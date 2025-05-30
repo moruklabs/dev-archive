@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 """
 HTML to YAML Parser
-Parses captured HTML files using purehtml and extracts structured data into YAML format.
+Parses captured HTML files using BeautifulSoup and extracts structured data into YAML format.
 """
 
 import os
 import json
 import yaml
 import argparse
-import purehtml
 from datetime import datetime, timezone
 from bs4 import BeautifulSoup
 from pathlib import Path
@@ -235,9 +234,7 @@ def parse_github_topics_html(html_content, filepath):
 
 def parse_producthunt_html(html_content, filepath):
     """Parse Product Hunt HTML (basic structure extraction)."""
-    # Use purehtml to clean the HTML first
-    cleaned_html = purehtml.purify_html_str(html_content)
-    soup = BeautifulSoup(cleaned_html, 'html.parser')
+    soup = BeautifulSoup(html_content, 'html.parser')
     
     # Extract basic page information
     title_elem = soup.find('title')
@@ -299,15 +296,24 @@ def parse_html_file(filepath):
         elif 'ph' in filepath:
             return parse_producthunt_html(html_content, filepath)
         else:
-            # Generic parser using purehtml
-            cleaned_html = purehtml.purify_html_str(html_content)
-            soup = BeautifulSoup(cleaned_html, 'html.parser')
+            # Generic parser using BeautifulSoup
+            soup = BeautifulSoup(html_content, 'html.parser')
             title = soup.find('title')
+            
+            # Extract clean text content
+            # Remove script and style elements for cleaner text extraction
+            for script in soup(["script", "style"]):
+                script.decompose()
+            
+            # Get text content, limit to 1000 chars
+            text_content = soup.get_text()
+            clean_content = re.sub(r'\s+', ' ', text_content).strip()[:1000]
+            
             return {
                 'source': 'generic',
                 'captured_at': extract_date_from_path(filepath),
                 'page_title': clean_text(title.text) if title else "",
-                'content': cleaned_html[:1000]  # First 1000 chars of cleaned content
+                'content': clean_content
             }
     
     except Exception as e:
