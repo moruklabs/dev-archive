@@ -31,7 +31,7 @@ jobs:
           pip install requests trafilatura browserforge
 
       - name: Run capture and parse script
-        run: python capture_and_parse.py
+        run: python capture_and_parse.py --test --random --number 5
 
       - name: Upload captures as artifact
         uses: actions/upload-artifact@v4
