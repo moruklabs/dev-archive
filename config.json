@@ -1,0 +1,27 @@
+{
+  "defs": {
+    "base": "capture/${today}",
+    "today_format": "YYYY-MM-DD"
+  },
+  "target": [
+    {
+      "folder_name": "${base}/ph/${today}",
+      "url": "https://www.producthunt.com/"
+    },
+    {
+      "vars": {
+        "interval": ["daily", "weekly", "monthly"],
+        "language": ["python", "javascript"]
+      },
+      "folder_name": "${base}/gh/trending/${today}/${interval}/${language}",
+      "url": "https://github.com/${language}/trending?since=${interval}"
+    },
+    {
+      "vars": {
+        "interval": ["daily", "weekly", "monthly"]
+      },
+      "folder_name": "${base}/gh/trending/${today}/${interval}/overall",
+      "url": "https://github.com/trending?since=${interval}"
+    }
+  ]
+}
