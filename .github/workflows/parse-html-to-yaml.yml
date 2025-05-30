@@ -2,7 +2,7 @@ name: Parse HTML to YAML
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # Runs daily at 6 AM UTC (different from hourly capture)
+    - cron: '*/20 * * * *'  # Runs every 20 minutes
   workflow_dispatch:
 
 permissions:
