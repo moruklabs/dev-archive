@@ -25,8 +25,8 @@ BACKOFF_FACTOR = 2
 REQUEST_TIMEOUT = 10  # seconds
 
 def is_safe_path(base_dir, path):
-    base_dir = os.path.abspath(base_dir)
-    path = os.path.abspath(path)
+    base_dir = os.path.realpath(base_dir)
+    path = os.path.realpath(path)
     return os.path.commonpath([base_dir]) == os.path.commonpath([base_dir, path])
 
 def load_config():
