@@ -89,9 +89,7 @@ def fetch_url(url):
 
 def save_content(folder, filename, content):
     os.makedirs(folder, exist_ok=True)
-    file_path = os.path.join(folder, filename)
-    if not is_safe_path(CAPTURES_DIR, file_path):
-        raise ValueError(f"Unsafe path detected: {file_path}")
+    with open(file_path, 'w', encoding='utf-8') as f:
     with open(file_path, 'w', encoding='utf-8') as f:
         f.write(content)
 
