@@ -2,7 +2,7 @@ name: Capture and Commit
 
 on:
   schedule:
-    - cron: '0 0 1 1 *'  # Runs once a year
+    - cron: '0 0 * * *'  # Runs once a day
   workflow_dispatch:
 
 permissions:
@@ -11,6 +11,7 @@ permissions:
 jobs:
   capture-and-parse:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -47,6 +48,7 @@ jobs:
 
   commit-captures:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     needs: capture-and-parse # Run after capture job
     if: success() # Only run if capture-and-parse succeeded
     steps:
