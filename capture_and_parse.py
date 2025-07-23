@@ -7,7 +7,7 @@ import requests
 from datetime import datetime, timezone
 from itertools import product
 from urllib.parse import urlparse
-from browserforge.fingerprints import FingerprintGenerator
+
 import argparse
 
 try:
@@ -19,9 +19,15 @@ except ImportError:
 
 CONFIG_FILE = 'config.json'
 CAPTURES_DIR = 'captures'
-DELAY_RANGE = (2, 5)  # seconds
+DELAY_RANGE = (1, 3)  # seconds, shorter to keep jobs fast
 MAX_RETRIES = 3
 BACKOFF_FACTOR = 2
+REQUEST_TIMEOUT = 10  # seconds
+
+def is_safe_path(base_dir, path):
+    base_dir = os.path.realpath(base_dir)
+    path = os.path.realpath(path)
+    return os.path.commonpath([base_dir]) == os.path.commonpath([base_dir, path])
 
 def load_config():
     with open(CONFIG_FILE, 'r') as f:
@@ -56,40 +62,19 @@ def expand_targets(defs, targets):
             expanded.append({'filepath': filepath, 'url': url})
     return expanded
 
+ALLOWED_DOMAINS = {"mshibanami.github.io"}
+
 def fetch_url(url):
-    generator = FingerprintGenerator(browser="chrome")
+    parsed = urlparse(url)
+    if parsed.netloc not in ALLOWED_DOMAINS:
+        print(f"[ERROR] Refusing to fetch from unauthorized domain: {parsed.netloc}")
+        return None
+    headers = {"User-Agent": "dev-archive-bot/1.0"}
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            fp = generator.generate()
-            headers = fp.headers
-            print(f"[DEBUG] Using fingerprint headers for {url}: {headers}")
-            resp = requests.get(url, headers=headers, timeout=20)
-            print(f"[DEBUG] Response status for {url}: {resp.status_code}")
+            resp = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
             if resp.status_code == 200:
-                print(f"[DEBUG] Response headers for {url}: {resp.headers}")
-                text_content = None
-                try:
-                    text_content = resp.text # Should trigger decompression
-                    print(f"[DEBUG] Successfully accessed resp.text for {url} (length: {len(text_content)})")
-                    if "producthunt.com" in url:
-                        debug_bin_path = "ph_debug_content.bin"
-                        debug_text_path = "ph_debug_text.txt"
-                        with open(debug_bin_path, "wb") as f_bin:
-                            f_bin.write(resp.content)
-                        with open(debug_text_path, "w", encoding='utf-8', errors='replace') as f_text:
-                            f_text.write(text_content)
-                        print(f"[INFO] Saved {debug_bin_path} and {debug_text_path} for {url}")
-                except Exception as e_text:
-                    print(f"[ERROR] Error accessing resp.text for {url}: {e_text}")
-                    if "producthunt.com" in url:
-                        debug_bin_error_path = "ph_debug_content_error.bin"
-                        with open(debug_bin_error_path, "wb") as f_bin_err:
-                            f_bin_err.write(resp.content)
-                        print(f"[INFO] Saved {debug_bin_error_path} for {url} due to resp.text access error")
-                    # If resp.text failed, but we have content, return raw content for caller to handle if needed
-                    # For this script's purpose, if .text fails, we treat it as a failed fetch for HTML.
-                    return None
-                return text_content # Return the (hopefully) decompressed text
+                return resp.text
             elif resp.status_code in (429, 500, 502, 503, 504):
                 print(f"[WARN] Retrying {url} due to status {resp.status_code} (attempt {attempt}/{MAX_RETRIES})")
                 time.sleep(BACKOFF_FACTOR ** attempt)
@@ -99,15 +84,13 @@ def fetch_url(url):
         except requests.exceptions.RequestException as e_req:
             print(f"[ERROR] RequestException during fetch for {url} (attempt {attempt}/{MAX_RETRIES}): {e_req}")
             time.sleep(BACKOFF_FACTOR ** attempt)
-        except Exception as e:
-            print(f"[ERROR] Generic exception during fetch for {url} (attempt {attempt}/{MAX_RETRIES}): {e}")
-            time.sleep(BACKOFF_FACTOR ** attempt)
     print(f"[ERROR] Failed to fetch {url} after {MAX_RETRIES} attempts.")
     return None
 
 def save_content(folder, filename, content):
     os.makedirs(folder, exist_ok=True)
-    with open(os.path.join(folder, filename), 'w', encoding='utf-8') as f:
+    with open(file_path, 'w', encoding='utf-8') as f:
+    with open(file_path, 'w', encoding='utf-8') as f:
         f.write(content)
 
 def generate_folders(defs, targets):
@@ -129,7 +112,7 @@ def send_telegram_message(message):
     url = f"https://api.telegram.org/bot{token}/sendMessage"
     data = {"chat_id": chat_id, "text": message, "parse_mode": "Markdown"}
     try:
-        resp = requests.post(url, data=data, timeout=10)
+        resp = requests.post(url, data=data, timeout=REQUEST_TIMEOUT)
         if resp.status_code != 200:
             print(f"Failed to send Telegram message: {resp.text}")
     except Exception as e:
@@ -189,6 +172,10 @@ def main():
             # Potentially add to failures list or send Telegram notification for config error
             continue
         filepath = os.path.join(CAPTURES_DIR, entry['filepath'])
+        if not is_safe_path(CAPTURES_DIR, filepath):
+            print(f"[ERROR] Unsafe filepath detected: {filepath}")
+            failures.append({"url": entry.get('url', '[NO URL]'), "filepath": filepath, "error": "unsafe filepath"})
+            continue
         url = entry.get('url', '[NO URL]')
         if url == '[NO URL]':
             print(f"[ERROR] Main loop: Entry missing 'url' for filepath: {filepath}")
@@ -200,12 +187,12 @@ def main():
             continue
 
         print(f"[INFO] Processing {url} -> {filepath}")
-        html = fetch_url(url)
-        if html:
-            save_content(os.path.dirname(filepath), os.path.basename(filepath), html)
-            print(f"[INFO] Saved HTML for {url} to {filepath}")
+        content = fetch_url(url)
+        if content:
+            save_content(os.path.dirname(filepath), os.path.basename(filepath), content)
+            print(f"[INFO] Saved content for {url} to {filepath}")
         else:
-            print(f"[ERROR] Failed to fetch HTML for {url}")
+            print(f"[ERROR] Failed to fetch content for {url}")
             failures.append({"url": url, "filepath": filepath, "error": "fetch failed"})
 
         delay = random.uniform(*DELAY_RANGE)
