@@ -1,3 +1,4 @@
+
 name: Capture and Commit
 
 on:
@@ -9,12 +10,14 @@ permissions:
   contents: write
 
 jobs:
-  capture-and-parse:
+  capture-and-commit:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -32,7 +35,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt # Install from requirements.txt
+          pip install -r requirements.txt
 
       - name: Run capture and parse script
         env:
@@ -40,47 +43,16 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python capture_and_parse.py
 
-      - name: Upload captures as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: captures-artifact # Ensure consistent artifact name
-          path: captures
-
-  commit-captures:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    needs: capture-and-parse # Run after capture job
-    if: success() # Only run if capture-and-parse succeeded
-    steps:
-      - name: Checkout main branch
-        uses: actions/checkout@v4
-        with:
-          ref: main # Or your default branch name
-          token: ${{ secrets.GITHUB_TOKEN }} # Use GITHUB_TOKEN for checkout too
-
-      - name: Download captures artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: captures-artifact # Must match the upload-artifact name
-          path: captures # Download to the 'captures' directory in the workspace
-
-      - name: Configure Git
+      - name: Commit and push new captures
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Pull latest changes
-        run: git pull --rebase origin main # Or your default branch name
-
-      - name: Commit and push new captures
-        run: |
-          # The captures directory from the artifact is already in the right place
           git add captures/
           if git diff --staged --quiet; then
             echo "No new captures to commit."
-            exit 0 # Success, no changes
+            exit 0
           fi
           git commit -m "feat: Update captures $(date +'%Y-%m-%d %H:%M:%S UTC')"
-          git push origin main # Or your default branch name
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GITHUB_TOKEN for push
+          git push origin main
