@@ -1,19 +1,28 @@
 {
   "defs": {
-    "base": "capture/${today}"
+    "base": "${today}",
+    "langs": [
+      "all",
+      "go",
+      "python",
+      "javascript",
+      "typescript",
+      "rust",
+      "java"
+    ]
   },
   "target": [
     {
-      "filepath": "${base}/gh/rss/daily.xml",
-      "url": "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml"
+      "filepath": "${base}/{lang}/daily.xml",
+      "url": "https://mshibanami.github.io/GitHubTrendingRSS/daily/{lang}.xml"
     },
     {
-      "filepath": "${base}/gh/rss/weekly.xml",
-      "url": "https://mshibanami.github.io/GitHubTrendingRSS/weekly/all.xml"
+      "filepath": "${base}/{lang}/weekly.xml",
+      "url": "https://mshibanami.github.io/GitHubTrendingRSS/weekly/{lang}.xml"
     },
     {
-      "filepath": "${base}/gh/rss/monthly.xml",
-      "url": "https://mshibanami.github.io/GitHubTrendingRSS/monthly/all.xml"
+      "filepath": "${base}/{lang}/monthly.xml",
+      "url": "https://mshibanami.github.io/GitHubTrendingRSS/monthly/{lang}.xml"
     }
   ]
 }
