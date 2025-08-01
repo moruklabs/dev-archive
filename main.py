@@ -8,10 +8,11 @@ from datetime import datetime, timezone
 from itertools import product
 from urllib.parse import urlparse
 
-import xml.etree.ElementTree
+import xml.etree.ElementTree as ET
 import dotenv
 import argparse
 import concurrent.futures
+from urllib.parse import quote
 
 try:
 
@@ -26,6 +27,10 @@ DELAY_RANGE = (1, 3)  # seconds, shorter to keep jobs fast
 MAX_RETRIES = 3
 BACKOFF_FACTOR = 2
 REQUEST_TIMEOUT = 10  # seconds
+
+# Our own base URL for RSS feeds - using GitHub Pages URL for this repository
+OUR_BASE_URL = "https://moruklabs.github.io/dev-archive"
+OUR_RSS_BASE_URL = f"{OUR_BASE_URL}/rss"
 
 def is_safe_path(base_dir, path):
     base_dir = os.path.realpath(base_dir)
@@ -43,6 +48,90 @@ def substitute(template, variables):
         var = match.group(1)
         return str(variables.get(var, match.group(0)))
     return re.sub(r'\$?\{([^}]+)\}', replacer, template)
+
+def transform_rss_content(content, lang, feed_type):
+    """Transform RSS content to use our own links and ensure proper RSS compliance."""
+    try:
+        # Parse the RSS XML
+        root = ET.fromstring(content)
+        
+        # Find the channel element
+        channel = root.find('channel')
+        if channel is None:
+            print(f"[ERROR] No channel element found in RSS")
+            return content
+        
+        # Update channel link to point to our repository
+        link_elem = channel.find('link')
+        if link_elem is not None:
+            link_elem.text = OUR_BASE_URL
+        
+        # Update channel description to include our branding
+        desc_elem = channel.find('description')
+        if desc_elem is not None:
+            original_desc = desc_elem.text or ""
+            if "GitHub" in original_desc and "Trending" in original_desc:
+                # Update description to indicate this is our curated feed
+                desc_elem.text = f"Curated {original_desc} - Archived by MorukLabs"
+        
+        # Add or update channel elements for better RSS compliance
+        # Add language if not present
+        if channel.find('language') is None:
+            lang_elem = ET.SubElement(channel, 'language')
+            lang_elem.text = 'en-us'
+        
+        # Add generator info
+        generator_elem = channel.find('generator')
+        if generator_elem is None:
+            generator_elem = ET.SubElement(channel, 'generator')
+        generator_elem.text = 'MorukLabs Dev Archive RSS Generator'
+        
+        # Process each item
+        for item in channel.findall('item'):
+            # Update item links to point to our archive instead of direct GitHub
+            link_elem = item.find('link')
+            if link_elem is not None and link_elem.text:
+                github_url = link_elem.text
+                if github_url.startswith('https://github.com/'):
+                    # Extract repo name from GitHub URL
+                    repo_name = github_url.replace('https://github.com/', '')
+                    # Create our own URL that will eventually redirect or show info about this repo
+                    our_url = f"{OUR_BASE_URL}/repo/{quote(repo_name)}"
+                    link_elem.text = our_url
+            
+            # Add GUID for better RSS compatibility if not present
+            guid_elem = item.find('guid')
+            if guid_elem is None and link_elem is not None:
+                guid_elem = ET.SubElement(item, 'guid')
+                guid_elem.text = link_elem.text
+                guid_elem.set('isPermaLink', 'true')
+            
+            # Ensure pubDate is present for the item
+            pubdate_elem = item.find('pubDate')
+            if pubdate_elem is None:
+                # Use channel pubDate or current time
+                channel_pubdate = channel.find('pubDate')
+                pubdate_elem = ET.SubElement(item, 'pubDate')
+                if channel_pubdate is not None and channel_pubdate.text:
+                    pubdate_elem.text = channel_pubdate.text
+                else:
+                    pubdate_elem.text = datetime.now(timezone.utc).strftime('%a, %d %b %Y %H:%M:%S GMT')
+        
+        # Convert back to string with proper XML declaration
+        xml_str = ET.tostring(root, encoding='utf-8', xml_declaration=True).decode('utf-8')
+        
+        # Basic formatting: add newlines after major elements for readability
+        xml_str = xml_str.replace('><', '>\n<')
+        xml_str = xml_str.replace('></', '</')
+        
+        return xml_str
+        
+    except ET.ParseError as e:
+        print(f"[ERROR] Failed to parse RSS XML: {e}")
+        return content
+    except Exception as e:
+        print(f"[ERROR] Failed to transform RSS content: {e}")
+        return content
 
 def expand_targets(defs, targets):
     # Separate fixed and list variables from defs
@@ -146,16 +235,26 @@ def process_language_targets(language_targets):
         if content:
             ## check if the content is valid xml
             try:
-                xml.etree.ElementTree.fromstring(content)
-            except xml.etree.ElementTree.ParseError:
+                ET.fromstring(content)
+            except ET.ParseError:
                 print(f"[ERROR] Invalid XML content for {url}")
                 language_failures.append({"url": url, "filepath": filepath, "error": "invalid XML"})
                 continue
-            ## minify the xml
-            content = xml.etree.ElementTree.fromstring(content)
-            content = xml.etree.ElementTree.tostring(content, encoding='utf-8').decode('utf-8')
-            save_content(os.path.dirname(filepath), os.path.basename(filepath), content)
-            print(f"[INFO] Saved content for {url} to {filepath}")
+            
+            # Extract language and feed type from filepath for transformation
+            path_parts = filepath.split('/')
+            lang = entry.get('lang', 'unknown')
+            feed_type = 'unknown'
+            if len(path_parts) > 0:
+                filename = path_parts[-1]
+                if filename.endswith('.xml'):
+                    feed_type = filename[:-4]  # Remove .xml extension
+            
+            # Transform RSS content to use our own links
+            transformed_content = transform_rss_content(content, lang, feed_type)
+            
+            save_content(os.path.dirname(filepath), os.path.basename(filepath), transformed_content)
+            print(f"[INFO] Saved transformed content for {url} to {filepath}")
         else:
             print(f"[ERROR] Failed to fetch content for {url}")
             language_failures.append({"url": url, "filepath": filepath, "error": "fetch failed"})
