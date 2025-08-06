@@ -1,0 +1,1713 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub TypeScript Weekly Trending</title>
+    <description>Weekly Trending of TypeScript in GitHub</description>
+    <pubDate>Tue, 05 Aug 2025 01:44:47 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>fastrepl/hyprnote</title>
+      <link>https://github.com/fastrepl/hyprnote</link>
+      <description>&lt;p&gt;Local-first AI Notepad for Private Meetings&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/e5fac942-1a51-4180-9d64-f508db705f9d" alt="github_banner_v2"&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;/p&gt;
+&lt;p align="center"&gt;AI notepad for &lt;strong&gt;private&lt;/strong&gt; meetings. Not a single byte of data leaves your device.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://deepwiki.com/fastrepl/hyprnote"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" alt="Ask DeepWiki"&gt;&lt;/a&gt; &lt;a href="https://hyprnote.com/discord" target="_blank"&gt;&lt;img src="https://img.shields.io/static/v1?label=Join%20our&amp;amp;message=Discord&amp;amp;color=blue&amp;amp;logo=Discord" alt="Discord"&gt;&lt;/a&gt; &lt;a href="https://x.com/tryhyprnote" target="_blank"&gt;&lt;img src="https://img.shields.io/static/v1?label=Follow%20us%20on&amp;amp;message=X&amp;amp;color=black&amp;amp;logo=x" alt="X"&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;/p&gt; 
+&lt;h2&gt;What is Hyprnote?&lt;/h2&gt; 
+&lt;p&gt;Hyprnote is a local-first AI notepad designed for people in back-to-back meetings.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Listens to your meetings while you write&lt;/li&gt; 
+ &lt;li&gt;Crafts smart summaries based on your quick notes&lt;/li&gt; 
+ &lt;li&gt;Runs completely &lt;strong&gt;offline&lt;/strong&gt; using open-source models like Whisper or HyprLLM&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;No clouds. No leaks. Just your notes—on your machine.&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;brew tap fastrepl/hyprnote &amp;amp;&amp;amp; brew install hyprnote --cask
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://hyprnote.com/download"&gt;macOS&lt;/a&gt; (public beta)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/fastrepl/hyprnote/issues/66"&gt;Windows&lt;/a&gt; (soon)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/fastrepl/hyprnote/issues/67"&gt;Linux&lt;/a&gt; (of course)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Highlights&lt;/h2&gt; 
+&lt;h3&gt;Realtime Transcript&lt;/h3&gt; 
+&lt;p&gt;Watch a live transcript update as the meeting unfolds—accurate, fast, and fully local. &lt;img width="959" height="712" alt="image" src="https://github.com/user-attachments/assets/d24b8b43-a052-44cd-803e-daa3ff600a9c"&gt;&lt;/p&gt; 
+&lt;h3&gt;From Memos to Summaries&lt;/h3&gt; 
+&lt;p&gt;Jot things down during your call. Hyprnote turns them into a polished meeting summary—context-aware and easy to share. &lt;img width="959" height="712" alt="image" src="https://github.com/user-attachments/assets/489f9239-1a32-4217-9d74-554906687fe1"&gt;&lt;/p&gt; 
+&lt;h3&gt;Truly Local&lt;/h3&gt; 
+&lt;p&gt;No internet? No problem. Hyprnote works offline by default and keeps everything on your device.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/c6649a63-3d41-40ea-a1fd-8c0713ad91bc" alt="offline"&gt;&lt;/p&gt; 
+&lt;h3&gt;Bring Your Own LLM&lt;/h3&gt; 
+&lt;p&gt;Prefer something custom? You can swap in your own language model:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Run local models via Ollama&lt;/li&gt; 
+ &lt;li&gt;Use approved third-party APIs like Gemini, Claude, or Azure-hosted GPT&lt;/li&gt; 
+ &lt;li&gt;Stay compliant with whatever your org allows&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Hyprnote plays nice with whatever stack you’re running.&lt;/p&gt; 
+&lt;img width="912" height="712" alt="image" src="https://github.com/user-attachments/assets/717dc39a-3359-46d6-a92f-51de56907750"&gt; 
+&lt;h3&gt;Note Templates&lt;/h3&gt; 
+&lt;p&gt;Prefer a certain style? Choose from predefined templates like bullet points, agenda-based, or paragraph summary. Or create your own.&lt;/p&gt; 
+&lt;img width="959" height="712" alt="image" src="https://github.com/user-attachments/assets/d826a854-4b6f-415c-9e97-270f517c0868"&gt; 
+&lt;h3&gt;Autonomy Selector&lt;/h3&gt; 
+&lt;p&gt;Control how much freedom the AI takes:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Stick strictly to your quick notes&lt;/li&gt; 
+ &lt;li&gt;Let Hyprnote improvise and reframe based on the full conversation&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;img width="912" height="712" alt="image" src="https://github.com/user-attachments/assets/7de5c74f-5d99-46ec-8a5f-a38fb62bafb1"&gt; 
+&lt;h3&gt;AI Chat&lt;/h3&gt; 
+&lt;p&gt;Ask follow-ups right inside your notes:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;"What were the action items?"&lt;/li&gt; 
+ &lt;li&gt;"Rewrite this in simpler language"&lt;/li&gt; 
+ &lt;li&gt;"Translate to Spanish"&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;img width="959" height="712" alt="image" src="https://github.com/user-attachments/assets/52b7dc14-906f-445f-91f9-b0089d40a495"&gt; 
+&lt;h3&gt;Integrations&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Apple Calendar, Contacts&lt;/li&gt; 
+ &lt;li&gt;Obsidian&lt;/li&gt; 
+ &lt;li&gt;Coming soon: Notion, Slack, Hubspot, Salesforce&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;img width="912" height="712" alt="image" src="https://github.com/user-attachments/assets/ab559e54-fda5-4c8c-97d7-ba1b9d134cc8"&gt;</description>
+    </item>
+    
+    <item>
+      <title>wasp-lang/open-saas</title>
+      <link>https://github.com/wasp-lang/open-saas</link>
+      <description>&lt;p&gt;A free, open-source SaaS app starter for React &amp; Node.js with superpowers. Full-featured. Community-driven.&lt;/p&gt;&lt;hr&gt;&lt;h2&gt;Welcome to your new SaaS App! 🎉&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.producthunt.com/products/open-saas?embed=true&amp;amp;utm_source=badge-featured&amp;amp;utm_medium=badge&amp;amp;utm_source=badge-open-saas-2" target="_blank"&gt;&lt;img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=991058&amp;amp;theme=neutral&amp;amp;t=1753776395137" alt="Open SaaS - The open-source SaaS boilerplate with superpowers! | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/3856276b-23e9-455e-a564-b5f26f4f0e98"&gt;https://github.com/user-attachments/assets/3856276b-23e9-455e-a564-b5f26f4f0e98&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;You've decided to build a SaaS app with the Open SaaS template. Great choice!&lt;/p&gt; 
+&lt;p&gt;This template is:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;fully open-source&lt;/li&gt; 
+ &lt;li&gt;completely free to use and distribute&lt;/li&gt; 
+ &lt;li&gt;comes with a ton of features out of the box!&lt;/li&gt; 
+ &lt;li&gt;focused on free, open-source services, where possible&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;🧑‍💻 Check it out in action here: &lt;a href="https://opensaas.sh"&gt;OpenSaaS.sh&lt;/a&gt;&lt;br&gt; 📚 Check out the Docs here: &lt;a href="https://docs.opensaas.sh"&gt;Open SaaS Docs&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;What's inside?&lt;/h2&gt; 
+&lt;p&gt;The template itself is built on top of some very powerful tools and frameworks, including:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🐝 &lt;a href="https://wasp.sh"&gt;Wasp&lt;/a&gt; - a full-stack React, NodeJS, Prisma framework with superpowers&lt;/li&gt; 
+ &lt;li&gt;🚀 &lt;a href="https://starlight.astro.build/"&gt;Astro&lt;/a&gt; - Astro's lightweight "Starlight" template for documentation and blog&lt;/li&gt; 
+ &lt;li&gt;💸 &lt;a href="https://stripe.com"&gt;Stripe&lt;/a&gt; or &lt;a href="https://lemonsqueezy.com/"&gt;Lemon Squeezy&lt;/a&gt; (with Polar.sh and Paddle coming soon!) - for products and payments&lt;/li&gt; 
+ &lt;li&gt;💅 &lt;a href="https://tailwindcss.com"&gt;ShadCN UI&lt;/a&gt; - for components &amp;amp; styling (plus admin dashboard!)&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;a href="https://docs.opensaas.sh/"&gt;AI-Ready&lt;/a&gt; - full set of Cursor rules &amp;amp; llms-full.txt for ai-assisted coding&lt;/li&gt; 
+ &lt;li&gt;📈 &lt;a href="https://plausible.io"&gt;Plausible&lt;/a&gt; or &lt;a href="https://analytics.google.com/"&gt;Google&lt;/a&gt; Analytics&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;a href="https://openai.com"&gt;OpenAI&lt;/a&gt; - OpenAI API w/ function calling example&lt;/li&gt; 
+ &lt;li&gt;📦 &lt;a href="https://aws.amazon.com/s3/"&gt;AWS S3&lt;/a&gt; - for file uploads&lt;/li&gt; 
+ &lt;li&gt;📧 &lt;a href="https://sendgrid.com"&gt;SendGrid&lt;/a&gt;, &lt;a href="https://mailgun.com"&gt;MailGun&lt;/a&gt;, or SMTP - for email sending&lt;/li&gt; 
+ &lt;li&gt;🧪 &lt;a href="https://playwright.dev"&gt;Playwright&lt;/a&gt; - end-to-end tests with Playwright&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Because we're using Wasp as the full-stack framework, we can leverage a lot of its features to build our SaaS in record time, including:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🔐 &lt;a href="https://wasp.sh/docs/auth/overview"&gt;Full-stack Authentication&lt;/a&gt; - Email verified + social Auth in a few lines of code.&lt;/li&gt; 
+ &lt;li&gt;⛑ &lt;a href="https://wasp.sh/docs/data-model/operations/overview"&gt;End-to-end Type Safety&lt;/a&gt; - Type your backend functions and get inferred types on the front-end automatically, without the need to install or configure any third-party libraries. Oh, and type-safe Links, too!&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;a href="https://wasp.sh/docs/advanced/jobs"&gt;Jobs&lt;/a&gt; - Run cron jobs in the background or set up queues simply by defining a function in the config file.&lt;/li&gt; 
+ &lt;li&gt;🚀 &lt;a href="https://wasp.sh/docs/advanced/deployment/overview"&gt;One-command Deploy&lt;/a&gt; - Easily deploy your DB, Server, &amp;amp; Client with one commaned to &lt;a href="https://railway.app"&gt;Railway&lt;/a&gt; or &lt;a href="https://fly.io"&gt;Fly.io&lt;/a&gt; via the CLI. Or deploy manually to any other hosting serivce of your choice.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;You also get access to Wasp's diverse, helpful community if you get stuck or need help.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🤝 &lt;a href="https://discord.gg/aCamt5wCpS"&gt;Wasp Discord&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;h3&gt;Simple Instructions&lt;/h3&gt; 
+&lt;p&gt;First, to install the latest version of &lt;a href="https://wasp.sh/"&gt;Wasp&lt;/a&gt; on macOS, Linux, or Windows with WSL, run the following command:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -sSL https://get.wasp.sh/installer.sh | sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then, create a new SaaS app with the following command:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;wasp new -t saas
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This will create a &lt;strong&gt;clean copy of the Open SaaS template&lt;/strong&gt; into a new directory, and you can start building your SaaS app right away!&lt;/p&gt; 
+&lt;h3&gt;Detailed Instructions&lt;/h3&gt; 
+&lt;p&gt;For everything you need to know about getting started and using this template, check out the &lt;a href="https://docs.opensaas.sh"&gt;Open SaaS Docs&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;We've documented everything in great detail, including installation instructions, pulling updates to the template, guides for integrating services, SEO, deployment, and more. 🚀&lt;/p&gt; 
+&lt;h2&gt;Getting Help &amp;amp; Providing Feedback&lt;/h2&gt; 
+&lt;p&gt;There are two ways to get help or provide feedback (and we try to always respond quickly!):&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/wasp-lang/open-saas/issues"&gt;Open an issue&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://discord.gg/aCamt5wCpS"&gt;Wasp Discord&lt;/a&gt; -- please direct questions to the #🙋questions forum channel&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Note that we've tried to get as many of the core features of a SaaS app into this template as possible, but there still might be some missing features or functionality.&lt;/p&gt; 
+&lt;p&gt;We could always use some help tying up loose ends: contributions are welcome! Check out &lt;a href="https://raw.githubusercontent.com/wasp-lang/open-saas/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for more details.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Canner/WrenAI</title>
+      <link>https://github.com/Canner/WrenAI</link>
+      <description>&lt;p&gt;⚡️ AI-powered Business Intelligence (GenBI - Generative BI) — Query any database in natural language, generate accurate SQL (Text-to-SQL), charts (Text-to-chart), and insights in seconds.&lt;/p&gt;&lt;hr&gt;&lt;p align="center" id="top"&gt; &lt;a href="https://getwren.ai/?utm_source=github&amp;amp;utm_medium=title&amp;amp;utm_campaign=readme"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: light)" srcset="./misc/wrenai_logo.png"&gt; 
+   &lt;img src="https://raw.githubusercontent.com/Canner/WrenAI/main/misc/wrenai_logo_white.png" width="300px"&gt; 
+  &lt;/picture&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h1 align="center"&gt;&lt;a href="https://getwren.ai/?utm_source=github&amp;amp;utm_medium=title&amp;amp;utm_campaign=readme"&gt;Wren AI - Open-Source GenBI Agent&lt;/a&gt;&lt;/h1&gt;
+&lt;a href="https://getwren.ai/?utm_source=github&amp;amp;utm_medium=title&amp;amp;utm_campaign=readme"&gt; &lt;/a&gt; 
+&lt;p&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a aria-label="Follow us on X" href="https://x.com/getwrenai"&gt; &lt;img alt="" src="https://img.shields.io/badge/-@getwrenai-blue?style=for-the-badge&amp;amp;logo=x&amp;amp;logoColor=white&amp;amp;labelColor=gray&amp;amp;logoWidth=20"&gt; &lt;/a&gt; &lt;a aria-label="Releases" href="https://github.com/canner/WrenAI/releases"&gt; &lt;img alt="" src="https://img.shields.io/github/v/release/canner/WrenAI?logo=github&amp;amp;label=GitHub%20Release&amp;amp;color=blue&amp;amp;style=for-the-badge"&gt; &lt;/a&gt; &lt;a aria-label="License" href="https://github.com/Canner/WrenAI/raw/main/LICENSE"&gt; &lt;img alt="" src="https://img.shields.io/github/license/canner/WrenAI?color=blue&amp;amp;style=for-the-badge"&gt; &lt;/a&gt; &lt;a href="https://docs.getwren.ai"&gt; &lt;img src="https://img.shields.io/badge/docs-online-brightgreen?style=for-the-badge" alt="Docs"&gt; &lt;/a&gt; &lt;a aria-label="Join the community on GitHub" href="https://discord.gg/5DvshJqG8Z"&gt; &lt;img alt="" src="https://img.shields.io/badge/-JOIN%20THE%20COMMUNITY-blue?style=for-the-badge&amp;amp;logo=discord&amp;amp;logoColor=white&amp;amp;labelColor=grey&amp;amp;logoWidth=20"&gt; &lt;/a&gt; &lt;a aria-label="Canner" href="https://cannerdata.com/?utm_source=github&amp;amp;utm_medium=badge&amp;amp;utm_campaign=readme"&gt; &lt;img src="https://img.shields.io/badge/%F0%9F%A7%A1-Made%20by%20Canner-blue?style=for-the-badge"&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/9263" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/9263" alt="Canner%2FWrenAI | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Wren AI is your GenBI Agent, that you can query any database with natural language → get accurate SQL(Text-to-SQL), charts(Text-to-Charts) &amp;amp; AI-generated insights in seconds. ⚡️&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/Canner/WrenAI/main/misc/workflow.png"&gt; &lt;/p&gt; 
+&lt;h2&gt;😍 Demos&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/f9c1cb34-5a95-4580-8890-ec9644da4160"&gt;https://github.com/user-attachments/assets/f9c1cb34-5a95-4580-8890-ec9644da4160&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/90ad1d35-bb1e-490b-9676-b29863ff090b"&gt;Watch GenBI Demo&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🤖 Features&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;&lt;/th&gt; 
+   &lt;th&gt;What you get&lt;/th&gt; 
+   &lt;th&gt;Why it matters&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Talk to Your Data&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Ask in any language → precise SQL &amp;amp; answers&lt;/td&gt; 
+   &lt;td&gt;Slash the SQL learning curve﻿&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;GenBI Insights&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;AI-written summaries, charts &amp;amp; reports&lt;/td&gt; 
+   &lt;td&gt;Decision-ready context in one click﻿&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Semantic Layer&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;MDL models encode schema, metrics, joins&lt;/td&gt; 
+   &lt;td&gt;Keeps LLM outputs accurate &amp;amp; governed﻿&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Embed via API&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Generate queries &amp;amp; charts inside your apps (&lt;a href="https://wrenai.readme.io/reference/cloud-getting-started"&gt;API Docs&lt;/a&gt;)&lt;/td&gt; 
+   &lt;td&gt;Build custom agents, SaaS features, chatbots﻿ (&lt;a href="https://huggingface.co/spaces/getWrenAI/wrenai-cloud-api-demo"&gt;Streamlit Live Demo&lt;/a&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;🤩 &lt;a href="https://getwren.ai/genbi?utm_source=github&amp;amp;utm_medium=content&amp;amp;utm_campaign=readme"&gt;Learn more about GenBI&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🚀 Getting Started&lt;/h2&gt; 
+&lt;p&gt;Using Wren AI is super simple, you can set it up within 3 minutes, and start to interact with your data!&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Visit our &lt;a href="http://docs.getwren.ai/oss/installation?utm_source=github&amp;amp;utm_medium=content&amp;amp;utm_campaign=readme"&gt;Install in your local environment&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Visit the &lt;a href="https://docs.getwren.ai/oss/guide/connect/overview?utm_source=github&amp;amp;utm_medium=content&amp;amp;utm_campaign=readme"&gt;Usage Guides&lt;/a&gt; to learn more about how to use Wren AI.&lt;/li&gt; 
+ &lt;li&gt;Or just start with &lt;a href="https://getwren.ai/?utm_source=github&amp;amp;utm_medium=content&amp;amp;utm_campaign=readme"&gt;Wren AI Cloud&lt;/a&gt; our Managed Cloud Service. (&lt;a href="https://docs.getwren.ai/oss/overview/cloud_vs_self_host"&gt;OSS vs. Commercial Plans&lt;/a&gt;).&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🏗️ Architecture&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/Canner/WrenAI/main/misc/how_wrenai_works.png"&gt; &lt;/p&gt; 
+&lt;p&gt;👉 &lt;a href="https://getwren.ai/post/how-we-design-our-semantic-engine-for-llms-the-backbone-of-the-semantic-layer-for-llm-architecture?utm_source=github&amp;amp;utm_medium=content&amp;amp;utm_campaign=readme"&gt;Learn more about our Design&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🔌 Data Sources&lt;/h2&gt; 
+&lt;p&gt;If your data source is not listed here, vote for it in our &lt;a href="https://github.com/Canner/WrenAI/discussions/327"&gt;GitHub discussion thread&lt;/a&gt;. It will be a valuable input for us to decide on the next supported data sources.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Athena (Trino)&lt;/li&gt; 
+ &lt;li&gt;Redshift&lt;/li&gt; 
+ &lt;li&gt;BigQuery&lt;/li&gt; 
+ &lt;li&gt;DuckDB&lt;/li&gt; 
+ &lt;li&gt;PostgreSQL&lt;/li&gt; 
+ &lt;li&gt;MySQL&lt;/li&gt; 
+ &lt;li&gt;Microsoft SQL Server&lt;/li&gt; 
+ &lt;li&gt;ClickHouse&lt;/li&gt; 
+ &lt;li&gt;Oracle&lt;/li&gt; 
+ &lt;li&gt;Trino&lt;/li&gt; 
+ &lt;li&gt;Snowflake&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🤖 LLM Models&lt;/h2&gt; 
+&lt;p&gt;Wren AI supports integration with various Large Language Models (LLMs), including but not limited to:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;OpenAI Models&lt;/li&gt; 
+ &lt;li&gt;Azure OpenAI Models&lt;/li&gt; 
+ &lt;li&gt;DeepSeek Models&lt;/li&gt; 
+ &lt;li&gt;Google AI Studio – Gemini Models&lt;/li&gt; 
+ &lt;li&gt;Vertex AI Models (Gemini + Anthropic)&lt;/li&gt; 
+ &lt;li&gt;Bedrock Models&lt;/li&gt; 
+ &lt;li&gt;Anthropic API Models&lt;/li&gt; 
+ &lt;li&gt;Groq Models&lt;/li&gt; 
+ &lt;li&gt;Ollama Models&lt;/li&gt; 
+ &lt;li&gt;Databricks Models&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Check &lt;a href="https://github.com/Canner/WrenAI/tree/main/wren-ai-service/docs/config_examples"&gt;configuration examples here&lt;/a&gt;!&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!CAUTION] The performance of Wren AI depends significantly on the capabilities of the LLM you choose. We strongly recommend using the most powerful model available for optimal results. Using less capable models may lead to reduced performance, slower response times, or inaccurate outputs.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;📚 Documentation&lt;/h2&gt; 
+&lt;p&gt;Visit &lt;a href="https://docs.getwren.ai/oss/overview/introduction?utm_source=github&amp;amp;utm_medium=content&amp;amp;utm_campaign=readme"&gt;Wren AI documentation&lt;/a&gt; to view the full documentation.&lt;/p&gt; 
+&lt;h2&gt;📪 Keep Posted?&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.getwren.ai/blog/?utm_source=github&amp;amp;utm_medium=content&amp;amp;utm_campaign=readme"&gt;Subscribe our blog&lt;/a&gt; and &lt;a href="https://www.linkedin.com/company/wrenai"&gt;Follow our LinkedIn&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🛠️ Contribution&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Star ⭐ the repo to show support (it really helps).&lt;/li&gt; 
+ &lt;li&gt;Open an issue for bugs, ideas, or discussions.&lt;/li&gt; 
+ &lt;li&gt;Read &lt;a href="https://github.com/Canner/WrenAI/raw/main/CONTRIBUTING.md"&gt;Contribution Guidelines&lt;/a&gt; for setup &amp;amp; PR guidelines.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;⭐️ Community&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Join 1.3k+ developers in our &lt;a href="https://discord.gg/5DvshJqG8Z"&gt;Discord&lt;/a&gt; for real-time help and roadmap previews.&lt;/li&gt; 
+ &lt;li&gt;If there are any issues, please visit &lt;a href="https://github.com/Canner/WrenAI/issues"&gt;GitHub Issues&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Explore our &lt;a href="https://wrenai.notion.site/"&gt;public roadmap&lt;/a&gt; to stay updated on upcoming features and improvements!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Please note that our &lt;a href="https://raw.githubusercontent.com/Canner/WrenAI/main/CODE_OF_CONDUCT.md"&gt;Code of Conduct&lt;/a&gt; applies to all Wren AI community channels. Users are &lt;strong&gt;highly encouraged&lt;/strong&gt; to read and adhere to them to avoid repercussions.&lt;/p&gt; 
+&lt;h2&gt;🎉 Our Contributors&lt;/h2&gt; 
+&lt;a href="https://github.com/canner/wrenAI/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=Canner/WrenAI"&gt; &lt;/a&gt; 
+&lt;p align="right"&gt; &lt;a href="https://raw.githubusercontent.com/Canner/WrenAI/main/#top"&gt;⬆️ Back to Top&lt;/a&gt; &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>diffusionstudio/core</title>
+      <link>https://github.com/diffusionstudio/core</link>
+      <description>&lt;p&gt;The Video Creation Engine: Edit videos with code, featuring the fastest WebCodecs renderer for in-browser video processing.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/diffusionstudio/core/main/assets/banner.png" alt="Library Banner" style="aspect-ratio: 1200/500;width: 100%;"&gt; &lt;/p&gt;
+&lt;h1 align="center"&gt;diffusionstudio/core&lt;/h1&gt; 
+&lt;p&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://img.shields.io/badge/Made%20with-Typescript-blue?color=000000&amp;amp;logo=typescript&amp;amp;logoColor=ffffff" alt="Static Badge"&gt; &lt;a href="https://vitejs.dev"&gt;&lt;img src="https://img.shields.io/badge/Powered%20by-Vite-000000?style=flat&amp;amp;logo=Vite&amp;amp;logoColor=ffffff" alt="powered by vite"&gt;&lt;/a&gt; &lt;a href="https://discord.com/invite/zPQJrNGuFB"&gt;&lt;img src="https://img.shields.io/discord/1115673443141156924?style=flat&amp;amp;logo=discord&amp;amp;logoColor=fff&amp;amp;color=000000" alt="discord"&gt;&lt;/a&gt; &lt;a href="https://x.com/diffusionhq"&gt;&lt;img src="https://img.shields.io/badge/Follow%20for-Updates-blue?color=000000&amp;amp;logo=X&amp;amp;logoColor=ffffff" alt="Static Badge"&gt;&lt;/a&gt; &lt;a href="https://www.ycombinator.com/companies/diffusion-studio"&gt;&lt;img src="https://img.shields.io/badge/Combinator-F24-blue?color=000000&amp;amp;logo=ycombinator&amp;amp;logoColor=ffffff" alt="Static Badge"&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;br&gt; 
+&lt;h1&gt;Getting Started&lt;/h1&gt; 
+&lt;p&gt;&lt;code&gt;@diffusionstudio/core&lt;/code&gt; is a 2D motion graphics and video rendering engine powered by WebCodecs. Developers commonly use it for video editing automations and to build editing &lt;a href="https://playground.diffusion.studio"&gt;playgrounds/web apps&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Explore the full documentation at &lt;a href="https://docs.diffusion.studio/docs"&gt;docs.diffusion.studio&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Credits&lt;/h2&gt; 
+&lt;p&gt;This project owes much to &lt;a href="https://github.com/Vanilagy"&gt;@Vanilagy's&lt;/a&gt; exceptional muxer implementations.&lt;/p&gt; 
+&lt;h2&gt;Why Use Diffusion Studio&lt;/h2&gt; 
+&lt;p&gt;💻 100% &lt;strong&gt;client-side&lt;/strong&gt;&lt;br&gt; 🪽 &lt;strong&gt;Small bundle size&lt;/strong&gt; – Only 75 KB with a single dependency&lt;br&gt; 🩸 Blazingly &lt;strong&gt;fast&lt;/strong&gt; WebCodecs renderer&lt;br&gt; 🦾 &lt;strong&gt;AI-first&lt;/strong&gt; architecture&lt;br&gt;&lt;/p&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;npm install @diffusionstudio/core
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Benchmarks&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/diffusionstudio/core/main/assets/benchmarks.png" alt="Benchmarks"&gt;&lt;/p&gt; 
+&lt;h2&gt;Basic Usage&lt;/h2&gt; 
+&lt;p&gt;Here’s an example of how to use the library:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-javascript"&gt;import * as core from '@diffusionstudio/core';
+
+const url = 'https://diffusion-studio-public.s3.eu-central-1.amazonaws.com/videos/big_buck_bunny_1080p_30fps.mp4';
+
+// create a video clip and trim it
+const video = new core.VideoClip(url).subclip(0, '10s');
+
+// create a text clip and add styles
+const text = new core.TextClip({ 
+  text: 'Bunny - Our Brave Hero', 
+  position: 'center', 
+  duration: '5s', 
+  stroke: { color: '#000000' } 
+});
+
+const composition = new core.Composition(); // 1920x1080
+
+// this is how to compose your clips
+await composition.add(video);  // convenience function for 
+await composition.add(text);   // clip -&amp;gt; layer -&amp;gt; composition
+
+await new core.Encoder(composition).render('hello_world.mp4');
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The API models the structure of conventional video editing applications like Adobe Premiere or CapCut, using a layer-based system. Each layer contains zero or more clips of a single type, arranged in ascending chronological order.&lt;/p&gt; 
+&lt;p&gt;Layers are created implicitly with &lt;code&gt;composition.add(clip)&lt;/code&gt;, but you can also create them manually:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-typescript"&gt;const layer = composition.createLayer();
+await layer.add(text0);
+await layer.add(text1);
+await layer.add(text2);
+...
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Examples&lt;/h2&gt; 
+&lt;p&gt;Find more &lt;a href="https://github.com/diffusionstudio/examples"&gt;examples here.&lt;/a&gt;, or test all capabilities on our &lt;a href="https://app.diffusion.studio"&gt;Playground.&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/7a943407-e916-4d9f-b46a-3163dbff44c3"&gt;https://github.com/user-attachments/assets/7a943407-e916-4d9f-b46a-3163dbff44c3&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;How Does Diffusion Studio Compare?&lt;/h2&gt; 
+&lt;h3&gt;Remotion&lt;/h3&gt; 
+&lt;p&gt;A React-based video creation tool that converts the DOM into videos. It’s beginner-friendly, allowing web developers to leverage their existing skills.&lt;/p&gt; 
+&lt;h3&gt;Motion Canvas&lt;/h3&gt; 
+&lt;p&gt;A standalone editor designed for high-quality animations. It features an imperative API, adding elements procedurally rather than relying on keyframes, making it ideal for detailed animations.&lt;/p&gt; 
+&lt;h3&gt;Diffusion Studio&lt;/h3&gt; 
+&lt;p&gt;A video editing &lt;strong&gt;library&lt;/strong&gt; rather than a framework with a visual interface. It’s lightweight, operates entirely on the &lt;strong&gt;client-side&lt;/strong&gt;, and supports WebCodecs without relying on WebAssembly/ffmpeg. Ideal for integration into existing projects.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Currently, version ^2.0.0 is invite-only. You can request access on our Discord if you're interested in contributing. The source code for version ^1.0.0 is available in this repository.&lt;/p&gt; 
+&lt;h2&gt;Current features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Video/Audio&lt;/strong&gt; trimming and offsets&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Layering&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Splitting&lt;/strong&gt; clips&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Html &amp;amp; Image&lt;/strong&gt; rendering&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Relative&lt;/strong&gt; units (e.g. 80% clip height)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Shapes&lt;/strong&gt; (e.g., rectangles, circles)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Text&lt;/strong&gt; with multiple styles&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Audio Visualization&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;High Quality &lt;strong&gt;Captions&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Silence Removal&lt;/strong&gt; for audio&lt;/li&gt; 
+ &lt;li&gt;Web &amp;amp; Local &lt;strong&gt;Fonts&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Custom Clips&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Filters&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Masks&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Blending&lt;/strong&gt; modes&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Keyframe&lt;/strong&gt; animations 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Numbers, Text and Colors&lt;/strong&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Easing&lt;/strong&gt; (ease in, ease out etc.)&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Extrapolation&lt;/strong&gt; &lt;code&gt;'clamp' | 'extend'&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Realtime playback&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Hardware accelerated&lt;/strong&gt; encoding via WebCodecs&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Dynamic render resolution and framerate&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Background&lt;/h2&gt; 
+&lt;p&gt;This project was initiated in March 2023 with the mission of creating a “video processing toolkit for the era of AI.” As someone passionate about video editing for over a decade, the release of WebCodecs and WebGPU without feature flags in Chrome presented the perfect opportunity to build something new.&lt;/p&gt; 
+&lt;p&gt;Traditional browser-based video editors rely on server-side rendering, requiring time-consuming uploads and downloads of large files. With WebCodecs, video processing can now be done directly in the browser, making it significantly faster and more efficient.&lt;/p&gt; 
+&lt;p&gt;I’m excited to contribute to the next generation of video editing technology.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This library is free to use under the &lt;strong&gt;Diffusion Studio Non-Commercial License&lt;/strong&gt;, as long as your project is &lt;strong&gt;not monetized&lt;/strong&gt;.&lt;/p&gt; 
+&lt;h3&gt;✅ You Can Use This Library for Free If:&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;You are an &lt;strong&gt;individual or a company&lt;/strong&gt; and your project is &lt;strong&gt;not generating revenue&lt;/strong&gt; (no sales, ads, donations beyond operational costs, or other forms of monetization).&lt;/li&gt; 
+ &lt;li&gt;Your project &lt;strong&gt;may become commercial in the future&lt;/strong&gt;, as long as you obtain a commercial license before monetization.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;💼 If Your Project Becomes Commercial:&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;If you decide to &lt;strong&gt;monetize your project&lt;/strong&gt; (e.g., through sales, ads, premium features, or enterprise use), you must purchase a commercial license.&lt;/li&gt; 
+ &lt;li&gt;Visit our website to obtain a license when you’re ready to monetize.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;📄 More Details:&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;See LICENSE for the Non-Commercial License.&lt;/li&gt; 
+ &lt;li&gt;See LICENSE_COMMERCIAL for the Commercial License terms.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;For any questions, feel free to &lt;a href="https://diffusion.studio"&gt;contact us&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Version History&lt;/h2&gt; 
+&lt;h3&gt;v1.x &lt;em&gt;(Released October 2024)&lt;/em&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fully open-source (MPL-2.0 license)&lt;/li&gt; 
+ &lt;li&gt;Relied on Pixi.js for rendering (resulting in a large library size)&lt;/li&gt; 
+ &lt;li&gt;WebGPU support&lt;/li&gt; 
+ &lt;li&gt;FFmpeg-compiled demuxer&lt;/li&gt; 
+ &lt;li&gt;Limited to short-form content&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;v2.x &lt;em&gt;(Released February 1, 2025)&lt;/em&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Source code access by invite only&lt;/strong&gt; (Commercial &amp;amp; Non-Commercial license)&lt;/li&gt; 
+ &lt;li&gt;Removed Pixi.js, significantly reducing library size&lt;/li&gt; 
+ &lt;li&gt;Introduced a custom Canvas 2D renderer&lt;/li&gt; 
+ &lt;li&gt;Continued FFmpeg-based demuxing&lt;/li&gt; 
+ &lt;li&gt;Still limited to short-form content&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;v3.x &lt;em&gt;(Released February 18, 2025)&lt;/em&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Source code access by invite only&lt;/strong&gt; (Commercial &amp;amp; Non-Commercial license)&lt;/li&gt; 
+ &lt;li&gt;Removed all FFmpeg dependencies&lt;/li&gt; 
+ &lt;li&gt;Retained Canvas 2D rendering&lt;/li&gt; 
+ &lt;li&gt;Introduced pure TypeScript-based muxers/demuxers&lt;/li&gt; 
+ &lt;li&gt;Added support for long-form content&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;v4.x &lt;em&gt;(Estimated Release: July 2025)&lt;/em&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Source code access by invite only&lt;/strong&gt; (Commercial &amp;amp; Non-Commercial license)&lt;/li&gt; 
+ &lt;li&gt;Introducing a custom WebGL2 renderer&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>wg-easy/wg-easy</title>
+      <link>https://github.com/wg-easy/wg-easy</link>
+      <description>&lt;p&gt;The easiest way to run WireGuard VPN + Web-based Admin UI.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;WireGuard Easy&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/wg-easy/wg-easy/actions/workflows/deploy.yml"&gt;&lt;img src="https://github.com/wg-easy/wg-easy/actions/workflows/deploy.yml/badge.svg?branch=production" alt="Build &amp;amp; Publish latest Image"&gt;&lt;/a&gt; &lt;a href="https://github.com/wg-easy/wg-easy/actions/workflows/lint.yml"&gt;&lt;img src="https://github.com/wg-easy/wg-easy/actions/workflows/lint.yml/badge.svg?branch=master" alt="Lint"&gt;&lt;/a&gt; &lt;a href="https://github.com/wg-easy/wg-easy/stargazers"&gt;&lt;img src="https://img.shields.io/github/stars/wg-easy/wg-easy" alt="GitHub Stars"&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/wg-easy/wg-easy/master/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/wg-easy/wg-easy" alt="License"&gt;&lt;/a&gt; &lt;a href="https://github.com/wg-easy/wg-easy/releases/latest"&gt;&lt;img src="https://img.shields.io/github/v/release/wg-easy/wg-easy" alt="GitHub Release"&gt;&lt;/a&gt; &lt;a href="https://github.com/wg-easy/wg-easy/pkgs/container/wg-easy"&gt;&lt;img src="https://img.shields.io/badge/image_pulls-12M+-blue" alt="Image Pulls"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;You have found the easiest way to install &amp;amp; manage WireGuard on any Linux host!&lt;/p&gt; 
+&lt;!-- TOOD: update screenshot --&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/wg-easy/wg-easy/master/assets/screenshot.png" width="802" alt="wg-easy Screenshot"&gt; &lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;All-in-one: WireGuard + Web UI.&lt;/li&gt; 
+ &lt;li&gt;Easy installation, simple to use.&lt;/li&gt; 
+ &lt;li&gt;List, create, edit, delete, enable &amp;amp; disable clients.&lt;/li&gt; 
+ &lt;li&gt;Show a client's QR code.&lt;/li&gt; 
+ &lt;li&gt;Download a client's configuration file.&lt;/li&gt; 
+ &lt;li&gt;Statistics for which clients are connected.&lt;/li&gt; 
+ &lt;li&gt;Tx/Rx charts for each connected client.&lt;/li&gt; 
+ &lt;li&gt;Gravatar support.&lt;/li&gt; 
+ &lt;li&gt;Automatic Light / Dark Mode&lt;/li&gt; 
+ &lt;li&gt;Multilanguage Support&lt;/li&gt; 
+ &lt;li&gt;One Time Links&lt;/li&gt; 
+ &lt;li&gt;Client Expiration&lt;/li&gt; 
+ &lt;li&gt;Prometheus metrics support&lt;/li&gt; 
+ &lt;li&gt;IPv6 support&lt;/li&gt; 
+ &lt;li&gt;CIDR support&lt;/li&gt; 
+ &lt;li&gt;2FA support&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] To better manage documentation for this project, it has its own site here: &lt;a href="https://wg-easy.github.io/wg-easy/latest"&gt;https://wg-easy.github.io/wg-easy/latest&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://wg-easy.github.io/wg-easy/latest/getting-started/"&gt;Getting Started&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wg-easy.github.io/wg-easy/latest/examples/tutorials/basic-installation/"&gt;Basic Installation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wg-easy.github.io/wg-easy/latest/examples/tutorials/caddy/"&gt;Caddy&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wg-easy.github.io/wg-easy/latest/examples/tutorials/traefik/"&gt;Traefik&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wg-easy.github.io/wg-easy/latest/examples/tutorials/podman-nft/"&gt;Podman&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wg-easy.github.io/wg-easy/latest/examples/tutorials/adguard/"&gt;AdGuard Home&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] If you want to migrate from the old version to the new version, you can find the migration guide here: &lt;a href="https://wg-easy.github.io/wg-easy/latest/advanced/migrate/"&gt;Migration Guide&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;This is a quick start guide to get you up and running with WireGuard Easy.&lt;/p&gt; 
+&lt;p&gt;For a more detailed installation guide, please refer to the &lt;a href="https://wg-easy.github.io/wg-easy/latest/getting-started/"&gt;Getting Started&lt;/a&gt; page.&lt;/p&gt; 
+&lt;h3&gt;1. Install Docker&lt;/h3&gt; 
+&lt;p&gt;If you haven't installed Docker yet, install it by running as root:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;curl -sSL https://get.docker.com | sh
+exit
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;And log in again.&lt;/p&gt; 
+&lt;h3&gt;2. Run WireGuard Easy&lt;/h3&gt; 
+&lt;p&gt;The easiest way to run WireGuard Easy is with Docker Compose.&lt;/p&gt; 
+&lt;p&gt;Just follow &lt;a href="https://wg-easy.github.io/wg-easy/latest/examples/tutorials/basic-installation/"&gt;these steps&lt;/a&gt; in the detailed documentation.&lt;/p&gt; 
+&lt;p&gt;You can also install WireGuard Easy with the &lt;a href="https://wg-easy.github.io/wg-easy/latest/examples/tutorials/docker-run/"&gt;docker run command&lt;/a&gt; or via &lt;a href="https://wg-easy.github.io/wg-easy/latest/examples/tutorials/podman-nft/"&gt;podman&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Now &lt;a href="https://wg-easy.github.io/wg-easy/latest/examples/tutorials/basic-installation/#setup-reverse-proxy"&gt;setup a reverse proxy&lt;/a&gt; to be able to access the Web UI securely from the internet. This step is optional, just make sure to follow the guide &lt;a href="https://wg-easy.github.io/wg-easy/latest/examples/tutorials/reverse-proxyless/"&gt;here&lt;/a&gt; if you decide not to do it.&lt;/p&gt; 
+&lt;h2&gt;Donate&lt;/h2&gt; 
+&lt;p&gt;Are you enjoying this project? Consider donating.&lt;/p&gt; 
+&lt;p&gt;Founder: &lt;a href="https://github.com/sponsors/WeeJeWel"&gt;Buy Emile a beer!&lt;/a&gt; 🍻&lt;/p&gt; 
+&lt;p&gt;Maintainer: &lt;a href="https://github.com/sponsors/kaaax0815"&gt;Buy kaaax0815 a coffee!&lt;/a&gt; ☕&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;h3&gt;Prerequisites&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Docker&lt;/li&gt; 
+ &lt;li&gt;Node LTS &amp;amp; corepack enabled&lt;/li&gt; 
+ &lt;li&gt;Visual Studio Code&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Dev Server&lt;/h3&gt; 
+&lt;p&gt;This starts the development server with docker&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;pnpm dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Update Auto Imports&lt;/h3&gt; 
+&lt;p&gt;If you add something that should be auto-importable and VSCode complains, run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;cd src
+pnpm install
+cd ..
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Test Cli&lt;/h3&gt; 
+&lt;p&gt;This starts the cli with docker&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;pnpm cli:dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the AGPL-3.0-only License - see the &lt;a href="https://raw.githubusercontent.com/wg-easy/wg-easy/master/LICENSE"&gt;LICENSE&lt;/a&gt; file for details&lt;/p&gt; 
+&lt;p&gt;This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Jason A. Donenfeld, ZX2C4 or Edge Security&lt;/p&gt; 
+&lt;p&gt;"WireGuard" and the "WireGuard" logo are registered trademarks of Jason A. Donenfeld&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>devlikeapro/waha</title>
+      <link>https://github.com/devlikeapro/waha</link>
+      <description>&lt;p&gt;WAHA - WhatsApp HTTP API (REST API) that you can configure in a click! 3 engines: WEBJS (browser based), NOWEB (websocket nodejs), GOWS (websocket go)&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;WAHA&lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/devlikeapro/waha/core/logo.png" style="border-radius: 50%" width="150"&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;WAHA&lt;/strong&gt; - &lt;strong&gt;W&lt;/strong&gt;hats&lt;strong&gt;A&lt;/strong&gt;pp &lt;strong&gt;H&lt;/strong&gt;TTP &lt;strong&gt;A&lt;/strong&gt;PI (REST API) that you can install on your own server and run in less than 5 minutes!&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://hub.docker.com/r/devlikeapro/waha"&gt;&lt;img src="https://img.shields.io/docker/pulls/devlikeapro/waha" alt="Docker Pulls"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Documentation: &lt;a href="https://waha.devlike.pro/"&gt;https://waha.devlike.pro/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Dashboard Example: &lt;a href="https://waha.devlike.pro/dashboard"&gt;https://waha.devlike.pro/dashboard&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Swagger Example: &lt;a href="https://waha.devlike.pro/swagger"&gt;https://waha.devlike.pro/swagger&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;Tables of Contents&lt;/h1&gt; 
+&lt;!-- toc --&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#quick-start"&gt;Quick start&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#requirements"&gt;Requirements&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#send-your-first-message"&gt;Send your first message&lt;/a&gt; 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#1-download-image"&gt;1. Download image&lt;/a&gt;&lt;/li&gt; 
+     &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#2-run-whatsapp-http-api"&gt;2. Run WhatsApp HTTP API&lt;/a&gt;&lt;/li&gt; 
+     &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#3-start-a-new-session"&gt;3. Start a new session&lt;/a&gt;&lt;/li&gt; 
+     &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#4-get-and-scan-qr"&gt;4. Get and scan QR&lt;/a&gt;&lt;/li&gt; 
+     &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#5-get-the-screenshot"&gt;5. Get the screenshot&lt;/a&gt;&lt;/li&gt; 
+     &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#6-send-a-text-message"&gt;6. Send a text message&lt;/a&gt;&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#what-is-next"&gt;What is next?&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#development"&gt;Development&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#start-the-project"&gt;Start the project&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;!-- tocstop --&gt; 
+&lt;h1&gt;Quick start&lt;/h1&gt; 
+&lt;h2&gt;Requirements&lt;/h2&gt; 
+&lt;p&gt;Only thing that you must have - installed docker. Please follow the original instruction &lt;a href="https://docs.docker.com/get-docker/" target="_blank" rel="noopener"&gt;how to install docker -&amp;gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;When you are ready - come back and follows the below steps to send the first text message to WhatsApp via HTTP API!&lt;/p&gt; 
+&lt;h2&gt;Send your first message&lt;/h2&gt; 
+&lt;p&gt;Let's go over steps that allow you to send your first text message via WhatsApp HTTP API!&lt;/p&gt; 
+&lt;h3&gt;1. Download image&lt;/h3&gt; 
+&lt;p&gt;Assuming you have installed &lt;a href="https://docs.docker.com/get-docker/"&gt;Docker&lt;/a&gt;, let's download the image.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker pull devlikeapro/waha
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker login -u devlikeapro -p {KEY}
+docker pull devlikeapro/waha-plus
+docker logout
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Read more about how to get &lt;code&gt;PASSWORD&lt;/code&gt; for &lt;a href="https://waha.devlike.pro/docs/how-to/waha-plus/"&gt;&lt;strong&gt;➕ WAHA Plus&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;2. Run WhatsApp HTTP API&lt;/h3&gt; 
+&lt;p&gt;Run WhatsApp HTTP API:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -it --rm -p 3000:3000/tcp --name waha devlikeapro/waha
+
+# It prints logs and the last line must be
+# WhatsApp HTTP API is running on: http://[::1]:3000
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Open the link in your browser &lt;a href="http://localhost:3000/"&gt;http://localhost:3000/&lt;/a&gt; and you'll see API documentation (Swagger).&lt;/p&gt; 
+&lt;h3&gt;3. Start a new session&lt;/h3&gt; 
+&lt;p&gt;To start a new session you should have your mobile phone with installed WhatsApp application close to you.&lt;/p&gt; 
+&lt;p&gt;Please go and read how what we'll need to a bit later: &lt;a href="https://faq.whatsapp.com/381777293328336/?helpref=hc_fnav" target="_blank"&gt; How to log in - the instruction on WhatsApp site &lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;When your ready - find &lt;code&gt;POST /api/sessions&lt;/code&gt;, click on &lt;strong&gt;Try it out&lt;/strong&gt;, then &lt;strong&gt;Execute&lt;/strong&gt; a bit below.&lt;/p&gt; 
+&lt;p&gt;The example payload:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "name": "default"
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;By using the request with &lt;code&gt;name&lt;/code&gt; values you can start multiple session (WhatsApp accounts) inside the single docker container in Plus&lt;/p&gt; 
+&lt;h3&gt;4. Get and scan QR&lt;/h3&gt; 
+&lt;p&gt;Find &lt;code&gt;GET /api/screenshot&lt;/code&gt; and execute it, it shows you QR code.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Scan the QR with your cell phone's WhatsApp app.&lt;/strong&gt;&lt;/p&gt; 
+&lt;h3&gt;5. Get the screenshot&lt;/h3&gt; 
+&lt;p&gt;Execute &lt;code&gt;GET /api/screenshot&lt;/code&gt; after a few seconds after scanning the QR - it'll show you the screenshot of you Whatsapp instance. If you can get the actual screenshot - then you're ready to start sending messages!&lt;/p&gt; 
+&lt;h3&gt;6. Send a text message&lt;/h3&gt; 
+&lt;p&gt;Let's send a text message - find &lt;code&gt;POST /api/sendText&lt;/code&gt; in &lt;a href="http://localhost:3000/"&gt;swagger&lt;/a&gt; and change &lt;code&gt;chatId&lt;/code&gt; this way: use a phone international phone number without &lt;code&gt;+&lt;/code&gt; symbol and add &lt;code&gt;@c.us&lt;/code&gt; at the end.&lt;/p&gt; 
+&lt;p&gt;For phone number &lt;code&gt;12132132131&lt;/code&gt; the &lt;code&gt;chatId&lt;/code&gt; is &lt;code&gt;12132132131@c.us&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;The example payload:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "chatId": "12132132130@c.us",
+  "text": "Hi there!",
+  "session": "default"
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Also, you can use &lt;code&gt;curl&lt;/code&gt; and send POST request like this:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Phone without +
+export PHONE=12132132130
+curl -d "{\"chatId\": \"${PHONE}@c.us\", \"text\": \"Hello from WhatsApp HTTP API\" }" -H "Content-Type: application/json" -X POST http://localhost:3000/api/sendText
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;What is next?&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://waha.devlike.pro/docs/overview/introduction/"&gt;Go and read the full documentation!&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Development&lt;/h1&gt; 
+&lt;h2&gt;Start the project&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Clone the repository&lt;/li&gt; 
+ &lt;li&gt;Make sure you're using node&amp;gt;=22 (check &lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/.nvmrc"&gt;.nvmrc&lt;/a&gt; to get the version)&lt;/li&gt; 
+ &lt;li&gt;Run the following commands:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Install dependencies
+yarn install
+# Fetch and compile proto files
+yarn gows:proto
+# Run
+yarn start
+# open http://localhost:3000
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>puppeteer/puppeteer</title>
+      <link>https://github.com/puppeteer/puppeteer</link>
+      <description>&lt;p&gt;JavaScript API for Chrome and Firefox&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Puppeteer&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/puppeteer/puppeteer/actions/workflows/ci.yml"&gt;&lt;img src="https://github.com/puppeteer/puppeteer/actions/workflows/ci.yml/badge.svg?branch=main" alt="build"&gt;&lt;/a&gt; &lt;a href="https://npmjs.org/package/puppeteer"&gt;&lt;img src="https://img.shields.io/npm/v/puppeteer.svg?sanitize=true" alt="npm puppeteer package"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;img src="https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png" height="200" align="right"&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Puppeteer is a JavaScript library which provides a high-level API to control Chrome or Firefox over the &lt;a href="https://chromedevtools.github.io/devtools-protocol/"&gt;DevTools Protocol&lt;/a&gt; or &lt;a href="https://pptr.dev/webdriver-bidi"&gt;WebDriver BiDi&lt;/a&gt;. Puppeteer runs in the headless (no visible UI) by default&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;&lt;a href="https://pptr.dev/docs"&gt;Get started&lt;/a&gt; | &lt;a href="https://pptr.dev/api"&gt;API&lt;/a&gt; | &lt;a href="https://pptr.dev/faq"&gt;FAQ&lt;/a&gt; | &lt;a href="https://pptr.dev/contributing"&gt;Contributing&lt;/a&gt; | &lt;a href="https://pptr.dev/troubleshooting"&gt;Troubleshooting&lt;/a&gt;&lt;/h2&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm i puppeteer # Downloads compatible Chrome during installation.
+npm i puppeteer-core # Alternatively, install as a library, without downloading Chrome.
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Example&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-ts"&gt;import puppeteer from 'puppeteer';
+// Or import puppeteer from 'puppeteer-core';
+
+// Launch the browser and open a new blank page
+const browser = await puppeteer.launch();
+const page = await browser.newPage();
+
+// Navigate the page to a URL.
+await page.goto('https://developer.chrome.com/');
+
+// Set screen size.
+await page.setViewport({width: 1080, height: 1024});
+
+// Type into search box using accessible input name.
+await page.locator('aria/Search').fill('automate beyond recorder');
+
+// Wait and click on first result.
+await page.locator('.devsite-result-item-link').click();
+
+// Locate the full title with a unique string.
+const textSelector = await page
+  .locator('text/Customize and automate')
+  .waitHandle();
+const fullTitle = await textSelector?.evaluate(el =&amp;gt; el.textContent);
+
+// Print the full title.
+console.log('The title of this blog post is "%s".', fullTitle);
+
+await browser.close();
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>linshenkx/prompt-optimizer</title>
+      <link>https://github.com/linshenkx/prompt-optimizer</link>
+      <description>&lt;p&gt;一款提示词优化器，助力于编写高质量的提示词&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Prompt Optimizer (提示词优化器) 🚀&lt;/h1&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/README_EN.md"&gt;English&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/README.md"&gt;中文&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://github.com/linshenkx/prompt-optimizer/stargazers"&gt;&lt;img src="https://img.shields.io/github/stars/linshenkx/prompt-optimizer" alt="GitHub stars"&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/chrome-web-store/users/cakkkhboolfnadechdlgdcnjammejlna?style=flat&amp;amp;label=Chrome%20Users&amp;amp;link=https%3A%2F%2Fchromewebstore.google.com%2Fdetail%2F%25E6%258F%2590%25E7%25A4%25BA%25E8%25AF%258D%25E4%25BC%2598%25E5%258C%2596%25E5%2599%25A8%2Fcakkkhboolfnadechdlgdcnjammejlna" alt="Chrome Web Store Users"&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/license-MIT-blue.svg?sanitize=true" alt="License"&gt;&lt;/a&gt; &lt;a href="https://hub.docker.com/r/linshen/prompt-optimizer"&gt;&lt;img src="https://img.shields.io/docker/pulls/linshen/prompt-optimizer" alt="Docker Pulls"&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/github/forks/linshenkx/prompt-optimizer?style=flat" alt="GitHub forks"&gt; &lt;a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flinshenkx%2Fprompt-optimizer"&gt;&lt;img src="https://img.shields.io/badge/Vercel-indigo?style=flat&amp;amp;logo=vercel" alt="Deploy with Vercel"&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://prompt.always200.com"&gt;在线体验&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"&gt;快速开始&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"&gt;常见问题&lt;/a&gt; | &lt;a href="https://chromewebstore.google.com/detail/prompt-optimizer/cakkkhboolfnadechdlgdcnjammejlna"&gt;Chrome插件&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/dev.md"&gt;开发文档&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/docs/user/deployment/vercel.md"&gt;Vercel部署指南&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/docs/user/mcp-server.md"&gt;MCP部署使用说明&lt;/a&gt; | &lt;a href="https://deepwiki.com/linshenkx/prompt-optimizer"&gt;DeepWiki文档&lt;/a&gt; | &lt;a href="https://zread.ai/linshenkx/prompt-optimizer"&gt;ZRead文档&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;📖 项目简介&lt;/h2&gt; 
+&lt;p&gt;Prompt Optimizer是一个强大的AI提示词优化工具，帮助你编写更好的AI提示词，提升AI输出质量。支持Web应用、桌面应用、Chrome插件和Docker部署四种使用方式。&lt;/p&gt; 
+&lt;h3&gt;🎥 功能演示&lt;/h3&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;b&gt;1. 角色扮演对话：激发小模型潜力&lt;/b&gt;&lt;/p&gt; 
+ &lt;p&gt;在追求成本效益的生产或注重隐私的本地化场景中，结构化的提示词能让小模型稳定地进入角色，提供沉浸式、高一致性的角色扮演体验，有效激发其潜力。&lt;/p&gt; 
+ &lt;img src="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/images/demo/cat-maid-roleplay.png" alt="猫女仆角色扮演演示" width="85%"&gt; 
+ &lt;br&gt; 
+ &lt;p&gt;&lt;b&gt;2. 知识图谱提取：保障生产环境的稳定性&lt;/b&gt;&lt;/p&gt; 
+ &lt;p&gt;在需要程序化处理的生产环境中，高质量的提示词能显著降低对模型智能程度的要求，使得更经济的小模型也能稳定输出可靠的指定格式。本工具旨在辅助开发者快速达到此目的，从而加速开发、保障稳定，实现降本增效。&lt;/p&gt; 
+ &lt;img src="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/images/demo/knowledge-graph-extractor.png" alt="知识图谱提取演示" width="85%"&gt; 
+ &lt;br&gt; 
+ &lt;p&gt;&lt;b&gt;3. 诗歌写作：辅助创意探索与需求定制&lt;/b&gt;&lt;/p&gt; 
+ &lt;p&gt;当面对一个强大的AI，我们的目标不只是得到一个“好”答案，而是得到一个“我们想要的”独特答案。本工具能帮助用户将一个模糊的灵感（如“写首诗”）细化为具体的需求（关于什么主题、何种意象、何种情感），辅助您探索、发掘并精确表达自己的创意，与AI共创独一无二的作品。&lt;/p&gt; 
+ &lt;img src="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/images/demo/poetry-writing.png" alt="诗歌创作演示" width="85%"&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;✨ 核心特性&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🎯 &lt;strong&gt;智能优化&lt;/strong&gt;：一键优化提示词，支持多轮迭代改进，提升AI回复准确度&lt;/li&gt; 
+ &lt;li&gt;📝 &lt;strong&gt;双模式优化&lt;/strong&gt;：支持系统提示词优化和用户提示词优化，满足不同使用场景&lt;/li&gt; 
+ &lt;li&gt;🔄 &lt;strong&gt;对比测试&lt;/strong&gt;：支持原始提示词和优化后提示词的实时对比，直观展示优化效果&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;strong&gt;多模型集成&lt;/strong&gt;：支持OpenAI、Gemini、DeepSeek、智谱AI、SiliconFlow等主流AI模型&lt;/li&gt; 
+ &lt;li&gt;🔒 &lt;strong&gt;安全架构&lt;/strong&gt;：纯客户端处理，数据直接与AI服务商交互，不经过中间服务器&lt;/li&gt; 
+ &lt;li&gt;📱 &lt;strong&gt;多端支持&lt;/strong&gt;：同时提供Web应用、桌面应用、Chrome插件和Docker部署四种使用方式&lt;/li&gt; 
+ &lt;li&gt;🔐 &lt;strong&gt;访问控制&lt;/strong&gt;：支持密码保护功能，保障部署安全&lt;/li&gt; 
+ &lt;li&gt;🧩 &lt;strong&gt;MCP协议支持&lt;/strong&gt;：支持Model Context Protocol (MCP) 协议，可与Claude Desktop等MCP兼容应用集成&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;快速开始&lt;/h2&gt; 
+&lt;h3&gt;1. 使用在线版本（推荐）&lt;/h3&gt; 
+&lt;p&gt;直接访问：&lt;a href="https://prompt.always200.com"&gt;https://prompt.always200.com&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;项目是纯前端项目，所有数据只存储在浏览器本地，不会上传至任何服务器，因此直接使用在线版本也是安全可靠的&lt;/p&gt; 
+&lt;h3&gt;2. Vercel部署&lt;/h3&gt; 
+&lt;p&gt;方式1：一键部署到自己的Vercel(方便，但后续无法自动更新)： &lt;a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flinshenkx%2Fprompt-optimizer"&gt;&lt;img src="https://vercel.com/button" alt="部署到 Vercel"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;方式2: Fork项目后在Vercel中导入（推荐，但需参考部署文档进行手动设置）：&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;先Fork项目到自己的GitHub&lt;/li&gt; 
+ &lt;li&gt;然后在Vercel中导入该项目&lt;/li&gt; 
+ &lt;li&gt;可跟踪源项目更新，便于同步最新功能和修复&lt;/li&gt; 
+ &lt;li&gt;配置环境变量： 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;code&gt;ACCESS_PASSWORD&lt;/code&gt;：设置访问密码，启用访问限制&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;VITE_OPENAI_API_KEY&lt;/code&gt;等：配置各AI服务商的API密钥&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;更多详细的部署步骤和注意事项，请查看：&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/docs/user/deployment/vercel.md"&gt;Vercel部署指南&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;3. 下载桌面应用&lt;/h3&gt; 
+&lt;p&gt;从 &lt;a href="https://github.com/linshenkx/prompt-optimizer/releases"&gt;GitHub Releases&lt;/a&gt; 下载最新版本。我们为各平台提供&lt;strong&gt;安装程序&lt;/strong&gt;和&lt;strong&gt;压缩包&lt;/strong&gt;两种格式。&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;安装程序 (推荐)&lt;/strong&gt;: 如 &lt;code&gt;*.exe&lt;/code&gt;, &lt;code&gt;*.dmg&lt;/code&gt;, &lt;code&gt;*.AppImage&lt;/code&gt; 等。&lt;strong&gt;强烈推荐使用此方式，因为它支持自动更新&lt;/strong&gt;。&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;压缩包&lt;/strong&gt;: 如 &lt;code&gt;*.zip&lt;/code&gt;。解压即用，但无法自动更新。&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;桌面应用核心优势&lt;/strong&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;无跨域限制&lt;/strong&gt;：作为原生桌面应用，它能彻底摆脱浏览器跨域（CORS）问题的困扰。这意味着您可以直接连接任何AI服务提供商的API，包括本地部署的Ollama或有严格安全策略的商业API，获得最完整、最稳定的功能体验。&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;自动更新&lt;/strong&gt;：通过安装程序（如 &lt;code&gt;.exe&lt;/code&gt;, &lt;code&gt;.dmg&lt;/code&gt;）安装的版本，能够自动检查并更新到最新版。&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;独立运行&lt;/strong&gt;：无需依赖浏览器，提供更快的响应和更佳的性能。&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;4. 安装Chrome插件&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;从Chrome商店安装（由于审批较慢，可能不是最新的）：&lt;a href="https://chromewebstore.google.com/detail/prompt-optimizer/cakkkhboolfnadechdlgdcnjammejlna"&gt;Chrome商店地址&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;点击图标即可打开提示词优化器&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;5. Docker部署&lt;/h3&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;点击查看 Docker 部署命令&lt;/summary&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;# 运行容器（默认配置）
+docker run -d -p 8081:80 --restart unless-stopped --name prompt-optimizer linshen/prompt-optimizer
+
+# 运行容器（配置API密钥和访问密码）
+docker run -d -p 8081:80 \
+  -e VITE_OPENAI_API_KEY=your_key \
+  -e ACCESS_USERNAME=your_username \  # 可选，默认为"admin"
+  -e ACCESS_PASSWORD=your_password \  # 设置访问密码
+  --restart unless-stopped \
+  --name prompt-optimizer \
+  linshen/prompt-optimizer
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;国内镜像&lt;/strong&gt;: 如果Docker Hub访问较慢，可以将上述命令中的 &lt;code&gt;linshen/prompt-optimizer&lt;/code&gt; 替换为 &lt;code&gt;registry.cn-guangzhou.aliyuncs.com/prompt-optimizer/prompt-optimizer&lt;/code&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;6. Docker Compose部署&lt;/h3&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;点击查看 Docker Compose 部署步骤&lt;/summary&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;# 1. 克隆仓库
+git clone https://github.com/linshenkx/prompt-optimizer.git
+cd prompt-optimizer
+
+# 2. 可选：创建.env文件配置API密钥和访问认证
+cp env.local.example .env
+# 编辑 .env 文件，填入实际的 API 密钥和配置
+
+# 3. 启动服务
+docker compose up -d
+
+# 4. 查看日志
+docker compose logs -f
+
+# 5. 访问服务
+Web 界面：http://localhost:8081
+MCP 服务器：http://localhost:8081/mcp
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;p&gt;你还可以直接编辑docker-compose.yml文件，自定义配置：&lt;/p&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;点击查看 docker-compose.yml 示例&lt;/summary&gt; 
+ &lt;pre&gt;&lt;code class="language-yaml"&gt;services:
+  prompt-optimizer:
+    # 使用Docker Hub镜像
+    image: linshen/prompt-optimizer:latest
+    # 或使用阿里云镜像（国内用户推荐）
+    # image: registry.cn-guangzhou.aliyuncs.com/prompt-optimizer/prompt-optimizer:latest
+    container_name: prompt-optimizer
+    restart: unless-stopped
+    ports:
+      - "8081:80"  # Web应用端口（包含MCP服务器，通过/mcp路径访问）
+    environment:
+      # API密钥配置
+      - VITE_OPENAI_API_KEY=your_openai_key
+      - VITE_GEMINI_API_KEY=your_gemini_key
+      # 访问控制（可选）
+      - ACCESS_USERNAME=admin
+      - ACCESS_PASSWORD=your_password
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;h3&gt;7. MCP Server 使用说明&lt;/h3&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;点击查看 MCP Server 使用说明&lt;/summary&gt; 
+ &lt;p&gt;Prompt Optimizer 现在支持 Model Context Protocol (MCP) 协议，可以与 Claude Desktop 等支持 MCP 的 AI 应用集成。&lt;/p&gt; 
+ &lt;p&gt;当通过 Docker 运行时，MCP Server 会自动启动，并可通过 &lt;code&gt;http://ip:port/mcp&lt;/code&gt; 访问。&lt;/p&gt; 
+ &lt;h4&gt;环境变量配置&lt;/h4&gt; 
+ &lt;p&gt;MCP Server 需要配置 API 密钥才能正常工作。主要的 MCP 专属配置：&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;# MCP 服务器配置
+MCP_DEFAULT_MODEL_PROVIDER=openai  # 可选值：openai, gemini, deepseek, siliconflow, zhipu, custom
+MCP_LOG_LEVEL=info                 # 日志级别
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;h4&gt;Docker 环境下使用 MCP&lt;/h4&gt; 
+ &lt;p&gt;在 Docker 环境中，MCP Server 会与 Web 应用一起运行，您可以通过 Web 应用的相同端口访问 MCP 服务，路径为 &lt;code&gt;/mcp&lt;/code&gt;。&lt;/p&gt; 
+ &lt;p&gt;例如，如果您将容器的 80 端口映射到主机的 8081 端口：&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;docker run -d -p 8081:80 \
+  -e VITE_OPENAI_API_KEY=your-openai-key \
+  -e MCP_DEFAULT_MODEL_PROVIDER=openai \
+  --name prompt-optimizer \
+  linshen/prompt-optimizer
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;那么 MCP Server 将可以通过 &lt;code&gt;http://localhost:8081/mcp&lt;/code&gt; 访问。&lt;/p&gt; 
+ &lt;h4&gt;Claude Desktop 集成示例&lt;/h4&gt; 
+ &lt;p&gt;要在 Claude Desktop 中使用 Prompt Optimizer，您需要在 Claude Desktop 的配置文件中添加服务配置。&lt;/p&gt; 
+ &lt;ol&gt; 
+  &lt;li&gt; &lt;p&gt;找到 Claude Desktop 的配置目录：&lt;/p&gt; 
+   &lt;ul&gt; 
+    &lt;li&gt;Windows: &lt;code&gt;%APPDATA%\Claude\services&lt;/code&gt;&lt;/li&gt; 
+    &lt;li&gt;macOS: &lt;code&gt;~/Library/Application Support/Claude/services&lt;/code&gt;&lt;/li&gt; 
+    &lt;li&gt;Linux: &lt;code&gt;~/.config/Claude/services&lt;/code&gt;&lt;/li&gt; 
+   &lt;/ul&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;编辑或创建 &lt;code&gt;services.json&lt;/code&gt; 文件，添加以下内容：&lt;/p&gt; &lt;/li&gt; 
+ &lt;/ol&gt; 
+ &lt;pre&gt;&lt;code class="language-json"&gt;{
+  "services": [
+    {
+      "name": "Prompt Optimizer",
+      "url": "http://localhost:8081/mcp"
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;请确保将 &lt;code&gt;localhost:8081&lt;/code&gt; 替换为您实际部署 Prompt Optimizer 的地址和端口。&lt;/p&gt; 
+ &lt;h4&gt;可用工具&lt;/h4&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;strong&gt;optimize-user-prompt&lt;/strong&gt;: 优化用户提示词以提高 LLM 性能&lt;/li&gt; 
+  &lt;li&gt;&lt;strong&gt;optimize-system-prompt&lt;/strong&gt;: 优化系统提示词以提高 LLM 性能&lt;/li&gt; 
+  &lt;li&gt;&lt;strong&gt;iterate-prompt&lt;/strong&gt;: 对已经成熟/完善的提示词进行定向迭代优化&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;更多详细信息，请查看 &lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/docs/user/mcp-server.md"&gt;MCP 服务器用户指南&lt;/a&gt;。&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;h2&gt;⚙️ API密钥配置&lt;/h2&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;点击查看API密钥配置方法&lt;/summary&gt; 
+ &lt;h3&gt;方式一：通过界面配置（推荐）&lt;/h3&gt; 
+ &lt;ol&gt; 
+  &lt;li&gt;点击界面右上角的"⚙️设置"按钮&lt;/li&gt; 
+  &lt;li&gt;选择"模型管理"选项卡&lt;/li&gt; 
+  &lt;li&gt;点击需要配置的模型（如OpenAI、Gemini、DeepSeek等）&lt;/li&gt; 
+  &lt;li&gt;在弹出的配置框中输入对应的API密钥&lt;/li&gt; 
+  &lt;li&gt;点击"保存"即可&lt;/li&gt; 
+ &lt;/ol&gt; 
+ &lt;p&gt;支持的模型：OpenAI、Gemini、DeepSeek、Zhipu智谱、SiliconFlow、自定义API（OpenAI兼容接口）&lt;/p&gt; 
+ &lt;p&gt;除了API密钥，您还可以在模型配置界面为每个模型单独设置高级LLM参数。这些参数通过一个名为 &lt;code&gt;llmParams&lt;/code&gt; 的字段进行配置，它允许您以键值对的形式指定LLM SDK支持的任何参数，从而更精细地控制模型行为。&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;高级LLM参数配置示例：&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;strong&gt;OpenAI/兼容API&lt;/strong&gt;: &lt;code&gt;{"temperature": 0.7, "max_tokens": 4096, "timeout": 60000}&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;strong&gt;Gemini&lt;/strong&gt;: &lt;code&gt;{"temperature": 0.8, "maxOutputTokens": 2048, "topP": 0.95}&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;strong&gt;DeepSeek&lt;/strong&gt;: &lt;code&gt;{"temperature": 0.5, "top_p": 0.9, "frequency_penalty": 0.1}&lt;/code&gt;&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;有关 &lt;code&gt;llmParams&lt;/code&gt; 的更详细说明和配置指南，请参阅 &lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/docs/developer/llm-params-guide.md"&gt;LLM参数配置指南&lt;/a&gt;。&lt;/p&gt; 
+ &lt;h3&gt;方式二：通过环境变量配置&lt;/h3&gt; 
+ &lt;p&gt;Docker部署时通过 &lt;code&gt;-e&lt;/code&gt; 参数配置环境变量：&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;-e VITE_OPENAI_API_KEY=your_key
+-e VITE_GEMINI_API_KEY=your_key
+-e VITE_DEEPSEEK_API_KEY=your_key
+-e VITE_ZHIPU_API_KEY=your_key
+-e VITE_SILICONFLOW_API_KEY=your_key
+-e VITE_CUSTOM_API_KEY=your_custom_api_key
+-e VITE_CUSTOM_API_BASE_URL=your_custom_api_base_url
+-e VITE_CUSTOM_API_MODEL=your_custom_model_name
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;h2&gt;本地开发&lt;/h2&gt; 
+&lt;p&gt;详细文档可查看 &lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/dev.md"&gt;开发文档&lt;/a&gt;&lt;/p&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;点击查看本地开发命令&lt;/summary&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;# 1. 克隆项目
+git clone https://github.com/linshenkx/prompt-optimizer.git
+cd prompt-optimizer
+
+# 2. 安装依赖
+pnpm install
+
+# 3. 启动开发服务
+pnpm dev               # 主开发命令：构建core/ui并运行web应用
+pnpm dev:web          # 仅运行web应用
+pnpm dev:fresh        # 完整重置并重新启动开发环境
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;h2&gt;🗺️ 开发路线&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled&gt; 基础功能开发&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled&gt; Web应用发布&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled&gt; Chrome插件发布&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled&gt; 国际化支持&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled&gt; 支持系统提示词优化和用户提示词优化&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled&gt; 桌面应用发布&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled&gt; mcp服务发布&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;详细的项目状态可查看 &lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/docs/project-status.md"&gt;项目状态文档&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;📖 相关文档&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/docs/README.md"&gt;文档索引&lt;/a&gt; - 所有文档的索引&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/docs/developer/technical-development-guide.md"&gt;技术开发指南&lt;/a&gt; - 技术栈和开发规范&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/docs/developer/llm-params-guide.md"&gt;LLM参数配置指南&lt;/a&gt; - 高级LLM参数配置详细说明&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/docs/developer/project-structure.md"&gt;项目结构&lt;/a&gt; - 详细的项目结构说明&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/docs/project/project-status.md"&gt;项目状态&lt;/a&gt; - 当前进度和计划&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/docs/project/prd.md"&gt;产品需求&lt;/a&gt; - 产品需求文档&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/docs/user/deployment/vercel.md"&gt;Vercel部署指南&lt;/a&gt; - Vercel部署详细说明&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;a href="https://star-history.com/#linshenkx/prompt-optimizer&amp;amp;Date"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=linshenkx/prompt-optimizer&amp;amp;type=Date&amp;amp;theme=dark"&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=linshenkx/prompt-optimizer&amp;amp;type=Date"&gt; 
+  &lt;img alt="Star History Chart" src="https://api.star-history.com/svg?repos=linshenkx/prompt-optimizer&amp;amp;type=Date"&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;h2&gt;常见问题&lt;/h2&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;点击查看常见问题解答&lt;/summary&gt; 
+ &lt;h3&gt;API连接问题&lt;/h3&gt; 
+ &lt;h4&gt;Q1: 为什么配置好API密钥后仍然无法连接到模型服务？&lt;/h4&gt; 
+ &lt;p&gt;&lt;strong&gt;A&lt;/strong&gt;: 大多数连接失败是由&lt;strong&gt;跨域问题&lt;/strong&gt;（CORS）导致的。由于本项目是纯前端应用，浏览器出于安全考虑会阻止直接访问不同源的API服务。模型服务如未正确配置CORS策略，会拒绝来自浏览器的直接请求。&lt;/p&gt; 
+ &lt;h4&gt;Q2: 如何解决本地Ollama的连接问题？&lt;/h4&gt; 
+ &lt;p&gt;&lt;strong&gt;A&lt;/strong&gt;: Ollama完全支持OpenAI标准接口，只需配置正确的跨域策略：&lt;/p&gt; 
+ &lt;ol&gt; 
+  &lt;li&gt;设置环境变量 &lt;code&gt;OLLAMA_ORIGINS=*&lt;/code&gt; 允许任意来源的请求&lt;/li&gt; 
+  &lt;li&gt;如仍有问题，设置 &lt;code&gt;OLLAMA_HOST=0.0.0.0:11434&lt;/code&gt; 监听任意IP地址&lt;/li&gt; 
+ &lt;/ol&gt; 
+ &lt;h4&gt;Q3: 如何解决商业API（如Nvidia的DS API、字节跳动的火山API）的跨域问题？&lt;/h4&gt; 
+ &lt;p&gt;&lt;strong&gt;A&lt;/strong&gt;: 这些平台通常有严格的跨域限制，推荐以下解决方案：&lt;/p&gt; 
+ &lt;ol&gt; 
+  &lt;li&gt; &lt;p&gt;&lt;strong&gt;使用Vercel代理&lt;/strong&gt;（便捷方案）&lt;/p&gt; 
+   &lt;ul&gt; 
+    &lt;li&gt;使用在线版本：&lt;a href="https://prompt.always200.com"&gt;prompt.always200.com&lt;/a&gt;&lt;/li&gt; 
+    &lt;li&gt;或自行部署到Vercel平台&lt;/li&gt; 
+    &lt;li&gt;在模型设置中勾选"使用Vercel代理"选项&lt;/li&gt; 
+    &lt;li&gt;请求流向：浏览器→Vercel→模型服务提供商&lt;/li&gt; 
+    &lt;li&gt;详细步骤请参考 &lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/docs/user/deployment/vercel.md"&gt;Vercel部署指南&lt;/a&gt;&lt;/li&gt; 
+   &lt;/ul&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;&lt;strong&gt;使用自部署的API中转服务&lt;/strong&gt;（可靠方案）&lt;/p&gt; 
+   &lt;ul&gt; 
+    &lt;li&gt;部署如OneAPI等开源API聚合/代理工具&lt;/li&gt; 
+    &lt;li&gt;在设置中配置为自定义API端点&lt;/li&gt; 
+    &lt;li&gt;请求流向：浏览器→中转服务→模型服务提供商&lt;/li&gt; 
+   &lt;/ul&gt; &lt;/li&gt; 
+ &lt;/ol&gt; 
+ &lt;h4&gt;Q4: Vercel代理有什么缺点或风险？&lt;/h4&gt; 
+ &lt;p&gt;&lt;strong&gt;A&lt;/strong&gt;: 使用Vercel代理可能会触发某些模型服务提供商的风控机制。部分厂商可能会将来自Vercel的请求判定为代理行为，从而限制或拒绝服务。如遇此问题，建议使用自部署的中转服务。&lt;/p&gt; 
+ &lt;h4&gt;Q5: 我已正确配置本地模型（如Ollama）的跨域策略，为什么使用在线版依然无法连接？&lt;/h4&gt; 
+ &lt;p&gt;&lt;strong&gt;A&lt;/strong&gt;: 这是由浏览器的&lt;strong&gt;混合内容（Mixed Content）安全策略&lt;/strong&gt;导致的。出于安全考虑，浏览器会阻止安全的HTTPS页面（如在线版）向不安全的HTTP地址（如您的本地Ollama服务）发送请求。&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;解决方案&lt;/strong&gt;： 为了绕过此限制，您需要让应用和API处于同一种协议下（例如，都是HTTP）。推荐以下几种方式：&lt;/p&gt; 
+ &lt;ol&gt; 
+  &lt;li&gt;&lt;strong&gt;使用桌面版&lt;/strong&gt;：桌面应用没有浏览器限制，是连接本地模型最稳定可靠的方式。&lt;/li&gt; 
+  &lt;li&gt;&lt;strong&gt;docker部署&lt;/strong&gt;：docker部署也是http&lt;/li&gt; 
+  &lt;li&gt;&lt;strong&gt;使用Chrome插件&lt;/strong&gt;：插件在某些情况下也可以绕过部分安全限制。&lt;/li&gt; 
+ &lt;/ol&gt; 
+&lt;/details&gt; 
+&lt;h2&gt;🤝 参与贡献&lt;/h2&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;点击查看贡献指南&lt;/summary&gt; 
+ &lt;ol&gt; 
+  &lt;li&gt;Fork 本仓库&lt;/li&gt; 
+  &lt;li&gt;创建特性分支 (&lt;code&gt;git checkout -b feature/AmazingFeature&lt;/code&gt;)&lt;/li&gt; 
+  &lt;li&gt;提交更改 (&lt;code&gt;git commit -m '添加某个特性'&lt;/code&gt;)&lt;/li&gt; 
+  &lt;li&gt;推送到分支 (&lt;code&gt;git push origin feature/AmazingFeature&lt;/code&gt;)&lt;/li&gt; 
+  &lt;li&gt;提交 Pull Request&lt;/li&gt; 
+ &lt;/ol&gt; 
+ &lt;p&gt;提示：使用cursor工具开发时，建议在提交前:&lt;/p&gt; 
+ &lt;ol&gt; 
+  &lt;li&gt;使用"code_review"规则进行代码审查&lt;/li&gt; 
+  &lt;li&gt;按照审查报告格式检查: 
+   &lt;ul&gt; 
+    &lt;li&gt;变更的整体一致性&lt;/li&gt; 
+    &lt;li&gt;代码质量和实现方式&lt;/li&gt; 
+    &lt;li&gt;测试覆盖情况&lt;/li&gt; 
+    &lt;li&gt;文档完善程度&lt;/li&gt; 
+   &lt;/ul&gt; &lt;/li&gt; 
+  &lt;li&gt;根据审查结果进行优化后再提交&lt;/li&gt; 
+ &lt;/ol&gt; 
+&lt;/details&gt; 
+&lt;h2&gt;👏 贡献者名单&lt;/h2&gt; 
+&lt;p&gt;感谢所有为项目做出贡献的开发者！&lt;/p&gt; 
+&lt;a href="https://github.com/linshenkx/prompt-optimizer/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=linshenkx/prompt-optimizer" alt="贡献者"&gt; &lt;/a&gt; 
+&lt;h2&gt;📄 开源协议&lt;/h2&gt; 
+&lt;p&gt;本项目采用 &lt;a href="https://raw.githubusercontent.com/linshenkx/prompt-optimizer/develop/LICENSE"&gt;MIT&lt;/a&gt; 协议开源。&lt;/p&gt; 
+&lt;hr&gt; 
+&lt;p&gt;如果这个项目对你有帮助，请考虑给它一个 Star ⭐️&lt;/p&gt; 
+&lt;h2&gt;👥 联系我们&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;提交 Issue&lt;/li&gt; 
+ &lt;li&gt;发起 Pull Request&lt;/li&gt; 
+ &lt;li&gt;加入讨论组&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>dyad-sh/dyad</title>
+      <link>https://github.com/dyad-sh/dyad</link>
+      <description>&lt;p&gt;Free, local, open-source AI app builder | v0 / lovable / Bolt alternative | 🌟 Star if you like it!&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;dyad&lt;/h1&gt; 
+&lt;p&gt;Dyad is a local, open-source AI app builder. It's fast, private and fully under your control — like Lovable, v0, or Bolt, but running right on your machine.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/f6c83dfc-6ffd-4d32-93dd-4b9c46d17790" alt="Image"&gt;&lt;/p&gt; 
+&lt;p&gt;More info at: &lt;a href="http://dyad.sh/"&gt;http://dyad.sh/&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🚀 Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;⚡️ &lt;strong&gt;Local&lt;/strong&gt;: Fast, private and no lock-in.&lt;/li&gt; 
+ &lt;li&gt;🛠 &lt;strong&gt;Bring your own keys&lt;/strong&gt;: Use your own AI API keys with no vendor lock-in.&lt;/li&gt; 
+ &lt;li&gt;🖥️ &lt;strong&gt;Cross-platform&lt;/strong&gt;: Easy to run on Mac or Windows.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📦 Download&lt;/h2&gt; 
+&lt;p&gt;No sign-up required. Just download and go.&lt;/p&gt; 
+&lt;h3&gt;&lt;a href="https://www.dyad.sh/#download"&gt;👉 Download for your platform&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;dyad&lt;/strong&gt; is open source (Apache 2.0-licensed).&lt;/p&gt; 
+&lt;p&gt;If you're interested in contributing to dyad, please read our &lt;a href="https://raw.githubusercontent.com/dyad-sh/dyad/main/CONTRIBUTING.md"&gt;contributing&lt;/a&gt; doc.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>outline/outline</title>
+      <link>https://github.com/outline/outline</link>
+      <description>&lt;p&gt;The fastest knowledge base for growing teams. Beautiful, realtime collaborative, feature packed, and markdown compatible.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://user-images.githubusercontent.com/31465/34380645-bd67f474-eb0b-11e7-8d03-0151c1730654.png" height="29"&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;i&gt;A fast, collaborative, knowledge base for your team built using React and Node.js.&lt;br&gt;Try out Outline using our hosted version at &lt;a href="https://www.getoutline.com"&gt;www.getoutline.com&lt;/a&gt;.&lt;/i&gt; &lt;br&gt; &lt;img width="1640" alt="screenshot" src="https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png"&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://circleci.com/gh/outline/outline" rel="nofollow"&gt;&lt;img src="https://circleci.com/gh/outline/outline.svg?style=shield"&gt;&lt;/a&gt; &lt;a href="http://www.typescriptlang.org" rel="nofollow"&gt;&lt;img src="https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg?sanitize=true" alt="TypeScript"&gt;&lt;/a&gt; &lt;a href="https://github.com/prettier/prettier"&gt;&lt;img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat" alt="Prettier"&gt;&lt;/a&gt; &lt;a href="https://github.com/styled-components/styled-components"&gt;&lt;img src="https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?sanitize=true" alt="Styled Components"&gt;&lt;/a&gt; &lt;a href="https://translate.getoutline.com/project/outline" alt="Localized"&gt;&lt;img src="https://badges.crowdin.net/outline/localized.svg?sanitize=true"&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;This is the source code that runs &lt;a href="https://www.getoutline.com"&gt;&lt;strong&gt;Outline&lt;/strong&gt;&lt;/a&gt; and all the associated services. If you want to use Outline then you don't need to run this code, we offer a hosted version of the app at &lt;a href="https://www.getoutline.com"&gt;getoutline.com&lt;/a&gt;. You can also find documentation on using Outline in &lt;a href="https://docs.getoutline.com/s/guide"&gt;our guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;If you'd like to run your own copy of Outline or contribute to development then this is the place for you.&lt;/p&gt; 
+&lt;h1&gt;Installation&lt;/h1&gt; 
+&lt;p&gt;Please see the &lt;a href="https://docs.getoutline.com/s/hosting/"&gt;documentation&lt;/a&gt; for running your own copy of Outline in a production configuration.&lt;/p&gt; 
+&lt;p&gt;If you have questions or improvements for the docs please create a thread in &lt;a href="https://github.com/outline/outline/discussions"&gt;GitHub discussions&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;Development&lt;/h1&gt; 
+&lt;p&gt;There is a short guide for &lt;a href="https://docs.getoutline.com/s/hosting/doc/local-development-5hEhFRXow7"&gt;setting up a development environment&lt;/a&gt; if you wish to contribute changes, fixes, and improvements to Outline.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Outline is built and maintained by a small team – we'd love your help to fix bugs and add features!&lt;/p&gt; 
+&lt;p&gt;Before submitting a pull request &lt;em&gt;please&lt;/em&gt; discuss with the core team by creating or commenting in an issue on &lt;a href="https://www.github.com/outline/outline/issues"&gt;GitHub&lt;/a&gt; – we'd also love to hear from you in the &lt;a href="https://www.github.com/outline/outline/discussions"&gt;discussions&lt;/a&gt;. This way we can ensure that an approach is agreed on before code is written. This will result in a much higher likelihood of your code being accepted.&lt;/p&gt; 
+&lt;p&gt;If you’re looking for ways to get started, here's a list of ways to help us improve Outline:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/outline/outline/main/docs/TRANSLATION.md"&gt;Translation&lt;/a&gt; into other languages&lt;/li&gt; 
+ &lt;li&gt;Issues with &lt;a href="https://github.com/outline/outline/labels/good%20first%20issue"&gt;&lt;code&gt;good first issue&lt;/code&gt;&lt;/a&gt; label&lt;/li&gt; 
+ &lt;li&gt;Performance improvements, both on server and frontend&lt;/li&gt; 
+ &lt;li&gt;Developer happiness and documentation&lt;/li&gt; 
+ &lt;li&gt;Bugs and other issues listed on GitHub&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Architecture&lt;/h2&gt; 
+&lt;p&gt;If you're interested in contributing or learning more about the Outline codebase please refer to the &lt;a href="https://raw.githubusercontent.com/outline/outline/main/docs/ARCHITECTURE.md"&gt;architecture document&lt;/a&gt; first for a high level overview of how the application is put together.&lt;/p&gt; 
+&lt;h2&gt;Debugging&lt;/h2&gt; 
+&lt;p&gt;In development Outline outputs simple logging to the console, prefixed by categories. In production it outputs JSON logs, these can be easily parsed by your preferred log ingestion pipeline.&lt;/p&gt; 
+&lt;p&gt;HTTP logging is disabled by default, but can be enabled by setting the &lt;code&gt;DEBUG=http&lt;/code&gt; environment variable.&lt;/p&gt; 
+&lt;h2&gt;Tests&lt;/h2&gt; 
+&lt;p&gt;We aim to have sufficient test coverage for critical parts of the application and aren't aiming for 100% unit test coverage. All API endpoints and anything authentication related should be thoroughly tested.&lt;/p&gt; 
+&lt;p&gt;To add new tests, write your tests with &lt;a href="https://facebook.github.io/jest/"&gt;Jest&lt;/a&gt; and add a file with &lt;code&gt;.test.js&lt;/code&gt; extension next to the tested code.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;# To run all tests
+make test
+
+# To run backend tests in watch mode
+make watch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Once the test database is created with &lt;code&gt;make test&lt;/code&gt; you may individually run frontend and backend tests directly.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;# To run backend tests
+yarn test:server
+
+# To run a specific backend test
+yarn test:server myTestFile
+
+# To run frontend tests
+yarn test:app
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Migrations&lt;/h2&gt; 
+&lt;p&gt;Sequelize is used to create and run migrations, for example:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;yarn sequelize migration:generate --name my-migration
+yarn sequelize db:migrate
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Or to run migrations on test database:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;yarn sequelize db:migrate --env test
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h1&gt;Activity&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://repobeats.axiom.co/api/embed/ff2e4e6918afff1acf9deb72d1ba6b071d586178.svg?sanitize=true" alt="Alt" title="Repobeats analytics image"&gt;&lt;/p&gt; 
+&lt;h1&gt;License&lt;/h1&gt; 
+&lt;p&gt;Outline is &lt;a href="https://raw.githubusercontent.com/outline/outline/main/LICENSE"&gt;BSL 1.1 licensed&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mattermost-community/focalboard</title>
+      <link>https://github.com/mattermost-community/focalboard</link>
+      <description>&lt;p&gt;Focalboard is an open source, self-hosted alternative to Trello, Notion, and Asana.&lt;/p&gt;&lt;hr&gt;&lt;blockquote&gt; 
+ &lt;p&gt;[!WARNING] This repository is currently not maintained. If you're interested in becoming a maintainer please &lt;a href="https://github.com/mattermost-community/focalboard/issues/5038"&gt;let us know here&lt;/a&gt;.&lt;/p&gt; 
+ &lt;p&gt;This repository only contains standalone Focalboard. If you're looking for the Mattermost plugin please see &lt;a href="https://github.com/mattermost/mattermost-plugin-boards"&gt;mattermost/mattermost-plugin-boards&lt;/a&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h1&gt;Focalboard&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://github.com/mattermost/focalboard/actions/workflows/ci.yml/badge.svg?sanitize=true" alt="CI Status"&gt; &lt;img src="https://github.com/mattermost/focalboard/actions/workflows/codeql-analysis.yml/badge.svg?sanitize=true" alt="CodeQL"&gt; &lt;img src="https://github.com/mattermost/focalboard/actions/workflows/dev-release.yml/badge.svg?sanitize=true" alt="Dev Release"&gt; &lt;img src="https://github.com/mattermost/focalboard/actions/workflows/prod-release.yml/badge.svg?sanitize=true" alt="Prod Release"&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/mattermost-community/focalboard/main/website/site/static/img/hero.jpg" alt="Focalboard"&gt;&lt;/p&gt; 
+&lt;p&gt;Focalboard is an open source, multilingual, self-hosted project management tool that's an alternative to Trello, Notion, and Asana.&lt;/p&gt; 
+&lt;p&gt;It helps define, organize, track and manage work across individuals and teams. Focalboard comes in two editions:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://www.focalboard.com/docs/personal-edition/desktop/"&gt;Personal Desktop&lt;/a&gt;&lt;/strong&gt;: A standalone, single-user &lt;a href="https://apps.apple.com/app/apple-store/id1556908618?pt=2114704&amp;amp;ct=website&amp;amp;mt=8"&gt;macOS&lt;/a&gt;, &lt;a href="https://www.microsoft.com/store/apps/9NLN2T0SX9VF?cid=website"&gt;Windows&lt;/a&gt;, or &lt;a href="https://www.focalboard.com/download/personal-edition/desktop/#linux-desktop"&gt;Linux&lt;/a&gt; desktop app for your own todos and personal projects.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://www.focalboard.com/download/personal-edition/ubuntu/"&gt;Personal Server&lt;/a&gt;&lt;/strong&gt;: A standalone, multi-user server for development and personal use.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Try Focalboard&lt;/h2&gt; 
+&lt;h3&gt;Personal Desktop (Windows, Mac or Linux Desktop)&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Windows&lt;/strong&gt;: Download from the &lt;a href="https://www.microsoft.com/store/productId/9NLN2T0SX9VF"&gt;Windows App Store&lt;/a&gt; or download &lt;code&gt;focalboard-win.zip&lt;/code&gt; from the &lt;a href="https://github.com/mattermost/focalboard/releases"&gt;latest release&lt;/a&gt;, unpack, and run &lt;code&gt;Focalboard.exe&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Mac&lt;/strong&gt;: Download from the &lt;a href="https://apps.apple.com/us/app/focalboard-insiders/id1556908618?mt=12"&gt;Mac App Store&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Linux Desktop&lt;/strong&gt;: Download &lt;code&gt;focalboard-linux.tar.gz&lt;/code&gt; from the &lt;a href="https://github.com/mattermost/focalboard/releases"&gt;latest release&lt;/a&gt;, unpack, and open &lt;code&gt;focalboard-app&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Personal Server&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Ubuntu&lt;/strong&gt;: You can download and run the compiled Focalboard &lt;strong&gt;Personal Server&lt;/strong&gt; on Ubuntu by following &lt;a href="https://www.focalboard.com/download/personal-edition/ubuntu/"&gt;our latest install guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;API Docs&lt;/h3&gt; 
+&lt;p&gt;Boards API docs can be found over at &lt;a href="https://htmlpreview.github.io/?https://github.com/mattermost/focalboard/raw/main/server/swagger/docs/html/index.html"&gt;https://htmlpreview.github.io/?https://github.com/mattermost/focalboard/blob/main/server/swagger/docs/html/index.html&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Getting started&lt;/h3&gt; 
+&lt;p&gt;Our &lt;a href="https://developers.mattermost.com/contribute/focalboard/personal-server-setup-guide"&gt;developer guide&lt;/a&gt; has detailed instructions on how to set up your development environment for the &lt;strong&gt;Personal Server&lt;/strong&gt;. You can also join the &lt;a href="https://community.mattermost.com/core/channels/focalboard"&gt;~Focalboard community channel&lt;/a&gt; to connect with other developers.&lt;/p&gt; 
+&lt;p&gt;Create an &lt;code&gt;.env&lt;/code&gt; file in the focalboard directory that contains:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;EXCLUDE_ENTERPRISE="1"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;To build the server:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;make prebuild
+make
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;To run the server:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt; ./bin/focalboard-server
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then navigate your browser to &lt;a href="http://localhost:8000"&gt;&lt;code&gt;http://localhost:8000&lt;/code&gt;&lt;/a&gt; to access your Focalboard server. The port is configured in &lt;code&gt;config.json&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;Once the server is running, you can rebuild just the web app via &lt;code&gt;make webapp&lt;/code&gt; in a separate terminal window. Reload your browser to see the changes.&lt;/p&gt; 
+&lt;h3&gt;Building and running standalone desktop apps&lt;/h3&gt; 
+&lt;p&gt;You can build standalone apps that package the server to run locally against SQLite:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Windows&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;em&gt;Requires Windows 10, &lt;a href="https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/"&gt;Windows 10 SDK&lt;/a&gt; 10.0.19041.0, and .NET 4.8 developer pack&lt;/em&gt;&lt;/li&gt; 
+   &lt;li&gt;Open a &lt;code&gt;git-bash&lt;/code&gt; prompt.&lt;/li&gt; 
+   &lt;li&gt;Run &lt;code&gt;make prebuild&lt;/code&gt;&lt;/li&gt; 
+   &lt;li&gt;The above prebuild step needs to be run only when you make changes to or want to install your npm dependencies, etc.&lt;/li&gt; 
+   &lt;li&gt;Once the prebuild is completed, you can keep repeating the below steps to build the app &amp;amp; see the changes.&lt;/li&gt; 
+   &lt;li&gt;Run &lt;code&gt;make win-wpf-app&lt;/code&gt;&lt;/li&gt; 
+   &lt;li&gt;Run &lt;code&gt;cd win-wpf/msix &amp;amp;&amp;amp; focalboard.exe&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Mac&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;em&gt;Requires macOS 11.3+ and Xcode 13.2.1+&lt;/em&gt;&lt;/li&gt; 
+   &lt;li&gt;Run &lt;code&gt;make prebuild&lt;/code&gt;&lt;/li&gt; 
+   &lt;li&gt;The above prebuild step needs to be run only when you make changes to or want to install your npm dependencies, etc.&lt;/li&gt; 
+   &lt;li&gt;Once the prebuild is completed, you can keep repeating the below steps to build the app &amp;amp; see the changes.&lt;/li&gt; 
+   &lt;li&gt;Run &lt;code&gt;make mac-app&lt;/code&gt;&lt;/li&gt; 
+   &lt;li&gt;Run &lt;code&gt;open mac/dist/Focalboard.app&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Linux&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;em&gt;Tested on Ubuntu 18.04&lt;/em&gt;&lt;/li&gt; 
+   &lt;li&gt;Install &lt;code&gt;webgtk&lt;/code&gt; dependencies 
+    &lt;ul&gt; 
+     &lt;li&gt;Run &lt;code&gt;sudo apt-get install libgtk-3-dev&lt;/code&gt;&lt;/li&gt; 
+     &lt;li&gt;Run &lt;code&gt;sudo apt-get install libwebkit2gtk-4.0-dev&lt;/code&gt;&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+   &lt;li&gt;Run &lt;code&gt;make prebuild&lt;/code&gt;&lt;/li&gt; 
+   &lt;li&gt;The above prebuild step needs to be run only when you make changes to or want to install your npm dependencies, etc.&lt;/li&gt; 
+   &lt;li&gt;Once the prebuild is completed, you can keep repeating the below steps to build the app &amp;amp; see the changes.&lt;/li&gt; 
+   &lt;li&gt;Run &lt;code&gt;make linux-app&lt;/code&gt;&lt;/li&gt; 
+   &lt;li&gt;Uncompress &lt;code&gt;linux/dist/focalboard-linux.tar.gz&lt;/code&gt; to a directory of your choice&lt;/li&gt; 
+   &lt;li&gt;Run &lt;code&gt;focalboard-app&lt;/code&gt; from the directory you have chosen&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Docker&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;To run it locally from offical image: 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;code&gt;docker run -it -p 80:8000 mattermost/focalboard&lt;/code&gt;&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+   &lt;li&gt;To build it for your current architecture: 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;code&gt;docker build -f docker/Dockerfile .&lt;/code&gt;&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+   &lt;li&gt;To build it for a custom architecture (experimental): 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;code&gt;docker build -f docker/Dockerfile --platform linux/arm64 .&lt;/code&gt;&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Cross-compilation currently isn't fully supported, so please build on the appropriate platform. Refer to the GitHub Actions workflows (&lt;code&gt;build-mac.yml&lt;/code&gt;, &lt;code&gt;build-win.yml&lt;/code&gt;, &lt;code&gt;build-ubuntu.yml&lt;/code&gt;) for the detailed list of steps on each platform.&lt;/p&gt; 
+&lt;h3&gt;Unit testing&lt;/h3&gt; 
+&lt;p&gt;Before checking in commits, run &lt;code&gt;make ci&lt;/code&gt;, which is similar to the &lt;code&gt;.gitlab-ci.yml&lt;/code&gt; workflow and includes:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Server unit tests&lt;/strong&gt;: &lt;code&gt;make server-test&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Web app ESLint&lt;/strong&gt;: &lt;code&gt;cd webapp; npm run check&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Web app unit tests&lt;/strong&gt;: &lt;code&gt;cd webapp; npm run test&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Web app UI tests&lt;/strong&gt;: &lt;code&gt;cd webapp; npm run cypress:ci&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Staying informed&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Changes&lt;/strong&gt;: See the &lt;a href="https://raw.githubusercontent.com/mattermost-community/focalboard/main/CHANGELOG.md"&gt;CHANGELOG&lt;/a&gt; for the latest updates&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Bug Reports&lt;/strong&gt;: &lt;a href="https://github.com/mattermost/focalboard/issues/new?assignees=&amp;amp;labels=bug&amp;amp;template=bug_report.md&amp;amp;title="&gt;File a bug report&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Chat&lt;/strong&gt;: Join the &lt;a href="https://community.mattermost.com/core/channels/focalboard"&gt;~Focalboard community channel&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>linkwarden/linkwarden</title>
+      <link>https://github.com/linkwarden/linkwarden</link>
+      <description>&lt;p&gt;⚡️⚡️⚡️ Self-hosted collaborative bookmark manager to collect, read, annotate, and fully preserve what matters, all in one place.&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/linkwarden/linkwarden/main/assets/logo.png" width="100px"&gt; 
+ &lt;h1&gt;Linkwarden&lt;/h1&gt; 
+ &lt;h3&gt;Bookmarks, Evolved&lt;/h3&gt; 
+ &lt;p&gt;&lt;a href="https://discord.com/invite/CtuYV47nuJ"&gt;&lt;img src="https://img.shields.io/discord/1117993124669702164?logo=discord&amp;amp;style=flat" alt="Discord"&gt;&lt;/a&gt; &lt;a href="https://twitter.com/LinkwardenHQ"&gt;&lt;img src="https://img.shields.io/twitter/follow/linkwarden" alt="Twitter"&gt;&lt;/a&gt; &lt;a href="https://news.ycombinator.com/item?id=36942308"&gt;&lt;img src="https://img.shields.io/badge/Hacker%20News-280-%23FF6600"&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://github.com/linkwarden/linkwarden/releases"&gt;&lt;img alt="GitHub release" src="https://img.shields.io/github/v/release/linkwarden/linkwarden"&gt;&lt;/a&gt; &lt;a href="https://crowdin.com/project/linkwarden"&gt; &lt;img src="https://badges.crowdin.net/linkwarden/localized.svg?sanitize=true" alt="Crowdin"&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/linkwarden"&gt;&lt;img src="https://img.shields.io/opencollective/all/linkwarden" alt="Open Collective"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;a href="https://demo.linkwarden.app"&gt;« LAUNCH DEMO »&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://cloud.linkwarden.app"&gt;Cloud&lt;/a&gt; · &lt;a href="https://linkwarden.app"&gt;Website&lt;/a&gt; · &lt;a href="https://github.com/linkwarden/linkwarden#features"&gt;Features&lt;/a&gt; · &lt;a href="https://docs.linkwarden.app"&gt;Docs&lt;/a&gt;&lt;/p&gt; 
+ &lt;img src="https://raw.githubusercontent.com/linkwarden/linkwarden/main/assets/home.png"&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Intro &amp;amp; motivation&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Linkwarden is a self-hosted, open-source collaborative bookmark manager to collect, read, annotate, and fully preserve what matters, all in one place.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;The objective is to organize useful webpages and articles you find across the web in one place, and since useful webpages can go away (see the inevitability of &lt;a href="https://en.wikipedia.org/wiki/Link_rot"&gt;Link Rot&lt;/a&gt;), Linkwarden also saves a copy of each webpage as a Screenshot and PDF, ensuring accessibility even if the original content is no longer available.&lt;/p&gt; 
+&lt;p&gt;In addition to preservation, Linkwarden provides a user-friendly reading and annotation experience that blends the simplicity of a “read-it-later” tool with the reliability of a web archive. Whether you’re highlighting key ideas, jotting down thoughts, or revisiting content long after it’s disappeared from the web, Linkwarden keeps your knowledge accessible and organized.&lt;/p&gt; 
+&lt;p&gt;Linkwarden is also designed with collaboration in mind, enabling you to share links with the public and/or collaborate seamlessly with multiple users.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP]&lt;br&gt; Our official &lt;a href="https://linkwarden.app/#pricing"&gt;Cloud&lt;/a&gt; offering provides the simplest way to begin using Linkwarden and it's the preferred choice for many due to its time-saving benefits. &lt;br&gt; Your subscription supports our hosting infrastructure and ongoing development. &lt;br&gt; Alternatively, if you prefer self-hosting Linkwarden, you can do so by following our &lt;a href="https://docs.linkwarden.app/self-hosting/installation"&gt;Installation documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;📸 Auto capture a screenshot, PDF, and single html file of each webpage.&lt;/li&gt; 
+ &lt;li&gt;📖 Reader view of the webpage, with the ability to highlight and annotate text.&lt;/li&gt; 
+ &lt;li&gt;🏛️ Send your webpage to Wayback Machine (&lt;a href="https://archive.org"&gt;archive.org&lt;/a&gt;) for a snapshot. (Optional)&lt;/li&gt; 
+ &lt;li&gt;✨ Local AI Tagging to automatically tag your links based on their content (Optional).&lt;/li&gt; 
+ &lt;li&gt;📂 Organize links by collection, sub-collection, name, description and multiple tags.&lt;/li&gt; 
+ &lt;li&gt;👥 Collaborate on gathering links in a collection.&lt;/li&gt; 
+ &lt;li&gt;🎛️ Customize the permissions of each member.&lt;/li&gt; 
+ &lt;li&gt;🌐 Share your collected links and preserved formats with the world.&lt;/li&gt; 
+ &lt;li&gt;📌 Pin your favorite links to dashboard.&lt;/li&gt; 
+ &lt;li&gt;🔍 Full text search, filter and sort for easy retrieval.&lt;/li&gt; 
+ &lt;li&gt;📱 Responsive design and supports most modern browsers.&lt;/li&gt; 
+ &lt;li&gt;🌓 Dark/Light mode support.&lt;/li&gt; 
+ &lt;li&gt;🧩 Browser extension. &lt;a href="https://github.com/linkwarden/browser-extension"&gt;Star it here!&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🔄 Browser Synchronization (using &lt;a href="https://floccus.org"&gt;Floccus&lt;/a&gt;!)&lt;/li&gt; 
+ &lt;li&gt;⬇️ Import and export your bookmarks.&lt;/li&gt; 
+ &lt;li&gt;🔐 SSO integration. (Enterprise and Self-hosted users only)&lt;/li&gt; 
+ &lt;li&gt;📦 Installable Progressive Web App (PWA).&lt;/li&gt; 
+ &lt;li&gt;🍎 iOS Shortcut to save Links to Linkwarden.&lt;/li&gt; 
+ &lt;li&gt;🔑 API keys.&lt;/li&gt; 
+ &lt;li&gt;✅ Bulk actions.&lt;/li&gt; 
+ &lt;li&gt;👥 User administration.&lt;/li&gt; 
+ &lt;li&gt;🌐 Support for Other Languages (i18n).&lt;/li&gt; 
+ &lt;li&gt;📁 Image and PDF Uploads.&lt;/li&gt; 
+ &lt;li&gt;🎨 Custom Icons for Links and Collections.&lt;/li&gt; 
+ &lt;li&gt;🔔 RSS Feed Subscription.&lt;/li&gt; 
+ &lt;li&gt;✨ And many more features. (Literally!)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Like what we're doing? Give us a Star ⭐&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/linkwarden/linkwarden/main/assets/star_repo.gif" alt="Star Us"&gt;&lt;/p&gt; 
+&lt;h2&gt;We're building our Community 🌐&lt;/h2&gt; 
+&lt;p&gt;Join and follow us in the following platforms to stay up to date about the most recent features and for support:&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://discord.com/invite/CtuYV47nuJ"&gt;&lt;img src="https://img.shields.io/discord/1117993124669702164?logo=discord&amp;amp;style=flat" alt="Discord"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://twitter.com/LinkwardenHQ"&gt;&lt;img src="https://img.shields.io/twitter/follow/linkwarden" alt="Twitter"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://fosstodon.org/@linkwarden"&gt;&lt;img src="https://img.shields.io/mastodon/follow/110748840237143200?domain=https%3A%2F%2Ffosstodon.org" alt="Mastodon"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Suggestions&lt;/h2&gt; 
+&lt;p&gt;We &lt;em&gt;usually&lt;/em&gt; go after the &lt;a href="https://github.com/linkwarden/linkwarden/issues?q=is%3Aissue%20is%3Aopen%20sort%3Areactions-%2B1-desc"&gt;popular suggestions&lt;/a&gt;. Feel free to open a &lt;a href="https://github.com/linkwarden/linkwarden/issues/new?assignees=&amp;amp;labels=enhancement&amp;amp;projects=&amp;amp;template=feature_request.md&amp;amp;title="&gt;new issue&lt;/a&gt; to suggest one - others might be interested too! :)&lt;/p&gt; 
+&lt;h2&gt;Roadmap&lt;/h2&gt; 
+&lt;p&gt;Make sure to check out our &lt;a href="https://github.com/orgs/linkwarden/projects/1"&gt;public roadmap&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Community Projects&lt;/h2&gt; 
+&lt;p&gt;Here are some community-maintained projects that are built around Linkwarden:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://apps.apple.com/ca/app/my-links-for-linkwarden/id6504573402"&gt;My Links&lt;/a&gt; - iOS and MacOS Apps, maintained by &lt;a href="https://github.com/JGeek00"&gt;JGeek00&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://fossdroid.com/a/linkdroid-for-linkwarden.html"&gt;LinkDroid&lt;/a&gt; - Android App with share sheet integration, &lt;a href="https://github.com/Dacid99/LinkDroid-for-Linkwarden"&gt;source code&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/Elbullazul/LinkGuardian"&gt;LinkGuardian&lt;/a&gt; - An Android client for Linkwarden. Built with Kotlin and Jetpack compose.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/rtuszik/starwarden"&gt;StarWarden&lt;/a&gt; - A browser extension to save your starred GitHub repositories to Linkwarden.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;p&gt;If you want to contribute, Thanks! Start by choosing one of our &lt;a href="https://github.com/linkwarden/linkwarden/issues?q=is%3Aissue%20is%3Aopen%20sort%3Areactions-%2B1-desc"&gt;popular suggestions&lt;/a&gt;, just please stay in touch with &lt;a href="https://github.com/daniel31x13"&gt;@daniel31x13&lt;/a&gt; before starting.&lt;/p&gt; 
+&lt;h1&gt;Translations&lt;/h1&gt; 
+&lt;p&gt;If you want to help us translate Linkwarden to your language, please check out our &lt;a href="https://crowdin.com/project/linkwarden"&gt;Crowdin page&lt;/a&gt; and start translating. We would love to have your help!&lt;/p&gt; 
+&lt;p&gt;To start translating a new language, please create an issue so we can set it up for you. New languages will be added once they reach at least 50% translation completion.&lt;/p&gt; 
+&lt;a href="https://crowdin.com/project/linkwarden"&gt; &lt;img src="https://badges.crowdin.net/linkwarden/localized.svg?sanitize=true" alt="Crowdin"&gt;&lt;/a&gt; 
+&lt;h2&gt;Security&lt;/h2&gt; 
+&lt;p&gt;If you found a security vulnerability, please do &lt;strong&gt;not&lt;/strong&gt; create a public issue, instead send an email to &lt;a href="mailto:security@linkwarden.app"&gt;security@linkwarden.app&lt;/a&gt; stating the vulnerability. Thanks!&lt;/p&gt; 
+&lt;h2&gt;Support &amp;lt;3&lt;/h2&gt; 
+&lt;p&gt;Other than using our official &lt;a href="https://linkwarden.app/#pricing"&gt;Cloud&lt;/a&gt; offering, any &lt;a href="https://opencollective.com/linkwarden"&gt;donations&lt;/a&gt; are highly appreciated as well!&lt;/p&gt; 
+&lt;p&gt;Here are the other ways to support/cheer this project:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Starring this repository.&lt;/li&gt; 
+ &lt;li&gt;Joining us on &lt;a href="https://discord.com/invite/CtuYV47nuJ"&gt;Discord&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Referring Linkwarden to a friend.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;If you did any of the above, Thanksss! Otherwise thanks.&lt;/p&gt; 
+&lt;h2&gt;Thanks to All the Contributors 💪&lt;/h2&gt; 
+&lt;p&gt;Huge thanks to these guys for spending their time helping Linkwarden grow. They rock! ⚡️&lt;/p&gt; 
+&lt;img src="https://contributors-img.web.app/image?repo=linkwarden/linkwarden" alt="Contributors"&gt;</description>
+    </item>
+    
+    <item>
+      <title>musistudio/claude-code-router</title>
+      <link>https://github.com/musistudio/claude-code-router</link>
+      <description>&lt;p&gt;Use Claude Code as the foundation for coding infrastructure, allowing you to decide how to interact with the model while enjoying updates from Anthropic.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Claude Code Router&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/musistudio/claude-code-router/main/README_zh.md"&gt;中文版&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;A powerful tool to route Claude Code requests to different models and customize any request.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/musistudio/claude-code-router/main/blog/images/claude-code.png" alt=""&gt;&lt;/p&gt; 
+&lt;h2&gt;✨ Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Model Routing&lt;/strong&gt;: Route requests to different models based on your needs (e.g., background tasks, thinking, long context).&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi-Provider Support&lt;/strong&gt;: Supports various model providers like OpenRouter, DeepSeek, Ollama, Gemini, Volcengine, and SiliconFlow.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Request/Response Transformation&lt;/strong&gt;: Customize requests and responses for different providers using transformers.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Dynamic Model Switching&lt;/strong&gt;: Switch models on-the-fly within Claude Code using the &lt;code&gt;/model&lt;/code&gt; command.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;GitHub Actions Integration&lt;/strong&gt;: Trigger Claude Code tasks in your GitHub workflows.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Plugin System&lt;/strong&gt;: Extend functionality with custom transformers.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🚀 Getting Started&lt;/h2&gt; 
+&lt;h3&gt;1. Installation&lt;/h3&gt; 
+&lt;p&gt;First, ensure you have &lt;a href="https://docs.anthropic.com/en/docs/claude-code/quickstart"&gt;Claude Code&lt;/a&gt; installed:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;npm install -g @anthropic-ai/claude-code
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then, install Claude Code Router:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;npm install -g @musistudio/claude-code-router
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;2. Configuration&lt;/h3&gt; 
+&lt;p&gt;Create and configure your &lt;code&gt;~/.claude-code-router/config.json&lt;/code&gt; file. For more details, you can refer to &lt;code&gt;config.example.json&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;The &lt;code&gt;config.json&lt;/code&gt; file has several key sections:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;PROXY_URL&lt;/code&gt;&lt;/strong&gt; (optional): You can set a proxy for API requests, for example: &lt;code&gt;"PROXY_URL": "http://127.0.0.1:7890"&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;LOG&lt;/code&gt;&lt;/strong&gt; (optional): You can enable logging by setting it to &lt;code&gt;true&lt;/code&gt;. The log file will be located at &lt;code&gt;$HOME/.claude-code-router.log&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;APIKEY&lt;/code&gt;&lt;/strong&gt; (optional): You can set a secret key to authenticate requests. When set, clients must provide this key in the &lt;code&gt;Authorization&lt;/code&gt; header (e.g., &lt;code&gt;Bearer your-secret-key&lt;/code&gt;) or the &lt;code&gt;x-api-key&lt;/code&gt; header. Example: &lt;code&gt;"APIKEY": "your-secret-key"&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;HOST&lt;/code&gt;&lt;/strong&gt; (optional): You can set the host address for the server. If &lt;code&gt;APIKEY&lt;/code&gt; is not set, the host will be forced to &lt;code&gt;127.0.0.1&lt;/code&gt; for security reasons to prevent unauthorized access. Example: &lt;code&gt;"HOST": "0.0.0.0"&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;Providers&lt;/code&gt;&lt;/strong&gt;: Used to configure different model providers.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;Router&lt;/code&gt;&lt;/strong&gt;: Used to set up routing rules. &lt;code&gt;default&lt;/code&gt; specifies the default model, which will be used for all requests if no other route is configured.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;API_TIMEOUT_MS&lt;/code&gt;&lt;/strong&gt;: Specifies the timeout for API calls in milliseconds.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Here is a comprehensive example:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "APIKEY": "your-secret-key",
+  "PROXY_URL": "http://127.0.0.1:7890",
+  "LOG": true,
+  "API_TIMEOUT_MS": 600000,
+  "Providers": [
+    {
+      "name": "openrouter",
+      "api_base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "api_key": "sk-xxx",
+      "models": [
+        "google/gemini-2.5-pro-preview",
+        "anthropic/claude-sonnet-4",
+        "anthropic/claude-3.5-sonnet",
+        "anthropic/claude-3.7-sonnet:thinking"
+      ],
+      "transformer": {
+        "use": ["openrouter"]
+      }
+    },
+    {
+      "name": "deepseek",
+      "api_base_url": "https://api.deepseek.com/chat/completions",
+      "api_key": "sk-xxx",
+      "models": ["deepseek-chat", "deepseek-reasoner"],
+      "transformer": {
+        "use": ["deepseek"],
+        "deepseek-chat": {
+          "use": ["tooluse"]
+        }
+      }
+    },
+    {
+      "name": "ollama",
+      "api_base_url": "http://localhost:11434/v1/chat/completions",
+      "api_key": "ollama",
+      "models": ["qwen2.5-coder:latest"]
+    },
+    {
+      "name": "gemini",
+      "api_base_url": "https://generativelanguage.googleapis.com/v1beta/models/",
+      "api_key": "sk-xxx",
+      "models": ["gemini-2.5-flash", "gemini-2.5-pro"],
+      "transformer": {
+        "use": ["gemini"]
+      }
+    },
+    {
+      "name": "volcengine",
+      "api_base_url": "https://ark.cn-beijing.volces.com/api/v3/chat/completions",
+      "api_key": "sk-xxx",
+      "models": ["deepseek-v3-250324", "deepseek-r1-250528"],
+      "transformer": {
+        "use": ["deepseek"]
+      }
+    },
+    {
+      "name": "modelscope",
+      "api_base_url": "https://api-inference.modelscope.cn/v1/chat/completions",
+      "api_key": "",
+      "models": ["Qwen/Qwen3-Coder-480B-A35B-Instruct", "Qwen/Qwen3-235B-A22B-Thinking-2507"],
+      "transformer": {
+        "use": [
+          [
+            "maxtoken",
+            {
+              "max_tokens": 65536
+            }
+          ],
+          "enhancetool"
+        ],
+        "Qwen/Qwen3-235B-A22B-Thinking-2507": {
+          "use": ["reasoning"]
+        }
+      }
+    },
+    {
+      "name": "dashscope",
+      "api_base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
+      "api_key": "",
+      "models": ["qwen3-coder-plus"],
+      "transformer": {
+        "use": [
+          [
+            "maxtoken",
+            {
+              "max_tokens": 65536
+            }
+          ],
+          "enhancetool"
+        ]
+      }
+    },
+    {
+      "name": "aihubmix",
+      "api_base_url": "https://aihubmix.com/v1/chat/completions",
+      "api_key": "sk-",
+      "models": [
+        "Z/glm-4.5",
+        "claude-opus-4-20250514",
+        "gemini-2.5-pro"
+      ]
+    }
+  ],
+  "Router": {
+    "default": "deepseek,deepseek-chat",
+    "background": "ollama,qwen2.5-coder:latest",
+    "think": "deepseek,deepseek-reasoner",
+    "longContext": "openrouter,google/gemini-2.5-pro-preview",
+    "longContextThreshold": 60000,
+    "webSearch": "gemini,gemini-2.5-flash"
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;3. Running Claude Code with the Router&lt;/h3&gt; 
+&lt;p&gt;Start Claude Code using the router:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;ccr code
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: After modifying the configuration file, you need to restart the service for the changes to take effect:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;ccr restart
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;4. UI Mode (Beta)&lt;/h3&gt; 
+&lt;p&gt;For a more intuitive experience, you can use the UI mode to manage your configuration:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;ccr ui
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This will open a web-based interface where you can easily view and edit your &lt;code&gt;config.json&lt;/code&gt; file.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/musistudio/claude-code-router/main/blog/images/ui.png" alt="UI"&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: The UI mode is currently in beta. 100% vibe coding: including project initialization, I just created a folder and a project.md document, and all code was generated by ccr + qwen3-coder + gemini(webSearch). If you encounter any issues, please submit an issue on GitHub.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h4&gt;Providers&lt;/h4&gt; 
+&lt;p&gt;The &lt;code&gt;Providers&lt;/code&gt; array is where you define the different model providers you want to use. Each provider object requires:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: A unique name for the provider.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;api_base_url&lt;/code&gt;: The full API endpoint for chat completions.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;api_key&lt;/code&gt;: Your API key for the provider.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;models&lt;/code&gt;: A list of model names available from this provider.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;transformer&lt;/code&gt; (optional): Specifies transformers to process requests and responses.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Transformers&lt;/h4&gt; 
+&lt;p&gt;Transformers allow you to modify the request and response payloads to ensure compatibility with different provider APIs.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Global Transformer&lt;/strong&gt;: Apply a transformer to all models from a provider. In this example, the &lt;code&gt;openrouter&lt;/code&gt; transformer is applied to all models under the &lt;code&gt;openrouter&lt;/code&gt; provider.&lt;/p&gt; &lt;pre&gt;&lt;code class="language-json"&gt;{
+  "name": "openrouter",
+  "api_base_url": "https://openrouter.ai/api/v1/chat/completions",
+  "api_key": "sk-xxx",
+  "models": [
+    "google/gemini-2.5-pro-preview",
+    "anthropic/claude-sonnet-4",
+    "anthropic/claude-3.5-sonnet"
+  ],
+  "transformer": { "use": ["openrouter"] }
+}
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Model-Specific Transformer&lt;/strong&gt;: Apply a transformer to a specific model. In this example, the &lt;code&gt;deepseek&lt;/code&gt; transformer is applied to all models, and an additional &lt;code&gt;tooluse&lt;/code&gt; transformer is applied only to the &lt;code&gt;deepseek-chat&lt;/code&gt; model.&lt;/p&gt; &lt;pre&gt;&lt;code class="language-json"&gt;{
+  "name": "deepseek",
+  "api_base_url": "https://api.deepseek.com/chat/completions",
+  "api_key": "sk-xxx",
+  "models": ["deepseek-chat", "deepseek-reasoner"],
+  "transformer": {
+    "use": ["deepseek"],
+    "deepseek-chat": { "use": ["tooluse"] }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Passing Options to a Transformer&lt;/strong&gt;: Some transformers, like &lt;code&gt;maxtoken&lt;/code&gt;, accept options. To pass options, use a nested array where the first element is the transformer name and the second is an options object.&lt;/p&gt; &lt;pre&gt;&lt;code class="language-json"&gt;{
+  "name": "siliconflow",
+  "api_base_url": "https://api.siliconflow.cn/v1/chat/completions",
+  "api_key": "sk-xxx",
+  "models": ["moonshotai/Kimi-K2-Instruct"],
+  "transformer": {
+    "use": [
+      [
+        "maxtoken",
+        {
+          "max_tokens": 16384
+        }
+      ]
+    ]
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Available Built-in Transformers:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;Anthropic&lt;/code&gt;:If you use only the &lt;code&gt;Anthropic&lt;/code&gt; transformer, it will preserve the original request and response parameters(you can use it to connect directly to an Anthropic endpoint).&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;deepseek&lt;/code&gt;: Adapts requests/responses for DeepSeek API.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;gemini&lt;/code&gt;: Adapts requests/responses for Gemini API.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;openrouter&lt;/code&gt;: Adapts requests/responses for OpenRouter API. It can also accept a &lt;code&gt;provider&lt;/code&gt; routing parameter to specify which underlying providers OpenRouter should use. For more details, refer to the &lt;a href="https://openrouter.ai/docs/features/provider-routing"&gt;OpenRouter documentation&lt;/a&gt;. See an example below: &lt;pre&gt;&lt;code class="language-json"&gt;  "transformer": {
+    "use": ["openrouter"],
+    "moonshotai/kimi-k2": {
+      "use": [
+        [
+          "openrouter",
+          {
+            "provider": {
+              "only": ["moonshotai/fp8"]
+            }
+          }
+        ]
+      ]
+    }
+  }
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;groq&lt;/code&gt;: Adapts requests/responses for groq API.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;maxtoken&lt;/code&gt;: Sets a specific &lt;code&gt;max_tokens&lt;/code&gt; value.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;tooluse&lt;/code&gt;: Optimizes tool usage for certain models via &lt;code&gt;tool_choice&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;gemini-cli&lt;/code&gt; (experimental): Unofficial support for Gemini via Gemini CLI &lt;a href="https://gist.github.com/musistudio/1c13a65f35916a7ab690649d3df8d1cd"&gt;gemini-cli.js&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;reasoning&lt;/code&gt;: Used to process the &lt;code&gt;reasoning_content&lt;/code&gt; field.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;sampling&lt;/code&gt;: Used to process sampling information fields such as &lt;code&gt;temperature&lt;/code&gt;, &lt;code&gt;top_p&lt;/code&gt;, &lt;code&gt;top_k&lt;/code&gt;, and &lt;code&gt;repetition_penalty&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;enhancetool&lt;/code&gt;: Adds a layer of error tolerance to the tool call parameters returned by the LLM (this will cause the tool call information to no longer be streamed).&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;cleancache&lt;/code&gt;: Clears the &lt;code&gt;cache_control&lt;/code&gt; field from requests.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;vertex-gemini&lt;/code&gt;: Handles the Gemini API using Vertex authentication.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Custom Transformers:&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;You can also create your own transformers and load them via the &lt;code&gt;transformers&lt;/code&gt; field in &lt;code&gt;config.json&lt;/code&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "transformers": [
+    {
+      "path": "$HOME/.claude-code-router/plugins/gemini-cli.js",
+      "options": {
+        "project": "xxx"
+      }
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Router&lt;/h4&gt; 
+&lt;p&gt;The &lt;code&gt;Router&lt;/code&gt; object defines which model to use for different scenarios:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;default&lt;/code&gt;: The default model for general tasks.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;background&lt;/code&gt;: A model for background tasks. This can be a smaller, local model to save costs.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;think&lt;/code&gt;: A model for reasoning-heavy tasks, like Plan Mode.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;longContext&lt;/code&gt;: A model for handling long contexts (e.g., &amp;gt; 60K tokens).&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;longContextThreshold&lt;/code&gt; (optional): The token count threshold for triggering the long context model. Defaults to 60000 if not specified.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;webSearch&lt;/code&gt;: Used for handling web search tasks and this requires the model itself to support the feature. If you're using openrouter, you need to add the &lt;code&gt;:online&lt;/code&gt; suffix after the model name.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;You can also switch models dynamically in Claude Code with the &lt;code&gt;/model&lt;/code&gt; command: &lt;code&gt;/model provider_name,model_name&lt;/code&gt; Example: &lt;code&gt;/model openrouter,anthropic/claude-3.5-sonnet&lt;/code&gt;&lt;/p&gt; 
+&lt;h4&gt;Custom Router&lt;/h4&gt; 
+&lt;p&gt;For more advanced routing logic, you can specify a custom router script via the &lt;code&gt;CUSTOM_ROUTER_PATH&lt;/code&gt; in your &lt;code&gt;config.json&lt;/code&gt;. This allows you to implement complex routing rules beyond the default scenarios.&lt;/p&gt; 
+&lt;p&gt;In your &lt;code&gt;config.json&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "CUSTOM_ROUTER_PATH": "$HOME/.claude-code-router/custom-router.js"
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The custom router file must be a JavaScript module that exports an &lt;code&gt;async&lt;/code&gt; function. This function receives the request object and the config object as arguments and should return the provider and model name as a string (e.g., &lt;code&gt;"provider_name,model_name"&lt;/code&gt;), or &lt;code&gt;null&lt;/code&gt; to fall back to the default router.&lt;/p&gt; 
+&lt;p&gt;Here is an example of a &lt;code&gt;custom-router.js&lt;/code&gt; based on &lt;code&gt;custom-router.example.js&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-javascript"&gt;// $HOME/.claude-code-router/custom-router.js
+
+/**
+ * A custom router function to determine which model to use based on the request.
+ *
+ * @param {object} req - The request object from Claude Code, containing the request body.
+ * @param {object} config - The application's config object.
+ * @returns {Promise&amp;lt;string|null&amp;gt;} - A promise that resolves to the "provider,model_name" string, or null to use the default router.
+ */
+module.exports = async function router(req, config) {
+  const userMessage = req.body.messages.find((m) =&amp;gt; m.role === "user")?.content;
+
+  if (userMessage &amp;amp;&amp;amp; userMessage.includes("explain this code")) {
+    // Use a powerful model for code explanation
+    return "openrouter,anthropic/claude-3.5-sonnet";
+  }
+
+  // Fallback to the default router configuration
+  return null;
+};
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h5&gt;Subagent Routing&lt;/h5&gt; 
+&lt;p&gt;For routing within subagents, you must specify a particular provider and model by including &lt;code&gt;&amp;lt;CCR-SUBAGENT-MODEL&amp;gt;provider,model&amp;lt;/CCR-SUBAGENT-MODEL&amp;gt;&lt;/code&gt; at the &lt;strong&gt;beginning&lt;/strong&gt; of the subagent's prompt. This allows you to direct specific subagent tasks to designated models.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;&amp;lt;CCR-SUBAGENT-MODEL&amp;gt;openrouter,anthropic/claude-3.5-sonnet&amp;lt;/CCR-SUBAGENT-MODEL&amp;gt;
+Please help me analyze this code snippet for potential optimizations...
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;🤖 GitHub Actions&lt;/h2&gt; 
+&lt;p&gt;Integrate Claude Code Router into your CI/CD pipeline. After setting up &lt;a href="https://docs.anthropic.com/en/docs/claude-code/github-actions"&gt;Claude Code Actions&lt;/a&gt;, modify your &lt;code&gt;.github/workflows/claude.yaml&lt;/code&gt; to use the router:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-yaml"&gt;name: Claude Code
+
+on:
+  issue_comment:
+    types: [created]
+  # ... other triggers
+
+jobs:
+  claude:
+    if: |
+      (github.event_name == 'issue_comment' &amp;amp;&amp;amp; contains(github.event.comment.body, '@claude')) ||
+      # ... other conditions
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+      issues: read
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Prepare Environment
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+          mkdir -p $HOME/.claude-code-router
+          cat &amp;lt;&amp;lt; 'EOF' &amp;gt; $HOME/.claude-code-router/config.json
+          {
+            "log": true,
+            "OPENAI_API_KEY": "${{ secrets.OPENAI_API_KEY }}",
+            "OPENAI_BASE_URL": "https://api.deepseek.com",
+            "OPENAI_MODEL": "deepseek-chat"
+          }
+          EOF
+        shell: bash
+
+      - name: Start Claude Code Router
+        run: |
+          nohup ~/.bun/bin/bunx @musistudio/claude-code-router@1.0.8 start &amp;amp;
+        shell: bash
+
+      - name: Run Claude Code
+        id: claude
+        uses: anthropics/claude-code-action@beta
+        env:
+          ANTHROPIC_BASE_URL: http://localhost:3456
+        with:
+          anthropic_api_key: "any-string-is-ok"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This setup allows for interesting automations, like running tasks during off-peak hours to reduce API costs.&lt;/p&gt; 
+&lt;h2&gt;📝 Further Reading&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/musistudio/claude-code-router/main/blog/en/project-motivation-and-how-it-works.md"&gt;Project Motivation and How It Works&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/musistudio/claude-code-router/main/blog/en/maybe-we-can-do-more-with-the-route.md"&gt;Maybe We Can Do More with the Router&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;❤️ Support &amp;amp; Sponsoring&lt;/h2&gt; 
+&lt;p&gt;If you find this project helpful, please consider sponsoring its development. Your support is greatly appreciated!&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://ko-fi.com/F1F31GN2GM"&gt;&lt;img src="https://ko-fi.com/img/githubbutton_sm.svg?sanitize=true" alt="ko-fi"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://paypal.me/musistudio1999"&gt;Paypal&lt;/a&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/musistudio/claude-code-router/main/blog/images/alipay.jpg" width="200" alt="Alipay"&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/musistudio/claude-code-router/main/blog/images/wechat.jpg" width="200" alt="WeChat Pay"&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h3&gt;Our Sponsors&lt;/h3&gt; 
+&lt;p&gt;A huge thank you to all our sponsors for their generous support!&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://aihubmix.com/"&gt;AIHubmix&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;@Simon Leischnig&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/duanshuaimin"&gt;@duanshuaimin&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/vrgitadmin"&gt;@vrgitadmin&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;@*o&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ceilwoo"&gt;@ceilwoo&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;@*说&lt;/li&gt; 
+ &lt;li&gt;@*更&lt;/li&gt; 
+ &lt;li&gt;@K*g&lt;/li&gt; 
+ &lt;li&gt;@R*R&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/bobleer"&gt;@bobleer&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;@*苗&lt;/li&gt; 
+ &lt;li&gt;@*划&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/Clarence-pan"&gt;@Clarence-pan&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/carter003"&gt;@carter003&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;@S*r&lt;/li&gt; 
+ &lt;li&gt;@*晖&lt;/li&gt; 
+ &lt;li&gt;@*敏&lt;/li&gt; 
+ &lt;li&gt;@Z*z&lt;/li&gt; 
+ &lt;li&gt;@*然&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/cluic"&gt;@cluic&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;@*苗&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/PromptExpert"&gt;@PromptExpert&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;@*应&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/yusnake"&gt;@yusnake&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;@*飞&lt;/li&gt; 
+ &lt;li&gt;@董*&lt;/li&gt; 
+ &lt;li&gt;@*汀&lt;/li&gt; 
+ &lt;li&gt;@*涯&lt;/li&gt; 
+ &lt;li&gt;@*:-）&lt;/li&gt; 
+ &lt;li&gt;@**磊&lt;/li&gt; 
+ &lt;li&gt;@*琢&lt;/li&gt; 
+ &lt;li&gt;@*成&lt;/li&gt; 
+ &lt;li&gt;@Z*o&lt;/li&gt; 
+ &lt;li&gt;@*琨&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/congzhangzh"&gt;@congzhangzh&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;@*_&lt;/li&gt; 
+ &lt;li&gt;@Z*m&lt;/li&gt; 
+ &lt;li&gt;@*鑫&lt;/li&gt; 
+ &lt;li&gt;@c*y&lt;/li&gt; 
+ &lt;li&gt;@*昕&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/witsice"&gt;@witsice&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;@b*g&lt;/li&gt; 
+ &lt;li&gt;@*亿&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;(If your name is masked, please contact me via my homepage email to update it with your GitHub username.)&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
