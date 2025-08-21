@@ -1,0 +1,2199 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub TypeScript Daily Trending</title>
+    <description>Daily Trending of TypeScript in GitHub</description>
+    <pubDate>Wed, 20 Aug 2025 01:37:43 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>pmndrs/zustand</title>
+      <link>https://github.com/pmndrs/zustand</link>
+      <description>&lt;p&gt;🐻 Bear necessities for state management in React&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/pmndrs/zustand/main/docs/bear.jpg" /&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/pmndrs/zustand/actions?query=workflow%3ALint"&gt;&lt;img src="https://img.shields.io/github/actions/workflow/status/pmndrs/zustand/test.yml?branch=main&amp;amp;style=flat&amp;amp;colorA=000000&amp;amp;colorB=000000" alt="Build Status" /&gt;&lt;/a&gt; &lt;a href="https://bundlejs.com/?q=zustand"&gt;&lt;img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdeno.bundlejs.com%2F%3Fq%3Dzustand&amp;amp;query=%24.size.uncompressedSize&amp;amp;style=flat&amp;amp;label=bundle%20size&amp;amp;colorA=000000&amp;amp;colorB=000000" alt="Build Size" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/zustand"&gt;&lt;img src="https://img.shields.io/npm/v/zustand?style=flat&amp;amp;colorA=000000&amp;amp;colorB=000000" alt="Version" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/zustand"&gt;&lt;img src="https://img.shields.io/npm/dt/zustand.svg?style=flat&amp;amp;colorA=000000&amp;amp;colorB=000000" alt="Downloads" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/poimandres"&gt;&lt;img src="https://img.shields.io/discord/740090768164651008?style=flat&amp;amp;colorA=000000&amp;amp;colorB=000000&amp;amp;label=discord&amp;amp;logo=discord&amp;amp;logoColor=ffffff" alt="Discord Shield" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;A small, fast and scalable bearbones state-management solution using simplified flux principles. Has a comfy API based on hooks, isn't boilerplatey or opinionated.&lt;/p&gt; 
+&lt;p&gt;Don't disregard it because it's cute. It has quite the claws, lots of time was spent dealing with common pitfalls, like the dreaded &lt;a href="https://react-redux.js.org/api/hooks#stale-props-and-zombie-children"&gt;zombie child problem&lt;/a&gt;, &lt;a href="https://github.com/bvaughn/rfcs/raw/useMutableSource/text/0000-use-mutable-source.md"&gt;react concurrency&lt;/a&gt;, and &lt;a href="https://github.com/facebook/react/issues/13332"&gt;context loss&lt;/a&gt; between mixed renderers. It may be the one state-manager in the React space that gets all of these right.&lt;/p&gt; 
+&lt;p&gt;You can try a live &lt;a href="https://zustand-demo.pmnd.rs/"&gt;demo&lt;/a&gt; and read the &lt;a href="https://zustand.docs.pmnd.rs/"&gt;docs&lt;/a&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install zustand
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;span&gt;⚠&lt;/span&gt; This readme is written for JavaScript users. If you are a TypeScript user, be sure to check out our &lt;a href="https://raw.githubusercontent.com/pmndrs/zustand/main/#typescript-usage"&gt;TypeScript Usage section&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;First create a store&lt;/h2&gt; 
+&lt;p&gt;Your store is a hook! You can put anything in it: primitives, objects, functions. State has to be updated immutably and the &lt;code&gt;set&lt;/code&gt; function &lt;a href="https://raw.githubusercontent.com/pmndrs/zustand/main/docs/guides/immutable-state-and-merging.md"&gt;merges state&lt;/a&gt; to help it.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;import { create } from 'zustand'
+
+const useBearStore = create((set) =&amp;gt; ({
+  bears: 0,
+  increasePopulation: () =&amp;gt; set((state) =&amp;gt; ({ bears: state.bears + 1 })),
+  removeAllBears: () =&amp;gt; set({ bears: 0 }),
+}))
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Then bind your components, and that's it!&lt;/h2&gt; 
+&lt;p&gt;Use the hook anywhere, no providers are needed. Select your state and the component will re-render on changes.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;function BearCounter() {
+  const bears = useBearStore((state) =&amp;gt; state.bears)
+  return &amp;lt;h1&amp;gt;{bears} around here ...&amp;lt;/h1&amp;gt;
+}
+
+function Controls() {
+  const increasePopulation = useBearStore((state) =&amp;gt; state.increasePopulation)
+  return &amp;lt;button onClick={increasePopulation}&amp;gt;one up&amp;lt;/button&amp;gt;
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Why zustand over redux?&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Simple and un-opinionated&lt;/li&gt; 
+ &lt;li&gt;Makes hooks the primary means of consuming state&lt;/li&gt; 
+ &lt;li&gt;Doesn't wrap your app in context providers&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/pmndrs/zustand/main/#transient-updates-for-often-occurring-state-changes"&gt;Can inform components transiently (without causing render)&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Why zustand over context?&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Less boilerplate&lt;/li&gt; 
+ &lt;li&gt;Renders components only on changes&lt;/li&gt; 
+ &lt;li&gt;Centralized, action-based state management&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;Recipes&lt;/h1&gt; 
+&lt;h2&gt;Fetching everything&lt;/h2&gt; 
+&lt;p&gt;You can, but bear in mind that it will cause the component to update on every state change!&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;const state = useBearStore()
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Selecting multiple state slices&lt;/h2&gt; 
+&lt;p&gt;It detects changes with strict-equality (old === new) by default, this is efficient for atomic state picks.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;const nuts = useBearStore((state) =&amp;gt; state.nuts)
+const honey = useBearStore((state) =&amp;gt; state.honey)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If you want to construct a single object with multiple state-picks inside, similar to redux's mapStateToProps, you can use &lt;a href="https://raw.githubusercontent.com/pmndrs/zustand/main/docs/guides/prevent-rerenders-with-use-shallow.md"&gt;useShallow&lt;/a&gt; to prevent unnecessary rerenders when the selector output does not change according to shallow equal.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;import { create } from 'zustand'
+import { useShallow } from 'zustand/react/shallow'
+
+const useBearStore = create((set) =&amp;gt; ({
+  nuts: 0,
+  honey: 0,
+  treats: {},
+  // ...
+}))
+
+// Object pick, re-renders the component when either state.nuts or state.honey change
+const { nuts, honey } = useBearStore(
+  useShallow((state) =&amp;gt; ({ nuts: state.nuts, honey: state.honey })),
+)
+
+// Array pick, re-renders the component when either state.nuts or state.honey change
+const [nuts, honey] = useBearStore(
+  useShallow((state) =&amp;gt; [state.nuts, state.honey]),
+)
+
+// Mapped picks, re-renders the component when state.treats changes in order, count or keys
+const treats = useBearStore(useShallow((state) =&amp;gt; Object.keys(state.treats)))
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For more control over re-rendering, you may provide any custom equality function (this example requires the use of &lt;a href="https://raw.githubusercontent.com/pmndrs/zustand/main/docs/migrations/migrating-to-v5.md#using-custom-equality-functions-such-as-shallow"&gt;&lt;code&gt;createWithEqualityFn&lt;/code&gt;&lt;/a&gt;).&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;const treats = useBearStore(
+  (state) =&amp;gt; state.treats,
+  (oldTreats, newTreats) =&amp;gt; compare(oldTreats, newTreats),
+)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Overwriting state&lt;/h2&gt; 
+&lt;p&gt;The &lt;code&gt;set&lt;/code&gt; function has a second argument, &lt;code&gt;false&lt;/code&gt; by default. Instead of merging, it will replace the state model. Be careful not to wipe out parts you rely on, like actions.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;const useFishStore = create((set) =&amp;gt; ({
+  salmon: 1,
+  tuna: 2,
+  deleteEverything: () =&amp;gt; set({}, true), // clears the entire store, actions included
+  deleteTuna: () =&amp;gt; set(({ tuna, ...rest }) =&amp;gt; rest, true),
+}))
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Async actions&lt;/h2&gt; 
+&lt;p&gt;Just call &lt;code&gt;set&lt;/code&gt; when you're ready, zustand doesn't care if your actions are async or not.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;const useFishStore = create((set) =&amp;gt; ({
+  fishies: {},
+  fetch: async (pond) =&amp;gt; {
+    const response = await fetch(pond)
+    set({ fishies: await response.json() })
+  },
+}))
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Read from state in actions&lt;/h2&gt; 
+&lt;p&gt;&lt;code&gt;set&lt;/code&gt; allows fn-updates &lt;code&gt;set(state =&amp;gt; result)&lt;/code&gt;, but you still have access to state outside of it through &lt;code&gt;get&lt;/code&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;const useSoundStore = create((set, get) =&amp;gt; ({
+  sound: 'grunt',
+  action: () =&amp;gt; {
+    const sound = get().sound
+    ...
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Reading/writing state and reacting to changes outside of components&lt;/h2&gt; 
+&lt;p&gt;Sometimes you need to access state in a non-reactive way or act upon the store. For these cases, the resulting hook has utility functions attached to its prototype.&lt;/p&gt; 
+&lt;p&gt;&lt;span&gt;⚠&lt;/span&gt; This technique is not recommended for adding state in &lt;a href="https://github.com/reactjs/rfcs/raw/main/text/0188-server-components.md"&gt;React Server Components&lt;/a&gt; (typically in Next.js 13 and above). It can lead to unexpected bugs and privacy issues for your users. For more details, see &lt;a href="https://github.com/pmndrs/zustand/discussions/2200"&gt;#2200&lt;/a&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;const useDogStore = create(() =&amp;gt; ({ paw: true, snout: true, fur: true }))
+
+// Getting non-reactive fresh state
+const paw = useDogStore.getState().paw
+// Listening to all changes, fires synchronously on every change
+const unsub1 = useDogStore.subscribe(console.log)
+// Updating state, will trigger listeners
+useDogStore.setState({ paw: false })
+// Unsubscribe listeners
+unsub1()
+
+// You can of course use the hook as you always would
+function Component() {
+  const paw = useDogStore((state) =&amp;gt; state.paw)
+  ...
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Using subscribe with selector&lt;/h3&gt; 
+&lt;p&gt;If you need to subscribe with a selector, &lt;code&gt;subscribeWithSelector&lt;/code&gt; middleware will help.&lt;/p&gt; 
+&lt;p&gt;With this middleware &lt;code&gt;subscribe&lt;/code&gt; accepts an additional signature:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-ts"&gt;subscribe(selector, callback, options?: { equalityFn, fireImmediately }): Unsubscribe
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class="language-js"&gt;import { subscribeWithSelector } from 'zustand/middleware'
+const useDogStore = create(
+  subscribeWithSelector(() =&amp;gt; ({ paw: true, snout: true, fur: true })),
+)
+
+// Listening to selected changes, in this case when "paw" changes
+const unsub2 = useDogStore.subscribe((state) =&amp;gt; state.paw, console.log)
+// Subscribe also exposes the previous value
+const unsub3 = useDogStore.subscribe(
+  (state) =&amp;gt; state.paw,
+  (paw, previousPaw) =&amp;gt; console.log(paw, previousPaw),
+)
+// Subscribe also supports an optional equality function
+const unsub4 = useDogStore.subscribe(
+  (state) =&amp;gt; [state.paw, state.fur],
+  console.log,
+  { equalityFn: shallow },
+)
+// Subscribe and fire immediately
+const unsub5 = useDogStore.subscribe((state) =&amp;gt; state.paw, console.log, {
+  fireImmediately: true,
+})
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Using zustand without React&lt;/h2&gt; 
+&lt;p&gt;Zustand core can be imported and used without the React dependency. The only difference is that the create function does not return a hook, but the API utilities.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;import { createStore } from 'zustand/vanilla'
+
+const store = createStore((set) =&amp;gt; ...)
+const { getState, setState, subscribe, getInitialState } = store
+
+export default store
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can use a vanilla store with &lt;code&gt;useStore&lt;/code&gt; hook available since v4.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;import { useStore } from 'zustand'
+import { vanillaStore } from './vanillaStore'
+
+const useBoundStore = (selector) =&amp;gt; useStore(vanillaStore, selector)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;span&gt;⚠&lt;/span&gt; Note that middlewares that modify &lt;code&gt;set&lt;/code&gt; or &lt;code&gt;get&lt;/code&gt; are not applied to &lt;code&gt;getState&lt;/code&gt; and &lt;code&gt;setState&lt;/code&gt;.&lt;/p&gt; 
+&lt;h2&gt;Transient updates (for often occurring state-changes)&lt;/h2&gt; 
+&lt;p&gt;The subscribe function allows components to bind to a state-portion without forcing re-render on changes. Best combine it with useEffect for automatic unsubscribe on unmount. This can make a &lt;a href="https://codesandbox.io/s/peaceful-johnson-txtws"&gt;drastic&lt;/a&gt; performance impact when you are allowed to mutate the view directly.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;const useScratchStore = create((set) =&amp;gt; ({ scratches: 0, ... }))
+
+const Component = () =&amp;gt; {
+  // Fetch initial state
+  const scratchRef = useRef(useScratchStore.getState().scratches)
+  // Connect to the store on mount, disconnect on unmount, catch state-changes in a reference
+  useEffect(() =&amp;gt; useScratchStore.subscribe(
+    state =&amp;gt; (scratchRef.current = state.scratches)
+  ), [])
+  ...
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Sick of reducers and changing nested states? Use Immer!&lt;/h2&gt; 
+&lt;p&gt;Reducing nested structures is tiresome. Have you tried &lt;a href="https://github.com/mweststrate/immer"&gt;immer&lt;/a&gt;?&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;import { produce } from 'immer'
+
+const useLushStore = create((set) =&amp;gt; ({
+  lush: { forest: { contains: { a: 'bear' } } },
+  clearForest: () =&amp;gt;
+    set(
+      produce((state) =&amp;gt; {
+        state.lush.forest.contains = null
+      }),
+    ),
+}))
+
+const clearForest = useLushStore((state) =&amp;gt; state.clearForest)
+clearForest()
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/pmndrs/zustand/main/docs/guides/updating-state.md#with-immer"&gt;Alternatively, there are some other solutions.&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Persist middleware&lt;/h2&gt; 
+&lt;p&gt;You can persist your store's data using any kind of storage.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;import { create } from 'zustand'
+import { persist, createJSONStorage } from 'zustand/middleware'
+
+const useFishStore = create(
+  persist(
+    (set, get) =&amp;gt; ({
+      fishes: 0,
+      addAFish: () =&amp;gt; set({ fishes: get().fishes + 1 }),
+    }),
+    {
+      name: 'food-storage', // name of the item in the storage (must be unique)
+      storage: createJSONStorage(() =&amp;gt; sessionStorage), // (optional) by default, 'localStorage' is used
+    },
+  ),
+)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/pmndrs/zustand/main/docs/integrations/persisting-store-data.md"&gt;See the full documentation for this middleware.&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Immer middleware&lt;/h2&gt; 
+&lt;p&gt;Immer is available as middleware too.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;import { create } from 'zustand'
+import { immer } from 'zustand/middleware/immer'
+
+const useBeeStore = create(
+  immer((set) =&amp;gt; ({
+    bees: 0,
+    addBees: (by) =&amp;gt;
+      set((state) =&amp;gt; {
+        state.bees += by
+      }),
+  })),
+)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Can't live without redux-like reducers and action types?&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;const types = { increase: 'INCREASE', decrease: 'DECREASE' }
+
+const reducer = (state, { type, by = 1 }) =&amp;gt; {
+  switch (type) {
+    case types.increase:
+      return { grumpiness: state.grumpiness + by }
+    case types.decrease:
+      return { grumpiness: state.grumpiness - by }
+  }
+}
+
+const useGrumpyStore = create((set) =&amp;gt; ({
+  grumpiness: 0,
+  dispatch: (args) =&amp;gt; set((state) =&amp;gt; reducer(state, args)),
+}))
+
+const dispatch = useGrumpyStore((state) =&amp;gt; state.dispatch)
+dispatch({ type: types.increase, by: 2 })
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Or, just use our redux-middleware. It wires up your main-reducer, sets the initial state, and adds a dispatch function to the state itself and the vanilla API.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;import { redux } from 'zustand/middleware'
+
+const useGrumpyStore = create(redux(reducer, initialState))
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Redux devtools&lt;/h2&gt; 
+&lt;p&gt;Install the &lt;a href="https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd"&gt;Redux DevTools Chrome extension&lt;/a&gt; to use the devtools middleware.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;import { devtools } from 'zustand/middleware'
+
+// Usage with a plain action store, it will log actions as "setState"
+const usePlainStore = create(devtools((set) =&amp;gt; ...))
+// Usage with a redux store, it will log full action types
+const useReduxStore = create(devtools(redux(reducer, initialState)))
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;One redux devtools connection for multiple stores&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;import { devtools } from 'zustand/middleware'
+
+// Usage with a plain action store, it will log actions as "setState"
+const usePlainStore1 = create(devtools((set) =&amp;gt; ..., { name, store: storeName1 }))
+const usePlainStore2 = create(devtools((set) =&amp;gt; ..., { name, store: storeName2 }))
+// Usage with a redux store, it will log full action types
+const useReduxStore1 = create(devtools(redux(reducer, initialState)), { name, store: storeName3 })
+const useReduxStore2 = create(devtools(redux(reducer, initialState)), { name, store: storeName4 })
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Assigning different connection names will separate stores in redux devtools. This also helps group different stores into separate redux devtools connections.&lt;/p&gt; 
+&lt;p&gt;devtools takes the store function as its first argument, optionally you can name the store or configure &lt;a href="https://github.com/zalmoxisus/redux-devtools-extension/raw/master/docs/API/Arguments.md#serialize"&gt;serialize&lt;/a&gt; options with a second argument.&lt;/p&gt; 
+&lt;p&gt;Name store: &lt;code&gt;devtools(..., {name: "MyStore"})&lt;/code&gt;, which will create a separate instance named "MyStore" in the devtools.&lt;/p&gt; 
+&lt;p&gt;Serialize options: &lt;code&gt;devtools(..., { serialize: { options: true } })&lt;/code&gt;.&lt;/p&gt; 
+&lt;h4&gt;Logging Actions&lt;/h4&gt; 
+&lt;p&gt;devtools will only log actions from each separated store unlike in a typical &lt;em&gt;combined reducers&lt;/em&gt; redux store. See an approach to combining stores &lt;a href="https://github.com/pmndrs/zustand/issues/163"&gt;https://github.com/pmndrs/zustand/issues/163&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;You can log a specific action type for each &lt;code&gt;set&lt;/code&gt; function by passing a third parameter:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;const useBearStore = create(devtools((set) =&amp;gt; ({
+  ...
+  eatFish: () =&amp;gt; set(
+    (prev) =&amp;gt; ({ fishes: prev.fishes &amp;gt; 1 ? prev.fishes - 1 : 0 }),
+    undefined,
+    'bear/eatFish'
+  ),
+  ...
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can also log the action's type along with its payload:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;  ...
+  addFishes: (count) =&amp;gt; set(
+    (prev) =&amp;gt; ({ fishes: prev.fishes + count }),
+    undefined,
+    { type: 'bear/addFishes', count, }
+  ),
+  ...
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If an action type is not provided, it is defaulted to "anonymous". You can customize this default value by providing an &lt;code&gt;anonymousActionType&lt;/code&gt; parameter:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;devtools(..., { anonymousActionType: 'unknown', ... })
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If you wish to disable devtools (on production for instance). You can customize this setting by providing the &lt;code&gt;enabled&lt;/code&gt; parameter:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;devtools(..., { enabled: false, ... })
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;React context&lt;/h2&gt; 
+&lt;p&gt;The store created with &lt;code&gt;create&lt;/code&gt; doesn't require context providers. In some cases, you may want to use contexts for dependency injection or if you want to initialize your store with props from a component. Because the normal store is a hook, passing it as a normal context value may violate the rules of hooks.&lt;/p&gt; 
+&lt;p&gt;The recommended method available since v4 is to use the vanilla store.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;import { createContext, useContext } from 'react'
+import { createStore, useStore } from 'zustand'
+
+const store = createStore(...) // vanilla store without hooks
+
+const StoreContext = createContext()
+
+const App = () =&amp;gt; (
+  &amp;lt;StoreContext.Provider value={store}&amp;gt;
+    ...
+  &amp;lt;/StoreContext.Provider&amp;gt;
+)
+
+const Component = () =&amp;gt; {
+  const store = useContext(StoreContext)
+  const slice = useStore(store, selector)
+  ...
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;TypeScript Usage&lt;/h2&gt; 
+&lt;p&gt;Basic typescript usage doesn't require anything special except for writing &lt;code&gt;create&amp;lt;State&amp;gt;()(...)&lt;/code&gt; instead of &lt;code&gt;create(...)&lt;/code&gt;...&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-ts"&gt;import { create } from 'zustand'
+import { devtools, persist } from 'zustand/middleware'
+import type {} from '@redux-devtools/extension' // required for devtools typing
+
+interface BearState {
+  bears: number
+  increase: (by: number) =&amp;gt; void
+}
+
+const useBearStore = create&amp;lt;BearState&amp;gt;()(
+  devtools(
+    persist(
+      (set) =&amp;gt; ({
+        bears: 0,
+        increase: (by) =&amp;gt; set((state) =&amp;gt; ({ bears: state.bears + by })),
+      }),
+      {
+        name: 'bear-storage',
+      },
+    ),
+  ),
+)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;A more complete TypeScript guide is &lt;a href="https://raw.githubusercontent.com/pmndrs/zustand/main/docs/guides/typescript.md"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Best practices&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;You may wonder how to organize your code for better maintenance: &lt;a href="https://raw.githubusercontent.com/pmndrs/zustand/main/docs/guides/slices-pattern.md"&gt;Splitting the store into separate slices&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Recommended usage for this unopinionated library: &lt;a href="https://raw.githubusercontent.com/pmndrs/zustand/main/docs/guides/flux-inspired-practice.md"&gt;Flux inspired practice&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/pmndrs/zustand/main/docs/guides/event-handler-in-pre-react-18.md"&gt;Calling actions outside a React event handler in pre-React 18&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/pmndrs/zustand/main/docs/guides/testing.md"&gt;Testing&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;For more, have a look &lt;a href="https://raw.githubusercontent.com/pmndrs/zustand/main/docs/"&gt;in the docs folder&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Third-Party Libraries&lt;/h2&gt; 
+&lt;p&gt;Some users may want to extend Zustand's feature set which can be done using third-party libraries made by the community. For information regarding third-party libraries with Zustand, visit &lt;a href="https://raw.githubusercontent.com/pmndrs/zustand/main/docs/integrations/third-party-libraries.md"&gt;the doc&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Comparison with other libraries&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://zustand.docs.pmnd.rs/getting-started/comparison"&gt;Difference between zustand and other state management libraries for React&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>ZuodaoTech/everyone-can-use-english</title>
+      <link>https://github.com/ZuodaoTech/everyone-can-use-english</link>
+      <description>&lt;p&gt;人人都能用英语&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/assets/icon.png" alt="Clash" width="128" /&gt; 
+&lt;/div&gt; 
+&lt;h3 align="center"&gt; AI 是当今世界上最好的外语老师，Enjoy 做 AI 最好的助教。 &lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://github.com/ZuodaoTech/everyone-can-use-english/actions/workflows/deploy-1000h.yml"&gt;&lt;img src="https://github.com/ZuodaoTech/everyone-can-use-english/actions/workflows/deploy-1000h.yml/badge.svg?sanitize=true" alt="Deploy 1000h website" /&gt;&lt;/a&gt; &lt;a href="https://github.com/ZuodaoTech/everyone-can-use-english/actions/workflows/test-enjoy-app.yml"&gt;&lt;img src="https://github.com/ZuodaoTech/everyone-can-use-english/actions/workflows/test-enjoy-app.yml/badge.svg?sanitize=true" alt="Test Enjoy App" /&gt;&lt;/a&gt; &lt;a href="https://github.com/ZuodaoTech/everyone-can-use-english/actions/workflows/release-enjoy-app.yml"&gt;&lt;img src="https://github.com/ZuodaoTech/everyone-can-use-english/actions/workflows/release-enjoy-app.yml/badge.svg?sanitize=true" alt="Release Enjoy App" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fenjoy.bot%2Fapi%2Fconfig%2Fapp_version&amp;amp;query=%24.version&amp;amp;label=Latest&amp;amp;link=https%3A%2F%2F1000h.org%2Fenjoy-app%2Finstall.html" alt="Latest Version" /&gt; &lt;img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fenjoy.bot%2Fapi%2Fbadges%2Frecordings" alt="Recording Duration" /&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;网页版&lt;/h2&gt; 
+&lt;p&gt;Enjoy 网页版已经上线，可访问 &lt;a href="https://enjoy.bot"&gt;https://enjoy.bot&lt;/a&gt; 直接使用。&lt;/p&gt; 
+&lt;div align="center" style="display:flex;overflow:auto;gap:10px;"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/web-audios.jpg" alt="Audios" width="300" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/web-add-audio.jpg" alt="Add Audio" width="300" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/web-audio-shadow.jpg" alt="Shadow" width="300" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/web-audio-assessment.jpg" alt="Assessment" width="300" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/web-new-chat.jpg" alt="New Chat" width="300" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/web-chat.jpg" alt="Chat" width="300" /&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;桌面版安装及使用&lt;/h2&gt; 
+&lt;p&gt;下载及使用相关说明，请参阅 &lt;a href="https://1000h.org/enjoy-app/"&gt;文档&lt;/a&gt;。&lt;/p&gt; 
+&lt;h2&gt;预览&lt;/h2&gt; 
+&lt;div align="center" style="display:flex;overflow:auto;"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/home.png" alt="Home" width="800" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/shadow.png" alt="Home" width="800" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/assessment.png" alt="Home" width="800" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/document.png" alt="Home" width="800" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/chat.png" alt="Home" width="800" /&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;桌面版开发&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn install
+yarn enjoy:start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;相关阅读&lt;/h2&gt; 
+&lt;h3&gt;一千小时（2024）&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://1000h.org/intro.html"&gt;简要说明&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://1000h.org/training-tasks/kick-off.html"&gt;训练任务&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://1000h.org/sounds-of-american-english/0-intro.html"&gt;语音塑造&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://1000h.org/in-the-brain/01-inifinite.html"&gt;大脑内部&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://1000h.org/self-training/00-intro.html"&gt;自我训练&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;人人都能用英语（2010）&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/README.md"&gt;简介&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/chapter1.md"&gt;第一章：起点&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/chapter2.md"&gt;第二章：口语&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/chapter3.md"&gt;第三章：语音&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/chapter4.md"&gt;第四章：朗读&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/chapter5.md"&gt;第五章：词典&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/chapter6.md"&gt;第六章：语法&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/chapter7.md"&gt;第七章：精读&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/chapter8.md"&gt;第八章：叮嘱&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/end.md"&gt;后记&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;常见问题&lt;/h2&gt; 
+&lt;p&gt;请查询 &lt;a href="https://1000h.org/enjoy-app/faq.html"&gt;文档 FAQ&lt;/a&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>epicenter-so/epicenter</title>
+      <link>https://github.com/epicenter-so/epicenter</link>
+      <description>&lt;p&gt;Press shortcut → speak → get text. Free and open source. More local-first apps soon ❤️&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://epicenter.so"&gt; &lt;img width="200" src="https://github.com/user-attachments/assets/9e210c52-2740-43b6-af3f-e6eaf4b5c397" alt="Epicenter" /&gt; &lt;/a&gt; &lt;/p&gt;
+&lt;h1 align="center"&gt;Epicenter&lt;/h1&gt; 
+&lt;p align="center"&gt;Local-first, open-source apps&lt;/p&gt; 
+&lt;p align="center"&gt;Own your data. Use any model you want. Free and open source ❤️&lt;/p&gt; 
+&lt;p&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;📢 Repository Update:&lt;/strong&gt; The &lt;a href="https://github.com/braden-w/whispering/"&gt;Whispering&lt;/a&gt; repository is now part of &lt;strong&gt;Epicenter&lt;/strong&gt;! You can find it &lt;a href="https://github.com/epicenter-so/epicenter/tree/main/apps/whispering"&gt;here&lt;/a&gt;. Everything else remains the same—same tools, same philosophy, same team.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p align="center"&gt; 
+ &lt;!-- GitHub Stars Badge --&gt; &lt;a href="https://github.com/epicenter-so/epicenter" target="_blank"&gt; &lt;img alt="GitHub stars" src="https://img.shields.io/github/stars/epicenter-so/epicenter?style=flat-square" /&gt; &lt;/a&gt; 
+ &lt;!-- Latest Version Badge --&gt; &lt;img src="https://img.shields.io/github/v/release/epicenter-so/epicenter?style=flat-square&amp;amp;label=Latest%20Version&amp;amp;color=brightgreen" /&gt; 
+ &lt;!-- License Badge --&gt; &lt;a href="https://raw.githubusercontent.com/epicenter-so/epicenter/main/LICENSE" target="_blank"&gt; &lt;img alt="MIT License" src="https://img.shields.io/github/license/epicenter-so/epicenter.svg?style=flat-square" /&gt; &lt;/a&gt; 
+ &lt;!-- Discord Badge --&gt; &lt;a href="https://go.epicenter.so/discord" target="_blank"&gt; &lt;img alt="Discord" src="https://img.shields.io/badge/Discord-Join%20us-5865F2?style=flat-square&amp;amp;logo=discord&amp;amp;logoColor=white" /&gt; &lt;/a&gt; 
+ &lt;!-- Platform Support Badges --&gt; &lt;a href="https://github.com/epicenter-so/epicenter/releases" target="_blank"&gt; &lt;img alt="macOS" src="https://img.shields.io/badge/-macOS-black?style=flat-square&amp;amp;logo=apple&amp;amp;logoColor=white" /&gt; &lt;/a&gt; &lt;a href="https://github.com/epicenter-so/epicenter/releases" target="_blank"&gt; &lt;img alt="Windows" src="https://img.shields.io/badge/-Windows-blue?style=flat-square&amp;amp;logo=windows&amp;amp;logoColor=white" /&gt; &lt;/a&gt; &lt;a href="https://github.com/epicenter-so/epicenter/releases" target="_blank"&gt; &lt;img alt="Linux" src="https://img.shields.io/badge/-Linux-yellow?style=flat-square&amp;amp;logo=linux&amp;amp;logoColor=white" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/epicenter-so/epicenter/main/#current-tools"&gt;Tools&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/epicenter-so/epicenter/main/#where-were-headed"&gt;Vision&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/epicenter-so/epicenter/main/#join-us"&gt;Contributing&lt;/a&gt; • &lt;a href="https://go.epicenter.so/discord"&gt;Discord&lt;/a&gt; • &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;What is Epicenter?&lt;/h2&gt; 
+&lt;p&gt;Epicenter is an ecosystem of open-source, local-first apps. Our eventual goal is to store all of your data—notes, transcripts, chat histories—in a single folder of plain text and SQLite. Every tool we build shares this memory. It's open, tweakable, and yours. Grep it, open it in Obsidian, host it wherever you like. The choice is yours.&lt;/p&gt; 
+&lt;h2&gt;Current Tools&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td align="center" width="50%"&gt; &lt;h3&gt;🎙️ &lt;a href="https://github.com/epicenter-so/epicenter/tree/main/apps/whispering"&gt;Whispering&lt;/a&gt;&lt;/h3&gt; &lt;p&gt;Press shortcut → speak → get text. Desktop transcription that cuts out the middleman. Bring your own API key.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;→ &lt;a href="https://github.com/epicenter-so/epicenter/tree/main/apps/whispering"&gt;Explore Whispering&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+   &lt;td align="center" width="50%"&gt; &lt;h3&gt;🤖 &lt;a href="https://github.com/epicenter-so/epicenter/tree/main/apps/sh"&gt;epicenter.sh&lt;/a&gt;&lt;/h3&gt; &lt;p&gt;A local-first assistant you can chat with. It lives in your folder, becoming the access point to everything you've ever written, thought, or built.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;→ &lt;a href="https://github.com/epicenter-so/epicenter/tree/main/apps/sh"&gt;Explore epicenter.sh&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;Where We're Headed&lt;/h2&gt; 
+&lt;p&gt;Our vision is to build a personal workspace where you own your data, choose your models, and replace siloed apps with open, interoperable alternatives. All while preserving authenticity and being free and open source.&lt;/p&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;p&gt;Epicenter will have more apps in the future, but for now, the best way to get started is to run Whispering locally:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Prerequisites: Install Bun from https://bun.sh (run bun upgrade if there's issues)
+git clone https://github.com/epicenter-so/epicenter.git
+cd epicenter
+bun install  # Will prompt to upgrade if your Bun version is too old
+cd apps/whispering
+bun dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Join Us&lt;/h2&gt; 
+&lt;h2&gt;Discord Community&lt;/h2&gt; 
+&lt;p&gt;If you think like a generalist, build like a hacker, and value tools that respect your mind—you'll fit right in.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;→ &lt;a href="https://go.epicenter.so/discord"&gt;Join our Discord&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;h3&gt;We're looking for contributors&lt;/h3&gt; 
+&lt;p&gt;If you're passionate about open source, local-first software, or are just a cracked Svelte/TypeScript developer—we'd love to build with you.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;→ &lt;a href="https://raw.githubusercontent.com/epicenter-so/epicenter/main/CONTRIBUTING.md"&gt;Read our Contributing Guide&lt;/a&gt; to get started&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Contributors coordinate and share ideas in our Discord community.&lt;/p&gt; 
+&lt;h2&gt;Tech Stack&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;img alt="Svelte 5" src="https://img.shields.io/badge/-Svelte%205-orange?style=flat-square&amp;amp;logo=svelte&amp;amp;logoColor=white" /&gt; &lt;img alt="Tauri" src="https://img.shields.io/badge/-Tauri-blue?style=flat-square&amp;amp;logo=tauri&amp;amp;logoColor=white" /&gt; &lt;img alt="TypeScript" src="https://img.shields.io/badge/-TypeScript-blue?style=flat-square&amp;amp;logo=typescript&amp;amp;logoColor=white" /&gt; &lt;img alt="Rust" src="https://img.shields.io/badge/-Rust-orange?style=flat-square&amp;amp;logo=rust&amp;amp;logoColor=white" /&gt; &lt;img alt="TanStack Query" src="https://img.shields.io/badge/-TanStack%20Query-red?style=flat-square&amp;amp;logo=react-query&amp;amp;logoColor=white" /&gt; &lt;img alt="Tailwind CSS" src="https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?style=flat-square&amp;amp;logo=tailwind-css&amp;amp;logoColor=white" /&gt; &lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/epicenter-so/epicenter/main/LICENSE"&gt;MIT&lt;/a&gt;. Build on it. Fork it. Make it yours. Please contribute if you can.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p align="center"&gt; &lt;strong&gt;Contact:&lt;/strong&gt; &lt;a href="mailto:github@bradenwong.com"&gt;github@bradenwong.com&lt;/a&gt; | &lt;a href="https://go.epicenter.so/discord"&gt;Discord&lt;/a&gt; | &lt;a href="https://twitter.com/braden_wong_"&gt;@braden_wong_&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;sub&gt;Built with ❤️ for data ownership, local-first, and open-souce&lt;/sub&gt; &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>software-mansion/react-native-reanimated</title>
+      <link>https://github.com/software-mansion/react-native-reanimated</link>
+      <description>&lt;p&gt;React Native's Animated library reimplemented&lt;/p&gt;&lt;hr&gt;&lt;img src="https://user-images.githubusercontent.com/16062886/117443145-ff868480-af37-11eb-8680-648bccf0d0ce.png" alt="React Native Reanimated by Software Mansion" width="100%" /&gt; 
+&lt;h3&gt;Create smooth animations with an excellent developer experience.&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Reanimated 4 is here! Check out our &lt;a href="https://docs.swmansion.com/react-native-reanimated/"&gt;documentation page&lt;/a&gt; for more information&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Nightly CI state&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://github.com/software-mansion/react-native-reanimated/actions/workflows/npm-reanimated-publish-nightly.yml"&gt;&lt;img src="https://github.com/software-mansion/react-native-reanimated/actions/workflows/npm-reanimated-publish-nightly.yml/badge.svg?sanitize=true" alt="NPM Reanimated publish nightly" /&gt;&lt;/a&gt; &lt;a href="https://github.com/software-mansion/react-native-reanimated/actions/workflows/npm-worklets-publish-nightly.yml"&gt;&lt;img src="https://github.com/software-mansion/react-native-reanimated/actions/workflows/npm-worklets-publish-nightly.yml/badge.svg?sanitize=true" alt="NPM Worklets publish [Nightly]" /&gt;&lt;/a&gt; &lt;a href="https://github.com/software-mansion/react-native-reanimated/actions/workflows/lint-clang-tidy-nightly.yml"&gt;&lt;img src="https://github.com/software-mansion/react-native-reanimated/actions/workflows/lint-clang-tidy-nightly.yml/badge.svg?sanitize=true" alt="Lint clang-tidy [Nightly]" /&gt;&lt;/a&gt; &lt;a href="https://github.com/software-mansion/react-native-reanimated/actions/workflows/reanimated-compatibility-check-nightly.yml"&gt;&lt;img src="https://github.com/software-mansion/react-native-reanimated/actions/workflows/reanimated-compatibility-check-nightly.yml/badge.svg?sanitize=true" alt="Reanimated compatibility check" /&gt;&lt;/a&gt; &lt;a href="https://github.com/software-mansion/react-native-reanimated/actions/workflows/use-frameworks-reanimated-build-check-nightly.yml"&gt;&lt;img src="https://github.com/software-mansion/react-native-reanimated/actions/workflows/use-frameworks-reanimated-build-check-nightly.yml/badge.svg?sanitize=true" alt="Use frameworks Reanimated build check [Nightly]" /&gt;&lt;/a&gt; &lt;a href="https://github.com/software-mansion/react-native-reanimated/actions/workflows/react-native-nightly-reanimated-build-check-nightly.yml"&gt;&lt;img src="https://github.com/software-mansion/react-native-reanimated/actions/workflows/react-native-nightly-reanimated-build-check-nightly.yml/badge.svg?sanitize=true" alt="React Native nightly Reanimated build check" /&gt;&lt;/a&gt; &lt;a href="https://github.com/software-mansion/react-native-reanimated/actions/workflows/expo-devclient-build-check-nightly.yml"&gt;&lt;img src="https://github.com/software-mansion/react-native-reanimated/actions/workflows/expo-devclient-build-check-nightly.yml/badge.svg?sanitize=true" alt="Expo DevClient build check" /&gt;&lt;/a&gt; &lt;a href="https://github.com/software-mansion/react-native-reanimated/actions/workflows/reanimated-typescript-compatibility-test-nightly.yml"&gt;&lt;img src="https://github.com/software-mansion/react-native-reanimated/actions/workflows/reanimated-typescript-compatibility-test-nightly.yml/badge.svg?sanitize=true" alt="Reanimated TypeScript compatibility test" /&gt;&lt;/a&gt; &lt;a href="https://github.com/software-mansion/react-native-reanimated/actions/workflows/windows-hosted-app-reanimated-build-check-nightly.yml"&gt;&lt;img src="https://github.com/software-mansion/react-native-reanimated/actions/workflows/windows-hosted-app-reanimated-build-check-nightly.yml/badge.svg?sanitize=true" alt="Windows hosted app Reanimated build check" /&gt;&lt;/a&gt; &lt;a href="https://github.com/software-mansion/react-native-reanimated/actions/workflows/worklets-bundle-mode-build-check-nightly.yml"&gt;&lt;img src="https://github.com/software-mansion/react-native-reanimated/actions/workflows/worklets-bundle-mode-build-check-nightly.yml/badge.svg?sanitize=true" alt="Worklets Bundle Mode build check [Nightly]" /&gt;&lt;/a&gt; &lt;a href="https://github.com/software-mansion/react-native-reanimated/actions/workflows/url-validation-nightly.yml"&gt;&lt;img src="https://github.com/software-mansion/react-native-reanimated/actions/workflows/url-validation-nightly.yml/badge.svg?sanitize=true" alt="URL validation" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;Check out the &lt;a href="https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/#installation"&gt;installation&lt;/a&gt; section of our docs for the detailed installation instructions.&lt;/p&gt; 
+&lt;h2&gt;Compatibility&lt;/h2&gt; 
+&lt;p&gt;React Native Reanimated 4.x supports only the &lt;a href="https://reactnative.dev/architecture/landing-page"&gt;New React Native architecture&lt;/a&gt; and three latest React Native versions.&lt;/p&gt; 
+&lt;p&gt;If your app still runs on the old architecture, please consider adopting the New Architecture or stay with latest 3.x release.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Check out our dedicated documentation page for info about this library, API reference and more: &lt;a href="https://docs.swmansion.com/react-native-reanimated/"&gt;https://docs.swmansion.com/react-native-reanimated/&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Examples&lt;/h2&gt; 
+&lt;p&gt;The source code for the example (showcase) app is under the &lt;a href="https://github.com/software-mansion/react-native-reanimated/raw/main/apps/common-app/"&gt;&lt;code&gt;apps/common-app&lt;/code&gt;&lt;/a&gt; directory. If you want to play with the API but don't feel like trying it on a real app, you can run the example project. Check &lt;a href="https://raw.githubusercontent.com/software-mansion/react-native-reanimated/main/apps/fabric-example/README.md"&gt;Example README&lt;/a&gt; for installation instructions.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Reanimated library is licensed under &lt;a href="https://raw.githubusercontent.com/software-mansion/react-native-reanimated/main/LICENSE"&gt;The MIT License&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Credits&lt;/h2&gt; 
+&lt;p&gt;This project has been built and is maintained thanks to the support from &lt;a href="https://shopify.com"&gt;Shopify&lt;/a&gt;, &lt;a href="https://expo.io"&gt;Expo.io&lt;/a&gt; and &lt;a href="https://swmansion.com"&gt;Software Mansion&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://shopify.com"&gt;&lt;img src="https://avatars1.githubusercontent.com/u/8085?v=3&amp;amp;s=100" alt="shopify" title="Shopify.com" /&gt;&lt;/a&gt; &lt;a href="https://expo.io"&gt;&lt;img src="https://avatars2.githubusercontent.com/u/12504344?v=3&amp;amp;s=100" alt="expo" title="Expo.io" /&gt;&lt;/a&gt; &lt;a href="https://swmansion.com"&gt;&lt;img src="https://logo.swmansion.com/logo?color=white&amp;amp;variant=desktop&amp;amp;width=150&amp;amp;tag=react-native-reanimated-github" alt="swm" title="Software Mansion" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Community Discord&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://discord.swmansion.com"&gt;Join the Software Mansion Community Discord&lt;/a&gt; to chat about Reanimated or other Software Mansion libraries.&lt;/p&gt; 
+&lt;h2&gt;Reanimated is created by Software Mansion&lt;/h2&gt; 
+&lt;p&gt;Since 2012 &lt;a href="https://swmansion.com"&gt;Software Mansion&lt;/a&gt; is a software agency with experience in building web and mobile apps. We are Core React Native Contributors and experts in dealing with all kinds of React Native issues. We can help you build your next dream product – &lt;a href="https://swmansion.com/contact/projects?utm_source=reanimated&amp;amp;utm_medium=readme"&gt;Hire us&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>danny-avila/LibreChat</title>
+      <link>https://github.com/danny-avila/LibreChat</link>
+      <description>&lt;p&gt;Enhanced ChatGPT Clone: Features Agents, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active project.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://librechat.ai"&gt; &lt;img src="https://raw.githubusercontent.com/danny-avila/LibreChat/main/client/public/assets/logo.svg?sanitize=true" height="256" /&gt; &lt;/a&gt; &lt;/p&gt;
+&lt;h1 align="center"&gt; &lt;a href="https://librechat.ai"&gt;LibreChat&lt;/a&gt; &lt;/h1&gt; 
+&lt;p&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://discord.librechat.ai"&gt; &lt;img src="https://img.shields.io/discord/1086345563026489514?label=&amp;amp;logo=discord&amp;amp;style=for-the-badge&amp;amp;logoWidth=20&amp;amp;logoColor=white&amp;amp;labelColor=000000&amp;amp;color=blueviolet" /&gt; &lt;/a&gt; &lt;a href="https://www.youtube.com/@LibreChat"&gt; &lt;img src="https://img.shields.io/badge/YOUTUBE-red.svg?style=for-the-badge&amp;amp;logo=youtube&amp;amp;logoColor=white&amp;amp;labelColor=000000&amp;amp;logoWidth=20" /&gt; &lt;/a&gt; &lt;a href="https://docs.librechat.ai"&gt; &lt;img src="https://img.shields.io/badge/DOCS-blue.svg?style=for-the-badge&amp;amp;logo=read-the-docs&amp;amp;logoColor=white&amp;amp;labelColor=000000&amp;amp;logoWidth=20" /&gt; &lt;/a&gt; &lt;a aria-label="Sponsors" href="https://github.com/sponsors/danny-avila"&gt; &lt;img src="https://img.shields.io/badge/SPONSORS-brightgreen.svg?style=for-the-badge&amp;amp;logo=github-sponsors&amp;amp;logoColor=white&amp;amp;labelColor=000000&amp;amp;logoWidth=20" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://railway.app/template/b5k2mn?referralCode=HI9hWz"&gt; &lt;img src="https://railway.app/button.svg?sanitize=true" alt="Deploy on Railway" height="30" /&gt; &lt;/a&gt; &lt;a href="https://zeabur.com/templates/0X2ZY8"&gt; &lt;img src="https://zeabur.com/button.svg?sanitize=true" alt="Deploy on Zeabur" height="30" /&gt; &lt;/a&gt; &lt;a href="https://template.cloud.sealos.io/deploy?templateName=librechat"&gt; &lt;img src="https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg?sanitize=true" alt="Deploy on Sealos" height="30" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.librechat.ai/docs/translation"&gt; &lt;img src="https://img.shields.io/badge/dynamic/json.svg?style=for-the-badge&amp;amp;color=2096F3&amp;amp;label=locize&amp;amp;query=%24.translatedPercentage&amp;amp;url=https://api.locize.app/badgedata/4cb2598b-ed4d-469c-9b04-2ed531a8cb45&amp;amp;suffix=%+translated" alt="Translation Progress" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h1&gt;✨ Features&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;🖥️ &lt;strong&gt;UI &amp;amp; Experience&lt;/strong&gt; inspired by ChatGPT with enhanced design and features&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;🤖 &lt;strong&gt;AI Model Selection&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Anthropic (Claude), AWS Bedrock, OpenAI, Azure OpenAI, Google, Vertex AI, OpenAI Responses API (incl. Azure)&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://www.librechat.ai/docs/quick_start/custom_endpoints"&gt;Custom Endpoints&lt;/a&gt;: Use any OpenAI-compatible API with LibreChat, no proxy required&lt;/li&gt; 
+   &lt;li&gt;Compatible with &lt;a href="https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints"&gt;Local &amp;amp; Remote AI Providers&lt;/a&gt;: 
+    &lt;ul&gt; 
+     &lt;li&gt;Ollama, groq, Cohere, Mistral AI, Apple MLX, koboldcpp, together.ai,&lt;/li&gt; 
+     &lt;li&gt;OpenRouter, Perplexity, ShuttleAI, Deepseek, Qwen, and more&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;🔧 &lt;strong&gt;&lt;a href="https://www.librechat.ai/docs/features/code_interpreter"&gt;Code Interpreter API&lt;/a&gt;&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Secure, Sandboxed Execution in Python, Node.js (JS/TS), Go, C/C++, Java, PHP, Rust, and Fortran&lt;/li&gt; 
+   &lt;li&gt;Seamless File Handling: Upload, process, and download files directly&lt;/li&gt; 
+   &lt;li&gt;No Privacy Concerns: Fully isolated and secure execution&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;🔦 &lt;strong&gt;Agents &amp;amp; Tools Integration&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;&lt;a href="https://www.librechat.ai/docs/features/agents"&gt;LibreChat Agents&lt;/a&gt;&lt;/strong&gt;: 
+    &lt;ul&gt; 
+     &lt;li&gt;No-Code Custom Assistants: Build specialized, AI-driven helpers without coding&lt;/li&gt; 
+     &lt;li&gt;Flexible &amp;amp; Extensible: Use MCP Servers, tools, file search, code execution, and more&lt;/li&gt; 
+     &lt;li&gt;Compatible with Custom Endpoints, OpenAI, Azure, Anthropic, AWS Bedrock, Google, Vertex AI, Responses API, and more&lt;/li&gt; 
+     &lt;li&gt;&lt;a href="https://modelcontextprotocol.io/clients#librechat"&gt;Model Context Protocol (MCP) Support&lt;/a&gt; for Tools&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;🔍 &lt;strong&gt;Web Search&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Search the internet and retrieve relevant information to enhance your AI context&lt;/li&gt; 
+   &lt;li&gt;Combines search providers, content scrapers, and result rerankers for optimal results&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;&lt;a href="https://www.librechat.ai/docs/features/web_search"&gt;Learn More →&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;🪄 &lt;strong&gt;Generative UI with Code Artifacts&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://youtu.be/GfTj7O4gmd0?si=WJbdnemZpJzBrJo3"&gt;Code Artifacts&lt;/a&gt; allow creation of React, HTML, and Mermaid diagrams directly in chat&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;🎨 &lt;strong&gt;Image Generation &amp;amp; Editing&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Text-to-image and image-to-image with &lt;a href="https://www.librechat.ai/docs/features/image_gen#1--openai-image-tools-recommended"&gt;GPT-Image-1&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;Text-to-image with &lt;a href="https://www.librechat.ai/docs/features/image_gen#2--dalle-legacy"&gt;DALL-E (3/2)&lt;/a&gt;, &lt;a href="https://www.librechat.ai/docs/features/image_gen#3--stable-diffusion-local"&gt;Stable Diffusion&lt;/a&gt;, &lt;a href="https://www.librechat.ai/docs/features/image_gen#4--flux"&gt;Flux&lt;/a&gt;, or any &lt;a href="https://www.librechat.ai/docs/features/image_gen#5--model-context-protocol-mcp"&gt;MCP server&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;Produce stunning visuals from prompts or refine existing images with a single instruction&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;💾 &lt;strong&gt;Presets &amp;amp; Context Management&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Create, Save, &amp;amp; Share Custom Presets&lt;/li&gt; 
+   &lt;li&gt;Switch between AI Endpoints and Presets mid-chat&lt;/li&gt; 
+   &lt;li&gt;Edit, Resubmit, and Continue Messages with Conversation branching&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://www.librechat.ai/docs/features/fork"&gt;Fork Messages &amp;amp; Conversations&lt;/a&gt; for Advanced Context control&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;💬 &lt;strong&gt;Multimodal &amp;amp; File Interactions&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Upload and analyze images with Claude 3, GPT-4.5, GPT-4o, o1, Llama-Vision, and Gemini 📸&lt;/li&gt; 
+   &lt;li&gt;Chat with Files using Custom Endpoints, OpenAI, Azure, Anthropic, AWS Bedrock, &amp;amp; Google 🗃️&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;🌎 &lt;strong&gt;Multilingual UI&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;English, 中文, Deutsch, Español, Français, Italiano, Polski, Português Brasileiro&lt;/li&gt; 
+   &lt;li&gt;Русский, 日本語, Svenska, 한국어, Tiếng Việt, 繁體中文, العربية, Türkçe, Nederlands, עברית&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;🧠 &lt;strong&gt;Reasoning UI&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Dynamic Reasoning UI for Chain-of-Thought/Reasoning AI models like DeepSeek-R1&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;🎨 &lt;strong&gt;Customizable Interface&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Customizable Dropdown &amp;amp; Interface that adapts to both power users and newcomers&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;🗣️ &lt;strong&gt;Speech &amp;amp; Audio&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Chat hands-free with Speech-to-Text and Text-to-Speech&lt;/li&gt; 
+   &lt;li&gt;Automatically send and play Audio&lt;/li&gt; 
+   &lt;li&gt;Supports OpenAI, Azure OpenAI, and Elevenlabs&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;📥 &lt;strong&gt;Import &amp;amp; Export Conversations&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Import Conversations from LibreChat, ChatGPT, Chatbot UI&lt;/li&gt; 
+   &lt;li&gt;Export conversations as screenshots, markdown, text, json&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;🔍 &lt;strong&gt;Search &amp;amp; Discovery&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Search all messages/conversations&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;👥 &lt;strong&gt;Multi-User &amp;amp; Secure Access&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Multi-User, Secure Authentication with OAuth2, LDAP, &amp;amp; Email Login Support&lt;/li&gt; 
+   &lt;li&gt;Built-in Moderation, and Token spend tools&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;⚙️ &lt;strong&gt;Configuration &amp;amp; Deployment&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Configure Proxy, Reverse Proxy, Docker, &amp;amp; many Deployment options&lt;/li&gt; 
+   &lt;li&gt;Use completely local or deploy on the cloud&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;📖 &lt;strong&gt;Open-Source &amp;amp; Community&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Completely Open-Source &amp;amp; Built in Public&lt;/li&gt; 
+   &lt;li&gt;Community-driven development, support, and feedback&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;a href="https://docs.librechat.ai/"&gt;For a thorough review of our features, see our docs here&lt;/a&gt; 📚&lt;/p&gt; 
+&lt;h2&gt;🪶 All-In-One AI Conversations with LibreChat&lt;/h2&gt; 
+&lt;p&gt;LibreChat brings together the future of assistant AIs with the revolutionary technology of OpenAI's ChatGPT. Celebrating the original styling, LibreChat gives you the ability to integrate multiple AI models. It also integrates and enhances original client features such as conversation and message search, prompt templates and plugins.&lt;/p&gt; 
+&lt;p&gt;With LibreChat, you no longer need to opt for ChatGPT Plus and can instead use free or pay-per-call APIs. We welcome contributions, cloning, and forking to enhance the capabilities of this advanced chatbot platform.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=ilfwGQtJNlI"&gt;&lt;img src="https://raw.githubusercontent.com/LibreChat-AI/librechat.ai/main/public/images/changelog/v0.7.6.gif" alt="Watch the video" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Click on the thumbnail to open the video☝️&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🌐 Resources&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;GitHub Repo:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;RAG API:&lt;/strong&gt; &lt;a href="https://github.com/danny-avila/rag_api"&gt;github.com/danny-avila/rag_api&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Website:&lt;/strong&gt; &lt;a href="https://github.com/LibreChat-AI/librechat.ai"&gt;github.com/LibreChat-AI/librechat.ai&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Other:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Website:&lt;/strong&gt; &lt;a href="https://librechat.ai"&gt;librechat.ai&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Documentation:&lt;/strong&gt; &lt;a href="https://librechat.ai/docs"&gt;librechat.ai/docs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Blog:&lt;/strong&gt; &lt;a href="https://librechat.ai/blog"&gt;librechat.ai/blog&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📝 Changelog&lt;/h2&gt; 
+&lt;p&gt;Keep up with the latest updates by visiting the releases page and notes:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/danny-avila/LibreChat/releases"&gt;Releases&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.librechat.ai/changelog"&gt;Changelog&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;⚠️ Please consult the &lt;a href="https://www.librechat.ai/changelog"&gt;changelog&lt;/a&gt; for breaking changes before updating.&lt;/strong&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;⭐ Star History&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;a href="https://star-history.com/#danny-avila/LibreChat&amp;amp;Date"&gt; &lt;img alt="Star History Chart" src="https://api.star-history.com/svg?repos=danny-avila/LibreChat&amp;amp;type=Date&amp;amp;theme=dark" onerror="this.src='https://api.star-history.com/svg?repos=danny-avila/LibreChat&amp;amp;type=Date'" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/4685" target="_blank" style="padding: 10px;"&gt; &lt;img src="https://trendshift.io/api/badge/repositories/4685" alt="danny-avila%2FLibreChat | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt; &lt;/a&gt; &lt;a href="https://runacap.com/ross-index/q1-24/" target="_blank" rel="noopener" style="margin-left: 20px;"&gt; &lt;img style="width: 260px; height: 56px" src="https://runacap.com/wp-content/uploads/2024/04/ROSS_badge_white_Q1_2024.svg?sanitize=true" alt="ROSS Index - Fastest Growing Open-Source Startups in Q1 2024 | Runa Capital" width="260" height="56" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;✨ Contributions&lt;/h2&gt; 
+&lt;p&gt;Contributions, suggestions, bug reports and fixes are welcome!&lt;/p&gt; 
+&lt;p&gt;For new features, components, or extensions, please open an issue and discuss before sending a PR.&lt;/p&gt; 
+&lt;p&gt;If you'd like to help translate LibreChat into your language, we'd love your contribution! Improving our translations not only makes LibreChat more accessible to users around the world but also enhances the overall user experience. Please check out our &lt;a href="https://www.librechat.ai/docs/translation"&gt;Translation Guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;💖 This project exists in its current state thanks to all the people who contribute&lt;/h2&gt; 
+&lt;a href="https://github.com/danny-avila/LibreChat/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=danny-avila/LibreChat" /&gt; &lt;/a&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🎉 Special Thanks&lt;/h2&gt; 
+&lt;p&gt;We thank &lt;a href="https://locize.com"&gt;Locize&lt;/a&gt; for their translation management tools that support multiple languages in LibreChat.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://locize.com" target="_blank" rel="noopener noreferrer"&gt; &lt;img src="https://github.com/user-attachments/assets/d6b70894-6064-475e-bb65-92a9e23e0077" alt="Locize Logo" height="50" /&gt; &lt;/a&gt; &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>David-patrick-chuks/Riona-AI-Agent</title>
+      <link>https://github.com/David-patrick-chuks/Riona-AI-Agent</link>
+      <description>&lt;p&gt;Riona Ai Agent 🌸 is built using Node.js and TypeScript 🛠️, designed for seamless job execution 📸. It's lightweight, efficient, and still evolving 🚧—exciting new features coming soon! 🌟&lt;/p&gt;&lt;hr&gt;&lt;h2&gt;Support the Project 🙌&lt;/h2&gt; 
+&lt;p&gt;If you'd like to support the development of Instagram-AI-Agent, please consider contributing to the following wallet addresses:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Bitcoin (BTC)&lt;/strong&gt;: 1GkWY6pjn7KoAkCnUab2MxnxeEQihknfUi&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Ethereum (ETH-erc20)&lt;/strong&gt;: 0xabb45f4d85e7d9db5de684c35ccde7239a167cbb&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Solana (SOL)&lt;/strong&gt;: EQV7fQ57zKNMFXy53WBfo2sCxtkRQVQLqj8sqWGnoyR&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Your support helps keep this project running and growing! 🚀&lt;/p&gt; 
+&lt;h2&gt;Instagram-AI-Agent 🌸&lt;/h2&gt; 
+&lt;p&gt;Instagram-AI-Agent is an AI-powered automation tool designed for &lt;strong&gt;Instagram&lt;/strong&gt; to automate social media interactions such as posting, liking, and commenting. It leverages advanced AI models to generate engaging content, automate interactions, and manage Instagram accounts efficiently.&lt;/p&gt; 
+&lt;p&gt;Before using the automation features, you can personalize the agent by training with the following, including: &lt;a href="https://www.instagram.com/dreamlandofficial_1?igsh=NTZvcHRkNjlhYzhp"&gt;https://www.instagram.com/dreamlandofficial_1?igsh=NTZvcHRkNjlhYzhp&lt;/a&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;YouTube Video URL&lt;/strong&gt; 🎥&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Audio File&lt;/strong&gt; 🎙️&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Portfolio or Website Link&lt;/strong&gt; 🌐&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;File Formats Supported&lt;/strong&gt;: PDF, DOC, DOCX, TXT 📄&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Instagram Automation&lt;/strong&gt;: Automatically log in, post photos, like posts, and leave thoughtful comments.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;AI-Powered Content Generation&lt;/strong&gt;: Use Google Generative AI to create engaging captions and comments.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Proxy Support&lt;/strong&gt;: Use proxies to manage multiple accounts and avoid rate limits.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Cookie Management&lt;/strong&gt;: Save and load cookies to maintain sessions across restarts.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Upcoming Features:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Twitter Automation&lt;/strong&gt;: (Coming soon) Automatically tweet, retweet, and like tweets.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;GitHub Automation&lt;/strong&gt;: (Coming soon) Automatically manage repositories, issues, and pull requests.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Clone the repository&lt;/strong&gt;:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;git clone https://github.com/david-patrick-chuks/Instagram-AI-Agent.git
+cd Instagram-AI-Agent
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Install dependencies&lt;/strong&gt;:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;npm install
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Set up environment variables&lt;/strong&gt;: Rename the &lt;a href="http://_vscodecontentref_/1"&gt;.env.example&lt;/a&gt; file to &lt;a href="http://_vscodecontentref_/1"&gt;.env&lt;/a&gt; in the root directory and add your Instagram credentials. Refer to the &lt;a href="http://_vscodecontentref_/2"&gt;.env.example&lt;/a&gt; file for the required variables.&lt;/p&gt; &lt;pre&gt;&lt;code class="language-dotenv"&gt;IGusername=your_instagram_username
+IGpassword=your_instagram_password 
+
+Xusername= #Twitter username
+Xpassword= #Twitter password
+
+MONGODB_URI= #MongoDB URI
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;MongoDB Setup (Using Docker)&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Install Docker&lt;/strong&gt;: If you don't have Docker installed, download and install it from the &lt;a href="https://www.docker.com/products/docker-desktop/"&gt;official website&lt;/a&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Run MongoDB using Docker Container&lt;/strong&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Option 1:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;docker run -d -p 27017:27017 --name instagram-ai-mongodb mongodb/mongodb-community-server:latest
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Option 2:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;docker run -d -p 27017:27017 --name instagram-ai-mongodb -v mongodb_data:/data/db mongodb/mongodb-community-server:latest
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;(Option 2: use this if you want to have like a permanent storage in you so your data won't be lost or remove if you stop or remove your Docker container)&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Modify the MONGODB_URI in the .env file&lt;/strong&gt;:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-dotenv"&gt;MONGODB_URI=mongodb://localhost:27017/instagram-ai-agent
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Verify the connection&lt;/strong&gt;: Open a new terminal and run the following command:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;docker ps
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;You should see the MongoDB container running.&lt;/p&gt; &lt;p&gt;Docker Commands (Additional Info):&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;To stop the MongoDB container: &lt;pre&gt;&lt;code class="language-sh"&gt;docker stop instagram-ai-mongodb
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+   &lt;li&gt;To start the MongoDB container: &lt;pre&gt;&lt;code class="language-sh"&gt;docker start instagram-ai-mongodb
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+   &lt;li&gt;To remove the MongoDB container: &lt;pre&gt;&lt;code class="language-sh"&gt;docker rm instagram-ai-mongodb
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+   &lt;li&gt;To remove the MongoDB container and its data: &lt;pre&gt;&lt;code class="language-sh"&gt;docker rm -v instagram-ai-mongodb
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Run the Instagram agent&lt;/strong&gt;: &lt;pre&gt;&lt;code class="language-sh"&gt;npm start
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Upcoming Features:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Run the Twitter agent&lt;/strong&gt; (Coming soon):&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;npm run start:twitter
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Run the GitHub agent&lt;/strong&gt; (Coming soon):&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;npm run start:github
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Project Structure&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;src/client&lt;/strong&gt;: Contains the main logic for interacting with social media platforms like Instagram.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;src/config&lt;/strong&gt;: Configuration files, including the logger setup.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;src/utils&lt;/strong&gt;: Utility functions for handling errors, cookies, data saving, etc.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;src/Agent&lt;/strong&gt;: Contains the AI agent logic and training scripts.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;src/Agent/training&lt;/strong&gt;: Training scripts for the AI agent.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;src/schema&lt;/strong&gt;: Schema definitions for AI-generated content and database models.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;src/test&lt;/strong&gt;: Contains test data and scripts, such as example tweets.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Logging&lt;/h2&gt; 
+&lt;p&gt;The project uses a custom logger to log information, warnings, and errors. Logs are saved in the &lt;a href="http://_vscodecontentref_/3"&gt;logs&lt;/a&gt; directory.&lt;/p&gt; 
+&lt;h2&gt;Error Handling&lt;/h2&gt; 
+&lt;p&gt;Process-level error handlers are set up to catch unhandled promise rejections, uncaught exceptions, and process warnings. Errors are logged using the custom logger.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Contributions are welcome! Please fork the repository and submit a pull request with your changes.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the MIT License. See the LICENSE file for details.&lt;/p&gt; 
+&lt;h2&gt;Acknowledgements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://ai.google/tools/"&gt;Google Generative AI&lt;/a&gt; for providing the AI models.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/puppeteer/puppeteer"&gt;Puppeteer&lt;/a&gt; for browser automation.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/berstend/puppeteer-extra"&gt;puppeteer-extra&lt;/a&gt; for additional plugins and enhancements.&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>immich-app/immich</title>
+      <link>https://github.com/immich-app/immich</link>
+      <description>&lt;p&gt;High performance self-hosted photo and video management solution.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;br /&gt; &lt;a href="https://opensource.org/license/agpl-v3"&gt;&lt;img src="https://img.shields.io/badge/License-AGPL_v3-blue.svg?color=3F51B5&amp;amp;style=for-the-badge&amp;amp;label=License&amp;amp;logoColor=000000&amp;amp;labelColor=ececec" alt="License: AGPLv3" /&gt;&lt;/a&gt; &lt;a href="https://discord.immich.app"&gt; &lt;img src="https://img.shields.io/discord/979116623879368755.svg?label=Discord&amp;amp;logo=Discord&amp;amp;style=for-the-badge&amp;amp;logoColor=000000&amp;amp;labelColor=ececec" alt="Discord" /&gt; &lt;/a&gt; &lt;br /&gt; &lt;br /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/immich-app/immich/main/design/immich-logo-stacked-light.svg?sanitize=true" width="300" title="Login With Custom URL" /&gt; &lt;/p&gt; 
+&lt;h3 align="center"&gt;High performance self-hosted photo and video management solution&lt;/h3&gt; 
+&lt;br /&gt; 
+&lt;a href="https://immich.app"&gt; &lt;img src="https://raw.githubusercontent.com/immich-app/immich/main/design/immich-screenshots.png" title="Main Screenshot" /&gt; &lt;/a&gt; 
+&lt;br /&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/readme_i18n/README_ca_ES.md"&gt;Català&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/readme_i18n/README_es_ES.md"&gt;Español&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/readme_i18n/README_fr_FR.md"&gt;Français&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/readme_i18n/README_it_IT.md"&gt;Italiano&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/readme_i18n/README_ja_JP.md"&gt;日本語&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/readme_i18n/README_ko_KR.md"&gt;한국어&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/readme_i18n/README_de_DE.md"&gt;Deutsch&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/readme_i18n/README_nl_NL.md"&gt;Nederlands&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/readme_i18n/README_tr_TR.md"&gt;Türkçe&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/readme_i18n/README_zh_CN.md"&gt;中文&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/readme_i18n/README_uk_UA.md"&gt;Українська&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/readme_i18n/README_ru_RU.md"&gt;Русский&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/readme_i18n/README_pt_BR.md"&gt;Português Brasileiro&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/readme_i18n/README_sv_SE.md"&gt;Svenska&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/readme_i18n/README_ar_JO.md"&gt;العربية&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/readme_i18n/README_vi_VN.md"&gt;Tiếng Việt&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/readme_i18n/README_th_TH.md"&gt;ภาษาไทย&lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;Disclaimer&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;⚠️ The project is under &lt;strong&gt;very active&lt;/strong&gt; development.&lt;/li&gt; 
+ &lt;li&gt;⚠️ Expect bugs and breaking changes.&lt;/li&gt; 
+ &lt;li&gt;⚠️ &lt;strong&gt;Do not use the app as the only way to store your photos and videos.&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;⚠️ Always follow &lt;a href="https://www.backblaze.com/blog/the-3-2-1-backup-strategy/"&gt;3-2-1&lt;/a&gt; backup plan for your precious photos and videos!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] You can find the main documentation, including installation guides, at &lt;a href="https://immich.app/"&gt;https://immich.app/&lt;/a&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Links&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://immich.app/docs"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://immich.app/docs/overview/introduction"&gt;About&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://immich.app/docs/install/requirements"&gt;Installation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://immich.app/roadmap"&gt;Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/#demo"&gt;Demo&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/immich-app/immich/main/#features"&gt;Features&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://immich.app/docs/developer/translations"&gt;Translations&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://immich.app/docs/overview/support-the-project"&gt;Contributing&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Demo&lt;/h2&gt; 
+&lt;p&gt;Access the demo &lt;a href="https://demo.immich.app"&gt;here&lt;/a&gt;. For the mobile app, you can use &lt;code&gt;https://demo.immich.app&lt;/code&gt; for the &lt;code&gt;Server Endpoint URL&lt;/code&gt;.&lt;/p&gt; 
+&lt;h3&gt;Login credentials&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Email&lt;/th&gt; 
+   &lt;th&gt;Password&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="mailto:demo@immich.app"&gt;demo@immich.app&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;demo&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="left"&gt;Features&lt;/th&gt; 
+   &lt;th&gt;Mobile&lt;/th&gt; 
+   &lt;th&gt;Web&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Upload and view videos and photos&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Auto backup when the app is opened&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;N/A&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Prevent duplication of assets&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Selective album(s) for backup&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;N/A&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Download photos and videos to local device&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Multi-user support&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Album and Shared albums&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Scrubbable/draggable scrollbar&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Support raw formats&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Metadata view (EXIF, map)&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Search by metadata, objects, faces, and CLIP&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Administrative functions (user management)&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Background backup&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;N/A&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Virtual scroll&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;OAuth support&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;API Keys&lt;/td&gt; 
+   &lt;td&gt;N/A&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;LivePhoto/MotionPhoto backup and playback&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Support 360 degree image display&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;User-defined storage structure&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Public Sharing&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Archive and Favorites&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Global Map&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Partner Sharing&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Facial recognition and clustering&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Memories (x years ago)&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Offline support&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Read-only gallery&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Stacked Photos&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Tags&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Folder View&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Translations&lt;/h2&gt; 
+&lt;p&gt;Read more about translations &lt;a href="https://immich.app/docs/developer/translations"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;a href="https://hosted.weblate.org/engage/immich/"&gt; &lt;img src="https://hosted.weblate.org/widget/immich/immich/multi-auto.svg?sanitize=true" alt="Translation status" /&gt; &lt;/a&gt; 
+&lt;h2&gt;Repository activity&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://repobeats.axiom.co/api/embed/9e86d9dc3ddd137161f2f6d2e758d7863b1789cb.svg?sanitize=true" alt="Activities" title="Repobeats analytics image" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Star history&lt;/h2&gt; 
+&lt;a href="https://star-history.com/#immich-app/immich&amp;amp;Date"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=immich-app/immich&amp;amp;type=Date&amp;amp;theme=dark" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=immich-app/immich&amp;amp;type=Date" /&gt; 
+  &lt;img alt="Star History Chart" src="https://api.star-history.com/svg?repos=immich-app/immich&amp;amp;type=Date" width="100%" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;h2&gt;Contributors&lt;/h2&gt; 
+&lt;a href="https://github.com/alextran1502/immich/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=immich-app/immich" width="100%" /&gt; &lt;/a&gt;</description>
+    </item>
+    
+    <item>
+      <title>Dokploy/dokploy</title>
+      <link>https://github.com/Dokploy/dokploy</link>
+      <description>&lt;p&gt;Open Source Alternative to Vercel, Netlify and Heroku.&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;a href="https://dokploy.com"&gt; &lt;img src="https://raw.githubusercontent.com/Dokploy/dokploy/canary/.github/sponsors/logo.png" alt="Dokploy - Open Source Alternative to Vercel, Heroku and Netlify." width="100%" /&gt; &lt;/a&gt; 
+ &lt;br /&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;Join us on Discord for help, feedback, and discussions!&lt;/p&gt; 
+ &lt;a href="https://discord.gg/2tBnJ3jDJc"&gt; &lt;img src="https://discordapp.com/api/guilds/1234073262418563112/widget.png?style=banner2" alt="Discord Shield" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;br /&gt; 
+&lt;p&gt;Dokploy is a free, self-hostable Platform as a Service (PaaS) that simplifies the deployment and management of applications and databases.&lt;/p&gt; 
+&lt;h2&gt;✨ Features&lt;/h2&gt; 
+&lt;p&gt;Dokploy includes multiple features to make your life easier.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Applications&lt;/strong&gt;: Deploy any type of application (Node.js, PHP, Python, Go, Ruby, etc.).&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Databases&lt;/strong&gt;: Create and manage databases with support for MySQL, PostgreSQL, MongoDB, MariaDB, and Redis.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Backups&lt;/strong&gt;: Automate backups for databases to an external storage destination.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Docker Compose&lt;/strong&gt;: Native support for Docker Compose to manage complex applications.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi Node&lt;/strong&gt;: Scale applications to multiple nodes using Docker Swarm to manage the cluster.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Templates&lt;/strong&gt;: Deploy open-source templates (Plausible, Pocketbase, Calcom, etc.) with a single click.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Traefik Integration&lt;/strong&gt;: Automatically integrates with Traefik for routing and load balancing.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Real-time Monitoring&lt;/strong&gt;: Monitor CPU, memory, storage, and network usage for every resource.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Docker Management&lt;/strong&gt;: Easily deploy and manage Docker containers.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;CLI/API&lt;/strong&gt;: Manage your applications and databases using the command line or through the API.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Notifications&lt;/strong&gt;: Get notified when your deployments succeed or fail (via Slack, Discord, Telegram, Email, etc.).&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi Server&lt;/strong&gt;: Deploy and manage your applications remotely to external servers.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Self-Hosted&lt;/strong&gt;: Self-host Dokploy on your VPS.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🚀 Getting Started&lt;/h2&gt; 
+&lt;p&gt;To get started, run the following command on a VPS:&lt;/p&gt; 
+&lt;p&gt;Want to skip the installation process? &lt;a href="https://app.dokploy.com"&gt;Try the Dokploy Cloud&lt;/a&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -sSL https://dokploy.com/install.sh | sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For detailed documentation, visit &lt;a href="https://docs.dokploy.com"&gt;docs.dokploy.com&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;♥️ Sponsors&lt;/h2&gt; 
+&lt;p&gt;🙏 We're deeply grateful to all our sponsors who make Dokploy possible! Your support helps cover the costs of hosting, testing, and developing new features.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://opencollective.com/dokploy"&gt;Dokploy Open Collective&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/sponsors/Siumauricio"&gt;Github Sponsors&lt;/a&gt;&lt;/p&gt; 
+&lt;!-- Hero Sponsors 🎖 --&gt; 
+&lt;!-- Add Hero Sponsors here --&gt; 
+&lt;h3&gt;Hero Sponsors 🎖&lt;/h3&gt; 
+&lt;div&gt; 
+ &lt;a href="https://www.hostinger.com/vps-hosting?ref=dokploy"&gt;&lt;img src="https://raw.githubusercontent.com/Dokploy/dokploy/canary/.github/sponsors/hostinger.jpg" alt="Hostinger" width="300" /&gt;&lt;/a&gt; 
+ &lt;a href="https://www.lxaer.com/?ref=dokploy"&gt;&lt;img src="https://raw.githubusercontent.com/Dokploy/dokploy/canary/.github/sponsors/lxaer.png" alt="LX Aer" width="100" /&gt;&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;!-- Premium Supporters 🥇 --&gt; 
+&lt;!-- Add Premium Supporters here --&gt; 
+&lt;h3&gt;Premium Supporters 🥇&lt;/h3&gt; 
+&lt;div&gt; 
+ &lt;a href="https://supafort.com/?ref=dokploy"&gt;&lt;img src="https://supafort.com/build/q-4Ht4rBZR.webp" alt="Supafort.com" width="300" /&gt;&lt;/a&gt; 
+ &lt;a href="https://agentdock.ai/?ref=dokploy"&gt;&lt;img src="https://raw.githubusercontent.com/Dokploy/dokploy/canary/.github/sponsors/agentdock.png" alt="agentdock.ai" width="100" /&gt;&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;!-- Elite Contributors 🥈 --&gt; 
+&lt;!-- Add Elite Contributors here --&gt; 
+&lt;h3&gt;Elite Contributors 🥈&lt;/h3&gt; 
+&lt;div&gt; 
+ &lt;a href="https://americancloud.com/?ref=dokploy"&gt;&lt;img src="https://raw.githubusercontent.com/Dokploy/dokploy/canary/.github/sponsors/american-cloud.png" alt="AmericanCloud" width="300" /&gt;&lt;/a&gt; 
+ &lt;a href="https://tolgee.io/?utm_source=github_dokploy&amp;amp;utm_medium=banner&amp;amp;utm_campaign=dokploy"&gt;&lt;img src="https://dokploy.com/tolgee-logo.png" alt="Tolgee" width="100" /&gt;&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;h3&gt;Supporting Members 🥉&lt;/h3&gt; 
+&lt;div&gt; 
+ &lt;p&gt;&lt;a href="https://cloudblast.io/?ref=dokploy"&gt;&lt;img src="https://cloudblast.io/img/logo-icon.193cf13e.svg?sanitize=true" width="250px" alt="Cloudblast.io" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://synexa.ai/?ref=dokploy"&gt;&lt;img src="https://raw.githubusercontent.com/Dokploy/dokploy/canary/.github/sponsors/synexa.png" width="65px" alt="Synexa" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h3&gt;Community Backers 🤝&lt;/h3&gt; 
+&lt;h4&gt;Organizations:&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://opencollective.com/dokploy"&gt;Sponsors on Open Collective&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;Individuals:&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://opencollective.com/dokploy"&gt;&lt;img src="https://opencollective.com/dokploy/individuals.svg?width=890" alt="Individual Contributors on Open Collective" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Contributors 🤝&lt;/h3&gt; 
+&lt;a href="https://github.com/dokploy/dokploy/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=dokploy/dokploy" alt="Contributors" /&gt; &lt;/a&gt; 
+&lt;h2&gt;📺 Video Tutorial&lt;/h2&gt; 
+&lt;a href="https://youtu.be/mznYKPvhcfw"&gt; &lt;img src="https://dokploy.com/banner.png" alt="Watch the video" width="400" /&gt; &lt;/a&gt; 
+&lt;h2&gt;🤝 Contributing&lt;/h2&gt; 
+&lt;p&gt;Check out the &lt;a href="https://raw.githubusercontent.com/Dokploy/dokploy/canary/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt; for more information.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>microsoft/data-formulator</title>
+      <link>https://github.com/microsoft/data-formulator</link>
+      <description>&lt;p&gt;🪄 Create rich visualizations with AI&lt;/p&gt;&lt;hr&gt;&lt;h1&gt; &lt;img src="https://raw.githubusercontent.com/microsoft/data-formulator/main/public/favicon.ico" alt="Data Formulator icon" width="28" /&gt; &lt;b&gt;Data Formulator: Create Rich Visualizations with AI&lt;/b&gt; &lt;/h1&gt; 
+&lt;div&gt; 
+ &lt;p&gt;&lt;a href="https://arxiv.org/abs/2408.16119"&gt;&lt;img src="https://img.shields.io/badge/Paper-arXiv:2408.16119-b31b1b.svg?sanitize=true" alt="arxiv" /&gt;&lt;/a&gt;  &lt;a href="https://opensource.org/licenses/MIT"&gt;&lt;img src="https://img.shields.io/badge/License-MIT-yellow.svg?sanitize=true" alt="License: MIT" /&gt;&lt;/a&gt;  &lt;a href="https://youtu.be/3ndlwt0Wi3c"&gt;&lt;img src="https://img.shields.io/badge/YouTube-white?logo=youtube&amp;amp;logoColor=%23FF0000" alt="YouTube" /&gt;&lt;/a&gt;  &lt;a href="https://github.com/microsoft/data-formulator/actions/workflows/python-build.yml"&gt;&lt;img src="https://github.com/microsoft/data-formulator/actions/workflows/python-build.yml/badge.svg?sanitize=true" alt="build" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/mYCZMQKYZb"&gt;&lt;img src="https://img.shields.io/badge/discord-chat-green?logo=discord" alt="Discord" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;p&gt;Transform data and create rich visualizations iteratively with AI 🪄. Try Data Formulator now!&lt;/p&gt; 
+&lt;p&gt;Any questions? Ask on the Discord channel! &lt;a href="https://discord.gg/mYCZMQKYZb"&gt;&lt;img src="https://img.shields.io/badge/discord-chat-green?logo=discord" alt="Discord" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;!-- [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/data-formulator?quickstart=1) --&gt; 
+&lt;kbd&gt; &lt;a target="_blank" rel="noopener noreferrer" href="https://codespaces.new/microsoft/data-formulator?quickstart=1" title="open Data Formulator in GitHub Codespaces"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/data-formulator/main/public/data-formulator-screenshot.png" /&gt;&lt;/a&gt; &lt;/kbd&gt; 
+&lt;h2&gt;News 🔥🔥🔥&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;[07-10-2025] Data Formulator 0.2.2: Start with an analysis goal&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Some key frontend performance updates.&lt;/li&gt; 
+   &lt;li&gt;You can start your exploration with a goal, or, tab and see if the agent can recommend some good exploration ideas for you. &lt;a href="https://github.com/microsoft/data-formulator/pull/176"&gt;Demo&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;[05-13-2025] Data Formulator 0.2.1.3/4: External Data Loader&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;We introduced external data loader class to make import data easier. &lt;a href="https://github.com/microsoft/data-formulator/tree/main/py-src/data_formulator/data_loader"&gt;Readme&lt;/a&gt; and &lt;a href="https://github.com/microsoft/data-formulator/pull/155"&gt;Demo&lt;/a&gt; 
+    &lt;ul&gt; 
+     &lt;li&gt;Current data loaders: MySQL, Azure Data Explorer (Kusto), Azure Blob and Amazon S3 (json, parquet, csv).&lt;/li&gt; 
+     &lt;li&gt;[07-01-2025] Updated with: Postgresql, mssql.&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+   &lt;li&gt;Call for action &lt;a href="https://github.com/microsoft/data-formulator/issues/156"&gt;link&lt;/a&gt;: 
+    &lt;ul&gt; 
+     &lt;li&gt;Users: let us know which data source you'd like to load data from.&lt;/li&gt; 
+     &lt;li&gt;Developers: let's build more data loaders.&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;[04-23-2025] Data Formulator 0.2: working with &lt;em&gt;large&lt;/em&gt; data 📦📦📦&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Explore large data by: 
+    &lt;ol&gt; 
+     &lt;li&gt;Upload large data file to the local database (powered by &lt;a href="https://github.com/duckdb/duckdb"&gt;DuckDB&lt;/a&gt;).&lt;/li&gt; 
+     &lt;li&gt;Use drag-and-drop to specify charts, and Data Formulator dynamically fetches data from the database to create visualizations (with ⚡️⚡️⚡️ speeds).&lt;/li&gt; 
+     &lt;li&gt;Work with AI agents: they generate SQL queries to transform the data to create rich visualizations!&lt;/li&gt; 
+     &lt;li&gt;Anchor the result / follow up / create a new branch / join tables; let's dive deeper.&lt;/li&gt; 
+    &lt;/ol&gt; &lt;/li&gt; 
+   &lt;li&gt;Checkout the demos at &lt;a href="https://github.com/microsoft/data-formulator/releases/tag/0.2"&gt;[https://github.com/microsoft/data-formulator/releases/tag/0.2]&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;Improved overall system performance, and enjoy the updated derive concept functionality.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;[03-20-2025] Data Formulator 0.1.7: Anchoring ⚓︎&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Anchor an intermediate dataset, so that followup data analysis are built on top of the anchored data, not the original one.&lt;/li&gt; 
+   &lt;li&gt;Clean a data and work with only the cleaned data; create a subset from the original data or join multiple data, and then go from there. AI agents will be less likely to get confused and work faster. ⚡️⚡️&lt;/li&gt; 
+   &lt;li&gt;Check out the demos at &lt;a href="https://github.com/microsoft/data-formulator/releases/tag/0.1.7"&gt;[https://github.com/microsoft/data-formulator/releases/tag/0.1.7]&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;Don't forget to update Data Formulator to test it out!&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;[02-20-2025] Data Formulator 0.1.6 released!&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Now supports working with multiple datasets at once! Tell Data Formulator which data tables you would like to use in the encoding shelf, and it will figure out how to join the tables to create a visualization to answer your question. 🪄&lt;/li&gt; 
+   &lt;li&gt;Checkout the demo at &lt;a href="https://github.com/microsoft/data-formulator/releases/tag/0.1.6"&gt;[https://github.com/microsoft/data-formulator/releases/tag/0.1.6]&lt;/a&gt;.&lt;/li&gt; 
+   &lt;li&gt;Update your Data Formulator to the latest version to play with the new features.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;[02-12-2025] More models supported now!&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Now supports OpenAI, Azure, Ollama, and Anthropic models (and more powered by &lt;a href="https://github.com/BerriAI/litellm"&gt;LiteLLM&lt;/a&gt;);&lt;/li&gt; 
+   &lt;li&gt;Models with strong code generation and instruction following capabilities are recommended (gpt-4o, claude-3-5-sonnet etc.);&lt;/li&gt; 
+   &lt;li&gt;You can store API keys in &lt;code&gt;api-keys.env&lt;/code&gt; to avoid typing them every time (see template &lt;code&gt;api-keys.env.template&lt;/code&gt;).&lt;/li&gt; 
+   &lt;li&gt;Let us know which models you have good/bad experiences with, and what models you would like to see supported! &lt;a href="https://github.com/microsoft/data-formulator/issues/49"&gt;[comment here]&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;[11-07-2024] Minor fun update: data visualization challenges!&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;We added a few visualization challenges with the sample datasets. Can you complete them all? &lt;a href="https://github.com/microsoft/data-formulator/issues/53#issue-2641841252"&gt;[try them out!]&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;Comment in the issue when you did, or share your results/questions with others! &lt;a href="https://github.com/microsoft/data-formulator/issues/53"&gt;[comment here]&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;[10-11-2024] Data Formulator python package released!&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;You can now install Data Formulator using Python and run it locally, easily. &lt;a href="https://raw.githubusercontent.com/microsoft/data-formulator/main/#get-started"&gt;[check it out]&lt;/a&gt;.&lt;/li&gt; 
+   &lt;li&gt;Our Codespaces configuration is also updated for fast start up ⚡️. &lt;a href="https://codespaces.new/microsoft/data-formulator?quickstart=1"&gt;[try it now!]&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;New experimental feature: load an image or a messy text, and ask AI to parse and clean it for you(!). &lt;a href="https://github.com/microsoft/data-formulator/pull/31#issuecomment-2403652717"&gt;[demo]&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;[10-01-2024] Initial release of Data Formulator, check out our &lt;a href="https://www.microsoft.com/en-us/research/blog/data-formulator-exploring-how-ai-can-help-analysts-create-rich-data-visualizations/"&gt;[blog]&lt;/a&gt; and &lt;a href="https://youtu.be/3ndlwt0Wi3c"&gt;[video]&lt;/a&gt;!&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Overview&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Data Formulator&lt;/strong&gt; is an application from Microsoft Research that uses large language models to transform data, expediting the practice of data visualization.&lt;/p&gt; 
+&lt;p&gt;Data Formulator is an AI-powered tool for analysts to iteratively create rich visualizations. Unlike most chat-based AI tools where users need to describe everything in natural language, Data Formulator combines &lt;em&gt;user interface interactions (UI)&lt;/em&gt; and &lt;em&gt;natural language (NL) inputs&lt;/em&gt; for easier interaction. This blended approach makes it easier for users to describe their chart designs while delegating data transformation to AI.&lt;/p&gt; 
+&lt;h2&gt;Get Started&lt;/h2&gt; 
+&lt;p&gt;Play with Data Formulator with one of the following options:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Option 1: Install via Python PIP&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Use Python PIP for an easy setup experience, running locally (recommend: install it in a virtual environment).&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;# install data_formulator
+pip install data_formulator
+
+# start data_formulator
+data_formulator 
+
+# alternatively, you can run data formulator with this command
+python -m data_formulator
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Data Formulator will be automatically opened in the browser at &lt;a href="http://localhost:5000"&gt;http://localhost:5000&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;&lt;em&gt;Update: you can specify the port number (e.g., 8080) by &lt;code&gt;python -m data_formulator --port 8080&lt;/code&gt; if the default port is occupied.&lt;/em&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Option 2: Codespaces (5 minutes)&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;You can also run Data Formulator in Codespaces; we have everything pre-configured. For more details, see &lt;a href="https://raw.githubusercontent.com/microsoft/data-formulator/main/CODESPACES.md"&gt;CODESPACES.md&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;&lt;a href="https://codespaces.new/microsoft/data-formulator?quickstart=1"&gt;&lt;img src="https://github.com/codespaces/badge.svg?sanitize=true" alt="Open in GitHub Codespaces" /&gt;&lt;/a&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Option 3: Working in the developer mode&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;You can build Data Formulator locally if you prefer full control over your development environment and the ability to customize the setup to your specific needs. For detailed instructions, refer to &lt;a href="https://raw.githubusercontent.com/microsoft/data-formulator/main/DEVELOPMENT.md"&gt;DEVELOPMENT.md&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Using Data Formulator&lt;/h2&gt; 
+&lt;p&gt;Once you've completed the setup using either option, follow these steps to start using Data Formulator:&lt;/p&gt; 
+&lt;h3&gt;The basics of data visualization&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Provide OpenAI keys and select a model (GPT-4o suggested) and choose a dataset.&lt;/li&gt; 
+ &lt;li&gt;Choose a chart type, and then drag-and-drop data fields to chart properties (x, y, color, ...) to specify visual encodings.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/0fbea012-1d2d-46c3-a923-b1fc5eb5e5b8"&gt;https://github.com/user-attachments/assets/0fbea012-1d2d-46c3-a923-b1fc5eb5e5b8&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Create visualization beyond the initial dataset (powered by 🤖)&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;You can type names of &lt;strong&gt;fields that do not exist in current data&lt;/strong&gt; in the encoding shelf: 
+  &lt;ul&gt; 
+   &lt;li&gt;this tells Data Formulator that you want to create visualizations that require computation or transformation from existing data,&lt;/li&gt; 
+   &lt;li&gt;you can optionally provide a natural language prompt to explain and clarify your intent (not necessary when field names are self-explanatory).&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Click the &lt;strong&gt;Formulate&lt;/strong&gt; button. 
+  &lt;ul&gt; 
+   &lt;li&gt;Data Formulator will transform data and instantiate the visualization based on the encoding and prompt.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Inspect the data, chart and code.&lt;/li&gt; 
+ &lt;li&gt;To create a new chart based on existing ones, follow up in natural language: 
+  &lt;ul&gt; 
+   &lt;li&gt;provide a follow up prompt (e.g., &lt;em&gt;``show only top 5!''&lt;/em&gt;),&lt;/li&gt; 
+   &lt;li&gt;you may also update visual encodings for the new chart.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/160c69d2-f42d-435c-9ff3-b1229b5bddba"&gt;https://github.com/user-attachments/assets/160c69d2-f42d-435c-9ff3-b1229b5bddba&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/c93b3e84-8ca8-49ae-80ea-f91ceef34acb"&gt;https://github.com/user-attachments/assets/c93b3e84-8ca8-49ae-80ea-f91ceef34acb&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Repeat this process as needed to explore and understand your data. Your explorations are trackable in the &lt;strong&gt;Data Threads&lt;/strong&gt; panel.&lt;/p&gt; 
+&lt;h2&gt;Developers' Guide&lt;/h2&gt; 
+&lt;p&gt;Follow the &lt;a href="https://raw.githubusercontent.com/microsoft/data-formulator/main/DEVELOPMENT.md"&gt;developers' instructions&lt;/a&gt; to build your new data analysis tools on top of Data Formulator.&lt;/p&gt; 
+&lt;h2&gt;Research Papers&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://arxiv.org/abs/2408.16119"&gt;Data Formulator 2: Iteratively Creating Rich Visualizations with AI&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code&gt;@article{wang2024dataformulator2iteratively,
+      title={Data Formulator 2: Iteratively Creating Rich Visualizations with AI}, 
+      author={Chenglong Wang and Bongshin Lee and Steven Drucker and Dan Marshall and Jianfeng Gao},
+      year={2024},
+      booktitle={ArXiv preprint arXiv:2408.16119},
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://arxiv.org/abs/2309.10094"&gt;Data Formulator: AI-powered Concept-driven Visualization Authoring&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code&gt;@article{wang2023data,
+  title={Data Formulator: AI-powered Concept-driven Visualization Authoring},
+  author={Wang, Chenglong and Thompson, John and Lee, Bongshin},
+  journal={IEEE Transactions on Visualization and Computer Graphics},
+  year={2023},
+  publisher={IEEE}
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit &lt;a href="https://cla.microsoft.com"&gt;https://cla.microsoft.com&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;When you submit a pull request, a CLA-bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repositories using our CLA.&lt;/p&gt; 
+&lt;p&gt;This project has adopted the &lt;a href="https://opensource.microsoft.com/codeofconduct/"&gt;Microsoft Open Source Code of Conduct&lt;/a&gt;. For more information see the &lt;a href="https://opensource.microsoft.com/codeofconduct/faq/"&gt;Code of Conduct FAQ&lt;/a&gt; or contact &lt;a href="mailto:opencode@microsoft.com"&gt;opencode@microsoft.com&lt;/a&gt; with any additional questions or comments.&lt;/p&gt; 
+&lt;h2&gt;Trademarks&lt;/h2&gt; 
+&lt;p&gt;This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to and must follow &lt;a href="https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general"&gt;Microsoft's Trademark &amp;amp; Brand Guidelines&lt;/a&gt;. Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship. Any use of third-party trademarks or logos are subject to those third-party's policies.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>strapi/strapi</title>
+      <link>https://github.com/strapi/strapi</link>
+      <description>&lt;p&gt;🚀 Strapi is the leading open-source headless CMS. It’s 100% JavaScript/TypeScript, fully customizable, and developer-first.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://strapi.io/#gh-light-mode-only"&gt; &lt;img src="https://strapi.io/assets/strapi-logo-dark.svg?sanitize=true" width="318px" alt="Strapi logo" /&gt; &lt;/a&gt; &lt;a href="https://strapi.io/#gh-dark-mode-only"&gt; &lt;img src="https://strapi.io/assets/strapi-logo-light.svg?sanitize=true" width="318px" alt="Strapi logo" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h3 align="center"&gt;Open-source headless CMS, self-hosted or Cloud you’re in control.&lt;/h3&gt; 
+&lt;p align="center"&gt;The leading open-source headless CMS, 100% JavaScript/TypeScript, flexible and fully customizable.&lt;/p&gt; 
+&lt;p align="center"&gt;&lt;a href="https://cloud.strapi.io/signups?source=github1"&gt;Cloud&lt;/a&gt; · &lt;a href="https://strapi.io/demo?utm_campaign=Growth-Experiments&amp;amp;utm_source=strapi%2Fstrapi%20README.md"&gt;Try live demo&lt;/a&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.npmjs.org/package/@strapi/strapi"&gt; &lt;img src="https://img.shields.io/npm/v/@strapi/strapi/latest.svg?sanitize=true" alt="NPM Version" /&gt; &lt;/a&gt; &lt;a href="https://github.com/strapi/strapi/actions/workflows/tests.yml"&gt; &lt;img src="https://github.com/strapi/strapi/actions/workflows/tests.yml/badge.svg?branch=main" alt="Tests" /&gt; &lt;/a&gt; &lt;a href="https://discord.strapi.io"&gt; &lt;img src="https://img.shields.io/discord/811989166782021633?label=Discord" alt="Strapi on Discord" /&gt; &lt;/a&gt; &lt;a href="https://github.com/strapi/strapi/actions/workflows/nightly.yml"&gt; &lt;img src="https://github.com/strapi/strapi/actions/workflows/nightly.yml/badge.svg?sanitize=true" alt="Strapi Nightly Release Build Status" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;br /&gt; 
+&lt;p align="center"&gt; &lt;a href="https://strapi.io"&gt; &lt;img src="https://raw.githubusercontent.com/strapi/strapi/main/public/assets/admin-demo.gif" alt="Administration panel" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;br /&gt; 
+&lt;p&gt;Strapi Community Edition is a free and open-source headless CMS enabling you to manage any content, anywhere.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Self-hosted or Cloud&lt;/strong&gt;: You can host and scale Strapi projects the way you want. You can save time by deploying to &lt;a href="https://cloud.strapi.io/signups?source=github1"&gt;Strapi Cloud&lt;/a&gt; or deploy to the hosting platform you want**: AWS, Azure, Google Cloud, DigitalOcean.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Modern Admin Panel&lt;/strong&gt;: Elegant, entirely customizable and a fully extensible admin panel.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi-database support&lt;/strong&gt;: You can choose the database you prefer: PostgreSQL, MySQL, MariaDB, and SQLite.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Customizable&lt;/strong&gt;: You can quickly build your logic by fully customizing APIs, routes, or plugins to fit your needs perfectly.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Blazing Fast and Robust&lt;/strong&gt;: Built on top of Node.js and TypeScript, Strapi delivers reliable and solid performance.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Front-end Agnostic&lt;/strong&gt;: Use any front-end framework (React, Next.js, Vue, Angular, etc.), mobile apps or even IoT.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Secure by default&lt;/strong&gt;: Reusable policies, CORS, CSP, P3P, Xframe, XSS, and more.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Powerful CLI&lt;/strong&gt;: Scaffold projects and APIs on the fly.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://docs.strapi.io/developer-docs/latest/getting-started/quick-start.html" target="_blank"&gt;Read the Getting Started tutorial&lt;/a&gt; or follow the steps below:&lt;/p&gt; 
+&lt;h3&gt;⏳ Installation&lt;/h3&gt; 
+&lt;p&gt;Install Strapi with this &lt;strong&gt;Quickstart&lt;/strong&gt; command to create a Strapi project instantly:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;(Use &lt;strong&gt;yarn&lt;/strong&gt; to install the Strapi project (recommended). &lt;a href="https://yarnpkg.com/lang/en/docs/install/"&gt;Install yarn with these docs&lt;/a&gt;.)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn create strapi
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;or&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;(Using npx to install the Strapi project.)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx create-strapi@latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This command generates a brand new project with the default features (authentication, permissions, content management, content type builder &amp;amp; file upload).&lt;/p&gt; 
+&lt;p&gt;Enjoy 🎉&lt;/p&gt; 
+&lt;h3&gt;🖐 Requirements&lt;/h3&gt; 
+&lt;p&gt;Complete installation requirements can be found in the documentation under &lt;a href="https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html"&gt;Installation Requirements&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Supported operating systems&lt;/strong&gt;:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;OS&lt;/th&gt; 
+   &lt;th&gt;Recommended&lt;/th&gt; 
+   &lt;th&gt;Minimum&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Ubuntu&lt;/td&gt; 
+   &lt;td&gt;24.04&lt;/td&gt; 
+   &lt;td&gt;LTS&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Debian&lt;/td&gt; 
+   &lt;td&gt;11&lt;/td&gt; 
+   &lt;td&gt;LTS&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;RHEL&lt;/td&gt; 
+   &lt;td&gt;9&lt;/td&gt; 
+   &lt;td&gt;LTS&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;macOS&lt;/td&gt; 
+   &lt;td&gt;14&lt;/td&gt; 
+   &lt;td&gt;12&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Windows Desktop&lt;/td&gt; 
+   &lt;td&gt;11&lt;/td&gt; 
+   &lt;td&gt;10&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Windows Server&lt;/td&gt; 
+   &lt;td&gt;No Support&lt;/td&gt; 
+   &lt;td&gt;No Support&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Docker&lt;/td&gt; 
+   &lt;td&gt;N/A&lt;/td&gt; 
+   &lt;td&gt;N/A&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;(Please note that Strapi may work on other operating systems, but these are not tested nor officially supported at this time.)&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Node:&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Strapi only supports maintenance and LTS versions of Node.js. Please refer to the &lt;a href="https://nodejs.org/en/about/releases/"&gt;Node.js release schedule&lt;/a&gt; for more information. NPM versions installed by default with Node.js are supported. Generally it's recommended to use yarn over npm where possible.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Strapi Version&lt;/th&gt; 
+   &lt;th&gt;Recommended&lt;/th&gt; 
+   &lt;th&gt;Minimum&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;5.0.0 and up&lt;/td&gt; 
+   &lt;td&gt;20.x&lt;/td&gt; 
+   &lt;td&gt;18.x&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;4.14.5 and up&lt;/td&gt; 
+   &lt;td&gt;20.x&lt;/td&gt; 
+   &lt;td&gt;18.x&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;4.11.0 and up&lt;/td&gt; 
+   &lt;td&gt;18.x&lt;/td&gt; 
+   &lt;td&gt;16.x&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;4.3.9 to 4.10.x&lt;/td&gt; 
+   &lt;td&gt;18.x&lt;/td&gt; 
+   &lt;td&gt;14.x&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;4.0.x to 4.3.8&lt;/td&gt; 
+   &lt;td&gt;16.x&lt;/td&gt; 
+   &lt;td&gt;14.x&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;Database:&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Database&lt;/th&gt; 
+   &lt;th&gt;Recommended&lt;/th&gt; 
+   &lt;th&gt;Minimum&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;MySQL&lt;/td&gt; 
+   &lt;td&gt;8.0&lt;/td&gt; 
+   &lt;td&gt;8.0&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;MariaDB&lt;/td&gt; 
+   &lt;td&gt;11.2&lt;/td&gt; 
+   &lt;td&gt;10.3&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;PostgreSQL&lt;/td&gt; 
+   &lt;td&gt;16.0&lt;/td&gt; 
+   &lt;td&gt;14.0&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;SQLite&lt;/td&gt; 
+   &lt;td&gt;3&lt;/td&gt; 
+   &lt;td&gt;3&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;We recommend always using the latest version of Strapi stable to start your new projects&lt;/strong&gt;.&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Content Types Builder&lt;/strong&gt;: Build the most flexible publishing experience for your content managers, by giving them the freedom to create any page on the go with &lt;a href="https://docs.strapi.io/user-docs/content-manager/writing-content#filling-up-fields"&gt;fields&lt;/a&gt;, components and &lt;a href="https://docs.strapi.io/user-docs/content-manager/writing-content#dynamic-zones"&gt;Dynamic Zones&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Media Library&lt;/strong&gt;: Upload your images, videos, audio or documents to the media library. Easily find the right asset, edit and reuse it.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Internationalization&lt;/strong&gt;: The Internationalization (i18n) plugin allows Strapi users to create, manage and distribute localized content in different languages, called "locales"&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Role Based Access Control&lt;/strong&gt;: Create an unlimited number of custom roles and permissions for admin and end users.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;GraphQL or REST&lt;/strong&gt;: Consume the API using REST or GraphQL&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;You can unlock additional features such as SSO, Audit Logs, Review Workflows in &lt;a href="https://cloud.strapi.io/login?source=github1"&gt;Strapi Cloud&lt;/a&gt; or &lt;a href="https://strapi.io/enterprise?source=github1"&gt;Strapi Enterprise&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://strapi.io/overview"&gt;See more on our website&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Please read our &lt;a href="https://raw.githubusercontent.com/strapi/strapi/develop/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt; before submitting a Pull Request to the project.&lt;/p&gt; 
+&lt;h2&gt;Community support&lt;/h2&gt; 
+&lt;p&gt;For general help using Strapi, please refer to &lt;a href="https://docs.strapi.io"&gt;the official Strapi documentation&lt;/a&gt;. For additional help, you can use one of these channels to ask a question:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://discord.strapi.io"&gt;Discord&lt;/a&gt; (For live discussion with the Community and Strapi team)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/strapi/strapi"&gt;GitHub&lt;/a&gt; (Bug reports, Contributions)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://forum.strapi.io"&gt;Community Forum&lt;/a&gt; (Questions and Discussions)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://feedback.strapi.io"&gt;Feedback section&lt;/a&gt; (Roadmap, Feature requests)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://twitter.com/strapijs"&gt;Twitter&lt;/a&gt; (Get the news fast)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.facebook.com/Strapi-616063331867161"&gt;Facebook&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/strapi"&gt;YouTube Channel&lt;/a&gt; (Learn from Video Tutorials)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Migration&lt;/h2&gt; 
+&lt;p&gt;Follow our &lt;a href="https://docs.strapi.io/developer-docs/latest/update-migration-guides/migration-guides.html"&gt;migration guides&lt;/a&gt; on the documentation to keep your projects up-to-date.&lt;/p&gt; 
+&lt;h2&gt;Roadmap&lt;/h2&gt; 
+&lt;p&gt;Check out our &lt;a href="https://feedback.strapi.io"&gt;roadmap&lt;/a&gt; to get informed of the latest features released and the upcoming ones. You may also give us insights and vote for a specific feature.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;See our dedicated &lt;a href="https://github.com/strapi/documentation"&gt;repository&lt;/a&gt; for the Strapi documentation, or view our documentation live:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html"&gt;Developer docs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.strapi.io/user-docs/latest/getting-started/introduction.html"&gt;User guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.strapi.io/cloud/intro"&gt;Cloud guide&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Try live demo&lt;/h2&gt; 
+&lt;p&gt;See for yourself what's under the hood by getting access to a &lt;a href="https://strapi.io/demo"&gt;hosted Strapi project&lt;/a&gt; with sample data.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/strapi/strapi/develop/LICENSE"&gt;LICENSE&lt;/a&gt; file for licensing information.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>outline/outline</title>
+      <link>https://github.com/outline/outline</link>
+      <description>&lt;p&gt;The fastest knowledge base for growing teams. Beautiful, realtime collaborative, feature packed, and markdown compatible.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://user-images.githubusercontent.com/31465/34380645-bd67f474-eb0b-11e7-8d03-0151c1730654.png" height="29" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;i&gt;A fast, collaborative, knowledge base for your team built using React and Node.js.&lt;br /&gt;Try out Outline using our hosted version at &lt;a href="https://www.getoutline.com"&gt;www.getoutline.com&lt;/a&gt;.&lt;/i&gt; &lt;br /&gt; &lt;img width="1640" alt="screenshot" src="https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://circleci.com/gh/outline/outline" rel="nofollow"&gt;&lt;img src="https://circleci.com/gh/outline/outline.svg?style=shield" /&gt;&lt;/a&gt; &lt;a href="http://www.typescriptlang.org" rel="nofollow"&gt;&lt;img src="https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg?sanitize=true" alt="TypeScript" /&gt;&lt;/a&gt; &lt;a href="https://github.com/prettier/prettier"&gt;&lt;img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat" alt="Prettier" /&gt;&lt;/a&gt; &lt;a href="https://github.com/styled-components/styled-components"&gt;&lt;img src="https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?sanitize=true" alt="Styled Components" /&gt;&lt;/a&gt; &lt;a href="https://translate.getoutline.com/project/outline" alt="Localized"&gt;&lt;img src="https://badges.crowdin.net/outline/localized.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;This is the source code that runs &lt;a href="https://www.getoutline.com"&gt;&lt;strong&gt;Outline&lt;/strong&gt;&lt;/a&gt; and all the associated services. If you want to use Outline then you don't need to run this code, we offer a hosted version of the app at &lt;a href="https://www.getoutline.com"&gt;getoutline.com&lt;/a&gt;. You can also find documentation on using Outline in &lt;a href="https://docs.getoutline.com/s/guide"&gt;our guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;If you'd like to run your own copy of Outline or contribute to development then this is the place for you.&lt;/p&gt; 
+&lt;h1&gt;Installation&lt;/h1&gt; 
+&lt;p&gt;Please see the &lt;a href="https://docs.getoutline.com/s/hosting/"&gt;documentation&lt;/a&gt; for running your own copy of Outline in a production configuration.&lt;/p&gt; 
+&lt;p&gt;If you have questions or improvements for the docs please create a thread in &lt;a href="https://github.com/outline/outline/discussions"&gt;GitHub discussions&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;Development&lt;/h1&gt; 
+&lt;p&gt;There is a short guide for &lt;a href="https://docs.getoutline.com/s/hosting/doc/local-development-5hEhFRXow7"&gt;setting up a development environment&lt;/a&gt; if you wish to contribute changes, fixes, and improvements to Outline.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Outline is built and maintained by a small team – we'd love your help to fix bugs and add features!&lt;/p&gt; 
+&lt;p&gt;Before submitting a pull request &lt;em&gt;please&lt;/em&gt; discuss with the core team by creating or commenting in an issue on &lt;a href="https://www.github.com/outline/outline/issues"&gt;GitHub&lt;/a&gt; – we'd also love to hear from you in the &lt;a href="https://www.github.com/outline/outline/discussions"&gt;discussions&lt;/a&gt;. This way we can ensure that an approach is agreed on before code is written. This will result in a much higher likelihood of your code being accepted.&lt;/p&gt; 
+&lt;p&gt;If you’re looking for ways to get started, here's a list of ways to help us improve Outline:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/outline/outline/main/docs/TRANSLATION.md"&gt;Translation&lt;/a&gt; into other languages&lt;/li&gt; 
+ &lt;li&gt;Issues with &lt;a href="https://github.com/outline/outline/labels/good%20first%20issue"&gt;&lt;code&gt;good first issue&lt;/code&gt;&lt;/a&gt; label&lt;/li&gt; 
+ &lt;li&gt;Performance improvements, both on server and frontend&lt;/li&gt; 
+ &lt;li&gt;Developer happiness and documentation&lt;/li&gt; 
+ &lt;li&gt;Bugs and other issues listed on GitHub&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Architecture&lt;/h2&gt; 
+&lt;p&gt;If you're interested in contributing or learning more about the Outline codebase please refer to the &lt;a href="https://raw.githubusercontent.com/outline/outline/main/docs/ARCHITECTURE.md"&gt;architecture document&lt;/a&gt; first for a high level overview of how the application is put together.&lt;/p&gt; 
+&lt;h2&gt;Debugging&lt;/h2&gt; 
+&lt;p&gt;In development Outline outputs simple logging to the console, prefixed by categories. In production it outputs JSON logs, these can be easily parsed by your preferred log ingestion pipeline.&lt;/p&gt; 
+&lt;p&gt;HTTP logging is disabled by default, but can be enabled by setting the &lt;code&gt;DEBUG=http&lt;/code&gt; environment variable.&lt;/p&gt; 
+&lt;h2&gt;Tests&lt;/h2&gt; 
+&lt;p&gt;We aim to have sufficient test coverage for critical parts of the application and aren't aiming for 100% unit test coverage. All API endpoints and anything authentication related should be thoroughly tested.&lt;/p&gt; 
+&lt;p&gt;To add new tests, write your tests with &lt;a href="https://facebook.github.io/jest/"&gt;Jest&lt;/a&gt; and add a file with &lt;code&gt;.test.js&lt;/code&gt; extension next to the tested code.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;# To run all tests
+make test
+
+# To run backend tests in watch mode
+make watch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Once the test database is created with &lt;code&gt;make test&lt;/code&gt; you may individually run frontend and backend tests directly.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;# To run backend tests
+yarn test:server
+
+# To run a specific backend test
+yarn test:server myTestFile
+
+# To run frontend tests
+yarn test:app
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Migrations&lt;/h2&gt; 
+&lt;p&gt;Sequelize is used to create and run migrations, for example:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;yarn sequelize migration:generate --name my-migration
+yarn sequelize db:migrate
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Or to run migrations on test database:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;yarn sequelize db:migrate --env test
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h1&gt;Activity&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://repobeats.axiom.co/api/embed/ff2e4e6918afff1acf9deb72d1ba6b071d586178.svg?sanitize=true" alt="Alt" title="Repobeats analytics image" /&gt;&lt;/p&gt; 
+&lt;h1&gt;License&lt;/h1&gt; 
+&lt;p&gt;Outline is &lt;a href="https://raw.githubusercontent.com/outline/outline/main/LICENSE"&gt;BSL 1.1 licensed&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mfts/papermark</title>
+      <link>https://github.com/mfts/papermark</link>
+      <description>&lt;p&gt;Papermark is the open-source DocSend alternative with built-in analytics and custom domains.&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;h1 align="center"&gt;Papermark&lt;/h1&gt; 
+ &lt;h3&gt;The open-source DocSend alternative.&lt;/h3&gt; 
+ &lt;p&gt;&lt;a target="_blank" href="https://www.producthunt.com/posts/papermark-3?utm_source=badge-top-post-badge&amp;amp;utm_medium=badge&amp;amp;utm_souce=badge-papermark"&gt;&lt;img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=411605&amp;amp;theme=light&amp;amp;period=daily" alt="Papermark - The open-source DocSend alternative | Product Hunt" style="width:250px;height:40px" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://www.papermark.com"&gt;papermark.com&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;br /&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://github.com/mfts/papermark/stargazers"&gt;&lt;img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/mfts/papermark" /&gt;&lt;/a&gt; 
+ &lt;a href="https://twitter.com/papermarkio"&gt;&lt;img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/papermarkio" /&gt;&lt;/a&gt; 
+ &lt;a href="https://github.com/mfts/papermark/raw/main/LICENSE"&gt;&lt;img alt="License" src="https://img.shields.io/badge/license-AGPLv3-purple" /&gt;&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;br /&gt; 
+&lt;p&gt;Papermark is the open-source document-sharing alternative to DocSend, featuring built-in analytics and custom domains.&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Shareable Links:&lt;/strong&gt; Share your documents securely by sending a custom link.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Custom Branding:&lt;/strong&gt; Add a custom domain and your own branding.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Analytics:&lt;/strong&gt; Gain insights through document tracking and soon page-by-page analytics.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Self-hosted, Open-source:&lt;/strong&gt; Host it yourself and customize it as needed.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Demo&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/mfts/papermark/main/.github/images/papermark-welcome.gif" alt="Papermark Welcome GIF" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Tech Stack&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://nextjs.org/"&gt;Next.js&lt;/a&gt; – Framework&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.typescriptlang.org/"&gt;TypeScript&lt;/a&gt; – Language&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://tailwindcss.com/"&gt;Tailwind&lt;/a&gt; – CSS&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://ui.shadcn.com"&gt;shadcn/ui&lt;/a&gt; - UI Components&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://prisma.io"&gt;Prisma&lt;/a&gt; - ORM &lt;a href="https://prisma.io"&gt;&lt;img src="https://made-with.prisma.io/dark.svg?sanitize=true" alt="Made with Prisma" /&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.postgresql.org/"&gt;PostgreSQL&lt;/a&gt; - Database&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://next-auth.js.org/"&gt;NextAuth.js&lt;/a&gt; – Authentication&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://tinybird.co"&gt;Tinybird&lt;/a&gt; – Analytics&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://resend.com"&gt;Resend&lt;/a&gt; – Email&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://stripe.com"&gt;Stripe&lt;/a&gt; – Payments&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://vercel.com/"&gt;Vercel&lt;/a&gt; – Hosting&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;h3&gt;Prerequisites&lt;/h3&gt; 
+&lt;p&gt;Here's what you need to run Papermark:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Node.js (version &amp;gt;= 18.17.0)&lt;/li&gt; 
+ &lt;li&gt;PostgreSQL Database&lt;/li&gt; 
+ &lt;li&gt;Blob storage (currently &lt;a href="https://aws.amazon.com/s3/"&gt;AWS S3&lt;/a&gt; or &lt;a href="https://vercel.com/storage/blob"&gt;Vercel Blob&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://resend.com"&gt;Resend&lt;/a&gt; (for sending emails)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;1. Clone the repository&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;git clone https://github.com/mfts/papermark.git
+cd papermark
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;2. Install npm dependencies&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;npm install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;3. Copy the environment variables to &lt;code&gt;.env&lt;/code&gt; and change the values&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;cp .env.example .env
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;4. Initialize the database&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;npm run dev:prisma
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;5. Run the dev server&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;npm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;6. Open the app in your browser&lt;/h3&gt; 
+&lt;p&gt;Visit &lt;a href="http://localhost:3000"&gt;http://localhost:3000&lt;/a&gt; in your browser.&lt;/p&gt; 
+&lt;h2&gt;Tinybird Instructions&lt;/h2&gt; 
+&lt;p&gt;To prepare the Tinybird database, follow these steps:&lt;/p&gt; 
+&lt;ol start="0"&gt; 
+ &lt;li&gt;We use &lt;code&gt;pipenv&lt;/code&gt; to manage our Python dependencies. If you don't have it installed, you can install it using the following command: &lt;pre&gt;&lt;code class="language-sh"&gt;pkgx pipenv
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt;Download the Tinybird CLI from &lt;a href="https://www.tinybird.co/docs/cli.html"&gt;here&lt;/a&gt; and install it on your system.&lt;/li&gt; 
+ &lt;li&gt;After authenticating with the Tinybird CLI, navigate to the &lt;code&gt;lib/tinybird&lt;/code&gt; directory: &lt;pre&gt;&lt;code class="language-sh"&gt;cd lib/tinybird
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt;Push the necessary data sources using the following command: &lt;pre&gt;&lt;code class="language-sh"&gt;tb push datasources/*
+tb push endpoints/get_*
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt;Don't forget to set the &lt;code&gt;TINYBIRD_TOKEN&lt;/code&gt; with the appropriate rights in your &lt;code&gt;.env&lt;/code&gt; file.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h4&gt;Updating Tinybird&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;pipenv shell
+## start: pkgx-specific
+cd ..
+cd papermark
+## end: pkgx-specific
+pipenv update tinybird-cli
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Papermark is an open-source project, and we welcome contributions from the community.&lt;/p&gt; 
+&lt;p&gt;If you'd like to contribute, please fork the repository and make any changes you'd like. Pull requests are warmly welcome.&lt;/p&gt; 
+&lt;h3&gt;Our Contributors ✨&lt;/h3&gt; 
+&lt;a href="https://github.com/mfts/papermark/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=mfts/papermark" /&gt; &lt;/a&gt;</description>
+    </item>
+    
+    <item>
+      <title>MotiaDev/motia</title>
+      <link>https://github.com/MotiaDev/motia</link>
+      <description>&lt;p&gt;Modern Backend Framework that unifies APIs, background jobs, workflows, and AI agents into a single cohesive system with built-in observability and state management.&lt;/p&gt;&lt;hr&gt;&lt;a href="https://motia.dev"&gt; &lt;img src="https://raw.githubusercontent.com/MotiaDev/motia/main/assets/github-readme-banner.png" alt="Motia Banner" width="100%" /&gt; &lt;/a&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/14032" style="margin-right:8px;"&gt; &lt;img src="https://trendshift.io/api/badge/repositories/14032" alt="Motia" style="width: 250px; height: 55px; margin-right:8px;" width="250" height="55" /&gt; &lt;/a&gt; &lt;a href="https://vercel.com/blog/summer-2025-oss-program#motia" target="_blank" style="margin-left:8px;"&gt; &lt;img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg?sanitize=true" style="width: 250px; height: 55px; margin-left:8px;" width="250" height="55" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;strong&gt;🔥 The Unified Backend Framework That Eliminates Runtime Fragmentation 🔥&lt;/strong&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;em&gt;APIs, background jobs, workflows, and AI agents in one system. JavaScript, TypeScript, Python, and more in one codebase.&lt;/em&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.npmjs.com/package/motia"&gt; &lt;img src="https://img.shields.io/npm/v/motia?style=flat&amp;amp;logo=npm&amp;amp;logoColor=white&amp;amp;color=CB3837&amp;amp;labelColor=000000" alt="npm version" /&gt; &lt;/a&gt; &lt;a href="https://github.com/MotiaDev/motia/raw/main/LICENSE"&gt; &lt;img src="https://img.shields.io/badge/license-MIT-green?style=flat&amp;amp;logo=opensourceinitiative&amp;amp;logoColor=white&amp;amp;labelColor=000000" alt="license" /&gt; &lt;/a&gt; &lt;a href="https://github.com/MotiaDev/motia"&gt; &lt;img src="https://img.shields.io/github/stars/MotiaDev/motia?style=flat&amp;amp;logo=github&amp;amp;logoColor=white&amp;amp;color=yellow&amp;amp;labelColor=000000" alt="GitHub stars" /&gt; &lt;/a&gt; &lt;a href="https://twitter.com/motiadev" target="_blank"&gt; &lt;img src="https://img.shields.io/badge/Follow-@motiadev-1DA1F2?style=flat&amp;amp;logo=twitter&amp;amp;logoColor=white&amp;amp;labelColor=000000" alt="Twitter Follow" /&gt; &lt;/a&gt; &lt;a href="https://discord.gg/motia" target="_blank"&gt; &lt;img src="https://img.shields.io/discord/1322278831184281721?style=flat&amp;amp;logo=discord&amp;amp;logoColor=white&amp;amp;color=5865F2&amp;amp;label=Discord&amp;amp;labelColor=000000" alt="Discord" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.motia.dev/manifesto"&gt;💡 Motia Manifesto&lt;/a&gt; • &lt;a href="https://www.motia.dev/docs/getting-started/quick-start"&gt;🚀 Quick Start&lt;/a&gt; • &lt;a href="https://www.motia.dev/docs/concepts/steps/defining-steps"&gt;📋 Defining Steps&lt;/a&gt; • &lt;a href="https://www.motia.dev/docs"&gt;📚 Docs&lt;/a&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🎯 What is Motia?&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Motia solves backend fragmentation.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Modern software engineering is splintered – APIs live in one framework, background jobs in another, queues have their own tooling, and AI agents are springing up in yet more isolated runtimes. &lt;strong&gt;This fragmentation demands a unified system.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Motia unifies APIs, background jobs, workflows, and AI agents into a &lt;strong&gt;single coherent system&lt;/strong&gt; with shared observability and developer experience. Similar to how React simplified frontend development where everything is a component, &lt;strong&gt;Motia simplifies backend development where everything is a Step&lt;/strong&gt;.&lt;/p&gt; 
+&lt;p&gt;Write &lt;strong&gt;JavaScript, TypeScript, Python, and more&lt;/strong&gt; in the same workflow. &lt;strong&gt;What used to take 5 frameworks to build now comes out of the box with Motia.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://motia.dev"&gt;&lt;img src="https://raw.githubusercontent.com/MotiaDev/motia/main/assets/Motia_Github_Repository_GIF.gif" alt="Motia combines APIs, background queues, and AI agents into one system" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🚀 Quickstart&lt;/h2&gt; 
+&lt;p&gt;Get Motia project up and running in &lt;strong&gt;under 60 seconds&lt;/strong&gt;:&lt;/p&gt; 
+&lt;h3&gt;1. Bootstrap a New Motia Project&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx motia@latest create -i   # runs the interactive terminal
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Follow the prompts to pick a template, project name, and language.&lt;/p&gt; 
+&lt;h3&gt;2. Start the Workbench&lt;/h3&gt; 
+&lt;p&gt;Inside your new project folder, launch the dev server:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx motia dev # ➜ http://localhost:3000
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This spins up the Motia Workbench – a local UI for building, testing &amp;amp; observing your backend in real-time.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/MotiaDev/motia/main/assets/motia-terminal.gif" alt="motia-terminal" /&gt;&lt;/p&gt; 
+&lt;h3&gt;3. Hit Your First Endpoint&lt;/h3&gt; 
+&lt;p&gt;Open a new terminal tab and run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl http://localhost:3000/default
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You should see the JSON response:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{ "message": "Hello World from Motia!" }
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;4. Explore the Workbench UI&lt;/h3&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/MotiaDev/motia/main/assets/new-workbench.png" alt="new-workbench" /&gt; The Workbench is your command centre:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;🌊 Flows&lt;/strong&gt; – Visualise how your Steps connect.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🔌 Endpoints&lt;/strong&gt; – Test APIs with one click and stream results live.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;👁️ Traces&lt;/strong&gt; – Inspect end-to-end traces of every execution.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;📊 Logs&lt;/strong&gt; – View structured logs grouped by trace.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🏪 State&lt;/strong&gt; – Inspect the key-value store across Steps.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;🎉 &lt;strong&gt;That's it!&lt;/strong&gt; You now have a production-ready backend with everything you need:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;REST API endpoints&lt;/strong&gt; with automatic validation and error handling&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;Visual debugger&lt;/strong&gt; with real-time flow inspection and tracing&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;Built-in observability&lt;/strong&gt; - logs, traces, and state visualization&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;Hot-reload&lt;/strong&gt; for instant feedback during development&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;Event-driven architecture&lt;/strong&gt; ready for complex workflows&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;Multi-language support&lt;/strong&gt; - add Python, Javascript, or other languages anytime&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;Zero configuration&lt;/strong&gt; - no infrastructure setup required&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;💡 &lt;strong&gt;Want a more detailed walkthrough?&lt;/strong&gt;&lt;br /&gt; Check out the &lt;a href="https://www.motia.dev/docs/getting-started/quick-start"&gt;Quick Start guide in our docs&lt;/a&gt; for step-by-step instructions and more examples.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;🧱 The Step Philosophy&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Everything is a Step&lt;/strong&gt; – similar to how React made everything a component, Motia makes every backend pattern a Step:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;🎯 Steps Represent Distinct Entry Points&lt;/strong&gt;: APIs, background jobs, scheduled tasks, and AI agents – all unified under a single primitive&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🌍 Any Language, One Workflow&lt;/strong&gt;: Write &lt;strong&gt;JavaScript, TypeScript, Python, and more&lt;/strong&gt; in the same project. Use Python for AI agents, TypeScript for APIs, JavaScript for workflows – all sharing state effortlessly&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;⚡ Enterprise-Grade, Out of the Box&lt;/strong&gt;: Get &lt;strong&gt;event-driven architecture, fault tolerance, observability, and real-time streaming&lt;/strong&gt; without complex infrastructure setup&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;👁️ Automatic Observability&lt;/strong&gt;: Complete end-to-end tracing, structured logging, and state visualization. &lt;strong&gt;No setup required&lt;/strong&gt; – works in both local development and production&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🌊 Composable Workflows&lt;/strong&gt;: Connect Steps by emitting and subscribing to events. Build complex, multi-stage processes with simple, declarative code&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🏪 Unified State Management&lt;/strong&gt;: All Steps share a traced key-value store. Every &lt;code&gt;get&lt;/code&gt;, &lt;code&gt;set&lt;/code&gt;, and &lt;code&gt;delete&lt;/code&gt; is automatically tracked across your entire workflow&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🔄 Built-in Fault Tolerance&lt;/strong&gt;: Retry mechanisms, error handling, and queue infrastructure abstracted away – focus on business logic, not infrastructure&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🚧 The Fragmentation Problem&lt;/h2&gt; 
+&lt;p&gt;Today, backend engineers face several recurring challenges:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;🧩 Fragmented Systems&lt;/strong&gt;: APIs in Express, background jobs in Celery/BullMQ, AI agents in LangChain – each with different deployment, debugging, and scaling patterns&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🌐 Multi-Language Barriers&lt;/strong&gt;: AI tools in Python, business logic in TypeScript – forcing teams to choose between cutting-edge tech and their existing skillset&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🔍 Observability Gaps&lt;/strong&gt;: Tracing requests across multiple frameworks and runtimes is complex and often incomplete&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;⚖️ Scalability vs. Velocity&lt;/strong&gt;: Choose between fast development (monolith) or proper scaling (microservices complexity)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🚀 Deployment Complexity&lt;/strong&gt;: Multiple runtimes mean multiple deploy targets, configs, and failure points&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;The rapid advancement of AI has made this worse&lt;/strong&gt; – many cutting-edge AI tools are only available in specific languages, forcing companies to abandon their existing tech stack or miss out on breakthrough technologies.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;✅ The Motia Solution&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Motia removes this limitation&lt;/strong&gt; by unifying your entire backend into a single runtime where everything is a &lt;strong&gt;Step&lt;/strong&gt;:&lt;/p&gt; 
+&lt;h3&gt;🎯 &lt;strong&gt;Unified vs. Fragmented&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Before&lt;/strong&gt;: APIs in Express, jobs in BullMQ, AI agents in LangChain&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;After&lt;/strong&gt;: All backend patterns as composable Steps with shared state and observability&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🌐 &lt;strong&gt;True Multi-Language Support&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Before&lt;/strong&gt;: Choose between Python AI tools OR your existing TypeScript stack&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;After&lt;/strong&gt;: Each Step can be written in any language while sharing common state – use Python for AI, TypeScript for APIs, JavaScript for workflows&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🔍 &lt;strong&gt;Built-in Observability&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Before&lt;/strong&gt;: Complex tracing setups across multiple frameworks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;After&lt;/strong&gt;: Complete observability toolkit available in both cloud and local environments out of the box&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;⚖️ &lt;strong&gt;Scalability Without Complexity&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Before&lt;/strong&gt;: Choose between monolith simplicity or microservice complexity&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;After&lt;/strong&gt;: Each Step scales independently, avoiding bottlenecks while maintaining development velocity&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🚀 &lt;strong&gt;One-Click Everything&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Before&lt;/strong&gt;: Multiple deployment pipelines, configs, and failure points&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;After&lt;/strong&gt;: Single deployable with atomic blue/green deployments and instant rollbacks&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;&lt;strong&gt;Traditional Stack&lt;/strong&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;strong&gt;Motia&lt;/strong&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Multiple deployment targets&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Single unified deployment&lt;/strong&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Fragmented observability&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;End-to-end tracing&lt;/strong&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Language silos&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;JavaScript, TypeScript, Python, etc&lt;/strong&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Context-switching overhead&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Single intuitive model&lt;/strong&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Manual error handling&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Automatic retries &amp;amp; fault tolerance&lt;/strong&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Complex infrastructure&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Zero-config queue &amp;amp; streaming&lt;/strong&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🔧 Supported Step Types&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Type&lt;/th&gt; 
+   &lt;th&gt;Trigger&lt;/th&gt; 
+   &lt;th&gt;Use Case&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;code&gt;api&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;HTTP Request&lt;/td&gt; 
+   &lt;td&gt;Expose REST endpoints&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;code&gt;event&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Emitted Topics&lt;/td&gt; 
+   &lt;td&gt;React to internal or external events&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;code&gt;cron&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Scheduled Time (cron)&lt;/td&gt; 
+   &lt;td&gt;Automate recurring jobs&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;code&gt;noop&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;None&lt;/td&gt; 
+   &lt;td&gt;Placeholder for manual/external tasks&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;🤔 How it Works&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;One framework. All backend patterns.&lt;/strong&gt; Motia replaces your entire backend stack with a single, event-driven system:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;🚀 Replace Multiple Frameworks:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Instead of&lt;/strong&gt;: Express/Nest.js + BullMQ + Temporal + LangChain + custom observability&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Use&lt;/strong&gt;: Motia Steps with automatic observability, queuing, and multi-language support&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;⚡ Simple but Powerful:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Need a REST API?&lt;/strong&gt; Create an &lt;code&gt;api&lt;/code&gt; step → instant HTTP endpoint with validation, tracing, and error handling&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Need background processing?&lt;/strong&gt; Emit an event → &lt;code&gt;event&lt;/code&gt; steps pick it up asynchronously with built-in retries and fault tolerance&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Need scheduled jobs?&lt;/strong&gt; Use a &lt;code&gt;cron&lt;/code&gt; step → automatic scheduling with full observability&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Need AI agents?&lt;/strong&gt; Write Python steps with access to the entire ecosystem (PyTorch, transformers, etc.) while sharing state with TypeScript APIs&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;🔄 Event-Driven by Design:&lt;/strong&gt; Each Step can emit events that trigger other Steps, creating powerful workflows that automatically handle:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Parallel processing&lt;/strong&gt; across multiple languages&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Fault tolerance&lt;/strong&gt; with automatic retries&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Real-time updates&lt;/strong&gt; streamed to clients&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Complete traceability&lt;/strong&gt; of every operation&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;The result?&lt;/strong&gt; What used to require 5+ frameworks, complex deployment pipelines, and weeks of infrastructure setup now works out of the box with Motia.&lt;/p&gt; 
+&lt;h2&gt;⚡ Core Concepts&lt;/h2&gt; 
+&lt;p&gt;The &lt;strong&gt;Step&lt;/strong&gt; is Motia's core primitive. The following concepts are deeply integrated with Steps to help you build powerful, complex, and scalable backends:&lt;/p&gt; 
+&lt;h3&gt;🔑 Steps &amp;amp; Step Types&lt;/h3&gt; 
+&lt;p&gt;Understand the three ways Steps are triggered:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;HTTP (&lt;code&gt;api&lt;/code&gt;)&lt;/strong&gt; – Build REST/GraphQL endpoints with zero boilerplate.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Events (&lt;code&gt;event&lt;/code&gt;)&lt;/strong&gt; – React to internal or external events emitted by other steps.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Cron (&lt;code&gt;cron&lt;/code&gt;)&lt;/strong&gt; – Schedule recurring jobs with a familiar cron syntax.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;📣 Emit &amp;amp; Subscribe (Event-Driven Workflows)&lt;/h3&gt; 
+&lt;p&gt;Steps talk to each other by &lt;strong&gt;emitting&lt;/strong&gt; and &lt;strong&gt;subscribing&lt;/strong&gt; to topics. This decouples producers from consumers and lets you compose complex workflows with simple, declarative code.&lt;/p&gt; 
+&lt;h3&gt;🏪 State Management&lt;/h3&gt; 
+&lt;p&gt;All steps share a unified key-value state store. Every &lt;code&gt;get&lt;/code&gt;, &lt;code&gt;set&lt;/code&gt;, and &lt;code&gt;delete&lt;/code&gt; is automatically traced so you always know when and where your data changed.&lt;/p&gt; 
+&lt;h3&gt;📊 Structured Logging&lt;/h3&gt; 
+&lt;p&gt;Motia provides structured, JSON logs correlated with trace IDs and step names. Search and filter your logs without regex hassle.&lt;/p&gt; 
+&lt;h3&gt;📡 Streams: Real-time Messaging&lt;/h3&gt; 
+&lt;p&gt;Push live updates from long-running or asynchronous workflows to clients without polling. Perfect for dashboards, progress indicators, and interactive AI agents.&lt;/p&gt; 
+&lt;h3&gt;👁️ End-to-End Observability with Traces&lt;/h3&gt; 
+&lt;p&gt;Every execution generates a full trace, capturing step timelines, state operations, emits, stream calls, and logs. Visualise everything in the Workbench's Traces UI and debug faster.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🗂 Production-Ready Examples&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;⭐ Explore 20+ sophisticated examples&lt;/strong&gt; demonstrating real-world use cases from AI agents to enterprise workflows: &lt;strong&gt;&lt;a href="https://github.com/MotiaDev/motia-examples"&gt;View All Examples →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;h3&gt;🤖 &lt;strong&gt;AI Agents &amp;amp; Workflows&lt;/strong&gt;&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;&lt;strong&gt;AI Deep Research Agent&lt;/strong&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;strong&gt;Finance Analysis Agent&lt;/strong&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;strong&gt;PDF RAG System&lt;/strong&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Comprehensive web research with iterative analysis and synthesis&lt;/td&gt; 
+   &lt;td&gt;Real-time financial data + AI insights for investment analysis&lt;/td&gt; 
+   &lt;td&gt;Document processing with Docling, Weaviate, and OpenAI RAG&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-deep-research-agent"&gt;View Example →&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia-examples/tree/main/examples/finance-agent"&gt;View Example →&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia-examples/tree/main/examples/rag-docling-weaviate"&gt;View Example →&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;&lt;strong&gt;GitHub PR Manager&lt;/strong&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;strong&gt;Gmail Intelligence&lt;/strong&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;strong&gt;Vision Analysis&lt;/strong&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;AI-powered PR classification, labeling, and reviewer assignment&lt;/td&gt; 
+   &lt;td&gt;Smart email analysis, auto-responses, and Discord summaries&lt;/td&gt; 
+   &lt;td&gt;Multi-modal conversation analysis with visual understanding&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia-examples/tree/main/examples/github-integration-workflow"&gt;View Example →&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia-examples/tree/main/examples/gmail-workflow"&gt;View Example →&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia-examples/tree/main/examples/conversation-analyzer-vision"&gt;View Example →&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;🌊 &lt;strong&gt;Real-Time Streaming &amp;amp; Chat&lt;/strong&gt;&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;&lt;strong&gt;Streaming AI Chatbot&lt;/strong&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;strong&gt;Real-Time Chat App&lt;/strong&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;strong&gt;Live Health Monitor&lt;/strong&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Token-by-token AI responses with WebSocket streaming&lt;/td&gt; 
+   &lt;td&gt;Multi-user chat with real-time message processing and moderation&lt;/td&gt; 
+   &lt;td&gt;Production uptime monitoring with intelligent Discord alerts&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia-examples/tree/main/examples/streaming-ai-chatbot"&gt;View Example →&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia-examples/tree/main/examples/realtime-chat-application"&gt;View Example →&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia-examples/tree/main/examples/realtime-uptime-monitor"&gt;View Example →&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;⚡ &lt;strong&gt;Parallel Processing &amp;amp; Workflows&lt;/strong&gt;&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;&lt;strong&gt;Parallel Execution Demo&lt;/strong&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;strong&gt;Content Automation&lt;/strong&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;strong&gt;Task Management&lt;/strong&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Concurrent task processing with workload distribution&lt;/td&gt; 
+   &lt;td&gt;Blog-to-Tweet automation with AI content optimization&lt;/td&gt; 
+   &lt;td&gt;Trello workflow automation with AI task validation&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia-examples/tree/main/examples/motia-parallel-execution"&gt;View Example →&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia-examples/tree/main/examples/blog-to-tweet-automation"&gt;View Example →&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia-examples/tree/main/examples/trello-flow"&gt;View Example →&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;🎯 &lt;strong&gt;Key Features Demonstrated:&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;Multi-Language Workflows&lt;/strong&gt; - JavaScript, TypeScript, Python working together&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;Real-Time Streaming&lt;/strong&gt; - WebSocket integration with live updates&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;AI Integration&lt;/strong&gt; - OpenAI, Claude, vision models, and custom AI workflows&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;Event-Driven Architecture&lt;/strong&gt; - Complex workflows with automatic retry and fault tolerance&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;Production Monitoring&lt;/strong&gt; - Health checks, uptime monitoring, and intelligent alerting&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;Parallel Processing&lt;/strong&gt; - Concurrent execution and workload distribution&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;Enterprise Integration&lt;/strong&gt; - GitHub, Gmail, Trello, Discord, and social media APIs&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;🚀 Each example includes:&lt;/strong&gt; Complete source code • Step-by-step tutorials • Production deployment guides • Docker configurations&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🌐 Language Support&lt;/h2&gt; 
+&lt;p&gt;Write steps in your preferred language:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Language&lt;/th&gt; 
+   &lt;th&gt;Status&lt;/th&gt; 
+   &lt;th&gt;Example&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;JavaScript&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Stable&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;handler.step.js&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;TypeScript&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Stable&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;handler.step.ts&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Python&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Stable&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;handler.step.py&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Ruby&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;🚧 Beta&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;handler.step.rb&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Go&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;🔄 Coming Soon&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;handler.step.go&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Rust&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;🔄 Coming Soon&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;handler.step.rs&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;💬 &lt;strong&gt;Get Help&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;📋 Questions&lt;/strong&gt;: Use our &lt;a href="https://discord.gg/motia"&gt;Discord community&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🐛 Bug Reports&lt;/strong&gt;: &lt;a href="https://github.com/MotiaDev/motia/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;📖 Documentation&lt;/strong&gt;: &lt;a href="https://motia.dev/docs"&gt;Official Docs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;📰 Blog&lt;/strong&gt;: &lt;a href="https://blog.motia.dev"&gt;Motia Blog&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🎥 Youtube&lt;/strong&gt;: &lt;a href="https://www.youtube.com/@motiadev"&gt;Motia Youtube&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🤝 &lt;strong&gt;Contributing&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;We welcome contributions! Whether it's:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🐛 Bug fixes and improvements&lt;/li&gt; 
+ &lt;li&gt;✨ New features and step types&lt;/li&gt; 
+ &lt;li&gt;📚 Documentation and examples&lt;/li&gt; 
+ &lt;li&gt;🌍 Language support additions&lt;/li&gt; 
+ &lt;li&gt;🎨 Workbench UI enhancements&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Check out our &lt;a href="https://github.com/MotiaDev/motia/raw/main/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt; to get started.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;strong&gt;🌟 Ready to unify your backend?&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://motia.dev"&gt;🚀 &lt;strong&gt;Get Started Now&lt;/strong&gt;&lt;/a&gt; • &lt;a href="https://motia.dev/docs"&gt;📖 &lt;strong&gt;Read the Docs&lt;/strong&gt;&lt;/a&gt; • &lt;a href="https://discord.com/invite/nJFfsH5d6v"&gt;💬 &lt;strong&gt;Join Discord&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;a href="https://www.star-history.com/#motiadev/motia&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=motiadev/motia&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;sub&gt;Built with ❤️ by the Motia team • &lt;strong&gt;Star us if you find &lt;a href="https://github.com/orgs/MotiaDev/motia"&gt;Motia&lt;/a&gt; useful!&lt;/strong&gt; ⭐&lt;/sub&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h3&gt;🚧 Roadmap&lt;/h3&gt; 
+&lt;p&gt;We have a public roadmap for Motia, you can view it &lt;a href="https://github.com/orgs/MotiaDev/projects/2/views/4"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Feel free to add comments to the issues, or create a new issue if you have a feature request.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Feature&lt;/th&gt; 
+   &lt;th&gt;Status&lt;/th&gt; 
+   &lt;th&gt;Link&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Python Types&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/485"&gt;#485&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Python types&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Streams: RBAC&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/495"&gt;#495&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for RBAC&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Streams: Workbench UI&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/497"&gt;#497&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Workbench UI&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Queue Strategies&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/476"&gt;#476&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Queue Strategies&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Reactive Steps&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/477"&gt;#477&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Reactive Steps&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Allow cloud configuration&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/478"&gt;#478&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for cloud configuration&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;BYOC: Bring your own Cloud: AWS&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/479"&gt;#479&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for AWS&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Point in time triggers&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/480"&gt;#480&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Point in time triggers&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Workbench plugins&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/481"&gt;#481&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Workbench plugins&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Rewrite our Core in either Go or Rust&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/482"&gt;#482&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Rewrite our Core in either Go or Rust&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Decrease deployment time&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/483"&gt;#483&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Decrease deployment time&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Built-in database support&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/484"&gt;#484&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for built-in database&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;BYOC: Google Cloud Platform&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/486"&gt;#486&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Google Cloud Platform&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;BYOC: Microsoft Azure&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/487"&gt;#487&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Microsoft Azure&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;BYOC: Vercel&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/488"&gt;#488&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Vercel&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;BYOC: Cloudflare&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/489"&gt;#489&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Cloudflare&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;New languages: Go&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/490"&gt;#490&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Go&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;New languages: Rust&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/491"&gt;#491&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Rust&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;New languages: Java&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/492"&gt;#492&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Java&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;New languages: Ruby&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/493"&gt;#493&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Ruby&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;New languages: C#&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/494"&gt;#494&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for C#&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;BYOC: Kubernetes&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/496"&gt;#496&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Kubernetes&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt;</description>
+    </item>
+    
+    <item>
+      <title>koush/scrypted</title>
+      <link>https://github.com/koush/scrypted</link>
+      <description>&lt;p&gt;Scrypted is a high performance video integration and automation platform&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Scrypted&lt;/h1&gt; 
+&lt;p&gt;Scrypted is a high performance home video integration platform and NVR with smart detections. &lt;a href="https://streamable.com/xbxn7z"&gt;Instant, low latency, streaming&lt;/a&gt; to HomeKit, Google Home, and Alexa. Supports most cameras. &lt;a href="https://docs.scrypted.app"&gt;Learn more&lt;/a&gt;.&lt;/p&gt; 
+&lt;img src="https://github.com/koush/scrypted/assets/73924/57e1d556-cd3d-4448-81f9-a6c51b6513de" /&gt; 
+&lt;h2&gt;Installation and Documentation&lt;/h2&gt; 
+&lt;p&gt;Installation and camera onboarding instructions can be found in the &lt;a href="https://docs.scrypted.app"&gt;docs&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;p&gt;Scrypted has active communities on &lt;a href="https://discord.gg/DcFzmBHYGq"&gt;Discord&lt;/a&gt;, &lt;a href="https://reddit.com/r/scrypted"&gt;Reddit&lt;/a&gt;, and &lt;a href="https://github.com/koush/scrypted"&gt;Github&lt;/a&gt;. Check them out if you have questions!&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;h2&gt;Debug Scrypted Plugins in VS Code&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;# this is an example for homekit.
+# check out the code
+git clone https://github.com/koush/scrypted
+cd scrypted
+# get the dependencies for the server and various plugins
+./npm-install.sh
+# open the homekit project in VS Code
+code plugins/homekit
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can now launch (using the Start Debugging play button) the HomeKit Plugin in VS Code. Please be aware that you do &lt;em&gt;not&lt;/em&gt; need to restart the Scrypted Server if you make changes to a plugin. Edit the plugin, launch, and the updated plugin will deploy on the running server.&lt;/p&gt; 
+&lt;p&gt;If you do not want to set up VS Code, you can also run build and install the plugin directly from the command line:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;# currently in the plugins/homekit directory.
+npm run build &amp;amp;&amp;amp; npm run scrypted-deploy 127.0.0.1
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Plugin SDK Documentation&lt;/h3&gt; 
+&lt;p&gt;Want to write your own plugin? Full documentation is available here: &lt;a href="https://developer.scrypted.app"&gt;https://developer.scrypted.app&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Debug the Scrypted Server in VS Code&lt;/h2&gt; 
+&lt;p&gt;Debugging the server should not be necessary, as the server only provides the hosting and RPC mechanism for plugins. The following is for reference purpose. Most development can be done by debugging the relevant plugin.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;# check out the code
+git clone https://github.com/koush/scrypted
+cd scrypted
+# get the dependencies for the server and various plugins
+./npm-install.sh
+# open server project in VS Code
+code server
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can now launch the Scrypted Server in VS Code.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
