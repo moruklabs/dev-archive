@@ -1,0 +1,1665 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub All Languages Weekly Trending</title>
+    <description>Weekly Trending of All Languages in GitHub</description>
+    <pubDate>Thu, 21 Aug 2025 01:39:38 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>ubicloud/ubicloud</title>
+      <link>https://github.com/ubicloud/ubicloud</link>
+      <description>&lt;p&gt;Open source alternative to AWS. Elastic compute, block storage (non replicated), firewall and load balancer, managed Postgres, K8s, AI inference, and IAM services.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://github.com/user-attachments/assets/779e73bd-c260-4729-8430-c630628f1b6b" /&gt; &lt;/p&gt; 
+&lt;h1&gt;Ubicloud &lt;a href="https://github.com/ubicloud/ubicloud/actions/workflows/ci.yml"&gt;&lt;img src="https://github.com/ubicloud/ubicloud/actions/workflows/ci.yml/badge.svg?sanitize=true" alt="CI" /&gt;&lt;/a&gt; &lt;a href="https://github.com/ubicloud/ubicloud/actions/workflows/build.yml"&gt;&lt;img src="https://github.com/ubicloud/ubicloud/actions/workflows/build.yml/badge.svg?sanitize=true" alt="Build" /&gt;&lt;/a&gt; &lt;a href="https://app.greptile.com/repo/ubicloud/ubicloud"&gt;&lt;img src="https://img.shields.io/badge/learn_with-greptile-%091B12?color=%091B12" alt="Learn this repo using Greptile" /&gt;&lt;/a&gt;&lt;/h1&gt; 
+&lt;p&gt;Ubicloud is an open source cloud that can run anywhere. Think of it as an open alternative to cloud providers, like what Linux is to proprietary operating systems.&lt;/p&gt; 
+&lt;p&gt;Ubicloud provides IaaS cloud features on bare metal providers, such as Hetzner, Leaseweb, and AWS Bare Metal. You can set it up yourself on these providers or you can use our &lt;a href="https://console.ubicloud.com"&gt;managed service&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Quick start&lt;/h2&gt; 
+&lt;h3&gt;Managed platform&lt;/h3&gt; 
+&lt;p&gt;You can use Ubicloud without installing anything. When you do this, we pass along the underlying provider's benefits to you, such as price or location.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://console.ubicloud.com"&gt;https://console.ubicloud.com&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Build your own cloud&lt;/h3&gt; 
+&lt;p&gt;You can also build your own cloud. To do this, start up Ubicloud's control plane and connect to its cloud console.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;git clone git@github.com:ubicloud/ubicloud.git
+
+# Generate secrets for demo
+./demo/generate_env
+
+# Run containers: db-migrator, app (web &amp;amp; respirate), postgresql
+docker-compose -f demo/docker-compose.yml up
+
+# Visit localhost:3000
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The control plane is responsible for cloudifying bare metal Linux machines. The easiest way to build your own cloud is to lease instances from one of those providers. For example: &lt;a href="https://www.hetzner.com/sb"&gt;https://www.hetzner.com/sb&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Once you lease instance(s), update the &lt;code&gt;.env&lt;/code&gt; file with the following environment variables:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;HETZNER_USER&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;HETZNER_PASSWORD&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;HETZNER_SSH_PUBLIC_KEY&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;HETZNER_SSH_PRIVATE_KEY&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Then, run the following script for each instance to cloudify it. Currently, the script cloudifies bare metal instances leased from Hetzner. After you cloudify your instances, you can provision and manage cloud resources on these machines.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;# Enter hostname/IP and provider
+docker exec -it ubicloud-app ./demo/cloudify_server
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Later when you create VMs, Ubicloud will assign them IPv6 addresses. If your ISP doesn't support IPv6, please use a VPN or tunnel broker such as Mullvad or Hurricane Electric's &lt;a href="https://tunnelbroker.net/"&gt;https://tunnelbroker.net/&lt;/a&gt; to connect. Alternatively, you could lease IPv4 addresses from your provider and add them to your control plane.&lt;/p&gt; 
+&lt;h2&gt;Why use it&lt;/h2&gt; 
+&lt;p&gt;Public cloud providers like AWS, Azure, and Google Cloud have made life easier for start-ups and enterprises. But they are closed source, have you rent computers at a huge premium, and lock you in. Ubicloud offers an open source alternative, reduces your costs, and returns control of your infrastructure back to you. All without sacrificing the cloud's convenience.&lt;/p&gt; 
+&lt;p&gt;Today, AWS offers about two hundred cloud services. Ultimately, we will implement 10% of the cloud services that make up 80% of that consumption.&lt;/p&gt; 
+&lt;p&gt;Example workloads and reasons to use Ubicloud today include:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;You have an ephemeral workload like a CI/CD pipeline (we're integrating with GitHub Actions), or you'd like to run compute/memory heavy tests. Our managed cloud is ~3x cheaper than AWS, so you save on costs.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;You want a portable and simple app deployment service like &lt;a href="https://github.com/basecamp/kamal"&gt;Kamal&lt;/a&gt;. We're moving Ubicloud's control plane from Heroku to Kamal; and we want to provide open and portable services for Kamal's dependencies in the process.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;You have bare metal machines sitting somewhere. You'd like to build your own cloud for portability, security, or compliance reasons.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Status&lt;/h2&gt; 
+&lt;p&gt;You can provide us your feedback, get help, or ask us questions regarding your Ubicloud installations in the &lt;a href="https://github.com/ubicloud/ubicloud/discussions"&gt;Community Forum&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;We follow an established architectural pattern in building public cloud services. A control plane manages a data plane, where the data plane leverages open source software. You can find our current cloud components / services below.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Elastic Compute&lt;/strong&gt;: Our control plane communicates with Linux bare metal servers using SSH. We use &lt;a href="https://github.com/cloud-hypervisor/cloud-hypervisor"&gt;Cloud Hypervisor&lt;/a&gt; as our virtual machine monitor (VMM); and each instance of the VMM is contained within Linux namespaces for further isolation / security.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Networking&lt;/strong&gt;: We use &lt;a href="https://en.wikipedia.org/wiki/IPsec"&gt;IPsec&lt;/a&gt; tunneling to establish an encrypted and private network environment. We support IPv4 and IPv6 in a dual-stack setup and provide both public and private networking. For security, each customer’s VMs operate in their own networking namespace. For &lt;a href="https://www.ubicloud.com/blog/ubicloud-firewalls-how-linux-nftables-enables-flexible-rules"&gt;firewalls&lt;/a&gt; and &lt;a href="https://www.ubicloud.com/blog/ubicloud-load-balancer-simple-and-cost-free"&gt;load balancers&lt;/a&gt;, we use Linux nftables.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Block Storage, non replicated&lt;/strong&gt;: We use Storage Performance Development Toolkit (&lt;a href="https://spdk.io"&gt;SPDK&lt;/a&gt;) to provide virtualized block storage to VMs. SPDK enables us to add enterprise features such as snapshot and replication in the future. We follow security best practices and encrypt the data encryption key itself.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Attribute-Based Access Control (ABAC)&lt;/strong&gt;: With ABAC, you can define attributes, roles, and permissions for users and give them fine-grained access to resources. You can read more about our &lt;a href="https://raw.githubusercontent.com/ubicloud/ubicloud/main/doc/authorization.md"&gt;ABAC design here&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;What's Next?&lt;/strong&gt;: We're planning to work on a managed K8s or metrics/monitoring service next. If you have a workload that would benefit from a specific cloud service, please get in touch with us through our &lt;a href="https://github.com/ubicloud/ubicloud/discussions"&gt;Community Forum&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Control plane: Manages data plane services and resources. This is a Ruby program that stores its data in Postgres. We use the &lt;a href="https://roda.jeremyevans.net/"&gt;Roda&lt;/a&gt; framework to serve HTTP requests and &lt;a href="http://sequel.jeremyevans.net/"&gt;Sequel&lt;/a&gt; to access the database. We manage web authentication with &lt;a href="http://rodauth.jeremyevans.net/"&gt;Rodauth&lt;/a&gt;. We communicate with data plane servers using SSH, via the library &lt;a href="https://github.com/net-ssh/net-ssh"&gt;net-ssh&lt;/a&gt;. For our tests, we use &lt;a href="https://rspec.info/"&gt;RSpec&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Cloud console: Server-side web app served by the Roda framework. For the visual design, we use &lt;a href="https://tailwindcss.com"&gt;Tailwind CSS&lt;/a&gt; with components from &lt;a href="https://tailwindui.com"&gt;Tailwind UI&lt;/a&gt;. We also use jQuery for interactivity.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;If you’d like to start hacking with Ubicloud, any method of obtaining Ruby and Postgres versions is acceptable. If you have no opinion on this, our development team uses &lt;code&gt;mise&lt;/code&gt; as &lt;a href="https://raw.githubusercontent.com/ubicloud/ubicloud/main/DEVELOPERS.md"&gt;documented here in detail&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://greptile.com/"&gt;Greptile&lt;/a&gt; provides an AI/LLM that indexes Ubicloud's source code &lt;a href="https://learnthisrepo.com/ubicloud"&gt;can answer questions about it&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;FAQ&lt;/h2&gt; 
+&lt;h3&gt;Do you have any experience with building this sort of thing?&lt;/h3&gt; 
+&lt;p&gt;Our founding team comes from Azure; and worked at Amazon and Heroku before that. We also have start-up experience. We were co-founders and founding team members at &lt;a href="https://github.com/citusdata/citus"&gt;Citus Data&lt;/a&gt;, &lt;a href="https://news.ycombinator.com/item?id=18990469"&gt;which got acquired by Microsoft&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;How is this different than OpenStack?&lt;/h3&gt; 
+&lt;p&gt;We see three differences. First, Ubicloud is available as a managed service (vs boxed software). This way, you can get started in minutes rather than weeks. Since Ubicloud is designed for multi-tenancy, it comes with built-in features such as encryption at rest and in transit, virtual networking, secrets rotation, etc.&lt;/p&gt; 
+&lt;p&gt;Second, we're initially targeting developers. This -we hope- will give us fast feedback cycles and enable us to have 6 key services in GA form in the next two years. OpenStack is still primarily used for 3 cloud services.&lt;/p&gt; 
+&lt;p&gt;Last, we're designing for simplicity. With OpenStack, you pick between 10 hypervisors, 10 S3 implementations, and 5 block storage implementations. The software needs to work in a way where all of these implementations are compatible with each other. That leads to consultant-ware. We'll take a more opinionated approach with Ubicloud.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PixiEditor/PixiEditor</title>
+      <link>https://github.com/PixiEditor/PixiEditor</link>
+      <description>&lt;p&gt;PixiEditor is a Universal Editor for all your 2D needs&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;a href="https://github.com/flabbet/PixiEditor/releases"&gt;&lt;img src="https://img.shields.io/github/v/release/flabbet/PixiEditor" alt="Release" /&gt;&lt;/a&gt; &lt;a href="https://github.com/flabbet/PixiEditor/releases"&gt;&lt;img src="https://img.shields.io/github/downloads/PixiEditor/PixiEditor/total" alt="Downloads" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/qSRMYmq"&gt;&lt;img src="https://badgen.net/badge/discord/join%20chat/7289DA?icon=discord" alt="Discord Server" /&gt;&lt;/a&gt; &lt;a href="https://reddit.com/r/PixiEditor"&gt;&lt;img src="https://img.shields.io/reddit/subreddit-subscribers/PixiEditor?label=%20r%2FPixiEditor&amp;amp;logoColor=%23e3002d" alt="Subreddit subscribers" /&gt;&lt;/a&gt; &lt;a href="https://forum.pixieditor.net/"&gt;&lt;img src="https://img.shields.io/badge/PixiEditor-Forum-red?link=https%3A%2F%2Fforum.pixieditor.net%2F" alt="Forum" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;img width="50%" align="center" src="https://github.com/user-attachments/assets/bd08c8bd-f610-449d-b1e2-6a990e562518" /&gt; 
+ &lt;h2&gt;The only 2D Graphics Editor you'll ever need&lt;/h2&gt; 
+ &lt;p&gt;&lt;strong&gt;PixiEditor&lt;/strong&gt; is a universal 2D editor that was made to provide you with tools and features for all your 2D needs. Create beautiful sprites for your games, animations, edit images, create logos. All packed up in an intuitive and familiar interface.&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://pixieditor.net/download"&gt;&lt;img src="https://github.com/nnakocaj/supreme-train/raw/main/download1.png" width="250" alt="Download" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;p&gt;&lt;img src="https://github.com/nnakocaj/supreme-train/raw/main/interface.png" alt="" /&gt;&lt;/p&gt; 
+&lt;h3&gt;Toolsets for any scenario&lt;/h3&gt; 
+&lt;p&gt;PixiEditor 2.0 comes by default with 3 toolsets:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Pixel art&lt;/strong&gt; - it contains tool suited for pixel-perfect scenarios&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Painting&lt;/strong&gt; - basic painting tools, soft brushes, anti aliased shapes&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Vector&lt;/strong&gt; - shapes and paths for creating vectors&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;All &lt;strong&gt;toolsets can be used on one canvas&lt;/strong&gt;. Mix vector with raster. Export to png, jpg, svg, gif, mp4 and more!&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://github.com/nnakocaj/supreme-train/raw/main/toolsets.gif?raw=true" width="70%" /&gt; &lt;/p&gt; 
+&lt;h3&gt;Animations&lt;/h3&gt; 
+&lt;p&gt;Version 2.0 comes with a timeline and animation capabilities. You can create frame by frame animations or use nodes to animate your custom shaders. Key frame animations with vectors are on our roadmap.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/nnakocaj/supreme-train/raw/main/timeline1.png" alt="" /&gt;&lt;/p&gt; 
+&lt;h3&gt;Nodes&lt;/h3&gt; 
+&lt;p&gt;Node render system is what powers such extensive capabilities. All layers, effects and the layer structure are nodes or a result of its connections. PixiEditor exposes node graph for every document, so you are free to customize your image however you want and create procedural art/animations!&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/nnakocaj/supreme-train/raw/main/node.png" alt="" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Building from source&lt;/h2&gt; 
+&lt;p&gt;Check out our &lt;a href="https://pixieditor.net/docs/contribution/compileguide/"&gt;Compile Guide&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;For a seamless collaboration &lt;a href="https://pixieditor.net/docs/contribution/starthere//"&gt;Start Here&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Help&lt;/h2&gt; 
+&lt;p&gt;Got stuck? We are here to &lt;a href="https://pixieditor.net/help"&gt;Help&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://discord.gg/DwaXAuXVzv" target="_blank"&gt;&lt;img src="https://newsletter.pixieditor.net/uploads/discord.png" alt="discord" width="50/" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+ &lt;a href="https://store.steampowered.com/app/2218560/PixiEditor__Pixel_Art_Editor/" target="_blank"&gt;&lt;img src="https://newsletter.pixieditor.net/uploads/steam.png" alt="steam" width="50/" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+ &lt;a href="https://www.youtube.com/@PixiEditor" target="_blank"&gt;&lt;img src="https://newsletter.pixieditor.net/uploads/youtube.png" alt="youtube" width="50/" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+ &lt;a href="https://twitter.com/PixiEditor" target="_blank"&gt;&lt;img src="https://newsletter.pixieditor.net/uploads/twitter.png" alt="twitter" width="50/" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+ &lt;a href="https://www.reddit.com/r/PixiEditor" target="_blank"&gt;&lt;img src="https://newsletter.pixieditor.net/uploads/reddit.png" alt="reddit" width="50/" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+ &lt;a href="https://www.linkedin.com/company/pixieditor" target="_blank"&gt;&lt;img src="https://newsletter.pixieditor.net/uploads/linkedin.png" alt="linkedin" width="50/" /&gt;&lt;/a&gt; 
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Shubhamsaboo/awesome-llm-apps</title>
+      <link>https://github.com/Shubhamsaboo/awesome-llm-apps</link>
+      <description>&lt;p&gt;Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="http://www.theunwindai.com"&gt; &lt;img src="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/docs/banner/unwind_black.png" width="900px" alt="Unwind AI" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.linkedin.com/in/shubhamsaboo/"&gt; &lt;img src="https://img.shields.io/badge/-Follow%20Shubham%20Saboo-blue?logo=linkedin&amp;amp;style=flat-square" alt="LinkedIn" /&gt; &lt;/a&gt; &lt;a href="https://twitter.com/Saboo_Shubham_"&gt; &lt;img src="https://img.shields.io/twitter/follow/Shubham_Saboo" alt="Twitter" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; 
+ &lt;!-- Keep these links. Translations will automatically update with the README. --&gt; &lt;a href="https://www.readme-i18n.com/Shubhamsaboo/awesome-llm-apps?lang=de"&gt;Deutsch&lt;/a&gt; | &lt;a href="https://www.readme-i18n.com/Shubhamsaboo/awesome-llm-apps?lang=es"&gt;Español&lt;/a&gt; | &lt;a href="https://www.readme-i18n.com/Shubhamsaboo/awesome-llm-apps?lang=fr"&gt;français&lt;/a&gt; | &lt;a href="https://www.readme-i18n.com/Shubhamsaboo/awesome-llm-apps?lang=ja"&gt;日本語&lt;/a&gt; | &lt;a href="https://www.readme-i18n.com/Shubhamsaboo/awesome-llm-apps?lang=ko"&gt;한국어&lt;/a&gt; | &lt;a href="https://www.readme-i18n.com/Shubhamsaboo/awesome-llm-apps?lang=pt"&gt;Português&lt;/a&gt; | &lt;a href="https://www.readme-i18n.com/Shubhamsaboo/awesome-llm-apps?lang=ru"&gt;Русский&lt;/a&gt; | &lt;a href="https://www.readme-i18n.com/Shubhamsaboo/awesome-llm-apps?lang=zh"&gt;中文&lt;/a&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;🌟 Awesome LLM Apps&lt;/h1&gt; 
+&lt;p&gt;A curated collection of &lt;strong&gt;Awesome LLM apps built with RAG, AI Agents, Multi-agent Teams, MCP, Voice Agents, and more.&lt;/strong&gt; This repository features LLM apps that use models from OpenAI, Anthropic, Google, and open-source models like DeepSeek, Qwen or Llama that you can run locally on your computer.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/9876" target="_blank"&gt; &lt;img src="https://trendshift.io/api/badge/repositories/9876" alt="Shubhamsaboo%2Fawesome-llm-apps | Trendshift" style="width: 250px; height: 55px;" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;🤔 Why Awesome LLM Apps?&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;💡 Discover practical and creative ways LLMs can be applied across different domains, from code repositories to email inboxes and more.&lt;/li&gt; 
+ &lt;li&gt;🔥 Explore apps that combine LLMs from OpenAI, Anthropic, Gemini, and open-source alternatives with AI Agents, Agent Teams, MCP &amp;amp; RAG.&lt;/li&gt; 
+ &lt;li&gt;🎓 Learn from well-documented projects and contribute to the growing open-source ecosystem of LLM-powered applications.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📂 Featured AI Projects&lt;/h2&gt; 
+&lt;h3&gt;AI Agents&lt;/h3&gt; 
+&lt;h3&gt;🌱 Starter AI Agents&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/starter_ai_agents/ai_blog_to_podcast_agent/"&gt;🎙️ AI Blog to Podcast Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/starter_ai_agents/ai_breakup_recovery_agent/"&gt;❤️‍🩹 AI Breakup Recovery Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/starter_ai_agents/ai_data_analysis_agent/"&gt;📊 AI Data Analysis Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/starter_ai_agents/ai_medical_imaging_agent/"&gt;🩻 AI Medical Imaging Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/starter_ai_agents/ai_meme_generator_agent_browseruse/"&gt;😂 AI Meme Generator Agent (Browser)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/starter_ai_agents/ai_music_generator_agent/"&gt;🎵 AI Music Generator Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/starter_ai_agents/ai_travel_agent/"&gt;🛫 AI Travel Agent (Local &amp;amp; Cloud)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/starter_ai_agents/gemini_multimodal_agent_demo/"&gt;✨ Gemini Multimodal Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/starter_ai_agents/local_news_agent_openai_swarm/"&gt;🌐 Local News Agent (OpenAI Swarm)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/starter_ai_agents/mixture_of_agents/"&gt;🔄 Mixture of Agents&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/starter_ai_agents/xai_finance_agent/"&gt;📊 xAI Finance Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/starter_ai_agents/opeani_research_agent/"&gt;🔍 OpenAI Research Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/starter_ai_agents/web_scrapping_ai_agent/"&gt;🕸️ Web Scrapping AI Agent (Local &amp;amp; Cloud)&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🚀 Advanced AI Agents&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/single_agent_apps/ai_deep_research_agent/"&gt;🔍 AI Deep Research Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/single_agent_apps/ai_consultant_agent"&gt;🤝 AI Consultant Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/single_agent_apps/ai_system_architect_r1/"&gt;🏗️ AI System Architect Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/single_agent_apps/ai_lead_generation_agent/"&gt;🎯 AI Lead Generation Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/multi_agent_apps/ai_financial_coach_agent/"&gt;💰 AI Financial Coach Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/single_agent_apps/ai_movie_production_agent/"&gt;🎬 AI Movie Production Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/single_agent_apps/ai_investment_agent/"&gt;📈 AI Investment Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/single_agent_apps/ai_health_fitness_agent/"&gt;🏋️‍♂️ AI Health &amp;amp; Fitness Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/multi_agent_apps/product_launch_intelligence_agent"&gt;🚀 AI Product Launch Intelligence Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/single_agent_apps/ai_journalist_agent/"&gt;🗞️ AI Journalist Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/multi_agent_apps/ai_mental_wellbeing_agent/"&gt;🧠 AI Mental Wellbeing Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/single_agent_apps/ai_meeting_agent/"&gt;📑 AI Meeting Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/multi_agent_apps/ai_Self-Evolving_agent/"&gt;🧬 AI Self-Evolving Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/multi_agent_apps/ai_news_and_podcast_agents/"&gt;🎧 AI Social Media News and Podcast Agent&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🎮 Autonomous Game Playing Agents&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/autonomous_game_playing_agent_apps/ai_3dpygame_r1/"&gt;🎮 AI 3D Pygame Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/autonomous_game_playing_agent_apps/ai_chess_agent/"&gt;♜ AI Chess Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/autonomous_game_playing_agent_apps/ai_tic_tac_toe_agent/"&gt;🎲 AI Tic-Tac-Toe Agent&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🤝 Multi-agent Teams&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/multi_agent_apps/agent_teams/ai_competitor_intelligence_agent_team/"&gt;🧲 AI Competitor Intelligence Agent Team&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/multi_agent_apps/agent_teams/ai_finance_agent_team/"&gt;💲 AI Finance Agent Team&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/multi_agent_apps/agent_teams/ai_game_design_agent_team/"&gt;🎨 AI Game Design Agent Team&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/multi_agent_apps/agent_teams/ai_legal_agent_team/"&gt;👨‍⚖️ AI Legal Agent Team (Cloud &amp;amp; Local)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/multi_agent_apps/agent_teams/ai_recruitment_agent_team/"&gt;💼 AI Recruitment Agent Team&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/multi_agent_apps/agent_teams/ai_real_estate_agent_team"&gt;🏠 AI Real Estate Agent Team&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/multi_agent_apps/agent_teams/ai_services_agency/"&gt;👨‍💼 AI Services Agency (CrewAI)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/multi_agent_apps/agent_teams/ai_teaching_agent_team/"&gt;👨‍🏫 AI Teaching Agent Team&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/multi_agent_apps/agent_teams/multimodal_coding_agent_team/"&gt;💻 Multimodal Coding Agent Team&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/multi_agent_apps/agent_teams/multimodal_design_agent_team/"&gt;✨ Multimodal Design Agent Team&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_ai_agents/multi_agent_apps/agent_teams/ai_travel_planner_agent_team/"&gt;🌏 AI Travel Planner Agent Team&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🗣️ Voice AI Agents&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/voice_ai_agents/ai_audio_tour_agent/"&gt;🗣️ AI Audio Tour Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/voice_ai_agents/customer_support_voice_agent/"&gt;📞 Customer Support Voice Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/voice_ai_agents/voice_rag_openaisdk/"&gt;🔊 Voice RAG Agent (OpenAI SDK)&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🌐 MCP AI Agents&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/mcp_ai_agents/browser_mcp_agent/"&gt;♾️ Browser MCP Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/mcp_ai_agents/github_mcp_agent/"&gt;🐙 GitHub MCP Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/mcp_ai_agents/notion_mcp_agent"&gt;📑 Notion MCP Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/mcp_ai_agents/ai_travel_planner_mcp_agent_team"&gt;🌍 AI Travel Planner MCP Agent&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;📀 RAG (Retrieval Augmented Generation)&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/rag_tutorials/agentic_rag/"&gt;🔗 Agentic RAG&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/rag_tutorials/agentic_rag_with_reasoning/"&gt;🧐 Agentic RAG with Reasoning&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/rag_tutorials/ai_blog_search/"&gt;📰 AI Blog Search (RAG)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/rag_tutorials/autonomous_rag/"&gt;🔍 Autonomous RAG&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/rag_tutorials/corrective_rag/"&gt;🔄 Corrective RAG (CRAG)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/rag_tutorials/deepseek_local_rag_agent/"&gt;🐋 Deepseek Local RAG Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/rag_tutorials/gemini_agentic_rag/"&gt;🤔 Gemini Agentic RAG&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/rag_tutorials/hybrid_search_rag/"&gt;👀 Hybrid Search RAG (Cloud)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/rag_tutorials/llama3.1_local_rag/"&gt;🔄 Llama 3.1 Local RAG&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/rag_tutorials/local_hybrid_search_rag/"&gt;🖥️ Local Hybrid Search RAG&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/rag_tutorials/local_rag_agent/"&gt;🦙 Local RAG Agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/rag_tutorials/rag-as-a-service/"&gt;🧩 RAG-as-a-Service&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/rag_tutorials/rag_agent_cohere/"&gt;✨ RAG Agent with Cohere&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/rag_tutorials/rag_chain/"&gt;⛓️ Basic RAG Chain&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/rag_tutorials/rag_database_routing/"&gt;📠 RAG with Database Routing&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/rag_tutorials/vision_rag/"&gt;🖼️ Vision RAG&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;💾 LLM Apps with Memory Tutorials&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_llm_apps/llm_apps_with_memory_tutorials/ai_arxiv_agent_memory/"&gt;💾 AI ArXiv Agent with Memory&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_llm_apps/llm_apps_with_memory_tutorials/ai_travel_agent_memory/"&gt;🛩️ AI Travel Agent with Memory&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_llm_apps/llm_apps_with_memory_tutorials/llama3_stateful_chat/"&gt;💬 Llama3 Stateful Chat&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_llm_apps/llm_apps_with_memory_tutorials/llm_app_personalized_memory/"&gt;📝 LLM App with Personalized Memory&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_llm_apps/llm_apps_with_memory_tutorials/local_chatgpt_with_memory/"&gt;🗄️ Local ChatGPT Clone with Memory&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_llm_apps/llm_apps_with_memory_tutorials/multi_llm_memory/"&gt;🧠 Multi-LLM Application with Shared Memory&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;💬 Chat with X Tutorials&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_llm_apps/chat_with_X_tutorials/chat_with_github/"&gt;💬 Chat with GitHub (GPT &amp;amp; Llama3)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_llm_apps/chat_with_X_tutorials/chat_with_gmail/"&gt;📨 Chat with Gmail&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_llm_apps/chat_with_X_tutorials/chat_with_pdf/"&gt;📄 Chat with PDF (GPT &amp;amp; Llama3)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_llm_apps/chat_with_X_tutorials/chat_with_research_papers/"&gt;📚 Chat with Research Papers (ArXiv) (GPT &amp;amp; Llama3)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_llm_apps/chat_with_X_tutorials/chat_with_substack/"&gt;📝 Chat with Substack&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_llm_apps/chat_with_X_tutorials/chat_with_youtube_videos/"&gt;📽️ Chat with YouTube Videos&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🔧 LLM Fine-tuning Tutorials&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/advanced_llm_apps/llm_finetuning_tutorials/llama3.2_finetuning/"&gt;🔧 Llama 3.2 Fine-tuning&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🧑‍🏫 AI Agent Framework Crash Course&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/ai_agent_framework_crash_course/google_adk_crash_course/"&gt;Google ADK Crash Course&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Starter agent; model‑agnostic (OpenAI, Claude)&lt;/li&gt; 
+   &lt;li&gt;Structured outputs (Pydantic)&lt;/li&gt; 
+   &lt;li&gt;Tools: built‑in, function, third‑party, MCP tools&lt;/li&gt; 
+   &lt;li&gt;Memory; callbacks; Plugins&lt;/li&gt; 
+   &lt;li&gt;Simple multi‑agent; Multi‑agent patterns&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🚀 Getting Started&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Clone the repository&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git 
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Navigate to the desired project directory&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;cd awesome-llm-apps/starter_ai_agents/ai_travel_agent
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Install the required dependencies&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;pip install -r requirements.txt
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Follow the project-specific instructions&lt;/strong&gt; in each project's &lt;code&gt;README.md&lt;/code&gt; file to set up and run the app.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;🤝 Contributing to Open Source&lt;/h2&gt; 
+&lt;p&gt;Contributions are welcome! If you have any ideas, improvements, or new apps to add, please create a new &lt;a href="https://github.com/Shubhamsaboo/awesome-llm-apps/issues"&gt;GitHub Issue&lt;/a&gt; or submit a pull request. Make sure to follow the existing project structure and include a detailed &lt;code&gt;README.md&lt;/code&gt; for each new app.&lt;/p&gt; 
+&lt;h3&gt;Thank You, Community, for the Support! 🙏&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://star-history.com/#Shubhamsaboo/awesome-llm-apps&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=Shubhamsaboo/awesome-llm-apps&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;🌟 &lt;strong&gt;Don’t miss out on future updates! Star the repo now and be the first to know about new and exciting LLM apps with RAG and AI Agents.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>syncthing/syncthing</title>
+      <link>https://github.com/syncthing/syncthing</link>
+      <description>&lt;p&gt;Open Source Continuous File Synchronization&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a href="https://syncthing.net/"&gt;&lt;img src="https://raw.githubusercontent.com/syncthing/syncthing/main/assets/logo-text-128.png" alt="Syncthing" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;a href="https://www.mozilla.org/MPL/2.0/"&gt;&lt;img src="https://img.shields.io/badge/license-MPLv2-blue.svg?style=flat-square" alt="MPLv2 License" /&gt;&lt;/a&gt; &lt;a href="https://bestpractices.coreinfrastructure.org/projects/88"&gt;&lt;img src="https://bestpractices.coreinfrastructure.org/projects/88/badge" alt="CII Best Practices" /&gt;&lt;/a&gt; &lt;a href="https://goreportcard.com/report/github.com/syncthing/syncthing"&gt;&lt;img src="https://goreportcard.com/badge/github.com/syncthing/syncthing" alt="Go Report Card" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Goals&lt;/h2&gt; 
+&lt;p&gt;Syncthing is a &lt;strong&gt;continuous file synchronization program&lt;/strong&gt;. It synchronizes files between two or more computers. We strive to fulfill the goals below. The goals are listed in order of importance, the most important ones first. This is the summary version of the goal list - for more commentary, see the full &lt;a href="https://github.com/syncthing/syncthing/raw/main/GOALS.md"&gt;Goals document&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Syncthing should be:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Safe From Data Loss&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Protecting the user's data is paramount. We take every reasonable precaution to avoid corrupting the user's files.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Secure Against Attackers&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Again, protecting the user's data is paramount. Regardless of our other goals, we must never allow the user's data to be susceptible to eavesdropping or modification by unauthorized parties.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Easy to Use&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Syncthing should be approachable, understandable, and inclusive.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Automatic&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;User interaction should be required only when absolutely necessary.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Universally Available&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Syncthing should run on every common computer. We are mindful that the latest technology is not always available to every individual.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;For Individuals&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Syncthing is primarily about empowering the individual user with safe, secure, and easy to use file synchronization.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Everything Else&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;There are many things we care about that don't make it on to the list. It is fine to optimize for these values, as long as they are not in conflict with the stated goals above.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;Take a look at the &lt;a href="https://docs.syncthing.net/intro/getting-started.html"&gt;getting started guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;There are a few examples for keeping Syncthing running in the background on your system in &lt;a href="https://github.com/syncthing/syncthing/raw/main/etc"&gt;the etc directory&lt;/a&gt;. There are also several &lt;a href="https://docs.syncthing.net/users/contrib.html#gui-wrappers"&gt;GUI implementations&lt;/a&gt; for Windows, Mac, and Linux.&lt;/p&gt; 
+&lt;h2&gt;Docker&lt;/h2&gt; 
+&lt;p&gt;To run Syncthing in Docker, see &lt;a href="https://github.com/syncthing/syncthing/raw/main/README-Docker.md"&gt;the Docker README&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Getting in Touch&lt;/h2&gt; 
+&lt;p&gt;The first and best point of contact is the &lt;a href="https://forum.syncthing.net/"&gt;Forum&lt;/a&gt;. If you've found something that is clearly a bug, feel free to report it in the &lt;a href="https://github.com/syncthing/syncthing/issues"&gt;GitHub issue tracker&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;If you believe that you’ve found a Syncthing-related security vulnerability, please report it by emailing &lt;a href="mailto:security@syncthing.net"&gt;security@syncthing.net&lt;/a&gt;. Do not report it in the Forum or issue tracker.&lt;/p&gt; 
+&lt;h2&gt;Building&lt;/h2&gt; 
+&lt;p&gt;Building Syncthing from source is easy. After extracting the source bundle from a release or checking out git, you just need to run &lt;code&gt;go run build.go&lt;/code&gt; and the binaries are created in &lt;code&gt;./bin&lt;/code&gt;. There's &lt;a href="https://docs.syncthing.net/dev/building.html"&gt;a guide&lt;/a&gt; with more details on the build process.&lt;/p&gt; 
+&lt;h2&gt;Signed Releases&lt;/h2&gt; 
+&lt;p&gt;Release binaries are GPG signed with the key available from &lt;a href="https://syncthing.net/security/"&gt;https://syncthing.net/security/&lt;/a&gt;. There is also a built-in automatic upgrade mechanism (disabled in some distribution channels) which uses a compiled in ECDSA signature. macOS and Windows binaries are also code-signed.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Please see the Syncthing &lt;a href="https://docs.syncthing.net/"&gt;documentation site&lt;/a&gt; &lt;a href="https://github.com/syncthing/docs"&gt;[source]&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;All code is licensed under the &lt;a href="https://github.com/syncthing/syncthing/raw/main/LICENSE"&gt;MPLv2 License&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>conductor-oss/conductor</title>
+      <link>https://github.com/conductor-oss/conductor</link>
+      <description>&lt;p&gt;Conductor is an event driven orchestration platform providing durable and highly resilient execution engine for your applications&lt;/p&gt;&lt;hr&gt;&lt;picture&gt; 
+ &lt;!-- Dark mode logo --&gt; 
+ &lt;source srcset="https://github.com/user-attachments/assets/104b3a67-6013-4622-8075-a45da3a9e726" media="(prefers-color-scheme: dark)" /&gt; 
+ &lt;!-- Light mode logo --&gt; 
+ &lt;img src="https://assets.conductor-oss.org/logo.png" alt="Logo" /&gt; 
+&lt;/picture&gt; 
+&lt;h1 align="center" style="border-bottom: none"&gt; Conductor - Scalable Workflow Orchestration &lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/conductor-oss/conductor/stargazers"&gt;&lt;img src="https://img.shields.io/github/stars/conductor-oss/conductor?style=social" alt="GitHub stars" /&gt;&lt;/a&gt; &lt;a href="https://github.com/conductor-oss/conductor/releases"&gt;&lt;img src="https://img.shields.io/github/v/release/conductor-oss/conductor.svg?sanitize=true" alt="Github release" /&gt;&lt;/a&gt; &lt;a href="http://www.apache.org/licenses/LICENSE-2.0"&gt;&lt;img src="https://img.shields.io/github/license/conductor-oss/conductor.svg?sanitize=true" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://join.slack.com/t/orkes-conductor/shared_invite/zt-2vdbx239s-Eacdyqya9giNLHfrCavfaA"&gt;&lt;img src="https://img.shields.io/badge/Slack-Join%20the%20Community-blueviolet?logo=slack" alt="Conductor Slack" /&gt;&lt;/a&gt; &lt;a href="https://conductor-oss.org"&gt;&lt;img src="https://img.shields.io/badge/Conductor%20OSS-Visit%20Site-blue" alt="Conductor OSS" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Conductor is an open-source orchestration engine built at Netflix to help developers manage microservices and event-driven workflows. Today, it’s actively maintained by the team at &lt;a href="https://orkes.io"&gt;Orkes&lt;/a&gt; and a growing &lt;a href="https://orkes-conductor.slack.com/join/shared_invite/zt-2vdbx239s-Eacdyqya9giNLHfrCavfaA#/shared-invite/email"&gt;community of contributors&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://youtu.be/4azDdDlx27M"&gt;&lt;img src="https://github.com/user-attachments/assets/6153aa58-8ad1-4ec5-93d1-38ba1b83e3f4" alt="conductor_oss_getting_started" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;Table of Contents&lt;/h1&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/#what-is-conductor"&gt;What is Conductor?&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/#key-benefits"&gt;Key benefits&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/#features"&gt;Features&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/#getting-started"&gt;Getting Started with Docker&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/#requirements"&gt;Requirements&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/#quick-start-guide"&gt;Quick Start&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/#create-your-first-workflow"&gt;Create your first workflow&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/#build-from-source"&gt;Build from source&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/#documentation"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/#database-specifications"&gt;Database Specifications&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/#conductor-oss-roadmap"&gt;Conductor Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/#contributors"&gt;How to Contribute&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/#resources"&gt;Additional Resources&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/#slack-community"&gt;Community &amp;amp; Support&lt;/a&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h1&gt;What is Conductor?&lt;/h1&gt; 
+&lt;p&gt;Conductor (or &lt;a href="https://netflixtechblog.com/netflix-conductor-a-microservices-orchestrator-2e8d4771bf40"&gt;Netflix Conductor&lt;/a&gt;) is a microservices orchestration engine for distributed and asynchronous workflows. It empowers developers to create workflows that define interactions between services, databases, and other external systems.&lt;/p&gt; 
+&lt;p&gt;Conductor is designed to enable flexible, resilient, and scalable workflows. It allows you to compose services into complex workflows without coupling them tightly, simplifying orchestration across cloud-native applications and enterprise systems alike.&lt;/p&gt; 
+&lt;h2&gt;Key benefits&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Resilience and Error Handling:&lt;/strong&gt; Conductor enables automatic retries and fallback mechanisms.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Scalability:&lt;/strong&gt; Built to scale with complex workflows in high-traffic environments.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Observability:&lt;/strong&gt; Provides monitoring and debugging capabilities for workflows.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Ease of Integration:&lt;/strong&gt; Seamlessly integrates with microservices, external APIs, and legacy systems.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Workflow as code:&lt;/strong&gt; Define workflows in JSON and manage them with versioning.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Rich task types:&lt;/strong&gt; Includes task types like HTTP, JSON, Lambda, Sub Workflow, and Event tasks, allowing for flexible workflow definitions.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Dynamic workflow management:&lt;/strong&gt; Workflows can evolve independently of the underlying services.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Built-in UI:&lt;/strong&gt; A customizable UI is available to monitor and manage workflows.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Flexible persistence and queue options:&lt;/strong&gt; Use Redis, MySQL, Postgres, and more.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;Getting Started with Conductor&lt;/h1&gt; 
+&lt;h3&gt;Requirements&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Install Docker Desktop (&lt;a href="https://docs.docker.com/desktop/setup/install/mac-install/"&gt;Mac&lt;/a&gt;, &lt;a href="https://docs.docker.com/desktop/setup/install/windows-install/"&gt;Windows/PC&lt;/a&gt;, &lt;a href="https://docs.docker.com/desktop/setup/install/linux/"&gt;Linux&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;Install Java (JDK) 17 or newer&lt;/li&gt; 
+ &lt;li&gt;Node 14 for the UI to build 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;em&gt;Earlier versions may work, but are untested&lt;/em&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Quick Start guide&lt;/h2&gt; 
+&lt;h4&gt;Clone the repo&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;git clone https://github.com/conductor-oss/conductor
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Change to new Conductor directory&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;cd conductor
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Start with Docker Compose (&lt;em&gt;recommended for local deployment&lt;/em&gt;)&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;docker compose -f docker/docker-compose.yaml up
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Create your first workflow&lt;/h4&gt; 
+&lt;h5&gt;With the UI:&lt;/h5&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="http://localhost:8127"&gt;http://localhost:8127&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h5&gt;Or the REST API with your preferred HTTP client:&lt;/h5&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="http://localhost:8080"&gt;http://localhost:8080&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;Documentation&lt;/h1&gt; 
+&lt;p&gt;Check-out the &lt;a href="https://github.com/conductor-oss/conductor/tree/main/docs"&gt;Conductor docs&lt;/a&gt; for additional details&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;Database Specifications&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The default persistence used is Redis&lt;/li&gt; 
+ &lt;li&gt;The indexing backend is &lt;a href="https://www.elastic.co/"&gt;Elasticsearch&lt;/a&gt; (7.x)&lt;/li&gt; 
+ &lt;li&gt;To use &lt;a href="https://opensearch.org/"&gt;Opensearch&lt;/a&gt; (2.x), comment out Elasticsearch import so lucene dependencies don't conflict &lt;a href="https://github.com/conductor-oss/conductor/raw/main/server/build.gradle#L44-L46"&gt;server/build.gradle&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Configuration for various database backends&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Backend&lt;/th&gt; 
+   &lt;th&gt;Configuration&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Redis + ES7&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/docker/server/config/config-redis.properties"&gt;config-redis.properties&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Postgres&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/docker/server/config/config-postgres.properties"&gt;config-postgres.properties&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Postgres + ES7&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/docker/server/config/config-postgres-es7.properties"&gt;config-postgres-es7.properties&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;MySQL + ES7&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/docker/server/config/config-mysql.properties"&gt;config-mysql.properties&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h1&gt;Build from source&lt;/h1&gt; 
+&lt;p&gt;Build from source and deploy Conductor as a standalone Java application. Configure databases, queues, and environment settings as needed. Follow the &lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/docs/devguide/running/source.md"&gt;Building Conductor From Source&lt;/a&gt;&lt;/strong&gt; guide included in this repo.&lt;/p&gt; 
+&lt;h2&gt;Available SDKs&lt;/h2&gt; 
+&lt;p&gt;Conductor provides several SDKs for interacting with the API and creating custom clients:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/conductor-oss/java-sdk"&gt;&lt;strong&gt;Java SDK:&lt;/strong&gt;&lt;/a&gt; Fully featured for building and executing workflows in Java.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/conductor-oss/python-sdk"&gt;&lt;strong&gt;Python SDK:&lt;/strong&gt;&lt;/a&gt; Python library for creating and managing workflows.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/conductor-oss/javascript-sdk"&gt;&lt;strong&gt;Javascript SDK:&lt;/strong&gt;&lt;/a&gt; For integrating Conductor workflows with Javascript/Typescript-based services.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/conductor-oss/go-sdk"&gt;&lt;strong&gt;Go SDK:&lt;/strong&gt;&lt;/a&gt; For integrating Conductor workflows with Go-based services.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/conductor-oss/csharp-sdk"&gt;&lt;strong&gt;C# SDK:&lt;/strong&gt;&lt;/a&gt;The conductor-csharp repository provides the client SDKs to build task workers in C#&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Each SDK is maintained as part of the Conductor project, providing examples and comprehensive API documentation.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;Contributing&lt;/h1&gt; 
+&lt;p&gt;We welcome contributions from everyone!&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Report Issues:&lt;/strong&gt; Found a bug or have a feature request? Open an &lt;a href="https://github.com/conductor-oss/conductor/issues"&gt;issue on GitHub&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Contribute code:&lt;/strong&gt; Check out our &lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/CONTRIBUTING.md"&gt;Contribution Guide&lt;/a&gt;, and explore our &lt;a href="https://github.com/conductor-oss/conductor/labels/good%20first%20issue"&gt;Good first issues&lt;/a&gt; for beginner-friendly tasks to tackle first.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Contribute to our Docs:&lt;/strong&gt; Contribute edits or updates to keep our &lt;a href="https://github.com/conductor-oss/conductor/tree/main/docs"&gt;documentation&lt;/a&gt; in great shape for the community.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Build a Conductor SDK:&lt;/strong&gt; Need an &lt;a href="https://github.com/conductor-sdk"&gt;SDK&lt;/a&gt; not available for Conductor today? Build your own using the &lt;a href="http://localhost:8080"&gt;Swagger API&lt;/a&gt; included with your local deployment.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;Community&lt;/h1&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://join.slack.com/t/orkes-conductor/shared_invite/zt-2vdbx239s-Eacdyqya9giNLHfrCavfaA"&gt;Join the Conductor Slack&lt;/a&gt;&lt;/strong&gt; channel for community discussions and support.&lt;/p&gt; 
+&lt;h2&gt;Contributors&lt;/h2&gt; 
+&lt;a href="https://github.com/conductor-oss/conductor/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=conductor-oss/conductor" /&gt; &lt;/a&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;Conductor OSS Roadmap&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/ROADMAP.md"&gt;See the roadmap for the Conductor&lt;/a&gt; If you would like to participate in the roadmap and development, &lt;a href="https://forms.gle/P2i1xHrxPQLrjzTB7"&gt;please reach out&lt;/a&gt;.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;License&lt;/h1&gt; 
+&lt;p&gt;Conductor is licensed under the &lt;a href="https://raw.githubusercontent.com/conductor-oss/conductor/main/LICENSE"&gt;Apache 2.0 License ©&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>external-secrets/external-secrets</title>
+      <link>https://github.com/external-secrets/external-secrets</link>
+      <description>&lt;p&gt;External Secrets Operator reads information from a third-party service like AWS Secrets Manager and automatically injects the values as Kubernetes Secrets.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/external-secrets/external-secrets/main/assets/eso-logo-large.png" width="30%" align="center" alt="external-secrets" /&gt; &lt;/p&gt; 
+&lt;h2&gt;Project Releases Paused Until Maintainer Team is Rebuilt ⚠️&lt;/h2&gt; 
+&lt;p&gt;The current maintainers of External Secrets Operator decided to pause official SemVer releases.&lt;/p&gt; 
+&lt;p&gt;Despite strong adoption and a growing user base, the project is currently maintained by a very small core team. This limited capacity makes it unsustainable to continue regular development, community support, and release management.&lt;/p&gt; 
+&lt;p&gt;To ensure the long-term health of the project, we are temporarily pausing all official releases - including new features, patches, and published container images - until we have at least five consistent, long-term community maintainers.&lt;/p&gt; 
+&lt;h3&gt;What does this mean?&lt;/h3&gt; 
+&lt;p&gt;✅ We will continue reviewing and merging community PRs.&lt;/p&gt; 
+&lt;p&gt;✅ Contributions will be available on the main branch.&lt;/p&gt; 
+&lt;p&gt;❌ We will not provide support via GitHub Discussions, Slack, or issue comments.&lt;/p&gt; 
+&lt;p&gt;❌ We will not publish any new releases (major, minor, or patch), including 0.19.x and 1.0.x.&lt;/p&gt; 
+&lt;h3&gt;How You Can Help&lt;/h3&gt; 
+&lt;p&gt;If your company or team relies on External Secrets Operator, please consider contributing back - especially if you work for an organization with a defined open source strategy.&lt;/p&gt; 
+&lt;p&gt;➡️ To get involved, please fill out &lt;a href="https://forms.gle/utsekWEBwrfo1dHs8"&gt;this form&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;You can also check out the &lt;a href="https://github.com/external-secrets/external-secrets/raw/main/GOVERNANCE.md"&gt;Governance document&lt;/a&gt; or join the &lt;a href="https://github.com/external-secrets/external-secrets/issues/5084"&gt;GitHub Issue&lt;/a&gt; for more context.&lt;/p&gt; 
+&lt;p&gt;We truly regret having to take this step, but it's necessary to raise awareness among the many organizations relying on External Secrets in production. We need your support to continue moving the project forward.&lt;/p&gt; 
+&lt;p&gt;Thank you for your understanding and for being part of this community.&lt;/p&gt; 
+&lt;h1&gt;External Secrets&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://github.com/external-secrets/external-secrets/actions/workflows/ci.yml/badge.svg?branch=main" alt="ci" /&gt; &lt;a href="https://bestpractices.coreinfrastructure.org/projects/5947"&gt;&lt;img src="https://bestpractices.coreinfrastructure.org/projects/5327/badge" alt="CII Best Practices" /&gt;&lt;/a&gt; &lt;a href="https://securityscorecards.dev/viewer/?uri=github.com/external-secrets/external-secrets"&gt;&lt;img src="https://api.securityscorecards.dev/projects/github.com/external-secrets/external-secrets/badge" alt="OpenSSF Scorecard" /&gt;&lt;/a&gt; &lt;a href="https://goreportcard.com/report/github.com/external-secrets/external-secrets"&gt;&lt;img src="https://goreportcard.com/badge/github.com/external-secrets/external-secrets" alt="Go Report Card" /&gt;&lt;/a&gt; &lt;a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fexternal-secrets%2Fexternal-secrets?ref=badge_shield"&gt;&lt;img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fexternal-secrets%2Fexternal-secrets.svg?type=shield" alt="FOSSA Status" /&gt;&lt;/a&gt; &lt;a href="https://artifacthub.io/packages/helm/external-secrets-operator/external-secrets"&gt;&lt;img alt="Artifact Hub" src="https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/external-secrets" /&gt;&lt;/a&gt; &lt;a href="https://operatorhub.io/operator/external-secrets-operator"&gt;&lt;img alt="operatorhub.io" src="https://img.shields.io/badge/operatorhub.io-external--secrets-brightgreen" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;External Secrets Operator&lt;/strong&gt; is a Kubernetes operator that integrates external secret management systems like &lt;a href="https://aws.amazon.com/secrets-manager/"&gt;AWS Secrets Manager&lt;/a&gt;, &lt;a href="https://www.vaultproject.io/"&gt;HashiCorp Vault&lt;/a&gt;, &lt;a href="https://cloud.google.com/secret-manager"&gt;Google Secrets Manager&lt;/a&gt;, &lt;a href="https://azure.microsoft.com/en-us/services/key-vault/"&gt;Azure Key Vault&lt;/a&gt;, &lt;a href="https://www.ibm.com/cloud/secrets-manager"&gt;IBM Cloud Secrets Manager&lt;/a&gt;, &lt;a href="https://akeyless.io"&gt;Akeyless&lt;/a&gt;, &lt;a href="https://www.conjur.org"&gt;CyberArk Conjur&lt;/a&gt;, &lt;a href="https://www.pulumi.com/product/esc/"&gt;Pulumi ESC&lt;/a&gt; and many more. The operator reads information from external APIs and automatically injects the values into a &lt;a href="https://kubernetes.io/docs/concepts/configuration/secret/"&gt;Kubernetes Secret&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Multiple people and organizations are joining efforts to create a single External Secrets solution based on existing projects. If you are curious about the origins of this project, check out &lt;a href="https://github.com/external-secrets/kubernetes-external-secrets/issues/47"&gt;this issue&lt;/a&gt; and &lt;a href="https://github.com/external-secrets/kubernetes-external-secrets/pull/477"&gt;this PR&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;External Secrets Operator guides and reference documentation is available at &lt;a href="https://external-secrets.io"&gt;external-secrets.io&lt;/a&gt;. Also see our &lt;a href="https://external-secrets.io/main/introduction/stability-support/"&gt;stability and support&lt;/a&gt; policy.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome and encourage contributions to this project! Please read the &lt;a href="https://www.external-secrets.io/main/contributing/devguide/"&gt;Developer&lt;/a&gt; and &lt;a href="https://www.external-secrets.io/main/contributing/process/"&gt;Contribution process&lt;/a&gt; guides. Also make sure to check the &lt;a href="https://www.external-secrets.io/main/contributing/coc/"&gt;Code of Conduct&lt;/a&gt; and adhere to its guidelines.&lt;/p&gt; 
+&lt;h3&gt;Sponsoring&lt;/h3&gt; 
+&lt;p&gt;Please consider sponsoring this project, there are many ways you can help us with: engineering time, providing infrastructure, donating money, etc. We are open to cooperations, feel free to approach as and we discuss how this could look like. We can keep your contribution anonymized if that's required (depending on the type of contribution), and anonymous donations are possible inside &lt;a href="https://opencollective.com/external-secrets-org"&gt;Opencollective&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Bi-weekly Development Meeting&lt;/h2&gt; 
+&lt;p&gt;We host our development meeting every odd wednesday on &lt;a href="https://meet.jit.si/eso-community-meeting"&gt;Jitsi&lt;/a&gt;. We run the meeting with alternating times &lt;a href="https://dateful.com/time-zone-converter?t=20:00&amp;amp;tz=Europe/Berlin"&gt;8:00 PM Berlin Time&lt;/a&gt; and &lt;a href="https://dateful.com/time-zone-converter?t=13:00&amp;amp;tz=Europe/Berlin"&gt;1:00 PM Berlin Time&lt;/a&gt;, we'll announce the time in our &lt;a href="https://kubernetes.slack.com/messages/external-secrets"&gt;Kubernetes Slack channel&lt;/a&gt;. Meeting notes are recorded on &lt;a href="https://hackmd.io/GSGEpTVdRZCP6LDxV3FHJA"&gt;hackmd&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Anyone is welcome to join. Feel free to ask questions, request feedback, raise awareness for an issue, or just say hi. ;)&lt;/p&gt; 
+&lt;h2&gt;Security&lt;/h2&gt; 
+&lt;p&gt;Please report vulnerabilities by email to &lt;a href="mailto:cncf-ExternalSecretsOp-maintainers@lists.cncf.io"&gt;cncf-ExternalSecretsOp-maintainers@lists.cncf.io&lt;/a&gt;. Also see our &lt;a href="https://raw.githubusercontent.com/external-secrets/external-secrets/main/SECURITY.md"&gt;SECURITY.md file&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;h2&gt;software bill of materials&lt;/h2&gt; 
+&lt;p&gt;We attach SBOM and provenance file to our GitHub release. Also, they are attached to container images.&lt;/p&gt; 
+&lt;h2&gt;Adopters&lt;/h2&gt; 
+&lt;p&gt;Please create a PR and add your company or project to our &lt;a href="https://raw.githubusercontent.com/external-secrets/external-secrets/main/ADOPTERS.md"&gt;ADOPTERS.md file&lt;/a&gt; if you are using our project!&lt;/p&gt; 
+&lt;h2&gt;Roadmap&lt;/h2&gt; 
+&lt;p&gt;You can find the roadmap in our documentation: &lt;a href="https://external-secrets.io/main/contributing/roadmap/"&gt;https://external-secrets.io/main/contributing/roadmap/&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Kicked off by&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/external-secrets/external-secrets/main/assets/Godaddylogo_2020.png" alt="" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Sponsored by&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/external-secrets/external-secrets/main/assets/ESI_Logo.svg?sanitize=true" alt="External Secrets Inc." /&gt; &lt;img src="https://raw.githubusercontent.com/external-secrets/external-secrets/main/assets/CS_logo_1.png" alt="Container Solutions" /&gt; &lt;img src="https://raw.githubusercontent.com/external-secrets/external-secrets/main/assets/form3_logo.png" alt="Form 3" /&gt; &lt;img src="https://raw.githubusercontent.com/external-secrets/external-secrets/main/assets/pento_logo.png" alt="Pento " /&gt;&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fexternal-secrets%2Fexternal-secrets?ref=badge_large"&gt;&lt;img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fexternal-secrets%2Fexternal-secrets.svg?type=large" alt="FOSSA Status" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>moeru-ai/airi</title>
+      <link>https://github.com/moeru-ai/airi</link>
+      <description>&lt;p&gt;💖🧸 Self hosted, you owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported.&lt;/p&gt;&lt;hr&gt;&lt;picture&gt; 
+ &lt;source width="100%" srcset="./docs/content/public/banner-dark-1280x640.avif" media="(prefers-color-scheme: dark)" /&gt; 
+ &lt;source width="100%" srcset="./docs/content/public/banner-light-1280x640.avif" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" /&gt; 
+ &lt;img width="250" src="https://raw.githubusercontent.com/moeru-ai/airi/main/docs/content/public/banner-light-1280x640.avif" /&gt; 
+&lt;/picture&gt; 
+&lt;h1 align="center"&gt;Project AIRI&lt;/h1&gt; 
+&lt;p align="center"&gt;Re-creating Neuro-sama, a container of souls of AI waifu / virtual characters to bring them into our worlds.&lt;/p&gt; 
+&lt;p align="center"&gt; [&lt;a href="https://discord.gg/TgQ3Cu2F7A"&gt;Join Discord Server&lt;/a&gt;] [&lt;a href="https:///airi.moeru.ai"&gt;Try it&lt;/a&gt;] [&lt;a href="https://github.com/moeru-ai/airi/raw/main/docs/README.zh-CN.md"&gt;简体中文&lt;/a&gt;] [&lt;a href="https://github.com/moeru-ai/airi/raw/main/docs/README.ja-JP.md"&gt;日本語&lt;/a&gt;] &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://deepwiki.com/moeru-ai/airi"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://github.com/moeru-ai/airi/raw/main/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/moeru-ai/airi.svg?style=flat&amp;amp;colorA=080f12&amp;amp;colorB=1fa669" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/TgQ3Cu2F7A"&gt;&lt;img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscord.com%2Fapi%2Finvites%2FTgQ3Cu2F7A%3Fwith_counts%3Dtrue&amp;amp;query=%24.approximate_member_count&amp;amp;suffix=%20members&amp;amp;logo=discord&amp;amp;logoColor=white&amp;amp;label=%20&amp;amp;color=7389D8&amp;amp;labelColor=6A7EC2" /&gt;&lt;/a&gt; &lt;a href="https://x.com/proj_airi"&gt;&lt;img src="https://img.shields.io/badge/%40proj__airi-black?style=flat&amp;amp;logo=x&amp;amp;labelColor=%23101419&amp;amp;color=%232d2e30" /&gt;&lt;/a&gt; &lt;a href="https://t.me/+7M_ZKO3zUHFlOThh"&gt;&lt;img src="https://img.shields.io/badge/Telegram-%235AA9E6?logo=telegram&amp;amp;labelColor=FFFFFF" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.producthunt.com/products/airi?embed=true&amp;amp;utm_source=badge-featured&amp;amp;utm_medium=badge&amp;amp;utm_source=badge-airi" target="_blank"&gt;&lt;img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=993524&amp;amp;theme=neutral&amp;amp;t=1752696535380" alt="AIRI - A container of cyber living souls, re-creation of Neuro-sama | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /&gt;&lt;/a&gt; &lt;a href="https://trendshift.io/repositories/14636" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/14636" alt="moeru-ai%2Fairi | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Heavily inspired by &lt;a href="https://www.youtube.com/@Neurosama"&gt;Neuro-sama&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!WARNING] &lt;strong&gt;Attention:&lt;/strong&gt; We &lt;strong&gt;do not&lt;/strong&gt; have any officially minted cryptocurrency or token associated with this project. Please check the information and proceed with caution.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE]&lt;/p&gt; 
+ &lt;p&gt;We got a whole dedicated organization &lt;a href="https://github.com/proj-airi"&gt;@proj-airi&lt;/a&gt; for all the sub-project that born from Project AIRI, check it out!&lt;/p&gt; 
+ &lt;p&gt;RAG, memory system, embedded database, icons, Live2D utilities, and more!&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Have you dreamed about having a cyber living being (cyber waifu / husbando, digital pet), or digital companion that could play with and talk to you?&lt;/p&gt; 
+&lt;p&gt;With the power of modern large language models like &lt;a href="https://chatgpt.com"&gt;ChatGPT&lt;/a&gt;, and famous &lt;a href="https://claude.ai"&gt;Claude&lt;/a&gt;, asking a virtual being able to have role playing and chat with us is already easy enough for everyone. Platforms like &lt;a href="https://character.ai"&gt;Character.ai (a.k.a. c.ai)&lt;/a&gt; and &lt;a href="https://janitorai.com/"&gt;JanitorAI&lt;/a&gt;, and local playgrounds like &lt;a href="https://github.com/SillyTavern/SillyTavern"&gt;SillyTavern&lt;/a&gt; is already a well-enough solution for chat based, or visual adventure game like experience.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;But, what about the abilities to play games? And see what you are coding at? Chatting while playing games, watching videos, and capable of doing many other things.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Perhaps you know &lt;a href="https://www.youtube.com/@Neurosama"&gt;Neuro-sama&lt;/a&gt; already, she is currently the best companion capable of playing games, chatting, and interacting with you and the participants (in VTuber community), some call this kind of being, "digital human" too. &lt;strong&gt;Sadly, it's not open sourced, you cannot interact with her after she went offline from live stream&lt;/strong&gt;.&lt;/p&gt; 
+&lt;p&gt;Therefore, this project, AIRI, offers another possibility here: &lt;strong&gt;let you own your digital life, cyber living, easily, anywhere, anytime&lt;/strong&gt;.&lt;/p&gt; 
+&lt;h2&gt;DevLogs we posted &amp;amp; Recent updates&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://airi.moeru.ai/docs/blog/DevLog-2025.07.18/"&gt;DevLog @ 2025.07.18&lt;/a&gt; on July 18, 2025&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://airi.moeru.ai/docs/blog/dreamlog-0x1/"&gt;DreamLog 0x1&lt;/a&gt; on June 16, 2025&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://airi.moeru.ai/docs/blog/DevLog-2025.06.08/"&gt;DevLog @ 2025.06.08&lt;/a&gt; on June 8, 2025&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://airi.moeru.ai/docs/blog/DevLog-2025.05.16/"&gt;DevLog @ 2025.05.16&lt;/a&gt; on May 16, 2025&lt;/li&gt; 
+ &lt;li&gt;...more on &lt;a href="https://airi.moeru.ai/docs"&gt;documentation site&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;What's so special for this project?&lt;/h2&gt; 
+&lt;p&gt;Unlike the other AI driven VTuber open source projects, アイリ VTuber was built with many support of Web technologies such as &lt;a href="https://www.w3.org/TR/webgpu/"&gt;WebGPU&lt;/a&gt;, &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API"&gt;WebAudio&lt;/a&gt;, &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers"&gt;Web Workers&lt;/a&gt;, &lt;a href="https://webassembly.org/"&gt;WebAssembly&lt;/a&gt;, &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket"&gt;WebSocket&lt;/a&gt;, etc. from the first day.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] Worry about the performance drop since we are using Web related technologies?&lt;/p&gt; 
+ &lt;p&gt;Don't worry, while Web browser version meant to give a insight about how much we can push and do inside browsers, and webviews, we will never fully rely on this, the desktop version of AIRI is capable of using native &lt;a href="https://developer.nvidia.com/cuda-toolkit"&gt;NVIDIA CUDA&lt;/a&gt; and &lt;a href="https://developer.apple.com/metal/"&gt;Apple Metal&lt;/a&gt; by default (thanks to HuggingFace &amp;amp; beloved &lt;a href="https://github.com/huggingface/candle"&gt;candle&lt;/a&gt; project), without any complex dependency managements, considering the tradeoff, it was partially powered by Web technologies for graphics, layouts, animations, and the WIP plugin systems for everyone to integrate things.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;This means that &lt;strong&gt;アイリ VTuber is capable to run on modern browsers and devices&lt;/strong&gt;, and even on mobile devices (already done with PWA support), this brought a lot of possibilities for us (the developers) to build and extend the power of アイリ VTuber to the next level, while still left the flexibilities for users to enable features that requires TCP connections or other non-Web technologies such as connect to voice channel to Discord, or playing Minecraft, Factorio with you and your friends.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE]&lt;/p&gt; 
+ &lt;p&gt;We are still in the early stage of development where we are seeking out talented developers to join us and help us to make アイリ VTuber a reality.&lt;/p&gt; 
+ &lt;p&gt;It's ok if you are not familiar with Vue.js, TypeScript, and devtools that required for this project, you can join us as an artist, designer, or even help us to launch our first live stream.&lt;/p&gt; 
+ &lt;p&gt;Even you are a big fan of React or Svelte, even Solid, we welcome you, you can open a sub-directory to add features that you want to see in アイリ VTuber, or would like to experiment with.&lt;/p&gt; 
+ &lt;p&gt;Fields (and related projects) that we are looking for:&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Live2D modeller&lt;/li&gt; 
+  &lt;li&gt;VRM modeller&lt;/li&gt; 
+  &lt;li&gt;VRChat avatar designer&lt;/li&gt; 
+  &lt;li&gt;Computer Vision&lt;/li&gt; 
+  &lt;li&gt;Reinforcement Learning&lt;/li&gt; 
+  &lt;li&gt;Speech Recognition&lt;/li&gt; 
+  &lt;li&gt;Speech Synthesis&lt;/li&gt; 
+  &lt;li&gt;ONNX Runtime&lt;/li&gt; 
+  &lt;li&gt;Transformers.js&lt;/li&gt; 
+  &lt;li&gt;vLLM&lt;/li&gt; 
+  &lt;li&gt;WebGPU&lt;/li&gt; 
+  &lt;li&gt;Three.js&lt;/li&gt; 
+  &lt;li&gt;WebXR (&lt;a href="https://github.com/moeru-ai/chat"&gt;checkout the another project&lt;/a&gt; we have under @moeru-ai organization)&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;If you are interested in, why not introduce yourself here? &lt;a href="https://github.com/moeru-ai/airi/discussions/33"&gt;Would like to join part of us to build AIRI?&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Current progress&lt;/h2&gt; 
+&lt;img src="https://raw.githubusercontent.com/moeru-ai/airi/main/docs/content/public/readme-image-pc-preview.avif" /&gt; 
+&lt;p&gt;Capable of&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Brain 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Play &lt;a href="https://www.minecraft.net"&gt;Minecraft&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Play &lt;a href="https://www.factorio.com"&gt;Factorio&lt;/a&gt; (WIP, but &lt;a href="https://github.com/moeru-ai/airi-factorio"&gt;PoC and demo available&lt;/a&gt;)&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Chat in &lt;a href="https://telegram.org"&gt;Telegram&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Chat in &lt;a href="https://discord.com"&gt;Discord&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Memory 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Pure in-browser database support (DuckDB WASM | &lt;code&gt;pglite&lt;/code&gt;)&lt;/li&gt; 
+     &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Memory Alaya (WIP)&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Pure in-browser local (WebGPU) inference&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Ears 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Audio input from browser&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Audio input from &lt;a href="https://discord.com"&gt;Discord&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Client side speech recognition&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Client side talking detection&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Mouth 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://elevenlabs.io/"&gt;ElevenLabs&lt;/a&gt; voice synthesis&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Body 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; VRM support 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Control VRM model&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; VRM model animations 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Auto blink&lt;/li&gt; 
+     &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Auto look at&lt;/li&gt; 
+     &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Idle eye movement&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Live2D support 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Control Live2D model&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Live2D model animations 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Auto blink&lt;/li&gt; 
+     &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Auto look at&lt;/li&gt; 
+     &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Idle eye movement&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;For detailed instructions to develop this project, follow the &lt;a href="https://raw.githubusercontent.com/moeru-ai/airi/main/.github/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] By default, &lt;code&gt;pnpm dev&lt;/code&gt; will start the development server for the Stage Web (browser version), if you would like to try developing the desktop version, please make sure you read &lt;a href="https://raw.githubusercontent.com/moeru-ai/airi/main/.github/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; to setup the environment correctly.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;pnpm i
+pnpm dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Stage Web (Browser version for &lt;a href="https://airi.moeru.ai"&gt;airi.moeru.ai&lt;/a&gt;)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;pnpm dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Stage Tamagotchi (Desktop version)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;pnpm dev:tamagotchi
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Documentation site&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;pnpm dev:docs
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Publish&lt;/h3&gt; 
+&lt;p&gt;Please update the version in &lt;code&gt;Cargo.toml&lt;/code&gt; after running the &lt;code&gt;bumpp&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;npx bumpp --no-commit --no-tag
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Supported the following LLM API Providers (powered by &lt;a href="https://github.com/moeru-ai/xsai"&gt;xsai&lt;/a&gt;)&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://openrouter.ai/"&gt;OpenRouter&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://github.com/vllm-project/vllm"&gt;vLLM&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://github.com/sgl-project/sglang"&gt;SGLang&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://github.com/ollama/ollama"&gt;Ollama&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://developers.generativeai.google"&gt;Google Gemini&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://platform.openai.com/docs/guides/gpt/chat-completions-api"&gt;OpenAI&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" disabled /&gt; &lt;a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/reference"&gt;Azure OpenAI API&lt;/a&gt; (PR welcome)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://anthropic.com"&gt;Anthropic Claude&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" disabled /&gt; &lt;a href="https://docs.anthropic.com/en/api/claude-on-amazon-bedrock"&gt;AWS Claude&lt;/a&gt; (PR welcome)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://www.deepseek.com/"&gt;DeepSeek&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://help.aliyun.com/document_detail/2400395.html"&gt;Qwen&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://x.ai/"&gt;xAI&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://wow.groq.com/"&gt;Groq&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://mistral.ai/"&gt;Mistral&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://developers.cloudflare.com/workers-ai/"&gt;Cloudflare Workers AI&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://www.together.ai/"&gt;Together.ai&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://www.together.ai/"&gt;Fireworks.ai&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://www.novita.ai/"&gt;Novita&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://bigmodel.cn"&gt;Zhipu&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://cloud.siliconflow.cn/i/rKXmRobW"&gt;SiliconFlow&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://platform.stepfun.com/"&gt;Stepfun&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://platform.baichuan-ai.com"&gt;Baichuan&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://api.minimax.chat/"&gt;Minimax&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://platform.moonshot.cn/"&gt;Moonshot AI&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://player2.game/"&gt;Player2&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://cloud.tencent.com/document/product/1729"&gt;Tencent Cloud&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; &lt;a href="https://www.xfyun.cn/doc/spark/Web.html"&gt;Sparks&lt;/a&gt; (PR welcome)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; &lt;a href="https://www.volcengine.com/experience/ark?utm_term=202502dsinvite&amp;amp;ac=DSASUQY5&amp;amp;rc=2QXCA1VI"&gt;Volcano Engine&lt;/a&gt; (PR welcome)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Sub-projects born from this project&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/proj-airi/awesome-ai-vtuber"&gt;Awesome AI VTuber&lt;/a&gt;: A curated list of AI VTubers and related projects&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/unspeech"&gt;&lt;code&gt;unspeech&lt;/code&gt;&lt;/a&gt;: Universal endpoint proxy server for &lt;code&gt;/audio/transcriptions&lt;/code&gt; and &lt;code&gt;/audio/speech&lt;/code&gt;, like LiteLLM but for any ASR and TTS&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/hfup"&gt;&lt;code&gt;hfup&lt;/code&gt;&lt;/a&gt;: tools to help on deploying, bundling to HuggingFace Spaces&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/xsai-transformers"&gt;&lt;code&gt;xsai-transformers&lt;/code&gt;&lt;/a&gt;: Experimental &lt;a href="https://github.com/huggingface/transformers.js"&gt;🤗 Transformers.js&lt;/a&gt; provider for &lt;a href="https://github.com/moeru-ai/xsai"&gt;xsAI&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/proj-airi/webai-realtime-voice-chat"&gt;WebAI: Realtime Voice Chat&lt;/a&gt;: Full example of implementing ChatGPT's realtime voice from scratch with VAD + STT + LLM + TTS.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/airi/tree/main/packages/drizzle-duckdb-wasm/README.md"&gt;&lt;code&gt;@proj-airi/drizzle-duckdb-wasm&lt;/code&gt;&lt;/a&gt;: Drizzle ORM driver for DuckDB WASM&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/airi/tree/main/packages/duckdb-wasm/README.md"&gt;&lt;code&gt;@proj-airi/duckdb-wasm&lt;/code&gt;&lt;/a&gt;: Easy to use wrapper for &lt;code&gt;@duckdb/duckdb-wasm&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/airi/raw/main/crates/tauri-plugin-mcp/README.md"&gt;&lt;code&gt;tauri-plugin-mcp&lt;/code&gt;&lt;/a&gt;: A Tauri plugin for interacting with MCP servers.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/airi-factorio"&gt;AIRI Factorio&lt;/a&gt;: Allow AIRI to play Factorio&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/nekomeowww/factorio-rcon-api"&gt;Factorio RCON API&lt;/a&gt;: RESTful API wrapper for Factorio headless server console&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/airi-factorio/tree/main/packages/autorio"&gt;&lt;code&gt;autorio&lt;/code&gt;&lt;/a&gt;: Factorio automation library&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/airi-factorio/tree/main/packages/tstl-plugin-reload-factorio-mod"&gt;&lt;code&gt;tstl-plugin-reload-factorio-mod&lt;/code&gt;&lt;/a&gt;: Reload Factorio mod when developing&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/luoling8192/velin"&gt;Velin&lt;/a&gt;: Use Vue SFC and Markdown to write easy to manage stateful prompts for LLM&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/demodel"&gt;&lt;code&gt;demodel&lt;/code&gt;&lt;/a&gt;: Easily boost the speed of pulling your models and datasets from various of inference runtimes.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/inventory"&gt;&lt;code&gt;inventory&lt;/code&gt;&lt;/a&gt;: Centralized model catalog and default provider configurations backend service&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/mcp-launcher"&gt;MCP Launcher&lt;/a&gt;: Easy to use MCP builder &amp;amp; launcher for all possible MCP servers, just like Ollama for models!&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/sad"&gt;🥺 SAD&lt;/a&gt;: Documentation and notes for self-host and browser running LLMs.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-mermaid"&gt;%%{ init: { 'flowchart': { 'curve': 'catmullRom' } } }%%
+
+flowchart TD
+  Core("Core")
+  Unspeech("unspeech")
+  DBDriver("@proj-airi/drizzle-duckdb-wasm")
+  MemoryDriver("[WIP] Memory Alaya")
+  DB1("@proj-airi/duckdb-wasm")
+  SVRT("@proj-airi/server-runtime")
+  Memory("Memory")
+  STT("STT")
+  Stage("Stage")
+  StageUI("@proj-airi/stage-ui")
+  UI("@proj-airi/ui")
+
+  subgraph AIRI
+    DB1 --&amp;gt; DBDriver --&amp;gt; MemoryDriver --&amp;gt; Memory --&amp;gt; Core
+    UI --&amp;gt; StageUI --&amp;gt; Stage --&amp;gt; Core
+    Core --&amp;gt; STT
+    Core --&amp;gt; SVRT
+  end
+
+  subgraph UI_Components
+    UI --&amp;gt; StageUI
+    UITransitions("@proj-airi/ui-transitions") --&amp;gt; StageUI
+    UILoadingScreens("@proj-airi/ui-loading-screens") --&amp;gt; StageUI
+    FontCJK("@proj-airi/font-cjkfonts-allseto") --&amp;gt; StageUI
+    FontXiaolai("@proj-airi/font-xiaolai") --&amp;gt; StageUI
+  end
+
+  subgraph Apps
+    Stage --&amp;gt; StageWeb("@proj-airi/stage-web")
+    Stage --&amp;gt; StageTamagotchi("@proj-airi/stage-tamagotchi")
+    Core --&amp;gt; RealtimeAudio("@proj-airi/realtime-audio")
+    Core --&amp;gt; PromptEngineering("@proj-airi/playground-prompt-engineering")
+  end
+
+  subgraph Server_Components
+    Core --&amp;gt; ServerSDK("@proj-airi/server-sdk")
+    ServerShared("@proj-airi/server-shared") --&amp;gt; SVRT
+    ServerShared --&amp;gt; ServerSDK
+  end
+
+  STT --&amp;gt;|Speaking| Unspeech
+  SVRT --&amp;gt;|Playing Factorio| F_AGENT
+  SVRT --&amp;gt;|Playing Minecraft| MC_AGENT
+
+  subgraph Factorio_Agent
+    F_AGENT("Factorio Agent")
+    F_API("Factorio RCON API")
+    factorio-server("factorio-server")
+    F_MOD1("autorio")
+
+    F_AGENT --&amp;gt; F_API -.-&amp;gt; factorio-server
+    F_MOD1 -.-&amp;gt; factorio-server
+  end
+
+  subgraph Minecraft_Agent
+    MC_AGENT("Minecraft Agent")
+    Mineflayer("Mineflayer")
+    minecraft-server("minecraft-server")
+
+    MC_AGENT --&amp;gt; Mineflayer -.-&amp;gt; minecraft-server
+  end
+
+  XSAI("xsAI") --&amp;gt; Core
+  XSAI --&amp;gt; F_AGENT
+  XSAI --&amp;gt; MC_AGENT
+
+  Core --&amp;gt; TauriMCP("@proj-airi/tauri-plugin-mcp")
+  Memory_PGVector("@proj-airi/memory-pgvector") --&amp;gt; Memory
+
+  style Core fill:#f9d4d4,stroke:#333,stroke-width:1px
+  style AIRI fill:#fcf7f7,stroke:#333,stroke-width:1px
+  style UI fill:#d4f9d4,stroke:#333,stroke-width:1px
+  style Stage fill:#d4f9d4,stroke:#333,stroke-width:1px
+  style UI_Components fill:#d4f9d4,stroke:#333,stroke-width:1px
+  style Server_Components fill:#d4e6f9,stroke:#333,stroke-width:1px
+  style Apps fill:#d4d4f9,stroke:#333,stroke-width:1px
+  style Factorio_Agent fill:#f9d4f2,stroke:#333,stroke-width:1px
+  style Minecraft_Agent fill:#f9d4f2,stroke:#333,stroke-width:1px
+
+  style DBDriver fill:#f9f9d4,stroke:#333,stroke-width:1px
+  style MemoryDriver fill:#f9f9d4,stroke:#333,stroke-width:1px
+  style DB1 fill:#f9f9d4,stroke:#333,stroke-width:1px
+  style Memory fill:#f9f9d4,stroke:#333,stroke-width:1px
+  style Memory_PGVector fill:#f9f9d4,stroke:#333,stroke-width:1px
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Similar Projects&lt;/h2&gt; 
+&lt;h3&gt;Open sourced ones&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/kimjammer/Neuro"&gt;kimjammer/Neuro: A recreation of Neuro-Sama originally created in 7 days.&lt;/a&gt;: very well completed implementation.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/SugarcaneDefender/z-waif"&gt;SugarcaneDefender/z-waif&lt;/a&gt;: Great at gaming, autonomous, and prompt engineering&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/semperai/amica/"&gt;semperai/amica&lt;/a&gt;: Great at VRM, WebXR&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/elizaOS/eliza"&gt;elizaOS/eliza&lt;/a&gt;: Great examples and software engineering on how to integrate agent into various of systems and APIs&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ardha27/AI-Waifu-Vtuber"&gt;ardha27/AI-Waifu-Vtuber&lt;/a&gt;: Great about Twitch API integrations&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/InsanityLabs/AIVTuber"&gt;InsanityLabs/AIVTuber&lt;/a&gt;: Nice UI and UX&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/IRedDragonICY/vixevia"&gt;IRedDragonICY/vixevia&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/t41372/Open-LLM-VTuber"&gt;t41372/Open-LLM-VTuber&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/PeterH0323/Streamer-Sales"&gt;PeterH0323/Streamer-Sales&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Non-open-sourced ones&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://clips.twitch.tv/WanderingCaringDeerDxCat-Qt55xtiGDSoNmDDr"&gt;https://clips.twitch.tv/WanderingCaringDeerDxCat-Qt55xtiGDSoNmDDr&lt;/a&gt; &lt;a href="https://www.youtube.com/watch?v=8Giv5mupJNE"&gt;https://www.youtube.com/watch?v=8Giv5mupJNE&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://clips.twitch.tv/TriangularAthleticBunnySoonerLater-SXpBk1dFso21VcWD"&gt;https://clips.twitch.tv/TriangularAthleticBunnySoonerLater-SXpBk1dFso21VcWD&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/@NOWA_Mirai"&gt;https://www.youtube.com/@NOWA_Mirai&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Project Status&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://repobeats.axiom.co/api/embed/a1d6fe2c13ea2bb53a5154435a71e2431f70c2ee.svg?sanitize=true" alt="Repobeats analytics image" title="Repobeats analytics image" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Acknowledgements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/unovue/reka-ui"&gt;Reka UI&lt;/a&gt;: for designing the documentation site, new landing page is based on this, as well as implementing massive amount of UI components. (shadcn-vue is using Reka UI as the headless, do checkout!)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/pixiv/ChatVRM"&gt;pixiv/ChatVRM&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/josephrocca/ChatVRM-js"&gt;josephrocca/ChatVRM-js: A JS conversion/adaptation of parts of the ChatVRM (TypeScript) code for standalone use in OpenCharacters and elsewhere&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Design of UI and style was inspired by &lt;a href="https://store.steampowered.com/app/2919650/Cookard/"&gt;Cookard&lt;/a&gt;, &lt;a href="https://store.steampowered.com/app/2240620/UNBEATABLE/"&gt;UNBEATABLE&lt;/a&gt;, and &lt;a href="https://store.steampowered.com/app/2957700/_/"&gt;Sensei! I like you so much!&lt;/a&gt;, and artworks of &lt;a href="https://dribbble.com/shots/22157656-Ayame"&gt;Ayame by Mercedes Bazan&lt;/a&gt; with &lt;a href="https://dribbble.com/shots/24501019-Wish"&gt;Wish by Mercedes Bazan&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/mallorbc/whisper_mic"&gt;mallorbc/whisper_mic&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/xsai"&gt;&lt;code&gt;xsai&lt;/code&gt;&lt;/a&gt;: Implemented a decent amount of packages to interact with LLMs and models, like &lt;a href="https://sdk.vercel.ai/"&gt;Vercel AI SDK&lt;/a&gt; but way small.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.star-history.com/#moeru-ai/airi&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=moeru-ai/airi&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>dtyq/magic</title>
+      <link>https://github.com/dtyq/magic</link>
+      <description>&lt;p&gt;Super Magic. The first open-source all-in-one AI productivity platform (Generalist AI Agent + Workflow Engine + IM + Online collaborative office system)&lt;/p&gt;&lt;hr&gt;&lt;div align="left"&gt; 
+ &lt;a href="https://raw.githubusercontent.com/dtyq/magic/master/README.md"&gt;&lt;img alt="README in English" src="https://img.shields.io/badge/English-d9d9d9" /&gt;&lt;/a&gt; 
+ &lt;a href="https://raw.githubusercontent.com/dtyq/magic/master/README_CN.md"&gt;&lt;img alt="简体中文版自述文件" src="https://img.shields.io/badge/简体中文-d9d9d9" /&gt;&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;p&gt;&lt;img src="https://public-cdn.letsmagic.ai/static/img/super-magic-publish-header-en.png?v=20250819" alt="Magic Open Source Product Matrix" /&gt;&lt;/p&gt; 
+&lt;h1&gt;🔥 Magic - First Open-Source All-in-One AI Productivity Platform&lt;/h1&gt; 
+&lt;div align="center"&gt; 
+ &lt;p align="center"&gt; &lt;a href="https://www.letsmagic.ai" target="_blank"&gt; &lt;img alt="Static Badge" src="https://img.shields.io/badge/Official Website-301AD2" /&gt; &lt;/a&gt; &lt;a href="https://github.com/dtyq/magic/releases"&gt; &lt;img src="https://poser.pugx.org/dtyq/magic/v/stable" alt="Stable Version" /&gt; &lt;/a&gt; &lt;a href="https://github.com/dtyq/magic/graphs/commit-activity" target="_blank"&gt; &lt;img alt="Commits last month" src="https://img.shields.io/github/commit-activity/m/dtyq/magic?labelColor=%20%2332b583&amp;amp;color=%20%2312b76a" /&gt; &lt;/a&gt; &lt;a href="https://github.com/dtyq/magic/" target="_blank"&gt; &lt;img alt="Issues closed" src="https://img.shields.io/github/issues-search?query=repo%3Adtyq%2Fmagic%20is%3Aclosed&amp;amp;label=issues%20closed&amp;amp;labelColor=%20%237d89b0&amp;amp;color=%20%235d6b98" /&gt; &lt;/a&gt; &lt;a href="https://github.com/dtyq/magic/discussions/" target="_blank"&gt; &lt;img alt="Discussion posts" src="https://img.shields.io/github/discussions/dtyq/magic?labelColor=%20%239b8afb&amp;amp;color=%20%237a5af8" /&gt; &lt;/a&gt; &lt;a href="https://www.letsmagic.ai" target="_blank"&gt; &lt;img alt="Static Badge" src="https://img.shields.io/badge/Build with Magic 🔮-301AD2" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;p&gt;Magic aims to help enterprises of all sizes quickly build and deploy AI applications to achieve a 100x increase in productivity.&lt;/p&gt; 
+&lt;h2&gt;Magic Product Matrix&lt;/h2&gt; 
+&lt;p&gt;Magic is the first &lt;strong&gt;"open-source all-in-one AI productivity platform"&lt;/strong&gt;, not a single AI product, but a comprehensive product matrix with rich capabilities.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://public-cdn.letsmagic.ai/static/img/super-magic-open-source-projects-en.png?v=20250819" alt="Product Matrix" /&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/dtyq/super-magic"&gt;Super Magic&lt;/a&gt;&lt;/strong&gt; - A &lt;strong&gt;general-purpose AI Agent&lt;/strong&gt; designed for complex task scenarios&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/dtyq/magic"&gt;Magic IM&lt;/a&gt;&lt;/strong&gt; - An enterprise-grade instant messaging system that integrates AI Agent conversations with internal enterprise communication&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/dtyq/magic"&gt;Magic Flow&lt;/a&gt;&lt;/strong&gt; - A powerful visual AI workflow orchestration system&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Teamshare OS&lt;/strong&gt; (Coming soon) - An enterprise-grade online collaborative office system&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;In addition to the above AI products, we have also open-sourced some of the infrastructure we used to build these products:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/dtyq/agentlang"&gt;Agentlang&lt;/a&gt;&lt;/strong&gt; - A language-first AI Agent Framework for building AI agents with natural language (currently available in Python version, TypeScript version coming soon)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/dtyq/magiclens"&gt;Magic Lens&lt;/a&gt;&lt;/strong&gt; - A powerful and flexible HTML to Markdown conversion tool that uses an extensible rule system to accurately convert complex HTML documents to concise Markdown format&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Magic Use&lt;/strong&gt; (Coming soon) - A revolutionary browser operation tool specifically designed for AI Agents&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Magic Space&lt;/strong&gt; (Coming soon) - A new static content hosting management system specifically designed for AI Agents&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Sandbox OS&lt;/strong&gt; (Coming soon) - A powerful sandbox system for AI Agent runtime&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Super Magic&lt;/h3&gt; 
+&lt;p&gt;A powerful &lt;strong&gt;general-purpose AI Agent&lt;/strong&gt; specially designed for complex task scenarios. Through a multi-agent design system and rich tool capabilities, Super Magic supports intelligent abilities such as &lt;strong&gt;autonomous task understanding&lt;/strong&gt;, &lt;strong&gt;autonomous task planning&lt;/strong&gt;, &lt;strong&gt;autonomous action&lt;/strong&gt;, and &lt;strong&gt;autonomous error correction&lt;/strong&gt;. It can understand natural language instructions, execute various business processes, and deliver final target results. As the flagship product of the Magic product matrix, Super Magic provides powerful secondary development capabilities through open source, allowing enterprises to quickly build and deploy intelligent assistants that meet specific business needs, greatly improving decision-making efficiency and quality.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://public-cdn.letsmagic.ai/static/img/super-magic-buffett.gif" alt="Super Magic" /&gt;&lt;/p&gt; 
+&lt;h4&gt;Super Magic Case Studies&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.letsmagic.cn/share/777665156986277889"&gt;Analysis of Investment Insights from Buffett's 2025 Shareholders Meeting&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.letsmagic.cn/share/774280936479625217"&gt;Analysis of Stocks Related to Beijing Humanoid Robot Half Marathon&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.letsmagic.cn/share/777461325648195584"&gt;Summary of Key Points from 'Thinking, Fast and Slow&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.letsmagic.cn/share/777604044873928705"&gt;Auntie Jenny IPO Analysis and Investment Recommendations&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.letsmagic.cn/share/771022574397648897"&gt;SKU Sales Forecast Requirements&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;For more case studies, please visit the &lt;a href="https://www.letsmagic.ai"&gt;Official Website&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Magic Flow&lt;/h3&gt; 
+&lt;p&gt;Magic Flow is a powerful visual AI workflow orchestration system that allows users to build complex AI Agent workflows on a free canvas. It has the following core features:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Visual Orchestration&lt;/strong&gt;: Intuitive drag-and-drop interface allows designing complex AI workflows without coding, easily implementing various functional combinations through node connections.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Rich Component Library&lt;/strong&gt;: Built-in variety of preset components, including text processing, image generation, code execution modules, meeting diverse business needs.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Comprehensive Model Support&lt;/strong&gt;: Compatible with any large model following the OpenAI API protocol, flexibly choosing AI capabilities suitable for business scenarios.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;System Integration Capability&lt;/strong&gt;: Seamless integration with Magic IM and other third-party IM systems (WeCom, DingTalk, Feishu), enabling cross-platform collaboration.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Custom Extensions&lt;/strong&gt;: Support for custom tool node development to meet specific business scenario requirements.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Real-time Debugging and Monitoring&lt;/strong&gt;: Providing comprehensive debugging and monitoring functions to help quickly identify and solve problems in workflows, ensuring stable operation of AI applications.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;img src="https://public-cdn.letsmagic.ai/static/img/magic-flow.png" alt="Magic Flow" /&gt;&lt;/p&gt; 
+&lt;p&gt;As an important component of the Magic product matrix, Magic Flow can be seamlessly integrated with other Magic products to create a complete enterprise-level AI application ecosystem.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://public-cdn.letsmagic.ai/static/img/super-magic-multi-agents-and-events-en.png?v=20250819" alt="Magic Multi-Agents and Events" /&gt;&lt;/p&gt; 
+&lt;h3&gt;Magic IM&lt;/h3&gt; 
+&lt;p&gt;Magic IM is an enterprise-grade AI Agent conversation system designed specifically for internal knowledge management and intelligent customer service scenarios. It provides rich conversational capabilities, supporting multi-turn dialogues, context understanding, knowledge base retrieval, and other functions, allowing enterprises to quickly build intelligent customer service, knowledge assistants, and other applications.&lt;/p&gt; 
+&lt;p&gt;Magic IM has the following core features:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Knowledge Base Management&lt;/strong&gt;: Powerful knowledge base management functions, supporting import of various document formats, automatic indexing, and semantic retrieval, ensuring AI answers based on authentic enterprise knowledge.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Conversation Management&lt;/strong&gt;: Comprehensive conversation management, supporting topic distinction for different conversation content, enabling both AI Agent conversations and communication with people within the organization.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Group Chat Capability&lt;/strong&gt;: Powerful group chat functionality, supporting real-time collaborative discussions among multiple people, with AI intelligently participating in group chats and providing instant answers, promoting efficient team communication and knowledge sharing.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi-organizational Architecture&lt;/strong&gt;: Support for multi-organization deployment and strict organizational data isolation, with each organization having independent data space and access permissions.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Data Security&lt;/strong&gt;: Strict data isolation and access control mechanisms, multi-level permission management, safeguarding sensitive enterprise information and ensuring no data leakage between organizations.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;img src="https://public-cdn.letsmagic.ai/static/img/magic-im-group-chat-en.png?v=20250819" alt="Magic IM" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Teamshare OS&lt;/h2&gt; 
+&lt;p&gt;Teamshare OS is a modern enterprise-grade collaborative office platform designed to enhance team collaboration efficiency and knowledge management. As an important component of the Magic product matrix, Teamshare deeply integrates AI capabilities into daily office scenarios, achieving intelligent workflows and knowledge management.&lt;/p&gt; 
+&lt;p&gt;Teamshare OS has the following core features:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Intelligent Document Management&lt;/strong&gt;: Support for online editing, collaboration, and version control of various document formats, AI-assisted content generation and optimization, making team document management more efficient.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Magic Table&lt;/strong&gt;: Powerful multi-dimensional data management tool, supporting custom field types, diverse views, and automated workflows, combined with AI capabilities to achieve intelligent data processing, meeting diverse data management needs.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Project Collaboration Management&lt;/strong&gt;: Intuitive project boards and task management, supporting custom workflows, combined with AI intelligent analysis to provide project progress forecasting and resource optimization suggestions.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Knowledge Base&lt;/strong&gt;: Powerful knowledge consolidation and retrieval system, automatically structuring internal enterprise documents to form sustainable accumulated enterprise knowledge assets.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Comprehensive Integration Capability&lt;/strong&gt;: Seamless integration with Magic product matrix, while supporting connection with mainstream office software and enterprise applications, creating a unified work platform.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Magic Table&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://gist.github.com/user-attachments/assets/6ef46e66-292c-4a8a-8a00-a3b9fb7beec7"&gt;https://gist.github.com/user-attachments/assets/6ef46e66-292c-4a8a-8a00-a3b9fb7beec7&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Magic Doc&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://gist.github.com/user-attachments/assets/7327f331-be7d-4aeb-8e19-0949adde66b2"&gt;https://gist.github.com/user-attachments/assets/7327f331-be7d-4aeb-8e19-0949adde66b2&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🚀 Using Super Magic&lt;/h2&gt; 
+&lt;h3&gt;Cloud Service&lt;/h3&gt; 
+&lt;p&gt;We provide &lt;a href="https://www.letsmagic.ai"&gt;cloud services&lt;/a&gt; for &lt;a href="https://www.letsmagic.ai"&gt;Super Magic&lt;/a&gt;, &lt;a href="https://www.letsmagic.ai"&gt;Magic IM&lt;/a&gt;, and &lt;a href="https://www.letsmagic.ai"&gt;Magic Flow&lt;/a&gt;, allowing anyone to start trying and using them with zero setup, providing all features of the open-source version. &lt;em&gt;Currently, an invitation code is required for access, which can be applied for online and granted for trial use after approval.&lt;/em&gt;&lt;/p&gt; 
+&lt;h3&gt;Magic for Enterprises/Organizations&lt;/h3&gt; 
+&lt;p&gt;We provide more powerful management capabilities and features for teams and enterprises. &lt;a href="mailto:bd@dtyq.com?subject=%5BGitHub%5DBusiness%20License%20Inquiry"&gt;Send us an email&lt;/a&gt; to discuss enterprise needs.&lt;/p&gt; 
+&lt;h3&gt;Self-hosted Community Edition&lt;/h3&gt; 
+&lt;h4&gt;System Requirements&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Docker 24.0+&lt;/li&gt; 
+ &lt;li&gt;Docker Compose 2.0+&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Start the System Using Docker&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Clone repository
+git clone https://github.com/dtyq/magic.git
+cd magic
+
+# Start service in foreground
+./bin/magic.sh start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h5&gt;Other Commands&lt;/h5&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Start service in background
+./bin/magic.sh daemon
+
+# Check service status
+./bin/magic.sh status
+
+# View logs
+./bin/magic.sh logs
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h5&gt;Configure Environment Variables&lt;/h5&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Configure Magic environment variables, must configure at least one large language model's environment variables to use Magic normally
+cp .env.example .env
+
+# Configure Super Magic environment variables, must configure any large language model that supports OpenAI format to use it normally
+./bin/magic.sh status
+cp config/.env_super_magic.example .env_super_magic
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h5&gt;Access Services&lt;/h5&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;API Service: &lt;a href="http://localhost:9501"&gt;http://localhost:9501&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Web Application: &lt;a href="http://localhost:8080"&gt;http://localhost:8080&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Account &lt;code&gt;13812345678&lt;/code&gt;：Password &lt;code&gt;letsmagic.ai&lt;/code&gt;&lt;/li&gt; 
+   &lt;li&gt;Account &lt;code&gt;13912345678&lt;/code&gt;：Password &lt;code&gt;letsmagic.ai&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;RabbitMQ Management Interface: &lt;a href="http://localhost:15672"&gt;http://localhost:15672&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Username: admin&lt;/li&gt; 
+   &lt;li&gt;Password: magic123456&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Official Website: &lt;a href="https://www.letsmagic.ai"&gt;https://www.letsmagic.ai&lt;/a&gt; Documentation: &lt;a href="https://docs.letsmagic.cn/en"&gt;https://docs.letsmagic.cn/en&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Contribution&lt;/h2&gt; 
+&lt;p&gt;For those who want to contribute code, please refer to our &lt;a href="https://github.com/dtyq/magic/raw/master/CONTRIBUTING.md"&gt;Contribution Guide&lt;/a&gt;. Also, please consider supporting Magic through social media, events, and conferences. The development of Magic relies on your support.&lt;/p&gt; 
+&lt;h2&gt;Security Vulnerabilities&lt;/h2&gt; 
+&lt;p&gt;If you discover a security vulnerability in Magic, please send an email to the Magic official team at &lt;a href="mailto:team@dtyq.com"&gt;team@dtyq.com&lt;/a&gt;. All security vulnerabilities will be promptly addressed.&lt;/p&gt; 
+&lt;h2&gt;📄 License&lt;/h2&gt; 
+&lt;p&gt;This repository follows the &lt;a href="https://raw.githubusercontent.com/dtyq/magic/master/LICENSE"&gt;Magic Open Source License&lt;/a&gt;, which is essentially Apache 2.0 but with some additional restrictions.&lt;/p&gt; 
+&lt;h2&gt;🙏 Acknowledgements&lt;/h2&gt; 
+&lt;p&gt;Thanks to all developers who have contributed to Magic!&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://star-history.com/#dtyq/magic&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=dtyq/magic&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>menloresearch/jan</title>
+      <link>https://github.com/menloresearch/jan</link>
+      <description>&lt;p&gt;Jan is an open source alternative to ChatGPT that runs 100% offline on your computer&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Jan - Local AI Assistant&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/menloresearch/jan/dev/docs/src/pages/docs/_assets/jan-app.png" alt="Jan AI" /&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; 
+ &lt;!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --&gt; &lt;img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/menloresearch/jan" /&gt; &lt;img alt="Github Last Commit" src="https://img.shields.io/github/last-commit/menloresearch/jan" /&gt; &lt;img alt="Github Contributors" src="https://img.shields.io/github/contributors/menloresearch/jan" /&gt; &lt;img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed/menloresearch/jan" /&gt; &lt;img alt="Discord" src="https://img.shields.io/discord/1107178041848909847?label=discord" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://jan.ai/docs/quickstart"&gt;Getting Started&lt;/a&gt; - &lt;a href="https://jan.ai/docs"&gt;Docs&lt;/a&gt; - &lt;a href="https://jan.ai/changelog"&gt;Changelog&lt;/a&gt; - &lt;a href="https://github.com/menloresearch/jan/issues"&gt;Bug reports&lt;/a&gt; - &lt;a href="https://discord.gg/AsJ8krTT3N"&gt;Discord&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;Jan is an AI assistant that can run 100% offline on your device. Download and run LLMs with &lt;strong&gt;full control&lt;/strong&gt; and &lt;strong&gt;privacy&lt;/strong&gt;.&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;The easiest way to get started is by downloading one of the following versions for your respective operating system:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;b&gt;Platform&lt;/b&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;b&gt;Stable&lt;/b&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;b&gt;Nightly&lt;/b&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;b&gt;Windows&lt;/b&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://app.jan.ai/download/latest/win-x64"&gt;jan.exe&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://app.jan.ai/download/nightly/win-x64"&gt;jan.exe&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;b&gt;macOS&lt;/b&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://app.jan.ai/download/latest/mac-universal"&gt;jan.dmg&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://app.jan.ai/download/nightly/mac-universal"&gt;jan.dmg&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;b&gt;Linux (deb)&lt;/b&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://app.jan.ai/download/latest/linux-amd64-deb"&gt;jan.deb&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://app.jan.ai/download/nightly/linux-amd64-deb"&gt;jan.deb&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;b&gt;Linux (AppImage)&lt;/b&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://app.jan.ai/download/latest/linux-amd64-appimage"&gt;jan.AppImage&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://app.jan.ai/download/nightly/linux-amd64-appimage"&gt;jan.AppImage&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;p&gt;Download from &lt;a href="https://jan.ai/"&gt;jan.ai&lt;/a&gt; or &lt;a href="https://github.com/menloresearch/jan/releases"&gt;GitHub Releases&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Local AI Models&lt;/strong&gt;: Download and run LLMs (Llama, Gemma, Qwen, etc.) from HuggingFace&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Cloud Integration&lt;/strong&gt;: Connect to OpenAI, Anthropic, Mistral, Groq, and others&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Custom Assistants&lt;/strong&gt;: Create specialized AI assistants for your tasks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;OpenAI-Compatible API&lt;/strong&gt;: Local server at &lt;code&gt;localhost:1337&lt;/code&gt; for other applications&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Model Context Protocol&lt;/strong&gt;: MCP integration for enhanced capabilities&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Privacy First&lt;/strong&gt;: Everything runs locally when you want it to&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Build from Source&lt;/h2&gt; 
+&lt;p&gt;For those who enjoy the scenic route:&lt;/p&gt; 
+&lt;h3&gt;Prerequisites&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Node.js ≥ 20.0.0&lt;/li&gt; 
+ &lt;li&gt;Yarn ≥ 1.22.0&lt;/li&gt; 
+ &lt;li&gt;Make ≥ 3.81&lt;/li&gt; 
+ &lt;li&gt;Rust (for Tauri)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Run with Make&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/menloresearch/jan
+cd jan
+make dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This handles everything: installs dependencies, builds core components, and launches the app.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Available make targets:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;make dev&lt;/code&gt; - Full development setup and launch&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;make build&lt;/code&gt; - Production build&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;make test&lt;/code&gt; - Run tests and linting&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;make clean&lt;/code&gt; - Delete everything and start fresh&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Run with Mise (easier)&lt;/h3&gt; 
+&lt;p&gt;You can also run with &lt;a href="https://mise.jdx.dev/"&gt;mise&lt;/a&gt;, which is a bit easier as it ensures Node.js, Rust, and other dependency versions are automatically managed:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/menloresearch/jan
+cd jan
+
+# Install mise (if not already installed)
+curl https://mise.run | sh
+
+# Install tools and start development
+mise install    # installs Node.js, Rust, and other tools
+mise dev        # runs the full development setup
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Available mise commands:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;mise dev&lt;/code&gt; - Full development setup and launch&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;mise build&lt;/code&gt; - Production build&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;mise test&lt;/code&gt; - Run tests and linting&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;mise clean&lt;/code&gt; - Delete everything and start fresh&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;mise tasks&lt;/code&gt; - List all available tasks&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Manual Commands&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn install
+yarn build:tauri:plugin:api
+yarn build:core
+yarn build:extensions
+yarn dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;System Requirements&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Minimum specs for a decent experience:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;macOS&lt;/strong&gt;: 13.6+ (8GB RAM for 3B models, 16GB for 7B, 32GB for 13B)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Windows&lt;/strong&gt;: 10+ with GPU support for NVIDIA/AMD/Intel Arc&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Linux&lt;/strong&gt;: Most distributions work, GPU acceleration available&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;For detailed compatibility, check our &lt;a href="https://jan.ai/docs/desktop/mac"&gt;installation guides&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Troubleshooting&lt;/h2&gt; 
+&lt;p&gt;If things go sideways:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Check our &lt;a href="https://jan.ai/docs/troubleshooting"&gt;troubleshooting docs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Copy your error logs and system specs&lt;/li&gt; 
+ &lt;li&gt;Ask for help in our &lt;a href="https://discord.gg/FTk2MvZwJH"&gt;Discord&lt;/a&gt; &lt;code&gt;#🆘|jan-help&lt;/code&gt; channel&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Contributions welcome. See &lt;a href="https://raw.githubusercontent.com/menloresearch/jan/dev/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for the full spiel.&lt;/p&gt; 
+&lt;h2&gt;Links&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://jan.ai/docs"&gt;Documentation&lt;/a&gt; - The manual you should read&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://jan.ai/api-reference"&gt;API Reference&lt;/a&gt; - For the technically inclined&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://jan.ai/changelog"&gt;Changelog&lt;/a&gt; - What we broke and fixed&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://discord.gg/FTk2MvZwJH"&gt;Discord&lt;/a&gt; - Where the community lives&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contact&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Bugs&lt;/strong&gt;: &lt;a href="https://github.com/menloresearch/jan/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Business&lt;/strong&gt;: &lt;a href="mailto:hello@jan.ai"&gt;hello@jan.ai&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Jobs&lt;/strong&gt;: &lt;a href="mailto:hr@jan.ai"&gt;hr@jan.ai&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;General Discussion&lt;/strong&gt;: &lt;a href="https://discord.gg/FTk2MvZwJH"&gt;Discord&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Apache 2.0 - Because sharing is caring.&lt;/p&gt; 
+&lt;h2&gt;Acknowledgements&lt;/h2&gt; 
+&lt;p&gt;Built on the shoulders of giants:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ggerganov/llama.cpp"&gt;Llama.cpp&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://tauri.app/"&gt;Tauri&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/scalar/scalar"&gt;Scalar&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>tadata-org/fastapi_mcp</title>
+      <link>https://github.com/tadata-org/fastapi_mcp</link>
+      <description>&lt;p&gt;Expose your FastAPI endpoints as Model Context Protocol (MCP) tools, with Auth!&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt;&lt;a href="https://github.com/tadata-org/fastapi_mcp"&gt;&lt;img src="https://github.com/user-attachments/assets/7e44e98b-a0ba-4aff-a68a-4ffee3a6189c" alt="fastapi-to-mcp" height="100/" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;span style="font-size: 0.85em; font-weight: normal;"&gt;Built by &lt;a href="https://tadata.com"&gt;Tadata&lt;/a&gt;&lt;/span&gt; 
+&lt;/div&gt; 
+&lt;h1 align="center"&gt; FastAPI-MCP &lt;/h1&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://trendshift.io/repositories/14064" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/14064" alt="tadata-org%2Ffastapi_mcp | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;p align="center"&gt;Expose your FastAPI endpoints as Model Context Protocol (MCP) tools, with Auth!&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;a href="https://pypi.org/project/fastapi-mcp/"&gt;&lt;img src="https://img.shields.io/pypi/v/fastapi-mcp?color=%2334D058&amp;amp;label=pypi%20package" alt="PyPI version" /&gt;&lt;/a&gt; &lt;a href="https://pypi.org/project/fastapi-mcp/"&gt;&lt;img src="https://img.shields.io/pypi/pyversions/fastapi-mcp.svg?sanitize=true" alt="Python Versions" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/tadata-org/fastapi_mcp/main/#"&gt;&lt;img src="https://img.shields.io/badge/FastAPI-009485.svg?logo=fastapi&amp;amp;logoColor=white" alt="FastAPI" /&gt;&lt;/a&gt; &lt;a href="https://github.com/tadata-org/fastapi_mcp/actions/workflows/ci.yml"&gt;&lt;img src="https://github.com/tadata-org/fastapi_mcp/actions/workflows/ci.yml/badge.svg?sanitize=true" alt="CI" /&gt;&lt;/a&gt; &lt;a href="https://codecov.io/gh/tadata-org/fastapi_mcp"&gt;&lt;img src="https://codecov.io/gh/tadata-org/fastapi_mcp/branch/main/graph/badge.svg?sanitize=true" alt="Coverage" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;p align="center"&gt;&lt;a href="https://github.com/tadata-org/fastapi_mcp"&gt;&lt;img src="https://github.com/user-attachments/assets/b205adc6-28c0-4e3c-a68b-9c1a80eb7d0c" alt="fastapi-mcp-usage" height="400" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Authentication&lt;/strong&gt; built in, using your existing FastAPI dependencies!&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;FastAPI-native:&lt;/strong&gt; Not just another OpenAPI -&amp;gt; MCP converter&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Zero/Minimal configuration&lt;/strong&gt; required - just point it at your FastAPI app and it works&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Preserving schemas&lt;/strong&gt; of your request models and response models&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Preserve documentation&lt;/strong&gt; of all your endpoints, just as it is in Swagger&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Flexible deployment&lt;/strong&gt; - Mount your MCP server to the same app, or deploy separately&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;ASGI transport&lt;/strong&gt; - Uses FastAPI's ASGI interface directly for efficient communication&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Hosted Solution&lt;/h2&gt; 
+&lt;p&gt;If you prefer a managed hosted solution check out &lt;a href="https://tadata.com"&gt;tadata.com&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;We recommend using &lt;a href="https://docs.astral.sh/uv/"&gt;uv&lt;/a&gt;, a fast Python package installer:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;uv add fastapi-mcp
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Alternatively, you can install with pip:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pip install fastapi-mcp
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Basic Usage&lt;/h2&gt; 
+&lt;p&gt;The simplest way to use FastAPI-MCP is to add an MCP server directly to your FastAPI application:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;from fastapi import FastAPI
+from fastapi_mcp import FastApiMCP
+
+app = FastAPI()
+
+mcp = FastApiMCP(app)
+
+# Mount the MCP server directly to your FastAPI app
+mcp.mount()
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;That's it! Your auto-generated MCP server is now available at &lt;code&gt;https://app.base.url/mcp&lt;/code&gt;.&lt;/p&gt; 
+&lt;h2&gt;Documentation, Examples and Advanced Usage&lt;/h2&gt; 
+&lt;p&gt;FastAPI-MCP provides &lt;a href="https://fastapi-mcp.tadata.com/"&gt;comprehensive documentation&lt;/a&gt;. Additionaly, check out the &lt;a href="https://raw.githubusercontent.com/tadata-org/fastapi_mcp/main/examples"&gt;examples directory&lt;/a&gt; for code samples demonstrating these features in action.&lt;/p&gt; 
+&lt;h2&gt;FastAPI-first Approach&lt;/h2&gt; 
+&lt;p&gt;FastAPI-MCP is designed as a native extension of FastAPI, not just a converter that generates MCP tools from your API. This approach offers several key advantages:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Native dependencies&lt;/strong&gt;: Secure your MCP endpoints using familiar FastAPI &lt;code&gt;Depends()&lt;/code&gt; for authentication and authorization&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;ASGI transport&lt;/strong&gt;: Communicates directly with your FastAPI app using its ASGI interface, eliminating the need for HTTP calls from the MCP to your API&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Unified infrastructure&lt;/strong&gt;: Your FastAPI app doesn't need to run separately from the MCP server (though &lt;a href="https://fastapi-mcp.tadata.com/advanced/deploy#deploying-separately-from-original-fastapi-app"&gt;separate deployment&lt;/a&gt; is also supported)&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;This design philosophy ensures minimum friction when adding MCP capabilities to your existing FastAPI services.&lt;/p&gt; 
+&lt;h2&gt;Development and Contributing&lt;/h2&gt; 
+&lt;p&gt;Thank you for considering contributing to FastAPI-MCP! We encourage the community to post Issues and create Pull Requests.&lt;/p&gt; 
+&lt;p&gt;Before you get started, please see our &lt;a href="https://raw.githubusercontent.com/tadata-org/fastapi_mcp/main/CONTRIBUTING.md"&gt;Contribution Guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;p&gt;Join &lt;a href="https://join.slack.com/t/themcparty/shared_invite/zt-30yxr1zdi-2FG~XjBA0xIgYSYuKe7~Xg"&gt;MCParty Slack community&lt;/a&gt; to connect with other MCP enthusiasts, ask questions, and share your experiences with FastAPI-MCP.&lt;/p&gt; 
+&lt;h2&gt;Requirements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Python 3.10+ (Recommended 3.12)&lt;/li&gt; 
+ &lt;li&gt;uv&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT License. Copyright (c) 2025 Tadata Inc.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>chroma-core/chroma</title>
+      <link>https://github.com/chroma-core/chroma</link>
+      <description>&lt;p&gt;Open-source search and retrieval database for AI applications.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://trychroma.com"&gt;&lt;img src="https://user-images.githubusercontent.com/891664/227103090-6624bf7d-9524-4e05-9d2c-c28d5d451481.png" alt="Chroma logo" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;b&gt;Chroma - the open-source embedding database&lt;/b&gt;. &lt;br /&gt; The fastest way to build Python or JavaScript LLM apps with memory! &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://discord.gg/MMeYNTmh3x" target="_blank"&gt; &lt;img src="https://img.shields.io/discord/1073293645303795742?cacheSeconds=3600" alt="Discord" /&gt; &lt;/a&gt; | &lt;a href="https://github.com/chroma-core/chroma/raw/master/LICENSE" target="_blank"&gt; &lt;img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg?sanitize=true" alt="License" /&gt; &lt;/a&gt; | &lt;a href="https://docs.trychroma.com/" target="_blank"&gt; Docs &lt;/a&gt; | &lt;a href="https://www.trychroma.com/" target="_blank"&gt; Homepage &lt;/a&gt; &lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pip install chromadb # python client
+# for javascript, npm install chromadb!
+# for client-server mode, chroma run --path /chroma_db_path
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Chroma Cloud&lt;/h2&gt; 
+&lt;p&gt;Our hosted service, Chroma Cloud, powers serverless vector and full-text search. It's extremely fast, cost-effective, scalable and painless. Create a DB and try it out in under 30 seconds with $5 of free credits.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://trychroma.com/signup"&gt;Get started with Chroma Cloud&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;API&lt;/h2&gt; 
+&lt;p&gt;The core API is only 4 functions (run our &lt;a href="https://colab.research.google.com/drive/1QEzFyqnoFxq7LUGyP1vzR4iLt9PpCDXv?usp=sharing"&gt;💡 Google Colab&lt;/a&gt;):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;import chromadb
+# setup Chroma in-memory, for easy prototyping. Can add persistence easily!
+client = chromadb.Client()
+
+# Create collection. get_collection, get_or_create_collection, delete_collection also available!
+collection = client.create_collection("all-my-documents")
+
+# Add docs to the collection. Can also update and delete. Row-based API coming soon!
+collection.add(
+    documents=["This is document1", "This is document2"], # we handle tokenization, embedding, and indexing automatically. You can skip that and add your own embeddings as well
+    metadatas=[{"source": "notion"}, {"source": "google-docs"}], # filter on these!
+    ids=["doc1", "doc2"], # unique for each doc
+)
+
+# Query/search 2 most similar results. You can also .get by id
+results = collection.query(
+    query_texts=["This is a query document"],
+    n_results=2,
+    # where={"metadata_field": "is_equal_to_this"}, # optional filter
+    # where_document={"$contains":"search_string"}  # optional filter
+)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Learn about all features on our &lt;a href="https://docs.trychroma.com"&gt;Docs&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Simple&lt;/strong&gt;: Fully-typed, fully-tested, fully-documented == happiness&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Integrations&lt;/strong&gt;: &lt;a href="https://blog.langchain.dev/langchain-chroma/"&gt;&lt;code&gt;🦜️🔗 LangChain&lt;/code&gt;&lt;/a&gt; (python and js), &lt;a href="https://twitter.com/atroyn/status/1628557389762007040"&gt;&lt;code&gt;🦙 LlamaIndex&lt;/code&gt;&lt;/a&gt; and more soon&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Dev, Test, Prod&lt;/strong&gt;: the same API that runs in your python notebook, scales to your cluster&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Feature-rich&lt;/strong&gt;: Queries, filtering, regex and more&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Free &amp;amp; Open Source&lt;/strong&gt;: Apache 2.0 Licensed&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Use case: ChatGPT for ______&lt;/h2&gt; 
+&lt;p&gt;For example, the &lt;code&gt;"Chat your data"&lt;/code&gt; use case:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Add documents to your database. You can pass in your own embeddings, embedding function, or let Chroma embed them for you.&lt;/li&gt; 
+ &lt;li&gt;Query relevant documents with natural language.&lt;/li&gt; 
+ &lt;li&gt;Compose documents into the context window of an LLM like &lt;code&gt;GPT4&lt;/code&gt; for additional summarization or analysis.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Embeddings?&lt;/h2&gt; 
+&lt;p&gt;What are embeddings?&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://platform.openai.com/docs/guides/embeddings/what-are-embeddings"&gt;Read the guide from OpenAI&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Literal&lt;/strong&gt;: Embedding something turns it from image/text/audio into a list of numbers. 🖼️ or 📄 =&amp;gt; &lt;code&gt;[1.2, 2.1, ....]&lt;/code&gt;. This process makes documents "understandable" to a machine learning model.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;By analogy&lt;/strong&gt;: An embedding represents the essence of a document. This enables documents and queries with the same essence to be "near" each other and therefore easy to find.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Technical&lt;/strong&gt;: An embedding is the latent-space position of a document at a layer of a deep neural network. For models trained specifically to embed data, this is the last layer.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;A small example&lt;/strong&gt;: If you search your photos for "famous bridge in San Francisco". By embedding this query and comparing it to the embeddings of your photos and their metadata - it should return photos of the Golden Gate Bridge.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Embeddings databases (also known as &lt;strong&gt;vector databases&lt;/strong&gt;) store embeddings and allow you to search by nearest neighbors rather than by substrings like a traditional database. By default, Chroma uses &lt;a href="https://docs.trychroma.com/guides/embeddings#default:-all-minilm-l6-v2"&gt;Sentence Transformers&lt;/a&gt; to embed for you but you can also use OpenAI embeddings, Cohere (multilingual) embeddings, or your own.&lt;/p&gt; 
+&lt;h2&gt;Get involved&lt;/h2&gt; 
+&lt;p&gt;Chroma is a rapidly developing project. We welcome PR contributors and ideas for how to improve the project.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://discord.gg/MMeYNTmh3x"&gt;Join the conversation on Discord&lt;/a&gt; - &lt;code&gt;#contributing&lt;/code&gt; channel&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.trychroma.com/roadmap"&gt;Review the 🛣️ Roadmap and contribute your ideas&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/chroma-core/chroma/issues"&gt;Grab an issue and open a PR&lt;/a&gt; - &lt;a href="https://github.com/chroma-core/chroma/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"&gt;&lt;code&gt;Good first issue tag&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.trychroma.com/contributing"&gt;Read our contributing guide&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Release Cadence&lt;/strong&gt; We currently release new tagged versions of the &lt;code&gt;pypi&lt;/code&gt; and &lt;code&gt;npm&lt;/code&gt; packages on Mondays. Hotfixes go out at any time during the week.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/chroma-core/chroma/main/LICENSE"&gt;Apache 2.0&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>microsoft/poml</title>
+      <link>https://github.com/microsoft/poml</link>
+      <description>&lt;p&gt;Prompt Orchestration Markup Language&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;POML: Prompt Orchestration Markup Language&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://microsoft.github.io/poml/"&gt;&lt;img src="https://img.shields.io/badge/docs-microsoft.github.io-blue" alt="Documentation" /&gt;&lt;/a&gt; &lt;a href="https://marketplace.visualstudio.com/items?itemName=poml-team.poml"&gt;&lt;img src="https://img.shields.io/visual-studio-marketplace/v/poml-team.poml" alt="VSCode Extension" /&gt;&lt;/a&gt; &lt;a href="https://pypi.org/project/poml/"&gt;&lt;img src="https://img.shields.io/pypi/v/poml" alt="PyPI" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/pomljs"&gt;&lt;img src="https://img.shields.io/npm/v/pomljs" alt="npm (latest)" /&gt;&lt;/a&gt; &lt;a href="https://github.com/microsoft/poml/actions/workflows/test.yml"&gt;&lt;img src="https://github.com/microsoft/poml/actions/workflows/test.yml/badge.svg?sanitize=true" alt="Test Status" /&gt;&lt;/a&gt; &lt;a href="https://opensource.org/licenses/MIT"&gt;&lt;img src="https://img.shields.io/badge/License-MIT-yellow.svg?sanitize=true" alt="License: MIT" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/FhMCqWzAn6"&gt;&lt;img src="https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&amp;amp;logoColor=white" alt="Discord" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;POML (Prompt Orchestration Markup Language)&lt;/strong&gt; is a novel markup language designed to bring structure, maintainability, and versatility to advanced prompt engineering for Large Language Models (LLMs). It addresses common challenges in prompt development, such as lack of structure, complex data integration, format sensitivity, and inadequate tooling. POML provides a systematic way to organize prompt components, integrate diverse data types seamlessly, and manage presentation variations, empowering developers to create more sophisticated and reliable LLM applications.&lt;/p&gt; 
+&lt;h2&gt;Demo Video&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://youtu.be/b9WDcFsKixo"&gt;&lt;img src="https://i3.ytimg.com/vi/b9WDcFsKixo/maxresdefault.jpg" alt="The 5-minute guide to POML" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Key Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Structured Prompting Markup&lt;/strong&gt;: Employs an HTML-like syntax with semantic components such as &lt;code&gt;&amp;lt;role&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;task&amp;gt;&lt;/code&gt;, and &lt;code&gt;&amp;lt;example&amp;gt;&lt;/code&gt; to encourage modular design, enhancing prompt readability, reusability, and maintainability.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Comprehensive Data Handling&lt;/strong&gt;: Incorporates specialized data components (e.g., &lt;code&gt;&amp;lt;document&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt;) that seamlessly embed or reference external data sources like text files, spreadsheets, and images, with customizable formatting options.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Decoupled Presentation Styling&lt;/strong&gt;: Features a CSS-like styling system that separates content from presentation. This allows developers to modify styling (e.g., verbosity, syntax format) via &lt;code&gt;&amp;lt;stylesheet&amp;gt;&lt;/code&gt; definitions or inline attributes without altering core prompt logic, mitigating LLM format sensitivity.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Integrated Templating Engine&lt;/strong&gt;: Includes a built-in templating engine with support for variables (&lt;code&gt;{{ }}&lt;/code&gt;), loops (&lt;code&gt;for&lt;/code&gt;), conditionals (&lt;code&gt;if&lt;/code&gt;), and variable definitions (&lt;code&gt;&amp;lt;let&amp;gt;&lt;/code&gt;) for dynamically generating complex, data-driven prompts.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Rich Development Toolkit&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;IDE Extension (Visual Studio Code)&lt;/strong&gt;: Provides essential development aids like syntax highlighting, context-aware auto-completion, hover documentation, real-time previews, inline diagnostics for error checking, and integrated interactive testing.&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Software Development Kits (SDKs)&lt;/strong&gt;: Offers SDKs for Node.js (JavaScript/TypeScript) and Python for seamless integration into various application workflows and popular LLM frameworks.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;p&gt;Here's a very simple POML example. Please put it in a file named &lt;code&gt;example.poml&lt;/code&gt;. Make sure it resides in the same directory as the &lt;code&gt;photosynthesis_diagram.png&lt;/code&gt; image file.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-xml"&gt;&amp;lt;poml&amp;gt;
+  &amp;lt;role&amp;gt;You are a patient teacher explaining concepts to a 10-year-old.&amp;lt;/role&amp;gt;
+  &amp;lt;task&amp;gt;Explain the concept of photosynthesis using the provided image as a reference.&amp;lt;/task&amp;gt;
+
+  &amp;lt;img src="photosynthesis_diagram.png" alt="Diagram of photosynthesis" /&amp;gt;
+
+  &amp;lt;output-format&amp;gt;
+    Keep the explanation simple, engaging, and under 100 words.
+    Start with "Hey there, future scientist!".
+  &amp;lt;/output-format&amp;gt;
+&amp;lt;/poml&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This example defines a role and task for the LLM, includes an image for context, and specifies the desired output format. With the POML toolkit, the prompt can be easily rendered with a flexible format, and tested with a vision LLM.&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;h3&gt;Visual Studio Code Extension&lt;/h3&gt; 
+&lt;p&gt;Install from &lt;a href="https://marketplace.visualstudio.com/items?itemName=poml-team.poml"&gt;Visual Studio Code Marketplace&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;You can also install the extension manually by downloading the &lt;code&gt;.vsix&lt;/code&gt; file from our &lt;a href="https://github.com/microsoft/poml/releases"&gt;GitHub releases page&lt;/a&gt; and installing it in VS Code via the Extensions view.&lt;/p&gt; 
+&lt;p&gt;Before testing prompts with the POML toolkit, make sure you have configured your preferred LLM model, API key, and endpoint. If these are not set, prompt testing will not work.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;To configure in Visual Studio Code:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Open the extension settings (open "Settings" and search for "POML").&lt;/li&gt; 
+ &lt;li&gt;Set your model provider (e.g., OpenAI, Azure, Google), API key, and endpoint URL in the POML section.&lt;/li&gt; 
+ &lt;li&gt;Alternatively, you can add these settings directly to your &lt;code&gt;settings.json&lt;/code&gt; file.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Node.js (via npm)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install pomljs
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Python (via pip)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pip install poml
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For development or local installation, you might use &lt;code&gt;pip install -e .&lt;/code&gt; from a cloned repository.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Refer to the &lt;a href="https://microsoft.github.io/poml"&gt;documentation&lt;/a&gt; for more details on installing the nightly build.&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;For detailed information on POML syntax, components, styling, templating, SDKs, and the VS Code extension, please refer to our &lt;a href="https://microsoft.github.io/poml"&gt;documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Learn More&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Watch our Demo Video on YouTube:&lt;/strong&gt; &lt;a href="https://youtu.be/b9WDcFsKixo"&gt;POML Introduction &amp;amp; Demo&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Join our Discord community:&lt;/strong&gt; Connect with the team and other users on our &lt;a href="https://discord.gg/FhMCqWzAn6"&gt;Discord server&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Read the Prompt Orchestration Markup Language paper:&lt;/strong&gt; &lt;a href="https://arxiv.org/abs/2508.13948"&gt;Prompt Orchestration Markup Language&lt;/a&gt; presents the design of POML and its impact on prompt engineering.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Explore Content-Format Integrated Prompt Optimization:&lt;/strong&gt; &lt;a href="https://arxiv.org/abs/2502.04295"&gt;Beyond Prompt Content: Enhancing LLM Performance via Content-Format Integrated Prompt Optimization&lt;/a&gt; proposes an iterative approach that jointly optimizes prompt content and formatting to improve LLM performance.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Citation&lt;/h2&gt; 
+&lt;p&gt;If you find POML useful or related to your research, please cite the following paper:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bibtex"&gt;@misc{zhang2025promptorchestrationmarkuplanguage,
+      title={Prompt Orchestration Markup Language}, 
+      author={Yuge Zhang and Nan Chen and Jiahang Xu and Yuqing Yang},
+      year={2025},
+      eprint={2508.13948},
+      archivePrefix={arXiv},
+      primaryClass={cs.HC},
+      url={https://arxiv.org/abs/2508.13948}, 
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Ecosystem &amp;amp; Community Projects&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/linmx0130/mini-poml-rs"&gt;mini-poml-rs&lt;/a&gt; – Experimental Rust-based POML renderer for environments without JavaScript or Python interpreters.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/GhennadiiMir/poml"&gt;poml-ruby&lt;/a&gt; – Ruby gem implementation of POML for Ruby applications.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit &lt;a href="https://cla.opensource.microsoft.com"&gt;https://cla.opensource.microsoft.com&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.&lt;/p&gt; 
+&lt;p&gt;This project has adopted the &lt;a href="https://opensource.microsoft.com/codeofconduct/"&gt;Microsoft Open Source Code of Conduct&lt;/a&gt;. For more information see the &lt;a href="https://opensource.microsoft.com/codeofconduct/faq/"&gt;Code of Conduct FAQ&lt;/a&gt; or contact &lt;a href="mailto:opencode@microsoft.com"&gt;opencode@microsoft.com&lt;/a&gt; with any additional questions or comments.&lt;/p&gt; 
+&lt;h2&gt;Trademarks&lt;/h2&gt; 
+&lt;p&gt;This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to and must follow &lt;a href="https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general"&gt;Microsoft's Trademark &amp;amp; Brand Guidelines&lt;/a&gt;. Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship. Any use of third-party trademarks or logos are subject to those third-party's policies.&lt;/p&gt; 
+&lt;h2&gt;Responsible AI&lt;/h2&gt; 
+&lt;p&gt;This project has been evaluated and certified to comply with the Microsoft Responsible AI Standard. The team will continue to monitor and maintain the repository, addressing any severe issues, including potential harms, if they arise. For more details, refer to the &lt;a href="https://raw.githubusercontent.com/microsoft/poml/main/RAI_README.md"&gt;Responsible AI Readme&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the MIT License. See the &lt;a href="https://raw.githubusercontent.com/microsoft/poml/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>bytedance/UI-TARS-desktop</title>
+      <link>https://github.com/bytedance/UI-TARS-desktop</link>
+      <description>&lt;p&gt;The Open-sourced Multimodal AI Agent Stack connecting Cutting-edge AI Models and Agent Infra.&lt;/p&gt;&lt;hr&gt;&lt;picture&gt; 
+ &lt;img alt="Agent TARS Banner" src="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/images/tars.png" /&gt; 
+&lt;/picture&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Introduction&lt;/h2&gt; 
+&lt;p&gt;English | &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/README.zh-CN.md"&gt;简体中文&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://trendshift.io/repositories/13584"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/13584" alt="" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;b&gt;TARS&lt;sup&gt;*&lt;/sup&gt;&lt;/b&gt; is a Multimodal AI Agent stack, currently shipping two projects: &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#agent-tars"&gt;Agent TARS&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#ui-tars-desktop"&gt;UI-TARS-desktop&lt;/a&gt;:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th width="50%" align="center"&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#agent-tars"&gt;Agent TARS&lt;/a&gt;&lt;/th&gt; 
+   &lt;th width="50%" align="center"&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#ui-tars-desktop"&gt;UI-TARS-desktop&lt;/a&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; 
+    &lt;video src="https://github.com/user-attachments/assets/c9489936-afdc-4d12-adda-d4b90d2a869d" width="50%"&gt;&lt;/video&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; 
+    &lt;video src="https://github.com/user-attachments/assets/e0914ce9-ad33-494b-bdec-0c25c1b01a27" width="50%"&gt;&lt;/video&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt; &lt;b&gt;Agent TARS&lt;/b&gt; is a general multimodal AI Agent stack, it brings the power of GUI Agent and Vision into your terminal, computer, browser and product. &lt;br /&gt; &lt;br /&gt; It primarily ships with a &lt;a href="https://agent-tars.com/guide/basic/cli.html" target="_blank"&gt;CLI&lt;/a&gt; and &lt;a href="https://agent-tars.com/guide/basic/web-ui.html" target="_blank"&gt;Web UI&lt;/a&gt; for usage. It aims to provide a workflow that is closer to human-like task completion through cutting-edge multimodal LLMs and seamless integration with various real-world &lt;a href="https://agent-tars.com/guide/basic/mcp.html" target="_blank"&gt;MCP&lt;/a&gt; tools. &lt;/td&gt; 
+   &lt;td align="left"&gt; &lt;b&gt;UI-TARS Desktop&lt;/b&gt; is a desktop application that provides a native GUI Agent based on the &lt;a href="https://github.com/bytedance/UI-TARS" target="_blank"&gt;UI-TARS&lt;/a&gt; model. &lt;br /&gt; &lt;br /&gt; It primarily ships a &lt;a href="https://github.com/bytedance/UI-TARS-desktop/raw/main/docs/quick-start.md#get-model-and-run-local-operator" target="_blank"&gt;local&lt;/a&gt; and &lt;a href="https://github.com/bytedance/UI-TARS-desktop/raw/main/docs/quick-start.md#run-remote-operator" target="_blank"&gt;remote&lt;/a&gt; computer as well as browser operators. &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Table of Contents&lt;/h2&gt; 
+&lt;!-- START doctoc generated TOC please keep comment here to allow auto update --&gt; 
+&lt;!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#news"&gt;News&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#agent-tars"&gt;Agent TARS&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#showcase"&gt;Showcase&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#core-features"&gt;Core Features&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#quick-start"&gt;Quick Start&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#documentation"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#ui-tars-desktop"&gt;UI-TARS Desktop&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#showcase-1"&gt;Showcase&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#features"&gt;Features&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#quick-start-1"&gt;Quick Start&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#contributing"&gt;Contributing&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#license"&gt;License&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#citation"&gt;Citation&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;!-- END doctoc generated TOC please keep comment here to allow auto update --&gt; 
+&lt;h2&gt;News&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-06-25]&lt;/strong&gt; We released a Agent TARS Beta and Agent TARS CLI - &lt;a href="https://agent-tars.com/blog/2025-06-25-introducing-agent-tars-beta.html"&gt;Introducing Agent TARS Beta&lt;/a&gt;, a multimodal AI agent that aims to explore a work form that is closer to human-like task completion through rich multimodal capabilities (such as GUI Agent, Vision) and seamless integration with various real-world tools.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-06-12]&lt;/strong&gt; - 🎁 We are thrilled to announce the release of UI-TARS Desktop v0.2.0! This update introduces two powerful new features: &lt;strong&gt;Remote Computer Operator&lt;/strong&gt; and &lt;strong&gt;Remote Browser Operator&lt;/strong&gt;—both completely free. No configuration required: simply click to remotely control any computer or browser, and experience a new level of convenience and intelligence.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-04-17]&lt;/strong&gt; - 🎉 We're thrilled to announce the release of new UI-TARS Desktop application v0.1.0, featuring a redesigned Agent UI. The application enhances the computer using experience, introduces new browser operation features, and supports &lt;a href="https://seed-tars.com/1.5"&gt;the advanced UI-TARS-1.5 model&lt;/a&gt; for improved performance and precise control.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-02-20]&lt;/strong&gt; - 📦 Introduced &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/docs/sdk.md"&gt;UI TARS SDK&lt;/a&gt;, is a powerful cross-platform toolkit for building GUI automation agents.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-01-23]&lt;/strong&gt; - 🚀 We updated the &lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/docs/deployment.md#cloud-deployment"&gt;Cloud Deployment&lt;/a&gt;&lt;/strong&gt; section in the 中文版: &lt;a href="https://bytedance.sg.larkoffice.com/docx/TCcudYwyIox5vyxiSDLlgIsTgWf#U94rdCxzBoJMLex38NPlHL21gNb"&gt;GUI模型部署教程&lt;/a&gt; with new information related to the ModelScope platform. You can now use the ModelScope platform for deployment.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Agent TARS&lt;/h2&gt; 
+&lt;p&gt; &lt;a href="https://npmjs.com/package/@agent-tars/cli?activeTab=readme"&gt;&lt;img src="https://img.shields.io/npm/v/@agent-tars/cli?style=for-the-badge&amp;amp;colorA=1a1a2e&amp;amp;colorB=3B82F6&amp;amp;logo=npm&amp;amp;logoColor=white" alt="npm version" /&gt;&lt;/a&gt; &lt;a href="https://npmcharts.com/compare/@agent-tars/cli?minimal=true"&gt;&lt;img src="https://img.shields.io/npm/dm/@agent-tars/cli.svg?style=for-the-badge&amp;amp;colorA=1a1a2e&amp;amp;colorB=0EA5E9&amp;amp;logo=npm&amp;amp;logoColor=white" alt="downloads" /&gt;&lt;/a&gt; &lt;a href="https://nodejs.org/en/about/previous-releases"&gt;&lt;img src="https://img.shields.io/node/v/@agent-tars/cli.svg?style=for-the-badge&amp;amp;colorA=1a1a2e&amp;amp;colorB=06B6D4&amp;amp;logo=node.js&amp;amp;logoColor=white" alt="node version" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/HnKcSBgTVx"&gt;&lt;img src="https://img.shields.io/badge/Discord-Join%20Community-5865F2?style=for-the-badge&amp;amp;logo=discord&amp;amp;logoColor=white" alt="Discord Community" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/agent_tars"&gt;&lt;img src="https://img.shields.io/badge/Twitter-Follow%20%40agent__tars-1DA1F2?style=for-the-badge&amp;amp;logo=twitter&amp;amp;logoColor=white" alt="Official Twitter" /&gt;&lt;/a&gt; &lt;a href="https://applink.larkoffice.com/client/chat/chatter/add_by_link?link_token=279h3365-b0fa-407f-89f3-0f96f36cd4d8"&gt;&lt;img src="https://img.shields.io/badge/飞书群-加入交流群-00D4AA?style=for-the-badge&amp;amp;logo=lark&amp;amp;logoColor=white" alt="飞书交流群" /&gt;&lt;/a&gt; &lt;a href="https://deepwiki.com/bytedance/UI-TARS-desktop"&gt;&lt;img src="https://img.shields.io/badge/DeepWiki-Ask%20AI-8B5CF6?style=for-the-badge&amp;amp;logo=gitbook&amp;amp;logoColor=white" alt="Ask DeepWiki" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;b&gt;Agent TARS&lt;/b&gt; is a general multimodal AI Agent stack, it brings the power of GUI Agent and Vision into your terminal, computer, browser and product. &lt;br /&gt; &lt;br /&gt; It primarily ships with a &lt;a href="https://agent-tars.com/guide/basic/cli.html" target="_blank"&gt;CLI&lt;/a&gt; and &lt;a href="https://agent-tars.com/guide/basic/web-ui.html" target="_blank"&gt;Web UI&lt;/a&gt; for usage. It aims to provide a workflow that is closer to human-like task completion through cutting-edge multimodal LLMs and seamless integration with various real-world &lt;a href="https://agent-tars.com/guide/basic/mcp.html" target="_blank"&gt;MCP&lt;/a&gt; tools.&lt;/p&gt; 
+&lt;h3&gt;Showcase&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;Please help me book the earliest flight from San Jose to New York on September 1st and the last return flight on September 6th on Priceline
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/772b0eef-aef7-4ab9-8cb0-9611820539d8"&gt;https://github.com/user-attachments/assets/772b0eef-aef7-4ab9-8cb0-9611820539d8&lt;/a&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th width="50%" align="center"&gt;Booking Hotel&lt;/th&gt; 
+   &lt;th width="50%" align="center"&gt;Generate Chart with extra MCP Servers&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; 
+    &lt;video src="https://github.com/user-attachments/assets/c9489936-afdc-4d12-adda-d4b90d2a869d" width="50%"&gt;&lt;/video&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; 
+    &lt;video src="https://github.com/user-attachments/assets/a9fd72d0-01bb-4233-aa27-ca95194bbce9" width="50%"&gt;&lt;/video&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt; &lt;b&gt;Instruction:&lt;/b&gt; &lt;i&gt;I am in Los Angeles from September 1st to September 6th, with a budget of $5,000. Please help me book a Ritz-Carlton hotel closest to the airport on booking.com and compile a transportation guide for me&lt;/i&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt; &lt;b&gt;Instruction:&lt;/b&gt; &lt;i&gt;Draw me a chart of Hangzhou's weather for one month&lt;/i&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;For more use cases, please check out &lt;a href="https://github.com/bytedance/UI-TARS-desktop/issues/842"&gt;#842&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Core Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🖱️ &lt;strong&gt;One-Click Out-of-the-box CLI&lt;/strong&gt; - Supports both &lt;strong&gt;headful&lt;/strong&gt; &lt;a href="https://agent-tars.com/guide/basic/web-ui.html"&gt;Web UI&lt;/a&gt; and &lt;strong&gt;headless&lt;/strong&gt; &lt;a href="https://agent-tars.com/guide/advanced/server.html"&gt;server&lt;/a&gt;) &lt;a href="https://agent-tars.com/guide/basic/cli.html"&gt;execution&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;🌐 &lt;strong&gt;Hybrid Browser Agent&lt;/strong&gt; - Control browsers using &lt;a href="https://agent-tars.com/guide/basic/browser.html#visual-grounding"&gt;GUI Agent&lt;/a&gt;, &lt;a href="https://agent-tars.com/guide/basic/browser.html#dom"&gt;DOM&lt;/a&gt;, or a hybrid strategy.&lt;/li&gt; 
+ &lt;li&gt;🔄 &lt;strong&gt;Event Stream&lt;/strong&gt; - Protocol-driven Event Stream drives &lt;a href="https://agent-tars.com/beta#context-engineering"&gt;Context Engineering&lt;/a&gt; and &lt;a href="https://agent-tars.com/blog/2025-06-25-introducing-agent-tars-beta.html#easy-to-build-applications"&gt;Agent UI&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;🧰 &lt;strong&gt;MCP Integration&lt;/strong&gt; - The kernel is built on MCP and also supports mounting &lt;a href="https://agent-tars.com/guide/basic/mcp.html"&gt;MCP Servers&lt;/a&gt; to connect to real-world tools.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Quick Start&lt;/h3&gt; 
+&lt;img alt="Agent TARS CLI" src="https://agent-tars.com/agent-tars-cli.png" /&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Luanch with `npx`.
+npx @agent-tars/cli@latest
+
+# Install globally, required Node.js &amp;gt;= 22
+npm install @agent-tars/cli@latest -g
+
+# Run with your preferred model provider
+agent-tars --provider volcengine --model doubao-1-5-thinking-vision-pro-250428 --apiKey your-api-key
+agent-tars --provider anthropic --model claude-3-7-sonnet-latest --apiKey your-api-key
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Visit the comprehensive &lt;a href="https://agent-tars.com/guide/get-started/quick-start.html"&gt;Quick Start&lt;/a&gt; guide for detailed setup instructions.&lt;/p&gt; 
+&lt;h3&gt;Documentation&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;🌟 &lt;strong&gt;Explore Agent TARS Universe&lt;/strong&gt; 🌟&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th width="20%" align="center"&gt;Category&lt;/th&gt; 
+   &lt;th width="30%" align="center"&gt;Resource Link&lt;/th&gt; 
+   &lt;th width="50%" align="left"&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🏠 &lt;strong&gt;Central Hub&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com"&gt; &lt;img src="https://img.shields.io/badge/Visit-Website-4F46E5?style=for-the-badge&amp;amp;logo=globe&amp;amp;logoColor=white" alt="Website" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Your gateway to Agent TARS ecosystem&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;📚 &lt;strong&gt;Quick Start&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com/guide/get-started/quick-start.html"&gt; &lt;img src="https://img.shields.io/badge/Get-Started-06B6D4?style=for-the-badge&amp;amp;logo=rocket&amp;amp;logoColor=white" alt="Quick Start" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Zero to hero in 5 minutes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🚀 &lt;strong&gt;What's New&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com/beta"&gt; &lt;img src="https://img.shields.io/badge/Read-Blog-F59E0B?style=for-the-badge&amp;amp;logo=rss&amp;amp;logoColor=white" alt="Blog" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Discover cutting-edge features &amp;amp; vision&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🛠️ &lt;strong&gt;Developer Zone&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com/guide/get-started/introduction.html"&gt; &lt;img src="https://img.shields.io/badge/View-Docs-10B981?style=for-the-badge&amp;amp;logo=gitbook&amp;amp;logoColor=white" alt="Docs" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Master every command &amp;amp; features&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🎯 &lt;strong&gt;Showcase&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/bytedance/UI-TARS-desktop/issues/842"&gt; &lt;img src="https://img.shields.io/badge/View-Examples-8B5CF6?style=for-the-badge&amp;amp;logo=github&amp;amp;logoColor=white" alt="Examples" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;View use cases built by the official and community&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🔧 &lt;strong&gt;Reference&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com/api/"&gt; &lt;img src="https://img.shields.io/badge/API-Reference-EF4444?style=for-the-badge&amp;amp;logo=book&amp;amp;logoColor=white" alt="API" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Complete technical reference&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;UI-TARS Desktop&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;img alt="UI-TARS" width="260" src="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/apps/ui-tars/resources/icon.png" /&gt; &lt;/p&gt; 
+&lt;p&gt;UI-TARS Desktop is a native GUI agent driven by &lt;a href="https://github.com/bytedance/UI-TARS"&gt;UI-TARS&lt;/a&gt; and Seed-1.5-VL/1.6 series models, available on your local computer and remote VM sandbox on cloud.&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt; &amp;nbsp;&amp;nbsp; 📑 &lt;a href="https://arxiv.org/abs/2501.12326"&gt;Paper&lt;/a&gt; &amp;nbsp;&amp;nbsp; | 🤗 &lt;a href="https://huggingface.co/ByteDance-Seed/UI-TARS-1.5-7B"&gt;Hugging Face Models&lt;/a&gt;&amp;nbsp;&amp;nbsp; | &amp;nbsp;&amp;nbsp;🫨 &lt;a href="https://discord.gg/pTXwYVjfcs"&gt;Discord&lt;/a&gt;&amp;nbsp;&amp;nbsp; | &amp;nbsp;&amp;nbsp;🤖 &lt;a href="https://www.modelscope.cn/collections/UI-TARS-bccb56fa1ef640"&gt;ModelScope&lt;/a&gt;&amp;nbsp;&amp;nbsp; &lt;br /&gt; 🖥️ Desktop Application &amp;nbsp;&amp;nbsp; | &amp;nbsp;&amp;nbsp; 👓 &lt;a href="https://github.com/web-infra-dev/midscene"&gt;Midscene (use in browser)&lt;/a&gt; &amp;nbsp;&amp;nbsp; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h3&gt;Showcase&lt;/h3&gt; 
+&lt;!-- // FIXME: Choose only two demo, one local computer and one remote computer showcase. --&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="center"&gt;Instruction&lt;/th&gt; 
+   &lt;th align="center"&gt;Local Operator&lt;/th&gt; 
+   &lt;th align="center"&gt;Remote Operator&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Please help me open the autosave feature of VS Code and delay AutoSave operations for 500 milliseconds in the VS Code setting.&lt;/td&gt; 
+   &lt;td align="center"&gt;
+    &lt;video src="https://github.com/user-attachments/assets/e0914ce9-ad33-494b-bdec-0c25c1b01a27" height="300"&gt;&lt;/video&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;
+    &lt;video src="https://github.com/user-attachments/assets/01e49b69-7070-46c8-b3e3-2aaaaec71800" height="300"&gt;&lt;/video&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Could you help me check the latest open issue of the UI-TARS-Desktop project on GitHub?&lt;/td&gt; 
+   &lt;td align="center"&gt;
+    &lt;video src="https://github.com/user-attachments/assets/3d159f54-d24a-4268-96c0-e149607e9199" height="300"&gt;&lt;/video&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;
+    &lt;video src="https://github.com/user-attachments/assets/072fb72d-7394-4bfa-95f5-4736e29f7e58" height="300"&gt;&lt;/video&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🤖 Natural language control powered by Vision-Language Model&lt;/li&gt; 
+ &lt;li&gt;🖥️ Screenshot and visual recognition support&lt;/li&gt; 
+ &lt;li&gt;🎯 Precise mouse and keyboard control&lt;/li&gt; 
+ &lt;li&gt;💻 Cross-platform support (Windows/MacOS/Browser)&lt;/li&gt; 
+ &lt;li&gt;🔄 Real-time feedback and status display&lt;/li&gt; 
+ &lt;li&gt;🔐 Private and secure - fully local processing&lt;/li&gt; 
+ &lt;li&gt;🛠️ Effortless setup and intuitive remote operators&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Quick Start&lt;/h3&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/docs/quick-start.md"&gt;Quick Start&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the Apache License 2.0.&lt;/p&gt; 
+&lt;h2&gt;Citation&lt;/h2&gt; 
+&lt;p&gt;If you find our paper and code useful in your research, please consider giving a star &lt;span&gt;⭐&lt;/span&gt; and citation &lt;span&gt;📝&lt;/span&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-BibTeX"&gt;@article{qin2025ui,
+  title={UI-TARS: Pioneering Automated GUI Interaction with Native Agents},
+  author={Qin, Yujia and Ye, Yining and Fang, Junjie and Wang, Haoming and Liang, Shihao and Tian, Shizuo and Zhang, Junda and Li, Jiahao and Li, Yunxin and Huang, Shijue and others},
+  journal={arXiv preprint arXiv:2501.12326},
+  year={2025}
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>apple/embedding-atlas</title>
+      <link>https://github.com/apple/embedding-atlas</link>
+      <description>&lt;p&gt;Embedding Atlas is a tool that provides interactive visualizations for large embeddings. It allows you to visualize, cross-filter, and search embeddings and metadata.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Embedding Atlas&lt;/h1&gt; 
+&lt;p&gt;Embedding Atlas is a tool that provides interactive visualizations for large embeddings. It allows you to visualize, cross-filter, and search embeddings and metadata.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;🏷️ &lt;strong&gt;Automatic data clustering &amp;amp; labeling:&lt;/strong&gt; Interactively visualize and navigate overall data structure.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;🫧 &lt;strong&gt;Kernel density estimation &amp;amp; density contours:&lt;/strong&gt; Easily explore and distinguish between dense regions of data and outliers.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;🧊 &lt;strong&gt;Order-independent transparency:&lt;/strong&gt; Ensure clear, accurate rendering of overlapping points.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;🔍 &lt;strong&gt;Real-time search &amp;amp; nearest neighbors:&lt;/strong&gt; Find similar data to a given query or existing data point.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;🚀 &lt;strong&gt;WebGPU implementation (with WebGL 2 fallback):&lt;/strong&gt; Fast, smooth performance (up to few million points) with modern rendering stack.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;📊 &lt;strong&gt;Multi-coordinated views for metadata exploration:&lt;/strong&gt; Interactively link and filter data across metadata columns.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Please visit &lt;a href="https://apple.github.io/embedding-atlas"&gt;https://apple.github.io/embedding-atlas&lt;/a&gt; for a demo and documentation.&lt;/p&gt; 
+&lt;picture&gt; 
+ &lt;source media="(prefers-color-scheme: dark)" srcset="./packages/docs/assets/embedding-atlas-dark.png" /&gt; 
+ &lt;img alt="screenshot of Embedding Atlas" src="https://raw.githubusercontent.com/apple/embedding-atlas/main/packages/docs/assets/embedding-atlas-light.png" /&gt; 
+&lt;/picture&gt; 
+&lt;h2&gt;Get started&lt;/h2&gt; 
+&lt;p&gt;To use Embedding Atlas with Python:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pip install embedding-atlas
+
+embedding-atlas &amp;lt;your-dataset.parquet&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;In addition to the command line tool, Embedding Atlas is also available as a Jupyter widget:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;from embedding_atlas.widget import EmbeddingAtlasWidget
+
+# Show the Embedding Atlas widget for your data frame:
+EmbeddingAtlasWidget(df)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Finally, components from Embedding Atlas are also available in an npm package:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install embedding-atlas
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class="language-js"&gt;import { EmbeddingAtlas, EmbeddingView, Table } from "embedding-atlas";
+
+// or with React:
+import { EmbeddingAtlas, EmbeddingView, Table } from "embedding-atlas/react";
+
+// or Svelte:
+import { EmbeddingAtlas, EmbeddingView, Table } from "embedding-atlas/svelte";
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For more information, please visit &lt;a href="https://apple.github.io/embedding-atlas/overview.html"&gt;https://apple.github.io/embedding-atlas/overview.html&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;BibTeX&lt;/h2&gt; 
+&lt;p&gt;For the Embedding Atlas tool:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bibtex"&gt;@misc{ren2025embedding,
+  title={Embedding Atlas: Low-Friction, Interactive Embedding Visualization},
+  author={Donghao Ren and Fred Hohman and Halden Lin and Dominik Moritz},
+  year={2025},
+  eprint={2505.06386},
+  archivePrefix={arXiv},
+  primaryClass={cs.HC},
+  url={https://arxiv.org/abs/2505.06386},
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For the algorithm that automatically produces clusters and labels in the embedding view:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bibtex"&gt;@misc{ren2025scalable,
+  title={A Scalable Approach to Clustering Embedding Projections},
+  author={Donghao Ren and Fred Hohman and Dominik Moritz},
+  year={2025},
+  eprint={2504.07285},
+  archivePrefix={arXiv},
+  primaryClass={cs.HC},
+  url={https://arxiv.org/abs/2504.07285},
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;p&gt;This repo contains multiple sub-packages:&lt;/p&gt; 
+&lt;p&gt;Frontend:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;packages/component&lt;/code&gt;: The &lt;code&gt;EmbeddingView&lt;/code&gt; and &lt;code&gt;EmbeddingViewMosaic&lt;/code&gt; components.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;packages/table&lt;/code&gt;: The &lt;code&gt;Table&lt;/code&gt; component.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;packages/viewer&lt;/code&gt;: The frontend application for visualizing embedding and other columns. It also provides the &lt;code&gt;EmbeddingAtlas&lt;/code&gt; component that can be embedded in other applications.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;packages/density-clustering&lt;/code&gt;: The density clustering algorithm, written in Rust.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;packages/umap-wasm&lt;/code&gt;: An implementation of UMAP algorithm in WebAssembly (with the &lt;a href="https://github.com/libscran/umappp"&gt;umappp&lt;/a&gt; C++ library).&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;packages/embedding-atlas&lt;/code&gt;: The &lt;code&gt;embedding-atlas&lt;/code&gt; package that get published. It imports all of the above and exposes their API in a single package.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Python:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;packages/backend&lt;/code&gt;: A Python package named &lt;code&gt;embedding-atlas&lt;/code&gt; that provides the &lt;code&gt;embedding-atlas&lt;/code&gt; command line tool.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Documentation:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;packages/docs&lt;/code&gt;: The documentation website.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;For more information, please visit &lt;a href="https://apple.github.io/embedding-atlas/develop.html"&gt;https://apple.github.io/embedding-atlas/develop.html&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This code is released under the &lt;a href="https://raw.githubusercontent.com/apple/embedding-atlas/main/LICENSE"&gt;&lt;code&gt;MIT license&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
