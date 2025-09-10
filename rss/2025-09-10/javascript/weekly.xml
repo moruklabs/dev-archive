@@ -1,0 +1,1723 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub JavaScript Weekly Trending</title>
+    <description>Weekly Trending of JavaScript in GitHub</description>
+    <pubDate>Tue, 09 Sep 2025 01:48:15 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>pedroslopez/whatsapp-web.js</title>
+      <link>https://github.com/pedroslopez/whatsapp-web.js</link>
+      <description>&lt;p&gt;A WhatsApp client library for NodeJS that connects through the WhatsApp Web browser app&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt; &lt;a href="https://wwebjs.dev"&gt;&lt;img src="https://github.com/wwebjs/logos/raw/main/4_Full%20Logo%20Lockup_Small/small_banner_blue.png?raw=true" title="whatsapp-web.js" alt="WWebJS Website" width="500" /&gt;&lt;/a&gt; &lt;/p&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt; &lt;a href="https://www.npmjs.com/package/whatsapp-web.js"&gt;&lt;img src="https://img.shields.io/npm/v/whatsapp-web.js.svg?sanitize=true" alt="npm" /&gt;&lt;/a&gt; &lt;a href="https://depfu.com/github/pedroslopez/whatsapp-web.js?project_id=9765"&gt;&lt;img src="https://badges.depfu.com/badges/4a65a0de96ece65fdf39e294e0c8dcba/overview.svg?sanitize=true" alt="Depfu" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/badge/WhatsApp_Web-2.3000.1017054665-brightgreen.svg?sanitize=true" alt="WhatsApp_Web 2.2346.52" /&gt; &lt;a href="https://discord.gg/H7DqQs4"&gt;&lt;img src="https://img.shields.io/discord/698610475432411196.svg?logo=discord" alt="Discord server" /&gt;&lt;/a&gt; &lt;/p&gt; 
+ &lt;br /&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;About&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;A WhatsApp API client that connects through the WhatsApp Web browser app&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;The library works by launching the WhatsApp Web browser application and managing it using Puppeteer to create an instance of WhatsApp Web, thereby mitigating the risk of being blocked. The WhatsApp API client connects through the WhatsApp Web browser app, accessing its internal functions. This grants you access to nearly all the features available on WhatsApp Web, enabling dynamic handling similar to any other Node.js application.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!IMPORTANT] &lt;strong&gt;It is not guaranteed you will not be blocked by using this method. WhatsApp does not allow bots or unofficial clients on their platform, so this shouldn't be considered totally safe.&lt;/strong&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Links&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://wwebjs.dev"&gt;Website&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://guide.wwebjs.dev/guide"&gt;Guide&lt;/a&gt; (&lt;a href="https://github.com/wwebjs/wwebjs.dev/tree/main"&gt;source&lt;/a&gt;) &lt;em&gt;(work in progress)&lt;/em&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.wwebjs.dev/"&gt;Documentation&lt;/a&gt; (&lt;a href="https://github.com/pedroslopez/whatsapp-web.js/tree/main/docs"&gt;source&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://discord.gg/H7DqQs4"&gt;WWebJS Discord&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/pedroslopez/whatsapp-web.js"&gt;GitHub&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://npmjs.org/package/whatsapp-web.js"&gt;npm&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;The module is now available on npm! &lt;code&gt;npm i whatsapp-web.js&lt;/code&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] &lt;strong&gt;Node &lt;code&gt;v18+&lt;/code&gt; is required.&lt;/strong&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;QUICK STEPS TO UPGRADE NODE&lt;/h2&gt; 
+&lt;h3&gt;Windows&lt;/h3&gt; 
+&lt;h4&gt;Manual&lt;/h4&gt; 
+&lt;p&gt;Just get the latest LTS from the &lt;a href="https://nodejs.org/en/download/"&gt;official node website&lt;/a&gt;.&lt;/p&gt; 
+&lt;h4&gt;npm&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-powershell"&gt;sudo npm install -g n
+sudo n stable
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Choco&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-powershell"&gt;choco install nodejs-lts
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Winget&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-powershell"&gt;winget install OpenJS.NodeJS.LTS
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Ubuntu / Debian&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &amp;amp;&amp;amp;\
+sudo apt-get install -y nodejs
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Example usage&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-js"&gt;const { Client } = require('whatsapp-web.js');
+
+const client = new Client();
+
+client.on('qr', (qr) =&amp;gt; {
+    // Generate and scan this code with your phone
+    console.log('QR RECEIVED', qr);
+});
+
+client.on('ready', () =&amp;gt; {
+    console.log('Client is ready!');
+});
+
+client.on('message', msg =&amp;gt; {
+    if (msg.body == '!ping') {
+        msg.reply('pong');
+    }
+});
+
+client.initialize();
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Take a look at &lt;a href="https://github.com/pedroslopez/whatsapp-web.js/raw/master/example.js"&gt;example.js&lt;/a&gt; for another examples with additional use cases.&lt;br /&gt; For further details on saving and restoring sessions, explore the provided &lt;a href="https://wwebjs.dev/guide/creating-your-bot/authentication.html"&gt;Authentication Strategies&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Supported features&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Feature&lt;/th&gt; 
+   &lt;th&gt;Status&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Multi Device&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Send messages&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Receive messages&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Send media (images/audio/documents)&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Send media (video)&lt;/td&gt; 
+   &lt;td&gt;✅ &lt;a href="https://wwebjs.dev/guide/creating-your-bot/handling-attachments.html#caveat-for-sending-videos-and-gifs"&gt;(requires Google Chrome)&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Send stickers&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Receive media (images/audio/video/documents)&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Send contact cards&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Send location&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Send buttons&lt;/td&gt; 
+   &lt;td&gt;❌ &lt;a href="https://www.youtube.com/watch?v=hv1R1rLeVVE"&gt;(DEPRECATED)&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Send lists&lt;/td&gt; 
+   &lt;td&gt;❌ &lt;a href="https://www.youtube.com/watch?v=hv1R1rLeVVE"&gt;(DEPRECATED)&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Receive location&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Message replies&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Join groups by invite&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Get invite for group&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Modify group info (subject, description)&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Modify group settings (send messages, edit info)&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Add group participants&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Kick group participants&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Promote/demote group participants&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Mention users&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Mention groups&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Mute/unmute chats&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Block/unblock contacts&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Get contact info&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Get profile pictures&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Set user status message&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;React to messages&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Create polls&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Channels&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Vote in polls&lt;/td&gt; 
+   &lt;td&gt;🔜&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Communities&lt;/td&gt; 
+   &lt;td&gt;🔜&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;Something missing? Make an issue and let us know!&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Feel free to open pull requests; we welcome contributions! However, for significant changes, it's best to open an issue beforehand. Make sure to review our &lt;a href="https://github.com/pedroslopez/whatsapp-web.js/raw/main/CODE_OF_CONDUCT.md"&gt;contribution guidelines&lt;/a&gt; before creating a pull request. Before creating your own issue or pull request, always check to see if one already exists!&lt;/p&gt; 
+&lt;h2&gt;Supporting the project&lt;/h2&gt; 
+&lt;p&gt;You can support the maintainer of this project through the links below&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/sponsors/pedroslopez"&gt;Support via GitHub Sponsors&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.paypal.me/psla/"&gt;Support via PayPal&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://m.do.co/c/73f906a36ed4"&gt;Sign up for DigitalOcean&lt;/a&gt; and get $200 in credit when you sign up (Referral)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Disclaimer&lt;/h2&gt; 
+&lt;p&gt;This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with WhatsApp or any of its subsidiaries or its affiliates. The official WhatsApp website can be found at &lt;a href="https://whatsapp.com"&gt;whatsapp.com&lt;/a&gt;. "WhatsApp" as well as related names, marks, emblems and images are registered trademarks of their respective owners. Also it is not guaranteed you will not be blocked by using this method. WhatsApp does not allow bots or unofficial clients on their platform, so this shouldn't be considered totally safe.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Copyright 2019 Pedro S Lopez&lt;/p&gt; 
+&lt;p&gt;Licensed under the Apache License, Version 2.0 (the "License");&lt;br /&gt; you may not use this project except in compliance with the License.&lt;br /&gt; You may obtain a copy of the License at &lt;a href="http://www.apache.org/licenses/LICENSE-2.0"&gt;http://www.apache.org/licenses/LICENSE-2.0&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Unless required by applicable law or agreed to in writing, software&lt;br /&gt; distributed under the License is distributed on an "AS IS" BASIS,&lt;br /&gt; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.&lt;br /&gt; See the License for the specific language governing permissions and&lt;br /&gt; limitations under the License.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>zizifn/edgetunnel</title>
+      <link>https://github.com/zizifn/edgetunnel</link>
+      <description>&lt;p&gt;Running V2ray inside edge/serverless runtime&lt;/p&gt;&lt;hr&gt;&lt;hr /&gt;</description>
+    </item>
+    
+    <item>
+      <title>mickael-kerjean/filestash</title>
+      <link>https://github.com/mickael-kerjean/filestash</link>
+      <description>&lt;p&gt;📁 The Dropbox like web client for SFTP, S3, FTP, WebDAV, Git, Minio, LDAP, CalDAV, CardDAV, Mysql, Backblaze, ...&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/.assets/photo.jpg" alt="screenshot" /&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/mickael-kerjean/contributors" alt="Contributors"&gt; &lt;img src="https://img.shields.io/github/contributors/mickael-kerjean/filestash" style="max-width:100%;" /&gt; &lt;/a&gt; &lt;a href="https://hub.docker.com/r/machines/filestash" alt="Docker Hub"&gt; &lt;img src="https://img.shields.io/docker/pulls/machines/filestash" style="max-width:100%;" /&gt; &lt;/a&gt; &lt;a href="https://kiwiirc.com/nextclient/#irc://irc.libera.chat/#filestash?nick=guest??" alt="Chat on IRC"&gt; &lt;img src="https://img.shields.io/badge/IRC-%23filestash-brightgreen.svg?sanitize=true" style="max-width:100%;" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; A Dropbox-like file manager that let you manage your data anywhere it is located:&lt;br /&gt; &lt;a href="https://www.filestash.app/ftp-client.html"&gt;FTP&lt;/a&gt; • &lt;a href="https://www.filestash.app/ftp-client.html"&gt;FTPS&lt;/a&gt; • &lt;a href="https://www.filestash.app/ssh-file-transfer.html"&gt;SFTP&lt;/a&gt; • &lt;a href="https://www.filestash.app/webdav-client.html"&gt;WebDAV&lt;/a&gt; • Git • &lt;a href="https://www.filestash.app/s3-browser.html"&gt;S3&lt;/a&gt; • NFS • &lt;a href="https://www.filestash.app/smb-client.html"&gt;SMB&lt;/a&gt; • Artifactory • &lt;a href="https://www.filestash.app/ldap-browser.html"&gt;LDAP&lt;/a&gt; • Mysql &lt;br /&gt; Storj • CardDAV • CalDAV • Backblaze B2 • &lt;a href="https://www.filestash.app/s3-browser.html"&gt;Minio&lt;/a&gt; &lt;br /&gt;Dropbox • Google Drive &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="http://demo.filestash.app"&gt; &lt;img src="https://raw.githubusercontent.com/mickael-kerjean/filestash_images/master/.assets/button_demo.png" alt="demo button" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h1&gt;Key Features&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Manage files from your browser&lt;/li&gt; 
+ &lt;li&gt;Sleek, Speedy, Snappy, works great on Desktop and Mobile&lt;/li&gt; 
+ &lt;li&gt;Extensible / Customisable / Hackable via a rich ecosystem of plugins&lt;/li&gt; 
+ &lt;li&gt;Shared Links which you can mount locally as network drives&lt;/li&gt; 
+ &lt;li&gt;Builtin Music, Video, Image viewers with optional transcoding and Chromecast support&lt;/li&gt; 
+ &lt;li&gt;API and LLM integration via &lt;a href="https://www.filestash.app/docs/api/#mcp"&gt;MCP&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.filestash.app/docs/plugin/#theme"&gt;Themes&lt;/a&gt; replicating the UX of &lt;a href="https://www.filestash.app/img/screenshots/theme_dropbox.png"&gt;dropbox&lt;/a&gt;, &lt;a href="https://www.filestash.app/img/screenshots/theme_gdrive.png"&gt;gdrive&lt;/a&gt;, &lt;a href="https://www.filestash.app/img/screenshots/theme_github.png"&gt;github&lt;/a&gt;, &lt;a href="https://www.filestash.app/img/screenshots/theme_ibm.png"&gt;ibm&lt;/a&gt;, &lt;a href="https://www.filestash.app/img/screenshots/theme_onedrive.png"&gt;onedrive&lt;/a&gt;, &lt;a href="https://www.filestash.app/img/screenshots/theme_untitled.png"&gt;and more&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;... and much &lt;sub&gt;much &lt;sub&gt;much&lt;/sub&gt;&lt;/sub&gt; more&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;Documentation&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.filestash.app/docs/"&gt;Getting started&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.filestash.app/docs/install-and-upgrade/"&gt;Installation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.filestash.app/docs/api/#api"&gt;API&lt;/a&gt; and &lt;a href="https://www.filestash.app/docs/api/#mcp"&gt;MCP&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.filestash.app/docs/plugin/"&gt;Plugins Inventory&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://downloads.filestash.app/upload/hardening-guide.pdf"&gt;Hardening Guide&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;Vision &amp;amp; Philosophy&lt;/h1&gt; 
+&lt;p&gt;Our goal is simple: &lt;strong&gt;to build the best web based file manager ever made. Period.&lt;/strong&gt; But "best" means different things to different people, and making Filestash modular is the only sane model to accomplish that. Anything that isn't a fundamental truth of the universe and might spark a debate belongs in a plugin.&lt;/p&gt; 
+&lt;p&gt;This modularity is made possible by the magic of programming interfaces. For example, if you want a &lt;a href="https://news.ycombinator.com/item?id=9224"&gt;Dropbox-like frontend for FTP&lt;/a&gt;, you will find out the &lt;a href="https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_backend_ftp"&gt;FTP plugin&lt;/a&gt; simply implements this interface:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-go"&gt;type IBackend interface {
+	Ls(path string) ([]os.FileInfo, error)           // list files in a folder
+	Cat(path string) (io.ReadCloser, error)          // download a file
+	Mkdir(path string) error                         // create a folder
+	Rm(path string) error                            // remove something
+	Mv(from string, to string) error                 // rename something
+	Save(path string, file io.Reader) error          // save a file
+	Touch(path string) error                         // create a file
+
+	// I have omitted 2 other methods, a first one to enable connections reuse and
+	// another one to declare what should the login form be like.
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;There are interfaces you can implement for every key component of Filestash: from storage, to authentication, authorisation, custom apps, search, thumbnailing, frontend patches, middleware, endpoint creation and a &lt;a href="https://github.com/mickael-kerjean/filestash/raw/master/server/common/plugin.go"&gt;few others&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;To see what's currently installed in your instance, head over to &lt;a href="https://demo.filestash.app/about"&gt;/about&lt;/a&gt;. The inventory of plugins is &lt;a href="https://www.filestash.app/docs/plugin/"&gt;documented here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;Roadmap&lt;/h1&gt; 
+&lt;p&gt;There are 2 major pieces of work currently underway:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Making Filestash able to open virtually anything. Thanks to plugin, we're adding support for files your browser has never heard of, from astrophysics to embroidery patterns. Concretly we have added support for: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://demo.filestash.app/assets/plugin/application_photography.zip"&gt;photography&lt;/a&gt;: heif, nef, raf, tiff, raw, arw, sr2, srf, nrw, cr2, crw, x3f, pef, rw2, orf, mrw, mdc, mef, mos, dcr, kdc, 3fr, erf and srw&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://demo.filestash.app/assets/plugin/application_photography.zip"&gt;astronomy&lt;/a&gt;: fits, xisf&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://demo.filestash.app/assets/plugin/application_science.zip"&gt;science&lt;/a&gt;: with latex, plantuml &amp;amp; pandoc compilers&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://demo.filestash.app/assets/plugin/application_musician.zip"&gt;music&lt;/a&gt;: mid, midi, gp4 and gp5&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://demo.filestash.app/assets/plugin/application_gis.zip"&gt;GIS&lt;/a&gt;: &lt;a href="https://www.filestash.app/tools/geojson-viewer.html"&gt;geojson&lt;/a&gt;, &lt;a href="https://www.filestash.app/tools/shp-viewer.html"&gt;shp&lt;/a&gt;, gpx, wms and &lt;a href="https://www.filestash.app/tools/dbf-viewer.html"&gt;dbf&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://demo.filestash.app/assets/plugin/application_engineering.zip"&gt;data engineering&lt;/a&gt;: &lt;a href="https://www.filestash.app/tools/parquet-viewer.html"&gt;parquet&lt;/a&gt;, &lt;a href="https://www.filestash.app/tools/arrow-viewer.html"&gt;arrow&lt;/a&gt;, &lt;a href="https://www.filestash.app/tools/feather-viewer.html"&gt;feather&lt;/a&gt;, &lt;a href="https://www.filestash.app/tools/avro-viewer.html"&gt;avro&lt;/a&gt;, &lt;a href="https://www.filestash.app/tools/orc-viewer.html"&gt;orc&lt;/a&gt;, hdf5, h5, netcdf, nc, rds, rda and rdata&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://demo.filestash.app/assets/plugin/application_dev.zip"&gt;dev&lt;/a&gt;: a, so, o, dylib, dll, har, cap, pcap, pcapng and &lt;a href="https://www.filestash.app/tools/sqlite-viewer.html"&gt;sqlite&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://demo.filestash.app/assets/plugin/application_creative.zip"&gt;creative work&lt;/a&gt;: svg, &lt;a href="https://www.filestash.app/tools/psd-viewer.html"&gt;psd&lt;/a&gt;, ai, &lt;a href="https://www.filestash.app/tools/sketch-viewer.html"&gt;sketch&lt;/a&gt;, &lt;a href="https://www.filestash.app/tools/cdr-viewer.html"&gt;cdr&lt;/a&gt;, woff, woff2, ttf, otf, eot, exr, tga, pgm, ppm, dds, ktx, dpx, pcx, xpm, pnm, xbm, aai, xwd, cin, pbm, pcd, sgi, wbmp and rgb&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://demo.filestash.app/assets/plugin/application_biomed.zip"&gt;biomedical&lt;/a&gt;: dicom, sam, bam, cif, pdb, xyz, sdf, mol, mol2 and mmtf&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://demo.filestash.app/assets/plugin/application_autodesk.zip"&gt;autodesk&lt;/a&gt;: &lt;a href="https://www.filestash.app/tools/dwg-viewer.html"&gt;dwg&lt;/a&gt; and &lt;a href="https://www.filestash.app/tools/dxf-viewer.html"&gt;dxf&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://demo.filestash.app/assets/plugin/application_adobe.zip"&gt;adobe&lt;/a&gt;: &lt;a href="https://www.filestash.app/tools/psd-viewer.html"&gt;psd&lt;/a&gt;, ai, &lt;a href="https://www.filestash.app/tools/xd-viewer.html"&gt;xd&lt;/a&gt;, &lt;a href="https://www.filestash.app/tools/dng-viewer.html"&gt;dng&lt;/a&gt;, &lt;a href="https://www.filestash.app/tools/eps-viewer.html"&gt;postscript&lt;/a&gt;, aco, ase, swf&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://demo.filestash.app/assets/plugin/application_3d.zip"&gt;3d&lt;/a&gt;: fbx, gltf, obj, stl, step, mesh, ifc, dae&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://demo.filestash.app/assets/plugin/application_embroidery.zip"&gt;embroidery&lt;/a&gt;: dgt, dst, dsb, dsz, edr, exp, 10o, col, hus, inf, jef, ksm, pcm, pcs, pes, sew, shv, sst, tap, u01, vip, vp3 and xxx&lt;/li&gt; 
+   &lt;li&gt;there is more to come as we stumbled upon new niches and spend time talking to real people.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Getting to v1.0. Filestash is already rock solid, it has been in active development for over 8 years. But the bar for v1.0 will be reached when Filestash is objectively better than Dropbox, Google Drive, and Box by every single measurable metric we care about. That's the mission.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h1&gt;Support&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Commercial Users → &lt;a href="https://www.filestash.app/pricing/?origin=github"&gt;support contract&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;For individuals → &lt;a href="https://kiwiirc.com/nextclient/#irc://irc.libera.chat/#filestash?nick=guest??"&gt;#filestash&lt;/a&gt; on IRC (libera.chat).&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Want to help us sprinkle some toppings on our noodle cups?&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Bitcoin: &lt;code&gt;3LX5KGmSmHDj5EuXrmUvcg77EJxCxmdsgW&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://opencollective.com/filestash"&gt;Open Collective&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;Credits&lt;/h1&gt; 
+&lt;p&gt;Filestash stands on the shoulder of: &lt;a href="https://github.com/mickael-kerjean/filestash/graphs/contributors"&gt;contributors&lt;/a&gt;, folks developing &lt;a href="https://github.com/mickael-kerjean/filestash/raw/master/go.mod"&gt;awesome libraries&lt;/a&gt;, a whole bunch of C stuff (the &lt;a href="https://imgs.xkcd.com/comics/dependency.png"&gt;C standard library&lt;/a&gt;, &lt;a href="https://libjpeg-turbo.org/"&gt;libjpeg&lt;/a&gt;, &lt;a href="https://www.libpng.org/pub/png/libpng.html"&gt;libpng&lt;/a&gt;, &lt;a href="https://giflib.sourceforge.net/"&gt;libgif&lt;/a&gt;, &lt;a href="https://www.libraw.org/about"&gt;libraw&lt;/a&gt; and many more), &lt;a href="https://fontawesome.com"&gt;fontawesome&lt;/a&gt;, &lt;a href="https://material.io/icons/"&gt;material&lt;/a&gt;, &lt;a href="https://www.browserstack.com/"&gt;Browser stack&lt;/a&gt; to let us test on real devices, and the many guys from Nebraska and elsewhere who have been thanklessly maintaining the critical pieces that Filestash sits on top:&lt;/p&gt; 
+&lt;img src="https://imgs.xkcd.com/comics/dependency.png" alt="credit to the nebraska guy on xkcd" /&gt;</description>
+    </item>
+    
+    <item>
+      <title>jgraph/drawio-desktop</title>
+      <link>https://github.com/jgraph/drawio-desktop</link>
+      <description>&lt;p&gt;Official electron build of draw.io&lt;/p&gt;&lt;hr&gt;&lt;h2&gt;About&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;drawio-desktop&lt;/strong&gt; is a diagramming desktop app based on &lt;a href="https://electronjs.org/"&gt;Electron&lt;/a&gt; that wraps the &lt;a href="https://github.com/jgraph/drawio"&gt;core draw.io editor&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Download built binaries from the &lt;a href="https://github.com/jgraph/drawio-desktop/releases"&gt;releases section&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Can I use this app for free?&lt;/strong&gt; Yes, under the apache 2.0 license. If you don't change the code and accept it is provided "as-is", you can use it for any purpose.&lt;/p&gt; 
+&lt;h2&gt;Security&lt;/h2&gt; 
+&lt;p&gt;draw.io Desktop is designed to be completely isolated from the Internet, apart from the update process. This checks github.com at startup for a newer version and downloads it from an AWS S3 bucket owned by Github. All JavaScript files are self-contained, the Content Security Policy forbids running remotely loaded JavaScript.&lt;/p&gt; 
+&lt;p&gt;No diagram data is ever sent externally, nor do we send any analytics about app usage externally. There is a Content Security Policy in place on the web part of the interface to ensure external transmission cannot happen, even by accident.&lt;/p&gt; 
+&lt;p&gt;Security and isolating the app are the primarily objectives of draw.io desktop. If you ask for anything that involves external connections enabled in the app by default, the answer will be no.&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;Support is provided on a reasonable business constraints basis, but without anything contractually binding. All support is provided via this repo. There is no private ticketing support for non-paying users.&lt;/p&gt; 
+&lt;p&gt;Purchasing draw.io for Confluence or Jira does not entitle you to commercial support for draw.io desktop.&lt;/p&gt; 
+&lt;h2&gt;Developing&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;draw.io&lt;/strong&gt; is a git submodule of &lt;strong&gt;drawio-desktop&lt;/strong&gt;. To get both you need to clone recursively:&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;git clone --recursive https://github.com/jgraph/drawio-desktop.git&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;To run this:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;code&gt;npm install&lt;/code&gt; (in the root directory of this repo)&lt;/li&gt; 
+ &lt;li&gt;[internal use only] export DRAWIO_ENV=dev if you want to develop/debug in dev mode.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;npm start&lt;/code&gt; &lt;em&gt;in the root directory of this repo&lt;/em&gt; runs the app. For debugging, use &lt;code&gt;npm start --enable-logging&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;Note: If a symlink is used to refer to drawio repo (instead of the submodule), then symlink the &lt;code&gt;node_modules&lt;/code&gt; directory inside &lt;code&gt;drawio/src/main/webapp&lt;/code&gt; also.&lt;/p&gt; 
+&lt;p&gt;To release:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Update the draw.io sub-module and push the change. Add version tag before pushing to origin.&lt;/li&gt; 
+ &lt;li&gt;Wait for the builds to complete (&lt;a href="https://travis-ci.org/jgraph/drawio-desktop"&gt;https://travis-ci.org/jgraph/drawio-desktop&lt;/a&gt; and &lt;a href="https://ci.appveyor.com/project/davidjgraph/drawio-desktop"&gt;https://ci.appveyor.com/project/davidjgraph/drawio-desktop&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;Go to &lt;a href="https://github.com/jgraph/drawio-desktop/releases"&gt;https://github.com/jgraph/drawio-desktop/releases&lt;/a&gt;, edit the preview release.&lt;/li&gt; 
+ &lt;li&gt;Download the windows exe and windows portable, sign them using &lt;code&gt;signtool sign /a /tr http://rfc3161timestamp.globalsign.com/advanced /td SHA256 c:/path/to/your/file.exe&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Re-upload signed file as &lt;code&gt;draw.io-windows-installer-x.y.z.exe&lt;/code&gt; and &lt;code&gt;draw.io-windows-no-installer-x.y.z.exe&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Add release notes&lt;/li&gt; 
+ &lt;li&gt;Publish release&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;em&gt;Note&lt;/em&gt;: In Windows release, when using both x64 and is32 as arch, the result is one big file with both archs. This is why we split them.&lt;/p&gt; 
+&lt;p&gt;Local Storage and Session Storage is stored in the AppData folder:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;macOS: &lt;code&gt;~/Library/Application Support/draw.io&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Windows: &lt;code&gt;C:\Users\&amp;lt;USER-NAME&amp;gt;\AppData\Roaming\draw.io\&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Not open-contribution&lt;/h2&gt; 
+&lt;p&gt;draw.io is closed to contributions (unless a maintainer permits it, which is extremely rare).&lt;/p&gt; 
+&lt;p&gt;The level of complexity of this project means that even simple changes can break a &lt;em&gt;lot&lt;/em&gt; of other moving parts. The amount of testing required is far more than it first seems. If we were to receive a PR, we'd have to basically throw it away and write it how we want it to be implemented.&lt;/p&gt; 
+&lt;p&gt;We are grateful for community involvement, bug reports, &amp;amp; feature requests. We do not wish to come off as anything but welcoming, however, we've made the decision to keep this project closed to contributions for the long term viability of the project.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UseInterstellar/Interstellar</title>
+      <link>https://github.com/UseInterstellar/Interstellar</link>
+      <description>&lt;p&gt;One of the most popular modern web proxies with blazing fast speeds and a variety of games.&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/UseInterstellar/Interstellar/main/.github/branding/in.png" /&gt; 
+ &lt;p&gt;Serving over 15 million users since 2022.&lt;/p&gt;
+ &lt;p&gt; &lt;/p&gt;
+ &lt;p&gt;Interstellar is a web proxy with a Clean and Sleek UI and easy to use menus. Our goal is to provide the best user experience to everyone.&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;p&gt;&lt;img src="https://github.com/UseInterstellar/Interstellar/assets/89202835/2669efed-5186-4932-83c4-725acae60bd2" alt="inpreview" /&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!IMPORTANT] If you fork this project, consider giving it a star in the original repository!&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;strong&gt;Join Our &lt;a href="https://discord.gg/interstellar"&gt;Discord Community&lt;/a&gt; for support, more links, and an active community!&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;About:Blank Cloaking&lt;/li&gt; 
+ &lt;li&gt;Tab Cloaking&lt;/li&gt; 
+ &lt;li&gt;Wide collection of apps &amp;amp; games&lt;/li&gt; 
+ &lt;li&gt;Clean, Easy to use UI&lt;/li&gt; 
+ &lt;li&gt;Inspect Element&lt;/li&gt; 
+ &lt;li&gt;Various Themes&lt;/li&gt; 
+ &lt;li&gt;Password Protection (Optional)&lt;/li&gt; 
+ &lt;li&gt;Built-in Tab System&lt;/li&gt; 
+ &lt;li&gt;Now.gg Support&lt;/li&gt; 
+ &lt;li&gt;Fast Speeds&lt;/li&gt; 
+ &lt;li&gt;Geforce NOW Support&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Deployment&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!IMPORTANT] You &lt;strong&gt;cannot&lt;/strong&gt; deploy to static web hosts, including Netlify, Cloudflare Pages, and GitHub Pages.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Password Protection&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Go to the &lt;code&gt;config.js&lt;/code&gt; file and set &lt;code&gt;challenge&lt;/code&gt; to &lt;strong&gt;true&lt;/strong&gt;. Then, set the environment variable as follows:&lt;/li&gt; 
+ &lt;li&gt;For PNPM: Run either &lt;code&gt;config=true pnpm start&lt;/code&gt; or &lt;code&gt;$env:config=true; pnpm start&lt;/code&gt;, depending on your server.&lt;/li&gt; 
+ &lt;li&gt;For Bun: Run either &lt;code&gt;config=true bun start&lt;/code&gt; or &lt;code&gt;$env:config=true; bun start&lt;/code&gt; if you prefer Bun.&lt;/li&gt; 
+ &lt;li&gt;For NPM: Run either &lt;code&gt;config=true npm start&lt;/code&gt; or &lt;code&gt;$env:config=true; npm start&lt;/code&gt; if you prefer NPM.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Server Deployment&lt;/h3&gt; 
+&lt;p&gt;You must run these commands on your server:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/UseInterstellar/Interstellar
+cd Interstellar
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Ad-Free Deployment&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone --branch Ad-Free https://github.com/UseInterstellar/Interstellar
+cd Interstellar
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Next depending on your package manager, run one of the following commands:&lt;/p&gt; 
+&lt;h4&gt;Bun&lt;/h4&gt; 
+&lt;p&gt;If you are using Bun, run the following commands:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun i
+bun start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;pnpm&lt;/h4&gt; 
+&lt;p&gt;If you are using pnpm, run the following commands:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm i
+pnpm start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;npm&lt;/h4&gt; 
+&lt;p&gt;If you are using npm, run the following commands:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm i
+npm run start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Updating&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd Interstellar
+git pull --force --allow-unrelated-histories # This may overwrite your local changes
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/UseInterstellar/Interstellar"&gt;&lt;img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a target="_blank" href="https://app.koyeb.com/deploy?type=git&amp;amp;repository=github.com/UseInterstellar/Interstellar"&gt;&lt;img alt="Deploy to Koyeb" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg?sanitize=true" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Deployment Alternatives&lt;/h3&gt; 
+&lt;p&gt;For more deployment options, join our &lt;a href="https://discord.gg/interstellar"&gt;Discord Server&lt;/a&gt; for various ways to deploy Interstellar. This includes methods of deploying to Render/OnRender.&lt;/p&gt; 
+&lt;h4&gt;What happened to Replit Deployment?&lt;/h4&gt; 
+&lt;p&gt;As of January 1st, 2024, Replit is &lt;a href="https://blog.replit.com/hosting-changes"&gt;no longer free&lt;/a&gt;. Try GitHub Codespaces instead.&lt;/p&gt; 
+&lt;h3&gt;GitHub Codespaces&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] If you're setting the port below 1023, then you must run &lt;code&gt;sudo PORT=1023&lt;/code&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Create a GitHub account if you haven't already.&lt;/li&gt; 
+ &lt;li&gt;Click "Code" (green button) and then "Create Codespace on main."&lt;/li&gt; 
+ &lt;li&gt;In the terminal at the bottom, paste &lt;code&gt;pnpm i &amp;amp;&amp;amp; pnpm start&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Respond to the application popup by clicking "Make public."&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!IMPORTANT] Make sure you click the "Make public." button, or the proxy won't function properly.&lt;br /&gt; If you get a Range Error, go back and make sure you clicked Make public!&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ol start="5"&gt; 
+ &lt;li&gt;Access the deployed website from the ports tab.&lt;/li&gt; 
+ &lt;li&gt;For subsequent uses in the same codespace, just run &lt;code&gt;pnpm start&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Solution for if there is no popup.&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Run &lt;code&gt;pnpm i&lt;/code&gt;, and before &lt;code&gt;pnpm start&lt;/code&gt;, prepend &lt;code&gt;PORT=8080&lt;/code&gt;, replacing 8080 with another port. For example, &lt;code&gt;PORT=6969 pnpm start&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;If this does not work then you can prepend &lt;code&gt;$env:PORT=8080;&lt;/code&gt;, replacing 8080 with another port. For example, &lt;code&gt;$env:PORT=6969; pnpm start&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Go to the ports tab, Click Forward A Port, And type the port number.&lt;/li&gt; 
+ &lt;li&gt;Right-click Visibility and set Port Visibility to Public.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] We are committed to making Interstellar easy and personalized however, as of now we need your support in making it ad-free. Consider keeping ads so Interstellar can run freely or contribute by being a supporter.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Report Issues&lt;/h2&gt; 
+&lt;p&gt;If you encounter problems, open an issue on GitHub, and we'll address it promptly.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] If you're having trouble, don't hesitate to reach out to us on &lt;a href="https://discord.gg/interstellar"&gt;Discord&lt;/a&gt; for personalized support.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h1&gt;Credits&lt;/h1&gt; 
+&lt;p&gt;A huge thanks goes out to all of the people who have contributed to Interstellar.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/UseInterstellar/Interstellar/graphs/contributors"&gt;&lt;img src="https://contrib.rocks/image?repo=UseInterstellar/Interstellar" alt="Contributors" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>fanmingming/live</title>
+      <link>https://github.com/fanmingming/live</link>
+      <description>&lt;p&gt;✯ 可直连访问的电视/广播图标库与相关工具项目 ✯ 🔕 永久免费 直连访问 完整开源 不断完善的台标 支持IPv4/IPv6双栈访问 🔕&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt;&lt;img alt="live.fanmingming.com" src="https://live.fanmingming.com/logo.png" /&gt;&lt;/p&gt; 
+&lt;h1 align="center"&gt; ✯ 一个可直连访问的电视/广播图标库与相关工具项目 ✯ &lt;/h1&gt; 
+&lt;h3 align="center"&gt;🔕 永久免费 直连访问 完整开源 不断完善的台标 支持IPv4/IPv6双栈访问 🔕&lt;/h3&gt; 
+&lt;p align="center"&gt; &lt;img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/fanmingming/live?style=flat-square" /&gt; &lt;img alt="GitHub forks" src="https://img.shields.io/github/forks/fanmingming/live?style=flat-square" /&gt; &lt;img alt="GitHub issues" src="https://img.shields.io/github/issues/fanmingming/live?style=flat-square" /&gt; &lt;img alt="GitHub watchers" src="https://img.shields.io/github/watchers/fanmingming/live?style=flat-square" /&gt; &lt;img alt="GitHub contributors" src="https://img.shields.io/github/contributors/fanmingming/live?style=flat-square" /&gt; &lt;img alt="GitHub" src="https://img.shields.io/github/license/fanmingming/live?style=flat-square" /&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🤹‍♂️使用方法:&lt;/h2&gt; 
+&lt;h3&gt;🌇电视/广播图标库：&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;类 别&lt;/th&gt; 
+   &lt;th&gt;调用路径&lt;/th&gt; 
+   &lt;th&gt;最后更新&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;📺电视&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/fanmingming/live/tree/main/tv"&gt;https://live.fanmingming.cn/tv/{name}.png&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;2025.04.01&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;📻广播&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/fanmingming/live/tree/main/radio"&gt;https://live.fanmingming.cn/radio/{name}.png&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;2024.8.29&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;⛓️创建您的m3u订阅链接：&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;下载 &lt;code&gt;demo.m3u&lt;/code&gt; 空白示例文件并使用文本编辑软件打开。&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://live.fanmingming.cn/tv/m3u/demo.m3u"&gt;https://live.fanmingming.cn/tv/m3u/demo.m3u&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;参考下方示例代码将&lt;code&gt;可用的CCTV1节目源&lt;/code&gt;替换为您当地可用的直播源链接，依此类推逐个替换。&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code&gt;#EXTM3U x-tvg-url="https://live.fanmingming.cn/e.xml"
+#EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://live.fanmingming.cn/tv/CCTV1.png" group-title="央视",CCTV-1 综合
+可用的CCTV1节目源
+此处省略...
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;将编辑完成的m3u文件上传到您的Github仓库。&lt;/li&gt; 
+ &lt;li&gt;为您的Github仓库开启Pages。&lt;/li&gt; 
+ &lt;li&gt;通过播放器订阅您的m3u链接。&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;关于Github Pages：&lt;a href="https://docs.github.com/en/enterprise-cloud@latest/pages/quickstart"&gt;https://docs.github.com/en/enterprise-cloud@latest/pages/quickstart&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;🛠️工具&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;📆&lt;strong&gt;EPG接口地址&lt;/strong&gt;： 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://live.fanmingming.cn/e.xml"&gt;https://live.fanmingming.cn/e.xml&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;🏞️&lt;strong&gt;Bing每日图片&lt;/strong&gt;： 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://fanmingming.com/bing"&gt;https://fanmingming.com/bing&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;🎞️&lt;strong&gt;m3u8在线下载&lt;/strong&gt;： 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://live.fanmingming.cn/m3u8"&gt;https://live.fanmingming.cn/m3u8&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;🆕&lt;strong&gt;TXT转M3U格式&lt;/strong&gt;： 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://live.fanmingming.cn/txt2m3u"&gt;https://live.fanmingming.cn/txt2m3u&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;📄&lt;strong&gt;在线M3U转TXT&lt;/strong&gt;： 
+  &lt;ul&gt; 
+   &lt;li&gt;Demo🔗 &lt;a href="https://fanmingming.com/txt?url=https://live.fanmingming.cn/tv/m3u/ipv6.m3u"&gt;https://fanmingming.com/txt?url=https://live.fanmingming.com/tv/m3u/ipv6.m3u&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;🌐&lt;strong&gt;M3U8 Web Player&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;Demo🔗 &lt;a href="https://live.fanmingming.cn/player/?vurl=https://0472.org/hls/cgtn.m3u8"&gt;https://live.fanmingming.cn/player/?vurl=https://0472.org/hls/cgtn.m3u8&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📖说明&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;项目EPG接口为112114.xyz站点分发，本项目无法确保其准确性。&lt;/li&gt; 
+ &lt;li&gt;通过M3U8 Web Player测试直播源需使用https协议的直播源链接。&lt;/li&gt; 
+ &lt;li&gt;在线M3U转TXT工具构建在Vercel，不会记录您的访问日志请放心使用。&lt;/li&gt; 
+ &lt;li&gt;TXT转M3U工具为前端网页转换，无需上传文件，粘贴即转换，安全不偷源。&lt;/li&gt; 
+ &lt;li&gt;本项目不存储任何的流媒体内容，所有的法律责任与后果应由使用者自行承担。&lt;/li&gt; 
+ &lt;li&gt;项目&lt;code&gt;/tv/m3u/&lt;/code&gt;和&lt;code&gt;/radio/m3u/&lt;/code&gt;目录下的内容收集于互联网，仅供测试研究使用，本项目无法保证其有效性。&lt;/li&gt; 
+ &lt;li&gt;主域名【&lt;code&gt;live.fanmingming.com&lt;/code&gt;】的WEB访问通过Github Pages自动构建，由CloudFlare提供CDN和安全防护。&lt;/li&gt; 
+ &lt;li&gt;镜像域名【&lt;code&gt;live.fanmingming.cn&lt;/code&gt;】提供完整的资源WEB访问，通过Github Actions自动构建在CloudFlare Pages。&lt;/li&gt; 
+ &lt;li&gt;项目所有文件均托管在&lt;a href="https://github.com/fanmingming/live"&gt;GitHub&lt;/a&gt;且自动构建，由项目发起人公益维护，欢迎Star本项目或点击&lt;a href="https://github.com/fanmingming/live/issues/new/choose"&gt;Issues&lt;/a&gt;反馈您的问题。&lt;/li&gt; 
+ &lt;li&gt;您可以Frok本项目到您的Github账户，将缺失的频道Logo上传到&lt;code&gt;tv&lt;/code&gt;或&lt;code&gt;radio&lt;/code&gt;目录下并发起拉取请求，收到请求后我们会对您提交的内容进行验证，审核通过后会自动为您署名并发布。&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📱联系&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Telegram: &lt;a href="https://t.me/AirfoneBot"&gt;@AirfoneBot&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;如遇资源访问问题请通过Telegram反馈。&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📔更新&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;2025.04.01 
+  &lt;ul&gt; 
+   &lt;li&gt;新增北京卫视4K台标。&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>electerm/electerm</title>
+      <link>https://github.com/electerm/electerm</link>
+      <description>&lt;p&gt;📻Terminal/ssh/sftp/ftp/telnet/serialport/RDP/VNC client(linux, mac, win)&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center" style="padding-top: 60px;padding-bottom: 40px;"&gt; &lt;a href="https://electerm.html5beta.com"&gt; &lt;img src="https://github.com/electerm/electerm-resource/raw/master/static/images/electerm.png" , alt="" /&gt; &lt;/a&gt; &lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/electerm/electerm/master/README_cn.md"&gt;中文&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;electerm &lt;a href="https://twitter.com/intent/tweet?text=Open%20sourced%20terminal%2Fssh%2Fsftp%20client(linux%2C%20mac%2C%20win)&amp;amp;url=https%3A%2F%2Fgithub.com%2Felecterm%2Felecterm&amp;amp;hashtags=electerm,ssh,terminal,sftp"&gt;&lt;img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social" alt="Tweet" /&gt;&lt;/a&gt;&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/electerm/electerm/releases"&gt;&lt;img src="https://img.shields.io/github/release/electerm/electerm/all.svg?sanitize=true" alt="GitHub version" /&gt;&lt;/a&gt; &lt;a href="https://github.com/electerm/electerm/actions"&gt;&lt;img src="https://github.com/electerm/electerm/actions/workflows/mac-test-1.yml/badge.svg?sanitize=true" alt="Build Status" /&gt;&lt;/a&gt; &lt;a href="https://github.com/electerm/electerm/raw/master/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/electerm/electerm.svg?sanitize=true" alt="license" /&gt;&lt;/a&gt; &lt;a href="https://standardjs.com"&gt;&lt;img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg?sanitize=true" alt="JavaScript Style Guide" /&gt;&lt;/a&gt; &lt;a href="https://snapcraft.io/electerm"&gt;&lt;img src="https://img.shields.io/badge/Snap-Store-green" alt="Get it from the Snap Store" /&gt;&lt;/a&gt; &lt;a href="https://www.microsoft.com/store/apps/9NCN7272GTFF"&gt;&lt;img src="https://img.shields.io/badge/Microsoft-Store-blue" alt="Get it from the Microsoft Store" /&gt;&lt;/a&gt; &lt;a href="https://electerm-repos.html5beta.com/deb"&gt;&lt;img src="https://img.shields.io/badge/Debian-Repository-red" alt="Debian Repository" /&gt;&lt;/a&gt; &lt;a href="https://github.com/sponsors/electerm"&gt;&lt;img src="https://img.shields.io/github/sponsors/electerm?label=Sponsors" alt="GitHub Sponsors" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.digitalocean.com/?refcode=c10bcb28b846&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge"&gt;&lt;img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%202.svg?sanitize=true" alt="DigitalOcean Referral Badge" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://vercel.com/oss"&gt;&lt;img src="https://vercel.com/oss/program-badge.svg?sanitize=true" alt="Vercel OSS Program" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Open-sourced terminal/ssh/telnet/serialport/RDP/VNC/sftp/ftp client(linux, mac, win).&lt;/p&gt; 
+&lt;p&gt;Powered by &lt;a href="https://github.com/tylerlong/manate"&gt;manate&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;For experienced developers, you may try the web app version running in browser(including mobile device): &lt;a href="https://github.com/electerm/electerm-web"&gt;electerm-web&lt;/a&gt; or &lt;a href="https://github.com/electerm/electerm-web-docker"&gt;docker image for electerm-web&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Online demo: &lt;a href="https://electerm-demo.html5beta.com"&gt;https://electerm-demo.html5beta.com&lt;/a&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;img src="https://github.com/electerm/electerm-resource/raw/master/static/images/electerm.gif" , alt="" /&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Works as a terminal/file manager or ssh/sftp/ftp/telnet/serialport/RDP/VNC client&lt;/li&gt; 
+ &lt;li&gt;Global hotkey to toggle window visibility (similar to guake, default is &lt;code&gt;ctrl + 2&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Multi platform(linux, mac, win)&lt;/li&gt; 
+ &lt;li&gt;🇺🇸 🇨🇳 🇧🇷 🇷🇺 🇪🇸 🇫🇷 🇹🇷 🇭🇰 🇯🇵 🇸🇦 🇩🇪 🇰🇷 🇮🇩 🇵🇱 Multi-language support(&lt;a href="https://github.com/electerm/electerm-locales"&gt;electerm-locales&lt;/a&gt;, contributions/fixes welcome)&lt;/li&gt; 
+ &lt;li&gt;Double click to directly edit (small) remote files.&lt;/li&gt; 
+ &lt;li&gt;Auth with publicKey + password.&lt;/li&gt; 
+ &lt;li&gt;Support Zmodem(rz, sz).&lt;/li&gt; 
+ &lt;li&gt;Support ssh tunnel.&lt;/li&gt; 
+ &lt;li&gt;Support &lt;a href="https://github.com/trzsz/trzsz"&gt;Trzsz&lt;/a&gt;(trz/tsz), similar to rz/sz, and compatible with tmux.&lt;/li&gt; 
+ &lt;li&gt;Transparent window(Mac, win).&lt;/li&gt; 
+ &lt;li&gt;Terminal background image.&lt;/li&gt; 
+ &lt;li&gt;Global/session proxy.&lt;/li&gt; 
+ &lt;li&gt;Quick commands&lt;/li&gt; 
+ &lt;li&gt;UI/terminal theme&lt;/li&gt; 
+ &lt;li&gt;Sync bookmarks/themes/quick commands to github/gitee secret gist&lt;/li&gt; 
+ &lt;li&gt;Quick input to one or all terminals.&lt;/li&gt; 
+ &lt;li&gt;AI assistant integration (supporting &lt;a href="https://www.deepseek.com"&gt;DeepSeek&lt;/a&gt;, OpenAI, and other AI APIs) to help with command suggestions, script writing, and explaining selected terminal content&lt;/li&gt; 
+ &lt;li&gt;Command line usage: check &lt;a href="https://github.com/electerm/electerm/wiki/Command-line-usage"&gt;wiki&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Download&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://electerm.html5beta.com"&gt;Homepage&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://sourceforge.net/projects/electerm.mirror/files/"&gt;sourceforge&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/electerm/electerm/releases"&gt;github releases&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Install&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;For Mac user: &lt;code&gt;brew install --cask electerm&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;With snap: &lt;code&gt;sudo snap install electerm --classic&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;For some Linux distribution, you can find it from OS default App store(Ubuntu, Deepin, Mint...).&lt;/li&gt; 
+ &lt;li&gt;For some linux OS, the &lt;code&gt;rpm&lt;/code&gt;, &lt;code&gt;deb&lt;/code&gt;, or &lt;code&gt;snap&lt;/code&gt; release may not work, you can try the &lt;code&gt;tar.gz&lt;/code&gt; or &lt;code&gt;.appImage&lt;/code&gt; release.&lt;/li&gt; 
+ &lt;li&gt;For Windows users, you can install it from &lt;a href="https://www.microsoft.com/store/apps/9NCN7272GTFF"&gt;windows store&lt;/a&gt;, command-line installer &lt;a href="https://github.com/microsoft/winget-cli"&gt;winget&lt;/a&gt; and &lt;a href="https://github.com/lukesampson/scoop"&gt;scoop&lt;/a&gt; is also recommended:&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-powershell"&gt;# winget https://github.com/microsoft/winget-cli
+winget install electerm.electerm
+
+# scoop https://github.com/lukesampson/scoop
+scoop bucket add dorado https://github.com/chawyehsu/dorado
+scoop install dorado/electerm
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Install from Debian repository (for Debian/Ubuntu-based systems) with &lt;code&gt;apt&lt;/code&gt; command&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Check &lt;a href="https://electerm-repos.html5beta.com/deb"&gt;https://electerm-repos.html5beta.com/deb&lt;/a&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Install from npm&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm i -g electerm
+
+# After installation, it will immediately open for windows and linux,
+# For macOS, it will open the drag to install panel
+
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Upgrade&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Auto upgrade: When a new version is released, you will get an upgrade notification after you start electerm again. You can then click the upgrade button to upgrade.&lt;/li&gt; 
+ &lt;li&gt;Download: Just download the latest edition, reinstall.&lt;/li&gt; 
+ &lt;li&gt;Npm: If you install from npm, just run &lt;code&gt;npm i -g electerm&lt;/code&gt; again.&lt;/li&gt; 
+ &lt;li&gt;If use Snap or some other distribution system, these systems may provide upgrades.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Themes&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/electerm"&gt;https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/electerm&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/Hope-IT-Works/electerm-theme-termius"&gt;https://github.com/Hope-IT-Works/electerm-theme-termius&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Known issues&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/electerm/electerm/wiki/Know-issues"&gt;https://github.com/electerm/electerm/wiki/Know-issues&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Troubleshoot&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/electerm/electerm/wiki/Troubleshoot"&gt;https://github.com/electerm/electerm/wiki/Troubleshoot&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Discussion&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/electerm/electerm/discussions"&gt;Discussion board&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://electerm.html5beta.com/electerm-wechat-group-qr.jpg" alt="electerm-wechat-group-qr.jpg" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;Would love to hear from you, please tell me what you think, &lt;a href="https://github.com/electerm/electerm/issues"&gt;submit an issue&lt;/a&gt;, &lt;a href="https://github.com/electerm/electerm/discussions/new"&gt;Start a new discussion&lt;/a&gt;, &lt;a href="https://github.com/electerm/electerm-locales"&gt;create/fix language files&lt;/a&gt; or create pull requests, all welcome.&lt;/p&gt; 
+&lt;h2&gt;Sponsor this project&lt;/h2&gt; 
+&lt;p&gt;github sponsor&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/sponsors/electerm"&gt;https://github.com/sponsors/electerm&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;kofi&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://ko-fi.com/zhaoxudong"&gt;https://ko-fi.com/zhaoxudong&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;wechat donate&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/electerm"&gt;&lt;img src="https://electerm.html5beta.com/electerm-wechat-donate.png" alt="wechat donate" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Dev&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# tested in ubuntu20.04+/mac os 10.13+ only
+# needs nodejs/npm, suggest using fnm to install nodejs/npm
+# with nodejs 22.x
+
+git clone git@github.com:electerm/electerm.git
+cd electerm
+npm i
+
+# start vite dev server, requires port 5570
+npm start
+
+# in a separate terminal session run app
+npm run app
+
+# code format check
+npm run lint
+
+# code format fix
+npm run fix
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Test&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm run b
+npm run prepare-test
+cp .sample.env .env
+
+# edit .env, fill your test host/username/password, may only works in mac OS
+npm run test
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Test build&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Tested only in ubuntu 16.04 x64+
+# Install yarn first(to do yarn autoclean)
+# See https://yarnpkg.com/en/docs/install
+
+# Build linux only with -l
+npm i
+npm run b
+./node_modules/.bin/electron-builder --linux tar.gz
+# or replace tar.gz to rpm/deb/AppImage
+# check dist/ folder
+
+# build for linux arm/
+./node_modules/.bin/electron-builder --linux --arm64
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Video guides&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://space.bilibili.com/14001525/channel/series?sid=5461229&amp;amp;spm_id_from=333.788.0.0"&gt;bilibili&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Change log&lt;/h2&gt; 
+&lt;p&gt;Visit &lt;a href="https://github.com/electerm/electerm/releases"&gt;Releases&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT&lt;/p&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.star-history.com/#electerm/electerm&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=electerm/electerm&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>WhiskeySockets/Baileys</title>
+      <link>https://github.com/WhiskeySockets/Baileys</link>
+      <description>&lt;p&gt;Socket-based TS/JavaScript API for WhatsApp Web&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;&lt;img alt="Baileys logo" src="https://raw.githubusercontent.com/WhiskeySockets/Baileys/refs/heads/master/Media/logo.png" height="75" /&gt;&lt;/h1&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!CAUTION] NOTICE OF BREAKING CHANGE.&lt;/p&gt; 
+ &lt;p&gt;As of 7.0.0, multiple breaking changes were introduced into the library.&lt;/p&gt; 
+ &lt;p&gt;Please check out &lt;a href="https://whiskey.so/migrate-latest"&gt;https://whiskey.so/migrate-latest&lt;/a&gt; for more information.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Baileys is a WebSockets-based TypeScript library for interacting with the WhatsApp Web API.&lt;/p&gt; 
+&lt;p&gt;Join the WhiskeySockets community via the link: &lt;a href="https://whiskey.so/discord"&gt;https://whiskey.so/discord&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!IMPORTANT] I made a survey for users of the project to ask questions, and provide Baileys valuable insights regarding its users. I will be publishing the results of this form (after filtering) as well so we can study and understand where we need to work.&lt;/p&gt; 
+ &lt;p&gt;The survey is anonymous and requires no personal info at all. You are required to sign-in with Google to keep responses to one person. You are able to edit your response after you submit. The deadline for this form is September 30, 2025.&lt;/p&gt; 
+ &lt;p&gt;I encourage you to put the effort, all it takes is 5-10 minutes and you get to ask me any questions you have.&lt;/p&gt; 
+ &lt;p&gt;- Rajeh (purpshell)&lt;/p&gt; 
+ &lt;p&gt;Fill in the survey via the link: &lt;a href="https://whiskey.so/survey"&gt;https://whiskey.so/survey&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h1&gt;Usage &amp;amp; Guide&lt;/h1&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!IMPORTANT] The new guide is a work in progress. Expect missing pages/content. &lt;a href="https://github.com/WhiskeySockets/baileys.wiki-site/issues/new"&gt;Report missing or incorrect content.&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;You can still access the old guide here:&lt;/strong&gt; &lt;a href="https://github.com/WhiskeySockets/Baileys/tree/master/README.md"&gt;README.md&lt;/a&gt;, or the &lt;a href="https://npmjs.com/package/baileys"&gt;NPM homepage&lt;/a&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;The new guide is posted at &lt;a href="https://baileys.wiki"&gt;https://baileys.wiki&lt;/a&gt; .&lt;/p&gt; 
+&lt;h1&gt;Sponsor&lt;/h1&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] If you'd like to financially support this project, you can do so by supporting the current maintainer &lt;a href="https://purpshell.dev/sponsor"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h1&gt;Disclaimer&lt;/h1&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!CAUTION] This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with WhatsApp or any of its subsidiaries or its affiliates. The official WhatsApp website can be found at whatsapp.com. "WhatsApp" as well as related names, marks, emblems and images are registered trademarks of their respective owners.&lt;/p&gt; 
+ &lt;p&gt;The maintainers of Baileys do not in any way condone the use of this application in practices that violate the Terms of Service of WhatsApp. The maintainers of this application call upon the personal responsibility of its users to use this application in a fair way, as it is intended to be used. Use at your own discretion. Do not spam people with this. We discourage any stalkerware, bulk or automated messaging usage.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h1&gt;License&lt;/h1&gt; 
+&lt;p&gt;Copyright (c) 2025 Rajeh Taher/WhiskeySockets&lt;/p&gt; 
+&lt;p&gt;Licensed under the MIT License: Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:&lt;/p&gt; 
+&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.&lt;/p&gt; 
+&lt;p&gt;THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt; 
+&lt;p&gt;Thus, the maintainers of the project can't be held liable for any potential misuse of this project.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>projectdiscovery/nuclei-templates</title>
+      <link>https://github.com/projectdiscovery/nuclei-templates</link>
+      <description>&lt;p&gt;Community curated list of templates for the nuclei engine to find security vulnerabilities.&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt; Nuclei Templates &lt;/h1&gt; 
+&lt;h4 align="center"&gt;Community curated list of templates for the nuclei engine to find security vulnerabilities in applications.&lt;/h4&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/projectdiscovery/nuclei-templates/issues"&gt;&lt;img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" /&gt;&lt;/a&gt; &lt;a href="https://github.com/projectdiscovery/nuclei-templates/releases"&gt;&lt;img src="https://img.shields.io/github/release/projectdiscovery/nuclei-templates" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/pdnuclei"&gt;&lt;img src="https://img.shields.io/twitter/follow/pdnuclei.svg?logo=twitter" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/projectdiscovery"&gt;&lt;img src="https://img.shields.io/discord/695645237418131507.svg?logo=discord" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://nuclei.projectdiscovery.io/templating-guide/"&gt;Documentation&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/#-contributions"&gt;Contributions&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/#-discussion"&gt;Discussion&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/#-community"&gt;Community&lt;/a&gt; • &lt;a href="https://nuclei.projectdiscovery.io/faq/templates/"&gt;FAQs&lt;/a&gt; • &lt;a href="https://discord.gg/projectdiscovery"&gt;Join Discord&lt;/a&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;Templates are the core of the &lt;a href="https://github.com/projectdiscovery/nuclei"&gt;nuclei scanner&lt;/a&gt; which powers the actual scanning engine. This repository stores and houses various templates for the scanner provided by our team, as well as contributed by the community. We hope that you also contribute by sending templates via &lt;strong&gt;pull requests&lt;/strong&gt; or &lt;a href="https://github.com/projectdiscovery/nuclei-templates/issues/new?assignees=&amp;amp;labels=&amp;amp;template=submit-template.md&amp;amp;title=%5Bnuclei-template%5D+"&gt;Github issues&lt;/a&gt; to grow the list.&lt;/p&gt; 
+&lt;h2&gt;Nuclei Templates overview&lt;/h2&gt; 
+&lt;p&gt;An overview of the nuclei template project, including statistics on unique tags, author, directory, severity, and type of templates. The table below contains the top ten statistics for each matrix; an expanded version of this is &lt;a href="https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/TEMPLATES-STATS.md"&gt;available here&lt;/a&gt;, and also available in &lt;a href="https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/TEMPLATES-STATS.json"&gt;JSON&lt;/a&gt; format for integration.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;h2&gt;Nuclei Templates Top 10 statistics&lt;/h2&gt; 
+    &lt;table&gt; 
+     &lt;thead&gt; 
+      &lt;tr&gt; 
+       &lt;th&gt;TAG&lt;/th&gt; 
+       &lt;th&gt;COUNT&lt;/th&gt; 
+       &lt;th&gt;AUTHOR&lt;/th&gt; 
+       &lt;th&gt;COUNT&lt;/th&gt; 
+       &lt;th&gt;DIRECTORY&lt;/th&gt; 
+       &lt;th&gt;COUNT&lt;/th&gt; 
+       &lt;th&gt;SEVERITY&lt;/th&gt; 
+       &lt;th&gt;COUNT&lt;/th&gt; 
+       &lt;th&gt;TYPE&lt;/th&gt; 
+       &lt;th&gt;COUNT&lt;/th&gt; 
+      &lt;/tr&gt; 
+     &lt;/thead&gt; 
+     &lt;tbody&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;cve&lt;/td&gt; 
+       &lt;td&gt;3288&lt;/td&gt; 
+       &lt;td&gt;dhiyaneshdk&lt;/td&gt; 
+       &lt;td&gt;1882&lt;/td&gt; 
+       &lt;td&gt;http&lt;/td&gt; 
+       &lt;td&gt;8967&lt;/td&gt; 
+       &lt;td&gt;info&lt;/td&gt; 
+       &lt;td&gt;4190&lt;/td&gt; 
+       &lt;td&gt;file&lt;/td&gt; 
+       &lt;td&gt;435&lt;/td&gt; 
+      &lt;/tr&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;panel&lt;/td&gt; 
+       &lt;td&gt;1342&lt;/td&gt; 
+       &lt;td&gt;daffainfo&lt;/td&gt; 
+       &lt;td&gt;868&lt;/td&gt; 
+       &lt;td&gt;cloud&lt;/td&gt; 
+       &lt;td&gt;657&lt;/td&gt; 
+       &lt;td&gt;high&lt;/td&gt; 
+       &lt;td&gt;2446&lt;/td&gt; 
+       &lt;td&gt;dns&lt;/td&gt; 
+       &lt;td&gt;26&lt;/td&gt; 
+      &lt;/tr&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;xss&lt;/td&gt; 
+       &lt;td&gt;1257&lt;/td&gt; 
+       &lt;td&gt;princechaddha&lt;/td&gt; 
+       &lt;td&gt;854&lt;/td&gt; 
+       &lt;td&gt;file&lt;/td&gt; 
+       &lt;td&gt;435&lt;/td&gt; 
+       &lt;td&gt;medium&lt;/td&gt; 
+       &lt;td&gt;2379&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+      &lt;/tr&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;wordpress&lt;/td&gt; 
+       &lt;td&gt;1181&lt;/td&gt; 
+       &lt;td&gt;dwisiswant0&lt;/td&gt; 
+       &lt;td&gt;806&lt;/td&gt; 
+       &lt;td&gt;dast&lt;/td&gt; 
+       &lt;td&gt;255&lt;/td&gt; 
+       &lt;td&gt;critical&lt;/td&gt; 
+       &lt;td&gt;1425&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+      &lt;/tr&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;exposure&lt;/td&gt; 
+       &lt;td&gt;1107&lt;/td&gt; 
+       &lt;td&gt;ritikchaddha&lt;/td&gt; 
+       &lt;td&gt;649&lt;/td&gt; 
+       &lt;td&gt;workflows&lt;/td&gt; 
+       &lt;td&gt;202&lt;/td&gt; 
+       &lt;td&gt;low&lt;/td&gt; 
+       &lt;td&gt;318&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+      &lt;/tr&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;wp-plugin&lt;/td&gt; 
+       &lt;td&gt;1032&lt;/td&gt; 
+       &lt;td&gt;pussycat0x&lt;/td&gt; 
+       &lt;td&gt;532&lt;/td&gt; 
+       &lt;td&gt;code&lt;/td&gt; 
+       &lt;td&gt;198&lt;/td&gt; 
+       &lt;td&gt;unknown&lt;/td&gt; 
+       &lt;td&gt;56&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+      &lt;/tr&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;osint&lt;/td&gt; 
+       &lt;td&gt;841&lt;/td&gt; 
+       &lt;td&gt;pikpikcu&lt;/td&gt; 
+       &lt;td&gt;352&lt;/td&gt; 
+       &lt;td&gt;network&lt;/td&gt; 
+       &lt;td&gt;145&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+      &lt;/tr&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;tech&lt;/td&gt; 
+       &lt;td&gt;803&lt;/td&gt; 
+       &lt;td&gt;pdteam&lt;/td&gt; 
+       &lt;td&gt;310&lt;/td&gt; 
+       &lt;td&gt;javascript&lt;/td&gt; 
+       &lt;td&gt;71&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+      &lt;/tr&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;rce&lt;/td&gt; 
+       &lt;td&gt;786&lt;/td&gt; 
+       &lt;td&gt;pdresearch&lt;/td&gt; 
+       &lt;td&gt;269&lt;/td&gt; 
+       &lt;td&gt;ssl&lt;/td&gt; 
+       &lt;td&gt;38&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+      &lt;/tr&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;lfi&lt;/td&gt; 
+       &lt;td&gt;777&lt;/td&gt; 
+       &lt;td&gt;iamnoooob&lt;/td&gt; 
+       &lt;td&gt;257&lt;/td&gt; 
+       &lt;td&gt;dns&lt;/td&gt; 
+       &lt;td&gt;23&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+      &lt;/tr&gt; 
+     &lt;/tbody&gt; 
+    &lt;/table&gt; &lt;p&gt;&lt;strong&gt;848 directories, 11344 files&lt;/strong&gt;.&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;📖 Documentation&lt;/h2&gt; 
+&lt;p&gt;Please navigate to &lt;a href="https://nuclei.projectdiscovery.io"&gt;https://nuclei.projectdiscovery.io&lt;/a&gt; for detailed documentation to &lt;strong&gt;build&lt;/strong&gt; new or your own &lt;strong&gt;custom&lt;/strong&gt; templates. We have also added a set of templates to help you understand how things work.&lt;/p&gt; 
+&lt;h2&gt;💪 Contributions&lt;/h2&gt; 
+&lt;p&gt;Nuclei-templates is powered by major contributions from the community. &lt;a href="https://github.com/projectdiscovery/nuclei-templates/issues/new?assignees=&amp;amp;labels=&amp;amp;template=submit-template.md&amp;amp;title=%5Bnuclei-template%5D+"&gt;Template contributions &lt;/a&gt;, &lt;a href="https://github.com/projectdiscovery/nuclei-templates/issues/new?assignees=&amp;amp;labels=&amp;amp;template=feature_request.md&amp;amp;title=%5BFeature%5D+"&gt;Feature Requests&lt;/a&gt; and &lt;a href="https://github.com/projectdiscovery/nuclei-templates/issues/new?assignees=&amp;amp;labels=&amp;amp;template=bug_report.md&amp;amp;title=%5BBug%5D+"&gt;Bug Reports&lt;/a&gt; are more than welcome.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://repobeats.axiom.co/api/embed/55ee65543bb9a0f9c797626c4e66d472a517d17c.svg?sanitize=true" alt="Alt" title="Repobeats analytics image" /&gt;&lt;/p&gt; 
+&lt;h2&gt;💬 Discussion&lt;/h2&gt; 
+&lt;p&gt;Have questions / doubts / ideas to discuss? Feel free to open a discussion on &lt;a href="https://github.com/projectdiscovery/nuclei-templates/discussions"&gt;Github discussions&lt;/a&gt; board.&lt;/p&gt; 
+&lt;h2&gt;👨‍💻 Community&lt;/h2&gt; 
+&lt;p&gt;You are welcome to join the active &lt;a href="https://discord.gg/projectdiscovery"&gt;Discord Community&lt;/a&gt; to discuss directly with project maintainers and share things with others around security and automation. Additionally, you may follow us on &lt;a href="https://twitter.com/pdnuclei"&gt;Twitter&lt;/a&gt; to be updated on all the things about Nuclei.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/projectdiscovery/nuclei-templates/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=projectdiscovery/nuclei-templates&amp;amp;max=300" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;Thanks again for your contribution and keeping this community vibrant. &lt;span&gt;❤️&lt;/span&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>poloclub/transformer-explainer</title>
+      <link>https://github.com/poloclub/transformer-explainer</link>
+      <description>&lt;p&gt;Transformer Explained Visually: Learn How LLM Transformer Models Work with Interactive Visualization&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Transformer Explainer: Interactive Learning of Text-Generative Models&lt;/h1&gt; 
+&lt;p&gt;Transformer Explainer is an interactive visualization tool designed to help anyone learn how Transformer-based models like GPT work. It runs a live GPT-2 model right in your browser, allowing you to experiment with your own text and observe in real time how internal components and operations of the Transformer work together to predict the next tokens. Try Transformer Explainer at &lt;a href="http://poloclub.github.io/transformer-explainer"&gt;http://poloclub.github.io/transformer-explainer&lt;/a&gt; and watch a demo video on YouTube &lt;a href="https://youtu.be/TFUc41G2ikY"&gt;https://youtu.be/TFUc41G2ikY&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt; &lt;a href="http://opensource.org/licenses/MIT"&gt;&lt;img src="http://img.shields.io/badge/license-MIT-brightgreen.svg?sanitize=true" alt="MIT license" /&gt;&lt;/a&gt; &lt;a href="https://arxiv.org/abs/2408.04619"&gt;&lt;img src="https://img.shields.io/badge/arXiv-2408.04619-red" alt="arxiv badge" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://youtu.be/TFUc41G2ikY" target="_blank"&gt;&lt;img width="100%" src="https://github.com/user-attachments/assets/0a4d8888-6555-4df5-bc71-77f1299115c3" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Live Demo&lt;/h2&gt; 
+&lt;p&gt;Try Transformer Explainer: &lt;a href="http://poloclub.github.io/transformer-explainer"&gt;http://poloclub.github.io/transformer-explainer&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Research Paper&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://arxiv.org/abs/2408.04619"&gt;&lt;strong&gt;Transformer Explainer: Interactive Learning of Text-Generative Models&lt;/strong&gt;&lt;/a&gt;. Aeree Cho, Grace C. Kim, Alexander Karpekov, Alec Helbling, Zijie J. Wang, Seongmin Lee, Benjamin Hoover, Duen Horng Chau. &lt;em&gt;Poster, IEEE VIS 2024.&lt;/em&gt;&lt;/p&gt; 
+&lt;h2&gt;How to run locally&lt;/h2&gt; 
+&lt;h4&gt;Prerequisites&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Node.js v20 or higher&lt;/li&gt; 
+ &lt;li&gt;NPM v10 or higher&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Steps&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/poloclub/transformer-explainer.git
+cd transformer-explainer
+npm install
+npm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then, on your web browser, access &lt;a href="http://localhost:5173"&gt;http://localhost:5173&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Credits&lt;/h2&gt; 
+&lt;p&gt;Transformer Explainer was created by &lt;a href="https://aereeeee.github.io/" target="_blank"&gt;Aeree Cho&lt;/a&gt;, &lt;a href="https://www.linkedin.com/in/chaeyeonggracekim/" target="_blank"&gt;Grace C. Kim&lt;/a&gt;, &lt;a href="https://alexkarpekov.com/" target="_blank"&gt;Alexander Karpekov&lt;/a&gt;, &lt;a href="https://alechelbling.com/" target="_blank"&gt;Alec Helbling&lt;/a&gt;, &lt;a href="https://zijie.wang/" target="_blank"&gt;Jay Wang&lt;/a&gt;, &lt;a href="https://seongmin.xyz/" target="_blank"&gt;Seongmin Lee&lt;/a&gt;, &lt;a href="https://bhoov.com/" target="_blank"&gt;Benjamin Hoover&lt;/a&gt;, and &lt;a href="https://poloclub.github.io/polochau/" target="_blank"&gt;Polo Chau&lt;/a&gt; at the Georgia Institute of Technology.&lt;/p&gt; 
+&lt;h2&gt;Citation&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bibTeX"&gt;@article{cho2024transformer,
+  title = {Transformer Explainer: Interactive Learning of Text-Generative Models},
+  shorttitle = {Transformer Explainer},
+  author = {Cho, Aeree and Kim, Grace C. and Karpekov, Alexander and Helbling, Alec and Wang, Zijie J. and Lee, Seongmin and Hoover, Benjamin and Chau, Duen Horng},
+  journal={IEEE VIS Poster},
+  year={2024}
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;The software is available under the &lt;a href="https://github.com/poloclub/transformer-explainer/raw/main/LICENSE"&gt;MIT License&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Contact&lt;/h2&gt; 
+&lt;p&gt;If you have any questions, feel free to &lt;a href="https://github.com/poloclub/transformer-explainer/issues/new/choose"&gt;open an issue&lt;/a&gt; or contact &lt;a href="https://aereeeee.github.io/"&gt;Aeree Cho&lt;/a&gt; or any of the contributors listed above.&lt;/p&gt; 
+&lt;h2&gt;More AI explainers to check out&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://poloclub.github.io/diffusion-explainer"&gt;&lt;strong&gt;Diffusion Explainer&lt;/strong&gt;&lt;/a&gt; for learning how Stable Diffusion transforms text prompt into image&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://poloclub.github.io/cnn-explainer"&gt;&lt;strong&gt;CNN Explainer&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://poloclub.github.io/ganlab"&gt;&lt;strong&gt;GAN Lab&lt;/strong&gt;&lt;/a&gt; for playing with Generative Adversarial Networks in browser&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>alyssaxuu/screenity</title>
+      <link>https://github.com/alyssaxuu/screenity</link>
+      <description>&lt;p&gt;The free and privacy-friendly screen recorder with no limits 🎥&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Screenity&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://screenity.io"&gt;&lt;img src="https://github.com/alyssaxuu/screenity/assets/7581348/ed55e52e-4adf-442b-b774-6856abacdffb" alt="jiewjjc232" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;The free and privacy-friendly screen recorder with no limits 🎥&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://chrome.google.com/webstore/detail/screenity-screen-recorder/kbbdabhdfibnancpjfhlkhafgdilcnji"&gt;Get it now - it's free!&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Screenity is a powerful privacy-friendly screen recorder and annotation tool to make better videos for work, education, and more. You can create stunning product demos, tutorials, presentations, or share feedback with your team - all for free.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;You can support this project (and many others) through &lt;a href="https://github.com/sponsors/alyssaxuu"&gt;GitHub Sponsors&lt;/a&gt;! ❤️&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Made by &lt;a href="https://alyssax.com"&gt;Alyssa X&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.producthunt.com/posts/screenity?utm_source=badge-top-post-badge&amp;amp;utm_medium=badge&amp;amp;utm_souce=badge-screenity" target="_blank"&gt;&lt;img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=275308&amp;amp;theme=light&amp;amp;period=daily" alt="Screenity - The most powerful screen recorder for Chrome | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /&gt;&lt;/a&gt; &lt;a href="https://news.ycombinator.com/item?id=25150804" target="_blank"&gt;&lt;img height="53" src="https://hackerbadge.now.sh/api?id=25150804&amp;amp;type=orange" alt="Featured on HackerNews" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;❗️ Screenity has been rebuilt from the ground up, and updated to MV3. &lt;a href="https://help.screenity.io/getting-started/77KizPC8MHVGfpKpqdux9D/what%E2%80%99s-changed-in-the-new-version-of-screenity/bDtvcwAtw9PPesQeNH4zjE"&gt;Click here&lt;/a&gt; to here to learn more about why, and what's changed in the new version. Also note that &lt;strong&gt;the license has changed to &lt;a href="https://github.com/alyssaxuu/screenity/raw/master/LICENSE"&gt;GPLv3&lt;/a&gt;&lt;/strong&gt;, but the older MV2 version remains MIT licensed. Make sure you read the license and the &lt;a href="https://screenity.io/en/terms/"&gt;Terms of Service&lt;/a&gt; regarding intellectual property.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Table of contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/alyssaxuu/screenity/master/#features"&gt;Features&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/alyssaxuu/screenity/master/#self-hosting-screenity"&gt;Self-hosting Screenity&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/alyssaxuu/screenity/master/#creating-a-development-version"&gt;Creating a development version&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/alyssaxuu/screenity/master/#enabling-save-to-google-drive"&gt;Enabling Save to Google Drive&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/alyssaxuu/screenity/master/#acknowledgements"&gt;Acknowledgements&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;p&gt;🎥 Make unlimited recordings of your tab, a specific area, desktop, any application, or camera&lt;br /&gt; 🎙️ Record your microphone or internal audio, and use features like push to talk&lt;br /&gt; ✏️ Annotate by drawing anywhere on the screen, adding text, arrows, shapes, and more&lt;br /&gt; ✨ Use AI-powered camera backgrounds or blur to enhance your recordings&lt;br /&gt; 🔎 Zoom in smoothly in your recordings to focus on specific areas&lt;br /&gt; 🪄 Blur out any sensitive content of any page to keep it private&lt;br /&gt; ✂️ Remove or add audio, cut, trim, or crop your recordings with a comprehensive editor&lt;br /&gt; 👀 Highlight your clicks and cursor, and go in spotlight mode&lt;br /&gt; ⏱️ Set up alarms to automatically stop your recording&lt;br /&gt; 💾 Export as mp4, gif, and webm, or save the video directly to Google Drive to share a link&lt;br /&gt; ⚙️ Set a countdown, hide parts of the UI, or move it anywhere&lt;br /&gt; 🔒 Only you can see your videos, we don’t collect any of your data. You can even go offline!&lt;br /&gt; 💙 No limits, make as many videos as you want, for as long as you want&lt;br /&gt; …and much more - all for free &amp;amp; no sign in needed!&lt;/p&gt; 
+&lt;h2&gt;Self-hosting Screenity&lt;/h2&gt; 
+&lt;p&gt;You can run Screenity locally without having to install it from the Chrome Store. Here's how:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Download the latest Build.zip from the &lt;a href="https://github.com/alyssaxuu/screenity/releases"&gt;releases page&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Load the extension by pasting &lt;code&gt;chrome://extensions/&lt;/code&gt; in the address bar, and &lt;a href="https://developer.chrome.com/docs/extensions/mv2/faq/#:~:text=You%20can%20start%20by%20turning,a%20packaged%20extension%2C%20and%20more."&gt;enabling developer mode&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Drag the folder that contains the code (make sure it's a folder and not a ZIP file, so unzip first), or click on the "Load unpacked" button and locate the folder.&lt;/li&gt; 
+ &lt;li&gt;That's it, you should now be able to use Screenity locally. &lt;a href="https://raw.githubusercontent.com/alyssaxuu/screenity/master/#enabling-save-to-google-drive"&gt;Follow these instructions&lt;/a&gt; to set up the Google Drive integration.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Creating a development version&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;❗️ Note that the license has changed to &lt;a href="https://github.com/alyssaxuu/screenity/raw/master/LICENSE"&gt;GPLv3&lt;/a&gt; for the current MV3 version (Screenity version 3.0.0 and higher). Make sure to read the license and the &lt;a href="https://screenity.io/en/terms/"&gt;Terms of Service&lt;/a&gt; regarding intellectual property.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Check if your &lt;a href="https://nodejs.org/"&gt;Node.js&lt;/a&gt; version is &amp;gt;= &lt;strong&gt;14&lt;/strong&gt;.&lt;/li&gt; 
+ &lt;li&gt;Clone this repository.&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;npm install&lt;/code&gt; to install the dependencies.&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;npm start&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Load the extension by going to &lt;code&gt;chrome://extensions/&lt;/code&gt; , and &lt;a href="https://developer.chrome.com/docs/extensions/mv2/faq/#:~:text=You%20can%20start%20by%20turning,a%20packaged%20extension%2C%20and%20more."&gt;enabling developer mode&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Click on &lt;code&gt;Load unpacked extension&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Select the &lt;code&gt;build&lt;/code&gt; folder.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Enabling Save to Google Drive&lt;/h3&gt; 
+&lt;p&gt;To enable the Google Drive Upload (authorization consent screen) you must change the client_id in the manifest.json file with your linked extension key.&lt;/p&gt; 
+&lt;p&gt;You can create it accessing &lt;a href="https://console.cloud.google.com/apis/credentials"&gt;Google Cloud Console&lt;/a&gt; and selecting Create Credential &amp;gt; OAuth Client ID &amp;gt; Chrome App. To create a persistent extension key, you can follow the steps detailed &lt;a href="https://developer.chrome.com/docs/extensions/reference/manifest/key"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Libraries used&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://ffmpegwasm.netlify.app/"&gt;FFmpeg WASM&lt;/a&gt; for editing and encoding videos&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/tensorflow/tfjs"&gt;Tensorflow&lt;/a&gt; with the &lt;a href="https://blog.tensorflow.org/2022/01/body-segmentation.html"&gt;Selfie Segmentation&lt;/a&gt; model&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/fabricjs/fabric.js"&gt;Fabric.js&lt;/a&gt; for drawing and annotating&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.radix-ui.com/primitives"&gt;Radix Primitives&lt;/a&gt; for the UI components&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://uiwjs.github.io/react-color/"&gt;react-color&lt;/a&gt; for the color wheel&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/localForage/localForage"&gt;localForage&lt;/a&gt; to help store videos offline with IndexedDB&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wavesurfer.xyz/"&gt;Wavesurfer.js&lt;/a&gt; to create audio waveforms in the popup and the editor&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://advanced-cropper.github.io/react-advanced-cropper/"&gt;React Advanced Cropper&lt;/a&gt; for the cropping UI in the editor&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/yusitnikov/fix-webm-duration"&gt;fix-webm-duration&lt;/a&gt; to add missing metadata to WEBM files&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Acknowledgements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Thanks to &lt;a href="https://www.helpkit.so/"&gt;HelpKit&lt;/a&gt; for sponsoring this project by hosting the &lt;a href="https://help.screenity.io/"&gt;Screenity Help Center&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Thanks to &lt;a href="https://www.behance.net/meixuanloo"&gt;Mei Xuan&lt;/a&gt; for helping with the Chinese translation of the extension.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;If you need any help, or want to become a Screenity expert, you can browse articles and guides in the &lt;a href="https://help.screenity.io"&gt;help center&lt;/a&gt;. You can also submit any feedback or ideas in this &lt;a href="https://tally.so/r/3ElpXq"&gt;form&lt;/a&gt;, or contact through &lt;a href="https://help.screenity.io/contact"&gt;this page&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Feel free to reach out to me through email at &lt;a href="mailto:hi@alyssax.com"&gt;hi@alyssax.com&lt;/a&gt; or &lt;a href="https://twitter.com/alyssaxuu"&gt;on Twitter&lt;/a&gt; if you have any questions or feedback! Hope you find this useful 💜&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>node-red/node-red</title>
+      <link>https://github.com/node-red/node-red</link>
+      <description>&lt;p&gt;Low-code programming for event-driven applications&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Node-RED&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://nodered.org"&gt;https://nodered.org&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/node-red/node-red/actions?query=branch%3Amaster"&gt;&lt;img src="https://github.com/node-red/node-red/actions/workflows/tests.yml/badge.svg?branch=master" alt="Build Status" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Low-code programming for event-driven applications.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://nodered.org/images/node-red-screenshot.png" alt="Node-RED: Low-code programming for event-driven applications" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;p&gt;Check out &lt;a href="https://nodered.org/docs/getting-started/"&gt;https://nodered.org/docs/getting-started/&lt;/a&gt; for full instructions on getting started.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;code&gt;sudo npm install -g --unsafe-perm node-red&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;node-red&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Open &lt;a href="http://localhost:1880"&gt;http://localhost:1880&lt;/a&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Getting Help&lt;/h2&gt; 
+&lt;p&gt;More documentation can be found &lt;a href="https://nodered.org/docs"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;For further help, or general discussion, please use the &lt;a href="https://discourse.nodered.org"&gt;Node-RED Forum&lt;/a&gt; or &lt;a href="https://nodered.org/slack"&gt;slack team&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Developers&lt;/h2&gt; 
+&lt;p&gt;If you want to run the latest code from git, here's how to get started:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;Clone the code:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; git clone https://github.com/node-red/node-red.git
+ cd node-red
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Install the node-red dependencies&lt;/p&gt; &lt;pre&gt;&lt;code&gt; npm install
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Build the code&lt;/p&gt; &lt;pre&gt;&lt;code&gt; npm run build
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Run&lt;/p&gt; &lt;pre&gt;&lt;code&gt; npm start
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Before raising a pull-request, please read our &lt;a href="https://github.com/node-red/node-red/raw/master/CONTRIBUTING.md"&gt;contributing guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;This project adheres to the &lt;a href="http://contributor-covenant.org/version/1/4/"&gt;Contributor Covenant 1.4&lt;/a&gt;. By participating, you are expected to uphold this code. Please report unacceptable behavior to any of the project's core team at &lt;a href="mailto:team@nodered.org"&gt;team@nodered.org&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Authors&lt;/h2&gt; 
+&lt;p&gt;Node-RED is a project of the &lt;a href="http://openjsf.org"&gt;OpenJS Foundation&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;It is maintained by:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Nick O'Leary &lt;a href="http://twitter.com/knolleary"&gt;@knolleary&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Dave Conway-Jones &lt;a href="http://twitter.com/ceejay"&gt;@ceejay&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;And many others...&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Copyright and license&lt;/h2&gt; 
+&lt;p&gt;Copyright OpenJS Foundation and other contributors, &lt;a href="https://openjsf.org"&gt;https://openjsf.org&lt;/a&gt; under &lt;a href="https://raw.githubusercontent.com/node-red/node-red/master/LICENSE"&gt;the Apache 2.0 license&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>jhuckaby/Cronicle</title>
+      <link>https://github.com/jhuckaby/Cronicle</link>
+      <description>&lt;p&gt;A simple, distributed task scheduler and runner with a web based UI.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Overview&lt;/h1&gt; 
+&lt;p&gt;&lt;strong&gt;Cronicle&lt;/strong&gt; is a multi-server task scheduler and runner, with a web based front-end UI. It handles both scheduled, repeating and on-demand jobs, targeting any number of worker servers, with real-time stats and live log viewer. It's basically a fancy &lt;a href="https://en.wikipedia.org/wiki/Cron"&gt;Cron&lt;/a&gt; replacement written in &lt;a href="https://nodejs.org/"&gt;Node.js&lt;/a&gt;. You can give it simple shell commands, or write Plugins in virtually any language.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://pixlcore.com/software/cronicle/screenshots-new/job-details-complete.png" alt="Main Screenshot" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Features at a Glance&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Single or multi-server setup.&lt;/li&gt; 
+ &lt;li&gt;Automated failover to backup servers.&lt;/li&gt; 
+ &lt;li&gt;Auto-discovery of nearby servers.&lt;/li&gt; 
+ &lt;li&gt;Real-time job status with live log viewer.&lt;/li&gt; 
+ &lt;li&gt;Plugins can be written in any language.&lt;/li&gt; 
+ &lt;li&gt;Schedule events in multiple timezones.&lt;/li&gt; 
+ &lt;li&gt;Optionally queue up long-running events.&lt;/li&gt; 
+ &lt;li&gt;Track CPU and memory usage for each job.&lt;/li&gt; 
+ &lt;li&gt;Historical stats with performance graphs.&lt;/li&gt; 
+ &lt;li&gt;Simple JSON messaging system for Plugins.&lt;/li&gt; 
+ &lt;li&gt;Web hooks for external notification systems.&lt;/li&gt; 
+ &lt;li&gt;Simple REST API for scheduling and running events.&lt;/li&gt; 
+ &lt;li&gt;API Keys for authenticating remote apps.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;The Cronicle documentation is split up across these files:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;→ &lt;strong&gt;&lt;a href="https://github.com/jhuckaby/Cronicle/raw/master/docs/Setup.md"&gt;Installation &amp;amp; Setup&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;→ &lt;strong&gt;&lt;a href="https://github.com/jhuckaby/Cronicle/raw/master/docs/Configuration.md"&gt;Configuration&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;→ &lt;strong&gt;&lt;a href="https://github.com/jhuckaby/Cronicle/raw/master/docs/WebUI.md"&gt;Web UI&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;→ &lt;strong&gt;&lt;a href="https://github.com/jhuckaby/Cronicle/raw/master/docs/Plugins.md"&gt;Plugins&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;→ &lt;strong&gt;&lt;a href="https://github.com/jhuckaby/Cronicle/raw/master/docs/CommandLine.md"&gt;Command Line&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;→ &lt;strong&gt;&lt;a href="https://github.com/jhuckaby/Cronicle/raw/master/docs/InnerWorkings.md"&gt;Inner Workings&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;→ &lt;strong&gt;&lt;a href="https://github.com/jhuckaby/Cronicle/raw/master/docs/APIReference.md"&gt;API Reference&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;→ &lt;strong&gt;&lt;a href="https://github.com/jhuckaby/Cronicle/raw/master/docs/Development.md"&gt;Development&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Glossary&lt;/h2&gt; 
+&lt;p&gt;A quick introduction to some common terms used in Cronicle:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Term&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Primary Server&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;The primary server which keeps time and runs the scheduler, assigning jobs to other servers, and/or itself.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Backup Server&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;A worker server which will automatically become primary and take over duties if the current primary dies.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Worker Server&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;A server which sits idle until it is assigned jobs by the primary server.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Server Group&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;A named group of servers which can be targeted by events, and tagged as "primary eligible", or "worker only".&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;API Key&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;A special key that can be used by external apps to send API requests into Cronicle. Remotely trigger jobs, etc.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;User&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;A human user account, which has a username and a password. Passwords are salted and hashed with &lt;a href="https://en.wikipedia.org/wiki/Bcrypt"&gt;bcrypt&lt;/a&gt;.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Plugin&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Any executable script in any language, which runs a job and reads/writes JSON to communicate with Cronicle.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Schedule&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;The list of events, which are scheduled to run at particular times, on particular servers.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Events can be assigned to categories which define defaults and optionally a color highlight in the UI.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Event&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;An entry in the schedule, which may run once or many times at any interval. Each event points to a Plugin, and a server or group to run it.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Job&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;A running instance of an event. If an event is set to run hourly, then a new job will be created every hour.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h1&gt;Colophon&lt;/h1&gt; 
+&lt;p&gt;We stand on the shoulders of giants. Cronicle was built using these awesome Node modules:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Module Name&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+   &lt;th&gt;License&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/async"&gt;async&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Higher-order functions and common patterns for asynchronous code.&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/bcrypt-node"&gt;bcrypt-node&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Native JS implementation of BCrypt for Node.&lt;/td&gt; 
+   &lt;td&gt;BSD 3-Clause&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/chart.js"&gt;chart.js&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Simple HTML5 charts using the canvas element.&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/daemon"&gt;daemon&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add-on for creating *nix daemons.&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/errno"&gt;errno&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Node.js libuv errno details exposed.&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/font-awesome"&gt;font-awesome&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;The iconic font and CSS framework.&lt;/td&gt; 
+   &lt;td&gt;OFL-1.1 and MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/form-data"&gt;form-data&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;A library to create readable "multipart/form-data" streams. Can be used to submit forms and file uploads to other web applications.&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/formidable"&gt;formidable&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;A Node.js module for parsing form data, especially file uploads.&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/jstimezonedetect"&gt;jstimezonedetect&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Automatically detects the client or server timezone.&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/jquery"&gt;jquery&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;JavaScript library for DOM operations.&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/mdi"&gt;mdi&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Material Design Webfont. This includes the Stock and Community icons in a single webfont collection.&lt;/td&gt; 
+   &lt;td&gt;OFL-1.1 and MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/mkdirp"&gt;mkdirp&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Recursively mkdir, like &lt;code&gt;mkdir -p&lt;/code&gt;.&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/moment"&gt;moment&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Parse, validate, manipulate, and display dates.&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/moment-timezone"&gt;moment-timezone&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Parse and display moments in any timezone.&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/netmask"&gt;netmask&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Parses and understands IPv4 CIDR blocks so they can be explored and compared.&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/node-static"&gt;node-static&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;A simple, compliant file streaming module for node.&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/nodemailer"&gt;nodemailer&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Easy as cake e-mail sending from your Node.js applications.&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/shell-quote"&gt;shell-quote&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Quote and parse shell commands.&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/socket.io"&gt;socket.io&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Node.js real-time framework server (Websockets).&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/socket.io-client"&gt;socket.io-client&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Client library for server-to-server socket.io connections.&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/uglify-js"&gt;uglify-js&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;JavaScript parser, mangler/compressor and beautifier toolkit.&lt;/td&gt; 
+   &lt;td&gt;BSD-2-Clause&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.npmjs.com/package/zxcvbn"&gt;zxcvbn&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Realistic password strength estimation, from Dropbox.&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Companies Using Cronicle&lt;/h2&gt; 
+&lt;p&gt;Cronicle is known to be in use by the following companies:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://agnesanddora.com"&gt;Agnes &amp;amp; Dora&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://sling.com"&gt;Sling TV&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;License&lt;/h1&gt; 
+&lt;p&gt;&lt;strong&gt;The MIT License (MIT)&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;Copyright (c) 2015 - 2025 Joseph Huckaby&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:&lt;/p&gt; 
+&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.&lt;/p&gt; 
+&lt;p&gt;THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>cmliu/WorkerVless2sub</title>
+      <link>https://github.com/cmliu/WorkerVless2sub</link>
+      <description>&lt;p&gt;自动化批量替换生成优选线路 VMess / VLESS / Trojan 节点的 优选订阅生成器&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;🚀 优选订阅生成器 WorkerVless2sub&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/sub.png" alt="sub" /&gt; 这个是一个通过 Cloudflare Workers 搭建，自动化批量替换生成优选线路 VMess / VLESS / Trojan 节点的 &lt;strong&gt;优选订阅生成器&lt;/strong&gt; &lt;a href="https://www.youtube.com/watch?v=p-KhFJAC4WQ&amp;amp;t=70s"&gt;[实现原理]&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!WARNING] 注意！这是一个&lt;strong&gt;公益服务项目&lt;/strong&gt;，请不要将私人节点放入&lt;code&gt;LINK&lt;/code&gt;变量，这会让所有人都能获得此节点！！！&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Telegram交流群：&lt;a href="https://t.me/CMLiussss"&gt;@CMLiussss&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;🔧 部署方法&lt;/h2&gt; 
+&lt;h3&gt;🛠 Pages Github 部署 &lt;a href="https://www.youtube.com/watch?v=p-KhFJAC4WQ&amp;amp;t=509s"&gt;视频教程&lt;/a&gt;&lt;/h3&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;code&gt;&lt;strong&gt;「 Pages Github 部署方法 」&lt;/strong&gt;&lt;/code&gt;&lt;/summary&gt; 
+ &lt;ol&gt; 
+  &lt;li&gt; &lt;p&gt;部署 Cloudflare Pages：&lt;/p&gt; 
+   &lt;ul&gt; 
+    &lt;li&gt;在 Github 上先 Fork 本项目，并点上 Star !!!&lt;/li&gt; 
+    &lt;li&gt;在 Cloudflare Pages 控制台中选择 &lt;code&gt;连接到 Git&lt;/code&gt;后，选中 &lt;code&gt;WorkerVless2sub&lt;/code&gt;项目后点击 &lt;code&gt;开始设置&lt;/code&gt;。&lt;/li&gt; 
+   &lt;/ul&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;给 Pages绑定 自定义域：&lt;/p&gt; 
+   &lt;ul&gt; 
+    &lt;li&gt;在 Pages控制台的 &lt;code&gt;自定义域&lt;/code&gt;选项卡，下方点击 &lt;code&gt;设置自定义域&lt;/code&gt;。&lt;/li&gt; 
+    &lt;li&gt;填入你的自定义次级域名，注意不要使用你的根域名，例如： 您分配到的域名是 &lt;code&gt;fuck.cloudns.biz&lt;/code&gt;，则添加自定义域填入 &lt;code&gt;sub.fuck.cloudns.biz&lt;/code&gt;即可；&lt;/li&gt; 
+    &lt;li&gt;按照 Cloudflare 的要求将返回你的域名DNS服务商，添加 该自定义域 &lt;code&gt;sub&lt;/code&gt;的 CNAME记录 &lt;code&gt;WorkerVless2sub.pages.dev&lt;/code&gt; 后，点击 &lt;code&gt;激活域&lt;/code&gt;即可。&lt;/li&gt; 
+   &lt;/ul&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;修改 快速订阅入口 以及 添加内置节点信息：&lt;/p&gt; &lt;p&gt;例如您的pages项目域名为：&lt;code&gt;sub.fuck.cloudns.biz&lt;/code&gt;；&lt;/p&gt; 
+   &lt;ul&gt; 
+    &lt;li&gt;添加 &lt;code&gt;TOKEN&lt;/code&gt; 变量，快速订阅访问入口，默认值为: &lt;code&gt;auto&lt;/code&gt; ，获取订阅器默认节点订阅地址即 &lt;code&gt;/auto&lt;/code&gt; ，例如 &lt;code&gt;https://sub.fuck.cloudns.biz/auto&lt;/code&gt;；&lt;/li&gt; 
+   &lt;/ul&gt; &lt;/li&gt; 
+ &lt;/ol&gt; 
+ &lt;p&gt;&lt;strong&gt;添加 VLESS 内置节点信息&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;添加 &lt;code&gt;HOST&lt;/code&gt; 变量，例如 &lt;code&gt;edgetunnel-2z2.pages.dev&lt;/code&gt;；&lt;/li&gt; 
+  &lt;li&gt;添加 &lt;code&gt;UUID&lt;/code&gt; 变量，例如 &lt;code&gt;30e9c5c8-ed28-4cd9-b008-dc67277f8b02&lt;/code&gt;；&lt;/li&gt; 
+  &lt;li&gt;添加 &lt;code&gt;PATH&lt;/code&gt; 变量，例如 &lt;code&gt;/?ed=2560&lt;/code&gt;；&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;添加 Trojan 内置节点信息&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;添加 &lt;code&gt;HOST&lt;/code&gt; 变量，例如 &lt;code&gt;hbpb.us.kg&lt;/code&gt;；&lt;/li&gt; 
+  &lt;li&gt;添加 &lt;code&gt;PASSWORD&lt;/code&gt; 变量，例如 &lt;code&gt;bpb-trojan&lt;/code&gt;；&lt;/li&gt; 
+  &lt;li&gt;添加 &lt;code&gt;PATH&lt;/code&gt; 变量，例如 &lt;code&gt;/tr?ed=2560&lt;/code&gt;；&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;ol start="4"&gt; 
+  &lt;li&gt; &lt;p&gt;添加你的专属优选线路：&lt;/p&gt; 
+   &lt;ul&gt; 
+    &lt;li&gt;添加变量 &lt;code&gt;ADD&lt;/code&gt;/&lt;code&gt;ADDNOTLS&lt;/code&gt; 本地静态的优选线路，若不带端口号 TLS默认端口为443 / noTLS默认端口为80，#号后为备注别名，例如：&lt;/li&gt; 
+   &lt;/ul&gt; &lt;pre&gt;&lt;code&gt;icook.tw:2053#优选域名
+cloudflare.cfgo.cc#优选官方线路
+&lt;/code&gt;&lt;/pre&gt; 
+   &lt;ul&gt; 
+    &lt;li&gt;添加变量 &lt;code&gt;ADDAPI&lt;/code&gt;/&lt;code&gt;ADDNOTLSAPI&lt;/code&gt; 为 &lt;strong&gt;优选IP地址txt文件&lt;/strong&gt; 的 URL。例如：&lt;/li&gt; 
+   &lt;/ul&gt; &lt;pre&gt;&lt;code class="language-url"&gt;https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressesapi.txt
+https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressesipv6api.txt
+&lt;/code&gt;&lt;/pre&gt; 
+   &lt;ul&gt; 
+    &lt;li&gt;添加变量 &lt;code&gt;ADDCSV&lt;/code&gt; 为 &lt;strong&gt;iptest测速结果csv文件地址&lt;/strong&gt; 的 URL。例如：&lt;/li&gt; 
+   &lt;/ul&gt; &lt;pre&gt;&lt;code class="language-js"&gt;https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressescsv.csv
+&lt;/code&gt;&lt;/pre&gt; 
+   &lt;ul&gt; 
+    &lt;li&gt;添加变量 &lt;code&gt;DLS&lt;/code&gt; ，意为&lt;code&gt;ADDCSV&lt;/code&gt;满足最低速度的要求，不满足改数值以上的IP将不会添加至优选订阅内容。注意：不考虑单位，只看数值，请按照您的测速结果而定。例如：&lt;/li&gt; 
+   &lt;/ul&gt; &lt;pre&gt;&lt;code class="language-js"&gt;8
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;/ol&gt; 
+&lt;/details&gt; 
+&lt;h3&gt;⚙️ Workers 部署方法 &lt;a href="https://youtu.be/AtCF7eq0hcE"&gt;视频教程&lt;/a&gt;&lt;/h3&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;code&gt;&lt;strong&gt;「 Workers 部署方法 」&lt;/strong&gt;&lt;/code&gt;&lt;/summary&gt; 
+ &lt;ol&gt; 
+  &lt;li&gt; &lt;p&gt;部署 Cloudflare Worker：&lt;/p&gt; 
+   &lt;ul&gt; 
+    &lt;li&gt;在 Cloudflare Worker 控制台中创建一个新的 Worker。&lt;/li&gt; 
+    &lt;li&gt;将 &lt;a href="https://github.com/cmliu/WorkerVless2sub/raw/main/_worker.js"&gt;worker.js&lt;/a&gt; 的内容粘贴到 Worker 编辑器中。&lt;/li&gt; 
+   &lt;/ul&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;修改 快速订阅入口 以及 添加内置节点信息：&lt;/p&gt; &lt;p&gt;例如您的workers项目域名为：&lt;code&gt;sub.cmliussss.workers.dev&lt;/code&gt;；&lt;/p&gt; 
+   &lt;ul&gt; 
+    &lt;li&gt;添加 &lt;code&gt;TOKEN&lt;/code&gt; 变量，快速订阅访问入口，默认值为: &lt;code&gt;auto&lt;/code&gt; ，获取订阅器默认节点订阅地址即 &lt;code&gt;/auto&lt;/code&gt; ，例如 &lt;code&gt;https://sub.cmliussss.workers.dev/auto&lt;/code&gt;；&lt;/li&gt; 
+   &lt;/ul&gt; &lt;/li&gt; 
+ &lt;/ol&gt; 
+ &lt;p&gt;&lt;strong&gt;添加 VLESS 内置节点信息&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;添加 &lt;code&gt;HOST&lt;/code&gt; 变量，例如 &lt;code&gt;edgetunnel-2z2.pages.dev&lt;/code&gt;；&lt;/li&gt; 
+  &lt;li&gt;添加 &lt;code&gt;UUID&lt;/code&gt; 变量，例如 &lt;code&gt;30e9c5c8-ed28-4cd9-b008-dc67277f8b02&lt;/code&gt;；&lt;/li&gt; 
+  &lt;li&gt;添加 &lt;code&gt;PATH&lt;/code&gt; 变量，例如 &lt;code&gt;/?ed=2560&lt;/code&gt;；&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;添加 Trojan 内置节点信息&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;添加 &lt;code&gt;HOST&lt;/code&gt; 变量，例如 &lt;code&gt;hbpb.us.kg&lt;/code&gt;；&lt;/li&gt; 
+  &lt;li&gt;添加 &lt;code&gt;PASSWORD&lt;/code&gt; 变量，例如 &lt;code&gt;bpb-trojan&lt;/code&gt;；&lt;/li&gt; 
+  &lt;li&gt;添加 &lt;code&gt;PATH&lt;/code&gt; 变量，例如 &lt;code&gt;/tr?ed=2560&lt;/code&gt;；&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;ol start="3"&gt; 
+  &lt;li&gt;添加你的专属优选线路：&lt;/li&gt; 
+ &lt;/ol&gt; 
+ &lt;p&gt;&lt;strong&gt;3.1 修改 addresses 参数示例&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;修改 &lt;code&gt;addresses&lt;/code&gt; 参数添加本地静态的优选线路，若不带端口号默认443，不支持生成非TLS订阅，#号后为备注别名，例如： &lt;code&gt;js let addresses = [ 'icook.tw:2053#优选域名', 'cloudflare.cfgo.cc#优选官方线路', '185.221.160.203:443#电信优选IP', ]; &lt;/code&gt; 该方式仅推荐添加优选域名的部分，频繁变更的优选推荐通过 &lt;code&gt;addressesapi&lt;/code&gt; 来实现。&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;3.2 修改 addressesapi 参数示例&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;修改 &lt;code&gt;addressesapi&lt;/code&gt; 参数，在脚本中设置 &lt;code&gt;addressesapi&lt;/code&gt; 变量为 &lt;strong&gt;优选IP地址txt文件&lt;/strong&gt; 的 URL。例如： &lt;code&gt;js let addressesapi = [ 'https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressesapi.txt', 'https://addressesapi.090227.xyz/CloudFlareYes', ]; &lt;/code&gt; 可参考 &lt;a href="https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressesapi.txt"&gt;addressesapi.txt&lt;/a&gt; 内容格式 自行搭建。&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;3.3 修改 addressescsv 参数示例&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;修改 &lt;code&gt;addressescsv&lt;/code&gt; 参数，在脚本中设置 &lt;code&gt;addressescsv&lt;/code&gt; 变量为 &lt;strong&gt;iptest测速结果csv文件地址&lt;/strong&gt; 的 URL。例如： &lt;pre&gt;&lt;code class="language-js"&gt;let DLS = 4;//速度下限
+let addressescsv = [
+	'https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressescsv.csv',
+	'https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressescsv.csv',
+];
+&lt;/code&gt;&lt;/pre&gt; &lt;code&gt;DLS&lt;/code&gt; 为要求满足的最低速度，不满足改数值以上的IP将不会添加至优选订阅内容。注意：不考虑单位，只看数值，请按照您的测速结果而定。&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;💡 如何使用 &lt;a href="https://youtu.be/OjqCKeEY7DQ"&gt;视频教程&lt;/a&gt;&lt;/h2&gt; 
+&lt;p&gt;例如您的workers项目域名为：&lt;code&gt;sub.cmliussss.workers.dev&lt;/code&gt;；&lt;/p&gt; 
+&lt;h3&gt;1. 快速订阅&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;添加 &lt;code&gt;TOKEN&lt;/code&gt; 变量，快速订阅访问入口，默认值为: &lt;code&gt;auto&lt;/code&gt; ，获取订阅器默认节点订阅地址即 &lt;code&gt;/auto&lt;/code&gt; ，例如： &lt;pre&gt;&lt;code class="language-url"&gt;https://sub.cmliussss.workers.dev/auto
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;2. 自定义订阅&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;一键优选订阅&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;例如您的workers项目域名为：&lt;code&gt;sub.cmliussss.workers.dev&lt;/code&gt;；&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;打开项目域名，填入已接入CDN的节点链接后点击&lt;code&gt;生成优选订阅&lt;/code&gt;即可。&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;VLESS 手动订阅&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;自定义订阅格式&lt;/strong&gt; &lt;code&gt;https://[你的Workers域名]/sub?host=[你的Vless域名]&amp;amp;uuid=[你的UUID]&amp;amp;path=[你的ws路径]&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;host&lt;/strong&gt;：您的 VLESS 伪装域名，例如 &lt;code&gt;edgetunnel-2z2.pages.dev&lt;/code&gt;；&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;uuid&lt;/strong&gt;：您的 VLESS 客户端 UUID，例如 &lt;code&gt;30e9c5c8-ed28-4cd9-b008-dc67277f8b02&lt;/code&gt;；&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;path&lt;/strong&gt;（可选）：您的 VLESS 路径（没有可留空不填），例如 &lt;code&gt;/?ed=2560&lt;/code&gt;。&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;sni&lt;/strong&gt;（可选）：您的 VLESS 的SNI（留空则默认同&lt;code&gt;host&lt;/code&gt;），例如 &lt;code&gt;www.10068.cn&lt;/code&gt;。&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;type&lt;/strong&gt;（可选）：您的 VLESS 的传输协议（留空则默认为&lt;code&gt;ws&lt;/code&gt;），例如 &lt;code&gt;splithttp&lt;/code&gt;。&lt;/li&gt; 
+ &lt;li&gt;自定义订阅地址如下： &lt;pre&gt;&lt;code class="language-url"&gt;https://sub.cmliussss.workers.dev/sub?host=edgetunnel-2z2.pages.dev&amp;amp;uuid=30e9c5c8-ed28-4cd9-b008-dc67277f8b02&amp;amp;path=/?ed=2560&amp;amp;sni=www.10068.cn&amp;amp;type=splithttp
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt;注意路径必须包含 "/sub"。&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Trojan 手动订阅&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;自定义订阅格式&lt;/strong&gt; &lt;code&gt;https://[你的Workers域名]/sub?host=[你的Trojan域名]&amp;amp;pw=[你的password]&amp;amp;path=[你的ws路径]&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;host&lt;/strong&gt;：您的 Trojan 伪装域名，例如 &lt;code&gt;hbpb.us.kg&lt;/code&gt;；&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;uuid&lt;/strong&gt;：您的 Trojan 客户端 Password，例如 &lt;code&gt;bpb-trojan&lt;/code&gt;；&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;path&lt;/strong&gt;（可选）：您的 Trojan 路径（没有可留空不填），例如 &lt;code&gt;/tr?ed=2560&lt;/code&gt;。&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;sni&lt;/strong&gt;（可选）：您的 Trojan 的SNI（留空则默认同&lt;code&gt;host&lt;/code&gt;），例如 &lt;code&gt;www.10068.cn&lt;/code&gt;。&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;type&lt;/strong&gt;（可选）：您的 Trojan 的传输协议（留空则默认为&lt;code&gt;ws&lt;/code&gt;），例如 &lt;code&gt;splithttp&lt;/code&gt;。&lt;/li&gt; 
+ &lt;li&gt;自定义订阅地址如下： &lt;pre&gt;&lt;code class="language-url"&gt;https://sub.cmliussss.workers.dev/sub?host=hbpb.us.kg&amp;amp;pw=bpb-trojan&amp;amp;path=/tr?ed=2560
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt;注意路径必须包含 "/sub"。&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;3. 指定 clash、singbox 配置文件&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;添加 &lt;code&gt;format=clash&lt;/code&gt; 键值，获取 clash 订阅配置，例如：&lt;/p&gt; &lt;pre&gt;&lt;code class="language-url"&gt;https://sub.cmliussss.workers.dev/auto?format=clash
+https://sub.cmliussss.workers.dev/sub?format=clash&amp;amp;host=edgetunnel-2z2.pages.dev&amp;amp;uuid=30e9c5c8-ed28-4cd9-b008-dc67277f8b02&amp;amp;path=/?ed=2048
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;添加 &lt;code&gt;format=singbox&lt;/code&gt; 键值，获取 singbox 订阅配置，例如：&lt;/p&gt; &lt;pre&gt;&lt;code class="language-url"&gt;https://sub.cmliussss.workers.dev/auto?format=singbox
+https://sub.cmliussss.workers.dev/sub?format=singbox&amp;amp;host=edgetunnel-2z2.pages.dev&amp;amp;uuid=30e9c5c8-ed28-4cd9-b008-dc67277f8b02&amp;amp;path=/?ed=2048
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🔑 变量说明&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;变量名&lt;/th&gt; 
+   &lt;th&gt;示例&lt;/th&gt; 
+   &lt;th&gt;备注&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;TOKEN&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;auto&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;快速订阅内置节点的订阅路径地址 /auto （支持多元素, 元素之间使用&lt;code&gt;,&lt;/code&gt;或&lt;code&gt;换行&lt;/code&gt;作间隔）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;HOST&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;edgetunnel-2z2.pages.dev&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;快速订阅内置节点的伪装域名 （支持多元素, 订阅时随机获取, 元素之间使用&lt;code&gt;,&lt;/code&gt;或&lt;code&gt;换行&lt;/code&gt;作间隔）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;UUID&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;b7a392e2-4ef0-4496-90bc-1c37bb234904&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;快速订阅内置VLESS节点的UUID （与变量&lt;code&gt;PASSWORD&lt;/code&gt;冲突, 共存时优先使用&lt;code&gt;PASSWORD&lt;/code&gt;）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;KEY&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;token&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;动态UUID秘钥，使用变量&lt;code&gt;KEY&lt;/code&gt;的时候，将不再启用变量&lt;code&gt;UUID&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;TIME&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;7&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;动态UUID有效时间（单位:天）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;UPTIME&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;3&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;动态UUID更新时间（默认:北京时间&lt;code&gt;3&lt;/code&gt;点更新）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;PASSWORD&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;bpb-trojan&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;快速订阅内置Trojan节点的password （与变量&lt;code&gt;UUID&lt;/code&gt;冲突, 共存时优先使用&lt;code&gt;PASSWORD&lt;/code&gt;）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;PATH&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;/?ed=2560&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;快速订阅内置节点的路径信息&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;SNI&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;www.10068.cn&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;快速订阅内置节点的SNI信息（留空则默认同&lt;code&gt;host&lt;/code&gt;）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;TYPE&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;splithttp&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;快速订阅内置节点的传输协议信息（留空则默认为&lt;code&gt;ws&lt;/code&gt;）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;ALPN&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;h3&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Alpn（留空则默认为&lt;code&gt;http/1.1&lt;/code&gt;）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;ADD&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;icook.tw:2053#官方优选域名&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;对应&lt;code&gt;addresses&lt;/code&gt;字段 （支持多元素, 元素之间使用&lt;code&gt;,&lt;/code&gt;或&lt;code&gt;换行&lt;/code&gt;作间隔）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;ADDAPI&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressesapi.txt"&gt;https://raw.github.../addressesapi.txt&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;对应&lt;code&gt;addressesapi&lt;/code&gt;字段 （支持多元素, 元素之间使用&lt;code&gt;,&lt;/code&gt;或&lt;code&gt;换行&lt;/code&gt;作间隔）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;ADDNOTLS&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;icook.hk:8080#官方优选域名&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;对应&lt;code&gt;addressesnotls&lt;/code&gt;字段 （支持多元素, 元素之间使用&lt;code&gt;,&lt;/code&gt;或&lt;code&gt;换行&lt;/code&gt;作间隔）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;ADDNOTLSAPI&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/cmliu/CFcdnVmess2sub/main/addressesapi.txt"&gt;https://raw.github.../addressesapi.txt&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;对应&lt;code&gt;addressesnotlsapi&lt;/code&gt;字段 （支持多元素, 元素之间使用&lt;code&gt;,&lt;/code&gt;或&lt;code&gt;换行&lt;/code&gt;作间隔）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;ADDCSV&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressescsv.csv"&gt;https://raw.github.../addressescsv.csv&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;对应&lt;code&gt;addressescsv&lt;/code&gt;字段 （支持多元素, 元素之间使用&lt;code&gt;,&lt;/code&gt;或&lt;code&gt;换行&lt;/code&gt;作间隔）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;DLS&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;8&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;addressescsv&lt;/code&gt;测速结果满足速度下限&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;NOTLS&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;改为&lt;code&gt;true&lt;/code&gt;, 将不做域名判断 始终返回noTLS节点&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;TGTOKEN&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;6894123456:XXXXXXXXXX0qExVsBPUhHDAbXXXXXqWXgBA&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;发送TG通知的机器人token&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;TGID&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;6946912345&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;接收TG通知的账户数字ID&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;SUBAPI&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;subapi.cmliussss.net&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;clash、singbox等 订阅转换后端&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;SUBCONFIG&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_MultiMode.ini"&gt;https://raw.github.../ACL4SSR_Online_Full_MultiMode.ini&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;clash、singbox等 订阅转换配置文件&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;SUBNAME&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;优选订阅生成器&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;订阅生成器名称&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;ICO&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;https://raw.cmliussss.com/favicon.ico&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;网站图标&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;PNG&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;https://raw.cmliussss.com/img/CM512.png&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;网站LOGO&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;IMG&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;https://raw.cmliussss.com/keqing1080p.jpg&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;背景图片，多张图片将随机展示 （多元素&lt;code&gt;换行&lt;/code&gt;作间隔）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;BEIAN&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;提供维护: &amp;lt;a href='https://t.me/CMLiussss'&amp;gt;CMLiussss&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;主页维护信息&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;SOCKS5DATA&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/socks5Data"&gt;https://raw.github.../socks5Data&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Socks5代理池&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;PS&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;【请勿测速】&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;节点名备注消息&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;PROXYIP&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;proxyip.cmliussss.net&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;默认分配的ProxyIP, 多ProxyIP将随机分配（支持多元素, 元素之间使用&lt;code&gt;,&lt;/code&gt;或&lt;code&gt;换行&lt;/code&gt;作间隔）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;PROXYIPAPI&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;https://raw.cmliussss.com/Serv00_ProxyIP.txt&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;不支持多元素&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;CMPROXYIPS&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;proxyip.aliyun.cmliussss.net#HK&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;识别HK后分配对应的ProxyIP（支持多元素, 元素之间使用&lt;code&gt;,&lt;/code&gt;或&lt;code&gt;换行&lt;/code&gt;作间隔）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;CFPORTS&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;2053&lt;/code&gt;,&lt;code&gt;2096&lt;/code&gt;,&lt;code&gt;8443&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;CF账户标准端口列表&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;URL302&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;https://t.me/CMLiussss&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;主页302跳转(支持多url, url之间使用&lt;code&gt;,&lt;/code&gt;或&lt;code&gt;换行&lt;/code&gt;作间隔, 小白别用)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;URL&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;https://blog.cmliussss.com&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;主页反代伪装(支持多url, url之间使用&lt;code&gt;,&lt;/code&gt;或&lt;code&gt;换行&lt;/code&gt;作间隔, 乱设容易触发反诈)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;LINK&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;vless://b7a39...&lt;/code&gt;,&lt;code&gt;vmess://ew0K...&lt;/code&gt;,&lt;code&gt;https://sub...&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;补充的&lt;strong&gt;公益节点链接&lt;/strong&gt;（不要填入私用节点）, 可同时放入多个节点链接与多个订阅链接（支持多元素, 元素之间使用&lt;code&gt;,&lt;/code&gt;或&lt;code&gt;换行&lt;/code&gt;作间隔）&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;⭐ Star 星星走起&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://starchart.cc/cmliu/WorkerVless2sub"&gt;&lt;img src="https://starchart.cc/cmliu/WorkerVless2sub.svg?variant=adaptive" alt="Stargazers over time" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;🙏 特别鸣谢&lt;/h1&gt; 
+&lt;h3&gt;🚀 Sponsored by SharonNetworks&lt;/h3&gt; 
+&lt;a href="https://sharon.io/"&gt; &lt;img src="https://framerusercontent.com/assets/3bMljdaUFNDFvMzdG9S0NjYmhSY.png" width="30%" alt="sharon.io" /&gt; &lt;/a&gt; 
+&lt;p&gt;本项目的&lt;a href="https://sub.cmliussss.com/"&gt;订阅转换&lt;/a&gt;后端由 SharonNetworks 提供支持 —— 专注亚太顶级回国优化线路，高带宽、低延迟直连中国大陆，内置强大高防 DDoS 清洗能力。&lt;/p&gt; 
+&lt;p&gt;SharonNetworks 为您的业务起飞保驾护航！&lt;/p&gt; 
+&lt;h4&gt;✨ 服务优势&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;亚太三网回程优化直连中国大陆，下载快到飞起&lt;/li&gt; 
+ &lt;li&gt;超大带宽 + 抗攻击清洗服务，保障业务安全稳定&lt;/li&gt; 
+ &lt;li&gt;多节点覆盖（香港、新加坡、日本、台湾、韩国）&lt;/li&gt; 
+ &lt;li&gt;高防护力、高速网络；港/日/新 CDN 即将上线&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;想体验同款构建环境？欢迎&amp;nbsp;&lt;a href="https://sharon.io"&gt;访问 Sharon 官网&lt;/a&gt;&amp;nbsp;或&amp;nbsp;&lt;a href="https://t.me/SharonNetwork"&gt;加入 Telegram 群组&lt;/a&gt; 了解更多并申请赞助。&lt;/p&gt; 
+&lt;h2&gt;🛠 开源代码引用&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/SAKURA-YUMI"&gt;SAKURA-YUMI&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/EzSync"&gt;EzSync&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash/config"&gt;ACL4SSR&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/6Kmfi6HP/EDtunnel/raw/main/.github/workflows/obfuscator.yml"&gt;3Kmfi6HP&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
