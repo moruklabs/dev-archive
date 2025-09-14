@@ -1,0 +1,1981 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub TypeScript Daily Trending</title>
+    <description>Daily Trending of TypeScript in GitHub</description>
+    <pubDate>Sat, 13 Sep 2025 01:37:57 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>huggingface/aisheets</title>
+      <link>https://github.com/huggingface/aisheets</link>
+      <description>&lt;p&gt;Build, enrich, and transform datasets using AI models with no code&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;h1&gt;🤗 Hugging Face AI Sheets&lt;/h1&gt; 
+ &lt;p&gt;&lt;em&gt;Build, enrich, and transform datasets using AI models with no code. Deploy locally or on the Hub with access to thousands of open models.&lt;/em&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://huggingface.co/blog/aisheets"&gt;Introduction&lt;/a&gt; • &lt;a href="https://huggingface.co/spaces/aisheets/sheets"&gt;Try it out&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;
+  &lt;video width="400" src="https://github.com/user-attachments/assets/a284e4d4-3c11-4885-96cc-2f6f0314f2a1"&gt;&lt;/video&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;What's AI Sheets?&lt;/h2&gt; 
+&lt;p&gt;Hugging Face AI Sheets is an open-source tool for building, enriching, and transforming datasets using AI models with no code. The tool can be deployed locally or on the Hub. It lets you use thousands of open models from the Hugging Face Hub via Inference Providers or local models, including &lt;code&gt;gpt-oss&lt;/code&gt; from OpenAI!&lt;/p&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;h3&gt;Using the AI Sheets Space&lt;/h3&gt; 
+&lt;p&gt;Try it instantly at &lt;a href="https://huggingface.co/spaces/aisheets/sheets"&gt;https://huggingface.co/spaces/aisheets/sheets&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Using Docker&lt;/h3&gt; 
+&lt;p&gt;First, get your Hugging Face token from &lt;a href="https://huggingface.co/settings/tokens"&gt;https://huggingface.co/settings/tokens&lt;/a&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;export HF_TOKEN=your_token_here
+docker run -p 3000:3000 \
+-e HF_TOKEN=HF_TOKEN \
+aisheets/sheets
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Open &lt;code&gt;http://localhost:3000&lt;/code&gt; in your browser.&lt;/p&gt; 
+&lt;h3&gt;Using pnpm&lt;/h3&gt; 
+&lt;p&gt;First, &lt;a href="https://pnpm.io/installation"&gt;install pnpm&lt;/a&gt; if you haven't already.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/huggingface/aisheets.git
+cd sheets
+export HF_TOKEN=your_token_here
+pnpm install --frozen-lockfile
+pnpm dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Open &lt;code&gt;http://localhost:5173&lt;/code&gt; in your browser.&lt;/p&gt; 
+&lt;h4&gt;Building for production&lt;/h4&gt; 
+&lt;p&gt;To build the production application, run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm build
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This will create a production build in the &lt;code&gt;dist&lt;/code&gt; directory.&lt;/p&gt; 
+&lt;p&gt;Then, you can launch the built-in Express server to serve the production build:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;export HF_TOKEN=your_token_here
+pnpm serve
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Running data generation scripts using HF Jobs&lt;/h2&gt; 
+&lt;p&gt;If you want to generate a larger dataset, you can use the above-mentioned config and script, like this:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;hf jobs uv run \
+-s HF_TOKEN=$HF_TOKEN \
+https://github.com/huggingface/aisheets/raw/refs/heads/main/scripts/extend_dataset/with_inference_client.py \ # script for running the pipeline
+nvidia/Nemotron-Personas dvilasuero/nemotron-kimi-qa-distilled \
+--config https://huggingface.co/datasets/dvilasuero/nemotron-personas-kimi-questions/raw/main/config.yml \ # config with prompts
+--num-rows 100 # limit to 100 rows, leave empty for the full dataset
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Alternatively, you can use a script that utilizes vllm inference instead of the inference client. This script helps you to save on inference costs, but it requires you to set up a vllm-compatible flavor when running the job:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;hf jobs uv run --flavor l4x1 \
+-s HF_TOKEN=$HF_TOKEN \
+https://github.com/huggingface/aisheets/raw/refs/heads/main/scripts/extend_dataset/with_vllm.py \ # script for running the pipeline
+nvidia/Nemotron-Personas dvilasuero/nemotron-kimi-qa-distilled \
+--config https://huggingface.co/datasets/dvilasuero/nemotron-personas-kimi-questions/raw/main/config.yml \ # config with prompts
+--num-rows 100 \ # limit to 100 rows, leave empty for the full dataset
+--vllm-model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Running AI Sheets with custom (and local) LLMs&lt;/h2&gt; 
+&lt;p&gt;By default, AI Sheets is configured to use the Huggingface Inference Providers API to run inference on the latest open-source models. However, you can also run Sheets with own custom LLMs, such as those hosted on your own infrastructure or other cloud providers. The only requirement is that your LLMs must support the &lt;a href="https://platform.openai.com/docs/api-reference/introduction"&gt;OpenAI API specification&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Steps&lt;/h3&gt; 
+&lt;p&gt;When running AI Sheets with custom LLMs, you need to set some environment variables to point the inference calls to your custom LLMs. Here are the steps:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Set the &lt;code&gt;MODEL_ENDPOINT_URL&lt;/code&gt; environment variable&lt;/strong&gt;: This variable should point to the base URL of your custom LLM's API endpoint. For example, if you are using Ollama to run your LLM locally, you would set it like this:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;export MODEL_ENDPOINT_URL=http://localhost:11434
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Since Ollama starts a local server on port &lt;code&gt;11434&lt;/code&gt; by default, this URL will point to your local Ollama instance.&lt;/p&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;&lt;strong&gt;Set the &lt;code&gt;MODEL_ENDPOINT_NAME&lt;/code&gt; environment variable&lt;/strong&gt;: This variable should specify the name of the model you want to use. For example, if you are using the &lt;code&gt;llama3&lt;/code&gt; model, you would set it like this:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;export MODEL_ENDPOINT_NAME=llama3
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This is a crucial step to conform to the OpenAI API specification. The model name is a required parameter in the &lt;a href="https://platform.openai.com/docs/api-reference/responses/create#responses-create-model"&gt;OpenAI API&lt;/a&gt;, and it is used to identify which model to use for inference.&lt;/p&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;&lt;strong&gt;Run the AI Sheets app&lt;/strong&gt;: After setting the environment variables, you can run the Sheets app as usual. The app will now use your custom LLM for inference instead of the default Huggingface Inference Providers API as the default behavior. Anyway, all the models provided by the Huggingface Inference Providers API will still be available when selecting a model in the column settings.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Note: The text-to-image generation feature cannot be customized yet. It will always utilize the Hugging Face Inference Providers API to generate images. Take this into account when running AI Sheets with custom LLMs.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Example of running AI Sheets with Ollama&lt;/h3&gt; 
+&lt;p&gt;To run AI Sheets with Ollama, you can follow these steps:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Start the Ollama server, and run the model of your choice&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;export OLLAMA_NOHISTORY=1
+ollama serve
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;ollama run llama3
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;(Visit the Ollama &lt;a href="https://github.com/ollama/ollama/raw/main/docs/faq.md#how-can-i-specify-the-context-window-size"&gt;FAQ&lt;/a&gt; page to know more about Ollama server configuration)&lt;/p&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Set the environment variables:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;export MODEL_ENDPOINT_URL=http://localhost:11434
+export MODEL_ENDPOINT_NAME=llama3
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;Run the AI Sheets app:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;pnpm serve
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This will start the AI Sheets app and use the &lt;code&gt;llama3&lt;/code&gt; model running on your local Ollama instance for inference.&lt;/p&gt; 
+&lt;h2&gt;Advanced configuration&lt;/h2&gt; 
+&lt;p&gt;AI Sheets defines some environment variables that can be used to customize the behavior of the application. In the following sections, we will describe the available environment variables and their usage.&lt;/p&gt; 
+&lt;h3&gt;&amp;nbsp;Authentication&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;OAUTH_CLIENT_ID&lt;/code&gt;: The Hugging Face OAuth client ID for the application. This is used to authenticate users via the Hugging Face OAuth. If this variable is defined, it will be used to authenticate users. (See how to setup the Hugging Face OAuth &lt;a href="https://huggingface.co/blog/frascuchon/running-sheets-locally#oauth-authentication"&gt;here&lt;/a&gt;).&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;HF_TOKEN&lt;/code&gt;: A Hugging Face token to use for authentication. If this variable is defined, it will be used for authenticated inference calls, instead of the OAuth token.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;OAUTH_SCOPES&lt;/code&gt;: The scopes to request during the OAuth authentication. The default value is &lt;code&gt;openid profile inference-api manage-repos&lt;/code&gt;. This variable is used to request the necessary permissions for the application to function correctly, and normally does not need to be changed.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;&amp;nbsp;Inference&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;DEFAULT_MODEL&lt;/code&gt;: The default model id to use when calling the inference API for text generation. The default value is &lt;code&gt;meta-llama/Llama-3.3-70B-Instruct&lt;/code&gt;. This variable can be used to change the default model used for text generation and must be a valid model id from the &lt;a href="https://huggingface.co/models?pipeline_tag=text-generation&amp;amp;inference_provider=all&amp;amp;sort=trending"&gt;Hugging Face Hub&lt;/a&gt;,&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;DEFAULT_MODEL_PROVIDER&lt;/code&gt;: The default model provider to use when calling the inference API for text generation. The default value is &lt;code&gt;nebius&lt;/code&gt;. This variable can be used to change the default model provider used for text generation and must be a valid provider from the &lt;a href="https://huggingface.co/docs/inference-providers/en/index"&gt;Hugging Face Inference Providers&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;ORG_BILLING&lt;/code&gt;: The organization billing to use for inference calls. If this variable is defined, the inference calls will be billed to the specified organization. This is useful for organizations that want to manage their inference costs and usage. Remember that users must be part of the organization to use this feature, or an &lt;code&gt;HF_TOKEN&lt;/code&gt; of a user that is part of the organization must be defined.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;MODEL_ENDPOINT_URL&lt;/code&gt;: The URL of a custom inference endpoint to use for text generation. If this variable is defined, it will be used instead of the default Hugging Face Inference API. This is useful for using custom inference endpoints that are not hosted on the Hugging Face Hub, such as Ollama or LLM Studio. The URL must be a valid endpoint that supports the &lt;a href="https://platform.openai.com/docs/api-reference/chat/create"&gt;OpenAI API format&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;MODEL_ENDPOINT_NAME&lt;/code&gt;: The model id to use when calling the custom inference endpoint defined by &lt;code&gt;MODEL_ENDPOINT_URL&lt;/code&gt;. This variable is required if &lt;code&gt;MODEL_ENDPOINT_URL&lt;/code&gt; is defined for custom inference endpoints that require a model id, such as Ollama or LLM Studio. The model id must correspond to the model deployed on the custom inference endpoint.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;NUM_CONCURRENT_REQUESTS&lt;/code&gt;: The number of concurrent requests to allow when calling the inference API in the column cells generation process. The default value is &lt;code&gt;5&lt;/code&gt;, and the maximum value is &lt;code&gt;10&lt;/code&gt;. This is useful to control the number of concurrent requests made to the inference API and avoid hitting rate limits defined by the provider.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Miscellaneous&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;DATA_DIR&lt;/code&gt;: The directory where the application will store all its data. The default value is &lt;code&gt;./data&lt;/code&gt;. This variable can be used to change the data directory used by the application. The directory must be writable by the application.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;SERPER_API_KEY&lt;/code&gt;: The API key to use for the Serper web search API. If this variable is defined, it will be used to authenticate web search requests. If this variable is not defined, web search will be disabled. The Serper API key can be obtained from the &lt;a href="https://serper.dev/"&gt;Serper website&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;TELEMETRY_ENABLED&lt;/code&gt;: A boolean value that indicates whether telemetry is enabled or not. The default value is &lt;code&gt;1&lt;/code&gt;. This variable can be used to disable telemetry if desired. Telemetry is used to collect anonymous usage data to help improve the application.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;EXAMPLES_PROMPT_MAX_CONTEXT_SIZE&lt;/code&gt;: The maximum context size (in characters) for the examples section in the prompt for text generation. The default value is &lt;code&gt;8192&lt;/code&gt;. If the examples section exceeds this size, it will be truncated. This variable can be used when the examples section is too large and needs to be reduced to fit within the context size limits of the model.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;SOURCES_PROMPT_MAX_CONTEXT_SIZE&lt;/code&gt;: The maximum context size (in characters) for the sources section in the prompt for text generation. The default value is &lt;code&gt;61440&lt;/code&gt;. If the sources section exceeds this size, it will be truncated. This variable can be used when the sources section is too large and needs to be reduced to fit within the context size limits of the model.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Developer docs&lt;/h2&gt; 
+&lt;h3&gt;Dev dependencies on your vscode&lt;/h3&gt; 
+&lt;h4&gt;vitest runner&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://marketplace.visualstudio.com/items?itemName=rluvaton.vscode-vitest"&gt;https://marketplace.visualstudio.com/items?itemName=rluvaton.vscode-vitest&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;biome&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://marketplace.visualstudio.com/items?itemName=biomejs.biome"&gt;https://marketplace.visualstudio.com/items?itemName=biomejs.biome&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Project Structure&lt;/h3&gt; 
+&lt;p&gt;This project is using Qwik with &lt;a href="https://qwik.dev/qwikcity/overview/"&gt;QwikCity&lt;/a&gt;. QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.&lt;/p&gt; 
+&lt;p&gt;Inside your project, you'll see the following directory structure:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;├── public/
+│   └── ...
+└── src/
+    ├── components/ --&amp;gt; Stateless components
+    │   └── ...
+    ├── features/ --&amp;gt; Components with business logic
+    │   └── ...
+    └── routes/
+        └── ...
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;src/routes&lt;/code&gt;: Provides the directory-based routing, which can include a hierarchy of &lt;code&gt;layout.tsx&lt;/code&gt; layout files, and an &lt;code&gt;index.tsx&lt;/code&gt; file as the page. Additionally, &lt;code&gt;index.ts&lt;/code&gt; files are endpoints. Please see the &lt;a href="https://qwik.dev/qwikcity/routing/overview/"&gt;routing docs&lt;/a&gt; for more info.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;src/components&lt;/code&gt;: Recommended directory for components.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;public&lt;/code&gt;: Any static assets, like images, can be placed in the public directory. Please see the &lt;a href="https://vitejs.dev/guide/assets.html#the-public-directory"&gt;Vite public directory&lt;/a&gt; for more info.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Development&lt;/h3&gt; 
+&lt;p&gt;Run this on your root folder&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;touch .env
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Add in your &lt;code&gt;.env&lt;/code&gt; file the following variable:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;HF_TOKEN=your_hugging_face_token
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Development mode uses &lt;a href="https://vitejs.dev/"&gt;Vite's development server&lt;/a&gt;. The &lt;code&gt;dev&lt;/code&gt; command will server-side render (SSR) the output during development.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;pnpm dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Note: during dev mode, Vite may request a significant number of &lt;code&gt;.js&lt;/code&gt; files. This does not represent a Qwik production build.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Preview&lt;/h3&gt; 
+&lt;p&gt;The preview command will create a production build of the client modules, a production build of &lt;code&gt;src/entry.preview.tsx&lt;/code&gt;, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;pnpm preview
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Production&lt;/h3&gt; 
+&lt;p&gt;The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;pnpm build
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Express Server&lt;/h3&gt; 
+&lt;p&gt;This app has a minimal &lt;a href="https://expressjs.com/"&gt;Express server&lt;/a&gt; implementation. After running a full build, you can preview the build using the command:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;pnpm serve
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then visit &lt;a href="http://localhost:3000/"&gt;http://localhost:3000/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>heroui-inc/heroui</title>
+      <link>https://github.com/heroui-inc/heroui</link>
+      <description>&lt;p&gt;🚀 Beautiful, fast and modern React UI library. (Previously NextUI)&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://heroui.com"&gt; &lt;img width="20%" src="https://raw.githubusercontent.com/heroui-inc/heroui/main/apps/docs/public/isotipo.png" alt="heorui" /&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h1 align="center"&gt;&lt;a href="https://heroui.com"&gt;HeroUI&lt;/a&gt;&lt;/h1&gt;
+&lt;a href="https://heroui.com"&gt; &lt;/a&gt; 
+&lt;p&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/heroui-inc/heroui/raw/main/LICENSE"&gt; &lt;img src="https://img.shields.io/npm/l/@heroui/react?style=flat" alt="License" /&gt; &lt;/a&gt; &lt;a href="https://codecov.io/gh/jrgarciadev/nextui"&gt; &lt;img src="https://codecov.io/gh/jrgarciadev/nextui/branch/main/graph/badge.svg?token=QJF2QKR5N4" alt="codecov badge" /&gt; &lt;/a&gt; 
+ &lt;!-- &lt;a href="https://github.com/heroui-inc/heroui/actions/workflows/main.yaml"&gt;
+    &lt;img src="https://github.com/heroui-inc/heroui/actions/workflows/main.yaml/badge.svg" alt="CI/CD heroui"&gt;
+  &lt;/a&gt; --&gt; &lt;a href="https://www.npmjs.com/package/@heroui/react"&gt; &lt;img src="https://img.shields.io/npm/dm/@heroui/react.svg?style=flat-round" alt="npm downloads" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;Visit &lt;a aria-label="heroui learn" href="https://heroui.com/learn"&gt;&lt;/a&gt;&lt;a href="https://heroui.com/guide"&gt;https://heroui.com/guide&lt;/a&gt; to get started with HeroUI.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Visit &lt;a href="https://heroui.com/docs"&gt;https://heroui.com/docs&lt;/a&gt; to view the full documentation.&lt;/p&gt; 
+&lt;h2&gt;Storybook&lt;/h2&gt; 
+&lt;p&gt;Visit &lt;a href="https://storybook.heroui.com/"&gt;https://storybook.heroui.com&lt;/a&gt; to view the storybook for all components.&lt;/p&gt; 
+&lt;h2&gt;Canary Release&lt;/h2&gt; 
+&lt;p&gt;Canary versions are available after every merge into &lt;code&gt;canary&lt;/code&gt; branch. You can install the packages with the tag &lt;code&gt;canary&lt;/code&gt; in npm to use the latest changes before the next production release.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://canary.heroui.com/docs"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://canary-sb.heroui.com"&gt;Storybook&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;p&gt;We're excited to see the community adopt HeroUI, raise issues, and provide feedback. Whether it's a feature request, bug report, or a project to showcase, please get involved!&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://discord.gg/9b6yyZKmH4"&gt;Discord&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://x.com/hero_ui"&gt;X&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/heroui-inc/heroui/discussions"&gt;GitHub Discussions&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Contributions are always welcome!&lt;/p&gt; 
+&lt;p&gt;See &lt;a href="https://github.com/heroui-inc/heroui/raw/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for ways to get started.&lt;/p&gt; 
+&lt;p&gt;Please adhere to this project's &lt;a href="https://github.com/heroui-inc/heroui/raw/main/CODE_OF_CONDUCT.md"&gt;CODE_OF_CONDUCT&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://choosealicense.com/licenses/mit/"&gt;MIT&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>dyad-sh/dyad</title>
+      <link>https://github.com/dyad-sh/dyad</link>
+      <description>&lt;p&gt;Free, local, open-source AI app builder ✨ v0 / lovable / Bolt alternative 🌟 Star if you like it!&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Dyad&lt;/h1&gt; 
+&lt;p&gt;Dyad is a local, open-source AI app builder. It's fast, private, and fully under your control — like Lovable, v0, or Bolt, but running right on your machine.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="http://dyad.sh/"&gt;&lt;img src="https://github.com/user-attachments/assets/f6c83dfc-6ffd-4d32-93dd-4b9c46d17790" alt="Image" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;More info at: &lt;a href="http://dyad.sh/"&gt;http://dyad.sh/&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🚀 Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;⚡️ &lt;strong&gt;Local&lt;/strong&gt;: Fast, private and no lock-in.&lt;/li&gt; 
+ &lt;li&gt;🛠 &lt;strong&gt;Bring your own keys&lt;/strong&gt;: Use your own AI API keys — no vendor lock-in.&lt;/li&gt; 
+ &lt;li&gt;🖥️ &lt;strong&gt;Cross-platform&lt;/strong&gt;: Easy to run on Mac or Windows.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📦 Download&lt;/h2&gt; 
+&lt;p&gt;No sign-up required. Just download and go.&lt;/p&gt; 
+&lt;h3&gt;&lt;a href="https://www.dyad.sh/#download"&gt;👉 Download for your platform&lt;/a&gt;&lt;/h3&gt; 
+&lt;h2&gt;🤝 Community&lt;/h2&gt; 
+&lt;p&gt;Join our growing community of AI app builders on &lt;strong&gt;Reddit&lt;/strong&gt;: &lt;a href="https://www.reddit.com/r/dyadbuilders/"&gt;r/dyadbuilders&lt;/a&gt; - share your projects and get help from the community!&lt;/p&gt; 
+&lt;h2&gt;🛠️ Contributing&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Dyad&lt;/strong&gt; is open-source (Apache 2.0 licensed).&lt;/p&gt; 
+&lt;p&gt;If you're interested in contributing to dyad, please read our &lt;a href="https://raw.githubusercontent.com/dyad-sh/dyad/main/CONTRIBUTING.md"&gt;contributing&lt;/a&gt; doc.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>expo/expo</title>
+      <link>https://github.com/expo/expo</link>
+      <description>&lt;p&gt;An open-source framework for making universal native apps with React. Expo runs on Android, iOS, and the web.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://expo.dev/"&gt; &lt;img alt="Expo logo" height="128" src="https://raw.githubusercontent.com/expo/expo/main/.github/resources/banner.png" /&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h1 align="center"&gt;&lt;a href="https://expo.dev/"&gt;Expo&lt;/a&gt;&lt;/h1&gt;
+&lt;a href="https://expo.dev/"&gt; &lt;/a&gt; 
+&lt;p&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a aria-label="SDK version" href="https://www.npmjs.com/package/expo" target="_blank"&gt; &lt;img alt="Expo SDK version" src="https://img.shields.io/npm/v/expo.svg?style=flat-square&amp;amp;label=SDK&amp;amp;labelColor=000000&amp;amp;color=4630EB" /&gt; &lt;/a&gt; &lt;a aria-label="Chat or ask a question" href="https://chat.expo.dev" target="_blank"&gt; &lt;img alt="Chat or ask a question" src="https://img.shields.io/discord/695411232856997968.svg?style=flat-square&amp;amp;labelColor=000000&amp;amp;color=4630EB&amp;amp;logo=discord&amp;amp;logoColor=FFFFFF&amp;amp;label=Chat%20with%20us" /&gt; &lt;/a&gt; &lt;a aria-label="Expo is free to use" href="https://github.com/expo/expo/raw/main/LICENSE" target="_blank"&gt; &lt;img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-success.svg?style=flat-square&amp;amp;color=33CC12" target="_blank" /&gt; &lt;/a&gt; &lt;a aria-label="expo downloads" href="http://www.npmtrends.com/expo" target="_blank"&gt; &lt;img alt="Downloads" src="https://img.shields.io/npm/dm/expo.svg?style=flat-square&amp;amp;labelColor=gray&amp;amp;color=33CC12&amp;amp;label=Downloads" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a aria-label="try expo with snack" href="https://snack.expo.dev"&gt;&lt;b&gt;Try Expo in the Browser&lt;/b&gt;&lt;/a&gt;  •  &lt;a aria-label="expo documentation" href="https://docs.expo.dev"&gt;Read the Documentation&lt;/a&gt;  •  &lt;a aria-label="expo documentation" href="https://expo.dev/blog"&gt;Learn more on our blog&lt;/a&gt;  •  &lt;a aria-label="expo documentation" href="https://expo.canny.io/feature-requests"&gt;Request a feature&lt;/a&gt; &lt;/p&gt; 
+&lt;h6 align="center"&gt;Follow us on&lt;/h6&gt; 
+&lt;p align="center"&gt; &lt;a aria-label="Follow @expo on X" href="https://x.com/intent/follow?screen_name=expo" target="_blank"&gt; &lt;img alt="Expo on X" src="https://img.shields.io/badge/X-000000?style=for-the-badge&amp;amp;logo=x&amp;amp;logoColor=white" target="_blank" /&gt; &lt;/a&gt;&amp;nbsp; &lt;a aria-label="Follow @expo on GitHub" href="https://github.com/expo" target="_blank"&gt; &lt;img alt="Expo on GitHub" src="https://img.shields.io/badge/GitHub-222222?style=for-the-badge&amp;amp;logo=github&amp;amp;logoColor=white" target="_blank" /&gt; &lt;/a&gt;&amp;nbsp; &lt;a aria-label="Follow @expo on Reddit" href="https://www.reddit.com/r/expo/" target="_blank"&gt; &lt;img alt="Expo on Reddit" src="https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&amp;amp;logo=reddit&amp;amp;logoColor=white" target="_blank" /&gt; &lt;/a&gt;&amp;nbsp; &lt;a aria-label="Follow @expo on Bluesky" href="https://bsky.app/profile/expo.dev" target="_blank"&gt; &lt;img alt="Expo on Bluesky" src="https://img.shields.io/badge/Bluesky-1DA1F2?style=for-the-badge&amp;amp;logo=bluesky&amp;amp;logoColor=white" target="_blank" /&gt; &lt;/a&gt;&amp;nbsp; &lt;a aria-label="Follow @expo on LinkedIn" href="https://www.linkedin.com/company/expo-dev" target="_blank"&gt; &lt;img alt="Expo on LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&amp;amp;logo=linkedin&amp;amp;logoColor=white" target="_blank" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;Introduction&lt;/h2&gt; 
+&lt;p&gt;Expo is an open-source platform for making universal native apps that run on Android, iOS, and the web. It includes a universal runtime and libraries that let you build native apps by writing React and JavaScript.&lt;/p&gt; 
+&lt;p&gt;This repository includes the Expo SDK, Modules API, Go app, CLI, Router, documentation, and various other supporting tools. &lt;a href="https://expo.dev/eas"&gt;Expo Application Services (EAS)&lt;/a&gt; is a platform of hosted services that are deeply integrated with Expo open source tools. EAS helps you build, ship, and iterate on your app as an individual or a team.&lt;/p&gt; 
+&lt;p&gt;Read the &lt;a href="https://expo.dev/guidelines"&gt;Expo Community Guidelines&lt;/a&gt; before interacting in the repository. Thank you for helping keep the Expo community open and welcoming!&lt;/p&gt; 
+&lt;h2&gt;Table of contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/expo/expo/main/#-documentation"&gt;📚 Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/expo/expo/main/#-project-layout"&gt;🗺 Project Layout&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/expo/expo/main/#-badges"&gt;🏅 Badges&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/expo/expo/main/#-contributing"&gt;👏 Contributing&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/expo/expo/main/#-faq"&gt;❓ FAQ&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/expo/expo/main/#-the-team"&gt;💙 The Team&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/expo/expo/main/#license"&gt;License&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📚 Documentation&lt;/h2&gt; 
+&lt;p&gt;Learn about building and deploying universal apps &lt;a aria-label="expo documentation" href="https://docs.expo.dev"&gt;in our official docs!&lt;/a&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.expo.dev/"&gt;Getting Started&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.expo.dev/versions/latest/"&gt;API Reference&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.expo.dev/workflow/customizing/"&gt;Using Custom Native Modules&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🗺 Project Layout&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/expo/expo/main/packages"&gt;&lt;code&gt;packages&lt;/code&gt;&lt;/a&gt; All the source code for Expo modules, if you want to edit a library or just see how it works this is where you'll find it.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/expo/expo/main/apps"&gt;&lt;code&gt;apps&lt;/code&gt;&lt;/a&gt; This is where you can find Expo projects which are linked to the development modules. You'll do most of your testing in here.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/expo/expo/main/apps/expo-go"&gt;&lt;code&gt;apps/expo-go&lt;/code&gt;&lt;/a&gt; This is where you can find the source code for Expo Go.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/expo/expo/main/apps/expo-go/ios"&gt;&lt;code&gt;apps/expo-go/ios/Exponent.xcworkspace&lt;/code&gt;&lt;/a&gt; is the Xcode workspace. When developing iOS, always open this instead of &lt;code&gt;Exponent.xcodeproj&lt;/code&gt; because the workspace also loads the CocoaPods dependencies.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/expo/expo/main/docs"&gt;&lt;code&gt;docs&lt;/code&gt;&lt;/a&gt; The source code for &lt;strong&gt;&lt;a href="https://docs.expo.dev"&gt;https://docs.expo.dev&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/expo/expo/main/templates"&gt;&lt;code&gt;templates&lt;/code&gt;&lt;/a&gt; The template projects you get when you run &lt;code&gt;npx create-expo-app&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/expo/expo/main/react-native-lab"&gt;&lt;code&gt;react-native-lab&lt;/code&gt;&lt;/a&gt; This is our fork of &lt;code&gt;react-native&lt;/code&gt; used to build Expo Go.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/expo/expo/main/guides"&gt;&lt;code&gt;guides&lt;/code&gt;&lt;/a&gt; In-depth tutorials for advanced topics like contributing to the client.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/expo/expo/main/tools"&gt;&lt;code&gt;tools&lt;/code&gt;&lt;/a&gt; contain build and configuration tools.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/expo/expo/main/template-files"&gt;&lt;code&gt;template-files&lt;/code&gt;&lt;/a&gt; contains templates for files that require private keys. They are populated using the keys in &lt;code&gt;template-files/keys.json&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/expo/expo/main/template-files/ios/dependencies.json"&gt;&lt;code&gt;template-files/ios/dependencies.json&lt;/code&gt;&lt;/a&gt; specifies the CocoaPods dependencies of the app.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🏅 Badges&lt;/h2&gt; 
+&lt;p&gt;Let everyone know your app can be run instantly in the &lt;em&gt;Expo Go&lt;/em&gt; app! &lt;br /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://expo.dev/client"&gt;&lt;img src="https://img.shields.io/badge/Runs%20with%20Expo%20Go-000.svg?style=flat-square&amp;amp;logo=EXPO&amp;amp;labelColor=f3f3f3&amp;amp;logoColor=000" alt="runs with Expo Go" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://expo.dev/client"&gt;&lt;img src="https://img.shields.io/badge/Runs%20with%20Expo%20Go-4630EB.svg?style=flat-square&amp;amp;logo=EXPO&amp;amp;labelColor=f3f3f3&amp;amp;logoColor=000" alt="runs with Expo Go" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-md"&gt;[![runs with Expo Go](https://img.shields.io/badge/Runs%20with%20Expo%20Go-000.svg?style=flat-square&amp;amp;logo=EXPO&amp;amp;labelColor=f3f3f3&amp;amp;logoColor=000)](https://expo.dev/client)
+
+[![runs with Expo Go](https://img.shields.io/badge/Runs%20with%20Expo%20Go-4630EB.svg?style=flat-square&amp;amp;logo=EXPO&amp;amp;labelColor=f3f3f3&amp;amp;logoColor=000)](https://expo.dev/client)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;👏 Contributing&lt;/h2&gt; 
+&lt;p&gt;If you like Expo and want to help make it better then check out our &lt;a href="https://raw.githubusercontent.com/expo/expo/main/CONTRIBUTING.md"&gt;contributing guide&lt;/a&gt;! Check out the &lt;a href="https://github.com/expo/expo/tree/main/packages/%40expo/cli"&gt;CLI package&lt;/a&gt; to work on the Expo CLI.&lt;/p&gt; 
+&lt;h2&gt;❓ FAQ&lt;/h2&gt; 
+&lt;p&gt;If you have questions about Expo and want answers, then check out our &lt;a href="https://docs.expo.dev/faq/"&gt;Frequently Asked Questions&lt;/a&gt;!&lt;/p&gt; 
+&lt;p&gt;If you still have questions you can ask them on our &lt;a href="https://chat.expo.dev"&gt;Discord and Forums&lt;/a&gt; or X &lt;a href="https://x.com/expo"&gt;@expo&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;💙 The Team&lt;/h2&gt; 
+&lt;p&gt;Curious about who makes Expo? Here are our &lt;a href="https://expo.dev/about"&gt;team members&lt;/a&gt;!&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;The Expo source code is made available under the &lt;a href="https://raw.githubusercontent.com/expo/expo/main/LICENSE"&gt;MIT license&lt;/a&gt;. Some of the dependencies are licensed differently, with the BSD license, for example.&lt;/p&gt; 
+&lt;img alt="Star the Expo repo on GitHub to support the project" src="https://user-images.githubusercontent.com/9664363/185428788-d762fd5d-97b3-4f59-8db7-f72405be9677.gif" width="50%" /&gt;</description>
+    </item>
+    
+    <item>
+      <title>ZuodaoTech/everyone-can-use-english</title>
+      <link>https://github.com/ZuodaoTech/everyone-can-use-english</link>
+      <description>&lt;p&gt;人人都能用英语&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/assets/icon.png" alt="Clash" width="128" /&gt; 
+&lt;/div&gt; 
+&lt;h3 align="center"&gt; AI 是当今世界上最好的外语老师，Enjoy 做 AI 最好的助教。 &lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://github.com/ZuodaoTech/everyone-can-use-english/actions/workflows/deploy-1000h.yml"&gt;&lt;img src="https://github.com/ZuodaoTech/everyone-can-use-english/actions/workflows/deploy-1000h.yml/badge.svg?sanitize=true" alt="Deploy 1000h website" /&gt;&lt;/a&gt; &lt;a href="https://github.com/ZuodaoTech/everyone-can-use-english/actions/workflows/test-enjoy-app.yml"&gt;&lt;img src="https://github.com/ZuodaoTech/everyone-can-use-english/actions/workflows/test-enjoy-app.yml/badge.svg?sanitize=true" alt="Test Enjoy App" /&gt;&lt;/a&gt; &lt;a href="https://github.com/ZuodaoTech/everyone-can-use-english/actions/workflows/release-enjoy-app.yml"&gt;&lt;img src="https://github.com/ZuodaoTech/everyone-can-use-english/actions/workflows/release-enjoy-app.yml/badge.svg?sanitize=true" alt="Release Enjoy App" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fenjoy.bot%2Fapi%2Fconfig%2Fapp_version&amp;amp;query=%24.version&amp;amp;label=Latest&amp;amp;link=https%3A%2F%2F1000h.org%2Fenjoy-app%2Finstall.html" alt="Latest Version" /&gt; &lt;img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fenjoy.bot%2Fapi%2Fbadges%2Frecordings" alt="Recording Duration" /&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;网页版&lt;/h2&gt; 
+&lt;p&gt;Enjoy 网页版已经上线，可访问 &lt;a href="https://enjoy.bot"&gt;https://enjoy.bot&lt;/a&gt; 直接使用。&lt;/p&gt; 
+&lt;div align="center" style="display:flex;overflow:auto;gap:10px;"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/web-audios.jpg" alt="Audios" width="300" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/web-add-audio.jpg" alt="Add Audio" width="300" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/web-audio-shadow.jpg" alt="Shadow" width="300" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/web-audio-assessment.jpg" alt="Assessment" width="300" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/web-new-chat.jpg" alt="New Chat" width="300" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/web-chat.jpg" alt="Chat" width="300" /&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;桌面版安装及使用&lt;/h2&gt; 
+&lt;p&gt;下载及使用相关说明，请参阅 &lt;a href="https://1000h.org/enjoy-app/"&gt;文档&lt;/a&gt;。&lt;/p&gt; 
+&lt;h2&gt;预览&lt;/h2&gt; 
+&lt;div align="center" style="display:flex;overflow:auto;"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/home.png" alt="Home" width="800" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/shadow.png" alt="Home" width="800" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/assessment.png" alt="Home" width="800" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/document.png" alt="Home" width="800" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/enjoy/snapshots/chat.png" alt="Home" width="800" /&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;桌面版开发&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn install
+yarn enjoy:start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;相关阅读&lt;/h2&gt; 
+&lt;h3&gt;一千小时（2024）&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://1000h.org/intro.html"&gt;简要说明&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://1000h.org/training-tasks/kick-off.html"&gt;训练任务&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://1000h.org/sounds-of-american-english/0-intro.html"&gt;语音塑造&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://1000h.org/in-the-brain/01-inifinite.html"&gt;大脑内部&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://1000h.org/self-training/00-intro.html"&gt;自我训练&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;人人都能用英语（2010）&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/README.md"&gt;简介&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/chapter1.md"&gt;第一章：起点&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/chapter2.md"&gt;第二章：口语&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/chapter3.md"&gt;第三章：语音&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/chapter4.md"&gt;第四章：朗读&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/chapter5.md"&gt;第五章：词典&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/chapter6.md"&gt;第六章：语法&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/chapter7.md"&gt;第七章：精读&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/chapter8.md"&gt;第八章：叮嘱&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ZuodaoTech/everyone-can-use-english/main/book/end.md"&gt;后记&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;常见问题&lt;/h2&gt; 
+&lt;p&gt;请查询 &lt;a href="https://1000h.org/enjoy-app/faq.html"&gt;文档 FAQ&lt;/a&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>kamranahmedse/developer-roadmap</title>
+      <link>https://github.com/kamranahmedse/developer-roadmap</link>
+      <description>&lt;p&gt;Interactive roadmaps, guides and other educational content to help developers grow in their careers.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://roadmap.sh/"&gt;&lt;img src="https://raw.githubusercontent.com/kamranahmedse/developer-roadmap/master/public/img/brand.png" height="128" /&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;h2 align="center"&gt;&lt;a href="https://roadmap.sh"&gt;roadmap.sh&lt;/a&gt;&lt;/h2&gt; 
+&lt;p align="center"&gt;Community driven roadmaps, articles and resources for developers&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p align="center"&gt; &lt;a href="https://roadmap.sh/roadmaps"&gt; &lt;img src="https://img.shields.io/badge/%E2%9C%A8-Roadmaps%20-0a0a0a.svg?style=flat&amp;amp;colorA=0a0a0a" alt="roadmaps" /&gt; &lt;/a&gt; &lt;a href="https://roadmap.sh/best-practices"&gt; &lt;img src="https://img.shields.io/badge/%E2%9C%A8-Best%20Practices-0a0a0a.svg?style=flat&amp;amp;colorA=0a0a0a" alt="best practices" /&gt; &lt;/a&gt; &lt;a href="https://roadmap.sh/questions"&gt; &lt;img src="https://img.shields.io/badge/%E2%9C%A8-Questions-0a0a0a.svg?style=flat&amp;amp;colorA=0a0a0a" alt="videos" /&gt; &lt;/a&gt; &lt;a href="https://www.youtube.com/channel/UCA0H2KIWgWTwpTFjSxp0now?sub_confirmation=1"&gt; &lt;img src="https://img.shields.io/badge/%E2%9C%A8-YouTube%20Channel-0a0a0a.svg?style=flat&amp;amp;colorA=0a0a0a" alt="roadmaps" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;p&gt;&lt;img src="https://i.imgur.com/waxVImv.png" alt="" /&gt;&lt;/p&gt; 
+&lt;p&gt;Roadmaps are now interactive, you can click the nodes to read more about the topics.&lt;/p&gt; 
+&lt;h3&gt;&lt;a href="https://roadmap.sh"&gt;View all Roadmaps&lt;/a&gt; &amp;nbsp;·&amp;nbsp; &lt;a href="https://roadmap.sh/best-practices"&gt;Best Practices&lt;/a&gt; &amp;nbsp;·&amp;nbsp; &lt;a href="https://roadmap.sh/questions"&gt;Questions&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;img src="https://i.imgur.com/waxVImv.png" alt="" /&gt;&lt;/p&gt; 
+&lt;p&gt;Here is the list of available roadmaps with more being actively worked upon.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Have a look at the &lt;a href="https://roadmap.sh/get-started"&gt;get started&lt;/a&gt; page that might help you pick up a path.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/frontend"&gt;Frontend Roadmap&lt;/a&gt; / &lt;a href="https://roadmap.sh/frontend?r=frontend-beginner"&gt;Frontend Beginner Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/backend"&gt;Backend Roadmap&lt;/a&gt; / &lt;a href="https://roadmap.sh/backend?r=backend-beginner"&gt;Backend Beginner Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/devops"&gt;DevOps Roadmap&lt;/a&gt; / &lt;a href="https://roadmap.sh/devops?r=devops-beginner"&gt;DevOps Beginner Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/full-stack"&gt;Full Stack Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/git-github"&gt;Git and GitHub&lt;/a&gt; / &lt;a href="https://roadmap.sh/git-github?r=git-github-beginner"&gt;Git and GitHub Beginner&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/api-design"&gt;API Design Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/computer-science"&gt;Computer Science Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/datastructures-and-algorithms"&gt;Data Structures and Algorithms Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/ai-data-scientist"&gt;AI and Data Scientist Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/ai-engineer"&gt;AI Engineer Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/aws"&gt;AWS Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/cloudflare"&gt;Cloudflare Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/linux"&gt;Linux Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/terraform"&gt;Terraform Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/data-analyst"&gt;Data Analyst Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/bi-analyst"&gt;BI Analyst Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/data-engineer"&gt;Data Engineer Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/machine-learning"&gt;Machine Learning Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/mlops"&gt;MLOps Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/product-manager"&gt;Product Manager Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/engineering-manager"&gt;Engineering Manager Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/qa"&gt;QA Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/python"&gt;Python Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/software-architect"&gt;Software Architect Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/game-developer"&gt;Game Developer Roadmap&lt;/a&gt; / &lt;a href="https://roadmap.sh/server-side-game-developer"&gt;Server Side Game Developer&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/software-design-architecture"&gt;Software Design and Architecture Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/javascript"&gt;JavaScript Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/typescript"&gt;TypeScript Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/cpp"&gt;C++ Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/react"&gt;React Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/nextjs"&gt;Next.js Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/react-native"&gt;React Native Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/vue"&gt;Vue Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/angular"&gt;Angular Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/nodejs"&gt;Node.js Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/php"&gt;PHP Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/graphql"&gt;GraphQL Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/android"&gt;Android Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/ios"&gt;iOS Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/flutter"&gt;Flutter Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/golang"&gt;Go Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/rust"&gt;Rust Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/java"&gt;Java Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/kotlin"&gt;Kotlin Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/spring-boot"&gt;Spring Boot Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/design-system"&gt;Design System Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/postgresql-dba"&gt;PostgreSQL Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/sql"&gt;SQL Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/redis"&gt;Redis Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/blockchain"&gt;Blockchain Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/aspnet-core"&gt;ASP.NET Core Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/system-design"&gt;System Design Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/kubernetes"&gt;Kubernetes Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/cyber-security"&gt;Cyber Security Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/mongodb"&gt;MongoDB Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/ux-design"&gt;UX Design Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/docker"&gt;Docker Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/prompt-engineering"&gt;Prompt Engineering Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/technical-writer"&gt;Technical Writer Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/devrel"&gt;DevRel Engineer Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/ai-red-teaming"&gt;AI Red Teaming Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/ai-agents"&gt;AI Agents Roadmap&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;There are also interactive best practices:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/best-practices/backend-performance"&gt;Backend Performance Best Practices&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/best-practices/frontend-performance"&gt;Frontend Performance Best Practices&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/best-practices/code-review"&gt;Code Review Best Practices&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/best-practices/api-security"&gt;API Security Best Practices&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/best-practices/aws"&gt;AWS Best Practices&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;..and questions to help you test, rate and improve your knowledge&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/questions/javascript"&gt;JavaScript Questions&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/questions/nodejs"&gt;Node.js Questions&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/questions/react"&gt;React Questions&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/questions/backend"&gt;Backend Questions&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.sh/questions/frontend"&gt;Frontend Questions&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;img src="https://i.imgur.com/waxVImv.png" alt="" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Share with the community&lt;/h2&gt; 
+&lt;p&gt;Please consider sharing a post about &lt;a href="https://roadmap.sh"&gt;roadmap.sh&lt;/a&gt; and the value it provides. It really does help!&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://reddit.com/submit?url=https://roadmap.sh&amp;amp;title=Interactive%20roadmaps,%20guides%20and%20other%20educational%20content%20for%20Developers"&gt;&lt;img src="https://img.shields.io/badge/share%20on-reddit-red?logo=reddit" alt="GitHub Repo stars" /&gt;&lt;/a&gt; &lt;a href="https://news.ycombinator.com/submitlink?u=https://roadmap.sh"&gt;&lt;img src="https://img.shields.io/badge/share%20on-hacker%20news-orange?logo=ycombinator" alt="GitHub Repo stars" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/share?url=https://roadmap.sh&amp;amp;text=Interactive%20roadmaps,%20guides%20and%20other%20educational%20content%20for%20Developers"&gt;&lt;img src="https://img.shields.io/badge/share%20on-twitter-03A9F4?logo=twitter" alt="GitHub Repo stars" /&gt;&lt;/a&gt; &lt;a href="https://www.facebook.com/sharer/sharer.php?u=https://roadmap.sh"&gt;&lt;img src="https://img.shields.io/badge/share%20on-facebook-1976D2?logo=facebook" alt="GitHub Repo stars" /&gt;&lt;/a&gt; &lt;a href="https://www.linkedin.com/shareArticle?url=https://roadmap.sh&amp;amp;title=Interactive%20roadmaps,%20guides%20and%20other%20educational%20content%20for%20Developers"&gt;&lt;img src="https://img.shields.io/badge/share%20on-linkedin-3949AB?logo=linkedin" alt="GitHub Repo stars" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;p&gt;Clone the repository, install the dependencies and start the application&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone git@github.com:kamranahmedse/developer-roadmap.git
+cd developer-roadmap
+npm install
+npm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Note: use the &lt;code&gt;depth&lt;/code&gt; parameter to reduce the clone size and speed up the clone.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;git clone --depth=1 https://github.com/kamranahmedse/developer-roadmap.git
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Contribution&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Have a look at &lt;a href="https://raw.githubusercontent.com/kamranahmedse/developer-roadmap/master/contributing.md"&gt;contribution docs&lt;/a&gt; for how to update any of the roadmaps&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Add content to roadmaps&lt;/li&gt; 
+ &lt;li&gt;Add new roadmaps&lt;/li&gt; 
+ &lt;li&gt;Suggest changes to existing roadmaps&lt;/li&gt; 
+ &lt;li&gt;Discuss ideas in issues&lt;/li&gt; 
+ &lt;li&gt;Spread the word&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Thanks to all contributors ❤&lt;/h2&gt; 
+&lt;a href="https://github.com/kamranahmedse/developer-roadmap/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=kamranahmedse/developer-roadmap" /&gt; &lt;/a&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Have a look at the &lt;a href="https://raw.githubusercontent.com/kamranahmedse/developer-roadmap/master/license"&gt;license file&lt;/a&gt; for details&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CodebuffAI/codebuff</title>
+      <link>https://github.com/CodebuffAI/codebuff</link>
+      <description>&lt;p&gt;Generate code from the terminal!&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Codebuff&lt;/h1&gt; 
+&lt;p&gt;Codebuff is an &lt;strong&gt;open-source AI coding assistant&lt;/strong&gt; that edits your codebase through natural language instructions. Instead of using one model for everything, it coordinates specialized agents that work together to understand your project and make precise changes.&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/CodebuffAI/codebuff/main/assets/codebuff-vs-claude-code.png" alt="Codebuff vs Claude Code" width="400" /&gt; 
+&lt;/div&gt; 
+&lt;p&gt;Codebuff beats Claude Code at 61% vs 53% on &lt;a href="https://raw.githubusercontent.com/CodebuffAI/codebuff/main/evals/README.md"&gt;our evals&lt;/a&gt; across 175+ coding tasks over multiple open-source repos that simulate real-world tasks.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/CodebuffAI/codebuff/main/assets/demo.gif" alt="Codebuff Demo" /&gt;&lt;/p&gt; 
+&lt;h2&gt;How it works&lt;/h2&gt; 
+&lt;p&gt;When you ask Codebuff to "add authentication to my API," it might invoke:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;A &lt;strong&gt;File Explorer Agent&lt;/strong&gt; to scan your codebase to understand the architecture and find relevant files&lt;/li&gt; 
+ &lt;li&gt;A &lt;strong&gt;Planner Agent&lt;/strong&gt; to plan which files need changes and in what order&lt;/li&gt; 
+ &lt;li&gt;An &lt;strong&gt;Editor Agent&lt;/strong&gt; to make precise edits&lt;/li&gt; 
+ &lt;li&gt;A &lt;strong&gt;Reviewer Agent&lt;/strong&gt; to validate changes&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;div align="center"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/CodebuffAI/codebuff/main/assets/multi-agents.png" alt="Codebuff Multi-Agents" width="250" /&gt; 
+&lt;/div&gt; 
+&lt;p&gt;This multi-agent approach gives you better context understanding, more accurate edits, and fewer errors compared to single-model tools.&lt;/p&gt; 
+&lt;h2&gt;CLI: Install and start coding&lt;/h2&gt; 
+&lt;p&gt;Install:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install -g codebuff
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd your-project
+codebuff
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then just tell Codebuff what you want and it handles the rest:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;"Fix the SQL injection vulnerability in user registration"&lt;/li&gt; 
+ &lt;li&gt;"Add rate limiting to all API endpoints"&lt;/li&gt; 
+ &lt;li&gt;"Refactor the database connection code for better performance"&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Codebuff will find the right files, makes changes across your codebase, and runs tests to make sure nothing breaks.&lt;/p&gt; 
+&lt;h2&gt;Create custom agents&lt;/h2&gt; 
+&lt;p&gt;To get started building your own agents, run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;codebuff init-agents
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can write agent definition files that give you maximum control over agent behavior.&lt;/p&gt; 
+&lt;p&gt;Implement your workflows by specifying tools, which agents can be spawned, and prompts. We even have TypeScript generators for more programmatic control.&lt;/p&gt; 
+&lt;p&gt;For example, here's a &lt;code&gt;git-committer&lt;/code&gt; agent that creates git commits based on the current git state. Notice that it runs &lt;code&gt;git diff&lt;/code&gt; and &lt;code&gt;git log&lt;/code&gt; to analyze changes, but then hands control over to the LLM to craft a meaningful commit message and perform the actual commit.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-typescript"&gt;export default {
+  id: 'git-committer',
+  displayName: 'Git Committer',
+  model: 'openai/gpt-5-nano',
+  toolNames: ['read_files', 'run_terminal_command', 'end_turn'],
+
+  instructionsPrompt:
+    'You create meaningful git commits by analyzing changes, reading relevant files for context, and crafting clear commit messages that explain the "why" behind changes.',
+
+  async *handleSteps() {
+    // Analyze what changed
+    yield { tool: 'run_terminal_command', command: 'git diff' }
+    yield { tool: 'run_terminal_command', command: 'git log --oneline -5' }
+
+    // Stage files and create commit with good message
+    yield 'STEP_ALL'
+  },
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;SDK: Run agents in production&lt;/h2&gt; 
+&lt;p&gt;Install the &lt;a href="https://www.npmjs.com/package/@codebuff/sdk"&gt;SDK package&lt;/a&gt; -- note this is different than the CLI codebuff package.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install @codebuff/sdk
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Import the client and run agents!&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-typescript"&gt;import { CodebuffClient } from '@codebuff/sdk'
+
+// 1. Initialize the client
+const client = new CodebuffClient({
+  apiKey: 'your-api-key',
+  cwd: '/path/to/your/project',
+  onError: (error) =&amp;gt; console.error('Codebuff error:', error.message),
+})
+
+// 2. Do a coding task...
+const result = await client.run({
+  agent: 'base', // Codebuff's base coding agent
+  prompt: 'Add comprehensive error handling to all API endpoints',
+  handleEvent: (event) =&amp;gt; {
+    console.log('Progress', event)
+  },
+})
+
+// 3. Or, run a custom agent!
+const myCustomAgent: AgentDefinition = {
+  id: 'greeter',
+  displayName: 'Greeter',
+  model: 'openai/gpt-5',
+  instructionsPrompt: 'Say hello!',
+}
+await client.run({
+  agent: 'greeter',
+  agentDefinitions: [myCustomAgent],
+  prompt: 'My name is Bob.',
+  customToolDefinitions: [], // Add custom tools too!
+  handleEvent: (event) =&amp;gt; {
+    console.log('Progress', event)
+  },
+})
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Learn more about the SDK &lt;a href="https://www.npmjs.com/package/@codebuff/sdk"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Why choose Codebuff&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Deep customizability&lt;/strong&gt;: Create sophisticated agent workflows with TypeScript generators that mix AI generation with programmatic control. Define custom agents that spawn subagents, implement conditional logic, and orchestrate complex multi-step processes that adapt to your specific use cases.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Any model on OpenRouter&lt;/strong&gt;: Unlike Claude Code which locks you into Anthropic's models, Codebuff supports any model available on &lt;a href="https://openrouter.ai/models"&gt;OpenRouter&lt;/a&gt; - from Claude and GPT to specialized models like Qwen, DeepSeek, and others. Switch models for different tasks or use the latest releases without waiting for platform updates.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Reuse any published agent&lt;/strong&gt;: Compose existing &lt;a href="https://www.codebuff.com/agents"&gt;published agents&lt;/a&gt; to get a leg up. Codebuff agents are the new MCP!&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Fully customizable SDK&lt;/strong&gt;: Build Codebuff's capabilities directly into your applications with a complete TypeScript SDK. Create custom tools, integrate with your CI/CD pipeline, build AI-powered development environments, or embed intelligent coding assistance into your products.&lt;/p&gt; 
+&lt;h2&gt;Contributing to Codebuff&lt;/h2&gt; 
+&lt;p&gt;We ❤️ contributions from the community - whether you're fixing bugs, tweaking our agents, or improving documentation.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Want to contribute?&lt;/strong&gt; Check out our &lt;a href="https://raw.githubusercontent.com/CodebuffAI/codebuff/main/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt; to get started.&lt;/p&gt; 
+&lt;p&gt;Some ways you can help:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🐛 &lt;strong&gt;Fix bugs&lt;/strong&gt; or add features&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;strong&gt;Create specialized agents&lt;/strong&gt; and publish them to the Agent Store&lt;/li&gt; 
+ &lt;li&gt;📚 &lt;strong&gt;Improve documentation&lt;/strong&gt; or write tutorials&lt;/li&gt; 
+ &lt;li&gt;💡 &lt;strong&gt;Share ideas&lt;/strong&gt; in our &lt;a href="https://github.com/CodebuffAI/codebuff/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Get started&lt;/h2&gt; 
+&lt;h3&gt;Install&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;CLI&lt;/strong&gt;: &lt;code&gt;npm install -g codebuff&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;SDK&lt;/strong&gt;: &lt;code&gt;npm install @codebuff/sdk&lt;/code&gt;&lt;/p&gt; 
+&lt;h3&gt;Resources&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Documentation&lt;/strong&gt;: &lt;a href="https://codebuff.com/docs"&gt;codebuff.com/docs&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Community&lt;/strong&gt;: &lt;a href="https://codebuff.com/discord"&gt;Discord&lt;/a&gt; - Join our friendly community&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Issues &amp;amp; Ideas&lt;/strong&gt;: &lt;a href="https://github.com/CodebuffAI/codebuff/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Contributing&lt;/strong&gt;: &lt;a href="https://raw.githubusercontent.com/CodebuffAI/codebuff/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; - Start here to contribute!&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Support&lt;/strong&gt;: &lt;a href="mailto:support@codebuff.com"&gt;support@codebuff.com&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>n8n-io/n8n</title>
+      <link>https://github.com/n8n-io/n8n</link>
+      <description>&lt;p&gt;Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png" alt="Banner image" /&gt;&lt;/p&gt; 
+&lt;h1&gt;n8n - Secure Workflow Automation for Technical Teams&lt;/h1&gt; 
+&lt;p&gt;n8n is a workflow automation platform that gives technical teams the flexibility of code with the speed of no-code. With 400+ integrations, native AI capabilities, and a fair-code license, n8n lets you build powerful automations while maintaining full control over your data and deployments.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-screenshot-readme.png" alt="n8n.io - Screenshot" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Key Capabilities&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Code When You Need It&lt;/strong&gt;: Write JavaScript/Python, add npm packages, or use the visual interface&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;AI-Native Platform&lt;/strong&gt;: Build AI agent workflows based on LangChain with your own data and models&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Full Control&lt;/strong&gt;: Self-host with our fair-code license or use our &lt;a href="https://app.n8n.cloud/login"&gt;cloud offering&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Enterprise-Ready&lt;/strong&gt;: Advanced permissions, SSO, and air-gapped deployments&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Active Community&lt;/strong&gt;: 400+ integrations and 900+ ready-to-use &lt;a href="https://n8n.io/workflows"&gt;templates&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;p&gt;Try n8n instantly with &lt;a href="https://docs.n8n.io/hosting/installation/npm/"&gt;npx&lt;/a&gt; (requires &lt;a href="https://nodejs.org/en/"&gt;Node.js&lt;/a&gt;):&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;npx n8n
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Or deploy with &lt;a href="https://docs.n8n.io/hosting/installation/docker/"&gt;Docker&lt;/a&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;docker volume create n8n_data
+docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Access the editor at &lt;a href="http://localhost:5678"&gt;http://localhost:5678&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Resources&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;📚 &lt;a href="https://docs.n8n.io"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🔧 &lt;a href="https://n8n.io/integrations"&gt;400+ Integrations&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;💡 &lt;a href="https://n8n.io/workflows"&gt;Example Workflows&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;a href="https://docs.n8n.io/langchain/"&gt;AI &amp;amp; LangChain Guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;👥 &lt;a href="https://community.n8n.io"&gt;Community Forum&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;📖 &lt;a href="https://community.n8n.io/c/tutorials/28"&gt;Community Tutorials&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;Need help? Our community forum is the place to get support and connect with other users: &lt;a href="https://community.n8n.io"&gt;community.n8n.io&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;n8n is &lt;a href="https://faircode.io"&gt;fair-code&lt;/a&gt; distributed under the &lt;a href="https://github.com/n8n-io/n8n/raw/master/LICENSE.md"&gt;Sustainable Use License&lt;/a&gt; and &lt;a href="https://github.com/n8n-io/n8n/raw/master/LICENSE_EE.md"&gt;n8n Enterprise License&lt;/a&gt;.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Source Available&lt;/strong&gt;: Always visible source code&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Self-Hostable&lt;/strong&gt;: Deploy anywhere&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Extensible&lt;/strong&gt;: Add your own nodes and functionality&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;a href="mailto:license@n8n.io"&gt;Enterprise licenses&lt;/a&gt; available for additional features and support.&lt;/p&gt; 
+&lt;p&gt;Additional information about the license model can be found in the &lt;a href="https://docs.n8n.io/reference/license/"&gt;docs&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Found a bug 🐛 or have a feature idea ✨? Check our &lt;a href="https://github.com/n8n-io/n8n/raw/master/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt; to get started.&lt;/p&gt; 
+&lt;h2&gt;Join the Team&lt;/h2&gt; 
+&lt;p&gt;Want to shape the future of automation? Check out our &lt;a href="https://n8n.io/careers"&gt;job posts&lt;/a&gt; and join our team!&lt;/p&gt; 
+&lt;h2&gt;What does n8n mean?&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Short answer:&lt;/strong&gt; It means "nodemation" and is pronounced as n-eight-n.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Long answer:&lt;/strong&gt; "I get that question quite often (more often than I expected) so I decided it is probably best to answer it here. While looking for a good name for the project with a free domain I realized very quickly that all the good ones I could think of were already taken. So, in the end, I chose nodemation. 'node-' in the sense that it uses a Node-View and that it uses Node.js and '-mation' for 'automation' which is what the project is supposed to help with. However, I did not like how long the name was and I could not imagine writing something that long every time in the CLI. That is when I then ended up on 'n8n'." - &lt;strong&gt;Jan Oberhauser, Founder and CEO, n8n.io&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>coder/code-server</title>
+      <link>https://github.com/coder/code-server</link>
+      <description>&lt;p&gt;VS Code in the browser&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;code-server&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/coder/code-server/discussions"&gt;&lt;img src="https://img.shields.io/badge/%20GitHub-%20Discussions-gray.svg?longCache=true&amp;amp;logo=github&amp;amp;colorB=purple" alt="&amp;quot;GitHub Discussions&amp;quot;" /&gt;&lt;/a&gt; &lt;a href="https://coder.com/community"&gt;&lt;img src="https://img.shields.io/badge/join-us%20on%20slack-gray.svg?longCache=true&amp;amp;logo=slack&amp;amp;colorB=brightgreen" alt="&amp;quot;Join us on Slack&amp;quot;" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/coderhq"&gt;&lt;img src="https://img.shields.io/twitter/follow/CoderHQ?label=%40CoderHQ&amp;amp;style=social" alt="Twitter Follow" /&gt;&lt;/a&gt; &lt;a href="https://discord.com/invite/coder"&gt;&lt;img src="https://img.shields.io/discord/747933592273027093" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://codecov.io/gh/coder/code-server"&gt;&lt;img src="https://codecov.io/gh/coder/code-server/branch/main/graph/badge.svg?token=5iM9farjnC" alt="codecov" /&gt;&lt;/a&gt; &lt;a href="https://coder.com/docs/code-server/latest"&gt;&lt;img src="https://img.shields.io/static/v1?label=Docs&amp;amp;message=see%20latest&amp;amp;color=blue" alt="See latest" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Run &lt;a href="https://github.com/Microsoft/vscode"&gt;VS Code&lt;/a&gt; on any machine anywhere and access it in the browser.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/coder/code-server/main/assets/screenshot-1.png" alt="Screenshot" /&gt; &lt;img src="https://raw.githubusercontent.com/coder/code-server/main/assets/screenshot-2.png" alt="Screenshot" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Highlights&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Code on any device with a consistent development environment&lt;/li&gt; 
+ &lt;li&gt;Use cloud servers to speed up tests, compilations, downloads, and more&lt;/li&gt; 
+ &lt;li&gt;Preserve battery life when you're on the go; all intensive tasks run on your server&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Requirements&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://coder.com/docs/code-server/latest/requirements"&gt;requirements&lt;/a&gt; for minimum specs, as well as instructions on how to set up a Google VM on which you can install code-server.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; Linux machine with WebSockets enabled, 1 GB RAM, and 2 vCPUs&lt;/p&gt; 
+&lt;h2&gt;Getting started&lt;/h2&gt; 
+&lt;p&gt;There are five ways to get started:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Using the &lt;a href="https://github.com/coder/code-server/raw/main/install.sh"&gt;install script&lt;/a&gt;, which automates most of the process. The script uses the system package manager if possible.&lt;/li&gt; 
+ &lt;li&gt;Manually &lt;a href="https://coder.com/docs/code-server/latest/install"&gt;installing code-server&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Deploy code-server to your team with &lt;a href="https://cdr.co/coder-github"&gt;coder/coder&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Using our one-click buttons and guides to &lt;a href="https://github.com/coder/deploy-code-server"&gt;deploy code-server to a cloud provider&lt;/a&gt; ⚡&lt;/li&gt; 
+ &lt;li&gt;Using the &lt;a href="https://github.com/coder/devcontainer-features/raw/main/src/code-server/README.md"&gt;code-server feature for devcontainers&lt;/a&gt;, if you already use devcontainers in your project.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;If you use the install script, you can preview what occurs during the install process:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -fsSL https://code-server.dev/install.sh | sh -s -- --dry-run
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;To install, run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -fsSL https://code-server.dev/install.sh | sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;When done, the install script prints out instructions for running and starting code-server.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; To manage code-server for a team on your infrastructure, see: &lt;a href="https://cdr.co/coder-github"&gt;coder/coder&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;We also have an in-depth &lt;a href="https://coder.com/docs/code-server/latest/guide"&gt;setup and configuration&lt;/a&gt; guide.&lt;/p&gt; 
+&lt;h2&gt;Questions?&lt;/h2&gt; 
+&lt;p&gt;See answers to &lt;a href="https://coder.com/docs/code-server/latest/FAQ"&gt;frequently asked questions&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Want to help?&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://coder.com/docs/code-server/latest/CONTRIBUTING"&gt;Contributing&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;h2&gt;Hiring&lt;/h2&gt; 
+&lt;p&gt;Interested in &lt;a href="https://coder.com/careers"&gt;working at Coder&lt;/a&gt;? Check out &lt;a href="https://coder.com/careers#openings"&gt;our open positions&lt;/a&gt;!&lt;/p&gt; 
+&lt;h2&gt;For Teams&lt;/h2&gt; 
+&lt;p&gt;We develop &lt;a href="https://cdr.co/coder-github"&gt;coder/coder&lt;/a&gt; to help teams to adopt remote development.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>firebase/genkit</title>
+      <link>https://github.com/firebase/genkit</link>
+      <description>&lt;p&gt;An open source framework for building AI-powered apps with familiar code-centric patterns. Genkit makes it easy to develop, integrate, and test AI features with observability and evaluations. Genkit works with various models and platforms.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/firebase/genkit/main/docs/resources/genkit-logo-dark.png#gh-dark-mode-only" alt="Genkit logo" title="Genkit" /&gt; &lt;img src="https://raw.githubusercontent.com/firebase/genkit/main/docs/resources/genkit-logo.png#gh-light-mode-only" alt="Genkit logo" title="Genkit" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://genkit.dev"&gt;Genkit&lt;/a&gt; is an open-source framework for building full-stack AI-powered applications, built and used in production by Google's Firebase. It provides SDKs for multiple programming languages with varying levels of stability:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;JavaScript/TypeScript&lt;/strong&gt;: Production-ready with full feature support&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Go&lt;/strong&gt;: Production-ready with full feature support&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Python (Alpha)&lt;/strong&gt;: Early development with core functionality&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;It offers a unified interface for integrating AI models from providers like &lt;a href="https://genkit.dev/docs/plugins/google-genai"&gt;Google&lt;/a&gt;, &lt;a href="https://genkit.dev/docs/plugins/openai"&gt;OpenAI&lt;/a&gt;, &lt;a href="https://thefireco.github.io/genkit-plugins/docs/plugins/genkitx-anthropic"&gt;Anthropic&lt;/a&gt;, &lt;a href="https://genkit.dev/docs/plugins/ollama/"&gt;Ollama&lt;/a&gt;, and more. Rapidly build and deploy production-ready chatbots, automations, and recommendation systems using streamlined APIs for multimodal content, structured outputs, tool calling, and agentic workflows.&lt;/p&gt; 
+&lt;p&gt;Get started with just a few lines of code:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-ts"&gt;import { genkit } from 'genkit';
+import { googleAI } from '@genkit-ai/google-genai';
+
+const ai = genkit({ plugins: [googleAI()] });
+
+const { text } = await ai.generate({
+    model: googleAI.model('gemini-2.5-flash'),
+    prompt: 'Why is Firebase awesome?'
+});
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Explore &amp;amp; build with Genkit&lt;/h2&gt; 
+&lt;p&gt;Play with AI sample apps, with visualizations of the Genkit code that powers them, at no cost to you.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://examples.genkit.dev"&gt;Explore Genkit by Example&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Key capabilities&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Broad AI model support&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Use a unified interface to integrate with hundreds of models from providers like &lt;a href="https://genkit.dev/docs/plugins/google-genai"&gt;Google&lt;/a&gt;, &lt;a href="https://genkit.dev/docs/plugins/openai"&gt; OpenAI&lt;/a&gt;, &lt;a href="https://thefireco.github.io/genkit-plugins/docs/plugins/genkitx-anthropic"&gt; Anthropic&lt;/a&gt;, &lt;a href="https://genkit.dev/docs/plugins/ollama"&gt;Ollama&lt;/a&gt;, and more. Explore, compare, and use the best models for your needs.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Simplified AI development&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Use streamlined APIs to build AI features with &lt;a href="https://genkit.dev/docs/models#structured-output"&gt; structured output&lt;/a&gt;, &lt;a href="https://genkit.dev/docs/tool-calling"&gt;agentic tool calling&lt;/a&gt;, &lt;a href="https://genkit.dev/docs/rag"&gt;context-aware generation&lt;/a&gt;, &lt;a href="https://genkit.dev/docs/models#multimodal"&gt;multi-modal input/output&lt;/a&gt;, and more. Genkit handles the complexity of AI development, so you can build and iterate faster.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Web and mobile ready&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Integrate seamlessly with frameworks and platforms including Next.js, React, Angular, iOS, Android, using purpose-built &lt;a href="https://genkit.dev/docs/firebase"&gt;client SDKs&lt;/a&gt; and helpers.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Cross-language support&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Build with the language that best fits your project. Genkit provides SDKs for JavaScript/TypeScript, Go, and Python (Alpha) with consistent APIs and capabilities across all supported languages.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Deploy anywhere&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Deploy AI logic to any environment that supports your chosen programming language, such as &lt;a href="https://genkit.dev/docs/firebase"&gt;Cloud Functions for Firebase&lt;/a&gt;, &lt;a href="https://genkit.dev/docs/cloud-run"&gt;Google Cloud Run&lt;/a&gt;, or &lt;a href="https://genkit.dev/docs/deploy-node"&gt;third-party platforms&lt;/a&gt;, with or without Google services.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Developer tools&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Accelerate AI development with a purpose-built, local &lt;a href="https://genkit.dev/docs/devtools"&gt;CLI and Developer UI&lt;/a&gt;. Test prompts and flows against individual inputs or datasets, compare outputs from different models, debug with detailed execution traces, and use immediate visual feedback to iterate rapidly on prompts.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Production monitoring&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Ship AI features with confidence using comprehensive production monitoring. Track model performance, and request volumes, latency, and error rates in a &lt;a href="https://genkit.dev/docs/observability/getting-started"&gt; purpose-built dashboard&lt;/a&gt;. Identify issues quickly with detailed observability metrics, and ensure your AI features meet quality and performance targets in real-world usage.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;How does it work?&lt;/h2&gt; 
+&lt;p&gt;Genkit simplifies AI integration with an open-source SDK and unified APIs that work across various model providers and programming languages. It abstracts away complexity so you can focus on delivering great user experiences.&lt;/p&gt; 
+&lt;p&gt;Some key features offered by Genkit include:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://genkit.dev/docs/models"&gt;Text and image generation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://genkit.dev/docs/models#structured-output"&gt;Type-safe, structured data generation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://genkit.dev/docs/tool-calling"&gt;Tool calling&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://genkit.dev/docs/dotprompt"&gt;Prompt templating&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://genkit.dev/docs/chat"&gt;Persisted chat interfaces&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://genkit.dev/docs/flows"&gt;AI workflows&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://genkit.dev/docs/rag"&gt;AI-powered data retrieval (RAG)&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Genkit is designed for server-side deployment in multiple language environments, and also provides seamless client-side integration through dedicated helpers and &lt;a href="https://genkit.dev/docs/firebase"&gt;client SDKs&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Implementation path&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;span&gt;1&lt;/span&gt;&lt;/td&gt; 
+   &lt;td&gt;Choose your language and model provider&lt;/td&gt; 
+   &lt;td&gt;Select the Genkit SDK for your preferred language (JavaScript/TypeScript, Go, or Python (Alpha)). Choose a model provider like &lt;a href="https://genkit.dev/docs/plugins/google-genai"&gt;Google Gemini&lt;/a&gt; or Anthropic, and get an API key. Some providers, like &lt;a href="https://genkit.dev/docs/plugins/vertex-ai"&gt;Vertex AI&lt;/a&gt;, may rely on a different means of authentication.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;span&gt;2&lt;/span&gt;&lt;/td&gt; 
+   &lt;td&gt;Install the SDK and initialize&lt;/td&gt; 
+   &lt;td&gt;Install the Genkit SDK, model-provider package of your choice, and the Genkit CLI. Import the Genkit and provider packages and initialize Genkit with the provider API key.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;span&gt;3&lt;/span&gt;&lt;/td&gt; 
+   &lt;td&gt;Write and test AI features&lt;/td&gt; 
+   &lt;td&gt;Use the Genkit SDK to build AI features for your use case, from basic text generation to complex multi-step workflows and agents. Use the CLI and Developer UI to help you rapidly test and iterate.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;span&gt;4&lt;/span&gt;&lt;/td&gt; 
+   &lt;td&gt;Deploy and monitor&lt;/td&gt; 
+   &lt;td&gt;Deploy your AI features to Firebase, Google Cloud Run, or any environment that supports your chosen programming language. Integrate them into your app, and monitor them in production in the Firebase console.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;Get started&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://genkit.dev/docs/get-started"&gt;JavaScript/TypeScript quickstart&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://genkit.dev/go/docs/get-started-go"&gt;Go quickstart&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://genkit.dev/python/docs/get-started/"&gt;Python quickstart&lt;/a&gt; (Alpha)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Development tools&lt;/h2&gt; 
+&lt;p&gt;Genkit provides a CLI and a local UI to streamline your AI development workflow.&lt;/p&gt; 
+&lt;h3&gt;CLI&lt;/h3&gt; 
+&lt;p&gt;The Genkit CLI includes commands for running and evaluating your Genkit functions (flows) and collecting telemetry and logs.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Install:&lt;/strong&gt; &lt;code&gt;npm install -g genkit-cli&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Run a command, wrapped with telemetry, a interactive developer UI, etc:&lt;/strong&gt; &lt;code&gt;genkit start -- &amp;lt;command to run your code&amp;gt;&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Developer UI&lt;/h3&gt; 
+&lt;p&gt;The Genkit developer UI is a local interface for testing, debugging, and iterating on your AI application.&lt;/p&gt; 
+&lt;p&gt;Key features:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Run:&lt;/strong&gt; Execute and experiment with Genkit flows, prompts, queries, and more in dedicated playgrounds.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Inspect:&lt;/strong&gt; Analyze detailed traces of past executions, including step-by-step breakdowns of complex flows.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Evaluate:&lt;/strong&gt; Review the results of evaluations run against your flows, including performance metrics and links to relevant traces.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;img src="https://raw.githubusercontent.com/firebase/genkit/main/docs/resources/readme-ui-traces-screenshot.png" width="700" alt="Screenshot of Genkit Developer UI showing traces" /&gt; 
+&lt;h2&gt;Try Genkit in Firebase Studio&lt;/h2&gt; 
+&lt;p&gt;Want to skip the local setup? Click below to try out Genkit using &lt;a href="https://firebase.studio"&gt;Firebase Studio&lt;/a&gt;, Google's AI-assisted workspace for full-stack app development in the cloud.&lt;/p&gt; 
+&lt;a href="https://studio.firebase.google.com/new/genkit"&gt; &lt;img height="32" alt="Open in Firebase Studio" src="https://cdn.firebasestudio.dev/btn/open_bright_32.svg?sanitize=true" /&gt; &lt;/a&gt; 
+&lt;h2&gt;Connect with us&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://discord.gg/qXt5zzQKpc"&gt;&lt;strong&gt;Join us on Discord&lt;/strong&gt;&lt;/a&gt; – Get help, share ideas, and chat with other developers.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/firebase/genkit/issues"&gt;&lt;strong&gt;Contribute on GitHub&lt;/strong&gt;&lt;/a&gt; – Report bugs, suggest features, or explore the source code.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/genkit-ai/"&gt;&lt;strong&gt;Contribute to Documentation and Samples&lt;/strong&gt;&lt;/a&gt; – Report issues in Genkit's &lt;a href="https://github.com/genkit-ai/docsite"&gt;documentation&lt;/a&gt;, or contribute to the &lt;a href="https://github.com/genkit-ai/samples"&gt;samples&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Contributions to Genkit are welcome and highly appreciated! See our &lt;a href="https://raw.githubusercontent.com/firebase/genkit/main/CONTRIBUTING.md"&gt;Contribution Guide&lt;/a&gt; to get started.&lt;/p&gt; 
+&lt;h2&gt;Authors&lt;/h2&gt; 
+&lt;p&gt;Genkit is built by &lt;a href="https://firebase.google.com/"&gt;Firebase&lt;/a&gt; with contributions from the &lt;a href="https://github.com/firebase/genkit/graphs/contributors"&gt;Open Source Community&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>11cafe/jaaz</title>
+      <link>https://github.com/11cafe/jaaz</link>
+      <description>&lt;p&gt;The world's first open-source multimodal creative assistant This is a substitute for Canva and Manus that prioritizes privacy and is usable locally.&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt; &lt;a href="https://jaaz.app" target="_blank"&gt; Jaaz.app&lt;/a&gt; &lt;p align="center"&gt;Open source Canva AI alternative&lt;/p&gt; &lt;p align="center"&gt; &lt;a href="https://jaaz.app"&gt; &lt;img src="https://github.com/user-attachments/assets/e0cffb94-8c6f-4867-800a-c144aceb6d54" alt="Jaaz Logo" /&gt; &lt;/a&gt; &lt;/p&gt; &lt;/h1&gt; 
+&lt;p align="center"&gt;The world's first open-source multimodal canvas creative agent&lt;/p&gt; 
+&lt;p align="center"&gt;This is a substitute for Canva and Manus that prioritizes privacy and is usable locally.&lt;/p&gt; 
+&lt;p&gt; &lt;b&gt;📣 [New!] Enterprise Cloud “Full” Edition&lt;/b&gt; — Private/on-prem deployment &amp;amp; commercial licensing (Docker image or full source). Includes all jaaz.app online features. &lt;b&gt;30% OFF&lt;/b&gt; through &lt;b&gt;Sep 15, 2025&lt;/b&gt;. &lt;a href="mailto:info@jaaz.app"&gt;Contact us →&lt;/a&gt; info@jaaz.app &lt;br /&gt; &lt;br /&gt; &lt;b&gt;📣 [New!] 企业云端完整版&lt;/b&gt; — 支持&lt;span&gt;私有化部署&lt;/span&gt;与&lt;span&gt;商业授权&lt;/span&gt;（Docker 镜像或源码交付），包含 jaaz.app 全量线上功能。限时 &lt;b&gt;30% OFF&lt;/b&gt;，截止 &lt;b&gt;2025-09-15&lt;/b&gt;。 &lt;a href="mailto:info@jaaz.app"&gt;了解/洽谈 →&lt;/a&gt; info@jaaz.app &lt;/p&gt; 
+&lt;br /&gt;
+&lt;br /&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/11cafe/jaaz/raw/main/README_zh.md"&gt;中文版&lt;/a&gt;| &lt;a href="https://mxnpt25l6k.feishu.cn/docx/LvcTdlVbFoRAZWxnhBYcqVydnpc"&gt;新手指南&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://discord.gg/https://discord.gg/SMRe5n3m"&gt; &lt;img src="https://img.shields.io/badge/Discord-5865F2?logo=discord&amp;amp;logoColor=white&amp;amp;style=for-the-badge" alt="Discord" /&gt; &lt;/a&gt; &lt;a href="https://github.com/11cafe/jaaz/stargazers"&gt; &lt;img src="https://img.shields.io/github/stars/11cafe/jaaz?style=for-the-badge&amp;amp;logo=github" alt="GitHub Stars" /&gt; &lt;/a&gt; 
+ &lt;!-- Download for Mac --&gt; &lt;a href="https://jaaz.app/api/downloads/mac-latest"&gt; &lt;img src="https://img.shields.io/badge/For%20Mac-000000?logo=apple&amp;amp;logoColor=white&amp;amp;style=for-the-badge" alt="Download for Mac" /&gt; &lt;/a&gt; 
+ &lt;!-- Download for Windows --&gt; &lt;a href="https://jaaz.app/api/downloads/windows-latest"&gt; &lt;img src="https://img.shields.io/badge/For%20Windows-0078D6?logo=laptop&amp;amp;logoColor=white&amp;amp;style=for-the-badge" alt="Download for Windows" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; Magic Canva! &lt;/p&gt;
+&lt;p&gt;"Build" your ideas like playing with LEGO—paint directly, point with arrows, and the AI instantly understands and generates results. &lt;img width="900" alt="Screenshot 2025-06-02 at 3 03 49 PM" src="https://github.com/user-attachments/assets/543b170c-14f7-4a73-96bd-909662138592" /&gt; &lt;img width="900" alt="Screenshot 2025-06-02 at 3 03 49 PM" src="https://github.com/user-attachments/assets/7dd9af32-cc60-4145-9b30-7db96d8fa09a" /&gt;&lt;/p&gt; 
+&lt;p&gt;Magic video!&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/b7abf987-c65d-49b1-8178-82770873c583"&gt;https://github.com/user-attachments/assets/b7abf987-c65d-49b1-8178-82770873c583&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Create Viral Shorts with a Single Sentence 
+ &lt;video src="https://github.com/user-attachments/assets/1c15e792-098a-4557-b310-d9c223f73442" controls width="100%"&gt;&lt;/video&gt;&lt;/p&gt; 
+&lt;h2&gt;✨ Getting started &amp;amp; staying tuned with us.&lt;/h2&gt; 
+&lt;p&gt;Star us, and you will receive all release notifications from GitHub without any delay! &lt;img width="900" alt="Screenshot 2025-06-02 at 3 03 49 PM" src="https://github.com/user-attachments/assets/1c9a3661-80a4-4fba-a30f-f469898b0aec" /&gt;&lt;/p&gt; 
+&lt;h2&gt;✨ Key Features&lt;/h2&gt; 
+&lt;p&gt;🎬 One-Prompt Image &amp;amp; Video Generation Turn one prompt into complete images or videos in seconds.&lt;/p&gt; 
+&lt;p&gt;-Supports GPT-4o, Midjourney, VEO3, Kling,veo3,seedance etc.&lt;/p&gt; 
+&lt;p&gt;-Auto-optimized prompts &amp;amp; multi-turn refinement&lt;/p&gt; 
+&lt;p&gt;🧙 Magic Canvas&amp;amp;Magic Video Prompt-free creation — build like Lego.&lt;/p&gt; 
+&lt;p&gt;-Simple sketching and free combination — AI instantly understands and generates.&lt;/p&gt; 
+&lt;p&gt;-AI understands and generates instantly&lt;/p&gt; 
+&lt;p&gt;-No prompt writing needed&lt;/p&gt; 
+&lt;p&gt;-Describe steps simply on the video, and AI will generate following them.&lt;/p&gt; 
+&lt;p&gt;🖼️ Infinite Canvas &amp;amp; Visual Storyboarding Plan scenes with an unlimited canvas&lt;/p&gt; 
+&lt;p&gt;-Link layouts, manage media visually&lt;/p&gt; 
+&lt;p&gt;-Real-time collaboration supported&lt;/p&gt; 
+&lt;p&gt;🤖 Smart AI Agent System -Chat to insert objects, transfer styles, control logic&lt;/p&gt; 
+&lt;p&gt;-Works with local (ComfyUI) &amp;amp; cloud models&lt;/p&gt; 
+&lt;p&gt;-Maintains multi-character coherence&lt;/p&gt; 
+&lt;p&gt;⚙️ Flexible Deployment &amp;amp; Local Assets -Fully offline or hybrid setup (Ollama + APIs)&lt;/p&gt; 
+&lt;p&gt;-Built-in library for media &amp;amp; prompts&lt;/p&gt; 
+&lt;p&gt;-Cross-platform: Windows &amp;amp; macOS&lt;/p&gt; 
+&lt;p&gt;🔐 Privacy &amp;amp; Security -Local-first, no data leaves your device&lt;/p&gt; 
+&lt;p&gt;-Open-source, no tracking&lt;/p&gt; 
+&lt;p&gt;-Safe for commercial use — you own your data&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;p&gt;Download here: &lt;a href="https://jaaz.app/"&gt;https://jaaz.app/&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Click the "Log In" button at the top right of the homepage to access API models. With a low-cost plan, you can seamlessly use a variety of powerful APIs.&lt;/p&gt; 
+&lt;img width="400" alt="Screenshot 2025-06-02 at 3 08 51 PM" src="https://github.com/user-attachments/assets/0055557d-c247-4801-ac3f-01ed4fa775ae" /&gt; 
+&lt;p&gt;Start chatting with agent to generate stories or storyboards!&lt;/p&gt; 
+&lt;h2&gt;Cases&lt;/h2&gt; 
+&lt;img width="889" height="1103" alt="Frame 122" src="https://github.com/user-attachments/assets/90503110-0f5c-4297-bbfe-6d35e3f54d4c" /&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Prompt: Help me place this character in six different scenes, all in front of landmark buildings from around the world. The lighting is harmonious. He takes photos from all over the world, realistic, with warm light, high picture quality, and a picture ratio of 9:16&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/4e2634b3-9068-47cd-a18f-ddde8f218d25" alt="814c563b08f6ef44de0c2c31f0fdd00b-min" /&gt;&lt;/p&gt; 
+&lt;img width="1000" alt="Screenshot 2025-06-02 at 3 51 56 AM" src="https://github.com/user-attachments/assets/5d8efe74-99b0-41bc-aa3e-6f7b92b69c36" /&gt; 
+&lt;img width="900" alt="Screenshot 2025-06-02 at 3 51 56 AM" src="https://github.com/user-attachments/assets/186982a9-5e4e-4ac1-a42c-c840092fd616" /&gt; 
+&lt;img width="900" alt="Screenshot 2025-06-02 at 3 03 49 PM" src="https://github.com/user-attachments/assets/b8508efd-def8-40ed-8ab5-62ed3c26de67" /&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/2065cabd-af32-43b6-bc01-59a935d9a287" alt="image26" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Team and Enterprise Support:&lt;/h2&gt; 
+&lt;p&gt;Support for multi-user private deployment of enterprise teams, ensuring privacy and security.&lt;/p&gt; 
+&lt;p&gt;Please contact via email: &lt;a href="mailto:aifoxdw@gmail.com"&gt;aifoxdw@gmail.com&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;WeChat: aifox1 &lt;img width="500" alt="Screenshot 2025-06-02 at 3 51 56 AM" src="https://github.com/user-attachments/assets/d5c54eda-120b-4fc2-a571-68fcab440868" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Manual Install (For Linux or local builds)&lt;/h2&gt; 
+&lt;p&gt;🟠 &lt;strong&gt;Need Python version &amp;gt;=3.12&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;First git clone this repo:&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;git clone https://github.com/11cafe/localart&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;cd react&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;npm install --force&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;npx vite build&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;cd ../server&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;pip install -r requirements.txt&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;python main.py&lt;/code&gt;&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;p&gt;🟠 &lt;strong&gt;Need Python version &amp;gt;=3.12&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;VSCode/Cursor Install Extensions：&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Black Formatter by ms-python (ms-python.black-formatter)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;code&gt;cd react&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;npm install --force &amp;amp;&amp;amp; npm run dev&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;cd server&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;pip install -r requirements.txt&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;python main.py&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MotiaDev/motia</title>
+      <link>https://github.com/MotiaDev/motia</link>
+      <description>&lt;p&gt;Modern Backend Framework that unifies APIs, background jobs, workflows, and AI Agents into a single core primitive with built-in observability and state management.&lt;/p&gt;&lt;hr&gt;&lt;a href="https://motia.dev"&gt; &lt;img src="https://raw.githubusercontent.com/MotiaDev/motia/main/assets/github-readme-banner.png" alt="Motia Banner" width="100%" /&gt; &lt;/a&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/14032" style="margin-right:8px;"&gt; &lt;img src="https://trendshift.io/api/badge/repositories/14032" alt="Motia" style="width: 250px; height: 55px; margin-right:8px;" width="250" height="55" /&gt; &lt;/a&gt; &lt;a href="https://vercel.com/blog/summer-2025-oss-program#motia" target="_blank" style="margin-left:8px;"&gt; &lt;img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg?sanitize=true" style="width: 250px; height: 55px; margin-left:8px;" width="250" height="55" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;strong&gt;🔥 The Unified Backend Framework That Eliminates Runtime Fragmentation 🔥&lt;/strong&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;em&gt;APIs, background jobs, workflows, and AI agents in one system. JavaScript, TypeScript, Python, and more in one codebase.&lt;/em&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.npmjs.com/package/motia"&gt; &lt;img src="https://img.shields.io/npm/v/motia?style=flat&amp;amp;logo=npm&amp;amp;logoColor=white&amp;amp;color=CB3837&amp;amp;labelColor=000000" alt="npm version" /&gt; &lt;/a&gt; &lt;a href="https://github.com/MotiaDev/motia/raw/main/LICENSE"&gt; &lt;img src="https://img.shields.io/badge/license-MIT-green?style=flat&amp;amp;logo=opensourceinitiative&amp;amp;logoColor=white&amp;amp;labelColor=000000" alt="license" /&gt; &lt;/a&gt; &lt;a href="https://github.com/MotiaDev/motia"&gt; &lt;img src="https://img.shields.io/github/stars/MotiaDev/motia?style=flat&amp;amp;logo=github&amp;amp;logoColor=white&amp;amp;color=yellow&amp;amp;labelColor=000000" alt="GitHub stars" /&gt; &lt;/a&gt; &lt;a href="https://twitter.com/motiadev" target="_blank"&gt; &lt;img src="https://img.shields.io/badge/Follow-@motiadev-1DA1F2?style=flat&amp;amp;logo=twitter&amp;amp;logoColor=white&amp;amp;labelColor=000000" alt="Twitter Follow" /&gt; &lt;/a&gt; &lt;a href="https://discord.gg/motia" target="_blank"&gt; &lt;img src="https://img.shields.io/discord/1322278831184281721?style=flat&amp;amp;logo=discord&amp;amp;logoColor=white&amp;amp;color=5865F2&amp;amp;label=Discord&amp;amp;labelColor=000000" alt="Discord" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.motia.dev/manifesto"&gt;💡 Motia Manifesto&lt;/a&gt; • &lt;a href="https://www.motia.dev/docs/getting-started/quick-start"&gt;🚀 Quick Start&lt;/a&gt; • &lt;a href="https://www.motia.dev/docs/concepts/steps/defining-steps"&gt;📋 Defining Steps&lt;/a&gt; • &lt;a href="https://www.motia.dev/docs"&gt;📚 Docs&lt;/a&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🎯 What is Motia?&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Motia solves backend fragmentation.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Modern software engineering is disjointed – APIs live in one framework, background jobs in another, queues have their own tooling, and AI agents are springing up in yet more isolated runtimes. &lt;strong&gt;This fragmentation demands a unified system.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Motia unifies APIs, background jobs, workflows, and AI agents into a &lt;strong&gt;single coherent system&lt;/strong&gt; with shared observability and developer experience. Similar to how React simplified frontend development, where everything is a component, &lt;strong&gt;Motia simplifies backend development, where everything is a Step&lt;/strong&gt;.&lt;/p&gt; 
+&lt;p&gt;Write &lt;strong&gt;JavaScript, TypeScript, Python, and more&lt;/strong&gt; in the same workflow. &lt;strong&gt;What used to take 5 frameworks to build now comes out of the box with Motia.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://motia.dev"&gt;&lt;img src="https://raw.githubusercontent.com/MotiaDev/motia/main/assets/github-readme-banner.gif" alt="Motia combines APIs, background queues, and AI agents into one system" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🚀 Quickstart&lt;/h2&gt; 
+&lt;p&gt;Get Motia project up and running in &lt;strong&gt;under 60 seconds&lt;/strong&gt;:&lt;/p&gt; 
+&lt;h3&gt;1. Bootstrap a New Motia Project&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx motia@latest create   # runs the interactive terminal
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Follow the prompts to pick a template, project name, and language. &lt;img src="https://raw.githubusercontent.com/MotiaDev/motia/main/assets/motia-terminal.gif" alt="motia-terminal" /&gt;&lt;/p&gt; 
+&lt;h3&gt;2. Start the Workbench&lt;/h3&gt; 
+&lt;p&gt;Inside your new project folder, launch the dev server:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx motia dev # ➜ http://localhost:3000
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;That's it!&lt;/strong&gt; You have:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;✅ REST APIs with validation&lt;/li&gt; 
+ &lt;li&gt;✅ Visual debugger &amp;amp; tracing&lt;/li&gt; 
+ &lt;li&gt;✅ Multi-language support&lt;/li&gt; 
+ &lt;li&gt;✅ Event-driven architecture&lt;/li&gt; 
+ &lt;li&gt;✅ Zero configuration&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/MotiaDev/motia/main/assets/new-workbench.png" alt="new-workbench" /&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;📖 &lt;strong&gt;&lt;a href="https://motia.dev/docs/getting-started/quick-start"&gt;Full tutorial in our docs →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;🎯 Step Types&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Type&lt;/th&gt; 
+   &lt;th&gt;Trigger&lt;/th&gt; 
+   &lt;th&gt;Use Case&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;code&gt;api&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;HTTP Request&lt;/td&gt; 
+   &lt;td&gt;REST endpoints&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;code&gt;event&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Topic subscription&lt;/td&gt; 
+   &lt;td&gt;Background processing&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;code&gt;cron&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Schedule&lt;/td&gt; 
+   &lt;td&gt;Recurring jobs&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;code&gt;noop&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Manual&lt;/td&gt; 
+   &lt;td&gt;External processes&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;📖 &lt;strong&gt;&lt;a href="https://motia.dev/docs/concepts/steps"&gt;Learn more about Steps →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🎯 Examples&lt;/h2&gt; 
+&lt;h3&gt;🏆 &lt;strong&gt;&lt;a href="https://chessarena.ai"&gt;ChessArena.ai&lt;/a&gt;&lt;/strong&gt; - Full-Featured Production App&lt;/h3&gt; 
+&lt;p&gt;A complete chess platform benchmarking LLM performance with real-time evaluation.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://chessarena.ai"&gt;Live Website →&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href="https://github.com/MotiaDev/chessarena-ai"&gt;Source Code →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;img src="https://github.com/MotiaDev/chessarena-ai/raw/main/public/images/chessarena.gif?raw=true" alt="ChessArena.ai in action (raw GIF)" /&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;strong&gt;Built from scratch to production deployment, featuring:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🔐 &lt;strong&gt;Authentication &amp;amp; user management&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;strong&gt;Multi-agent LLM evaluation&lt;/strong&gt; (OpenAI, Claude, Gemini, Grok)&lt;/li&gt; 
+ &lt;li&gt;🐍 &lt;strong&gt;Python engine integration&lt;/strong&gt; (Stockfish chess evaluation)&lt;/li&gt; 
+ &lt;li&gt;📊 &lt;strong&gt;Real-time streaming&lt;/strong&gt; with live move updates and scoring&lt;/li&gt; 
+ &lt;li&gt;🎨 &lt;strong&gt;Modern React UI&lt;/strong&gt; with interactive chess boards&lt;/li&gt; 
+ &lt;li&gt;🔄 &lt;strong&gt;Event-driven workflows&lt;/strong&gt; connecting TypeScript APIs to Python processors&lt;/li&gt; 
+ &lt;li&gt;📈 &lt;strong&gt;Live leaderboards&lt;/strong&gt; with move-by-move quality scoring&lt;/li&gt; 
+ &lt;li&gt;🚀 &lt;strong&gt;Production deployment&lt;/strong&gt; on Motia Cloud&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;📚 &lt;strong&gt;More Examples&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/MotiaDev/motia-examples"&gt;View all 20+ examples →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Example&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-deep-research-agent"&gt;AI Research Agent&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Web research with iterative analysis&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://github.com/MotiaDev/motia-examples/tree/main/examples/streaming-ai-chatbot"&gt;Streaming Chatbot&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Real-time AI responses&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://github.com/MotiaDev/motia-examples/tree/main/examples/gmail-workflow"&gt;Gmail Automation&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Smart email processing&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://github.com/MotiaDev/motia-examples/tree/main/examples/github-integration-workflow"&gt;GitHub PR Manager&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Automated PR workflows&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://github.com/MotiaDev/motia-examples/tree/main/examples/finance-agent"&gt;Finance Agent&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Real-time market analysis&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;Features demonstrated:&lt;/strong&gt; Multi-language workflows • Real-time streaming • AI integration • Production deployment&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🌐 Language Support&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Language&lt;/th&gt; 
+   &lt;th&gt;Status&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;JavaScript&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Stable&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;TypeScript&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Stable&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Python&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Stable&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Ruby&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;🚧 Beta&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Go&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;🔄 Soon&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;📚 Resources&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://motia.dev/docs"&gt;📖 Documentation&lt;/a&gt;&lt;/strong&gt; - Complete guides and API reference&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://discord.gg/motia"&gt;💬 Discord&lt;/a&gt;&lt;/strong&gt; - Community support and discussions&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/MotiaDev/motia/issues"&gt;🐛 GitHub Issues&lt;/a&gt;&lt;/strong&gt; - Bug reports and feature requests&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/orgs/MotiaDev/projects/2"&gt;🗺️ Roadmap&lt;/a&gt;&lt;/strong&gt; - Upcoming features and progress&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🚧 Roadmap&lt;/h2&gt; 
+&lt;p&gt;We have a public roadmap for Motia, you can view it &lt;a href="https://github.com/orgs/MotiaDev/projects/2/views/4"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Feel free to add comments to the issues, or create a new issue if you have a feature request.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Feature&lt;/th&gt; 
+   &lt;th&gt;Status&lt;/th&gt; 
+   &lt;th&gt;Link&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Python Types&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/485"&gt;#485&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Python types&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Streams: RBAC&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/495"&gt;#495&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for RBAC&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Streams: Workbench UI&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/497"&gt;#497&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Workbench UI&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Queue Strategies&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/476"&gt;#476&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Queue Strategies&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Reactive Steps&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/477"&gt;#477&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Reactive Steps&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Point in time triggers&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/480"&gt;#480&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Point in time triggers&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Workbench plugins&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/481"&gt;#481&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for Workbench plugins&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Rewrite our Core in either Go or Rust&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/482"&gt;#482&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Rewrite our Core in either Go or Rust&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Decrease deployment time&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/483"&gt;#483&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Decrease deployment time&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Built-in database support&lt;/td&gt; 
+   &lt;td&gt;Planned&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/MotiaDev/motia/issues/484"&gt;#484&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Add support for built-in database&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;🤝 Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions! Check our &lt;strong&gt;&lt;a href="https://github.com/MotiaDev/motia/raw/main/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt;&lt;/strong&gt; to get started.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;strong&gt;&lt;a href="https://motia.dev"&gt;🚀 Get Started&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://motia.dev/docs"&gt;📖 Docs&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://discord.gg/motia"&gt;💬 Discord&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://www.star-history.com/#motiadev/motia&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=motiadev/motia&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;sub&gt;⭐ &lt;strong&gt;Star us if you find Motia useful!&lt;/strong&gt;&lt;/sub&gt;&lt;/p&gt; 
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>tldraw/tldraw</title>
+      <link>https://github.com/tldraw/tldraw</link>
+      <description>&lt;p&gt;very good whiteboard SDK / infinite canvas SDK&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;tldraw&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://deepwiki.com/tldraw/tldraw"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" alt="Ask DeepWiki" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Welcome to the public monorepo for &lt;a href="https://github.com/tldraw/tldraw"&gt;tldraw&lt;/a&gt;. tldraw is a library for creating infinite canvas experiences in React. It's the software behind the digital whiteboard &lt;a href="https://tldraw.com"&gt;tldraw.com&lt;/a&gt;.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Read the docs and learn more at &lt;a href="https://tldraw.dev"&gt;tldraw.dev&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Learn about &lt;a href="https://github.com/tldraw/tldraw#License"&gt;our license&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;a href="https://tldraw.dev/#pricing"&gt;Click here&lt;/a&gt; to learn about our license and pricing.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm i tldraw
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-tsx"&gt;import { Tldraw } from 'tldraw'
+import 'tldraw/tldraw.css'
+
+export default function App() {
+	return (
+		&amp;lt;div style={{ position: 'fixed', inset: 0 }}&amp;gt;
+			&amp;lt;Tldraw /&amp;gt;
+		&amp;lt;/div&amp;gt;
+	)
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Learn more at &lt;a href="https://tldraw.dev"&gt;tldraw.dev&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Local development&lt;/h2&gt; 
+&lt;p&gt;The local development server will run our examples app. The basic example will show any changes you've made to the codebase.&lt;/p&gt; 
+&lt;p&gt;To run the local development server, first clone this repo.&lt;/p&gt; 
+&lt;p&gt;Enable &lt;a href="https://nodejs.org/api/corepack.html"&gt;corepack&lt;/a&gt; to make sure you have the right version of &lt;code&gt;yarn&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm i -g corepack
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Install dependencies:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Start the local development server:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Open the example project at &lt;code&gt;localhost:5420&lt;/code&gt;.&lt;/p&gt; 
+&lt;h2&gt;Tips for AIs&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Are you an AI agent?&lt;/strong&gt; If so, this monorepo has special &lt;code&gt;CONTEXT.md&lt;/code&gt; files found throughout the repository that you can use to quickly build context while you work. Use your own tools to find and read these files, or use our helpful &lt;code&gt;context&lt;/code&gt; script to locate and log the contents of the most relevant files.&lt;/p&gt; 
+&lt;p&gt;To get started quickly, run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn context
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This will find and display the nearest CONTEXT.md file to help you understand the codebase. The &lt;code&gt;context&lt;/code&gt; script supports several options:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;yarn context&lt;/code&gt; - Show path to nearest CONTEXT.md from current directory&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;yarn context ./foo/bar/baz.ts&lt;/code&gt; - Show path to nearest CONTEXT.md for a specific file or directory&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;yarn context -v&lt;/code&gt; or &lt;code&gt;--verbose&lt;/code&gt; - Show full content of nearest CONTEXT.md&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;yarn context -r&lt;/code&gt; or &lt;code&gt;--recursive&lt;/code&gt; - Find all CONTEXT.md files in the repository&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;The tldraw SDK is provided under the &lt;a href="https://github.com/tldraw/tldraw/raw/main/LICENSE.md"&gt;tldraw license&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;You can use the tldraw SDK in commercial or non-commercial projects so long as you preserve the "Made with tldraw" watermark on the canvas. To remove the watermark, you can purchase a &lt;a href="https://tldraw.dev#pricing"&gt;business license&lt;/a&gt;. Visit &lt;a href="https://tldraw.dev"&gt;tldraw.dev&lt;/a&gt; to learn more.&lt;/p&gt; 
+&lt;h2&gt;Trademarks&lt;/h2&gt; 
+&lt;p&gt;Copyright (c) 2024-present tldraw Inc. The tldraw name and logo are trademarks of tldraw. Please see our &lt;a href="https://github.com/tldraw/tldraw/raw/main/TRADEMARKS.md"&gt;trademark guidelines&lt;/a&gt; for info on acceptable usage.&lt;/p&gt; 
+&lt;h2&gt;Distributions&lt;/h2&gt; 
+&lt;p&gt;You can find tldraw on npm &lt;a href="https://www.npmjs.com/package/@tldraw/tldraw?activeTab=versions"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Contribution&lt;/h2&gt; 
+&lt;p&gt;Please see our &lt;a href="https://github.com/tldraw/tldraw/raw/main/CONTRIBUTING.md"&gt;contributing guide&lt;/a&gt;. Found a bug? Please &lt;a href="https://github.com/tldraw/tldraw/issues/new"&gt;submit an issue&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;p&gt;Have questions, comments or feedback? &lt;a href="https://discord.tldraw.com/?utm_source=github&amp;amp;utm_medium=readme&amp;amp;utm_campaign=sociallink"&gt;Join our discord&lt;/a&gt;. For the latest news and release notes, visit &lt;a href="https://tldraw.dev"&gt;tldraw.dev&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Contributors&lt;/h2&gt; 
+&lt;a href="https://github.com/tldraw/tldraw/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=tldraw/tldraw&amp;amp;max=400&amp;amp;columns=20" width="100%" /&gt; &lt;/a&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;a href="https://star-history.com/#tldraw/tldraw"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=tldraw/tldraw&amp;amp;type=Date&amp;amp;theme=dark" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=tldraw/tldraw&amp;amp;type=Date" /&gt; 
+  &lt;img src="https://api.star-history.com/svg?repos=tldraw/tldraw&amp;amp;type=Date" alt="Star History Chart" width="100%" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;h2&gt;Contact&lt;/h2&gt; 
+&lt;p&gt;Find us on Twitter/X at &lt;a href="https://twitter.com/tldraw"&gt;@tldraw&lt;/a&gt;. You can contact us by email at &lt;a href="mailto:hello@tldraw.com"&gt;hello@tldraw.com&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PostHog/posthog.com</title>
+      <link>https://github.com/PostHog/posthog.com</link>
+      <description>&lt;p&gt;Official docs, website, and handbook for PostHog.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img alt="posthoglogo" src="https://user-images.githubusercontent.com/65415371/205059737-c8a4f836-4889-4654-902e-f302b187b6a0.png" /&gt; &lt;/p&gt; 
+&lt;h1&gt;PostHog.com - Website, docs, blog, and handbook&lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;a href="http://makeapullrequest.com"&gt;&lt;img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=shields" /&gt;&lt;/a&gt; &lt;img alt="GitHub contributors" src="https://img.shields.io/github/contributors/posthog/posthog.com" /&gt; &lt;a href="https://posthog.com/community"&gt;&lt;img alt="Join Community" src="https://img.shields.io/badge/community-join-blue" /&gt;&lt;/a&gt; &lt;img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/posthog/posthog.com" /&gt; &lt;img alt="GitHub closed pull requests" src="https://img.shields.io/github/issues-pr-closed/posthog/posthog.com" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://app.posthog.com/home#supportModal"&gt;Support&lt;/a&gt; - &lt;a href="https://posthog.com/roadmap"&gt;Roadmap&lt;/a&gt; - &lt;a href="https://github.com/PostHog/posthog.com/issues/new"&gt;Open an issue&lt;/a&gt; - &lt;a href="https://github.com/PostHog/posthog.com/raw/master/STYLEGUIDE.md"&gt;Style guide&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;This is the repository for the PostHog website. It contains:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;All of our written content and visuals including product features, manuals, docs, blogs, case studies, tutorials, and the handbook&lt;/li&gt; 
+ &lt;li&gt;Features like questions and answers (using &lt;a href="https://github.com/PostHog/squeak"&gt;Squeak!&lt;/a&gt;), job listings (using &lt;a href="https://www.ashbyhq.com/customers/posthog-customer-story"&gt;Ashby&lt;/a&gt;), pricing calculator, roadmap, API docs, and more&lt;/li&gt; 
+ &lt;li&gt;All the components, templates, logic, and styling to make this work, look pretty, and spark joy&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Table of contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/PostHog/posthog.com/master/#quick-start"&gt;Quick start&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/PostHog/posthog.com/master/#advanced-setup"&gt;Advanced setup&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/PostHog/posthog.com/master/#contributing"&gt;Contributing&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Quick start&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Pre-installation&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Install &lt;a href="https://nodejs.org/en/download/"&gt;Node&lt;/a&gt; (version 22) - if you installed Node using nvm, you can run &lt;code&gt;nvm use&lt;/code&gt; to automatically switch to the correct version.&lt;/p&gt; &lt;p&gt;Install &lt;a href="https://classic.yarnpkg.com/en/"&gt;Yarn&lt;/a&gt;. (If you're on a Mac with Apple Silicon and get an error with &lt;code&gt;-86&lt;/code&gt; in it, you may need to &lt;a href="https://osxdaily.com/2020/12/04/how-install-rosetta-2-apple-silicon-mac/"&gt;install Rosetta&lt;/a&gt;.)&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;npm install --global yarn
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Start developing&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Clone the repo and navigate into your new site’s directory:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;git clone git@github.com:PostHog/posthog.com.git &amp;amp;&amp;amp; cd posthog.com/
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;If you're using an Apple Silicon Mac (M1) you'll need to run the following commands:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;rm -rf ./node_modules
+brew install vips
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Then install the site dependencies, and start it up:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;yarn
+yarn start
+&lt;/code&gt;&lt;/pre&gt; 
+  &lt;blockquote&gt; 
+   &lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Seeing a discrepancy between local development and staging/production? Preview the production build locally by running &lt;code&gt;gatsby build &amp;amp;&amp;amp; gatsby serve&lt;/code&gt;&lt;/p&gt; 
+  &lt;/blockquote&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Open the source code and start editing!&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Your site is now running at &lt;code&gt;http://localhost:8001&lt;/code&gt;!&lt;/p&gt; 
+  &lt;blockquote&gt; 
+   &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You'll also see a second link: &lt;code&gt;http://localhost:8001/___graphql&lt;/code&gt;. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the &lt;a href="https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql"&gt;Gatsby tutorial&lt;/a&gt;.&lt;/p&gt; 
+  &lt;/blockquote&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;See full instructions on &lt;a href="https://posthog.com/handbook/engineering/posthog-com/developing-the-website"&gt;developing PostHog.com locally in our manual&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Advanced setup&lt;/h2&gt; 
+&lt;h3&gt;Debugging errors on start&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Pull the latest changes from &lt;code&gt;master&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;gatsby clean &amp;amp;&amp;amp; yarn start&lt;/code&gt; or delete &lt;code&gt;node_modules&lt;/code&gt; and &lt;code&gt;.cache&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Check builds are passing in &lt;a href="https://github.com/PostHog/posthog.com/deployments"&gt;deployment to Vercel&lt;/a&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Working on &lt;code&gt;/docs/api&lt;/code&gt;?&lt;/h3&gt; 
+&lt;p&gt;The site will load the API schema from US Cloud by default. You can override this to use your local PostHog instance with an env var:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;POSTHOG_OPEN_API_SPEC_URL="http://127.0.0.1:8000/api/schema/" yarn start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Want Ashby job listings or GitHub contributors to load?&lt;/h3&gt; 
+&lt;p&gt;You’ll need to set environment variables for these. &lt;a href="https://github.com/PostHog/company-internal/raw/master/website-api-keys.md"&gt;See (private) instructions&lt;/a&gt; for this.&lt;/p&gt; 
+&lt;h3&gt;Developing the posts section&lt;/h3&gt; 
+&lt;p&gt;To see your local version of the posts section, &lt;code&gt;/posts&lt;/code&gt; needs to be visited directly (&lt;code&gt;http://localhost:8001/posts&lt;/code&gt;)&lt;/p&gt; 
+&lt;h3&gt;Developing the merch store&lt;/h3&gt; 
+&lt;p&gt;Additional environment variables are needed to develop the merch store:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;SHOPIFY_APP_PASSWORD&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;GATSBY_MYSHOPIFY_URL&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;GATSBY_SHOPIFY_STOREFRONT_TOKEN&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Currently, these environment variables are excluded from Vercel preview builds to disable merch store node creation and speed up build times on non-merch related PRs.&lt;/p&gt; 
+&lt;h3&gt;Dynamic open graph images&lt;/h3&gt; 
+&lt;p&gt;To develop a dynamic open graph image:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Run &lt;code&gt;yarn build&lt;/code&gt; with both the &lt;code&gt;ASHBY_API_KEY&lt;/code&gt; and &lt;code&gt;GITHUB_API_KEY&lt;/code&gt; set.&lt;/li&gt; 
+ &lt;li&gt;In &lt;code&gt;gatsby/onPostBuild.ts&lt;/code&gt;, temporarily comment out the following: &lt;pre&gt;&lt;code&gt;if (process.env.VERCEL_GIT_COMMIT_REF !== 'master') return
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt;Find the generated open graph image in &lt;code&gt;public/og-images/&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We &amp;lt;3 contributions big and small. In priority order (although everything is appreciated) with the most helpful first:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Ask a &lt;a href="https://posthog.com/questions"&gt;question in our community&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Submit &lt;a href="https://app.posthog.com/home#supportModal"&gt;bug reports and give us feedback in the app&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Vote on features or get early access to beta functionality in our &lt;a href="https://posthog.com/roadmap"&gt;roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Open a PR 
+  &lt;ul&gt; 
+   &lt;li&gt;Read &lt;a href="https://raw.githubusercontent.com/PostHog/posthog.com/master/#quick-start"&gt;our instructions above&lt;/a&gt; on developing PostHog.com locally&lt;/li&gt; 
+   &lt;li&gt;Read more &lt;a href="https://posthog.com/handbook/engineering/posthog-com/developing-the-website"&gt;detailed instructions in our manual&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;For basic edits, go to the file in GitHub and click the edit button (pencil icon)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Open &lt;a href="https://github.com/PostHog/posthog.com/issues/new"&gt;an issue&lt;/a&gt; or &lt;a href="https://github.com/PostHog/posthog.com/issues/new?assignees=andyvan-ph&amp;amp;labels=content&amp;amp;template=blog-post-idea-template.md&amp;amp;title=%7BContent+type%7D+-+%7Btitle%7D"&gt;content idea&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>element-plus/element-plus</title>
+      <link>https://github.com/element-plus/element-plus</link>
+      <description>&lt;p&gt;🎉 A Vue.js 3 UI Library made by Element team&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img width="300px" src="https://user-images.githubusercontent.com/10731096/95823103-9ce15780-0d5f-11eb-8010-1bd1b5910d4f.png" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.npmjs.org/package/element-plus"&gt; &lt;img src="https://img.shields.io/npm/v/element-plus.svg?sanitize=true" /&gt; &lt;/a&gt; &lt;a href="https://github.com/element-plus/element-plus"&gt; &lt;img src="https://img.shields.io/badge/node-%20%3E%3D%2020-47c219" /&gt; &lt;/a&gt; &lt;a href="https://npmcharts.com/compare/element-plus?minimal=true"&gt; &lt;img src="https://img.shields.io/npm/dm/element-plus.svg?sanitize=true" /&gt; &lt;/a&gt; &lt;a href="https://codecov.io/gh/element-plus/element-plus"&gt; &lt;img src="https://codecov.io/gh/element-plus/element-plus/branch/dev/graph/badge.svg?token=BKSBO2GLZI" /&gt; &lt;/a&gt; &lt;br /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;Element Plus - A Vue.js 3 UI library&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;💪 Vue 3 Composition API&lt;/li&gt; 
+ &lt;li&gt;🔥 Written in TypeScript&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;Alright, for you to get started if you are looking for making Element Plus better you should keep reading. For developers that uses Element Plus to develop your website you should go ahead visit &lt;a href="https://element-plus.org/"&gt;Getting Started&lt;/a&gt;.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;中国大陆&lt;a href="https://cn.element-plus.org/zh-CN/"&gt;加速镜像站点&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Breaking change list&lt;/h2&gt; 
+&lt;p&gt;The first stable release of Element Plus suitable for use in production was released on February 07, 2022. The APIs is stable right now, and here's also a full list about how to get upgraded from &lt;a href="https://element.eleme.io"&gt;Element UI&lt;/a&gt; to Element Plus.&lt;/p&gt; 
+&lt;p&gt;You can find the breaking change list here: &lt;a href="https://github.com/element-plus/element-plus/discussions/5658"&gt;Breaking Change List&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Migration Tool &lt;span&gt;🛠&lt;/span&gt;&lt;/h3&gt; 
+&lt;p&gt;We have made a migration tool for you to migrate your project from &lt;a href="https://element.eleme.io"&gt;Element UI&lt;/a&gt; to Element Plus.&lt;/p&gt; 
+&lt;p&gt;You can find the &lt;a href="https://github.com/thx/gogocode/tree/main/packages/gogocode-plugin-element"&gt;gogo code migration tool&lt;/a&gt; here.&lt;/p&gt; 
+&lt;p&gt;We have tested this on &lt;a href="https://github.com/PanJiaChen/vue-element-admin"&gt;Vue Element Admin&lt;/a&gt;. You can find the transpiled code &lt;a href="https://github.com/gogocodeio/vue-element-admin"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Playground&lt;/h3&gt; 
+&lt;p&gt;You can also try Element Plus out with the components built-in playground.&lt;/p&gt; 
+&lt;h4&gt;Try it with our built-in playground&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://element-plus.run/"&gt;Playground&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;Try it with code sandbox&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://codesandbox.io/p/github/element-plus/element-plus-demo/main"&gt;&lt;img src="https://codesandbox.io/static/img/play-codesandbox.svg?sanitize=true" alt="Edit element-plus" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;b&gt;Special thanks to the generous sponsorship by:&lt;/b&gt; &lt;/p&gt; 
+&lt;br /&gt; 
+&lt;p align="center"&gt; &lt;b&gt;Platinum Sponsors&lt;/b&gt; &lt;/p&gt; 
+&lt;table align="center" cellspacing="0" cellpadding="0"&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="middle"&gt; &lt;a href="https://melecode.com/" target="_blank"&gt; &lt;img width="150px" src="https://github.com/element-plus/element-plus/assets/82012629/9ca4269c-7545-4463-9bdc-8e5a1fbd0b08" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center" valign="middle"&gt; &lt;a href="https://www.jnpfsoft.com/index.html?from=elementUI" target="_blank"&gt; &lt;img width="150px" src="https://github.com/element-plus/element-plus/assets/17680888/6a044d82-c393-48ab-90b8-de0d3aad1624" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center" valign="middle"&gt; &lt;a href="https://vue.misboot.com/#/login?from=element-plus" target="_blank"&gt; &lt;img width="150px" src="https://github.com/user-attachments/assets/ade8e7e6-f9a4-45d5-9006-44b548599a8d" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center" valign="middle"&gt; &lt;a href="http://github.crmeb.net/u/Element?from=element-plus" target="_blank"&gt; &lt;img width="150px" src="https://github.com/user-attachments/assets/18079452-986c-4c6e-84ec-fb6175c26567" /&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p align="center"&gt; &lt;b&gt;Gold Sponsors&lt;/b&gt; &lt;/p&gt; 
+&lt;table align="center" cellspacing="0" cellpadding="0"&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="middle"&gt; &lt;a href="https://doc.buildadmin.com/?from=element-plus" target="_blank"&gt; &lt;img width="130px" src="https://user-images.githubusercontent.com/17680888/173179536-30e35fd1-cd5a-482a-bc41-9d5f0aa66fd4.png" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center" valign="middle"&gt; &lt;a href="https://fantastic-admin.github.io/?from=element-plus" target="_blank"&gt; &lt;img width="130px" src="https://github.com/user-attachments/assets/0dbd9c02-d132-4c9e-a162-2b5a8728fc7e" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center" valign="middle"&gt; &lt;a href="https://bit.dev/?from=element-ui" target="_blank"&gt; &lt;img width="130px" src="https://user-images.githubusercontent.com/10095631/41342907-e44e7196-6f2f-11e8-92f2-47702dc8f059.png" /&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Translations&lt;/h2&gt; 
+&lt;p&gt;Element Plus is translated to multiple languages, you can click the badge to help up update the translation or apply to become a proofreader &lt;a href="https://crowdin.com/project/element-plus"&gt;&lt;img src="https://badges.crowdin.net/element-plus/localized.svg?sanitize=true" alt="Crowdin" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;For now we are only showing English and Chinese for resource reasons, but we are looking forward to translate it into more languages, please go to the link above and leave a message if you want to help translating Element Plus into your desired language.&lt;/p&gt; 
+&lt;h3&gt;How to help translating&lt;/h3&gt; 
+&lt;p&gt;See how to help translating in &lt;a href="https://element-plus.org/en-US/guide/translation.html"&gt;Translating Element Plus&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Stay tuned &lt;span&gt;👀&lt;/span&gt;&lt;/h2&gt; 
+&lt;p&gt;Join our &lt;a href="https://discord.com/invite/gXK9XNzW3X"&gt;Discord&lt;/a&gt; to start communicating with everybody.&lt;/p&gt; 
+&lt;h2&gt;This thing is broken, I should help improve it!&lt;/h2&gt; 
+&lt;p&gt;Awesommmmmmee. Everything you need is down below. You can also refer to &lt;a href="https://github.com/element-plus/element-plus/raw/dev/CONTRIBUTING.md"&gt;CONTRIBUTING&lt;/a&gt; and &lt;a href="https://github.com/element-plus/element-plus/raw/dev/CODE_OF_CONDUCT.md"&gt;Code of Conduct&lt;/a&gt; where you'll find the same information listed below.&lt;/p&gt; 
+&lt;h2&gt;I would like to become a part of the development team!&lt;/h2&gt; 
+&lt;p&gt;Welcome &lt;span&gt;🤩&lt;/span&gt;! We are looking for talented developers to join us and making Element Plus better! If you care to join the development team, please reach out to us, you are more than welcomed to join us! &lt;span&gt;❤️&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;We are now lacking of experts of &lt;code&gt;Testing&lt;/code&gt;, &lt;code&gt;GitHub Actions&lt;/code&gt;, &lt;code&gt;PM&lt;/code&gt;, if you do feel like you can and willing to help us, please do reach out to us. &lt;span&gt;🙏&lt;/span&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributors&lt;/h2&gt; 
+&lt;p&gt;This project exists thanks to all the people who contribute.&lt;/p&gt; 
+&lt;p&gt;And thank you to all our backers! 🙏&lt;/p&gt; 
+&lt;a href="https://openomy.app/github/element-plus/element-plus" target="_blank" style="display: block; width: 100%;" align="center"&gt; &lt;img src="https://openomy.app/svg?repo=element-plus/element-plus&amp;amp;chart=bubble&amp;amp;latestMonth=3" target="_blank" alt="Contribution Leaderboard" style="display: block; width: 100%;" /&gt; &lt;/a&gt; 
+&lt;hr /&gt; 
+&lt;a href="https://github.com/element-plus/element-plus/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=element-plus/element-plus" /&gt; &lt;/a&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Element Plus is open source software licensed as &lt;a href="https://github.com/element-plus/element-plus/raw/master/LICENSE"&gt;MIT&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>taskforcesh/bullmq</title>
+      <link>https://github.com/taskforcesh/bullmq</link>
+      <description>&lt;p&gt;BullMQ - Message Queue and Batch processing for NodeJS and Python based on Redis&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;br /&gt; 
+ &lt;img src="https://user-images.githubusercontent.com/95200/143832033-32e868df-f3b0-4251-97fb-c64809a43d36.png" width="800" /&gt; 
+ &lt;br /&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt; The fastest, most reliable, Redis-based distributed queue for Node. &lt;br /&gt; Carefully written for rock solid stability and atomicity. &lt;/p&gt; Read the 
+ &lt;a href="https://docs.bullmq.io"&gt;documentation&lt;/a&gt; 
+ &lt;br /&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt; &lt;a href="https://join.slack.com/t/bullmq/shared_invite/zt-1nbtpk6mv-TItWpF9jf3k4yrCaS0PPZA"&gt; &lt;img src="https://img.shields.io/badge/Slack-4A154B" /&gt; &lt;/a&gt; &lt;a href="https://badge.fury.io/js/bullmq"&gt; &lt;img src="https://badge.fury.io/js/bullmq.svg?sanitize=true" /&gt; &lt;/a&gt; &lt;a href="https://coveralls.io/github/taskforcesh/bullmq?branch=master"&gt; &lt;img src="https://coveralls.io/repos/github/taskforcesh/bullmq/badge.svg?branch=master" /&gt; &lt;/a&gt; &lt;a href="https://github.com/semantic-release/semantic-release"&gt; &lt;img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?sanitize=true" /&gt; &lt;/a&gt; &lt;a href="https://gurubase.io/g/bullmq"&gt; &lt;img src="https://img.shields.io/badge/Gurubase-Ask%20BullMQ%20Guru-006BFF" /&gt; &lt;/a&gt; &lt;/p&gt; 
+ &lt;p&gt; &lt;em&gt;Follow &lt;a href="https://twitter.com/manast"&gt;@manast&lt;/a&gt; for *important* Bull/BullMQ/BullMQ-Pro news and updates!&lt;/em&gt; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h1&gt;🛠 Tutorials&lt;/h1&gt; 
+&lt;p&gt;You can find tutorials and news in this blog: &lt;a href="https://blog.taskforce.sh/"&gt;https://blog.taskforce.sh/&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;News 🚀&lt;/h1&gt; 
+&lt;h2&gt;🌐 Language agnostic BullMQ&lt;/h2&gt; 
+&lt;p&gt;Do you need to work with BullMQ on platforms other than Node.js? If so, check out the &lt;a href="https://github.com/taskforcesh/bullmq-proxy"&gt;BullMQ Proxy&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Official FrontEnd&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://taskforce.sh"&gt;&lt;img src="https://taskforce.sh/assets/logo_square.png" width="150" alt="Taskforce.sh, Inc" style="padding: 200px" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Supercharge your queues with a professional front end:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Get a complete overview of all your queues.&lt;/li&gt; 
+ &lt;li&gt;Inspect jobs, search, retry, or promote delayed jobs.&lt;/li&gt; 
+ &lt;li&gt;Metrics and statistics.&lt;/li&gt; 
+ &lt;li&gt;and many more features.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Sign up at &lt;a href="https://taskforce.sh"&gt;Taskforce.sh&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;🚀 Sponsors 🚀&lt;/h1&gt; 
+&lt;table cellspacing="0" cellpadding="0" border="0"&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;a href="https://www.dragonflydb.io/"&gt; &lt;img src="https://raw.githubusercontent.com/dragonflydb/dragonfly/main/.github/images/logo-full.svg?sanitize=true" width="550" alt="Dragonfly" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; Dragonfly is a new Redis™ drop-in replacement that is fully compatible with BullMQ and brings some important advantages over Redis™ such as massive better performance by utilizing all CPU cores available and faster and more memory efficient data structures. Read more &lt;a href="https://www.dragonflydb.io/docs/integrations/bullmq"&gt;here&lt;/a&gt; on how to use it with BullMQ. &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h1&gt;Used by&lt;/h1&gt; 
+&lt;p&gt;Some notable organizations using BullMQ:&lt;/p&gt; 
+&lt;table cellspacing="0" cellpadding="0"&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td valign="center"&gt; &lt;a href="https://github.com/microsoft/lage"&gt; &lt;img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LUuDmt_xXMfG66Rn1GA%2Fuploads%2FUvwInTAmk7hxAViDwJzU%2Fclipart1565701.png?alt=media" width="150" alt="Microsoft" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td valign="center"&gt; &lt;a href="https://github.com/vendure-ecommerce/vendure"&gt; &lt;img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LUuDmt_xXMfG66Rn1GA%2Fuploads%2FvT30DUqsi61gL8edn3R2%2Fwordmark-logo.png?alt=media" width="150" alt="Vendure" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td valign="center"&gt; &lt;a href="https://github.com/datawrapper/datawrapper"&gt; &lt;img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LUuDmt_xXMfG66Rn1GA%2Fuploads%2FCJ5XmotpBBsuSgD8CilC%2Fdatawrapper-logo.png?alt=media" width="150" alt="Datawrapper" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td valign="center"&gt; &lt;a href="https://github.com/nestjs/bull/tree/master/packages/bullmq"&gt; &lt;img src="https://876297641-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LUuDmt_xXMfG66Rn1GA%2Fuploads%2FfAcGye182utFUtPKdLqJ%2FScreenshot%202022-02-15%20at%2011.32.39.png?alt=media&amp;amp;token=29feb550-f0bc-467d-a290-f700701d7d15" width="150" alt="Nest" /&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td valign="center"&gt; &lt;a href="https://github.com/teamcurri"&gt; &lt;img src="https://user-images.githubusercontent.com/659829/161662129-ae645bc4-c1e9-48ff-997e-4cee281a964a.png" width="150" alt="Curri" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td valign="center"&gt; &lt;a href="https://novu.co"&gt; &lt;img src="https://assets.super.so/1e9f5a51-c4c6-4fca-b6e8-25fa0186f139/images/0f550019-16db-4a65-90d1-1bdb7d3c5f20/novu-logo-gradient-light-background2x.png" width="150" alt="Novu" /&gt; &lt;/a&gt; &lt;/td&gt;  
+   &lt;td valign="center"&gt; &lt;a href="https://www.nocodb.com"&gt; &lt;img src="https://github.com/nocodb/nocodb/raw/develop/packages/nc-gui/assets/img/icons/512x512.png" width="50" alt="NoCodeDB" /&gt; &lt;/a&gt; &lt;/td&gt;  
+   &lt;td valign="center"&gt; &lt;a href="https://infisical.com/"&gt; 
+     &lt;picture&gt; 
+      &lt;source media="(prefers-color-scheme: dark)" srcset="https://mintlify.s3-us-west-1.amazonaws.com/infisical/logo/dark.svg" /&gt; 
+      &lt;img src="https://mintlify.s3-us-west-1.amazonaws.com/infisical/logo/light.svg?sanitize=true" width="150" alt="Infisical" /&gt; 
+     &lt;/picture&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h1&gt;The gist&lt;/h1&gt; 
+&lt;p&gt;Install:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;$ yarn add bullmq
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Add jobs to the queue:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-ts"&gt;import { Queue } from 'bullmq';
+
+const queue = new Queue('Paint');
+
+queue.add('cars', { color: 'blue' });
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Process the jobs in your workers:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-ts"&gt;import { Worker } from 'bullmq';
+
+const worker = new Worker('Paint', async job =&amp;gt; {
+  if (job.name === 'cars') {
+    await paintCar(job.data.color);
+  }
+});
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Listen to jobs for completion:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-ts"&gt;import { QueueEvents } from 'bullmq';
+
+const queueEvents = new QueueEvents('Paint');
+
+queueEvents.on('completed', ({ jobId }) =&amp;gt; {
+  console.log('done painting');
+});
+
+queueEvents.on(
+  'failed',
+  ({ jobId, failedReason }: { jobId: string; failedReason: string }) =&amp;gt; {
+    console.error('error painting', failedReason);
+  },
+);
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Adds jobs with parent-child relationship:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-ts"&gt;import { FlowProducer } from 'bullmq';
+
+const flow = new FlowProducer();
+
+const originalTree = await flow.add({
+  name: 'root-job',
+  queueName: 'topQueueName',
+  data: {},
+  children: [
+    {
+      name: 'child-job',
+      data: { idx: 0, foo: 'bar' },
+      queueName: 'childrenQueueName',
+      children: [
+        {
+          name: 'grandchild-job',
+          data: { idx: 1, foo: 'bah' },
+          queueName: 'grandChildrenQueueName'
+        },
+        {
+          name: 'grandchild-job',
+          data: { idx: 2, foo: 'baz' },
+          queueName: 'grandChildrenQueueName'
+        },
+      ],
+    },
+    {
+      name: 'child-job',
+      data: { idx: 3, foo: 'foo' },
+      queueName: 'childrenQueueName'
+    },
+  ],
+});
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This is just scratching the surface, check all the features and more in the official &lt;a href="https://docs.bullmq.io"&gt;documentation&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Feature Comparison&lt;/h1&gt; 
+&lt;p&gt;Since there are a few job queue solutions, here is a table comparing them:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="left"&gt;Feature&lt;/th&gt; 
+   &lt;th align="center"&gt;&lt;a href="https://bullmq.io/#bullmq-pro"&gt;BullMQ-Pro&lt;/a&gt;&lt;/th&gt; 
+   &lt;th align="center"&gt;&lt;a href="https://bullmq.io"&gt;BullMQ&lt;/a&gt;&lt;/th&gt; 
+   &lt;th align="center"&gt;Bull&lt;/th&gt; 
+   &lt;th align="center"&gt;Kue&lt;/th&gt; 
+   &lt;th&gt;Bee&lt;/th&gt; 
+   &lt;th&gt;Agenda&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Backend&lt;/td&gt; 
+   &lt;td align="center"&gt;redis&lt;/td&gt; 
+   &lt;td align="center"&gt;redis&lt;/td&gt; 
+   &lt;td align="center"&gt;redis&lt;/td&gt; 
+   &lt;td align="center"&gt;redis&lt;/td&gt; 
+   &lt;td&gt;redis&lt;/td&gt; 
+   &lt;td&gt;mongo&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Observables&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Group Rate Limit&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Group Support&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Batches Support&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Parent/Child Dependencies&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Deduplication (Debouncing)&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Deduplication (Throttling)&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Priorities&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;✓&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Concurrency&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td&gt;✓&lt;/td&gt; 
+   &lt;td&gt;✓&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Delayed jobs&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;✓&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Global events&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Rate Limiter&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Pause/Resume&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Sandboxed worker&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Repeatable jobs&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;✓&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Atomic ops&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td&gt;✓&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Persistence&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td&gt;✓&lt;/td&gt; 
+   &lt;td&gt;✓&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;UI&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td align="center"&gt;✓&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;✓&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Optimized for&lt;/td&gt; 
+   &lt;td align="center"&gt;Jobs / Messages&lt;/td&gt; 
+   &lt;td align="center"&gt;Jobs / Messages&lt;/td&gt; 
+   &lt;td align="center"&gt;Jobs / Messages&lt;/td&gt; 
+   &lt;td align="center"&gt;Jobs&lt;/td&gt; 
+   &lt;td&gt;Messages&lt;/td&gt; 
+   &lt;td&gt;Jobs&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Fork the repo, make some changes, submit a pull-request! Here is the &lt;a href="https://github.com/taskforcesh/bullmq/raw/master/contributing.md"&gt;contributing&lt;/a&gt; doc that has more details.&lt;/p&gt; 
+&lt;h1&gt;Thanks&lt;/h1&gt; 
+&lt;p&gt;Thanks for all the contributors that made this library possible, also a special mention to Leon van Kammen that kindly donated his npm bullmq repo.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MetaMask/metamask-mobile</title>
+      <link>https://github.com/MetaMask/metamask-mobile</link>
+      <description>&lt;p&gt;Mobile web browser providing access to websites that use the Ethereum blockchain&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/MetaMask/metamask-mobile/main/logo.png?raw=true" alt="MetaMask logo" /&gt;&lt;/p&gt; 
+&lt;h1&gt;MetaMask&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/MetaMask/metamask-mobile/actions/workflows/ci.yml"&gt;&lt;img src="https://github.com/MetaMask/metamask-mobile/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI" /&gt;&lt;/a&gt; &lt;a href="https://github.com/MetaMask/metamask-mobile/actions/workflows/cla.yml"&gt;&lt;img src="https://github.com/MetaMask/metamask-mobile/actions/workflows/cla.yml/badge.svg?branch=main" alt="CLA" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;MetaMask is a mobile wallet that provides easy access to websites that use the &lt;a href="https://ethereum.org/"&gt;Ethereum&lt;/a&gt; blockchain.&lt;/p&gt; 
+&lt;p&gt;For up to the minute news, follow our &lt;a href="https://twitter.com/metamask"&gt;Twitter&lt;/a&gt; or &lt;a href="https://medium.com/metamask"&gt;Medium&lt;/a&gt; pages.&lt;/p&gt; 
+&lt;p&gt;To learn how to develop MetaMask-compatible applications, visit our &lt;a href="https://docs.metamask.io"&gt;Developer Docs&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;To learn how to contribute to the MetaMask codebase, visit our &lt;a href="https://github.com/MetaMask/contributor-docs"&gt;Contributor Docs&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/MetaMask/metamask-mobile/main/docs/readme/architecture.md"&gt;Architecture&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/MetaMask/metamask-mobile/main/docs/readme/expo-environment.md"&gt;Expo Development Environment Setup&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/MetaMask/metamask-mobile/main/docs/readme/environment.md"&gt;Native Development Environment Setup&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/MetaMask/metamask-mobile/main/docs/readme/troubleshooting.md"&gt;Build Troubleshooting&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/MetaMask/metamask-mobile/main/docs/readme/testing.md"&gt;Testing&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/MetaMask/metamask-mobile/main/docs/readme/debugging.md"&gt;Debugging&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/MetaMask/metamask-mobile/main/docs/readme/performance.md"&gt;Performance&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/MetaMask/metamask-mobile/main/docs/readme/release-build-profiler.md"&gt;Release Build Profiling&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/MetaMask/metamask-mobile/main/docs/readme/storybook.md"&gt;Storybook&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/MetaMask/metamask-mobile/main/docs/readme/miscellaneous.md"&gt;Miscellaneous&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Getting started&lt;/h2&gt; 
+&lt;h3&gt;Using Expo (recommended)&lt;/h3&gt; 
+&lt;p&gt;Expo is the fastest way to start developing. With the Expo framework, developers don't need to compile the native side of the application as before, hence no need for any native environment setup, developers only need to download a precompiled development build and run the javascript bundler. The development build will then connect with the bundler to load the javascript code.&lt;/p&gt; 
+&lt;h4&gt;Expo Environment Setup&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/MetaMask/metamask-mobile/main/docs/readme/expo-environment.md"&gt;Install node, yarn and watchman.&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;Clone the project&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone git@github.com:MetaMask/metamask-mobile.git &amp;amp;&amp;amp; \
+cd metamask-mobile
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Install dependencies&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn setup:expo
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Run the bundler&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn watch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Download and install the development build&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;Expo development builds are hosted in &lt;a href="https://www.runway.team/"&gt;Runway&lt;/a&gt; buckets and are made available to all contributors through the public bucket links below. A new build is generated every time a PR is merged into the &lt;code&gt;main&lt;/code&gt; branch.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;For Android:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Download and install an &lt;code&gt;.apk&lt;/code&gt; file from this &lt;a href="https://app.runway.team/bucket/hykQxdZCEGgoyyZ9sBtkhli8wupv9PiTA6uRJf3Lh65FTECF1oy8vzkeXdmuJKhm7xGLeV35GzIT1Un7J5XkBADm5OhknlBXzA0CzqB767V36gi1F3yg3Uss"&gt;Runway bucket&lt;/a&gt; onto your Android device or emulator.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;For iOS:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Physical device 
+    &lt;ul&gt; 
+     &lt;li&gt;Your test device needs to first be registered with our Apple developer account.&lt;/li&gt; 
+     &lt;li&gt;Once registered, download and install an &lt;code&gt;.ipa&lt;/code&gt; file from this &lt;a href="https://app.runway.team/bucket/MV2BJmn6D5_O7nqGw8jHpATpEA4jkPrBB4EcWXC6wV7z8jgwIbAsDhE5Ncl7KwF32qRQQD9YrahAIaxdFVvLT4v3UvBcViMtT3zJdMMfkXDPjSdqVGw="&gt;Runway bucket&lt;/a&gt; onto your device.&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+   &lt;li&gt;Simulator 
+    &lt;ul&gt; 
+     &lt;li&gt;Download and install an &lt;code&gt;.app&lt;/code&gt; file from this &lt;a href="https://app.runway.team/bucket/aCddXOkg1p_nDryri-FMyvkC9KRqQeVT_12sf6Nw0u6iGygGo6BlNzjD6bOt-zma260EzAxdpXmlp2GQphp3TN1s6AJE4i6d_9V0Tv5h4pHISU49dFk="&gt;Runway bucket&lt;/a&gt; onto your simulator.&lt;/li&gt; 
+     &lt;li&gt;Note: Our &lt;code&gt;.app&lt;/code&gt; files are zipped and hosted under &lt;code&gt;Additional Artifacts&lt;/code&gt; in the bucket. Since this hosting additional artifacts in public buckets is a relatively new feature, contributors may find that some builds are missing additional artifacts. Under the hood, these are usually associated with failed or aborted Bitrise builds. We are working with the Runway team to better filter out these builds and are subject to change in the future.&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Load the app&lt;/h4&gt; 
+&lt;p&gt;If on a simulator:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;use the initial expo screen that appears when starting the development to choose the bundler url&lt;/li&gt; 
+ &lt;li&gt;OR press "a" for Android or "i" for iOS on the terminal where the bundler is running&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;If on a physical device:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Use the camera app to scan the QR code presented by the bundler running on the terminal&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;That's it! This will work for any javascript development, if you need to develop or modify native code please see the next section.&lt;/p&gt; 
+&lt;h3&gt;Native Development&lt;/h3&gt; 
+&lt;p&gt;If developing or modifying native code or installing any library that introduces or uses native code, it is not possible to use an Expo precompiled development build as you need to compile the native side of the application again. To do so, please follow the steps stated in this section.&lt;/p&gt; 
+&lt;h4&gt;Native Environment setup&lt;/h4&gt; 
+&lt;p&gt;Before running the app for native development, make sure your development environment has all the required tools. Several of these tools (ie Node and Ruby) may require specific versions in order to successfully build the app.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/MetaMask/metamask-mobile/main/docs/readme/environment.md"&gt;Setup your development environment&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;Building the app&lt;/h4&gt; 
+&lt;p&gt;&lt;strong&gt;Clone the project&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone git@github.com:MetaMask/metamask-mobile.git &amp;amp;&amp;amp; \
+cd metamask-mobile
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h5&gt;Firebase Messaging Setup&lt;/h5&gt; 
+&lt;p&gt;MetaMask uses Firebase Cloud Messaging (FCM) to enable app communications. To integrate FCM, you'll need configuration files for both iOS and Android platforms.&lt;/p&gt; 
+&lt;h6&gt;Internal Contributor instructions&lt;/h6&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Grab the &lt;code&gt;.js.env&lt;/code&gt; file from 1Password, ask around for the correct vault. This file contains the &lt;code&gt;GOOGLE_SERVICES_B64_ANDROID&lt;/code&gt; and &lt;code&gt;GOOGLE_SERVICES_B64_IOS&lt;/code&gt; secrets that will be used to generate the relevant configuration files for IOS/Android.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/MetaMask/metamask-mobile/main/README.md#install-dependencies"&gt;Install&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/MetaMask/metamask-mobile/main/README.md#running-the-app"&gt;run &amp;amp; start&lt;/a&gt; the application as documented below.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h6&gt;External Contributor instructions&lt;/h6&gt; 
+&lt;p&gt;As an external contributor, you need to provide your own Firebase project configuration files:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;GoogleService-Info.plist&lt;/code&gt;&lt;/strong&gt; (iOS)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;google-services.json&lt;/code&gt;&lt;/strong&gt; (Android)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Create a Free Firebase Project 
+  &lt;ul&gt; 
+   &lt;li&gt;Set up a Firebase project in the Firebase Console.&lt;/li&gt; 
+   &lt;li&gt;Configure the project with a client package name matching &lt;code&gt;io.metamask&lt;/code&gt; (IMPORTANT).&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Add Configuration Files 
+  &lt;ul&gt; 
+   &lt;li&gt;Create/Update the &lt;code&gt;google-services.json&lt;/code&gt; and &lt;code&gt;GoogleService-Info.plist&lt;/code&gt; files in:&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;android/app/google-services.json&lt;/code&gt; (for Android)&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;ios/GoogleServices/GoogleService-Info.plist&lt;/code&gt; directory (for iOS)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Create the correct base64 environments variables.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Generate Android Base64 Version of Google Services
+export GOOGLE_SERVICES_B64_ANDROID="$(base64 -w0 -i ./android/app/google-services.json)" &amp;amp;&amp;amp; echo "export GOOGLE_SERVICES_B64_ANDROID=\"$GOOGLE_SERVICES_B64_ANDROID\"" | tee -a .js.env
+
+# Generate IOS Base64 Version of Google Services
+export GOOGLE_SERVICES_B64_IOS="$(base64 -w0 -i ./ios/GoogleServices/GoogleService-Info.plist)" &amp;amp;&amp;amp; echo "export GOOGLE_SERVICES_B64_IOS=\"$GOOGLE_SERVICES_B64_IOS\"" | tee -a .js.env
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;[!CAUTION]&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;In case you don't provide your own Firebase project config file or run the steps above, you will face the error &lt;code&gt;No matching client found for package name 'io.metamask'&lt;/code&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;In case of any doubt, please follow the instructions in the link below to get your Firebase project config file. &lt;a href="https://firebaseopensource.com/projects/firebase/quickstart-js/messaging/readme/#getting_started"&gt;Firebase Project Quickstart&lt;/a&gt;&lt;/p&gt; 
+&lt;h5&gt;Install dependencies&lt;/h5&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn setup
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;em&gt;Not the usual install command, this will run scripts and a lengthy postinstall flow&lt;/em&gt;&lt;/p&gt; 
+&lt;h4&gt;Running the app for native development&lt;/h4&gt; 
+&lt;p&gt;&lt;strong&gt;Run Metro bundler&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn watch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;em&gt;Like a local server for the app&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Run on a iOS device&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn start:ios
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Run on an Android device&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn start:android
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>GLips/Figma-Context-MCP</title>
+      <link>https://github.com/GLips/Figma-Context-MCP</link>
+      <description>&lt;p&gt;MCP server to provide Figma layout information to AI coding agents like Cursor&lt;/p&gt;&lt;hr&gt;&lt;a href="https://www.framelink.ai/?utm_source=github&amp;amp;utm_medium=referral&amp;amp;utm_campaign=readme" target="_blank" rel="noopener"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://www.framelink.ai/github/HeaderDark.png" /&gt; 
+  &lt;img alt="Framelink" src="https://www.framelink.ai/github/HeaderLight.png" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;div align="center"&gt; 
+ &lt;h1&gt;Framelink Figma MCP Server&lt;/h1&gt; 
+ &lt;p&gt; 🌐 Available in: &lt;a href="https://raw.githubusercontent.com/GLips/Figma-Context-MCP/main/README.ko.md"&gt;한국어 (Korean)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/GLips/Figma-Context-MCP/main/README.ja.md"&gt;日本語 (Japanese)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/GLips/Figma-Context-MCP/main/README.zh-cn.md"&gt;简体中文 (Simplified Chinese)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/GLips/Figma-Context-MCP/main/README.zh-tw.md"&gt;繁體中文 (Traditional Chinese)&lt;/a&gt; &lt;/p&gt; 
+ &lt;h3&gt;Give your coding agent access to your Figma data.&lt;br /&gt;Implement designs in any framework in one-shot.&lt;/h3&gt; 
+ &lt;a href="https://npmcharts.com/compare/figma-developer-mcp?interval=30"&gt; &lt;img alt="weekly downloads" src="https://img.shields.io/npm/dm/figma-developer-mcp.svg?sanitize=true" /&gt; &lt;/a&gt; 
+ &lt;a href="https://github.com/GLips/Figma-Context-MCP/raw/main/LICENSE"&gt; &lt;img alt="MIT License" src="https://img.shields.io/github/license/GLips/Figma-Context-MCP" /&gt; &lt;/a&gt; 
+ &lt;a href="https://framelink.ai/discord"&gt; &lt;img alt="Discord" src="https://img.shields.io/discord/1352337336913887343?color=7389D8&amp;amp;label&amp;amp;logo=discord&amp;amp;logoColor=ffffff" /&gt; &lt;/a&gt; 
+ &lt;br /&gt; 
+ &lt;a href="https://twitter.com/glipsman"&gt; &lt;img alt="Twitter" src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fx.com%2Fglipsman&amp;amp;label=%40glipsman" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;br /&gt; 
+&lt;p&gt;Give &lt;a href="https://cursor.sh/"&gt;Cursor&lt;/a&gt; and other AI-powered coding tools access to your Figma files with this &lt;a href="https://modelcontextprotocol.io/introduction"&gt;Model Context Protocol&lt;/a&gt; server.&lt;/p&gt; 
+&lt;p&gt;When Cursor has access to Figma design data, it's &lt;strong&gt;way&lt;/strong&gt; better at one-shotting designs accurately than alternative approaches like pasting screenshots.&lt;/p&gt; 
+&lt;h3&gt;&lt;a href="https://www.framelink.ai/docs/quickstart?utm_source=github&amp;amp;utm_medium=referral&amp;amp;utm_campaign=readme"&gt;See quickstart instructions →&lt;/a&gt;&lt;/h3&gt; 
+&lt;h2&gt;Demo&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://youtu.be/6G9yb-LrEqg"&gt;Watch a demo of building a UI in Cursor with Figma design data&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://youtu.be/6G9yb-LrEqg"&gt;&lt;img src="https://img.youtube.com/vi/6G9yb-LrEqg/maxresdefault.jpg" alt="Watch the video" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;How it works&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Open your IDE's chat (e.g. agent mode in Cursor).&lt;/li&gt; 
+ &lt;li&gt;Paste a link to a Figma file, frame, or group.&lt;/li&gt; 
+ &lt;li&gt;Ask Cursor to do something with the Figma file—e.g. implement the design.&lt;/li&gt; 
+ &lt;li&gt;Cursor will fetch the relevant metadata from Figma and use it to write your code.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;This MCP server is specifically designed for use with Cursor. Before responding with context from the &lt;a href="https://www.figma.com/developers/api"&gt;Figma API&lt;/a&gt;, it simplifies and translates the response so only the most relevant layout and styling information is provided to the model.&lt;/p&gt; 
+&lt;p&gt;Reducing the amount of context provided to the model helps make the AI more accurate and the responses more relevant.&lt;/p&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;Many code editors and other AI clients use a configuration file to manage MCP servers.&lt;/p&gt; 
+&lt;p&gt;The &lt;code&gt;figma-developer-mcp&lt;/code&gt; server can be configured by adding the following to your configuration file.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;NOTE: You will need to create a Figma access token to use this server. Instructions on how to create a Figma API access token can be found &lt;a href="https://help.figma.com/hc/en-us/articles/8085703771159-Manage-personal-access-tokens"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;MacOS / Linux&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "Framelink Figma MCP": {
+      "command": "npx",
+      "args": ["-y", "figma-developer-mcp", "--figma-api-key=YOUR-KEY", "--stdio"]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Windows&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "Framelink Figma MCP": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "figma-developer-mcp", "--figma-api-key=YOUR-KEY", "--stdio"]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Or you can set &lt;code&gt;FIGMA_API_KEY&lt;/code&gt; and &lt;code&gt;PORT&lt;/code&gt; in the &lt;code&gt;env&lt;/code&gt; field.&lt;/p&gt; 
+&lt;p&gt;If you need more information on how to configure the Framelink Figma MCP server, see the &lt;a href="https://www.framelink.ai/docs/quickstart?utm_source=github&amp;amp;utm_medium=referral&amp;amp;utm_campaign=readme"&gt;Framelink docs&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://star-history.com/#GLips/Figma-Context-MCP"&gt;&lt;img src="https://api.star-history.com/svg?repos=GLips/Figma-Context-MCP&amp;amp;type=Date" alt="Star History Chart" width="600" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Learn More&lt;/h2&gt; 
+&lt;p&gt;The Framelink Figma MCP server is simple but powerful. Get the most out of it by learning more at the &lt;a href="https://framelink.ai?utm_source=github&amp;amp;utm_medium=referral&amp;amp;utm_campaign=readme"&gt;Framelink&lt;/a&gt; site.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
