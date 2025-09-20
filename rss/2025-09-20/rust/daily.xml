@@ -1,0 +1,1827 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub Rust Daily Trending</title>
+    <description>Daily Trending of Rust in GitHub</description>
+    <pubDate>Fri, 19 Sep 2025 01:36:16 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>linera-io/linera-protocol</title>
+      <link>https://github.com/linera-io/linera-protocol</link>
+      <description>&lt;p&gt;Main repository for the Linera protocol&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;&lt;img src="https://github.com/linera-io/linera-protocol/assets/1105398/fe08c941-93af-4114-bb83-bcc0eaec95f9" width="250" height="85" /&gt;&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/linera-io/linera-protocol/main/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/linera-io/linera-protocol" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://github.com/linera-io/linera-protocol/actions/workflows/docker-compose.yml"&gt;&lt;img src="https://github.com/linera-io/linera-protocol/actions/workflows/docker-compose.yml/badge.svg?sanitize=true" alt="Build Status for Docker" /&gt;&lt;/a&gt; &lt;a href="https://github.com/linera-io/linera-protocol/actions/workflows/rust.yml"&gt;&lt;img src="https://github.com/linera-io/linera-protocol/actions/workflows/rust.yml/badge.svg?sanitize=true" alt="Build Status for Rust" /&gt;&lt;/a&gt; &lt;a href="https://github.com/linera-io/linera-protocol/actions/workflows/documentation.yml"&gt;&lt;img src="https://github.com/linera-io/linera-protocol/actions/workflows/documentation.yml/badge.svg?sanitize=true" alt="Build Status for Documentation" /&gt;&lt;/a&gt; &lt;a href="https://x.com/linera_io"&gt;&lt;img src="https://img.shields.io/twitter/follow/linera_io" alt="Twitter" /&gt;&lt;/a&gt; &lt;a href="https://discord.com/invite/linera"&gt;&lt;img src="https://img.shields.io/discord/984941796272521226" alt="Discord" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;!-- [![Build Status for Kubernetes](https://github.com/linera-io/linera-protocol/actions/workflows/kubernetes.yml/badge.svg)](https://github.com/linera-io/linera-protocol/actions/workflows/kubernetes.yml) --&gt; 
+&lt;p&gt;&lt;a href="https://linera.io"&gt;Linera&lt;/a&gt; is a decentralized blockchain infrastructure designed for highly scalable, secure, low-latency Web3 applications.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Visit our &lt;a href="https://linera.dev"&gt;developer page&lt;/a&gt; and read our &lt;a href="https://linera.io/whitepaper"&gt;whitepaper&lt;/a&gt; to learn more about the Linera protocol.&lt;/p&gt; 
+&lt;h2&gt;Repository Structure&lt;/h2&gt; 
+&lt;p&gt;The main crates and directories of this repository can be summarized as follows: (listed from low to high levels in the dependency graph)&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_base/index.html"&gt;&lt;code&gt;linera-base&lt;/code&gt;&lt;/a&gt; Base definitions, including cryptography.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_version/index.html"&gt;&lt;code&gt;linera-version&lt;/code&gt;&lt;/a&gt; A library to manage version info in binaries and services.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_views/index.html"&gt;&lt;code&gt;linera-views&lt;/code&gt;&lt;/a&gt; A library mapping complex data structures onto a key-value store. The corresponding procedural macros are implemented in &lt;code&gt;linera-views-derive&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_execution/index.html"&gt;&lt;code&gt;linera-execution&lt;/code&gt;&lt;/a&gt; Persistent data and the corresponding logic for runtime and execution of Linera applications.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_chain/index.html"&gt;&lt;code&gt;linera-chain&lt;/code&gt;&lt;/a&gt; Persistent data and the corresponding logic for chains of blocks, certificates, and cross-chain messaging.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_storage/index.html"&gt;&lt;code&gt;linera-storage&lt;/code&gt;&lt;/a&gt; Defines the storage abstractions for the protocol on top of &lt;code&gt;linera-chain&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_core/index.html"&gt;&lt;code&gt;linera-core&lt;/code&gt;&lt;/a&gt; The core Linera protocol, including client and server logic, node synchronization, etc.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_rpc/index.html"&gt;&lt;code&gt;linera-rpc&lt;/code&gt;&lt;/a&gt; Defines the data-type for RPC messages (currently all client ↔ proxy ↔ chain ↔ chain interactions), and track the corresponding data schemas.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_client/index.html"&gt;&lt;code&gt;linera-client&lt;/code&gt;&lt;/a&gt; Library for writing Linera clients. Used for the command-line client and the node service in &lt;code&gt;linera-service&lt;/code&gt;, as well as the Web client in &lt;a href="https://github.com/linera-io/linera-web/"&gt;&lt;code&gt;linera-web&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_service/index.html"&gt;&lt;code&gt;linera-service&lt;/code&gt;&lt;/a&gt; Executable for clients (aka CLI wallets), proxy (aka validator frontend) and servers.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_sdk/index.html"&gt;&lt;code&gt;linera-sdk&lt;/code&gt;&lt;/a&gt; The library to develop Linera applications written in Rust for the Wasm virtual machine. The corresponding procedural macros are implemented in &lt;code&gt;linera-sdk-derive&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://raw.githubusercontent.com/linera-io/linera-protocol/main/examples"&gt;&lt;code&gt;examples&lt;/code&gt;&lt;/a&gt; Examples of Linera applications written in Rust.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Prerequisites&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/linera-io/linera-protocol/main/INSTALL.md"&gt;&lt;code&gt;INSTALL.md&lt;/code&gt;&lt;/a&gt; for software requirements to develop in this repo.&lt;/p&gt; 
+&lt;h2&gt;Quickstart with the Linera CLI tool&lt;/h2&gt; 
+&lt;p&gt;The following commands set up a local test network and run some transfers between the microchains owned by a single wallet.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Make sure to compile the Linera binaries and add them in the $PATH.
+# cargo build -p linera-storage-service -p linera-service --bins
+export PATH="$PWD/target/debug:$PATH"
+
+# Import the optional helper function `linera_spawn`.
+source /dev/stdin &amp;lt;&amp;lt;&amp;lt;"$(linera net helper 2&amp;gt;/dev/null)"
+
+# Run a local test network with the default parameters and a number of microchains
+# owned by the default wallet. This also defines `LINERA_TMP_DIR`.
+linera_spawn \
+linera net up --with-faucet --faucet-port 8080
+
+# Remember the URL of the faucet.
+FAUCET_URL=http://localhost:8080
+
+# If you're using a testnet, start here and run this instead:
+#   LINERA_TMP_DIR=$(mktemp -d)
+#   FAUCET_URL=https://faucet.testnet-XXX.linera.net  # for some value XXX
+
+# Set the path of the future wallet.
+export LINERA_WALLET="$LINERA_TMP_DIR/wallet.json"
+export LINERA_KEYSTORE="$LINERA_TMP_DIR/keystore.json"
+export LINERA_STORAGE="rocksdb:$LINERA_TMP_DIR/client.db"
+
+# Initialize a new user wallet.
+linera wallet init --faucet $FAUCET_URL
+
+# Request chains.
+INFO1=($(linera wallet request-chain --faucet $FAUCET_URL))
+INFO2=($(linera wallet request-chain --faucet $FAUCET_URL))
+CHAIN1="${INFO1[0]}"
+ACCOUNT1="${INFO1[1]}"
+CHAIN2="${INFO2[0]}"
+ACCOUNT2="${INFO2[1]}"
+
+# Show the different chains tracked by the wallet.
+linera wallet show
+
+# Query the chain balance of some of the chains.
+linera query-balance "$CHAIN1"
+linera query-balance "$CHAIN2"
+
+# Transfer 10 units then 5 back.
+linera transfer 10 --from "$CHAIN1" --to "$CHAIN2"
+linera transfer 5 --from "$CHAIN2" --to "$CHAIN1"
+
+# Query balances again.
+linera query-balance "$CHAIN1"
+linera query-balance "$CHAIN2"
+
+# Now let's fund the user balances.
+linera transfer 5 --from "$CHAIN1" --to "$CHAIN1:$ACCOUNT1"
+linera transfer 2 --from "$CHAIN1:$ACCOUNT1" --to "$CHAIN2:$ACCOUNT2"
+
+# Query user balances again.
+linera query-balance "$CHAIN1:$ACCOUNT1"
+linera query-balance "$CHAIN2:$ACCOUNT2"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;More complex examples may be found in our &lt;a href="https://linera.dev"&gt;developer manual&lt;/a&gt; as well as the &lt;a href="https://raw.githubusercontent.com/linera-io/linera-protocol/main/examples"&gt;example applications&lt;/a&gt; in this repository.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions from the community! If you'd like to contribute to the Linera protocol:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork the repository&lt;/li&gt; 
+ &lt;li&gt;Create a feature branch (&lt;code&gt;git checkout -b feature/amazing-feature&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Commit your changes (&lt;code&gt;git commit -m 'Add some amazing feature'&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Push to the branch (&lt;code&gt;git push origin feature/amazing-feature&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Open a Pull Request&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;For detailed guidelines, see our &lt;a href="https://raw.githubusercontent.com/linera-io/linera-protocol/main/CONTRIBUTING.md"&gt;contribution guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>influxdata/influxdb</title>
+      <link>https://github.com/influxdata/influxdb</link>
+      <description>&lt;p&gt;Scalable datastore for metrics, events, and real-time analytics&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="assets/influxdb-logo.png" /&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="assets/influxdb-logo-dark.png" /&gt; 
+  &lt;img src="https://raw.githubusercontent.com/influxdata/influxdb/main/assets/influxdb-logo.png" alt="InfluxDB Logo" width="600" /&gt; 
+ &lt;/picture&gt; 
+ &lt;p&gt; &lt;/p&gt;
+&lt;/div&gt; 
+&lt;p&gt;InfluxDB Core is a database built to collect, process, transform, and store event and time series data. It is ideal for use cases that require real-time ingest and fast query response times to build user interfaces, monitoring, and automation solutions.&lt;/p&gt; 
+&lt;p&gt;Common use cases include:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Monitoring sensor data&lt;/li&gt; 
+ &lt;li&gt;Server monitoring&lt;/li&gt; 
+ &lt;li&gt;Application performance monitoring&lt;/li&gt; 
+ &lt;li&gt;Network monitoring&lt;/li&gt; 
+ &lt;li&gt;Financial market and trading analytics&lt;/li&gt; 
+ &lt;li&gt;Behavioral analytics&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;InfluxDB is optimized for scenarios where near real-time data monitoring is essential and queries need to return quickly to support user experiences such as dashboards and interactive user interfaces.&lt;/p&gt; 
+&lt;p&gt;InfluxDB 3 Core’s feature highlights include:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Diskless architecture with object storage support (or local disk with no dependencies)&lt;/li&gt; 
+ &lt;li&gt;Fast query response times (under 10ms for last-value queries, or 30ms for distinct metadata)&lt;/li&gt; 
+ &lt;li&gt;Embedded Python VM for plugins and triggers&lt;/li&gt; 
+ &lt;li&gt;Parquet file persistence&lt;/li&gt; 
+ &lt;li&gt;Compatibility with InfluxDB 1.x and 2.x write APIs&lt;/li&gt; 
+ &lt;li&gt;Compatability with InfluxDB 1.x query API (InfluxQL)&lt;/li&gt; 
+ &lt;li&gt;SQL query engine with support for FlightSQL and HTTP query API&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Project Status&lt;/h2&gt; 
+&lt;p&gt;InfluxDB 3 Core is GA as of April 15, 2025! We plan to have monthly point releases for the following six months, with patch releases as needed. We will move to a quarterly cadence after that for 3-4 releases, after which we'll reevaluate our release schedule.&lt;/p&gt; 
+&lt;p&gt;Join the &lt;a href="https://discord.gg/vZe2w2Ds8B"&gt;InfluxDB3 Discord&lt;/a&gt; or the public channels below to share your feedback, feature requests, and bug reports.&lt;/p&gt; 
+&lt;p&gt;See the &lt;a href="https://www.influxdata.com/blog/influxdb-3-oss-ga/"&gt;InfluxDB 3 Core &amp;amp; Enterprise GA release announcement here&lt;/a&gt; or dig into the &lt;a href="https://docs.influxdata.com/influxdb3/core/get-started/"&gt;InfluxDB 3 getting started guide here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Learn InfluxDB&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://docs.influxdata.com/"&gt;Documentation&lt;/a&gt; | &lt;a href="https://community.influxdata.com/"&gt;Community Forum&lt;/a&gt; | &lt;a href="https://www.influxdata.com/slack/"&gt;Community Slack&lt;/a&gt; | &lt;a href="https://www.influxdata.com/blog/"&gt;Blog&lt;/a&gt; | &lt;a href="https://university.influxdata.com/"&gt;InfluxDB University&lt;/a&gt; | &lt;a href="https://www.youtube.com/@influxdata8893"&gt;YouTube&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Try &lt;strong&gt;InfluxDB Cloud&lt;/strong&gt; for free and get started fast with no local setup required. Click &lt;a href="https://cloud2.influxdata.com/signup"&gt;here&lt;/a&gt; to start building your application on InfluxDB Cloud.&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;We have nightly and versioned Docker images, Debian packages, RPM packages, and tarballs of InfluxDB available on the &lt;a href="https://portal.influxdata.com/downloads/"&gt;InfluxData downloads page&lt;/a&gt;. We also provide the InfluxDB command line interface (CLI) client as a separate binary available at the same location.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;For v1 installation, use the &lt;a href="https://github.com/influxdata/influxdb/tree/master-1.x"&gt;main 1.x branch&lt;/a&gt; or &lt;a href="https://docs.influxdata.com/influxdb/v1/introduction/install/#installing-influxdb-oss"&gt;install InfluxDB OSS directly&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;For v2 installation, use the &lt;a href="https://github.com/influxdata/influxdb/tree/main-2.x"&gt;main 2.x branch&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;For InfluxDB 3 Core see the &lt;a href="https://docs.influxdata.com/influxdb3/core/get-started/"&gt;InfluxDB 3 Core getting started guide&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;For InfluxDB 3 Enterprise see the &lt;a href="https://docs.influxdata.com/influxdb3/enterprise/get-started/"&gt;InfluxDB 3 Enterprise getting started guide&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;If you are interested in building from source, see the &lt;a href="https://raw.githubusercontent.com/influxdata/influxdb/main/CONTRIBUTING.md#building-from-source"&gt;building from source&lt;/a&gt; guide for contributors.&lt;/p&gt; 
+&lt;p&gt;To begin using InfluxDB, visit our &lt;a href="https://docs.influxdata.com/influxdb/v1/introduction/get-started/"&gt;Getting Started with InfluxDB&lt;/a&gt; documentation.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;The open source software we build is licensed under the permissive MIT or Apache 2 licenses at the user's choosing. We’ve long held the view that our open source code should be truly open and our commercial code should be separate and closed.&lt;/p&gt; 
+&lt;h2&gt;Interested in joining the team building InfluxDB?&lt;/h2&gt; 
+&lt;p&gt;Check out current job openings at &lt;a href="https://www.influxdata.com/careers"&gt;www.influxdata.com/careers&lt;/a&gt; today!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>witnessmenow/ESP32-Cheap-Yellow-Display</title>
+      <link>https://github.com/witnessmenow/ESP32-Cheap-Yellow-Display</link>
+      <description>&lt;p&gt;Building a community around a cheap ESP32 Display with a touch screen&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;ESP32-Cheap-Yellow-Display&lt;/h1&gt; 
+&lt;p&gt;There is an ESP32 with a built in 320 x 240 2.8" LCD display with a touch screen called the "ESP32-2432S028R", since this doesn't roll of the tongue, I propose it should be renamed the "Cheap Yellow Display" or CYD for short. This display is only about $15 delivered so I think it's really good value.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/witnessmenow/ESP32-Cheap-Yellow-Display/assets/1562562/76c3d481-2523-4b6f-881c-2e29f9368cd0" alt="image" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;p&gt;The CYD has the following features:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;ESP32 (With Wifi and Bluetooth)&lt;/li&gt; 
+ &lt;li&gt;320 x 240 LCD Display (2.8")&lt;/li&gt; 
+ &lt;li&gt;Touch Screen (Resistive)&lt;/li&gt; 
+ &lt;li&gt;USB for powering and programming&lt;/li&gt; 
+ &lt;li&gt;SD Card Slot, LED and some additional pins broken out&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Who is it good for?&lt;/h2&gt; 
+&lt;p&gt;I think it's useful for the following types of people:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;People just getting started with working hardware&lt;/strong&gt; - as everything is already connected, there is no soldering or additional components required&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;People who are familiar with working with hardware, but are lazy&lt;/strong&gt; - (like me) Sometimes you just want to build a project without having to assemble any hardware&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;People who aren't really looking to learn anything, but just want to build some cool things&lt;/strong&gt; - More about this later.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;What is the purpose of this page?&lt;/h2&gt; 
+&lt;p&gt;So this is pretty nice hardware and a cheap price, but the software instructions/support around it is pretty poor. Just a single link to a zip file on a random website.&lt;/p&gt; 
+&lt;p&gt;A couple of years ago I released the &lt;a href="https://github.com/witnessmenow/ESP32-Trinity"&gt;ESP32 Trinity&lt;/a&gt;, which is an open source ESP32 board for controlling Matrix panels. I think the main benefit people get out of the work I did on the Trinty is not the hardware, but the documentation, example code and ready to go projects.&lt;/p&gt; 
+&lt;p&gt;I'm no longer creating hardware products, but I think it would be interesting if we could create the same kind of community around this display, where people can share examples and projects made for this display.&lt;/p&gt; 
+&lt;h2&gt;How do I know if a display is a CYD?&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="http://www.plantuml.com/plantuml/png/RP0nJyCm48Nt_8gZNIb3fge3LD2b2q92235UamDRE7PaNuhyxxda7DGgJBs-zxtSE-yJO-IXSzKD6-e8UeVMLyQs1DJrdA6br4JRims-4fW9LiS4bY6JS-47qBTWC052QvEayyCAvA-wS-8vi01F7mS8SVevOxJeUK9zu55QzzP_Nw-exxPmz8tHJzRRsJq4cdo3Pu98oIQsCd4O6WDIbyXF4LN-JNMsYG7UNXyXUAUTLHDfqVeMJWClUfSPrY_OOyPtO_ivUPcfnoMV3iyXJh4cj_MGJd8lEleQkvQKi9TYUT_DvbukXnraIfTQURMT39Nu8kcrXInIwQYO-gCyNwgm6al-ZneTNIRqjLokqS2UV3jqxXS0" alt="CYD decision tree" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Where to buy?&lt;/h2&gt; 
+&lt;p&gt;Buy from wherever works out cheapest for you:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://s.click.aliexpress.com/e/_DkSpIjB"&gt;Aliexpress*&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://s.click.aliexpress.com/e/_DkcmuCh"&gt;Aliexpress*&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.aliexpress.com/item/1005004502250619.html"&gt;Aliexpress&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.makerfabs.com/sunton-esp32-2-8-inch-tft-with-touch.html"&gt;Makerfabs&lt;/a&gt; - Seems to come with a 16GB SD card. Makerfabs also stock my &lt;a href="https://github.com/witnessmenow/ESP32-Trinity"&gt;ESP32 Trinity&lt;/a&gt; (NOTE there will be import due in the EU from makerfabs)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;* = Affiliate Link&lt;/p&gt; 
+&lt;h2&gt;Getting Started With Your CYD&lt;/h2&gt; 
+&lt;p&gt;For details on how to get started with your CYD, please check out the &lt;a href="https://raw.githubusercontent.com/witnessmenow/ESP32-Cheap-Yellow-Display/main/SETUP.md"&gt;Setup and Configuration&lt;/a&gt; page&lt;/p&gt; 
+&lt;h2&gt;Code Examples&lt;/h2&gt; 
+&lt;h3&gt;The Basics&lt;/h3&gt; 
+&lt;p&gt;A collection of examples demonstrating how to use the different features of the CYD, this is a good place to get started. &lt;a href="https://raw.githubusercontent.com/witnessmenow/ESP32-Cheap-Yellow-Display/main/Examples/Basics"&gt;Check them out here.&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Alternative Display Libraries&lt;/h3&gt; 
+&lt;p&gt;The basics examples are based on the TFT_eSPI display library, but the CYD also works with other display libraries too. Here is some example code if you prefer to use an alternative Arduino library. &lt;a href="https://raw.githubusercontent.com/witnessmenow/ESP32-Cheap-Yellow-Display/main/Examples/AlternativeLibraries"&gt;Check them out here.&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;ESPHome&lt;/h3&gt; 
+&lt;p&gt;Some examples for using the CYD in ESPHome. &lt;a href="https://raw.githubusercontent.com/witnessmenow/ESP32-Cheap-Yellow-Display/main/Examples/ESPHome"&gt;Check them out here.&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Additional Info and Links&lt;/h2&gt; 
+&lt;h3&gt;Discord&lt;/h3&gt; 
+&lt;p&gt;Join the CYD discussion on &lt;a href="https://discord.gg/nnezpvq"&gt;my Discord channel&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;3DPrinting&lt;/h3&gt; 
+&lt;p&gt;Some examples of 3D printed stands and cases. &lt;a href="https://raw.githubusercontent.com/witnessmenow/ESP32-Cheap-Yellow-Display/main/3dModels"&gt;Check them out here.&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Pin Information&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/witnessmenow/ESP32-Cheap-Yellow-Display/main/PINS.md"&gt;This page&lt;/a&gt; contains information about what pins are used where, and what ones are free to use.&lt;/p&gt; 
+&lt;h3&gt;Add-ons&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/witnessmenow/ESP32-Cheap-Yellow-Display/main/ADDONS.md"&gt;This page&lt;/a&gt; contains information about additional hardware add-ons that can add functionality to your CYD&lt;/p&gt; 
+&lt;h3&gt;Troubleshooting&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/witnessmenow/ESP32-Cheap-Yellow-Display/main/TROUBLESHOOTING.md"&gt;This page&lt;/a&gt; contains information about how to troubleshoot your CYD device&lt;/p&gt; 
+&lt;h3&gt;Hardware Mods&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/witnessmenow/ESP32-Cheap-Yellow-Display/main/Mods/README.md"&gt;This page&lt;/a&gt; contains information about some hardware mods that can be performed on the CYD to improve or change some of its functionality&lt;/p&gt; 
+&lt;h3&gt;Media and Video Mentions&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/witnessmenow/ESP32-Cheap-Yellow-Display/main/MEDIA.md"&gt;This page&lt;/a&gt; lists any times the CYD project was mentioned somewhere!&lt;/p&gt; 
+&lt;h2&gt;License Info&lt;/h2&gt; 
+&lt;p&gt;This project is licensed as MIT as per the &lt;a href="https://raw.githubusercontent.com/witnessmenow/ESP32-Cheap-Yellow-Display/main/LICENSE"&gt;license file&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;The one exception to this is the &lt;a href="https://raw.githubusercontent.com/witnessmenow/ESP32-Cheap-Yellow-Display/main/OriginalDocumentation/"&gt;OriginalDocumentation&lt;/a&gt; folder, that I do not have the right to license&lt;/p&gt; 
+&lt;h2&gt;Other Languages&lt;/h2&gt; 
+&lt;p&gt;Some members of the community have ported some of this information to other languages!&lt;/p&gt; 
+&lt;p&gt;Please note: I can't gaurantee the accuracy of the translation, how up to date they are or the content on them in general.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/usini/ESP32-Cheap-Yellow-Display-Documentation-FR"&gt;French / Française&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/paelzer/ESP32-Cheap-Yellow-Display-Documentation-DE"&gt;German / Deutsch&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;If you would like to contribure a translation, please name the repo with the language name or code in the repo name and you can link it here.&lt;/p&gt; 
+&lt;h2&gt;Help Support what I do!&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/sponsors/witnessmenow/"&gt;If you enjoy my work, please consider becoming a Github sponsor!&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ai-dynamo/dynamo</title>
+      <link>https://github.com/ai-dynamo/dynamo</link>
+      <description>&lt;p&gt;A Datacenter Scale Distributed Inference Serving Framework&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/docs/images/frontpage-banner.png" alt="Dynamo banner" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://opensource.org/licenses/Apache-2.0"&gt;&lt;img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg?sanitize=true" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://github.com/ai-dynamo/dynamo/releases/latest"&gt;&lt;img src="https://img.shields.io/github/v/release/ai-dynamo/dynamo" alt="GitHub Release" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/D92uqZRjCZ"&gt;&lt;img src="https://dcbadge.limes.pink/api/server/D92uqZRjCZ?style=flat" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://deepwiki.com/ai-dynamo/dynamo"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" alt="Ask DeepWiki" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;| &lt;strong&gt;&lt;a href="https://github.com/ai-dynamo/dynamo/issues/762"&gt;Roadmap&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href="https://github.com/ai-dynamo/dynamo/raw/main/docs/support_matrix.md"&gt;Support matrix&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href="https://docs.nvidia.com/dynamo/latest/index.html"&gt;Documentation&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href="https://github.com/ai-dynamo/dynamo/tree/main/examples"&gt;Examples&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href="https://catalog.ngc.nvidia.com/orgs/nvidia/teams/ai-dynamo/collections/ai-dynamo"&gt;Prebuilt containers&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href="https://github.com/ai-dynamo/enhancements"&gt;Design Proposals&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href="https://developer.nvidia.com/blog/tag/nvidia-dynamo"&gt;Blogs&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;h1&gt;NVIDIA Dynamo&lt;/h1&gt; 
+&lt;p&gt;High-throughput, low-latency inference framework designed for serving generative AI and reasoning models in multi-node distributed environments.&lt;/p&gt; 
+&lt;h2&gt;Latest News&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;[08/05] Deploy &lt;code&gt;openai/gpt-oss-120b&lt;/code&gt; with disaggregated serving on NVIDIA Blackwell GPUs using Dynamo &lt;a href="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/components/backends/trtllm/gpt-oss.md"&gt;➡️ link&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;The Era of Multi-GPU, Multi-Node&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/docs/images/frontpage-gpu-vertical.png" alt="Multi Node Multi-GPU topology" width="600" /&gt; &lt;/p&gt; 
+&lt;p&gt;Large language models are quickly outgrowing the memory and compute budget of any single GPU. Tensor-parallelism solves the capacity problem by spreading each layer across many GPUs—and sometimes many servers—but it creates a new one: how do you coordinate those shards, route requests, and share KV cache fast enough to feel like one accelerator? This orchestration gap is exactly what NVIDIA Dynamo is built to close.&lt;/p&gt; 
+&lt;p&gt;Dynamo is designed to be inference engine agnostic (supports TRT-LLM, vLLM, SGLang or others) and captures LLM-specific capabilities such as:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Disaggregated prefill &amp;amp; decode inference&lt;/strong&gt; – Maximizes GPU throughput and facilitates trade off between throughput and latency.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Dynamic GPU scheduling&lt;/strong&gt; – Optimizes performance based on fluctuating demand&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;LLM-aware request routing&lt;/strong&gt; – Eliminates unnecessary KV cache re-computation&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Accelerated data transfer&lt;/strong&gt; – Reduces inference response time using NIXL.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;KV cache offloading&lt;/strong&gt; – Leverages multiple memory hierarchies for higher system throughput&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/docs/images/frontpage-architecture.png" alt="Dynamo architecture" width="600" /&gt; &lt;/p&gt; 
+&lt;h2&gt;Framework Support Matrix&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Feature&lt;/th&gt; 
+   &lt;th&gt;vLLM&lt;/th&gt; 
+   &lt;th&gt;SGLang&lt;/th&gt; 
+   &lt;th&gt;TensorRT-LLM&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/docs/architecture/disagg_serving.md"&gt;&lt;strong&gt;Disaggregated Serving&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/docs/architecture/disagg_serving.md#conditional-disaggregation"&gt;&lt;strong&gt;Conditional Disaggregation&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;🚧&lt;/td&gt; 
+   &lt;td&gt;🚧&lt;/td&gt; 
+   &lt;td&gt;🚧&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/docs/architecture/kv_cache_routing.md"&gt;&lt;strong&gt;KV-Aware Routing&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/docs/architecture/load_planner.md"&gt;&lt;strong&gt;Load Based Planner&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;🚧&lt;/td&gt; 
+   &lt;td&gt;🚧&lt;/td&gt; 
+   &lt;td&gt;🚧&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/docs/architecture/sla_planner.md"&gt;&lt;strong&gt;SLA-Based Planner&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/docs/architecture/kvbm_architecture.md"&gt;&lt;strong&gt;KVBM&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;🚧&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;To learn more about each framework and their capabilities, check out each framework's README!&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/components/backends/vllm/README.md"&gt;vLLM&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/components/backends/sglang/README.md"&gt;SGLang&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/components/backends/trtllm/README.md"&gt;TensorRT-LLM&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Built in Rust for performance and in Python for extensibility, Dynamo is fully open-source and driven by a transparent, OSS (Open Source Software) first development approach.&lt;/p&gt; 
+&lt;h1&gt;Installation&lt;/h1&gt; 
+&lt;p&gt;The following examples require a few system level packages. Recommended to use Ubuntu 24.04 with a x86_64 CPU. See &lt;a href="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/docs/support_matrix.md"&gt;docs/support_matrix.md&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;1. Initial setup&lt;/h2&gt; 
+&lt;p&gt;The Dynamo team recommends the &lt;code&gt;uv&lt;/code&gt; Python package manager, although any way works. Install uv:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;curl -LsSf https://astral.sh/uv/install.sh | sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Install etcd and NATS (required)&lt;/h3&gt; 
+&lt;p&gt;To coordinate across a data center, Dynamo relies on etcd and NATS. To run Dynamo locally, these need to be available.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://etcd.io/"&gt;etcd&lt;/a&gt; can be run directly as &lt;code&gt;./etcd&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://nats.io/"&gt;nats&lt;/a&gt; needs jetstream enabled: &lt;code&gt;nats-server -js&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;To quickly setup etcd &amp;amp; NATS, you can also run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;# At the root of the repository:
+docker compose -f deploy/docker-compose.yml up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;2. Select an engine&lt;/h2&gt; 
+&lt;p&gt;We publish Python wheels specialized for each of our supported engines: vllm, sglang, trtllm, and llama.cpp. The examples that follow use SGLang; continue reading for other engines.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;uv venv venv
+source venv/bin/activate
+uv pip install pip
+
+# Choose one
+uv pip install "ai-dynamo[sglang]"  #replace with [vllm], [trtllm], etc.
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;3. Run Dynamo&lt;/h2&gt; 
+&lt;h3&gt;Running an LLM API server&lt;/h3&gt; 
+&lt;p&gt;Dynamo provides a simple way to spin up a local set of inference components including:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;OpenAI Compatible Frontend&lt;/strong&gt; – High performance OpenAI compatible http api server written in Rust.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Basic and Kv Aware Router&lt;/strong&gt; – Route and load balance traffic to a set of workers.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Workers&lt;/strong&gt; – Set of pre-configured LLM serving engines.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code&gt;# Start an OpenAI compatible HTTP server, a pre-processor (prompt templating and tokenization) and a router.
+# Pass the TLS certificate and key paths to use HTTPS instead of HTTP.
+python -m dynamo.frontend --http-port 8000 [--tls-cert-path cert.pem] [--tls-key-path key.pem]
+
+# Start the SGLang engine, connecting to NATS and etcd to receive requests. You can run several of these,
+# both for the same model and for multiple models. The frontend node will discover them.
+python -m dynamo.sglang.worker --model deepseek-ai/DeepSeek-R1-Distill-Llama-8B --skip-tokenizer-init
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Send a Request&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl localhost:8000/v1/chat/completions   -H "Content-Type: application/json"   -d '{
+    "model": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+    "messages": [
+    {
+        "role": "user",
+        "content": "Hello, how are you?"
+    }
+    ],
+    "stream":false,
+    "max_tokens": 300
+  }' | jq
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Rerun with &lt;code&gt;curl -N&lt;/code&gt; and change &lt;code&gt;stream&lt;/code&gt; in the request to &lt;code&gt;true&lt;/code&gt; to get the responses as soon as the engine issues them.&lt;/p&gt; 
+&lt;h3&gt;Deploying Dynamo&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Follow the &lt;a href="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/docs/guides/dynamo_deploy/README.md"&gt;Quickstart Guide&lt;/a&gt; to deploy on Kubernetes.&lt;/li&gt; 
+ &lt;li&gt;Check out &lt;a href="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/components/backends"&gt;Backends&lt;/a&gt; to deploy various workflow configurations (e.g. SGLang with router, vLLM with disaggregated serving, etc.)&lt;/li&gt; 
+ &lt;li&gt;Run some &lt;a href="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/examples"&gt;Examples&lt;/a&gt; to learn about building components in Dynamo and exploring various integrations.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Benchmarking Dynamo&lt;/h3&gt; 
+&lt;p&gt;Dynamo provides comprehensive benchmarking tools to evaluate and optimize your deployments:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/docs/benchmarks/benchmarking.md"&gt;Benchmarking Guide&lt;/a&gt;&lt;/strong&gt; – Compare deployment topologies (aggregated vs. disaggregated vs. vanilla vLLM) using GenAI-Perf&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/docs/benchmarks/pre_deployment_profiling.md"&gt;Pre-Deployment Profiling&lt;/a&gt;&lt;/strong&gt; – Optimize configurations before deployment to meet SLA requirements&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;Engines&lt;/h1&gt; 
+&lt;p&gt;Dynamo is designed to be inference engine agnostic. To use any engine with Dynamo, NATS and etcd need to be installed, along with a Dynamo frontend (&lt;code&gt;python -m dynamo.frontend [--interactive]&lt;/code&gt;).&lt;/p&gt; 
+&lt;h2&gt;vLLM&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;uv pip install ai-dynamo[vllm]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Run the backend/worker like this:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;python -m dynamo.vllm --help
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;vLLM attempts to allocate enough KV cache for the full context length at startup. If that does not fit in your available memory pass &lt;code&gt;--context-length &amp;lt;value&amp;gt;&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;To specify which GPUs to use set environment variable &lt;code&gt;CUDA_VISIBLE_DEVICES&lt;/code&gt;.&lt;/p&gt; 
+&lt;h2&gt;SGLang&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;# Install libnuma
+apt install -y libnuma-dev
+
+uv pip install ai-dynamo[sglang]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Run the backend/worker like this:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;python -m dynamo.sglang.worker --help
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can pass any sglang flags directly to this worker, see &lt;a href="https://docs.sglang.ai/advanced_features/server_arguments.html"&gt;https://docs.sglang.ai/advanced_features/server_arguments.html&lt;/a&gt; . See there to use multiple GPUs.&lt;/p&gt; 
+&lt;h2&gt;TensorRT-LLM&lt;/h2&gt; 
+&lt;p&gt;It is recommended to use &lt;a href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch"&gt;NGC PyTorch Container&lt;/a&gt; for running the TensorRT-LLM engine.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!Note] Ensure that you select a PyTorch container image version that matches the version of TensorRT-LLM you are using. For example, if you are using &lt;code&gt;tensorrt-llm==1.1.0rc3&lt;/code&gt;, use the PyTorch container image version &lt;code&gt;25.06&lt;/code&gt;. To find the correct PyTorch container version for your desired &lt;code&gt;tensorrt-llm&lt;/code&gt; release, visit the &lt;a href="https://github.com/NVIDIA/TensorRT-LLM/raw/main/docker/Dockerfile.multi"&gt;TensorRT-LLM Dockerfile.multi&lt;/a&gt; on GitHub. Switch to the branch that matches your &lt;code&gt;tensorrt-llm&lt;/code&gt; version, and look for the &lt;code&gt;BASE_TAG&lt;/code&gt; line to identify the recommended PyTorch container tag.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!Important] Launch container with the following additional settings &lt;code&gt;--shm-size=1g --ulimit memlock=-1&lt;/code&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Install prerequisites&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;# Optional step: Only required for Blackwell and Grace Hopper
+uv pip install torch==2.7.1 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+
+# Required until the trtllm version is bumped to include this pinned dependency itself
+uv pip install "cuda-python&amp;gt;=12,&amp;lt;13"
+
+sudo apt-get -y install libopenmpi-dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!Tip] You can learn more about these prequisites and known issues with TensorRT-LLM pip based installation &lt;a href="https://nvidia.github.io/TensorRT-LLM/installation/linux.html"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;After installing the pre-requisites above, install Dynamo&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;uv pip install ai-dynamo[trtllm]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Run the backend/worker like this:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;python -m dynamo.trtllm --help
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;To specify which GPUs to use set environment variable &lt;code&gt;CUDA_VISIBLE_DEVICES&lt;/code&gt;.&lt;/p&gt; 
+&lt;h1&gt;Developing Locally&lt;/h1&gt; 
+&lt;h2&gt;1. Install libraries&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Ubuntu:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;sudo apt install -y build-essential libhwloc-dev libudev-dev pkg-config libclang-dev protobuf-compiler python3-dev cmake
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;macOS:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://brew.sh/"&gt;Homebrew&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code&gt;# if brew is not installed on your system, install it
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://developer.apple.com/xcode/"&gt;Xcode&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code&gt;brew install cmake protobuf
+
+## Check that Metal is accessible
+xcrun -sdk macosx metal
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If Metal is accessible, you should see an error like &lt;code&gt;metal: error: no input files&lt;/code&gt;, which confirms it is installed correctly.&lt;/p&gt; 
+&lt;h2&gt;2. Install Rust&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;3. Create a Python virtual env:&lt;/h2&gt; 
+&lt;p&gt;Follow the instructions in &lt;a href="https://docs.astral.sh/uv/#installation"&gt;uv installation&lt;/a&gt; guide to install uv if you don't have &lt;code&gt;uv&lt;/code&gt; installed. Once uv is installed, create a virtual environment and activate it.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Install uv&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -LsSf https://astral.sh/uv/install.sh | sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Create a virtual environment&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;uv venv dynamo
+source dynamo/bin/activate
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;4. Install build tools&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;uv pip install pip maturin
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;a href="https://github.com/PyO3/maturin"&gt;Maturin&lt;/a&gt; is the Rust&amp;lt;-&amp;gt;Python bindings build tool.&lt;/p&gt; 
+&lt;h2&gt;5. Build the Rust bindings&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;cd lib/bindings/python
+maturin develop --uv
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;6. Install the wheel&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;cd $PROJECT_ROOT
+uv pip install .
+# For development, use
+export PYTHONPATH="${PYTHONPATH}:$(pwd)/components/frontend/src:$(pwd)/components/planner/src:$(pwd)/components/backends/vllm/src:$(pwd)/components/backends/sglang/src:$(pwd)/components/backends/trtllm/src:$(pwd)/components/backends/llama_cpp/src:$(pwd)/components/backends/mocker/src"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!Note] Editable (&lt;code&gt;-e&lt;/code&gt;) does not work because the &lt;code&gt;dynamo&lt;/code&gt; package is split over multiple directories, one per backend.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;You should now be able to run &lt;code&gt;python -m dynamo.frontend&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;Remember that nats and etcd must be running (see earlier).&lt;/p&gt; 
+&lt;p&gt;Set the environment variable &lt;code&gt;DYN_LOG&lt;/code&gt; to adjust the logging level; for example, &lt;code&gt;export DYN_LOG=debug&lt;/code&gt;. It has the same syntax as &lt;code&gt;RUST_LOG&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;If you use vscode or cursor, we have a .devcontainer folder built on &lt;a href="https://code.visualstudio.com/docs/devcontainers/containers"&gt;Microsofts Extension&lt;/a&gt;. For instructions see the &lt;a href="https://raw.githubusercontent.com/ai-dynamo/dynamo/main/.devcontainer/README.md"&gt;ReadMe&lt;/a&gt; for more details.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>kata-containers/kata-containers</title>
+      <link>https://github.com/kata-containers/kata-containers</link>
+      <description>&lt;p&gt;Kata Containers is an open source project and community working to build a standard implementation of lightweight Virtual Machines (VMs) that feel and perform like containers, but provide the workload isolation and security advantages of VMs. https://katacontainers.io/&lt;/p&gt;&lt;hr&gt;&lt;img src="https://object-storage-ca-ymq-1.vexxhost.net/swift/v1/6e4619c416ff4bd19e1c087f27a43eea/www-images-prod/openstack-logo/kata/SVG/kata-1.svg?sanitize=true" width="900" /&gt; 
+&lt;p&gt;&lt;a href="https://github.com/kata-containers/kata-containers/actions/workflows/payload-after-push.yaml"&gt;&lt;img src="https://github.com/kata-containers/kata-containers/actions/workflows/payload-after-push.yaml/badge.svg?sanitize=true" alt="CI | Publish Kata Containers payload" /&gt;&lt;/a&gt; &lt;a href="https://github.com/kata-containers/kata-containers/actions/workflows/ci-nightly.yaml"&gt;&lt;img src="https://github.com/kata-containers/kata-containers/actions/workflows/ci-nightly.yaml/badge.svg?sanitize=true" alt="Kata Containers Nightly CI" /&gt;&lt;/a&gt; &lt;a href="https://scorecard.dev/viewer/?uri=github.com/kata-containers/kata-containers"&gt;&lt;img src="https://api.scorecard.dev/projects/github.com/kata-containers/kata-containers/badge" alt="OpenSSF Scorecard" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Kata Containers&lt;/h1&gt; 
+&lt;p&gt;Welcome to Kata Containers!&lt;/p&gt; 
+&lt;p&gt;This repository is the home of the Kata Containers code for the 2.0 and newer releases.&lt;/p&gt; 
+&lt;p&gt;If you want to learn about Kata Containers, visit the main &lt;a href="https://katacontainers.io"&gt;Kata Containers website&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Introduction&lt;/h2&gt; 
+&lt;p&gt;Kata Containers is an open source project and community working to build a standard implementation of lightweight Virtual Machines (VMs) that feel and perform like containers, but provide the workload isolation and security advantages of VMs.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;The code is licensed under the Apache 2.0 license. See &lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/LICENSE"&gt;the license file&lt;/a&gt; for further details.&lt;/p&gt; 
+&lt;h2&gt;Platform support&lt;/h2&gt; 
+&lt;p&gt;Kata Containers currently runs on 64-bit systems supporting the following technologies:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Architecture&lt;/th&gt; 
+   &lt;th&gt;Virtualization technology&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;x86_64&lt;/code&gt;, &lt;code&gt;amd64&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://www.intel.com"&gt;Intel&lt;/a&gt; VT-x, AMD SVM&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;aarch64&lt;/code&gt; ("&lt;code&gt;arm64&lt;/code&gt;")&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://www.arm.com"&gt;ARM&lt;/a&gt; Hyp&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;ppc64le&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://www.ibm.com"&gt;IBM&lt;/a&gt; Power&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;s390x&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://www.ibm.com"&gt;IBM&lt;/a&gt; Z &amp;amp; LinuxONE SIE&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Hardware requirements&lt;/h3&gt; 
+&lt;p&gt;The &lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/src/runtime"&gt;Kata Containers runtime&lt;/a&gt; provides a command to determine if your host system is capable of running and creating a Kata Container:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ kata-runtime check
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt; &lt;p&gt;This command runs a number of checks including connecting to the network to determine if a newer release of Kata Containers is available on GitHub. If you do not wish this to check to run, add the &lt;code&gt;--no-network-checks&lt;/code&gt; option.&lt;/p&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;By default, only a brief success / failure message is printed. If more details are needed, the &lt;code&gt;--verbose&lt;/code&gt; flag can be used to display the list of all the checks performed.&lt;/p&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;If the command is run as the &lt;code&gt;root&lt;/code&gt; user additional checks are run (including checking if another incompatible hypervisor is running). When running as &lt;code&gt;root&lt;/code&gt;, network checks are automatically disabled.&lt;/p&gt; &lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Getting started&lt;/h2&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/docs/install"&gt;installation documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/docs"&gt;official documentation&lt;/a&gt; including:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/docs/install"&gt;Installation guides&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/docs/Developer-Guide.md"&gt;Developer guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/docs/design"&gt;Design documents&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/docs/design/architecture"&gt;Architecture overview&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/docs/design/architecture_3.0/"&gt;Architecture 3.0 overview&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Configuration&lt;/h2&gt; 
+&lt;p&gt;Kata Containers uses a single &lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/src/runtime/README.md#configuration"&gt;configuration file&lt;/a&gt; which contains a number of sections for various parts of the Kata Containers system including the &lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/src/runtime"&gt;runtime&lt;/a&gt;, the &lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/src/agent"&gt;agent&lt;/a&gt; and the &lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/#hypervisors"&gt;hypervisor&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Hypervisors&lt;/h2&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/docs/hypervisors.md"&gt;hypervisors document&lt;/a&gt; and the &lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/src/runtime/README.md#hypervisor-specific-configuration"&gt;Hypervisor specific configuration details&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;p&gt;To learn more about the project, its community and governance, see the &lt;a href="https://github.com/kata-containers/community"&gt;community repository&lt;/a&gt;. This is the first place to go if you wish to contribute to the project.&lt;/p&gt; 
+&lt;h2&gt;Getting help&lt;/h2&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/#community"&gt;community&lt;/a&gt; section for ways to contact us.&lt;/p&gt; 
+&lt;h3&gt;Raising issues&lt;/h3&gt; 
+&lt;p&gt;Please raise an issue &lt;a href="https://github.com/kata-containers/kata-containers/issues"&gt;in this repository&lt;/a&gt;.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you are reporting a security issue, please follow the &lt;a href="https://github.com/kata-containers/community#vulnerability-handling"&gt;vulnerability reporting process&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Developers&lt;/h2&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/docs/Developer-Guide.md"&gt;developer guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Components&lt;/h3&gt; 
+&lt;h3&gt;Main components&lt;/h3&gt; 
+&lt;p&gt;The table below lists the core parts of the project:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Component&lt;/th&gt; 
+   &lt;th&gt;Type&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/src/runtime"&gt;runtime&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;core&lt;/td&gt; 
+   &lt;td&gt;Main component run by a container manager and providing a containerd shimv2 runtime implementation.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/src/runtime-rs"&gt;runtime-rs&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;core&lt;/td&gt; 
+   &lt;td&gt;The Rust version runtime.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/src/agent"&gt;agent&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;core&lt;/td&gt; 
+   &lt;td&gt;Management process running inside the virtual machine / POD that sets up the container environment.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/src/dragonball"&gt;&lt;code&gt;dragonball&lt;/code&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;core&lt;/td&gt; 
+   &lt;td&gt;An optional built-in VMM brings out-of-the-box Kata Containers experience with optimizations on container workloads&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/docs"&gt;documentation&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;documentation&lt;/td&gt; 
+   &lt;td&gt;Documentation common to all components (such as design and install documentation).&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/tests"&gt;tests&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;tests&lt;/td&gt; 
+   &lt;td&gt;Excludes unit tests which live with the main code.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Additional components&lt;/h3&gt; 
+&lt;p&gt;The table below lists the remaining parts of the project:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Component&lt;/th&gt; 
+   &lt;th&gt;Type&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/tools/packaging"&gt;packaging&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;infrastructure&lt;/td&gt; 
+   &lt;td&gt;Scripts and metadata for producing packaged binaries&lt;br /&gt;(components, hypervisors, kernel and rootfs).&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.kernel.org"&gt;kernel&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;kernel&lt;/td&gt; 
+   &lt;td&gt;Linux kernel used by the hypervisor to boot the guest image. Patches are stored &lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/tools/packaging/kernel"&gt;here&lt;/a&gt;.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/tools/osbuilder"&gt;osbuilder&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;infrastructure&lt;/td&gt; 
+   &lt;td&gt;Tool to create "mini O/S" rootfs and initrd images and kernel for the hypervisor.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/tools/packaging/kata-debug/README.md"&gt;kata-debug&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;infrastructure&lt;/td&gt; 
+   &lt;td&gt;Utility tool to gather Kata Containers debug information from Kubernetes clusters.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/src/tools/agent-ctl"&gt;&lt;code&gt;agent-ctl&lt;/code&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;utility&lt;/td&gt; 
+   &lt;td&gt;Tool that provides low-level access for testing the agent.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/src/tools/kata-ctl"&gt;&lt;code&gt;kata-ctl&lt;/code&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;utility&lt;/td&gt; 
+   &lt;td&gt;Tool that provides advanced commands and debug facilities.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/src/tools/trace-forwarder"&gt;&lt;code&gt;trace-forwarder&lt;/code&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;utility&lt;/td&gt; 
+   &lt;td&gt;Agent tracing helper.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/src/tools/runk"&gt;&lt;code&gt;runk&lt;/code&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;utility&lt;/td&gt; 
+   &lt;td&gt;Standard OCI container runtime based on the agent.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/.github/workflows"&gt;&lt;code&gt;ci&lt;/code&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;CI&lt;/td&gt; 
+   &lt;td&gt;Continuous Integration configuration files and scripts.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/ci/openshift-ci/README.md"&gt;&lt;code&gt;ocp-ci&lt;/code&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;CI&lt;/td&gt; 
+   &lt;td&gt;Continuous Integration configuration for the OpenShift pipelines.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/kata-containers/www.katacontainers.io"&gt;&lt;code&gt;katacontainers.io&lt;/code&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Source for the &lt;a href="https://www.katacontainers.io"&gt;&lt;code&gt;katacontainers.io&lt;/code&gt;&lt;/a&gt; site.&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/tools/testing/kata-webhook/README.md"&gt;&lt;code&gt;Webhook&lt;/code&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;utility&lt;/td&gt; 
+   &lt;td&gt;Example of a simple admission controller webhook to annotate pods with the Kata runtime class&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Packaging and releases&lt;/h3&gt; 
+&lt;p&gt;Kata Containers is now &lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/docs/install/README.md#packaged-installation-methods"&gt;available natively for most distributions&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;General tests&lt;/h2&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/tests/README.md"&gt;tests documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Metrics tests&lt;/h2&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/kata-containers/kata-containers/main/tests/metrics/README.md"&gt;metrics documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Glossary of Terms&lt;/h2&gt; 
+&lt;p&gt;See the &lt;a href="https://github.com/kata-containers/kata-containers/wiki/Glossary"&gt;glossary of terms&lt;/a&gt; related to Kata Containers.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>gleam-lang/gleam</title>
+      <link>https://github.com/gleam-lang/gleam</link>
+      <description>&lt;p&gt;⭐️ A friendly language for building type-safe, scalable systems!&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/gleam-lang/gleam/main/images/lucy.png" alt="Lucy, Gleam's mascot" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/gleam-lang/gleam/releases"&gt;&lt;img src="https://img.shields.io/github/release/gleam-lang/gleam" alt="GitHub release" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/Fm8Pwmy"&gt;&lt;img src="https://img.shields.io/discord/768594524158427167?color=blue" alt="Discord chat" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;!-- A spacer --&gt; 
+&lt;div&gt;
+ &amp;nbsp;
+&lt;/div&gt; 
+&lt;p&gt;Gleam is a friendly language for building type-safe systems that scale! For more information see &lt;a href="https://gleam.run"&gt;the website&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Support Gleam!&lt;/h2&gt; 
+&lt;p&gt;Gleam is not owned by a corporation, instead it is kindly supported by its sponsors. If you like Gleam please consider &lt;a href="https://gleam.run/sponsor"&gt;sponsoring the project or members of the core team&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Thank you so much! 💖&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ArthurBrussee/brush</title>
+      <link>https://github.com/ArthurBrussee/brush</link>
+      <description>&lt;p&gt;3D Reconstruction for all&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Brush&lt;/h1&gt; 
+&lt;p&gt;
+ &lt;video src="https://github.com/user-attachments/assets/5756967a-846c-44cf-bde9-3ca4c86f1a4d"&gt;
+  A video showing various Brush features and scenes
+ &lt;/video&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;i&gt; Massive thanks to &lt;a href="https://www.youtube.com/@gradeeterna"&gt;@GradeEterna&lt;/a&gt; for the beautiful scenes &lt;/i&gt; &lt;/p&gt; 
+&lt;p&gt;Brush is a 3D reconstruction engine using &lt;a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/"&gt;Gaussian splatting&lt;/a&gt;. It works on a wide range of systems: &lt;strong&gt;macOS/windows/linux&lt;/strong&gt;, &lt;strong&gt;AMD/Nvidia/Intel&lt;/strong&gt; cards, &lt;strong&gt;Android&lt;/strong&gt;, and in a &lt;strong&gt;browser&lt;/strong&gt;. To achieve this, it uses WebGPU compatible tech and the &lt;a href="https://github.com/tracel-ai/burn"&gt;Burn&lt;/a&gt; machine learning framework.&lt;/p&gt; 
+&lt;p&gt;Machine learning for real time rendering has tons of potential, but most ML tools don't work well with it: Rendering requires realtime interactivity, usually involve dynamic shapes &amp;amp; computations, don't run on most platforms, and it can be cumbersome to ship apps with large CUDA deps. Brush on the other hand produces simple dependency free binaries, runs on nearly all devices, without any setup.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://arthurbrussee.github.io/brush-demo"&gt;&lt;strong&gt;Try the web demo&lt;/strong&gt; &lt;img src="https://cdn-icons-png.flaticon.com/256/888/888846.png" alt="chrome logo" width="24" /&gt; &lt;/a&gt; &lt;em&gt;NOTE: Only works on Chrome and Edge. Firefox and Safari are hopefully supported soon)&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://discord.gg/TbxJST2BbC"&gt;&lt;img src="https://dcbadge.limes.pink/api/server/https://discord.gg/TbxJST2BbC" alt="" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Features&lt;/h1&gt; 
+&lt;h2&gt;Training&lt;/h2&gt; 
+&lt;p&gt;Brush takes in COLMAP data or datasets in the Nerfstudio format. Training is fully supported natively, on mobile, and in a browser. While training you can interact with the scene and see the training dynamics live, and compare the current rendering to input views as the training progresses.&lt;/p&gt; 
+&lt;p&gt;It also supports masking images:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Images with transparency. This will force the final splat to match the transparency of the input.&lt;/li&gt; 
+ &lt;li&gt;A folder of images called 'masks'. This ignores parts of the image that are masked out.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Viewer&lt;/h2&gt; 
+&lt;p&gt;Brush also works well as a splat viewer, including on the web. It can load .ply &amp;amp; .compressed.ply files. You can stream in data from a URL (for a web app, simply append &lt;code&gt;?url=&lt;/code&gt;).&lt;/p&gt; 
+&lt;p&gt;Brush also can load .zip of splat files to display them as an animation, or a special ply that includes delta frames (see &lt;a href="https://cat-4d.github.io/"&gt;cat-4D&lt;/a&gt; and &lt;a href="https://felixtaubner.github.io/cap4d/"&gt;Cap4D&lt;/a&gt;!).&lt;/p&gt; 
+&lt;h2&gt;CLI&lt;/h2&gt; 
+&lt;p&gt;Brush can be used as a CLI. Run &lt;code&gt;brush --help&lt;/code&gt; to get an overview. Every CLI command can work with &lt;code&gt;--with-viewer&lt;/code&gt; which also opens the UI, for easy debugging.&lt;/p&gt; 
+&lt;h2&gt;Rerun&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/f679fec0-935d-4dd2-87e1-c301db9cdc2c"&gt;https://github.com/user-attachments/assets/f679fec0-935d-4dd2-87e1-c301db9cdc2c&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;While training, additional data can be visualized with the excellent &lt;a href="https://rerun.io/"&gt;rerun&lt;/a&gt;. To install rerun on your machine, please follow their &lt;a href="https://rerun.io/docs/getting-started/installing-viewer"&gt;instructions&lt;/a&gt;. Open the ./brush_blueprint.rbl in the viewer for best results.&lt;/p&gt; 
+&lt;h2&gt;Building Brush&lt;/h2&gt; 
+&lt;p&gt;First install rust 1.88+. You can run tests with &lt;code&gt;cargo test --all&lt;/code&gt;. Brush uses the wonderful &lt;a href="https://rerun.io/"&gt;rerun&lt;/a&gt; for additional visualizations while training, run &lt;code&gt;cargo install rerun-cli&lt;/code&gt; if you want to use it.&lt;/p&gt; 
+&lt;h3&gt;Windows/macOS/Linux&lt;/h3&gt; 
+&lt;p&gt;Simply &lt;code&gt;cargo run&lt;/code&gt; or &lt;code&gt;cargo run --release&lt;/code&gt; from the workspace root. Brush can also be used as a CLI, run &lt;code&gt;cargo run --release -- --help&lt;/code&gt; to use the CLI directly from source. See the notes about the CLI in the features section.&lt;/p&gt; 
+&lt;h3&gt;Web&lt;/h3&gt; 
+&lt;p&gt;Brush can be compiled to WASM. Run &lt;code&gt;npm run dev&lt;/code&gt; to start the demo website using Next.js, see the brush_nextjs directory.&lt;/p&gt; 
+&lt;p&gt;Brush uses &lt;a href="https://rustwasm.github.io/wasm-bindgen/introduction.html"&gt;&lt;code&gt;wasm-pack&lt;/code&gt;&lt;/a&gt; to build the WASM bundle. You can also use it without a bundler, see &lt;a href="hhttps://rustwasm.github.io/wasm-bindgen/examples/without-a-bundler.html"&gt;wasm-pack's documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;WebGPU is still an upcoming standard, and as such, only Chrome 134+ on Windows and macOS is currently supported.&lt;/p&gt; 
+&lt;h3&gt;Android&lt;/h3&gt; 
+&lt;p&gt;As a one time setup, make sure you have the Android SDK &amp;amp; NDK installed.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Check if ANDROID_NDK_HOME and ANDROID_HOME are set&lt;/li&gt; 
+ &lt;li&gt;Add the Android target to rust &lt;code&gt;rustup target add aarch64-linux-android&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Install cargo-ndk to manage building a lib &lt;code&gt;cargo install cargo-ndk&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Each time you change the rust code, run&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;cargo ndk -t arm64-v8a -o crates/brush-app/app/src/main/jniLibs/ build&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Nb: Nb, for best performance, build in release mode. This is separate from the Android Studio app build configuration.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;cargo ndk -t arm64-v8a -o crates/brush-app/app/src/main/jniLibs/ build --release&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;You can now either run the project from Android Studio (Android Studio does NOT build the rust code), or run it from the command line:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew build
+./gradlew installDebug
+adb shell am start -n com.splats.app/.MainActivity
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can also open this folder as a project in Android Studio and run things from there. Nb: Running in Android Studio does &lt;em&gt;not&lt;/em&gt; rebuild the rust code automatically.&lt;/p&gt; 
+&lt;h2&gt;Benchmarks&lt;/h2&gt; 
+&lt;p&gt;Rendering and training are generally faster than gsplat. You can run benchmarks of some of the kernels using &lt;code&gt;cargo bench&lt;/code&gt;.&lt;/p&gt; 
+&lt;h1&gt;Acknowledgements&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/nerfstudio-project/gsplat"&gt;&lt;strong&gt;gSplat&lt;/strong&gt;&lt;/a&gt;, for their reference version of the kernels&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Peter Hedman, George Kopanas &amp;amp; Bernhard Kerbl&lt;/strong&gt;, for the many discussions &amp;amp; pointers.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;The Burn team&lt;/strong&gt;, for help &amp;amp; improvements to Burn along the way&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Raph Levien&lt;/strong&gt;, for the &lt;a href="https://github.com/googlefonts/compute-shader-101/pull/31"&gt;original version&lt;/a&gt; of the GPU radix sort.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;GradeEterna&lt;/strong&gt;, for feedback and their scenes.&lt;/p&gt; 
+&lt;h1&gt;Disclaimer&lt;/h1&gt; 
+&lt;p&gt;This is &lt;em&gt;not&lt;/em&gt; an official Google product. This repository is a forked public version of &lt;a href="https://github.com/google-research/google-research/tree/master/brush_splat"&gt;the google-research repository&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>a2x/cs2-dumper</title>
+      <link>https://github.com/a2x/cs2-dumper</link>
+      <description>&lt;p&gt;Counter-Strike: 2 Offset Dumper&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;cs2-dumper&lt;/h1&gt; 
+&lt;p&gt;An external offset/interface dumper for Counter-Strike 2, with support for both Windows &amp;amp; Linux. Powered by &lt;a href="https://github.com/memflow/memflow"&gt;memflow&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;The native Linux version is available in the &lt;a href="https://github.com/a2x/cs2-dumper/tree/linux"&gt;linux&lt;/a&gt; branch (currently outdated).&lt;/p&gt; 
+&lt;p&gt;For a work-in-progress offline version, check out the &lt;a href="https://github.com/a2x/cs2-analyzer"&gt;cs2-analyzer&lt;/a&gt; repository or view its included web demo &lt;a href="https://a2x.github.io/cs2-analyzer"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;You can download the latest release from &lt;a href="https://github.com/a2x/cs2-dumper/releases"&gt;Releases&lt;/a&gt; or compile it yourself. Note that compiling it yourself requires your Rust compiler version to be at least 1.74.0 or newer.&lt;/p&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Ensure the game is running (Being in the main menu should suffice).&lt;/li&gt; 
+ &lt;li&gt;Run the &lt;code&gt;cs2-dumper&lt;/code&gt; executable.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; If you run the executable without specifying an optional memflow connector name, it will automatically use the &lt;a href="https://github.com/memflow/memflow-native"&gt;memflow-native&lt;/a&gt; OS layer to read the memory of the game process. If you wish to use an existing memflow connector instead, such as &lt;strong&gt;pcileech&lt;/strong&gt; or &lt;strong&gt;kvm&lt;/strong&gt;, you can pass the &lt;code&gt;connector&lt;/code&gt; and optional &lt;code&gt;connector-args&lt;/code&gt; arguments to the program. These connectors can be installed and managed using the &lt;a href="https://github.com/memflow/memflowup"&gt;memflowup&lt;/a&gt; tool.&lt;/p&gt; 
+&lt;p&gt;E.g (for pcileech). &lt;code&gt;cs2-dumper -c pcileech -a :device=FPGA -vv&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;Certain connectors, such as the &lt;a href="https://github.com/memflow/memflow-kvm"&gt;kvm&lt;/a&gt; connector on Linux or the &lt;a href="https://github.com/memflow/memflow-pcileech"&gt;pcileech&lt;/a&gt; / &lt;a href="https://github.com/a2x/memflow-winio"&gt;winio&lt;/a&gt; connectors on Windows, require elevated privileges to work. So either run the &lt;code&gt;cs2-dumper&lt;/code&gt; executable with &lt;code&gt;sudo&lt;/code&gt; on Linux or as an administrator on Windows.&lt;/p&gt; 
+&lt;h3&gt;Available Arguments&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;-c, --connector &amp;lt;connector&amp;gt;&lt;/code&gt;: The name of the memflow connector to use.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;-a, --connector-args &amp;lt;connector-args&amp;gt;&lt;/code&gt;: Additional arguments to pass to the memflow connector.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;-f, --file-types &amp;lt;file-types&amp;gt;&lt;/code&gt;: The types of files to generate. Default: &lt;code&gt;cs&lt;/code&gt;, &lt;code&gt;hpp&lt;/code&gt;, &lt;code&gt;json&lt;/code&gt;, &lt;code&gt;rs&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;-i, --indent-size &amp;lt;indent-size&amp;gt;&lt;/code&gt;: The number of spaces to use per indentation level. Default: &lt;code&gt;4&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;-o, --output &amp;lt;output&amp;gt;&lt;/code&gt;: The output directory to write the generated files to. Default: &lt;code&gt;output&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;-p, --process-name &amp;lt;process-name&amp;gt;&lt;/code&gt;: The name of the game process. Default: &lt;code&gt;cs2.exe&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;-v...&lt;/code&gt;: Increase logging verbosity. Can be specified multiple times.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;-h, --help&lt;/code&gt;: Print help.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;-V, --version&lt;/code&gt;: Print version.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Running Tests&lt;/h2&gt; 
+&lt;p&gt;To run the few basic provided tests, use the following command: &lt;code&gt;cargo test -- --nocapture&lt;/code&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Licensed under the MIT license (&lt;a href="https://raw.githubusercontent.com/a2x/cs2-dumper/main/LICENSE"&gt;LICENSE&lt;/a&gt;).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>category-labs/monad-bft</title>
+      <link>https://github.com/category-labs/monad-bft</link>
+      <description>&lt;p&gt;&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Monad BFT&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://github.com/monad-crypto/monad-bft/actions/workflows/randomized.yml/badge.svg?branch=master" alt="Nightly Tests" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Overview&lt;/h2&gt; 
+&lt;p&gt;This repository contains implementation for the Monad consensus client and JsonRpc server. Monad consensus collects transactions and produces blocks which are written to a ledger filestream. These blocks are consumed by Monad execution, which then updates the state of the blockchain. The &lt;a href="https://raw.githubusercontent.com/category-labs/monad-bft/master/monad-triedb/README.md"&gt;triedb&lt;/a&gt; is a database which stores block information and the blockchain state.&lt;/p&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;git submodule update --init --recursive
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Using Docker&lt;/h3&gt; 
+&lt;p&gt;The most straightforward way to start a consensus client + an execution client + a JsonRpc server. Run the following:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;code&gt;cd docker/single-node&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;nets/run.sh&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Using Cargo&lt;/h3&gt; 
+&lt;p&gt;To run a Monad consensus client, follow instructions &lt;a href="https://raw.githubusercontent.com/category-labs/monad-bft/master/monad-node/README.md"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;To run a JsonRpc server, follow instructions &lt;a href="https://raw.githubusercontent.com/category-labs/monad-bft/master/monad-rpc/README.md"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Architecture&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-mermaid"&gt;sequenceDiagram
+autonumber
+    participant D as Driver
+    box Purple Executor
+    participant S as impl Stream
+    participant E as impl Executor
+    end
+    participant State
+    participant PersistenceLogger
+    loop
+    D -&amp;gt;&amp;gt;+ S: CALL next()
+    Note over S: blocks until event ready
+    S --&amp;gt;&amp;gt;- D: RETURN Event
+    D -&amp;gt;&amp;gt; PersistenceLogger: CALL push(Event)
+    D -&amp;gt;&amp;gt;+ State: CALL update(Event)
+    Note over State: mutate state
+    State --&amp;gt;&amp;gt;- D: RETURN Vec&amp;lt;Command&amp;gt;
+    D -&amp;gt;&amp;gt; E: CALL exec(Vec&amp;lt;Command&amp;gt;)
+    Note over E: apply side effects
+    end
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>zed-industries/zed</title>
+      <link>https://github.com/zed-industries/zed</link>
+      <description>&lt;p&gt;Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Zed&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://zed.dev"&gt;&lt;img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zed-industries/zed/main/assets/badge/v0.json" alt="Zed" /&gt;&lt;/a&gt; &lt;a href="https://github.com/zed-industries/zed/actions/workflows/ci.yml"&gt;&lt;img src="https://github.com/zed-industries/zed/actions/workflows/ci.yml/badge.svg?sanitize=true" alt="CI" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Welcome to Zed, a high-performance, multiplayer code editor from the creators of &lt;a href="https://github.com/atom/atom"&gt;Atom&lt;/a&gt; and &lt;a href="https://github.com/tree-sitter/tree-sitter"&gt;Tree-sitter&lt;/a&gt;.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Installation&lt;/h3&gt; 
+&lt;p&gt;On macOS and Linux you can &lt;a href="https://zed.dev/download"&gt;download Zed directly&lt;/a&gt; or &lt;a href="https://zed.dev/docs/linux#installing-via-a-package-manager"&gt;install Zed via your local package manager&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Other platforms are not yet available:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Windows (&lt;a href="https://github.com/zed-industries/zed/issues/5394"&gt;tracking issue&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;Web (&lt;a href="https://github.com/zed-industries/zed/issues/5396"&gt;tracking issue&lt;/a&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Developing Zed&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/zed-industries/zed/main/docs/src/development/macos.md"&gt;Building Zed for macOS&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/zed-industries/zed/main/docs/src/development/linux.md"&gt;Building Zed for Linux&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/zed-industries/zed/main/docs/src/development/windows.md"&gt;Building Zed for Windows&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/zed-industries/zed/main/docs/src/development/local-collaboration.md"&gt;Running Collaboration Locally&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Contributing&lt;/h3&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/zed-industries/zed/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for ways you can contribute to Zed.&lt;/p&gt; 
+&lt;p&gt;Also... we're hiring! Check out our &lt;a href="https://zed.dev/jobs"&gt;jobs&lt;/a&gt; page for open roles.&lt;/p&gt; 
+&lt;h3&gt;Licensing&lt;/h3&gt; 
+&lt;p&gt;License information for third party dependencies must be correctly provided for CI to pass.&lt;/p&gt; 
+&lt;p&gt;We use &lt;a href="https://github.com/EmbarkStudios/cargo-about"&gt;&lt;code&gt;cargo-about&lt;/code&gt;&lt;/a&gt; to automatically comply with open source licenses. If CI is failing, check the following:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Is it showing a &lt;code&gt;no license specified&lt;/code&gt; error for a crate you've created? If so, add &lt;code&gt;publish = false&lt;/code&gt; under &lt;code&gt;[package]&lt;/code&gt; in your crate's Cargo.toml.&lt;/li&gt; 
+ &lt;li&gt;Is the error &lt;code&gt;failed to satisfy license requirements&lt;/code&gt; for a dependency? If so, first determine what license the project has and whether this system is sufficient to comply with this license's requirements. If you're unsure, ask a lawyer. Once you've verified that this system is acceptable add the license's SPDX identifier to the &lt;code&gt;accepted&lt;/code&gt; array in &lt;code&gt;script/licenses/zed-licenses.toml&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Is &lt;code&gt;cargo-about&lt;/code&gt; unable to find the license for a dependency? If so, add a clarification field at the end of &lt;code&gt;script/licenses/zed-licenses.toml&lt;/code&gt;, as specified in the &lt;a href="https://embarkstudios.github.io/cargo-about/cli/generate/config.html#crate-configuration"&gt;cargo-about book&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>meilisearch/meilisearch</title>
+      <link>https://github.com/meilisearch/meilisearch</link>
+      <description>&lt;p&gt;A lightning-fast search engine API bringing AI-powered hybrid search to your sites and applications.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://www.meilisearch.com/?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=logo#gh-light-mode-only" target="_blank"&gt; &lt;img src="https://raw.githubusercontent.com/meilisearch/meilisearch/main/assets/meilisearch-logo-light.svg?sanitize=true#gh-light-mode-only" /&gt; &lt;/a&gt; &lt;a href="https://www.meilisearch.com/?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=logo#gh-dark-mode-only" target="_blank"&gt; &lt;img src="https://raw.githubusercontent.com/meilisearch/meilisearch/main/assets/meilisearch-logo-dark.svg?sanitize=true#gh-dark-mode-only" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h4 align="center"&gt; &lt;a href="https://www.meilisearch.com/?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=nav"&gt;Website&lt;/a&gt; | &lt;a href="https://roadmap.meilisearch.com/tabs/1-under-consideration"&gt;Roadmap&lt;/a&gt; | &lt;a href="https://www.meilisearch.com/pricing?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=nav"&gt;Meilisearch Cloud&lt;/a&gt; | &lt;a href="https://blog.meilisearch.com/?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=nav"&gt;Blog&lt;/a&gt; | &lt;a href="https://www.meilisearch.com/docs?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=nav"&gt;Documentation&lt;/a&gt; | &lt;a href="https://www.meilisearch.com/docs/faq?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=nav"&gt;FAQ&lt;/a&gt; | &lt;a href="https://discord.meilisearch.com/?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=nav"&gt;Discord&lt;/a&gt; &lt;/h4&gt; 
+&lt;p align="center"&gt; &lt;a href="https://deps.rs/repo/github/meilisearch/meilisearch"&gt;&lt;img src="https://deps.rs/repo/github/meilisearch/meilisearch/status.svg?sanitize=true" alt="Dependency status" /&gt;&lt;/a&gt; &lt;a href="https://github.com/meilisearch/meilisearch/raw/main/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/license-MIT-informational" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://github.com/meilisearch/meilisearch/queue"&gt;&lt;img alt="Merge Queues enabled" src="https://img.shields.io/badge/Merge_Queues-enabled-%2357cf60?logo=github" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;⚡ A lightning-fast search engine that fits effortlessly into your apps, websites, and workflow 🔍&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.meilisearch.com?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=intro"&gt;Meilisearch&lt;/a&gt; helps you shape a delightful search experience in a snap, offering features that work out of the box to speed up your workflow.&lt;/p&gt; 
+&lt;p align="center" name="demo"&gt; &lt;a href="https://where2watch.meilisearch.com/?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=demo-gif#gh-light-mode-only" target="_blank"&gt; &lt;img src="https://raw.githubusercontent.com/meilisearch/meilisearch/main/assets/demo-light.gif#gh-light-mode-only" alt="A bright colored application for finding movies screening near the user" /&gt; &lt;/a&gt; &lt;a href="https://where2watch.meilisearch.com/?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=demo-gif#gh-dark-mode-only" target="_blank"&gt; &lt;img src="https://raw.githubusercontent.com/meilisearch/meilisearch/main/assets/demo-dark.gif#gh-dark-mode-only" alt="A dark colored application for finding movies screening near the user" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;🖥 Examples&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://where2watch.meilisearch.com/?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=organization"&gt;&lt;strong&gt;Movies&lt;/strong&gt;&lt;/a&gt; — An application to help you find streaming platforms to watch movies using &lt;a href="https://www.meilisearch.com/solutions/hybrid-search?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=demos"&gt;hybrid search&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://ecommerce.meilisearch.com/?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=demos"&gt;&lt;strong&gt;Ecommerce&lt;/strong&gt;&lt;/a&gt; — Ecommerce website using disjunctive &lt;a href="https://www.meilisearch.com/docs/learn/fine_tuning_results/faceted_search?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=demos"&gt;facets&lt;/a&gt;, range and rating filtering, and pagination.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://music.meilisearch.com/?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=demos"&gt;&lt;strong&gt;Songs&lt;/strong&gt;&lt;/a&gt; — Search through 47 million of songs.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://saas.meilisearch.com/?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=demos"&gt;&lt;strong&gt;SaaS&lt;/strong&gt;&lt;/a&gt; — Search for contacts, deals, and companies in this &lt;a href="https://www.meilisearch.com/docs/learn/security/multitenancy_tenant_tokens?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=demos"&gt;multi-tenant&lt;/a&gt; CRM application.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See the list of all our example apps in our &lt;a href="https://github.com/meilisearch/demos"&gt;demos repository&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;✨ Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Hybrid search:&lt;/strong&gt; Combine the best of both &lt;a href="https://www.meilisearch.com/docs/learn/experimental/vector_search?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=features"&gt;semantic&lt;/a&gt; &amp;amp; full-text search to get the most relevant results&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Search-as-you-type:&lt;/strong&gt; Find &amp;amp; display results in less than 50 milliseconds to provide an intuitive experience&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://www.meilisearch.com/docs/learn/relevancy/typo_tolerance_settings?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=features"&gt;Typo tolerance&lt;/a&gt;:&lt;/strong&gt; get relevant matches even when queries contain typos and misspellings&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://www.meilisearch.com/docs/learn/fine_tuning_results/filtering?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=features"&gt;Filtering&lt;/a&gt; and &lt;a href="https://www.meilisearch.com/docs/learn/fine_tuning_results/faceted_search?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=features"&gt;faceted search&lt;/a&gt;:&lt;/strong&gt; enhance your users' search experience with custom filters and build a faceted search interface in a few lines of code&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://www.meilisearch.com/docs/learn/fine_tuning_results/sorting?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=features"&gt;Sorting&lt;/a&gt;:&lt;/strong&gt; sort results based on price, date, or pretty much anything else your users need&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://www.meilisearch.com/docs/learn/relevancy/synonyms?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=features"&gt;Synonym support&lt;/a&gt;:&lt;/strong&gt; configure synonyms to include more relevant content in your search results&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://www.meilisearch.com/docs/learn/fine_tuning_results/geosearch?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=features"&gt;Geosearch&lt;/a&gt;:&lt;/strong&gt; filter and sort documents based on geographic data&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://www.meilisearch.com/docs/learn/what_is_meilisearch/language?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=features"&gt;Extensive language support&lt;/a&gt;:&lt;/strong&gt; search datasets in any language, with optimized support for Chinese, Japanese, Hebrew, and languages using the Latin alphabet&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://www.meilisearch.com/docs/learn/security/master_api_keys?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=features"&gt;Security management&lt;/a&gt;:&lt;/strong&gt; control which users can access what data with API keys that allow fine-grained permissions handling&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://www.meilisearch.com/docs/learn/security/multitenancy_tenant_tokens?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=features"&gt;Multi-Tenancy&lt;/a&gt;:&lt;/strong&gt; personalize search results for any number of application tenants&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Highly Customizable:&lt;/strong&gt; customize Meilisearch to your specific needs or use our out-of-the-box and hassle-free presets&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://www.meilisearch.com/docs/reference/api/overview?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=features"&gt;RESTful API&lt;/a&gt;:&lt;/strong&gt; integrate Meilisearch in your technical stack with our plugins and SDKs&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;AI-ready:&lt;/strong&gt; works out of the box with &lt;a href="https://www.meilisearch.com/with/langchain"&gt;langchain&lt;/a&gt; and the &lt;a href="https://github.com/meilisearch/meilisearch-mcp"&gt;model context protocol&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Easy to install, deploy, and maintain&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📖 Documentation&lt;/h2&gt; 
+&lt;p&gt;You can consult Meilisearch's documentation at &lt;a href="https://www.meilisearch.com/docs/?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=docs"&gt;meilisearch.com/docs&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;🚀 Getting started&lt;/h2&gt; 
+&lt;p&gt;For basic instructions on how to set up Meilisearch, add documents to an index, and search for documents, take a look at our &lt;a href="https://www.meilisearch.com/docs?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=get-started"&gt;documentation&lt;/a&gt; guide.&lt;/p&gt; 
+&lt;h2&gt;🌍 Supercharge your Meilisearch experience&lt;/h2&gt; 
+&lt;p&gt;Say goodbye to server deployment and manual updates with &lt;a href="https://www.meilisearch.com/cloud?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch"&gt;Meilisearch Cloud&lt;/a&gt;. Additional features include analytics &amp;amp; monitoring in many regions around the world. No credit card is required.&lt;/p&gt; 
+&lt;h2&gt;🧰 SDKs &amp;amp; integration tools&lt;/h2&gt; 
+&lt;p&gt;Install one of our SDKs in your project for seamless integration between Meilisearch and your favorite language or framework!&lt;/p&gt; 
+&lt;p&gt;Take a look at the complete &lt;a href="https://www.meilisearch.com/docs/learn/what_is_meilisearch/sdks?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=sdks-link"&gt;Meilisearch integration list&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.meilisearch.com/docs/learn/what_is_meilisearch/sdks?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=sdks-logos"&gt;&lt;img src="https://raw.githubusercontent.com/meilisearch/meilisearch/main/assets/integrations.png" alt="Logos belonging to different languages and frameworks supported by Meilisearch, including React, Ruby on Rails, Go, Rust, and PHP" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;⚙️ Advanced usage&lt;/h2&gt; 
+&lt;p&gt;Experienced users will want to keep our &lt;a href="https://www.meilisearch.com/docs/reference/api/overview?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=advanced"&gt;API Reference&lt;/a&gt; close at hand.&lt;/p&gt; 
+&lt;p&gt;We also offer a wide range of dedicated guides to all Meilisearch features, such as &lt;a href="https://www.meilisearch.com/docs/learn/fine_tuning_results/filtering?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=advanced"&gt;filtering&lt;/a&gt;, &lt;a href="https://www.meilisearch.com/docs/learn/fine_tuning_results/sorting?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=advanced"&gt;sorting&lt;/a&gt;, &lt;a href="https://www.meilisearch.com/docs/learn/fine_tuning_results/geosearch?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=advanced"&gt;geosearch&lt;/a&gt;, &lt;a href="https://www.meilisearch.com/docs/learn/security/master_api_keys?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=advanced"&gt;API keys&lt;/a&gt;, and &lt;a href="https://www.meilisearch.com/docs/learn/security/tenant_tokens?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=advanced"&gt;tenant tokens&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Finally, for more in-depth information, refer to our articles explaining fundamental Meilisearch concepts such as &lt;a href="https://www.meilisearch.com/docs/learn/core_concepts/documents?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=advanced"&gt;documents&lt;/a&gt; and &lt;a href="https://www.meilisearch.com/docs/learn/core_concepts/indexes?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=advanced"&gt;indexes&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;🧾 Editions &amp;amp; Licensing&lt;/h2&gt; 
+&lt;p&gt;Meilisearch is available in two editions:&lt;/p&gt; 
+&lt;h3&gt;🧪 Community Edition (CE)&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fully open source under the &lt;a href="https://raw.githubusercontent.com/meilisearch/meilisearch/main/LICENSE"&gt;MIT license&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Core search engine with fast and relevant full-text, semantic or hybrid search&lt;/li&gt; 
+ &lt;li&gt;Free to use for anyone, including commercial usage&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🏢 Enterprise Edition (EE)&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Includes advanced features such as: 
+  &lt;ul&gt; 
+   &lt;li&gt;Sharding&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Governed by a &lt;a href="https://raw.githubusercontent.com/meilisearch/meilisearch/main/LICENSE-EE"&gt;commercial license&lt;/a&gt; or the &lt;a href="https://mariadb.com/bsl11"&gt;Business Source License 1.1&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Not allowed in production without a commercial agreement with Meilisearch. 
+  &lt;ul&gt; 
+   &lt;li&gt;You may use, modify, and distribute the Licensed Work for non-production purposes only, such as testing, development, or evaluation.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Want access to Enterprise features? → Contact us at &lt;a href="maito:sales@meilisearch.com"&gt;sales@meilisearch.com&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;📊 Telemetry&lt;/h2&gt; 
+&lt;p&gt;Meilisearch collects &lt;strong&gt;anonymized&lt;/strong&gt; user data to help us improve our product. You can &lt;a href="https://www.meilisearch.com/docs/learn/what_is_meilisearch/telemetry?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=telemetry#how-to-disable-data-collection"&gt;deactivate this&lt;/a&gt; whenever you want.&lt;/p&gt; 
+&lt;p&gt;To request deletion of collected data, please write to us at &lt;a href="mailto:privacy@meilisearch.com"&gt;privacy@meilisearch.com&lt;/a&gt;. Remember to include your &lt;code&gt;Instance UID&lt;/code&gt; in the message, as this helps us quickly find and delete your data.&lt;/p&gt; 
+&lt;p&gt;If you want to know more about the kind of data we collect and what we use it for, check the &lt;a href="https://www.meilisearch.com/docs/learn/what_is_meilisearch/telemetry?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=telemetry#how-to-disable-data-collection"&gt;telemetry section&lt;/a&gt; of our documentation.&lt;/p&gt; 
+&lt;h2&gt;📫 Get in touch!&lt;/h2&gt; 
+&lt;p&gt;Meilisearch is a search engine created by &lt;a href="https://www.meilisearch.com/careers"&gt;Meili&lt;/a&gt;, a software development company headquartered in France and with team members all over the world. Want to know more about us? &lt;a href="https://blog.meilisearch.com/?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=contact"&gt;Check out our blog!&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;🗞 &lt;a href="https://meilisearch.us2.list-manage.com/subscribe?u=27870f7b71c908a8b359599fb&amp;amp;id=79582d828e"&gt;Subscribe to our newsletter&lt;/a&gt; if you don't want to miss any updates! We promise we won't clutter your mailbox: we only send one edition every two months.&lt;/p&gt; 
+&lt;p&gt;💌 Want to make a suggestion or give feedback? Here are some of the channels where you can reach us:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;For feature requests, please visit our &lt;a href="https://github.com/meilisearch/product/discussions"&gt;product repository&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Found a bug? Open an &lt;a href="https://github.com/meilisearch/meilisearch/issues"&gt;issue&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Want to be part of our Discord community? &lt;a href="https://discord.meilisearch.com/?utm_campaign=oss&amp;amp;utm_source=github&amp;amp;utm_medium=meilisearch&amp;amp;utm_content=contact"&gt;Join us!&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Thank you for your support!&lt;/p&gt; 
+&lt;h2&gt;👩‍💻 Contributing&lt;/h2&gt; 
+&lt;p&gt;Meilisearch is, and will always be, open-source! If you want to contribute to the project, please look at &lt;a href="https://raw.githubusercontent.com/meilisearch/meilisearch/main/CONTRIBUTING.md"&gt;our contribution guidelines&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;📦 Versioning&lt;/h2&gt; 
+&lt;p&gt;Meilisearch releases and their associated binaries are available on the project's &lt;a href="https://github.com/meilisearch/meilisearch/releases"&gt;releases page&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;The binaries are versioned following &lt;a href="https://semver.org/"&gt;SemVer conventions&lt;/a&gt;. To know more, read our &lt;a href="https://raw.githubusercontent.com/meilisearch/meilisearch/main/documentation/versioning-policy.md"&gt;versioning policy&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Differently from the binaries, crates in this repository are not currently available on &lt;a href="https://crates.io/"&gt;crates.io&lt;/a&gt; and do not follow &lt;a href="https://semver.org"&gt;SemVer conventions&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>cachix/devenv</title>
+      <link>https://github.com/cachix/devenv</link>
+      <description>&lt;p&gt;Fast, Declarative, Reproducible, and Composable Developer Environments using Nix&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://devenv.sh"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: light)" srcset="logos/devenv-horizontal-light-bg.svg" /&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="logos/devenv-horizontal-dark-bg.svg" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/cachix/devenv/main/logos/devenv-horizontal-light-bg.svg?sanitize=true" width="500px" alt="devenv logo" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h1&gt;&lt;a href="https://devenv.sh"&gt;devenv.sh&lt;/a&gt; - Fast, Declarative, Reproducible, and Composable Developer Environments&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://builtwithnix.org"&gt;&lt;img src="https://img.shields.io/static/v1?logo=nixos&amp;amp;logoColor=white&amp;amp;label=&amp;amp;message=Built%20with%20Nix&amp;amp;color=41439a" alt="Built with Nix" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/naMgvexb6q"&gt;&lt;img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscord.com%2Fapi%2Finvites%2FnaMgvexb6q%3Fwith_counts%3Dtrue&amp;amp;query=%24.approximate_member_count&amp;amp;logo=discord&amp;amp;logoColor=white&amp;amp;label=Discord%20users&amp;amp;color=green&amp;amp;style=flat" alt="Discord channel" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/github/license/cachix/devenv" alt="License: Apache 2.0" /&gt; &lt;a href="https://github.com/cachix/devenv/releases"&gt;&lt;img src="https://img.shields.io/github/v/release/cachix/devenv?color=green&amp;amp;label=version&amp;amp;sort=semver" alt="Version" /&gt;&lt;/a&gt; &lt;a href="https://github.com/cachix/devenv/actions/workflows/buildtest.yml?branch=main"&gt;&lt;img src="https://github.com/cachix/devenv/actions/workflows/buildtest.yml/badge.svg?sanitize=true" alt="CI" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Running &lt;code&gt;devenv init&lt;/code&gt; generates &lt;code&gt;devenv.nix&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-nix"&gt;{ pkgs, ... }:
+
+{
+  # https://devenv.sh/basics/
+  env.GREET = "devenv";
+
+  # https://devenv.sh/packages/
+  packages = [ pkgs.git ];
+
+  enterShell = ''
+    hello
+  '';
+
+  # https://devenv.sh/tests/
+  enterTest = ''
+    echo "Running tests"
+    git --version | grep --color=auto "${pkgs.git.version}"
+  '';
+
+  # https://devenv.sh/languages/
+  languages.nix.enable = true;
+
+  # https://devenv.sh/scripts/
+  scripts.hello.exec = "echo hello from $GREET";
+
+  # https://devenv.sh/services/
+  services.postgres.enable = true;
+
+  # https://devenv.sh/git-hooks/
+  git-hooks.hooks.shellcheck.enable = true;
+
+  # https://devenv.sh/processes/
+  processes.ping.exec = "ping localhost";
+}
+
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;And &lt;code&gt;devenv shell&lt;/code&gt; activates the environment.&lt;/p&gt; 
+&lt;h2&gt;Commands&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;$ devenv
+https://devenv.sh 1.6.0: Fast, Declarative, Reproducible, and Composable Developer Environments
+
+Usage: devenv [OPTIONS] [COMMAND]
+
+Commands:
+  init       Scaffold devenv.yaml, devenv.nix, .gitignore and .envrc.
+  generate   Generate devenv.yaml and devenv.nix using AI
+  shell      Activate the developer environment. https://devenv.sh/basics/
+  update     Update devenv.lock from devenv.yaml inputs. http://devenv.sh/inputs/
+  search     Search for packages and options in nixpkgs. https://devenv.sh/packages/#searching-for-a-file
+  info       Print information about this developer environment.
+  up         Start processes in the foreground. https://devenv.sh/processes/
+  processes  Start or stop processes. https://devenv.sh/processes/
+  tasks      Run tasks. https://devenv.sh/tasks/
+  test       Run tests. http://devenv.sh/tests/
+  container  Build, copy, or run a container. https://devenv.sh/containers/
+  inputs     Add an input to devenv.yaml. https://devenv.sh/inputs/
+  repl       Launch an interactive environment for inspecting the devenv configuration.
+  gc         Delete previous shell generations. See https://devenv.sh/garbage-collection
+  build      Build any attribute in devenv.nix.
+  direnvrc   Print a direnvrc that adds devenv support to direnv. See https://devenv.sh/automatic-shell-activation.
+  version    Print the version of devenv.
+  help       Print this message or the help of the given subcommand(s)
+
+Options:
+  -V, --version
+          Print version information and exit
+
+  -v, --verbose
+          Enable additional debug logs.
+
+  -q, --quiet
+          Silence all logs
+
+      --log-format &amp;lt;LOG_FORMAT&amp;gt;
+          Configure the output format of the logs.
+
+          [default: cli]
+
+          Possible values:
+          - cli:            The default human-readable log format used in the CLI
+          - tracing-full:   A verbose structured log format used for debugging
+          - tracing-pretty: A pretty human-readable log format used for debugging
+
+  -j, --max-jobs &amp;lt;MAX_JOBS&amp;gt;
+          Maximum number of Nix builds at any time.
+
+          [default: 8]
+
+  -u, --cores &amp;lt;CORES&amp;gt;
+          Maximum number CPU cores being used by a single build.
+
+          [default: 2]
+
+  -s, --system &amp;lt;SYSTEM&amp;gt;
+          [default: x86_64-linux]
+
+  -i, --impure
+          Relax the hermeticity of the environment.
+
+      --no-eval-cache
+          Disable caching of Nix evaluation results.
+
+      --refresh-eval-cache
+          Force a refresh of the Nix evaluation cache.
+
+      --offline
+          Disable substituters and consider all previously downloaded files up-to-date.
+
+  -c, --clean [&amp;lt;CLEAN&amp;gt;...]
+          Ignore existing environment variables when entering the shell. Pass a list of comma-separated environment variables to let through.
+
+      --nix-debugger
+          Enter the Nix debugger on failure.
+
+  -n, --nix-option &amp;lt;NAME&amp;gt; &amp;lt;VALUE&amp;gt;
+          Pass additional options to nix commands.
+
+          These options are passed directly to Nix using the --option flag.
+          See `man nix.conf` for the full list of available options.
+
+          Examples:
+            --nix-option sandbox false
+            --nix-option keep-outputs true
+            --nix-option system x86_64-darwin
+
+  -o, --override-input &amp;lt;NAME&amp;gt; &amp;lt;URI&amp;gt;
+          Override inputs in devenv.yaml.
+
+          Examples:
+            --override-input nixpkgs github:NixOS/nixpkgs/nixos-unstable
+            --override-input nixpkgs path:/path/to/local/nixpkgs
+
+  -O, --option &amp;lt;OPTION&amp;gt; &amp;lt;VALUE&amp;gt;
+          Override configuration options with typed values.
+
+          OPTION must include a type: &amp;lt;attribute&amp;gt;:&amp;lt;type&amp;gt;
+          Supported types: string, int, float, bool, path
+
+          Examples:
+            --option languages.rust.channel:string beta
+            --option services.postgres.enable:bool true
+            --option languages.python.version:string 3.10
+
+  -h, --help
+          Print help (see a summary with '-h')
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://devenv.sh/getting-started/"&gt;Getting Started&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://devenv.sh/basics/"&gt;Basics&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://devenv.sh/roadmap/"&gt;Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://devenv.sh/blog/"&gt;Blog&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://devenv.sh/reference/yaml-options/"&gt;&lt;code&gt;devenv.yaml&lt;/code&gt; reference&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://devenv.sh/reference/options/"&gt;&lt;code&gt;devenv.nix&lt;/code&gt; reference&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://devenv.sh/community/contributing/"&gt;Contributing&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>openai/codex</title>
+      <link>https://github.com/openai/codex</link>
+      <description>&lt;p&gt;Lightweight coding agent that runs in your terminal&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt;OpenAI Codex CLI&lt;/h1&gt; 
+&lt;p align="center"&gt;&lt;code&gt;npm i -g @openai/codex&lt;/code&gt;&lt;br /&gt;or &lt;code&gt;brew install codex&lt;/code&gt;&lt;/p&gt; 
+&lt;p align="center"&gt;&lt;strong&gt;Codex CLI&lt;/strong&gt; is a coding agent from OpenAI that runs locally on your computer. &lt;br /&gt; &lt;br /&gt;If you want Codex in your code editor (VS Code, Cursor, Windsurf), &lt;a href="https://developers.openai.com/codex/ide"&gt;install in your IDE&lt;/a&gt; &lt;br /&gt;If you are looking for the &lt;em&gt;cloud-based agent&lt;/em&gt; from OpenAI, &lt;strong&gt;Codex Web&lt;/strong&gt;, go to &lt;a href="https://chatgpt.com/codex"&gt;chatgpt.com/codex&lt;/a&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/openai/codex/main/.github/codex-cli-splash.png" alt="Codex CLI splash" width="80%" /&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Quickstart&lt;/h2&gt; 
+&lt;h3&gt;Installing and running Codex CLI&lt;/h3&gt; 
+&lt;p&gt;Install globally with your preferred package manager. If you use npm:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;npm install -g @openai/codex
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Alternatively, if you use Homebrew:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;brew install codex
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then simply run &lt;code&gt;codex&lt;/code&gt; to get started:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;codex
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;You can also go to the &lt;a href="https://github.com/openai/codex/releases/latest"&gt;latest GitHub Release&lt;/a&gt; and download the appropriate binary for your platform.&lt;/summary&gt; 
+ &lt;p&gt;Each GitHub Release contains many executables, but in practice, you likely want one of these:&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;macOS 
+   &lt;ul&gt; 
+    &lt;li&gt;Apple Silicon/arm64: &lt;code&gt;codex-aarch64-apple-darwin.tar.gz&lt;/code&gt;&lt;/li&gt; 
+    &lt;li&gt;x86_64 (older Mac hardware): &lt;code&gt;codex-x86_64-apple-darwin.tar.gz&lt;/code&gt;&lt;/li&gt; 
+   &lt;/ul&gt; &lt;/li&gt; 
+  &lt;li&gt;Linux 
+   &lt;ul&gt; 
+    &lt;li&gt;x86_64: &lt;code&gt;codex-x86_64-unknown-linux-musl.tar.gz&lt;/code&gt;&lt;/li&gt; 
+    &lt;li&gt;arm64: &lt;code&gt;codex-aarch64-unknown-linux-musl.tar.gz&lt;/code&gt;&lt;/li&gt; 
+   &lt;/ul&gt; &lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;Each archive contains a single entry with the platform baked into the name (e.g., &lt;code&gt;codex-x86_64-unknown-linux-musl&lt;/code&gt;), so you likely want to rename it to &lt;code&gt;codex&lt;/code&gt; after extracting it.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;h3&gt;Using Codex with your ChatGPT plan&lt;/h3&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/openai/codex/main/.github/codex-cli-login.png" alt="Codex CLI login" width="80%" /&gt; &lt;/p&gt; 
+&lt;p&gt;Run &lt;code&gt;codex&lt;/code&gt; and select &lt;strong&gt;Sign in with ChatGPT&lt;/strong&gt;. We recommend signing into your ChatGPT account to use Codex as part of your Plus, Pro, Team, Edu, or Enterprise plan. &lt;a href="https://help.openai.com/en/articles/11369540-codex-in-chatgpt"&gt;Learn more about what's included in your ChatGPT plan&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;You can also use Codex with an API key, but this requires &lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/authentication.md#usage-based-billing-alternative-use-an-openai-api-key"&gt;additional setup&lt;/a&gt;. If you previously used an API key for usage-based billing, see the &lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/authentication.md#migrating-from-usage-based-billing-api-key"&gt;migration steps&lt;/a&gt;. If you're having trouble with login, please comment on &lt;a href="https://github.com/openai/codex/issues/1243"&gt;this issue&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Model Context Protocol (MCP)&lt;/h3&gt; 
+&lt;p&gt;Codex CLI supports &lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/advanced.md#model-context-protocol-mcp"&gt;MCP servers&lt;/a&gt;. Enable by adding an &lt;code&gt;mcp_servers&lt;/code&gt; section to your &lt;code&gt;~/.codex/config.toml&lt;/code&gt;.&lt;/p&gt; 
+&lt;h3&gt;Configuration&lt;/h3&gt; 
+&lt;p&gt;Codex CLI supports a rich set of configuration options, with preferences stored in &lt;code&gt;~/.codex/config.toml&lt;/code&gt;. For full configuration options, see &lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/config.md"&gt;Configuration&lt;/a&gt;.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Docs &amp;amp; FAQ&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/getting-started.md"&gt;&lt;strong&gt;Getting started&lt;/strong&gt;&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/getting-started.md#cli-usage"&gt;CLI usage&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/getting-started.md#running-with-a-prompt-as-input"&gt;Running with a prompt as input&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/getting-started.md#example-prompts"&gt;Example prompts&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/getting-started.md#memory-with-agentsmd"&gt;Memory with AGENTS.md&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/config.md"&gt;Configuration&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/sandbox.md"&gt;&lt;strong&gt;Sandbox &amp;amp; approvals&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/authentication.md"&gt;&lt;strong&gt;Authentication&lt;/strong&gt;&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/authentication.md#forcing-a-specific-auth-method-advanced"&gt;Auth methods&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/authentication.md#connecting-on-a-headless-machine"&gt;Login on a "Headless" machine&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/advanced.md"&gt;&lt;strong&gt;Advanced&lt;/strong&gt;&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/advanced.md#non-interactive--ci-mode"&gt;Non-interactive / CI mode&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/advanced.md#tracing--verbose-logging"&gt;Tracing / verbose logging&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/advanced.md#model-context-protocol-mcp"&gt;Model Context Protocol (MCP)&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/zdr.md"&gt;&lt;strong&gt;Zero data retention (ZDR)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/contributing.md"&gt;&lt;strong&gt;Contributing&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/install.md"&gt;&lt;strong&gt;Install &amp;amp; build&lt;/strong&gt;&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/install.md#system-requirements"&gt;System Requirements&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/install.md#dotslash"&gt;DotSlash&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/install.md#build-from-source"&gt;Build from source&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/faq.md"&gt;&lt;strong&gt;FAQ&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/open-source-fund.md"&gt;&lt;strong&gt;Open source fund&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This repository is licensed under the &lt;a href="https://raw.githubusercontent.com/openai/codex/main/LICENSE"&gt;Apache-2.0 License&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>aws/amazon-q-developer-cli</title>
+      <link>https://github.com/aws/amazon-q-developer-cli</link>
+      <description>&lt;p&gt;✨ Agentic chat experience in your terminal. Build applications using natural language.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Amazon Q CLI&lt;/h1&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;macOS&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;DMG&lt;/strong&gt;: &lt;a href="https://desktop-release.q.us-east-1.amazonaws.com/latest/Amazon%20Q.dmg"&gt;Download now&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Linux&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/command-line-installing.html#command-line-installing-ubuntu"&gt;Ubuntu/Debian&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/command-line-installing.html#command-line-installing-appimage"&gt;AppImage&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/command-line-installing.html#command-line-installing-alternative-linux"&gt;Alternative Linux builds&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Thank you so much for considering to contribute to Amazon Q.&lt;/p&gt; 
+&lt;p&gt;Before getting started, see our &lt;a href="https://raw.githubusercontent.com/aws/amazon-q-developer-cli/main/CONTRIBUTING.md#security-issue-notifications"&gt;contributing docs&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Prerequisites&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;MacOS 
+  &lt;ul&gt; 
+   &lt;li&gt;Xcode 13 or later&lt;/li&gt; 
+   &lt;li&gt;Brew&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;1. Clone repo&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;git clone https://github.com/aws/amazon-q-developer-cli.git
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;2. Install the Rust toolchain using &lt;a href="https://rustup.rs"&gt;Rustup&lt;/a&gt;:&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup default stable
+rustup toolchain install nightly
+cargo install typos-cli
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;3. Develop locally&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;To compile and run: &lt;code&gt;cargo run --bin chat_cli&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;To run tests: &lt;code&gt;cargo test&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;To run lints: &lt;code&gt;cargo clippy&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;To format rust files: &lt;code&gt;cargo +nightly fmt&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;To run subcommands: &lt;code&gt;cargo run --bin chat_cli -- {subcommand}&lt;/code&gt;. 
+  &lt;ul&gt; 
+   &lt;li&gt;Login would then be: &lt;code&gt;cargo run --bin chat_cli -- login&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Project Layout&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/aws/amazon-q-developer-cli/main/crates/chat-cli/"&gt;&lt;code&gt;chat_cli&lt;/code&gt;&lt;/a&gt; - the &lt;code&gt;q&lt;/code&gt; CLI, allows users to interface with Amazon Q Developer from the command line&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/aws/amazon-q-developer-cli/main/scripts/"&gt;&lt;code&gt;scripts/&lt;/code&gt;&lt;/a&gt; - Contains ops and build related scripts&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/aws/amazon-q-developer-cli/main/crates/"&gt;&lt;code&gt;crates/&lt;/code&gt;&lt;/a&gt; - Contains all rust crates&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/aws/amazon-q-developer-cli/main/docs/"&gt;&lt;code&gt;docs/&lt;/code&gt;&lt;/a&gt; - Contains technical documentation&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Security&lt;/h2&gt; 
+&lt;p&gt;For security related concerns, see &lt;a href="https://raw.githubusercontent.com/aws/amazon-q-developer-cli/main/SECURITY.md"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Licensing&lt;/h2&gt; 
+&lt;p&gt;This repo is dual licensed under MIT and Apache 2.0 licenses.&lt;/p&gt; 
+&lt;p&gt;Those licenses can be found &lt;a href="https://raw.githubusercontent.com/aws/amazon-q-developer-cli/main/LICENSE.MIT"&gt;here&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/aws/amazon-q-developer-cli/main/LICENSE.APACHE"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;“Amazon Web Services” and all related marks, including logos, graphic designs, and service names, are trademarks or trade dress of AWS in the U.S. and other countries. AWS’s trademarks and trade dress may not be used in connection with any product or service that is not AWS’s, in any manner that is likely to cause confusion among customers, or in any manner that disparages or discredits AWS.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>bytecodealliance/wasmtime</title>
+      <link>https://github.com/bytecodealliance/wasmtime</link>
+      <description>&lt;p&gt;A lightweight WebAssembly runtime that is fast, secure, and standards-compliant&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;h1&gt;&lt;code&gt;wasmtime&lt;/code&gt;&lt;/h1&gt; 
+ &lt;p&gt; &lt;strong&gt;A standalone runtime for &lt;a href="https://webassembly.org/"&gt;WebAssembly&lt;/a&gt;&lt;/strong&gt; &lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;A &lt;a href="https://bytecodealliance.org/"&gt;Bytecode Alliance&lt;/a&gt; project&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt; &lt;a href="https://github.com/bytecodealliance/wasmtime/actions?query=workflow%3ACI"&gt;&lt;img src="https://github.com/bytecodealliance/wasmtime/workflows/CI/badge.svg?sanitize=true" alt="build status" /&gt;&lt;/a&gt; &lt;a href="https://bytecodealliance.zulipchat.com/#narrow/stream/217126-wasmtime"&gt;&lt;img src="https://img.shields.io/badge/zulip-join_chat-brightgreen.svg?sanitize=true" alt="zulip chat" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/badge/rustc-stable+-green.svg?sanitize=true" alt="supported rustc stable" /&gt; &lt;a href="https://docs.rs/wasmtime"&gt;&lt;img src="https://docs.rs/wasmtime/badge.svg?sanitize=true" alt="Documentation Status" /&gt;&lt;/a&gt; &lt;/p&gt; 
+ &lt;h3&gt; &lt;a href="https://bytecodealliance.github.io/wasmtime/"&gt;Guide&lt;/a&gt; &lt;span&gt; | &lt;/span&gt; &lt;a href="https://bytecodealliance.github.io/wasmtime/contributing.html"&gt;Contributing&lt;/a&gt; &lt;span&gt; | &lt;/span&gt; &lt;a href="https://wasmtime.dev/"&gt;Website&lt;/a&gt; &lt;span&gt; | &lt;/span&gt; &lt;a href="https://bytecodealliance.zulipchat.com/#narrow/stream/217126-wasmtime"&gt;Chat&lt;/a&gt; &lt;/h3&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;The Wasmtime CLI can be installed on Linux and macOS (locally) with a small install script:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-console"&gt;curl https://wasmtime.dev/install.sh -sSf | bash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This script installs into &lt;code&gt;$WASMTIME_HOME&lt;/code&gt; (defaults to &lt;code&gt;$HOME/.wasmtime&lt;/code&gt;), and executable is placed in &lt;code&gt;$WASMTIME_HOME/bin&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;After running the install script above, follow the on-screen instructions.&lt;/p&gt; 
+&lt;p&gt;Windows or otherwise interested users can download installers and binaries directly from the &lt;a href="https://github.com/bytecodealliance/wasmtime/releases"&gt;GitHub Releases&lt;/a&gt; page.&lt;/p&gt; 
+&lt;p&gt;For additional installation options, refer to the &lt;a href="https://docs.wasmtime.dev/cli-install.html"&gt;online book CLI installation page&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Documentation on Wasmtime's currently supported versions can be found &lt;a href="https://docs.wasmtime.dev/stability-release.html#current-versions"&gt;in the online book documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Example&lt;/h2&gt; 
+&lt;p&gt;If you've got the &lt;a href="https://www.rust-lang.org/tools/install"&gt;Rust compiler installed&lt;/a&gt; then you can take some Rust source code:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-rust"&gt;fn main() {
+    println!("Hello, world!");
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;and compile it into a WebAssembly component with:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-console"&gt;rustup target add wasm32-wasip2
+rustc hello.rs --target wasm32-wasip2
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Once compiled, you can run your component:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-console"&gt;wasmtime hello.wasm
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You should see the following output:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-text"&gt;Hello, world!
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;(Note: make sure you installed Rust using the &lt;a href="https://rustup.rs"&gt;&lt;code&gt;rustup&lt;/code&gt;&lt;/a&gt; method in the official instructions above, and do not have a copy of the Rust toolchain installed on your system in some other way as well (e.g. the system package manager). Otherwise, the &lt;code&gt;rustup target add...&lt;/code&gt; command may not install the target for the correct copy of Rust.)&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Fast&lt;/strong&gt;. Wasmtime is built on the optimizing &lt;a href="https://cranelift.dev/"&gt;Cranelift&lt;/a&gt; code generator to quickly generate high-quality machine code either at runtime or ahead-of-time. Wasmtime is optimized for efficient instantiation, low-overhead calls between the embedder and wasm, and scalability of concurrent instances.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://docs.wasmtime.dev/security.html"&gt;Secure&lt;/a&gt;&lt;/strong&gt;. Wasmtime's development is strongly focused on correctness and security. Building on top of Rust's runtime safety guarantees, each Wasmtime feature goes through careful review and consideration via an &lt;a href="https://github.com/bytecodealliance/rfcs"&gt;RFC process&lt;/a&gt;. Once features are designed and implemented, they undergo 24/7 fuzzing donated by &lt;a href="https://google.github.io/oss-fuzz/"&gt;Google's OSS Fuzz&lt;/a&gt;. As features stabilize they become part of a &lt;a href="https://docs.wasmtime.dev/stability-release.html"&gt;release&lt;/a&gt;, and when things go wrong we have a well-defined &lt;a href="https://bytecodealliance.org/security"&gt;security policy&lt;/a&gt; in place to quickly mitigate and patch any issues. We follow best practices for defense-in-depth and integrate protections and mitigations for issues like Spectre. Finally, we're working to push the state-of-the-art by collaborating with academic researchers to formally verify critical parts of Wasmtime and Cranelift.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://docs.rs/wasmtime/latest/wasmtime/struct.Config.html"&gt;Configurable&lt;/a&gt;&lt;/strong&gt;. Wasmtime uses sensible defaults, but can also be configured to provide more fine-grained control over things like CPU and memory consumption. Whether you want to run Wasmtime in a tiny environment or on massive servers with many concurrent instances, we've got you covered.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://docs.rs/wasmtime-wasi/latest/wasmtime_wasi/"&gt;WASI&lt;/a&gt;&lt;/strong&gt;. Wasmtime supports a rich set of APIs for interacting with the host environment through the &lt;a href="https://wasi.dev"&gt;WASI standard&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://docs.wasmtime.dev/stability-tiers.html"&gt;Standards Compliant&lt;/a&gt;&lt;/strong&gt;. Wasmtime passes the &lt;a href="https://github.com/WebAssembly/testsuite"&gt;official WebAssembly test suite&lt;/a&gt;, implements the &lt;a href="https://github.com/WebAssembly/wasm-c-api"&gt;official C API of wasm&lt;/a&gt;, and implements &lt;a href="https://github.com/WebAssembly/proposals"&gt;future proposals to WebAssembly&lt;/a&gt; as well. Wasmtime developers are intimately engaged with the WebAssembly standards process all along the way too.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Language Support&lt;/h2&gt; 
+&lt;p&gt;You can use Wasmtime from a variety of different languages through embeddings of the implementation.&lt;/p&gt; 
+&lt;p&gt;Languages supported by the Bytecode Alliance:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://bytecodealliance.github.io/wasmtime/lang-rust.html"&gt;Rust&lt;/a&gt;&lt;/strong&gt; - the &lt;a href="https://crates.io/crates/wasmtime"&gt;&lt;code&gt;wasmtime&lt;/code&gt; crate&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://bytecodealliance.github.io/wasmtime/lang-c.html"&gt;C&lt;/a&gt;&lt;/strong&gt; - the &lt;a href="https://bytecodealliance.github.io/wasmtime/c-api/"&gt;&lt;code&gt;wasm.h&lt;/code&gt;, &lt;code&gt;wasi.h&lt;/code&gt;, and &lt;code&gt;wasmtime.h&lt;/code&gt; headers&lt;/a&gt;, &lt;a href="https://raw.githubusercontent.com/bytecodealliance/wasmtime/main/crates/c-api/CMakeLists.txt"&gt;CMake&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;C++&lt;/strong&gt; - the &lt;a href="https://bytecodealliance.github.io/wasmtime/c-api/"&gt;&lt;code&gt;wasmtime.hh&lt;/code&gt; header&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://bytecodealliance.github.io/wasmtime/lang-python.html"&gt;Python&lt;/a&gt;&lt;/strong&gt; - the &lt;a href="https://pypi.org/project/wasmtime/"&gt;&lt;code&gt;wasmtime&lt;/code&gt; PyPI package&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://bytecodealliance.github.io/wasmtime/lang-dotnet.html"&gt;.NET&lt;/a&gt;&lt;/strong&gt; - the &lt;a href="https://www.nuget.org/packages/Wasmtime"&gt;&lt;code&gt;Wasmtime&lt;/code&gt; NuGet package&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://bytecodealliance.github.io/wasmtime/lang-go.html"&gt;Go&lt;/a&gt;&lt;/strong&gt; - the &lt;a href="https://pkg.go.dev/github.com/bytecodealliance/wasmtime-go"&gt;&lt;code&gt;wasmtime-go&lt;/code&gt; repository&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://bytecodealliance.github.io/wasmtime/lang-ruby.html"&gt;Ruby&lt;/a&gt;&lt;/strong&gt; - the &lt;a href="https://rubygems.org/gems/wasmtime"&gt;&lt;code&gt;wasmtime&lt;/code&gt; gem&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Languages supported by the community:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.wasmtime.dev/lang-elixir.html"&gt;Elixir&lt;/a&gt;&lt;/strong&gt; - the &lt;a href="https://hex.pm/packages/wasmex"&gt;&lt;code&gt;wasmex&lt;/code&gt; hex package&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Perl&lt;/strong&gt; - the &lt;a href="https://metacpan.org/pod/Wasm::Wasmtime"&gt;&lt;code&gt;Wasm&lt;/code&gt; Perl package's &lt;code&gt;Wasm::Wasmtime&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://bytecodealliance.github.io/wasmtime"&gt;📚 Read the Wasmtime guide here! 📚&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;The &lt;a href="https://bytecodealliance.github.io/wasmtime"&gt;wasmtime guide&lt;/a&gt; is the best starting point to learn about what Wasmtime can do for you or help answer your questions about Wasmtime. If you're curious in contributing to Wasmtime, &lt;a href="https://bytecodealliance.github.io/wasmtime/contributing.html"&gt;it can also help you do that&lt;/a&gt;!&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;It's Wasmtime.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>YaLTeR/niri</title>
+      <link>https://github.com/YaLTeR/niri</link>
+      <description>&lt;p&gt;A scrollable-tiling Wayland compositor.&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt;&lt;img alt="niri" src="https://github.com/user-attachments/assets/07d05cd0-d5dc-4a28-9a35-51bae8f119a0" /&gt;&lt;/h1&gt; 
+&lt;p align="center"&gt;A scrollable-tiling Wayland compositor.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://matrix.to/#/#niri:matrix.org"&gt;&lt;img alt="Matrix" src="https://img.shields.io/badge/matrix-%23niri-blue?logo=matrix" /&gt;&lt;/a&gt; &lt;a href="https://github.com/YaLTeR/niri/raw/main/LICENSE"&gt;&lt;img alt="GitHub License" src="https://img.shields.io/github/license/YaLTeR/niri" /&gt;&lt;/a&gt; &lt;a href="https://github.com/YaLTeR/niri/releases"&gt;&lt;img alt="GitHub Release" src="https://img.shields.io/github/v/release/YaLTeR/niri?logo=github" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://yalter.github.io/niri/Getting-Started.html"&gt;Getting Started&lt;/a&gt; | &lt;a href="https://yalter.github.io/niri/Configuration%3A-Introduction.html"&gt;Configuration&lt;/a&gt; | &lt;a href="https://github.com/YaLTeR/niri/discussions/325"&gt;Setup&amp;nbsp;Showcase&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/535e6530-2f44-4b84-a883-1240a3eee6e9" alt="niri with a few windows open" /&gt;&lt;/p&gt; 
+&lt;h2&gt;About&lt;/h2&gt; 
+&lt;p&gt;Windows are arranged in columns on an infinite strip going to the right. Opening a new window never causes existing windows to resize.&lt;/p&gt; 
+&lt;p&gt;Every monitor has its own separate window strip. Windows can never "overflow" onto an adjacent monitor.&lt;/p&gt; 
+&lt;p&gt;Workspaces are dynamic and arranged vertically. Every monitor has an independent set of workspaces, and there's always one empty workspace present all the way down.&lt;/p&gt; 
+&lt;p&gt;The workspace arrangement is preserved across disconnecting and connecting monitors where it makes sense. When a monitor disconnects, its workspaces will move to another monitor, but upon reconnection they will move back to the original monitor.&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Built from the ground up for scrollable tiling&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://yalter.github.io/niri/Workspaces.html"&gt;Dynamic workspaces&lt;/a&gt; like in GNOME&lt;/li&gt; 
+ &lt;li&gt;An &lt;a href="https://github.com/user-attachments/assets/379a5d1f-acdb-4c11-b36c-e85fd91f0995"&gt;Overview&lt;/a&gt; that zooms out workspaces and windows&lt;/li&gt; 
+ &lt;li&gt;Built-in screenshot UI&lt;/li&gt; 
+ &lt;li&gt;Monitor and window screencasting through xdg-desktop-portal-gnome 
+  &lt;ul&gt; 
+   &lt;li&gt;You can &lt;a href="https://yalter.github.io/niri/Configuration%3A-Window-Rules.html#block-out-from"&gt;block out&lt;/a&gt; sensitive windows from screencasts&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://yalter.github.io/niri/Screencasting.html#dynamic-screencast-target"&gt;Dynamic cast target&lt;/a&gt; that can change what it shows on the go&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/YaLTeR/niri/assets/1794388/946a910e-9bec-4cd1-a923-4a9421707515"&gt;Touchpad&lt;/a&gt; and &lt;a href="https://github.com/YaLTeR/niri/assets/1794388/8464e65d-4bf2-44fa-8c8e-5883355bd000"&gt;mouse&lt;/a&gt; gestures&lt;/li&gt; 
+ &lt;li&gt;Group windows into &lt;a href="https://yalter.github.io/niri/Tabs.html"&gt;tabs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Configurable layout: gaps, borders, struts, window sizes&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://yalter.github.io/niri/Configuration%3A-Layout.html#gradients"&gt;Gradient borders&lt;/a&gt; with Oklab and Oklch support&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/YaLTeR/niri/assets/1794388/ce178da2-af9e-4c51-876f-8709c241d95e"&gt;Animations&lt;/a&gt; with support for &lt;a href="https://github.com/YaLTeR/niri/assets/1794388/27a238d6-0a22-4692-b794-30dc7a626fad"&gt;custom shaders&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Live-reloading config&lt;/li&gt; 
+ &lt;li&gt;Works with &lt;a href="https://yalter.github.io/niri/Accessibility.html"&gt;screen readers&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Video Demo&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/YaLTeR/niri/assets/1794388/bce834b0-f205-434e-a027-b373495f9729"&gt;https://github.com/YaLTeR/niri/assets/1794388/bce834b0-f205-434e-a027-b373495f9729&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Also check out this video from Brodie Robertson that showcases a lot of the niri functionality: &lt;a href="https://youtu.be/DeYx2exm04M"&gt;Niri Is My New Favorite Wayland Compositor&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Status&lt;/h2&gt; 
+&lt;p&gt;Niri is stable for day-to-day use and does most things expected of a Wayland compositor. Many people are daily-driving niri, and are happy to help in our &lt;a href="https://matrix.to/#/#niri:matrix.org"&gt;Matrix channel&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Give it a try! Follow the instructions on the &lt;a href="https://yalter.github.io/niri/Getting-Started.html"&gt;Getting Started&lt;/a&gt; page. Have your &lt;a href="https://github.com/Alexays/Waybar"&gt;waybar&lt;/a&gt;s and &lt;a href="https://codeberg.org/dnkl/fuzzel"&gt;fuzzel&lt;/a&gt;s ready: niri is not a complete desktop environment. Also check out &lt;a href="https://github.com/Vortriz/awesome-niri"&gt;awesome-niri&lt;/a&gt;, a list of niri-related links and projects.&lt;/p&gt; 
+&lt;p&gt;Here are some points you may have questions about:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi-monitor&lt;/strong&gt;: yes, a core part of the design from the very start. Mixed DPI works.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Fractional scaling&lt;/strong&gt;: yes, plus all niri UI stays pixel-perfect.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;NVIDIA&lt;/strong&gt;: seems to work fine.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Floating windows&lt;/strong&gt;: yes, starting from niri 25.01.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Input devices&lt;/strong&gt;: niri supports tablets, touchpads, and touchscreens. You can map the tablet to a specific monitor, or use &lt;a href="https://opentabletdriver.net/"&gt;OpenTabletDriver&lt;/a&gt;. We have touchpad gestures, but no touchscreen gestures yet.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Wlr protocols&lt;/strong&gt;: yes, we have most of the important ones like layer-shell, gamma-control, screencopy. You can check on &lt;a href="https://wayland.app"&gt;wayland.app&lt;/a&gt; at the bottom of each protocol's page.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Performance&lt;/strong&gt;: while I run niri on beefy machines, I try to stay conscious of performance. I've seen someone use it fine on an Eee&amp;nbsp;PC&amp;nbsp;900 from&amp;nbsp;2008, of all things.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Xwayland&lt;/strong&gt;: &lt;a href="https://yalter.github.io/niri/Xwayland.html#using-xwayland-satellite"&gt;integrated&lt;/a&gt; via xwayland-satellite starting from niri 25.08.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Media&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://youtu.be/Kmz8ODolnDg?list=PLRdS-n5seLRqrmWDQY4KDqtRMfIwU0U3T"&gt;niri: Making a Wayland compositor in Rust&lt;/a&gt; · &lt;em&gt;December 2024&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;My talk from the 2024 Moscow RustCon about niri, and how I do randomized property testing and profiling, and measure input latency. The talk is in Russian, but I prepared full English subtitles that you can find in YouTube's subtitle language selector.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.trommelspeicher.de/podcast/special_the_developer_behind_niri"&gt;An interview with Ivan, the developer behind Niri&lt;/a&gt; · &lt;em&gt;June 2025&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;An interview by a German tech podcast Das Triumvirat (in English). We talk about niri development and history, and my experience building and maintaining niri.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://lwn.net/Articles/1025866/"&gt;A tour of the niri scrolling-tiling Wayland compositor&lt;/a&gt; · &lt;em&gt;July 2025&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;An LWN article with a nice overview and introduction to niri.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;If you'd like to help with niri, there are plenty of both coding- and non-coding-related ways to do so. See &lt;a href="https://github.com/YaLTeR/niri/raw/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for an overview.&lt;/p&gt; 
+&lt;h2&gt;Inspiration&lt;/h2&gt; 
+&lt;p&gt;Niri is heavily inspired by &lt;a href="https://github.com/paperwm/PaperWM"&gt;PaperWM&lt;/a&gt; which implements scrollable tiling on top of GNOME Shell.&lt;/p&gt; 
+&lt;p&gt;One of the reasons that prompted me to try writing my own compositor is being able to properly separate the monitors. Being a GNOME Shell extension, PaperWM has to work against Shell's global window coordinate space to prevent windows from overflowing.&lt;/p&gt; 
+&lt;h2&gt;Tile Scrollably Elsewhere&lt;/h2&gt; 
+&lt;p&gt;Here are some other projects which implement a similar workflow:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/paperwm/PaperWM"&gt;PaperWM&lt;/a&gt;: scrollable tiling on top of GNOME Shell.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/peterfajdiga/karousel"&gt;karousel&lt;/a&gt;: scrollable tiling on top of KDE.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/dawsers/scroll"&gt;scroll&lt;/a&gt; and &lt;a href="https://spwhitton.name/tech/code/papersway/"&gt;papersway&lt;/a&gt;: scrollable tiling on top of sway/i3.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/hyprwm/hyprland-plugins/tree/main/hyprscrolling"&gt;hyprscrolling&lt;/a&gt; and &lt;a href="https://gitlab.com/magus/hyprslidr"&gt;hyprslidr&lt;/a&gt;: scrollable tiling on top of Hyprland.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/mogenson/PaperWM.spoon"&gt;PaperWM.spoon&lt;/a&gt;: scrollable tiling on top of macOS.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contact&lt;/h2&gt; 
+&lt;p&gt;Our main communication channel is a Matrix chat, feel free to join and ask a question: &lt;a href="https://matrix.to/#/#niri:matrix.org"&gt;https://matrix.to/#/#niri:matrix.org&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;We also have a community Discord server: &lt;a href="https://discord.gg/vT8Sfjy7sx"&gt;https://discord.gg/vT8Sfjy7sx&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>tree-sitter/tree-sitter</title>
+      <link>https://github.com/tree-sitter/tree-sitter</link>
+      <description>&lt;p&gt;An incremental parsing system for programming tools&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;tree-sitter&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://zenodo.org/badge/latestdoi/14164618"&gt;&lt;img src="https://zenodo.org/badge/14164618.svg?sanitize=true" alt="DOI" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/w7nTvsVJhm"&gt;&lt;img src="https://img.shields.io/discord/1063097320771698699?logo=discord&amp;amp;label=discord" alt="discord" /&gt;&lt;/a&gt; &lt;a href="https://matrix.to/#/#tree-sitter-chat:matrix.org"&gt;&lt;img src="https://img.shields.io/matrix/tree-sitter-chat%3Amatrix.org?logo=matrix&amp;amp;label=matrix" alt="matrix" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Tree-sitter is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited. Tree-sitter aims to be:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;General&lt;/strong&gt; enough to parse any programming language&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Fast&lt;/strong&gt; enough to parse on every keystroke in a text editor&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Robust&lt;/strong&gt; enough to provide useful results even in the presence of syntax errors&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Dependency-free&lt;/strong&gt; so that the runtime library (which is written in pure C) can be embedded in any application&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Links&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://tree-sitter.github.io"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/tree-sitter/tree-sitter/master/lib/binding_rust/README.md"&gt;Rust binding&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/tree-sitter/tree-sitter/master/lib/binding_web/README.md"&gt;Wasm binding&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/tree-sitter/tree-sitter/master/crates/cli/README.md"&gt;Command-line interface&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>mtkennerly/ludusavi</title>
+      <link>https://github.com/mtkennerly/ludusavi</link>
+      <description>&lt;p&gt;Backup tool for PC game saves&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;&lt;img src="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/assets/icon.svg?sanitize=true" alt="Logo" /&gt; Ludusavi&lt;/h1&gt; 
+&lt;p&gt;Ludusavi is a tool for backing up your PC video game save data, written in &lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt;. It is cross-platform and supports multiple game stores.&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Ability to back up data from more than 19,000 games plus your own custom entries.&lt;/li&gt; 
+ &lt;li&gt;Backup and restore for Steam, GOG, Epic, Heroic, Lutris, and other game libraries.&lt;/li&gt; 
+ &lt;li&gt;Both a graphical interface and command line interface for scripting. Tab completion is available for Bash, Fish, Zsh, PowerShell, and Elvish.&lt;/li&gt; 
+ &lt;li&gt;Support for: 
+  &lt;ul&gt; 
+   &lt;li&gt;Saves that are stored as files and in the Windows registry.&lt;/li&gt; 
+   &lt;li&gt;Proton saves with Steam.&lt;/li&gt; 
+   &lt;li&gt;Steam screenshots.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Available as a &lt;a href="https://playnite.link"&gt;Playnite&lt;/a&gt; extension: &lt;a href="https://github.com/mtkennerly/ludusavi-playnite"&gt;https://github.com/mtkennerly/ludusavi-playnite&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Works on the Steam Deck.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;This tool uses the &lt;a href="https://github.com/mtkennerly/ludusavi-manifest"&gt;Ludusavi Manifest&lt;/a&gt; for info on what to back up for each game. The data is primarily sourced from &lt;a href="https://www.pcgamingwiki.com/wiki/Home"&gt;PCGamingWiki&lt;/a&gt;, so please contribute any new or fixed data back to the wiki itself, and your improvements will be incorporated into Ludusavi's data as well.&lt;/p&gt; 
+&lt;p&gt;If you'd like to help translate Ludusavi into other languages, &lt;a href="https://crowdin.com/project/ludusavi"&gt;check out the Crowdin project&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Demo&lt;/h2&gt; 
+&lt;!-- These anchors are kept for compatibility with old section headers. --&gt; 
+&lt;p&gt;&lt;a name="gui"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;img src="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/demo-gui.gif" alt="GUI demo of previewing a backup" /&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;!-- These anchors are kept for compatibility with old section headers. --&gt; 
+&lt;p&gt;&lt;a name="requirements"&gt;&lt;/a&gt; &lt;a name="methods"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Download the executable for Windows, Linux, or Mac from the &lt;a href="https://github.com/mtkennerly/ludusavi/releases"&gt;releases page&lt;/a&gt;. It's portable, so you can simply download it and put it anywhere on your system.&lt;/p&gt; 
+&lt;p&gt;If you prefer, Ludusavi is also available via &lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/installation.md"&gt;Winget, Scoop, Flatpak, and Cargo&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Note:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Windows users may see a popup that says "Windows protected your PC", because Windows does not recognize the program's publisher. Click "more info" and then "run anyway" to start the program.&lt;/li&gt; 
+ &lt;li&gt;Mac users may see a popup that says "Ludusavi can't be opened because it is from an unidentified developer". To allow Ludusavi to run, please refer to &lt;a href="https://support.apple.com/en-us/102445"&gt;this article&lt;/a&gt;, specifically the section on &lt;code&gt;If you want to open an app [...] from an unidentified developer&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;!-- These anchors are kept for compatibility with old section headers. --&gt; 
+&lt;p&gt;&lt;a name="backup-exclusions"&gt;&lt;/a&gt; &lt;a name="backup-retention"&gt;&lt;/a&gt; &lt;a name="backup-structure"&gt;&lt;/a&gt; &lt;a name="backup-validation"&gt;&lt;/a&gt; &lt;a name="cli-api"&gt;&lt;/a&gt; &lt;a name="cloud-backup"&gt;&lt;/a&gt; &lt;a name="command-line"&gt;&lt;/a&gt; &lt;a name="configuration"&gt;&lt;/a&gt; &lt;a name="configuration-file"&gt;&lt;/a&gt; &lt;a name="custom-games"&gt;&lt;/a&gt; &lt;a name="duplicates"&gt;&lt;/a&gt; &lt;a name="environment-variables"&gt;&lt;/a&gt; &lt;a name="filter"&gt;&lt;/a&gt; &lt;a name="game-launch-wrapping"&gt;&lt;/a&gt; &lt;a name="logging"&gt;&lt;/a&gt; &lt;a name="redirects"&gt;&lt;/a&gt; &lt;a name="roots"&gt;&lt;/a&gt; &lt;a name="selective-scanning"&gt;&lt;/a&gt; &lt;a name="troubleshooting"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Detailed help documentation is available for several topics.&lt;/p&gt; 
+&lt;h3&gt;General&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/backup-automation.md"&gt;Backup automation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/backup-exclusions.md"&gt;Backup exclusions&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/backup-retention.md"&gt;Backup retention&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/backup-validation.md"&gt;Backup validation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/cloud-backup.md"&gt;Cloud backup&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/custom-games.md"&gt;Custom games&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/duplicates.md"&gt;Duplicates&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/filter.md"&gt;Filter&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/game-launch-wrapping.md"&gt;Game launch wrapping&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/redirects.md"&gt;Redirects&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/roots.md"&gt;Roots&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/selective-scanning.md"&gt;Selective scanning&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Interfaces&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/application-folder.md"&gt;Application folder&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/backup-structure.md"&gt;Backup structure&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/command-line.md"&gt;Command line&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/configuration-file.md"&gt;Configuration file&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/environment-variables.md"&gt;Environment variables&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/logging.md"&gt;Logging&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Other&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/troubleshooting.md"&gt;Troubleshooting&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/help/missing-saves.md"&gt;What if my saves aren't found?&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;p&gt;The community has created some additional resources you may find useful. Please note that this is not an exhaustive list and that these projects are not officially affiliated with Ludusavi itself:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Secondary manifests: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/BloodShed-Oni/ludusavi-extra-manifests"&gt;https://github.com/BloodShed-Oni/ludusavi-extra-manifests&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/hblamo/ludusavi-emudeck-manifest"&gt;https://github.com/hblamo/ludusavi-emudeck-manifest&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/hvmzx/ludusavi-manifests"&gt;https://github.com/hvmzx/ludusavi-manifests&lt;/a&gt; 
+    &lt;ul&gt; 
+     &lt;li&gt;This has an example of using a scheduled GitHub workflow to generate a manifest that adds more paths to the primary manifest's entries.&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Plugins for Decky Loader on Steam Deck: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/GedasFX/decky-ludusavi"&gt;https://github.com/GedasFX/decky-ludusavi&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Plugins for VS Code: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://marketplace.visualstudio.com/items?itemName=claui.ludusavi"&gt;https://marketplace.visualstudio.com/items?itemName=claui.ludusavi&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Tools: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/jose-l-martins/GSM-to-Ludusavi-converter"&gt;https://github.com/jose-l-martins/GSM-to-Ludusavi-converter&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Comparison with other tools&lt;/h2&gt; 
+&lt;p&gt;There are other excellent backup tools available, but not a singular cross-platform and cross-store solution:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.gamesave-manager.com"&gt;GameSave Manager&lt;/a&gt; (as of v3.1.512.0): 
+  &lt;ul&gt; 
+   &lt;li&gt;Only supports Windows.&lt;/li&gt; 
+   &lt;li&gt;Much slower than Ludusavi. On the same hardware and with default settings, an initial scan of the whole system takes 2 minutes in GSM versus 10 seconds in Ludusavi. Performing a backup immediately after that scan takes 4 minutes 16 seconds in GSM versus 4.5 seconds in Ludusavi. In this test, GSM found 257 games with 2.84 GB, and Ludusavi found 297 games with 2.95 GiB.&lt;/li&gt; 
+   &lt;li&gt;Closed source, so the community cannot contribute improvements.&lt;/li&gt; 
+   &lt;li&gt;Interface can be slow or unresponsive. For example, when clicking "select all / de-select all", each checkbox has to individually toggle itself. With 257 games, this means you end up having to wait around 42 seconds.&lt;/li&gt; 
+   &lt;li&gt;Minimal command line interface.&lt;/li&gt; 
+   &lt;li&gt;Can create symlinks for games and game data. Ludusavi does not support this.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://mikemaximus.github.io/gbm-web"&gt;Game Backup Monitor&lt;/a&gt; (as of v1.2.2): 
+  &lt;ul&gt; 
+   &lt;li&gt;Does not support Mac.&lt;/li&gt; 
+   &lt;li&gt;Database only covers 577 games (as of 2022-11-16), although it can also import the Ludusavi manifest starting in 1.3.1.&lt;/li&gt; 
+   &lt;li&gt;No command line interface.&lt;/li&gt; 
+   &lt;li&gt;Can automatically back up saves for a game after you play it. Ludusavi can only do that in conjunction with a launcher like Playnite.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://supremesonicbrazil.gitlab.io/gbml-web"&gt;Gaming Backup Multitool for Linux&lt;/a&gt; (as of v1.4.0.0): 
+  &lt;ul&gt; 
+   &lt;li&gt;Only supports Linux and Steam.&lt;/li&gt; 
+   &lt;li&gt;Database is not actively updated. As of 2022-11-16, the last update was 2018-06-05.&lt;/li&gt; 
+   &lt;li&gt;No command line interface.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;p&gt;Please refer to &lt;a href="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>uutils/coreutils</title>
+      <link>https://github.com/uutils/coreutils</link>
+      <description>&lt;p&gt;Cross-platform Rust rewrite of the GNU coreutils&lt;/p&gt;&lt;hr&gt;&lt;div class="oranda-hide"&gt; 
+ &lt;div align="center"&gt; 
+  &lt;p&gt;&lt;img src="https://raw.githubusercontent.com/uutils/coreutils/main/docs/src/logo.svg?sanitize=true" alt="uutils logo" /&gt;&lt;/p&gt; 
+  &lt;h1&gt;uutils coreutils&lt;/h1&gt; 
+  &lt;p&gt;&lt;a href="https://crates.io/crates/coreutils"&gt;&lt;img src="https://img.shields.io/crates/v/coreutils.svg?sanitize=true" alt="Crates.io" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/wQVJbvJ"&gt;&lt;img src="https://img.shields.io/badge/discord-join-7289DA.svg?logo=discord&amp;amp;longCache=true&amp;amp;style=flat" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://github.com/uutils/coreutils/raw/main/LICENSE"&gt;&lt;img src="http://img.shields.io/badge/license-MIT-blue.svg?sanitize=true" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://deps.rs/repo/github/uutils/coreutils"&gt;&lt;img src="https://deps.rs/repo/github/uutils/coreutils/status.svg?sanitize=true" alt="dependency status" /&gt;&lt;/a&gt;&lt;/p&gt; 
+  &lt;p&gt;&lt;a href="https://codecov.io/gh/uutils/coreutils"&gt;&lt;img src="https://codecov.io/gh/uutils/coreutils/branch/master/graph/badge.svg?sanitize=true" alt="CodeCov" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/badge/MSRV-1.85.0-brightgreen" alt="MSRV" /&gt; &lt;a href="https://hosted.weblate.org/projects/rust-coreutils/"&gt;&lt;img src="https://hosted.weblate.org/widget/rust-coreutils/svg-badge.svg?sanitize=true" alt="Weblate" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;/div&gt; 
+ &lt;hr /&gt; 
+&lt;/div&gt; 
+&lt;p&gt;uutils coreutils is a cross-platform reimplementation of the GNU coreutils in &lt;a href="http://www.rust-lang.org"&gt;Rust&lt;/a&gt;. While all programs have been implemented, some options might be missing or different behavior might be experienced.&lt;/p&gt; 
+&lt;div class="oranda-hide"&gt; 
+ &lt;p&gt;To install it:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;cargo install coreutils
+~/.cargo/bin/coreutils
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/div&gt; 
+&lt;!-- markdownlint-disable-next-line MD026 --&gt; 
+&lt;h2&gt;Goals&lt;/h2&gt; 
+&lt;p&gt;uutils coreutils aims to be a drop-in replacement for the GNU utils. Differences with GNU are treated as bugs.&lt;/p&gt; 
+&lt;p&gt;Our key objectives include:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Matching GNU's output (stdout and error code) exactly&lt;/li&gt; 
+ &lt;li&gt;Better error messages&lt;/li&gt; 
+ &lt;li&gt;Providing comprehensive internationalization support (UTF-8)&lt;/li&gt; 
+ &lt;li&gt;Improved performances&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/uutils/coreutils/main/docs/src/extensions.md"&gt;Extensions&lt;/a&gt; when relevant (example: --progress)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;uutils aims to work on as many platforms as possible, to be able to use the same utils on Linux, macOS, Windows and other platforms. This ensures, for example, that scripts can be easily transferred between platforms.&lt;/p&gt; 
+&lt;div class="oranda-hide"&gt; 
+ &lt;h2&gt;Documentation&lt;/h2&gt; 
+ &lt;p&gt;uutils has both user and developer documentation available:&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;a href="https://uutils.github.io/coreutils/docs/"&gt;User Manual&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://docs.rs/crate/coreutils/"&gt;Developer Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;Both can also be generated locally, the instructions for that can be found in the &lt;a href="https://github.com/uutils/uutils.github.io"&gt;coreutils docs&lt;/a&gt; repository.&lt;/p&gt; 
+ &lt;p&gt;Use &lt;a href="https://hosted.weblate.org/projects/rust-coreutils/"&gt;weblate/rust-coreutils&lt;/a&gt; to translate the Rust coreutils into your language.&lt;/p&gt; 
+ &lt;!-- ANCHOR: build (this mark is needed for mdbook) --&gt; 
+ &lt;h2&gt;Requirements&lt;/h2&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Rust (&lt;code&gt;cargo&lt;/code&gt;, &lt;code&gt;rustc&lt;/code&gt;)&lt;/li&gt; 
+  &lt;li&gt;GNU Make (optional)&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;h3&gt;Rust Version&lt;/h3&gt; 
+ &lt;p&gt;uutils follows Rust's release channels and is tested against stable, beta and nightly. The current Minimum Supported Rust Version (MSRV) is &lt;code&gt;1.85.0&lt;/code&gt;.&lt;/p&gt; 
+ &lt;h2&gt;Building&lt;/h2&gt; 
+ &lt;p&gt;There are currently two methods to build the uutils binaries: either Cargo or GNU Make.&lt;/p&gt; 
+ &lt;blockquote&gt; 
+  &lt;p&gt;Building the full package, including all documentation, requires both Cargo and GNU Make on a Unix platform.&lt;/p&gt; 
+ &lt;/blockquote&gt; 
+ &lt;p&gt;For either method, we first need to fetch the repository:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;git clone https://github.com/uutils/coreutils
+cd coreutils
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;h3&gt;Cargo&lt;/h3&gt; 
+ &lt;p&gt;Building uutils using Cargo is easy because the process is the same as for every other Rust program:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;cargo build --release
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;This command builds the most portable common core set of uutils into a multicall (BusyBox-type) binary, named 'coreutils', on most Rust-supported platforms.&lt;/p&gt; 
+ &lt;p&gt;Additional platform-specific uutils are often available. Building these expanded sets of uutils for a platform (on that platform) is as simple as specifying it as a feature:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;cargo build --release --features macos
+# or ...
+cargo build --release --features windows
+# or ...
+cargo build --release --features unix
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;If you don't want to build every utility available on your platform into the final binary, you can also specify which ones you want to build manually. For example:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;cargo build --features "base32 cat echo rm" --no-default-features
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;If you don't want to build the multicall binary and would prefer to build the utilities as individual binaries, that is also possible. Each utility is contained in its own package within the main repository, named "uu_UTILNAME". To build individual utilities, use cargo to build just the specific packages (using the &lt;code&gt;--package&lt;/code&gt; [aka &lt;code&gt;-p&lt;/code&gt;] option). For example:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;cargo build -p uu_base32 -p uu_cat -p uu_echo -p uu_rm
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;h3&gt;GNU Make&lt;/h3&gt; 
+ &lt;p&gt;Building using &lt;code&gt;make&lt;/code&gt; is a simple process as well.&lt;/p&gt; 
+ &lt;p&gt;To simply build all available utilities:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;In release mode:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make PROFILE=release
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To build all but a few of the available utilities:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make SKIP_UTILS='UTILITY_1 UTILITY_2'
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To build only a few of the available utilities:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make UTILS='UTILITY_1 UTILITY_2'
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;h2&gt;Installation&lt;/h2&gt; 
+ &lt;h3&gt;Install with Cargo&lt;/h3&gt; 
+ &lt;p&gt;Likewise, installing can simply be done using:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;cargo install --path . --locked
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;This command will install uutils into Cargo's &lt;em&gt;bin&lt;/em&gt; folder (&lt;em&gt;e.g.&lt;/em&gt; &lt;code&gt;$HOME/.cargo/bin&lt;/code&gt;).&lt;/p&gt; 
+ &lt;p&gt;This does not install files necessary for shell completion or manpages. For manpages or shell completion to work, use &lt;code&gt;GNU Make&lt;/code&gt; or see &lt;code&gt;Manually install shell completions&lt;/code&gt;/&lt;code&gt;Manually install manpages&lt;/code&gt;.&lt;/p&gt; 
+ &lt;h3&gt;Install with GNU Make&lt;/h3&gt; 
+ &lt;p&gt;To install all available utilities:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make install
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To install using &lt;code&gt;sudo&lt;/code&gt; switch &lt;code&gt;-E&lt;/code&gt; must be used:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;sudo -E make install
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To install all but a few of the available utilities:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make SKIP_UTILS='UTILITY_1 UTILITY_2' install
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To install only a few of the available utilities:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make UTILS='UTILITY_1 UTILITY_2' install
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To install every program with a prefix (e.g. uu-echo uu-cat):&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make PROG_PREFIX=PREFIX_GOES_HERE install
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To install the multicall binary:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make MULTICALL=y install
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;Set install parent directory (default value is /usr/local):&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;# DESTDIR is also supported
+make PREFIX=/my/path install
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;Installing with &lt;code&gt;make&lt;/code&gt; installs shell completions for all installed utilities for &lt;code&gt;bash&lt;/code&gt;, &lt;code&gt;fish&lt;/code&gt; and &lt;code&gt;zsh&lt;/code&gt;. Completions for &lt;code&gt;elvish&lt;/code&gt; and &lt;code&gt;powershell&lt;/code&gt; can also be generated; See &lt;code&gt;Manually install shell completions&lt;/code&gt;.&lt;/p&gt; 
+ &lt;p&gt;To skip installation of completions and manpages:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make COMPLETIONS=n MANPAGES=n install
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;h3&gt;Manually install shell completions&lt;/h3&gt; 
+ &lt;p&gt;The &lt;code&gt;coreutils&lt;/code&gt; binary can generate completions for the &lt;code&gt;bash&lt;/code&gt;, &lt;code&gt;elvish&lt;/code&gt;, &lt;code&gt;fish&lt;/code&gt;, &lt;code&gt;powershell&lt;/code&gt; and &lt;code&gt;zsh&lt;/code&gt; shells. It prints the result to stdout.&lt;/p&gt; 
+ &lt;p&gt;The syntax is:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;cargo run completion &amp;lt;utility&amp;gt; &amp;lt;shell&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;So, to install completions for &lt;code&gt;ls&lt;/code&gt; on &lt;code&gt;bash&lt;/code&gt; to &lt;code&gt;/usr/local/share/bash-completion/completions/ls&lt;/code&gt;, run:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;cargo run completion ls bash &amp;gt; /usr/local/share/bash-completion/completions/ls
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;h3&gt;Manually install manpages&lt;/h3&gt; 
+ &lt;p&gt;To generate manpages, the syntax is:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;cargo run manpage &amp;lt;utility&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;So, to install the manpage for &lt;code&gt;ls&lt;/code&gt; to &lt;code&gt;/usr/local/share/man/man1/ls.1&lt;/code&gt; run:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;cargo run manpage ls &amp;gt; /usr/local/share/man/man1/ls.1
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;h2&gt;Un-installation&lt;/h2&gt; 
+ &lt;p&gt;Un-installation differs depending on how you have installed uutils. If you used Cargo to install, use Cargo to uninstall. If you used GNU Make to install, use Make to uninstall.&lt;/p&gt; 
+ &lt;h3&gt;Uninstall with Cargo&lt;/h3&gt; 
+ &lt;p&gt;To uninstall uutils:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;cargo uninstall coreutils
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;h3&gt;Uninstall with GNU Make&lt;/h3&gt; 
+ &lt;p&gt;To uninstall all utilities:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make uninstall
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To uninstall every program with a set prefix:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make PROG_PREFIX=PREFIX_GOES_HERE uninstall
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To uninstall the multicall binary:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make MULTICALL=y uninstall
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To uninstall from a custom parent directory:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;# DESTDIR is also supported
+make PREFIX=/my/path uninstall
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;!-- ANCHOR_END: build (this mark is needed for mdbook) --&gt; 
+ &lt;h2&gt;GNU test suite compatibility&lt;/h2&gt; 
+ &lt;p&gt;Below is the evolution of how many GNU tests uutils passes. A more detailed breakdown of the GNU test results of the main branch can be found &lt;a href="https://uutils.github.io/coreutils/docs/test_coverage.html"&gt;in the user manual&lt;/a&gt;.&lt;/p&gt; 
+ &lt;p&gt;See &lt;a href="https://github.com/orgs/uutils/projects/1"&gt;https://github.com/orgs/uutils/projects/1&lt;/a&gt; for the main meta bugs (many are missing).&lt;/p&gt; 
+ &lt;p&gt;&lt;img src="https://github.com/uutils/coreutils-tracking/raw/main/gnu-results.svg?raw=true" alt="Evolution over time" /&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;!-- close oranda-hide div --&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;To contribute to uutils, please see &lt;a href="https://raw.githubusercontent.com/uutils/coreutils/main/CONTRIBUTING.md"&gt;CONTRIBUTING&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;uutils is licensed under the MIT License - see the &lt;code&gt;LICENSE&lt;/code&gt; file for details&lt;/p&gt; 
+&lt;p&gt;GNU Coreutils is licensed under the GPL 3.0 or later.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>apache/datafusion</title>
+      <link>https://github.com/apache/datafusion</link>
+      <description>&lt;p&gt;Apache DataFusion SQL Query Engine&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Apache DataFusion&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://crates.io/crates/datafusion"&gt;&lt;img src="https://img.shields.io/crates/v/datafusion.svg?sanitize=true" alt="Crates.io" /&gt;&lt;/a&gt; &lt;a href="https://github.com/apache/datafusion/raw/main/LICENSE.txt"&gt;&lt;img src="https://img.shields.io/badge/license-Apache%20v2-blue.svg?sanitize=true" alt="Apache licensed" /&gt;&lt;/a&gt; &lt;a href="https://github.com/apache/datafusion/actions?query=branch%3Amain"&gt;&lt;img src="https://github.com/apache/datafusion/actions/workflows/rust.yml/badge.svg?sanitize=true" alt="Build Status" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/github/commit-activity/m/apache/datafusion" alt="Commit Activity" /&gt; &lt;a href="https://github.com/apache/datafusion/issues"&gt;&lt;img src="https://img.shields.io/github/issues-raw/apache/datafusion" alt="Open Issues" /&gt;&lt;/a&gt; &lt;a href="https://discord.com/invite/Qw5gKqHxUM"&gt;&lt;img src="https://img.shields.io/badge/Chat-Discord-purple" alt="Discord chat" /&gt;&lt;/a&gt; &lt;a href="https://www.linkedin.com/company/apache-datafusion/"&gt;&lt;img src="https://img.shields.io/badge/Follow-Linkedin-blue" alt="Linkedin" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/crates/msrv/datafusion?label=Min%20Rust%20Version" alt="Crates.io MSRV" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://datafusion.apache.org/"&gt;Website&lt;/a&gt; | &lt;a href="https://docs.rs/datafusion/latest/datafusion/"&gt;API Docs&lt;/a&gt; | &lt;a href="https://discord.com/channels/885562378132000778/885562378132000781"&gt;Chat&lt;/a&gt;&lt;/p&gt; 
+&lt;a href="https://datafusion.apache.org/"&gt; &lt;img src="https://github.com/apache/datafusion/raw/HEAD/docs/source/_static/images/2x_bgwhite_original.png" width="512" alt="logo" /&gt; &lt;/a&gt; 
+&lt;p&gt;DataFusion is an extensible query engine written in &lt;a href="http://rustlang.org"&gt;Rust&lt;/a&gt; that uses &lt;a href="https://arrow.apache.org"&gt;Apache Arrow&lt;/a&gt; as its in-memory format.&lt;/p&gt; 
+&lt;p&gt;This crate provides libraries and binaries for developers building fast and feature rich database and analytic systems, customized to particular workloads. See &lt;a href="https://datafusion.apache.org/user-guide/introduction.html#use-cases"&gt;use cases&lt;/a&gt; for examples. The following related subprojects target end users:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apache/datafusion-python/"&gt;DataFusion Python&lt;/a&gt; offers a Python interface for SQL and DataFrame queries.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apache/datafusion-comet/"&gt;DataFusion Comet&lt;/a&gt; is an accelerator for Apache Spark based on DataFusion.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;"Out of the box," DataFusion offers [SQL] and [&lt;code&gt;Dataframe&lt;/code&gt;] APIs, excellent &lt;a href="https://benchmark.clickhouse.com/"&gt;performance&lt;/a&gt;, built-in support for CSV, Parquet, JSON, and Avro, extensive customization, and a great community.&lt;/p&gt; 
+&lt;p&gt;DataFusion features a full query planner, a columnar, streaming, multi-threaded, vectorized execution engine, and partitioned data sources. You can customize DataFusion at almost all points including additional data sources, query languages, functions, custom operators and more. See the &lt;a href="https://datafusion.apache.org/contributor-guide/architecture.html"&gt;Architecture&lt;/a&gt; section for more details.&lt;/p&gt; 
+&lt;p&gt;Here are links to some important information&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://datafusion.apache.org/"&gt;Project Site&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://datafusion.apache.org/user-guide/cli/installation.html"&gt;Installation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://datafusion.apache.org/user-guide/example-usage.html"&gt;Rust Getting Started&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://datafusion.apache.org/user-guide/dataframe.html"&gt;Rust DataFrame API&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.rs/datafusion/latest/datafusion"&gt;Rust API docs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apache/datafusion/tree/main/datafusion-examples"&gt;Rust Examples&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://arrow.apache.org/datafusion-python/"&gt;Python DataFrame API&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.rs/datafusion/latest/datafusion/index.html#architecture"&gt;Architecture&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;What can you do with this crate?&lt;/h2&gt; 
+&lt;p&gt;DataFusion is great for building projects such as domain specific query engines, new database platforms and data pipelines, query languages and more. It lets you start quickly from a fully working engine, and then customize those features specific to your use. &lt;a href="https://datafusion.apache.org/user-guide/introduction.html#known-users"&gt;Click Here&lt;/a&gt; to see a list known users.&lt;/p&gt; 
+&lt;h2&gt;Contributing to DataFusion&lt;/h2&gt; 
+&lt;p&gt;Please see the &lt;a href="https://datafusion.apache.org/contributor-guide"&gt;contributor guide&lt;/a&gt; and &lt;a href="https://datafusion.apache.org/contributor-guide/communication.html"&gt;communication&lt;/a&gt; pages for more information.&lt;/p&gt; 
+&lt;h2&gt;Crate features&lt;/h2&gt; 
+&lt;p&gt;This crate has several &lt;a href="https://doc.rust-lang.org/cargo/reference/features.html"&gt;features&lt;/a&gt; which can be specified in your &lt;code&gt;Cargo.toml&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;Default features:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;nested_expressions&lt;/code&gt;: functions for working with nested type function such as &lt;code&gt;array_to_string&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;compression&lt;/code&gt;: reading files compressed with &lt;code&gt;xz2&lt;/code&gt;, &lt;code&gt;bzip2&lt;/code&gt;, &lt;code&gt;flate2&lt;/code&gt;, and &lt;code&gt;zstd&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;crypto_expressions&lt;/code&gt;: cryptographic functions such as &lt;code&gt;md5&lt;/code&gt; and &lt;code&gt;sha256&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;datetime_expressions&lt;/code&gt;: date and time functions such as &lt;code&gt;to_timestamp&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;encoding_expressions&lt;/code&gt;: &lt;code&gt;encode&lt;/code&gt; and &lt;code&gt;decode&lt;/code&gt; functions&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;parquet&lt;/code&gt;: support for reading the &lt;a href="https://parquet.apache.org/"&gt;Apache Parquet&lt;/a&gt; format&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;sql&lt;/code&gt;: Support for sql parsing / planning&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;regex_expressions&lt;/code&gt;: regular expression functions, such as &lt;code&gt;regexp_match&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;unicode_expressions&lt;/code&gt;: Include unicode aware functions such as &lt;code&gt;character_length&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;unparser&lt;/code&gt;: enables support to reverse LogicalPlans back into SQL&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;recursive_protection&lt;/code&gt;: uses &lt;a href="https://docs.rs/recursive/latest/recursive/"&gt;recursive&lt;/a&gt; for stack overflow protection.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Optional features:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;avro&lt;/code&gt;: support for reading the &lt;a href="https://avro.apache.org/"&gt;Apache Avro&lt;/a&gt; format&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;backtrace&lt;/code&gt;: include backtrace information in error messages&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;parquet_encryption&lt;/code&gt;: support for using &lt;a href="https://parquet.apache.org/docs/file-format/data-pages/encryption/"&gt;Parquet Modular Encryption&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;pyarrow&lt;/code&gt;: conversions between PyArrow and DataFusion types&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;serde&lt;/code&gt;: enable arrow-schema's &lt;code&gt;serde&lt;/code&gt; feature&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;DataFusion API Evolution and Deprecation Guidelines&lt;/h2&gt; 
+&lt;p&gt;Public methods in Apache DataFusion evolve over time: while we try to maintain a stable API, we also improve the API over time. As a result, we typically deprecate methods before removing them, according to the &lt;a href="https://datafusion.apache.org/contributor-guide/api-health.html"&gt;deprecation guidelines&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Dependencies and &lt;code&gt;Cargo.lock&lt;/code&gt;&lt;/h2&gt; 
+&lt;p&gt;Following the &lt;a href="https://blog.rust-lang.org/2023/08/29/committing-lockfiles.html"&gt;guidance&lt;/a&gt; on committing &lt;code&gt;Cargo.lock&lt;/code&gt; files, this project commits its &lt;code&gt;Cargo.lock&lt;/code&gt; file.&lt;/p&gt; 
+&lt;p&gt;CI uses the committed &lt;code&gt;Cargo.lock&lt;/code&gt; file, and dependencies are updated regularly using &lt;a href="https://docs.github.com/en/code-security/dependabot/working-with-dependabot"&gt;Dependabot&lt;/a&gt; PRs.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
