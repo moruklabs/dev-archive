@@ -1,0 +1,1812 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub All Languages Daily Trending</title>
+    <description>Daily Trending of All Languages in GitHub</description>
+    <pubDate>Sat, 20 Sep 2025 01:30:14 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>Alibaba-NLP/DeepResearch</title>
+      <link>https://github.com/Alibaba-NLP/DeepResearch</link>
+      <description>&lt;p&gt;Tongyi Deep Research, the Leading Open-source Deep Research Agent&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;img src="https://raw.githubusercontent.com/Alibaba-NLP/DeepResearch/main/assets/logo.png" width="100%" /&gt; 
+ &lt;/picture&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;div align="center" style="line-height: 1;"&gt; 
+ &lt;p&gt;&lt;a href="https://huggingface.co/Alibaba-NLP/Tongyi-DeepResearch-30B-A3B"&gt;&lt;img src="https://img.shields.io/badge/Models-5EDDD2?style=for-the-badge&amp;amp;logo=huggingface&amp;amp;logoColor=ffffff&amp;amp;labelColor" alt="MODELS" /&gt;&lt;/a&gt; &lt;a href="https://github.com/Alibaba-NLP/DeepResearch"&gt;&lt;img src="https://img.shields.io/badge/Github-24292F?style=for-the-badge&amp;amp;logo=github&amp;amp;logoColor=white" alt="GITHUB" /&gt;&lt;/a&gt; &lt;a href="https://tongyi-agent.github.io/blog/introducing-tongyi-deep-research/"&gt;&lt;img src="https://img.shields.io/badge/Blog-4285F4?style=for-the-badge&amp;amp;logo=google-chrome&amp;amp;logoColor=white" alt="Blog" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;p align="center"&gt; 🤗 &lt;a href="https://huggingface.co/Alibaba-NLP/Tongyi-DeepResearch-30B-A3B" target="_blank"&gt;HuggingFace&lt;/a&gt; ｜ &lt;img src="https://raw.githubusercontent.com/Alibaba-NLP/DeepResearch/main/assets/tongyi.png" width="14px" style="display:inline;" /&gt; &lt;a href="https://modelscope.cn/models/iic/Tongyi-DeepResearch-30B-A3B" target="_blank"&gt;ModelScope&lt;/a&gt; &lt;/p&gt;
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/14217" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/14217" alt="Alibaba-NLP%2FWebAgent | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;h1&gt;Introduction&lt;/h1&gt; 
+&lt;p&gt;We present &lt;img src="https://raw.githubusercontent.com/Alibaba-NLP/DeepResearch/main/assets/tongyi.png" width="14px" style="display:inline;" /&gt; &lt;strong&gt;Tongyi DeepResearch&lt;/strong&gt;, an agentic large language model featuring 30.5 billion total parameters, with only 3.3 billion activated per token. Developed by Tongyi Lab, the model is specifically designed for &lt;strong&gt;long-horizon, deep information-seeking&lt;/strong&gt; tasks. Tongyi DeepResearch demonstrates state-of-the-art performance across a range of agentic search benchmarks, including Humanity's Last Exam, BrowserComp, BrowserComp-ZH, WebWalkerQA,xbench-DeepSearch, FRAMES and SimpleQA.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Tongyi DeepResearch builds upon our previous work on the &lt;img src="https://raw.githubusercontent.com/Alibaba-NLP/DeepResearch/main/assets/tongyi.png" width="14px" style="display:inline;" /&gt; &lt;a href="https://raw.githubusercontent.com/Alibaba-NLP/DeepResearch/main/WebAgent/"&gt;WebAgent&lt;/a&gt; project.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;More details can be found in our 📰&amp;nbsp;&lt;a href="https://tongyi-agent.github.io/blog/introducing-tongyi-deep-research/"&gt;Tech Blog&lt;/a&gt;.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img width="100%" src="https://raw.githubusercontent.com/Alibaba-NLP/DeepResearch/main/assets/performance.png" /&gt; &lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;⚙️ &lt;strong&gt;Fully automated synthetic data generation pipeline&lt;/strong&gt;: We design a highly scalable data synthesis pipeline, which is fully automatic and empowers agentic pre-training, supervised fine-tuning, and reinforcement learning.&lt;/li&gt; 
+ &lt;li&gt;🔄 &lt;strong&gt;Large-scale continual pre-training on agentic data&lt;/strong&gt;: Leveraging diverse, high-quality agentic interaction data to extend model capabilities, maintain freshness, and strengthen reasoning performance.&lt;/li&gt; 
+ &lt;li&gt;🔁 &lt;strong&gt;End-to-end reinforcement learning&lt;/strong&gt;: We employ a strictly on-policy RL approach based on a customized Group Relative Policy Optimization framework, with token-level policy gradients, leave-one-out advantage estimation, and selective filtering of negative samples to stabilize training in a non‑stationary environment.&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;strong&gt;Agent Inference Paradigm Compatibility&lt;/strong&gt;: At inference, Tongyi DeepResearch is compatible with two inference paradigms: ReAct, for rigorously evaluating the model's core intrinsic abilities, and an IterResearch-based 'Heavy' mode, which uses a test-time scaling strategy to unlock the model's maximum performance ceiling.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;Model Download&lt;/h1&gt; 
+&lt;p&gt;You can directly download the model by following the links below.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="center"&gt;Model&lt;/th&gt; 
+   &lt;th align="center"&gt;Download Links&lt;/th&gt; 
+   &lt;th align="center"&gt;Model Size&lt;/th&gt; 
+   &lt;th align="center"&gt;Context Length&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Tongyi-DeepResearch-30B-A3B&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://huggingface.co/Alibaba-NLP/Tongyi-DeepResearch-30B-A3B"&gt;🤗 HuggingFace&lt;/a&gt;&lt;br /&gt; &lt;a href="https://modelscope.cn/models/iic/Tongyi-DeepResearch-30B-A3B"&gt;🤖 ModelScope&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;30B-A3B&lt;/td&gt; 
+   &lt;td align="center"&gt;128K&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h1&gt;News&lt;/h1&gt; 
+&lt;p&gt;[2025/09/17]🔥 We have released &lt;strong&gt;Tongyi-DeepResearch-30B-A3B&lt;/strong&gt;.&lt;/p&gt; 
+&lt;h1&gt;Deep Research Benchmark Results&lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;img width="100%" src="https://raw.githubusercontent.com/Alibaba-NLP/DeepResearch/main/assets/benchmark.png" /&gt; &lt;/p&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;p&gt;This guide provides instructions for setting up the environment and running inference scripts located in the &lt;a href="https://raw.githubusercontent.com/Alibaba-NLP/DeepResearch/main/inference/"&gt;inference&lt;/a&gt; folder.&lt;/p&gt; 
+&lt;h3&gt;1. Environment Setup&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Recommended Python version: &lt;strong&gt;3.10.0&lt;/strong&gt; (using other versions may cause dependency issues).&lt;/li&gt; 
+ &lt;li&gt;It is strongly advised to create an isolated environment using &lt;code&gt;conda&lt;/code&gt; or &lt;code&gt;virtualenv&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Example with Conda
+conda create -n react_infer_env python=3.10.0 
+conda activate react_infer_env
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;2. Installation&lt;/h3&gt; 
+&lt;p&gt;Install the required dependencies:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pip install -r requirements.txt
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;3. Prepare Evaluation Data&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Create a folder named &lt;code&gt;eval_data/&lt;/code&gt; in the project root.&lt;/li&gt; 
+ &lt;li&gt;Place your QA file in &lt;strong&gt;JSONL&lt;/strong&gt; format inside this directory, e.g. &lt;code&gt;eval_data/example.jsonl&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Each line must be a JSON object that includes &lt;strong&gt;both&lt;/strong&gt; of the following keys: &lt;pre&gt;&lt;code class="language-json"&gt;{"question": "...","answer": "..."}
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt;A sample file is provided in the &lt;code&gt;eval_data&lt;/code&gt; folder for reference.&lt;/li&gt; 
+ &lt;li&gt;If you plan to use the &lt;em&gt;file parser&lt;/em&gt; tool, &lt;strong&gt;prepend the file name to the &lt;code&gt;question&lt;/code&gt; field&lt;/strong&gt; and place the referenced file inside the &lt;code&gt;eval_data/file_corpus/&lt;/code&gt; directory.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;4. Configure the Inference Script&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Open &lt;code&gt;run_react_infer.sh&lt;/code&gt; and modify the following variables as instructed in the comments: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;code&gt;MODEL_PATH&lt;/code&gt; - path to the local or remote model weights.&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;DATASET&lt;/code&gt; - path to the evaluation set, e.g. &lt;code&gt;example&lt;/code&gt;.&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;OUTPUT_PATH&lt;/code&gt; - path for saving the prediction results, e.g. &lt;code&gt;./outputs&lt;/code&gt;.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Depending on the tools you enable (retrieval, calculator, web search, etc.), provide the required &lt;code&gt;API_KEY&lt;/code&gt;, &lt;code&gt;BASE_URL&lt;/code&gt;, or other credentials. Each key is explained inline in the bash script.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;5. Run the Inference Script&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bash run_react_infer.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;With these steps, you can fully prepare the environment, configure the dataset, and run the model. For more details, consult the inline comments in each script or open an issue.&lt;/p&gt; 
+&lt;h2&gt;Benchmark Evaluation&lt;/h2&gt; 
+&lt;p&gt;We provide benchmark evaluation scripts for various datasets. Please refer to the &lt;a href="https://raw.githubusercontent.com/Alibaba-NLP/DeepResearch/main/evaluation/"&gt;evaluation scripts&lt;/a&gt; directory for more details.&lt;/p&gt; 
+&lt;h2&gt;Deep Research Agent Family&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;img width="100%" src="https://raw.githubusercontent.com/Alibaba-NLP/DeepResearch/main/assets/family.png" /&gt; &lt;/p&gt; 
+&lt;p&gt;Tongyi DeepResearch also has an extensive deep research agent family. You can find more information in the following paper:&lt;/p&gt; 
+&lt;p&gt;[1] &lt;a href="https://arxiv.org/pdf/2501.07572"&gt;WebWalker: Benchmarking LLMs in Web Traversal&lt;/a&gt;&lt;br /&gt; [2] &lt;a href="https://arxiv.org/pdf/2505.22648"&gt;WebDancer: Towards Autonomous Information Seeking Agency&lt;/a&gt;&lt;br /&gt; [3] &lt;a href="https://arxiv.org/pdf/2507.02592"&gt;WebSailor: Navigating Super-human Reasoning for Web Agent&lt;/a&gt;&lt;br /&gt; [4] &lt;a href="https://arxiv.org/pdf/2507.15061"&gt;WebShaper: Agentically Data Synthesizing via Information-Seeking Formalization&lt;/a&gt;&lt;br /&gt; [5] &lt;a href="https://arxiv.org/pdf/2508.05748"&gt;WebWatcher: Breaking New Frontier of Vision-Language Deep Research Agent&lt;/a&gt;&lt;br /&gt; [6] &lt;a href="https://arxiv.org/pdf/2509.13309"&gt;WebResearcher: Unleashing unbounded reasoning capability in Long-Horizon Agents&lt;/a&gt;&lt;br /&gt; [7] &lt;a href="https://arxiv.org/pdf/2509.13313"&gt;ReSum: Unlocking Long-Horizon Search Intelligence via Context Summarization&lt;/a&gt;&lt;br /&gt; [8] &lt;a href="https://arxiv.org/pdf/2509.13312"&gt;WebWeaver: Structuring Web-Scale Evidence with Dynamic Outlines for Open-Ended Deep Research&lt;/a&gt;&lt;br /&gt; [9] &lt;a href="https://arxiv.org/pdf/2509.13305"&gt;WebSailor-V2: Bridging the Chasm to Proprietary Agents via Synthetic Data and Scalable Reinforcement Learning&lt;/a&gt;&lt;br /&gt; [10] &lt;a href="https://arxiv.org/pdf/2509.13310"&gt;Scaling Agents via Continual Pre-training&lt;/a&gt;&lt;br /&gt; [11] &lt;a href="https://arxiv.org/pdf/2509.13311"&gt;Towards General Agentic Intelligence via Environment Scaling&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🌟 Misc&lt;/h2&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;a href="https://www.star-history.com/#Alibaba-NLP/DeepResearch&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=Alibaba-NLP/DeepResearch&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;🚩 Talent Recruitment&lt;/h2&gt; 
+&lt;p&gt;🔥🔥🔥 We are hiring! Research intern positions are open (based in Hangzhou、Beijing、Shanghai)&lt;/p&gt; 
+&lt;p&gt;📚 &lt;strong&gt;Research Area&lt;/strong&gt;：Web Agent, Search Agent, Agent RL, MultiAgent RL, Agentic RAG&lt;/p&gt; 
+&lt;p&gt;☎️ &lt;strong&gt;Contact&lt;/strong&gt;：&lt;a href=""&gt;yongjiang.jy@alibaba-inc.com&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Contact Information&lt;/h2&gt; 
+&lt;p&gt;For communications, please contact Yong Jiang (&lt;a href="mailto:yongjiang.jy@alibaba-inc.com"&gt;yongjiang.jy@alibaba-inc.com&lt;/a&gt;).&lt;/p&gt; 
+&lt;h2&gt;Citation&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bibtex"&gt;@misc{tongyidr,
+  author={Tongyi DeepResearch Team},
+  title={Tongyi-DeepResearch},
+  year={2025},
+  howpublished={\url{https://github.com/Alibaba-NLP/DeepResearch}}
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>fmtlib/fmt</title>
+      <link>https://github.com/fmtlib/fmt</link>
+      <description>&lt;p&gt;A modern formatting library&lt;/p&gt;&lt;hr&gt;&lt;img src="https://user-images.githubusercontent.com/576385/156254208-f5b743a9-88cf-439d-b0c0-923d53e8d551.png" alt="{fmt}" width="25%" /&gt; 
+&lt;p&gt;&lt;a href="https://github.com/fmtlib/fmt/actions?query=workflow%3Alinux"&gt;&lt;img src="https://github.com/fmtlib/fmt/workflows/linux/badge.svg?sanitize=true" alt="image" /&gt;&lt;/a&gt; &lt;a href="https://github.com/fmtlib/fmt/actions?query=workflow%3Amacos"&gt;&lt;img src="https://github.com/fmtlib/fmt/workflows/macos/badge.svg?sanitize=true" alt="image" /&gt;&lt;/a&gt; &lt;a href="https://github.com/fmtlib/fmt/actions?query=workflow%3Awindows"&gt;&lt;img src="https://github.com/fmtlib/fmt/workflows/windows/badge.svg?sanitize=true" alt="image" /&gt;&lt;/a&gt; &lt;a href="https://bugs.chromium.org/p/oss-fuzz/issues/list?%0Acolspec=ID%20Type%20Component%20Status%20Proj%20Reported%20Owner%20%0ASummary&amp;amp;q=proj%3Dfmt&amp;amp;can=1"&gt;&lt;img src="https://oss-fuzz-build-logs.storage.googleapis.com/badges/fmt.svg?sanitize=true" alt="fmt is continuously fuzzed at oss-fuzz" /&gt;&lt;/a&gt; &lt;a href="https://www.bestpractices.dev/projects/8880"&gt;&lt;img src="https://www.bestpractices.dev/projects/8880/badge" alt="OpenSSF Best Practices" /&gt;&lt;/a&gt; &lt;a href="https://securityscorecards.dev/viewer/?uri=github.com/fmtlib/fmt"&gt;&lt;img src="https://api.securityscorecards.dev/projects/github.com/fmtlib/fmt/badge" alt="image" /&gt;&lt;/a&gt; &lt;a href="https://stackoverflow.com/questions/tagged/fmt"&gt;&lt;img src="https://img.shields.io/badge/stackoverflow-fmt-blue.svg?sanitize=true" alt="Ask questions at StackOverflow with the tag fmt" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;{fmt}&lt;/strong&gt; is an open-source formatting library providing a fast and safe alternative to C stdio and C++ iostreams.&lt;/p&gt; 
+&lt;p&gt;If you like this project, please consider donating to one of the funds that help victims of the war in Ukraine: &lt;a href="https://www.stopputin.net/"&gt;https://www.stopputin.net/&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://fmt.dev"&gt;Documentation&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://hackingcpp.com/cpp/libs/fmt.html"&gt;Cheat Sheets&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Q&amp;amp;A: ask questions on &lt;a href="https://stackoverflow.com/questions/tagged/fmt"&gt;StackOverflow with the tag fmt&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Try {fmt} in &lt;a href="https://godbolt.org/z/8Mx1EW73v"&gt;Compiler Explorer&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;Features&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Simple &lt;a href="https://fmt.dev/latest/api/"&gt;format API&lt;/a&gt; with positional arguments for localization&lt;/li&gt; 
+ &lt;li&gt;Implementation of &lt;a href="https://en.cppreference.com/w/cpp/utility/format"&gt;C++20 std::format&lt;/a&gt; and &lt;a href="https://en.cppreference.com/w/cpp/io/print"&gt;C++23 std::print&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://fmt.dev/latest/syntax/"&gt;Format string syntax&lt;/a&gt; similar to Python's &lt;a href="https://docs.python.org/3/library/stdtypes.html#str.format"&gt;format&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Fast IEEE 754 floating-point formatter with correct rounding, shortness and round-trip guarantees using the &lt;a href="https://github.com/jk-jeon/dragonbox"&gt;Dragonbox&lt;/a&gt; algorithm&lt;/li&gt; 
+ &lt;li&gt;Portable Unicode support&lt;/li&gt; 
+ &lt;li&gt;Safe &lt;a href="https://fmt.dev/latest/api/#printf-formatting"&gt;printf implementation&lt;/a&gt; including the POSIX extension for positional arguments&lt;/li&gt; 
+ &lt;li&gt;Extensibility: &lt;a href="https://fmt.dev/latest/api/#formatting-user-defined-types"&gt;support for user-defined types&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;High performance: faster than common standard library implementations of &lt;code&gt;(s)printf&lt;/code&gt;, iostreams, &lt;code&gt;to_string&lt;/code&gt; and &lt;code&gt;to_chars&lt;/code&gt;, see &lt;a href="https://raw.githubusercontent.com/fmtlib/fmt/master/#speed-tests"&gt;Speed tests&lt;/a&gt; and &lt;a href="http://www.zverovich.net/2020/06/13/fast-int-to-string-revisited.html"&gt;Converting a hundred million integers to strings per second&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Small code size both in terms of source code with the minimum configuration consisting of just three files, &lt;code&gt;base.h&lt;/code&gt;, &lt;code&gt;format.h&lt;/code&gt; and &lt;code&gt;format-inl.h&lt;/code&gt;, and compiled code; see &lt;a href="https://raw.githubusercontent.com/fmtlib/fmt/master/#compile-time-and-code-bloat"&gt;Compile time and code bloat&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Reliability: the library has an extensive set of &lt;a href="https://github.com/fmtlib/fmt/tree/master/test"&gt;tests&lt;/a&gt; and is &lt;a href="https://bugs.chromium.org/p/oss-fuzz/issues/list?colspec=ID%20Type%20Component%20Status%20Proj%20Reported%20Owner%20Summary&amp;amp;q=proj%3Dfmt&amp;amp;can=1"&gt;continuously fuzzed&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Safety: the library is fully type-safe, errors in format strings can be reported at compile time, automatic memory management prevents buffer overflow errors&lt;/li&gt; 
+ &lt;li&gt;Ease of use: small self-contained code base, no external dependencies, permissive MIT &lt;a href="https://github.com/fmtlib/fmt/raw/master/LICENSE"&gt;license&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://fmt.dev/latest/#portability"&gt;Portability&lt;/a&gt; with consistent output across platforms and support for older compilers&lt;/li&gt; 
+ &lt;li&gt;Clean warning-free codebase even on high warning levels such as &lt;code&gt;-Wall -Wextra -pedantic&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Locale independence by default&lt;/li&gt; 
+ &lt;li&gt;Optional header-only configuration enabled with the &lt;code&gt;FMT_HEADER_ONLY&lt;/code&gt; macro&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See the &lt;a href="https://fmt.dev"&gt;documentation&lt;/a&gt; for more details.&lt;/p&gt; 
+&lt;h1&gt;Examples&lt;/h1&gt; 
+&lt;p&gt;&lt;strong&gt;Print to stdout&lt;/strong&gt; (&lt;a href="https://godbolt.org/z/Tevcjh"&gt;run&lt;/a&gt;)&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-c++"&gt;#include &amp;lt;fmt/base.h&amp;gt;
+
+int main() {
+  fmt::print("Hello, world!\n");
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Format a string&lt;/strong&gt; (&lt;a href="https://godbolt.org/z/oK8h33"&gt;run&lt;/a&gt;)&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-c++"&gt;std::string s = fmt::format("The answer is {}.", 42);
+// s == "The answer is 42."
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Format a string using positional arguments&lt;/strong&gt; (&lt;a href="https://godbolt.org/z/Yn7Txe"&gt;run&lt;/a&gt;)&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-c++"&gt;std::string s = fmt::format("I'd rather be {1} than {0}.", "right", "happy");
+// s == "I'd rather be happy than right."
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Print dates and times&lt;/strong&gt; (&lt;a href="https://godbolt.org/z/c31ExdY3W"&gt;run&lt;/a&gt;)&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-c++"&gt;#include &amp;lt;fmt/chrono.h&amp;gt;
+
+int main() {
+  auto now = std::chrono::system_clock::now();
+  fmt::print("Date and time: {}\n", now);
+  fmt::print("Time: {:%H:%M}\n", now);
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Output:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Date and time: 2023-12-26 19:10:31.557195597
+Time: 19:10
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Print a container&lt;/strong&gt; (&lt;a href="https://godbolt.org/z/MxM1YqjE7"&gt;run&lt;/a&gt;)&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-c++"&gt;#include &amp;lt;vector&amp;gt;
+#include &amp;lt;fmt/ranges.h&amp;gt;
+
+int main() {
+  std::vector&amp;lt;int&amp;gt; v = {1, 2, 3};
+  fmt::print("{}\n", v);
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Output:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;[1, 2, 3]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Check a format string at compile time&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-c++"&gt;std::string s = fmt::format("{:d}", "I am not a number");
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This gives a compile-time error in C++20 because &lt;code&gt;d&lt;/code&gt; is an invalid format specifier for a string.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Write a file from a single thread&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-c++"&gt;#include &amp;lt;fmt/os.h&amp;gt;
+
+int main() {
+  auto out = fmt::output_file("guide.txt");
+  out.print("Don't {}", "Panic");
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This can be &lt;a href="http://www.zverovich.net/2020/08/04/optimal-file-buffer-size.html"&gt;5 to 9 times faster than fprintf&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Print with colors and text styles&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-c++"&gt;#include &amp;lt;fmt/color.h&amp;gt;
+
+int main() {
+  fmt::print(fg(fmt::color::crimson) | fmt::emphasis::bold,
+             "Hello, {}!\n", "world");
+  fmt::print(fg(fmt::color::floral_white) | bg(fmt::color::slate_gray) |
+             fmt::emphasis::underline, "Olá, {}!\n", "Mundo");
+  fmt::print(fg(fmt::color::steel_blue) | fmt::emphasis::italic,
+             "你好{}！\n", "世界");
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Output on a modern terminal with Unicode support:&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/fmtlib/fmt/assets/%0A576385/2a93c904-d6fa-4aa6-b453-2618e1c327d7" alt="image" /&gt;&lt;/p&gt; 
+&lt;h1&gt;Benchmarks&lt;/h1&gt; 
+&lt;h2&gt;Speed tests&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Library&lt;/th&gt; 
+   &lt;th&gt;Method&lt;/th&gt; 
+   &lt;th&gt;Run Time, s&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;libc&lt;/td&gt; 
+   &lt;td&gt;printf&lt;/td&gt; 
+   &lt;td&gt;0.91&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;libc++&lt;/td&gt; 
+   &lt;td&gt;std::ostream&lt;/td&gt; 
+   &lt;td&gt;2.49&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;{fmt} 9.1&lt;/td&gt; 
+   &lt;td&gt;fmt::print&lt;/td&gt; 
+   &lt;td&gt;0.74&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Boost Format 1.80&lt;/td&gt; 
+   &lt;td&gt;boost::format&lt;/td&gt; 
+   &lt;td&gt;6.26&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Folly Format&lt;/td&gt; 
+   &lt;td&gt;folly::format&lt;/td&gt; 
+   &lt;td&gt;1.87&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;{fmt} is the fastest of the benchmarked methods, ~20% faster than &lt;code&gt;printf&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;The above results were generated by building &lt;code&gt;tinyformat_test.cpp&lt;/code&gt; on macOS 12.6.1 with &lt;code&gt;clang++ -O3 -DNDEBUG -DSPEED_TEST -DHAVE_FORMAT&lt;/code&gt;, and taking the best of three runs. In the test, the format string &lt;code&gt;"%0.10f:%04d:%+g:%s:%p:%c:%%\n"&lt;/code&gt; or equivalent is filled 2,000,000 times with output sent to &lt;code&gt;/dev/null&lt;/code&gt;; for further details refer to the &lt;a href="https://github.com/fmtlib/format-benchmark/raw/master/src/tinyformat-test.cc"&gt;source&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;{fmt} is up to 20-30x faster than &lt;code&gt;std::ostringstream&lt;/code&gt; and &lt;code&gt;sprintf&lt;/code&gt; on IEEE754 &lt;code&gt;float&lt;/code&gt; and &lt;code&gt;double&lt;/code&gt; formatting (&lt;a href="https://github.com/fmtlib/dtoa-benchmark"&gt;dtoa-benchmark&lt;/a&gt;) and faster than &lt;a href="https://github.com/google/double-conversion"&gt;double-conversion&lt;/a&gt; and &lt;a href="https://github.com/ulfjack/ryu"&gt;ryu&lt;/a&gt;:&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://fmt.dev/unknown_mac64_clang12.0.html"&gt;&lt;img src="https://user-images.githubusercontent.com/576385/95684665-11719600-0ba8-11eb-8e5b-972ff4e49428.png" alt="image" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Compile time and code bloat&lt;/h2&gt; 
+&lt;p&gt;The script &lt;a href="https://github.com/fmtlib/format-benchmark/raw/master/bloat-test.py"&gt;bloat-test.py&lt;/a&gt; from &lt;a href="https://github.com/fmtlib/format-benchmark"&gt;format-benchmark&lt;/a&gt; tests compile time and code bloat for nontrivial projects. It generates 100 translation units and uses &lt;code&gt;printf()&lt;/code&gt; or its alternative five times in each to simulate a medium-sized project. The resulting executable size and compile time (Apple clang version 15.0.0 (clang-1500.1.0.2.5), macOS Sonoma, best of three) is shown in the following tables.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Optimized build (-O3)&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Method&lt;/th&gt; 
+   &lt;th&gt;Compile Time, s&lt;/th&gt; 
+   &lt;th&gt;Executable size, KiB&lt;/th&gt; 
+   &lt;th&gt;Stripped size, KiB&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;printf&lt;/td&gt; 
+   &lt;td&gt;1.6&lt;/td&gt; 
+   &lt;td&gt;54&lt;/td&gt; 
+   &lt;td&gt;50&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;IOStreams&lt;/td&gt; 
+   &lt;td&gt;25.9&lt;/td&gt; 
+   &lt;td&gt;98&lt;/td&gt; 
+   &lt;td&gt;84&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;fmt 83652df&lt;/td&gt; 
+   &lt;td&gt;4.8&lt;/td&gt; 
+   &lt;td&gt;54&lt;/td&gt; 
+   &lt;td&gt;50&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;tinyformat&lt;/td&gt; 
+   &lt;td&gt;29.1&lt;/td&gt; 
+   &lt;td&gt;161&lt;/td&gt; 
+   &lt;td&gt;136&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Boost Format&lt;/td&gt; 
+   &lt;td&gt;55.0&lt;/td&gt; 
+   &lt;td&gt;530&lt;/td&gt; 
+   &lt;td&gt;317&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;{fmt} is fast to compile and is comparable to &lt;code&gt;printf&lt;/code&gt; in terms of per-call binary size (within a rounding error on this system).&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Non-optimized build&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Method&lt;/th&gt; 
+   &lt;th&gt;Compile Time, s&lt;/th&gt; 
+   &lt;th&gt;Executable size, KiB&lt;/th&gt; 
+   &lt;th&gt;Stripped size, KiB&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;printf&lt;/td&gt; 
+   &lt;td&gt;1.4&lt;/td&gt; 
+   &lt;td&gt;54&lt;/td&gt; 
+   &lt;td&gt;50&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;IOStreams&lt;/td&gt; 
+   &lt;td&gt;23.4&lt;/td&gt; 
+   &lt;td&gt;92&lt;/td&gt; 
+   &lt;td&gt;68&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;{fmt} 83652df&lt;/td&gt; 
+   &lt;td&gt;4.4&lt;/td&gt; 
+   &lt;td&gt;89&lt;/td&gt; 
+   &lt;td&gt;85&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;tinyformat&lt;/td&gt; 
+   &lt;td&gt;24.5&lt;/td&gt; 
+   &lt;td&gt;204&lt;/td&gt; 
+   &lt;td&gt;161&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Boost Format&lt;/td&gt; 
+   &lt;td&gt;36.4&lt;/td&gt; 
+   &lt;td&gt;831&lt;/td&gt; 
+   &lt;td&gt;462&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;code&gt;libc&lt;/code&gt;, &lt;code&gt;lib(std)c++&lt;/code&gt;, and &lt;code&gt;libfmt&lt;/code&gt; are all linked as shared libraries to compare formatting function overhead only. Boost Format is a header-only library so it doesn't provide any linkage options.&lt;/p&gt; 
+&lt;h2&gt;Running the tests&lt;/h2&gt; 
+&lt;p&gt;Please refer to &lt;a href="https://fmt.dev/latest/get-started/#building-from-source"&gt;Building the library&lt;/a&gt; for instructions on how to build the library and run the unit tests.&lt;/p&gt; 
+&lt;p&gt;Benchmarks reside in a separate repository, &lt;a href="https://github.com/fmtlib/format-benchmark"&gt;format-benchmarks&lt;/a&gt;, so to run the benchmarks you first need to clone this repository and generate Makefiles with CMake:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;$ git clone --recursive https://github.com/fmtlib/format-benchmark.git
+$ cd format-benchmark
+$ cmake .
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then you can run the speed test:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;$ make speed-test
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;or the bloat test:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;$ make bloat-test
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h1&gt;Migrating code&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://clang.llvm.org/extra/clang-tidy/"&gt;clang-tidy&lt;/a&gt; v18 provides the &lt;a href="https://clang.llvm.org/extra/clang-tidy/checks/modernize/use-std-print.html"&gt;modernize-use-std-print&lt;/a&gt; check that is capable of converting occurrences of &lt;code&gt;printf&lt;/code&gt; and &lt;code&gt;fprintf&lt;/code&gt; to &lt;code&gt;fmt::print&lt;/code&gt; if configured to do so. (By default it converts to &lt;code&gt;std::print&lt;/code&gt;.)&lt;/p&gt; 
+&lt;h1&gt;Notable projects using this library&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://play0ad.com/"&gt;0 A.D.&lt;/a&gt;: a free, open-source, cross-platform real-time strategy game&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ampl/mp"&gt;AMPL/MP&lt;/a&gt;: an open-source library for mathematical programming&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apple/foundationdb"&gt;Apple's FoundationDB&lt;/a&gt;: an open-source, distributed, transactional key-value store&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aseprite/aseprite"&gt;Aseprite&lt;/a&gt;: animated sprite editor &amp;amp; pixel art tool&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.aviobook.aero/en"&gt;AvioBook&lt;/a&gt;: a comprehensive aircraft operations suite&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://battle.net/"&gt;Blizzard Battle.net&lt;/a&gt;: an online gaming platform&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://celestia.space/"&gt;Celestia&lt;/a&gt;: real-time 3D visualization of space&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://ceph.com/"&gt;Ceph&lt;/a&gt;: a scalable distributed storage system&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://ccache.dev/"&gt;ccache&lt;/a&gt;: a compiler cache&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ClickHouse/ClickHouse"&gt;ClickHouse&lt;/a&gt;: an analytical database management system&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.contextvision.com/"&gt;ContextVision&lt;/a&gt;: medical imaging software&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/contour-terminal/contour/"&gt;Contour&lt;/a&gt;: a modern terminal emulator&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://cuauv.org/"&gt;CUAUV&lt;/a&gt;: Cornell University's autonomous underwater vehicle&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://drake.mit.edu/"&gt;Drake&lt;/a&gt;: a planning, control, and analysis toolbox for nonlinear dynamical systems (MIT)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/envoyproxy/envoy"&gt;Envoy&lt;/a&gt;: C++ L7 proxy and communication bus (Lyft)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://fivem.net/"&gt;FiveM&lt;/a&gt;: a modification framework for GTA V&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/MengRao/fmtlog"&gt;fmtlog&lt;/a&gt;: a performant fmtlib-style logging library with latency in nanoseconds&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/facebook/folly"&gt;Folly&lt;/a&gt;: Facebook open-source library&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://gemrb.org/"&gt;GemRB&lt;/a&gt;: a portable open-source implementation of Bioware's Infinity Engine&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://store.steampowered.com/app/1247360/Grand_Mountain_Adventure/"&gt;Grand Mountain Adventure&lt;/a&gt;: a beautiful open-world ski &amp;amp; snowboarding game&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/pvpgn/pvpgn-server"&gt;HarpyWar/pvpgn&lt;/a&gt;: Player vs Player Gaming Network with tweaks&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/kbengine/kbengine"&gt;KBEngine&lt;/a&gt;: an open-source MMOG server engine&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://keypirinha.com/"&gt;Keypirinha&lt;/a&gt;: a semantic launcher for Windows&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://kodi.tv/"&gt;Kodi&lt;/a&gt; (formerly xbmc): home theater software&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://kth.cash/"&gt;Knuth&lt;/a&gt;: high-performance Bitcoin full-node&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/contour-terminal/libunicode/"&gt;libunicode&lt;/a&gt;: a modern C++17 Unicode library&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://mariadb.org/"&gt;MariaDB&lt;/a&gt;: relational database management system&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/microsoft/verona"&gt;Microsoft Verona&lt;/a&gt;: research programming language for concurrent ownership&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://mongodb.com/"&gt;MongoDB&lt;/a&gt;: distributed document database&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/duckie/mongo_smasher"&gt;MongoDB Smasher&lt;/a&gt;: a small tool to generate randomized datasets&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://openspaceproject.com/"&gt;OpenSpace&lt;/a&gt;: an open-source astrovisualization framework&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.polserver.com/"&gt;PenUltima Online (POL)&lt;/a&gt;: an MMO server, compatible with most Ultima Online clients&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/pytorch/pytorch"&gt;PyTorch&lt;/a&gt;: an open-source machine learning library&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.quasardb.net/"&gt;quasardb&lt;/a&gt;: a distributed, high-performance, associative database&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/odygrd/quill"&gt;Quill&lt;/a&gt;: asynchronous low-latency logging library&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ravijanjam/qkw"&gt;QKW&lt;/a&gt;: generalizing aliasing to simplify navigation, and execute complex multi-line terminal command sequences&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HunanTV/redis-cerberus"&gt;redis-cerberus&lt;/a&gt;: a Redis cluster proxy&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://vectorized.io/redpanda"&gt;redpanda&lt;/a&gt;: a 10x faster Kafka® replacement for mission-critical systems written in C++&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="http://rpclib.net/"&gt;rpclib&lt;/a&gt;: a modern C++ msgpack-RPC server and client library&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.salesforce.com/analytics-cloud/overview/"&gt;Salesforce Analytics Cloud&lt;/a&gt;: business intelligence software&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.scylladb.com/"&gt;Scylla&lt;/a&gt;: a Cassandra-compatible NoSQL data store that can handle 1 million transactions per second on a single server&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="http://www.seastar-project.org/"&gt;Seastar&lt;/a&gt;: an advanced, open-source C++ framework for high-performance server applications on modern hardware&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/gabime/spdlog"&gt;spdlog&lt;/a&gt;: super fast C++ logging library&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.stellar.org/"&gt;Stellar&lt;/a&gt;: financial platform&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.touchsurgery.com/"&gt;Touch Surgery&lt;/a&gt;: surgery simulator&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TrinityCore/TrinityCore"&gt;TrinityCore&lt;/a&gt;: open-source MMORPG framework&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://userver.tech/"&gt;🐙 userver framework&lt;/a&gt;: open-source asynchronous framework with a rich set of abstractions and database drivers&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/microsoft/terminal"&gt;Windows Terminal&lt;/a&gt;: the new Windows terminal&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;a href="https://github.com/search?q=fmtlib&amp;amp;type=Code"&gt;More...&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;If you are aware of other projects using this library, please let me know by &lt;a href="mailto:victor.zverovich@gmail.com"&gt;email&lt;/a&gt; or by submitting an &lt;a href="https://github.com/fmtlib/fmt/issues"&gt;issue&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;Motivation&lt;/h1&gt; 
+&lt;p&gt;So why yet another formatting library?&lt;/p&gt; 
+&lt;p&gt;There are plenty of methods for doing this task, from standard ones like the printf family of function and iostreams to Boost Format and FastFormat libraries. The reason for creating a new library is that every existing solution that I found either had serious issues or didn't provide all the features I needed.&lt;/p&gt; 
+&lt;h2&gt;printf&lt;/h2&gt; 
+&lt;p&gt;The good thing about &lt;code&gt;printf&lt;/code&gt; is that it is pretty fast and readily available being a part of the C standard library. The main drawback is that it doesn't support user-defined types. &lt;code&gt;printf&lt;/code&gt; also has safety issues although they are somewhat mitigated with &lt;a href="https://gcc.gnu.org/onlinedocs/gcc/Function-Attributes.html"&gt;__attribute__ ((format (printf, ...))&lt;/a&gt; in GCC. There is a POSIX extension that adds positional arguments required for &lt;a href="https://en.wikipedia.org/wiki/Internationalization_and_localization"&gt;i18n&lt;/a&gt; to &lt;code&gt;printf&lt;/code&gt; but it is not a part of C99 and may not be available on some platforms.&lt;/p&gt; 
+&lt;h2&gt;iostreams&lt;/h2&gt; 
+&lt;p&gt;The main issue with iostreams is best illustrated with an example:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-c++"&gt;std::cout &amp;lt;&amp;lt; std::setprecision(2) &amp;lt;&amp;lt; std::fixed &amp;lt;&amp;lt; 1.23456 &amp;lt;&amp;lt; "\n";
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;which is a lot of typing compared to printf:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-c++"&gt;printf("%.2f\n", 1.23456);
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Matthew Wilson, the author of FastFormat, called this "chevron hell". iostreams don't support positional arguments by design.&lt;/p&gt; 
+&lt;p&gt;The good part is that iostreams support user-defined types and are safe although error handling is awkward.&lt;/p&gt; 
+&lt;h2&gt;Boost Format&lt;/h2&gt; 
+&lt;p&gt;This is a very powerful library that supports both &lt;code&gt;printf&lt;/code&gt;-like format strings and positional arguments. Its main drawback is performance. According to various benchmarks, it is much slower than other methods considered here. Boost Format also has excessive build times and severe code bloat issues (see &lt;a href="https://raw.githubusercontent.com/fmtlib/fmt/master/#benchmarks"&gt;Benchmarks&lt;/a&gt;).&lt;/p&gt; 
+&lt;h2&gt;FastFormat&lt;/h2&gt; 
+&lt;p&gt;This is an interesting library that is fast, safe and has positional arguments. However, it has significant limitations, citing its author:&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Three features that have no hope of being accommodated within the current design are:&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Leading zeros (or any other non-space padding)&lt;/li&gt; 
+  &lt;li&gt;Octal/hexadecimal encoding&lt;/li&gt; 
+  &lt;li&gt;Runtime width/alignment specification&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;It is also quite big and has a heavy dependency, on STLSoft, which might be too restrictive for use in some projects.&lt;/p&gt; 
+&lt;h2&gt;Boost Spirit.Karma&lt;/h2&gt; 
+&lt;p&gt;This is not a formatting library but I decided to include it here for completeness. As iostreams, it suffers from the problem of mixing verbatim text with arguments. The library is pretty fast, but slower on integer formatting than &lt;code&gt;fmt::format_to&lt;/code&gt; with format string compilation on Karma's own benchmark, see &lt;a href="http://www.zverovich.net/2020/06/13/fast-int-to-string-revisited.html"&gt;Converting a hundred million integers to strings per second&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;License&lt;/h1&gt; 
+&lt;p&gt;{fmt} is distributed under the MIT &lt;a href="https://github.com/fmtlib/fmt/raw/master/LICENSE"&gt;license&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;Documentation License&lt;/h1&gt; 
+&lt;p&gt;The &lt;a href="https://fmt.dev/latest/syntax/"&gt;Format String Syntax&lt;/a&gt; section in the documentation is based on the one from Python &lt;a href="https://docs.python.org/3/library/string.html#module-string"&gt;string module documentation&lt;/a&gt;. For this reason, the documentation is distributed under the Python Software Foundation license available in &lt;a href="https://raw.github.com/fmtlib/fmt/master/doc/python-license.txt"&gt;doc/python-license.txt&lt;/a&gt;. It only applies if you distribute the documentation of {fmt}.&lt;/p&gt; 
+&lt;h1&gt;Maintainers&lt;/h1&gt; 
+&lt;p&gt;The {fmt} library is maintained by Victor Zverovich (&lt;a href="https://github.com/vitaut"&gt;vitaut&lt;/a&gt;) with contributions from many other people. See &lt;a href="https://github.com/fmtlib/fmt/graphs/contributors"&gt;Contributors&lt;/a&gt; and &lt;a href="https://github.com/fmtlib/fmt/releases"&gt;Releases&lt;/a&gt; for some of the names. Let us know if your contribution is not listed or mentioned incorrectly and we'll make it right.&lt;/p&gt; 
+&lt;h1&gt;Security Policy&lt;/h1&gt; 
+&lt;p&gt;To report a security issue, please disclose it at &lt;a href="https://github.com/fmtlib/fmt/security/advisories/new"&gt;security advisory&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;This project is maintained by a team of volunteers on a reasonable-effort basis. As such, please give us at least &lt;em&gt;90&lt;/em&gt; days to work on a fix before public exposure.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>bitnami/charts</title>
+      <link>https://github.com/bitnami/charts</link>
+      <description>&lt;p&gt;Bitnami Helm Charts&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img width="400px" height="auto" src="https://dyltqmyl993wv.cloudfront.net/bitnami/bitnami-by-vmware.png" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://twitter.com/bitnami"&gt;&lt;img src="https://badgen.net/badge/twitter/@bitnami/1DA1F2?icon&amp;amp;label" /&gt;&lt;/a&gt; &lt;a href="https://github.com/bitnami/charts"&gt;&lt;img src="https://badgen.net/github/stars/bitnami/charts?icon=github" /&gt;&lt;/a&gt; &lt;a href="https://github.com/bitnami/charts"&gt;&lt;img src="https://badgen.net/github/forks/bitnami/charts?icon=github" /&gt;&lt;/a&gt; &lt;a href="https://artifacthub.io/packages/search?repo=bitnami"&gt;&lt;img src="https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/bitnami" /&gt;&lt;/a&gt; &lt;a href="https://github.com/bitnami/charts/actions/workflows/cd-pipeline.yml"&gt;&lt;img src="https://github.com/bitnami/charts/actions/workflows/cd-pipeline.yml/badge.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h1&gt;The Bitnami Library for Kubernetes&lt;/h1&gt; 
+&lt;p&gt;Popular applications, provided by &lt;a href="https://bitnami.com"&gt;Bitnami&lt;/a&gt;, ready to launch on Kubernetes using &lt;a href="https://github.com/helm/helm"&gt;Kubernetes Helm&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;TL;DR&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-console"&gt;helm install my-release oci://registry-1.docker.io/bitnamicharts/&amp;lt;chart&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;⚠️ Important Notice: Upcoming changes to the Bitnami Catalog&lt;/h2&gt; 
+&lt;p&gt;Beginning August 28th, 2025, Bitnami will evolve its public catalog to offer a curated set of hardened, security-focused images under the new &lt;a href="https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications"&gt;Bitnami Secure Images initiative&lt;/a&gt;. As part of this transition:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Granting community users access for the first time to security-optimized versions of popular container images.&lt;/li&gt; 
+ &lt;li&gt;Bitnami will begin deprecating support for non-hardened, Debian-based software images in its free tier and will gradually remove non-latest tags from the public catalog. As a result, community users will have access to a reduced number of hardened images. These images are published only under the “latest” tag and are intended for development purposes&lt;/li&gt; 
+ &lt;li&gt;Starting August 28th, over two weeks, all existing container images, including older or versioned tags (e.g., 2.50.0, 10.6), will be migrated from the public catalog (docker.io/bitnami) to the “Bitnami Legacy” repository (docker.io/bitnamilegacy), where they will no longer receive updates.&lt;/li&gt; 
+ &lt;li&gt;For production workloads and long-term support, users are encouraged to adopt Bitnami Secure Images, which include hardened containers, smaller attack surfaces, CVE transparency (via VEX/KEV), SBOMs, and enterprise support.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;These changes aim to improve the security posture of all Bitnami users by promoting best practices for software supply chain integrity and up-to-date deployments. For more details, visit the &lt;a href="https://github.com/bitnami/containers/issues/83267"&gt;Bitnami Secure Images announcement&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Vulnerabilities scanner&lt;/h2&gt; 
+&lt;p&gt;Each Helm chart contains one or more containers. Those containers use images provided by Bitnami through its test &amp;amp; release pipeline and whose source code can be found at &lt;a href="https://github.com/bitnami/containers"&gt;bitnami/containers&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;As part of the container releases, the images are scanned for vulnerabilities, &lt;a href="https://github.com/bitnami/containers#vulnerability-scan-in-bitnami-container-images"&gt;here&lt;/a&gt; you can find more info about this topic.&lt;/p&gt; 
+&lt;p&gt;Since the container image is an immutable artifact that is already analyzed, as part of the Helm chart release process we are not looking for vulnerabilities in the containers but running different verifications to ensure the Helm charts work as expected, see the testing strategy defined at &lt;a href="https://github.com/bitnami/charts/raw/main/TESTING.md"&gt;&lt;em&gt;TESTING.md&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Before you begin&lt;/h2&gt; 
+&lt;h3&gt;Prerequisites&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Kubernetes 1.23+&lt;/li&gt; 
+ &lt;li&gt;Helm 3.8.0+&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Setup a Kubernetes Cluster&lt;/h3&gt; 
+&lt;p&gt;The quickest way to set up a Kubernetes cluster to install Bitnami Charts is by following the "Bitnami Get Started" guides for the different services:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.bitnami.com/kubernetes/get-started-tkg/"&gt;Get Started with Bitnami Charts using VMware Tanzu Kubernetes Grid (TKG)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.bitnami.com/kubernetes/get-started-tmc/"&gt;Get Started with Bitnami Charts using VMware Tanzu Mission Control (TMC)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.bitnami.com/kubernetes/get-started-cnab/"&gt;Get Started With Bitnami Charts Using Azure Marketplace Kubernetes Applications&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.bitnami.com/kubernetes/get-started-eks/"&gt;Get Started with Bitnami Charts using the Amazon Elastic Container Service for Kubernetes (EKS)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.bitnami.com/kubernetes/get-started-gke/"&gt;Get Started with Bitnami Charts using the Google Kubernetes Engine (GKE)&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;For setting up Kubernetes on other cloud platforms or bare-metal servers refer to the Kubernetes &lt;a href="https://kubernetes.io/docs/getting-started-guides/"&gt;getting started guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Install Helm&lt;/h3&gt; 
+&lt;p&gt;Helm is a tool for managing Kubernetes charts. Charts are packages of pre-configured Kubernetes resources.&lt;/p&gt; 
+&lt;p&gt;To install Helm, refer to the &lt;a href="https://github.com/helm/helm#install"&gt;Helm install guide&lt;/a&gt; and ensure that the &lt;code&gt;helm&lt;/code&gt; binary is in the &lt;code&gt;PATH&lt;/code&gt; of your shell.&lt;/p&gt; 
+&lt;h3&gt;Using Helm&lt;/h3&gt; 
+&lt;p&gt;Once you have installed the Helm client, you can deploy a Bitnami Helm Chart into a Kubernetes cluster.&lt;/p&gt; 
+&lt;p&gt;Please refer to the &lt;a href="https://helm.sh/docs/intro/quickstart/"&gt;Quick Start guide&lt;/a&gt; if you wish to get running in just a few commands, otherwise, the &lt;a href="https://helm.sh/docs/intro/using_helm/"&gt;Using Helm Guide&lt;/a&gt; provides detailed instructions on how to use the Helm client to manage packages on your Kubernetes cluster.&lt;/p&gt; 
+&lt;p&gt;Useful Helm Client Commands:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Install a chart: &lt;code&gt;helm install my-release oci://registry-1.docker.io/bitnamicharts/&amp;lt;chart&amp;gt;&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Upgrade your application: &lt;code&gt;helm upgrade my-release oci://registry-1.docker.io/bitnamicharts/&amp;lt;chart&amp;gt;&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Copyright © 2025 Broadcom. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.&lt;/p&gt; 
+&lt;p&gt;Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at&lt;/p&gt; 
+&lt;p&gt;&lt;a href="http://www.apache.org/licenses/LICENSE-2.0"&gt;http://www.apache.org/licenses/LICENSE-2.0&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>basecamp/omarchy</title>
+      <link>https://github.com/basecamp/omarchy</link>
+      <description>&lt;p&gt;Opinionated Arch/Hyprland Setup&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Omarchy&lt;/h1&gt; 
+&lt;p&gt;Turn a fresh Arch installation into a fully-configured, beautiful, and modern web development system based on Hyprland by running a single command. That's the one-line pitch for Omarchy (like it was for Omakub). No need to write bespoke configs for every essential tool just to get started or to be up on all the latest command-line tools. Omarchy is an opinionated take on what Linux can be at its best.&lt;/p&gt; 
+&lt;p&gt;Read more at &lt;a href="https://omarchy.org"&gt;omarchy.org&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Omarchy is released under the &lt;a href="https://opensource.org/licenses/MIT"&gt;MIT License&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>WebGoat/WebGoat</title>
+      <link>https://github.com/WebGoat/WebGoat</link>
+      <description>&lt;p&gt;WebGoat is a deliberately insecure application&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;WebGoat: A deliberately insecure Web Application&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/WebGoat/WebGoat/actions/workflows/build.yml"&gt;&lt;img src="https://github.com/WebGoat/WebGoat/actions/workflows/build.yml/badge.svg?branch=develop" alt="Build" /&gt;&lt;/a&gt; &lt;a href="https://jdk.java.net/"&gt;&lt;img src="https://img.shields.io/badge/java%20jdk-23-green.svg?sanitize=true" alt="java-jdk" /&gt;&lt;/a&gt; &lt;a href="https://owasp.org/projects/"&gt;&lt;img src="https://img.shields.io/badge/OWASP-Lab%20project-f7b73c.svg?sanitize=true" alt="OWASP Labs" /&gt;&lt;/a&gt; &lt;a href="https://github.com/WebGoat/WebGoat/releases/latest"&gt;&lt;img src="https://img.shields.io/github/release/WebGoat/WebGoat.svg?sanitize=true" alt="GitHub release" /&gt;&lt;/a&gt; &lt;a href="https://gitter.im/OWASPWebGoat/community?utm_source=badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=pr-badge"&gt;&lt;img src="https://badges.gitter.im/OWASPWebGoat/community.svg?sanitize=true" alt="Gitter" /&gt;&lt;/a&gt; &lt;a href="https://github.com/WebGoat/WebGoat/discussions"&gt;&lt;img src="https://img.shields.io/github/discussions/WebGoat/WebGoat" alt="Discussions" /&gt;&lt;/a&gt; &lt;a href="https://conventionalcommits.org"&gt;&lt;img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&amp;amp;logoColor=white" alt="Conventional Commits" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Introduction&lt;/h1&gt; 
+&lt;p&gt;WebGoat is a deliberately insecure web application maintained by &lt;a href="http://www.owasp.org/"&gt;OWASP&lt;/a&gt; designed to teach web application security lessons.&lt;/p&gt; 
+&lt;p&gt;This program is a demonstration of common server-side application flaws. The exercises are intended to be used by people to learn about application security and penetration testing techniques.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;WARNING 1:&lt;/strong&gt; &lt;em&gt;While running this program your machine will be extremely vulnerable to attack. You should disconnect from the Internet while using this program.&lt;/em&gt; WebGoat's default configuration binds to localhost to minimize the exposure.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;WARNING 2:&lt;/strong&gt; &lt;em&gt;This program is for educational purposes only. If you attempt these techniques without authorization, you are very likely to get caught. If you are caught engaging in unauthorized hacking, most companies will fire you. Claiming that you were doing security research will not work as that is the first thing that all hackers claim.&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/WebGoat/WebGoat/main/docs/images/webgoat.png" alt="WebGoat" /&gt;&lt;/p&gt; 
+&lt;h1&gt;Installation instructions:&lt;/h1&gt; 
+&lt;p&gt;For more details check &lt;a href="https://raw.githubusercontent.com/WebGoat/WebGoat/main/CONTRIBUTING.md"&gt;the Contribution guide&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;1. Run using Docker&lt;/h2&gt; 
+&lt;p&gt;Already have a browser and ZAP and/or Burp installed on your machine in this case you can run the WebGoat image directly using Docker.&lt;/p&gt; 
+&lt;p&gt;Every release is also published on &lt;a href="https://hub.docker.com/r/webgoat/webgoat"&gt;DockerHub&lt;/a&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;docker run -it -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 webgoat/webgoat
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For some lessons you need the container run in the same timezone. For this you can set the TZ environment variable. E.g.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;docker run -it -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 -e TZ=America/Boise webgoat/webgoat
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If you want to use OWASP ZAP or another proxy, you can no longer use 127.0.0.1 or localhost. but you can use custom host entries. For example:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;127.0.0.1 www.webgoat.local www.webwolf.local
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then you can run the container with:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;docker run -it -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 -e WEBGOAT_HOST=www.webgoat.local -e WEBWOLF_HOST=www.webwolf.local -e TZ=America/Boise webgoat/webgoat
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then visit &lt;a href="http://www.webgoat.local:8080/WebGoat/"&gt;http://www.webgoat.local:8080/WebGoat/&lt;/a&gt; and &lt;a href="http://www.webwolf.local:9090/WebWolf/"&gt;http://www.webwolf.local:9090/WebWolf/&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;2. Run using Docker with complete Linux Desktop&lt;/h2&gt; 
+&lt;p&gt;Instead of installing tools locally we have a complete Docker image based on running a desktop in your browser. This way you only have to run a Docker image which will give you the best user experience.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;docker run -p 127.0.0.1:3000:3000 webgoat/webgoat-desktop
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;3. Standalone&lt;/h2&gt; 
+&lt;p&gt;Download the latest WebGoat release from &lt;a href="https://github.com/WebGoat/WebGoat/releases"&gt;https://github.com/WebGoat/WebGoat/releases&lt;/a&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;export TZ=Europe/Amsterdam # or your timezone
+java -Dfile.encoding=UTF-8 -jar webgoat-2023.8.jar
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Click the link in the log to start WebGoat.&lt;/p&gt; 
+&lt;h3&gt;3.1 Running on a different port&lt;/h3&gt; 
+&lt;p&gt;If for some reason you want to run WebGoat on a different port, you can do so by adding the following parameter:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;java -jar webgoat-2023.8.jar --webgoat.port=8001 --webwolf.port=8002
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For a full overview of all the parameters you can use, please check the [WebGoat properties file](webgoat-container/src/main/resources/application-{webgoat, webwolf}.properties).&lt;/p&gt; 
+&lt;h2&gt;4. Run from the sources&lt;/h2&gt; 
+&lt;h3&gt;Prerequisites:&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Java 23&lt;/li&gt; 
+ &lt;li&gt;Your favorite IDE&lt;/li&gt; 
+ &lt;li&gt;Git, or Git support in your IDE&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Open a command shell/window:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-Shell"&gt;git clone git@github.com:WebGoat/WebGoat.git
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Now let's start by compiling the project.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-Shell"&gt;cd WebGoat
+git checkout &amp;lt;&amp;lt;branch_name&amp;gt;&amp;gt;
+# On Linux/Mac:
+./mvnw clean install
+
+# On Windows:
+./mvnw.cmd clean install
+
+# Using docker or podman, you can than build the container locally
+docker build -f Dockerfile . -t webgoat/webgoat
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Now we are ready to run the project. WebGoat is using Spring Boot.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-Shell"&gt;# On Linux/Mac:
+./mvnw spring-boot:run
+# On Windows:
+./mvnw.cmd spring-boot:run
+
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;... you should be running WebGoat on &lt;a href="http://localhost:8080/WebGoat"&gt;http://localhost:8080/WebGoat&lt;/a&gt; momentarily.&lt;/p&gt; 
+&lt;p&gt;Note: The above link will redirect you to login page if you are not logged in. LogIn/Create account to proceed.&lt;/p&gt; 
+&lt;p&gt;To change the IP address add the following variable to the &lt;code&gt;WebGoat/webgoat-container/src/main/resources/application.properties&lt;/code&gt; file:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;server.address=x.x.x.x
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;4. Run with custom menu&lt;/h2&gt; 
+&lt;p&gt;For specialist only. There is a way to set up WebGoat with a personalized menu. You can leave out some menu categories or individual lessons by setting certain environment variables.&lt;/p&gt; 
+&lt;p&gt;For instance running as a jar on a Linux/macOS it will look like this:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-Shell"&gt;export TZ=Europe/Amsterdam # or your timezone
+export EXCLUDE_CATEGORIES="CLIENT_SIDE,GENERAL,CHALLENGE"
+export EXCLUDE_LESSONS="SqlInjectionAdvanced,SqlInjectionMitigations"
+java -jar target/webgoat-2023.8-SNAPSHOT.jar
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Or in a docker run it would (once this version is pushed into docker hub) look like this:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-Shell"&gt;docker run -d -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 -e EXCLUDE_CATEGORIES="CLIENT_SIDE,GENERAL,CHALLENGE" -e EXCLUDE_LESSONS="SqlInjectionAdvanced,SqlInjectionMitigations" webgoat/webgoat
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gar-b-age/CookLikeHOC</title>
+      <link>https://github.com/Gar-b-age/CookLikeHOC</link>
+      <description>&lt;p&gt;🥢像老乡鸡🐔那样做饭。主要部分于2024年完工，非老乡鸡官方仓库。文字来自《老乡鸡菜品溯源报告》，并做归纳、编辑与整理。CookLikeHOC.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/Gar-b-age/CookLikeHOC/main/banner.png" alt="pic" /&gt;&lt;/p&gt; 
+&lt;h1&gt;像老乡鸡那样做饭&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/Gar-b-age/CookLikeHOC/issues/26"&gt;&lt;strong&gt;一些说明&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;仓库主体部分于2024年完工，和2025年9月份的舆论事件无关。截止提交时，仓库的贡献者们与老乡鸡的唯一关系只有消费者和商家的关系。本仓库不是老乡鸡的官方仓库。如果有任何问题或意见建议，欢迎指出&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;新更新&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;炖菜已上线部分由ai配图的菜品，但更欢迎大家来贡献实拍图&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;现已上线网页端，&lt;a href="https://cooklikehoc.soilzhu.su"&gt;点击访问&lt;/a&gt;&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;a href="https://t.me/cooklikehoc"&gt;&lt;img src="https://raw.githubusercontent.com/Gar-b-age/CookLikeHOC/main/tg.png" alt="link" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;《老乡鸡菜品溯源报告》中公布的所有菜品已经全部录入完，欢迎大家查阅和补充。&lt;/p&gt; 
+&lt;p&gt;文字超大段copy自&lt;a href="https://www.lxjchina.com.cn/display.asp?id=4226"&gt;《老乡鸡菜品溯源报告》&lt;/a&gt;，有编辑与整理&lt;/p&gt; 
+&lt;p&gt;指路隔壁 &lt;a href="https://cook.aiursoft.cn/"&gt;How To Cook&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;至于为什么仓库名要叫CookLikeHOC，因为直接写Laoxiangji大概不方便阅读，而Home Original Chicken是china daily报道中所使用的老乡鸡的英文名，故简写成HOC。&lt;/p&gt; 
+&lt;p&gt;Contributor&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://contrib.rocks/image?repo=Gar-b-age/CookLikeHOC" alt="cr" /&gt;&lt;/p&gt; 
+&lt;p&gt;Logo &lt;img src="https://raw.githubusercontent.com/Gar-b-age/CookLikeHOC/main/logo.png" alt="pic" /&gt;&lt;/p&gt; 
+&lt;p&gt;Star History&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://star-history.com/#Gar-b-age/CookLikeHOC&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=Gar-b-age/CookLikeHOC&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>nocodb/nocodb</title>
+      <link>https://github.com/nocodb/nocodb</link>
+      <description>&lt;p&gt;🔥 🔥 🔥 Open Source Airtable Alternative&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center" style="border-bottom: none"&gt; 
+ &lt;div&gt; 
+  &lt;a style="color:#36f" href="https://www.nocodb.com"&gt; &lt;img src="https://raw.githubusercontent.com/nocodb/nocodb/develop/packages/nc-gui/assets/img/brand/nocodb-full.png" height="80" /&gt; &lt;br /&gt; The Open Source Airtable Alternative &lt;/a&gt; 
+  &lt;br /&gt; 
+ &lt;/div&gt; &lt;/h1&gt; 
+&lt;p align="center"&gt; NocoDB is the fastest and easiest way to build databases online. &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="http://www.nocodb.com"&gt;&lt;b&gt;Website&lt;/b&gt;&lt;/a&gt; • &lt;a href="https://discord.gg/5RgZmkW"&gt;&lt;b&gt;Discord&lt;/b&gt;&lt;/a&gt; • &lt;a href="https://community.nocodb.com/"&gt;&lt;b&gt;Community&lt;/b&gt;&lt;/a&gt; • &lt;a href="https://twitter.com/nocodb"&gt;&lt;b&gt;Twitter&lt;/b&gt;&lt;/a&gt; • &lt;a href="https://www.reddit.com/r/NocoDB/"&gt;&lt;b&gt;Reddit&lt;/b&gt;&lt;/a&gt; • &lt;a href="https://docs.nocodb.com/"&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/nocodb/nocodb/assets/86527202/e2fad786-f211-4dcb-9bd3-aaece83a6783" alt="video avi" /&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;a href="https://raw.githubusercontent.com/nocodb/nocodb/develop/markdown/readme/languages/chinese.md"&gt;&lt;img height="38" src="https://user-images.githubusercontent.com/61551451/135263434-75fe793d-42af-49e4-b964-d70920e41655.png" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/nocodb/nocodb/develop/markdown/readme/languages/french.md"&gt;&lt;img height="38" src="https://user-images.githubusercontent.com/61551451/135263474-787d71e7-3a87-42a8-92a8-be1d1f55413d.png" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/nocodb/nocodb/develop/markdown/readme/languages/german.md"&gt;&lt;img height="38" src="https://user-images.githubusercontent.com/61551451/135263531-fae58600-6616-4b43-95a0-5891019dd35d.png" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/nocodb/nocodb/develop/markdown/readme/languages/spanish.md"&gt;&lt;img height="38" src="https://user-images.githubusercontent.com/61551451/135263589-3dbeda9a-0d2e-4bbd-b1fc-691404bb74fb.png" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/nocodb/nocodb/develop/markdown/readme/languages/portuguese.md"&gt;&lt;img height="38" src="https://user-images.githubusercontent.com/61551451/135263669-f567196a-d4e8-4143-a80a-93d3be32ba90.png" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/nocodb/nocodb/develop/markdown/readme/languages/italian.md"&gt;&lt;img height="38" src="https://user-images.githubusercontent.com/61551451/135263707-ba4e04a4-268a-4626-91b8-048e572fd9f6.png" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/nocodb/nocodb/develop/markdown/readme/languages/japanese.md"&gt;&lt;img height="38" src="https://user-images.githubusercontent.com/61551451/135263770-38e3e79d-11d4-472e-ac27-ae0f17cf65c4.png" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/nocodb/nocodb/develop/markdown/readme/languages/korean.md"&gt;&lt;img height="38" src="https://user-images.githubusercontent.com/61551451/135263822-28fce9de-915a-44dc-962d-7a61d340e91d.png" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/nocodb/nocodb/develop/markdown/readme/languages/russian.md"&gt;&lt;img height="38" src="https://user-images.githubusercontent.com/61551451/135263888-151d4ad1-7084-4943-97c9-56f28cd40b80.png" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;p align="center"&gt;&lt;a href="https://raw.githubusercontent.com/nocodb/nocodb/develop/markdown/readme/languages/README.md"&gt;&lt;b&gt;See other languages »&lt;/b&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;img src="https://static.scarf.sh/a.png?x-pxid=c12a77cc-855e-4602-8a0f-614b2d0da56a" /&gt; 
+&lt;h1&gt;Join Our Community&lt;/h1&gt; 
+&lt;a href="https://discord.gg/5RgZmkW" target="_blank"&gt; &lt;img src="https://discordapp.com/api/guilds/661905455894888490/widget.png?style=banner3" alt="" /&gt; &lt;/a&gt; 
+&lt;p&gt;&lt;a href="https://github.com/nocodb/nocodb/stargazers"&gt;&lt;img src="http://reporoster.com/stars/nocodb/nocodb" alt="Stargazers repo roster for @nocodb/nocodb" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Installation&lt;/h1&gt; 
+&lt;h2&gt;Docker with SQLite&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -d \
+  --name noco \
+  -v "$(pwd)"/nocodb:/usr/app/data/ \
+  -p 8080:8080 \
+  nocodb/nocodb:latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Docker with PG&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -d \
+  --name noco \
+  -v "$(pwd)"/nocodb:/usr/app/data/ \
+  -p 8080:8080 \
+  -e NC_DB="pg://host.docker.internal:5432?u=root&amp;amp;p=password&amp;amp;d=d1" \
+  -e NC_AUTH_JWT_SECRET="569a1821-0a93-45e8-87ab-eb857f20a010" \
+  nocodb/nocodb:latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Auto-upstall&lt;/h2&gt; 
+&lt;p&gt;Auto-upstall is a single command that sets up NocoDB on a server for production usage. Behind the scenes it auto-generates docker-compose for you.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bash &amp;lt;(curl -sSL http://install.nocodb.com/noco.sh) &amp;lt;(mktemp)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Auto-upstall does the following: 🕊&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🐳 Automatically installs all pre-requisites like docker, docker-compose&lt;/li&gt; 
+ &lt;li&gt;🚀 Automatically installs NocoDB with PostgreSQL, Redis, Minio, Traefik gateway using Docker Compose. 🐘 🗄️ 🌐&lt;/li&gt; 
+ &lt;li&gt;🔄 Automatically upgrades NocoDB to the latest version when you run the command again.&lt;/li&gt; 
+ &lt;li&gt;🔒 Automatically setups SSL and also renews it. Needs a domain or subdomain as input while installation.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;install.nocodb.com/noco.sh script can be found &lt;a href="https://raw.githubusercontent.com/nocodb/nocodb/develop/docker-compose/1_Auto_Upstall/noco.sh"&gt;here in our github&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Other Methods&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Binaries are only for quick testing locally.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Install Method&lt;/th&gt; 
+   &lt;th&gt;Command to install&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;🍏 MacOS arm64 &lt;br /&gt;(Binary)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;curl http://get.nocodb.com/macos-arm64 -o nocodb -L &amp;amp;&amp;amp; chmod +x nocodb &amp;amp;&amp;amp; ./nocodb&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;🍏 MacOS x64 &lt;br /&gt;(Binary)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;curl http://get.nocodb.com/macos-x64 -o nocodb -L &amp;amp;&amp;amp; chmod +x nocodb &amp;amp;&amp;amp; ./nocodb&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;🐧 Linux arm64 &lt;br /&gt;(Binary)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;curl http://get.nocodb.com/linux-arm64 -o nocodb -L &amp;amp;&amp;amp; chmod +x nocodb &amp;amp;&amp;amp; ./nocodb&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;🐧 Linux x64 &lt;br /&gt;(Binary)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;curl http://get.nocodb.com/linux-x64 -o nocodb -L &amp;amp;&amp;amp; chmod +x nocodb &amp;amp;&amp;amp; ./nocodb&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;🪟 Windows arm64 &lt;br /&gt;(Binary)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;iwr http://get.nocodb.com/win-arm64.exe -OutFile Noco-win-arm64.exe &amp;amp;&amp;amp; .\Noco-win-arm64.exe&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;🪟 Windows x64 &lt;br /&gt;(Binary)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;iwr http://get.nocodb.com/win-x64.exe -OutFile Noco-win-x64.exe &amp;amp;&amp;amp; .\Noco-win-x64.exe&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;When running locally access nocodb by visiting: &lt;a href="http://localhost:8080/dashboard"&gt;http://localhost:8080/dashboard&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;For more installation methods, please refer to &lt;a href="https://docs.nocodb.com/category/installation"&gt;our docs&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Screenshots&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://github.com/nocodb/nocodb/assets/86527202/a127c05e-2121-4af2-a342-128e0e2d0291" alt="2" /&gt; &lt;img src="https://github.com/nocodb/nocodb/assets/86527202/674da952-8a06-4848-a0e8-a7b02d5f5c88" alt="3" /&gt; &lt;img src="https://github.com/nocodb/nocodb/assets/86527202/cbc5152a-9caf-4f77-a8f7-92a9d06d025b" alt="4" /&gt; &lt;img src="https://github.com/nocodb/nocodb/assets/86527202/dc75dfdc-c486-4f5a-a853-2a8f9e6b569a" alt="5" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/35857179/194844886-a17006e0-979d-493f-83c4-0e72f5a9b716.png" alt="5" /&gt; &lt;img src="https://github.com/nocodb/nocodb/assets/86527202/be64e619-7295-43e2-aa95-cace4462b17f" alt="7" /&gt; &lt;img src="https://github.com/nocodb/nocodb/assets/86527202/4538bf5a-371f-4ec1-a867-8197e5824286" alt="8" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/35857179/194844893-82d5e21b-ae61-41bd-9990-31ad659bf490.png" alt="8" /&gt; &lt;img src="https://user-images.githubusercontent.com/35857179/194844897-cfd79946-e413-4c97-b16d-eb4d7678bb79.png" alt="9" /&gt; &lt;img src="https://user-images.githubusercontent.com/35857179/194844902-c0122570-0dd5-41cf-a26f-6f8d71fefc99.png" alt="10" /&gt; &lt;img src="https://user-images.githubusercontent.com/35857179/194844903-c1e47f40-e782-4f5d-8dce-6449cc70b181.png" alt="11" /&gt; &lt;img src="https://user-images.githubusercontent.com/35857179/194844907-09277d3e-cbbf-465c-9165-6afc4161e279.png" alt="12" /&gt;&lt;/p&gt; 
+&lt;h1&gt;Features&lt;/h1&gt; 
+&lt;h3&gt;Rich Spreadsheet Interface&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;⚡ &amp;nbsp;Basic Operations: Create, Read, Update and Delete Tables, Columns, and Rows&lt;/li&gt; 
+ &lt;li&gt;⚡ &amp;nbsp;Fields Operations: Sort, Filter, Group, Hide / Unhide Columns&lt;/li&gt; 
+ &lt;li&gt;⚡ &amp;nbsp;Multiple Views Types: Grid (By default), Gallery, Form, Kanban and Calendar View&lt;/li&gt; 
+ &lt;li&gt;⚡ &amp;nbsp;View Permissions Types: Collaborative Views, &amp;amp; Locked Views&lt;/li&gt; 
+ &lt;li&gt;⚡ &amp;nbsp;Share Bases / Views: either Public or Private (with Password Protected)&lt;/li&gt; 
+ &lt;li&gt;⚡ &amp;nbsp;Variant Cell Types: ID, Links, Lookup, Rollup, SingleLineText, Attachment, Currency, Formula, User, etc&lt;/li&gt; 
+ &lt;li&gt;⚡ &amp;nbsp;Access Control with Roles: Fine-grained Access Control at different levels&lt;/li&gt; 
+ &lt;li&gt;⚡ &amp;nbsp;and more ...&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;App Store for Workflow Automations&lt;/h3&gt; 
+&lt;p&gt;We provide different integrations in three main categories. See &lt;a href="https://docs.nocodb.com/account-settings/oss-specific-details/#app-store" target="_blank"&gt;App Store&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;⚡ &amp;nbsp;Chat: Slack, Discord, Mattermost, and etc&lt;/li&gt; 
+ &lt;li&gt;⚡ &amp;nbsp;Email: AWS SES, SMTP, MailerSend, and etc&lt;/li&gt; 
+ &lt;li&gt;⚡ &amp;nbsp;Storage: AWS S3, Google Cloud Storage, Minio, and etc&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Programmatic Access&lt;/h3&gt; 
+&lt;p&gt;We provide the following ways to let users programmatically invoke actions. You can use a token (either JWT or Social Auth) to sign your requests for authorization to NocoDB.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;⚡ &amp;nbsp;REST APIs&lt;/li&gt; 
+ &lt;li&gt;⚡ &amp;nbsp;NocoDB SDK&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;Contributing&lt;/h1&gt; 
+&lt;p&gt;Please refer to &lt;a href="https://github.com/nocodb/nocodb/raw/master/.github/CONTRIBUTING.md"&gt;Contribution Guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;Why are we building this?&lt;/h1&gt; 
+&lt;p&gt;Most internet businesses equip themselves with either spreadsheet or a database to solve their business needs. Spreadsheets are used by Billion+ humans collaboratively every single day. However, we are way off working at similar speeds on databases which are way more powerful tools when it comes to computing. Attempts to solve this with SaaS offerings have meant horrible access controls, vendor lock-in, data lock-in, abrupt price changes &amp;amp; most importantly a glass ceiling on what's possible in the future.&lt;/p&gt; 
+&lt;h1&gt;Our Mission&lt;/h1&gt; 
+&lt;p&gt;Our mission is to provide the most powerful no-code interface for databases that is open source to every single internet business in the world. This would not only democratise access to a powerful computing tool but also bring forth a billion+ people who will have radical tinkering-and-building abilities on the internet.&lt;/p&gt; 
+&lt;h1&gt;License&lt;/h1&gt; 
+&lt;p&gt; This project is licensed under &lt;a href="https://raw.githubusercontent.com/nocodb/nocodb/develop/LICENSE"&gt;AGPLv3&lt;/a&gt;. &lt;/p&gt; 
+&lt;h1&gt;Contributors&lt;/h1&gt; 
+&lt;p&gt;Thank you for your contributions! We appreciate all the contributions from the community.&lt;/p&gt; 
+&lt;a href="https://github.com/nocodb/nocodb/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=nocodb/nocodb" /&gt; &lt;/a&gt;</description>
+    </item>
+    
+    <item>
+      <title>microsoft/AI-For-Beginners</title>
+      <link>https://github.com/microsoft/AI-For-Beginners</link>
+      <description>&lt;p&gt;12 Weeks, 24 Lessons, AI for All!&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a href="https://github.com/microsoft/AI-For-Beginners/raw/main/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/microsoft/AI-For-Beginners.svg?sanitize=true" alt="GitHub license" /&gt;&lt;/a&gt; &lt;a href="https://GitHub.com/microsoft/AI-For-Beginners/graphs/contributors/"&gt;&lt;img src="https://img.shields.io/github/contributors/microsoft/AI-For-Beginners.svg?sanitize=true" alt="GitHub contributors" /&gt;&lt;/a&gt; &lt;a href="https://GitHub.com/microsoft/AI-For-Beginners/issues/"&gt;&lt;img src="https://img.shields.io/github/issues/microsoft/AI-For-Beginners.svg?sanitize=true" alt="GitHub issues" /&gt;&lt;/a&gt; &lt;a href="https://GitHub.com/microsoft/AI-For-Beginners/pulls/"&gt;&lt;img src="https://img.shields.io/github/issues-pr/microsoft/AI-For-Beginners.svg?sanitize=true" alt="GitHub pull-requests" /&gt;&lt;/a&gt; &lt;a href="http://makeapullrequest.com"&gt;&lt;img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://GitHub.com/microsoft/AI-For-Beginners/watchers/"&gt;&lt;img src="https://img.shields.io/github/watchers/microsoft/AI-For-Beginners.svg?style=social&amp;amp;label=Watch" alt="GitHub watchers" /&gt;&lt;/a&gt; &lt;a href="https://GitHub.com/microsoft/AI-For-Beginners/network/"&gt;&lt;img src="https://img.shields.io/github/forks/microsoft/AI-For-Beginners.svg?style=social&amp;amp;label=Fork" alt="GitHub forks" /&gt;&lt;/a&gt; &lt;a href="https://GitHub.com/microsoft/AI-For-Beginners/stargazers/"&gt;&lt;img src="https://img.shields.io/github/stars/microsoft/AI-For-Beginners.svg?style=social&amp;amp;label=Star" alt="GitHub stars" /&gt;&lt;/a&gt; &lt;a href="https://mybinder.org/v2/gh/microsoft/ai-for-beginners/HEAD"&gt;&lt;img src="https://mybinder.org/badge_logo.svg?sanitize=true" alt="Binder" /&gt;&lt;/a&gt; &lt;a href="https://gitter.im/Microsoft/ai-for-beginners?utm_source=badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=pr-badge"&gt;&lt;img src="https://badges.gitter.im/Microsoft/ai-for-beginners.svg?sanitize=true" alt="Gitter" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://discord.gg/zxKYvhSnVp?WT.mc_id=academic-000002-leestott"&gt;&lt;img src="https://dcbadge.vercel.app/api/server/ByRwuEEgH4" alt="" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Artificial Intelligence for Beginners - A Curriculum&lt;/h1&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="center"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/sketchnotes/ai-overview.png" alt="Sketchnote by @girlie_mac https://twitter.com/girlie_mac" /&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;AI For Beginners - &lt;em&gt;Sketchnote by &lt;a href="https://twitter.com/girlie_mac"&gt;@girlie_mac&lt;/a&gt;&lt;/em&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;Explore the world of &lt;strong&gt;Artificial Intelligence&lt;/strong&gt; (AI) with our 12-week, 24-lesson curriculum! It includes practical lessons, quizzes, and labs. The curriculum is beginner-friendly and covers tools like TensorFlow and PyTorch, as well as ethics in AI&lt;/p&gt; 
+&lt;h3&gt;🌐 Multi-Language Support&lt;/h3&gt; 
+&lt;h4&gt;Supported via GitHub Action (Automated &amp;amp; Always Up-to-Date)&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/fr/README.md"&gt;French&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/es/README.md"&gt;Spanish&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/de/README.md"&gt;German&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/ru/README.md"&gt;Russian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/ar/README.md"&gt;Arabic&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/fa/README.md"&gt;Persian (Farsi)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/ur/README.md"&gt;Urdu&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/zh/README.md"&gt;Chinese (Simplified)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/mo/README.md"&gt;Chinese (Traditional, Macau)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/hk/README.md"&gt;Chinese (Traditional, Hong Kong)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/tw/README.md"&gt;Chinese (Traditional, Taiwan)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/ja/README.md"&gt;Japanese&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/ko/README.md"&gt;Korean&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/hi/README.md"&gt;Hindi&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/bn/README.md"&gt;Bengali&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/mr/README.md"&gt;Marathi&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/ne/README.md"&gt;Nepali&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/pa/README.md"&gt;Punjabi (Gurmukhi)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/pt/README.md"&gt;Portuguese (Portugal)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/br/README.md"&gt;Portuguese (Brazil)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/it/README.md"&gt;Italian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/pl/README.md"&gt;Polish&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/tr/README.md"&gt;Turkish&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/el/README.md"&gt;Greek&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/th/README.md"&gt;Thai&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/sv/README.md"&gt;Swedish&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/da/README.md"&gt;Danish&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/no/README.md"&gt;Norwegian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/fi/README.md"&gt;Finnish&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/nl/README.md"&gt;Dutch&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/he/README.md"&gt;Hebrew&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/vi/README.md"&gt;Vietnamese&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/id/README.md"&gt;Indonesian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/ms/README.md"&gt;Malay&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/tl/README.md"&gt;Tagalog (Filipino)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/sw/README.md"&gt;Swahili&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/hu/README.md"&gt;Hungarian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/cs/README.md"&gt;Czech&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/sk/README.md"&gt;Slovak&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/ro/README.md"&gt;Romanian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/bg/README.md"&gt;Bulgarian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/sr/README.md"&gt;Serbian (Cyrillic)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/hr/README.md"&gt;Croatian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/sl/README.md"&gt;Slovenian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/uk/README.md"&gt;Ukrainian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/translations/my/README.md"&gt;Burmese (Myanmar)&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;If you wish to have additional translations languages supported are listed &lt;a href="https://github.com/Azure/co-op-translator/raw/main/getting_started/supported-languages.md"&gt;here&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Join the Community&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://discord.gg/kzRShWzttr"&gt;&lt;img src="https://dcbadge.limes.pink/api/server/kzRShWzttr" alt="Azure AI Discord" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;What you will learn&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://soshnikov.com/courses/ai-for-beginners/mindmap.html"&gt;Mindmap of the Course&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;In this curriculum, you will learn:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Different approaches to Artificial Intelligence, including the "good old" symbolic approach with &lt;strong&gt;Knowledge Representation&lt;/strong&gt; and reasoning (&lt;a href="https://en.wikipedia.org/wiki/Symbolic_artificial_intelligence"&gt;GOFAI&lt;/a&gt;).&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Neural Networks&lt;/strong&gt; and &lt;strong&gt;Deep Learning&lt;/strong&gt;, which are at the core of modern AI. We will illustrate the concepts behind these important topics using code in two of the most popular frameworks - &lt;a href="http://Tensorflow.org"&gt;TensorFlow&lt;/a&gt; and &lt;a href="http://pytorch.org"&gt;PyTorch&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Neural Architectures&lt;/strong&gt; for working with images and text. We will cover recent models but may be a bit lacking in the state-of-the-art.&lt;/li&gt; 
+ &lt;li&gt;Less popular AI approaches, such as &lt;strong&gt;Genetic Algorithms&lt;/strong&gt; and &lt;strong&gt;Multi-Agent Systems&lt;/strong&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;What we will not cover in this curriculum:&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;a href="https://learn.microsoft.com/en-us/collections/7w28iy2xrqzdj0?WT.mc_id=academic-77998-bethanycheum"&gt;Find all additional resources for this course in our Microsoft Learn collection&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Business cases of using &lt;strong&gt;AI in Business&lt;/strong&gt;. Consider taking &lt;a href="https://docs.microsoft.com/learn/paths/introduction-ai-for-business-users/?WT.mc_id=academic-77998-bethanycheum"&gt;Introduction to AI for business users&lt;/a&gt; learning path on Microsoft Learn, or &lt;a href="https://www.microsoft.com/ai/ai-business-school/?WT.mc_id=academic-77998-bethanycheum"&gt;AI Business School&lt;/a&gt;, developed in cooperation with &lt;a href="https://www.insead.edu/"&gt;INSEAD&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Classic Machine Learning&lt;/strong&gt;, which is well described in our &lt;a href="http://github.com/Microsoft/ML-for-Beginners"&gt;Machine Learning for Beginners Curriculum&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Practical AI applications built using &lt;strong&gt;&lt;a href="https://azure.microsoft.com/services/cognitive-services/?WT.mc_id=academic-77998-bethanycheum"&gt;Cognitive Services&lt;/a&gt;&lt;/strong&gt;. For this, we recommend that you start with modules Microsoft Learn for &lt;a href="https://docs.microsoft.com/learn/paths/create-computer-vision-solutions-azure-cognitive-services/?WT.mc_id=academic-77998-bethanycheum"&gt;vision&lt;/a&gt;, &lt;a href="https://docs.microsoft.com/learn/paths/explore-natural-language-processing/?WT.mc_id=academic-77998-bethanycheum"&gt;natural language processing&lt;/a&gt;, &lt;strong&gt;&lt;a href="https://learn.microsoft.com/en-us/training/paths/develop-ai-solutions-azure-openai/?WT.mc_id=academic-77998-bethanycheum"&gt;Generative AI with Azure OpenAI Service&lt;/a&gt;&lt;/strong&gt; and others.&lt;/li&gt; 
+ &lt;li&gt;Specific ML &lt;strong&gt;Cloud Frameworks&lt;/strong&gt;, such as &lt;a href="https://azure.microsoft.com/services/machine-learning/?WT.mc_id=academic-77998-bethanycheum"&gt;Azure Machine Learning&lt;/a&gt;, &lt;a href="https://learn.microsoft.com/en-us/training/paths/get-started-fabric/?WT.mc_id=academic-77998-bethanycheum"&gt;Microsoft Fabric&lt;/a&gt;, or &lt;a href="https://docs.microsoft.com/learn/paths/data-engineer-azure-databricks?WT.mc_id=academic-77998-bethanycheum"&gt;Azure Databricks&lt;/a&gt;. Consider using &lt;a href="https://docs.microsoft.com/learn/paths/build-ai-solutions-with-azure-ml-service/?WT.mc_id=academic-77998-bethanycheum"&gt;Build and operate machine learning solutions with Azure Machine Learning&lt;/a&gt; and &lt;a href="https://docs.microsoft.com/learn/paths/build-operate-machine-learning-solutions-azure-databricks/?WT.mc_id=academic-77998-bethanycheum"&gt;Build and Operate Machine Learning Solutions with Azure Databricks&lt;/a&gt; learning paths.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Conversational AI&lt;/strong&gt; and &lt;strong&gt;Chat Bots&lt;/strong&gt;. There is a separate &lt;a href="https://docs.microsoft.com/learn/paths/create-conversational-ai-solutions/?WT.mc_id=academic-77998-bethanycheum"&gt;Create conversational AI solutions&lt;/a&gt; learning path, and you can also refer to &lt;a href="https://soshnikov.com/azure/hello-bot-conversational-ai-on-microsoft-platform/"&gt;this blog post&lt;/a&gt; for more detail.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Deep Mathematics&lt;/strong&gt; behind deep learning. For this, we would recommend &lt;a href="https://www.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618"&gt;Deep Learning&lt;/a&gt; by Ian Goodfellow, Yoshua Bengio and Aaron Courville, which is also available online at &lt;a href="https://www.deeplearningbook.org/"&gt;https://www.deeplearningbook.org/&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;For a gentle introduction to &lt;em&gt;AI in the Cloud&lt;/em&gt; topics you may consider taking the &lt;a href="https://docs.microsoft.com/learn/paths/get-started-with-artificial-intelligence-on-azure/?WT.mc_id=academic-77998-bethanycheum"&gt;Get started with artificial intelligence on Azure&lt;/a&gt; Learning Path.&lt;/p&gt; 
+&lt;h1&gt;Content&lt;/h1&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="center"&gt;&lt;/th&gt; 
+   &lt;th align="center"&gt;Lesson Link&lt;/th&gt; 
+   &lt;th align="center"&gt;PyTorch/Keras/TensorFlow&lt;/th&gt; 
+   &lt;th&gt;Lab&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;0&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/0-course-setup/setup.md"&gt;Course Setup&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/0-course-setup/how-to-run.md"&gt;Setup Your Development Environment&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;I&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/1-Intro/README.md"&gt;&lt;strong&gt;Introduction to AI&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;01&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/1-Intro/README.md"&gt;Introduction and History of AI&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;-&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;II&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;strong&gt;Symbolic AI&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;02&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/2-Symbolic/README.md"&gt;Knowledge Representation and Expert Systems&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/2-Symbolic/Animals.ipynb"&gt;Expert Systems&lt;/a&gt; / &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/2-Symbolic/FamilyOntology.ipynb"&gt;Ontology&lt;/a&gt; /&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/2-Symbolic/MSConceptGraph.ipynb"&gt;Concept Graph&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;III&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/3-NeuralNetworks/README.md"&gt;&lt;strong&gt;Introduction to Neural Networks&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;03&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/3-NeuralNetworks/03-Perceptron/README.md"&gt;Perceptron&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/3-NeuralNetworks/03-Perceptron/Perceptron.ipynb"&gt;Notebook&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/3-NeuralNetworks/03-Perceptron/lab/README.md"&gt;Lab&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;04&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/3-NeuralNetworks/04-OwnFramework/README.md"&gt;Multi-Layered Perceptron and Creating our own Framework&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/3-NeuralNetworks/04-OwnFramework/OwnFramework.ipynb"&gt;Notebook&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/3-NeuralNetworks/04-OwnFramework/lab/README.md"&gt;Lab&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;05&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/3-NeuralNetworks/05-Frameworks/README.md"&gt;Intro to Frameworks (PyTorch/TensorFlow) and Overfitting&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/3-NeuralNetworks/05-Frameworks/IntroPyTorch.ipynb"&gt;PyTorch&lt;/a&gt; / &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/3-NeuralNetworks/05-Frameworks/IntroKeras.ipynb"&gt;Keras&lt;/a&gt; / &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/3-NeuralNetworks/05-Frameworks/IntroKerasTF.ipynb"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/3-NeuralNetworks/05-Frameworks/lab/README.md"&gt;Lab&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;IV&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/README.md"&gt;&lt;strong&gt;Computer Vision&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://docs.microsoft.com/learn/modules/intro-computer-vision-pytorch/?WT.mc_id=academic-77998-cacaste"&gt;PyTorch&lt;/a&gt; / &lt;a href="https://docs.microsoft.com/learn/modules/intro-computer-vision-TensorFlow/?WT.mc_id=academic-77998-cacaste"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://learn.microsoft.com/en-us/collections/7w28iy2xrqzdj0?WT.mc_id=academic-77998-bethanycheum"&gt;Explore Computer Vision on Microsoft Azure&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;06&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/06-IntroCV/README.md"&gt;Intro to Computer Vision. OpenCV&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/06-IntroCV/OpenCV.ipynb"&gt;Notebook&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/06-IntroCV/lab/README.md"&gt;Lab&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;07&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/07-ConvNets/README.md"&gt;Convolutional Neural Networks&lt;/a&gt; &amp;amp; &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/07-ConvNets/CNN_Architectures.md"&gt;CNN Architectures&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/07-ConvNets/ConvNetsPyTorch.ipynb"&gt;PyTorch&lt;/a&gt; /&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/07-ConvNets/ConvNetsTF.ipynb"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/07-ConvNets/lab/README.md"&gt;Lab&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;08&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/08-TransferLearning/README.md"&gt;Pre-trained Networks and Transfer Learning&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/08-TransferLearning/TrainingTricks.md"&gt;Training Tricks&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/08-TransferLearning/TransferLearningPyTorch.ipynb"&gt;PyTorch&lt;/a&gt; / &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/3-NeuralNetworks/05-Frameworks/IntroKerasTF.ipynb"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/08-TransferLearning/lab/README.md"&gt;Lab&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;09&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/09-Autoencoders/README.md"&gt;Autoencoders and VAEs&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/09-Autoencoders/AutoEncodersPyTorch.ipynb"&gt;PyTorch&lt;/a&gt; / &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/09-Autoencoders/AutoencodersTF.ipynb"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;10&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/10-GANs/README.md"&gt;Generative Adversarial Networks &amp;amp; Artistic Style Transfer&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/10-GANs/GANPyTorch.ipynb"&gt;PyTorch&lt;/a&gt; / &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/10-GANs/GANTF.ipynb"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;11&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/11-ObjectDetection/README.md"&gt;Object Detection&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/11-ObjectDetection/ObjectDetection.ipynb"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/11-ObjectDetection/lab/README.md"&gt;Lab&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;12&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/12-Segmentation/README.md"&gt;Semantic Segmentation. U-Net&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/12-Segmentation/SemanticSegmentationPytorch.ipynb"&gt;PyTorch&lt;/a&gt; / &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/4-ComputerVision/12-Segmentation/SemanticSegmentationTF.ipynb"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;V&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/5-NLP/README.md"&gt;&lt;strong&gt;Natural Language Processing&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://docs.microsoft.com/learn/modules/intro-natural-language-processing-pytorch/?WT.mc_id=academic-77998-cacaste"&gt;PyTorch&lt;/a&gt; /&lt;a href="https://docs.microsoft.com/learn/modules/intro-natural-language-processing-TensorFlow/?WT.mc_id=academic-77998-cacaste"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://learn.microsoft.com/en-us/collections/7w28iy2xrqzdj0?WT.mc_id=academic-77998-bethanycheum"&gt;Explore Natural Language Processing on Microsoft Azure&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;13&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/5-NLP/13-TextRep/README.md"&gt;Text Representation. Bow/TF-IDF&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/microsoft/AI-For-Beginners/raw/main/lessons/5-NLP/13-TextRep/TextRepresentationPyTorch.ipynb"&gt;PyTorch&lt;/a&gt; / &lt;a href="https://github.com/microsoft/AI-For-Beginners/raw/main/lessons/5-NLP/13-TextRep/TextRepresentationTF.ipynb"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;14&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/5-NLP/14-Embeddings/README.md"&gt;Semantic word embeddings. Word2Vec and GloVe&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/microsoft/AI-For-Beginners/raw/main/lessons/5-NLP/14-Embeddings/EmbeddingsPyTorch.ipynb"&gt;PyTorch&lt;/a&gt; / &lt;a href="https://github.com/microsoft/AI-For-Beginners/raw/main/lessons/5-NLP/14-Embeddings/EmbeddingsTF.ipynb"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;15&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/5-NLP/15-LanguageModeling/README.md"&gt;Language Modeling. Training your own embeddings&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/microsoft/AI-For-Beginners/raw/main/lessons/5-NLP/15-LanguageModeling/CBoW-PyTorch.ipynb"&gt;PyTorch&lt;/a&gt; / &lt;a href="https://github.com/microsoft/AI-For-Beginners/raw/main/lessons/5-NLP/15-LanguageModeling/CBoW-TF.ipynb"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/5-NLP/15-LanguageModeling/lab/README.md"&gt;Lab&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;16&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/5-NLP/16-RNN/README.md"&gt;Recurrent Neural Networks&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/microsoft/AI-For-Beginners/raw/main/lessons/5-NLP/16-RNN/RNNPyTorch.ipynb"&gt;PyTorch&lt;/a&gt; / &lt;a href="https://github.com/microsoft/AI-For-Beginners/raw/main/lessons/5-NLP/16-RNN/RNNTF.ipynb"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;17&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/5-NLP/17-GenerativeNetworks/README.md"&gt;Generative Recurrent Networks&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/microsoft/AI-For-Beginners/raw/main/lessons/5-NLP/17-GenerativeNetworks/GenerativePyTorch.ipynb"&gt;PyTorch&lt;/a&gt; / &lt;a href="https://github.com/microsoft/AI-For-Beginners/raw/main/lessons/5-NLP/17-GenerativeNetworks/GenerativeTF.ipynb"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/5-NLP/17-GenerativeNetworks/lab/README.md"&gt;Lab&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;18&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/5-NLP/18-Transformers/README.md"&gt;Transformers. BERT.&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/microsoft/AI-For-Beginners/raw/main/lessons/5-NLP/18-Transformers/TransformersPyTorch.ipynb"&gt;PyTorch&lt;/a&gt; /&lt;a href="https://github.com/microsoft/AI-For-Beginners/raw/main/lessons/5-NLP/18-Transformers/TransformersTF.ipynb"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;19&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/5-NLP/19-NER/README.md"&gt;Named Entity Recognition&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://microsoft.github.io/AI-For-Beginners/lessons/5-NLP/19-NER/NER-TF.ipynb"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/5-NLP/19-NER/lab/README.md"&gt;Lab&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;20&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/5-NLP/20-LangModels/README.md"&gt;Large Language Models, Prompt Programming and Few-Shot Tasks&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://microsoft.github.io/AI-For-Beginners/lessons/5-NLP/20-LangModels/GPT-PyTorch.ipynb"&gt;PyTorch&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;VI&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;strong&gt;Other AI Techniques&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;21&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/6-Other/21-GeneticAlgorithms/README.md"&gt;Genetic Algorithms&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/6-Other/21-GeneticAlgorithms/Genetic.ipynb"&gt;Notebook&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;22&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/6-Other/22-DeepRL/README.md"&gt;Deep Reinforcement Learning&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/6-Other/22-DeepRL/CartPole-RL-PyTorch.ipynb"&gt;PyTorch&lt;/a&gt; /&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/6-Other/22-DeepRL/CartPole-RL-TF.ipynb"&gt;TensorFlow&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/6-Other/22-DeepRL/lab/README.md"&gt;Lab&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;23&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/6-Other/23-MultiagentSystems/README.md"&gt;Multi-Agent Systems&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;VII&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;strong&gt;AI Ethics&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;24&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/7-Ethics/README.md"&gt;AI Ethics and Responsible AI&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://docs.microsoft.com/learn/paths/responsible-ai-business-principles/?WT.mc_id=academic-77998-cacaste"&gt;Microsoft Learn: Responsible AI Principles&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;IX&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;strong&gt;Extras&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;25&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/X-Extras/X1-MultiModal/README.md"&gt;Multi-Modal Networks, CLIP and VQGAN&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/X-Extras/X1-MultiModal/Clip.ipynb"&gt;Notebook&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Each lesson contains&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Pre-reading material&lt;/li&gt; 
+ &lt;li&gt;Executable Jupyter Notebooks, which are often specific to the framework (&lt;strong&gt;PyTorch&lt;/strong&gt; or &lt;strong&gt;TensorFlow&lt;/strong&gt;). The executable notebook also contains a lot of theoretical material, so to understand the topic you need to go through at least one version of the notebook (either PyTorch or TensorFlow).&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Labs&lt;/strong&gt; available for some topics, which give you an opportunity to try applying the material you have learned to a specific problem.&lt;/li&gt; 
+ &lt;li&gt;Some sections contain links to &lt;a href="https://learn.microsoft.com/en-us/collections/7w28iy2xrqzdj0?WT.mc_id=academic-77998-bethanycheum"&gt;&lt;strong&gt;MS Learn&lt;/strong&gt;&lt;/a&gt; modules that cover related topics.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;We have created a &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/0-course-setup/setup.md"&gt;setup lesson&lt;/a&gt; to help you with setting up your development environment. - For Educators, we have created a &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/0-course-setup/for-teachers.md"&gt;curricula setup lesson&lt;/a&gt; for you too!&lt;/li&gt; 
+ &lt;li&gt;How to &lt;a href="https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/lessons/0-course-setup/how-to-run.md"&gt;Run the code in a VSCode or a Codepace&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Follow these steps:&lt;/p&gt; 
+&lt;p&gt;Fork the Repository: Click on the "Fork" button at the top-right corner of this page.&lt;/p&gt; 
+&lt;p&gt;Clone the Repository: &lt;code&gt;git clone https://github.com/microsoft/AI-For-Beginners.git&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;Don't forget to star (🌟) this repo to find it easier later.&lt;/p&gt; 
+&lt;h2&gt;Meet other Learners&lt;/h2&gt; 
+&lt;p&gt;Join our &lt;a href="https://aka.ms/genai-discord?WT.mc_id=academic-105485-bethanycheum"&gt;official AI Discord server&lt;/a&gt; to meet and network with other learners taking this course and get support.&lt;/p&gt; 
+&lt;p&gt;If you have product feedback or questions whilst building visit our &lt;a href="https://aka.ms/foundry/forum"&gt;Azure AI Foundry Developer Forum&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Quizzes&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;A note about quizzes&lt;/strong&gt;: All quizzes are contained in the Quiz-app folder in etc\quiz-app, or &lt;a href="https://ff-quizzes.netlify.app/"&gt;Online Here&lt;/a&gt; They are linked from within the lessons the quiz app can be run locally or deployed to Azure; follow the instruction in the &lt;code&gt;quiz-app&lt;/code&gt; folder. They are gradually being localized.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Help Wanted&lt;/h2&gt; 
+&lt;p&gt;Do you have suggestions or found spelling or code errors? Raise an issue or create a pull request.&lt;/p&gt; 
+&lt;h2&gt;Special Thanks&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;✍️ Primary Author:&lt;/strong&gt; &lt;a href="http://soshnikov.com"&gt;Dmitry Soshnikov&lt;/a&gt;, PhD&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🔥 Editor:&lt;/strong&gt; &lt;a href="https://twitter.com/jenlooper"&gt;Jen Looper&lt;/a&gt;, PhD&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🎨 Sketchnote illustrator:&lt;/strong&gt; &lt;a href="https://twitter.com/girlie_mac"&gt;Tomomi Imura&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;✅ Quiz Creator:&lt;/strong&gt; &lt;a href="https://github.com/CinnamonXI"&gt;Lateefah Bello&lt;/a&gt;, &lt;a href="https://studentambassadors.microsoft.com/"&gt;MLSA&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🙏 Core Contributors:&lt;/strong&gt; &lt;a href="https://github.com/Pe4enIks"&gt;Evgenii Pishchik&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Other Curricula&lt;/h2&gt; 
+&lt;p&gt;Our team produces other curricula! Check out:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://aka.ms/genai-beginners"&gt;Generative AI for Beginners&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/microsoft/Generative-AI-for-beginners-dotnet"&gt;Generative AI for Beginners .NET&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/microsoft/generative-ai-with-javascript"&gt;Generative AI with JavaScript&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/microsoft/Generative-AI-for-beginners-java"&gt;Generative AI with Java&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://aka.ms/ai-beginners"&gt;AI for Beginners&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://aka.ms/datascience-beginners"&gt;Data Science for Beginners&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://aka.ms/ml-beginners"&gt;ML for Beginners&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/microsoft/Security-101"&gt;Cybersecurity for Beginners&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://aka.ms/webdev-beginners"&gt;Web Dev for Beginners&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://aka.ms/iot-beginners"&gt;IoT for Beginners&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/microsoft/xr-development-for-beginners"&gt;XR Development for Beginners&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/microsoft/Mastering-GitHub-Copilot-for-Paired-Programming"&gt;Mastering GitHub Copilot for Agentic use&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers"&gt;Mastering GitHub Copilot for C#/.NET Developers&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/microsoft/CopilotAdventures"&gt;Choose Your Own Copilot Adventure&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>bitnami/containers</title>
+      <link>https://github.com/bitnami/containers</link>
+      <description>&lt;p&gt;Bitnami container images&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img width="400px" height="auto" src="https://dyltqmyl993wv.cloudfront.net/bitnami/bitnami-by-vmware.png" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://twitter.com/bitnami"&gt;&lt;img src="https://badgen.net/badge/twitter/@bitnami/1DA1F2?icon&amp;amp;label" /&gt;&lt;/a&gt; &lt;a href="https://github.com/bitnami/containers"&gt;&lt;img src="https://badgen.net/github/stars/bitnami/containers?icon=github" /&gt;&lt;/a&gt; &lt;a href="https://github.com/bitnami/containers"&gt;&lt;img src="https://badgen.net/github/forks/bitnami/containers?icon=github" /&gt;&lt;/a&gt; &lt;a href="https://github.com/bitnami/containers/actions/workflows/ci-pipeline.yml"&gt;&lt;img src="https://github.com/bitnami/containers/actions/workflows/ci-pipeline.yml/badge.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h1&gt;The Bitnami Containers Library&lt;/h1&gt; 
+&lt;p&gt;Popular applications, provided by &lt;a href="https://bitnami.com"&gt;Bitnami&lt;/a&gt;, containerized and ready to launch.&lt;/p&gt; 
+&lt;h2&gt;⚠️ Important Notice: Upcoming changes to the Bitnami Catalog&lt;/h2&gt; 
+&lt;p&gt;Beginning August 28th, 2025, Bitnami will evolve its public catalog to offer a curated set of hardened, security-focused images under the new &lt;a href="https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications"&gt;Bitnami Secure Images initiative&lt;/a&gt;. As part of this transition:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Granting community users access for the first time to security-optimized versions of popular container images.&lt;/li&gt; 
+ &lt;li&gt;Bitnami will begin deprecating support for non-hardened, Debian-based software images in its free tier and will gradually remove non-latest tags from the public catalog. As a result, community users will have access to a reduced number of hardened images. These images are published only under the “latest” tag and are intended for development purposes&lt;/li&gt; 
+ &lt;li&gt;Starting August 28th, over two weeks, all existing container images, including older or versioned tags (e.g., 2.50.0, 10.6), will be migrated from the public catalog (docker.io/bitnami) to the “Bitnami Legacy” repository (docker.io/bitnamilegacy), where they will no longer receive updates.&lt;/li&gt; 
+ &lt;li&gt;For production workloads and long-term support, users are encouraged to adopt Bitnami Secure Images, which include hardened containers, smaller attack surfaces, CVE transparency (via VEX/KEV), SBOMs, and enterprise support.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;These changes aim to improve the security posture of all Bitnami users by promoting best practices for software supply chain integrity and up-to-date deployments. For more details, visit the &lt;a href="https://github.com/bitnami/containers/issues/83267"&gt;Bitnami Secure Images announcement&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Why use Bitnami Secure Images?&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Bitnami Secure Images and Helm charts are built to make open source more secure and enterprise ready.&lt;/li&gt; 
+ &lt;li&gt;Triage security vulnerabilities faster, with transparency into CVE risks using industry standard Vulnerability Exploitability Exchange (VEX), KEV, and EPSS scores.&lt;/li&gt; 
+ &lt;li&gt;Our hardened images use a minimal OS (Photon Linux), which reduces the attack surface while maintaining extensibility through the use of an industry standard package format.&lt;/li&gt; 
+ &lt;li&gt;Stay more secure and compliant with continuously built images updated within hours of upstream patches.&lt;/li&gt; 
+ &lt;li&gt;Bitnami containers, virtual machines and cloud images use the same components and configuration approach - making it easy to switch between formats based on your project needs.&lt;/li&gt; 
+ &lt;li&gt;Hardened images come with attestation signatures (Notation), SBOMs, virus scan reports and other metadata produced in an SLSA-3 compliant software factory.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Only a subset of BSI applications are available for free. Looking to access the entire catalog of applications as well as enterprise support? Try the &lt;a href="https://www.arrow.com/globalecs/uk/products/bitnami-secure-images/"&gt;commercial edition of Bitnami Secure Images today&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Get an image&lt;/h2&gt; 
+&lt;p&gt;The recommended way to get any of the Bitnami Images is to pull the prebuilt image from the &lt;a href="https://hub.docker.com/r/bitnami/"&gt;Docker Hub Registry&lt;/a&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-console"&gt;docker pull bitnami/APP
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;To use a specific version, you can pull a versioned tag.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-console"&gt;docker pull bitnami/APP:[TAG]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If you wish, you can also build the image yourself by cloning the repository, changing to the directory containing the Dockerfile, and executing the &lt;code&gt;docker build&lt;/code&gt; command.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-console"&gt;git clone https://github.com/bitnami/containers.git
+cd bitnami/APP/VERSION/OPERATING-SYSTEM
+docker build -t bitnami/APP .
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] Remember to replace the &lt;code&gt;APP&lt;/code&gt;, &lt;code&gt;VERSION&lt;/code&gt;, and &lt;code&gt;OPERATING-SYSTEM&lt;/code&gt; placeholders in the example command above with the correct values.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Run the application using Docker Compose&lt;/h2&gt; 
+&lt;p&gt;The main folder of each application contains a functional &lt;code&gt;docker-compose.yml&lt;/code&gt; file. Run the application using it as shown below:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-console"&gt;curl -sSL https://raw.githubusercontent.com/bitnami/containers/main/bitnami/APP/docker-compose.yml &amp;gt; docker-compose.yml
+docker-compose up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] Remember to replace the &lt;code&gt;APP&lt;/code&gt; placeholder in the example command above with the correct value.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Vulnerability scan in Bitnami container images&lt;/h2&gt; 
+&lt;p&gt;As part of the release process, the Bitnami container images are analyzed for vulnerabilities. At this moment, we are using two different tools:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aquasecurity/trivy"&gt;Trivy&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/anchore/grype"&gt;Grype&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;This scanning process is triggered via a GH action for every PR affecting the source code of the containers, regardless of its nature or origin.&lt;/p&gt; 
+&lt;h2&gt;Retention policy&lt;/h2&gt; 
+&lt;p&gt;Deprecated assets will be retained in the container registry (&lt;a href="https://hub.docker.com/u/bitnami"&gt;Bitnami DockerHub org&lt;/a&gt;) without changes for, at least, 6 months after the deprecation. After that period, all the images will be moved to a new &lt;em&gt;"archived"&lt;/em&gt; repository. For instance, once deprecated an asset named &lt;em&gt;foo&lt;/em&gt; whose container repository was &lt;code&gt;bitnami/foo&lt;/code&gt;, all the images will be moved to &lt;code&gt;bitnami/foo-archived&lt;/code&gt; where they will remain indefinitely.&lt;/p&gt; 
+&lt;p&gt;Special images, like &lt;code&gt;bitnami/bitnami-shell&lt;/code&gt; or &lt;code&gt;bitnami/sealed-secrets&lt;/code&gt;, which are extensively used in Helm charts, will have an extended coexistence period of 1 year.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We'd love for you to contribute to those container images. You can request new features by creating an &lt;a href="https://github.com/bitnami/containers/issues/new/choose"&gt;issue&lt;/a&gt;, or submit a &lt;a href="https://github.com/bitnami/containers/pulls"&gt;pull request&lt;/a&gt; with your contribution.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Copyright © 2025 Broadcom. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.&lt;/p&gt; 
+&lt;p&gt;Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.&lt;/p&gt; 
+&lt;p&gt;You may obtain a copy of the License at&lt;/p&gt; 
+&lt;p&gt;&lt;a href="http://www.apache.org/licenses/LICENSE-2.0"&gt;http://www.apache.org/licenses/LICENSE-2.0&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>flutter/flutter</title>
+      <link>https://github.com/flutter/flutter</link>
+      <description>&lt;p&gt;Flutter makes it easy and fast to build beautiful apps for mobile and beyond&lt;/p&gt;&lt;hr&gt;&lt;a href="https://flutter.dev/"&gt; &lt;h1 align="center"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://storage.googleapis.com/cms-storage-bucket/6e19fee6b47b36ca613f.png" /&gt; 
+   &lt;img alt="Flutter" src="https://storage.googleapis.com/cms-storage-bucket/c823e53b3a1a7b0d36a9.png" /&gt; 
+  &lt;/picture&gt; &lt;/h1&gt; &lt;/a&gt; 
+&lt;p&gt;&lt;a href="https://flutter-dashboard.appspot.com/#/build?repo=flutter"&gt;&lt;img src="https://flutter-dashboard.appspot.com/api/public/build-status-badge?repo=flutter" alt="Flutter CI Status" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/flutter/flutter/master/docs/contributing/Chat.md"&gt;&lt;img src="https://img.shields.io/discord/608014603317936148?logo=discord" alt="Discord badge" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/intent/follow?screen_name=flutterdev"&gt;&lt;img src="https://img.shields.io/twitter/follow/flutterdev.svg?style=social&amp;amp;label=Follow" alt="Twitter handle" /&gt;&lt;/a&gt; &lt;a href="https://bsky.app/profile/flutter.dev"&gt;&lt;img src="https://img.shields.io/badge/Bluesky-0285FF?logo=bluesky&amp;amp;logoColor=fff&amp;amp;label=Follow%20me%20on&amp;amp;color=0285FF" alt="BlueSky badge" /&gt;&lt;/a&gt; &lt;a href="https://codecov.io/gh/flutter/flutter"&gt;&lt;img src="https://codecov.io/gh/flutter/flutter/branch/master/graph/badge.svg?token=11yDrJU2M2" alt="codecov" /&gt;&lt;/a&gt; &lt;a href="https://bestpractices.coreinfrastructure.org/projects/5631"&gt;&lt;img src="https://bestpractices.coreinfrastructure.org/projects/5631/badge" alt="CII Best Practices" /&gt;&lt;/a&gt; &lt;a href="https://slsa.dev"&gt;&lt;img src="https://slsa.dev/images/gh-badge-level1.svg?sanitize=true" alt="SLSA 1" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Flutter is Google's SDK for crafting beautiful, fast user experiences for mobile, web, and desktop from a single codebase. Flutter works with existing code, is used by developers and organizations around the world, and is free and open source.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://flutter.dev/get-started/"&gt;Install Flutter&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.flutter.dev/"&gt;Flutter documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/flutter/flutter/master/docs/README.md"&gt;Development wiki&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/flutter/flutter/raw/main/CONTRIBUTING.md"&gt;Contributing to Flutter&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;For announcements about new releases, follow the &lt;a href="https://groups.google.com/forum/#!forum/flutter-announce"&gt;flutter-announce@googlegroups.com&lt;/a&gt; mailing list. Our documentation also tracks &lt;a href="https://docs.flutter.dev/release/breaking-changes"&gt;breaking changes&lt;/a&gt; across releases.&lt;/p&gt; 
+&lt;h2&gt;Terms of service&lt;/h2&gt; 
+&lt;p&gt;The Flutter tool may occasionally download resources from Google servers. By downloading or using the Flutter SDK, you agree to the Google Terms of Service: &lt;a href="https://policies.google.com/terms"&gt;https://policies.google.com/terms&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;For example, when installed from GitHub (as opposed to from a prepackaged archive), the Flutter tool will download the Dart SDK from Google servers immediately when first run, as it is used to execute the &lt;code&gt;flutter&lt;/code&gt; tool itself. This will also occur when Flutter is upgraded (e.g. by running the &lt;code&gt;flutter upgrade&lt;/code&gt; command).&lt;/p&gt; 
+&lt;h2&gt;About Flutter&lt;/h2&gt; 
+&lt;p&gt;We think Flutter will help you create beautiful, fast apps, with a productive, extensible and open development model, whether you're targeting iOS or Android, web, Windows, macOS, Linux or embedding it as the UI toolkit for a platform of your choice.&lt;/p&gt; 
+&lt;h3&gt;Beautiful user experiences&lt;/h3&gt; 
+&lt;p&gt;We want to enable designers to deliver their full creative vision without being forced to water it down due to limitations of the underlying framework. Flutter's &lt;a href="https://docs.flutter.dev/resources/inside-flutter"&gt;layered architecture&lt;/a&gt; gives you control over every pixel on the screen and its powerful compositing capabilities let you overlay and animate graphics, video, text, and controls without limitation. Flutter includes a full &lt;a href="https://flutter.dev/widgets/"&gt;set of widgets&lt;/a&gt; that deliver pixel-perfect experiences whether you're building for iOS (&lt;a href="https://docs.flutter.dev/development/ui/widgets/cupertino"&gt;Cupertino&lt;/a&gt;) or other platforms (&lt;a href="https://docs.flutter.dev/development/ui/widgets/material"&gt;Material&lt;/a&gt;), along with support for customizing or creating entirely new visual components.&lt;/p&gt; 
+&lt;p align="center"&gt;&lt;img src="https://github.com/flutter/website/raw/main/src/content/assets/images/docs/homepage/reflectly-hero-600px.png?raw=true" alt="Reflectly hero image" /&gt;&lt;/p&gt; 
+&lt;h3&gt;Fast results&lt;/h3&gt; 
+&lt;p&gt;Flutter is fast. It's powered by hardware-accelerated 2D graphics libraries like &lt;a href="https://skia.org/"&gt;Skia&lt;/a&gt; (which underpins Chrome and Android) and &lt;a href="https://docs.flutter.dev/perf/impeller"&gt;Impeller&lt;/a&gt;. We architected Flutter to support glitch-free, jank-free graphics at the native speed of your device.&lt;/p&gt; 
+&lt;p&gt;Flutter code is powered by the world-class &lt;a href="https://dart.dev/"&gt;Dart platform&lt;/a&gt;, which enables compilation to 32-bit and 64-bit ARM machine code for iOS and Android, JavaScript and WebAssembly for the web, as well as Intel x64 and ARM for desktop devices.&lt;/p&gt; 
+&lt;p align="center"&gt;&lt;img src="https://github.com/flutter/website/raw/main/src/content/assets/images/docs/homepage/dart-diagram-small.png?raw=true" alt="Dart diagram" /&gt;&lt;/p&gt; 
+&lt;h3&gt;Productive development&lt;/h3&gt; 
+&lt;p&gt;Flutter offers &lt;a href="https://docs.flutter.dev/development/tools/hot-reload"&gt;stateful hot reload&lt;/a&gt;, allowing you to make changes to your code and see the results instantly without restarting your app or losing its state.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://docs.flutter.dev/development/tools/hot-reload"&gt;&lt;img src="https://github.com/flutter/website/raw/main/src/content/assets/images/docs/tools/android-studio/hot-reload.gif?raw=true" alt="Hot reload animation" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Extensible and open model&lt;/h3&gt; 
+&lt;p&gt;Flutter works with any development tool (or none at all), and also includes editor plug-ins for both &lt;a href="https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter"&gt;Visual Studio Code&lt;/a&gt; and &lt;a href="https://plugins.jetbrains.com/plugin/9212-flutter"&gt;IntelliJ / Android Studio&lt;/a&gt;. Flutter provides &lt;a href="https://pub.dev/flutter"&gt;tens of thousands of packages&lt;/a&gt; to speed your development, regardless of your target platform. And accessing other native code is easy, with support for both FFI (&lt;a href="https://docs.flutter.dev/development/platform-integration/android/c-interop"&gt;on Android&lt;/a&gt;, &lt;a href="https://docs.flutter.dev/development/platform-integration/ios/c-interop"&gt;on iOS&lt;/a&gt;, &lt;a href="https://docs.flutter.dev/development/platform-integration/macos/c-interop"&gt;on macOS&lt;/a&gt;, and &lt;a href="https://docs.flutter.dev/development/platform-integration/windows/building#integrating-with-windows"&gt;on Windows&lt;/a&gt;) as well as &lt;a href="https://docs.flutter.dev/development/platform-integration/platform-channels"&gt;platform-specific APIs&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Flutter is a fully open-source project, and we welcome contributions. Information on how to get started can be found in our &lt;a href="https://raw.githubusercontent.com/flutter/flutter/master/CONTRIBUTING.md"&gt;contributor guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CopilotKit/CopilotKit</title>
+      <link>https://github.com/CopilotKit/CopilotKit</link>
+      <description>&lt;p&gt;React UI + elegant infrastructure for AI Copilots, AI chatbots, and in-app AI agents. The Agentic last-mile 🪁&lt;/p&gt;&lt;hr&gt;&lt;img width="4096" height="1588" alt="header" src="https://github.com/user-attachments/assets/dd638592-fb74-4e22-8c55-49dfc4d0e462" /&gt; 
+&lt;br /&gt; 
+&lt;div align="start" style="display:flex;justify-content:start;gap:16px;height:20px;margin: 0;"&gt; 
+ &lt;a href="https://www.npmjs.com/package/@copilotkit/react-core" target="_blank"&gt; &lt;img src="https://img.shields.io/npm/v/%40copilotkit%2Freact-core?logo=npm&amp;amp;logoColor=%23FFFFFF&amp;amp;label=Version&amp;amp;color=%236963ff" alt="NPM" /&gt; &lt;/a&gt; 
+ &lt;a href="https://github.com/copilotkit/copilotkit/raw/main/LICENSE" target="_blank"&gt; &lt;img src="https://img.shields.io/github/license/copilotkit/copilotkit?color=%236963ff&amp;amp;label=License" alt="MIT" /&gt; &lt;/a&gt; 
+ &lt;a href="https://discord.gg/6dffbvGU3D" target="_blank"&gt; &lt;img src="https://img.shields.io/discord/1122926057641742418?logo=discord&amp;amp;logoColor=%23FFFFFF&amp;amp;label=Discord&amp;amp;color=%236963ff" alt="Discord" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;br /&gt; 
+&lt;div&gt; 
+ &lt;a href="https://www.producthunt.com/posts/copilotkit" target="_blank"&gt; &lt;img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=428778&amp;amp;theme=light&amp;amp;period=daily" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;⚡️ Quick Install&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;  npx copilotkit@latest init
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;br /&gt; 
+&lt;p&gt;&lt;a href="https://docs.copilotkit.ai/?ref=github_readme"&gt;Read the Docs →&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;a href="https://cloud.copilotkit.ai?ref=github_readme"&gt;Try Copilot Cloud →&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;a href="https://discord.gg/6dffbvGU3D?ref=github_readme"&gt;Join our Discord →&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🚀 Getting Started&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Install: Run a simple CLI command&lt;/li&gt; 
+ &lt;li&gt;Configure: Add CopilotKit provider to your app&lt;/li&gt; 
+ &lt;li&gt;Customize: Use headless UI or the customizable pre-built components&lt;/li&gt; 
+ &lt;li&gt;Deploy: You're done!&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;br /&gt; 
+&lt;a href="https://docs.copilotkit.ai/#get-started-now?ref=github_readme" target="_blank"&gt; Complete getting started guide → &lt;/a&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;img width="4096" height="2341" alt="Best in class support across the ecosystem" src="https://github.com/user-attachments/assets/bf399131-2a92-49f8-8748-38ed72353f9c" /&gt; 
+&lt;h2&gt;✨ Why CopilotKit?&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Minutes to integrate&amp;nbsp;- Get started quickly with our CLI&lt;/li&gt; 
+ &lt;li&gt;Framework agnostic&amp;nbsp;- Works with React, Next.js, AGUI and more&lt;/li&gt; 
+ &lt;li&gt;Production-ready UI&amp;nbsp;- Use customizable components or build with headless UI&lt;/li&gt; 
+ &lt;li&gt;Built-in security&amp;nbsp;- Prompt injection protection&lt;/li&gt; 
+ &lt;li&gt;Open source&amp;nbsp;- Full transparency and community-driven&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🧑‍💻 Real life use cases&lt;/h2&gt; 
+&lt;p&gt;&lt;span&gt;Deploy deeply-integrated AI assistants &amp;amp; agents that work alongside your users inside your applications.&lt;/span&gt;&lt;/p&gt; 
+&lt;img width="4096" height="2725" alt="Headless UI" src="https://github.com/user-attachments/assets/4dbe1e74-8b46-4798-a658-f79ee5a66189" /&gt; 
+&lt;h2&gt;🖥️ Code Samples&lt;/h2&gt; 
+&lt;p&gt;&lt;span&gt;Drop in these building blocks and tailor them to your needs.&lt;/span&gt;&lt;/p&gt; 
+&lt;h3&gt;Build with Headless APIs and Pre-Built Components&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-ts"&gt;// Headless UI with full control
+const { visibleMessages, appendMessage, setMessages, ... } = useCopilotChat();
+
+// Pre-built components with deep customization options (CSS + pass custom sub-components)
+&amp;lt;CopilotPopup 
+  instructions={"You are assisting the user as best as you can. Answer in the best way possible given the data you have."} 
+  labels={{ title: "Popup Assistant", initial: "Need any help?" }} 
+/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class="language-ts"&gt;// Frontend actions + generative UI, with full streaming support
+useCopilotAction({
+  name: "appendToSpreadsheet",
+  description: "Append rows to the current spreadsheet",
+  parameters: [
+    { name: "rows", type: "object[]", attributes: [{ name: "cells", type: "object[]", attributes: [{ name: "value", type: "string" }] }] }
+  ],
+  render: ({ status, args }) =&amp;gt; &amp;lt;Spreadsheet data={canonicalSpreadsheetData(args.rows)} /&amp;gt;,
+  handler: ({ rows }) =&amp;gt; setSpreadsheet({ ...spreadsheet, rows: [...spreadsheet.rows, ...canonicalSpreadsheetData(rows)] }),
+});
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Integrate In-App CoAgents with LangGraph&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-ts"&gt;// Share state between app and agent
+const { agentState } = useCoAgent({ 
+  name: "basic_agent", 
+  initialState: { input: "NYC" } 
+});![banner](https://github.com/user-attachments/assets/b4d76fab-7439-4010-9319-a5b16546b569)
+![class-support-ecosystem](https://github.com/user-attachments/assets/65de96b7-dc12-4c3d-a704-30c2d3b0ea3c)
+![form-filling-copilot](https://github.com/user-attachments/assets/46b0ad80-33dc-4a49-94ba-f270a32fc123)
+![chat-with-your-data](https://github.com/user-attachments/assets/4ffd9b7a-86d9-4b22-9c17-148de581e7c6)
+![state-machine-copilot](https://github.com/user-attachments/assets/65581290-f4bd-4486-840b-27d3d0c77bc8)
+
+
+// agentic generative UI
+useCoAgentStateRender({
+  name: "basic_agent",
+  render: ({ state }) =&amp;gt; &amp;lt;WeatherDisplay {...state.final_response} /&amp;gt;,
+});
+
+// Human in the Loop (Approval)
+useCopilotAction({
+  name: "email_tool",
+  parameters: [
+    {
+      name: "email_draft",
+      type: "string",
+      description: "The email content",
+      required: true,
+    },
+  ],
+  renderAndWaitForResponse: ({ args, status, respond }) =&amp;gt; {
+    return (
+      &amp;lt;EmailConfirmation
+        emailContent={args.email_draft || ""}
+        isExecuting={status === "executing"}
+        onCancel={() =&amp;gt; respond?.({ approved: false })}
+        onSend={() =&amp;gt;
+          respond?.({
+            approved: true,
+            metadata: { sentAt: new Date().toISOString() },
+          })
+        }
+      /&amp;gt;
+    );
+  },
+});
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class="language-ts"&gt;// intermediate agent state streaming (supports both LangGraph.js + LangGraph python)
+const modifiedConfig = copilotKitCustomizeConfig(config, {
+  emitIntermediateState: [{ 
+    stateKey: "outline", 
+    tool: "set_outline", 
+    toolArgument: "outline" 
+  }],
+});
+const response = await ChatOpenAI({ model: "gpt-4o" }).invoke(messages, modifiedConfig);
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;🏆 Featured Examples&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.copilotkit.ai/examples/form-filling-copilot"&gt; &lt;img width="290" height="304" alt="Banner 2 A" src="https://github.com/user-attachments/assets/90c42b54-8931-45ad-9c0b-53f7f67453a1" /&gt; &lt;/a&gt; &lt;a href="https://www.copilotkit.ai/examples/state-machine-copilot"&gt; &lt;img width="290" height="304" alt="Banner 2 A-1" src="https://github.com/user-attachments/assets/609c62eb-76af-4866-a353-5e3545470ec3" /&gt; &lt;/a&gt; &lt;a href="https://www.copilotkit.ai/examples/chat-with-your-data"&gt; &lt;img width="290" height="304" alt="Banner 2 A-2" src="https://github.com/user-attachments/assets/c614ac4e-d2b3-4514-9ef1-fdba04c0a082" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;🖥️ AG-UI: The Agent–User Interaction Protocol&lt;/h2&gt; 
+&lt;p&gt;Connect agent workflow to user-facing apps, with deep partnerships and 1st-party integrations across the agentic stack—including LangGraph, CrewAI, and more.&lt;/p&gt; 
+&lt;a href="https://github.com/ag-ui-protocol/ag-ui" target="_blank"&gt; Learn more in the AG-UI README → &lt;/a&gt; 
+&lt;h2&gt;🤝 Community&lt;/h2&gt; 
+&lt;h3&gt;Have questions or need help?&lt;/h3&gt; 
+&lt;a href="https://discord.gg/6dffbvGU3D?ref=github_readme" target="_blank"&gt; Join our Discord → &lt;/a&gt; 
+&lt;br /&gt; 
+&lt;a href="https://docs.copilotkit.ai/?ref=github_readme" target="_blank"&gt; Read the Docs → &lt;/a&gt; 
+&lt;br /&gt; 
+&lt;a href="https://cloud.copilotkit.ai?ref=github_readme" target="_blank"&gt; Try Copilot Cloud → &lt;/a&gt; 
+&lt;h3&gt;Stay up to date with our latest releases!&lt;/h3&gt; 
+&lt;a href="https://www.linkedin.com/company/copilotkit/" target="_blank"&gt; Follow us on LinkedIn → &lt;/a&gt; 
+&lt;br /&gt; 
+&lt;a href="https://x.com/copilotkit" target="_blank"&gt; Follow us on X → &lt;/a&gt; 
+&lt;h2&gt;🙋🏽‍♂️ Contributing&lt;/h2&gt; 
+&lt;p&gt;Thanks for your interest in contributing to CopilotKit! 💜&lt;/p&gt; 
+&lt;p&gt;We value all contributions, whether it's through code, documentation, creating demo apps, or just spreading the word.&lt;/p&gt; 
+&lt;p&gt;Here are a few useful resources to help you get started:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;For code contributions, &lt;a href="https://raw.githubusercontent.com/CopilotKit/CopilotKit/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;For documentation-related contributions, &lt;a href="https://docs.copilotkit.ai/contributing/docs-contributions?ref=github_readme"&gt;check out the documentation contributions guide&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Want to contribute but not sure how? &lt;a href="https://discord.gg/6dffbvGU3D"&gt;Join our Discord&lt;/a&gt; and we'll help you out!&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📄 License&lt;/h2&gt; 
+&lt;p&gt;This repository's source code is available under the &lt;a href="https://github.com/CopilotKit/CopilotKit/raw/main/LICENSE"&gt;MIT License&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>LazyVim/LazyVim</title>
+      <link>https://github.com/LazyVim/LazyVim</link>
+      <description>&lt;p&gt;Neovim config for the lazy&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;img src="https://user-images.githubusercontent.com/292349/213446185-2db63fd5-8c84-459c-9f04-e286382d6e80.png" /&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;h4 align="center"&gt; &lt;a href="https://lazyvim.github.io/installation"&gt;Install&lt;/a&gt; · &lt;a href="https://lazyvim.github.io/configuration"&gt;Configure&lt;/a&gt; · &lt;a href="https://lazyvim.github.io"&gt;Docs&lt;/a&gt; &lt;/h4&gt; 
+&lt;div align="center"&gt;
+ &lt;p&gt; &lt;a href="https://github.com/LazyVim/LazyVim/releases/latest"&gt; &lt;img alt="Latest release" src="https://img.shields.io/github/v/release/LazyVim/LazyVim?style=for-the-badge&amp;amp;logo=starship&amp;amp;color=C9CBFF&amp;amp;logoColor=D9E0EE&amp;amp;labelColor=302D41&amp;amp;include_prerelease&amp;amp;sort=semver" /&gt; &lt;/a&gt; &lt;a href="https://github.com/LazyVim/LazyVim/pulse"&gt; &lt;img alt="Last commit" src="https://img.shields.io/github/last-commit/LazyVim/LazyVim?style=for-the-badge&amp;amp;logo=starship&amp;amp;color=8bd5ca&amp;amp;logoColor=D9E0EE&amp;amp;labelColor=302D41" /&gt; &lt;/a&gt; &lt;a href="https://github.com/LazyVim/LazyVim/raw/main/LICENSE"&gt; &lt;img alt="License" src="https://img.shields.io/github/license/LazyVim/LazyVim?style=for-the-badge&amp;amp;logo=starship&amp;amp;color=ee999f&amp;amp;logoColor=D9E0EE&amp;amp;labelColor=302D41" /&gt; &lt;/a&gt; &lt;a href="https://github.com/LazyVim/LazyVim/stargazers"&gt; &lt;img alt="Stars" src="https://img.shields.io/github/stars/LazyVim/LazyVim?style=for-the-badge&amp;amp;logo=starship&amp;amp;color=c69ff5&amp;amp;logoColor=D9E0EE&amp;amp;labelColor=302D41" /&gt; &lt;/a&gt; &lt;a href="https://github.com/LazyVim/LazyVim/issues"&gt; &lt;img alt="Issues" src="https://img.shields.io/github/issues/LazyVim/LazyVim?style=for-the-badge&amp;amp;logo=bilibili&amp;amp;color=F5E0DC&amp;amp;logoColor=D9E0EE&amp;amp;labelColor=302D41" /&gt; &lt;/a&gt; &lt;a href="https://github.com/LazyVim/LazyVim"&gt; &lt;img alt="Repo Size" src="https://img.shields.io/github/repo-size/LazyVim/LazyVim?color=%23DDB6F2&amp;amp;label=SIZE&amp;amp;logo=codesandbox&amp;amp;style=for-the-badge&amp;amp;logoColor=D9E0EE&amp;amp;labelColor=302D41" /&gt; &lt;/a&gt; &lt;a href="https://twitter.com/intent/follow?screen_name=folke"&gt; &lt;img alt="follow on Twitter" src="https://img.shields.io/twitter/follow/folke?style=for-the-badge&amp;amp;logo=twitter&amp;amp;color=8aadf3&amp;amp;logoColor=D9E0EE&amp;amp;labelColor=302D41" /&gt; &lt;/a&gt; &lt;/p&gt;
+&lt;/div&gt; 
+&lt;p&gt;LazyVim is a Neovim setup powered by &lt;a href="https://github.com/folke/lazy.nvim"&gt;💤 lazy.nvim&lt;/a&gt; to make it easy to customize and extend your config. Rather than having to choose between starting from scratch or using a pre-made distro, LazyVim offers the best of both worlds - the flexibility to tweak your config as needed, along with the convenience of a pre-configured setup.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/292349/211285846-0b7bb3bf-0462-4029-b64c-4ee1d037fc1c.png" alt="image" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/292349/213447056-92290767-ea16-430c-8727-ce994c93e9cc.png" alt="image" /&gt;&lt;/p&gt; 
+&lt;h2&gt;✨ Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🔥 Transform your Neovim into a full-fledged IDE&lt;/li&gt; 
+ &lt;li&gt;💤 Easily customize and extend your config with &lt;a href="https://github.com/folke/lazy.nvim"&gt;lazy.nvim&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🚀 Blazingly fast&lt;/li&gt; 
+ &lt;li&gt;🧹 Sane default settings for options, autocmds, and keymaps&lt;/li&gt; 
+ &lt;li&gt;📦 Comes with a wealth of plugins pre-configured and ready to use&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;⚡️ Requirements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Neovim &amp;gt;= &lt;strong&gt;0.11.2&lt;/strong&gt; (needs to be built with &lt;strong&gt;LuaJIT&lt;/strong&gt;)&lt;/li&gt; 
+ &lt;li&gt;Git &amp;gt;= &lt;strong&gt;2.19.0&lt;/strong&gt; (for partial clones support)&lt;/li&gt; 
+ &lt;li&gt;a &lt;a href="https://www.nerdfonts.com/"&gt;Nerd Font&lt;/a&gt; &lt;strong&gt;&lt;em&gt;(optional)&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;a &lt;strong&gt;C&lt;/strong&gt; compiler for &lt;code&gt;nvim-treesitter&lt;/code&gt;. See &lt;a href="https://github.com/nvim-treesitter/nvim-treesitter#requirements"&gt;here&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🚀 Getting Started&lt;/h2&gt; 
+&lt;p&gt;You can find a starter template for &lt;strong&gt;LazyVim&lt;/strong&gt; &lt;a href="https://github.com/LazyVim/starter"&gt;here&lt;/a&gt;&lt;/p&gt; 
+&lt;details&gt;
+ &lt;summary&gt;Try it with Docker&lt;/summary&gt; 
+ &lt;pre&gt;&lt;code class="language-sh"&gt;docker run -w /root -it --rm alpine:edge sh -uelic '
+  apk add git lazygit fzf curl neovim ripgrep alpine-sdk --update
+  git clone https://github.com/LazyVim/starter ~/.config/nvim
+  cd ~/.config/nvim
+  nvim
+'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt;
+ &lt;summary&gt;Install the &lt;a href="https://github.com/LazyVim/starter"&gt;LazyVim Starter&lt;/a&gt;&lt;/summary&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt; &lt;p&gt;Make a backup of your current Neovim files:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;mv ~/.config/nvim ~/.config/nvim.bak
+mv ~/.local/share/nvim ~/.local/share/nvim.bak
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;Clone the starter&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;git clone https://github.com/LazyVim/starter ~/.config/nvim
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;Remove the &lt;code&gt;.git&lt;/code&gt; folder, so you can add it to your own repo later&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;rm -rf ~/.config/nvim/.git
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;Start Neovim!&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;nvim
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Refer to the comments in the files on how to customize &lt;strong&gt;LazyVim&lt;/strong&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;There's a great video created by &lt;a href="https://github.com/elijahmanor"&gt;@elijahmanor&lt;/a&gt; with a walkthrough to get started.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=N93cTbtLCIM"&gt;&lt;img src="https://img.youtube.com/vi/N93cTbtLCIM/hqdefault.jpg" alt="Watch the video" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/dusty-phillips"&gt;@dusty-phillips&lt;/a&gt; wrote a comprehensive book called &lt;a href="https://lazyvim-ambitious-devs.phillips.codes"&gt;LazyVim for Ambitious Developers&lt;/a&gt; available for free online.&lt;/p&gt; 
+&lt;h2&gt;📂 File Structure&lt;/h2&gt; 
+&lt;p&gt;The files under config will be automatically loaded at the appropriate time, so you don't need to require those files manually. &lt;strong&gt;LazyVim&lt;/strong&gt; comes with a set of default config files that will be loaded &lt;strong&gt;&lt;em&gt;before&lt;/em&gt;&lt;/strong&gt; your own. See &lt;a href="https://github.com/LazyVim/LazyVim/tree/main/lua/lazyvim/config"&gt;here&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;You can add your custom plugin specs under &lt;code&gt;lua/plugins/&lt;/code&gt;. All files there will be automatically loaded by &lt;a href="https://github.com/folke/lazy.nvim"&gt;lazy.nvim&lt;/a&gt;&lt;/p&gt; 
+&lt;pre&gt;
+~/.config/nvim
+├── lua
+│&amp;nbsp;&amp;nbsp; ├── config
+│&amp;nbsp;&amp;nbsp; │&amp;nbsp;&amp;nbsp; ├── autocmds.lua
+│&amp;nbsp;&amp;nbsp; │&amp;nbsp;&amp;nbsp; ├── keymaps.lua
+│&amp;nbsp;&amp;nbsp; │&amp;nbsp;&amp;nbsp; ├── lazy.lua
+│&amp;nbsp;&amp;nbsp; │&amp;nbsp;&amp;nbsp; └── options.lua
+│&amp;nbsp;&amp;nbsp; └── plugins
+│&amp;nbsp;&amp;nbsp;     ├── spec1.lua
+│&amp;nbsp;&amp;nbsp;     ├── **
+│&amp;nbsp;&amp;nbsp;     └── spec2.lua
+└── init.lua
+&lt;/pre&gt; 
+&lt;h2&gt;⚙️ Configuration&lt;/h2&gt; 
+&lt;p&gt;Refer to the &lt;a href="https://lazyvim.github.io"&gt;docs&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>linera-io/linera-protocol</title>
+      <link>https://github.com/linera-io/linera-protocol</link>
+      <description>&lt;p&gt;Main repository for the Linera protocol&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;&lt;img src="https://github.com/linera-io/linera-protocol/assets/1105398/fe08c941-93af-4114-bb83-bcc0eaec95f9" width="250" height="85" /&gt;&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/linera-io/linera-protocol/main/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/linera-io/linera-protocol" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://github.com/linera-io/linera-protocol/actions/workflows/docker-compose.yml"&gt;&lt;img src="https://github.com/linera-io/linera-protocol/actions/workflows/docker-compose.yml/badge.svg?sanitize=true" alt="Build Status for Docker" /&gt;&lt;/a&gt; &lt;a href="https://github.com/linera-io/linera-protocol/actions/workflows/rust.yml"&gt;&lt;img src="https://github.com/linera-io/linera-protocol/actions/workflows/rust.yml/badge.svg?sanitize=true" alt="Build Status for Rust" /&gt;&lt;/a&gt; &lt;a href="https://github.com/linera-io/linera-protocol/actions/workflows/documentation.yml"&gt;&lt;img src="https://github.com/linera-io/linera-protocol/actions/workflows/documentation.yml/badge.svg?sanitize=true" alt="Build Status for Documentation" /&gt;&lt;/a&gt; &lt;a href="https://x.com/linera_io"&gt;&lt;img src="https://img.shields.io/twitter/follow/linera_io" alt="Twitter" /&gt;&lt;/a&gt; &lt;a href="https://discord.com/invite/linera"&gt;&lt;img src="https://img.shields.io/discord/984941796272521226" alt="Discord" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;!-- [![Build Status for Kubernetes](https://github.com/linera-io/linera-protocol/actions/workflows/kubernetes.yml/badge.svg)](https://github.com/linera-io/linera-protocol/actions/workflows/kubernetes.yml) --&gt; 
+&lt;p&gt;&lt;a href="https://linera.io"&gt;Linera&lt;/a&gt; is a decentralized blockchain infrastructure designed for highly scalable, secure, low-latency Web3 applications.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Visit our &lt;a href="https://linera.dev"&gt;developer page&lt;/a&gt; and read our &lt;a href="https://linera.io/whitepaper"&gt;whitepaper&lt;/a&gt; to learn more about the Linera protocol.&lt;/p&gt; 
+&lt;h2&gt;Repository Structure&lt;/h2&gt; 
+&lt;p&gt;The main crates and directories of this repository can be summarized as follows: (listed from low to high levels in the dependency graph)&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_base/index.html"&gt;&lt;code&gt;linera-base&lt;/code&gt;&lt;/a&gt; Base definitions, including cryptography.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_version/index.html"&gt;&lt;code&gt;linera-version&lt;/code&gt;&lt;/a&gt; A library to manage version info in binaries and services.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_views/index.html"&gt;&lt;code&gt;linera-views&lt;/code&gt;&lt;/a&gt; A library mapping complex data structures onto a key-value store. The corresponding procedural macros are implemented in &lt;code&gt;linera-views-derive&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_execution/index.html"&gt;&lt;code&gt;linera-execution&lt;/code&gt;&lt;/a&gt; Persistent data and the corresponding logic for runtime and execution of Linera applications.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_chain/index.html"&gt;&lt;code&gt;linera-chain&lt;/code&gt;&lt;/a&gt; Persistent data and the corresponding logic for chains of blocks, certificates, and cross-chain messaging.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_storage/index.html"&gt;&lt;code&gt;linera-storage&lt;/code&gt;&lt;/a&gt; Defines the storage abstractions for the protocol on top of &lt;code&gt;linera-chain&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_core/index.html"&gt;&lt;code&gt;linera-core&lt;/code&gt;&lt;/a&gt; The core Linera protocol, including client and server logic, node synchronization, etc.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_rpc/index.html"&gt;&lt;code&gt;linera-rpc&lt;/code&gt;&lt;/a&gt; Defines the data-type for RPC messages (currently all client ↔ proxy ↔ chain ↔ chain interactions), and track the corresponding data schemas.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_client/index.html"&gt;&lt;code&gt;linera-client&lt;/code&gt;&lt;/a&gt; Library for writing Linera clients. Used for the command-line client and the node service in &lt;code&gt;linera-service&lt;/code&gt;, as well as the Web client in &lt;a href="https://github.com/linera-io/linera-web/"&gt;&lt;code&gt;linera-web&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_service/index.html"&gt;&lt;code&gt;linera-service&lt;/code&gt;&lt;/a&gt; Executable for clients (aka CLI wallets), proxy (aka validator frontend) and servers.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://linera-io.github.io/linera-protocol/linera_sdk/index.html"&gt;&lt;code&gt;linera-sdk&lt;/code&gt;&lt;/a&gt; The library to develop Linera applications written in Rust for the Wasm virtual machine. The corresponding procedural macros are implemented in &lt;code&gt;linera-sdk-derive&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://raw.githubusercontent.com/linera-io/linera-protocol/main/examples"&gt;&lt;code&gt;examples&lt;/code&gt;&lt;/a&gt; Examples of Linera applications written in Rust.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Prerequisites&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/linera-io/linera-protocol/main/INSTALL.md"&gt;&lt;code&gt;INSTALL.md&lt;/code&gt;&lt;/a&gt; for software requirements to develop in this repo.&lt;/p&gt; 
+&lt;h2&gt;Quickstart with the Linera CLI tool&lt;/h2&gt; 
+&lt;p&gt;The following commands set up a local test network and run some transfers between the microchains owned by a single wallet.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Make sure to compile the Linera binaries and add them in the $PATH.
+# cargo build -p linera-storage-service -p linera-service --bins
+export PATH="$PWD/target/debug:$PATH"
+
+# Import the optional helper function `linera_spawn`.
+source /dev/stdin &amp;lt;&amp;lt;&amp;lt;"$(linera net helper 2&amp;gt;/dev/null)"
+
+# Run a local test network with the default parameters and a number of microchains
+# owned by the default wallet. This also defines `LINERA_TMP_DIR`.
+linera_spawn \
+linera net up --with-faucet --faucet-port 8080
+
+# Remember the URL of the faucet.
+FAUCET_URL=http://localhost:8080
+
+# If you're using a testnet, start here and run this instead:
+#   LINERA_TMP_DIR=$(mktemp -d)
+#   FAUCET_URL=https://faucet.testnet-XXX.linera.net  # for some value XXX
+
+# Set the path of the future wallet.
+export LINERA_WALLET="$LINERA_TMP_DIR/wallet.json"
+export LINERA_KEYSTORE="$LINERA_TMP_DIR/keystore.json"
+export LINERA_STORAGE="rocksdb:$LINERA_TMP_DIR/client.db"
+
+# Initialize a new user wallet.
+linera wallet init --faucet $FAUCET_URL
+
+# Request chains.
+INFO1=($(linera wallet request-chain --faucet $FAUCET_URL))
+INFO2=($(linera wallet request-chain --faucet $FAUCET_URL))
+CHAIN1="${INFO1[0]}"
+ACCOUNT1="${INFO1[1]}"
+CHAIN2="${INFO2[0]}"
+ACCOUNT2="${INFO2[1]}"
+
+# Show the different chains tracked by the wallet.
+linera wallet show
+
+# Query the chain balance of some of the chains.
+linera query-balance "$CHAIN1"
+linera query-balance "$CHAIN2"
+
+# Transfer 10 units then 5 back.
+linera transfer 10 --from "$CHAIN1" --to "$CHAIN2"
+linera transfer 5 --from "$CHAIN2" --to "$CHAIN1"
+
+# Query balances again.
+linera query-balance "$CHAIN1"
+linera query-balance "$CHAIN2"
+
+# Now let's fund the user balances.
+linera transfer 5 --from "$CHAIN1" --to "$CHAIN1:$ACCOUNT1"
+linera transfer 2 --from "$CHAIN1:$ACCOUNT1" --to "$CHAIN2:$ACCOUNT2"
+
+# Query user balances again.
+linera query-balance "$CHAIN1:$ACCOUNT1"
+linera query-balance "$CHAIN2:$ACCOUNT2"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;More complex examples may be found in our &lt;a href="https://linera.dev"&gt;developer manual&lt;/a&gt; as well as the &lt;a href="https://raw.githubusercontent.com/linera-io/linera-protocol/main/examples"&gt;example applications&lt;/a&gt; in this repository.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions from the community! If you'd like to contribute to the Linera protocol:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork the repository&lt;/li&gt; 
+ &lt;li&gt;Create a feature branch (&lt;code&gt;git checkout -b feature/amazing-feature&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Commit your changes (&lt;code&gt;git commit -m 'Add some amazing feature'&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Push to the branch (&lt;code&gt;git push origin feature/amazing-feature&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Open a Pull Request&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;For detailed guidelines, see our &lt;a href="https://raw.githubusercontent.com/linera-io/linera-protocol/main/CONTRIBUTING.md"&gt;contribution guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>facebookresearch/detectron2</title>
+      <link>https://github.com/facebookresearch/detectron2</link>
+      <description>&lt;p&gt;Detectron2 is a platform for object detection, segmentation and other visual recognition tasks.&lt;/p&gt;&lt;hr&gt;&lt;img src="https://raw.githubusercontent.com/facebookresearch/detectron2/main/.github/Detectron2-Logo-Horz.svg?sanitize=true" width="300" /&gt; 
+&lt;p&gt;Detectron2 is Facebook AI Research's next generation library that provides state-of-the-art detection and segmentation algorithms. It is the successor of &lt;a href="https://github.com/facebookresearch/Detectron/"&gt;Detectron&lt;/a&gt; and &lt;a href="https://github.com/facebookresearch/maskrcnn-benchmark/"&gt;maskrcnn-benchmark&lt;/a&gt;. It supports a number of computer vision research projects and production applications in Facebook.&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;img src="https://user-images.githubusercontent.com/1381301/66535560-d3422200-eace-11e9-9123-5535d469db19.png" /&gt; 
+&lt;/div&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Learn More about Detectron2&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Includes new capabilities such as panoptic segmentation, Densepose, Cascade R-CNN, rotated bounding boxes, PointRend, DeepLab, ViTDet, MViTv2 etc.&lt;/li&gt; 
+ &lt;li&gt;Used as a library to support building &lt;a href="https://raw.githubusercontent.com/facebookresearch/detectron2/main/projects/"&gt;research projects&lt;/a&gt; on top of it.&lt;/li&gt; 
+ &lt;li&gt;Models can be exported to TorchScript format or Caffe2 format for deployment.&lt;/li&gt; 
+ &lt;li&gt;It &lt;a href="https://detectron2.readthedocs.io/notes/benchmarks.html"&gt;trains much faster&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See our &lt;a href="https://ai.meta.com/blog/-detectron2-a-pytorch-based-modular-object-detection-library-/"&gt;blog post&lt;/a&gt; to see more demos. See this &lt;a href="https://ai.meta.com/blog/detectron-everingham-prize/"&gt;interview&lt;/a&gt; to learn more about the stories behind detectron2.&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://detectron2.readthedocs.io/tutorials/install.html"&gt;installation instructions&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://detectron2.readthedocs.io/tutorials/getting_started.html"&gt;Getting Started with Detectron2&lt;/a&gt;, and the &lt;a href="https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5"&gt;Colab Notebook&lt;/a&gt; to learn about basic usage.&lt;/p&gt; 
+&lt;p&gt;Learn more at our &lt;a href="https://detectron2.readthedocs.org"&gt;documentation&lt;/a&gt;. And see &lt;a href="https://raw.githubusercontent.com/facebookresearch/detectron2/main/projects/"&gt;projects/&lt;/a&gt; for some projects that are built on top of detectron2.&lt;/p&gt; 
+&lt;h2&gt;Model Zoo and Baselines&lt;/h2&gt; 
+&lt;p&gt;We provide a large set of baseline results and trained models available for download in the &lt;a href="https://raw.githubusercontent.com/facebookresearch/detectron2/main/MODEL_ZOO.md"&gt;Detectron2 Model Zoo&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Detectron2 is released under the &lt;a href="https://raw.githubusercontent.com/facebookresearch/detectron2/main/LICENSE"&gt;Apache 2.0 license&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Citing Detectron2&lt;/h2&gt; 
+&lt;p&gt;If you use Detectron2 in your research or wish to refer to the baseline results published in the &lt;a href="https://raw.githubusercontent.com/facebookresearch/detectron2/main/MODEL_ZOO.md"&gt;Model Zoo&lt;/a&gt;, please use the following BibTeX entry.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-BibTeX"&gt;@misc{wu2019detectron2,
+  author =       {Yuxin Wu and Alexander Kirillov and Francisco Massa and
+                  Wan-Yen Lo and Ross Girshick},
+  title =        {Detectron2},
+  howpublished = {\url{https://github.com/facebookresearch/detectron2}},
+  year =         {2019}
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>google-research/timesfm</title>
+      <link>https://github.com/google-research/timesfm</link>
+      <description>&lt;p&gt;TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;TimesFM&lt;/h1&gt; 
+&lt;p&gt;TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Paper: &lt;a href="https://arxiv.org/abs/2310.10688"&gt;A decoder-only foundation model for time-series forecasting&lt;/a&gt;, ICML 2024.&lt;/li&gt; 
+ &lt;li&gt;All checkpoints: &lt;a href="https://huggingface.co/collections/google/timesfm-release-66e4be5fdb56e960c1e482a6"&gt;TimesFM Hugging Face Collection&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://research.google/blog/a-decoder-only-foundation-model-for-time-series-forecasting/"&gt;Google Research blog&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://cloud.google.com/bigquery/docs/timesfm-model"&gt;TimesFM in BigQuery&lt;/a&gt;: an official Google product.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;This open version is not an officially supported Google product.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Latest Model Version:&lt;/strong&gt; TimesFM 2.5&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Archived Model Versions:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;1.0 and 2.0: relevant code archived in the sub directory &lt;code&gt;v1&lt;/code&gt;. You can &lt;code&gt;pip install timesfm==1.3.0&lt;/code&gt; to install an older version of this package to load them.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Update - Sept. 15, 2025&lt;/h2&gt; 
+&lt;p&gt;TimesFM 2.5 is out!&lt;/p&gt; 
+&lt;p&gt;Comparing to TimesFM 2.0, this new 2.5 model:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;uses 200M parameters, down from 500M.&lt;/li&gt; 
+ &lt;li&gt;supports up to 16k context length, up from 2048.&lt;/li&gt; 
+ &lt;li&gt;supports continuous quantile forecast up to 1k horizon via an optional 30M quantile head.&lt;/li&gt; 
+ &lt;li&gt;gets rid of the &lt;code&gt;frequency&lt;/code&gt; indicator.&lt;/li&gt; 
+ &lt;li&gt;has a couple of new forecasting flags.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Along with the model upgrade we have also upgraded the inference API. This repo will be under construction over the next few weeks to&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;add support for an upcoming Flax version of the model (faster inference).&lt;/li&gt; 
+ &lt;li&gt;add back covariate support.&lt;/li&gt; 
+ &lt;li&gt;populate more docstrings, docs and notebook.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Install&lt;/h3&gt; 
+&lt;p&gt;TODO(siriuz42): Package timesfm==2.0.0 and upload to PyPI .&lt;/p&gt; 
+&lt;p&gt;Run&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;git clone https://github.com/google-research/timesfm.git
+cd timesfm
+pip install -e .
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Code Example&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;import numpy as np
+import timesfm
+model = timesfm.TimesFM_2p5_200M_torch()
+model.load_checkpoint()
+model.compile(
+    timesfm.ForecastConfig(
+        max_context=1024,
+        max_horizon=256,
+        normalize_inputs=True,
+        use_continuous_quantile_head=True,
+        force_flip_invariance=True,
+        infer_is_positive=True,
+        fix_quantile_crossing=True,
+    )
+)
+point_forecast, quantile_forecast = model.forecast(
+    horizon=12,
+    inputs=[
+        np.linspace(0, 1, 100),
+        np.sin(np.linspace(0, 20, 67)),
+    ],  # Two dummy inputs
+)
+point_forecast.shape  # (2, 12)
+quantile_forecast.shape  # (2, 12, 10): mean, then 10th to 90th quantiles.
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>microsoft/markitdown</title>
+      <link>https://github.com/microsoft/markitdown</link>
+      <description>&lt;p&gt;Python tool for converting files and office documents to Markdown.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;MarkItDown&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://pypi.org/project/markitdown/"&gt;&lt;img src="https://img.shields.io/pypi/v/markitdown.svg?sanitize=true" alt="PyPI" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/pypi/dd/markitdown" alt="PyPI - Downloads" /&gt; &lt;a href="https://github.com/microsoft/autogen"&gt;&lt;img src="https://img.shields.io/badge/Built%20by-AutoGen%20Team-blue" alt="Built by AutoGen Team" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] MarkItDown now offers an MCP (Model Context Protocol) server for integration with LLM applications like Claude Desktop. See &lt;a href="https://github.com/microsoft/markitdown/tree/main/packages/markitdown-mcp"&gt;markitdown-mcp&lt;/a&gt; for more information.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!IMPORTANT] Breaking changes between 0.0.1 to 0.1.0:&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Dependencies are now organized into optional feature-groups (further details below). Use &lt;code&gt;pip install 'markitdown[all]'&lt;/code&gt; to have backward-compatible behavior.&lt;/li&gt; 
+  &lt;li&gt;convert_stream() now requires a binary file-like object (e.g., a file opened in binary mode, or an io.BytesIO object). This is a breaking change from the previous version, where it previously also accepted text file-like objects, like io.StringIO.&lt;/li&gt; 
+  &lt;li&gt;The DocumentConverter class interface has changed to read from file-like streams rather than file paths. &lt;em&gt;No temporary files are created anymore&lt;/em&gt;. If you are the maintainer of a plugin, or custom DocumentConverter, you likely need to update your code. Otherwise, if only using the MarkItDown class or CLI (as in these examples), you should not need to change anything.&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;MarkItDown is a lightweight Python utility for converting various files to Markdown for use with LLMs and related text analysis pipelines. To this end, it is most comparable to &lt;a href="https://github.com/deanmalmgren/textract"&gt;textract&lt;/a&gt;, but with a focus on preserving important document structure and content as Markdown (including: headings, lists, tables, links, etc.) While the output is often reasonably presentable and human-friendly, it is meant to be consumed by text analysis tools -- and may not be the best option for high-fidelity document conversions for human consumption.&lt;/p&gt; 
+&lt;p&gt;MarkItDown currently supports the conversion from:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;PDF&lt;/li&gt; 
+ &lt;li&gt;PowerPoint&lt;/li&gt; 
+ &lt;li&gt;Word&lt;/li&gt; 
+ &lt;li&gt;Excel&lt;/li&gt; 
+ &lt;li&gt;Images (EXIF metadata and OCR)&lt;/li&gt; 
+ &lt;li&gt;Audio (EXIF metadata and speech transcription)&lt;/li&gt; 
+ &lt;li&gt;HTML&lt;/li&gt; 
+ &lt;li&gt;Text-based formats (CSV, JSON, XML)&lt;/li&gt; 
+ &lt;li&gt;ZIP files (iterates over contents)&lt;/li&gt; 
+ &lt;li&gt;Youtube URLs&lt;/li&gt; 
+ &lt;li&gt;EPubs&lt;/li&gt; 
+ &lt;li&gt;... and more!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Why Markdown?&lt;/h2&gt; 
+&lt;p&gt;Markdown is extremely close to plain text, with minimal markup or formatting, but still provides a way to represent important document structure. Mainstream LLMs, such as OpenAI's GPT-4o, natively "&lt;em&gt;speak&lt;/em&gt;" Markdown, and often incorporate Markdown into their responses unprompted. This suggests that they have been trained on vast amounts of Markdown-formatted text, and understand it well. As a side benefit, Markdown conventions are also highly token-efficient.&lt;/p&gt; 
+&lt;h2&gt;Prerequisites&lt;/h2&gt; 
+&lt;p&gt;MarkItDown requires Python 3.10 or higher. It is recommended to use a virtual environment to avoid dependency conflicts.&lt;/p&gt; 
+&lt;p&gt;With the standard Python installation, you can create and activate a virtual environment using the following commands:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;python -m venv .venv
+source .venv/bin/activate
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If using &lt;code&gt;uv&lt;/code&gt;, you can create a virtual environment with:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;uv venv --python=3.12 .venv
+source .venv/bin/activate
+# NOTE: Be sure to use 'uv pip install' rather than just 'pip install' to install packages in this virtual environment
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If you are using Anaconda, you can create a virtual environment with:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;conda create -n markitdown python=3.12
+conda activate markitdown
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;To install MarkItDown, use pip: &lt;code&gt;pip install 'markitdown[all]'&lt;/code&gt;. Alternatively, you can install it from the source:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone git@github.com:microsoft/markitdown.git
+cd markitdown
+pip install -e 'packages/markitdown[all]'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;h3&gt;Command-Line&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;markitdown path-to-file.pdf &amp;gt; document.md
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Or use &lt;code&gt;-o&lt;/code&gt; to specify the output file:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;markitdown path-to-file.pdf -o document.md
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can also pipe content:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cat path-to-file.pdf | markitdown
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Optional Dependencies&lt;/h3&gt; 
+&lt;p&gt;MarkItDown has optional dependencies for activating various file formats. Earlier in this document, we installed all optional dependencies with the &lt;code&gt;[all]&lt;/code&gt; option. However, you can also install them individually for more control. For example:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pip install 'markitdown[pdf, docx, pptx]'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;will install only the dependencies for PDF, DOCX, and PPTX files.&lt;/p&gt; 
+&lt;p&gt;At the moment, the following optional dependencies are available:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;[all]&lt;/code&gt; Installs all optional dependencies&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;[pptx]&lt;/code&gt; Installs dependencies for PowerPoint files&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;[docx]&lt;/code&gt; Installs dependencies for Word files&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;[xlsx]&lt;/code&gt; Installs dependencies for Excel files&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;[xls]&lt;/code&gt; Installs dependencies for older Excel files&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;[pdf]&lt;/code&gt; Installs dependencies for PDF files&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;[outlook]&lt;/code&gt; Installs dependencies for Outlook messages&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;[az-doc-intel]&lt;/code&gt; Installs dependencies for Azure Document Intelligence&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;[audio-transcription]&lt;/code&gt; Installs dependencies for audio transcription of wav and mp3 files&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;[youtube-transcription]&lt;/code&gt; Installs dependencies for fetching YouTube video transcription&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Plugins&lt;/h3&gt; 
+&lt;p&gt;MarkItDown also supports 3rd-party plugins. Plugins are disabled by default. To list installed plugins:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;markitdown --list-plugins
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;To enable plugins use:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;markitdown --use-plugins path-to-file.pdf
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;To find available plugins, search GitHub for the hashtag &lt;code&gt;#markitdown-plugin&lt;/code&gt;. To develop a plugin, see &lt;code&gt;packages/markitdown-sample-plugin&lt;/code&gt;.&lt;/p&gt; 
+&lt;h3&gt;Azure Document Intelligence&lt;/h3&gt; 
+&lt;p&gt;To use Microsoft Document Intelligence for conversion:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;markitdown path-to-file.pdf -o document.md -d -e "&amp;lt;document_intelligence_endpoint&amp;gt;"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;More information about how to set up an Azure Document Intelligence Resource can be found &lt;a href="https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/how-to-guides/create-document-intelligence-resource?view=doc-intel-4.0.0"&gt;here&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Python API&lt;/h3&gt; 
+&lt;p&gt;Basic usage in Python:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;from markitdown import MarkItDown
+
+md = MarkItDown(enable_plugins=False) # Set to True to enable plugins
+result = md.convert("test.xlsx")
+print(result.text_content)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Document Intelligence conversion in Python:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;from markitdown import MarkItDown
+
+md = MarkItDown(docintel_endpoint="&amp;lt;document_intelligence_endpoint&amp;gt;")
+result = md.convert("test.pdf")
+print(result.text_content)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;To use Large Language Models for image descriptions (currently only for pptx and image files), provide &lt;code&gt;llm_client&lt;/code&gt; and &lt;code&gt;llm_model&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;from markitdown import MarkItDown
+from openai import OpenAI
+
+client = OpenAI()
+md = MarkItDown(llm_client=client, llm_model="gpt-4o", llm_prompt="optional custom prompt")
+result = md.convert("example.jpg")
+print(result.text_content)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Docker&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;docker build -t markitdown:latest .
+docker run --rm -i markitdown:latest &amp;lt; ~/your-file.pdf &amp;gt; output.md
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit &lt;a href="https://cla.opensource.microsoft.com"&gt;https://cla.opensource.microsoft.com&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.&lt;/p&gt; 
+&lt;p&gt;This project has adopted the &lt;a href="https://opensource.microsoft.com/codeofconduct/"&gt;Microsoft Open Source Code of Conduct&lt;/a&gt;. For more information see the &lt;a href="https://opensource.microsoft.com/codeofconduct/faq/"&gt;Code of Conduct FAQ&lt;/a&gt; or contact &lt;a href="mailto:opencode@microsoft.com"&gt;opencode@microsoft.com&lt;/a&gt; with any additional questions or comments.&lt;/p&gt; 
+&lt;h3&gt;How to Contribute&lt;/h3&gt; 
+&lt;p&gt;You can help by looking at issues or helping review PRs. Any issue or PR is welcome, but we have also marked some as 'open for contribution' and 'open for reviewing' to help facilitate community contributions. These are of course just suggestions and you are welcome to contribute in any way you like.&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;table&gt; 
+  &lt;thead&gt; 
+   &lt;tr&gt; 
+    &lt;th&gt;&lt;/th&gt; 
+    &lt;th&gt;All&lt;/th&gt; 
+    &lt;th&gt;Especially Needs Help from Community&lt;/th&gt; 
+   &lt;/tr&gt; 
+  &lt;/thead&gt; 
+  &lt;tbody&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;strong&gt;Issues&lt;/strong&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://github.com/microsoft/markitdown/issues"&gt;All Issues&lt;/a&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://github.com/microsoft/markitdown/issues?q=is%3Aissue+is%3Aopen+label%3A%22open+for+contribution%22"&gt;Issues open for contribution&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;strong&gt;PRs&lt;/strong&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://github.com/microsoft/markitdown/pulls"&gt;All PRs&lt;/a&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://github.com/microsoft/markitdown/pulls?q=is%3Apr+is%3Aopen+label%3A%22open+for+reviewing%22"&gt;PRs open for reviewing&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+  &lt;/tbody&gt; 
+ &lt;/table&gt; 
+&lt;/div&gt; 
+&lt;h3&gt;Running Tests and Checks&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;Navigate to the MarkItDown package:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;cd packages/markitdown
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Install &lt;code&gt;hatch&lt;/code&gt; in your environment and run tests:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;pip install hatch  # Other ways of installing hatch: https://hatch.pypa.io/dev/install/
+hatch shell
+hatch test
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;(Alternative) Use the Devcontainer which has all the dependencies installed:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;# Reopen the project in Devcontainer and run:
+hatch test
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Run pre-commit checks before submitting a PR: &lt;code&gt;pre-commit run --all-files&lt;/code&gt;&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Contributing 3rd-party Plugins&lt;/h3&gt; 
+&lt;p&gt;You can also contribute by creating and sharing 3rd party plugins. See &lt;code&gt;packages/markitdown-sample-plugin&lt;/code&gt; for more details.&lt;/p&gt; 
+&lt;h2&gt;Trademarks&lt;/h2&gt; 
+&lt;p&gt;This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to and must follow &lt;a href="https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general"&gt;Microsoft's Trademark &amp;amp; Brand Guidelines&lt;/a&gt;. Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship. Any use of third-party trademarks or logos are subject to those third-party's policies.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
