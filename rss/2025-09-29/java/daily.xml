@@ -1,0 +1,1617 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub Java Daily Trending</title>
+    <description>Daily Trending of Java in GitHub</description>
+    <pubDate>Sun, 28 Sep 2025 01:34:56 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>apache/iceberg</title>
+      <link>https://github.com/apache/iceberg</link>
+      <description>&lt;p&gt;Apache Iceberg&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://iceberg.apache.org/assets/images/Iceberg-logo.svg?sanitize=true" alt="Iceberg" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/apache/iceberg/actions/workflows/java-ci.yml"&gt;&lt;img src="https://github.com/apache/iceberg/actions/workflows/java-ci.yml/badge.svg?sanitize=true" alt="" /&gt;&lt;/a&gt; &lt;a href="https://apache-iceberg.slack.com/"&gt;&lt;img src="https://img.shields.io/badge/chat-on%20Slack-brightgreen.svg?sanitize=true" alt="Slack" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Iceberg is a high-performance format for huge analytic tables. Iceberg brings the reliability and simplicity of SQL tables to big data, while making it possible for engines like Spark, Trino, Flink, Presto, Hive and Impala to safely work with the same tables, at the same time.&lt;/p&gt; 
+&lt;p&gt;Background and documentation is available at &lt;a href="https://iceberg.apache.org"&gt;https://iceberg.apache.org&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Status&lt;/h2&gt; 
+&lt;p&gt;Iceberg is under active development at the Apache Software Foundation.&lt;/p&gt; 
+&lt;p&gt;The &lt;a href="https://iceberg.apache.org/spec/"&gt;Iceberg format specification&lt;/a&gt; is stable and new features are added with each version.&lt;/p&gt; 
+&lt;p&gt;The core Java library is located in this repository and is the reference implementation for other libraries.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://iceberg.apache.org/docs/latest/"&gt;Documentation&lt;/a&gt; is available for all libraries and integrations.&lt;/p&gt; 
+&lt;h2&gt;Collaboration&lt;/h2&gt; 
+&lt;p&gt;Iceberg tracks issues in GitHub and prefers to receive contributions as pull requests.&lt;/p&gt; 
+&lt;p&gt;Community discussions happen primarily on the &lt;a href="mailto:dev@iceberg.apache.org"&gt;dev mailing list&lt;/a&gt; or on specific issues.&lt;/p&gt; 
+&lt;h3&gt;Building&lt;/h3&gt; 
+&lt;p&gt;Iceberg is built using Gradle with Java 11, 17, or 21.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;To invoke a build and run tests: &lt;code&gt;./gradlew build&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;To skip tests: &lt;code&gt;./gradlew build -x test -x integrationTest&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;To fix code style for default versions: &lt;code&gt;./gradlew spotlessApply&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;To fix code style for all versions of Spark/Hive/Flink:&lt;code&gt;./gradlew spotlessApply -DallModules&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Iceberg table support is organized in library modules:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;iceberg-common&lt;/code&gt; contains utility classes used in other modules&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;iceberg-api&lt;/code&gt; contains the public Iceberg API&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;iceberg-core&lt;/code&gt; contains implementations of the Iceberg API and support for Avro data files, &lt;strong&gt;this is what processing engines should depend on&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;iceberg-parquet&lt;/code&gt; is an optional module for working with tables backed by Parquet files&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;iceberg-arrow&lt;/code&gt; is an optional module for reading Parquet into Arrow memory&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;iceberg-orc&lt;/code&gt; is an optional module for working with tables backed by ORC files&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;iceberg-hive-metastore&lt;/code&gt; is an implementation of Iceberg tables backed by the Hive metastore Thrift client&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;iceberg-data&lt;/code&gt; is an optional module for working with tables directly from JVM applications&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Iceberg also has modules for adding Iceberg support to processing engines:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;iceberg-spark&lt;/code&gt; is an implementation of Spark's Datasource V2 API for Iceberg with submodules for each spark versions (use runtime jars for a shaded version)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;iceberg-flink&lt;/code&gt; contains classes for integrating with Apache Flink (use iceberg-flink-runtime for a shaded version)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;iceberg-mr&lt;/code&gt; contains an InputFormat and other classes for integrating with Apache Hive&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;The tests require Docker to execute. On macOS (with Docker Desktop), you might need to create a symbolic name to the docker socket in order to be detected by the tests:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;sudo ln -s $HOME/.docker/run/docker.sock /var/run/docker.sock
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;In some cases the testcontainer may exit with an initialization error because of an illegal state exception in the GenericContainer. One work around for this problem is to set &lt;code&gt;selinux&lt;/code&gt; into permissive mode before running the tests.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;sudo setenforce Permissive
+./gradlew ...
+sudo setenforce Enforcing
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Engine Compatibility&lt;/h3&gt; 
+&lt;p&gt;See the &lt;a href="https://iceberg.apache.org/multi-engine-support/"&gt;Multi-Engine Support&lt;/a&gt; page to know about Iceberg compatibility with different Spark, Flink and Hive versions. For other engines such as Presto or Trino, please visit their websites for Iceberg integration details.&lt;/p&gt; 
+&lt;h3&gt;Implementations&lt;/h3&gt; 
+&lt;p&gt;This repository contains the Java implementation of Iceberg. Other implementations can be found at:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Go&lt;/strong&gt;: &lt;a href="https://github.com/apache/iceberg-go"&gt;iceberg-go&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;PyIceberg&lt;/strong&gt; (Python): &lt;a href="https://github.com/apache/iceberg-python"&gt;iceberg-python&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Rust&lt;/strong&gt;: &lt;a href="https://github.com/apache/iceberg-rust"&gt;iceberg-rust&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;C++&lt;/strong&gt;: &lt;a href="https://github.com/apache/iceberg-cpp"&gt;iceberg-cpp&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>kekingcn/kkFileView</title>
+      <link>https://github.com/kekingcn/kkFileView</link>
+      <description>&lt;p&gt;Universal File Online Preview Project based on Spring-Boot&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;kkFileView&lt;/h1&gt; 
+&lt;h3&gt;Introduction&lt;/h3&gt; 
+&lt;p&gt;Document online preview project solution, built using the popular Spring Boot framework for easy setup and deployment. This versatile open source project provides basic support for a wide range of document formats, including:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Supports Office documents such as &lt;code&gt;doc&lt;/code&gt;, &lt;code&gt;docx&lt;/code&gt;, &lt;code&gt;xls&lt;/code&gt;, &lt;code&gt;xlsx&lt;/code&gt;, &lt;code&gt;xlsm&lt;/code&gt;, &lt;code&gt;ppt&lt;/code&gt;, &lt;code&gt;pptx&lt;/code&gt;, &lt;code&gt;csv&lt;/code&gt;, &lt;code&gt;tsv&lt;/code&gt;, , &lt;code&gt;dotm&lt;/code&gt;, &lt;code&gt;xlt&lt;/code&gt;, &lt;code&gt;xltm&lt;/code&gt;, &lt;code&gt;dot&lt;/code&gt;, &lt;code&gt;xlam&lt;/code&gt;, &lt;code&gt;dotx&lt;/code&gt;, &lt;code&gt;xla,&lt;/code&gt; ,&lt;code&gt;pages&lt;/code&gt; etc.&lt;/li&gt; 
+ &lt;li&gt;Supports domestic WPS Office documents such as &lt;code&gt;wps&lt;/code&gt;, &lt;code&gt;dps&lt;/code&gt;, &lt;code&gt;et&lt;/code&gt; , &lt;code&gt;ett&lt;/code&gt;, &lt;code&gt; wpt&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Supports OpenOffice, LibreOffice office documents such as &lt;code&gt;odt&lt;/code&gt;, &lt;code&gt;ods&lt;/code&gt;, &lt;code&gt;ots&lt;/code&gt;, &lt;code&gt;odp&lt;/code&gt;, &lt;code&gt;otp&lt;/code&gt;, &lt;code&gt;six&lt;/code&gt;, &lt;code&gt;ott&lt;/code&gt;, &lt;code&gt;fodt&lt;/code&gt; and &lt;code&gt;fods&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Supports Visio flowchart files such as &lt;code&gt;vsd&lt;/code&gt;, &lt;code&gt;vsdx&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Supports Windows system image files such as &lt;code&gt;wmf&lt;/code&gt;, &lt;code&gt;emf&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Supports Photoshop software model files such as &lt;code&gt;psd&lt;/code&gt; ,&lt;code&gt;eps&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Supports document formats like &lt;code&gt;pdf&lt;/code&gt;, &lt;code&gt;ofd&lt;/code&gt;, and &lt;code&gt;rtf&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Supports software model files like &lt;code&gt;xmind&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Support for &lt;code&gt;bpmn&lt;/code&gt; workflow files.&lt;/li&gt; 
+ &lt;li&gt;Support for &lt;code&gt;eml&lt;/code&gt; mail files&lt;/li&gt; 
+ &lt;li&gt;Support for &lt;code&gt;epub&lt;/code&gt; book documents&lt;/li&gt; 
+ &lt;li&gt;Supports 3D model files like &lt;code&gt;obj&lt;/code&gt;, &lt;code&gt;3ds&lt;/code&gt;, &lt;code&gt;stl&lt;/code&gt;, &lt;code&gt;ply&lt;/code&gt;, &lt;code&gt;gltf&lt;/code&gt;, &lt;code&gt;glb&lt;/code&gt;, &lt;code&gt;off&lt;/code&gt;, &lt;code&gt;3dm&lt;/code&gt;, &lt;code&gt;fbx&lt;/code&gt;, &lt;code&gt;dae&lt;/code&gt;, &lt;code&gt;wrl&lt;/code&gt;, &lt;code&gt;3mf&lt;/code&gt;, &lt;code&gt;ifc&lt;/code&gt;, &lt;code&gt;brep&lt;/code&gt;, &lt;code&gt;step&lt;/code&gt;, &lt;code&gt;iges&lt;/code&gt;, &lt;code&gt;fcstd&lt;/code&gt;, &lt;code&gt;bim&lt;/code&gt;, etc.&lt;/li&gt; 
+ &lt;li&gt;Supports CAD model files such as &lt;code&gt;dwg&lt;/code&gt;, &lt;code&gt;dxf&lt;/code&gt;, &lt;code&gt;dwf&lt;/code&gt; &lt;code&gt;iges&lt;/code&gt; ,&lt;code&gt; igs&lt;/code&gt;, &lt;code&gt;dwt&lt;/code&gt; , &lt;code&gt;dng&lt;/code&gt; , &lt;code&gt;ifc&lt;/code&gt; , &lt;code&gt;dwfx&lt;/code&gt; , &lt;code&gt;stl&lt;/code&gt; , &lt;code&gt;cf2&lt;/code&gt; , &lt;code&gt;plt&lt;/code&gt;, etc.&lt;/li&gt; 
+ &lt;li&gt;Supports all plain text files such as &lt;code&gt;txt&lt;/code&gt;, &lt;code&gt;xml&lt;/code&gt; (rendering), &lt;code&gt;md&lt;/code&gt; (rendering), &lt;code&gt;java&lt;/code&gt;, &lt;code&gt;php&lt;/code&gt;, &lt;code&gt;py&lt;/code&gt;, &lt;code&gt;js&lt;/code&gt;, &lt;code&gt;css&lt;/code&gt;, etc.&lt;/li&gt; 
+ &lt;li&gt;Supports compressed packages such as &lt;code&gt;zip&lt;/code&gt;, &lt;code&gt;rar&lt;/code&gt;, &lt;code&gt;jar&lt;/code&gt;, &lt;code&gt;tar&lt;/code&gt;, &lt;code&gt;gzip&lt;/code&gt;, &lt;code&gt;7z&lt;/code&gt;, etc.&lt;/li&gt; 
+ &lt;li&gt;Supports image previewing (flip, zoom, mirror) of &lt;code&gt;jpg&lt;/code&gt;, &lt;code&gt;jpeg&lt;/code&gt;, &lt;code&gt;png&lt;/code&gt;, &lt;code&gt;gif&lt;/code&gt;, &lt;code&gt;bmp&lt;/code&gt;, &lt;code&gt;ico&lt;/code&gt;, &lt;code&gt;jfif&lt;/code&gt;, &lt;code&gt;webp&lt;/code&gt;, etc.&lt;/li&gt; 
+ &lt;li&gt;Supports image information model files such as &lt;code&gt;tif&lt;/code&gt; and &lt;code&gt;tiff&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Supports image format files such as &lt;code&gt;tga&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Supports vector image format files such as &lt;code&gt;svg&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Supports &lt;code&gt;mp3&lt;/code&gt;,&lt;code&gt;wav&lt;/code&gt;,&lt;code&gt;mp4&lt;/code&gt;,&lt;code&gt;flv&lt;/code&gt; .&lt;/li&gt; 
+ &lt;li&gt;Supports many audio and video format files such as &lt;code&gt;avi&lt;/code&gt;, &lt;code&gt;mov&lt;/code&gt;, &lt;code&gt;wmv&lt;/code&gt;, &lt;code&gt;mkv&lt;/code&gt;, &lt;code&gt;3gp&lt;/code&gt;, and &lt;code&gt;rm&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Supports for &lt;code&gt;dcm&lt;/code&gt; .&lt;/li&gt; 
+ &lt;li&gt;Supports for &lt;code&gt;drawio&lt;/code&gt; .&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Build with the popular frame spring boot&lt;/li&gt; 
+ &lt;li&gt;Easy to build and deploy&lt;/li&gt; 
+ &lt;li&gt;Basically support online preview of mainstream office documents, such as Doc, docx, Excel, PDF, TXT, zip, rar, pictures, etc&lt;/li&gt; 
+ &lt;li&gt;REST API&lt;/li&gt; 
+ &lt;li&gt;Abstract file preview interface so that it is easy to extend more file extensions and develop this project on your own&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Official website and DOCS&lt;/h3&gt; 
+&lt;p&gt;URL：&lt;a href="https://kkview.cn/"&gt;https://kkview.cn&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Live demo&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Please treat public service kindly, or this would stop at any time.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;URL：&lt;a href="https://file.kkview.cn"&gt;https://file.kkview.cn&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Contact Us&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;We will answer your questions carefully and solve any problems you encounter while using the project. We also kindly ask that you at least Google or Baidu before asking questions in order to save time and avoid ineffective communication. Let's cherish our lives and stay away from ineffective communication.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;img src="./doc/github星球.png/" width="50%" /&gt; 
+&lt;h3&gt;Quick Start&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Technology stack&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Spring boot： &lt;a href="http://www.kailing.pub/PdfReader/web/viewer.html?file=springboot"&gt;spring boot Development Reference Guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Freemarker&lt;/li&gt; 
+ &lt;li&gt;Redisson&lt;/li&gt; 
+ &lt;li&gt;Jodconverter&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Dependencies&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Redis(Optional, Unnecessary by default)&lt;/li&gt; 
+ &lt;li&gt;OpenOffice or LibreOffice(Integrated on Windows, will be installed automatically on Linux, need to be manually installed on Mac OS)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;First step：&lt;code&gt;git pull https://github.com/kekingcn/kkFileView.git&lt;/code&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;second step：Run the main method of &lt;code&gt;/server/src/main/java/cn/keking/ServerMain.java&lt;/code&gt;. After starting,visit &lt;code&gt;http://localhost:8012/&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Changelog&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;December 14, 2022, version 4.1.0 released:&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Updated homepage design by @wsd7747.&lt;/li&gt; 
+ &lt;li&gt;Compatible with multipage tif for pdf and jpg conversion and multiple page online preview for tif image preview by @zhangzhen1979.&lt;/li&gt; 
+ &lt;li&gt;Optimized docker build, using layered build method by @yl-yue.&lt;/li&gt; 
+ &lt;li&gt;Implemented file encryption based on userToken cache by @yl-yue.&lt;/li&gt; 
+ &lt;li&gt;Implemented preview for encrypted Word, PPT, and Excel files by @yl-yue.&lt;/li&gt; 
+ &lt;li&gt;Upgraded Linux &amp;amp; Docker images to LibreOffice 7.3.&lt;/li&gt; 
+ &lt;li&gt;Updated OFD preview component, tif preview component, and added support for PPT watermarking.&lt;/li&gt; 
+ &lt;li&gt;Numerous other upgrades, optimizations, and bug fixes. We thank @yl-yue, @wsd7747, @zhangzhen1979, @tomhusky, @shenghuadun, and @kischn.sun for their code contributions.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;July 6, 2021, version 4.0.0 released:&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;The integration of OpenOffice in the underlying system has been replaced with LibreOffice, resulting in enhanced compatibility and improved preview effects for Office files.&lt;/li&gt; 
+ &lt;li&gt;Fixed the directory traversal vulnerability in compressed files.&lt;/li&gt; 
+ &lt;li&gt;Fixed the issue where previewing PPT files in PDF mode was ineffective.&lt;/li&gt; 
+ &lt;li&gt;Fixed the issue where the front-end display of image preview mode for PPT files was abnormal.&lt;/li&gt; 
+ &lt;li&gt;Added a new feature: the file upload function on the homepage can be enabled or disabled in real-time through configuration.&lt;/li&gt; 
+ &lt;li&gt;Optimized the logging of Office process shutdown.&lt;/li&gt; 
+ &lt;li&gt;Optimized the logic for finding Office components in Windows environment, with built-in LibreOffice taking priority.&lt;/li&gt; 
+ &lt;li&gt;Optimized the synchronous execution of starting Office processes.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;June 17, 2021, version 3.6.0 released:&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;This version includes support for OFD file type versions, and all the important features in this release were contributed by the community. We thank @gaoxingzaq and @zhangxiaoxiao9527 for their code contributions.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Added support for previewing OFD type files. OFD is a domestically produced file format similar to PDF.&lt;/li&gt; 
+ &lt;li&gt;Added support for transcoding and previewing video files through ffmpeg. With transcoding enabled, theoretically, all mainstream video file formats such as RM, RMVB, FLV, etc. are supported for preview.&lt;/li&gt; 
+ &lt;li&gt;Beautified the preview effect of PPT and PPTX file types, much better looking than the previous version.&lt;/li&gt; 
+ &lt;li&gt;Updated the versions of dependencies such as pdfbox, xstream, common-io.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;January 28, 2021:&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;The final update of the Lunar New Year 2020 has been released, mainly including some UI improvements, bug fixes reported by QQ group users and issues, and most importantly, it is a new version for a good year.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Introduced galimatias to solve the problem of abnormal file download caused by non-standard file names.&lt;/li&gt; 
+ &lt;li&gt;Updated UI style of index access demonstration interface.&lt;/li&gt; 
+ &lt;li&gt;Updated UI style of markdown file preview.&lt;/li&gt; 
+ &lt;li&gt;Updated UI style of XML file preview, adjusted the architecture of text file preview to facilitate expansion.&lt;/li&gt; 
+ &lt;li&gt;Updated UI style of simTxT file preview.&lt;/li&gt; 
+ &lt;li&gt;Adjusted the UI of continuous preview of multiple images to flip up and down.&lt;/li&gt; 
+ &lt;li&gt;Simplified all file download IO operations by adopting the apache-common-io package.&lt;/li&gt; 
+ &lt;li&gt;XML file preview supports switching to pure text mode.&lt;/li&gt; 
+ &lt;li&gt;Enhanced prompt information when url base64 decoding fails.&lt;/li&gt; 
+ &lt;li&gt;Fixed import errors and image preview bug.&lt;/li&gt; 
+ &lt;li&gt;Fixed the problem of missing log directory when running the release package.&lt;/li&gt; 
+ &lt;li&gt;Fixed the bug of continuous preview of multiple images in the compressed package.&lt;/li&gt; 
+ &lt;li&gt;Fixed the problem of no universal matching for file type suffixes in uppercase and lowercase.&lt;/li&gt; 
+ &lt;li&gt;Specified the use of the Apache Commons-code implementation for Base64 encoding to fix exceptions occurring in some JDK versions.&lt;/li&gt; 
+ &lt;li&gt;Fixed the bug of HTML file preview of text-like files.&lt;/li&gt; 
+ &lt;li&gt;Fixed the problem of inability to switch between jpg and pdf when previewing dwg files.&lt;/li&gt; 
+ &lt;li&gt;Escaped dangerous characters to prevent reflected xss.&lt;/li&gt; 
+ &lt;li&gt;Fixed the problem of duplicate encoding causing the failure of document-to-image preview and standardized the encoding.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;December 27, 2020:&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;The year-end major update of 2020 includes comprehensive architecture design, complete code refactoring, significant improvement in code quality, and more convenient secondary development. We welcome you to review the source code and contribute to building by raising issues and pull requests.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Adjusted architecture modules, extensively refactored code, and improved code quality by several levels. Please feel free to review.&lt;/li&gt; 
+ &lt;li&gt;Enhanced XML file preview effect and added preview of XML document structure.&lt;/li&gt; 
+ &lt;li&gt;Added support for markdown file preview, including support for md rendering and switching between source text and preview.&lt;/li&gt; 
+ &lt;li&gt;Switched the underlying web server to jetty, resolving the issue: &lt;a href="https://github.com/kekingcn/kkFileView/issues/168"&gt;https://github.com/kekingcn/kkFileView/issues/168&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Introduced cpdetector to solve the problem of file encoding recognition.&lt;/li&gt; 
+ &lt;li&gt;Adopted double encoding with base64 and urlencode for URLs to completely solve preview problems with bizarre file names.&lt;/li&gt; 
+ &lt;li&gt;Added configuration item office.preview.switch.disabled to control the switch of office file preview.&lt;/li&gt; 
+ &lt;li&gt;Optimized text file preview logic, transmitting content through Base64 to avoid requesting file content again during preview.&lt;/li&gt; 
+ &lt;li&gt;Disabled the image zoom effect in office preview mode to achieve consistent experience with image and pdf preview.&lt;/li&gt; 
+ &lt;li&gt;Directly set pdfbox to be compatible with lower version JDK, and there will be no warning prompts even when run in IDEA.&lt;/li&gt; 
+ &lt;li&gt;Removed non-essential toolkits like Guava and Hutool to reduce code volume.&lt;/li&gt; 
+ &lt;li&gt;Asynchronous loading of Office components speeds up application launch to within 5 seconds.&lt;/li&gt; 
+ &lt;li&gt;Reasonable settings of the number of threads in the preview consumption queue.&lt;/li&gt; 
+ &lt;li&gt;Fixed the bug where files in compressed packages failed to preview again.&lt;/li&gt; 
+ &lt;li&gt;Fixed the bug in image preview.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;May 20th 2020 ：&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Support for global watermark and dynamic change of watermark content through parameters&lt;/li&gt; 
+ &lt;li&gt;Support for CAD file Preview&lt;/li&gt; 
+ &lt;li&gt;Add configuration item base.url, support using nginx reverse proxy and set context-path&lt;/li&gt; 
+ &lt;li&gt;All configuration items can be read from environment variables, which is convenient for docker image deployment and large-scale use in cluster&lt;/li&gt; 
+ &lt;li&gt;Support the configuration of TrustHost (only the file source from the trust site can be previewed), and protect the preview service from abuse&lt;/li&gt; 
+ &lt;li&gt;Support configuration of customize cache cleanup time (cron expression)&lt;/li&gt; 
+ &lt;li&gt;All recognizable plain text can be previewed directly without downloading, such as .md .java .py, etc&lt;/li&gt; 
+ &lt;li&gt;Support configuration to limit PDF file download after conversion&lt;/li&gt; 
+ &lt;li&gt;Optimize Maven packaging configuration to solve the problem of line break in .sh script&lt;/li&gt; 
+ &lt;li&gt;Place all CDN dependencies on the front end locally for users without external network connection&lt;/li&gt; 
+ &lt;li&gt;Comment Service on home page switched from Sohu ChangYan to gitalk&lt;/li&gt; 
+ &lt;li&gt;Fixed preview exceptions that may be caused by special characters in the URL&lt;/li&gt; 
+ &lt;li&gt;Fixed the addtask exception of the transformation file queue&lt;/li&gt; 
+ &lt;li&gt;Fixed other known issues&lt;/li&gt; 
+ &lt;li&gt;Official website build: &lt;a href="https://kkview.cn"&gt;https://kkview.cn&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Official docker image repository build: &lt;a href="https://hub.docker.com/r/keking/kkfileview"&gt;https://hub.docker.com/r/keking/kkfileview&lt;/a&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;June 18th 2019 ：&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Support automatic cleaning of cache and preview files&lt;/li&gt; 
+ &lt;li&gt;Support http/https stream url file preview&lt;/li&gt; 
+ &lt;li&gt;Support FTP url file preview&lt;/li&gt; 
+ &lt;li&gt;Add Docker build&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;April 8th 2019&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Cache and queue implementations abstract, providing JDK and REDIS implementations (REDIS becomes optional dependencies)&lt;/li&gt; 
+ &lt;li&gt;Provides zip and tar.gz packages, and provides a one-click startup script&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;January 17th 2018&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Refined the project directory, abstract file preview interface, Easy to extend more file extensions and depoly this project on your own&lt;/li&gt; 
+ &lt;li&gt;Added English documentation (@幻幻Fate，@汝辉) contribution&lt;/li&gt; 
+ &lt;li&gt;Support for more image file extensions&lt;/li&gt; 
+ &lt;li&gt;Fixed the issue that image carousel in zip file will always start from the first&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;January 12th 2018&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Support for multiple images preview&lt;/li&gt; 
+ &lt;li&gt;Support for images rotation preview in rar/zip&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;January 2nd 2018&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fixed gibberish issue when preview a txt document caused by the file encoding problem&lt;/li&gt; 
+ &lt;li&gt;Fixed the issue that some module dependencies can not be found&lt;/li&gt; 
+ &lt;li&gt;Add a spring boot profile, and support for Multi-environment configuration&lt;/li&gt; 
+ &lt;li&gt;Add &lt;code&gt;pdf.js&lt;/code&gt; to preview the documents such as doc,etc.,support for generating doc headlines as pdf menu，support for mobile preview&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Sponsor Us&lt;/h3&gt; 
+&lt;p&gt;If this project has been helpful to you, we welcome your sponsorship. Your support is our greatest motivation.！&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>halo-dev/halo</title>
+      <link>https://github.com/halo-dev/halo</link>
+      <description>&lt;p&gt;强大易用的开源建站工具。&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://www.halo.run" target="_blank" rel="noopener noreferrer"&gt; &lt;img width="100" src="https://www.halo.run/logo" alt="Halo logo" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;&lt;b&gt;Halo&lt;/b&gt; [ˈheɪloʊ]，强大易用的开源建站工具。&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/halo-dev/halo/releases"&gt;&lt;img alt="GitHub release" src="https://img.shields.io/github/release/halo-dev/halo.svg?style=flat-square&amp;amp;include_prereleases" /&gt;&lt;/a&gt; &lt;a href="https://hub.docker.com/r/halohub/halo"&gt;&lt;img alt="Docker pulls" src="https://img.shields.io/docker/pulls/halohub/halo?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://github.com/halo-dev/halo/commits"&gt;&lt;img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/halo-dev/halo.svg?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://github.com/halo-dev/halo/actions"&gt;&lt;img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/halo-dev/halo/halo.yaml?branch=main&amp;amp;style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://codecov.io/gh/halo-dev/halo"&gt;&lt;img alt="Codecov percentage" src="https://img.shields.io/codecov/c/github/halo-dev/halo/main?style=flat-square&amp;amp;token=YsRUg9fall" /&gt;&lt;/a&gt; &lt;a href="https://gitcode.com/feizhiyun/Halo"&gt;&lt;img src="https://gitcode.com/feizhiyun/Halo/star/badge.svg?sanitize=true" alt="GitCode Stars" /&gt;&lt;/a&gt; &lt;a href="https://www.producthunt.com/posts/halo-6b401e75-bb58-4dff-9fe9-2ada3323c874?utm_source=badge-featured&amp;amp;utm_medium=badge&amp;amp;utm_souce=badge-halo-6b401e75-bb58-4dff-9fe9-2ada3323c874" target="_blank"&gt;&lt;img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=407442&amp;amp;theme=light" alt="Halo - Powerful and easy-to-use Open-Source website building tool | Product Hunt" style="height: 20px;" height="20px" /&gt;&lt;/a&gt; &lt;br /&gt; &lt;a href="https://www.halo.run"&gt;官网&lt;/a&gt; &lt;a href="https://docs.halo.run"&gt;文档&lt;/a&gt; &lt;a href="https://bbs.halo.run"&gt;社区&lt;/a&gt; &lt;a href="https://gitee.com/halo-dev"&gt;Gitee&lt;/a&gt; &lt;a href="https://t.me/halo_dev"&gt;Telegram 频道&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.bilibili.com/video/BV15x4y1U7RU/?share_source=copy_web&amp;amp;vd_source=0ab6cf86ca512a363f04f18b86f55b86"&gt;&lt;img src="https://www.halo.run/upload/halo-github-screenshot.png" alt="Watch the video" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;快速开始&lt;/h2&gt; 
+&lt;p&gt;如果你的设备有 Docker 环境，可以使用以下命令快速启动一个 Halo 的体验环境：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -d --name halo -p 8090:8090 -v ~/.halo2:/root/.halo2 halohub/halo:2.21
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;或者点击下方按钮使用 &lt;a href="https://gitpod.io/"&gt;Gitpod&lt;/a&gt; 或 &lt;a href="https://template.us-west-1.run.claw.cloud/deploy?templateName=halo"&gt;ClawCloud Run&lt;/a&gt; 启动一个体验环境：&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://gitpod.io/#https://github.com/halo-sigs/gitpod-demo"&gt;&lt;img src="https://gitpod.io/button/open-in-gitpod.svg?sanitize=true" alt="Open in Gitpod" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://template.us-west-1.run.claw.cloud/deploy?templateName=halo"&gt;&lt;img src="https://raw.githubusercontent.com/ClawCloud/Run-Template/refs/heads/main/Run-on-ClawCloud.svg?sanitize=true" alt="Run on ClawCloud" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;以上方式仅作为体验使用，推荐使用开源 Linux 服务器运维管理面板 &lt;a href="https://github.com/1Panel-dev/1Panel"&gt;1Panel&lt;/a&gt; 进行部署（&lt;a href="https://docs.halo.run/getting-started/install/1panel"&gt;查看文档&lt;/a&gt;），轻松搞定反向代理、SSL 证书及升级备份任务。更多部署方式，请&lt;a href="https://docs.halo.run/category/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97"&gt;查看文档&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;在线体验&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;环境地址：&lt;a href="https://demo.halo.run"&gt;https://demo.halo.run&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;后台地址：&lt;a href="https://demo.halo.run/console"&gt;https://demo.halo.run/console&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;用户名：&lt;code&gt;demo&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;密码：&lt;code&gt;P@ssw0rd123..&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;专业版&lt;/h2&gt; 
+&lt;p&gt;相比于社区版，Halo 专业版为用户提供了大量增强功能及技术支持服务，增强功能包括短信验证码注册登录、全站私有化、LDAP 登录、三方账号登录及自定义 LOGO 等。 &lt;a href="https://www.lxware.cn/halo"&gt;点击查看专业版详细介绍&lt;/a&gt;。&lt;/p&gt; 
+&lt;h2&gt;生态&lt;/h2&gt; 
+&lt;p&gt;可访问 &lt;a href="https://www.halo.run/store/apps"&gt;官方应用市场&lt;/a&gt; 或 &lt;a href="https://github.com/halo-sigs/awesome-halo"&gt;awesome-halo 仓库&lt;/a&gt; 查看适用于 Halo 2.x 的主题和插件。&lt;/p&gt; 
+&lt;h2&gt;许可证&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/halo-dev/halo/raw/master/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/halo-dev/halo.svg?style=flat-square" alt="license" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Halo 使用 GPL-v3.0 协议开源，请遵守开源协议。&lt;/p&gt; 
+&lt;h2&gt;赞助&lt;/h2&gt; 
+&lt;p&gt;如果 Halo 对你有帮助，欢迎&lt;a href="https://afdian.com/a/halo-dev"&gt;赞助我们&lt;/a&gt;，感谢以下赞助者对 Halo 项目的支持：&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a target="_blank" href="https://afdian.com/a/halo-dev"&gt; &lt;img alt="sponsors" src="https://github.com/halo-sigs/sponsor-images/raw/main/sponsorkit/sponsors.svg?raw=true" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;贡献&lt;/h2&gt; 
+&lt;p&gt;参考 &lt;a href="https://github.com/halo-dev/halo/raw/main/CONTRIBUTING.md"&gt;CONTRIBUTING&lt;/a&gt;。&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/halo-dev/halo/graphs/contributors"&gt;&lt;img src="https://opencollective.com/halo/contributors.svg?width=890&amp;amp;button=false" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;状态&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://repobeats.axiom.co/api/embed/ad008b2151c22e7cf734d2688befaa795d593b95.svg?sanitize=true" alt="Repobeats analytics" title="Repobeats analytics image" /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ashishps1/awesome-low-level-design</title>
+      <link>https://github.com/ashishps1/awesome-low-level-design</link>
+      <description>&lt;p&gt;Learn Low Level Design (LLD) and prepare for interviews using free resources.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/images/lld-repo-logo.png" width="350" height="200" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://blog.algomaster.io/"&gt;Join Free Newsletter&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;This repository contains resources to learn Low Level Design (LLD) / Object Oriented Design (OOD) and prepare for interviews.&lt;/p&gt; 
+&lt;p&gt;👉 For a better and more comprehensive experience, checkout the &lt;a href="https://algomaster.io/learn/lld"&gt;LLD page at AlgoMaster.io&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;📌 Fundamental Concepts&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://blog.algomaster.io/p/basic-oop-concepts-explained-with-code"&gt;Basics OOP Concepts&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://algomaster.io/learn/lld/dry"&gt;DRY Principle&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://algomaster.io/learn/lld/yagni"&gt;YAGNI Principle&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://algomaster.io/learn/lld/kiss"&gt;KISS Principle&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898"&gt;SOLID Principles with Pictures&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://blog.algomaster.io/p/solid-principles-explained-with-code"&gt;SOLID Principles with Code&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;⚙️ Design Patterns&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;&lt;strong&gt;Creational Patterns&lt;/strong&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;strong&gt;Structural Patterns&lt;/strong&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;strong&gt;Behavioral Patterns&lt;/strong&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/singleton"&gt;Singleton&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/adapter"&gt;Adapter&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/iterator"&gt;Iterator&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/factory-method"&gt;Factory Method&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/bridge"&gt;Bridge&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/observer"&gt;Observer&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/abstract-factory"&gt;Abstract Factory&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/composite"&gt;Composite&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/strategy"&gt;Strategy&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/builder"&gt;Builder&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/decorator"&gt;Decorator&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/command"&gt;Command&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/prototype"&gt;Prototype&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/facade"&gt;Facade&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/state"&gt;State&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/flyweight"&gt;Flyweight&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/template-method"&gt;Template Method&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/proxy"&gt;Proxy&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/visitor"&gt;Visitor&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/mediator"&gt;Mediator&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/memento"&gt;Memento&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://algomaster.io/learn/lld/chain-of-responsibility"&gt;Chain of Responsibility&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;🗂️ UML&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://blog.algomaster.io/p/uml-class-diagram-explained-with-examples"&gt;Class Diagram&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://blog.algomaster.io/p/119449cd-b003-46da-9e4d-0eb356d216d8"&gt;Use Case Diagram&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://blog.algomaster.io/p/4dd99bdc-5c35-4a80-bc53-1777cb57aa05"&gt;Sequence Diagram&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-activity-diagram/"&gt;Activity Diagram&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-state-machine-diagram/"&gt;State Machine Diagram&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;✅ &lt;a href="https://blog.algomaster.io/p/how-to-answer-a-lld-interview-problem"&gt;How to Answer a LLD Interview Problem&lt;/a&gt;&lt;/h2&gt; 
+&lt;img src="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/images/interview-template.png" width="350" height="250" /&gt; 
+&lt;h2&gt;💻 Low Level Design Interview Problems&lt;/h2&gt; 
+&lt;h3&gt;Easy Problems&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/parking-lot.md"&gt;Design Parking Lot&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/stack-overflow.md"&gt;Design Stack Overflow&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/vending-machine.md"&gt;Design a Vending Machine&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/logging-framework.md"&gt;Design Logging Framework&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/traffic-signal.md"&gt;Design Traffic Signal Control System&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/coffee-vending-machine.md"&gt;Design Coffee Vending Machine&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/task-management-system.md"&gt;Design a Task Management System&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Medium Problems&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/atm.md"&gt;Design ATM&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/linkedin.md"&gt;Design LinkedIn&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/lru-cache.md"&gt;Design LRU Cache&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/tic-tac-toe.md"&gt;Design Tic Tac Toe Game&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/pub-sub-system.md"&gt;Design Pub Sub System&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/elevator-system.md"&gt;Design an Elevator System&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/car-rental-system.md"&gt;Design Car Rental System&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/online-auction-system.md"&gt;Design an Online Auction System&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/hotel-management-system.md"&gt;Design Hotel Management System&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/digital-wallet-service.md"&gt;Design a Digital Wallet Service&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/airline-management-system.md"&gt;Design Airline Management System&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/library-management-system.md"&gt;Design a Library Management System&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/social-networking-service.md"&gt;Design a Social Network like Facebook&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/restaurant-management-system.md"&gt;Design Restaurant Management System&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/concert-ticket-booking-system.md"&gt;Design a Concert Ticket Booking System&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Hard Problems&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/cricinfo.md"&gt;Design CricInfo&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/splitwise.md"&gt;Design Splitwise&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/chess-game.md"&gt;Design Chess Game&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/snake-and-ladder.md"&gt;Design a Snake and Ladder game&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/ride-sharing-service.md"&gt;Design Ride-Sharing Service like Uber&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/course-registration-system.md"&gt;Design Course Registration System&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/movie-ticket-booking-system.md"&gt;Design Movie Ticket Booking System&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/online-shopping-service.md"&gt;Design Online Shopping System like Amazon&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/online-stock-brokerage-system.md"&gt;Design Online Stock Brokerage System&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/music-streaming-service.md"&gt;Design Music Streaming Service like Spotify&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ashishps1/awesome-low-level-design/main/problems/food-delivery-service.md"&gt;Design Online Food Delivery Service like Swiggy&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📇 Courses&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://algomaster.io/learn/lld/what-is-lld"&gt;Master LLD Interviews - AlgoMaster.io&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📚 Books&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.amazon.in/dp/9385889753"&gt;Head First Design Patterns&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.amazon.in/dp/B001GSTOAM"&gt;Clean Code&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.amazon.in/dp/0134757599"&gt;Refactoring: Improving the Design of Existing Code&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📩 Newsletter&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://blog.algomaster.io/"&gt;AlgoMaster Newsletter&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Additional resources&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.coursera.org/learn/object-oriented-design"&gt;Coursera - Object-Oriented Design&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.coursera.org/learn/design-patterns"&gt;Coursera - Design Patterns&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/DovAmir/awesome-design-patterns"&gt;Github - Awesome Design Patterns&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🤝 Contributing&lt;/h2&gt; 
+&lt;p&gt;Contributions are welcome! If you'd like to add a new problem, improve existing content, or fix errors:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork the repository&lt;/li&gt; 
+ &lt;li&gt;Create a feature branch: &lt;code&gt;git checkout -b feature/your-feature-name&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Commit your changes: &lt;code&gt;git commit -m 'Add some feature'&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Push to the branch: &lt;code&gt;git push origin feature/your-feature-name&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Submit a pull request&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;Please make sure to update Readme files and documentation as appropriate.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p align="center"&gt; &lt;i&gt;If you find this resource helpful, please give it a star and share it with others!&lt;/i&gt; &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>langchain4j/langchain4j</title>
+      <link>https://github.com/langchain4j/langchain4j</link>
+      <description>&lt;p&gt;LangChain4j is an open-source Java library that simplifies the integration of LLMs into Java applications through a unified API, providing access to popular LLMs and vector databases. It makes implementing RAG, tool calling (including support for MCP), and agents easy. LangChain4j integrates seamlessly with various enterprise Java frameworks.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;LangChain for Java: Supercharge your Java application with the power of LLMs&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/langchain4j/langchain4j/actions/workflows/main.yaml"&gt;&lt;img src="https://img.shields.io/github/actions/workflow/status/langchain4j/langchain4j/main.yaml?branch=main&amp;amp;style=for-the-badge&amp;amp;label=CI%20BUILD&amp;amp;logo=github" alt="Build Status" /&gt;&lt;/a&gt; &lt;a href="https://github.com/langchain4j/langchain4j/actions/workflows/nightly_jdk17.yaml"&gt;&lt;img src="https://img.shields.io/github/actions/workflow/status/langchain4j/langchain4j/nightly_jdk17.yaml?branch=main&amp;amp;style=for-the-badge&amp;amp;label=NIGHTLY%20BUILD&amp;amp;logo=github" alt="Nightly Build" /&gt;&lt;/a&gt; &lt;a href="https://app.codacy.com/gh/langchain4j/langchain4j/dashboard"&gt;&lt;img src="https://img.shields.io/badge/Codacy-Dashboard-blue?style=for-the-badge&amp;amp;logo=codacy" alt="CODACY" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://discord.gg/JzTFvyjG6R"&gt;&lt;img src="https://dcbadge.vercel.app/api/server/JzTFvyjG6R?style=for-the-badge" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://bsky.app/profile/langchain4j.dev"&gt;&lt;img src="https://img.shields.io/badge/@langchain4j-follow-blue?logo=bluesky&amp;amp;style=for-the-badge" alt="BlueSky" /&gt;&lt;/a&gt; &lt;a href="https://x.com/langchain4j"&gt;&lt;img src="https://img.shields.io/badge/@langchain4j-follow-blue?logo=x&amp;amp;style=for-the-badge" alt="X" /&gt;&lt;/a&gt; &lt;a href="https://search.maven.org/#search%7Cgav%7C1%7Cg:%22dev.langchain4j%22%20AND%20a:%22langchain4j%22"&gt;&lt;img src="https://img.shields.io/maven-central/v/dev.langchain4j/langchain4j?logo=apachemaven&amp;amp;style=for-the-badge" alt="Maven Version" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Introduction&lt;/h2&gt; 
+&lt;p&gt;Welcome!&lt;/p&gt; 
+&lt;p&gt;The goal of LangChain4j is to simplify integrating LLMs into Java applications.&lt;/p&gt; 
+&lt;p&gt;Here's how:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Unified APIs:&lt;/strong&gt; LLM providers (like OpenAI or Google Vertex AI) and embedding (vector) stores (such as Pinecone or Milvus) use proprietary APIs. LangChain4j offers a unified API to avoid the need for learning and implementing specific APIs for each of them. To experiment with different LLMs or embedding stores, you can easily switch between them without the need to rewrite your code. LangChain4j currently supports &lt;a href="https://docs.langchain4j.dev/integrations/language-models/"&gt;15+ popular LLM providers&lt;/a&gt; and &lt;a href="https://docs.langchain4j.dev/integrations/embedding-stores/"&gt;15+ embedding stores&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Comprehensive Toolbox:&lt;/strong&gt; Since early 2023, the community has been building numerous LLM-powered applications, identifying common abstractions, patterns, and techniques. LangChain4j has refined these into practical code. Our toolbox includes tools ranging from low-level prompt templating, chat memory management, and function calling to high-level patterns like Agents and RAG. For each abstraction, we provide an interface along with multiple ready-to-use implementations based on common techniques. Whether you're building a chatbot or developing a RAG with a complete pipeline from data ingestion to retrieval, LangChain4j offers a wide variety of options.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Numerous Examples:&lt;/strong&gt; These &lt;a href="https://github.com/langchain4j/langchain4j-examples"&gt;examples&lt;/a&gt; showcase how to begin creating various LLM-powered applications, providing inspiration and enabling you to start building quickly.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;LangChain4j began development in early 2023 amid the ChatGPT hype. We noticed a lack of Java counterparts to the numerous Python and JavaScript LLM libraries and frameworks, and we had to fix that! Although "LangChain" is in our name, the project is a fusion of ideas and concepts from LangChain, Haystack, LlamaIndex, and the broader community, spiced up with a touch of our own innovation.&lt;/p&gt; 
+&lt;p&gt;We actively monitor community developments, aiming to quickly incorporate new techniques and integrations, ensuring you stay up-to-date. The library is under active development. While some features are still being worked on, the core functionality is in place, allowing you to start building LLM-powered apps now!&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Documentation can be found &lt;a href="https://docs.langchain4j.dev"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;The documentation chatbot (experimental) can be found &lt;a href="https://chat.langchain4j.dev/"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;Getting started guide can be found &lt;a href="https://docs.langchain4j.dev/get-started"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Code Examples&lt;/h2&gt; 
+&lt;p&gt;Please see examples of how LangChain4j can be used in &lt;a href="https://github.com/langchain4j/langchain4j-examples"&gt;langchain4j-examples&lt;/a&gt; repo:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/langchain4j/langchain4j-examples/tree/main/other-examples/src/main/java"&gt;Examples in plain Java&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/quarkiverse/quarkus-langchain4j/tree/main/samples"&gt;Examples with Quarkus&lt;/a&gt; (uses &lt;a href="https://github.com/quarkiverse/quarkus-langchain4j"&gt;quarkus-langchain4j&lt;/a&gt; dependency)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/langchain4j/langchain4j-examples/tree/main/spring-boot-example/src/main/java/dev/langchain4j/example"&gt;Example with Spring Boot&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/integrations/langchain4j"&gt;Examples with Helidon&lt;/a&gt; (uses &lt;a href="https://mvnrepository.com/artifact/io.helidon.integrations.langchain4j"&gt;io.helidon.integrations.langchain4j&lt;/a&gt; dependency)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/micronaut-projects/micronaut-langchain4j/tree/0.3.x/doc-examples/example-openai-java"&gt;Examples with Micronaut&lt;/a&gt; (uses &lt;a href="https://micronaut-projects.github.io/micronaut-langchain4j/latest/guide/"&gt;micronaut-langchain4j&lt;/a&gt; dependency)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Useful Materials&lt;/h2&gt; 
+&lt;p&gt;Useful materials can be found &lt;a href="https://docs.langchain4j.dev/useful-materials"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Get Help&lt;/h2&gt; 
+&lt;p&gt;Please use &lt;a href="https://discord.gg/JzTFvyjG6R"&gt;Discord&lt;/a&gt; or &lt;a href="https://github.com/langchain4j/langchain4j/discussions"&gt;GitHub discussions&lt;/a&gt; to get help.&lt;/p&gt; 
+&lt;h2&gt;Request Features&lt;/h2&gt; 
+&lt;p&gt;Please let us know what features you need by &lt;a href="https://github.com/langchain4j/langchain4j/issues/new/choose"&gt;opening an issue&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Contribute&lt;/h2&gt; 
+&lt;p&gt;Contribution guidelines can be found &lt;a href="https://github.com/langchain4j/langchain4j/raw/main/CONTRIBUTING.md"&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>apache/flink</title>
+      <link>https://github.com/apache/flink</link>
+      <description>&lt;p&gt;Apache Flink&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Apache Flink&lt;/h1&gt; 
+&lt;p&gt;Apache Flink is an open source stream processing framework with powerful stream- and batch-processing capabilities.&lt;/p&gt; 
+&lt;p&gt;Learn more about Flink at &lt;a href="https://flink.apache.org/"&gt;https://flink.apache.org/&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;A streaming-first runtime that supports both batch processing and data streaming programs&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Elegant and fluent APIs in Java&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;A runtime that supports very high throughput and low event latency at the same time&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Support for &lt;em&gt;event time&lt;/em&gt; and &lt;em&gt;out-of-order&lt;/em&gt; processing in the DataStream API, based on the &lt;em&gt;Dataflow Model&lt;/em&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Flexible windowing (time, count, sessions, custom triggers) across different time semantics (event time, processing time)&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Fault-tolerance with &lt;em&gt;exactly-once&lt;/em&gt; processing guarantees&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Natural back-pressure in streaming programs&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Libraries for Graph processing (batch), Machine Learning (batch), and Complex Event Processing (streaming)&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Custom memory management for efficient and robust switching between in-memory and out-of-core data processing algorithms&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Compatibility layers for Apache Hadoop MapReduce&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Integration with YARN, HDFS, HBase, and other components of the Apache Hadoop ecosystem&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Streaming Example&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-java"&gt;// pojo class WordWithCount
+public class WordWithCount {
+    public String word;
+    public int count;
+
+    public WordWithCount() {}
+    
+    public WordWithCount(String word, int count) {
+        this.word = word;
+        this.count = count;
+    }
+}
+
+// main method
+StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+DataStreamSource&amp;lt;String&amp;gt; text = env.socketTextStream(host, port);
+DataStream&amp;lt;WordWithCount&amp;gt; windowCounts = text
+    .flatMap(
+        (FlatMapFunction&amp;lt;String, String&amp;gt;) (line, collector) 
+            -&amp;gt; Arrays.stream(line.split("\\s")).forEach(collector::collect)
+    ).returns(String.class)
+    .map(word -&amp;gt; new WordWithCount(word, 1)).returns(TypeInformation.of(WordWithCount.class))
+    .keyBy(wordWithCnt -&amp;gt; wordWithCnt.word)
+    .window(TumblingProcessingTimeWindows.of(Duration.ofSeconds(5)))
+    .sum("count").returns(TypeInformation.of(WordWithCount.class));
+
+windowCounts.print();
+env.execute();
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Batch Example&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-java"&gt;// pojo class WordWithCount
+public class WordWithCount {
+    public String word;
+    public int count;
+
+    public WordWithCount() {}
+
+    public WordWithCount(String word, int count) {
+        this.word = word;
+        this.count = count;
+    }
+}
+
+// main method
+StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+env.setRuntimeMode(RuntimeExecutionMode.BATCH);
+FileSource&amp;lt;String&amp;gt; source = FileSource.forRecordStreamFormat(new TextLineInputFormat(), new Path("MyInput.txt")).build();
+DataStreamSource&amp;lt;String&amp;gt; text = env.fromSource(source, WatermarkStrategy.noWatermarks(), "MySource");
+DataStream&amp;lt;WordWithCount&amp;gt; windowCounts = text
+        .flatMap((FlatMapFunction&amp;lt;String, String&amp;gt;) (line, collector) -&amp;gt; Arrays
+                .stream(line.split("\\s"))
+                .forEach(collector::collect)).returns(String.class)
+        .map(word -&amp;gt; new WordWithCount(word, 1)).returns(TypeInformation.of(WordWithCount.class))
+        .keyBy(wordWithCount -&amp;gt; wordWithCount.word)
+        .sum("count").returns(TypeInformation.of(WordWithCount.class));
+
+windowCounts.print();
+env.execute();
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Building Apache Flink from Source&lt;/h2&gt; 
+&lt;p&gt;Prerequisites for building Flink:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Unix-like environment (we use Linux, Mac OS X, Cygwin, WSL)&lt;/li&gt; 
+ &lt;li&gt;Git&lt;/li&gt; 
+ &lt;li&gt;Maven (we require version 3.8.6)&lt;/li&gt; 
+ &lt;li&gt;Java (version 11, 17, or 21)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Basic Build Instructions&lt;/h3&gt; 
+&lt;p&gt;First, clone the repository:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/apache/flink.git
+cd flink
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then, choose one of the following commands based on your preferred Java version:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;For Java 11&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;./mvnw clean package -DskipTests -Djdk11 -Pjava11-target
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;For Java 17 (Default)&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;./mvnw clean package -DskipTests -Djdk17 -Pjava17-target
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;For Java 21&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;./mvnw clean package -DskipTests -Djdk21 -Pjava21-target
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The build process will take approximately 10 minutes to complete. Flink will be installed in &lt;code&gt;build-target&lt;/code&gt;.&lt;/p&gt; 
+&lt;h3&gt;Notes&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Make sure your JAVA_HOME environment variable points to the correct JDK version&lt;/li&gt; 
+ &lt;li&gt;The build command uses Maven wrapper (mvnw) which ensures the correct Maven version is used&lt;/li&gt; 
+ &lt;li&gt;The -DskipTests flag skips running tests to speed up the build process&lt;/li&gt; 
+ &lt;li&gt;Each Java version requires its corresponding profile (-Pjava
+  &lt;version&gt;
+   -target) and JDK flag (-Djdk
+   &lt;version&gt;
+    )
+   &lt;/version&gt;
+  &lt;/version&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Developing Flink&lt;/h2&gt; 
+&lt;p&gt;The Flink committers use IntelliJ IDEA to develop the Flink codebase. We recommend IntelliJ IDEA for developing projects that involve Scala code.&lt;/p&gt; 
+&lt;p&gt;Minimal requirements for an IDE are:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Support for Java and Scala (also mixed projects)&lt;/li&gt; 
+ &lt;li&gt;Support for Maven with Java and Scala&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;IntelliJ IDEA&lt;/h3&gt; 
+&lt;p&gt;The IntelliJ IDE supports Maven out of the box and offers a plugin for Scala development.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;IntelliJ download: &lt;a href="https://www.jetbrains.com/idea/"&gt;https://www.jetbrains.com/idea/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;IntelliJ Scala Plugin: &lt;a href="https://plugins.jetbrains.com/plugin/?id=1347"&gt;https://plugins.jetbrains.com/plugin/?id=1347&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Check out our &lt;a href="https://nightlies.apache.org/flink/flink-docs-master/flinkDev/ide_setup.html#intellij-idea"&gt;Setting up IntelliJ&lt;/a&gt; guide for details.&lt;/p&gt; 
+&lt;h3&gt;Eclipse Scala IDE&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; From our experience, this setup does not work with Flink due to deficiencies of the old Eclipse version bundled with Scala IDE 3.0.3 or due to version incompatibilities with the bundled Scala version in Scala IDE 4.4.1.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;We recommend to use IntelliJ instead (see above)&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;Don’t hesitate to ask!&lt;/p&gt; 
+&lt;p&gt;Contact the developers and community on the &lt;a href="https://flink.apache.org/community.html#mailing-lists"&gt;mailing lists&lt;/a&gt; if you need any help.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://issues.apache.org/jira/browse/FLINK"&gt;Open an issue&lt;/a&gt; if you find a bug in Flink.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;The documentation of Apache Flink is located on the website: &lt;a href="https://flink.apache.org"&gt;https://flink.apache.org&lt;/a&gt; or in the &lt;code&gt;docs/&lt;/code&gt; directory of the source code.&lt;/p&gt; 
+&lt;h2&gt;Fork and Contribute&lt;/h2&gt; 
+&lt;p&gt;This is an active open-source project. We are always open to people who want to use the system or contribute to it. Contact us if you are looking for implementation tasks that fit your skills. This article describes &lt;a href="https://flink.apache.org/contributing/how-to-contribute.html"&gt;how to contribute to Apache Flink&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Externalized Connectors&lt;/h2&gt; 
+&lt;p&gt;Most Flink connectors have been externalized to individual repos under the &lt;a href="https://github.com/apache"&gt;Apache Software Foundation&lt;/a&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apache/flink-connector-aws"&gt;flink-connector-aws&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apache/flink-connector-cassandra"&gt;flink-connector-cassandra&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apache/flink-connector-elasticsearch"&gt;flink-connector-elasticsearch&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apache/flink-connector-gcp-pubsub"&gt;flink-connector-gcp-pubsub&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apache/flink-connector-hbase"&gt;flink-connector-hbase&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apache/flink-connector-hive"&gt;flink-connector-hive&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apache/flink-connector-jdbc"&gt;flink-connector-jdbc&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apache/flink-connector-kafka"&gt;flink-connector-kafka&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apache/flink-connector-mongodb"&gt;flink-connector-mongodb&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apache/flink-connector-opensearch"&gt;flink-connector-opensearch&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apache/flink-connector-prometheus"&gt;flink-connector-prometheus&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apache/flink-connector-pulsar"&gt;flink-connector-pulsar&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apache/flink-connector-rabbitmq"&gt;flink-connector-rabbitmq&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;About&lt;/h2&gt; 
+&lt;p&gt;Apache Flink is an open source project of The Apache Software Foundation (ASF). The Apache Flink project originated from the &lt;a href="http://stratosphere.eu"&gt;Stratosphere&lt;/a&gt; research project.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>thingsboard/thingsboard</title>
+      <link>https://github.com/thingsboard/thingsboard</link>
+      <description>&lt;p&gt;Open-source IoT Platform - Device management, data collection, processing and visualization.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/3584b592-33dd-4fb4-91d4-47b62b34806c" alt="banner" /&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;h1&gt;Open-source IoT platform for data collection, processing, visualization, and device management.&lt;/h1&gt; 
+&lt;/div&gt; 
+&lt;br /&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;💡 &lt;a href="https://thingsboard.io/docs/getting-started-guides/helloworld/"&gt;Get started&lt;/a&gt; • 🌐 &lt;a href="https://thingsboard.io/"&gt;Website&lt;/a&gt; • 📚 &lt;a href="https://thingsboard.io/docs/"&gt;Documentation&lt;/a&gt; • 📔 &lt;a href="https://thingsboard.io/blog/"&gt;Blog&lt;/a&gt; • ▶️ &lt;a href="https://demo.thingsboard.io/signup"&gt;Live demo&lt;/a&gt; • 🔗 &lt;a href="https://www.linkedin.com/company/thingsboard/posts/?feedView=all"&gt;LinkedIn&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;🚀 Installation options&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Install ThingsBoard &lt;a href="https://thingsboard.io/docs/user-guide/install/installation-options/?ceInstallType=onPremise"&gt;On-premise&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Try &lt;a href="https://thingsboard.io/installations/"&gt;ThingsBoard Cloud&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;or &lt;a href="https://demo.thingsboard.io/signup"&gt;Use our Live demo&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;💡 Getting started with ThingsBoard&lt;/h2&gt; 
+&lt;p&gt;Check out our &lt;a href="https://thingsboard.io/docs/getting-started-guides/helloworld/"&gt;Getting Started guide&lt;/a&gt; or &lt;a href="https://www.youtube.com/watch?v=80L0ubQLXsc"&gt;watch the video&lt;/a&gt; to learn the basics of ThingsBoard and create your first dashboard! You will learn to:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Connect devices to ThingsBoard&lt;/li&gt; 
+ &lt;li&gt;Push data from devices to ThingsBoard&lt;/li&gt; 
+ &lt;li&gt;Build real-time dashboards&lt;/li&gt; 
+ &lt;li&gt;Create a Customer and assign the dashboard with them.&lt;/li&gt; 
+ &lt;li&gt;Define thresholds and trigger alarms&lt;/li&gt; 
+ &lt;li&gt;Set up notifications via email, SMS, mobile apps, or integrate with third-party services.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;✨ Features&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td width="50%" valign="top"&gt; &lt;br /&gt; 
+    &lt;div align="center"&gt; 
+     &lt;img src="https://github.com/user-attachments/assets/255cca4f-b111-44e8-99ea-0af55f8e3681" alt="Provision and manage devices and assets" width="378" /&gt; 
+     &lt;h3&gt;Provision and manage &lt;br /&gt; devices and assets&lt;/h3&gt; 
+    &lt;/div&gt; 
+    &lt;div align="center"&gt; 
+     &lt;p&gt;Provision, monitor and control your IoT entities in secure way using rich server-side APIs. Define relations between your devices, assets, customers or any other entities.&lt;/p&gt; 
+    &lt;/div&gt; &lt;br /&gt; 
+    &lt;div align="center"&gt; 
+     &lt;a href="https://thingsboard.io/docs/user-guide/entities-and-relations/"&gt;Read more ➜&lt;/a&gt; 
+    &lt;/div&gt; &lt;br /&gt; &lt;/td&gt; 
+   &lt;td width="50%" valign="top"&gt; &lt;br /&gt; 
+    &lt;div align="center"&gt; 
+     &lt;img src="https://github.com/user-attachments/assets/24b41d10-150a-42dd-ab1a-32ac9b5978c1" alt="Collect and visualize your data" width="378" /&gt; 
+     &lt;h3&gt;Collect and visualize &lt;br /&gt; your data&lt;/h3&gt; 
+    &lt;/div&gt; 
+    &lt;div align="center"&gt; 
+     &lt;p&gt;Collect and store telemetry data in scalable and fault-tolerant way. Visualize your data with built-in or custom widgets and flexible dashboards. Share dashboards with your customers.&lt;/p&gt; 
+    &lt;/div&gt; &lt;br /&gt; 
+    &lt;div align="center"&gt; 
+     &lt;a href="https://thingsboard.io/iot-data-visualization/"&gt;Read more ➜&lt;/a&gt; 
+    &lt;/div&gt; &lt;br /&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td width="50%" valign="top"&gt; &lt;br /&gt; 
+    &lt;div align="center"&gt; 
+     &lt;img src="https://github.com/user-attachments/assets/6f2a6dd2-7b33-4d17-8b92-d1f995adda2c" alt="SCADA Dashboards" width="378" /&gt; 
+     &lt;h3&gt;SCADA Dashboards&lt;/h3&gt; 
+    &lt;/div&gt; 
+    &lt;div align="center"&gt; 
+     &lt;p&gt;Monitor and control your industrial processes in real time with SCADA. Use SCADA symbols on dashboards to create and manage any workflow, offering full flexibility to design and oversee operations according to your requirements.&lt;/p&gt; 
+    &lt;/div&gt; &lt;br /&gt; 
+    &lt;div align="center"&gt; 
+     &lt;a href="https://thingsboard.io/use-cases/scada/"&gt;Read more ➜&lt;/a&gt; 
+    &lt;/div&gt; &lt;br /&gt; &lt;/td&gt; 
+   &lt;td width="50%" valign="top"&gt; &lt;br /&gt; 
+    &lt;div align="center"&gt; 
+     &lt;img src="https://github.com/user-attachments/assets/c23dcc9b-aeba-40ef-9973-49b953fc1257" alt="Process and React" width="378" /&gt; 
+     &lt;h3&gt;Process and React&lt;/h3&gt; 
+    &lt;/div&gt; 
+    &lt;div align="center"&gt; 
+     &lt;p&gt;Define data processing rule chains. Transform and normalize your device data. Raise alarms on incoming telemetry events, attribute updates, device inactivity and user actions.&lt;br /&gt;&lt;/p&gt; 
+    &lt;/div&gt; &lt;br /&gt; &lt;br /&gt; 
+    &lt;div align="center"&gt; 
+     &lt;a href="https://thingsboard.io/docs/user-guide/rule-engine-2-0/re-getting-started/"&gt;Read more ➜&lt;/a&gt; 
+    &lt;/div&gt; &lt;br /&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;⚙️ Powerful IoT Rule Engine&lt;/h2&gt; 
+&lt;p&gt;ThingsBoard allows you to create complex &lt;a href="https://thingsboard.io/docs/user-guide/rule-engine-2-0/re-getting-started/"&gt;Rule Chains&lt;/a&gt; to process data from your devices and match your application specific use cases.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://thingsboard.io/docs/user-guide/rule-engine-2-0/re-getting-started/"&gt;&lt;img src="https://github.com/user-attachments/assets/43d21dc9-0e18-4f1b-8f9a-b72004e12f07" alt="IoT Rule Engine" title="IoT Rule Engine" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;a href="https://thingsboard.io/docs/user-guide/rule-engine-2-0/re-getting-started/"&gt;&lt;strong&gt;Read more about Rule Engine ➜&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;📦 Real-Time IoT Dashboards&lt;/h2&gt; 
+&lt;p&gt;ThingsBoard is a scalable, user-friendly, and device-agnostic IoT platform that speeds up time-to-market with powerful built-in solution templates. It enables data collection and analysis from any devices, saving resources on routine tasks and letting you focus on your solution’s unique aspects. See more our Use Cases &lt;a href="https://thingsboard.io/iot-use-cases/"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://thingsboard.io/use-cases/smart-energy/"&gt;&lt;strong&gt;Smart energy&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://thingsboard.io/use-cases/smart-energy/"&gt;&lt;img src="https://github.com/user-attachments/assets/2a0abf13-6dc5-4f5e-9c30-1aea1d39af1e" alt="Smart energy" title="Smart energy" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://thingsboard.io/use-cases/scada/"&gt;&lt;strong&gt;SCADA swimming pool&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://thingsboard.io/use-cases/scada/"&gt;&lt;img src="https://github.com/user-attachments/assets/68fd9e29-99f1-4c16-8c4c-476f4ccb20c0" alt="SCADA Swimming pool" title="SCADA Swimming pool" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://thingsboard.io/use-cases/fleet-tracking/"&gt;&lt;strong&gt;Fleet tracking&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://thingsboard.io/use-cases/fleet-tracking/"&gt;&lt;img src="https://github.com/user-attachments/assets/9e8938ba-ee0c-4599-9494-d74b7de8a63d" alt="Fleet tracking" title="Fleet tracking" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://thingsboard.io/use-cases/smart-farming/"&gt;&lt;strong&gt;Smart farming&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://thingsboard.io/use-cases/smart-farming/"&gt;&lt;img src="https://github.com/user-attachments/assets/56b84c99-ef24-44e5-a903-b925b7f9d142" alt="Smart farming" title="Smart farming" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://thingsboard.io/smart-metering/"&gt;&lt;strong&gt;Smart metering&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://thingsboard.io/smart-metering/"&gt;&lt;img src="https://github.com/user-attachments/assets/adc05e3d-397c-48ef-bed6-535bbd698455" alt="Smart metering" title="Smart metering" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;a href="https://thingsboard.io/iot-use-cases/"&gt;&lt;strong&gt;Check more of our use cases ➜&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;🫶 Support&lt;/h2&gt; 
+&lt;p&gt;To get support, please visit our &lt;a href="https://github.com/thingsboard/thingsboard/issues"&gt;GitHub issues page&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;📄 Licenses&lt;/h2&gt; 
+&lt;p&gt;This project is released under &lt;a href="https://raw.githubusercontent.com/thingsboard/thingsboard/master/LICENSE"&gt;Apache 2.0 License&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>opensearch-project/OpenSearch</title>
+      <link>https://github.com/opensearch-project/OpenSearch</link>
+      <description>&lt;p&gt;🔎 Open source distributed and RESTful search engine.&lt;/p&gt;&lt;hr&gt;&lt;a href="https://opensearch.org/"&gt; &lt;img src="https://opensearch.org/assets/img/opensearch-logo-themed.svg?sanitize=true" height="64px" /&gt; &lt;/a&gt; 
+&lt;p&gt;&lt;a href="https://github.com/opensearch-project/OpenSearch/raw/main/LICENSE.txt"&gt;&lt;img src="https://img.shields.io/badge/license-Apache%20v2-blue.svg?sanitize=true" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://insights.linuxfoundation.org/project/opensearch-foundation"&gt;&lt;img src="https://insights.production.lfx.dev/api/badge/health-score?project=opensearch-foundation" alt="LFX Health Score" /&gt;&lt;/a&gt; &lt;a href="https://insights.linuxfoundation.org/project/opensearch-foundation/repository/opensearch-project-opensearch"&gt;&lt;img src="https://insights.production.lfx.dev/api/badge/active-contributors?project=opensearch-foundation&amp;amp;repos=https://github.com/opensearch-project/OpenSearch" alt="LFX Active Contributors" /&gt;&lt;/a&gt; &lt;a href="https://codecov.io/gh/opensearch-project/OpenSearch"&gt;&lt;img src="https://codecov.io/gh/opensearch-project/OpenSearch/branch/main/graph/badge.svg?sanitize=true" alt="Code Coverage" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/github/v/release/opensearch-project/OpenSearch?sort=semver" alt="GitHub release (latest SemVer)" /&gt; &lt;a href="https://www.linkedin.com/company/opensearch-project"&gt;&lt;img src="https://img.shields.io/badge/Follow-Linkedin-blue" alt="Linkedin" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/opensearch-project/OpenSearch/main/#welcome"&gt;Welcome!&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/opensearch-project/OpenSearch/main/#project-resources"&gt;Project Resources&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/opensearch-project/OpenSearch/main/#code-of-conduct"&gt;Code of Conduct&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/opensearch-project/OpenSearch/main/#security"&gt;Security&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/opensearch-project/OpenSearch/main/#license"&gt;License&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/opensearch-project/OpenSearch/main/#copyright"&gt;Copyright&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/opensearch-project/OpenSearch/main/#trademark"&gt;Trademark&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Welcome!&lt;/h2&gt; 
+&lt;p&gt;OpenSearch is an open-source, enterprise-grade search and observability suite that brings order to unstructured data at scale.&lt;/p&gt; 
+&lt;h2&gt;Project Resources&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://opensearch.org/"&gt;Project Website&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://opensearch.org/downloads/"&gt;Downloads&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.opensearch.org/"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Need help? Try &lt;a href="https://discuss.opendistrocommunity.dev/"&gt;Forums&lt;/a&gt; or &lt;a href="https://opensearch.org/slack/"&gt;Slack&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/opensearch-project/OpenSearch/main/CONTRIBUTING.md"&gt;Contributing to OpenSearch&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/opensearch-project/OpenSearch/main/MAINTAINERS.md"&gt;Maintainer Responsibilities&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/opensearch-project/OpenSearch/main/RELEASING.md"&gt;Release Management&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/opensearch-project/OpenSearch/main/ADMINS.md"&gt;Admin Responsibilities&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/opensearch-project/OpenSearch/main/TESTING.md"&gt;Testing&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/opensearch-project/OpenSearch/main/SECURITY.md"&gt;Security&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Code of Conduct&lt;/h2&gt; 
+&lt;p&gt;The project's &lt;a href="https://raw.githubusercontent.com/opensearch-project/OpenSearch/main/CODE_OF_CONDUCT.md"&gt;Code of Conduct&lt;/a&gt; outlines our expectations for all participants in our community, based on the &lt;a href="https://opensearch.org/code-of-conduct/"&gt;OpenSearch Code of Conduct&lt;/a&gt;. Please contact &lt;a href="mailto:conduct@opensearch.foundation"&gt;conduct@opensearch.foundation&lt;/a&gt; with any additional questions or comments.&lt;/p&gt; 
+&lt;h2&gt;Security&lt;/h2&gt; 
+&lt;p&gt;If you discover a potential security issue in this project we ask that you notify OpenSearch Security directly via email to &lt;a href="mailto:security@opensearch.org"&gt;security@opensearch.org&lt;/a&gt;. Please do &lt;strong&gt;not&lt;/strong&gt; create a public GitHub issue.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the &lt;a href="https://raw.githubusercontent.com/opensearch-project/OpenSearch/main/LICENSE.txt"&gt;Apache v2.0 License&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Copyright&lt;/h2&gt; 
+&lt;p&gt;Copyright OpenSearch Contributors. See &lt;a href="https://raw.githubusercontent.com/opensearch-project/OpenSearch/main/NOTICE.txt"&gt;NOTICE&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;h2&gt;Trademark&lt;/h2&gt; 
+&lt;p&gt;OpenSearch is a registered trademark of LF Projects, LLC.&lt;/p&gt; 
+&lt;p&gt;OpenSearch includes certain Apache-licensed Elasticsearch code from Elasticsearch B.V. and other source code. Elasticsearch B.V. is not the source of that other source code. ELASTICSEARCH is a registered trademark of Elasticsearch B.V.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>keycloak/keycloak</title>
+      <link>https://github.com/keycloak/keycloak</link>
+      <description>&lt;p&gt;Open Source Identity and Access Management For Modern Applications and Services&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://github.com/keycloak/keycloak-misc/raw/main/logo/logo.svg?sanitize=true" alt="Keycloak" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://img.shields.io/github/v/release/keycloak/keycloak?label=latest%20release" alt="GitHub Release" /&gt; &lt;a href="https://bestpractices.coreinfrastructure.org/projects/6818"&gt;&lt;img src="https://bestpractices.coreinfrastructure.org/projects/6818/badge" alt="OpenSSF Best Practices" /&gt;&lt;/a&gt; &lt;a href="https://clomonitor.io/projects/cncf/keycloak"&gt;&lt;img src="https://img.shields.io/endpoint?url=https://clomonitor.io/api/projects/cncf/keycloak/badge" alt="CLOMonitor" /&gt;&lt;/a&gt; &lt;a href="https://securityscorecards.dev/viewer/?uri=github.com/keycloak/keycloak"&gt;&lt;img src="https://api.securityscorecards.dev/projects/github.com/keycloak/keycloak/badge" alt="OpenSSF Scorecard" /&gt;&lt;/a&gt; &lt;a href="https://artifacthub.io/packages/olm/community-operators/keycloak-operator"&gt;&lt;img src="https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/keycloak-operator" alt="Artifact Hub" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/github/stars/keycloak/keycloak?style=flat" alt="GitHub Repo stars" /&gt; &lt;img src="https://img.shields.io/github/commit-activity/m/keycloak/keycloak" alt="GitHub commit activity" /&gt; &lt;a href="https://raw.githubusercontent.com/keycloak/keycloak/main/docs/translation.md"&gt;&lt;img src="https://hosted.weblate.org/widget/keycloak/svg-badge.svg?sanitize=true" alt="Translation status" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Open Source Identity and Access Management&lt;/h1&gt; 
+&lt;p&gt;Add authentication to applications and secure services with minimum effort. No need to deal with storing users or authenticating users.&lt;/p&gt; 
+&lt;p&gt;Keycloak provides user federation, strong authentication, user management, fine-grained authorization, and more.&lt;/p&gt; 
+&lt;h2&gt;Help and Documentation&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.keycloak.org/documentation.html"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://groups.google.com/d/forum/keycloak-user"&gt;User Mailing List&lt;/a&gt; - Mailing list for help and general questions about Keycloak&lt;/li&gt; 
+ &lt;li&gt;Join&amp;nbsp;&lt;a href="https://cloud-native.slack.com/archives/C056HC17KK9"&gt;#keycloak&lt;/a&gt; for general questions, or&amp;nbsp;&lt;a href="https://cloud-native.slack.com/archives/C056XU905S6"&gt;#keycloak-dev&lt;/a&gt;&amp;nbsp;on Slack for design and development discussions, by creating an account at&amp;nbsp;&lt;a href="https://slack.cncf.io/"&gt;https://slack.cncf.io/&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Reporting Security Vulnerabilities&lt;/h2&gt; 
+&lt;p&gt;If you have found a security vulnerability, please look at the &lt;a href="https://github.com/keycloak/keycloak/security/policy"&gt;instructions on how to properly report it&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Reporting an issue&lt;/h2&gt; 
+&lt;p&gt;If you believe you have discovered a defect in Keycloak, please open &lt;a href="https://github.com/keycloak/keycloak/issues"&gt;an issue&lt;/a&gt;. Please remember to provide a good summary, description as well as steps to reproduce the issue.&lt;/p&gt; 
+&lt;h2&gt;Getting started&lt;/h2&gt; 
+&lt;p&gt;To run Keycloak, download the distribution from our &lt;a href="https://www.keycloak.org/downloads.html"&gt;website&lt;/a&gt;. Unzip and run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;bin/kc.[sh|bat] start-dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Alternatively, you can use the Docker image by running:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;docker run quay.io/keycloak/keycloak start-dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For more details refer to the &lt;a href="https://www.keycloak.org/documentation.html"&gt;Keycloak Documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Building from Source&lt;/h2&gt; 
+&lt;p&gt;To build from source, refer to the &lt;a href="https://raw.githubusercontent.com/keycloak/keycloak/main/docs/building.md"&gt;building and working with the code base&lt;/a&gt; guide.&lt;/p&gt; 
+&lt;h3&gt;Testing&lt;/h3&gt; 
+&lt;p&gt;To run tests, refer to the &lt;a href="https://raw.githubusercontent.com/keycloak/keycloak/main/docs/tests.md"&gt;running tests&lt;/a&gt; guide.&lt;/p&gt; 
+&lt;h3&gt;Writing Tests&lt;/h3&gt; 
+&lt;p&gt;To write tests, refer to the &lt;a href="https://raw.githubusercontent.com/keycloak/keycloak/main/docs/tests-development.md"&gt;writing tests&lt;/a&gt; guide.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Before contributing to Keycloak, please read our &lt;a href="https://raw.githubusercontent.com/keycloak/keycloak/main/CONTRIBUTING.md"&gt;contributing guidelines&lt;/a&gt;. Participation in the Keycloak project is governed by the &lt;a href="https://github.com/cncf/foundation/raw/main/code-of-conduct.md"&gt;CNCF Code of Conduct&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Joining a &lt;a href="https://www.keycloak.org/community"&gt;community meeting&lt;/a&gt; is a great way to get involved and help shape the future of Keycloak.&lt;/p&gt; 
+&lt;h2&gt;Other Keycloak Projects&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/keycloak/keycloak"&gt;Keycloak&lt;/a&gt; - Keycloak Server and Java adapters&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/keycloak/keycloak-quickstarts"&gt;Keycloak QuickStarts&lt;/a&gt; - QuickStarts for getting started with Keycloak&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/keycloak/keycloak-nodejs-connect"&gt;Keycloak Node.js Connect&lt;/a&gt; - Node.js adapter for Keycloak&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.apache.org/licenses/LICENSE-2.0"&gt;Apache License, Version 2.0&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>apache/fesod</title>
+      <link>https://github.com/apache/fesod</link>
+      <description>&lt;p&gt;Fast. Easy. Done. Processing Excels without worrying about large files causing OOM.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Apache Fesod (Incubating)&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/apache/fesod/actions/workflows/ci.yml"&gt;&lt;img src="https://img.shields.io/github/actions/workflow/status/apache/fesod/ci.yml?style=flat-square&amp;amp;logo=github" alt="GitHub Actions Workflow Status" /&gt;&lt;/a&gt; &lt;a href="https://github.com/apache/fesod/actions/workflows/nightly.yml"&gt;&lt;img src="https://img.shields.io/github/actions/workflow/status/apache/fesod/nightly.yml?style=flat-square&amp;amp;logo=github&amp;amp;label=nightly" alt="GitHub Actions Workflow Status" /&gt;&lt;/a&gt; &lt;a href="https://github.com/apache/fesod/raw/main/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/apache/fesod?logo=apache&amp;amp;style=flat-square" alt="GitHub License" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/maven-central/v/org.apache.fesod/fesod?logo=apachemaven&amp;amp;style=flat-square" alt="Maven Central Version" /&gt; &lt;a href="https://fesod.apache.org/"&gt;&lt;img src="https://img.shields.io/github/actions/workflow/status/apache/fesod/ci.yml?style=flat-square&amp;amp;logo=read-the-docs&amp;amp;label=Document" alt="Document" /&gt;&lt;/a&gt; &lt;a href="https://deepwiki.com/apache/fesod"&gt;&lt;img src="https://img.shields.io/badge/DeepWiki-apache%2Ffesod-blue.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAyCAYAAAAnWDnqAAAAAXNSR0IArs4c6QAAA05JREFUaEPtmUtyEzEQhtWTQyQLHNak2AB7ZnyXZMEjXMGeK/AIi+QuHrMnbChYY7MIh8g01fJoopFb0uhhEqqcbWTp06/uv1saEDv4O3n3dV60RfP947Mm9/SQc0ICFQgzfc4CYZoTPAswgSJCCUJUnAAoRHOAUOcATwbmVLWdGoH//PB8mnKqScAhsD0kYP3j/Yt5LPQe2KvcXmGvRHcDnpxfL2zOYJ1mFwrryWTz0advv1Ut4CJgf5uhDuDj5eUcAUoahrdY/56ebRWeraTjMt/00Sh3UDtjgHtQNHwcRGOC98BJEAEymycmYcWwOprTgcB6VZ5JK5TAJ+fXGLBm3FDAmn6oPPjR4rKCAoJCal2eAiQp2x0vxTPB3ALO2CRkwmDy5WohzBDwSEFKRwPbknEggCPB/imwrycgxX2NzoMCHhPkDwqYMr9tRcP5qNrMZHkVnOjRMWwLCcr8ohBVb1OMjxLwGCvjTikrsBOiA6fNyCrm8V1rP93iVPpwaE+gO0SsWmPiXB+jikdf6SizrT5qKasx5j8ABbHpFTx+vFXp9EnYQmLx02h1QTTrl6eDqxLnGjporxl3NL3agEvXdT0WmEost648sQOYAeJS9Q7bfUVoMGnjo4AZdUMQku50McDcMWcBPvr0SzbTAFDfvJqwLzgxwATnCgnp4wDl6Aa+Ax283gghmj+vj7feE2KBBRMW3FzOpLOADl0Isb5587h/U4gGvkt5v60Z1VLG8BhYjbzRwyQZemwAd6cCR5/XFWLYZRIMpX39AR0tjaGGiGzLVyhse5C9RKC6ai42ppWPKiBagOvaYk8lO7DajerabOZP46Lby5wKjw1HCRx7p9sVMOWGzb/vA1hwiWc6jm3MvQDTogQkiqIhJV0nBQBTU+3okKCFDy9WwferkHjtxib7t3xIUQtHxnIwtx4mpg26/HfwVNVDb4oI9RHmx5WGelRVlrtiw43zboCLaxv46AZeB3IlTkwouebTr1y2NjSpHz68WNFjHvupy3q8TFn3Hos2IAk4Ju5dCo8B3wP7VPr/FGaKiG+T+v+TQqIrOqMTL1VdWV1DdmcbO8KXBz6esmYWYKPwDL5b5FA1a0hwapHiom0r/cKaoqr+27/XcrS5UwSMbQAAAABJRU5ErkJggg==" alt="DeepWiki" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Introduction&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Apache Fesod (Incubating)&lt;/strong&gt; is a high-performance and memory-efficient Java library for reading and writing Excel files, designed to simplify development and ensure reliability.&lt;/p&gt; 
+&lt;p&gt;Apache Fesod (Incubating) can provide developers and enterprises with great freedom and flexibility. We plan to introduce more new features in the future to continually enhance user experience and tool usability. Apache Fesod ( Incubating) is committed to being your best choice for handling Excel files.&lt;/p&gt; 
+&lt;p&gt;The name fesod(pronounced &lt;code&gt;/ˈfɛsɒd/&lt;/code&gt;), an acronym for "fast easy spreadsheet and other documents" expresses the project's origin, background and vision.&lt;/p&gt; 
+&lt;h3&gt;Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;High-performance Reading and Writing&lt;/strong&gt;: Apache Fesod (Incubating) focuses on performance optimization, capable of efficiently handling large-scale Excel data. Compared to some traditional Excel processing libraries, it can significantly reduce memory consumption.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Simplicity and Ease of Use&lt;/strong&gt;: The library offers a simple and intuitive API, allowing developers to easily integrate it into projects, whether for simple Excel operations or complex data processing.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Stream Operations&lt;/strong&gt;: Apache Fesod (Incubating) supports stream reading, minimizing the problem of loading large amounts of data at once. This design is especially important when dealing with hundreds of thousands or even millions of rows of data.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;Apache Fesod (Incubating) requires &lt;strong&gt;Java 1.8&lt;/strong&gt; or later. Using the latest LTS release of Java is encouraged. We strongly recommend using the latest version of Apache Fesod (Incubating), as performance optimizations, bug fixes, and new features in the latest version will enhance your experience.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Currently, Apache Fesod (Incubating) uses POI as its underlying package. If your project already includes POI-related components, you will need to manually exclude POI-related jar files.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Maven&lt;/h3&gt; 
+&lt;p&gt;If you are using Maven for project building, add the following configuration in the &lt;code&gt;pom.xml&lt;/code&gt; file:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-xml"&gt;
+&amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;org.apache.fesod&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;fesod&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;version&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Gradle&lt;/h3&gt; 
+&lt;p&gt;If you are using Gradle for project building, add the following configuration in the build.gradle file:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-gradle"&gt;dependencies {
+    implementation 'org.apache.fesod:fesod:version'
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;QuickStart&lt;/h2&gt; 
+&lt;h3&gt;Read&lt;/h3&gt; 
+&lt;p&gt;Below is an example of reading an Excel document:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-java"&gt;// Implement the ReadListener interface to set up operations for reading data
+public class DemoDataListener implements ReadListener&amp;lt;DemoData&amp;gt; {
+
+    @Override
+    public void invoke(DemoData data, AnalysisContext context) {
+        System.out.println("Parsed a data entry" + JSON.toJSONString(data));
+    }
+
+    @Override
+    public void doAfterAllAnalysed(AnalysisContext context) {
+        System.out.println("All data parsed!");
+    }
+}
+
+public static void main(String[] args) {
+    String fileName = "demo.xlsx";
+    // Read Excel file
+    Fesod.read(fileName, DemoData.class, new DemoDataListener()).sheet().doRead();
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Write&lt;/h3&gt; 
+&lt;p&gt;Below is a simple example of creating an Excel document:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-java"&gt;// Sample data class
+public class DemoData {
+
+    @ExcelProperty("String Title")
+    private String string;
+
+    @ExcelProperty("Date Title")
+    private Date date;
+
+    @ExcelProperty("Number Title")
+    private Double doubleData;
+
+    @ExcelIgnore
+    private String ignore;
+}
+
+// Prepare data to write
+private static List&amp;lt;DemoData&amp;gt; data() {
+    List&amp;lt;DemoData&amp;gt; list = new ArrayList&amp;lt;&amp;gt;();
+    for (int i = 0; i &amp;lt; 10; i++) {
+        DemoData data = new DemoData();
+        data.setString("String" + i);
+        data.setDate(new Date());
+        data.setDoubleData(0.56);
+        list.add(data);
+    }
+    return list;
+}
+
+public static void main(String[] args) {
+    String fileName = "demo.xlsx";
+    // Create a "Template" sheet and write data
+    Fesod.write(fileName, DemoData.class).sheet("Template").doWrite(data());
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;h3&gt;Contributors&lt;/h3&gt; 
+&lt;p&gt;Contributors are welcomed to join the Apache Fesod (Incubating). Please check &lt;a href="https://fesod.apache.org/community/contribution/"&gt;Contributing Guide&lt;/a&gt; about how to contribute to this project.&lt;/p&gt; 
+&lt;p&gt;Thank you to all the people who already contributed to the Apache Fesod (Incubating) !&lt;/p&gt; 
+&lt;a href="https://github.com/apache/fesod/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=apache/fesod" /&gt; &lt;/a&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Note: Showing the first 100 contributors only due to GitHub image size limitations&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Subscribe Mailing Lists&lt;/h3&gt; 
+&lt;p&gt;Mail List is the most recognized form of communication in the Apache community. Contact us through the following mailing list.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="left"&gt;Name&lt;/th&gt; 
+   &lt;th align="left"&gt;Mailing list&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;&lt;a href="mailto:dev@fesod.apache.org"&gt;dev@fesod.apache.org&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="mailto:dev-subscribe@fesod.apache.org"&gt;Subscribe&lt;/a&gt; ｜ &lt;a href="mailto:dev-unsubscribe@fesod.apache.org"&gt;Unsubscribe&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Star History&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://www.star-history.com/#apache/fesod&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=apache/fesod&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Apache Fesod (Incubating) project is licensed under the &lt;a href="https://raw.githubusercontent.com/apache/fesod/main/LICENSE"&gt;Apache License 2.0&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CodePhiliaX/Chat2DB</title>
+      <link>https://github.com/CodePhiliaX/Chat2DB</link>
+      <description>&lt;p&gt;🔥🔥🔥AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;h2&gt;🚀 Zoer is Launching&lt;/h2&gt; 
+ &lt;p&gt;&lt;strong&gt;Powered by Chat2DB Team - AI-powered app builder that creates professional applications in minutes, no coding required&lt;/strong&gt;&lt;/p&gt; 
+ &lt;a href="https://zoer.ai/?utm_source=chat2db&amp;amp;utm_medium=banner&amp;amp;utm_campaign=github" target="_blank"&gt; &lt;img width="1000" height="auto" alt="Zoer - AI App Builder" src="https://github.com/user-attachments/assets/2f2a682d-9cc0-4470-93d3-19b4f1f6589e" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" /&gt; &lt;/a&gt; 
+ &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+ &lt;hr /&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;a href="https://trendshift.io/repositories/11808" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/11808" alt="CodePhiliaX%2FChat2DB | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt; &lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;a href="https://readmex.com/CodePhiliaX/Chat2DB"&gt;&lt;img src="https://raw.githubusercontent.com/CodePhiliaX/resource-trusteeship/main/readmex.svg?sanitize=true" alt="ReadmeX" /&gt;&lt;/a&gt; &lt;a href="https://discord.com/invite/uNjb3n5JVN"&gt;&lt;img src="https://img.shields.io/badge/-Join%20us%20on%20Discord-%237289DA.svg?style=flat&amp;amp;logo=discord&amp;amp;logoColor=white" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/intent/tweet?text=Chat2DB-An%20intelligent%20and%20versatile%20general-purpose%20SQL%20client%20and%20reporting%20tool%20for%20databases%20which%20integrates%20ChatGPT%20capabilities.&amp;amp;url=https://github.com/chat2db/Chat2DB&amp;amp;hashtags=ChatGPT,AGI,SQL%20Client,Reporting%20tool"&gt;&lt;img src="https://img.shields.io/twitter/follow/_Chat2DB?label=Chat2DB" alt="Twitter" /&gt;&lt;/a&gt; &lt;a href="https://t.me/share/url?text=Chat2DB-An%20intelligent%20and%20versatile%20general-purpose%20SQL%20client%20and%20reporting%20tool%20for%20databases%20which%20integrates%20ChatGPT%20capabilities.&amp;amp;url=https://github.com/chat2db/Chat2DB"&gt;&lt;img src="https://img.shields.io/twitter/url?label=Telegram&amp;amp;logo=Telegram&amp;amp;style=social&amp;amp;url=https://github.com/chat2db/Chat2DB" alt="Telegram" /&gt;&lt;/a&gt; &lt;a href="https://api.whatsapp.com/send?text=Chat2DB-An%20intelligent%20and%20versatile%20general-purpose%20SQL%20client%20and%20reporting%20tool%20for%20databases%20which%20integrates%20ChatGPT%20capabilities.%20https://github.com/chat2db/Chat2DB"&gt;&lt;img src="https://img.shields.io/twitter/url?label=whatsapp&amp;amp;logo=whatsapp&amp;amp;style=social&amp;amp;url=https://github.com/chat2db/Chat2DB" alt="Whatsapp" /&gt;&lt;/a&gt; &lt;a href="https://www.reddit.com/submit?url=https://github.com/chat2db/Chat2DB&amp;amp;title=Chat2DB-An%20intelligent%20and%20versatile%20general-purpose%20SQL%20client%20and%20reporting%20tool%20for%20databases%20which%20integrates%20ChatGPT%20capabilities."&gt;&lt;img src="https://img.shields.io/twitter/url?label=Reddit&amp;amp;logo=Reddit&amp;amp;style=social&amp;amp;url=https://github.com/chat2db/Chat2DB" alt="Reddit" /&gt;&lt;/a&gt; &lt;a href="mailto:?subject=Check%20this%20GitHub%20repository%20out.&amp;amp;body=Chat2DB-An%20intelligent%20and%20versatile%20general-purpose%20SQL%20client%20and%20reporting%20tool%20for%20databases%20which%20integrates%20ChatGPT%20capabilities.%3A%0Ahttps://github.com/chat2db/Chat2DB"&gt;&lt;img src="https://img.shields.io/twitter/url?label=Gmail&amp;amp;logo=Gmail&amp;amp;style=social&amp;amp;url=https://github.com/chat2db/Chat2DB" alt="Gmail" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://raw.githubusercontent.com/CodePhiliaX/Chat2DB/main/README.md"&gt;&lt;img alt="README in English" src="https://img.shields.io/badge/English-d9d9d9" /&gt;&lt;/a&gt; 
+ &lt;a href="https://raw.githubusercontent.com/CodePhiliaX/Chat2DB/main/README_CN.md"&gt;&lt;img alt="简体中文版自述文件" src="https://img.shields.io/badge/简体中文-d9d9d9" /&gt;&lt;/a&gt; 
+ &lt;a href="https://raw.githubusercontent.com/CodePhiliaX/Chat2DB/main/README_JA.md"&gt;&lt;img alt="日本語のREADME" src="https://img.shields.io/badge/日本語-d9d9d9" /&gt;&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;p&gt;&lt;strong&gt;1. Intelligent SQL Generation&lt;/strong&gt;:&lt;br /&gt; Chat2DB Pro supports AI-driven intelligent SQL development to help you write SQL queries faster.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;2. Database Management&lt;/strong&gt;:&lt;br /&gt; Supports more than 10 databases, including MySQL, PostgreSQL, H2, Oracle, SQLServer, SQLite, MariaDB, ClickHouse, DM, Presto, DB2, OceanBase, Hive, KingBase, MongoDB, Redis, Snowflake, and more.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;3. Intelligent Report Generation&lt;/strong&gt;:&lt;br /&gt; Chat2DB Pro supports AI-driven intelligent data reporting to help you generate dashboards faster.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;4. Data Structure Synchronization&lt;/strong&gt;:&lt;br /&gt; Chat2DB Pro supports database table structure synchronization to help you sync database table structures faster.&lt;/p&gt; 
+&lt;h2&gt;Feature Comparison&lt;/h2&gt; 
+&lt;table style="width: 100%;"&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;th align="center"&gt;Feature&lt;/th&gt; 
+   &lt;th align="center"&gt;Community Open Source&lt;/th&gt; 
+   &lt;th align="center"&gt;Local&lt;/th&gt; 
+   &lt;th align="center"&gt;Pro &lt;/th&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Database Types&lt;/td&gt; 
+   &lt;td align="center"&gt;16+&lt;/td&gt; 
+   &lt;td align="center"&gt;Target 100+&lt;/td&gt; 
+   &lt;td align="center"&gt;Target 100+&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Supported AI&lt;/td&gt; 
+   &lt;td align="center"&gt;Requires AI Configuration&lt;/td&gt; 
+   &lt;td align="center"&gt;AI ready on installation&lt;/td&gt; 
+   &lt;td align="center"&gt;AI ready on installation&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;AI Capabilities&lt;/td&gt; 
+   &lt;td align="center"&gt;Basic&lt;/td&gt; 
+   &lt;td align="center"&gt;Varied&lt;/td&gt; 
+   &lt;td align="center"&gt;Varied&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Visual Table Editor&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;SQL Console&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;SQL Formatting&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Save Query Records&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Theme Color Settings&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Data Structure Sync&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Database Grouping&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Database Structure Import/Export&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Data Import/Export&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Data Migration&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Copy/Clear Table&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Open and Run SQL Files&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;UML Diagram&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;In Development&lt;/td&gt; 
+   &lt;td align="center"&gt;In Development&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Generate Code&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Copy Results as Insert/Update&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Modify Query Results&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Intelligent SQL Editor&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;AI Table Creation&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;AI Data Sets&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Chat2Excel&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Intelligent Dashboard&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Editor Settings&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Custom Shortcuts&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Cross-device Usage&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;❌&lt;/td&gt; 
+   &lt;td align="center"&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;Download and Installation&lt;/h2&gt; 
+&lt;p&gt;Chat2DB is a cross-platform application that supports Windows, MacOS, and Linux. You can download Chat2DB from the following links:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://chat2db.ai/download"&gt;Download Pro Version&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://chat2db.ai/download"&gt;Download Local Version&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/CodePhiliaX/Chat2DB/releases/tag/v0.3.6"&gt;Download Open Source Version&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Community Edition Docker Installation&lt;/h2&gt; 
+&lt;h3&gt;System Requirements&lt;/h3&gt; 
+&lt;p&gt;Before installing Chat2DB, ensure your system meets the following requirements:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Docker 19.03.0 or later&lt;/li&gt; 
+ &lt;li&gt;Docker Compose 1.25.0 or later&lt;/li&gt; 
+ &lt;li&gt;CPU &amp;gt;= 2 Cores&lt;/li&gt; 
+ &lt;li&gt;RAM &amp;gt;= 4 GiB&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;  docker rm chat2db
+  
+  docker run --name=chat2db -ti -p 10824:10824 -v ~/.chat2db-docker:/root/.chat2db  chat2db/chat2db:latest
+
+  docker start chat2db
+  
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Code Debugging&lt;/h2&gt; 
+&lt;h2&gt;Runtime Environment&lt;/h2&gt; 
+&lt;p&gt;Note: If local debugging is needed:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Java runtime: &lt;a href="https://adoptopenjdk.net/" target="_blank"&gt;Open JDK 17&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Node.js runtime: Node 16 &lt;a href="https://nodejs.org/" target="_blank"&gt;Node.js&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Clone the repository locally&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ git clone git@github.com:chat2db/Chat2DB.git
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Frontend Debugging&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;Node version must be 16 or higher  
+Use yarn only, npm is not supported
+$ cd Chat2DB/chat2db-client
+$ yarn
+$ yarn run start:web
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Backend Debugging&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ cd ../chat2db-server
+$ mvn clean install # Maven version 3.8 or higher is required
+$ cd chat2db-server/chat2db-server-start/target/
+$ java -jar -Dloader.path=./lib -Dchatgpt.apiKey=xxxxx chat2db-server-start.jar  # 需要安装java 17以上版本，启动应用 chatgpt.apiKey 需要输入ChatGPT的key,如果不输入无法使用AIGC功能
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Standalone Deployment&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# chat2db-client
+$ npm run build:web:prod 
+$ cp -r dist ../chat2db-server/chat2db-server-start/src/main/resources/static/front 
+$ cp -r dist/index.html ../chat2db-server/chat2db-server-start/src/main/resources/thymeleaf
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Contact Us&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Email: &lt;a href="mailto:Chat2DB@ch2db.com"&gt;Chat2DB@ch2db.com&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Discord: &lt;a href="https://discord.gg/JDkwB6JS8A"&gt;Join our Discord server&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Twitter: &lt;a href="https://x.com/Chat2DB_AI"&gt;@Chat2DB&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;YouTube: &lt;a href="https://www.youtube.com/@chat2db.tutorial"&gt;Chat2DB Channel&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;GitHub: &lt;a href="https://github.com/codePhiliaX/chat2db"&gt;Chat2DB GitHub&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Acknowledgments&lt;/h2&gt; 
+&lt;p&gt;Thanks to everyone who has contributed to Chat2DB~~&lt;/p&gt; 
+&lt;a href="https://github.com/chat2db/Chat2DB/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=chat2db/Chat2DB" /&gt; &lt;/a&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;a href="https://star-history.com/#CodePhiliaX/chat2db&amp;amp;Date"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=CodePhiliaX/chat2db&amp;amp;type=Date&amp;amp;theme=dark" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=CodePhiliaX/chat2db&amp;amp;type=Date" /&gt; 
+  &lt;img alt="Star History Chart" src="https://api.star-history.com/svg?repos=CodePhiliaX/chat2db&amp;amp;type=Date" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;The primary license used by this software is the &lt;a href="https://www.apache.org/licenses/LICENSE-2.0"&gt;Apache License 2.0&lt;/a&gt;, supplemented by the &lt;a href="https://raw.githubusercontent.com/CodePhiliaX/Chat2DB/main/Chat2DB_LICENSE"&gt;Chat2DB License&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>apache/fluss</title>
+      <link>https://github.com/apache/fluss</link>
+      <description>&lt;p&gt;Apache Fluss is a streaming storage built for real-time analytics.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="website/static/img/logo/svg/white_color_logo.svg" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="website/static/img/logo/svg/colored_logo.svg" /&gt; 
+  &lt;!-- Fall back to version that works for dark and light mode --&gt; 
+  &lt;img alt="Apache Fluss logo" src="https://raw.githubusercontent.com/apache/fluss/main/website/static/img/logo/svg/white_filled.svg?sanitize=true" /&gt; 
+ &lt;/picture&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://fluss.apache.org/docs/"&gt;Documentation&lt;/a&gt; | &lt;a href="https://fluss.apache.org/docs/quickstart/flink/"&gt;QuickStart&lt;/a&gt; | &lt;a href="https://fluss.apache.org/community/dev/ide-setup/"&gt;Development&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/apache/fluss/actions/workflows/ci.yaml"&gt;&lt;img src="https://github.com/apache/fluss/actions/workflows/ci.yaml/badge.svg?branch=main" alt="CI" /&gt;&lt;/a&gt; &lt;a href="https://github.com/apache/fluss/raw/main/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?sanitize=true" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://join.slack.com/t/apache-fluss/shared_invite/zt-33wlna581-QAooAiCmnYboJS8D_JUcYw"&gt;&lt;img src="https://img.shields.io/badge/slack-join_chat-brightgreen.svg?logo=slack" alt="Slack" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;What is Apache Fluss (Incubating)?&lt;/h2&gt; 
+&lt;p&gt;Apache Fluss (Incubating) is a streaming storage built for real-time analytics which can serve as the real-time data layer for Lakehouse architectures.&lt;/p&gt; 
+&lt;p&gt;It bridges the gap between &lt;strong&gt;data streaming&lt;/strong&gt; and &lt;strong&gt;data Lakehouse&lt;/strong&gt; by enabling low-latency, high-throughput data ingestion and processing while seamlessly integrating with popular compute engines like &lt;strong&gt;Apache Flink&lt;/strong&gt;, while Apache Spark, and StarRocks are coming soon.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Fluss (German: river, pronounced &lt;code&gt;/flus/&lt;/code&gt;)&lt;/strong&gt; enables streaming data continuously converging, distributing and flowing into lakes, like a river 🌊&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Sub-Second Latency&lt;/strong&gt;: Low-latency streaming reads/writes optimized for real-time applications with Apache Flink.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Columnar Stream&lt;/strong&gt;: 10x improvement in streaming read performance with efficient pushdown projections.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Streaming &amp;amp; Lakehouse Unification&lt;/strong&gt;: Unified data streaming and Lakehouse with low latencies for powerful analytics.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Real-Time Updates&lt;/strong&gt;: Cost-efficient partial updates for large-scale data without expensive join operations.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Changelog Generation&lt;/strong&gt;: Complete changelogs for streaming processors, streamlining analytics workflows.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Lookup Queries&lt;/strong&gt;: Ultra-high QPS for primary key lookups, enabling efficient dimension table serving.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Building&lt;/h2&gt; 
+&lt;p&gt;Prerequisites for building Apache Fluss:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Unix-like environment (we use Linux, Mac OS X, Cygwin, WSL)&lt;/li&gt; 
+ &lt;li&gt;Git&lt;/li&gt; 
+ &lt;li&gt;Maven (we require version &amp;gt;= 3.8.6)&lt;/li&gt; 
+ &lt;li&gt;Java 8 or 11&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/apache/fluss.git
+cd fluss
+./mvnw clean package -DskipTests
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Apache Fluss is now installed in &lt;code&gt;build-target&lt;/code&gt;. The build command uses Maven Wrapper (&lt;code&gt;mvnw&lt;/code&gt;) which ensures the correct Maven version is used.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Apache Fluss (Incubating) is open-source, and we’d love your help to keep it growing! Join the &lt;a href="https://github.com/apache/fluss/discussions"&gt;discussions&lt;/a&gt;, open &lt;a href="https://github.com/apache/fluss/issues"&gt;issues&lt;/a&gt; if you find a bug or request features, contribute code and documentation, or help us improve the project in any way. All contributions are welcome!&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Apache Fluss (Incubating) project is licensed under the &lt;a href="https://github.com/apache/fluss/raw/main/LICENSE"&gt;Apache License 2.0&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>netty/netty</title>
+      <link>https://github.com/netty/netty</link>
+      <description>&lt;p&gt;Netty project - an event-driven asynchronous network application framework&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://github.com/netty/netty/workflows/Build%20project/badge.svg?sanitize=true" alt="Build project" /&gt; &lt;a href="https://insights.linuxfoundation.org/project/netty"&gt;&lt;img src="https://insights.linuxfoundation.org/api/badge/health-score?project=netty" alt="LFX Health Score" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Netty Project&lt;/h1&gt; 
+&lt;p&gt;Netty is an asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers &amp;amp; clients.&lt;/p&gt; 
+&lt;h2&gt;Links&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://netty.io/"&gt;Web Site&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://netty.io/downloads.html"&gt;Downloads&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://netty.io/wiki/"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://twitter.com/netty_project"&gt;@netty_project&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://discord.gg/q4aQ2XjaCa"&gt;Official Discord server&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/netty/netty/4.2/testsuite-jpms/README.md"&gt;Modular Netty guide&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How to build&lt;/h2&gt; 
+&lt;p&gt;For the detailed information about building and developing Netty, please visit &lt;a href="https://netty.io/wiki/developer-guide.html"&gt;the developer guide&lt;/a&gt;. This page only gives very basic information.&lt;/p&gt; 
+&lt;p&gt;You require the following to build Netty:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Latest stable &lt;a href="https://adoptium.net/"&gt;OpenJDK 8&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Latest stable &lt;a href="https://maven.apache.org/"&gt;Apache Maven&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;If you are on Linux or MacOS, you need &lt;a href="https://netty.io/wiki/native-transports.html"&gt;additional development packages&lt;/a&gt; installed on your system, because you'll build the native transport.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Note that this is build-time requirement. JDK 5 (for 3.x) or 6 (for 4.0+ / 4.1+) is enough to run your Netty-based application.&lt;/p&gt; 
+&lt;h2&gt;Branches to look&lt;/h2&gt; 
+&lt;p&gt;Development of all versions takes place in each branch whose name is identical to &lt;code&gt;&amp;lt;majorVersion&amp;gt;.&amp;lt;minorVersion&amp;gt;&lt;/code&gt;. For example, the development of 3.9 and 4.1 resides in &lt;a href="https://github.com/netty/netty/tree/3.9"&gt;the branch '3.9'&lt;/a&gt; and &lt;a href="https://github.com/netty/netty/tree/4.1"&gt;the branch '4.1'&lt;/a&gt; respectively.&lt;/p&gt; 
+&lt;h2&gt;Usage with JDK 9+&lt;/h2&gt; 
+&lt;p&gt;You can read the &lt;a href="https://raw.githubusercontent.com/netty/netty/4.2/testsuite-jpms/README.md"&gt;Modular Netty guide&lt;/a&gt; to learn more about using Netty with the Java Platform Module System, the guide contains a user section and a developer section for Netty contributors.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ZCShou/GoGoGo</title>
+      <link>https://github.com/ZCShou/GoGoGo</link>
+      <description>&lt;p&gt;一个基于 Android 调试 API + 百度地图实现的虚拟定位工具，并且同时实现了一个可以自由移动的摇杆&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/ZCShou/GoGoGo/master/docs/images/LOGO.png" height="80" /&gt; &lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;a href="https://github.com/ZCShou/GoGoGo/stargazers"&gt;&lt;img src="https://img.shields.io/github/stars/ZCShou/GoGoGo?logo=github" alt="GitHub stars" /&gt;&lt;/a&gt; &lt;a href="https://github.com/ZCShou/GoGoGo/network"&gt;&lt;img src="https://img.shields.io/github/forks/ZCShou/GoGoGo?logo=github" alt="GitHub forks" /&gt;&lt;/a&gt; &lt;a href="https://github.com/ZCShou/GoGoGo/raw/master/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/ZCShou/GoGoGo" alt="license" /&gt;&lt;/a&gt; &lt;a href="https://github.com/ZCShou/GoGoGo/releases"&gt;&lt;img src="https://img.shields.io/github/v/release/ZCShou/GoGoGo?label=Release" alt="GitHub Release" /&gt;&lt;/a&gt; &lt;a href="https://github.com/RichardLitt/standard-readme"&gt;&lt;img src="https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square" alt="standard-readme compliant" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;a href="https://github.com/ZCShou/GoGoGo/actions/workflows/build-check.yml"&gt;&lt;img src="https://github.com/ZCShou/GoGoGo/actions/workflows/build-check.yml/badge.svg?sanitize=true" alt="Build Check" /&gt;&lt;/a&gt; &lt;a href="https://github.com/ZCShou/GoGoGo/actions/workflows/codeql-analysis.yml"&gt;&lt;img src="https://github.com/ZCShou/GoGoGo/actions/workflows/codeql-analysis.yml/badge.svg?sanitize=true" alt="CodeQL" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div align="center"&gt;
+  影梭 - 用于 Android 8.0+ 的无需 ROOT 权限的虚拟定位 APP 
+&lt;/div&gt; 
+&lt;h2&gt;简介&lt;/h2&gt; 
+&lt;p&gt;  影梭是一个基于 Android 调试 API + 百度地图及定位 SDK 实现的安卓定位修改工具，并且同时实现了一个可以自由控制移动的摇杆。使用影梭，不需要 ROOT 权限就可以随意修改自己的当前位置以及模拟移动。&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;源码仓库：&lt;a href="https://github.com/ZCShou/GoGoGo"&gt;Github&lt;/a&gt;（推荐）、&lt;a href="https://gitee.com/itexp/gogogo"&gt;Gitee&lt;/a&gt;（镜像）&lt;/li&gt; 
+ &lt;li&gt;下载地址：&lt;a href="https://github.com/ZCShou/GoGoGo/releases"&gt;Github&lt;/a&gt;（推荐）、&lt;a href="https://gitee.com/itexp/gogogo/releases"&gt;Gitee&lt;/a&gt;（镜像）&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;警告一&lt;/h2&gt; 
+&lt;p&gt;  &lt;strong&gt;最近，有网友直接白嫖影梭后改名为标枪定位，然后添加广告（除了加广告，功能没有任何改变），但是，没有按照 GPLv3 协议的要求进行开源（我已经联系过该网友进了提醒，但并没有收到回复），在此提醒：&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;开源 ≠ 白嫖，请遵循开源协议&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;GPL 的法律效力在国内相关诉讼案例很多，请自行搜索，权衡利弊。影梭保留追究相关侵权人员法律责任的所有权利！&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;开源不易，且行且珍惜&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;警告二&lt;/h2&gt; 
+&lt;p&gt;  &lt;strong&gt;最近，有很多人将影梭用在校园运动类 APP（包括但不限于闪动校园、TakeTwo、运动世界校园等）中作弊，开发者也收到了很多人提问为何影梭定位并不起作用或者寻求对影梭的改进，在此提醒：&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;影梭不支持任何校园运动类 APP 的作弊行为&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;影梭开发者也不赞同采用任何形式在校园运动中作弊&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;背景&lt;/h2&gt; 
+&lt;p&gt;  之前在玩一款 VR 游戏：一起来捉妖。为了省事，就想有没有可以更改位置的 APP。经过一番摸索发现确实有不少可以修改位置的 APP。但是，绝大多数这种 APP 都是收费的，而且贼贵！&lt;/p&gt; 
+&lt;p&gt;  我比较感兴趣的是这样的技术是如何实现的，因此，决定研究研究自己写一个！现在游戏已经弃坑了，但是技术不能丢。因此，将研究结果开源出来方便大家一起学习！但是请注意（重要的事情说三遍！否则后果自负）：&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;该 APP 仅仅是为了学习 Android + 百度地图的实现方法，请勿用于游戏作弊！&lt;/li&gt; 
+ &lt;li&gt;该 APP 仅仅是为了学习 Android + 百度地图的实现方法，请勿用于游戏作弊！&lt;/li&gt; 
+ &lt;li&gt;该 APP 仅仅是为了学习 Android + 百度地图的实现方法，请勿用于游戏作弊！&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;功能&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;定位修改&lt;/li&gt; 
+ &lt;li&gt;摇杆控制移动&lt;/li&gt; 
+ &lt;li&gt;历史记录&lt;/li&gt; 
+ &lt;li&gt;位置搜索&lt;/li&gt; 
+ &lt;li&gt;直接输入坐标&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;截图&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/ZCShou/GoGoGo/master/docs/images/joystick.jpg" alt="joystick.jpg" /&gt; &lt;img src="https://raw.githubusercontent.com/ZCShou/GoGoGo/master/docs/images/search_history.jpg" alt="search_history.jpg" /&gt; &lt;img src="https://raw.githubusercontent.com/ZCShou/GoGoGo/master/docs/images/map.jpg" alt="map.jpg" /&gt;&lt;/p&gt; 
+&lt;h2&gt;用法&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;下载 APK 直接安装&lt;/li&gt; 
+ &lt;li&gt;启动影梭，赋予相关权限&lt;/li&gt; 
+ &lt;li&gt;单击地图位置，然后点击启动按钮&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;文档&lt;/h2&gt; 
+&lt;p&gt;  由于本人并不是做移动开发的，很多功能代码写的都比较差。我也第一次写 Android APP，目前还处在学习中。。。此外，就一个简单的 APP，应该也不需要啥文档，开发过程中遇到的一些问题，我一般都会记录在个人博客中，具体参见：&lt;a href="https://blog.csdn.net/zcshoucsdn/category_10559121.html"&gt;https://blog.csdn.net/zcshoucsdn/category_10559121.html&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;  如果有疑问可以直接搜索 ISSUE 或者 在上面直接提交问题。&lt;/p&gt; 
+&lt;h2&gt;参考&lt;/h2&gt; 
+&lt;p&gt;  由于本人也是个新手，纯属业余瞎搞，因此，在写影梭的过程中，参考了很多网友分享的技术文章、示例代码等。包括但不限于以下列出的几个：&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/Hilaver/MockGPS"&gt;https://github.com/Hilaver/MockGPS&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/bxxfighting/together-go"&gt;https://github.com/bxxfighting/together-go&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/P72B/Mocklation"&gt;https://github.com/P72B/Mocklation&lt;/a&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;  还有些 CSDN 上的文章，目前不记得地址了，如果您发现其中有直接引用或借鉴您的地方，请与我联系，我会再第一时间进行处理，谢谢！&lt;/p&gt; 
+&lt;h2&gt;FAQ&lt;/h2&gt; 
+&lt;p&gt;Q：为何不支持 Android 8.0 以下版本？&lt;/p&gt; 
+&lt;p&gt;A：因为手里没有机器无法进行适配。。。&lt;/p&gt; 
+&lt;p&gt;Q：为何定位不是很稳定，偶尔会飘回真实位置？&lt;/p&gt; 
+&lt;p&gt;A：这是是由于实现原理导致的，Android 调试 API 固有的问题。确切的说，应该是由于手机本身还开启了其他定位方式（例如，基站定位、wifi定位等）导致的&lt;/p&gt; 
+&lt;p&gt;Q：是否支持鸿蒙系统？&lt;/p&gt; 
+&lt;p&gt;A：经过测试，影梭可以在鸿蒙系统上正常运行。&lt;/p&gt; 
+&lt;p&gt;Q：为何在微信等腾讯系应用上定位不起作用？&lt;/p&gt; 
+&lt;p&gt;A：建议去问一下腾讯。&lt;/p&gt; 
+&lt;p&gt;Q：编译时 java 报错？&lt;/p&gt; 
+&lt;p&gt;A：Gradle 使用的 java 版本与 Android Studio 使用的不一致。Gradle 默认会在环境变量中搜索 JAVA_HOME 来确定 Java 位置。&lt;/p&gt; 
+&lt;h2&gt;如何贡献&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;FORK -&amp;gt; PR&lt;/li&gt; 
+ &lt;li&gt;加入影梭开发，共同完善&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;许可证&lt;/h2&gt; 
+&lt;p&gt;GPL-3.0-only © ZCShou&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://app.fossa.com/projects/git%2Bgithub.com%2FZCShou%2FGoGoGo?ref=badge_large&amp;amp;issueType=license"&gt;&lt;img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FZCShou%2FGoGoGo.svg?type=large&amp;amp;issueType=license" alt="FOSSA Status" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>apache/lucene</title>
+      <link>https://github.com/apache/lucene</link>
+      <description>&lt;p&gt;Apache Lucene open-source search software&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Apache Lucene&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://lucene.apache.org/theme/images/lucene/lucene_logo_green_300.png?v=0e493d7a" alt="Lucene Logo" /&gt;&lt;/p&gt; 
+&lt;p&gt;Apache Lucene is a high-performance, full-featured text search engine library written in Java.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://ci-builds.apache.org/job/Lucene/job/Lucene-Artifacts-main/"&gt;&lt;img src="https://ci-builds.apache.org/job/Lucene/job/Lucene-Artifacts-main/badge/icon?subject=Lucene" alt="Build Status" /&gt;&lt;/a&gt; &lt;a href="https://develocity.apache.org/scans?search.buildToolType=gradle&amp;amp;search.rootProjectNames=lucene-root"&gt;&lt;img src="https://img.shields.io/badge/Revved%20up%20by-Develocity-06A0CE?logo=Gradle&amp;amp;labelColor=02303A" alt="Revved up by Develocity" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Online Documentation&lt;/h2&gt; 
+&lt;p&gt;This README file only contains basic setup instructions. For more comprehensive documentation, visit:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Latest Releases: &lt;a href="https://lucene.apache.org/core/documentation.html"&gt;https://lucene.apache.org/core/documentation.html&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Nightly: &lt;a href="https://ci-builds.apache.org/job/Lucene/job/Lucene-Artifacts-main/javadoc/"&gt;https://ci-builds.apache.org/job/Lucene/job/Lucene-Artifacts-main/javadoc/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;New contributors should start by reading &lt;a href="https://raw.githubusercontent.com/apache/lucene/main/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Build System Documentation: &lt;a href="https://raw.githubusercontent.com/apache/lucene/main/help/"&gt;help/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Migration Guide: &lt;a href="https://raw.githubusercontent.com/apache/lucene/main/lucene/MIGRATE.md"&gt;lucene/MIGRATE.md&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Building&lt;/h2&gt; 
+&lt;h3&gt;Basic steps:&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Install &lt;a href="https://jdk.java.net/archive/"&gt;OpenJDK 24&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Clone Lucene's git repository (or download the source distribution).&lt;/li&gt; 
+ &lt;li&gt;Run gradle launcher script (&lt;code&gt;gradlew&lt;/code&gt;).&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;We'll assume that you know how to get and set up the JDK - if you don't, then we suggest starting at &lt;a href="https://jdk.java.net/"&gt;https://jdk.java.net/&lt;/a&gt; and learning more about Java, before returning to this README.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Bug fixes, improvements and new features are always welcome! Please review the &lt;a href="https://raw.githubusercontent.com/apache/lucene/main/CONTRIBUTING.md"&gt;Contributing to Lucene Guide&lt;/a&gt; for information on contributing.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Additional Developer Documentation: &lt;a href="https://raw.githubusercontent.com/apache/lucene/main/dev-docs/"&gt;dev-docs/&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Discussion and Support&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://lucene.apache.org/core/discussion.html#java-user-list-java-userluceneapacheorg"&gt;Users Mailing List&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://lucene.apache.org/core/discussion.html#developer-lists"&gt;Developers Mailing List&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;IRC: &lt;code&gt;#lucene&lt;/code&gt; and &lt;code&gt;#lucene-dev&lt;/code&gt; on freenode.net&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>eugenp/tutorials</title>
+      <link>https://github.com/eugenp/tutorials</link>
+      <description>&lt;p&gt;Getting Started with Spring Boot 3:&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Cloning the repository&lt;/h1&gt; 
+&lt;p&gt;If you are getting an error while cloning the repository, try running: git config --global http.postBuffer 5000000&lt;/p&gt; 
+&lt;p&gt;This will increase the buffer size from the default 1MiB to 5MiB.&lt;/p&gt; 
+&lt;p&gt;To revert this value to the default, use: git config --global http.postBuffer 1000000&lt;/p&gt; 
+&lt;h1&gt;The Courses&lt;/h1&gt; 
+&lt;p&gt;"Learn Spring" Course: &lt;br /&gt; &lt;strong&gt;&lt;a href="https://www.baeldung.com/learn-spring-course?utm_source=github&amp;amp;utm_medium=social&amp;amp;utm_content=tutorials&amp;amp;utm_campaign=ls#master-class"&gt;&amp;gt;&amp;gt; LEARN SPRING - THE MASTER CLASS&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;"REST With Spring" Course: &lt;br /&gt; &lt;strong&gt;&lt;a href="https://www.baeldung.com/rest-with-spring-course?utm_source=github&amp;amp;utm_medium=social&amp;amp;utm_content=tutorials&amp;amp;utm_campaign=rws#master-class"&gt;&amp;gt;&amp;gt; THE REST WITH SPRING - MASTER CLASS&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;"Learn Spring Security" Course: &lt;br /&gt; &lt;strong&gt;&lt;a href="https://www.baeldung.com/learn-spring-security-course?utm_source=github&amp;amp;utm_medium=social&amp;amp;utm_content=tutorials&amp;amp;utm_campaign=lss#master-class"&gt;&amp;gt;&amp;gt; LEARN SPRING SECURITY - MASTER CLASS&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;h1&gt;Java and Spring Tutorials&lt;/h1&gt; 
+&lt;p&gt;This project is &lt;strong&gt;a collection of small and focused tutorials&lt;/strong&gt; - each covering a single and well-defined area of development in the Java ecosystem. A strong focus of these is the Spring Framework - Spring, Spring Boot and Spring Security. In addition to Spring, the modules here cover several aspects of Java.&lt;/p&gt; 
+&lt;h1&gt;Profile-based segregation&lt;/h1&gt; 
+&lt;p&gt;We use Maven build profiles to segregate the huge list of individual projects in our repository.&lt;/p&gt; 
+&lt;p&gt;The projects are broadly divided into 6 lists: default, default-jdk17, default-jdk22, default-jdk23, default-jdk8 and default-heavy.&lt;/p&gt; 
+&lt;p&gt;Next, they are segregated further based on the tests that we want to execute.&lt;/p&gt; 
+&lt;p&gt;We also have a parents profile to build only parent modules.&lt;/p&gt; 
+&lt;p&gt;Therefore, we have a total of 13 profiles:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Profile&lt;/th&gt; 
+   &lt;th&gt;Includes&lt;/th&gt; 
+   &lt;th&gt;Type of test enabled&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;default&lt;/td&gt; 
+   &lt;td&gt;JDK21 projects&lt;/td&gt; 
+   &lt;td&gt;*UnitTest&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;integration&lt;/td&gt; 
+   &lt;td&gt;JDK21 projects&lt;/td&gt; 
+   &lt;td&gt;*IntegrationTest&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;default-jdk17&lt;/td&gt; 
+   &lt;td&gt;JDK17 projects&lt;/td&gt; 
+   &lt;td&gt;*UnitTest&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;integration-jdk17&lt;/td&gt; 
+   &lt;td&gt;JDK17 projects&lt;/td&gt; 
+   &lt;td&gt;*IntegrationTest&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;default-jdk22&lt;/td&gt; 
+   &lt;td&gt;JDK22 projects&lt;/td&gt; 
+   &lt;td&gt;*UnitTest&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;integration-jdk22&lt;/td&gt; 
+   &lt;td&gt;JDK22 projects&lt;/td&gt; 
+   &lt;td&gt;*IntegrationTest&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;default-jdk23&lt;/td&gt; 
+   &lt;td&gt;JDK23 projects&lt;/td&gt; 
+   &lt;td&gt;*UnitTest&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;integration-jdk23&lt;/td&gt; 
+   &lt;td&gt;JDK23 projects&lt;/td&gt; 
+   &lt;td&gt;*IntegrationTest&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;default-heavy&lt;/td&gt; 
+   &lt;td&gt;Heavy/long running projects&lt;/td&gt; 
+   &lt;td&gt;*UnitTest&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;integration-heavy&lt;/td&gt; 
+   &lt;td&gt;Heavy/long running projects&lt;/td&gt; 
+   &lt;td&gt;*IntegrationTest&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;default-jdk8&lt;/td&gt; 
+   &lt;td&gt;JDK8 projects&lt;/td&gt; 
+   &lt;td&gt;*UnitTest&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;integration-jdk8&lt;/td&gt; 
+   &lt;td&gt;JDK8 projects&lt;/td&gt; 
+   &lt;td&gt;*IntegrationTest&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;parents&lt;/td&gt; 
+   &lt;td&gt;Set of parent modules&lt;/td&gt; 
+   &lt;td&gt;None&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h1&gt;Building the project&lt;/h1&gt; 
+&lt;p&gt;Though it should not be needed often to build the entire repository at once because we are usually concerned with a specific module.&lt;/p&gt; 
+&lt;p&gt;But if we want to, we can invoke the below command from the root of the repository if we want to build the entire repository with only Unit Tests enabled:&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;mvn clean install -Pdefault,default-heavy&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;or if we want to build the entire repository with Integration Tests enabled, we can do:&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;mvn clean install -Pintegration,integration-heavy&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;Analogously, for the JDK8 projects the commands are:&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;mvn clean install -Pdefault-jdk8&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;and&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;mvn clean install -Pintegration-jdk8&lt;/code&gt;&lt;/p&gt; 
+&lt;h1&gt;Building a single module&lt;/h1&gt; 
+&lt;p&gt;To build a specific module, run the command: &lt;code&gt;mvn clean install&lt;/code&gt; in the module directory.&lt;/p&gt; 
+&lt;p&gt;It can happen that your module is part of a parent module e.g. &lt;code&gt;parent-boot-1&lt;/code&gt;,&lt;code&gt;parent-spring-5&lt;/code&gt; etc, then you will need to build the parent module first so that you can build your module. We have created a &lt;code&gt;parents&lt;/code&gt; profile that you can use to build just the parent modules, just run the profile as: &lt;code&gt;mvn clean install -Pparents&lt;/code&gt;&lt;/p&gt; 
+&lt;h1&gt;Building modules from the root of the repository&lt;/h1&gt; 
+&lt;p&gt;To build specific modules from the root of the repository, run the command: &lt;code&gt;mvn clean install --pl akka-modules,algorithms-modules -Pdefault&lt;/code&gt; in the root directory.&lt;/p&gt; 
+&lt;p&gt;Here &lt;code&gt;akka-modules&lt;/code&gt; and &lt;code&gt;algorithms-modules&lt;/code&gt; are the modules that we want to build and &lt;code&gt;default&lt;/code&gt; is the maven profile in which these modules are present.&lt;/p&gt; 
+&lt;h1&gt;Running a Spring Boot module&lt;/h1&gt; 
+&lt;p&gt;To run a Spring Boot module, run the command: &lt;code&gt;mvn spring-boot:run&lt;/code&gt; in the module directory.&lt;/p&gt; 
+&lt;h1&gt;Working with the IDE&lt;/h1&gt; 
+&lt;p&gt;This repo contains a large number of modules. When you're working with an individual module, there's no need to import all of them (or build all of them) - you can simply import that particular module in either Eclipse or IntelliJ.&lt;/p&gt; 
+&lt;h1&gt;Running Tests&lt;/h1&gt; 
+&lt;p&gt;The command &lt;code&gt;mvn clean install&lt;/code&gt; from within a module will run the unit tests in that module. For Spring modules this will also run the &lt;code&gt;SpringContextTest&lt;/code&gt; if present.&lt;/p&gt; 
+&lt;p&gt;To run the integration tests, use the command:&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;mvn clean install -Pintegration&lt;/code&gt; or&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;mvn clean install -Pintegration-heavy&lt;/code&gt; or&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;mvn clean install -Pintegration-jdk8&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;depending on the list where our module exists&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
