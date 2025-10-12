@@ -1,0 +1,1897 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub All Languages Daily Trending</title>
+    <description>Daily Trending of All Languages in GitHub</description>
+    <pubDate>Sat, 11 Oct 2025 01:30:12 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>78/xiaozhi-esp32</title>
+      <link>https://github.com/78/xiaozhi-esp32</link>
+      <description>&lt;p&gt;An MCP-based chatbot | 一个基于MCP的聊天机器人&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;An MCP-based Chatbot&lt;/h1&gt; 
+&lt;p&gt;（中文 | &lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/README_en.md"&gt;English&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/README_ja.md"&gt;日本語&lt;/a&gt;）&lt;/p&gt; 
+&lt;h2&gt;介绍&lt;/h2&gt; 
+&lt;p&gt;👉 &lt;a href="https://www.bilibili.com/video/BV1bpjgzKEhd/"&gt;人类：给 AI 装摄像头 vs AI：当场发现主人三天没洗头【bilibili】&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;👉 &lt;a href="https://www.bilibili.com/video/BV1XnmFYLEJN/"&gt;手工打造你的 AI 女友，新手入门教程【bilibili】&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;小智 AI 聊天机器人作为一个语音交互入口，利用 Qwen / DeepSeek 等大模型的 AI 能力，通过 MCP 协议实现多端控制。&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/mcp-based-graph.jpg" alt="通过MCP控制万物" width="320" /&gt; 
+&lt;h3&gt;版本说明&lt;/h3&gt; 
+&lt;p&gt;当前 v2 版本与 v1 版本分区表不兼容，所以无法从 v1 版本通过 OTA 升级到 v2 版本。分区表说明参见 &lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/partitions/v2/README.md"&gt;partitions/v2/README.md&lt;/a&gt;。&lt;/p&gt; 
+&lt;p&gt;使用 v1 版本的所有硬件，可以通过手动烧录固件来升级到 v2 版本。&lt;/p&gt; 
+&lt;p&gt;v1 的稳定版本为 1.9.2，可以通过 &lt;code&gt;git checkout v1&lt;/code&gt; 来切换到 v1 版本，该分支会持续维护到 2026 年 2 月。&lt;/p&gt; 
+&lt;h3&gt;已实现功能&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Wi-Fi / ML307 Cat.1 4G&lt;/li&gt; 
+ &lt;li&gt;离线语音唤醒 &lt;a href="https://github.com/espressif/esp-sr"&gt;ESP-SR&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;支持两种通信协议（&lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/websocket.md"&gt;Websocket&lt;/a&gt; 或 MQTT+UDP）&lt;/li&gt; 
+ &lt;li&gt;采用 OPUS 音频编解码&lt;/li&gt; 
+ &lt;li&gt;基于流式 ASR + LLM + TTS 架构的语音交互&lt;/li&gt; 
+ &lt;li&gt;声纹识别，识别当前说话人的身份 &lt;a href="https://github.com/modelscope/3D-Speaker"&gt;3D Speaker&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;OLED / LCD 显示屏，支持表情显示&lt;/li&gt; 
+ &lt;li&gt;电量显示与电源管理&lt;/li&gt; 
+ &lt;li&gt;支持多语言（中文、英文、日文）&lt;/li&gt; 
+ &lt;li&gt;支持 ESP32-C3、ESP32-S3、ESP32-P4 芯片平台&lt;/li&gt; 
+ &lt;li&gt;通过设备端 MCP 实现设备控制（音量、灯光、电机、GPIO 等）&lt;/li&gt; 
+ &lt;li&gt;通过云端 MCP 扩展大模型能力（智能家居控制、PC桌面操作、知识搜索、邮件收发等）&lt;/li&gt; 
+ &lt;li&gt;自定义唤醒词、字体、表情与聊天背景，支持网页端在线修改 (&lt;a href="https://github.com/78/xiaozhi-assets-generator"&gt;自定义Assets生成器&lt;/a&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;硬件&lt;/h2&gt; 
+&lt;h3&gt;面包板手工制作实践&lt;/h3&gt; 
+&lt;p&gt;详见飞书文档教程：&lt;/p&gt; 
+&lt;p&gt;👉 &lt;a href="https://ccnphfhqs21z.feishu.cn/wiki/F5krwD16viZoF0kKkvDcrZNYnhb?from=from_copylink"&gt;《小智 AI 聊天机器人百科全书》&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;面包板效果图如下：&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/wiring2.jpg" alt="面包板效果图" /&gt;&lt;/p&gt; 
+&lt;h3&gt;支持 70 多个开源硬件（仅展示部分）&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://oshwhub.com/li-chuang-kai-fa-ban/li-chuang-shi-zhan-pai-esp32-s3-kai-fa-ban" target="_blank" title="立创·实战派 ESP32-S3 开发板"&gt;立创·实战派 ESP32-S3 开发板&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/espressif/esp-box" target="_blank" title="乐鑫 ESP32-S3-BOX3"&gt;乐鑫 ESP32-S3-BOX3&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.m5stack.com/zh_CN/core/CoreS3" target="_blank" title="M5Stack CoreS3"&gt;M5Stack CoreS3&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.m5stack.com/en/atom/Atomic%20Echo%20Base" target="_blank" title="AtomS3R + Echo Base"&gt;M5Stack AtomS3R + Echo Base&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://gf.bilibili.com/item/detail/1108782064" target="_blank" title="神奇按钮 2.4"&gt;神奇按钮 2.4&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.waveshare.net/shop/ESP32-S3-Touch-AMOLED-1.8.htm" target="_blank" title="微雪电子 ESP32-S3-Touch-AMOLED-1.8"&gt;微雪电子 ESP32-S3-Touch-AMOLED-1.8&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/Xinyuan-LilyGO/T-Circle-S3" target="_blank" title="LILYGO T-Circle-S3"&gt;LILYGO T-Circle-S3&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://oshwhub.com/tenclass01/xmini_c3" target="_blank" title="虾哥 Mini C3"&gt;虾哥 Mini C3&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://oshwhub.com/movecall/cuican-ai-pendant-lights-up-y" target="_blank" title="Movecall CuiCan ESP32S3"&gt;璀璨·AI 吊坠&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/WMnologo/xingzhi-ai" target="_blank" title="无名科技Nologo-星智-1.54"&gt;无名科技 Nologo-星智-1.54TFT&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.seeedstudio.com/SenseCAP-Watcher-W1-A-p-5979.html" target="_blank" title="SenseCAP Watcher"&gt;SenseCAP Watcher&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1BHJtz6E2S/" target="_blank" title="ESP-HI 超低成本机器狗"&gt;ESP-HI 超低成本机器狗&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;div style="display: flex; justify-content: space-between;"&gt; 
+ &lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/lichuang-s3.jpg" target="_blank" title="立创·实战派 ESP32-S3 开发板"&gt; &lt;img src="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/lichuang-s3.jpg" width="240" /&gt; &lt;/a&gt; 
+ &lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/espbox3.jpg" target="_blank" title="乐鑫 ESP32-S3-BOX3"&gt; &lt;img src="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/espbox3.jpg" width="240" /&gt; &lt;/a&gt; 
+ &lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/m5cores3.jpg" target="_blank" title="M5Stack CoreS3"&gt; &lt;img src="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/m5cores3.jpg" width="240" /&gt; &lt;/a&gt; 
+ &lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/atoms3r.jpg" target="_blank" title="AtomS3R + Echo Base"&gt; &lt;img src="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/atoms3r.jpg" width="240" /&gt; &lt;/a&gt; 
+ &lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/magiclick.jpg" target="_blank" title="神奇按钮 2.4"&gt; &lt;img src="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/magiclick.jpg" width="240" /&gt; &lt;/a&gt; 
+ &lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/waveshare.jpg" target="_blank" title="微雪电子 ESP32-S3-Touch-AMOLED-1.8"&gt; &lt;img src="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/waveshare.jpg" width="240" /&gt; &lt;/a&gt; 
+ &lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/lilygo-t-circle-s3.jpg" target="_blank" title="LILYGO T-Circle-S3"&gt; &lt;img src="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/lilygo-t-circle-s3.jpg" width="240" /&gt; &lt;/a&gt; 
+ &lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/xmini-c3.jpg" target="_blank" title="虾哥 Mini C3"&gt; &lt;img src="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/xmini-c3.jpg" width="240" /&gt; &lt;/a&gt; 
+ &lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/movecall-cuican-esp32s3.jpg" target="_blank" title="CuiCan"&gt; &lt;img src="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/movecall-cuican-esp32s3.jpg" width="240" /&gt; &lt;/a&gt; 
+ &lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/wmnologo_xingzhi_1.54.jpg" target="_blank" title="无名科技Nologo-星智-1.54"&gt; &lt;img src="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/wmnologo_xingzhi_1.54.jpg" width="240" /&gt; &lt;/a&gt; 
+ &lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/sensecap_watcher.jpg" target="_blank" title="SenseCAP Watcher"&gt; &lt;img src="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/sensecap_watcher.jpg" width="240" /&gt; &lt;/a&gt; 
+ &lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/esp-hi.jpg" target="_blank" title="ESP-HI 超低成本机器狗"&gt; &lt;img src="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/v1/esp-hi.jpg" width="240" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;软件&lt;/h2&gt; 
+&lt;h3&gt;固件烧录&lt;/h3&gt; 
+&lt;p&gt;新手第一次操作建议先不要搭建开发环境，直接使用免开发环境烧录的固件。&lt;/p&gt; 
+&lt;p&gt;固件默认接入 &lt;a href="https://xiaozhi.me"&gt;xiaozhi.me&lt;/a&gt; 官方服务器，个人用户注册账号可以免费使用 Qwen 实时模型。&lt;/p&gt; 
+&lt;p&gt;👉 &lt;a href="https://ccnphfhqs21z.feishu.cn/wiki/Zpz4wXBtdimBrLk25WdcXzxcnNS"&gt;新手烧录固件教程&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;开发环境&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Cursor 或 VSCode&lt;/li&gt; 
+ &lt;li&gt;安装 ESP-IDF 插件，选择 SDK 版本 5.4 或以上&lt;/li&gt; 
+ &lt;li&gt;Linux 比 Windows 更好，编译速度快，也免去驱动问题的困扰&lt;/li&gt; 
+ &lt;li&gt;本项目使用 Google C++ 代码风格，提交代码时请确保符合规范&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;开发者文档&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/custom-board.md"&gt;自定义开发板指南&lt;/a&gt; - 学习如何为小智 AI 创建自定义开发板&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/mcp-usage.md"&gt;MCP 协议物联网控制用法说明&lt;/a&gt; - 了解如何通过 MCP 协议控制物联网设备&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/mcp-protocol.md"&gt;MCP 协议交互流程&lt;/a&gt; - 设备端 MCP 协议的实现方式&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/mqtt-udp.md"&gt;MQTT + UDP 混合通信协议文档&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/78/xiaozhi-esp32/main/docs/websocket.md"&gt;一份详细的 WebSocket 通信协议文档&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;大模型配置&lt;/h2&gt; 
+&lt;p&gt;如果你已经拥有一个小智 AI 聊天机器人设备，并且已接入官方服务器，可以登录 &lt;a href="https://xiaozhi.me"&gt;xiaozhi.me&lt;/a&gt; 控制台进行配置。&lt;/p&gt; 
+&lt;p&gt;👉 &lt;a href="https://www.bilibili.com/video/BV1jUCUY2EKM/"&gt;后台操作视频教程（旧版界面）&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;相关开源项目&lt;/h2&gt; 
+&lt;p&gt;在个人电脑上部署服务器，可以参考以下第三方开源的项目：&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/xinnan-tech/xiaozhi-esp32-server"&gt;xinnan-tech/xiaozhi-esp32-server&lt;/a&gt; Python 服务器&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/joey-zhou/xiaozhi-esp32-server-java"&gt;joey-zhou/xiaozhi-esp32-server-java&lt;/a&gt; Java 服务器&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/AnimeAIChat/xiaozhi-server-go"&gt;AnimeAIChat/xiaozhi-server-go&lt;/a&gt; Golang 服务器&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;使用小智通信协议的第三方客户端项目：&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/huangjunsen0406/py-xiaozhi"&gt;huangjunsen0406/py-xiaozhi&lt;/a&gt; Python 客户端&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TOM88812/xiaozhi-android-client"&gt;TOM88812/xiaozhi-android-client&lt;/a&gt; Android 客户端&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="http://github.com/100askTeam/xiaozhi-linux"&gt;100askTeam/xiaozhi-linux&lt;/a&gt; 百问科技提供的 Linux 客户端&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/78/xiaozhi-sf32"&gt;78/xiaozhi-sf32&lt;/a&gt; 思澈科技的蓝牙芯片固件&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/QuecPython/solution-xiaozhiAI"&gt;QuecPython/solution-xiaozhiAI&lt;/a&gt; 移远提供的 QuecPython 固件&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;关于项目&lt;/h2&gt; 
+&lt;p&gt;这是一个由虾哥开源的 ESP32 项目，以 MIT 许可证发布，允许任何人免费使用，修改或用于商业用途。&lt;/p&gt; 
+&lt;p&gt;我们希望通过这个项目，能够帮助大家了解 AI 硬件开发，将当下飞速发展的大语言模型应用到实际的硬件设备中。&lt;/p&gt; 
+&lt;p&gt;如果你有任何想法或建议，请随时提出 Issues 或加入 QQ 群：1011329060&lt;/p&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;a href="https://star-history.com/#78/xiaozhi-esp32&amp;amp;Date"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=78/xiaozhi-esp32&amp;amp;type=Date&amp;amp;theme=dark" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=78/xiaozhi-esp32&amp;amp;type=Date" /&gt; 
+  &lt;img alt="Star History Chart" src="https://api.star-history.com/svg?repos=78/xiaozhi-esp32&amp;amp;type=Date" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt;</description>
+    </item>
+    
+    <item>
+      <title>TapXWorld/ChinaTextbook</title>
+      <link>https://github.com/TapXWorld/ChinaTextbook</link>
+      <description>&lt;p&gt;所有小初高、大学PDF教材。&lt;/p&gt;&lt;hr&gt;&lt;h2&gt;项目的由来&lt;/h2&gt; 
+&lt;p&gt;虽然国内教育网站已提供免费资源，但大多数普通人获取信息的途径依然受限。有些人利用这一点，在某站上销售这些带有私人水印的资源。为了应对这种情况，我计划将这些资源集中并开源，以促进义务教育的普及和消除地区间的教育贫困。&lt;/p&gt; 
+&lt;p&gt;还有一个最重要的原因是，希望海外华人能够让自己的孩子继续了解国内教育。&lt;/p&gt; 
+&lt;h2&gt;学习数学&lt;/h2&gt; 
+&lt;p&gt;希望未来出现更多不是为了考学而读书的人。&lt;/p&gt; 
+&lt;h3&gt;小学数学&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/raw/master/%E5%B0%8F%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%20%C2%B7%20%E6%95%B0%E5%AD%A6%E4%B8%80%E5%B9%B4%E7%BA%A7%E4%B8%8A%E5%86%8C.pdf"&gt;一年级上册&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/raw/master/%E5%B0%8F%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%C2%B7%E6%95%B0%E5%AD%A6%E4%B8%80%E5%B9%B4%E7%BA%A7%E4%B8%8B%E5%86%8C.pdf"&gt;一年级下册&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/raw/master/%E5%B0%8F%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%20%C2%B7%20%E6%95%B0%E5%AD%A6%E4%BA%8C%E5%B9%B4%E7%BA%A7%E4%B8%8A%E5%86%8C.pdf"&gt;二年级上册&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/raw/master/%E5%B0%8F%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%C2%B7%E6%95%B0%E5%AD%A6%E4%BA%8C%E5%B9%B4%E7%BA%A7%E4%B8%8B%E5%86%8C.pdf"&gt;二年级下册&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/raw/master/%E5%B0%8F%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%20%C2%B7%20%E6%95%B0%E5%AD%A6%E4%B8%89%E5%B9%B4%E7%BA%A7%E4%B8%8A%E5%86%8C.pdf"&gt;三年级上册&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/raw/master/%E5%B0%8F%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%C2%B7%E6%95%B0%E5%AD%A6%E4%B8%89%E5%B9%B4%E7%BA%A7%E4%B8%8B%E5%86%8C.pdf"&gt;三年级下册&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/raw/master/%E5%B0%8F%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%20%C2%B7%20%E6%95%B0%E5%AD%A6%E5%9B%9B%E5%B9%B4%E7%BA%A7%E4%B8%8A%E5%86%8C.pdf"&gt;四年级上册&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/raw/master/%E5%B0%8F%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%C2%B7%E6%95%B0%E5%AD%A6%E5%9B%9B%E5%B9%B4%E7%BA%A7%E4%B8%8B%E5%86%8C.pdf"&gt;四年级下册&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/raw/master/%E5%B0%8F%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%20%C2%B7%20%E6%95%B0%E5%AD%A6%E4%BA%94%E5%B9%B4%E7%BA%A7%E4%B8%8A%E5%86%8C.pdf"&gt;五年级上册&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/raw/master/%E5%B0%8F%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%C2%B7%E6%95%B0%E5%AD%A6%E4%BA%94%E5%B9%B4%E7%BA%A7%E4%B8%8B%E5%86%8C.pdf"&gt;五年级下册&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/raw/master/%E5%B0%8F%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%20%C2%B7%20%E6%95%B0%E5%AD%A6%E5%85%AD%E5%B9%B4%E7%BA%A7%E4%B8%8A%E5%86%8C.pdf"&gt;六年级上册&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/raw/master/%E5%B0%8F%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%C2%B7%E6%95%B0%E5%AD%A6%E5%85%AD%E5%B9%B4%E7%BA%A7%E4%B8%8B%E5%86%8C.pdf"&gt;六年级下册&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;初中数学&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/raw/master/%E5%88%9D%E4%B8%AD/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88-%E4%BA%BA%E6%B0%91%E6%95%99%E8%82%B2%E5%87%BA%E7%89%88%E7%A4%BE/%E4%B8%83%E5%B9%B4%E7%BA%A7/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%C2%B7%E6%95%B0%E5%AD%A6%E4%B8%83%E5%B9%B4%E7%BA%A7%E4%B8%8A%E5%86%8C.pdf"&gt;初一上册&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/raw/master/%E5%88%9D%E4%B8%AD/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88-%E4%BA%BA%E6%B0%91%E6%95%99%E8%82%B2%E5%87%BA%E7%89%88%E7%A4%BE/%E4%B8%83%E5%B9%B4%E7%BA%A7/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%C2%B7%E6%95%B0%E5%AD%A6%E4%B8%83%E5%B9%B4%E7%BA%A7%E4%B8%8B%E5%86%8C.pdf"&gt;初一下册&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/raw/master/%E5%88%9D%E4%B8%AD/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88-%E4%BA%BA%E6%B0%91%E6%95%99%E8%82%B2%E5%87%BA%E7%89%88%E7%A4%BE/%E5%85%AB%E5%B9%B4%E7%BA%A7/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%C2%B7%E6%95%B0%E5%AD%A6%E5%85%AB%E5%B9%B4%E7%BA%A7%E4%B8%8A%E5%86%8C.pdf"&gt;初二上册&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/raw/master/%E5%88%9D%E4%B8%AD/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88-%E4%BA%BA%E6%B0%91%E6%95%99%E8%82%B2%E5%87%BA%E7%89%88%E7%A4%BE/%E5%85%AB%E5%B9%B4%E7%BA%A7/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%C2%B7%E6%95%B0%E5%AD%A6%E5%85%AB%E5%B9%B4%E7%BA%A7%E4%B8%8B%E5%86%8C.pdf"&gt;初二下册&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/raw/master/%E5%88%9D%E4%B8%AD/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88-%E4%BA%BA%E6%B0%91%E6%95%99%E8%82%B2%E5%87%BA%E7%89%88%E7%A4%BE/%E4%B9%9D%E5%B9%B4%E7%BA%A7/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%C2%B7%E6%95%B0%E5%AD%A6%E4%B9%9D%E5%B9%B4%E7%BA%A7%E4%B8%8A%E5%86%8C.pdf"&gt;初三上册&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/raw/master/%E5%88%9D%E4%B8%AD/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88-%E4%BA%BA%E6%B0%91%E6%95%99%E8%82%B2%E5%87%BA%E7%89%88%E7%A4%BE/%E4%B9%9D%E5%B9%B4%E7%BA%A7/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%C2%B7%E6%95%B0%E5%AD%A6%E4%B9%9D%E5%B9%B4%E7%BA%A7%E4%B8%8B%E5%86%8C.pdf"&gt;初三下册&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;高中数学&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/tree/master/%E9%AB%98%E4%B8%AD/%E6%95%B0%E5%AD%A6/%E4%BA%BA%E6%95%99%E7%89%88%EF%BC%88A%E7%89%88%EF%BC%89%EF%BC%88%E4%B8%BB%E7%BC%96%EF%BC%9A%E7%AB%A0%E5%BB%BA%E8%B7%83%26%E6%9D%8E%E5%A2%9E%E6%B2%AA%EF%BC%89-%E4%BA%BA%E6%B0%91%E6%95%99%E8%82%B2%E5%87%BA%E7%89%88%E7%A4%BE"&gt;目录&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;大学数学&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/tree/master/%E5%A4%A7%E5%AD%A6/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/%E5%90%8C%E6%B5%8E%E5%A4%A7%E5%AD%A6%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%E7%AC%AC%E4%B8%83%E7%89%88"&gt;高等数学&lt;/a&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/tree/master/%E5%A4%A7%E5%AD%A6/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0"&gt;线性代数&lt;/a&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/tree/master/%E5%A4%A7%E5%AD%A6/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6"&gt;离散数学&lt;/a&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook/tree/master/%E5%A4%A7%E5%AD%A6/%E6%A6%82%E7%8E%87%E8%AE%BA"&gt;概率论&lt;/a&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="http://www.dxsx.net/index.php"&gt;更多数学资料-(大学数学网)&lt;/a&gt;&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;&lt;/h2&gt; 
+&lt;h2&gt;问题：如何合并被拆分的文件？&lt;/h2&gt; 
+&lt;p&gt;由于 GitHub 对单个文件的上传有最大限制，超过 100MB 的文件会被拒绝上传，超过 50MB 的文件上传时会收到警告。因此，文件大小超过 50MB 的文件会被拆分成每个 35MB 的多个文件。&lt;/p&gt; 
+&lt;h3&gt;示例&lt;/h3&gt; 
+&lt;p&gt;文件被拆分的示例：&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;义务教育教科书 · 数学一年级上册.pdf.1&lt;/li&gt; 
+ &lt;li&gt;义务教育教科书 · 数学一年级上册.pdf.2&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;解决办法&lt;/h3&gt; 
+&lt;p&gt;要合并这些被拆分的文件，您只需执行以下步骤(其他操作系统同理)：&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;将合并程序 &lt;code&gt;mergePDFs-windows-amd64.exe&lt;/code&gt; 下载到包含 PDF 文件的文件夹中。&lt;/li&gt; 
+ &lt;li&gt;确保 &lt;code&gt;mergePDFs-windows-amd64.exe&lt;/code&gt; 和被拆分的 PDF 文件在同一目录下。&lt;/li&gt; 
+ &lt;li&gt;双击 &lt;code&gt;mergePDFs-windows-amd64.exe&lt;/code&gt; 程序即可自动完成文件合并。&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;下载方式&lt;/h3&gt; 
+&lt;p&gt;您可以通过以下链接，下载文件合并程序：&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/TapXWorld/ChinaTextbook-tools/releases"&gt;下载文件合并程序&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;文件和程序示例&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;mergePDFs-windows-amd64.exe&lt;/li&gt; 
+ &lt;li&gt;义务教育教科书 · 数学一年级上册.pdf.1&lt;/li&gt; 
+ &lt;li&gt;义务教育教科书 · 数学一年级上册.pdf.2&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;重新下载&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;如果您位于内地，并且网络不错，想重新下载，您可以使用 &lt;a href="https://github.com/happycola233/tchMaterial-parser"&gt;tchMaterial-parser&lt;/a&gt; 项目（鼓励开源），进行重新下载。&lt;/li&gt; 
+ &lt;li&gt;如果您位于国外，和内地网络通信速度较慢，建议使用本存储库进行签出。&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;教材捐献&lt;/h2&gt; 
+&lt;p&gt;如果这个项目帮助您免费获取教育资源，请考虑支持我们推广开放教育的努力！您的捐献将帮助我们维护和扩展这个资源库。&lt;/p&gt; 
+&lt;p&gt;加入我们的 Telegram 社区，获取最新动态并分享您的想法：&lt;a href="https://t.me/+1V6WjEq8WEM4MDM1"&gt;https://t.me/+1V6WjEq8WEM4MDM1&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;支持我&lt;/h2&gt; 
+&lt;p&gt;如果您觉得这个项目对您有帮助，您可以扫描以下二维码进行捐赠：&lt;/p&gt; 
+&lt;p align="left"&gt; &lt;img src="https://raw.githubusercontent.com/TapXWorld/ChinaTextbook/master/.cache/support-alipay.png" width="20%" /&gt; &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TibixDev/winboat</title>
+      <link>https://github.com/TibixDev/winboat</link>
+      <description>&lt;p&gt;Run Windows apps on 🐧 Linux with ✨ seamless integration&lt;/p&gt;&lt;hr&gt;&lt;div align="left"&gt; 
+ &lt;table&gt; 
+  &lt;tbody&gt;
+   &lt;tr&gt; 
+    &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/TibixDev/winboat/main/gh-assets/winboat_logo.svg?sanitize=true" alt="WinBoat Logo" width="150" /&gt; &lt;/td&gt; 
+    &lt;td&gt; &lt;h1 style="color: #7C86FF; margin: 0; font-size: 32px;"&gt;WinBoat&lt;/h1&gt; &lt;p style="color: oklch(90% 0 0); font-size: 14px; margin: 5px 0;"&gt;Windows for Penguins.&lt;br /&gt; Run Windows apps on 🐧 Linux with ✨ seamless integration&lt;/p&gt; &lt;/td&gt; 
+   &lt;/tr&gt; 
+  &lt;/tbody&gt;
+ &lt;/table&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Screenshots&lt;/h2&gt; 
+&lt;div align="center"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/TibixDev/winboat/main/gh-assets/features/feat_dash.png" alt="WinBoat Dashboard" width="45%" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/TibixDev/winboat/main/gh-assets/features/feat_apps.png" alt="WinBoat Apps" width="45%" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/TibixDev/winboat/main/gh-assets/features/feat_native.png" alt="Native Windows" width="45%" /&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;⚠️ Work in Progress ⚠️&lt;/h2&gt; 
+&lt;p&gt;WinBoat is currently in beta, so expect to occasionally run into hiccups and bugs. You should be comfortable with some level of troubleshooting if you decide to try it, however we encourage you to give it a shot anyway.&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;🎨 Elegant Interface&lt;/strong&gt;: Sleek and intuitive interface that seamlessly integrates Windows into your Linux desktop environment, making it feel like a native experience&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;📦 Automated Installs&lt;/strong&gt;: Simple installation process through our interface - pick your preferences &amp;amp; specs and let us handle the rest&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🚀 Run Any App&lt;/strong&gt;: If it runs on Windows, it can run on WinBoat. Enjoy the full range of Windows applications as native OS-level windows in your Linux environment&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🖥️ Full Windows Desktop&lt;/strong&gt;: Access the complete Windows desktop experience when you need it, or run individual apps seamlessly integrated into your Linux workflow&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;📁 Filesystem Integration&lt;/strong&gt;: Your home directory is mounted in Windows, allowing easy file sharing between the two systems without any hassle&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;✨ And many more&lt;/strong&gt;: Smartcard passthrough, resource monitoring, and more features being added regularly&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How Does It Work?&lt;/h2&gt; 
+&lt;p&gt;WinBoat is an Electron app which allows you to run Windows apps on Linux using a containerized approach. Windows runs as a VM inside a Docker container, we communicate with it using the &lt;a href="https://github.com/TibixDev/winboat/tree/main/guest_server"&gt;WinBoat Guest Server&lt;/a&gt; to retrieve data we need from Windows. For compositing applications as native OS-level windows, we use FreeRDP together with Windows's RemoteApp protocol.&lt;/p&gt; 
+&lt;h2&gt;Prerequisites&lt;/h2&gt; 
+&lt;p&gt;Before running WinBoat, ensure your system meets the following requirements:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;RAM&lt;/strong&gt;: At least 4 GB of RAM&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;CPU&lt;/strong&gt;: At least 2 CPU threads&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Storage&lt;/strong&gt;: At least 32 GB free space in &lt;code&gt;/var&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Virtualization&lt;/strong&gt;: KVM enabled in BIOS/UEFI 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://duckduckgo.com/?t=h_&amp;amp;q=how+to+enable+virtualization+in+%3Cmotherboard+brand%3E+bios&amp;amp;ia=web"&gt;How to enable virtualization&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Docker&lt;/strong&gt;: Required for containerization 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://docs.docker.com/engine/install/"&gt;Installation Guide&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;⚠️ NOTE:&lt;/strong&gt; Docker Desktop is &lt;strong&gt;not&lt;/strong&gt; supported, you will run into issues if you use it&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Docker Compose v2&lt;/strong&gt;: Required for compatibility with docker-compose.yml files 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://docs.docker.com/compose/install/#plugin-linux-only"&gt;Installation Guide&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Docker User Group&lt;/strong&gt;: Add your user to the &lt;code&gt;docker&lt;/code&gt; group 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user"&gt;Setup Instructions&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;FreeRDP&lt;/strong&gt;: Required for remote desktop connection (Please make sure you have &lt;strong&gt;Version 3.x.x&lt;/strong&gt; with sound support included) 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/FreeRDP/FreeRDP/wiki/PreBuilds"&gt;Installation Guide&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;[OPTIONAL] &lt;strong&gt;Kernel Modules&lt;/strong&gt;: The &lt;code&gt;iptables&lt;/code&gt; / &lt;code&gt;nftables&lt;/code&gt; and &lt;code&gt;iptable_nat&lt;/code&gt; kernel modules can be loaded for network autodiscovery and better shared filesystem performance, but this is not obligatory in newer versions of WinBoat 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://rentry.org/rmfq2e5e"&gt;Module loading instructions&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Downloading&lt;/h2&gt; 
+&lt;p&gt;You can download the latest Linux builds under the &lt;a href="https://github.com/TibixDev/winboat/releases"&gt;Releases&lt;/a&gt; tab. We currently offer four variants:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;AppImage:&lt;/strong&gt; A popular &amp;amp; portable app format which should run fine on most distributions&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Unpacked:&lt;/strong&gt; The raw unpacked files, simply run the executable (&lt;code&gt;linux-unpacked/winboat&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;.deb:&lt;/strong&gt; The intended format for Debian based distributions&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;.rpm:&lt;/strong&gt; The intended format for Fedora based distributions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Known Issues About Container Runtimes&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Podman is &lt;strong&gt;unsupported&lt;/strong&gt; for now&lt;/li&gt; 
+ &lt;li&gt;Docker Desktop is &lt;strong&gt;unsupported&lt;/strong&gt; for now&lt;/li&gt; 
+ &lt;li&gt;Distros that emulate Docker through a Podman socket are &lt;strong&gt;unsupported&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;Any rootless containerization solution is currently &lt;strong&gt;unsupported&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Building WinBoat&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;For building you need to have NodeJS and Go installed on your system&lt;/li&gt; 
+ &lt;li&gt;Clone the repo (&lt;code&gt;git clone https://github.com/TibixDev/WinBoat&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Install the dependencies (&lt;code&gt;npm i&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Build the app and the guest server using &lt;code&gt;npm run build:linux-gs&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;You can now find the built app under &lt;code&gt;dist&lt;/code&gt; with an AppImage and an Unpacked variant&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Running WinBoat in development mode&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Make sure you meet the &lt;a href="https://raw.githubusercontent.com/TibixDev/winboat/main/#prerequisites"&gt;prerequisites&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Additionally, for development you need to have NodeJS and Go installed on your system&lt;/li&gt; 
+ &lt;li&gt;Clone the repo (&lt;code&gt;git clone https://github.com/TibixDev/WinBoat&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Install the dependencies (&lt;code&gt;npm i&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Build the guest server (&lt;code&gt;npm run build-guest-server&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Run the app (&lt;code&gt;npm run dev&lt;/code&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Contributions are welcome! Whether it's bug fixes, feature improvements, or documentation updates, we appreciate your help making WinBoat better.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Please note&lt;/strong&gt;: We maintain a focus on technical contributions only. Pull requests containing political/sexual content, or other sensitive/controversial topics will not be accepted. Let's keep things focused on making great software! 🚀&lt;/p&gt; 
+&lt;p&gt;Feel free to:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Report bugs and issues&lt;/li&gt; 
+ &lt;li&gt;Submit feature requests&lt;/li&gt; 
+ &lt;li&gt;Contribute code improvements&lt;/li&gt; 
+ &lt;li&gt;Help with documentation&lt;/li&gt; 
+ &lt;li&gt;Share feedback and suggestions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Check out our issues page to get started, or feel free to open a new issue if you've found something that needs attention.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;WinBoat is licensed under the &lt;a href="https://github.com/TibixDev/winboat/raw/main/LICENSE"&gt;MIT&lt;/a&gt; license&lt;/p&gt; 
+&lt;h2&gt;Inspiration / Alternatives&lt;/h2&gt; 
+&lt;p&gt;These past few years some cool projects have surfaced with similar concepts, some of which we've also taken inspirations from.&lt;br /&gt; They're awesome and you should check them out:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/winapps-org/winapps"&gt;WinApps&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/casualsnek/cassowary"&gt;Cassowary&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/dockur/windows"&gt;dockur/windows&lt;/a&gt; (🌟 Also used in WinBoat)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Socials &amp;amp; Contact&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.winboat.app/"&gt;&lt;img src="https://img.shields.io/badge/Website-winboat.app-blue?style=flat&amp;amp;logo=googlechrome&amp;amp;logoColor=white" alt="Website" /&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://x.com/winboat_app"&gt;&lt;img src="https://img.shields.io/badge/Twitter-@winboat__app-1DA1F2?style=flat&amp;amp;logo=x&amp;amp;logoColor=white" alt="Twitter" /&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://fosstodon.org/@winboat"&gt;&lt;img src="https://img.shields.io/badge/Mastodon-@winboat-6364FF?style=flat&amp;amp;logo=mastodon&amp;amp;logoColor=white" alt="Mastodon" /&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="http://bsky.app/profile/winboat.app"&gt;&lt;img src="https://img.shields.io/badge/Bluesky-winboat.app-00A8E8?style=flat&amp;amp;logo=bluesky&amp;amp;logoColor=white" alt="Bluesky" /&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="http://discord.gg/MEwmpWm4tN"&gt;&lt;img src="https://img.shields.io/badge/Discord-Join_Community-5865F2?style=flat&amp;amp;logo=discord&amp;amp;logoColor=white" alt="Discord" /&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="mailto:staff@winboat.app"&gt;&lt;img src="https://img.shields.io/badge/Email-staff@winboat.app-D14836?style=flat&amp;amp;logo=gmail&amp;amp;logoColor=white" alt="Email" /&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://deepwiki.com/TibixDev/winboat"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" alt="Ask DeepWiki" /&gt;&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;a href="https://www.star-history.com/#tibixdev/winboat&amp;amp;Date"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=tibixdev/winboat&amp;amp;type=Date&amp;amp;theme=dark" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=tibixdev/winboat&amp;amp;type=Date" /&gt; 
+  &lt;img alt="Star History Chart" src="https://api.star-history.com/svg?repos=tibixdev/winboat&amp;amp;type=Date" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt;</description>
+    </item>
+    
+    <item>
+      <title>browserbase/stagehand</title>
+      <link>https://github.com/browserbase/stagehand</link>
+      <description>&lt;p&gt;The AI Browser Automation Framework&lt;/p&gt;&lt;hr&gt;&lt;div id="toc" align="center" style="margin-bottom: 0;"&gt; 
+ &lt;ul style="list-style: none; margin: 0; padding: 0;"&gt; 
+  &lt;a href="https://stagehand.dev"&gt; 
+   &lt;picture&gt; 
+    &lt;source media="(prefers-color-scheme: dark)" srcset="media/dark_logo.png" /&gt; 
+    &lt;img alt="Stagehand" src="https://raw.githubusercontent.com/browserbase/stagehand/main/media/light_logo.png" width="200" style="margin-right: 30px;" /&gt; 
+   &lt;/picture&gt; &lt;/a&gt; 
+ &lt;/ul&gt; 
+&lt;/div&gt; 
+&lt;p align="center"&gt; &lt;strong&gt;The AI Browser Automation Framework&lt;/strong&gt;&lt;br /&gt; &lt;a href="https://docs.stagehand.dev"&gt;Read the Docs&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/browserbase/stagehand/tree/main?tab=MIT-1-ov-file#MIT-1-ov-file"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="media/dark_license.svg" /&gt; 
+   &lt;img alt="MIT License" src="https://raw.githubusercontent.com/browserbase/stagehand/main/media/light_license.svg?sanitize=true" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;a href="https://join.slack.com/t/stagehand-dev/shared_invite/zt-38khc8iv5-T2acb50_0OILUaX7lxeBOg"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="media/dark_slack.svg" /&gt; 
+   &lt;img alt="Slack Community" src="https://raw.githubusercontent.com/browserbase/stagehand/main/media/light_slack.svg?sanitize=true" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/12122" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/12122" alt="browserbase%2Fstagehand | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; If you're looking for the Python implementation, you can find it &lt;a href="https://github.com/browserbase/stagehand-python"&gt; here&lt;/a&gt; &lt;/p&gt; 
+&lt;div align="center" style="display: flex; align-items: center; justify-content: center; gap: 4px; margin-bottom: 0;"&gt; 
+ &lt;b&gt;Vibe code&lt;/b&gt; 
+ &lt;span style="font-size: 1.05em;"&gt; Stagehand with &lt;/span&gt; 
+ &lt;a href="https://director.ai" style="display: flex; align-items: center;"&gt; &lt;span&gt;Director&lt;/span&gt; &lt;/a&gt; 
+ &lt;span&gt; &lt;/span&gt; 
+ &lt;picture&gt; 
+  &lt;img alt="Director" src="https://raw.githubusercontent.com/browserbase/stagehand/main/media/director_icon.svg?sanitize=true" width="25" /&gt; 
+ &lt;/picture&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Why Stagehand?&lt;/h2&gt; 
+&lt;p&gt;Most existing browser automation tools either require you to write low-level code in a framework like Selenium, Playwright, or Puppeteer, or use high-level agents that can be unpredictable in production. By letting developers choose what to write in code vs. natural language, Stagehand is the natural choice for browser automations in production.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Choose when to write code vs. natural language&lt;/strong&gt;: use AI when you want to navigate unfamiliar pages, and use code (&lt;a href="https://playwright.dev/"&gt;Playwright&lt;/a&gt;) when you know exactly what you want to do.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Preview and cache actions&lt;/strong&gt;: Stagehand lets you preview AI actions before running them, and also helps you easily cache repeatable actions to save time and tokens.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Computer use models with one line of code&lt;/strong&gt;: Stagehand lets you integrate SOTA computer use models from OpenAI and Anthropic into the browser with one line of code.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Example&lt;/h2&gt; 
+&lt;p&gt;Here's how to build a sample browser automation with Stagehand:&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;div style="max-width:300px;"&gt; 
+  &lt;img src="https://raw.githubusercontent.com/browserbase/stagehand/main/media/github_demo.gif" alt="See Stagehand in Action" /&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;pre&gt;&lt;code class="language-typescript"&gt;// Use Playwright functions on the page object
+const page = stagehand.page;
+await page.goto("https://github.com/browserbase");
+
+// Use act() to execute individual actions
+await page.act("click on the stagehand repo");
+
+// Use Computer Use agents for larger actions
+const agent = stagehand.agent({
+    provider: "openai",
+    model: "computer-use-preview",
+});
+await agent.execute("Get to the latest PR");
+
+// Use extract() to read data from the page
+const { author, title } = await page.extract({
+  instruction: "extract the author and title of the PR",
+  schema: z.object({
+    author: z.string().describe("The username of the PR author"),
+    title: z.string().describe("The title of the PR"),
+  }),
+});
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Visit &lt;a href="https://docs.stagehand.dev"&gt;docs.stagehand.dev&lt;/a&gt; to view the full documentation.&lt;/p&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;Start with Stagehand with one line of code, or check out our &lt;a href="https://docs.stagehand.dev/first-steps/quickstart"&gt;Quickstart Guide&lt;/a&gt; for more information:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx create-browser-app
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://www.loom.com/share/f5107f86d8c94fa0a8b4b1e89740f7a7"&gt; &lt;p&gt;Watch Anirudh demo create-browser-app to create a Stagehand project!&lt;/p&gt; &lt;/a&gt; 
+ &lt;a href="https://www.loom.com/share/f5107f86d8c94fa0a8b4b1e89740f7a7"&gt; &lt;img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/f5107f86d8c94fa0a8b4b1e89740f7a7-ec3f428b6775ceeb-full-play.gif" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;h3&gt;Build and Run from Source&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/browserbase/stagehand.git
+cd stagehand
+pnpm install
+pnpm playwright install
+pnpm run build
+pnpm run example # run the blank script at ./examples/example.ts
+pnpm run example 2048 # run the 2048 example at ./examples/2048.ts
+pnpm run evals -man # see evaluation suite options
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Stagehand is best when you have an API key for an LLM provider and Browserbase credentials. To add these to your project, run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cp .env.example .env
+nano .env # Edit the .env file to add API keys
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE]&lt;br /&gt; We highly value contributions to Stagehand! For questions or support, please join our &lt;a href="https://join.slack.com/t/stagehand-dev/shared_invite/zt-38khc8iv5-T2acb50_0OILUaX7lxeBOg"&gt;Slack community&lt;/a&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;At a high level, we're focused on improving reliability, speed, and cost in that order of priority. If you're interested in contributing, we strongly recommend reaching out to &lt;a href="https://x.com/miguel_gonzf"&gt;Miguel Gonzalez&lt;/a&gt; or &lt;a href="https://x.com/pk_iv"&gt;Paul Klein&lt;/a&gt; in our &lt;a href="https://join.slack.com/t/stagehand-dev/shared_invite/zt-38khc8iv5-T2acb50_0OILUaX7lxeBOg"&gt;Slack community&lt;/a&gt; before starting to ensure that your contribution aligns with our goals.&lt;/p&gt; 
+&lt;p&gt;For more information, please see our &lt;a href="https://docs.stagehand.dev/examples/contributing"&gt;Contributing Guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Acknowledgements&lt;/h2&gt; 
+&lt;p&gt;This project heavily relies on &lt;a href="https://playwright.dev/"&gt;Playwright&lt;/a&gt; as a resilient backbone to automate the web. It also would not be possible without the awesome techniques and discoveries made by &lt;a href="https://github.com/reworkd/tarsier"&gt;tarsier&lt;/a&gt;, &lt;a href="https://github.com/jbeoris/gemini-zod"&gt;gemini-zod&lt;/a&gt;, and &lt;a href="https://github.com/normal-computing/fuji-web"&gt;fuji-web&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;We'd like to thank the following people for their major contributions to Stagehand:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/pkiv"&gt;Paul Klein&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/kamath"&gt;Anirudh Kamath&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/seanmcguire12"&gt;Sean McGuire&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/miguelg719"&gt;Miguel Gonzalez&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/sameelarif"&gt;Sameel Arif&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/filip-michalsky"&gt;Filip Michalsky&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://x.com/jeremypress"&gt;Jeremy Press&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/navidpour"&gt;Navid Pour&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Licensed under the MIT License.&lt;/p&gt; 
+&lt;p&gt;Copyright 2025 Browserbase, Inc.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>supermemoryai/supermemory</title>
+      <link>https://github.com/supermemoryai/supermemory</link>
+      <description>&lt;p&gt;Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.&lt;/p&gt;&lt;hr&gt;&lt;div align="center" style="padding-bottom:20px;padding-top:20px"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/supermemoryai/supermemory/main/logo.svg?sanitize=true" alt="supermemory Logo" width="400" /&gt; 
+&lt;/div&gt; 
+&lt;div align="center" style="padding-bottom:10px;padding-top:10px"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/supermemoryai/supermemory/main/apps/web/public/landing-page.jpeg" alt="supermemory" width="100%" /&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;h3&gt;Core Functionality&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/supermemoryai/supermemory/main/#add-memory"&gt;Add Memories from Any Content&lt;/a&gt;&lt;/strong&gt;: Easily add memories from URLs, PDFs, and plain text—just paste, upload, or link.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/supermemoryai/supermemory/main/#chat-memories"&gt;Chat with Your Memories&lt;/a&gt;&lt;/strong&gt;: Converse with your stored content using natural language chat.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/supermemoryai/supermemory/main/#mcp-integration"&gt;Supermemory MCP Integration&lt;/a&gt;&lt;/strong&gt;: Seamlessly connect with all major AI tools (Claude, Cursor, etc.) via Supermemory MCP.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How do i use this?&lt;/h2&gt; 
+&lt;p&gt;Go to &lt;a href="https://app.supermemory.ai"&gt;app.supermemory.ai&lt;/a&gt; and sign into with your account&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;a id="add-memory"&gt;&lt;/a&gt;Start Adding Memory with your choice of format (Note, Link, File)&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;div align="center" style="padding-bottom:10px;padding-top:10px"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/supermemoryai/supermemory/main/apps/web/public/add-memory.png" alt="supermemory" width="100%" /&gt; 
+&lt;/div&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;You can also Connect to your favourite services (Notion, Google Drive, OneDrive)&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;div align="center" style="padding-bottom:10px;padding-top:10px"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/supermemoryai/supermemory/main/apps/web/public/add-connections.png" alt="supermemory" width="100%" /&gt; 
+&lt;/div&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;&lt;a id="chat-memories"&gt;&lt;/a&gt;Once Memories are added, you can chat with Supermemory by clicking on "Open Chat" and retrieve info from your saved memories&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;div align="center" style="padding-bottom:10px;padding-top:10px"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/supermemoryai/supermemory/main/apps/web/public/chat.png" alt="supermemory" width="100%" /&gt; 
+&lt;/div&gt; 
+&lt;ol start="4"&gt; 
+ &lt;li&gt;&lt;a id="mcp-integration"&gt;&lt;/a&gt;Add MCP to your AI Tools (by clicking on "Connect to your AI" and select the AI tool you are trying to integrate)&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;div align="center" style="padding-bottom:10px;padding-top:10px"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/supermemoryai/supermemory/main/apps/web/public/mcp.png" alt="supermemory" width="100%" /&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;Have questions or feedback? We're here to help:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Email: &lt;a href="mailto:dhravya@supermemory.com"&gt;dhravya@supermemory.com&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Documentation: &lt;a href="https://docs.supermemory.ai"&gt;docs.supermemory.ai&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions from developers of all skill levels! Whether you're fixing bugs, adding features, or improving documentation, your help makes supermemory better for everyone.&lt;/p&gt; 
+&lt;h3&gt;Quick Start for Contributors&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Fork and clone&lt;/strong&gt; the repository&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Install dependencies&lt;/strong&gt; with &lt;code&gt;bun install&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Set up your environment&lt;/strong&gt; by copying &lt;code&gt;.env.example&lt;/code&gt; to &lt;code&gt;.env.local&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Start developing&lt;/strong&gt; with &lt;code&gt;bun run dev&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;For detailed guidelines, development setup, coding standards, and the complete contribution workflow, please see our &lt;a href="https://raw.githubusercontent.com/supermemoryai/supermemory/main/CONTRIBUTING.md"&gt;&lt;strong&gt;Contributing Guide&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Ways to Contribute&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🐛 &lt;strong&gt;Bug fixes&lt;/strong&gt; - Help us squash those pesky issues&lt;/li&gt; 
+ &lt;li&gt;✨ &lt;strong&gt;New features&lt;/strong&gt; - Add functionality that users will love&lt;/li&gt; 
+ &lt;li&gt;🎨 &lt;strong&gt;UI/UX improvements&lt;/strong&gt; - Make the interface more intuitive&lt;/li&gt; 
+ &lt;li&gt;⚡ &lt;strong&gt;Performance optimizations&lt;/strong&gt; - Help us make supermemory faster&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Check out our &lt;a href="https://github.com/supermemoryai/supermemory/issues"&gt;Issues&lt;/a&gt; page for &lt;code&gt;good first issue&lt;/code&gt; and &lt;code&gt;help wanted&lt;/code&gt; labels to get started!&lt;/p&gt; 
+&lt;h2&gt;Updates &amp;amp; Roadmap&lt;/h2&gt; 
+&lt;p&gt;Stay up to date with the latest improvements:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.supermemory.ai/changelog/overview"&gt;Changelog&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://x.com/supermemoryai"&gt;X&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>evershopcommerce/evershop</title>
+      <link>https://github.com/evershopcommerce/evershop</link>
+      <description>&lt;p&gt;🛍️ Typescript E-commerce Platform&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img width="60" height="68" alt="EverShop Logo" src="https://raw.githubusercontent.com/evershopcommerce/evershop/dev/.github/images/logo-green.png" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;/p&gt;
+&lt;h1 align="center"&gt;EverShop&lt;/h1&gt; 
+&lt;p&gt;&lt;/p&gt; 
+&lt;h4 align="center"&gt; &lt;a href="https://evershop.io/docs/development/getting-started/introduction"&gt;Documentation&lt;/a&gt; | &lt;a href="https://demo.evershop.io/"&gt;Demo&lt;/a&gt; &lt;/h4&gt; 
+&lt;p align="center"&gt; &lt;img src="https://github.com/evershopcommerce/evershop/actions/workflows/build_test.yml/badge.svg?sanitize=true" alt="Github Action" /&gt; &lt;a href="https://twitter.com/evershopjs"&gt; &lt;img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/evershopjs?style=social" /&gt; &lt;/a&gt; &lt;a href="https://discord.gg/GSzt7dt7RM"&gt; &lt;img src="https://img.shields.io/discord/757179260417867879?label=discord" alt="Discord" /&gt; &lt;/a&gt; &lt;a href="https://opensource.org/licenses/GPL-3.0"&gt; &lt;img src="https://img.shields.io/badge/License-GPLv3-blue.svg?sanitize=true" alt="License" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img alt="EverShop" width="950" src="https://raw.githubusercontent.com/evershopcommerce/evershop/dev/.github/images/banner.png" /&gt; &lt;/p&gt; 
+&lt;h2&gt;Introduction&lt;/h2&gt; 
+&lt;p&gt;EverShop is a modern, TypeScript-first eCommerce platform built with GraphQL and React. Designed for developers, it offers essential commerce features in a modular, fully customizable architecture—perfect for building tailored shopping experiences with confidence and speed.&lt;/p&gt; 
+&lt;h2&gt;Installation Using Docker&lt;/h2&gt; 
+&lt;p&gt;You can get started with EverShop in minutes by using the Docker image. The Docker image is a great way to get started with EverShop without having to worry about installing dependencies or configuring your environment.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -sSL https://raw.githubusercontent.com/evershopcommerce/evershop/main/docker-compose.yml &amp;gt; docker-compose.yml
+docker-compose up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For the full installation guide, please refer to our &lt;a href="https://evershop.io/docs/development/getting-started/installation-guide"&gt;Installation guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://evershop.io/docs/development/getting-started/installation-guide"&gt;Installation guide&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://evershop.io/docs/development/module/create-your-first-extension"&gt;Extension development&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://evershop.io/docs/development/theme/theme-overview"&gt;Theme development&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Demo&lt;/h2&gt; 
+&lt;p&gt;Explore our demo store.&lt;/p&gt; 
+&lt;p align="left"&gt; &lt;a href="https://demo.evershop.io/admin" target="_blank"&gt; &lt;img alt="EverShop Admin Demo" height="35" src="https://raw.githubusercontent.com/evershopcommerce/evershop/dev/.github/images/evershop-demo-back.png" /&gt; &lt;/a&gt; &lt;a href="https://demo.evershop.io/" target="_blank"&gt; &lt;img alt="EverShop Store Demo" height="35" src="https://raw.githubusercontent.com/evershopcommerce/evershop/dev/.github/images/evershop-demo-front.png" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;b&gt;Demo user:&lt;/b&gt; 
+&lt;p&gt;Email: &lt;a href="mailto:demo@evershop.io"&gt;demo@evershop.io&lt;/a&gt;&lt;br /&gt; Password: 123456&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;If you like my work, feel free to:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;⭐ this repository. It helps.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Fevershopcommerce%2Fevershop&amp;amp;text=Awesome%20React%20Ecommerce%20Project&amp;amp;hashtags=react,ecommerce,expressjs,graphql"&gt;&lt;img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social" alt="Tweet" /&gt;&lt;/a&gt; about EverShop. Thank you!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;EverShop is an open-source project. We are committed to a fully transparent development process and appreciate highly any contributions. Whether you are helping us fix bugs, proposing new features, improving our documentation or spreading the word - we would love to have you as part of the EverShop community.&lt;/p&gt; 
+&lt;h3&gt;Ask a question about EverShop&lt;/h3&gt; 
+&lt;p&gt;You can ask questions, and participate in discussions about EverShop-related topics in the EverShop Discord channel.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://discord.gg/GSzt7dt7RM"&gt;&lt;img src="https://raw.githubusercontent.com/evershopcommerce/evershop/dev/.github/images/discord_banner_github.svg?sanitize=true" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Create a bug report&lt;/h3&gt; 
+&lt;p&gt;If you see an error message or run into an issue, please &lt;a href="https://github.com/evershopcommerce/evershop/issues/new"&gt;create bug report&lt;/a&gt;. This effort is valued and it will help all EverShop users.&lt;/p&gt; 
+&lt;h3&gt;Submit a feature request&lt;/h3&gt; 
+&lt;p&gt;If you have an idea, or you're missing a capability that would make development easier and more robust, please &lt;a href="https://github.com/evershopcommerce/evershop/issues/new"&gt;Submit feature request&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;If a similar feature request already exists, don't forget to leave a "+1". If you add some more information such as your thoughts and vision about the feature, your comments will be embraced warmly :)&lt;/p&gt; 
+&lt;p&gt;Please refer to our &lt;a href="https://raw.githubusercontent.com/evershopcommerce/evershop/dev/CONTRIBUTING.md"&gt;Contribution Guidelines&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/evershopcommerce/evershop/dev/CODE_OF_CONDUCT.md"&gt;Code of Conduct&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/evershopcommerce/evershop/raw/main/LICENSE"&gt;GPL-3.0 License&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Stremio/stremio-web</title>
+      <link>https://github.com/Stremio/stremio-web</link>
+      <description>&lt;p&gt;Stremio - Freedom to Stream&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Stremio - Freedom to Stream&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://github.com/stremio/stremio-web/workflows/Build/badge.svg?branch=development" alt="Build" /&gt; &lt;a href="https://stremio.github.io/stremio-web/development"&gt;&lt;img src="https://img.shields.io/website?label=Page&amp;amp;logo=github&amp;amp;up_message=online&amp;amp;down_message=offline&amp;amp;url=https%3A%2F%2Fstremio.github.io%2Fstremio-web%2F" alt="Github Page" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Stremio is a modern media center that's a one-stop solution for your video entertainment. You discover, watch and organize video content from easy to install addons.&lt;/p&gt; 
+&lt;h2&gt;Build&lt;/h2&gt; 
+&lt;h3&gt;Prerequisites&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Node.js 12 or higher&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://pnpm.io/installation"&gt;pnpm&lt;/a&gt; 10 or higher&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Install dependencies&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Start development server&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Production build&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm run build
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Run with Docker&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker build -t stremio-web .
+docker run -p 8080:8080 stremio-web
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Screenshots&lt;/h2&gt; 
+&lt;h3&gt;Board&lt;/h3&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/Stremio/stremio-web/development/screenshots/board.png" alt="Board" /&gt;&lt;/p&gt; 
+&lt;h3&gt;Discover&lt;/h3&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/Stremio/stremio-web/development/screenshots/discover.png" alt="Discover" /&gt;&lt;/p&gt; 
+&lt;h3&gt;Meta Details&lt;/h3&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/Stremio/stremio-web/development/screenshots/metadetails.png" alt="Meta Details" /&gt;&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Stremio is copyright 2017-2023 Smart code and available under GPLv2 license. See the &lt;a href="https://raw.githubusercontent.com/Stremio/stremio-web/development/LICENSE.md"&gt;LICENSE&lt;/a&gt; file in the project for more information.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>WECENG/ticket-purchase</title>
+      <link>https://github.com/WECENG/ticket-purchase</link>
+      <description>&lt;p&gt;大麦自动抢票，支持人员、城市、日期场次、价格选择&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;大麦抢票脚本 V1.0&lt;/h1&gt; 
+&lt;h3&gt;特征&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;自动无延时抢票&lt;/li&gt; 
+ &lt;li&gt;支持人员、城市、日期场次、价格选择&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;功能介绍&lt;/h2&gt; 
+&lt;p&gt;通过selenium打开页面进行登录，模拟用户购票流程自动购票&lt;/p&gt; 
+&lt;p&gt;其流程图如下:&lt;/p&gt; 
+&lt;img src="img/大麦抢票流程.png" width="50%" height="50%" /&gt; 
+&lt;h2&gt;准备工作&lt;/h2&gt; 
+&lt;h3&gt;1. 配置环境&lt;/h3&gt; 
+&lt;h4&gt;1.1安装python3环境&lt;/h4&gt; 
+&lt;p&gt;&lt;strong&gt;Windows&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;访问Python官方网站：&lt;a href="https://www.python.org/downloads/windows/"&gt;https://www.python.org/downloads/windows/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;下载最新的Python 3.9+版本的安装程序。&lt;/li&gt; 
+ &lt;li&gt;运行安装程序。&lt;/li&gt; 
+ &lt;li&gt;在安装程序中，确保勾选 "Add Python X.X to PATH" 选项，这将自动将Python添加到系统环境变量中，方便在命令行中使用Python。&lt;/li&gt; 
+ &lt;li&gt;完成安装后，你可以在命令提示符或PowerShell中输入 &lt;code&gt;python3&lt;/code&gt; 来启动Python解释器。&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;macOS&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;你可以使用Homebrew来安装Python 3。&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt; &lt;p&gt;安装Homebrew（如果未安装）：打开终端并运行以下命令：&lt;/p&gt; &lt;pre&gt;&lt;code class="language-shell"&gt;/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+   &lt;li&gt; &lt;p&gt;安装Python 3：运行以下命令来安装Python 3：&lt;/p&gt; &lt;pre&gt;&lt;code class="language-shell"&gt;brew install python@3
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h4&gt;1.2 安装所需要的环境&lt;/h4&gt; 
+&lt;p&gt;在命令窗口输入如下指令&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;pip3 install selenium
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;1.3 下载google chrome浏览器&lt;/h4&gt; 
+&lt;p&gt;下载地址: &lt;a href="https://www.google.cn/intl/zh-CN/chrome/?brand=YTUH&amp;amp;gclid=Cj0KCQjwj5mpBhDJARIsAOVjBdoV_1sBwdqKGHV3rUU1vJmNKZdy5QNzbRT8F5O0-_jq1WHXurE8a7MaAkWrEALw_wcB&amp;amp;gclsrc=aw.ds"&gt;https://www.google.cn/intl/zh-CN/chrome/?brand=YTUH&amp;amp;gclid=Cj0KCQjwj5mpBhDJARIsAOVjBdoV_1sBwdqKGHV3rUU1vJmNKZdy5QNzbRT8F5O0-_jq1WHXurE8a7MaAkWrEALw_wcB&amp;amp;gclsrc=aw.ds&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;2. 修改配置文件&lt;/h3&gt; 
+&lt;p&gt;在运行程序之前，需要先修改&lt;code&gt;config.json&lt;/code&gt;文件。该文件用于指定用户需要抢票的相关信息，包括演唱会的场次、观演的人员、城市、日期、价格等。文件结果如下图所示：&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/WECENG/ticket-purchase/master/img/config_json.png" width="50%" height="50%" /&gt; 
+&lt;h4&gt;2.1 文件内容说明&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;index_url&lt;/code&gt;为大麦网的地址，&lt;strong&gt;无需修改&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;login_url&lt;/code&gt;为大麦网的登录地址，&lt;strong&gt;无需修改&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;target_url&lt;/code&gt;为用户需要抢的演唱会票的目标地址，&lt;strong&gt;待修改&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;users&lt;/code&gt;为观演人的姓名，&lt;strong&gt;观演人需要用户在手机大麦APP中先填写好，然后再填入该配置文件中&lt;/strong&gt;，&lt;strong&gt;待修改&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;city&lt;/code&gt;为城市，&lt;strong&gt;如果用户需要抢的演唱会票需要选择城市，请把城市填入此处。如无需选择，则不填&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;date&lt;/code&gt;为场次日期，&lt;strong&gt;待修改，可多选&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;price&lt;/code&gt;为票档的价格，&lt;strong&gt;待修改，可多选&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;if_commit_order&lt;/code&gt;为是否要自动提交订单，&lt;strong&gt;改成 true&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;if_listen为是否回流监听，&lt;strong&gt;改成true&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;2.2 示例说明&lt;/h4&gt; 
+&lt;p&gt;进入大麦网&lt;a href="https://www.damai.cn/%EF%BC%8C%E9%80%89%E6%8B%A9%E4%BD%A0%E9%9C%80%E8%A6%81%E6%8A%A2%E7%A5%A8%E7%9A%84%E6%BC%94%E5%94%B1%E4%BC%9A%E3%80%82%E5%81%87%E8%AE%BE%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%EF%BC%9A"&gt;https://www.damai.cn/，选择你需要抢票的演唱会。假设如下图所示：&lt;/a&gt;&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/WECENG/ticket-purchase/master/img/example.png" width="50%" height="50%" /&gt; 
+&lt;p&gt;接下来按照下图的标注对配置文件进行修改：&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/WECENG/ticket-purchase/master/img/example_detail.png" width="50%" height="50%" /&gt; 
+&lt;p&gt;最终&lt;code&gt;config.json&lt;/code&gt;的文件内容如下：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "index_url": "https://www.damai.cn/",
+  "login_url": "https://passport.damai.cn/login?ru=https%3A%2F%2Fwww.damai.cn%2F",
+  "target_url": "https://detail.damai.cn/item.htm?spm=a2oeg.home.card_0.ditem_1.591b23e1JQGWHg&amp;amp;id=740680932762",
+  "users": [
+    "名字1",
+    "名字2"
+  ],
+  "city": "广州",
+  "date": "2023-10-28",
+  "price": "1039",
+  "if_listen":true,
+  "if_commit_order": true
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;3.运行程序&lt;/h3&gt; 
+&lt;p&gt;运行程序开始抢票，进入命令窗口，执行如下命令：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;cd damai
+python3 damai.py
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h1&gt;大麦app抢票&lt;/h1&gt; 
+&lt;p&gt;大麦app抢票脚本需要依赖appium，因此需要现在安装appium server&amp;amp;client环境，步骤如下：&lt;/p&gt; 
+&lt;h2&gt;appium server&lt;/h2&gt; 
+&lt;h3&gt;下载&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;先安装好node环境（具备npm）node版本号18.0.0&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;先下载并安装好android sdk，并配置环境变量（appium server运行需依赖android sdk)&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;下载appium&lt;/p&gt; &lt;pre&gt;&lt;code class="language-shell"&gt;npm install -g appium
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;查看appium是否安装成功&lt;/p&gt; &lt;pre&gt;&lt;code class="language-shell"&gt;appium -v
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;下载UiAutomator2驱动&lt;/p&gt; &lt;pre&gt;&lt;code class="language-shell"&gt;npm install appium-uiautomator2-driver
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;​ 可能会遇到如下错误：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-tex"&gt;➜  xcode git:(master) ✗ npm install appium-uiautomator2-driver
+
+npm ERR! code 1
+npm ERR! path /Users/chenweicheng/Documents/xcode/node_modules/appium-uiautomator2-driver/node_modules/appium-chromedriver
+npm ERR! command failed
+npm ERR! command sh -c node install-npm.js
+npm ERR! [11:57:54] Error installing Chromedriver: Request failed with status code 404
+npm ERR! [11:57:54] AxiosError: Request failed with status code 404
+npm ERR!     at settle (/Users/chenweicheng/Documents/xcode/node_modules/appium-uiautomator2-driver/node_modules/axios/lib/core/settle.js:19:12)
+npm ERR!     at IncomingMessage.handleStreamEnd (/Users/chenweicheng/Documents/xcode/node_modules/appium-uiautomator2-driver/node_modules/axios/lib/adapters/http.js:572:11)
+npm ERR!     at IncomingMessage.emit (node:events:539:35)
+npm ERR!     at endReadableNT (node:internal/streams/readable:1344:12)
+npm ERR!     at processTicksAndRejections (node:internal/process/task_queues:82:21)
+npm ERR! [11:57:54] Downloading Chromedriver can be skipped by setting the'APPIUM_SKIP_CHROMEDRIVER_INSTALL' environment variable.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/chenweicheng/.npm/_logs/2023-10-26T03_57_35_950Z-debug-0.log
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;​ 解决办法（添加环境变量，错误原因是没有找到chrome浏览器驱动，忽略即可）&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;export APPIUM_SKIP_CHROMEDRIVER_INSTALL=true
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;启动&lt;/h3&gt; 
+&lt;p&gt;启动appium server并使用uiautomator2驱动&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;appium --use-plugins uiautomator2
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;启动成功将出现如下信息：&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;[Appium] Welcome to Appium v2.2.1 (REV 2176894a5be5da17a362bf3f20678641a78f4b69)
+[Appium] Non-default server args:
+[Appium] {
+[Appium]   usePlugins: [
+[Appium]     'uiautomator2'
+[Appium]   ]
+[Appium] }
+[Appium] Attempting to load driver uiautomator2...
+[Appium] Requiring driver at /Users/chenweicheng/Documents/xcode/node_modules/appium-uiautomator2-driver
+[Appium] Appium REST http interface listener started on http://0.0.0.0:4723
+[Appium] You can provide the following URLs in your client code to connect to this server:
+[Appium] 	http://127.0.0.1:4723/ (only accessible from the same host)
+[Appium] 	http://172.31.102.45:4723/
+[Appium] 	http://198.18.0.1:4723/
+[Appium] Available drivers:
+[Appium]   - uiautomator2@2.32.3 (automationName 'UiAutomator2')
+[Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;其中&lt;code&gt;[Appium] http://127.0.0.1:4723/ (only accessible from the same host) [Appium] http://172.31.102.45:4723/ [Appium] http://198.18.0.1:4723/&lt;/code&gt;为appium server连接地址&lt;/p&gt; 
+&lt;h2&gt;appium client&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;先下载并安装好python3和pip3&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;安装&lt;/p&gt; &lt;pre&gt;&lt;code class="language-shell"&gt;pip3 install appium-python-client
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;在代码中引入并使用appium&lt;/p&gt; &lt;pre&gt;&lt;code class="language-python"&gt;from appium import webdriver
+from appium.options.common.base import AppiumOptions
+
+device_app_info = AppiumOptions()
+device_app_info.set_capability('platformName', 'Android')
+device_app_info.set_capability('platformVersion', '10')
+device_app_info.set_capability('deviceName', 'YourDeviceName')
+device_app_info.set_capability('appPackage', 'cn.damai')
+device_app_info.set_capability('appActivity', '.launcher.splash.SplashMainActivity')
+device_app_info.set_capability('unicodeKeyboard', True)
+device_app_info.set_capability('resetKeyboard', True)
+device_app_info.set_capability('noReset', True)
+device_app_info.set_capability('newCommandTimeout', 6000)
+device_app_info.set_capability('automationName', 'UiAutomator2')
+
+# 连接appium server，server地址查看appium启动信息
+driver = webdriver.Remote('http://127.0.0.1:4723', options=device_app_info)
+
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;启动脚本程序&lt;/p&gt; &lt;pre&gt;&lt;code class="language-shell"&gt;cd damai_appium
+python3 damai_appium.py
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>microsoft/RD-Agent</title>
+      <link>https://github.com/microsoft/RD-Agent</link>
+      <description>&lt;p&gt;Research and development (R&amp;D) is crucial for the enhancement of industrial productivity, especially in the AI era, where the core aspects of R&amp;D are mainly focused on data and models. We are committed to automating these high-value generic R&amp;D processes through R&amp;D-Agent, which lets AI drive data-driven AI. 🔗https://aka.ms/RD-Agent-Tech-Report&lt;/p&gt;&lt;hr&gt;&lt;h4 align="center"&gt; &lt;img src="https://raw.githubusercontent.com/microsoft/RD-Agent/main/docs/_static/logo.png" alt="RA-Agent logo" style="width:70%; " /&gt; &lt;p&gt;&lt;a href="https://rdagent.azurewebsites.net" target="_blank"&gt;🖥️ Live Demo&lt;/a&gt; | &lt;a href="https://rdagent.azurewebsites.net/factor_loop" target="_blank"&gt;🎥 Demo Video&lt;/a&gt; &lt;a href="https://www.youtube.com/watch?v=JJ4JYO3HscM&amp;amp;list=PLALmKB0_N3_i52fhUmPQiL4jsO354uopR" target="_blank"&gt;▶️YouTube&lt;/a&gt; | &lt;a href="https://rdagent.readthedocs.io/en/latest/index.html" target="_blank"&gt;📖 Documentation&lt;/a&gt; | &lt;a href="https://aka.ms/RD-Agent-Tech-Report" target="_blank"&gt;📄 Tech Report&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/RD-Agent/main/#-paperwork-list"&gt; 📃 Papers &lt;/a&gt;&lt;/p&gt; &lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://github.com/microsoft/RD-Agent/actions/workflows/ci.yml"&gt;&lt;img src="https://github.com/microsoft/RD-Agent/actions/workflows/ci.yml/badge.svg?sanitize=true" alt="CI" /&gt;&lt;/a&gt; &lt;a href="https://github.com/microsoft/RD-Agent/actions/workflows/github-code-scanning/codeql"&gt;&lt;img src="https://github.com/microsoft/RD-Agent/actions/workflows/github-code-scanning/codeql/badge.svg?sanitize=true" alt="CodeQL" /&gt;&lt;/a&gt; &lt;a href="https://github.com/microsoft/RD-Agent/actions/workflows/dependabot/dependabot-updates"&gt;&lt;img src="https://github.com/microsoft/RD-Agent/actions/workflows/dependabot/dependabot-updates/badge.svg?sanitize=true" alt="Dependabot Updates" /&gt;&lt;/a&gt; &lt;a href="https://github.com/microsoft/RD-Agent/actions/workflows/pr.yml"&gt;&lt;img src="https://github.com/microsoft/RD-Agent/actions/workflows/pr.yml/badge.svg?sanitize=true" alt="Lint PR Title" /&gt;&lt;/a&gt; &lt;a href="https://github.com/microsoft/RD-Agent/actions/workflows/release.yml"&gt;&lt;img src="https://github.com/microsoft/RD-Agent/actions/workflows/release.yml/badge.svg?sanitize=true" alt="Release.yml" /&gt;&lt;/a&gt; &lt;a href="https://pypi.org/project/rdagent/#files"&gt;&lt;img src="https://img.shields.io/badge/platform-Linux-blue" alt="Platform" /&gt;&lt;/a&gt; &lt;a href="https://pypi.org/project/rdagent/"&gt;&lt;img src="https://img.shields.io/pypi/v/rdagent" alt="PyPI" /&gt;&lt;/a&gt; &lt;a href="https://pypi.org/project/rdagent/"&gt;&lt;img src="https://img.shields.io/pypi/pyversions/rdagent" alt="PyPI - Python Version" /&gt;&lt;/a&gt; &lt;a href="https://github.com/microsoft/RD-Agent/releases"&gt;&lt;img src="https://img.shields.io/github/v/release/microsoft/RD-Agent" alt="Release" /&gt;&lt;/a&gt; &lt;a href="https://github.com/microsoft/RD-Agent/raw/main/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/microsoft/RD-Agent" alt="GitHub" /&gt;&lt;/a&gt; &lt;a href="https://github.com/pre-commit/pre-commit"&gt;&lt;img src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit" alt="pre-commit" /&gt;&lt;/a&gt; &lt;a href="http://mypy-lang.org/"&gt;&lt;img src="https://www.mypy-lang.org/static/mypy_badge.svg?sanitize=true" alt="Checked with mypy" /&gt;&lt;/a&gt; &lt;a href="https://github.com/astral-sh/ruff"&gt;&lt;img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json" alt="Ruff" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/ybQ97B6Jjy"&gt;&lt;img src="https://img.shields.io/badge/chat-discord-blue" alt="Chat" /&gt;&lt;/a&gt; &lt;a href="https://rdagent.readthedocs.io/en/latest/?badge=latest"&gt;&lt;img src="https://readthedocs.org/projects/rdagent/badge/?version=latest" alt="Documentation Status" /&gt;&lt;/a&gt; &lt;a href="https://github.com/microsoft/RD-Agent/actions/workflows/readthedocs-preview.yml"&gt;&lt;img src="https://github.com/microsoft/RD-Agent/actions/workflows/readthedocs-preview.yml/badge.svg?sanitize=true" alt="Readthedocs Preview" /&gt;&lt;/a&gt; 
+ &lt;!-- this badge is too long, please place it in the last one to make it pretty --&gt; &lt;a href="https://arxiv.org/abs/2505.14738"&gt;&lt;img src="https://img.shields.io/badge/arXiv-2505.14738-00ff00.svg?sanitize=true" alt="arXiv" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;📰 News&lt;/h1&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;🗞️ News&lt;/th&gt; 
+   &lt;th&gt;📝 Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;NeurIPS 2025 Acceptance&lt;/td&gt; 
+   &lt;td&gt;We are thrilled to announce that our paper &lt;a href="https://arxiv.org/abs/2505.15155"&gt;R&amp;amp;D-Agent-Quant&lt;/a&gt; has been accepted to NeurIPS 2025&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/RD-Agent/main/#overall-technical-report"&gt;Technical Report Release&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Overall framework description and results on MLE-bench&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/RD-Agent/main/#deep-application-in-diverse-scenarios"&gt;R&amp;amp;D-Agent-Quant Release&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Apply R&amp;amp;D-Agent to quant trading&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;MLE-Bench Results Released&lt;/td&gt; 
+   &lt;td&gt;R&amp;amp;D-Agent currently leads as the &lt;a href="https://raw.githubusercontent.com/microsoft/RD-Agent/main/#-the-best-machine-learning-engineering-agent"&gt;top-performing machine learning engineering agent&lt;/a&gt; on MLE-bench&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Support LiteLLM Backend&lt;/td&gt; 
+   &lt;td&gt;We now fully support &lt;strong&gt;&lt;a href="https://github.com/BerriAI/litellm"&gt;LiteLLM&lt;/a&gt;&lt;/strong&gt; as our default backend for integration with multiple LLM providers.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;General Data Science Agent&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://rdagent.readthedocs.io/en/latest/scens/data_science.html"&gt;Data Science Agent&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Kaggle Scenario release&lt;/td&gt; 
+   &lt;td&gt;We release &lt;strong&gt;&lt;a href="https://rdagent.readthedocs.io/en/latest/scens/data_science.html"&gt;Kaggle Agent&lt;/a&gt;&lt;/strong&gt;, try the new features!&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Official WeChat group release&lt;/td&gt; 
+   &lt;td&gt;We created a WeChat group, welcome to join! (🗪&lt;a href="https://github.com/microsoft/RD-Agent/issues/880"&gt;QR Code&lt;/a&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Official Discord release&lt;/td&gt; 
+   &lt;td&gt;We launch our first chatting channel in Discord (🗪&lt;a href="https://discord.gg/ybQ97B6Jjy"&gt;&lt;img src="https://img.shields.io/badge/chat-discord-blue" alt="Chat" /&gt;&lt;/a&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;First release&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;R&amp;amp;D-Agent&lt;/strong&gt; is released on GitHub&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h1&gt;🏆 The Best Machine Learning Engineering Agent!&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/openai/mle-bench"&gt;MLE-bench&lt;/a&gt; is a comprehensive benchmark evaluating the performance of AI agents on machine learning engineering tasks. Utilizing datasets from 75 Kaggle competitions, MLE-bench provides robust assessments of AI systems' capabilities in real-world ML engineering scenarios.&lt;/p&gt; 
+&lt;p&gt;R&amp;amp;D-Agent currently leads as the top-performing machine learning engineering agent on MLE-bench:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Agent&lt;/th&gt; 
+   &lt;th&gt;Low == Lite (%)&lt;/th&gt; 
+   &lt;th&gt;Medium (%)&lt;/th&gt; 
+   &lt;th&gt;High (%)&lt;/th&gt; 
+   &lt;th&gt;All (%)&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;R&amp;amp;D-Agent o3(R)+GPT-4.1(D)&lt;/td&gt; 
+   &lt;td&gt;51.52 ± 6.9&lt;/td&gt; 
+   &lt;td&gt;19.3 ± 5.5&lt;/td&gt; 
+   &lt;td&gt;26.67 ± 0&lt;/td&gt; 
+   &lt;td&gt;30.22 ± 1.5&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;R&amp;amp;D-Agent o1-preview&lt;/td&gt; 
+   &lt;td&gt;48.18 ± 2.49&lt;/td&gt; 
+   &lt;td&gt;8.95 ± 2.36&lt;/td&gt; 
+   &lt;td&gt;18.67 ± 2.98&lt;/td&gt; 
+   &lt;td&gt;22.4 ± 1.1&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;AIDE o1-preview&lt;/td&gt; 
+   &lt;td&gt;34.3 ± 2.4&lt;/td&gt; 
+   &lt;td&gt;8.8 ± 1.1&lt;/td&gt; 
+   &lt;td&gt;10.0 ± 1.9&lt;/td&gt; 
+   &lt;td&gt;16.9 ± 1.1&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;O3(R)+GPT-4.1(D)&lt;/strong&gt;: This version is designed to both reduce average time per loop and leverage a cost-effective combination of backend LLMs by seamlessly integrating Research Agent (o3) with Development Agent (GPT-4.1).&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;AIDE o1-preview&lt;/strong&gt;: Represents the previously best public result on MLE-bench as reported in the original MLE-bench paper.&lt;/li&gt; 
+ &lt;li&gt;Average and standard deviation results for R&amp;amp;D-Agent o1-preview is based on a independent of 5 seeds and for R&amp;amp;D-Agent o3(R)+GPT-4.1(D) is based on 6 seeds.&lt;/li&gt; 
+ &lt;li&gt;According to MLE-Bench, the 75 competitions are categorized into three levels of complexity: &lt;strong&gt;Low==Lite&lt;/strong&gt; if we estimate that an experienced ML engineer can produce a sensible solution in under 2 hours, excluding the time taken to train any models; &lt;strong&gt;Medium&lt;/strong&gt; if it takes between 2 and 10 hours; and &lt;strong&gt;High&lt;/strong&gt; if it takes more than 10 hours.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;You can inspect the detailed runs of the above results online.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://aka.ms/RD-Agent_MLE-Bench_O1-preview"&gt;R&amp;amp;D-Agent o1-preview detailed runs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://aka.ms/RD-Agent_MLE-Bench_O3_GPT41"&gt;R&amp;amp;D-Agent o3(R)+GPT-4.1(D) detailed runs&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;For running R&amp;amp;D-Agent on MLE-bench, refer to &lt;strong&gt;&lt;a href="https://rdagent.readthedocs.io/en/latest/scens/data_science.html"&gt;MLE-bench Guide: Running ML Engineering via MLE-bench&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;h1&gt;🥇 The First Data-Centric Quant Multi-Agent Framework!&lt;/h1&gt; 
+&lt;p&gt;R&amp;amp;D-Agent for Quantitative Finance, in short &lt;strong&gt;RD-Agent(Q)&lt;/strong&gt;, is the first data-centric, multi-agent framework designed to automate the full-stack research and development of quantitative strategies via coordinated factor-model co-optimization.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/3198bc10-47ba-4ee0-8a8e-46d5ce44f45d" alt="image" /&gt;&lt;/p&gt; 
+&lt;p&gt;Extensive experiments in real stock markets show that, at a cost under $10, RD-Agent(Q) achieves approximately 2× higher ARR than benchmark factor libraries while using over 70% fewer factors. It also surpasses state-of-the-art deep time-series models under smaller resource budgets. Its alternating factor–model optimization further delivers excellent trade-off between predictive accuracy and strategy robustness.&lt;/p&gt; 
+&lt;p&gt;You can learn more details about &lt;strong&gt;RD-Agent(Q)&lt;/strong&gt; through the &lt;a href="https://arxiv.org/abs/2505.15155"&gt;paper&lt;/a&gt; and reproduce it through the &lt;a href="https://rdagent.readthedocs.io/en/latest/scens/quant_agent_fin.html"&gt;documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;Data Science Agent Preview&lt;/h1&gt; 
+&lt;p&gt;Check out our demo video showcasing the current progress of our Data Science Agent under development:&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/3eccbecb-34a4-4c81-bce4-d3f8862f7305"&gt;https://github.com/user-attachments/assets/3eccbecb-34a4-4c81-bce4-d3f8862f7305&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;🌟 Introduction&lt;/h1&gt; 
+&lt;div align="center"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/microsoft/RD-Agent/main/docs/_static/scen.png" alt="Our focused scenario" style="width:80%; " /&gt; 
+&lt;/div&gt; 
+&lt;p&gt;R&amp;amp;D-Agent aims to automate the most critical and valuable aspects of the industrial R&amp;amp;D process, and we begin with focusing on the data-driven scenarios to streamline the development of models and data. Methodologically, we have identified a framework with two key components: 'R' for proposing new ideas and 'D' for implementing them. We believe that the automatic evolution of R&amp;amp;D will lead to solutions of significant industrial value.&lt;/p&gt; 
+&lt;!-- Tag Cloud --&gt; 
+&lt;p&gt;R&amp;amp;D is a very general scenario. The advent of R&amp;amp;D-Agent can be your&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;💰 &lt;strong&gt;Automatic Quant Factory&lt;/strong&gt; (&lt;a href="https://rdagent.azurewebsites.net/factor_loop"&gt;🎥Demo Video&lt;/a&gt;|&lt;a href="https://www.youtube.com/watch?v=X4DK2QZKaKY&amp;amp;t=6s"&gt;▶️YouTube&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;strong&gt;Data Mining Agent:&lt;/strong&gt; Iteratively proposing data &amp;amp; models (&lt;a href="https://rdagent.azurewebsites.net/model_loop"&gt;🎥Demo Video 1&lt;/a&gt;|&lt;a href="https://www.youtube.com/watch?v=dm0dWL49Bc0&amp;amp;t=104s"&gt;▶️YouTube&lt;/a&gt;) (&lt;a href="https://rdagent.azurewebsites.net/dmm"&gt;🎥Demo Video 2&lt;/a&gt;|&lt;a href="https://www.youtube.com/watch?v=VIaSTZuoZg4"&gt;▶️YouTube&lt;/a&gt;) and implementing them by gaining knowledge from data.&lt;/li&gt; 
+ &lt;li&gt;🦾 &lt;strong&gt;Research Copilot:&lt;/strong&gt; Auto read research papers (&lt;a href="https://rdagent.azurewebsites.net/report_model"&gt;🎥Demo Video&lt;/a&gt;|&lt;a href="https://www.youtube.com/watch?v=BiA2SfdKQ7o"&gt;▶️YouTube&lt;/a&gt;) / financial reports (&lt;a href="https://rdagent.azurewebsites.net/report_factor"&gt;🎥Demo Video&lt;/a&gt;|&lt;a href="https://www.youtube.com/watch?v=ECLTXVcSx-c"&gt;▶️YouTube&lt;/a&gt;) and implement model structures or building datasets.&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;strong&gt;Kaggle Agent:&lt;/strong&gt; Auto Model Tuning and Feature Engineering(&lt;a href=""&gt;🎥Demo Video Coming Soon...&lt;/a&gt;) and implementing them to achieve more in competitions.&lt;/li&gt; 
+ &lt;li&gt;...&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;You can click the links above to view the demo. We're continuously adding more methods and scenarios to the project to enhance your R&amp;amp;D processes and boost productivity.&lt;/p&gt; 
+&lt;p&gt;Additionally, you can take a closer look at the examples in our &lt;strong&gt;&lt;a href="https://rdagent.azurewebsites.net/"&gt;🖥️ Live Demo&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://rdagent.azurewebsites.net/" target="_blank"&gt; &lt;img src="https://raw.githubusercontent.com/microsoft/RD-Agent/main/docs/_static/demo.png" alt="Watch the demo" width="80%" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;h1&gt;⚡ Quick start&lt;/h1&gt; 
+&lt;h3&gt;RD-Agent currently only supports Linux.&lt;/h3&gt; 
+&lt;p&gt;You can try above demos by running the following command:&lt;/p&gt; 
+&lt;h3&gt;🐳 Docker installation.&lt;/h3&gt; 
+&lt;p&gt;Users must ensure Docker is installed before attempting most scenarios. Please refer to the &lt;a href="https://docs.docker.com/engine/install/"&gt;official 🐳Docker page&lt;/a&gt; for installation instructions. Ensure the current user can run Docker commands &lt;strong&gt;without using sudo&lt;/strong&gt;. You can verify this by executing &lt;code&gt;docker run hello-world&lt;/code&gt;.&lt;/p&gt; 
+&lt;h3&gt;🐍 Create a Conda Environment&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Create a new conda environment with Python (3.10 and 3.11 are well-tested in our CI): &lt;pre&gt;&lt;code class="language-sh"&gt;conda create -n rdagent python=3.10
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt;Activate the environment: &lt;pre&gt;&lt;code class="language-sh"&gt;conda activate rdagent
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🛠️ Install the R&amp;amp;D-Agent&lt;/h3&gt; 
+&lt;h4&gt;For Users&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;You can directly install the R&amp;amp;D-Agent package from PyPI: &lt;pre&gt;&lt;code class="language-sh"&gt;pip install rdagent
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;For Developers&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;If you want to try the latest version or contribute to RD-Agent, you can install it from the source and follow the development setup: &lt;pre&gt;&lt;code class="language-sh"&gt;git clone https://github.com/microsoft/RD-Agent
+cd RD-Agent
+make dev
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;More details can be found in the &lt;a href="https://rdagent.readthedocs.io/en/latest/development.html"&gt;development setup&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;💊 Health check&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;rdagent provides a health check that currently checks two things. 
+  &lt;ul&gt; 
+   &lt;li&gt;whether the docker installation was successful.&lt;/li&gt; 
+   &lt;li&gt;whether the default port used by the &lt;a href="https://github.com/microsoft/RD-Agent?tab=readme-ov-file#%EF%B8%8F-monitor-the-application-results"&gt;rdagent ui&lt;/a&gt; is occupied.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;rdagent health_check --no-check-env
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;⚙️ Configuration&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;The demos requires following ability:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;ChatCompletion&lt;/li&gt; 
+   &lt;li&gt;json_mode&lt;/li&gt; 
+   &lt;li&gt;embedding query&lt;/li&gt; 
+  &lt;/ul&gt; &lt;p&gt;You can set your Chat Model and Embedding Model in the following ways:&lt;/p&gt; 
+  &lt;blockquote&gt; 
+   &lt;p&gt;&lt;strong&gt;🔥 Attention&lt;/strong&gt;: We now provide experimental support for &lt;strong&gt;DeepSeek&lt;/strong&gt; models! You can use DeepSeek's official API for cost-effective and high-performance inference. See the configuration example below for DeepSeek setup.&lt;/p&gt; 
+  &lt;/blockquote&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Using LiteLLM (Default)&lt;/strong&gt;: We now support LiteLLM as a backend for integration with multiple LLM providers. You can configure in multiple ways:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Option 1: Unified API base for both models&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Configuration Example: &lt;code&gt;OpenAI&lt;/code&gt; Setup :&lt;/em&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;cat &amp;lt;&amp;lt; EOF  &amp;gt; .env
+# Set to any model supported by LiteLLM.
+CHAT_MODEL=gpt-4o 
+EMBEDDING_MODEL=text-embedding-3-small
+# Configure unified API base
+OPENAI_API_BASE=&amp;lt;your_unified_api_base&amp;gt;
+OPENAI_API_KEY=&amp;lt;replace_with_your_openai_api_key&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;em&gt;Configuration Example: &lt;code&gt;Azure OpenAI&lt;/code&gt; Setup :&lt;/em&gt;&lt;/p&gt; 
+  &lt;blockquote&gt; 
+   &lt;p&gt;Before using this configuration, please confirm in advance that your &lt;code&gt;Azure OpenAI API key&lt;/code&gt; supports &lt;code&gt;embedded models&lt;/code&gt;.&lt;/p&gt; 
+  &lt;/blockquote&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;cat &amp;lt;&amp;lt; EOF  &amp;gt; .env
+EMBEDDING_MODEL=azure/&amp;lt;Model deployment supporting embedding&amp;gt;
+CHAT_MODEL=azure/&amp;lt;your deployment name&amp;gt;
+AZURE_API_KEY=&amp;lt;replace_with_your_openai_api_key&amp;gt;
+AZURE_API_BASE=&amp;lt;your_unified_api_base&amp;gt;
+AZURE_API_VERSION=&amp;lt;azure api version&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Option 2: Separate API bases for Chat and Embedding models&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;cat &amp;lt;&amp;lt; EOF  &amp;gt; .env
+# Set to any model supported by LiteLLM.
+# Configure separate API bases for chat and embedding
+
+# CHAT MODEL:
+CHAT_MODEL=gpt-4o 
+OPENAI_API_BASE=&amp;lt;your_chat_api_base&amp;gt;
+OPENAI_API_KEY=&amp;lt;replace_with_your_openai_api_key&amp;gt;
+
+# EMBEDDING MODEL:
+# TAKE siliconflow as an example, you can use other providers.
+# Note: embedding requires litellm_proxy prefix
+EMBEDDING_MODEL=litellm_proxy/BAAI/bge-large-en-v1.5
+LITELLM_PROXY_API_KEY=&amp;lt;replace_with_your_siliconflow_api_key&amp;gt;
+LITELLM_PROXY_API_BASE=https://api.siliconflow.cn/v1
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;em&gt;Configuration Example: &lt;code&gt;DeepSeek&lt;/code&gt; Setup :&lt;/em&gt;&lt;/p&gt; 
+  &lt;blockquote&gt; 
+   &lt;p&gt;Since many users encounter configuration errors when setting up DeepSeek. Here's a complete working example for DeepSeek Setup:&lt;/p&gt; 
+  &lt;/blockquote&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;cat &amp;lt;&amp;lt; EOF  &amp;gt; .env
+# CHAT MODEL: Using DeepSeek Official API
+CHAT_MODEL=deepseek/deepseek-chat 
+DEEPSEEK_API_KEY=&amp;lt;replace_with_your_deepseek_api_key&amp;gt;
+
+# EMBEDDING MODEL: Using SiliconFlow for embedding since deepseek has no embedding model.
+# Note: embedding requires litellm_proxy prefix
+EMBEDDING_MODEL=litellm_proxy/BAAI/bge-m3
+LITELLM_PROXY_API_KEY=&amp;lt;replace_with_your_siliconflow_api_key&amp;gt;
+LITELLM_PROXY_API_BASE=https://api.siliconflow.cn/v1
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Notice: If you are using reasoning models that include thought processes in their responses (such as &amp;lt;think&amp;gt; tags), you need to set the following environment variable:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;REASONING_THINK_RM=True
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;You can also use a deprecated backend if you only use &lt;code&gt;OpenAI API&lt;/code&gt; or &lt;code&gt;Azure OpenAI&lt;/code&gt; directly. For this deprecated setting and more configuration information, please refer to the &lt;a href="https://rdagent.readthedocs.io/en/latest/installation_and_configuration.html"&gt;documentation&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;If your environment configuration is complete, please execute the following commands to check if your configuration is valid. This step is necessary.&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;rdagent health_check
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🚀 Run the Application&lt;/h3&gt; 
+&lt;p&gt;The &lt;strong&gt;&lt;a href="https://rdagent.azurewebsites.net/"&gt;🖥️ Live Demo&lt;/a&gt;&lt;/strong&gt; is implemented by the following commands(each item represents one demo, you can select the one you prefer):&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;Run the &lt;strong&gt;Automated Quantitative Trading &amp;amp; Iterative Factors Model Joint Evolution&lt;/strong&gt;: &lt;a href="http://github.com/microsoft/qlib"&gt;Qlib&lt;/a&gt; self-loop factor &amp;amp; model proposal and implementation application&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;rdagent fin_quant
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Run the &lt;strong&gt;Automated Quantitative Trading &amp;amp; Iterative Factors Evolution&lt;/strong&gt;: &lt;a href="http://github.com/microsoft/qlib"&gt;Qlib&lt;/a&gt; self-loop factor proposal and implementation application&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;rdagent fin_factor
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Run the &lt;strong&gt;Automated Quantitative Trading &amp;amp; Iterative Model Evolution&lt;/strong&gt;: &lt;a href="http://github.com/microsoft/qlib"&gt;Qlib&lt;/a&gt; self-loop model proposal and implementation application&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;rdagent fin_model
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Run the &lt;strong&gt;Automated Quantitative Trading &amp;amp; Factors Extraction from Financial Reports&lt;/strong&gt;: Run the &lt;a href="http://github.com/microsoft/qlib"&gt;Qlib&lt;/a&gt; factor extraction and implementation application based on financial reports&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;# 1. Generally, you can run this scenario using the following command:
+rdagent fin_factor_report --report-folder=&amp;lt;Your financial reports folder path&amp;gt;
+
+# 2. Specifically, you need to prepare some financial reports first. You can follow this concrete example:
+wget https://github.com/SunsetWolf/rdagent_resource/releases/download/reports/all_reports.zip
+unzip all_reports.zip -d git_ignore_folder/reports
+rdagent fin_factor_report --report-folder=git_ignore_folder/reports
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Run the &lt;strong&gt;Automated Model Research &amp;amp; Development Copilot&lt;/strong&gt;: model extraction and implementation application&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;# 1. Generally, you can run your own papers/reports with the following command:
+rdagent general_model &amp;lt;Your paper URL&amp;gt;
+
+# 2. Specifically, you can do it like this. For more details and additional paper examples, use `rdagent general_model -h`:
+rdagent general_model  "https://arxiv.org/pdf/2210.09789"
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Run the &lt;strong&gt;Automated Medical Prediction Model Evolution&lt;/strong&gt;: Medical self-loop model proposal and implementation application&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;# Generally, you can run the data science program with the following command:
+rdagent data_science --competition &amp;lt;your competition name&amp;gt;
+
+# Specifically, you need to create a folder for storing competition files (e.g., competition description file, competition datasets, etc.), and configure the path to the folder in your environment. In addition, you need to use chromedriver when you download the competition descriptors, which you can follow for this specific example:
+
+# 1. Download the dataset, extract it to the target folder.
+wget https://github.com/SunsetWolf/rdagent_resource/releases/download/ds_data/arf-12-hours-prediction-task.zip
+unzip arf-12-hours-prediction-task.zip -d ./git_ignore_folder/ds_data/
+
+# 2. Configure environment variables in the `.env` file
+dotenv set DS_LOCAL_DATA_PATH "$(pwd)/git_ignore_folder/ds_data"
+dotenv set DS_CODER_ON_WHOLE_PIPELINE True
+dotenv set DS_IF_USING_MLE_DATA False
+dotenv set DS_SAMPLE_DATA_BY_LLM False
+dotenv set DS_SCEN rdagent.scenarios.data_science.scen.DataScienceScen
+
+# 3. run the application
+rdagent data_science --competition arf-12-hours-prediction-task
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; For more information about the dataset, please refer to the &lt;a href="https://rdagent.readthedocs.io/en/latest/scens/data_science.html"&gt;documentation&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Run the &lt;strong&gt;Automated Kaggle Model Tuning &amp;amp; Feature Engineering&lt;/strong&gt;: self-loop model proposal and feature engineering implementation application &lt;br /&gt;&lt;/p&gt; 
+  &lt;blockquote&gt; 
+   &lt;p&gt;Using &lt;strong&gt;tabular-playground-series-dec-2021&lt;/strong&gt; as an example. &lt;br /&gt;&lt;/p&gt; 
+   &lt;ol&gt; 
+    &lt;li&gt;Register and login on the &lt;a href="https://www.kaggle.com/"&gt;Kaggle&lt;/a&gt; website. &lt;br /&gt;&lt;/li&gt; 
+    &lt;li&gt;Configuring the Kaggle API. &lt;br /&gt; (1) Click on the avatar (usually in the top right corner of the page) -&amp;gt; &lt;code&gt;Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Create New Token&lt;/code&gt;, A file called &lt;code&gt;kaggle.json&lt;/code&gt; will be downloaded. &lt;br /&gt; (2) Move &lt;code&gt;kaggle.json&lt;/code&gt; to &lt;code&gt;~/.config/kaggle/&lt;/code&gt; &lt;br /&gt; (3) Modify the permissions of the kaggle.json file. Reference command: &lt;code&gt;chmod 600 ~/.config/kaggle/kaggle.json&lt;/code&gt; &lt;br /&gt;&lt;/li&gt; 
+    &lt;li&gt;Join the competition: Click &lt;code&gt;Join the competition&lt;/code&gt; -&amp;gt; &lt;code&gt;I Understand and Accept&lt;/code&gt; at the bottom of the &lt;a href="https://www.kaggle.com/competitions/tabular-playground-series-dec-2021/data"&gt;competition details page&lt;/a&gt;.&lt;/li&gt; 
+   &lt;/ol&gt; 
+  &lt;/blockquote&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;# Generally, you can run the Kaggle competition program with the following command:
+rdagent data_science --competition &amp;lt;your competition name&amp;gt;
+
+# 1. Configure environment variables in the `.env` file
+mkdir -p ./git_ignore_folder/ds_data
+dotenv set DS_LOCAL_DATA_PATH "$(pwd)/git_ignore_folder/ds_data"
+dotenv set DS_CODER_ON_WHOLE_PIPELINE True
+dotenv set DS_IF_USING_MLE_DATA True
+dotenv set DS_SAMPLE_DATA_BY_LLM True
+dotenv set DS_SCEN rdagent.scenarios.data_science.scen.KaggleScen
+
+# 2. run the application
+rdagent data_science --competition tabular-playground-series-dec-2021
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🖥️ Monitor the Application Results&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;You can run the following command for our demo program to see the run logs.&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;rdagent ui --port 19899 --log-dir &amp;lt;your log folder like "log/"&amp;gt; --data-science
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;About the &lt;code&gt;data_science&lt;/code&gt; parameter: If you want to see the logs of the data science scenario, set the &lt;code&gt;data_science&lt;/code&gt; parameter to &lt;code&gt;True&lt;/code&gt;; otherwise set it to &lt;code&gt;False&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Although port 19899 is not commonly used, but before you run this demo, you need to check if port 19899 is occupied. If it is, please change it to another port that is not occupied.&lt;/p&gt; &lt;p&gt;You can check if a port is occupied by running the following command.&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;rdagent health_check --no-check-env --no-check-docker
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;🏭 Scenarios&lt;/h1&gt; 
+&lt;p&gt;We have applied R&amp;amp;D-Agent to multiple valuable data-driven industrial scenarios.&lt;/p&gt; 
+&lt;h2&gt;🎯 Goal: Agent for Data-driven R&amp;amp;D&lt;/h2&gt; 
+&lt;p&gt;In this project, we are aiming to build an Agent to automate Data-Driven R&amp;amp;D that can&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;📄 Read real-world material (reports, papers, etc.) and &lt;strong&gt;extract&lt;/strong&gt; key formulas, descriptions of interested &lt;strong&gt;features&lt;/strong&gt; and &lt;strong&gt;models&lt;/strong&gt;, which are the key components of data-driven R&amp;amp;D .&lt;/li&gt; 
+ &lt;li&gt;🛠️ &lt;strong&gt;Implement&lt;/strong&gt; the extracted formulas (e.g., features, factors, and models) in runnable codes. 
+  &lt;ul&gt; 
+   &lt;li&gt;Due to the limited ability of LLM in implementing at once, build an evolving process for the agent to improve performance by learning from feedback and knowledge.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;💡 Propose &lt;strong&gt;new ideas&lt;/strong&gt; based on current knowledge and observations.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;!-- ![Data-Centric R&amp;D Overview](docs/_static/overview.png) --&gt; 
+&lt;h2&gt;📈 Scenarios/Demos&lt;/h2&gt; 
+&lt;p&gt;In the two key areas of data-driven scenarios, model implementation and data building, our system aims to serve two main roles: 🦾Copilot and 🤖Agent.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The 🦾Copilot follows human instructions to automate repetitive tasks.&lt;/li&gt; 
+ &lt;li&gt;The 🤖Agent, being more autonomous, actively proposes ideas for better results in the future.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The supported scenarios are listed below:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Scenario/Target&lt;/th&gt; 
+   &lt;th&gt;Model Implementation&lt;/th&gt; 
+   &lt;th&gt;Data Building&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;💹 Finance&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;🤖 &lt;a href="https://rdagent.azurewebsites.net/model_loop"&gt;Iteratively Proposing Ideas &amp;amp; Evolving&lt;/a&gt;&lt;a href="https://www.youtube.com/watch?v=dm0dWL49Bc0&amp;amp;t=104s"&gt;▶️YouTube&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;🤖 &lt;a href="https://rdagent.azurewebsites.net/factor_loop"&gt;Iteratively Proposing Ideas &amp;amp; Evolving&lt;/a&gt; &lt;a href="https://www.youtube.com/watch?v=X4DK2QZKaKY&amp;amp;t=6s"&gt;▶️YouTube&lt;/a&gt; &lt;br /&gt; 🦾 &lt;a href="https://rdagent.azurewebsites.net/report_factor"&gt;Auto reports reading &amp;amp; implementation&lt;/a&gt;&lt;a href="https://www.youtube.com/watch?v=ECLTXVcSx-c"&gt;▶️YouTube&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;🩺 Medical&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;🤖 &lt;a href="https://rdagent.azurewebsites.net/dmm"&gt;Iteratively Proposing Ideas &amp;amp; Evolving&lt;/a&gt;&lt;a href="https://www.youtube.com/watch?v=VIaSTZuoZg4"&gt;▶️YouTube&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;🏭 General&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;🦾 &lt;a href="https://rdagent.azurewebsites.net/report_model"&gt;Auto paper reading &amp;amp; implementation&lt;/a&gt;&lt;a href="https://www.youtube.com/watch?v=BiA2SfdKQ7o"&gt;▶️YouTube&lt;/a&gt; &lt;br /&gt; 🤖 Auto Kaggle Model Tuning&lt;/td&gt; 
+   &lt;td&gt;🤖Auto Kaggle feature Engineering&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://rdagent.readthedocs.io/en/latest/scens/data_science.html#roadmap"&gt;RoadMap&lt;/a&gt;&lt;/strong&gt;: Currently, we are working hard to add new features to the Kaggle scenario.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Different scenarios vary in entrance and configuration. Please check the detailed setup tutorial in the scenarios documents.&lt;/p&gt; 
+&lt;p&gt;Here is a gallery of &lt;a href="https://github.com/SunsetWolf/rdagent_resource/releases/download/demo_traces/demo_traces.zip"&gt;successful explorations&lt;/a&gt; (5 traces showed in &lt;strong&gt;&lt;a href="https://rdagent.azurewebsites.net/"&gt;🖥️ Live Demo&lt;/a&gt;&lt;/strong&gt;). You can download and view the execution trace using &lt;a href="https://github.com/microsoft/RD-Agent?tab=readme-ov-file#%EF%B8%8F-monitor-the-application-results"&gt;this command&lt;/a&gt; from the documentation.&lt;/p&gt; 
+&lt;p&gt;Please refer to &lt;strong&gt;&lt;a href="https://rdagent.readthedocs.io/en/latest/scens/catalog.html"&gt;📖readthedocs_scen&lt;/a&gt;&lt;/strong&gt; for more details of the scenarios.&lt;/p&gt; 
+&lt;h1&gt;⚙️ Framework&lt;/h1&gt; 
+&lt;div align="center"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/microsoft/RD-Agent/main/docs/_static/Framework-RDAgent.png" alt="Framework-RDAgent" width="85%" /&gt; 
+&lt;/div&gt; 
+&lt;p&gt;Automating the R&amp;amp;D process in data science is a highly valuable yet underexplored area in industry. We propose a framework to push the boundaries of this important research field.&lt;/p&gt; 
+&lt;p&gt;The research questions within this framework can be divided into three main categories:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Research Area&lt;/th&gt; 
+   &lt;th&gt;Paper/Work List&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Benchmark the R&amp;amp;D abilities&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/RD-Agent/main/#benchmark"&gt;Benchmark&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Idea proposal:&lt;/strong&gt; Explore new ideas or refine existing ones&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/RD-Agent/main/#research"&gt;Research&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Ability to realize ideas:&lt;/strong&gt; Implement and execute ideas&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/RD-Agent/main/#development"&gt;Development&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;We believe that the key to delivering high-quality solutions lies in the ability to evolve R&amp;amp;D capabilities. Agents should learn like human experts, continuously improving their R&amp;amp;D skills.&lt;/p&gt; 
+&lt;p&gt;More documents can be found in the &lt;strong&gt;&lt;a href="https://rdagent.readthedocs.io/"&gt;📖 readthedocs&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt; 
+&lt;h1&gt;📃 Paper/Work list&lt;/h1&gt; 
+&lt;h2&gt;Overall Technical Report&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://arxiv.org/abs/2505.14738"&gt;R&amp;amp;D-Agent: Automating Data-Driven AI Solution Building Through LLM-Powered Automated Research, Development, and Evolution&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-BibTeX"&gt;@misc{yang2024rdagent,
+    title={R\&amp;amp;D-Agent: Automating Data-Driven AI Solution Building Through LLM-Powered Automated Research, Development, and Evolution},
+    author={Xu Yang and Xiao Yang and Shikai Fang and Bowen Xian and Yuante Li and Jian Wang and Minrui Xu and Haoran Pan and Xinpeng Hong and Weiqing Liu and Yelong Shen and Weizhu Chen and Jiang Bian},
+    year={2025},
+    eprint={2505.14738},
+    archivePrefix={arXiv},
+    primaryClass={cs.AI},
+    url={https://arxiv.org/abs/2505.14738}
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/28b0488d-a546-4fef-8dc5-563ed64a9b4d" alt="image" /&gt;&lt;/p&gt; 
+&lt;h2&gt;📊 Benchmark&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://arxiv.org/abs/2404.11276"&gt;Towards Data-Centric Automatic R&amp;amp;D&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-BibTeX"&gt;@misc{chen2024datacentric,
+    title={Towards Data-Centric Automatic R&amp;amp;D},
+    author={Haotian Chen and Xinjie Shen and Zeqi Ye and Wenjun Feng and Haoxue Wang and Xiao Yang and Xu Yang and Weiqing Liu and Jiang Bian},
+    year={2024},
+    eprint={2404.11276},
+    archivePrefix={arXiv},
+    primaryClass={cs.AI}
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/494f55d3-de9e-4e73-ba3d-a787e8f9e841" alt="image" /&gt;&lt;/p&gt; 
+&lt;h2&gt;🔍 Research&lt;/h2&gt; 
+&lt;p&gt;In a data mining expert's daily research and development process, they propose a hypothesis (e.g., a model structure like RNN can capture patterns in time-series data), design experiments (e.g., finance data contains time-series and we can verify the hypothesis in this scenario), implement the experiment as code (e.g., Pytorch model structure), and then execute the code to get feedback (e.g., metrics, loss curve, etc.). The experts learn from the feedback and improve in the next iteration.&lt;/p&gt; 
+&lt;p&gt;Based on the principles above, we have established a basic method framework that continuously proposes hypotheses, verifies them, and gets feedback from the real-world practice. This is the first scientific research automation framework that supports linking with real-world verification.&lt;/p&gt; 
+&lt;p&gt;For more detail, please refer to our &lt;strong&gt;&lt;a href="https://rdagent.azurewebsites.net"&gt;🖥️ Live Demo page&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt; 
+&lt;h2&gt;🛠️ Development&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://arxiv.org/abs/2407.18690"&gt;Collaborative Evolving Strategy for Automatic Data-Centric Development&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-BibTeX"&gt;@misc{yang2024collaborative,
+    title={Collaborative Evolving Strategy for Automatic Data-Centric Development},
+    author={Xu Yang and Haotian Chen and Wenjun Feng and Haoxue Wang and Zeqi Ye and Xinjie Shen and Xiao Yang and Shizhao Sun and Weiqing Liu and Jiang Bian},
+    year={2024},
+    eprint={2407.18690},
+    archivePrefix={arXiv},
+    primaryClass={cs.AI}
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/75d9769b-0edd-4caf-9d45-57d1e577054b" alt="image" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Deep Application in Diverse Scenarios&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://arxiv.org/abs/2505.15155"&gt;R&amp;amp;D-Agent-Quant: A Multi-Agent Framework for Data-Centric Factors and Model Joint Optimization&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-BibTeX"&gt;@misc{li2025rdagentquant,
+    title={R\&amp;amp;D-Agent-Quant: A Multi-Agent Framework for Data-Centric Factors and Model Joint Optimization},
+    author={Yuante Li and Xu Yang and Xiao Yang and Minrui Xu and Xisen Wang and Weiqing Liu and Jiang Bian},
+    year={2025},
+    eprint={2505.15155},
+    archivePrefix={arXiv},
+    primaryClass={cs.AI}
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/3186f67a-c2f8-4b6b-8bb9-a9b959c13866" alt="image" /&gt;&lt;/p&gt; 
+&lt;h1&gt;🤝 Contributing&lt;/h1&gt; 
+&lt;p&gt;We welcome contributions and suggestions to improve R&amp;amp;D-Agent. Please refer to the &lt;a href="https://raw.githubusercontent.com/microsoft/RD-Agent/main/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt; for more details on how to contribute.&lt;/p&gt; 
+&lt;p&gt;Before submitting a pull request, ensure that your code passes the automatic CI checks.&lt;/p&gt; 
+&lt;h2&gt;📝 Guidelines&lt;/h2&gt; 
+&lt;p&gt;This project welcomes contributions and suggestions. Contributing to this project is straightforward and rewarding. Whether it's solving an issue, addressing a bug, enhancing documentation, or even correcting a typo, every contribution is valuable and helps improve R&amp;amp;D-Agent.&lt;/p&gt; 
+&lt;p&gt;To get started, you can explore the issues list, or search for &lt;code&gt;TODO:&lt;/code&gt; comments in the codebase by running the command &lt;code&gt;grep -r "TODO:"&lt;/code&gt;.&lt;/p&gt; 
+&lt;img src="https://img.shields.io/github/contributors-anon/microsoft/RD-Agent" /&gt; 
+&lt;a href="https://github.com/microsoft/RD-Agent/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=microsoft/RD-Agent&amp;amp;max=100&amp;amp;columns=15" /&gt; &lt;/a&gt; 
+&lt;p&gt;Before we released R&amp;amp;D-Agent as an open-source project on GitHub, it was an internal project within our group. Unfortunately, the internal commit history was not preserved when we removed some confidential code. As a result, some contributions from our group members, including Haotian Chen, Wenjun Feng, Haoxue Wang, Zeqi Ye, Xinjie Shen, and Jinhui Li, were not included in the public commits.&lt;/p&gt; 
+&lt;h1&gt;⚖️ Legal disclaimer&lt;/h1&gt; 
+&lt;p style="line-height: 1; font-style: italic;"&gt;The RD-agent is provided “as is”, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. The RD-agent is aimed to facilitate research and development process in the financial industry and not ready-to-use for any financial investment or advice. Users shall independently assess and test the risks of the RD-agent in a specific use scenario, ensure the responsible use of AI technology, including but not limited to developing and integrating risk mitigation measures, and comply with all applicable laws and regulations in all applicable jurisdictions. The RD-agent does not provide financial opinions or reflect the opinions of Microsoft, nor is it designed to replace the role of qualified financial professionals in formulating, assessing, and approving finance products. The inputs and outputs of the RD-agent belong to the users and users shall assume all liability under any theory of liability, whether in contract, torts, regulatory, negligence, products liability, or otherwise, associated with use of the RD-agent and any inputs and outputs thereof.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CapSoftware/Cap</title>
+      <link>https://github.com/CapSoftware/Cap</link>
+      <description>&lt;p&gt;Open source Loom alternative. Beautiful, shareable screen recordings.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;/p&gt;
+&lt;p align="center"&gt; &lt;img width="150" height="150" src="https://github.com/CapSoftware/Cap/raw/main/apps/desktop/src-tauri/icons/Square310x310Logo.png" alt="Logo" /&gt; &lt;/p&gt; 
+&lt;h1 align="center"&gt;&lt;b&gt;Cap&lt;/b&gt;&lt;/h1&gt; 
+&lt;p align="center"&gt; The open source Loom alternative. &lt;br /&gt; &lt;a href="https://cap.so"&gt;&lt;strong&gt;Cap.so »&lt;/strong&gt;&lt;/a&gt; &lt;br /&gt; &lt;br /&gt; &lt;b&gt;Downloads for &lt;/b&gt; &lt;a href="https://cap.so/download"&gt;macOS &amp;amp; Windows&lt;/a&gt; &lt;br /&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;p&gt;&lt;a href="https://console.algora.io/org/CapSoftware/bounties?status=open"&gt;&lt;img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fconsole.algora.io%2Fapi%2Fshields%2FCapSoftware%2Fbounties%3Fstatus%3Dopen" alt="Open Bounties" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Cap is the open source alternative to Loom. It's a video messaging tool that allows you to record, edit and share videos in seconds.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/CapSoftware/Cap/refs/heads/main/apps/web/public/landing-cover.png" /&gt; 
+&lt;h1&gt;Self Hosting&lt;/h1&gt; 
+&lt;p&gt;Cap Web is available to self-host using Docker or Railway, see our &lt;a href="https://cap.so/docs/self-hosting"&gt;self-hosting docs&lt;/a&gt; to learn more. You can also use the button below to deploy Cap Web to Railway:&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://railway.com/new/template/PwpGcf"&gt;&lt;img src="https://railway.com/button.svg?sanitize=true" alt="Deploy on Railway" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Cap Desktop can connect to your self-hosted Cap Web instance regardless of if you build it yourself or &lt;a href="https://cap.so/download"&gt;download from our website&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;Monorepo App Architecture&lt;/h1&gt; 
+&lt;p&gt;We use a combination of Rust, React (Next.js), TypeScript, Tauri, Drizzle (ORM), MySQL, TailwindCSS throughout this Turborepo powered monorepo.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;A note about database: The codebase is currently designed to work with MySQL only. MariaDB or other compatible databases might partially work but are not officially supported.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Apps:&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;desktop&lt;/code&gt;: A &lt;a href="https://tauri.app"&gt;Tauri&lt;/a&gt; (Rust) app, using &lt;a href="https://start.solidjs.com"&gt;SolidStart&lt;/a&gt; on the frontend.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;web&lt;/code&gt;: A &lt;a href="https://nextjs.org"&gt;Next.js&lt;/a&gt; web app.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Packages:&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;ui&lt;/code&gt;: A &lt;a href="https://reactjs.org"&gt;React&lt;/a&gt; Shared component library.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;utils&lt;/code&gt;: A &lt;a href="https://reactjs.org"&gt;React&lt;/a&gt; Shared utility library.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;tsconfig&lt;/code&gt;: Shared &lt;code&gt;tsconfig&lt;/code&gt; configurations used throughout the monorepo.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;database&lt;/code&gt;: A &lt;a href="https://reactjs.org"&gt;React&lt;/a&gt; and &lt;a href="https://orm.drizzle.team/"&gt;Drizzle ORM&lt;/a&gt; Shared database library.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;config&lt;/code&gt;: &lt;code&gt;eslint&lt;/code&gt; configurations (includes &lt;code&gt;eslint-config-next&lt;/code&gt;, &lt;code&gt;eslint-config-prettier&lt;/code&gt; other configs used throughout the monorepo).&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;License:&lt;/h3&gt; 
+&lt;p&gt;Portions of this software are licensed as follows:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;All code residing in the &lt;code&gt;cap-camera*&lt;/code&gt; and &lt;code&gt;scap-*&lt;/code&gt; families of crates is licensed under the MIT License (see &lt;a href="https://github.com/CapSoftware/Cap/raw/main/licenses/LICENSE-MIT"&gt;licenses/LICENSE-MIT&lt;/a&gt;).&lt;/li&gt; 
+ &lt;li&gt;All third party components are licensed under the original license provided by the owner of the applicable component&lt;/li&gt; 
+ &lt;li&gt;All other content not mentioned above is available under the AGPLv3 license as defined in &lt;a href="https://github.com/CapSoftware/Cap/raw/main/LICENSE"&gt;LICENSE&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;Contributing&lt;/h1&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/CapSoftware/Cap/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for more information. This guide is a work in progress, and is updated regularly as the app matures.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>anthropics/claude-code</title>
+      <link>https://github.com/anthropics/claude-code</link>
+      <description>&lt;p&gt;Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Claude Code&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://img.shields.io/badge/Node.js-18%2B-brightgreen?style=flat-square" alt="" /&gt; &lt;a href="https://www.npmjs.com/package/@anthropic-ai/claude-code"&gt;&lt;img src="https://img.shields.io/npm/v/@anthropic-ai/claude-code.svg?style=flat-square" alt="npm" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands. Use it in your terminal, IDE, or tag @claude on Github.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Learn more in the &lt;a href="https://docs.anthropic.com/en/docs/claude-code/overview"&gt;official documentation&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/anthropics/claude-code/main/demo.gif" /&gt; 
+&lt;h2&gt;Get started&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Install Claude Code:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;npm install -g @anthropic-ai/claude-code
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Navigate to your project directory and run &lt;code&gt;claude&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Reporting Bugs&lt;/h2&gt; 
+&lt;p&gt;We welcome your feedback. Use the &lt;code&gt;/bug&lt;/code&gt; command to report issues directly within Claude Code, or file a &lt;a href="https://github.com/anthropics/claude-code/issues"&gt;GitHub issue&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Connect on Discord&lt;/h2&gt; 
+&lt;p&gt;Join the &lt;a href="https://anthropic.com/discord"&gt;Claude Developers Discord&lt;/a&gt; to connect with other developers using Claude Code. Get help, share feedback, and discuss your projects with the community.&lt;/p&gt; 
+&lt;h2&gt;Data collection, usage, and retention&lt;/h2&gt; 
+&lt;p&gt;When you use Claude Code, we collect feedback, which includes usage data (such as code acceptance or rejections), associated conversation data, and user feedback submitted via the &lt;code&gt;/bug&lt;/code&gt; command.&lt;/p&gt; 
+&lt;h3&gt;How we use your data&lt;/h3&gt; 
+&lt;p&gt;See our &lt;a href="https://docs.anthropic.com/en/docs/claude-code/data-usage"&gt;data usage policies&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Privacy safeguards&lt;/h3&gt; 
+&lt;p&gt;We have implemented several safeguards to protect your data, including limited retention periods for sensitive information, restricted access to user session data, and clear policies against using feedback for model training.&lt;/p&gt; 
+&lt;p&gt;For full details, please review our &lt;a href="https://www.anthropic.com/legal/commercial-terms"&gt;Commercial Terms of Service&lt;/a&gt; and &lt;a href="https://www.anthropic.com/legal/privacy"&gt;Privacy Policy&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PixelGuys/Cubyz</title>
+      <link>https://github.com/PixelGuys/Cubyz</link>
+      <description>&lt;p&gt;Voxel sandbox game with a large render distance, procedurally generated content and some cool graphical effects.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Cubyz&lt;/h1&gt; 
+&lt;p&gt;Cubyz is a 3D voxel sandbox game (inspired by Minecraft).&lt;/p&gt; 
+&lt;p&gt;Cubyz has a bunch of interesting/unique features such as:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Level of Detail (→ This enables far view distances.)&lt;/li&gt; 
+ &lt;li&gt;3D Chunks (→ There is no height or depth limit.)&lt;/li&gt; 
+ &lt;li&gt;Procedural Crafting (→ You can craft anything you want, and the game will figure out what kind of tool you tried to make.)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;About&lt;/h1&gt; 
+&lt;p&gt;Cubyz is written in &lt;img src="https://github.com/PixelGuys/Cubyz/assets/43880493/04dc89ca-3ef2-4167-9e1a-e23f25feb67c" width="20" height="20" /&gt; &lt;a href="https://ziglang.org/"&gt;Zig&lt;/a&gt;, a rather small language with some cool features and a focus on readability.&lt;/p&gt; 
+&lt;p&gt;Windows and Linux are supported. Mac is not supported, as it does not have OpenGL 4.3.&lt;/p&gt; 
+&lt;p&gt;Check out the &lt;a href="https://discord.gg/XtqCRRG"&gt;Discord server&lt;/a&gt; for more information and announcements.&lt;/p&gt; 
+&lt;p&gt;There are also some devlogs on &lt;a href="https://www.youtube.com/playlist?list=PLYi_o2N3ImLb3SIUpTS_AFPWe0MUTk2Lf"&gt;YouTube&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;History&lt;/h3&gt; 
+&lt;p&gt;Until recently (the Zig rewrite was started in August 2022) Cubyz was written in Java. You can still see the code in the &lt;a href="https://github.com/PixelGuys/Cubyz-Java"&gt;Cubyz-Java&lt;/a&gt; repository and play it using the &lt;a href="https://github.com/PixelGuys/Cubyz-Launcher/releases"&gt;Java Launcher&lt;/a&gt;. &lt;code&gt;// TODO: Move this over to a separate repository&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;Originally Cubyz was created on August 22, 2018 by &lt;img src="https://avatars.githubusercontent.com/u/39484230" width="20" height="20" /&gt;&lt;a href="https://github.com/zenith391"&gt;zenith391&lt;/a&gt; and &lt;img src="https://avatars.githubusercontent.com/u/39484479" width="20" height="20" /&gt;&lt;a href="https://github.com/ZaUserA"&gt;ZaUserA&lt;/a&gt;. Back then, it was called "Cubz".&lt;/p&gt; 
+&lt;p&gt;However, both of them lost interest at some point, and now Cubyz is maintained by &lt;img src="https://avatars.githubusercontent.com/u/43880493" width="20" height="20" /&gt;&lt;a href="https://github.com/IntegratedQuantum"&gt;IntegratedQuantum&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;Run Cubyz&lt;/h1&gt; 
+&lt;h3&gt;This section is about compiling a dev version, if you just want a precompiled version, go to &lt;a href="https://github.com/PixelGuys/Cubyz/releases"&gt;releases&lt;/a&gt;&lt;/h3&gt; 
+&lt;h2&gt;The Easy Way (no tools needed)&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Download the latest &lt;a href="https://codeload.github.com/PixelGuys/Cubyz/zip/refs/heads/master"&gt;source code&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Extract the zip file&lt;/li&gt; 
+ &lt;li&gt;Go into the extraced folder and double click the &lt;code&gt;run_linux.sh&lt;/code&gt; or &lt;code&gt;run_windows.bat&lt;/code&gt; depending on your operating system.&lt;/li&gt; 
+ &lt;li&gt;Congratulations: You just compiled your first program!&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;It doesn't work?&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;If it doesn't work and keeps running for more than 10 minutes without doing anything it can help to kill and restart the process. A few people seem to experience this, and I have not found the cause. It might also help to delete the &lt;code&gt;zig-cache&lt;/code&gt; folder.&lt;/li&gt; 
+ &lt;li&gt;If you see an error message in the terminal, please report it in the &lt;a href="https://github.com/PixelGuys/Cubyz/issues"&gt;Issues&lt;/a&gt; tab or on the &lt;a href="https://discord.gg/XtqCRRG"&gt;Discord server&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Otherwise you can always ask for help on the Discord server. If you are unable to get it compiling on your machine, you can also ask on the Discord server and we may compile a release for you.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Note for Linux Users:&lt;/h4&gt; 
+&lt;p&gt;I also had to install a few &lt;code&gt;-dev&lt;/code&gt; packages for the compilation to work:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;sudo apt install libgl-dev libasound2-dev libx11-dev libxcursor-dev libxrandr-dev libxinerama-dev libxext-dev libxi-dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;The Better Way&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Install Git&lt;/li&gt; 
+ &lt;li&gt;Clone this repository &lt;code&gt;git clone https://github.com/pixelguys/Cubyz&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;run_linux.sh&lt;/code&gt; or &lt;code&gt;run_windows.bat&lt;/code&gt;, if you already have Zig installed on your computer (it must be a compatible version) you can also just use &lt;code&gt;zig build run&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;When you want to update your local version you can use &lt;code&gt;git pull&lt;/code&gt;. This keeps everything in one place, avoiding repeatedly downloading the compiler on every update.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h1&gt;Contributing&lt;/h1&gt; 
+&lt;h3&gt;Code&lt;/h3&gt; 
+&lt;p&gt;Check out the &lt;a href="https://github.com/PixelGuys/Cubyz/raw/master/docs/CONTRIBUTING.md"&gt;Contributing Guidelines&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Gameplay Additions&lt;/h3&gt; 
+&lt;p&gt;Check out the &lt;a href="https://github.com/PixelGuys/Cubyz/raw/master/docs/GAME_DESIGN_PRINCIPLES.md"&gt;Game Design Principles&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Textures&lt;/h3&gt; 
+&lt;p&gt;If you want to add new textures, make sure they fit the style of the game. It's recommended that you have baseline skills in pixel art before attempting to make textures. A great collection of tutorials can be found &lt;a href="https://lospec.com/pixel-art-tutorials"&gt;here&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;If any of the following points are ignored, your texture will be rejected:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Resolution is 16 x 16&lt;/li&gt; 
+ &lt;li&gt;Lighting direction is top-left for items and blocks.&lt;/li&gt; 
+ &lt;li&gt;Keep colour palettes small. Do not use near-duplicate colours, do not use noise, filters, or brushes that create unnecessary amounts of colours. Most blocks can be textured with ~4-6 colours.&lt;/li&gt; 
+ &lt;li&gt;Reference other block textures to see how colours &amp;amp; contrast is used. Test your textures ingame alongside other blocks.&lt;/li&gt; 
+ &lt;li&gt;Blocks should tile smoothly. Avoid creating seams or repetitive patterns.&lt;/li&gt; 
+ &lt;li&gt;Use hue shifting conservatively. Take the material into account when choosing colours.&lt;/li&gt; 
+ &lt;li&gt;Items have full, coloured, 1-pixel outlines. It should be shaded so that the side in light (top left) is brighter, while the side in shadow (bottom right) is darker.&lt;/li&gt; 
+ &lt;li&gt;Items should have higher contrast than their block counterparts.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;Your texture may be edited or replaced to ensure a consistent art style throughout the game.&lt;/p&gt; 
+&lt;p&gt;For further information, ask &lt;img src="https://avatars.githubusercontent.com/u/122191047" width="20" height="20" /&gt;&lt;a href="https://github.com/careeoki"&gt;careeoki&lt;/a&gt; on &lt;a href="https://discord.gg/XtqCRRG"&gt;Discord&lt;/a&gt;. She has made a majority of the art for Cubyz.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MODSetter/SurfSense</title>
+      <link>https://github.com/MODSetter/SurfSense</link>
+      <description>&lt;p&gt;Open Source Alternative to NotebookLM / Perplexity, connected to external sources such as Search Engines, Slack, Linear, Jira, ClickUp, Confluence, Notion, YouTube, GitHub, Discord and more. Join our discord: https://discord.gg/ejRNvftDp9&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/e236b764-0ddc-42ff-a1f1-8fbb3d2e0e65" alt="new_header" /&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://discord.gg/ejRNvftDp9"&gt; &lt;img src="https://img.shields.io/discord/1359368468260192417" alt="Discord" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;h1&gt;SurfSense&lt;/h1&gt; 
+&lt;p&gt;While tools like NotebookLM and Perplexity are impressive and highly effective for conducting research on any topic/query, SurfSense elevates this capability by integrating with your personal knowledge base. It is a highly customizable AI research agent, connected to external sources such as Search Engines (Tavily, LinkUp), Slack, Linear, Jira, ClickUp, Confluence, Gmail, Notion, YouTube, GitHub, Discord, Airtable, Google Calendar, Luma and more to come.&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://trendshift.io/repositories/13606" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/13606" alt="MODSetter%2FSurfSense | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;h1&gt;Video&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/d9221908-e0de-4b2f-ac3a-691cf4b202da"&gt;https://github.com/user-attachments/assets/d9221908-e0de-4b2f-ac3a-691cf4b202da&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Podcast Sample&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/a0a16566-6967-4374-ac51-9b3e07fbecd7"&gt;https://github.com/user-attachments/assets/a0a16566-6967-4374-ac51-9b3e07fbecd7&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Key Features&lt;/h2&gt; 
+&lt;h3&gt;💡 &lt;strong&gt;Idea&lt;/strong&gt;:&lt;/h3&gt; 
+&lt;p&gt;Have your own highly customizable private NotebookLM and Perplexity integrated with external sources.&lt;/p&gt; 
+&lt;h3&gt;📁 &lt;strong&gt;Multiple File Format Uploading Support&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;Save content from your own personal files &lt;em&gt;(Documents, images, videos and supports &lt;strong&gt;50+ file extensions&lt;/strong&gt;)&lt;/em&gt; to your own personal knowledge base .&lt;/p&gt; 
+&lt;h3&gt;🔍 &lt;strong&gt;Powerful Search&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;Quickly research or find anything in your saved content .&lt;/p&gt; 
+&lt;h3&gt;💬 &lt;strong&gt;Chat with your Saved Content&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;Interact in Natural Language and get cited answers.&lt;/p&gt; 
+&lt;h3&gt;📄 &lt;strong&gt;Cited Answers&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;Get Cited answers just like Perplexity.&lt;/p&gt; 
+&lt;h3&gt;🔔 &lt;strong&gt;Privacy &amp;amp; Local LLM Support&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;Works Flawlessly with Ollama local LLMs.&lt;/p&gt; 
+&lt;h3&gt;🏠 &lt;strong&gt;Self Hostable&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;Open source and easy to deploy locally.&lt;/p&gt; 
+&lt;h3&gt;🎙️ Podcasts&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Blazingly fast podcast generation agent. (Creates a 3-minute podcast in under 20 seconds.)&lt;/li&gt; 
+ &lt;li&gt;Convert your chat conversations into engaging audio content&lt;/li&gt; 
+ &lt;li&gt;Support for local TTS providers (Kokoro TTS)&lt;/li&gt; 
+ &lt;li&gt;Support for multiple TTS providers (OpenAI, Azure, Google Vertex AI)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;📊 &lt;strong&gt;Advanced RAG Techniques&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Supports 100+ LLM's&lt;/li&gt; 
+ &lt;li&gt;Supports 6000+ Embedding Models.&lt;/li&gt; 
+ &lt;li&gt;Supports all major Rerankers (Pinecode, Cohere, Flashrank etc)&lt;/li&gt; 
+ &lt;li&gt;Uses Hierarchical Indices (2 tiered RAG setup).&lt;/li&gt; 
+ &lt;li&gt;Utilizes Hybrid Search (Semantic + Full Text Search combined with Reciprocal Rank Fusion).&lt;/li&gt; 
+ &lt;li&gt;RAG as a Service API Backend.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;ℹ️ &lt;strong&gt;External Sources&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Search Engines (Tavily, LinkUp)&lt;/li&gt; 
+ &lt;li&gt;Slack&lt;/li&gt; 
+ &lt;li&gt;Linear&lt;/li&gt; 
+ &lt;li&gt;Jira&lt;/li&gt; 
+ &lt;li&gt;ClickUp&lt;/li&gt; 
+ &lt;li&gt;Confluence&lt;/li&gt; 
+ &lt;li&gt;Notion&lt;/li&gt; 
+ &lt;li&gt;Gmail&lt;/li&gt; 
+ &lt;li&gt;Youtube Videos&lt;/li&gt; 
+ &lt;li&gt;GitHub&lt;/li&gt; 
+ &lt;li&gt;Discord&lt;/li&gt; 
+ &lt;li&gt;Airtable&lt;/li&gt; 
+ &lt;li&gt;Google Calendar&lt;/li&gt; 
+ &lt;li&gt;Luma&lt;/li&gt; 
+ &lt;li&gt;and more to come.....&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📄 &lt;strong&gt;Supported File Extensions&lt;/strong&gt;&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: File format support depends on your ETL service configuration. LlamaCloud supports 50+ formats, Unstructured supports 34+ core formats, and Docling (core formats, local processing, privacy-focused, no API key).&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Documents &amp;amp; Text&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;LlamaCloud&lt;/strong&gt;: &lt;code&gt;.pdf&lt;/code&gt;, &lt;code&gt;.doc&lt;/code&gt;, &lt;code&gt;.docx&lt;/code&gt;, &lt;code&gt;.docm&lt;/code&gt;, &lt;code&gt;.dot&lt;/code&gt;, &lt;code&gt;.dotm&lt;/code&gt;, &lt;code&gt;.rtf&lt;/code&gt;, &lt;code&gt;.txt&lt;/code&gt;, &lt;code&gt;.xml&lt;/code&gt;, &lt;code&gt;.epub&lt;/code&gt;, &lt;code&gt;.odt&lt;/code&gt;, &lt;code&gt;.wpd&lt;/code&gt;, &lt;code&gt;.pages&lt;/code&gt;, &lt;code&gt;.key&lt;/code&gt;, &lt;code&gt;.numbers&lt;/code&gt;, &lt;code&gt;.602&lt;/code&gt;, &lt;code&gt;.abw&lt;/code&gt;, &lt;code&gt;.cgm&lt;/code&gt;, &lt;code&gt;.cwk&lt;/code&gt;, &lt;code&gt;.hwp&lt;/code&gt;, &lt;code&gt;.lwp&lt;/code&gt;, &lt;code&gt;.mw&lt;/code&gt;, &lt;code&gt;.mcw&lt;/code&gt;, &lt;code&gt;.pbd&lt;/code&gt;, &lt;code&gt;.sda&lt;/code&gt;, &lt;code&gt;.sdd&lt;/code&gt;, &lt;code&gt;.sdp&lt;/code&gt;, &lt;code&gt;.sdw&lt;/code&gt;, &lt;code&gt;.sgl&lt;/code&gt;, &lt;code&gt;.sti&lt;/code&gt;, &lt;code&gt;.sxi&lt;/code&gt;, &lt;code&gt;.sxw&lt;/code&gt;, &lt;code&gt;.stw&lt;/code&gt;, &lt;code&gt;.sxg&lt;/code&gt;, &lt;code&gt;.uof&lt;/code&gt;, &lt;code&gt;.uop&lt;/code&gt;, &lt;code&gt;.uot&lt;/code&gt;, &lt;code&gt;.vor&lt;/code&gt;, &lt;code&gt;.wps&lt;/code&gt;, &lt;code&gt;.zabw&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Unstructured&lt;/strong&gt;: &lt;code&gt;.doc&lt;/code&gt;, &lt;code&gt;.docx&lt;/code&gt;, &lt;code&gt;.odt&lt;/code&gt;, &lt;code&gt;.rtf&lt;/code&gt;, &lt;code&gt;.pdf&lt;/code&gt;, &lt;code&gt;.xml&lt;/code&gt;, &lt;code&gt;.txt&lt;/code&gt;, &lt;code&gt;.md&lt;/code&gt;, &lt;code&gt;.markdown&lt;/code&gt;, &lt;code&gt;.rst&lt;/code&gt;, &lt;code&gt;.html&lt;/code&gt;, &lt;code&gt;.org&lt;/code&gt;, &lt;code&gt;.epub&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Docling&lt;/strong&gt;: &lt;code&gt;.pdf&lt;/code&gt;, &lt;code&gt;.docx&lt;/code&gt;, &lt;code&gt;.html&lt;/code&gt;, &lt;code&gt;.htm&lt;/code&gt;, &lt;code&gt;.xhtml&lt;/code&gt;, &lt;code&gt;.adoc&lt;/code&gt;, &lt;code&gt;.asciidoc&lt;/code&gt;&lt;/p&gt; 
+&lt;h3&gt;Presentations&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;LlamaCloud&lt;/strong&gt;: &lt;code&gt;.ppt&lt;/code&gt;, &lt;code&gt;.pptx&lt;/code&gt;, &lt;code&gt;.pptm&lt;/code&gt;, &lt;code&gt;.pot&lt;/code&gt;, &lt;code&gt;.potm&lt;/code&gt;, &lt;code&gt;.potx&lt;/code&gt;, &lt;code&gt;.odp&lt;/code&gt;, &lt;code&gt;.key&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Unstructured&lt;/strong&gt;: &lt;code&gt;.ppt&lt;/code&gt;, &lt;code&gt;.pptx&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Docling&lt;/strong&gt;: &lt;code&gt;.pptx&lt;/code&gt;&lt;/p&gt; 
+&lt;h3&gt;Spreadsheets &amp;amp; Data&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;LlamaCloud&lt;/strong&gt;: &lt;code&gt;.xlsx&lt;/code&gt;, &lt;code&gt;.xls&lt;/code&gt;, &lt;code&gt;.xlsm&lt;/code&gt;, &lt;code&gt;.xlsb&lt;/code&gt;, &lt;code&gt;.xlw&lt;/code&gt;, &lt;code&gt;.csv&lt;/code&gt;, &lt;code&gt;.tsv&lt;/code&gt;, &lt;code&gt;.ods&lt;/code&gt;, &lt;code&gt;.fods&lt;/code&gt;, &lt;code&gt;.numbers&lt;/code&gt;, &lt;code&gt;.dbf&lt;/code&gt;, &lt;code&gt;.123&lt;/code&gt;, &lt;code&gt;.dif&lt;/code&gt;, &lt;code&gt;.sylk&lt;/code&gt;, &lt;code&gt;.slk&lt;/code&gt;, &lt;code&gt;.prn&lt;/code&gt;, &lt;code&gt;.et&lt;/code&gt;, &lt;code&gt;.uos1&lt;/code&gt;, &lt;code&gt;.uos2&lt;/code&gt;, &lt;code&gt;.wk1&lt;/code&gt;, &lt;code&gt;.wk2&lt;/code&gt;, &lt;code&gt;.wk3&lt;/code&gt;, &lt;code&gt;.wk4&lt;/code&gt;, &lt;code&gt;.wks&lt;/code&gt;, &lt;code&gt;.wq1&lt;/code&gt;, &lt;code&gt;.wq2&lt;/code&gt;, &lt;code&gt;.wb1&lt;/code&gt;, &lt;code&gt;.wb2&lt;/code&gt;, &lt;code&gt;.wb3&lt;/code&gt;, &lt;code&gt;.qpw&lt;/code&gt;, &lt;code&gt;.xlr&lt;/code&gt;, &lt;code&gt;.eth&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Unstructured&lt;/strong&gt;: &lt;code&gt;.xls&lt;/code&gt;, &lt;code&gt;.xlsx&lt;/code&gt;, &lt;code&gt;.csv&lt;/code&gt;, &lt;code&gt;.tsv&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Docling&lt;/strong&gt;: &lt;code&gt;.xlsx&lt;/code&gt;, &lt;code&gt;.csv&lt;/code&gt;&lt;/p&gt; 
+&lt;h3&gt;Images&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;LlamaCloud&lt;/strong&gt;: &lt;code&gt;.jpg&lt;/code&gt;, &lt;code&gt;.jpeg&lt;/code&gt;, &lt;code&gt;.png&lt;/code&gt;, &lt;code&gt;.gif&lt;/code&gt;, &lt;code&gt;.bmp&lt;/code&gt;, &lt;code&gt;.svg&lt;/code&gt;, &lt;code&gt;.tiff&lt;/code&gt;, &lt;code&gt;.webp&lt;/code&gt;, &lt;code&gt;.html&lt;/code&gt;, &lt;code&gt;.htm&lt;/code&gt;, &lt;code&gt;.web&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Unstructured&lt;/strong&gt;: &lt;code&gt;.jpg&lt;/code&gt;, &lt;code&gt;.jpeg&lt;/code&gt;, &lt;code&gt;.png&lt;/code&gt;, &lt;code&gt;.bmp&lt;/code&gt;, &lt;code&gt;.tiff&lt;/code&gt;, &lt;code&gt;.heic&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Docling&lt;/strong&gt;: &lt;code&gt;.jpg&lt;/code&gt;, &lt;code&gt;.jpeg&lt;/code&gt;, &lt;code&gt;.png&lt;/code&gt;, &lt;code&gt;.bmp&lt;/code&gt;, &lt;code&gt;.tiff&lt;/code&gt;, &lt;code&gt;.tif&lt;/code&gt;, &lt;code&gt;.webp&lt;/code&gt;&lt;/p&gt; 
+&lt;h3&gt;Audio &amp;amp; Video &lt;em&gt;(Always Supported)&lt;/em&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;code&gt;.mp3&lt;/code&gt;, &lt;code&gt;.mpga&lt;/code&gt;, &lt;code&gt;.m4a&lt;/code&gt;, &lt;code&gt;.wav&lt;/code&gt;, &lt;code&gt;.mp4&lt;/code&gt;, &lt;code&gt;.mpeg&lt;/code&gt;, &lt;code&gt;.webm&lt;/code&gt;&lt;/p&gt; 
+&lt;h3&gt;Email &amp;amp; Communication&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Unstructured&lt;/strong&gt;: &lt;code&gt;.eml&lt;/code&gt;, &lt;code&gt;.msg&lt;/code&gt;, &lt;code&gt;.p7s&lt;/code&gt;&lt;/p&gt; 
+&lt;h3&gt;🔖 Cross Browser Extension&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The SurfSense extension can be used to save any webpage you like.&lt;/li&gt; 
+ &lt;li&gt;Its main usecase is to save any webpages protected beyond authentication.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;FEATURE REQUESTS AND FUTURE&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;SurfSense is actively being developed.&lt;/strong&gt; While it's not yet production-ready, you can help us speed up the process.&lt;/p&gt; 
+&lt;p&gt;Join the &lt;a href="https://discord.gg/ejRNvftDp9"&gt;SurfSense Discord&lt;/a&gt; and help shape the future of SurfSense!&lt;/p&gt; 
+&lt;h2&gt;🚀 Roadmap&lt;/h2&gt; 
+&lt;p&gt;Stay up to date with our development progress and upcoming features!&lt;br /&gt; Check out our public roadmap and contribute your ideas or feedback:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;View the Roadmap:&lt;/strong&gt; &lt;a href="https://github.com/users/MODSetter/projects/2"&gt;SurfSense Roadmap on GitHub Projects&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;How to get started?&lt;/h2&gt; 
+&lt;h3&gt;Installation Options&lt;/h3&gt; 
+&lt;p&gt;SurfSense provides two installation methods:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://www.surfsense.net/docs/docker-installation"&gt;Docker Installation&lt;/a&gt;&lt;/strong&gt; - The easiest way to get SurfSense up and running with all dependencies containerized.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Includes pgAdmin for database management through a web UI&lt;/li&gt; 
+   &lt;li&gt;Supports environment variable customization via &lt;code&gt;.env&lt;/code&gt; file&lt;/li&gt; 
+   &lt;li&gt;Flexible deployment options (full stack or core services only)&lt;/li&gt; 
+   &lt;li&gt;No need to manually edit configuration files between environments&lt;/li&gt; 
+   &lt;li&gt;See &lt;a href="https://raw.githubusercontent.com/MODSetter/SurfSense/main/DOCKER_SETUP.md"&gt;Docker Setup Guide&lt;/a&gt; for detailed instructions&lt;/li&gt; 
+   &lt;li&gt;For deployment scenarios and options, see &lt;a href="https://raw.githubusercontent.com/MODSetter/SurfSense/main/DEPLOYMENT_GUIDE.md"&gt;Deployment Guide&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://www.surfsense.net/docs/manual-installation"&gt;Manual Installation (Recommended)&lt;/a&gt;&lt;/strong&gt; - For users who prefer more control over their setup or need to customize their deployment.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;Both installation guides include detailed OS-specific instructions for Windows, macOS, and Linux.&lt;/p&gt; 
+&lt;p&gt;Before installation, make sure to complete the &lt;a href="https://www.surfsense.net/docs/"&gt;prerequisite setup steps&lt;/a&gt; including:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;PGVector setup&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;File Processing ETL Service&lt;/strong&gt; (choose one): 
+  &lt;ul&gt; 
+   &lt;li&gt;Unstructured.io API key (supports 34+ formats)&lt;/li&gt; 
+   &lt;li&gt;LlamaIndex API key (enhanced parsing, supports 50+ formats)&lt;/li&gt; 
+   &lt;li&gt;Docling (local processing, no API key required, supports PDF, Office docs, images, HTML, CSV)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Other required API keys&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Screenshots&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Research Agent&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/e22c5d86-f511-4c72-8c50-feba0c1561b4" alt="updated_researcher" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Search Spaces&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/e254c38c-f937-44b6-9e9d-770db583d099" alt="search_spaces" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Manage Documents&lt;/strong&gt; &lt;img src="https://github.com/user-attachments/assets/7001e306-eb06-4009-89c6-8fadfdc3fc4d" alt="documents" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Podcast Agent&lt;/strong&gt; &lt;img src="https://github.com/user-attachments/assets/6cb82ffd-9e14-4172-bc79-67faf34c4c1c" alt="podcasts" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Agent Chat&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/bb352d52-1c6d-4020-926b-722d0b98b491" alt="git_chat" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Browser Extension&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/1f042b7a-6349-422b-94fb-d40d0df16c40" alt="ext1" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/a9b9f1aa-2677-404d-b0a0-c1b2dddf24a7" alt="ext2" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Tech Stack&lt;/h2&gt; 
+&lt;h3&gt;&lt;strong&gt;BackEnd&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;FastAPI&lt;/strong&gt;: Modern, fast web framework for building APIs with Python&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;PostgreSQL with pgvector&lt;/strong&gt;: Database with vector search capabilities for similarity searches&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;SQLAlchemy&lt;/strong&gt;: SQL toolkit and ORM (Object-Relational Mapping) for database interactions&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Alembic&lt;/strong&gt;: A database migrations tool for SQLAlchemy.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;FastAPI Users&lt;/strong&gt;: Authentication and user management with JWT and OAuth support&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;LangGraph&lt;/strong&gt;: Framework for developing AI-agents.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;LangChain&lt;/strong&gt;: Framework for developing AI-powered applications.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;LLM Integration&lt;/strong&gt;: Integration with LLM models through LiteLLM&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Rerankers&lt;/strong&gt;: Advanced result ranking for improved search relevance&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Hybrid Search&lt;/strong&gt;: Combines vector similarity and full-text search for optimal results using Reciprocal Rank Fusion (RRF)&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Vector Embeddings&lt;/strong&gt;: Document and text embeddings for semantic search&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;pgvector&lt;/strong&gt;: PostgreSQL extension for efficient vector similarity operations&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Chonkie&lt;/strong&gt;: Advanced document chunking and embedding library&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Uses &lt;code&gt;AutoEmbeddings&lt;/code&gt; for flexible embedding model selection&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;LateChunker&lt;/code&gt; for optimized document chunking based on embedding model's max sequence length&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;&lt;strong&gt;FrontEnd&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Next.js 15.2.3&lt;/strong&gt;: React framework featuring App Router, server components, automatic code-splitting, and optimized rendering.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;React 19.0.0&lt;/strong&gt;: JavaScript library for building user interfaces.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;TypeScript&lt;/strong&gt;: Static type-checking for JavaScript, enhancing code quality and developer experience.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Vercel AI SDK Kit UI Stream Protocol&lt;/strong&gt;: To create scalable chat UI.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Tailwind CSS 4.x&lt;/strong&gt;: Utility-first CSS framework for building custom UI designs.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Shadcn&lt;/strong&gt;: Headless components library.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Lucide React&lt;/strong&gt;: Icon set implemented as React components.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Framer Motion&lt;/strong&gt;: Animation library for React.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Sonner&lt;/strong&gt;: Toast notification library.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Geist&lt;/strong&gt;: Font family from Vercel.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;React Hook Form&lt;/strong&gt;: Form state management and validation.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Zod&lt;/strong&gt;: TypeScript-first schema validation with static type inference.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;@hookform/resolvers&lt;/strong&gt;: Resolvers for using validation libraries with React Hook Form.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;@tanstack/react-table&lt;/strong&gt;: Headless UI for building powerful tables &amp;amp; datagrids.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;&lt;strong&gt;DevOps&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Docker&lt;/strong&gt;: Container platform for consistent deployment across environments&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Docker Compose&lt;/strong&gt;: Tool for defining and running multi-container Docker applications&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;pgAdmin&lt;/strong&gt;: Web-based PostgreSQL administration tool included in Docker setup&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;&lt;strong&gt;Extension&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;Manifest v3 on Plasmo&lt;/p&gt; 
+&lt;h2&gt;Future Work&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Add More Connectors.&lt;/li&gt; 
+ &lt;li&gt;Patch minor bugs.&lt;/li&gt; 
+ &lt;li&gt;Document Podcasts&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contribute&lt;/h2&gt; 
+&lt;p&gt;Contributions are very welcome! A contribution can be as small as a ⭐ or even finding and creating issues. Fine-tuning the Backend is always desired.&lt;/p&gt; 
+&lt;p&gt;For detailed contribution guidelines, please see our &lt;a href="https://raw.githubusercontent.com/MODSetter/SurfSense/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; file.&lt;/p&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;a href="https://www.star-history.com/#MODSetter/SurfSense&amp;amp;Date"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=MODSetter/SurfSense&amp;amp;type=Date&amp;amp;theme=dark" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=MODSetter/SurfSense&amp;amp;type=Date" /&gt; 
+  &lt;img alt="Star History Chart" src="https://api.star-history.com/svg?repos=MODSetter/SurfSense&amp;amp;type=Date" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;hr /&gt; 
+&lt;hr /&gt; 
+&lt;p align="center"&gt; &lt;img src="https://github.com/user-attachments/assets/329c9bc2-6005-4aed-a629-700b5ae296b4" alt="Catalyst Project" width="200" /&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;hr /&gt;</description>
+    </item>
+    
+    <item>
+      <title>coze-dev/coze-studio</title>
+      <link>https://github.com/coze-dev/coze-studio</link>
+      <description>&lt;p&gt;An AI agent development platform with all-in-one visual tools, simplifying agent creation, debugging, and deployment like never before. Coze your way to AI Agent creation.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/943f576df3424fa98580c2ad18946719~tplv-goo7wpa0wc-image.image" alt="Image" /&gt;&lt;/p&gt; 
+&lt;div align="center"&gt;
+ &lt;p&gt; &lt;a href="https://raw.githubusercontent.com/coze-dev/coze-studio/main/#what-is-coze-studio"&gt;Coze Studio&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/coze-dev/coze-studio/main/#feature-list"&gt;Feature list&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/coze-dev/coze-studio/main/#quickstart"&gt;Quickstart&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/coze-dev/coze-studio/main/#developer-guide"&gt;Developer Guide&lt;/a&gt; &lt;/p&gt; 
+ &lt;p&gt; &lt;img alt="License" src="https://img.shields.io/badge/license-apache2.0-blue.svg?sanitize=true" /&gt; &lt;img alt="Go Version" src="https://img.shields.io/badge/go-%3E%3D%201.23.4-blue" /&gt; &lt;/p&gt; 
+ &lt;p&gt;English | &lt;a href="https://raw.githubusercontent.com/coze-dev/coze-studio/main/README.zh_CN.md"&gt;中文&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;What is Coze Studio?&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.coze.cn/home"&gt;Coze Studio&lt;/a&gt; is an all-in-one AI agent development tool. Providing the latest large models and tools, various development modes and frameworks, Coze Studio offers the most convenient AI agent development environment, from development to deployment.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Provides all core technologies needed for AI agent development&lt;/strong&gt;: prompt, RAG, plugin, workflow, enabling developers to focus on creating the core value of AI.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Ready to use for professional AI agent development at the lowest cost&lt;/strong&gt;: Coze Studio provides developers with complete app templates and build frameworks, allowing you to quickly construct various AI agents and turn creative ideas into reality.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Coze Studio, derived from the "Coze Development Platform" which has served tens of thousands of enterprises and millions of developers, we have made its core engine completely open. It is a one-stop visual development tool for AI Agents that makes creating, debugging, and deploying AI Agents unprecedentedly simple. Through Coze Studio's visual design and build tools, developers can quickly create and debug agents, apps, and workflows using no-code or low-code approaches, enabling powerful AI app development and more customized business logic. It's an ideal choice for building low-code AI products tailored . Coze Studio aims to lower the threshold for AI agent development and application, encouraging community co-construction and sharing for deeper exploration and practice in the AI field.&lt;/p&gt; 
+&lt;p&gt;The backend of Coze Studio is developed using Golang, the frontend uses React + TypeScript, and the overall architecture is based on microservices and built following domain-driven design (DDD) principles. Provide developers with a high-performance, highly scalable, and easy-to-customize underlying framework to help them address complex business needs.&lt;/p&gt; 
+&lt;h2&gt;Feature list&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;&lt;strong&gt;Module&lt;/strong&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;strong&gt;Feature&lt;/strong&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Model service&lt;/td&gt; 
+   &lt;td&gt;Manage the model list, integrate services such as OpenAI and Volcengine&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Build agent&lt;/td&gt; 
+   &lt;td&gt;* Build, publish, and manage agent &lt;br /&gt; * Support configuring workflows, knowledge bases, and other resources&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Build apps&lt;/td&gt; 
+   &lt;td&gt;* Create and publish apps &lt;br /&gt; * Build business logic through workflows&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Build a workflow&lt;/td&gt; 
+   &lt;td&gt;Create, modify, publish, and delete workflows&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Develop resources&lt;/td&gt; 
+   &lt;td&gt;Support creating and managing the following resources: &lt;br /&gt; * Plugins &lt;br /&gt; * Knowledge bases &lt;br /&gt; * Databases &lt;br /&gt; * Prompts&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;API and SDK&lt;/td&gt; 
+   &lt;td&gt;* Create conversations, initiate chats, and other OpenAPI &lt;br /&gt; * Integrate agents or apps into your own app through Chat SDK&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Quickstart&lt;/h2&gt; 
+&lt;p&gt;Learn how to obtain and deploy the open-source version of Coze Studio, quickly build projects, and experience Coze Studio's open-source version.&lt;/p&gt; 
+&lt;p&gt;Environment requirements:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Before installing Coze Studio, please ensure that your machine meets the following minimum system requirements: 2 Core、4 GB&lt;/li&gt; 
+ &lt;li&gt;Pre-install Docker and Docker Compose, and start the Docker service.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Deployment steps:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;Retrieve the source code.&lt;/p&gt; &lt;pre&gt;&lt;code class="language-Bash"&gt;# Clone code
+git clone https://github.com/coze-dev/coze-studio.git
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Configure the model.&lt;/p&gt; 
+  &lt;ol&gt; 
+   &lt;li&gt; &lt;p&gt;Copy the template files of the doubao-seed-1.6 model from the template directory and paste them into the configuration file directory.&lt;/p&gt; &lt;pre&gt;&lt;code class="language-Bash"&gt;cd coze-studio
+# Copy model configuration template
+cp backend/conf/model/template/model_template_ark_doubao-seed-1.6.yaml backend/conf/model/ark_doubao-seed-1.6.yaml
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+   &lt;li&gt; &lt;p&gt;Modify the template file in the configuration file directory.&lt;/p&gt; 
+    &lt;ol&gt; 
+     &lt;li&gt;Enter the directory &lt;code&gt;backend/conf/model&lt;/code&gt;. Open the file &lt;code&gt;ark_doubao-seed-1.6.yaml&lt;/code&gt;.&lt;/li&gt; 
+     &lt;li&gt;Set the fields &lt;code&gt;id&lt;/code&gt;, &lt;code&gt;meta.conn_config.api_key&lt;/code&gt;, &lt;code&gt;meta.conn_config.model&lt;/code&gt;, and save the file. 
+      &lt;ul&gt; 
+       &lt;li&gt;&lt;strong&gt;id&lt;/strong&gt;: The model ID in Coze Studio, defined by the developer, must be a non-zero integer and globally unique. Agents or workflows call models based on model IDs. For models that have already been launched, do not modify their IDs; otherwise, it may result in model call failures.&lt;/li&gt; 
+       &lt;li&gt;&lt;strong&gt;meta.conn_config.api_key&lt;/strong&gt;: The API Key for the model service. In this example, it is the API Key for Ark API Key. For more information, see &lt;a href="https://www.volcengine.com/docs/82379/1541594"&gt;Get Volcengine Ark API Key&lt;/a&gt; or &lt;a href="https://docs.byteplus.com/en/docs/ModelArk/1361424?utm_source=github&amp;amp;utm_medium=readme&amp;amp;utm_campaign=coze_open_source"&gt;Get BytePlus ModelArk API Key&lt;/a&gt;.&lt;/li&gt; 
+       &lt;li&gt;&lt;strong&gt;meta.conn_config.model&lt;/strong&gt;: The Model name for the model service. In this example, it refers to the Model ID or Endpoint ID of Ark. For more information, see &lt;a href="https://www.volcengine.com/docs/82379/1513689"&gt;Get Volcengine Ark Model ID&lt;/a&gt; / &lt;a href="https://www.volcengine.com/docs/82379/1099522"&gt;Get Volcengine Ark Endpoint ID&lt;/a&gt; or &lt;a href="https://docs.byteplus.com/en/docs/ModelArk/model_id?utm_source=github&amp;amp;utm_medium=readme&amp;amp;utm_campaign=coze_open_source"&gt;Get BytePlus ModelArk Model ID&lt;/a&gt; / &lt;a href="https://docs.byteplus.com/en/docs/ModelArk/1099522?utm_source=github&amp;amp;utm_medium=readme&amp;amp;utm_campaign=coze_open_source"&gt;Get BytePlus ModelArk Endpoint ID&lt;/a&gt;.&lt;/li&gt; 
+      &lt;/ul&gt; 
+      &lt;blockquote&gt; 
+       &lt;p&gt;For users in China, you may use Volcengine Ark; for users outside China, you may use BytePlus ModelArk instead.&lt;/p&gt; 
+      &lt;/blockquote&gt; &lt;/li&gt; 
+    &lt;/ol&gt; &lt;/li&gt; 
+  &lt;/ol&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Deploy and start the service. When deploying and starting Coze Studio for the first time, it may take a while to retrieve images and build local images. Please be patient. During deployment, you will see the following log information. If you see the message "Container coze-server Started," it means the Coze Studio service has started successfully.&lt;/p&gt; &lt;pre&gt;&lt;code class="language-Bash"&gt;# Start the service
+cd docker
+cp .env.example .env
+docker compose up -d
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;For common startup failure issues, &lt;strong&gt;please refer to the &lt;a href="https://github.com/coze-dev/coze-studio/wiki/9.-FAQ"&gt;FAQ&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;After starting the service, you can open Coze Studio by accessing &lt;code&gt;http://localhost:8888/&lt;/code&gt; through your browser.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!WARNING] If you want to deploy Coze Studio in a public network environment, it is recommended to assess security risks before you begin, and take corresponding protection measures. Possible security risks include account registration functions, Python execution environments in workflow code nodes, Coze Server listening address configurations, SSRF (Server - Side Request Forgery), and some horizontal privilege escalations in APIs. For more details, refer to &lt;a href="https://github.com/coze-dev/coze-studio/wiki/2.-Quickstart#security-risks-in-public-networks"&gt;Quickstart&lt;/a&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Developer Guide&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Project Configuration&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/coze-dev/coze-studio/wiki/3.-Model-configuration"&gt;Model Configuration&lt;/a&gt;: Before deploying the open-source version of Coze Studio, you must configure the model service. Otherwise, you cannot select models when building agents, workflows, and apps.&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/coze-dev/coze-studio/wiki/4.-Plugin-Configuration"&gt;Plugin Configuration&lt;/a&gt;: To use official plugins from the plugin store, you must first configure the plugins and add the authentication keys for third-party services.&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/coze-dev/coze-studio/wiki/5.-Basic-component-configuration"&gt;Basic Component Configuration&lt;/a&gt;: Learn how to configure components such as image uploaders to use functions like image uploading in Coze Studio .&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/coze-dev/coze-studio/wiki/6.-API-Reference"&gt;API Reference&lt;/a&gt;: The Coze Studio Community Edition API and Chat SDK are authenticated using Personal Access Token, providing APIs for conversations and workflows.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/coze-dev/coze-studio/wiki/7.-Development-Standards"&gt;Development Guidelines&lt;/a&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/coze-dev/coze-studio/wiki/7.-Development-Standards#project-architecture"&gt;Project Architecture&lt;/a&gt;: Learn about the technical architecture and core components of the open-source version of Coze Studio.&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/coze-dev/coze-studio/wiki/7.-Development-Standards#code-development-and-testing"&gt;Code Development and Testing&lt;/a&gt;: Learn how to perform secondary development and testing based on the open-source version of Coze Studio.&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/coze-dev/coze-studio/wiki/7.-Development-Standards#troubleshooting"&gt;Troubleshooting&lt;/a&gt;: Learn how to view container states and system logs.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Using the open-source version of Coze Studio&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Regarding how to use Coze Studio, refer to the &lt;a href="https://www.coze.cn/open/docs"&gt;Coze Development Platform Official Documentation Center&lt;/a&gt; for more information. Please note that certain features, such as tone customization, are limited to the commercial version. Differences between the open-source and commercial versions can be found in the &lt;strong&gt;Feature List&lt;/strong&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.coze.cn/open/docs/guides/quickstart"&gt;Quick Start&lt;/a&gt;: Quickly build an AI assistant agent with Coze Studio.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.coze.cn/open/docs/guides/agent_overview"&gt;Developing Agents&lt;/a&gt;: Learn how to create, build, publish, and manage agents. You can use functions such as knowledge, plugins, etc., to resolve model hallucination and lack of expertise in professional fields. In addition, Coze Studio provides rich memory features that enable agents to generate more accurate responses based on a personal user's historical conversations during interactions.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.coze.cn/open/docs/guides/workflow"&gt;Develop workflows&lt;/a&gt;: A workflow is a set of executable instructions used to implement business logic or complete specific tasks. It structures data flow and task processing for apps or agents. Coze Studio provides a visual canvas where you can quickly build workflows by dragging and dropping nodes.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.coze.cn/open/docs/guides/plugin"&gt;Resources such as plugins&lt;/a&gt;: In Coze Studio, workflows, plugins, databases, knowledge bases, and variables are collectively referred to as resources.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;API &amp;amp; SDK&lt;/strong&gt;: Coze Studio supports &lt;a href="https://github.com/coze-dev/coze-studio/wiki/6.-API-Reference"&gt;API related to chat and workflows&lt;/a&gt;, and you can also integrate agents or apps with local business systems through &lt;a href="https://www.coze.cn/open/docs/developer_guides/web_sdk_overview"&gt;Chat SDK&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.coze.cn/open/docs/tutorial/chat_sdk_web_online_customer_service"&gt;Tutorials for practice&lt;/a&gt;: Learn how to use Coze Studio to implement various AI scenarios, such as building web-based online customer service using Chat SDK.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project uses the Apache 2.0 license. For details, please refer to the &lt;a href="https://github.com/coze-dev/coze-studio/raw/main/LICENSE-APACHE"&gt;LICENSE&lt;/a&gt; file.&lt;/p&gt; 
+&lt;h2&gt;Community contributions&lt;/h2&gt; 
+&lt;p&gt;We welcome community contributions. For contribution guidelines, please refer to &lt;a href="https://github.com/coze-dev/coze-studio/raw/main/CONTRIBUTING.md"&gt;CONTRIBUTING&lt;/a&gt; and &lt;a href="https://github.com/coze-dev/coze-studio/raw/main/CODE_OF_CONDUCT.md"&gt;Code of conduct&lt;/a&gt;. We look forward to your contributions!&lt;/p&gt; 
+&lt;h2&gt;Security and privacy&lt;/h2&gt; 
+&lt;p&gt;If you discover potential security issues in the project, or believe you may have found a security issue, please notify the ByteDance security team through our &lt;a href="https://security.bytedance.com/src"&gt;security center&lt;/a&gt; or &lt;a href="mailto:sec@bytedance.com"&gt;vulnerability reporting email&lt;/a&gt;. Please &lt;strong&gt;do not&lt;/strong&gt; create public GitHub Issues.&lt;/p&gt; 
+&lt;h2&gt;Join Community&lt;/h2&gt; 
+&lt;p&gt;We are committed to building an open and friendly developer community. All developers interested in AI Agent development are welcome to join us!&lt;/p&gt; 
+&lt;h3&gt;🐛 Issue Reports &amp;amp; Feature Requests&lt;/h3&gt; 
+&lt;p&gt;To efficiently track and resolve issues while ensuring transparency and collaboration, we recommend participating through:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;GitHub Issues&lt;/strong&gt;: &lt;a href="https://github.com/coze-dev/coze-studio/issues"&gt;Submit bug reports or feature requests&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Pull Requests&lt;/strong&gt;: &lt;a href="https://github.com/coze-dev/coze-studio/pulls"&gt;Contribute code or documentation improvements&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;💬 Technical Discussion &amp;amp; Communication&lt;/h3&gt; 
+&lt;p&gt;Join our technical discussion groups to share experiences with other developers and stay updated with the latest project developments:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Feishu Group Chat&lt;/strong&gt;&lt;br /&gt; Scan the QR code below with Feishu mobile app to join:&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/0a49081e8f3743e8bf3dcdded4bb571a~tplv-goo7wpa0wc-image.image" alt="Image" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Discord Server&lt;/strong&gt;&lt;br /&gt; Click to join: &lt;a href="https://discord.gg/sTVN9EVS4B"&gt;Coze Community&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Telegram Group&lt;/strong&gt;&lt;br /&gt; Click to join: Telegram Group &lt;a href="https://t.me/+pP9CkPnomDA0Mjgx"&gt;Coze&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Acknowledgments&lt;/h2&gt; 
+&lt;p&gt;Thank you to all the developers and community members who have contributed to the Coze Studio project. Special thanks:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The &lt;a href="https://github.com/cloudwego/eino"&gt;Eino&lt;/a&gt; framework team - providing powerful support for Coze Studio's agent and workflow runtime engines, model abstractions and implementations, and knowledge base indexing and retrieval&lt;/li&gt; 
+ &lt;li&gt;The &lt;a href="https://github.com/bytedance/flowgram.ai"&gt;FlowGram&lt;/a&gt; team - providing a high-quality workflow building engine for Coze Studio's frontend workflow canvas editor&lt;/li&gt; 
+ &lt;li&gt;The &lt;a href="https://github.com/cloudwego/hertz"&gt;Hertz&lt;/a&gt; team - Go HTTP framework with high-performance and strong-extensibility for building micro-services&lt;/li&gt; 
+ &lt;li&gt;All users who participated in testing and feedback&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>xyflow/xyflow</title>
+      <link>https://github.com/xyflow/xyflow</link>
+      <description>&lt;p&gt;React Flow | Svelte Flow - Powerful open source libraries for building node-based UIs with React (https://reactflow.dev) or Svelte (https://svelteflow.dev). Ready out-of-the-box and infinitely customizable.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/2857535/279643999-ffda9f91-6b6d-447d-82be-fcbd6103edb6.svg#gh-light-mode-only" alt="xyflow-header" /&gt; &lt;img src="https://user-images.githubusercontent.com/2857535/279644026-a01c231c-6c6e-4b41-96e0-a85c75c9acee.svg#gh-dark-mode-only" alt="xyflow-header-dark" /&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;img src="https://img.shields.io/github/license/wbkd/react-flow?color=%23ff0072" alt="GitHub License MIT" /&gt; &lt;img src="https://img.shields.io/npm/dt/reactflow?color=%23FF0072&amp;amp;label=React%20Flow%20downloads" alt="npm downloads" /&gt; &lt;img src="https://img.shields.io/npm/dt/@xyflow/svelte?color=%23FF3E00&amp;amp;label=Svelte%20Flow%20downloads" alt="npm downloads" /&gt;&lt;/p&gt; 
+ &lt;p&gt;Powerful open source libraries for building node-based UIs with React or Svelte. Ready out-of-the-box and infinitely customizable.&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://reactflow.dev/"&gt;React Flow&lt;/a&gt; · &lt;a href="https://svelteflow.dev/"&gt;Svelte Flow&lt;/a&gt; · &lt;a href="https://reactflow.dev/pro"&gt;React Flow Pro&lt;/a&gt; · &lt;a href="https://discord.gg/Bqt6xrs"&gt;Discord&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;The xyflow mono repo&lt;/h2&gt; 
+&lt;p&gt;The xyflow repository is the home of four packages:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;React Flow 12 &lt;code&gt;@xyflow/react&lt;/code&gt; &lt;a href="https://raw.githubusercontent.com/xyflow/xyflow/main/packages/react"&gt;packages/react&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;React Flow 11 &lt;code&gt;reactflow&lt;/code&gt; &lt;a href="https://github.com/xyflow/xyflow/tree/v11"&gt;v11 branch&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Svelte Flow &lt;code&gt;@xyflow/svelte&lt;/code&gt; &lt;a href="https://raw.githubusercontent.com/xyflow/xyflow/main/packages/svelte"&gt;packages/svelte&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Shared helper library &lt;code&gt;@xyflow/system&lt;/code&gt; &lt;a href="https://raw.githubusercontent.com/xyflow/xyflow/main/packages/system"&gt;packages/system&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Commercial usage&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Are you using React Flow or Svelte Flow for a personal project?&lt;/strong&gt; Great! No sponsorship needed, you can support us by reporting any bugs you find, sending us screenshots of your projects, and starring us on Github 🌟&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Are you using React Flow or Svelte Flow at your organization and making money from it?&lt;/strong&gt; Awesome! We rely on your support to keep our libraries developed and maintained under an MIT License, just how we like it. For React Flow you can do that on the &lt;a href="https://reactflow.dev/pro"&gt;React Flow Pro website&lt;/a&gt; and for both of our libraries you can do it through &lt;a href="https://github.com/sponsors/xyflow"&gt;Github Sponsors&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Getting started&lt;/h2&gt; 
+&lt;p&gt;The best way to get started is to check out the &lt;a href="https://reactflow.dev/learn"&gt;React Flow&lt;/a&gt; or &lt;a href="https://svelteflow.dev/learn"&gt;Svelte Flow&lt;/a&gt; learn section. However if you want to get a sneak peek of how to install and use the libraries you can see it here:&lt;/p&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;React Flow&lt;/strong&gt; basic usage&lt;/summary&gt; 
+ &lt;h3&gt;Installation&lt;/h3&gt; 
+ &lt;pre&gt;&lt;code class="language-sh"&gt;npm install @xyflow/react
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;h3&gt;Basic usage&lt;/h3&gt; 
+ &lt;pre&gt;&lt;code class="language-jsx"&gt;import { useCallback } from 'react';
+import {
+ReactFlow,
+MiniMap,
+Controls,
+Background,
+useNodesState,
+useEdgesState,
+addEdge,
+} from '@xyflow/react';
+
+import '@xyflow/react/dist/style.css';
+
+const initialNodes = [
+{ id: '1', position: { x: 0, y: 0 }, data: { label: '1' } },
+{ id: '2', position: { x: 0, y: 100 }, data: { label: '2' } },
+];
+
+const initialEdges = [{ id: 'e1-2', source: '1', target: '2' }];
+
+function Flow() {
+const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+
+const onConnect = useCallback((params) =&amp;gt; setEdges((eds) =&amp;gt; addEdge(params, eds)), [setEdges]);
+
+return (
+  &amp;lt;ReactFlow
+    nodes={nodes}
+    edges={edges}
+    onNodesChange={onNodesChange}
+    onEdgesChange={onEdgesChange}
+    onConnect={onConnect}
+  &amp;gt;
+    &amp;lt;MiniMap /&amp;gt;
+    &amp;lt;Controls /&amp;gt;
+    &amp;lt;Background /&amp;gt;
+  &amp;lt;/ReactFlow&amp;gt;
+);
+}
+
+export default Flow;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;Svelte Flow&lt;/strong&gt; basic usage&lt;/summary&gt; 
+ &lt;h3&gt;Installation&lt;/h3&gt; 
+ &lt;pre&gt;&lt;code class="language-sh"&gt;npm install @xyflow/svelte
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;h3&gt;Basic usage&lt;/h3&gt; 
+ &lt;pre&gt;&lt;code class="language-svelte"&gt;&amp;lt;script lang="ts"&amp;gt;
+import { writable } from 'svelte/store';
+import {
+  SvelteFlow,
+  Controls,
+  Background,
+  BackgroundVariant,
+  MiniMap,
+} from '@xyflow/svelte';
+
+import '@xyflow/svelte/dist/style.css'
+
+const nodes = writable([
+  {
+    id: '1',
+    type: 'input',
+    data: { label: 'Input Node' },
+    position: { x: 0, y: 0 }
+  },
+  {
+    id: '2',
+    type: 'custom',
+    data: { label: 'Node' },
+    position: { x: 0, y: 150 }
+  }
+]);
+
+const edges = writable([
+  {
+    id: '1-2',
+    type: 'default',
+    source: '1',
+    target: '2',
+    label: 'Edge Text'
+  }
+]);
+&amp;lt;/script&amp;gt;
+
+&amp;lt;SvelteFlow
+{nodes}
+{edges}
+fitView
+on:nodeclick={(event) =&amp;gt; console.log('on node click', event)}
+&amp;gt;
+&amp;lt;Controls /&amp;gt;
+&amp;lt;Background variant={BackgroundVariant.Dots} /&amp;gt;
+&amp;lt;MiniMap /&amp;gt;
+&amp;lt;/SvelteFlow&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;h2&gt;Releases&lt;/h2&gt; 
+&lt;p&gt;For releasing packages we are using &lt;a href="https://github.com/changesets/changesets"&gt;changesets&lt;/a&gt; in combination with the &lt;a href="https://github.com/changesets/action"&gt;changeset Github action&lt;/a&gt;. The rough idea is:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;create PRs for new features, updates and fixes (with a changeset if relevant for changelog)&lt;/li&gt; 
+ &lt;li&gt;merge into main&lt;/li&gt; 
+ &lt;li&gt;changset creates a PR that bumps all packages based on the changesets&lt;/li&gt; 
+ &lt;li&gt;merge changeset PR if you want to release to Github and npm&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Built by &lt;a href="https://xyflow.com"&gt;xyflow&lt;/a&gt;&lt;/h2&gt; 
+&lt;p&gt;React Flow and Svelte Flow are maintained by the &lt;a href="https://xyflow.com/about"&gt;xyflow team&lt;/a&gt;. If you need help or want to talk to us about a collaboration, reach out through our&amp;nbsp;&lt;a href="https://xyflow.com/contact"&gt;contact form&lt;/a&gt;&amp;nbsp;or by joining our &lt;a href="https://discord.gg/Bqt6xrs"&gt;Discord Server&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;React Flow and Svelte Flow are &lt;a href="https://raw.githubusercontent.com/xyflow/xyflow/main/LICENSE"&gt;MIT licensed&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
