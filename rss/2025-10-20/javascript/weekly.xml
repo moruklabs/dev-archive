@@ -1,0 +1,2756 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub JavaScript Weekly Trending</title>
+    <description>Weekly Trending of JavaScript in GitHub</description>
+    <pubDate>Sun, 19 Oct 2025 01:44:07 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>davila7/claude-code-templates</title>
+      <link>https://github.com/davila7/claude-code-templates</link>
+      <description>&lt;p&gt;CLI tool for configuring and monitoring Claude Code&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a href="https://www.npmjs.com/package/claude-code-templates"&gt;&lt;img src="https://img.shields.io/npm/v/claude-code-templates.svg?sanitize=true" alt="npm version" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/claude-code-templates"&gt;&lt;img src="https://img.shields.io/npm/dt/claude-code-templates.svg?sanitize=true" alt="npm downloads" /&gt;&lt;/a&gt; &lt;a href="https://opensource.org/licenses/MIT"&gt;&lt;img src="https://img.shields.io/badge/License-MIT-yellow.svg?sanitize=true" alt="License: MIT" /&gt;&lt;/a&gt; &lt;a href="https://opensource.org/"&gt;&lt;img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103" alt="Open Source" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/davila7/claude-code-templates/main/CONTRIBUTING.md"&gt;&lt;img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?sanitize=true" alt="PRs Welcome" /&gt;&lt;/a&gt; &lt;a href="https://github.com/davila7/claude-code-templates"&gt;&lt;img src="https://img.shields.io/github/stars/davila7/claude-code-templates.svg?style=social&amp;amp;label=Star" alt="GitHub stars" /&gt;&lt;/a&gt; &lt;a href="https://github.com/hesreallyhim/awesome-claude-code"&gt;&lt;img src="https://awesome.re/mentioned-badge-flat.svg?sanitize=true" alt="Mentioned in Awesome Claude Code" /&gt;&lt;/a&gt; &lt;a href="https://buymeacoffee.com/daniavila"&gt;&lt;img src="https://img.shields.io/badge/%E2%98%95-Buy%20me%20a%20coffee-ffdd00?style=flat&amp;amp;logo=buy-me-a-coffee" alt="Buy Me a Coffee" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Claude Code Templates (aitmpl.com)&lt;/h1&gt; 
+&lt;p&gt;&lt;strong&gt;Ready-to-use configurations for Anthropic's Claude Code.&lt;/strong&gt; A comprehensive collection of AI agents, custom commands, settings, hooks, external integrations (MCPs), and project templates to enhance your development workflow.&lt;/p&gt; 
+&lt;h2&gt;Browse &amp;amp; Install Components and Templates&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://aitmpl.com"&gt;Browse All Templates&lt;/a&gt;&lt;/strong&gt; - Interactive web interface to explore and install 100+ agents, commands, settings, hooks, and MCPs.&lt;/p&gt; 
+&lt;img width="1049" height="855" alt="Screenshot 2025-08-19 at 08 09 24" src="https://github.com/user-attachments/assets/e3617410-9b1c-4731-87b7-a3858800b737" /&gt; 
+&lt;h2&gt;🚀 Quick Installation&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Install a complete development stack
+npx claude-code-templates@latest --agent development-team/frontend-developer --command testing/generate-tests --mcp development/github-integration
+
+# Browse and install interactively
+npx claude-code-templates@latest
+
+# Install specific components
+npx claude-code-templates@latest --agent business-marketing/security-auditor
+npx claude-code-templates@latest --command performance/optimize-bundle
+npx claude-code-templates@latest --setting performance/mcp-timeouts
+npx claude-code-templates@latest --hook git/pre-commit-validation
+npx claude-code-templates@latest --mcp database/postgresql-integration
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;What You Get&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Component&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+   &lt;th&gt;Examples&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;🤖 Agents&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;AI specialists for specific domains&lt;/td&gt; 
+   &lt;td&gt;Security auditor, React performance optimizer, database architect&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;⚡ Commands&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Custom slash commands&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;/generate-tests&lt;/code&gt;, &lt;code&gt;/optimize-bundle&lt;/code&gt;, &lt;code&gt;/check-security&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;🔌 MCPs&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;External service integrations&lt;/td&gt; 
+   &lt;td&gt;GitHub, PostgreSQL, Stripe, AWS, OpenAI&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;⚙️ Settings&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Claude Code configurations&lt;/td&gt; 
+   &lt;td&gt;Timeouts, memory settings, output styles&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;🪝 Hooks&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Automation triggers&lt;/td&gt; 
+   &lt;td&gt;Pre-commit validation, post-completion actions&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;📦 Templates&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Complete project configurations with CLAUDE.md, .claude/* files and .mcp.json&lt;/td&gt; 
+   &lt;td&gt;Framework-specific setups, project best practices&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;🛠️ Additional Tools&lt;/h2&gt; 
+&lt;p&gt;Beyond the template catalog, Claude Code Templates includes powerful development tools:&lt;/p&gt; 
+&lt;h3&gt;📊 Claude Code Analytics&lt;/h3&gt; 
+&lt;p&gt;Monitor your AI-powered development sessions in real-time with live state detection and performance metrics.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx claude-code-templates@latest --analytics
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;💬 Conversation Monitor&lt;/h3&gt; 
+&lt;p&gt;Mobile-optimized interface to view Claude responses in real-time with secure remote access.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Local access
+npx claude-code-templates@latest --chats
+
+# Secure remote access via Cloudflare Tunnel
+npx claude-code-templates@latest --chats --tunnel
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;🔍 Health Check&lt;/h3&gt; 
+&lt;p&gt;Comprehensive diagnostics to ensure your Claude Code installation is optimized.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx claude-code-templates@latest --health-check
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;🔌 Plugin Dashboard&lt;/h3&gt; 
+&lt;p&gt;View marketplaces, installed plugins, and manage permissions from a unified interface.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx claude-code-templates@latest --plugins
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;📖 Documentation&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://docs.aitmpl.com/"&gt;📚 docs.aitmpl.com&lt;/a&gt;&lt;/strong&gt; - Complete guides, examples, and API reference for all components and tools.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions! &lt;strong&gt;&lt;a href="https://aitmpl.com"&gt;Browse existing templates&lt;/a&gt;&lt;/strong&gt; to see what's available, then check our &lt;a href="https://raw.githubusercontent.com/davila7/claude-code-templates/main/CONTRIBUTING.md"&gt;contributing guidelines&lt;/a&gt; to add your own agents, commands, MCPs, settings, or hooks.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Please read our &lt;a href="https://raw.githubusercontent.com/davila7/claude-code-templates/main/CODE_OF_CONDUCT.md"&gt;Code of Conduct&lt;/a&gt; before contributing.&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Attribution&lt;/h2&gt; 
+&lt;p&gt;This collection includes components from multiple sources:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Agents Collection:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;wshobson/agents Collection&lt;/strong&gt; by &lt;a href="https://github.com/wshobson/agents"&gt;wshobson&lt;/a&gt; - Licensed under MIT License (48 agents)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Commands Collection:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;awesome-claude-code Commands&lt;/strong&gt; by &lt;a href="https://github.com/hesreallyhim/awesome-claude-code"&gt;hesreallyhim&lt;/a&gt; - Licensed under CC0 1.0 Universal (21 commands)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📄 License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the MIT License - see the &lt;a href="https://raw.githubusercontent.com/davila7/claude-code-templates/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;h2&gt;🔗 Links&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;🌐 Browse Templates&lt;/strong&gt;: &lt;a href="https://aitmpl.com"&gt;aitmpl.com&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;📚 Documentation&lt;/strong&gt;: &lt;a href="https://docs.aitmpl.com"&gt;docs.aitmpl.com&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;💬 Community&lt;/strong&gt;: &lt;a href="https://github.com/davila7/claude-code-templates/discussions"&gt;GitHub Discussions&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🐛 Issues&lt;/strong&gt;: &lt;a href="https://github.com/davila7/claude-code-templates/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;⭐ Star History&lt;/h2&gt; 
+&lt;a href="https://star-history.com/#davila7/claude-code-templates&amp;amp;Date"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=davila7/claude-code-templates&amp;amp;type=Date&amp;amp;theme=dark" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=davila7/claude-code-templates&amp;amp;type=Date" /&gt; 
+  &lt;img alt="Star History Chart" src="https://api.star-history.com/svg?repos=davila7/claude-code-templates&amp;amp;type=Date" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;⭐ Found this useful? Give us a star to support the project!&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://buymeacoffee.com/daniavila"&gt;&lt;img src="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&amp;amp;slug=daniavila&amp;amp;button_colour=FFDD00&amp;amp;font_colour=000000&amp;amp;font_family=Cookie&amp;amp;outline_colour=000000&amp;amp;coffee_colour=ffffff" alt="Buy Me A Coffee" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>eyaltoledano/claude-task-master</title>
+      <link>https://github.com/eyaltoledano/claude-task-master</link>
+      <description>&lt;p&gt;An AI-powered task-management system you can drop into Cursor, Lovable, Windsurf, Roo, and others.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a name="readme-top"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://trendshift.io/repositories/13971" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/13971" alt="eyaltoledano%2Fclaude-task-master | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;p align="center"&gt; &lt;a href="https://task-master.dev"&gt;&lt;img src="https://raw.githubusercontent.com/eyaltoledano/claude-task-master/main/images/logo.png?raw=true" alt="Taskmaster logo" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;b&gt;Taskmaster&lt;/b&gt;: A task management system for AI-driven development, designed to work seamlessly with any AI chat. &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://discord.gg/taskmasterai" target="_blank"&gt;&lt;img src="https://dcbadge.limes.pink/api/server/https://discord.gg/taskmasterai?style=flat" alt="Discord" /&gt;&lt;/a&gt; | &lt;a href="https://docs.task-master.dev" target="_blank"&gt;Docs&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/eyaltoledano/claude-task-master/actions/workflows/ci.yml"&gt;&lt;img src="https://github.com/eyaltoledano/claude-task-master/actions/workflows/ci.yml/badge.svg?sanitize=true" alt="CI" /&gt;&lt;/a&gt; &lt;a href="https://github.com/eyaltoledano/claude-task-master/stargazers"&gt;&lt;img src="https://img.shields.io/github/stars/eyaltoledano/claude-task-master?style=social" alt="GitHub stars" /&gt;&lt;/a&gt; &lt;a href="https://badge.fury.io/js/task-master-ai"&gt;&lt;img src="https://badge.fury.io/js/task-master-ai.svg?sanitize=true" alt="npm version" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/eyaltoledano/claude-task-master/main/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/license-MIT%20with%20Commons%20Clause-blue.svg?sanitize=true" alt="License" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.npmjs.com/package/task-master-ai"&gt;&lt;img src="https://img.shields.io/npm/d18m/task-master-ai?style=flat" alt="NPM Downloads" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/task-master-ai"&gt;&lt;img src="https://img.shields.io/npm/dm/task-master-ai?style=flat" alt="NPM Downloads" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/task-master-ai"&gt;&lt;img src="https://img.shields.io/npm/dw/task-master-ai?style=flat" alt="NPM Downloads" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;By &lt;a href="https://x.com/eyaltoledano"&gt;@eyaltoledano&lt;/a&gt; &amp;amp; &lt;a href="https://x.com/RalphEcom"&gt;@RalphEcom&lt;/a&gt;&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://x.com/eyaltoledano"&gt;&lt;img src="https://img.shields.io/twitter/follow/eyaltoledano" alt="Twitter Follow" /&gt;&lt;/a&gt; &lt;a href="https://x.com/RalphEcom"&gt;&lt;img src="https://img.shields.io/twitter/follow/RalphEcom" alt="Twitter Follow" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;A task management system for AI-driven development with Claude, designed to work seamlessly with Cursor AI.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;📚 &lt;strong&gt;&lt;a href="https://docs.task-master.dev"&gt;View Full Documentation&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;For detailed guides, API references, and comprehensive examples, visit our documentation site.&lt;/p&gt; 
+&lt;h3&gt;Quick Reference&lt;/h3&gt; 
+&lt;p&gt;The following documentation is also available in the &lt;code&gt;docs&lt;/code&gt; directory:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/eyaltoledano/claude-task-master/main/docs/configuration.md"&gt;Configuration Guide&lt;/a&gt; - Set up environment variables and customize Task Master&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/eyaltoledano/claude-task-master/main/docs/tutorial.md"&gt;Tutorial&lt;/a&gt; - Step-by-step guide to getting started with Task Master&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/eyaltoledano/claude-task-master/main/docs/command-reference.md"&gt;Command Reference&lt;/a&gt; - Complete list of all available commands&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/eyaltoledano/claude-task-master/main/docs/task-structure.md"&gt;Task Structure&lt;/a&gt; - Understanding the task format and features&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/eyaltoledano/claude-task-master/main/docs/examples.md"&gt;Example Interactions&lt;/a&gt; - Common Cursor AI interaction examples&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/eyaltoledano/claude-task-master/main/docs/migration-guide.md"&gt;Migration Guide&lt;/a&gt; - Guide to migrating to the new project structure&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Quick Install for Cursor 1.0+ (One-Click)&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://cursor.com/en/install-mcp?name=task-master-ai&amp;amp;config=eyJjb21tYW5kIjoibnB4IC15IC0tcGFja2FnZT10YXNrLW1hc3Rlci1haSB0YXNrLW1hc3Rlci1haSIsImVudiI6eyJBTlRIUk9QSUNfQVBJX0tFWSI6IllPVVJfQU5USFJPUElDX0FQSV9LRVlfSEVSRSIsIlBFUlBMRVhJVFlfQVBJX0tFWSI6IllPVVJfUEVSUExFWElUWV9BUElfS0VZX0hFUkUiLCJPUEVOQUlfQVBJX0tFWSI6IllPVVJfT1BFTkFJX0tFWV9IRVJFIiwiR09PR0xFX0FQSV9LRVkiOiJZT1VSX0dPT0dMRV9LRVlfSEVSRSIsIk1JU1RSQUxfQVBJX0tFWSI6IllPVVJfTUlTVFJBTF9LRVlfSEVSRSIsIkdST1FfQVBJX0tFWSI6IllPVVJfR1JPUV9LRVlfSEVSRSIsIk9QRU5ST1VURVJfQVBJX0tFWSI6IllPVVJfT1BFTlJPVVRFUl9LRVlfSEVSRSIsIlhBSV9BUElfS0VZIjoiWU9VUl9YQUlfS0VZX0hFUkUiLCJBWlVSRV9PUEVOQUlfQVBJX0tFWSI6IllPVVJfQVpVUkVfS0VZX0hFUkUiLCJPTExBTUFfQVBJX0tFWSI6IllPVVJfT0xMQU1BX0FQSV9LRVlfSEVSRSJ9fQ%3D%3D"&gt;&lt;img src="https://cursor.com/deeplink/mcp-install-dark.svg?sanitize=true" alt="Add task-master-ai MCP server to Cursor" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; After clicking the link, you'll still need to add your API keys to the configuration. The link installs the MCP server with placeholder keys that you'll need to replace with your actual API keys.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h4&gt;Claude Code Quick Install&lt;/h4&gt; 
+&lt;p&gt;For Claude Code users:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;claude mcp add taskmaster-ai -- npx -y task-master-ai
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Don't forget to add your API keys to the configuration:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;in the root .env of your Project&lt;/li&gt; 
+ &lt;li&gt;in the "env" section of your mcp config for taskmaster-ai&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Requirements&lt;/h2&gt; 
+&lt;p&gt;Taskmaster utilizes AI across several commands, and those require a separate API key. You can use a variety of models from different AI providers provided you add your API keys. For example, if you want to use Claude 3.7, you'll need an Anthropic API key.&lt;/p&gt; 
+&lt;p&gt;You can define 3 types of models to be used: the main model, the research model, and the fallback model (in case either the main or research fail). Whatever model you use, its provider API key must be present in either mcp.json or .env.&lt;/p&gt; 
+&lt;p&gt;At least one (1) of the following is required:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Anthropic API key (Claude API)&lt;/li&gt; 
+ &lt;li&gt;OpenAI API key&lt;/li&gt; 
+ &lt;li&gt;Google Gemini API key&lt;/li&gt; 
+ &lt;li&gt;Perplexity API key (for research model)&lt;/li&gt; 
+ &lt;li&gt;xAI API Key (for research or main model)&lt;/li&gt; 
+ &lt;li&gt;OpenRouter API Key (for research or main model)&lt;/li&gt; 
+ &lt;li&gt;Claude Code (no API key required - requires Claude Code CLI)&lt;/li&gt; 
+ &lt;li&gt;Codex CLI (OAuth via ChatGPT subscription - requires Codex CLI)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Using the research model is optional but highly recommended. You will need at least ONE API key (unless using Claude Code or Codex CLI with OAuth). Adding all API keys enables you to seamlessly switch between model providers at will.&lt;/p&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;h3&gt;Option 1: MCP (Recommended)&lt;/h3&gt; 
+&lt;p&gt;MCP (Model Control Protocol) lets you run Task Master directly from your editor.&lt;/p&gt; 
+&lt;h4&gt;1. Add your MCP config at the following path depending on your editor&lt;/h4&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Editor&lt;/th&gt; 
+   &lt;th&gt;Scope&lt;/th&gt; 
+   &lt;th&gt;Linux/macOS Path&lt;/th&gt; 
+   &lt;th&gt;Windows Path&lt;/th&gt; 
+   &lt;th&gt;Key&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Cursor&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Global&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;~/.cursor/mcp.json&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;%USERPROFILE%\.cursor\mcp.json&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;mcpServers&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;Project&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;&amp;lt;project_folder&amp;gt;/.cursor/mcp.json&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;&amp;lt;project_folder&amp;gt;\.cursor\mcp.json&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;mcpServers&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Windsurf&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Global&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;~/.codeium/windsurf/mcp_config.json&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;%USERPROFILE%\.codeium\windsurf\mcp_config.json&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;mcpServers&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;VS Code&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Project&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;&amp;lt;project_folder&amp;gt;/.vscode/mcp.json&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;&amp;lt;project_folder&amp;gt;\.vscode\mcp.json&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;servers&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Q CLI&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Global&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;~/.aws/amazonq/mcp.json&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;mcpServers&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h5&gt;Manual Configuration&lt;/h5&gt; 
+&lt;h6&gt;Cursor &amp;amp; Windsurf &amp;amp; Q Developer CLI (&lt;code&gt;mcpServers&lt;/code&gt;)&lt;/h6&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "task-master-ai": {
+      "command": "npx",
+      "args": ["-y", "task-master-ai"],
+      "env": {
+        "ANTHROPIC_API_KEY": "YOUR_ANTHROPIC_API_KEY_HERE",
+        "PERPLEXITY_API_KEY": "YOUR_PERPLEXITY_API_KEY_HERE",
+        "OPENAI_API_KEY": "YOUR_OPENAI_KEY_HERE",
+        "GOOGLE_API_KEY": "YOUR_GOOGLE_KEY_HERE",
+        "MISTRAL_API_KEY": "YOUR_MISTRAL_KEY_HERE",
+        "GROQ_API_KEY": "YOUR_GROQ_KEY_HERE",
+        "OPENROUTER_API_KEY": "YOUR_OPENROUTER_KEY_HERE",
+        "XAI_API_KEY": "YOUR_XAI_KEY_HERE",
+        "AZURE_OPENAI_API_KEY": "YOUR_AZURE_KEY_HERE",
+        "OLLAMA_API_KEY": "YOUR_OLLAMA_API_KEY_HERE"
+      }
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;🔑 Replace &lt;code&gt;YOUR_…_KEY_HERE&lt;/code&gt; with your real API keys. You can remove keys you don't use.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: If you see &lt;code&gt;0 tools enabled&lt;/code&gt; in the MCP settings, restart your editor and check that your API keys are correctly configured.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h6&gt;VS Code (&lt;code&gt;servers&lt;/code&gt; + &lt;code&gt;type&lt;/code&gt;)&lt;/h6&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "servers": {
+    "task-master-ai": {
+      "command": "npx",
+      "args": ["-y", "task-master-ai"],
+      "env": {
+        "ANTHROPIC_API_KEY": "YOUR_ANTHROPIC_API_KEY_HERE",
+        "PERPLEXITY_API_KEY": "YOUR_PERPLEXITY_API_KEY_HERE",
+        "OPENAI_API_KEY": "YOUR_OPENAI_KEY_HERE",
+        "GOOGLE_API_KEY": "YOUR_GOOGLE_KEY_HERE",
+        "MISTRAL_API_KEY": "YOUR_MISTRAL_KEY_HERE",
+        "GROQ_API_KEY": "YOUR_GROQ_KEY_HERE",
+        "OPENROUTER_API_KEY": "YOUR_OPENROUTER_KEY_HERE",
+        "XAI_API_KEY": "YOUR_XAI_KEY_HERE",
+        "AZURE_OPENAI_API_KEY": "YOUR_AZURE_KEY_HERE",
+        "OLLAMA_API_KEY": "YOUR_OLLAMA_API_KEY_HERE"
+      },
+      "type": "stdio"
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;🔑 Replace &lt;code&gt;YOUR_…_KEY_HERE&lt;/code&gt; with your real API keys. You can remove keys you don't use.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h4&gt;2. (Cursor-only) Enable Taskmaster MCP&lt;/h4&gt; 
+&lt;p&gt;Open Cursor Settings (Ctrl+Shift+J) ➡ Click on MCP tab on the left ➡ Enable task-master-ai with the toggle&lt;/p&gt; 
+&lt;h4&gt;3. (Optional) Configure the models you want to use&lt;/h4&gt; 
+&lt;p&gt;In your editor's AI chat pane, say:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-txt"&gt;Change the main, research and fallback models to &amp;lt;model_name&amp;gt;, &amp;lt;model_name&amp;gt; and &amp;lt;model_name&amp;gt; respectively.
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For example, to use Claude Code (no API key required):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-txt"&gt;Change the main model to claude-code/sonnet
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/eyaltoledano/claude-task-master/main/docs/models.md"&gt;Table of available models&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/eyaltoledano/claude-task-master/main/docs/examples/claude-code-usage.md"&gt;Claude Code setup&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;4. Initialize Task Master&lt;/h4&gt; 
+&lt;p&gt;In your editor's AI chat pane, say:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-txt"&gt;Initialize taskmaster-ai in my project
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;5. Make sure you have a PRD (Recommended)&lt;/h4&gt; 
+&lt;p&gt;For &lt;strong&gt;new projects&lt;/strong&gt;: Create your PRD at &lt;code&gt;.taskmaster/docs/prd.txt&lt;/code&gt;&lt;br /&gt; For &lt;strong&gt;existing projects&lt;/strong&gt;: You can use &lt;code&gt;scripts/prd.txt&lt;/code&gt; or migrate with &lt;code&gt;task-master migrate&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;An example PRD template is available after initialization in &lt;code&gt;.taskmaster/templates/example_prd.txt&lt;/code&gt;.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] While a PRD is recommended for complex projects, you can always create individual tasks by asking "Can you help me implement [description of what you want to do]?" in chat.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;strong&gt;Always start with a detailed PRD.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;The more detailed your PRD, the better the generated tasks will be.&lt;/p&gt; 
+&lt;h4&gt;6. Common Commands&lt;/h4&gt; 
+&lt;p&gt;Use your AI assistant to:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Parse requirements: &lt;code&gt;Can you parse my PRD at scripts/prd.txt?&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Plan next step: &lt;code&gt;What's the next task I should work on?&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Implement a task: &lt;code&gt;Can you help me implement task 3?&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;View multiple tasks: &lt;code&gt;Can you show me tasks 1, 3, and 5?&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Expand a task: &lt;code&gt;Can you help me expand task 4?&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Research fresh information&lt;/strong&gt;: &lt;code&gt;Research the latest best practices for implementing JWT authentication with Node.js&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Research with context&lt;/strong&gt;: &lt;code&gt;Research React Query v5 migration strategies for our current API implementation in src/api.js&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/eyaltoledano/claude-task-master/main/docs/examples.md"&gt;More examples on how to use Task Master in chat&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Option 2: Using Command Line&lt;/h3&gt; 
+&lt;h4&gt;Installation&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Install globally
+npm install -g task-master-ai
+
+# OR install locally within your project
+npm install task-master-ai
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Initialize a new project&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# If installed globally
+task-master init
+
+# If installed locally
+npx task-master init
+
+# Initialize project with specific rules
+task-master init --rules cursor,windsurf,vscode
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This will prompt you for project details and set up a new project with the necessary files and structure.&lt;/p&gt; 
+&lt;h4&gt;Common Commands&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Initialize a new project
+task-master init
+
+# Parse a PRD and generate tasks
+task-master parse-prd your-prd.txt
+
+# List all tasks
+task-master list
+
+# Show the next task to work on
+task-master next
+
+# Show specific task(s) - supports comma-separated IDs
+task-master show 1,3,5
+
+# Research fresh information with project context
+task-master research "What are the latest best practices for JWT authentication?"
+
+# Move tasks between tags (cross-tag movement)
+task-master move --from=5 --from-tag=backlog --to-tag=in-progress
+task-master move --from=5,6,7 --from-tag=backlog --to-tag=done --with-dependencies
+task-master move --from=5 --from-tag=backlog --to-tag=in-progress --ignore-dependencies
+
+# Generate task files
+task-master generate
+
+# Add rules after initialization
+task-master rules add windsurf,roo,vscode
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Claude Code Support&lt;/h2&gt; 
+&lt;p&gt;Task Master now supports Claude models through the Claude Code CLI, which requires no API key:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Models&lt;/strong&gt;: &lt;code&gt;claude-code/opus&lt;/code&gt; and &lt;code&gt;claude-code/sonnet&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Requirements&lt;/strong&gt;: Claude Code CLI installed&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Benefits&lt;/strong&gt;: No API key needed, uses your local Claude instance&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/eyaltoledano/claude-task-master/main/docs/examples/claude-code-usage.md"&gt;Learn more about Claude Code setup&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Troubleshooting&lt;/h2&gt; 
+&lt;h3&gt;If &lt;code&gt;task-master init&lt;/code&gt; doesn't respond&lt;/h3&gt; 
+&lt;p&gt;Try running it with Node directly:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;node node_modules/claude-task-master/scripts/init.js
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Or clone the repository and run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/eyaltoledano/claude-task-master.git
+cd claude-task-master
+node scripts/init.js
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Join Our Team&lt;/h2&gt; 
+&lt;a href="https://tryhamster.com" target="_blank"&gt; &lt;img src="https://raw.githubusercontent.com/eyaltoledano/claude-task-master/main/images/hamster-hiring.png" alt="Join Hamster's founding team" /&gt; &lt;/a&gt; 
+&lt;h2&gt;Contributors&lt;/h2&gt; 
+&lt;a href="https://github.com/eyaltoledano/claude-task-master/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=eyaltoledano/claude-task-master" alt="Task Master project contributors" /&gt; &lt;/a&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.star-history.com/#eyaltoledano/claude-task-master&amp;amp;Timeline"&gt;&lt;img src="https://api.star-history.com/svg?repos=eyaltoledano/claude-task-master&amp;amp;type=Timeline" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Licensing&lt;/h2&gt; 
+&lt;p&gt;Task Master is licensed under the MIT License with Commons Clause. This means you can:&lt;/p&gt; 
+&lt;p&gt;✅ &lt;strong&gt;Allowed&lt;/strong&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Use Task Master for any purpose (personal, commercial, academic)&lt;/li&gt; 
+ &lt;li&gt;Modify the code&lt;/li&gt; 
+ &lt;li&gt;Distribute copies&lt;/li&gt; 
+ &lt;li&gt;Create and sell products built using Task Master&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;❌ &lt;strong&gt;Not Allowed&lt;/strong&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Sell Task Master itself&lt;/li&gt; 
+ &lt;li&gt;Offer Task Master as a hosted service&lt;/li&gt; 
+ &lt;li&gt;Create competing products based on Task Master&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/eyaltoledano/claude-task-master/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for the complete license text and &lt;a href="https://raw.githubusercontent.com/eyaltoledano/claude-task-master/main/docs/licensing.md"&gt;licensing details&lt;/a&gt; for more information.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>modood/Administrative-divisions-of-China</title>
+      <link>https://github.com/modood/Administrative-divisions-of-China</link>
+      <description>&lt;p&gt;中华人民共和国行政区划：省级（省份）、 地级（城市）、 县级（区县）、 乡级（乡镇街道）、 村级（村委会居委会） ，中国省市区镇村二级三级四级五级联动地址数据。&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Administrative-divisions-of-China&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="http://standardjs.com/"&gt;&lt;img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?sanitize=true" alt="code style" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/china-division"&gt;&lt;img src="https://img.shields.io/npm/v/china-division.svg?sanitize=true" alt="npm" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/china-division"&gt;&lt;img src="https://img.shields.io/npm/dt/china-division.svg?sanitize=true" alt="downloads" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/modood/Administrative-divisions-of-China/master/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/license-WTFPL%20--%20Do%20What%20the%20Fuck%20You%20Want%20to%20Public%20License-green.svg?sanitize=true" alt="license" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;中华人民共和国行政区划（五级）：省级、地级、县级、乡级和村级。&lt;/p&gt; 
+&lt;h2&gt;数据来源&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;国家统计局： 
+  &lt;ul&gt; 
+   &lt;li&gt;中华人民共和国国家统计局-统计用区划和城乡划分代码&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="http://www.stats.gov.cn/sj/tjbz/gjtjbz/202302/t20230213_1902741.html"&gt;中华人民共和国国家统计局-统计用区划代码和城乡划分代码编制规则&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;本项目已更新至： 
+  &lt;ul&gt; 
+   &lt;li&gt;2023年统计用区划代码和城乡划分代码（截止时间：2023-06-30，发布时间：2023-09-11）&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;数据下载&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="left"&gt;文件列表&lt;/th&gt; 
+   &lt;th align="left"&gt;JSON&lt;/th&gt; 
+   &lt;th align="left"&gt;CSV&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;省级（省份、直辖市、自治区）&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/modood/Administrative-divisions-of-China/raw/master/dist/provinces.json"&gt;provinces.json&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/modood/Administrative-divisions-of-China/raw/master/dist/provinces.csv"&gt;provinces.csv&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;地级（城市）&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/modood/Administrative-divisions-of-China/raw/master/dist/cities.json"&gt;cities.json&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/modood/Administrative-divisions-of-China/raw/master/dist/cities.csv"&gt;cities.csv&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;县级（区县）&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/modood/Administrative-divisions-of-China/raw/master/dist/areas.json"&gt;areas.json&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/modood/Administrative-divisions-of-China/raw/master/dist/areas.csv"&gt;areas.csv&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;乡级（乡镇、街道）&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/modood/Administrative-divisions-of-China/raw/master/dist/streets.json"&gt;streets.json&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/modood/Administrative-divisions-of-China/raw/master/dist/streets.csv"&gt;streets.csv&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;村级（村委会、居委会）&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/modood/Administrative-divisions-of-China/raw/master/dist/villages.json"&gt;villages.json&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/modood/Administrative-divisions-of-China/raw/master/dist/villages.csv"&gt;villages.csv&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="left"&gt;文件列表&lt;/th&gt; 
+   &lt;th align="left"&gt;普通&lt;/th&gt; 
+   &lt;th align="left"&gt;带编码&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;“省份、城市” 二级联动数据&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/modood/Administrative-divisions-of-China/raw/master/dist/pc.json"&gt;pc.json&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/modood/Administrative-divisions-of-China/raw/master/dist/pc-code.json"&gt;pc-code.json&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;“省份、城市、区县” 三级联动数据&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/modood/Administrative-divisions-of-China/raw/master/dist/pca.json"&gt;pca.json&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/modood/Administrative-divisions-of-China/raw/master/dist/pca-code.json"&gt;pca-code.json&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;“省份、城市、区县、乡镇” 四级联动数据&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/modood/Administrative-divisions-of-China/raw/master/dist/pcas.json"&gt;pcas.json&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/modood/Administrative-divisions-of-China/raw/master/dist/pcas-code.json"&gt;pcas-code.json&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;“省份、城市、区县、乡镇、村庄” 五级联动数据&lt;/td&gt; 
+   &lt;td align="left"&gt;-&lt;/td&gt; 
+   &lt;td align="left"&gt;-&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;提示：需要打包下载全部文件，请看 &lt;a href="https://github.com/modood/Administrative-divisions-of-China/releases"&gt;Releases&lt;/a&gt;。&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;数据库支持&lt;/h2&gt; 
+&lt;p&gt;目前本项目数据保存在 sqlite3，数据文件下载：&lt;a href="https://github.com/modood/Administrative-divisions-of-China/raw/master/dist/data.sqlite"&gt;data.sqlite&lt;/a&gt;。&lt;/p&gt; 
+&lt;p&gt;可以自己将数据迁移到其他数据库管理系统中（MySQL, Oracle, MSSQL 等）。&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;省级数据预览&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="left"&gt;code&lt;/th&gt; 
+   &lt;th align="left"&gt;name&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;13&lt;/td&gt; 
+   &lt;td align="left"&gt;河北省&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;14&lt;/td&gt; 
+   &lt;td align="left"&gt;山西省&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;15&lt;/td&gt; 
+   &lt;td align="left"&gt;内蒙古自治区&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;45&lt;/td&gt; 
+   &lt;td align="left"&gt;广西壮族自治区&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;地级数据预览&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="left"&gt;code&lt;/th&gt; 
+   &lt;th align="left"&gt;name&lt;/th&gt; 
+   &lt;th align="left"&gt;provinceCode&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;1301&lt;/td&gt; 
+   &lt;td align="left"&gt;石家庄市&lt;/td&gt; 
+   &lt;td align="left"&gt;13&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;1401&lt;/td&gt; 
+   &lt;td align="left"&gt;太原市&lt;/td&gt; 
+   &lt;td align="left"&gt;14&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;1525&lt;/td&gt; 
+   &lt;td align="left"&gt;锡林郭勒盟&lt;/td&gt; 
+   &lt;td align="left"&gt;15&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;4503&lt;/td&gt; 
+   &lt;td align="left"&gt;桂林市&lt;/td&gt; 
+   &lt;td align="left"&gt;45&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;县级数据预览&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="left"&gt;code&lt;/th&gt; 
+   &lt;th align="left"&gt;name&lt;/th&gt; 
+   &lt;th align="left"&gt;cityCode&lt;/th&gt; 
+   &lt;th align="left"&gt;provinceCode&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;130111&lt;/td&gt; 
+   &lt;td align="left"&gt;栾城区&lt;/td&gt; 
+   &lt;td align="left"&gt;1301&lt;/td&gt; 
+   &lt;td align="left"&gt;13&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;140121&lt;/td&gt; 
+   &lt;td align="left"&gt;清徐县&lt;/td&gt; 
+   &lt;td align="left"&gt;1401&lt;/td&gt; 
+   &lt;td align="left"&gt;14&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;152527&lt;/td&gt; 
+   &lt;td align="left"&gt;太仆寺旗&lt;/td&gt; 
+   &lt;td align="left"&gt;1525&lt;/td&gt; 
+   &lt;td align="left"&gt;15&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;450305&lt;/td&gt; 
+   &lt;td align="left"&gt;七星区&lt;/td&gt; 
+   &lt;td align="left"&gt;4503&lt;/td&gt; 
+   &lt;td align="left"&gt;45&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;乡级数据预览&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="left"&gt;code&lt;/th&gt; 
+   &lt;th align="left"&gt;name&lt;/th&gt; 
+   &lt;th align="left"&gt;areaCode&lt;/th&gt; 
+   &lt;th align="left"&gt;cityCode&lt;/th&gt; 
+   &lt;th align="left"&gt;provinceCode&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;130111200&lt;/td&gt; 
+   &lt;td align="left"&gt;南高乡&lt;/td&gt; 
+   &lt;td align="left"&gt;130111&lt;/td&gt; 
+   &lt;td align="left"&gt;1301&lt;/td&gt; 
+   &lt;td align="left"&gt;13&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;140121102&lt;/td&gt; 
+   &lt;td align="left"&gt;东于镇&lt;/td&gt; 
+   &lt;td align="left"&gt;140121&lt;/td&gt; 
+   &lt;td align="left"&gt;1401&lt;/td&gt; 
+   &lt;td align="left"&gt;14&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;152527201&lt;/td&gt; 
+   &lt;td align="left"&gt;贡宝拉格苏木&lt;/td&gt; 
+   &lt;td align="left"&gt;152527&lt;/td&gt; 
+   &lt;td align="left"&gt;1525&lt;/td&gt; 
+   &lt;td align="left"&gt;15&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;450305004&lt;/td&gt; 
+   &lt;td align="left"&gt;漓东街道办事处&lt;/td&gt; 
+   &lt;td align="left"&gt;450305&lt;/td&gt; 
+   &lt;td align="left"&gt;4503&lt;/td&gt; 
+   &lt;td align="left"&gt;45&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;村级数据预览&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="left"&gt;code&lt;/th&gt; 
+   &lt;th align="left"&gt;name&lt;/th&gt; 
+   &lt;th align="left"&gt;streetCode&lt;/th&gt; 
+   &lt;th align="left"&gt;areaCode&lt;/th&gt; 
+   &lt;th align="left"&gt;cityCode&lt;/th&gt; 
+   &lt;th align="left"&gt;provinceCode&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;130111200201&lt;/td&gt; 
+   &lt;td align="left"&gt;南高村委会&lt;/td&gt; 
+   &lt;td align="left"&gt;130111200&lt;/td&gt; 
+   &lt;td align="left"&gt;130111&lt;/td&gt; 
+   &lt;td align="left"&gt;1301&lt;/td&gt; 
+   &lt;td align="left"&gt;13&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;140121102001&lt;/td&gt; 
+   &lt;td align="left"&gt;东于社区居委会&lt;/td&gt; 
+   &lt;td align="left"&gt;140121102&lt;/td&gt; 
+   &lt;td align="left"&gt;140121&lt;/td&gt; 
+   &lt;td align="left"&gt;1401&lt;/td&gt; 
+   &lt;td align="left"&gt;14&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;152527201206&lt;/td&gt; 
+   &lt;td align="left"&gt;敦达乌苏嘎查&lt;/td&gt; 
+   &lt;td align="left"&gt;152527201&lt;/td&gt; 
+   &lt;td align="left"&gt;152527&lt;/td&gt; 
+   &lt;td align="left"&gt;1525&lt;/td&gt; 
+   &lt;td align="left"&gt;15&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;450305004006&lt;/td&gt; 
+   &lt;td align="left"&gt;横塘社区&lt;/td&gt; 
+   &lt;td align="left"&gt;450305004&lt;/td&gt; 
+   &lt;td align="left"&gt;450305&lt;/td&gt; 
+   &lt;td align="left"&gt;4503&lt;/td&gt; 
+   &lt;td align="left"&gt;45&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt;</description>
+    </item>
+    
+    <item>
+      <title>projectdiscovery/nuclei-templates</title>
+      <link>https://github.com/projectdiscovery/nuclei-templates</link>
+      <description>&lt;p&gt;Community curated list of templates for the nuclei engine to find security vulnerabilities.&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt; Nuclei Templates &lt;/h1&gt; 
+&lt;h4 align="center"&gt;Community curated list of templates for the nuclei engine to find security vulnerabilities in applications.&lt;/h4&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/projectdiscovery/nuclei-templates/issues"&gt;&lt;img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" /&gt;&lt;/a&gt; &lt;a href="https://github.com/projectdiscovery/nuclei-templates/releases"&gt;&lt;img src="https://img.shields.io/github/release/projectdiscovery/nuclei-templates" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/pdnuclei"&gt;&lt;img src="https://img.shields.io/twitter/follow/pdnuclei.svg?logo=twitter" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/projectdiscovery"&gt;&lt;img src="https://img.shields.io/discord/695645237418131507.svg?logo=discord" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://nuclei.projectdiscovery.io/templating-guide/"&gt;Documentation&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/#-contributions"&gt;Contributions&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/#-discussion"&gt;Discussion&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/#-community"&gt;Community&lt;/a&gt; • &lt;a href="https://nuclei.projectdiscovery.io/faq/templates/"&gt;FAQs&lt;/a&gt; • &lt;a href="https://discord.gg/projectdiscovery"&gt;Join Discord&lt;/a&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;Templates are the core of the &lt;a href="https://github.com/projectdiscovery/nuclei"&gt;nuclei scanner&lt;/a&gt; which powers the actual scanning engine. This repository stores and houses various templates for the scanner provided by our team, as well as contributed by the community. We hope that you also contribute by sending templates via &lt;strong&gt;pull requests&lt;/strong&gt; or &lt;a href="https://github.com/projectdiscovery/nuclei-templates/issues/new?assignees=&amp;amp;labels=&amp;amp;template=submit-template.md&amp;amp;title=%5Bnuclei-template%5D+"&gt;Github issues&lt;/a&gt; to grow the list.&lt;/p&gt; 
+&lt;h2&gt;Nuclei Templates overview&lt;/h2&gt; 
+&lt;p&gt;An overview of the nuclei template project, including statistics on unique tags, author, directory, severity, and type of templates. The table below contains the top ten statistics for each matrix; an expanded version of this is &lt;a href="https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/TEMPLATES-STATS.md"&gt;available here&lt;/a&gt;, and also available in &lt;a href="https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/TEMPLATES-STATS.json"&gt;JSON&lt;/a&gt; format for integration.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;h2&gt;Nuclei Templates Top 10 statistics&lt;/h2&gt; 
+    &lt;table&gt; 
+     &lt;thead&gt; 
+      &lt;tr&gt; 
+       &lt;th&gt;TAG&lt;/th&gt; 
+       &lt;th&gt;COUNT&lt;/th&gt; 
+       &lt;th&gt;AUTHOR&lt;/th&gt; 
+       &lt;th&gt;COUNT&lt;/th&gt; 
+       &lt;th&gt;DIRECTORY&lt;/th&gt; 
+       &lt;th&gt;COUNT&lt;/th&gt; 
+       &lt;th&gt;SEVERITY&lt;/th&gt; 
+       &lt;th&gt;COUNT&lt;/th&gt; 
+       &lt;th&gt;TYPE&lt;/th&gt; 
+       &lt;th&gt;COUNT&lt;/th&gt; 
+      &lt;/tr&gt; 
+     &lt;/thead&gt; 
+     &lt;tbody&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;cve&lt;/td&gt; 
+       &lt;td&gt;3288&lt;/td&gt; 
+       &lt;td&gt;dhiyaneshdk&lt;/td&gt; 
+       &lt;td&gt;1882&lt;/td&gt; 
+       &lt;td&gt;http&lt;/td&gt; 
+       &lt;td&gt;8967&lt;/td&gt; 
+       &lt;td&gt;info&lt;/td&gt; 
+       &lt;td&gt;4190&lt;/td&gt; 
+       &lt;td&gt;file&lt;/td&gt; 
+       &lt;td&gt;435&lt;/td&gt; 
+      &lt;/tr&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;panel&lt;/td&gt; 
+       &lt;td&gt;1342&lt;/td&gt; 
+       &lt;td&gt;daffainfo&lt;/td&gt; 
+       &lt;td&gt;868&lt;/td&gt; 
+       &lt;td&gt;cloud&lt;/td&gt; 
+       &lt;td&gt;657&lt;/td&gt; 
+       &lt;td&gt;high&lt;/td&gt; 
+       &lt;td&gt;2446&lt;/td&gt; 
+       &lt;td&gt;dns&lt;/td&gt; 
+       &lt;td&gt;26&lt;/td&gt; 
+      &lt;/tr&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;xss&lt;/td&gt; 
+       &lt;td&gt;1257&lt;/td&gt; 
+       &lt;td&gt;princechaddha&lt;/td&gt; 
+       &lt;td&gt;854&lt;/td&gt; 
+       &lt;td&gt;file&lt;/td&gt; 
+       &lt;td&gt;435&lt;/td&gt; 
+       &lt;td&gt;medium&lt;/td&gt; 
+       &lt;td&gt;2379&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+      &lt;/tr&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;wordpress&lt;/td&gt; 
+       &lt;td&gt;1181&lt;/td&gt; 
+       &lt;td&gt;dwisiswant0&lt;/td&gt; 
+       &lt;td&gt;806&lt;/td&gt; 
+       &lt;td&gt;dast&lt;/td&gt; 
+       &lt;td&gt;255&lt;/td&gt; 
+       &lt;td&gt;critical&lt;/td&gt; 
+       &lt;td&gt;1425&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+      &lt;/tr&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;exposure&lt;/td&gt; 
+       &lt;td&gt;1107&lt;/td&gt; 
+       &lt;td&gt;ritikchaddha&lt;/td&gt; 
+       &lt;td&gt;649&lt;/td&gt; 
+       &lt;td&gt;workflows&lt;/td&gt; 
+       &lt;td&gt;202&lt;/td&gt; 
+       &lt;td&gt;low&lt;/td&gt; 
+       &lt;td&gt;318&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+      &lt;/tr&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;wp-plugin&lt;/td&gt; 
+       &lt;td&gt;1032&lt;/td&gt; 
+       &lt;td&gt;pussycat0x&lt;/td&gt; 
+       &lt;td&gt;532&lt;/td&gt; 
+       &lt;td&gt;code&lt;/td&gt; 
+       &lt;td&gt;198&lt;/td&gt; 
+       &lt;td&gt;unknown&lt;/td&gt; 
+       &lt;td&gt;56&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+      &lt;/tr&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;osint&lt;/td&gt; 
+       &lt;td&gt;841&lt;/td&gt; 
+       &lt;td&gt;pikpikcu&lt;/td&gt; 
+       &lt;td&gt;352&lt;/td&gt; 
+       &lt;td&gt;network&lt;/td&gt; 
+       &lt;td&gt;145&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+      &lt;/tr&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;tech&lt;/td&gt; 
+       &lt;td&gt;803&lt;/td&gt; 
+       &lt;td&gt;pdteam&lt;/td&gt; 
+       &lt;td&gt;310&lt;/td&gt; 
+       &lt;td&gt;javascript&lt;/td&gt; 
+       &lt;td&gt;71&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+      &lt;/tr&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;rce&lt;/td&gt; 
+       &lt;td&gt;786&lt;/td&gt; 
+       &lt;td&gt;pdresearch&lt;/td&gt; 
+       &lt;td&gt;269&lt;/td&gt; 
+       &lt;td&gt;ssl&lt;/td&gt; 
+       &lt;td&gt;38&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+      &lt;/tr&gt; 
+      &lt;tr&gt; 
+       &lt;td&gt;lfi&lt;/td&gt; 
+       &lt;td&gt;777&lt;/td&gt; 
+       &lt;td&gt;iamnoooob&lt;/td&gt; 
+       &lt;td&gt;257&lt;/td&gt; 
+       &lt;td&gt;dns&lt;/td&gt; 
+       &lt;td&gt;23&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;/td&gt; 
+      &lt;/tr&gt; 
+     &lt;/tbody&gt; 
+    &lt;/table&gt; &lt;p&gt;&lt;strong&gt;848 directories, 11344 files&lt;/strong&gt;.&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;📖 Documentation&lt;/h2&gt; 
+&lt;p&gt;Please navigate to &lt;a href="https://nuclei.projectdiscovery.io"&gt;https://nuclei.projectdiscovery.io&lt;/a&gt; for detailed documentation to &lt;strong&gt;build&lt;/strong&gt; new or your own &lt;strong&gt;custom&lt;/strong&gt; templates. We have also added a set of templates to help you understand how things work.&lt;/p&gt; 
+&lt;h2&gt;💪 Contributions&lt;/h2&gt; 
+&lt;p&gt;Nuclei-templates is powered by major contributions from the community. &lt;a href="https://github.com/projectdiscovery/nuclei-templates/issues/new?assignees=&amp;amp;labels=&amp;amp;template=submit-template.md&amp;amp;title=%5Bnuclei-template%5D+"&gt;Template contributions &lt;/a&gt;, &lt;a href="https://github.com/projectdiscovery/nuclei-templates/issues/new?assignees=&amp;amp;labels=&amp;amp;template=feature_request.md&amp;amp;title=%5BFeature%5D+"&gt;Feature Requests&lt;/a&gt; and &lt;a href="https://github.com/projectdiscovery/nuclei-templates/issues/new?assignees=&amp;amp;labels=&amp;amp;template=bug_report.md&amp;amp;title=%5BBug%5D+"&gt;Bug Reports&lt;/a&gt; are more than welcome.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://repobeats.axiom.co/api/embed/55ee65543bb9a0f9c797626c4e66d472a517d17c.svg?sanitize=true" alt="Alt" title="Repobeats analytics image" /&gt;&lt;/p&gt; 
+&lt;h2&gt;💬 Discussion&lt;/h2&gt; 
+&lt;p&gt;Have questions / doubts / ideas to discuss? Feel free to open a discussion on &lt;a href="https://github.com/projectdiscovery/nuclei-templates/discussions"&gt;Github discussions&lt;/a&gt; board.&lt;/p&gt; 
+&lt;h2&gt;👨‍💻 Community&lt;/h2&gt; 
+&lt;p&gt;You are welcome to join the active &lt;a href="https://discord.gg/projectdiscovery"&gt;Discord Community&lt;/a&gt; to discuss directly with project maintainers and share things with others around security and automation. Additionally, you may follow us on &lt;a href="https://twitter.com/pdnuclei"&gt;Twitter&lt;/a&gt; to be updated on all the things about Nuclei.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/projectdiscovery/nuclei-templates/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=projectdiscovery/nuclei-templates&amp;amp;max=300" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;Thanks again for your contribution and keeping this community vibrant. &lt;span&gt;❤️&lt;/span&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JannisX11/blockbench</title>
+      <link>https://github.com/JannisX11/blockbench</link>
+      <description>&lt;p&gt;Blockbench - A low poly 3D model editor&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Blockbench&lt;/h1&gt; 
+&lt;p&gt;Blockbench is a free and open source model editor for low-poly models with pixel art textures. Models can be exported into standardized formats, to be shared, rendered, 3D-printed, or used in game engines. There are also multiple dedicated formats for Minecraft Java and Bedrock Edition with format-specific features.&lt;/p&gt; 
+&lt;p&gt;Blockbench features a modern and beginner friendly interface, but also offers lots of customization and advanced features for experienced 3D artists. Plugins can extend the functionality of the program even further.&lt;/p&gt; 
+&lt;p&gt;Website and download: &lt;a href="https://www.blockbench.net"&gt;blockbench.net&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://web.blockbench.net/content/front_page_app.png" alt="Interface" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Contribution&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/JannisX11/blockbench/master/CODE_OF_CONDUCT.MD"&gt;&lt;img src="https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg?sanitize=true" alt="Contributor Covenant" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Check out the &lt;a href="https://raw.githubusercontent.com/JannisX11/blockbench/master/CONTRIBUTING.md"&gt;Contribution Guidelines&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Launching Blockbench&lt;/h2&gt; 
+&lt;p&gt;To launch Blockbench from source, you can clone the repository, navigate to the correct branch and launch the program in development mode using the instructions below. If you just want to use the latest version, please download the app from the website.&lt;/p&gt; 
+&lt;h3&gt;Setup Repository&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Install &lt;a href="https://nodejs.org/en/"&gt;NodeJS&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Then install all dependencies via &lt;code&gt;npm install&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Run in Electron&lt;/h3&gt; 
+&lt;p&gt;Use this command or press Ctrl + Shift + B to launch Blockbench in Electron:&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;npm run dev&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;To enable debugging in VS Code, switch to the &lt;strong&gt;Run &amp;amp; Debug&lt;/strong&gt; tab, select the &lt;strong&gt;"Debug Renderer"&lt;/strong&gt; configuration, and press the green arrow button to launch. Now you can set breakpoints and debug inside VSCode.&lt;/p&gt; 
+&lt;h3&gt;Run the web app&lt;/h3&gt; 
+&lt;p&gt;Use this command to launch the web app locally:&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;npm run serve&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;Now you can open the web app in your browser under &lt;a href="http://localhost:3000"&gt;http://localhost:3000&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Plugins&lt;/h2&gt; 
+&lt;p&gt;Blockbench supports Javascript-based plugins. Learn more about creating plugins on &lt;a href="https://www.blockbench.net/wiki/docs/plugin"&gt;https://www.blockbench.net/wiki/docs/plugin&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The Blockbench source-code is licensed under the GPL license version 3. See &lt;code&gt;LICENSE.MD&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Modifications to the source code can be made under the terms of that license.&lt;/li&gt; 
+ &lt;li&gt;Blockbench plugins (external scripts) and themes (theme files to customize the design) that interact with the Blockbench API are an exception. Plugins and themes can be created and/or published as open source, proprietary or paid software.&lt;/li&gt; 
+ &lt;li&gt;All assets created with Blockbench (models, textures, animations, screenshots etc.) are your own!&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>clusterzx/paperless-ai</title>
+      <link>https://github.com/clusterzx/paperless-ai</link>
+      <description>&lt;p&gt;An automated document analyzer for Paperless-ngx using OpenAI API, Ollama, Deepseek-r1, Azure and all OpenAI API compatible Services to automatically analyze and tag your documents.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;📄 Paperless-AI&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/clusterzx/paperless-ai/commits/main"&gt;&lt;img src="https://img.shields.io/github/commit-activity/t/clusterzx/paperless-ai" alt="GitHub commit activity" /&gt;&lt;/a&gt; &lt;a href="https://hub.docker.com/r/clusterzx/paperless-ai"&gt;&lt;img src="https://img.shields.io/docker/pulls/clusterzx/paperless-ai" alt="Docker Pulls" /&gt;&lt;/a&gt; &lt;a href="https://github.com/clusterzx"&gt;&lt;img src="https://img.shields.io/github/stars/clusterzx" alt="GitHub Stars" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/clusterzx/paperless-ai/main/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/clusterzx/paperless-ai?cacheSeconds=1" alt="License" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Paperless-AI&lt;/strong&gt; is an AI-powered extension for &lt;a href="https://github.com/paperless-ngx/paperless-ngx"&gt;Paperless-ngx&lt;/a&gt; that brings automatic document classification, smart tagging, and semantic search using OpenAI-compatible APIs and Ollama.&lt;/p&gt; 
+&lt;p&gt;It enables &lt;strong&gt;fully automated document workflows&lt;/strong&gt;, &lt;strong&gt;contextual chat&lt;/strong&gt;, and &lt;strong&gt;powerful customization&lt;/strong&gt; — all via an intuitive web interface.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;💡 Just ask:&lt;br /&gt; “When did I sign my rental agreement?”&lt;br /&gt; “What was the amount of the last electricity bill?”&lt;br /&gt; “Which documents mention my health insurance?”&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Powered by &lt;strong&gt;Retrieval-Augmented Generation (RAG)&lt;/strong&gt;, you can now search semantically across your full archive and get precise, natural language answers.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;✨ Features&lt;/h2&gt; 
+&lt;h3&gt;🔄 Automated Document Processing&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Detects new documents in Paperless-ngx automatically&lt;/li&gt; 
+ &lt;li&gt;Analyzes content using OpenAI API, Ollama, and other compatible backends&lt;/li&gt; 
+ &lt;li&gt;Assigns title, tags, document type, and correspondent&lt;/li&gt; 
+ &lt;li&gt;Built-in support for: 
+  &lt;ul&gt; 
+   &lt;li&gt;Ollama (Mistral, Llama, Phi-3, Gemma-2)&lt;/li&gt; 
+   &lt;li&gt;OpenAI&lt;/li&gt; 
+   &lt;li&gt;DeepSeek.ai&lt;/li&gt; 
+   &lt;li&gt;OpenRouter.ai&lt;/li&gt; 
+   &lt;li&gt;Perplexity.ai&lt;/li&gt; 
+   &lt;li&gt;Together.ai&lt;/li&gt; 
+   &lt;li&gt;LiteLLM&lt;/li&gt; 
+   &lt;li&gt;VLLM&lt;/li&gt; 
+   &lt;li&gt;Fastchat&lt;/li&gt; 
+   &lt;li&gt;Gemini (Google)&lt;/li&gt; 
+   &lt;li&gt;...and more!&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🧠 RAG-Based AI Chat&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Natural language document search and Q&amp;amp;A&lt;/li&gt; 
+ &lt;li&gt;Understands full document context (not just keywords)&lt;/li&gt; 
+ &lt;li&gt;Semantic memory powered by your own data&lt;/li&gt; 
+ &lt;li&gt;Fast, intelligent, privacy-friendly document queries&lt;br /&gt; &lt;img src="https://raw.githubusercontent.com/clusterzx/paperless-ai/refs/heads/main/ppairag.png" alt="RAG_CHAT_DEMO" /&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;⚙️ Manual Processing&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Web interface for manual AI tagging&lt;/li&gt; 
+ &lt;li&gt;Useful when reviewing sensitive documents&lt;/li&gt; 
+ &lt;li&gt;Accessible via &lt;code&gt;/manual&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🧩 Smart Tagging &amp;amp; Rules&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Define rules to limit which documents are processed&lt;/li&gt; 
+ &lt;li&gt;Disable prompts and apply tags automatically&lt;/li&gt; 
+ &lt;li&gt;Set custom output tags for tracked classification&lt;br /&gt; &lt;img src="https://github.com/user-attachments/assets/1fc9f470-6e45-43e0-a212-b8fa6225e8dd" alt="PPAI_SHOWCASE3" /&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🚀 Installation&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;⚠️ &lt;strong&gt;First-time install:&lt;/strong&gt; Restart the container &lt;strong&gt;after completing setup&lt;/strong&gt; (API keys, preferences) to build RAG index.&lt;br /&gt; 🔁 Not required for updates.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;📘 &lt;a href="https://github.com/clusterzx/paperless-ai/wiki/2.-Installation"&gt;Installation Wiki&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🐳 Docker Support&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Health monitoring and auto-restart&lt;/li&gt; 
+ &lt;li&gt;Persistent volumes and graceful shutdown&lt;/li&gt; 
+ &lt;li&gt;Works out of the box with minimal setup&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🔧 Local Development&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Install dependencies
+npm install
+
+# Start development/test mode
+npm run test
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🧭 Roadmap Highlights&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;✅ Multi-AI model support&lt;/li&gt; 
+ &lt;li&gt;✅ Multilingual document analysis&lt;/li&gt; 
+ &lt;li&gt;✅ Tag rules and filters&lt;/li&gt; 
+ &lt;li&gt;✅ Integrated document chat with RAG&lt;/li&gt; 
+ &lt;li&gt;✅ Responsive web interface&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🤝 Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome PRs and contributions!&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Fork, clone, then:
+git checkout -b feature/YourFeature
+# After changes:
+git commit -m "Add YourFeature"
+git push origin feature/YourFeature
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then open a Pull Request via GitHub.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🆘 Support &amp;amp; Community&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/clusterzx/paperless-ai/issues"&gt;Issues&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://discord.gg/AvNekAfK38"&gt;Discord&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📄 License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the MIT License. See &lt;a href="https://raw.githubusercontent.com/clusterzx/paperless-ai/main/LICENSE"&gt;LICENSE&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🙏 Support Development&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.patreon.com/c/clusterzx"&gt;&lt;img src="https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&amp;amp;logo=patreon&amp;amp;logoColor=white" alt="Patreon" /&gt;&lt;/a&gt; &lt;a href="https://www.paypal.com/paypalme/bech0r"&gt;&lt;img src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&amp;amp;logo=paypal&amp;amp;logoColor=white" alt="PayPal" /&gt;&lt;/a&gt; &lt;a href="https://www.buymeacoffee.com/clusterzx"&gt;&lt;img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&amp;amp;logo=buy-me-a-coffee&amp;amp;logoColor=black" alt="BuyMeACoffee" /&gt;&lt;/a&gt; &lt;a href="https://ko-fi.com/clusterzx"&gt;&lt;img src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&amp;amp;logo=ko-fi&amp;amp;logoColor=white" alt="Ko-Fi" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>usebruno/bruno</title>
+      <link>https://github.com/usebruno/bruno</link>
+      <description>&lt;p&gt;Opensource IDE For Exploring and Testing API's (lightweight alternative to Postman/Insomnia)&lt;/p&gt;&lt;hr&gt;&lt;br /&gt; 
+&lt;img src="https://raw.githubusercontent.com/usebruno/bruno/main/assets/images/logo-transparent.png" width="80" /&gt; 
+&lt;h3&gt;Bruno - Opensource IDE for exploring and testing APIs.&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://badge.fury.io/gh/usebruno%bruno"&gt;&lt;img src="https://badge.fury.io/gh/usebruno%2Fbruno.svg?sanitize=true" alt="GitHub version" /&gt;&lt;/a&gt; &lt;a href="https://github.com/usebruno/bruno/actions/workflows/tests.yml"&gt;&lt;img src="https://github.com/usebruno/bruno/actions/workflows/tests.yml/badge.svg?branch=main" alt="CI" /&gt;&lt;/a&gt; &lt;a href="https://github.com/usebruno/bruno/pulse"&gt;&lt;img src="https://img.shields.io/github/commit-activity/m/usebruno/bruno" alt="Commit Activity" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/use_bruno"&gt;&lt;img src="https://img.shields.io/twitter/follow/use_bruno?style=social&amp;amp;logo=x" alt="X" /&gt;&lt;/a&gt; &lt;a href="https://www.usebruno.com"&gt;&lt;img src="https://img.shields.io/badge/Website-Visit-blue" alt="Website" /&gt;&lt;/a&gt; &lt;a href="https://www.usebruno.com/downloads"&gt;&lt;img src="https://img.shields.io/badge/Download-Latest-brightgreen" alt="Download" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;English&lt;/strong&gt; | &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/docs/readme/readme_ua.md"&gt;Українська&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/docs/readme/readme_ru.md"&gt;Русский&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/docs/readme/readme_tr.md"&gt;Türkçe&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/docs/readme/readme_de.md"&gt;Deutsch&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/docs/readme/readme_fr.md"&gt;Français&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/docs/readme/readme_pt_br.md"&gt;Português (BR)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/docs/readme/readme_kr.md"&gt;한국어&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/docs/readme/readme_bn.md"&gt;বাংলা&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/docs/readme/readme_es.md"&gt;Español&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/docs/readme/readme_it.md"&gt;Italiano&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/docs/readme/readme_ro.md"&gt;Română&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/docs/readme/readme_pl.md"&gt;Polski&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/docs/readme/readme_cn.md"&gt;简体中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/docs/readme/readme_zhtw.md"&gt;正體中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/docs/readme/readme_ar.md"&gt;العربية&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/docs/readme/readme_ja.md"&gt;日本語&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/docs/readme/readme_ka.md"&gt;ქართული&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/docs/readme/readme_nl.md"&gt;Nederlands&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Bruno is a new and innovative API client, aimed at revolutionizing the status quo represented by Postman and similar tools out there.&lt;/p&gt; 
+&lt;p&gt;Bruno stores your collections directly in a folder on your filesystem. We use a plain text markup language, Bru, to save information about API requests.&lt;/p&gt; 
+&lt;p&gt;You can use Git or any version control of your choice to collaborate over your API collections.&lt;/p&gt; 
+&lt;p&gt;Bruno is offline-only. There are no plans to add cloud-sync to Bruno, ever. We value your data privacy and believe it should stay on your device. Read our long-term vision &lt;a href="https://github.com/usebruno/bruno/discussions/269"&gt;here&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.usebruno.com/downloads"&gt;Download Bruno&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;📢 Watch our recent talk at India FOSS 3.0 Conference &lt;a href="https://www.youtube.com/watch?v=7bSMFpbcPiY"&gt;here&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/usebruno/bruno/main/assets/images/landing-2.png" alt="bruno" /&gt; &lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;h2&gt;Commercial Versions ✨&lt;/h2&gt; 
+&lt;p&gt;Majority of our features are free and open source. We strive to strike a harmonious balance between &lt;a href="https://github.com/usebruno/bruno/discussions/269"&gt;open-source principles and sustainability&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;You can explore our &lt;a href="https://www.usebruno.com/pricing"&gt;paid versions&lt;/a&gt; to see if there are additional features that you or your team may find useful! &lt;br /&gt;&lt;/p&gt; 
+&lt;h2&gt;Table of Contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/#installation"&gt;Installation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/#features"&gt;Features&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/#run-across-multiple-platforms-%EF%B8%8F"&gt;Run across multiple platforms 🖥️&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/#collaborate-via-git-"&gt;Collaborate via Git 👩‍💻🧑‍💻&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/#important-links-"&gt;Important Links 📌&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/#showcase-"&gt;Showcase 🎥&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/#share-testimonials-"&gt;Share Testimonials 📣&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/#publishing-to-new-package-managers"&gt;Publishing to New Package Managers&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/#stay-in-touch-"&gt;Stay in touch 🌐&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/#trademark"&gt;Trademark&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/#contribute-"&gt;Contribute 👩‍💻🧑‍💻&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/#authors"&gt;Authors&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/#license-"&gt;License 📄&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;Bruno is available as binary download &lt;a href="https://www.usebruno.com/downloads"&gt;on our website&lt;/a&gt; for Mac, Windows and Linux.&lt;/p&gt; 
+&lt;p&gt;You can also install Bruno via package managers like Homebrew, Chocolatey, Scoop, Snap, Flatpak and Apt.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;# On Mac via Homebrew
+brew install bruno
+
+# On Windows via Chocolatey
+choco install bruno
+
+# On Windows via Scoop
+scoop bucket add extras
+scoop install bruno
+
+# On Windows via winget
+winget install Bruno.Bruno
+
+# On Linux via Snap
+snap install bruno
+
+# On Linux via Flatpak
+flatpak install com.usebruno.Bruno
+
+# On Arch Linux via AUR
+yay -S bruno
+
+# On Linux via Apt
+sudo mkdir -p /etc/apt/keyrings
+sudo apt update &amp;amp;&amp;amp; sudo apt install gpg curl
+curl -fsSL "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;amp;search=0x9FA6017ECABE0266" \
+  | gpg --dearmor \
+  | sudo tee /etc/apt/keyrings/bruno.gpg &amp;gt; /dev/null
+sudo chmod 644 /etc/apt/keyrings/bruno.gpg
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/bruno.gpg] http://debian.usebruno.com/ bruno stable" \
+  | sudo tee /etc/apt/sources.list.d/bruno.list
+sudo apt update &amp;amp;&amp;amp; sudo apt install bruno
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;h3&gt;Run across multiple platforms 🖥️&lt;/h3&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/usebruno/bruno/main/assets/images/run-anywhere.png" alt="bruno" /&gt; &lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;h3&gt;Collaborate via Git 👩‍💻🧑‍💻&lt;/h3&gt; 
+&lt;p&gt;Or any version control system of your choice&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/usebruno/bruno/main/assets/images/version-control.png" alt="bruno" /&gt; &lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;h2&gt;Important Links 📌&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/usebruno/bruno/discussions/269"&gt;Our Long Term Vision&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.usebruno.com/roadmap"&gt;Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.usebruno.com"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://stackoverflow.com/questions/tagged/bruno"&gt;Stack Overflow&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.usebruno.com"&gt;Website&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.usebruno.com/pricing"&gt;Pricing&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.usebruno.com/downloads"&gt;Download&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Showcase 🎥&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/usebruno/bruno/discussions/343"&gt;Testimonials&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/usebruno/bruno/discussions/386"&gt;Knowledge Hub&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/usebruno/bruno/discussions/385"&gt;Scriptmania&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Share Testimonials 📣&lt;/h2&gt; 
+&lt;p&gt;If Bruno has helped you at work and your teams, please don't forget to share your &lt;a href="https://github.com/usebruno/bruno/discussions/343"&gt;testimonials on our GitHub discussion&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Publishing to New Package Managers&lt;/h2&gt; 
+&lt;p&gt;Please see &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/publishing.md"&gt;here&lt;/a&gt; for more information.&lt;/p&gt; 
+&lt;h2&gt;Stay in touch 🌐&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://twitter.com/use_bruno"&gt;𝕏 (Twitter)&lt;/a&gt; &lt;br /&gt; &lt;a href="https://www.usebruno.com"&gt;Website&lt;/a&gt; &lt;br /&gt; &lt;a href="https://discord.com/invite/KgcZUncpjq"&gt;Discord&lt;/a&gt; &lt;br /&gt; &lt;a href="https://www.linkedin.com/company/usebruno"&gt;LinkedIn&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Trademark&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;Bruno&lt;/code&gt; is a trademark held by &lt;a href="https://www.helloanoop.com/"&gt;Anoop M D&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Logo&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;The logo is sourced from &lt;a href="https://openmoji.org/library/emoji-1F436/"&gt;OpenMoji&lt;/a&gt;. License: CC &lt;a href="https://creativecommons.org/licenses/by-sa/4.0/"&gt;BY-SA 4.0&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Contribute 👩‍💻🧑‍💻&lt;/h2&gt; 
+&lt;p&gt;I am happy that you are looking to improve bruno. Please check out the &lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/contributing.md"&gt;contributing guide&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Even if you are not able to make contributions via code, please don't hesitate to file bugs and feature requests that needs to be implemented to solve your use case.&lt;/p&gt; 
+&lt;h2&gt;Authors&lt;/h2&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://github.com/usebruno/bruno/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=usebruno/bruno" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;License 📄&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/usebruno/bruno/main/license.md"&gt;MIT&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SillyTavern/SillyTavern</title>
+      <link>https://github.com/SillyTavern/SillyTavern</link>
+      <description>&lt;p&gt;LLM Frontend for Power Users.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a name="readme-top"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/01a6ae9a-16aa-45f2-8bff-32b5dc587e44" alt="" /&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;English | &lt;a href="https://raw.githubusercontent.com/SillyTavern/SillyTavern/release/readme-de_de.md"&gt;German&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/SillyTavern/SillyTavern/release/readme-zh_cn.md"&gt;中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/SillyTavern/SillyTavern/release/readme-zh_tw.md"&gt;繁體中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/SillyTavern/SillyTavern/release/readme-ja_jp.md"&gt;日本語&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/SillyTavern/SillyTavern/release/readme-ru_ru.md"&gt;Русский&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/SillyTavern/SillyTavern/release/readme-ko_kr.md"&gt;한국어&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://github.com/SillyTavern/SillyTavern/stargazers"&gt;&lt;img src="https://img.shields.io/github/stars/SillyTavern/SillyTavern.svg?sanitize=true" alt="GitHub Stars" /&gt;&lt;/a&gt; &lt;a href="https://github.com/SillyTavern/SillyTavern/forks"&gt;&lt;img src="https://img.shields.io/github/forks/SillyTavern/SillyTavern.svg?sanitize=true" alt="GitHub Forks" /&gt;&lt;/a&gt; &lt;a href="https://github.com/SillyTavern/SillyTavern/issues"&gt;&lt;img src="https://img.shields.io/github/issues/SillyTavern/SillyTavern.svg?sanitize=true" alt="GitHub Issues" /&gt;&lt;/a&gt; &lt;a href="https://github.com/SillyTavern/SillyTavern/pulls"&gt;&lt;img src="https://img.shields.io/github/issues-pr/SillyTavern/SillyTavern.svg?sanitize=true" alt="GitHub Pull Requests" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;SillyTavern provides a single unified interface for many LLM APIs (KoboldAI/CPP, Horde, NovelAI, Ooba, Tabby, OpenAI, OpenRouter, Claude, Mistral and more), a mobile-friendly layout, Visual Novel Mode, Automatic1111 &amp;amp; ComfyUI API image generation integration, TTS, WorldInfo (lorebooks), customizable UI, auto-translate, more prompt options than you'd ever want or need, and endless growth potential via third-party extensions.&lt;/p&gt; 
+&lt;p&gt;We have a &lt;a href="https://docs.sillytavern.app/"&gt;Documentation website&lt;/a&gt; to answer most of your questions and help you get started.&lt;/p&gt; 
+&lt;h2&gt;What is SillyTavern?&lt;/h2&gt; 
+&lt;p&gt;SillyTavern (or ST for short) is a locally installed user interface that allows you to interact with text generation LLMs, image generation engines, and TTS voice models.&lt;/p&gt; 
+&lt;p&gt;Beginning in February 2023 as a fork of TavernAI 1.2.8, SillyTavern now has over 200 contributors and 2 years of independent development under its belt, and continues to serve as a leading software for savvy AI hobbyists.&lt;/p&gt; 
+&lt;h2&gt;Our Vision&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;We aim to empower users with as much utility and control over their LLM prompts as possible. The steep learning curve is part of the fun!&lt;/li&gt; 
+ &lt;li&gt;We do not provide any online or hosted services, nor programmatically track any user data.&lt;/li&gt; 
+ &lt;li&gt;SillyTavern is a passion project brought to you by a dedicated community of LLM enthusiasts, and will always be free and open sourced.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Do I need a powerful PC to run SillyTavern?&lt;/h2&gt; 
+&lt;p&gt;The hardware requirements are minimal: it will run on anything that can run NodeJS 18 or higher. If you intend to do LLM inference on your local machine, we recommend a 3000-series NVIDIA graphics card with at least 6GB of VRAM, but actual requirements may vary depending on the model and backend you choose to use.&lt;/p&gt; 
+&lt;h2&gt;Questions or suggestions?&lt;/h2&gt; 
+&lt;h3&gt;Discord server&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="left"&gt;&lt;a href="https://discord.gg/sillytavern"&gt;&lt;img src="https://img.shields.io/discord/1100685673633153084?color=5865F2&amp;amp;label=discord&amp;amp;labelColor=black&amp;amp;logo=discord&amp;amp;logoColor=white&amp;amp;style=for-the-badge" alt="" /&gt;&lt;/a&gt;&lt;/th&gt; 
+   &lt;th align="left"&gt;&lt;a href="https://discord.gg/sillytavern"&gt;Join our Discord community!&lt;/a&gt; Get support, share favorite characters and prompts.&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+&lt;/table&gt; 
+&lt;p&gt;Or get in touch with the developers directly:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Discord: cohee, rossascends, wolfsblvt&lt;/li&gt; 
+ &lt;li&gt;Reddit: &lt;a href="https://www.reddit.com/user/RossAscends/"&gt;/u/RossAscends&lt;/a&gt;, &lt;a href="https://www.reddit.com/user/sillylossy/"&gt;/u/sillylossy&lt;/a&gt;, &lt;a href="https://www.reddit.com/user/Wolfsblvt/"&gt;u/Wolfsblvt&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/SillyTavern/SillyTavern/issues"&gt;Post a GitHub issue&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;I like your project! How do I contribute?&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Send pull requests. Learn how to contribute: &lt;a href="https://raw.githubusercontent.com/SillyTavern/SillyTavern/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Send feature suggestions and issue reports using the provided templates.&lt;/li&gt; 
+ &lt;li&gt;Read this entire readme file and check the documentation website first, to avoid sending duplicate issues.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Screenshots&lt;/h2&gt; 
+&lt;img width="500" alt="image" src="https://github.com/user-attachments/assets/9b5f32f0-c3b3-4102-b3f5-0e9213c0f50f" /&gt; 
+&lt;img width="500" alt="image" src="https://github.com/user-attachments/assets/913fdbaa-7d33-42f1-ae2c-89dca41c53d1" /&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;For detailed installation instructions, please visit our documentation:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.sillytavern.app/installation/windows/"&gt;Windows Installation Guide&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.sillytavern.app/installation/linuxmacos/"&gt;MacOS/Linux Installation Guide&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.sillytavern.app/installation/android-(termux)/"&gt;Android (Termux) Installation Guide&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.sillytavern.app/installation/docker/"&gt;Docker Installation Guide&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License and credits&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TavernAI/TavernAI"&gt;TavernAI&lt;/a&gt; 1.2.8 by Humi: MIT License&lt;/li&gt; 
+ &lt;li&gt;Portions of CncAnon's TavernAITurbo mod used with permission&lt;/li&gt; 
+ &lt;li&gt;Visual Novel Mode inspired by the work of PepperTaco (&lt;a href="https://github.com/peppertaco/Tavern/"&gt;https://github.com/peppertaco/Tavern/&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;Noto Sans font by Google (OFL license)&lt;/li&gt; 
+ &lt;li&gt;Icon theme by Font Awesome &lt;a href="https://fontawesome.com"&gt;https://fontawesome.com&lt;/a&gt; (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)&lt;/li&gt; 
+ &lt;li&gt;Default content by @OtisAlejandro (Seraphina character and lorebook) and @kallmeflocc (10K Discord Users Celebratory Background)&lt;/li&gt; 
+ &lt;li&gt;Docker guide by &lt;a href="https://github.com/mrguymiah"&gt;@mrguymiah&lt;/a&gt; and &lt;a href="https://github.com/Bronya-Rand"&gt;@Bronya-Rand&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;kokoro-js library by &lt;a href="https://github.com/hexgrad"&gt;@hexgrad&lt;/a&gt; (Apache-2.0 License)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Top Contributors&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/SillyTavern/SillyTavern/graphs/contributors"&gt;&lt;img src="https://contrib.rocks/image?repo=SillyTavern/SillyTavern" alt="Contributors" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;!-- LINK GROUP --&gt;</description>
+    </item>
+    
+    <item>
+      <title>dcloudio/uni-app</title>
+      <link>https://github.com/dcloudio/uni-app</link>
+      <description>&lt;p&gt;A cross-platform framework using Vue.js&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;uni-app&lt;/h1&gt; 
+&lt;p&gt; 简体中文 | &lt;a href="https://github.com/dcloudio/uni-app/raw/dev/README_en-US.md"&gt;English&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;uni-app&lt;/code&gt; 是一个使用 &lt;code&gt;Vue.js&lt;/code&gt; 开发小程序、 Web、App的统一前端框架。官网地址：&lt;a href="https://uniapp.dcloud.io"&gt;https://uniapp.dcloud.io&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;开发者使用 &lt;code&gt;Vue&lt;/code&gt; 语法编写代码，&lt;code&gt;uni-app&lt;/code&gt; 框架将其编译到 小程序（微信/支付宝/百度/字节跳动/QQ/快手/钉钉/小红书/京东/鸿蒙元服务）、App（iOS/Android/HarmonyOS）、Web等多个平台，保证其正确运行并达到优秀体验。&lt;/p&gt; 
+&lt;h1&gt;uni-app的特点&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;开发者和案例更多：HBuilder装机量800万台，开发者社区月活百万，70多个QQ微信群承载10万人。案例众多，uni统计月活超10亿（&lt;a href="https://uniapp.dcloud.io/case"&gt;详见&lt;/a&gt;）&lt;/li&gt; 
+ &lt;li&gt;性能更高（见&lt;a href="https://juejin.im/post/5ca1736af265da30ae314248"&gt;评测&lt;/a&gt;）&lt;/li&gt; 
+ &lt;li&gt;更丰富的周边生态，&lt;a href="https://ext.dcloud.net.cn/"&gt;插件市场&lt;/a&gt;数千款插件&lt;/li&gt; 
+ &lt;li&gt;提供比小程序原生开发更好的开发体验、更高的工程化效率&lt;/li&gt; 
+ &lt;li&gt;跨端抹平度更完善，且各端特色发挥更灵活，可真正实现一套代码多端覆盖，无需各端多头维护升级&lt;/li&gt; 
+ &lt;li&gt;权威认可：阿里小程序官方工具内置uni-app（&lt;a href="https://docs.alipay.com/mini/ide/0.70-stable"&gt;详见&lt;/a&gt;）、腾讯课堂官方自制uni-app培训视频（&lt;a href="https://ask.dcloud.net.cn/article/35640"&gt;详见&lt;/a&gt;）&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;扫码体验&lt;/h2&gt; 
+&lt;p&gt;开发一次，编译到14个平台。依次扫描14个二维码，亲自体验最全面的跨平台效果！&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;img src="https://web-ext-storage.dcloud.net.cn/doc/uni-support-platform-qrcode.jpg" /&gt; 
+&lt;/div&gt; 
+&lt;p&gt;&lt;em&gt;注： 某些平台不能提交简单demo，补充了一些其他功能。&lt;/em&gt;&lt;/p&gt; 
+&lt;h2&gt;快速开始&lt;/h2&gt; 
+&lt;p&gt;&lt;code&gt;uni-app&lt;/code&gt;支持通过&lt;code&gt;vue-cli&lt;/code&gt;命令行、&lt;code&gt;HBuilderX&lt;/code&gt;可视化界面两种方式快速创建项目：&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://uniapp.dcloud.net.cn/quickstart-cli.html"&gt;vue-cli命令行方式&lt;/a&gt;：不限IDE，适合对node熟悉的开发者，扩展阅读：&lt;a href="https://ask.dcloud.net.cn/article/36286"&gt;在vscode中开发uni-app&lt;/a&gt;、&lt;a href="https://ask.dcloud.net.cn/article/36307"&gt;在 WebStorm 中开发 uni-app&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://uniapp.dcloud.net.cn/quickstart-hx.html"&gt;HBuilderX可视化界面&lt;/a&gt;：专用IDE，内置相关环境，开箱即用，开发效率更高。&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;项目案例&lt;/h2&gt; 
+&lt;p&gt;案例展示：&lt;a href="https://uniapp.dcloud.io/case"&gt;uniapp.dcloud.io/case&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;欢迎提交你的应用，&lt;a href="https://github.com/dcloudio/uni-app/issues/6"&gt;uni-app案例征集&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;需求墙&lt;/h2&gt; 
+&lt;p&gt;&lt;code&gt;uni-app&lt;/code&gt;计划支持的功能点，会在需求墙上进行展示，征集开发者的投票意见，&lt;a href="https://dev.dcloud.net.cn/wish/"&gt;前往投票&lt;/a&gt;。&lt;/p&gt; 
+&lt;h2&gt;更新日志&lt;/h2&gt; 
+&lt;p&gt;&lt;code&gt;uni-app&lt;/code&gt;一直保持高频的更新迭代，详见&lt;a href="https://uniapp.dcloud.net.cn/release"&gt;正式版更新日志&lt;/a&gt;、&lt;a href="https://uniapp.dcloud.net.cn/release-note-alpha"&gt;Alpha版更新日志&lt;/a&gt;。&lt;/p&gt; 
+&lt;h2&gt;论坛&lt;/h2&gt; 
+&lt;p&gt;由于&lt;code&gt;DCloud&lt;/code&gt;有70多个QQ、微信群，官方已无法维护更多交流群。请开发者到官方论坛交流：&lt;a href="https://ask.dcloud.net.cn/explore/"&gt;https://ask.dcloud.net.cn/explore/&lt;/a&gt; 。论坛提供了比issues更专业的工具服务。&lt;/p&gt; 
+&lt;h2&gt;插件市场&lt;/h2&gt; 
+&lt;p&gt;&lt;code&gt;uni-app&lt;/code&gt;有丰富的插件生态，众多开发者提交了数千款组件、sdk、项目模板，详见：&lt;a href="https://ext.dcloud.net.cn/"&gt;https://ext.dcloud.net.cn/&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;除了众多三方ui库，官方还提供了uni-ui，在性能和跨端兼容方面有更强的优势。详见：&lt;a href="https://ext.dcloud.net.cn/plugin?id=55"&gt;https://ext.dcloud.net.cn/plugin?id=55&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;现有项目如何迁移到uni-app体系&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;微信小程序转换uni-app指南及转换器：&lt;a href="https://ask.dcloud.net.cn/article/35786"&gt;https://ask.dcloud.net.cn/article/35786&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;vue h5项目转换uni-app指南：&lt;a href="https://ask.dcloud.net.cn/article/36174"&gt;https://ask.dcloud.net.cn/article/36174&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;mpvue 项目（组件）迁移指南、示例及资源汇总： &lt;a href="https://ask.dcloud.net.cn/article/34945"&gt;https://ask.dcloud.net.cn/article/34945&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;wepy转uni-app转换器：&lt;a href="https://github.com/zhangdaren/wepy-to-uniapp"&gt;https://github.com/zhangdaren/wepy-to-uniapp&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;常见疑问&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;问：不同端有不同的需求、不同的特色，登录支付也不一样，如何统一？&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;答：差异部分使用条件编译。uni-app提供了灵活强大的&lt;a href="https://uniapp.dcloud.io/platform"&gt;条件编译&lt;/a&gt;。可以完美处理复用部分和差异部分。真正一套工程源码。当业务升级时，不再需要多端维护。如果多端维护，经常会因为某些端的流量不大，就一直拖延无法让那些用户享受到最新服务。另外登录支付在客户端部分，已经被uni-app统一成一样的api了。&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;问：多端是不是一种妥协，是否会造成性能下降？&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;答：good question。多端且不影响性能，确实很难，但uni-app做到了。在h5端，它的性能、包体积与直接使用vue.js开发一致； 在小程序端，它的性能比大多数开发框架更好，uni-app底层自动处理的setdata差量同步机制，比开发者手动写setdata更好，就像使用vue.js更新界面比手动写js修改dom更高效一样； 在App，uni-app支持webview渲染和原生渲染双引擎，启用原生渲染时，css写法受限，但性能是很接近原生开发的效果的，在当前的手机环境下，千万日活以下的应用在App使用uni-app也不会遇到任何压力。当然也可以在已经做好的原生App中将部分页面改为uni-app实现; 此外，我们会把很多跨端处理放在编译期完成的，这样会减少对运行期的效率影响。&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;问：不做多端，是不是不需要uni-app？&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;答：不是。大量开发者用uni-app只做一个端，详见&lt;a href="https://uniapp.dcloud.io/case"&gt;案例&lt;/a&gt;。对于开发者而言，一个优秀工具在手，做什么都不愁。&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;问：uni-app以后会不会变更开源协议，转向收费？&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;答：官方承诺永远不会变更开源协议。无论HBuilderX、uni-app、App，面向中国人永久免费。&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;更多资料&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;评测：&lt;a href="https://juejin.cn/post/7317091780826497075"&gt;App跨平台框架VS原生开发深度评测之2023版&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;评测：&lt;a href="https://juejin.cn/post/6844904118901817351"&gt;跨端开发框架深度横评之2020版&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;评测：&lt;a href="https://mp.weixin.qq.com/s/jIDEHfuMnED6HTfNgjsW4w"&gt;深入测试一周，主流多端框架大比武之2019版&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://doc.dcloud.net.cn/uni-app-x/select.html"&gt;uni-app x在App端和flutter的比较&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;贡献指南&lt;/h2&gt; 
+&lt;p&gt;如果你想参与贡献，请先阅读&lt;a href="https://raw.githubusercontent.com/dcloudio/uni-app/next/.github/CONTRIBUTING.md"&gt;贡献指南&lt;/a&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>tangyoha/telegram_media_downloader</title>
+      <link>https://github.com/tangyoha/telegram_media_downloader</link>
+      <description>&lt;p&gt;基于Dineshkarthik的项目， 电报视频下载，电报资源下载，跨平台，支持web查看下载进度 ，支持bot下发指令下载，支持下载已经加入的私有群但是限制下载的资源， telegram media download,Download media files from a telegram conversation/chat/channel up to 2GiB per file&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt;Telegram Media Downloader&lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/tangyoha/telegram_media_downloader/actions"&gt;&lt;img alt="Unittest" src="https://github.com/tangyoha/telegram_media_downloader/workflows/Unittest/badge.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://codecov.io/gh/tangyoha/telegram_media_downloader"&gt;&lt;img alt="Coverage Status" src="https://codecov.io/gh/tangyoha/telegram_media_downloader/branch/master/graph/badge.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://github.com/tangyoha/telegram_media_downloader/raw/master/LICENSE"&gt;&lt;img alt="License: MIT" src="https://black.readthedocs.io/en/stable/_static/license.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://github.com/python/black"&gt;&lt;img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://github.com/tangyoha/telegram_media_downloader/releases"&gt; &lt;img alt="Code style: black" src="https://img.shields.io/github/v/release/tangyoha/telegram_media_downloader?display_name=tag" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h3 align="center"&gt; &lt;a href="https://raw.githubusercontent.com/tangyoha/telegram_media_downloader/master/README_CN.md"&gt;中文&lt;/a&gt;&lt;span&gt; · &lt;/span&gt; &lt;a href="https://github.com/tangyoha/telegram_media_downloader/discussions/categories/ideas"&gt;Feature request&lt;/a&gt; &lt;span&gt; · &lt;/span&gt; &lt;a href="https://github.com/tangyoha/telegram_media_downloader/issues"&gt;Report a bug&lt;/a&gt; &lt;span&gt; · &lt;/span&gt; Support: &lt;a href="https://github.com/tangyoha/telegram_media_downloader/discussions"&gt;Discussions&lt;/a&gt; &lt;span&gt; &amp;amp; &lt;/span&gt; &lt;a href="https://t.me/TeegramMediaDownload"&gt;Telegram Community&lt;/a&gt; &lt;/h3&gt; 
+&lt;h2&gt;Overview&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Support two default running&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;The robot is running, and the command &lt;code&gt;download&lt;/code&gt; or &lt;code&gt;forward&lt;/code&gt; is issued from the robot&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Download as a one-time download tool&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;UI&lt;/h3&gt; 
+&lt;h4&gt;Web page&lt;/h4&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;After running, open a browser and visit &lt;code&gt;localhost:5000&lt;/code&gt; If it is a remote machine, you need to configure web_host: 0.0.0.0&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;img alt="Code style: black" style="width:100%; high:60%;" src="https://raw.githubusercontent.com/tangyoha/telegram_media_downloader/master/screenshot/web_ui.gif" /&gt; 
+&lt;h3&gt;Robot&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Need to configure bot_token, please refer to &lt;a href="https://github.com/tangyoha/telegram_media_downloader/wiki/How-to-Download-Using-Robots"&gt;Documentation&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;img alt="Code style: black" style="width:60%; high:30%; " src="https://raw.githubusercontent.com/tangyoha/telegram_media_downloader/master/screenshot/bot.gif" /&gt; 
+&lt;h3&gt;Support&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Category&lt;/th&gt; 
+   &lt;th&gt;Support&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Language&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Python 3.7&lt;/code&gt; and above&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Download media types&lt;/td&gt; 
+   &lt;td&gt;audio, document, photo, video, video_note, voice&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Version release plan&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/tangyoha/telegram_media_downloader/issues/2"&gt;v2.2.0&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;For *nix os distributions with &lt;code&gt;make&lt;/code&gt; availability&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;git clone https://github.com/tangyoha/telegram_media_downloader.git
+cd telegram_media_downloader
+make install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For Windows which doesn't have &lt;code&gt;make&lt;/code&gt; inbuilt&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;git clone https://github.com/tangyoha/telegram_media_downloader.git
+cd telegram_media_downloader
+pip3 install -r requirements.txt
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Docker&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;For more detailed installation tutorial, please check the wiki&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Make sure you have &lt;strong&gt;docker&lt;/strong&gt; and &lt;strong&gt;docker-compose&lt;/strong&gt; installed&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;docker pull tangyoha/telegram_media_downloader:latest
+mkdir -p ~/app &amp;amp;&amp;amp; mkdir -p ~/app/log/ &amp;amp;&amp;amp; cd ~/app
+wget https://raw.githubusercontent.com/tangyoha/telegram_media_downloader/master/docker-compose.yaml -O docker-compose.yaml
+wget https://raw.githubusercontent.com/tangyoha/telegram_media_downloader/master/config.yaml -O config.yaml
+wget https://raw.githubusercontent.com/tangyoha/telegram_media_downloader/master/data.yaml -O data.yaml
+# vi config.yaml and docker-compose.yaml
+vi config.yaml
+
+# The first time you need to start the foreground
+# enter your phone number and code, then exit(ctrl + c)
+docker-compose run --rm telegram_media_downloader
+
+# After performing the above operations, all subsequent startups will start in the background
+docker-compose up -d
+
+# Upgrade
+docker pull tangyoha/telegram_media_downloader:latest
+cd ~/app
+docker-compose down
+docker-compose up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Upgrade installation&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;cd telegram_media_downloader
+pip3 install -r requirements.txt
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Configuration&lt;/h2&gt; 
+&lt;p&gt;All the configurations are passed to the Telegram Media Downloader via &lt;code&gt;config.yaml&lt;/code&gt; file.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Getting your API Keys:&lt;/strong&gt; The very first step requires you to obtain a valid Telegram API key (API id/hash pair):&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Visit &lt;a href="https://my.telegram.org/apps"&gt;https://my.telegram.org/apps&lt;/a&gt; and log in with your Telegram Account.&lt;/li&gt; 
+ &lt;li&gt;Fill out the form to register a new Telegram application.&lt;/li&gt; 
+ &lt;li&gt;Done! The API key consists of two parts: &lt;strong&gt;api_id&lt;/strong&gt; and &lt;strong&gt;api_hash&lt;/strong&gt;.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Getting chat id:&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;1. Using web telegram:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;Open &lt;a href="https://web.telegram.org/?legacy=1#/im"&gt;https://web.telegram.org/?legacy=1#/im&lt;/a&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Now go to the chat/channel and you will see the URL as something like&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;code&gt;https://web.telegram.org/?legacy=1#/im?p=u853521067_2449618633394&lt;/code&gt; here &lt;code&gt;853521067&lt;/code&gt; is the chat id.&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;https://web.telegram.org/?legacy=1#/im?p=@somename&lt;/code&gt; here &lt;code&gt;somename&lt;/code&gt; is the chat id.&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;https://web.telegram.org/?legacy=1#/im?p=s1301254321_6925449697188775560&lt;/code&gt; here take &lt;code&gt;1301254321&lt;/code&gt; and add &lt;code&gt;-100&lt;/code&gt; to the start of the id =&amp;gt; &lt;code&gt;-1001301254321&lt;/code&gt;.&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;https://web.telegram.org/?legacy=1#/im?p=c1301254321_6925449697188775560&lt;/code&gt; here take &lt;code&gt;1301254321&lt;/code&gt; and add &lt;code&gt;-100&lt;/code&gt; to the start of the id =&amp;gt; &lt;code&gt;-1001301254321&lt;/code&gt;.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;2. Using bot:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Use &lt;a href="https://t.me/username_to_id_bot"&gt;@username_to_id_bot&lt;/a&gt; to get the chat_id of 
+  &lt;ul&gt; 
+   &lt;li&gt;almost any telegram user: send username to the bot or just forward their message to the bot&lt;/li&gt; 
+   &lt;li&gt;any chat: send chat username or copy and send its joinchat link to the bot&lt;/li&gt; 
+   &lt;li&gt;public or private channel: same as chats, just copy and send to the bot&lt;/li&gt; 
+   &lt;li&gt;id of any telegram bot&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;config.yaml&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-yaml"&gt;api_hash: your_api_hash
+api_id: your_api_id
+chat:
+- chat_id: telegram_chat_id
+  last_read_message_id: 0
+  download_filter: message_date &amp;gt;= 2022-12-01 00:00:00 and message_date &amp;lt;= 2023-01-17 00:00:00
+- chat_id: telegram_chat_id_2
+  last_read_message_id: 0
+# note we remove ids_to_retry to data.yaml
+ids_to_retry: []
+media_types:
+- audio
+- document
+- photo
+- video
+- voice
+- animation #gif
+file_formats:
+  audio:
+  - all
+  document:
+  - pdf
+  - epub
+  video:
+  - mp4
+save_path: D:\telegram_media_downloader
+file_path_prefix:
+- chat_title
+- media_datetime
+upload_drive:
+  # required
+  enable_upload_file: true
+  # required
+  remote_dir: drive:/telegram
+  # required
+  upload_adapter: rclone
+  # option,when config upload_adapter rclone then this config are required
+  rclone_path: D:\rclone\rclone.exe
+  # option
+  before_upload_file_zip: True
+  # option
+  after_upload_file_delete: True
+hide_file_name: true
+file_name_prefix:
+- message_id
+- file_name
+file_name_prefix_split: ' - '
+max_download_task: 5
+web_host: 127.0.0.1
+web_port: 5000
+language: EN
+web_login_secret: 123
+allowed_user_ids:
+- 'me'
+date_format: '%Y_%m'
+enable_download_txt: false
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;api_hash&lt;/strong&gt; - The api_hash you got from telegram apps&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;api_id&lt;/strong&gt; - The api_id you got from telegram apps&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;bot_token&lt;/strong&gt; - Your bot token&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;chat&lt;/strong&gt; - Chat list 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;code&gt;chat_id&lt;/code&gt; - The id of the chat/channel you want to download media. Which you get from the above-mentioned steps.&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;download_filter&lt;/code&gt; - Download filter, see &lt;a href="https://github.com/tangyoha/telegram_media_downloader/wiki/How-to-use-Filter"&gt;How to use Filter&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;last_read_message_id&lt;/code&gt; - If it is the first time you are going to read the channel let it be &lt;code&gt;0&lt;/code&gt; or if you have already used this script to download media it will have some numbers which are auto-updated after the scripts successful execution. Don't change it.&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;ids_to_retry&lt;/code&gt; - &lt;code&gt;Leave it as it is.&lt;/code&gt; This is used by the downloader script to keep track of all skipped downloads so that it can be downloaded during the next execution of the script.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;media_types&lt;/strong&gt; - Type of media to download, you can update which type of media you want to download it can be one or any of the available types.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;file_formats&lt;/strong&gt; - File types to download for supported media types which are &lt;code&gt;audio&lt;/code&gt;, &lt;code&gt;document&lt;/code&gt; and &lt;code&gt;video&lt;/code&gt;. Default format is &lt;code&gt;all&lt;/code&gt;, downloads all files.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;save_path&lt;/strong&gt; - The root directory where you want to store downloaded files.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;file_path_prefix&lt;/strong&gt; - Store file subfolders, the order of the list is not fixed, can be randomly combined. 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;code&gt;chat_title&lt;/code&gt; - Channel or group title, it will be chat id if not exist title.&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;media_datetime&lt;/code&gt; - Media date.&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;media_type&lt;/code&gt; - Media type, also see &lt;code&gt;media_types&lt;/code&gt;.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;upload_drive&lt;/strong&gt; - You can upload file to cloud drive. 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;code&gt;enable_upload_file&lt;/code&gt; - Enable upload file, default &lt;code&gt;false&lt;/code&gt;.&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;remote_dir&lt;/code&gt; - Where you upload, like &lt;code&gt;drive_id/drive_name&lt;/code&gt;.&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;upload_adapter&lt;/code&gt; - Upload file adapter, which can be &lt;code&gt;rclone&lt;/code&gt;, &lt;code&gt;aligo&lt;/code&gt;. If it is &lt;code&gt;rclone&lt;/code&gt;, it supports all &lt;code&gt;rclone&lt;/code&gt; servers that support uploading. If it is &lt;code&gt;aligo&lt;/code&gt;, it supports uploading &lt;code&gt;Ali cloud disk&lt;/code&gt;.&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;rclone_path&lt;/code&gt; - RClone exe path, see &lt;a href="https://github.com/tangyoha/telegram_media_downloader/wiki/Rclone"&gt;How to use rclone&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;before_upload_file_zip&lt;/code&gt; - Zip file before upload, default &lt;code&gt;false&lt;/code&gt;.&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;after_upload_file_delete&lt;/code&gt; - Delete file after upload success, default &lt;code&gt;false&lt;/code&gt;.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;file_name_prefix&lt;/strong&gt; - Custom file name, use the same as &lt;strong&gt;file_path_prefix&lt;/strong&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;code&gt;message_id&lt;/code&gt; - Message id&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;file_name&lt;/code&gt; - File name (may be empty)&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;caption&lt;/code&gt; - The title of the message (may be empty)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;file_name_prefix_split&lt;/strong&gt; - Custom file name prefix symbol, the default is &lt;code&gt;-&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;max_download_task&lt;/strong&gt; - The maximum number of task download tasks, the default is 5.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;hide_file_name&lt;/strong&gt; - Whether to hide the web interface file name, default &lt;code&gt;false&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;web_host&lt;/strong&gt; - Web host&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;web_port&lt;/strong&gt; - Web port&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;language&lt;/strong&gt; - Application language, the default is English (&lt;code&gt;EN&lt;/code&gt;), optional &lt;code&gt;ZH&lt;/code&gt;(Chinese),&lt;code&gt;RU&lt;/code&gt;,&lt;code&gt;UA&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;web_login_secret&lt;/strong&gt; - Web page login password, if not configured, no login is required to access the web page&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;log_level&lt;/strong&gt; - see &lt;code&gt;logging._nameToLevel&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;forward_limit&lt;/strong&gt; - Limit the number of forwards per minute, the default is 33, please do not modify this parameter by default.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;allowed_user_ids&lt;/strong&gt; - Who is allowed to use the robot? The default login account can be used. Please add single quotes to the name with @.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;date_format&lt;/strong&gt; Support custom configuration of media_datetime format in file_path_prefix.see &lt;a href="https://docs.python.org/3/library/datetime.html"&gt;python-datetime&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;enable_download_txt&lt;/strong&gt; Enable download txt file, default &lt;code&gt;false&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Execution&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;python3 media_downloader.py
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;All downloaded media will be stored at the root of &lt;code&gt;save_path&lt;/code&gt;. The specific location reference is as follows:&lt;/p&gt; 
+&lt;p&gt;The complete directory of video download is: &lt;code&gt;save_path&lt;/code&gt;/&lt;code&gt;chat_title&lt;/code&gt;/&lt;code&gt;media_datetime&lt;/code&gt;/&lt;code&gt;media_type&lt;/code&gt;. The order of the list is not fixed and can be randomly combined. If the configuration is empty, all files are saved under &lt;code&gt;save_path&lt;/code&gt;.&lt;/p&gt; 
+&lt;h2&gt;Proxy&lt;/h2&gt; 
+&lt;p&gt;&lt;code&gt;socks4, socks5, http&lt;/code&gt; proxies are supported in this project currently. To use it, add the following to the bottom of your &lt;code&gt;config.yaml&lt;/code&gt; file&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-yaml"&gt;proxy:
+  scheme: socks5
+  hostname: 127.0.0.1
+  port: 1234
+  username: your_username(delete the line if none)
+  password: your_password(delete the line if none)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If your proxy doesn’t require authorization you can omit username and password. Then the proxy will automatically be enabled.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;h3&gt;Contributing Guidelines&lt;/h3&gt; 
+&lt;p&gt;Read through our &lt;a href="https://github.com/tangyoha/telegram_media_downloader/raw/master/CONTRIBUTING.md"&gt;contributing guidelines&lt;/a&gt; to learn about our submission process, coding rules and more.&lt;/p&gt; 
+&lt;h3&gt;Want to Help?&lt;/h3&gt; 
+&lt;p&gt;Want to file a bug, contribute some code, or improve documentation? Excellent! Read up on our guidelines for &lt;a href="https://github.com/tangyoha/telegram_media_downloader/raw/master/CONTRIBUTING.md"&gt;contributing&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Code of Conduct&lt;/h3&gt; 
+&lt;p&gt;Help us keep Telegram Media Downloader open and inclusive. Please read and follow our &lt;a href="https://github.com/tangyoha/telegram_media_downloader/raw/master/CODE_OF_CONDUCT.md"&gt;Code of Conduct&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Sponsor&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://paypal.me/tangyoha?country.x=C2&amp;amp;locale.x=zh_XC"&gt;PayPal&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt; &lt;img alt="Code style: black" style="width:30%" src="https://raw.githubusercontent.com/tangyoha/telegram_media_downloader/master/screenshot/alipay.JPG" /&gt; &lt;img alt="Code style: black" style="width:30%" src="https://raw.githubusercontent.com/tangyoha/telegram_media_downloader/master/screenshot/wechat.JPG" /&gt; &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>asgeirtj/system_prompts_leaks</title>
+      <link>https://github.com/asgeirtj/system_prompts_leaks</link>
+      <description>&lt;p&gt;Collection of extracted System Prompts from popular chatbots like ChatGPT, Claude &amp; Gemini&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/22d32e2d-e0c9-4afc-9e72-44b779dac659" alt="CleanShot 2025-09-03 at 02 37 49" /&gt;&lt;/p&gt; 
+&lt;h1&gt;System Prompts Leaks&lt;/h1&gt; 
+&lt;p&gt;Collection of system prompts/system messages/developer messages.&lt;/p&gt; 
+&lt;p&gt;Feel free to do Pull Requests&lt;/p&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.star-history.com/#asgeirtj/system_prompts_leaks&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=asgeirtj/system_prompts_leaks&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>hmjz100/LinkSwift</title>
+      <link>https://github.com/hmjz100/LinkSwift</link>
+      <description>&lt;p&gt;一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘&lt;/p&gt;&lt;hr&gt;&lt;blockquote&gt; 
+ &lt;p&gt;[!IMPORTANT] 如果您是从 GreasyFork 找到这的，建议前往下方的 &lt;a href="https://raw.githubusercontent.com/hmjz100/LinkSwift/main/#%E5%AE%89%E8%A3%85"&gt;安装&lt;/a&gt; 选择一个合适的源覆盖安装，避免因脚本失效或 GF 刷子导致无法及时更新。&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;img src="https://socialify.git.ci/hmjz100/LinkSwift/image?description=1&amp;amp;descriptionEditable=%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8E%20JavaScript%20%E7%9A%84%E7%BD%91%E7%9B%98%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7&amp;amp;language=1&amp;amp;logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBkPSJNMTAzLjYgMTA3LjRjMy41LTIuMiA4LjktNi4xIDEzLjgtMTIuNXM3LjMtMTIuNSA4LjUtMTYuNWMuNS0xLjcgMi4yLTcuNSAyLjItMTQuNyAwLTEwLjEtMy4zLTI1LjEtMTUuNC0zNi44LTE0LjUtMTQtMzIuMS0xNC4zLTM1LjctMTQuMy04IDAtMTUuNyAxLjktMjIuNiA1LjJDNDQgMjMgMzUuNyAzMS40IDMwLjggNDEuN2MtMS4zIDIuOC00IDQuNy03LjEgNS00IC4zLTcuNSA0LjQtOC45IDkuNi0uNSAxLjktMS42IDMuNS0zLjEgNC43QzQuNCA2Ni44IDAgNzUuNyAwIDg1YzAgNi44IDIuMyAxMy4xIDYuMSAxOC4yIDUuNSA3LjQgMTQuMiAxMi4yIDI0IDEyLjJoNDcuMWM0LjQgMCAxMS0uNSAxOC4zLTMuNSAzLjItMS40IDUuOS0zIDguMS00LjV6IiBmaWxsPSIjQTA5OUYwIi8%2BPHBhdGggZD0iTTExOS44IDY0LjNjLjEtMTcuMS0xMC40LTI4LTEyLjUtMzAuMUM5NSAyMi4xIDc5LjkgMjEuOCA3Ni45IDIxLjhjLTE3LjYgMC0zMy4zIDEwLjUtMzkuOSAyNi43LS42IDEuMy0xLjggMi4zLTMuNCAyLjNoLS40Yy01LjggMC0xMC42IDQuOC0xMC42IDEwLjd2LjVjMCAxLjQtLjggMi42LTEuOSAzLjNDMTMuNCA2OSA4LjggNzYuOCA4LjggODVjMCAxMi4yIDkuOSAyMi4zIDIyLjIgMjIuM2g0NS4yYzMuNi0uMSAxNy42LS45IDI5LjYtMTIgMi45LTIuOCAxMy45LTEzLjcgMTQtMzF6IiBmaWxsPSIjNTc0QUI4Ii8%2BPHBhdGggZD0iTTExMC44IDU3LjRsLjIgMy4zYzAgMS4zLTEuMSAyLjQtMi4zIDIuNC0xLjMgMC0yLjMtMS4xLTIuMy0yLjRsLS4xLTIuOHYtLjNjMC0xLjIuOS0yLjIgMi4xLTIuM2guM2MuNyAwIDEuMy4zIDEuNy43LS4yLjEuMy41LjQgMS40em0tMy4zLTEwLjNjMCAxLjItMSAyLjMtMi4yIDIuM2gtLjFjLS44IDAtMS42LS41LTItMS4yLTQuNi04LjMtMTMuMy0xMy41LTIyLjgtMTMuNS0xLjIgMC0yLjMtMS0yLjMtMi4ydi0uMWMwLTEuMiAxLTIuMyAyLjItMi4zaC4xYTMwLjM3IDMwLjM3IDAgMCAxIDE1LjggNC40YzQuNiAyLjggOC40IDYuOCAxMS4xIDExLjUuMS4zLjIuNy4yIDEuMXpNODguMyA3My44TDczLjUgOTMuMmMtMS41IDEuOS0zLjUgMy4xLTUuNyAzLjVoLS4yYy0uNC4xLS44LjEtMS4yLjEtLjYgMC0xLjEtLjEtMS42LS4yLTIuMi0uNC00LjItMS43LTUuNi0zLjVMNDQuMyA3My45Yy0yLTIuNi0yLjUtNS40LTEuNC03LjcuMS0uMS4xLS4yLjItLjIgMS4yLTIgMy41LTMuMiA2LjQtMy4yaDYuNnYtNS43YzAtNi44IDQuNy0xMiAxMC45LTEyIDQuOCAwIDguNSAyLjYgMTAuMyA3LjIuNSAxLjMtLjIgMi43LTEuNSAzLjJzLTIuOC0uMS0zLjMtMS40Yy0xLjEtMi43LTIuOS00LTUuNS00LTMuNSAwLTYgMy02IDd2OC4xYzAgLjUtLjIgMS0uNiAxLjQtLjYuNy0xLjcgMS4xLTIuNiAxLjFoLTguNGMtMS4zIDAtMiAuNC0yLjEuNy0uMi40IDAgMS4zLjkgMi40TDYzLjEgOTBjLjkgMS4yIDIuMSAxLjggMy4zIDEuOHMyLjMtLjYgMy4xLTEuN2wxNC44LTE5LjNjLjktMS4xIDEuMS0yIC45LTIuNC0uMi0uMy0uOS0uNy0yLjEtLjdoLTcuNmMtLjkgMC0xLjctLjUtMi4xLTEuMi0uMy0uNC0uNC0uOC0uNC0xLjMgMC0xLjQgMS4xLTIuNSAyLjUtMi41aDcuNmMzLjEgMCA1LjUgMS4zIDYuNiAzLjVsLjMuN2MuNyAyLjEuMSA0LjYtMS43IDYuOXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4%3D&amp;amp;name=1&amp;amp;owner=1&amp;amp;pattern=Charlie%20Brown&amp;amp;theme=Auto" alt="LinkSwift" /&gt;&lt;/p&gt; 
+&lt;p align="center"&gt;“出淤泥而不染，濯清涟而不妖”&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p align="center"&gt; 搭配使用，效果更佳！👋扩展脚本 &lt;br /&gt; &lt;a href="https://github.com/hmjz100/123panYouthMember#安装"&gt;123 云盘会员青春版&lt;/a&gt; | &lt;a href="#安装"&gt;百度网盘会员青春版&lt;/a&gt; | &lt;a href="https://scriptcat.org/script-show-page/2470" target="_blank"&gt;阿里云盘会员青春版&lt;/a&gt; &lt;br /&gt; ↓&amp;nbsp;&amp;nbsp;↓&amp;nbsp;&amp;nbsp;↓&amp;nbsp;&amp;nbsp;↓&amp;nbsp;&amp;nbsp;↓ &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img alt="Github Stargazers" src="https://img.shields.io/github/stars/hmjz100/LinkSwift.svg?label=%e6%98%9f%e6%a0%87&amp;amp;logo=github&amp;amp;logoColor=white&amp;amp;labelColor=black&amp;amp;color=gold&amp;amp;style=for-the-badge&amp;amp;cacheSeconds=10" /&gt; &lt;img alt="Github Forks" src="https://img.shields.io/github/forks/hmjz100/LinkSwift?label=%e5%a4%8d%e5%88%bb&amp;amp;logo=github&amp;amp;logoColor=white&amp;amp;labelColor=black&amp;amp;color=grey&amp;amp;style=for-the-badge&amp;amp;cacheSeconds=10" /&gt; &lt;img alt="Github Licence" src="https://img.shields.io/github/license/hmjz100/LinkSwift?label=%e8%ae%b8%e5%8f%af&amp;amp;logo=github&amp;amp;logoColor=white&amp;amp;labelColor=black&amp;amp;color=grey&amp;amp;style=for-the-badge&amp;amp;cacheSeconds=10" /&gt; &lt;br /&gt; &lt;a href="https://trendshift.io/repositories/13630" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/13630" alt="hmjz100%2FLinkSwift | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt; &lt;br /&gt; &lt;img src="https://img.shields.io/chrome-web-store/v/gcalenpjmijncebpfijmoaglllgpjagf.svg?label=Tampermonkey%20BETA%20%E7%AF%A1%E6%94%B9%E7%8C%B4%E6%B5%8B%E8%AF%95%E7%89%88&amp;amp;logo=tampermonkey&amp;amp;logoColor=red&amp;amp;color=red&amp;amp;style=for-the-badge" alt="Tampermonkey BETA 篡改猴测试版" /&gt; &lt;img src="https://img.shields.io/chrome-web-store/v/dhdgffkkebhmkfjojejmpbldmpobfkfo.svg?label=Tampermonkey%20%E7%AF%A1%E6%94%B9%E7%8C%B4&amp;amp;logo=tampermonkey&amp;amp;logoColor=white&amp;amp;color=brightgreen&amp;amp;style=for-the-badge" alt="TamperMonkey 篡改猴" /&gt; &lt;br /&gt; &lt;img src="https://img.shields.io/badge/Google_Chrome-≥76.0-yellow.svg?style=for-the-badge" alt="Google Chrome-≥76.0" /&gt; &lt;img src="https://img.shields.io/badge/Microsoft_Edge-≥88.0-blue.svg?style=for-the-badge" alt="Microsoft Edge-≥88.0" /&gt; &lt;img src="https://img.shields.io/badge/支持平台-Windows_|_Mac_|_Linux_|_Android-blueviolet.svg?style=for-the-badge" alt="支持平台" /&gt; &lt;br /&gt; &lt;img alt="Starchart" src="https://starchart.cc/hmjz100/LinkSwift.svg?variant=adaptive&amp;amp;line=%23574ab8" /&gt; &lt;/p&gt; 
+&lt;h2&gt;安装&lt;/h2&gt; 
+&lt;p&gt;选择合适的源，点击链接即可安装&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;LinkSwift - 直链获取、UI 美化 
+  &lt;ul&gt; 
+   &lt;li&gt;Github 国际: &lt;a href="https://github.com/hmjz100/LinkSwift/raw/main/%EF%BC%88%E6%94%B9%EF%BC%89%E7%BD%91%E7%9B%98%E7%9B%B4%E9%93%BE%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B.user.js"&gt;hmjz100/LinkSwift/（改）网盘直链下载助手.user.js&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;OpenUserJS 国际（更新不及时）: &lt;a href="https://openuserjs.org/install/hmjz100/LinkSwift.user.js"&gt;hmjz100/LinkSwift.user.js&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;Gitee 国内: &lt;a href="https://gitee.com/hmjz100/LinkSwift/raw/main/%EF%BC%88%E6%94%B9%EF%BC%89%E7%BD%91%E7%9B%98%E7%9B%B4%E9%93%BE%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B.user.js"&gt;hmjz100/LinkSwift/（改）网盘直链下载助手.user.js&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;脚本猫 国内: &lt;a href="https://scriptcat.org/scripts/code/1604/LinkSwift.user.js"&gt;hmjz100/1604/LinkSwift.user.js&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;（改）百度网盘会员青春版 - 使用 "netfilter" 进一步优化/修改 UI 
+  &lt;ul&gt; 
+   &lt;li&gt;Github 国际: &lt;a href="https://github.com/hmjz100/LinkSwift/raw/main/%EF%BC%88%E6%94%B9%EF%BC%89%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%BC%9A%E5%91%98%E9%9D%92%E6%98%A5%E7%89%88.user.js"&gt;hmjz100/LinkSwift/（改）百度网盘会员青春版.user.js&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;OpenUserJS 国际（更新不及时）: &lt;a href="https://openuserjs.org/install/hmjz100/%EF%BC%88%E6%94%B9%EF%BC%89%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%BC%9A%E5%91%98%E9%9D%92%E6%98%A5%E7%89%88.user.js"&gt;hmjz100/（改）百度网盘会员青春版.user.js&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;Gitee 国内: &lt;a href="https://gitee.com/hmjz100/LinkSwift/raw/main/%EF%BC%88%E6%94%B9%EF%BC%89%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%BC%9A%E5%91%98%E9%9D%92%E6%98%A5%E7%89%88.user.js"&gt;hmjz100/LinkSwift/（改）百度网盘会员青春版.user.js&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;脚本猫 国内: &lt;a href="https://scriptcat.org/scripts/code/2236/%EF%BC%88%E6%94%B9%EF%BC%89%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%BC%9A%E5%91%98%E9%9D%92%E6%98%A5%E7%89%88.user.js"&gt;hmjz100/2236/（改）百度网盘会员青春版.user.js&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;说明&lt;/h2&gt; 
+&lt;p&gt;基于&lt;a href="https://www.baiduyun.wiki/install.html"&gt;【网盘直链下载助手】&lt;/a&gt;修改&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;原作者: &lt;a href="https://www.youxiaohou.com/"&gt;油小猴&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;原仓库: &lt;a href="https://github.com/syhyz1990/baiduyun"&gt;https://github.com/syhyz1990/baiduyun&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;本脚本发布至脚本猫: &lt;a href="https://scriptcat.org/script-show-page/1604"&gt;https://scriptcat.org/script-show-page/1604&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;还有 OpenUserJS: &lt;a href="https://openuserjs.org/scripts/hmjz100/LinkSwift"&gt;https://openuserjs.org/scripts/hmjz100/LinkSwift&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;简介&lt;/h2&gt; 
+&lt;p&gt;支持 百度网盘/阿里云盘/中国移动云盘/天翼云盘/迅雷云盘/夸克网盘/UC网盘/123云盘 八大网盘，相比较原脚本，增加了更多功能~&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!IMPORTANT] 本项目所获取的直链均基于网盘服务商公开的 API 接口实现。&lt;br /&gt; 项目并未以任何形式承诺、宣传或实现对网盘限速功能的破解。&lt;br /&gt; 若您获得了未受限制的直链，通常是由于平台策略差异或临时开放所致，&lt;br /&gt; 请勿将其误解为本项目具备破解限速的功能或提供相应服务。&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h4&gt;卑微的小标题&lt;/h4&gt; 
+&lt;p&gt;这个脚本只有一个人在修改~如果喜欢的话还请留个 Star 哦~&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;如有 bug 等问题请在这发&lt;a href="https://github.com/hmjz100/LinkSwift/issues"&gt;议题反馈&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;版本号&lt;/h2&gt; 
+&lt;p&gt;V. 1.1.1.9（基于 6.2.7 版本）&lt;br /&gt; 本脚本目前仅在 Github、Gitee、脚本猫脚本站 与 OpenUserJS 发布； 如果您是在其他渠道获取到本脚本的，安装后所带来的问题概不负责。&lt;/p&gt; 
+&lt;h2&gt;更新日志&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;版本号&lt;/th&gt; 
+   &lt;th&gt;创建日期&lt;/th&gt; 
+   &lt;th&gt;更新日志&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.1.1.9&lt;/td&gt; 
+   &lt;td&gt;2025年09月13日&lt;/td&gt; 
+   &lt;td&gt;1、修复 - 123 云盘下载视频变为缩略图。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.1.1.8&lt;/td&gt; 
+   &lt;td&gt;2025年09月11日&lt;/td&gt; 
+   &lt;td&gt;1、修复 - 适配新版 123 云盘分享页。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.1.1.7&lt;/td&gt; 
+   &lt;td&gt;2025年08月02日&lt;/td&gt; 
+   &lt;td&gt;1、修复 - 缺失声明 (at)connect 导致的问题。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.1.1.6&lt;/td&gt; 
+   &lt;td&gt;2025年07月28日&lt;/td&gt; 
+   &lt;td&gt;1、废弃 - 百度网盘 BDUSS Cookie 相关代码，转向使用更安全的 AccessToken；&lt;br /&gt;2、废弃 - 百度网盘分享页面下载相关代码；&lt;br /&gt;3、优化 - 下载窗口可在设置改变后动态修改界面。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.1.1.5&lt;/td&gt; 
+   &lt;td&gt;2025年07月21日&lt;/td&gt; 
+   &lt;td&gt;1、增加 AB Download Manager 下载方式；&lt;br /&gt;2、支持从设置页面一键返回下载窗口，无需重复获取链接。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.1.1.4&lt;/td&gt; 
+   &lt;td&gt;2025年07月19日&lt;/td&gt; 
+   &lt;td&gt;1、适配 123 云盘新版页面。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.1.1.3&lt;/td&gt; 
+   &lt;td&gt;2025年06月19日&lt;/td&gt; 
+   &lt;td&gt;1、修复夸克网盘无法获取下载链接的 Bug；&lt;br /&gt;2、修复 API 下载无法复制全部链接。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.1.1.2&lt;/td&gt; 
+   &lt;td&gt;2025年06月08日&lt;/td&gt; 
+   &lt;td&gt;1、修复无法删除第一项远程配置的 Bug。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.1.1.1&lt;/td&gt; 
+   &lt;td&gt;2025年06月02日&lt;/td&gt; 
+   &lt;td&gt;1、修复推送到 Aria2 时推送成功但报错的 Bug。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.1.1&lt;/td&gt; 
+   &lt;td&gt;2025年06月01日&lt;/td&gt; 
+   &lt;td&gt;六一儿童节快乐！萌萌哒更新~&lt;br /&gt;1、配置文件格式更新，支持添加、删除、切换多个服务配置；&lt;br /&gt;2、支持比特彗星推送下载，原 RPC 已并入 Aria2 下载；&lt;br /&gt;3、界面增加 Font Awesome 图标！更好看啦；&lt;br /&gt;4、优化脚本代码、界面，运行更轻快；&lt;br /&gt;5、修复上个版本遗存的问题。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.1.0.1&lt;/td&gt; 
+   &lt;td&gt;2025年05月09日&lt;/td&gt; 
+   &lt;td&gt;1、修复查看 RPC 下载任务的 Bug。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.1.0&lt;/td&gt; 
+   &lt;td&gt;2025年05月08日&lt;/td&gt; 
+   &lt;td&gt;1、支持 UC 网盘、123 云盘；&lt;br /&gt;2、改进了网盘主题的注入方式；&lt;br /&gt;3、聚合并重构了部分重复函数，对整体脚本逻辑进行了梳理和精简；&lt;br /&gt;4、将脚本执行阶段从 document-body 适配为 document-start。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.9.7&lt;/td&gt; 
+   &lt;td&gt;2025年02月13日&lt;/td&gt; 
+   &lt;td&gt;1、修复移动云盘下载错误；&lt;br /&gt;2、优化代码，更好的错误识别；&lt;br /&gt;3、去除了游小猴云服务。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.9.6&lt;/td&gt; 
+   &lt;td&gt;2024年10月28日&lt;/td&gt; 
+   &lt;td&gt;1、支持在百度网盘中选择文件夹下载；&lt;br /&gt;2、优化部分提示。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.9.5&lt;/td&gt; 
+   &lt;td&gt;2024年10月14日&lt;/td&gt; 
+   &lt;td&gt;1、修复因代码逻辑错误而无法获取链接的 Bug。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.9.4&lt;/td&gt; 
+   &lt;td&gt;2024年10月09日&lt;/td&gt; 
+   &lt;td&gt;1、修复因百度网盘 AccessToken 过期导致无法获取链接的 Bug。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.9.3&lt;/td&gt; 
+   &lt;td&gt;2024年08月10日&lt;/td&gt; 
+   &lt;td&gt;1、若网盘不支持在分享中下载，将仅显示保存网盘按钮；&lt;br /&gt;2、优化下载界面，支持选择 Iframe 或 Blob 的方式来下载文件，增加按钮的提示文本；&lt;br /&gt;3、优化 CSS 样式，统一了 SweetAlert2 按钮样式，同时适配了 Dark Reader 插件，界面更协调；&lt;br /&gt;4、支持修改油小猴网站主题色；&lt;br /&gt;5、原有主题相关设置现已移动至助手美化页面中。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.9.2&lt;/td&gt; 
+   &lt;td&gt;2024年08月04日&lt;/td&gt; 
+   &lt;td&gt;1、修复使用API下载时有可能会导致IDM无限弹窗的Bug。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.9.1&lt;/td&gt; 
+   &lt;td&gt;2024年07月30日&lt;/td&gt; 
+   &lt;td&gt;1、修复在百度网盘旧版下脚本无法删除元素的Bug。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.9&lt;/td&gt; 
+   &lt;td&gt;2024年07月29日&lt;/td&gt; 
+   &lt;td&gt;1、跟进官方V6.2.7，修复因无法进行百度授权而导致获取直链报错 9019 的 Bug。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.8.9&lt;/td&gt; 
+   &lt;td&gt;2024年07月22日&lt;/td&gt; 
+   &lt;td&gt;1、跟进官方V6.2.3，优化保存到网盘提示，修复阿里云盘、移动云盘失效的问题；&lt;br /&gt;2、优化修改网盘主题的代码，减少对页面的破坏。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.8.8&lt;/td&gt; 
+   &lt;td&gt;2024年05月09日&lt;/td&gt; 
+   &lt;td&gt;1、修复下载菜单字体过小的Bug。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.8.7&lt;/td&gt; 
+   &lt;td&gt;2024年05月06日&lt;/td&gt; 
+   &lt;td&gt;1、修复在阿里云盘分享页面下点击“未点亮”按钮时没有任何反应的Bug；&lt;br /&gt;2、更新并优化网盘界面精简规则；&lt;br /&gt;3、支持更换 百度网盘、阿里云盘、迅雷云盘、夸克网盘、移动云盘 界面的主题颜色。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.8.6&lt;/td&gt; 
+   &lt;td&gt;2024年04月08日&lt;/td&gt; 
+   &lt;td&gt;1、新增移动云盘会员中心页面，可在网盘中点击“会员中心”按钮查看(但无法使用第三方支付)。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.8.5&lt;/td&gt; 
+   &lt;td&gt;2024年04月07日&lt;/td&gt; 
+   &lt;td&gt;1、跟进官方V6.1.6，修复迅雷网盘分享页面无法选中文件，修复移动云盘无法判断页面。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.8.4&lt;/td&gt; 
+   &lt;td&gt;2024年04月07日&lt;/td&gt; 
+   &lt;td&gt;1、修复因重复绑定按钮而导致命令重复执行的Bug；&lt;br /&gt;2、优化调试信息界面排版；&lt;br /&gt;3、移除对百度网盘手机网页版的支持。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.8.3&lt;/td&gt; 
+   &lt;td&gt;2024年02月11日&lt;/td&gt; 
+   &lt;td&gt;1、适配阿里云盘新域名alipan.com。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.8.2&lt;/td&gt; 
+   &lt;td&gt;2023年11月29日&lt;/td&gt; 
+   &lt;td&gt;1、更换新图标。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.8.1&lt;/td&gt; 
+   &lt;td&gt;2023年11月25日&lt;/td&gt; 
+   &lt;td&gt;1、修复因重复绑定按钮而导致RPC下载会发送多条下载请求的Bug；&lt;br /&gt;2、选择不使用油小猴服务器时，“用ghproxy连接Github仓库”更换为“用jsdelivr连接Github仓库”；&lt;br /&gt;3、跟进官方V6.1.4版本，修复移动网盘无法获取链接，支持阿里云盘新域名alipan.com。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.8&lt;/td&gt; 
+   &lt;td&gt;2023年11月05日&lt;/td&gt; 
+   &lt;td&gt;1、修复迅雷网盘勾选文件后仍提示未勾选。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.7.9&lt;/td&gt; 
+   &lt;td&gt;2023年11月05日&lt;/td&gt; 
+   &lt;td&gt;1、更新精简网盘元素匹配规则，防止因通知横条而导致不能点到“API下载”以下的按钮。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.7.8&lt;/td&gt; 
+   &lt;td&gt;2023年09月10日&lt;/td&gt; 
+   &lt;td&gt;1、跟进官方V6.1.2，加入V2接口；&lt;br /&gt;2、修复百度网盘下载时因为获取不到accessToken而一直转圈。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.7.7&lt;/td&gt; 
+   &lt;td&gt;2023年09月03日&lt;/td&gt; 
+   &lt;td&gt;1、修复百度网盘的按钮会因为主题不同而被改变颜色的Bug；&lt;br /&gt;2、更新夸克网盘按钮与界面。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.7.6&lt;/td&gt; 
+   &lt;td&gt;2023年09月01日&lt;/td&gt; 
+   &lt;td&gt;1、修复“注入”功能；&lt;br /&gt;2、黑暗模式支持随设置热切换。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.7.5&lt;/td&gt; 
+   &lt;td&gt;2023年08月31日&lt;/td&gt; 
+   &lt;td&gt;1、修复阿里云盘下载逻辑；&lt;br /&gt;2、精简代码；&lt;br /&gt;3、支持深色模式；&lt;br /&gt;4、修改部分提示文本；&lt;br /&gt;5、修改部分CSS；&lt;br /&gt;6、设置可测试RPC连接。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.7.4&lt;/td&gt; 
+   &lt;td&gt;2023年08月27日&lt;/td&gt; 
+   &lt;td&gt;1、优化下载逻辑；&lt;br /&gt;2、修复阿里云盘无法使用API下载。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.7.3&lt;/td&gt; 
+   &lt;td&gt;2023年08月24日&lt;/td&gt; 
+   &lt;td&gt;1、如果出现网络请求错误时支持自动重新请求；&lt;br /&gt;2、可选择是否使用油小猴服务器。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.7.2&lt;/td&gt; 
+   &lt;td&gt;2023年07月29日&lt;/td&gt; 
+   &lt;td&gt;1、修复使用RPC下载时会重复发送链接的Bug。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.7.1&lt;/td&gt; 
+   &lt;td&gt;2023年07月27日&lt;/td&gt; 
+   &lt;td&gt;1、[实验功能，不影响正常使用]支持百度网盘手机网页版，勾选文件后可在顶栏找到“下载助手”按钮。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.7&lt;/td&gt; 
+   &lt;td&gt;2023年07月26日&lt;/td&gt; 
+   &lt;td&gt;1、重构夸克网盘、阿里云盘按钮。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.6.9&lt;/td&gt; 
+   &lt;td&gt;2023年07月25日&lt;/td&gt; 
+   &lt;td&gt;1、下载窗口加入关闭按钮。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.6.8&lt;/td&gt; 
+   &lt;td&gt;2023年07月24日&lt;/td&gt; 
+   &lt;td&gt;1、修复夸克网盘按钮错位。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.6.7&lt;/td&gt; 
+   &lt;td&gt;2023年07月24日&lt;/td&gt; 
+   &lt;td&gt;1、将百度网盘界面修改为主题色，可在设置选择是否修改；&lt;br /&gt;2、增加主题色名称，更改部分内容颜色；&lt;br /&gt;3、移动云盘API下载支持批量复制；&lt;br /&gt;4、优化控制台输出结果；&lt;br /&gt;5、百度网盘API下载不使用IDM时可以显示剩余时间；&lt;br /&gt;6、“取消点亮按钮”按钮的位置现已移动到设置页面。&lt;br /&gt;7、homo特有的彩蛋又回来力(喜)。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.6.6&lt;/td&gt; 
+   &lt;td&gt;2023年06月07日&lt;/td&gt; 
+   &lt;td&gt;1、修复暗号错误。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.6.5&lt;/td&gt; 
+   &lt;td&gt;2023年06月04日&lt;/td&gt; 
+   &lt;td&gt;1、修复即使输入正确暗号也不能成功点亮按钮的服务器错误。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.6.4&lt;/td&gt; 
+   &lt;td&gt;2023年06月02日&lt;/td&gt; 
+   &lt;td&gt;1、跟进官方V6.1.1版本，修复阿里云盘获取下载链接时的问题。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.6.3&lt;/td&gt; 
+   &lt;td&gt;2023年05月19日&lt;/td&gt; 
+   &lt;td&gt;1、照顾小屏幕用户，将始终显示复制全部链接的按钮；&lt;br /&gt;2、增加取消下载时的动画。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.6.2&lt;/td&gt; 
+   &lt;td&gt;2023年05月08日&lt;/td&gt; 
+   &lt;td&gt;1、修复部分界面错位，实现CSS内置；&lt;br /&gt;2、百度网盘界面将变得更加简洁。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.6.1&lt;/td&gt; 
+   &lt;td&gt;2023年05月06日&lt;/td&gt; 
+   &lt;td&gt;1、新增百度云盘API下载支持复制链接；&lt;br /&gt;2、为了照顾手机浏览器用户，增大项目之间间隙，新增隐藏IDM提示选项，可在助手设置中启用；&lt;br /&gt;3、修改CSS，界面会出现更多的主题色；&lt;br /&gt;4、支持在游小猴官网查看暗号；&lt;br /&gt;5、修复部分语法错误。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.6&lt;/td&gt; 
+   &lt;td&gt;2023年04月15日&lt;/td&gt; 
+   &lt;td&gt;1、修复了打开阿里云盘分享连接时因下载移动端广告导致只能点击API下载；&lt;br /&gt;2、跟进官方6.0.4版本，修复夸克网盘获取下载链接失效、支持移动云盘。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.5.5&lt;/td&gt; 
+   &lt;td&gt;2023年04月01日&lt;/td&gt; 
+   &lt;td&gt;1、感谢&lt;a href="https://github.com/Night-stars-1"&gt;Night-stars&lt;/a&gt;的帮助，修复因为原作者服务器导致的初始化暗号识别错误；&lt;br /&gt;2、修改一些文本以及提供给服务器的信息。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.5.4&lt;/td&gt; 
+   &lt;td&gt;2023年03月13日&lt;/td&gt; 
+   &lt;td&gt;1、小修小改css，让主题色出现在更多地方；&lt;br /&gt;2、修改下载链接获取失败的提示；&lt;br /&gt;3、增加更多的主题色，可在助手设置查看；&lt;br /&gt;4、homo彩蛋被删去力（悲）。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.5.3&lt;/td&gt; 
+   &lt;td&gt;2023年03月10日&lt;/td&gt; 
+   &lt;td&gt;1、阿里云盘可以摸到下载菜单了。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.5.2&lt;/td&gt; 
+   &lt;td&gt;2022年10月04日&lt;/td&gt; 
+   &lt;td&gt;1、增加脚本信息菜单；&lt;br /&gt;2、优化阿里云盘显示svg图片；&lt;br /&gt;3、修改弹窗按钮颜色。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.5.1&lt;/td&gt; 
+   &lt;td&gt;2022年09月30日&lt;/td&gt; 
+   &lt;td&gt;1、修复在切换按钮主题后夸克网盘不能正常显示按钮。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.5&lt;/td&gt; 
+   &lt;td&gt;2022年09月21日&lt;/td&gt; 
+   &lt;td&gt;1、跟进官方5.9.4版，修复文件名识别。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.4&lt;/td&gt; 
+   &lt;td&gt;2022年08月13日&lt;/td&gt; 
+   &lt;td&gt;1、修复了原作者留下的夸克网盘切换文件夹就多一个“下载助手”按钮的大BUG；&lt;br /&gt;2、在下载菜单增加“助手设置”“更新日志”按钮；&lt;br /&gt;3、修改阿里云盘和夸克网盘下载助手按钮样式；&lt;br /&gt;4、增加“取消点亮按钮”油猴菜单；&lt;br /&gt;5、修改部分css，使其与选择的主题更贴切。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.3&lt;/td&gt; 
+   &lt;td&gt;2022年08月11日&lt;/td&gt; 
+   &lt;td&gt;1、增加homo特有的彩蛋&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.2&lt;/td&gt; 
+   &lt;td&gt;2022年08月10日&lt;/td&gt; 
+   &lt;td&gt;1、修改并加宽界面，调整部分css，使Sweetalert2界面更美观，更与原版相近；&lt;br /&gt;2、修改部分提示文字，使文字更容易复制。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.1&lt;/td&gt; 
+   &lt;td&gt;2022年08月10日&lt;/td&gt; 
+   &lt;td&gt;1、去除更新提示；&lt;br /&gt;2、更新Sweetalert2至11版本。&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.0.0&lt;/td&gt; 
+   &lt;td&gt;2022年08月10日&lt;/td&gt; 
+   &lt;td&gt;(脚本发布)&lt;br /&gt;1、增加“注入”功能（bushi）；&lt;br /&gt;2、去除广告。&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;hr /&gt; 
+&lt;p align="center"&gt;这是给认真阅读完README文件的人的赞美&lt;/p&gt; 
+&lt;p align="center"&gt;个人博客: &lt;a target="_blank" href="https://hmjz100blog.rf.gd"&gt;https://hmjz100blog.rf.gd&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Wei-Shaw/claude-relay-service</title>
+      <link>https://github.com/Wei-Shaw/claude-relay-service</link>
+      <description>&lt;p&gt;CRS-自建Claude Code镜像，一站式开源中转服务，让 Claude、OpenAI、Gemini、Droid 订阅统一接入，支持拼车共享，更高效分摊成本，原生工具无缝使用。&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Claude Relay Service&lt;/h1&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;a href="https://opensource.org/licenses/MIT"&gt;&lt;img src="https://img.shields.io/badge/License-MIT-yellow.svg?sanitize=true" alt="License: MIT" /&gt;&lt;/a&gt; &lt;a href="https://nodejs.org/"&gt;&lt;img src="https://img.shields.io/badge/Node.js-18+-green.svg?sanitize=true" alt="Node.js" /&gt;&lt;/a&gt; &lt;a href="https://redis.io/"&gt;&lt;img src="https://img.shields.io/badge/Redis-6+-red.svg?sanitize=true" alt="Redis" /&gt;&lt;/a&gt; &lt;a href="https://www.docker.com/"&gt;&lt;img src="https://img.shields.io/badge/Docker-Ready-blue.svg?sanitize=true" alt="Docker" /&gt;&lt;/a&gt; &lt;a href="https://github.com/Wei-Shaw/claude-relay-service/actions/workflows/auto-release-pipeline.yml"&gt;&lt;img src="https://github.com/Wei-Shaw/claude-relay-service/actions/workflows/auto-release-pipeline.yml/badge.svg?sanitize=true" alt="Docker Build" /&gt;&lt;/a&gt; &lt;a href="https://hub.docker.com/r/weishaw/claude-relay-service"&gt;&lt;img src="https://img.shields.io/docker/pulls/weishaw/claude-relay-service" alt="Docker Pulls" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;🔐 自行搭建Claude API中转服务，支持多账户管理&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://raw.githubusercontent.com/Wei-Shaw/claude-relay-service/main/README_EN.md"&gt;English&lt;/a&gt; • &lt;a href="https://pincc.ai/"&gt;快速开始&lt;/a&gt; • &lt;a href="https://demo.pincc.ai/admin-next/login"&gt;演示站点&lt;/a&gt; • &lt;a href="https://t.me/claude_relay_service"&gt;公告频道&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;💎 Claude/Codex 拼车服务推荐&lt;/h2&gt; 
+&lt;div align="center"&gt; 
+ &lt;table&gt; 
+  &lt;thead&gt; 
+   &lt;tr&gt; 
+    &lt;th align="left"&gt;平台&lt;/th&gt; 
+    &lt;th align="left"&gt;类型&lt;/th&gt; 
+    &lt;th align="left"&gt;服务&lt;/th&gt; 
+    &lt;th align="left"&gt;介绍&lt;/th&gt; 
+   &lt;/tr&gt; 
+  &lt;/thead&gt; 
+  &lt;tbody&gt; 
+   &lt;tr&gt; 
+    &lt;td align="left"&gt;&lt;strong&gt;&lt;a href="https://pincc.ai/"&gt;pincc.ai&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+    &lt;td align="left"&gt;🏆 &lt;strong&gt;官方运营&lt;/strong&gt;&lt;/td&gt; 
+    &lt;td align="left"&gt;&lt;small&gt;✅ Claude Code&lt;br /&gt;✅ Codex CLI&lt;/small&gt;&lt;/td&gt; 
+    &lt;td align="left"&gt;项目直营，提供稳定的 Claude Code / Codex CLI 拼车服务&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td align="left"&gt;&lt;strong&gt;&lt;a href="https://ctok.ai/"&gt;ctok.ai&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+    &lt;td align="left"&gt;🤝 合作伙伴&lt;/td&gt; 
+    &lt;td align="left"&gt;&lt;small&gt;✅ Claude Code&lt;br /&gt;✅ Codex CLI&lt;/small&gt;&lt;/td&gt; 
+    &lt;td align="left"&gt;社区认证，提供 Claude Code / Codex CLI 拼车&lt;/td&gt; 
+   &lt;/tr&gt; 
+  &lt;/tbody&gt; 
+ &lt;/table&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;⚠️ 重要提醒&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;使用本项目前请仔细阅读：&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;🚨 &lt;strong&gt;服务条款风险&lt;/strong&gt;: 使用本项目可能违反Anthropic的服务条款。请在使用前仔细阅读Anthropic的用户协议，使用本项目的一切风险由用户自行承担。&lt;/p&gt; 
+&lt;p&gt;📖 &lt;strong&gt;免责声明&lt;/strong&gt;: 本项目仅供技术学习和研究使用，作者不对因使用本项目导致的账户封禁、服务中断或其他损失承担任何责任。&lt;/p&gt; 
+&lt;h2&gt;🤔 这个项目适合你吗？&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🌍 &lt;strong&gt;地区限制&lt;/strong&gt;: 所在地区无法直接访问Claude Code服务？&lt;/li&gt; 
+ &lt;li&gt;🔒 &lt;strong&gt;隐私担忧&lt;/strong&gt;: 担心第三方镜像服务会记录或泄露你的对话内容？&lt;/li&gt; 
+ &lt;li&gt;👥 &lt;strong&gt;成本分摊&lt;/strong&gt;: 想和朋友一起分摊Claude Code Max订阅费用？&lt;/li&gt; 
+ &lt;li&gt;⚡ &lt;strong&gt;稳定性&lt;/strong&gt;: 第三方镜像站经常故障不稳定，影响效率 ？&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;如果有以上困惑，那这个项目可能适合你。&lt;/p&gt; 
+&lt;h3&gt;适合的场景&lt;/h3&gt; 
+&lt;p&gt;✅ &lt;strong&gt;找朋友拼车&lt;/strong&gt;: 三五好友一起分摊Claude Code Max订阅&lt;br /&gt; ✅ &lt;strong&gt;隐私敏感&lt;/strong&gt;: 不想让第三方镜像看到你的对话内容&lt;br /&gt; ✅ &lt;strong&gt;技术折腾&lt;/strong&gt;: 有基本的技术基础，愿意自己搭建和维护&lt;br /&gt; ✅ &lt;strong&gt;稳定需求&lt;/strong&gt;: 需要长期稳定的Claude访问，不想受制于镜像站&lt;br /&gt; ✅ &lt;strong&gt;地区受限&lt;/strong&gt;: 无法直接访问Claude官方服务&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;💭 为什么要自己搭？&lt;/h2&gt; 
+&lt;h3&gt;现有镜像站可能的问题&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🕵️ &lt;strong&gt;隐私风险&lt;/strong&gt;: 你的对话内容都被人家看得一清二楚，商业机密什么的就别想了&lt;/li&gt; 
+ &lt;li&gt;🐌 &lt;strong&gt;性能不稳&lt;/strong&gt;: 用的人多了就慢，高峰期经常卡死&lt;/li&gt; 
+ &lt;li&gt;💰 &lt;strong&gt;价格不透明&lt;/strong&gt;: 不知道实际成本&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;自建的好处&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🔐 &lt;strong&gt;数据安全&lt;/strong&gt;: 所有接口请求都只经过你自己的服务器，直连Anthropic API&lt;/li&gt; 
+ &lt;li&gt;⚡ &lt;strong&gt;性能可控&lt;/strong&gt;: 就你们几个人用，Max 200刀套餐基本上可以爽用Opus&lt;/li&gt; 
+ &lt;li&gt;💰 &lt;strong&gt;成本透明&lt;/strong&gt;: 用了多少token一目了然，按官方价格换算了具体费用&lt;/li&gt; 
+ &lt;li&gt;📊 &lt;strong&gt;监控完整&lt;/strong&gt;: 使用情况、成本分析、性能监控全都有&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🚀 核心功能&lt;/h2&gt; 
+&lt;h3&gt;基础功能&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;多账户管理&lt;/strong&gt;: 可以添加多个Claude账户自动轮换&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;自定义API Key&lt;/strong&gt;: 给每个人分配独立的Key&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;使用统计&lt;/strong&gt;: 详细记录每个人用了多少token&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;高级功能&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🔄 &lt;strong&gt;智能切换&lt;/strong&gt;: 账户出问题自动换下一个&lt;/li&gt; 
+ &lt;li&gt;🚀 &lt;strong&gt;性能优化&lt;/strong&gt;: 连接池、缓存，减少延迟&lt;/li&gt; 
+ &lt;li&gt;📊 &lt;strong&gt;监控面板&lt;/strong&gt;: Web界面查看所有数据&lt;/li&gt; 
+ &lt;li&gt;🛡️ &lt;strong&gt;安全控制&lt;/strong&gt;: 访问限制、速率控制、客户端限制&lt;/li&gt; 
+ &lt;li&gt;🌐 &lt;strong&gt;代理支持&lt;/strong&gt;: 支持HTTP/SOCKS5代理&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📋 部署要求&lt;/h2&gt; 
+&lt;h3&gt;硬件要求（最低配置）&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;CPU&lt;/strong&gt;: 1核心就够了&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;内存&lt;/strong&gt;: 512MB（建议1GB）&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;硬盘&lt;/strong&gt;: 30GB可用空间&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;网络&lt;/strong&gt;: 能访问到Anthropic API（建议使用US地区的机器）&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;建议&lt;/strong&gt;: 2核4G的基本够了，网络尽量选回国线路快一点的（为了提高速度，建议不要开代理或者设置服务器的IP直连）&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;经验&lt;/strong&gt;: 阿里云、腾讯云的海外主机经测试会被Cloudflare拦截，无法直接访问claude api&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;软件要求&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Node.js&lt;/strong&gt; 18或更高版本&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Redis&lt;/strong&gt; 6或更高版本&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;操作系统&lt;/strong&gt;: 建议Linux&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;费用估算&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;服务器&lt;/strong&gt;: 轻量云服务器，一个月30-60块&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Claude订阅&lt;/strong&gt;: 看你怎么分摊了&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;其他&lt;/strong&gt;: 域名（可选）&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🚀 脚本部署（推荐）&lt;/h2&gt; 
+&lt;p&gt;推荐使用管理脚本进行一键部署，简单快捷，自动处理所有依赖和配置。&lt;/p&gt; 
+&lt;h3&gt;快速安装&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -fsSL https://pincc.ai/manage.sh -o manage.sh &amp;amp;&amp;amp; chmod +x manage.sh &amp;amp;&amp;amp; ./manage.sh install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;脚本功能&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;一键安装&lt;/strong&gt;: 自动检测系统环境，安装 Node.js 18+、Redis 等依赖&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;交互式配置&lt;/strong&gt;: 友好的配置向导，设置端口、Redis 连接等&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;自动启动&lt;/strong&gt;: 安装完成后自动启动服务并显示访问地址&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;便捷管理&lt;/strong&gt;: 通过 &lt;code&gt;crs&lt;/code&gt; 命令随时管理服务状态&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;管理命令&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;crs install   # 安装服务
+crs start     # 启动服务
+crs stop      # 停止服务
+crs restart   # 重启服务
+crs status    # 查看状态
+crs update    # 更新服务
+crs uninstall # 卸载服务
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;安装示例&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ crs install
+
+# 会依次询问：
+安装目录 (默认: ~/claude-relay-service):
+服务端口 (默认: 3000): 8080
+Redis 地址 (默认: localhost):
+Redis 端口 (默认: 6379):
+Redis 密码 (默认: 无密码):
+
+# 安装完成后自动启动并显示：
+服务已成功安装并启动！
+
+访问地址：
+  本地 Web: http://localhost:8080/web
+  公网 Web: http://YOUR_IP:8080/web
+
+管理员账号信息已保存到: data/init.json
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;系统要求&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;支持系统: Ubuntu/Debian、CentOS/RedHat、Arch Linux、macOS&lt;/li&gt; 
+ &lt;li&gt;自动安装 Node.js 18+ 和 Redis&lt;/li&gt; 
+ &lt;li&gt;Redis 使用系统默认位置，数据独立于应用&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📦 手动部署&lt;/h2&gt; 
+&lt;h3&gt;第一步：环境准备&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Ubuntu/Debian用户：&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# 安装Node.js
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# 安装Redis
+sudo apt update
+sudo apt install redis-server
+sudo systemctl start redis-server
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;CentOS/RHEL用户：&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# 安装Node.js
+curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
+sudo yum install -y nodejs
+
+# 安装Redis
+sudo yum install redis
+sudo systemctl start redis
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;第二步：下载和配置&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# 下载项目
+git clone https://github.com/Wei-Shaw//claude-relay-service.git
+cd claude-relay-service
+
+# 安装依赖
+npm install
+
+# 复制配置文件（重要！）
+cp config/config.example.js config/config.js
+cp .env.example .env
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;第三步：配置文件设置&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;编辑 &lt;code&gt;.env&lt;/code&gt; 文件：&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# 这两个密钥随便生成，但要记住
+JWT_SECRET=你的超级秘密密钥
+ENCRYPTION_KEY=32位的加密密钥随便写
+
+# Redis配置
+REDIS_HOST=localhost
+REDIS_PORT=6379
+REDIS_PASSWORD=
+
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;编辑 &lt;code&gt;config/config.js&lt;/code&gt; 文件：&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-javascript"&gt;module.exports = {
+  server: {
+    port: 3000, // 服务端口，可以改
+    host: '0.0.0.0' // 不用改
+  },
+  redis: {
+    host: '127.0.0.1', // Redis地址
+    port: 6379 // Redis端口
+  }
+  // 其他配置保持默认就行
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;第四步：安装前端依赖并构建&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# 安装前端依赖
+npm run install:web
+
+# 构建前端（生成 dist 目录）
+npm run build:web
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;第五步：启动服务&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# 初始化
+npm run setup # 会随机生成后台账号密码信息，存储在 data/init.json
+# 或者通过环境变量预设管理员凭据：
+# export ADMIN_USERNAME=cr_admin_custom
+# export ADMIN_PASSWORD=your-secure-password
+
+# 启动服务
+npm run service:start:daemon   # 后台运行
+
+# 查看状态
+npm run service:status
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🐳 Docker 部署&lt;/h2&gt; 
+&lt;h3&gt;Docker compose&lt;/h3&gt; 
+&lt;h4&gt;第一步：下载构建docker-compose.yml文件的脚本并执行&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -fsSL https://pincc.ai/crs-compose.sh -o crs-compose.sh &amp;amp;&amp;amp; chmod +x crs-compose.sh &amp;amp;&amp;amp; ./crs-compose.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;第二步：启动&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker-compose up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Docker Compose 配置&lt;/h3&gt; 
+&lt;p&gt;docker-compose.yml 已包含：&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;✅ 自动初始化管理员账号&lt;/li&gt; 
+ &lt;li&gt;✅ 数据持久化（logs和data目录自动挂载）&lt;/li&gt; 
+ &lt;li&gt;✅ Redis数据库&lt;/li&gt; 
+ &lt;li&gt;✅ 健康检查&lt;/li&gt; 
+ &lt;li&gt;✅ 自动重启&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;环境变量说明&lt;/h3&gt; 
+&lt;h4&gt;必填项&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;JWT_SECRET&lt;/code&gt;: JWT密钥，至少32个字符&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;ENCRYPTION_KEY&lt;/code&gt;: 加密密钥，必须是32个字符&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;可选项&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;ADMIN_USERNAME&lt;/code&gt;: 管理员用户名（不设置则自动生成）&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;ADMIN_PASSWORD&lt;/code&gt;: 管理员密码（不设置则自动生成）&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;LOG_LEVEL&lt;/code&gt;: 日志级别（默认：info）&lt;/li&gt; 
+ &lt;li&gt;更多配置项请参考 &lt;code&gt;.env.example&lt;/code&gt; 文件&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;管理员凭据获取方式&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;查看容器日志&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;docker logs claude-relay-service
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;查看挂载的文件&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;cat ./data/init.json
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;使用环境变量预设&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;# 在 .env 文件中设置
+ADMIN_USERNAME=cr_admin_custom
+ADMIN_PASSWORD=your-secure-password
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🎮 开始使用&lt;/h2&gt; 
+&lt;h3&gt;1. 打开管理界面&lt;/h3&gt; 
+&lt;p&gt;浏览器访问：&lt;code&gt;http://你的服务器IP:3000/web&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;管理员账号：&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;自动生成：查看 data/init.json&lt;/li&gt; 
+ &lt;li&gt;环境变量预设：通过 ADMIN_USERNAME 和 ADMIN_PASSWORD 设置&lt;/li&gt; 
+ &lt;li&gt;Docker 部署：查看容器日志 &lt;code&gt;docker logs claude-relay-service&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;2. 添加Claude账户&lt;/h3&gt; 
+&lt;p&gt;这一步比较关键，需要OAuth授权：&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;点击「Claude账户」标签&lt;/li&gt; 
+ &lt;li&gt;如果你担心多个账号共用1个IP怕被封禁，可以选择设置静态代理IP（可选）&lt;/li&gt; 
+ &lt;li&gt;点击「添加账户」&lt;/li&gt; 
+ &lt;li&gt;点击「生成授权链接」，会打开一个新页面&lt;/li&gt; 
+ &lt;li&gt;在新页面完成Claude登录和授权&lt;/li&gt; 
+ &lt;li&gt;复制返回的Authorization Code&lt;/li&gt; 
+ &lt;li&gt;粘贴到页面完成添加&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;: 如果你在国内，这一步可能需要科学上网。&lt;/p&gt; 
+&lt;h3&gt;3. 创建API Key&lt;/h3&gt; 
+&lt;p&gt;给每个使用者分配一个Key：&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;点击「API Keys」标签&lt;/li&gt; 
+ &lt;li&gt;点击「创建新Key」&lt;/li&gt; 
+ &lt;li&gt;给Key起个名字，比如「张三的Key」&lt;/li&gt; 
+ &lt;li&gt;设置使用限制（可选）： 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;速率限制&lt;/strong&gt;: 限制每个时间窗口的请求次数和Token使用量&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;并发限制&lt;/strong&gt;: 限制同时处理的请求数&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;模型限制&lt;/strong&gt;: 限制可访问的模型列表&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;客户端限制&lt;/strong&gt;: 限制只允许特定客户端使用（如ClaudeCode、Gemini-CLI等）&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;保存，记下生成的Key&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;4. 开始使用 Claude Code 和 Gemini CLI&lt;/h3&gt; 
+&lt;p&gt;现在你可以用自己的服务替换官方API了：&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Claude Code 设置环境变量：&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;默认使用标准 Claude 账号池：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;export ANTHROPIC_BASE_URL="http://127.0.0.1:3000/api/" # 根据实际填写你服务器的ip地址或者域名
+export ANTHROPIC_AUTH_TOKEN="后台创建的API密钥"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;VSCode Claude 插件配置：&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;如果使用 VSCode 的 Claude 插件，需要在 &lt;code&gt;~/.claude/config.json&lt;/code&gt; 文件中配置：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+    "primaryApiKey": "crs"
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;如果该文件不存在，请手动创建。Windows 用户路径为 &lt;code&gt;C:\Users\你的用户名\.claude\config.json&lt;/code&gt;。&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Gemini CLI 设置环境变量：&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;GEMINI_MODEL="gemini-2.5-pro"
+GOOGLE_GEMINI_BASE_URL="http://127.0.0.1:3000/gemini" # 根据实际填写你服务器的ip地址或者域名
+GEMINI_API_KEY="后台创建的API密钥"  # 使用相同的API密钥即可
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;使用 Claude Code：&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;claude
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;使用 Gemini CLI：&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;gemini  # 或其他 Gemini CLI 命令
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Codex 配置：&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;在 &lt;code&gt;~/.codex/config.toml&lt;/code&gt; 文件&lt;strong&gt;开头&lt;/strong&gt;添加以下配置：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-toml"&gt;model_provider = "crs"
+model = "gpt-5-codex"
+model_reasoning_effort = "high"
+disable_response_storage = true
+preferred_auth_method = "apikey"
+
+[model_providers.crs]
+name = "crs"
+base_url = "http://127.0.0.1:3000/openai"  # 根据实际填写你服务器的ip地址或者域名
+wire_api = "responses"
+requires_openai_auth = true
+env_key = "CRS_OAI_KEY"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;在 &lt;code&gt;~/.codex/auth.json&lt;/code&gt; 文件中配置API密钥为 null：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+    "OPENAI_API_KEY": null  
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;环境变量设置：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;export CRS_OAI_KEY="后台创建的API密钥"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;⚠️ 在通过 Nginx 反向代理 CRS 服务并使用 Codex CLI 时，需要在 http 块中添加 underscores_in_headers on;。因为 Nginx 默认会移除带下划线的请求头（如 session_id），一旦该头被丢弃，多账号环境下的粘性会话功能将失效。&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;strong&gt;Droid CLI 配置：&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Droid CLI 读取 &lt;code&gt;~/.factory/config.json&lt;/code&gt;。可以在该文件中添加自定义模型以指向本服务的新端点：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "custom_models": [
+    {
+      "model_display_name": "Sonnet 4.5 [crs]",
+      "model": "claude-sonnet-4-5-20250929",
+      "base_url": "http://127.0.0.1:3000/droid/claude",
+      "api_key": "后台创建的API密钥",
+      "provider": "anthropic",
+      "max_tokens": 8192
+    },
+    {
+      "model_display_name": "GPT5-Codex [crs]",
+      "model": "gpt-5-codex",
+      "base_url": "http://127.0.0.1:3000/droid/openai",
+      "api_key": "后台创建的API密钥",
+      "provider": "openai",
+      "max_tokens": 16384
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;💡 将示例中的 &lt;code&gt;http://127.0.0.1:3000&lt;/code&gt; 替换为你的服务域名或公网地址，并写入后台生成的 API 密钥（cr_ 开头）。&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;5. 第三方工具API接入&lt;/h3&gt; 
+&lt;p&gt;本服务支持多种API端点格式，方便接入不同的第三方工具（如Cherry Studio等）。&lt;/p&gt; 
+&lt;h4&gt;Cherry Studio 接入示例&lt;/h4&gt; 
+&lt;p&gt;Cherry Studio支持多种AI服务的接入，下面是不同账号类型的详细配置：&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;1. Claude账号接入：&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;# API地址
+http://你的服务器:3000/claude
+
+# 模型ID示例
+claude-sonnet-4-5-20250929 # Claude Sonnet 4.5
+claude-opus-4-20250514     # Claude Opus 4
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;配置步骤：&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;供应商类型选择"Anthropic"&lt;/li&gt; 
+ &lt;li&gt;API地址填入：&lt;code&gt;http://你的服务器:3000/claude&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;API Key填入：后台创建的API密钥（cr_开头）&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;2. Gemini账号接入：&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;# API地址
+http://你的服务器:3000/gemini
+
+# 模型ID示例
+gemini-2.5-pro             # Gemini 2.5 Pro
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;配置步骤：&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;供应商类型选择"Gemini"&lt;/li&gt; 
+ &lt;li&gt;API地址填入：&lt;code&gt;http://你的服务器:3000/gemini&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;API Key填入：后台创建的API密钥（cr_开头）&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;3. Codex接入：&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;# API地址
+http://你的服务器:3000/openai
+
+# 模型ID（固定）
+gpt-5                      # Codex使用固定模型ID
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;配置步骤：&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;供应商类型选择"Openai-Response"&lt;/li&gt; 
+ &lt;li&gt;API地址填入：&lt;code&gt;http://你的服务器:3000/openai&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;API Key填入：后台创建的API密钥（cr_开头）&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;重要&lt;/strong&gt;：Codex只支持Openai-Response标准&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Cherry Studio 地址格式重要说明：&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;推荐格式&lt;/strong&gt;：&lt;code&gt;http://你的服务器:3000/claude&lt;/code&gt;（不加结尾 &lt;code&gt;/&lt;/code&gt;，让 Cherry Studio 自动加上 v1）&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;等效格式&lt;/strong&gt;：&lt;code&gt;http://你的服务器:3000/claude/v1/&lt;/code&gt;（手动指定 v1 并加结尾 &lt;code&gt;/&lt;/code&gt;）&lt;/li&gt; 
+ &lt;li&gt;💡 &lt;strong&gt;说明&lt;/strong&gt;：这两种格式在 Cherry Studio 中是完全等效的&lt;/li&gt; 
+ &lt;li&gt;❌ &lt;strong&gt;错误格式&lt;/strong&gt;：&lt;code&gt;http://你的服务器:3000/claude/&lt;/code&gt;（单独的 &lt;code&gt;/&lt;/code&gt; 结尾会被 Cherry Studio 忽略 v1 版本）&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;其他第三方工具接入&lt;/h4&gt; 
+&lt;p&gt;&lt;strong&gt;接入要点：&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;所有账号类型都使用相同的API密钥（在后台统一创建）&lt;/li&gt; 
+ &lt;li&gt;根据不同的路由前缀自动识别账号类型&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/claude/&lt;/code&gt; - 使用Claude账号池&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/droid/claude/&lt;/code&gt; - 使用Droid类型Claude账号池（只建议api调用或Droid Cli中使用）&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/gemini/&lt;/code&gt; - 使用Gemini账号池&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/openai/&lt;/code&gt; - 使用Codex账号（只支持Openai-Response格式）&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/droid/openai/&lt;/code&gt; - 使用Droid类型OpenAI兼容账号池（只建议api调用或Droid Cli中使用）&lt;/li&gt; 
+ &lt;li&gt;支持所有标准API端点（messages、models等）&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;重要说明：&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;确保在后台已添加对应类型的账号（Claude/Gemini/Codex）&lt;/li&gt; 
+ &lt;li&gt;API密钥可以通用，系统会根据路由自动选择账号类型&lt;/li&gt; 
+ &lt;li&gt;建议为不同用户创建不同的API密钥便于使用统计&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🔧 日常维护&lt;/h2&gt; 
+&lt;h3&gt;服务管理&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# 查看服务状态
+npm run service:status
+
+# 查看日志
+npm run service:logs
+
+# 重启服务
+npm run service:restart:daemon
+
+# 停止服务
+npm run service:stop
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;监控使用情况&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Web界面&lt;/strong&gt;: &lt;code&gt;http://你的域名:3000/web&lt;/code&gt; - 查看使用统计&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;健康检查&lt;/strong&gt;: &lt;code&gt;http://你的域名:3000/health&lt;/code&gt; - 确认服务正常&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;日志文件&lt;/strong&gt;: &lt;code&gt;logs/&lt;/code&gt; 目录下的各种日志文件&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;升级指南&lt;/h3&gt; 
+&lt;p&gt;当有新版本发布时，按照以下步骤升级服务：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# 1. 进入项目目录
+cd claude-relay-service
+
+# 2. 拉取最新代码
+git pull origin main
+
+# 如果遇到 package-lock.json 冲突，使用远程版本
+git checkout --theirs package-lock.json
+git add package-lock.json
+
+# 3. 安装新的依赖（如果有）
+npm install
+
+# 4. 安装并构建前端
+npm run install:web
+npm run build:web
+
+# 5. 重启服务
+npm run service:restart:daemon
+
+# 6. 检查服务状态
+npm run service:status
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;注意事项：&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;升级前建议备份重要配置文件（.env, config/config.js）&lt;/li&gt; 
+ &lt;li&gt;查看更新日志了解是否有破坏性变更&lt;/li&gt; 
+ &lt;li&gt;如果有数据库结构变更，会自动迁移&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🔒 客户端限制功能&lt;/h2&gt; 
+&lt;h3&gt;功能说明&lt;/h3&gt; 
+&lt;p&gt;客户端限制功能允许你控制每个API Key可以被哪些客户端使用，通过User-Agent识别客户端，提高API的安全性。&lt;/p&gt; 
+&lt;h3&gt;使用方法&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;在创建或编辑API Key时启用客户端限制&lt;/strong&gt;：&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;勾选"启用客户端限制"&lt;/li&gt; 
+   &lt;li&gt;选择允许的客户端（支持多选）&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;预定义客户端&lt;/strong&gt;：&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;ClaudeCode&lt;/strong&gt;: 官方Claude CLI（匹配 &lt;code&gt;claude-cli/x.x.x (external, cli)&lt;/code&gt; 格式）&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Gemini-CLI&lt;/strong&gt;: Gemini命令行工具（匹配 &lt;code&gt;GeminiCLI/vx.x.x (platform; arch)&lt;/code&gt; 格式）&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;调试和诊断&lt;/strong&gt;：&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;系统会在日志中记录所有请求的User-Agent&lt;/li&gt; 
+   &lt;li&gt;客户端验证失败时会返回403错误并记录详细信息&lt;/li&gt; 
+   &lt;li&gt;通过日志可以查看实际的User-Agent格式，方便配置自定义客户端&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;日志示例&lt;/h3&gt; 
+&lt;p&gt;认证成功时的日志：&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;🔓 Authenticated request from key: 测试Key (key-id) in 5ms
+   User-Agent: "claude-cli/1.0.58 (external, cli)"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;客户端限制检查日志：&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;🔍 Checking client restriction for key: key-id (测试Key)
+   User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+   Allowed clients: claude_code, gemini_cli
+🚫 Client restriction failed for key: key-id (测试Key) from 127.0.0.1, User-Agent: Mozilla/5.0...
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;常见问题处理&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Redis连不上？&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# 检查Redis是否启动
+redis-cli ping
+
+# 应该返回 PONG
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;OAuth授权失败？&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;检查代理设置是否正确&lt;/li&gt; 
+ &lt;li&gt;确保能正常访问 claude.ai&lt;/li&gt; 
+ &lt;li&gt;清除浏览器缓存重试&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;API请求失败？&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;检查API Key是否正确&lt;/li&gt; 
+ &lt;li&gt;查看日志文件找错误信息&lt;/li&gt; 
+ &lt;li&gt;确认Claude账户状态正常&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🛠️ 进阶&lt;/h2&gt; 
+&lt;h3&gt;反向代理部署指南&lt;/h3&gt; 
+&lt;p&gt;在生产环境中，建议通过反向代理进行连接，以便使用自动 HTTPS、安全头部和性能优化。下面提供两种常用方案： &lt;strong&gt;Caddy&lt;/strong&gt; 和 &lt;strong&gt;Nginx Proxy Manager (NPM)&lt;/strong&gt;。&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Caddy 方案&lt;/h2&gt; 
+&lt;p&gt;Caddy 是一款自动管理 HTTPS 证书的 Web 服务器，配置简单、性能优秀，很适合不需要 Docker 环境的部署方案。&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;1. 安装 Caddy&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Ubuntu/Debian
+sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+sudo apt update
+sudo apt install caddy
+
+# CentOS/RHEL/Fedora
+sudo yum install yum-plugin-copr
+sudo yum copr enable @caddy/caddy
+sudo yum install caddy
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;2. Caddy 配置&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;编辑 &lt;code&gt;/etc/caddy/Caddyfile&lt;/code&gt; ：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-caddy"&gt;your-domain.com {
+    # 反向代理到本地服务
+    reverse_proxy 127.0.0.1:3000 {
+        # 支持流式响应或 SSE
+        flush_interval -1
+
+        # 传递真实 IP
+        header_up X-Real-IP {remote_host}
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto {scheme}
+
+        # 长读/写超时配置
+        transport http {
+            read_timeout 300s
+            write_timeout 300s
+            dial_timeout 30s
+        }
+    }
+
+    # 安全头部
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        X-Frame-Options "DENY"
+        X-Content-Type-Options "nosniff"
+        -Server
+    }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;3. 启动 Caddy&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;sudo caddy validate --config /etc/caddy/Caddyfile
+sudo systemctl start caddy
+sudo systemctl enable caddy
+sudo systemctl status caddy
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;4. 服务配置&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Caddy 会自动管理 HTTPS，因此可以将服务限制在本地进行监听：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-javascript"&gt;// config/config.js
+module.exports = {
+  server: {
+    port: 3000,
+    host: '127.0.0.1' // 只监听本地
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Caddy 特点&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🔒 自动 HTTPS，零配置证书管理&lt;/li&gt; 
+ &lt;li&gt;🛡️ 安全默认配置，启用现代 TLS 套件&lt;/li&gt; 
+ &lt;li&gt;⚡ HTTP/2 和流式传输支持&lt;/li&gt; 
+ &lt;li&gt;🔧 配置文件简洁，易于维护&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Nginx Proxy Manager (NPM) 方案&lt;/h2&gt; 
+&lt;p&gt;Nginx Proxy Manager 通过图形化界面管理反向代理和 HTTPS 证书，並以 Docker 容器部署。&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;1. 在 NPM 创建新的 Proxy Host&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Details 配置如下：&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;项目&lt;/th&gt; 
+   &lt;th&gt;设置&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Domain Names&lt;/td&gt; 
+   &lt;td&gt;relay.example.com&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Scheme&lt;/td&gt; 
+   &lt;td&gt;http&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Forward Hostname / IP&lt;/td&gt; 
+   &lt;td&gt;192.168.0.1 (docker 机器 IP)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Forward Port&lt;/td&gt; 
+   &lt;td&gt;3000&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Block Common Exploits&lt;/td&gt; 
+   &lt;td&gt;☑️&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Websockets Support&lt;/td&gt; 
+   &lt;td&gt;❌ &lt;strong&gt;关闭&lt;/strong&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Cache Assets&lt;/td&gt; 
+   &lt;td&gt;❌ &lt;strong&gt;关闭&lt;/strong&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Access List&lt;/td&gt; 
+   &lt;td&gt;Publicly Accessible&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;注意：&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;请确保 Claude Relay Service &lt;strong&gt;监听 host 为 &lt;code&gt;0.0.0.0&lt;/code&gt; 、容器 IP 或本机 IP&lt;/strong&gt;，以便 NPM 实现内网连接。&lt;/li&gt; 
+  &lt;li&gt;&lt;strong&gt;Websockets Support 和 Cache Assets 必须关闭&lt;/strong&gt;，否则会导致 SSE / 流式响应失败。&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;strong&gt;2. Custom locations&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;無需添加任何内容，保持为空。&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;3. SSL 设置&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;SSL Certificate&lt;/strong&gt;: Request a new SSL Certificate (Let's Encrypt) 或已有证书&lt;/li&gt; 
+ &lt;li&gt;☑️ &lt;strong&gt;Force SSL&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;☑️ &lt;strong&gt;HTTP/2 Support&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;☑️ &lt;strong&gt;HSTS Enabled&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;☑️ &lt;strong&gt;HSTS Subdomains&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;4. Advanced 配置&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Custom Nginx Configuration 中添加以下内容：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-nginx"&gt;# 传递真实用户 IP
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Forwarded-Proto $scheme;
+
+# 支持 WebSocket / SSE 等流式通信
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection "upgrade";
+proxy_buffering off;
+
+# 长连接 / 超时设置（适合 AI 聊天流式传输）
+proxy_read_timeout 300s;
+proxy_send_timeout 300s;
+proxy_connect_timeout 30s;
+
+# ---- 安全性设置 ----
+# 严格 HTTPS 策略 (HSTS)
+add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+
+# 阻挡点击劫持与内容嗅探
+add_header X-Frame-Options "DENY" always;
+add_header X-Content-Type-Options "nosniff" always;
+
+# Referrer / Permissions 限制策略
+add_header Referrer-Policy "no-referrer-when-downgrade" always;
+add_header Permissions-Policy "camera=(), microphone=(), geolocation=()" always;
+
+# 隐藏服务器信息（等效于 Caddy 的 `-Server`）
+proxy_hide_header Server;
+
+# ---- 性能微调 ----
+# 关闭代理端缓存，确保即时响应（SSE / Streaming）
+proxy_cache_bypass $http_upgrade;
+proxy_no_cache $http_upgrade;
+proxy_request_buffering off;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;4. 启动和验证&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;保存后等待 NPM 自动申请 Let's Encrypt 证书（如果有）。&lt;/li&gt; 
+ &lt;li&gt;Dashboard 中查看 Proxy Host 状态，确保显示为 "Online"。&lt;/li&gt; 
+ &lt;li&gt;访问 &lt;code&gt;https://relay.example.com&lt;/code&gt;，如果显示绿色锁图标即表示 HTTPS 正常。&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;NPM 特点&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🔒 自动申请和续期证书&lt;/li&gt; 
+ &lt;li&gt;🔧 图形化界面，方便管理多服务&lt;/li&gt; 
+ &lt;li&gt;⚡ 原生支持 HTTP/2 / HTTPS&lt;/li&gt; 
+ &lt;li&gt;🚀 适合 Docker 容器部署&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;上述两种方案均可用于生产部署。&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;💡 使用建议&lt;/h2&gt; 
+&lt;h3&gt;账户管理&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;定期检查&lt;/strong&gt;: 每周看看账户状态，及时处理异常&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;合理分配&lt;/strong&gt;: 可以给不同的人分配不同的apikey，可以根据不同的apikey来分析用量&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;安全建议&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;使用HTTPS&lt;/strong&gt;: 强烈建议使用Caddy反向代理（自动HTTPS），确保数据传输安全&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;定期备份&lt;/strong&gt;: 重要配置和数据要备份&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;监控日志&lt;/strong&gt;: 定期查看异常日志&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;更新密钥&lt;/strong&gt;: 定期更换JWT和加密密钥&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;防火墙设置&lt;/strong&gt;: 只开放必要的端口（80, 443），隐藏直接服务端口&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🆘 遇到问题怎么办？&lt;/h2&gt; 
+&lt;h3&gt;自助排查&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;查看日志&lt;/strong&gt;: &lt;code&gt;logs/&lt;/code&gt; 目录下的日志文件&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;检查配置&lt;/strong&gt;: 确认配置文件设置正确&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;测试连通性&lt;/strong&gt;: 用 curl 测试API是否正常&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;重启服务&lt;/strong&gt;: 有时候重启一下就好了&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;寻求帮助&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;GitHub Issues&lt;/strong&gt;: 提交详细的错误信息&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;查看文档&lt;/strong&gt;: 仔细阅读错误信息和文档&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;社区讨论&lt;/strong&gt;: 看看其他人是否遇到类似问题&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📄 许可证&lt;/h2&gt; 
+&lt;p&gt;本项目采用 &lt;a href="https://raw.githubusercontent.com/Wei-Shaw/claude-relay-service/main/LICENSE"&gt;MIT许可证&lt;/a&gt;。&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;strong&gt;⭐ 觉得有用的话给个Star呗，这是对作者最大的鼓励！&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;🤝 有问题欢迎提Issue，有改进建议欢迎PR&lt;/strong&gt;&lt;/p&gt; 
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>fchollet/ARC-AGI</title>
+      <link>https://github.com/fchollet/ARC-AGI</link>
+      <description>&lt;p&gt;The Abstraction and Reasoning Corpus&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Abstraction and Reasoning Corpus for Artificial General Intelligence v1 (ARC-AGI-1)&lt;/h1&gt; 
+&lt;p&gt;This repository contains the ARC-AGI-1 task data, as well as a browser-based interface for humans to try their hand at solving the tasks manually.&lt;/p&gt; 
+&lt;p&gt;See also the &lt;a href="https://github.com/arcprize/ARC-AGI-2"&gt;ARC-AGI-2 repository&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;"ARC can be seen as a general artificial intelligence benchmark, as a program synthesis benchmark, or as a psychometric intelligence test. It is targeted at both humans and artificially intelligent systems that aim at emulating a human-like form of general fluid intelligence."&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;A complete description of the dataset, its goals, and its underlying logic, can be found in: &lt;a href="https://arxiv.org/abs/1911.01547"&gt;On the Measure of Intelligence&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;As a reminder, a test-taker is said to solve a task when, upon seeing the task for the first time, they are able to produce the correct output grid for &lt;em&gt;all&lt;/em&gt; test inputs in the task (this includes picking the dimensions of the output grid). For each test input, the test-taker is allowed 3 trials (this holds for all test-takers, either humans or AI).&lt;/p&gt; 
+&lt;h2&gt;Task file format&lt;/h2&gt; 
+&lt;p&gt;The &lt;code&gt;data&lt;/code&gt; directory contains two subdirectories:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;data/training&lt;/code&gt;: contains the task files for training (400 tasks). Use these to prototype your algorithm or to train your algorithm to acquire ARC-relevant cognitive priors.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;data/evaluation&lt;/code&gt;: contains the task files for evaluation (400 tasks). Use these to evaluate your final algorithm. To ensure fair evaluation results, do not leak information from the evaluation set into your algorithm (e.g. by looking at the evaluation tasks yourself during development, or by repeatedly modifying an algorithm while using its evaluation score as feedback).&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The tasks are stored in JSON format. Each task JSON file contains a dictionary with two fields:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;"train"&lt;/code&gt;: demonstration input/output pairs. It is a list of "pairs" (typically 3 pairs).&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;"test"&lt;/code&gt;: test input/output pairs. It is a list of "pairs" (typically 1 pair).&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;A "pair" is a dictionary with two fields:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;"input"&lt;/code&gt;: the input "grid" for the pair.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;"output"&lt;/code&gt;: the output "grid" for the pair.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;A "grid" is a rectangular matrix (list of lists) of integers between 0 and 9 (inclusive). The smallest possible grid size is 1x1 and the largest is 30x30.&lt;/p&gt; 
+&lt;p&gt;When looking at a task, a test-taker has access to inputs &amp;amp; outputs of the demonstration pairs, plus the input(s) of the test pair(s). The goal is to construct the output grid(s) corresponding to the test input grid(s), using 3 trials for each test input. "Constructing the output grid" involves picking the height and width of the output grid, then filling each cell in the grid with a symbol (integer between 0 and 9, which are visualized as colors). Only &lt;em&gt;exact&lt;/em&gt; solutions (all cells match the expected answer) can be said to be correct.&lt;/p&gt; 
+&lt;h2&gt;Usage of the testing interface&lt;/h2&gt; 
+&lt;p&gt;The testing interface is located at &lt;code&gt;apps/testing_interface.html&lt;/code&gt;. Open it in a web browser (Chrome recommended). It will prompt you to select a task JSON file.&lt;/p&gt; 
+&lt;p&gt;After loading a task, you will enter the test space, which looks like this:&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://arc-benchmark.s3.amazonaws.com/figs/arc_test_space.png" alt="test space" /&gt;&lt;/p&gt; 
+&lt;p&gt;On the left, you will see the input/output pairs demonstrating the nature of the task. In the middle, you will see the current test input grid. On the right, you will see the controls you can use to construct the corresponding output grid.&lt;/p&gt; 
+&lt;p&gt;You have access to the following tools:&lt;/p&gt; 
+&lt;h3&gt;Grid controls&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Resize: input a grid size (e.g. "10x20" or "4x4") and click "Resize". This preserves existing grid content (in the top left corner).&lt;/li&gt; 
+ &lt;li&gt;Copy from input: copy the input grid to the output grid. This is useful for tasks where the output consists of some modification of the input.&lt;/li&gt; 
+ &lt;li&gt;Reset grid: fill the grid with 0s.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Symbol controls&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Edit: select a color (symbol) from the color picking bar, then click on a cell to set its color.&lt;/li&gt; 
+ &lt;li&gt;Select: click and drag on either the output grid or the input grid to select cells. 
+  &lt;ul&gt; 
+   &lt;li&gt;After selecting cells on the output grid, you can select a color from the color picking to set the color of the selected cells. This is useful to draw solid rectangles or lines.&lt;/li&gt; 
+   &lt;li&gt;After selecting cells on either the input grid or the output grid, you can press C to copy their content. After copying, you can select a cell on the output grid and press "V" to paste the copied content. You should select the cell in the top left corner of the zone you want to paste into.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Floodfill: click on a cell from the output grid to color all connected cells to the selected color. "Connected cells" are contiguous cells with the same color.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Answer validation&lt;/h3&gt; 
+&lt;p&gt;When your output grid is ready, click the green "Submit!" button to check your answer. We do not enforce the 3-trials rule.&lt;/p&gt; 
+&lt;p&gt;After you've obtained the correct answer for the current test input grid, you can switch to the next test input grid for the task using the "Next test input" button (if there is any available; most tasks only have one test input).&lt;/p&gt; 
+&lt;p&gt;When you're done with a task, use the "load task" button to open a new task.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
