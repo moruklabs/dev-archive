@@ -1,0 +1,2321 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub TypeScript Weekly Trending</title>
+    <description>Weekly Trending of TypeScript in GitHub</description>
+    <pubDate>Tue, 21 Oct 2025 01:50:23 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>satnaing/shadcn-admin</title>
+      <link>https://github.com/satnaing/shadcn-admin</link>
+      <description>&lt;p&gt;Admin Dashboard UI built with Shadcn and Vite.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Shadcn Admin Dashboard&lt;/h1&gt; 
+&lt;p&gt;Admin Dashboard UI crafted with Shadcn and Vite. Built with responsiveness and accessibility in mind.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/satnaing/shadcn-admin/main/public/images/shadcn-admin.png" alt="alt text" /&gt;&lt;/p&gt; 
+&lt;p&gt;I've been creating dashboard UIs at work and for my personal projects. I always wanted to make a reusable collection of dashboard UI for future projects; and here it is now. While I've created a few custom components, some of the code is directly adapted from ShadcnUI examples.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;This is not a starter project (template) though. I'll probably make one in the future.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Light/dark mode&lt;/li&gt; 
+ &lt;li&gt;Responsive&lt;/li&gt; 
+ &lt;li&gt;Accessible&lt;/li&gt; 
+ &lt;li&gt;With built-in Sidebar component&lt;/li&gt; 
+ &lt;li&gt;Global search command&lt;/li&gt; 
+ &lt;li&gt;10+ pages&lt;/li&gt; 
+ &lt;li&gt;Extra custom components&lt;/li&gt; 
+ &lt;li&gt;RTL support&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Customized Components (click to expand)&lt;/summary&gt; 
+ &lt;p&gt;This project uses Shadcn UI components, but some have been slightly modified for better RTL (Right-to-Left) support and other improvements. These customized components differ from the original Shadcn UI versions.&lt;/p&gt; 
+ &lt;p&gt;If you want to update components using the Shadcn CLI (e.g., &lt;code&gt;npx shadcn@latest add &amp;lt;component&amp;gt;&lt;/code&gt;), it's generally safe for non-customized components. For the listed customized ones, you may need to manually merge changes to preserve the project's modifications and avoid overwriting RTL support or other updates.&lt;/p&gt; 
+ &lt;blockquote&gt; 
+  &lt;p&gt;If you don't require RTL support, you can safely update the 'RTL Updated Components' via the Shadcn CLI, as these changes are primarily for RTL compatibility. The 'Modified Components' may have other customizations to consider.&lt;/p&gt; 
+ &lt;/blockquote&gt; 
+ &lt;h3&gt;Modified Components&lt;/h3&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;scroll-area&lt;/li&gt; 
+  &lt;li&gt;sonner&lt;/li&gt; 
+  &lt;li&gt;separator&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;h3&gt;RTL Updated Components&lt;/h3&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;alert-dialog&lt;/li&gt; 
+  &lt;li&gt;calendar&lt;/li&gt; 
+  &lt;li&gt;command&lt;/li&gt; 
+  &lt;li&gt;dialog&lt;/li&gt; 
+  &lt;li&gt;dropdown-menu&lt;/li&gt; 
+  &lt;li&gt;select&lt;/li&gt; 
+  &lt;li&gt;table&lt;/li&gt; 
+  &lt;li&gt;sheet&lt;/li&gt; 
+  &lt;li&gt;sidebar&lt;/li&gt; 
+  &lt;li&gt;switch&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;strong&gt;Modified Components&lt;/strong&gt;: These have general updates, potentially including RTL adjustments.&lt;/li&gt; 
+  &lt;li&gt;&lt;strong&gt;RTL Updated Components&lt;/strong&gt;: These have specific changes for RTL language support (e.g., layout, positioning).&lt;/li&gt; 
+  &lt;li&gt;For implementation details, check the source files in &lt;code&gt;src/components/ui/&lt;/code&gt;.&lt;/li&gt; 
+  &lt;li&gt;All other Shadcn UI components in the project are standard and can be safely updated via the CLI.&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;h2&gt;Tech Stack&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;UI:&lt;/strong&gt; &lt;a href="https://ui.shadcn.com"&gt;ShadcnUI&lt;/a&gt; (TailwindCSS + RadixUI)&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Build Tool:&lt;/strong&gt; &lt;a href="https://vitejs.dev/"&gt;Vite&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Routing:&lt;/strong&gt; &lt;a href="https://tanstack.com/router/latest"&gt;TanStack Router&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Type Checking:&lt;/strong&gt; &lt;a href="https://www.typescriptlang.org/"&gt;TypeScript&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Linting/Formatting:&lt;/strong&gt; &lt;a href="https://eslint.org/"&gt;Eslint&lt;/a&gt; &amp;amp; &lt;a href="https://prettier.io/"&gt;Prettier&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Icons:&lt;/strong&gt; &lt;a href="https://lucide.dev/icons/"&gt;Lucide Icons&lt;/a&gt;, &lt;a href="https://tabler.io/icons"&gt;Tabler Icons&lt;/a&gt; (Brand icons only)&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Auth (partial):&lt;/strong&gt; &lt;a href="https://go.clerk.com/GttUAaK"&gt;Clerk&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Run Locally&lt;/h2&gt; 
+&lt;p&gt;Clone the project&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;  git clone https://github.com/satnaing/shadcn-admin.git
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Go to the project directory&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;  cd shadcn-admin
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Install dependencies&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;  pnpm install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Start the server&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;  pnpm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Sponsoring this project ❤️&lt;/h2&gt; 
+&lt;p&gt;If you find this project helpful or use this in your own work, consider &lt;a href="https://github.com/sponsors/satnaing"&gt;sponsoring me&lt;/a&gt; to support development and maintenance. You can &lt;a href="https://buymeacoffee.com/satnaing"&gt;buy me a coffee&lt;/a&gt; as well. Don’t worry, every penny helps. Thank you! 🙏&lt;/p&gt; 
+&lt;p&gt;For questions or sponsorship inquiries, feel free to reach out at &lt;a href="mailto:contact@satnaing.dev"&gt;contact@satnaing.dev&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Current Sponsor&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://go.clerk.com/GttUAaK"&gt;Clerk&lt;/a&gt; - for backing the implementation of Clerk in this project&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Author&lt;/h2&gt; 
+&lt;p&gt;Crafted with 🤍 by &lt;a href="https://github.com/satnaing"&gt;@satnaing&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Licensed under the &lt;a href="https://choosealicense.com/licenses/mit/"&gt;MIT License&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>nitrojs/nitro</title>
+      <link>https://github.com/nitrojs/nitro</link>
+      <description>&lt;p&gt;Next Generation Server Toolkit. Create web servers with everything you need and deploy them wherever you prefer.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Nitro&lt;/h1&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] You’re viewing the &lt;strong&gt;v3 Alpha&lt;/strong&gt; branch. For the current stable release, see &lt;a href="https://github.com/nitrojs/nitro/tree/v2"&gt;Nitro v2&lt;/a&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;strong&gt;Nitro&lt;/strong&gt; extends your Vite app with a &lt;strong&gt;production-ready server&lt;/strong&gt;, designed to run &lt;strong&gt;anywhere&lt;/strong&gt;. Add server routes, deploy across multiple platforms, and enjoy a &lt;strong&gt;zero-config&lt;/strong&gt; experience.&lt;/p&gt; 
+&lt;p&gt;📘 &lt;strong&gt;Docs (v3 Alpha):&lt;/strong&gt; &lt;a href="https://v3.nitro.build"&gt;https://v3.nitro.build&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;See Check out the &lt;a href="https://raw.githubusercontent.com/nitrojs/nitro/main/CONTRIBUTING.md"&gt;Contribution Guide&lt;/a&gt; to get started.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Released under the &lt;a href="https://raw.githubusercontent.com/nitrojs/nitro/main/LICENSE"&gt;MIT License&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>nanobrowser/nanobrowser</title>
+      <link>https://github.com/nanobrowser/nanobrowser</link>
+      <description>&lt;p&gt;Open-Source Chrome extension for AI-powered web automation. Run multi-agent workflows using your own LLM API key. Alternative to OpenAI Operator.&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt; &lt;img src="https://github.com/user-attachments/assets/ec60b0c4-87ba-48f4-981a-c55ed0e8497b" height="100" width="375" alt="banner" /&gt;&lt;br /&gt; &lt;/h1&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;a href="https://github.com/nanobrowser"&gt;&lt;img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&amp;amp;logo=github&amp;amp;logoColor=white" alt="GitHub" /&gt;&lt;/a&gt; &lt;a href="https://x.com/nanobrowser_ai"&gt;&lt;img src="https://img.shields.io/badge/Twitter-000000?style=for-the-badge&amp;amp;logo=x&amp;amp;logoColor=white" alt="Twitter" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/NN3ABHggMK"&gt;&lt;img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&amp;amp;logo=discord&amp;amp;logoColor=white" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://deepwiki.com/nanobrowser/nanobrowser"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" height="28" alt="Ask DeepWiki" /&gt;&lt;/a&gt; &lt;a href="https://github.com/sponsors/alexchenzl"&gt;&lt;img src="https://img.shields.io/badge/Sponsor-ff69b4?style=for-the-badge&amp;amp;logo=githubsponsors&amp;amp;logoColor=white" alt="Sponsor" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;🌐 Nanobrowser&lt;/h2&gt; 
+&lt;p&gt;Nanobrowser is an open-source AI web automation tool that runs in your browser. A free alternative to OpenAI Operator with flexible LLM options and multi-agent system.&lt;/p&gt; 
+&lt;p&gt;⬇️ Get &lt;a href="https://chromewebstore.google.com/detail/nanobrowser/imbddededgmcgfhfpcjmijokokekbkal"&gt;Nanobrowser from Chrome Web Store&lt;/a&gt; for free&lt;/p&gt; 
+&lt;p&gt;👏 Join the community in &lt;a href="https://discord.gg/NN3ABHggMK"&gt;Discord&lt;/a&gt; | &lt;a href="https://x.com/nanobrowser_ai"&gt;X&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;🌟 Loving Nanobrowser? Give us a star and help spread the word!&lt;/p&gt; 
+&lt;p&gt;❤️ Support the project by &lt;a href="https://github.com/sponsors/alexchenzl"&gt;sponsoring us&lt;/a&gt; - every contribution helps keep Nanobrowser free and open source!&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;img src="https://github.com/user-attachments/assets/112c4385-7b03-4b81-a352-4f348093351b" width="600" alt="Nanobrowser Demo GIF" /&gt; 
+ &lt;p&gt;&lt;em&gt;Nanobrowser's multi-agent system analyzing HuggingFace in real-time, with the Planner intelligently self-correcting when encountering obstacles and dynamically instructing the Navigator to adjust its approach—all running locally in your browser.&lt;/em&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;🔥Why Nanobrowser?&lt;/h2&gt; 
+&lt;p&gt;Looking for a powerful AI browser agent without the $200/month price tag of OpenAI Operator? &lt;strong&gt;Nanobrowser&lt;/strong&gt; , as a chrome extension, delivers premium web automation capabilities while keeping you in complete control:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;100% Free&lt;/strong&gt; - No subscription fees or hidden costs. Just install and use your own API keys, and you only pay what you use with your own API keys.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Privacy-Focused&lt;/strong&gt; - Everything runs in your local browser. Your credentials stay with you, never shared with any cloud service.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Flexible LLM Options&lt;/strong&gt; - Connect to your preferred LLM providers with the freedom to choose different models for different agents.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Fully Open Source&lt;/strong&gt; - Complete transparency in how your browser is automated. No black boxes or hidden processes.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; We currently support OpenAI, Anthropic, Gemini, Ollama, Groq, Cerebras, Llama and custom OpenAI-Compatible providers, more providers will be supported.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;📊 Key Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi-agent System&lt;/strong&gt;: Specialized AI agents collaborate to accomplish complex web workflows&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Interactive Side Panel&lt;/strong&gt;: Intuitive chat interface with real-time status updates&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Task Automation&lt;/strong&gt;: Seamlessly automate repetitive web automation tasks across websites&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Follow-up Questions&lt;/strong&gt;: Ask contextual follow-up questions about completed tasks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Conversation History&lt;/strong&gt;: Easily access and manage your AI agent interaction history&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Multiple LLM Support&lt;/strong&gt;: Connect your preferred LLM providers and assign different models to different agents&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🌐 Browser Support&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Officially Supported:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Chrome&lt;/strong&gt; - Full support with all features&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Edge&lt;/strong&gt; - Full support with all features&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Not Supported:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Firefox, Safari, and other Chromium variants (Opera, Arc, etc.)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: While Nanobrowser may function on other Chromium-based browsers, we recommend using Chrome or Edge for the best experience and guaranteed compatibility.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;🚀 Quick Start&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Install from Chrome Web Store&lt;/strong&gt; (Stable Version): 
+  &lt;ul&gt; 
+   &lt;li&gt;Visit the &lt;a href="https://chromewebstore.google.com/detail/nanobrowser/imbddededgmcgfhfpcjmijokokekbkal"&gt;Nanobrowser Chrome Web Store page&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;Click "Add to Chrome" button&lt;/li&gt; 
+   &lt;li&gt;Confirm the installation when prompted&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Important Note&lt;/strong&gt;: For latest features, install from &lt;a href="https://raw.githubusercontent.com/nanobrowser/nanobrowser/master/#-manually-install-latest-version"&gt;"Manually Install Latest Version"&lt;/a&gt; below, as Chrome Web Store version may be delayed due to review process.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;&lt;strong&gt;Configure Agent Models&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;Click the Nanobrowser icon in your toolbar to open the sidebar&lt;/li&gt; 
+   &lt;li&gt;Click the &lt;code&gt;Settings&lt;/code&gt; icon (top right)&lt;/li&gt; 
+   &lt;li&gt;Add your LLM API keys&lt;/li&gt; 
+   &lt;li&gt;Choose which model to use for different agents (Navigator, Planner)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;🔧 Manually Install Latest Version&lt;/h2&gt; 
+&lt;p&gt;To get the most recent version with all the latest features:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Download&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Download the latest &lt;code&gt;nanobrowser.zip&lt;/code&gt; file from the official Github &lt;a href="https://github.com/nanobrowser/nanobrowser/releases"&gt;release page&lt;/a&gt;.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Install&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Unzip &lt;code&gt;nanobrowser.zip&lt;/code&gt;.&lt;/li&gt; 
+   &lt;li&gt;Open &lt;code&gt;chrome://extensions/&lt;/code&gt; in Chrome&lt;/li&gt; 
+   &lt;li&gt;Enable &lt;code&gt;Developer mode&lt;/code&gt; (top right)&lt;/li&gt; 
+   &lt;li&gt;Click &lt;code&gt;Load unpacked&lt;/code&gt; (top left)&lt;/li&gt; 
+   &lt;li&gt;Select the unzipped &lt;code&gt;nanobrowser&lt;/code&gt; folder.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Configure Agent Models&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Click the Nanobrowser icon in your toolbar to open the sidebar&lt;/li&gt; 
+   &lt;li&gt;Click the &lt;code&gt;Settings&lt;/code&gt; icon (top right).&lt;/li&gt; 
+   &lt;li&gt;Add your LLM API keys.&lt;/li&gt; 
+   &lt;li&gt;Choose which model to use for different agents (Navigator, Planner)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Upgrading&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Download the latest &lt;code&gt;nanobrowser.zip&lt;/code&gt; file from the release page.&lt;/li&gt; 
+   &lt;li&gt;Unzip and replace your existing Nanobrowser files with the new ones.&lt;/li&gt; 
+   &lt;li&gt;Go to &lt;code&gt;chrome://extensions/&lt;/code&gt; in Chrome and click the refresh icon on the Nanobrowser card.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;🛠️ Build from Source&lt;/h2&gt; 
+&lt;p&gt;If you prefer to build Nanobrowser yourself, follow these steps:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://nodejs.org/"&gt;Node.js&lt;/a&gt; (v22.12.0 or higher)&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://pnpm.io/installation"&gt;pnpm&lt;/a&gt; (v9.15.1 or higher)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Clone the Repository&lt;/strong&gt;:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/nanobrowser/nanobrowser.git
+cd nanobrowser
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Install Dependencies&lt;/strong&gt;:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;pnpm install
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Build the Extension&lt;/strong&gt;:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;pnpm build
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Load the Extension&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;The built extension will be in the &lt;code&gt;dist&lt;/code&gt; directory&lt;/li&gt; 
+   &lt;li&gt;Follow the installation steps from the Manually Install section to load the extension into your browser&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Development Mode&lt;/strong&gt; (optional):&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;pnpm dev
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;🤖 Choosing Your Models&lt;/h2&gt; 
+&lt;p&gt;Nanobrowser allows you to configure different LLM models for each agent to balance performance and cost. Here are recommended configurations:&lt;/p&gt; 
+&lt;h3&gt;Better Performance&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Planner&lt;/strong&gt;: Claude Sonnet 4 
+  &lt;ul&gt; 
+   &lt;li&gt;Better reasoning and planning capabilities&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Navigator&lt;/strong&gt;: Claude Haiku 3.5 
+  &lt;ul&gt; 
+   &lt;li&gt;Efficient for web navigation tasks&lt;/li&gt; 
+   &lt;li&gt;Good balance of performance and cost&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Cost-Effective Configuration&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Planner&lt;/strong&gt;: Claude Haiku or GPT-4o 
+  &lt;ul&gt; 
+   &lt;li&gt;Reasonable performance at lower cost&lt;/li&gt; 
+   &lt;li&gt;May require more iterations for complex tasks&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Navigator&lt;/strong&gt;: Gemini 2.5 Flash or GPT-4o-mini 
+  &lt;ul&gt; 
+   &lt;li&gt;Lightweight and cost-efficient&lt;/li&gt; 
+   &lt;li&gt;Suitable for basic navigation tasks&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Local Models&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Setup Options&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Use Ollama or other custom OpenAI-compatible providers to run models locally&lt;/li&gt; 
+   &lt;li&gt;Zero API costs and complete privacy with no data leaving your machine&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Recommended Models&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Qwen3-30B-A3B-Instruct-2507&lt;/strong&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Falcon3 10B&lt;/strong&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Qwen 2.5 Coder 14B&lt;/strong&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Mistral Small 24B&lt;/strong&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://gist.github.com/maximus2600/75d60bf3df62986e2254d5166e2524cb"&gt;Latest test results from community&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;We welcome community experience sharing with other local models in our &lt;a href="https://discord.gg/NN3ABHggMK"&gt;Discord&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Prompt Engineering&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Local models require more specific and cleaner prompts&lt;/li&gt; 
+   &lt;li&gt;Avoid high-level, ambiguous commands&lt;/li&gt; 
+   &lt;li&gt;Break complex tasks into clear, detailed steps&lt;/li&gt; 
+   &lt;li&gt;Provide explicit context and constraints&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: The cost-effective configuration may produce less stable outputs and require more iterations for complex tasks.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Tip&lt;/strong&gt;: Feel free to experiment with your own model configurations! Found a great combination? Share it with the community in our &lt;a href="https://discord.gg/NN3ABHggMK"&gt;Discord&lt;/a&gt; to help others optimize their setup.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;💡 See It In Action&lt;/h2&gt; 
+&lt;p&gt;Here are some powerful tasks you can accomplish with just a sentence:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;News Summary&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;blockquote&gt; 
+   &lt;p&gt;"Go to TechCrunch and extract top 10 headlines from the last 24 hours"&lt;/p&gt; 
+  &lt;/blockquote&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;GitHub Research&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;blockquote&gt; 
+   &lt;p&gt;"Look for the trending Python repositories on GitHub with most stars"&lt;/p&gt; 
+  &lt;/blockquote&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Shopping Research&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;blockquote&gt; 
+   &lt;p&gt;"Find a portable Bluetooth speaker on Amazon with a water-resistant design, under $50. It should have a minimum battery life of 10 hours"&lt;/p&gt; 
+  &lt;/blockquote&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;🛠️ Roadmap&lt;/h2&gt; 
+&lt;p&gt;We're actively developing Nanobrowser with exciting features on the horizon, welcome to join us!&lt;/p&gt; 
+&lt;p&gt;Check out our detailed roadmap and upcoming features in our &lt;a href="https://github.com/nanobrowser/nanobrowser/discussions/85"&gt;GitHub Discussions&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;🤝 Contributing&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;We need your help to make Nanobrowser even better!&lt;/strong&gt; Contributions of all kinds are welcome:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Share Prompts &amp;amp; Use Cases&lt;/strong&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Join our &lt;a href="https://discord.gg/NN3ABHggMK"&gt;Discord server&lt;/a&gt;.&lt;/li&gt; 
+   &lt;li&gt;share how you're using Nanobrowser. Help us build a library of useful prompts and real-world use cases.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Provide Feedback&lt;/strong&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Try Nanobrowser and give us feedback on its performance or suggest improvements in our &lt;a href="https://discord.gg/NN3ABHggMK"&gt;Discord server&lt;/a&gt;.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Contribute Code&lt;/strong&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Check out our &lt;a href="https://raw.githubusercontent.com/nanobrowser/nanobrowser/master/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for guidelines on how to contribute code to the project.&lt;/li&gt; 
+   &lt;li&gt;Submit pull requests for bug fixes, features, or documentation improvements.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;We believe in the power of open source and community collaboration. Join us in building the future of web automation!&lt;/p&gt; 
+&lt;h2&gt;🔒 Security&lt;/h2&gt; 
+&lt;p&gt;If you discover a security vulnerability, please &lt;strong&gt;DO NOT&lt;/strong&gt; disclose it publicly through issues, pull requests, or discussions.&lt;/p&gt; 
+&lt;p&gt;Instead, please create a &lt;a href="https://github.com/nanobrowser/nanobrowser/security/advisories/new"&gt;GitHub Security Advisory&lt;/a&gt; to report the vulnerability responsibly. This allows us to address the issue before it's publicly disclosed.&lt;/p&gt; 
+&lt;p&gt;We appreciate your help in keeping Nanobrowser and its users safe!&lt;/p&gt; 
+&lt;h2&gt;💬 Community&lt;/h2&gt; 
+&lt;p&gt;Join our growing community of developers and users:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://discord.gg/NN3ABHggMK"&gt;Discord&lt;/a&gt; - Chat with team and community&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://x.com/nanobrowser_ai"&gt;Twitter&lt;/a&gt; - Follow for updates and announcements&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/nanobrowser/nanobrowser/discussions"&gt;GitHub Discussions&lt;/a&gt; - Share ideas and ask questions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;👏 Acknowledgments&lt;/h2&gt; 
+&lt;p&gt;Nanobrowser builds on top of other awesome open-source projects:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/browser-use/browser-use"&gt;Browser Use&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/EmergenceAI/Agent-E"&gt;Puppeteer&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite"&gt;Chrome Extension Boilerplate&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/langchain-ai/langchainjs"&gt;LangChain&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Huge thanks to their creators and contributors!&lt;/p&gt; 
+&lt;h2&gt;📄 License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the Apache License 2.0 - see the &lt;a href="https://raw.githubusercontent.com/nanobrowser/nanobrowser/master/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;p&gt;Made with ❤️ by the Nanobrowser Team.&lt;/p&gt; 
+&lt;p&gt;Like Nanobrowser? Give us a star 🌟 and join us in &lt;a href="https://discord.gg/NN3ABHggMK"&gt;Discord&lt;/a&gt; | &lt;a href="https://x.com/nanobrowser_ai"&gt;X&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;⚠️ DISCLAIMER ON DERIVATIVE PROJECTS&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;We explicitly &lt;em&gt;DO NOT&lt;/em&gt; endorse, support, or participate in any&lt;/strong&gt; projects involving cryptocurrencies, tokens, NFTs, or other blockchain-related applications &lt;strong&gt;based on this codebase.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Any such derivative projects are&amp;nbsp;NOT&amp;nbsp;Affiliated with, or maintained by, or in any way connected to the official Nanobrowser project or its core team.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;We assume NO LIABILITY for any losses, damages, or issues arising from the use of third-party derivative projects. Users interact with these projects at their own risk.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;We reserve the right to publicly distance ourselves from any misuse or misleading use of our name, codebase, or brand.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;We encourage open-source innovation but urge our community to be discerning and cautious. Please ensure you understand the risks before using any software or service built upon our codebase by independent developers.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mountain-loop/yaak</title>
+      <link>https://github.com/mountain-loop/yaak</link>
+      <description>&lt;p&gt;The most intuitive desktop API client. Organize and execute REST, GraphQL, WebSockets, Server Sent Events, and gRPC 🦬&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://github.com/JamesIves/github-sponsors-readme-action"&gt; &lt;img width="200px" src="https://github.com/mountain-loop/yaak/raw/main/src-tauri/icons/icon.png" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h1 align="center"&gt; 💫 Yaak ➟ Desktop API Client 💫 &lt;/h1&gt; 
+&lt;p align="center"&gt; A fast, privacy-first API client for REST, GraphQL, SSE, WebSocket, and gRPC – built with Tauri, Rust, and React. &lt;/p&gt; 
+&lt;p align="center"&gt; Development is funded by community-purchased &lt;a href="https://yaak.app/pricing"&gt;licenses&lt;/a&gt;. You can also &lt;a href="https://github.com/sponsors/gschier"&gt;become a sponsor&lt;/a&gt; to have your logo appear below. 💖 &lt;/p&gt; 
+&lt;br /&gt; 
+&lt;p align="center"&gt; 
+ &lt;!-- sponsors-premium --&gt;&lt;a href="https://github.com/MVST-Solutions"&gt;&lt;img src="https://github.com/MVST-Solutions.png" width="80px" alt="User avatar: MVST-Solutions" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/dharsanb"&gt;&lt;img src="https://github.com/dharsanb.png" width="80px" alt="User avatar: dharsanb" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/railwayapp"&gt;&lt;img src="https://github.com/railwayapp.png" width="80px" alt="User avatar: railwayapp" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/caseyamcl"&gt;&lt;img src="https://github.com/caseyamcl.png" width="80px" alt="User avatar: caseyamcl" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/andriyor"&gt;&lt;img src="https://github.com/andriyor.png" width="80px" alt="User avatar: andriyor" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/"&gt;&lt;img src="https://raw.githubusercontent.com/JamesIves/github-sponsors-readme-action/dev/.github/assets/placeholder.png" width="80px" alt="User avatar: " /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+ &lt;!-- sponsors-premium --&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; 
+ &lt;!-- sponsors-base --&gt;&lt;a href="https://github.com/seanwash"&gt;&lt;img src="https://github.com/seanwash.png" width="50px" alt="User avatar: seanwash" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/jerath"&gt;&lt;img src="https://github.com/jerath.png" width="50px" alt="User avatar: jerath" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/itsa-sh"&gt;&lt;img src="https://github.com/itsa-sh.png" width="50px" alt="User avatar: itsa-sh" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/dmmulroy"&gt;&lt;img src="https://github.com/dmmulroy.png" width="50px" alt="User avatar: dmmulroy" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/timcole"&gt;&lt;img src="https://github.com/timcole.png" width="50px" alt="User avatar: timcole" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/VLZH"&gt;&lt;img src="https://github.com/VLZH.png" width="50px" alt="User avatar: VLZH" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/terasaka2k"&gt;&lt;img src="https://github.com/terasaka2k.png" width="50px" alt="User avatar: terasaka2k" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/majudhu"&gt;&lt;img src="https://github.com/majudhu.png" width="50px" alt="User avatar: majudhu" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+ &lt;!-- sponsors-base --&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://yaak.app/static/screenshot.png" alt="Yaak API Client" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;p&gt;Yaak is an offline-first API client designed to stay out of your way while giving you everything you need when you need it. Built with &lt;a href="https://tauri.app"&gt;Tauri&lt;/a&gt;, Rust, and React, it’s fast, lightweight, and private. No telemetry, no VC funding, and no cloud lock-in.&lt;/p&gt; 
+&lt;h3&gt;🌐 Work with any API&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Import collections from Postman, Insomnia, OpenAPI, Swagger, or Curl.&lt;/li&gt; 
+ &lt;li&gt;Send requests via REST, GraphQL, gRPC, WebSocket, or Server-Sent Events.&lt;/li&gt; 
+ &lt;li&gt;Filter and inspect responses with JSONPath or XPath.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🔐 Stay secure&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Use OAuth 2.0, JWT, Basic Auth, or custom plugins for authentication.&lt;/li&gt; 
+ &lt;li&gt;Secure sensitive values with encrypted secrets.&lt;/li&gt; 
+ &lt;li&gt;Store secrets in your OS keychain.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;☁️ Organize &amp;amp; collaborate&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Group requests into workspaces and nested folders.&lt;/li&gt; 
+ &lt;li&gt;Use environment variables to switch between dev, staging, and prod.&lt;/li&gt; 
+ &lt;li&gt;Mirror workspaces to your filesystem for versioning in Git or syncing with Dropbox.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🧩 Extend &amp;amp; customize&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Insert dynamic values like UUIDs or timestamps with template tags.&lt;/li&gt; 
+ &lt;li&gt;Pick from built-in themes or build your own.&lt;/li&gt; 
+ &lt;li&gt;Create plugins to extend authentication, template tags, or the UI.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contribution Policy&lt;/h2&gt; 
+&lt;p&gt;Yaak is open source but only accepting contributions for bug fixes. To get started, visit &lt;a href="https://raw.githubusercontent.com/mountain-loop/yaak/main/DEVELOPMENT.md"&gt;&lt;code&gt;DEVELOPMENT.md&lt;/code&gt;&lt;/a&gt; for tips on setting up your environment.&lt;/p&gt; 
+&lt;h2&gt;Useful Resources&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://feedback.yaak.app"&gt;Feedback and Bug Reports&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://feedback.yaak.app/help"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://yaak.app/alternatives/postman"&gt;Yaak vs Postman&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://yaak.app/alternatives/bruno"&gt;Yaak vs Bruno&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://yaak.app/alternatives/insomnia"&gt;Yaak vs Insomnia&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>evershopcommerce/evershop</title>
+      <link>https://github.com/evershopcommerce/evershop</link>
+      <description>&lt;p&gt;🛍️ Typescript E-commerce Platform&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img width="60" height="68" alt="EverShop Logo" src="https://raw.githubusercontent.com/evershopcommerce/evershop/dev/.github/images/logo-green.png" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;/p&gt;
+&lt;h1 align="center"&gt;EverShop&lt;/h1&gt; 
+&lt;p&gt;&lt;/p&gt; 
+&lt;h4 align="center"&gt; &lt;a href="https://evershop.io/docs/development/getting-started/introduction"&gt;Documentation&lt;/a&gt; | &lt;a href="https://demo.evershop.io/"&gt;Demo&lt;/a&gt; &lt;/h4&gt; 
+&lt;p align="center"&gt; &lt;img src="https://github.com/evershopcommerce/evershop/actions/workflows/build_test.yml/badge.svg?sanitize=true" alt="Github Action" /&gt; &lt;a href="https://twitter.com/evershopjs"&gt; &lt;img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/evershopjs?style=social" /&gt; &lt;/a&gt; &lt;a href="https://discord.gg/GSzt7dt7RM"&gt; &lt;img src="https://img.shields.io/discord/757179260417867879?label=discord" alt="Discord" /&gt; &lt;/a&gt; &lt;a href="https://opensource.org/licenses/GPL-3.0"&gt; &lt;img src="https://img.shields.io/badge/License-GPLv3-blue.svg?sanitize=true" alt="License" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img alt="EverShop" width="950" src="https://raw.githubusercontent.com/evershopcommerce/evershop/dev/.github/images/banner.png" /&gt; &lt;/p&gt; 
+&lt;h2&gt;Introduction&lt;/h2&gt; 
+&lt;p&gt;EverShop is a modern, TypeScript-first eCommerce platform built with GraphQL and React. Designed for developers, it offers essential commerce features in a modular, fully customizable architecture—perfect for building tailored shopping experiences with confidence and speed.&lt;/p&gt; 
+&lt;h2&gt;Installation Using Docker&lt;/h2&gt; 
+&lt;p&gt;You can get started with EverShop in minutes by using the Docker image. The Docker image is a great way to get started with EverShop without having to worry about installing dependencies or configuring your environment.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -sSL https://raw.githubusercontent.com/evershopcommerce/evershop/main/docker-compose.yml &amp;gt; docker-compose.yml
+docker-compose up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For the full installation guide, please refer to our &lt;a href="https://evershop.io/docs/development/getting-started/installation-guide"&gt;Installation guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://evershop.io/docs/development/getting-started/installation-guide"&gt;Installation guide&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://evershop.io/docs/development/module/create-your-first-extension"&gt;Extension development&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://evershop.io/docs/development/theme/theme-overview"&gt;Theme development&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Demo&lt;/h2&gt; 
+&lt;p&gt;Explore our demo store.&lt;/p&gt; 
+&lt;p align="left"&gt; &lt;a href="https://demo.evershop.io/admin" target="_blank"&gt; &lt;img alt="EverShop Admin Demo" height="35" src="https://raw.githubusercontent.com/evershopcommerce/evershop/dev/.github/images/evershop-demo-back.png" /&gt; &lt;/a&gt; &lt;a href="https://demo.evershop.io/" target="_blank"&gt; &lt;img alt="EverShop Store Demo" height="35" src="https://raw.githubusercontent.com/evershopcommerce/evershop/dev/.github/images/evershop-demo-front.png" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;b&gt;Demo user:&lt;/b&gt; 
+&lt;p&gt;Email: &lt;a href="mailto:demo@evershop.io"&gt;demo@evershop.io&lt;/a&gt;&lt;br /&gt; Password: 123456&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;If you like my work, feel free to:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;⭐ this repository. It helps.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Fevershopcommerce%2Fevershop&amp;amp;text=Awesome%20React%20Ecommerce%20Project&amp;amp;hashtags=react,ecommerce,expressjs,graphql"&gt;&lt;img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social" alt="Tweet" /&gt;&lt;/a&gt; about EverShop. Thank you!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;EverShop is an open-source project. We are committed to a fully transparent development process and appreciate highly any contributions. Whether you are helping us fix bugs, proposing new features, improving our documentation or spreading the word - we would love to have you as part of the EverShop community.&lt;/p&gt; 
+&lt;h3&gt;Ask a question about EverShop&lt;/h3&gt; 
+&lt;p&gt;You can ask questions, and participate in discussions about EverShop-related topics in the EverShop Discord channel.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://discord.gg/GSzt7dt7RM"&gt;&lt;img src="https://raw.githubusercontent.com/evershopcommerce/evershop/dev/.github/images/discord_banner_github.svg?sanitize=true" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Create a bug report&lt;/h3&gt; 
+&lt;p&gt;If you see an error message or run into an issue, please &lt;a href="https://github.com/evershopcommerce/evershop/issues/new"&gt;create bug report&lt;/a&gt;. This effort is valued and it will help all EverShop users.&lt;/p&gt; 
+&lt;h3&gt;Submit a feature request&lt;/h3&gt; 
+&lt;p&gt;If you have an idea, or you're missing a capability that would make development easier and more robust, please &lt;a href="https://github.com/evershopcommerce/evershop/issues/new"&gt;Submit feature request&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;If a similar feature request already exists, don't forget to leave a "+1". If you add some more information such as your thoughts and vision about the feature, your comments will be embraced warmly :)&lt;/p&gt; 
+&lt;p&gt;Please refer to our &lt;a href="https://raw.githubusercontent.com/evershopcommerce/evershop/dev/CONTRIBUTING.md"&gt;Contribution Guidelines&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/evershopcommerce/evershop/dev/CODE_OF_CONDUCT.md"&gt;Code of Conduct&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/evershopcommerce/evershop/raw/main/LICENSE"&gt;GPL-3.0 License&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>devlikeapro/waha</title>
+      <link>https://github.com/devlikeapro/waha</link>
+      <description>&lt;p&gt;WAHA - WhatsApp HTTP API (REST API) that you can configure in a click! 3 engines: WEBJS (browser based), NOWEB (websocket nodejs), GOWS (websocket go)&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;WAHA&lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/devlikeapro/waha/core/logo.png" style="border-radius: 50%" width="150" /&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;WAHA&lt;/strong&gt; - &lt;strong&gt;W&lt;/strong&gt;hats&lt;strong&gt;A&lt;/strong&gt;pp &lt;strong&gt;H&lt;/strong&gt;TTP &lt;strong&gt;A&lt;/strong&gt;PI (REST API) that you can install on your own server and run in less than 5 minutes!&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://hub.docker.com/r/devlikeapro/waha"&gt;&lt;img src="https://img.shields.io/docker/pulls/devlikeapro/waha" alt="Docker Pulls" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Documentation: &lt;a href="https://waha.devlike.pro/"&gt;https://waha.devlike.pro/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Dashboard Example: &lt;a href="https://waha.devlike.pro/dashboard"&gt;https://waha.devlike.pro/dashboard&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Swagger Example: &lt;a href="https://waha.devlike.pro/swagger"&gt;https://waha.devlike.pro/swagger&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;Tables of Contents&lt;/h1&gt; 
+&lt;!-- toc --&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#quick-start"&gt;Quick start&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#requirements"&gt;Requirements&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#send-your-first-message"&gt;Send your first message&lt;/a&gt; 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#1-download-image"&gt;1. Download image&lt;/a&gt;&lt;/li&gt; 
+     &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#2-run-whatsapp-http-api"&gt;2. Run WhatsApp HTTP API&lt;/a&gt;&lt;/li&gt; 
+     &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#3-start-a-new-session"&gt;3. Start a new session&lt;/a&gt;&lt;/li&gt; 
+     &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#4-get-and-scan-qr"&gt;4. Get and scan QR&lt;/a&gt;&lt;/li&gt; 
+     &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#5-get-the-screenshot"&gt;5. Get the screenshot&lt;/a&gt;&lt;/li&gt; 
+     &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#6-send-a-text-message"&gt;6. Send a text message&lt;/a&gt;&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#what-is-next"&gt;What is next?&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#development"&gt;Development&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/#start-the-project"&gt;Start the project&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;!-- tocstop --&gt; 
+&lt;h1&gt;Quick start&lt;/h1&gt; 
+&lt;h2&gt;Requirements&lt;/h2&gt; 
+&lt;p&gt;Only thing that you must have - installed docker. Please follow the original instruction &lt;a href="https://docs.docker.com/get-docker/" target="_blank" rel="noopener"&gt;how to install docker -&amp;gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;When you are ready - come back and follows the below steps to send the first text message to WhatsApp via HTTP API!&lt;/p&gt; 
+&lt;h2&gt;Send your first message&lt;/h2&gt; 
+&lt;p&gt;Let's go over steps that allow you to send your first text message via WhatsApp HTTP API!&lt;/p&gt; 
+&lt;h3&gt;1. Download image&lt;/h3&gt; 
+&lt;p&gt;Assuming you have installed &lt;a href="https://docs.docker.com/get-docker/"&gt;Docker&lt;/a&gt;, let's download the image.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker pull devlikeapro/waha
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker login -u devlikeapro -p {KEY}
+docker pull devlikeapro/waha-plus
+docker logout
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Read more about how to get &lt;code&gt;PASSWORD&lt;/code&gt; for &lt;a href="https://waha.devlike.pro/docs/how-to/waha-plus/"&gt;&lt;strong&gt;➕ WAHA Plus&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;2. Run WhatsApp HTTP API&lt;/h3&gt; 
+&lt;p&gt;Run WhatsApp HTTP API:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -it --rm -p 3000:3000/tcp --name waha devlikeapro/waha
+
+# It prints logs and the last line must be
+# WhatsApp HTTP API is running on: http://[::1]:3000
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Open the link in your browser &lt;a href="http://localhost:3000/"&gt;http://localhost:3000/&lt;/a&gt; and you'll see API documentation (Swagger).&lt;/p&gt; 
+&lt;h3&gt;3. Start a new session&lt;/h3&gt; 
+&lt;p&gt;To start a new session you should have your mobile phone with installed WhatsApp application close to you.&lt;/p&gt; 
+&lt;p&gt;Please go and read how what we'll need to a bit later: &lt;a href="https://faq.whatsapp.com/381777293328336/?helpref=hc_fnav" target="_blank"&gt; How to log in - the instruction on WhatsApp site &lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;When your ready - find &lt;code&gt;POST /api/sessions&lt;/code&gt;, click on &lt;strong&gt;Try it out&lt;/strong&gt;, then &lt;strong&gt;Execute&lt;/strong&gt; a bit below.&lt;/p&gt; 
+&lt;p&gt;The example payload:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "name": "default"
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;By using the request with &lt;code&gt;name&lt;/code&gt; values you can start multiple session (WhatsApp accounts) inside the single docker container in Plus&lt;/p&gt; 
+&lt;h3&gt;4. Get and scan QR&lt;/h3&gt; 
+&lt;p&gt;Find &lt;code&gt;GET /api/screenshot&lt;/code&gt; and execute it, it shows you QR code.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Scan the QR with your cell phone's WhatsApp app.&lt;/strong&gt;&lt;/p&gt; 
+&lt;h3&gt;5. Get the screenshot&lt;/h3&gt; 
+&lt;p&gt;Execute &lt;code&gt;GET /api/screenshot&lt;/code&gt; after a few seconds after scanning the QR - it'll show you the screenshot of you Whatsapp instance. If you can get the actual screenshot - then you're ready to start sending messages!&lt;/p&gt; 
+&lt;h3&gt;6. Send a text message&lt;/h3&gt; 
+&lt;p&gt;Let's send a text message - find &lt;code&gt;POST /api/sendText&lt;/code&gt; in &lt;a href="http://localhost:3000/"&gt;swagger&lt;/a&gt; and change &lt;code&gt;chatId&lt;/code&gt; this way: use a phone international phone number without &lt;code&gt;+&lt;/code&gt; symbol and add &lt;code&gt;@c.us&lt;/code&gt; at the end.&lt;/p&gt; 
+&lt;p&gt;For phone number &lt;code&gt;12132132131&lt;/code&gt; the &lt;code&gt;chatId&lt;/code&gt; is &lt;code&gt;12132132131@c.us&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;The example payload:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "chatId": "12132132130@c.us",
+  "text": "Hi there!",
+  "session": "default"
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Also, you can use &lt;code&gt;curl&lt;/code&gt; and send POST request like this:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Phone without +
+export PHONE=12132132130
+curl -d "{\"chatId\": \"${PHONE}@c.us\", \"text\": \"Hello from WhatsApp HTTP API\" }" -H "Content-Type: application/json" -X POST http://localhost:3000/api/sendText
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;What is next?&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://waha.devlike.pro/docs/overview/introduction/"&gt;Go and read the full documentation!&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Development&lt;/h1&gt; 
+&lt;h2&gt;Start the project&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Clone the repository&lt;/li&gt; 
+ &lt;li&gt;Make sure you're using node&amp;gt;=22 (check &lt;a href="https://raw.githubusercontent.com/devlikeapro/waha/core/.nvmrc"&gt;.nvmrc&lt;/a&gt; to get the version)&lt;/li&gt; 
+ &lt;li&gt;Run the following commands:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Install dependencies
+yarn install
+# Fetch and compile proto files
+yarn gows:proto
+# Run
+yarn start
+# open http://localhost:3000
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>langchain-ai/langchainjs</title>
+      <link>https://github.com/langchain-ai/langchainjs</link>
+      <description>&lt;p&gt;🦜🔗 Build context-aware reasoning applications 🦜🔗&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;🦜️🔗 LangChain.js&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://img.shields.io/npm/dm/langchain" alt="npm" /&gt; &lt;a href="https://opensource.org/licenses/MIT"&gt;&lt;img src="https://img.shields.io/badge/License-MIT-yellow.svg?sanitize=true" alt="License: MIT" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/langchainai"&gt;&lt;img src="https://img.shields.io/twitter/url/https/twitter.com/langchainai.svg?style=social&amp;amp;label=Follow%20%40LangChainAI" alt="Twitter" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;LangChain is a framework for building LLM-powered applications. It helps you chain together interoperable components and third-party integrations to simplify AI application development — all while future-proofing decisions as the underlying technology evolves.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Documentation&lt;/strong&gt;: To learn more about LangChain, check out &lt;a href="https://docs.langchain.com/oss/javascript/langchain/overview"&gt;the docs&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;If you're looking for more advanced customization or agent orchestration, check out &lt;a href="https://langchain-ai.github.io/langgraphjs/"&gt;LangGraph.js&lt;/a&gt;. our framework for building agents and controllable workflows.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] Looking for the Python version? Check out &lt;a href="https://github.com/langchain-ai/langchain"&gt;LangChain&lt;/a&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;To help you ship LangChain apps to production faster, check out &lt;a href="https://smith.langchain.com"&gt;LangSmith&lt;/a&gt;. &lt;a href="https://smith.langchain.com"&gt;LangSmith&lt;/a&gt; is a unified developer platform for building, testing, and monitoring LLM applications.&lt;/p&gt; 
+&lt;h2&gt;⚡️ Quick Install&lt;/h2&gt; 
+&lt;p&gt;You can use npm, pnpm, or yarn to install LangChain.js&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;npm install -S langchain&lt;/code&gt; or &lt;code&gt;pnpm install langchain&lt;/code&gt; or &lt;code&gt;yarn add langchain&lt;/code&gt;&lt;/p&gt; 
+&lt;h2&gt;🚀 Why use LangChain?&lt;/h2&gt; 
+&lt;p&gt;LangChain helps developers build applications powered by LLMs through a standard interface for agents, models, embeddings, vector stores, and more.&lt;/p&gt; 
+&lt;p&gt;Use LangChain for:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Real-time data augmentation&lt;/strong&gt;. Easily connect LLMs to diverse data sources and external/internal systems, drawing from LangChain’s vast library of integrations with model providers, tools, vector stores, retrievers, and more.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Model interoperability&lt;/strong&gt;. Swap models in and out as your engineering team experiments to find the best choice for your application’s needs. As the industry frontier evolves, adapt quickly — LangChain’s abstractions keep you moving without losing momentum.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📦 LangChain's ecosystem&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.langchain.com/langsmith"&gt;LangSmith&lt;/a&gt; - Unified developer platform for building, testing, and monitoring LLM applications. With LangSmith, you can debug poor-performing LLM app runs, evaluate agent trajectories, gain visibility in production, and deploy agents with confidence.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.langchain.com/oss/javascript/langgraph/overview"&gt;LangGraph&lt;/a&gt; - Build agents that can reliably handle complex tasks with LangGraph, our low-level agent orchestration framework. LangGraph offers customizable architecture, long-term memory, and human-in-the-loop workflows — and is trusted in production by companies like LinkedIn, Uber, Klarna, and GitLab.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🌐 Supported Environments&lt;/h2&gt; 
+&lt;p&gt;LangChain.js is written in TypeScript and can be used in:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Node.js (ESM and CommonJS) - 18.x, 19.x, 20.x, 22.x&lt;/li&gt; 
+ &lt;li&gt;Cloudflare Workers&lt;/li&gt; 
+ &lt;li&gt;Vercel / Next.js (Browser, Serverless and Edge functions)&lt;/li&gt; 
+ &lt;li&gt;Supabase Edge Functions&lt;/li&gt; 
+ &lt;li&gt;Browser&lt;/li&gt; 
+ &lt;li&gt;Deno&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📖 Additional Resources&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.langchain.com/oss/javascript/langchain/overview"&gt;Getting started&lt;/a&gt;: Installation, setting up the environment, simple examples&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.langchain.com/oss/javascript/langchain/learn"&gt;Learn&lt;/a&gt;: Learn about the core concepts of LangChain.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://forum.langchain.com"&gt;LangChain Forum&lt;/a&gt;: Connect with the community and share all of your technical questions, ideas, and feedback.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://chat.langchain.com"&gt;Chat LangChain&lt;/a&gt;: Ask questions &amp;amp; chat with our documentaiton.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;💁 Contributing&lt;/h2&gt; 
+&lt;p&gt;As an open-source project in a rapidly developing field, we are extremely open to contributions, whether it be in the form of a new feature, improved infrastructure, or better documentation.&lt;/p&gt; 
+&lt;p&gt;For detailed information on how to contribute, see &lt;a href="https://github.com/langchain-ai/langchainjs/raw/main/CONTRIBUTING.md"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Please report any security issues or concerns following our &lt;a href="https://github.com/langchain-ai/langchainjs/raw/main/SECURITY.md"&gt;security guidelines&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>stan-smith/FossFLOW</title>
+      <link>https://github.com/stan-smith/FossFLOW</link>
+      <description>&lt;p&gt;Make beautiful isometric infrastructure diagrams&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;FossFLOW - Isometric Diagramming Tool &lt;img width="30" height="30" alt="fossflow" src="https://github.com/user-attachments/assets/56d78887-601c-4336-ab87-76f8ee4cde96" /&gt;&lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/README.md"&gt;English&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.cn.md"&gt;简体中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.es.md"&gt;Español&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.pt.md"&gt;Português&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.fr.md"&gt;Français&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.hi.md"&gt;हिन्दी&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.bn.md"&gt;বাংলা&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.ru.md"&gt;Русский&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;b&gt;Hey!&lt;/b&gt; Stan here, if you've used FossFLOW and it's helped you, &lt;b&gt;I'd really appreciate if you could donate something small :)&lt;/b&gt; I work full time, and finding the time to work on this project is challenging enough. If you've had a feature that I've implemented for you, or fixed a bug it'd be great if you could :) if not, that's not a problem, this software will always remain free!&lt;/p&gt; 
+&lt;p&gt;&lt;b&gt;Also!&lt;/b&gt; If you haven't yet, please check out the underlying library this is built on by &lt;a href="https://github.com/markmanx/isoflow"&gt;@markmanx&lt;/a&gt; I truly stand on the shoulders of a giant here 🫡&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://ko-fi.com/P5P61KBXA3"&gt;&lt;img src="https://ko-fi.com/img/githubbutton_sm.svg?sanitize=true" alt="ko-fi" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img width="30" height="30" alt="image" src="https://github.com/user-attachments/assets/dc6ec9ca-48d7-4047-94cf-5c4f7ed63b84" /&gt; &lt;b&gt; &lt;a href="https://buymeacoffee.com/stan.smith"&gt;https://buymeacoffee.com/stan.smith&lt;/a&gt; &lt;/b&gt;&lt;/p&gt; 
+&lt;p&gt;Thanks,&lt;/p&gt; 
+&lt;p&gt;-Stan&lt;/p&gt; 
+&lt;h2&gt;Try it online&lt;/h2&gt; 
+&lt;p&gt;Go to &lt;b&gt; --&amp;gt; &lt;a href="https://stan-smith.github.io/FossFLOW/"&gt;https://stan-smith.github.io/FossFLOW/&lt;/a&gt; &amp;lt;-- &lt;/b&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;FossFLOW is a powerful, open-source Progressive Web App (PWA) for creating beautiful isometric diagrams. Built with React and the &lt;a href="https://github.com/markmanx/isoflow"&gt;Isoflow&lt;/a&gt; (Now forked and published to NPM as fossflow) library, it runs entirely in your browser with offline support.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/e7f254ad-625f-4b8a-8efc-5293b5be9d55" alt="Screenshot_20250630_160954" /&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;📝 &lt;a href="https://github.com/stan-smith/FossFLOW/raw/master/FOSSFLOW_TODO.md"&gt;FOSSFLOW_TODO.md&lt;/a&gt;&lt;/strong&gt; - Current issues and roadmap with codebase mappings, most gripes are with the isoflow library itself.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🤝 &lt;a href="https://github.com/stan-smith/FossFLOW/raw/master/CONTRIBUTORS.md"&gt;CONTRIBUTORS.md&lt;/a&gt;&lt;/strong&gt; - How to contribute to the project.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Recent Updates (October 2025)&lt;/h2&gt; 
+&lt;h3&gt;Multilingual Support&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;8 Languages Supported&lt;/strong&gt; - Full interface translation in English, Chinese (Simplified), Spanish, Portuguese (Brazilian), French, Hindi, Bengali, and Russian&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Language Selector&lt;/strong&gt; - Easy-to-use language switcher in the app header&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Complete Translation&lt;/strong&gt; - All menus, dialogs, settings, tooltips, and help content translated&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Locale-Aware&lt;/strong&gt; - Automatically detects and remembers your language preference&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Improved Connector Tool&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Click-based Creation&lt;/strong&gt; - New default mode: click first node, then second node to connect&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Drag Mode Option&lt;/strong&gt; - Original drag-and-drop still available via settings&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Mode Selection&lt;/strong&gt; - Switch between click and drag modes in Settings → Connectors tab&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Better Reliability&lt;/strong&gt; - Click mode provides more predictable connection creation&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Custom Icon Import&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Import Your Own Icons&lt;/strong&gt; - Upload custom icons (PNG, JPG, SVG) to use in your diagrams&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Automatic Scaling&lt;/strong&gt; - Icons are automatically scaled to consistent sizes for professional appearance&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Isometric/Flat Toggle&lt;/strong&gt; - Choose whether imported icons appear as 3D isometric or flat 2D&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Smart Persistence&lt;/strong&gt; - Custom icons are saved with diagrams and work across all storage methods&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Icon Resources&lt;/strong&gt; - Find free icons at: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://icon-sets.iconify.design/"&gt;Iconify Icon Sets&lt;/a&gt; - Thousands of free SVG icons&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://www.flaticon.com/free-icons/isometric"&gt;Flaticon Isometric Icons&lt;/a&gt; - High-quality isometric icon packs&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Server Storage Support&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Persistent Storage&lt;/strong&gt; - Diagrams saved to server filesystem, persist across browser sessions&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi-device Access&lt;/strong&gt; - Access your diagrams from any device when using Docker deployment&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Automatic Detection&lt;/strong&gt; - UI automatically shows server storage when available&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Overwrite Protection&lt;/strong&gt; - Confirmation dialog when saving with duplicate names&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Docker Integration&lt;/strong&gt; - Server storage enabled by default in Docker deployments&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Enhanced Interaction Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Configurable Hotkeys&lt;/strong&gt; - Three profiles (QWERTY, SMNRCT, None) for tool selection with visual indicators&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Advanced Pan Controls&lt;/strong&gt; - Multiple pan methods including empty area drag, middle/right click, modifier keys (Ctrl/Alt), and keyboard navigation (Arrow/WASD/IJKL)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Toggle Connector Arrows&lt;/strong&gt; - Option to show/hide arrows on individual connectors&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Persistent Tool Selection&lt;/strong&gt; - Connector tool remains active after creating connections&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Settings Dialog&lt;/strong&gt; - Centralized configuration for hotkeys and pan controls&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Docker &amp;amp; CI/CD Improvements&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Automated Docker Builds&lt;/strong&gt; - GitHub Actions workflow for automatic Docker Hub deployment on commits&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi-architecture Support&lt;/strong&gt; - Docker images for both &lt;code&gt;linux/amd64&lt;/code&gt; and &lt;code&gt;linux/arm64&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Pre-built Images&lt;/strong&gt; - Available at &lt;code&gt;stnsmith/fossflow:latest&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Monorepo Architecture&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Single repository&lt;/strong&gt; for both library and application&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;NPM Workspaces&lt;/strong&gt; for streamlined dependency management&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Unified build process&lt;/strong&gt; with &lt;code&gt;npm run build&lt;/code&gt; at the root&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;UI Fixes&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fixed Quill editor toolbar icons display issue&lt;/li&gt; 
+ &lt;li&gt;Resolved React key warnings in context menus&lt;/li&gt; 
+ &lt;li&gt;Improved markdown editor styling&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🎨 &lt;strong&gt;Isometric Diagramming&lt;/strong&gt; - Create stunning 3D-style technical diagrams&lt;/li&gt; 
+ &lt;li&gt;💾 &lt;strong&gt;Auto-Save&lt;/strong&gt; - Your work is automatically saved every 5 seconds&lt;/li&gt; 
+ &lt;li&gt;📱 &lt;strong&gt;PWA Support&lt;/strong&gt; - Install as a native app on Mac and Linux&lt;/li&gt; 
+ &lt;li&gt;🔒 &lt;strong&gt;Privacy-First&lt;/strong&gt; - All data stored locally in your browser&lt;/li&gt; 
+ &lt;li&gt;📤 &lt;strong&gt;Import/Export&lt;/strong&gt; - Share diagrams as JSON files&lt;/li&gt; 
+ &lt;li&gt;🎯 &lt;strong&gt;Session Storage&lt;/strong&gt; - Quick save without dialogs&lt;/li&gt; 
+ &lt;li&gt;🌐 &lt;strong&gt;Offline Support&lt;/strong&gt; - Work without internet connection&lt;/li&gt; 
+ &lt;li&gt;🗄️ &lt;strong&gt;Server Storage&lt;/strong&gt; - Optional persistent storage when using Docker (enabled by default)&lt;/li&gt; 
+ &lt;li&gt;🌍 &lt;strong&gt;Multilingual&lt;/strong&gt; - Full support for 8 languages: English, 简体中文, Español, Português, Français, हिन्दी, বাংলা, Русский&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🐳 Quick Deploy with Docker&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Using Docker Compose (recommended - includes persistent storage)
+docker compose up
+
+# Or run directly from Docker Hub with persistent storage
+docker run -p 80:80 -v $(pwd)/diagrams:/data/diagrams stnsmith/fossflow:latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Server storage is enabled by default in Docker. Your diagrams will be saved to &lt;code&gt;./diagrams&lt;/code&gt; on the host.&lt;/p&gt; 
+&lt;p&gt;To disable server storage, set &lt;code&gt;ENABLE_SERVER_STORAGE=false&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -p 80:80 -e ENABLE_SERVER_STORAGE=false stnsmith/fossflow:latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Quick Start (Local Development)&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Clone the repository
+git clone https://github.com/stan-smith/FossFLOW
+cd FossFLOW
+
+# Install dependencies
+npm install
+
+# Build the library (required first time)
+npm run build:lib
+
+# Start development server
+npm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Open &lt;a href="http://localhost:3000"&gt;http://localhost:3000&lt;/a&gt; in your browser.&lt;/p&gt; 
+&lt;h2&gt;Monorepo Structure&lt;/h2&gt; 
+&lt;p&gt;This is a monorepo containing two packages:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;packages/fossflow-lib&lt;/code&gt; - React component library for drawing network diagrams (built with Webpack)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;packages/fossflow-app&lt;/code&gt; - Progressive Web App for creating isometric diagrams (built with RSBuild)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Development Commands&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Development
+npm run dev          # Start app development server
+npm run dev:lib      # Watch mode for library development
+
+# Building
+npm run build        # Build both library and app
+npm run build:lib    # Build library only
+npm run build:app    # Build app only
+
+# Testing &amp;amp; Linting
+npm test             # Run unit tests
+npm run lint         # Check for linting errors
+
+# E2E Tests (Selenium)
+cd e2e-tests
+./run-tests.sh       # Run end-to-end tests (requires Docker &amp;amp; Python)
+
+# Publishing
+npm run publish:lib  # Publish library to npm
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;How to Use&lt;/h2&gt; 
+&lt;h3&gt;Creating Diagrams&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Add Items&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Press the "+" button on the top right menu, the library of components will appear on the left&lt;/li&gt; 
+   &lt;li&gt;Drag and drop components from the library onto the canvas&lt;/li&gt; 
+   &lt;li&gt;Or right-click on the grid and select "Add node"&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Connect Items&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Select the Connector tool (press 'C' or click connector icon)&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Click mode&lt;/strong&gt; (default): Click first node, then click second node&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Drag mode&lt;/strong&gt; (optional): Click and drag from first to second node&lt;/li&gt; 
+   &lt;li&gt;Switch modes in Settings → Connectors tab&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Save Your Work&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Quick Save&lt;/strong&gt; - Saves to browser session&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Export&lt;/strong&gt; - Download as JSON file&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Import&lt;/strong&gt; - Load from JSON file&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Storage Options&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Session Storage&lt;/strong&gt;: Temporary saves cleared when browser closes&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Export/Import&lt;/strong&gt;: Permanent storage as JSON files&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Auto-Save&lt;/strong&gt;: Automatically saves changes every 5 seconds to session&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions! Please see &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/CONTRIBUTORS.md"&gt;CONTRIBUTORS.md&lt;/a&gt; for guidelines.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/FOSSFLOW_ENCYCLOPEDIA.md"&gt;FOSSFLOW_ENCYCLOPEDIA.md&lt;/a&gt; - Comprehensive guide to the codebase&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/FOSSFLOW_TODO.md"&gt;FOSSFLOW_TODO.md&lt;/a&gt; - Current issues and roadmap&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/CONTRIBUTORS.md"&gt;CONTRIBUTORS.md&lt;/a&gt; - Contributing guidelines&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ThinkInAIXYZ/deepchat</title>
+      <link>https://github.com/ThinkInAIXYZ/deepchat</link>
+      <description>&lt;p&gt;🐬DeepChat - A smart assistant that connects powerful AI to your personal world&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/build/icon.png" width="150" height="150" alt="DeepChat AI Assistant Icon" /&gt; &lt;/p&gt; 
+&lt;h1 align="center"&gt;DeepChat - Powerful Open-Source Multi-Model AI Chat Platform&lt;/h1&gt; 
+&lt;p align="center"&gt;DeepChat is a feature-rich open-source AI chat platform supporting multiple cloud and local large language models with powerful search enhancement and tool calling capabilities.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/ThinkInAIXYZ/deepchat/stargazers"&gt;&lt;img src="https://img.shields.io/github/stars/ThinkInAIXYZ/deepchat" alt="Stars Badge" /&gt;&lt;/a&gt; &lt;a href="https://github.com/ThinkInAIXYZ/deepchat/network/members"&gt;&lt;img src="https://img.shields.io/github/forks/ThinkInAIXYZ/deepchat" alt="Forks Badge" /&gt;&lt;/a&gt; &lt;a href="https://github.com/ThinkInAIXYZ/deepchat/pulls"&gt;&lt;img src="https://img.shields.io/github/issues-pr/ThinkInAIXYZ/deepchat" alt="Pull Requests Badge" /&gt;&lt;/a&gt; &lt;a href="https://github.com/ThinkInAIXYZ/deepchat/issues"&gt;&lt;img src="https://img.shields.io/github/issues/ThinkInAIXYZ/deepchat" alt="Issues Badge" /&gt;&lt;/a&gt; &lt;a href="https://github.com/ThinkInAIXYZ/deepchat/raw/main/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/ThinkInAIXYZ/deepchat" alt="License Badge" /&gt;&lt;/a&gt; &lt;a href="https://deepwiki.com/ThinkInAIXYZ/deepchat"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" alt="Ask DeepWiki" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/README.zh.md"&gt;中文&lt;/a&gt; / 
+ &lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/README.md"&gt;English&lt;/a&gt; / 
+ &lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/README.jp.md"&gt;日本語&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;📑 Table of Contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#-table-of-contents"&gt;📑 Table of Contents&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#-project-introduction"&gt;🚀 Project Introduction&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#-why-choose-deepchat"&gt;💡 Why Choose DeepChat&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#-main-features"&gt;🔥 Main Features&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#-supported-model-providers"&gt;🤖 Supported Model Providers&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#compatible-with-any-model-provider-in-openaigeminianthropic-api-format"&gt;Compatible with any model provider in OpenAI/Gemini/Anthropic API format&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#-use-cases"&gt;🔍 Use Cases&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#-quick-start"&gt;📦 Quick Start&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#download-and-install"&gt;Download and Install&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#configure-models"&gt;Configure Models&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#start-conversations"&gt;Start Conversations&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#-development-guide"&gt;💻 Development Guide&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#install-dependencies"&gt;Install Dependencies&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#start-development"&gt;Start Development&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#build"&gt;Build&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#-community--contribution"&gt;👥 Community &amp;amp; Contribution&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#-star-history"&gt;⭐ Star History&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#-contributors"&gt;👨‍💻 Contributors&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/#-license"&gt;📃 License&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🚀 Project Introduction&lt;/h2&gt; 
+&lt;p&gt;DeepChat is a powerful open-source AI chat platform providing a unified interface for interacting with various large language models. Whether you're using cloud APIs like OpenAI, Gemini, Anthropic, or locally deployed Ollama models, DeepChat delivers a smooth user experience.&lt;/p&gt; 
+&lt;p&gt;As a cross-platform AI assistant application, DeepChat not only supports basic chat functionality but also offers advanced features such as search enhancement, tool calling, and multimodal interaction, making AI capabilities more accessible and efficient.&lt;/p&gt; 
+&lt;table align="center"&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td align="center" style="padding: 10px;"&gt; &lt;img src="https://github.com/user-attachments/assets/6e932a65-78e0-4d2e-9654-ccc010f78bf7" alt="DeepChat Light Mode" width="400" /&gt; &lt;br /&gt; &lt;/td&gt; 
+   &lt;td align="center" style="padding: 10px;"&gt; &lt;img src="https://github.com/user-attachments/assets/ea6ccf60-32af-4bc1-91cc-e72703bdc1ff" alt="DeepChat Dark Mode" width="400" /&gt; &lt;br /&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;💡 Why Choose DeepChat&lt;/h2&gt; 
+&lt;p&gt;Compared to other AI tools, DeepChat offers the following unique advantages:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Unified Multi-Model Management&lt;/strong&gt;: One application supports almost all mainstream LLMs, eliminating the need to switch between multiple apps&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Seamless Local Model Integration&lt;/strong&gt;: Built-in Ollama support allows you to manage and use local models without command-line operations&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Advanced Tool Calling&lt;/strong&gt;: Built-in MCP support enables code execution, web access, and other tools without additional configuration&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Powerful Search Enhancement&lt;/strong&gt;: Support for multiple search engines makes AI responses more accurate and timely, providing non-standard web search paradigms that can be quickly customized&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Privacy-Focused&lt;/strong&gt;: Local data storage and network proxy support reduce the risk of information leakage&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Business-Friendly&lt;/strong&gt;: Embraces open source under the Apache License 2.0, suitable for both commercial and personal use&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🔥 Main Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🌐 &lt;strong&gt;Multiple Cloud LLM Provider Support&lt;/strong&gt;: DeepSeek, OpenAI, SiliconFlow, Grok, Gemini, Anthropic, and more&lt;/li&gt; 
+ &lt;li&gt;🏠 &lt;strong&gt;Local Model Deployment Support&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;Integrated Ollama with comprehensive management capabilities&lt;/li&gt; 
+   &lt;li&gt;Control and manage Ollama model downloads, deployments, and runs without command-line operations&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;🚀 &lt;strong&gt;Rich and Easy-to-Use Chat Capabilities&lt;/strong&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Complete Markdown rendering with code block rendering based on industry-leading &lt;a href="https://codemirror.net/"&gt;CodeMirror&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;Multi-window + multi-tab architecture supporting parallel multi-session operations across all dimensions, use large models like using a browser, non-blocking experience brings excellent efficiency&lt;/li&gt; 
+   &lt;li&gt;Supports Artifacts rendering for diverse result presentation, significantly saving token consumption after MCP integration&lt;/li&gt; 
+   &lt;li&gt;Messages support retry to generate multiple variations; conversations can be forked freely, ensuring there's always a suitable line of thought&lt;/li&gt; 
+   &lt;li&gt;Supports rendering images, Mermaid diagrams, and other multi-modal content; supports GPT-4o, Gemini, Grok text-to-image capabilities&lt;/li&gt; 
+   &lt;li&gt;Supports highlighting external information sources like search results within the content&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;🔍 &lt;strong&gt;Robust Search Extension Capabilities&lt;/strong&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Built-in integration with leading search APIs like BoSearch, Brave Search via MCP mode, allowing the model to intelligently decide when to search&lt;/li&gt; 
+   &lt;li&gt;Supports mainstream search engines like Google, Bing, Baidu, and Sogou Official Accounts search by simulating user web browsing, enabling the LLM to read search engines like a human&lt;/li&gt; 
+   &lt;li&gt;Supports reading any search engine; simply configure a search assistant model to connect various search sources, whether internal networks, API-less engines, or vertical domain search engines, as information sources for the model&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;🔧 &lt;strong&gt;Excellent MCP (Model Context Protocol) Support&lt;/strong&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Complete support for the three core capabilities of Resources/Prompts/Tools in the MCP protocol&lt;/li&gt; 
+   &lt;li&gt;Supports semantic workflows, enabling more complex and intelligent automation by understanding the meaning and context of tasks.&lt;/li&gt; 
+   &lt;li&gt;Extremely user-friendly configuration interface&lt;/li&gt; 
+   &lt;li&gt;Aesthetically pleasing and clear tool call display&lt;/li&gt; 
+   &lt;li&gt;Detailed tool call debugging window with automatic formatting of tool parameters and return data&lt;/li&gt; 
+   &lt;li&gt;Built-in Node.js runtime environment; npx/node-like services require no extra configuration and work out-of-the-box&lt;/li&gt; 
+   &lt;li&gt;Supports StreamableHTTP/SSE/Stdio protocol Transports&lt;/li&gt; 
+   &lt;li&gt;Supports inMemory services with built-in utilities like code execution, web information retrieval, and file operations; ready for most common use cases out-of-the-box without secondary installation&lt;/li&gt; 
+   &lt;li&gt;Converts visual model capabilities into universally usable functions for any model via the built-in MCP service&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;💻 &lt;strong&gt;Multi-Platform Support&lt;/strong&gt;: Windows, macOS, Linux&lt;/li&gt; 
+ &lt;li&gt;🎨 &lt;strong&gt;Beautiful and User-Friendly Interface&lt;/strong&gt;, user-oriented design, meticulously themed light and dark modes&lt;/li&gt; 
+ &lt;li&gt;🔗 &lt;strong&gt;Rich DeepLink Support&lt;/strong&gt;: Initiate conversations via links for seamless integration with other applications. Also supports one-click installation of MCP services for simplicity and speed&lt;/li&gt; 
+ &lt;li&gt;🚑 &lt;strong&gt;Security-First Design&lt;/strong&gt;: Chat data and configuration data have reserved encryption interfaces and code obfuscation capabilities&lt;/li&gt; 
+ &lt;li&gt;🛡️ &lt;strong&gt;Privacy Protection&lt;/strong&gt;: Supports screen projection hiding, network proxies, and other privacy protection methods to reduce the risk of information leakage&lt;/li&gt; 
+ &lt;li&gt;💰 &lt;strong&gt;Business-Friendly&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;Embraces open source, based on the Apache License 2.0 protocol, enterprise use without worry&lt;/li&gt; 
+   &lt;li&gt;Enterprise integration requires only minimal configuration code changes to use reserved encrypted obfuscation security capabilities&lt;/li&gt; 
+   &lt;li&gt;Clear code structure, both model providers and MCP services are highly decoupled, can be freely customized with minimal cost&lt;/li&gt; 
+   &lt;li&gt;Reasonable architecture, data interaction and UI behavior separation, fully utilizing Electron's capabilities, rejecting simple web wrappers, excellent performance&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;For more details on how to use these features, see the &lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/docs/user-guide.md"&gt;User Guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;🤖 Supported Model Providers&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr align="center"&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/ollama.svg?sanitize=true" width="50" height="50" alt="Ollama Icon" /&gt;&lt;br /&gt; &lt;a href="https://ollama.com"&gt;Ollama&lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/deepseek-color.svg?sanitize=true" width="50" height="50" alt="Deepseek Icon" /&gt;&lt;br /&gt; &lt;a href="https://deepseek.com/"&gt;Deepseek&lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/ppio-color.svg?sanitize=true" width="50" height="50" alt="PPIO Icon" /&gt;&lt;br /&gt; &lt;a href="https://ppinfra.com/"&gt;PPIO&lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/alibabacloud-color.svg?sanitize=true" width="50" height="50" alt="DashScope Icon" /&gt;&lt;br /&gt; &lt;a href="https://www.aliyun.com/product/bailian"&gt;DashScope&lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr align="center"&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/doubao-color.svg?sanitize=true" width="50" height="50" alt="Doubao Icon" /&gt;&lt;br /&gt; &lt;a href="https://console.volcengine.com/ark/"&gt;Doubao&lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/minimax-color.svg?sanitize=true" width="50" height="50" alt="MiniMax Icon" /&gt;&lt;br /&gt; &lt;a href="https://platform.minimaxi.com/"&gt;MiniMax&lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/fireworks-color.svg?sanitize=true" width="50" height="50" alt="Fireworks Icon" /&gt;&lt;br /&gt; &lt;a href="https://fireworks.ai/"&gt;Fireworks&lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/302ai.svg?sanitize=true" width="50" height="50" alt="302.AI Icon" /&gt;&lt;br /&gt; &lt;a href="https://302.ai/"&gt;302.AI&lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr align="center"&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/openai.svg?sanitize=true" width="50" height="50" alt="OpenAI Icon" /&gt;&lt;br /&gt; &lt;a href="https://openai.com/"&gt;OpenAI&lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/gemini-color.svg?sanitize=true" width="50" height="50" alt="Gemini Icon" /&gt;&lt;br /&gt; &lt;a href="https://gemini.google.com/"&gt;Gemini&lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/github.svg?sanitize=true" width="50" height="50" alt="GitHub Models Icon" /&gt;&lt;br /&gt; &lt;a href="https://github.com/marketplace/models"&gt;GitHub Models&lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/moonshot.svg?sanitize=true" width="50" height="50" alt="Moonshot Icon" /&gt;&lt;br /&gt; &lt;a href="https://moonshot.ai/"&gt;Moonshot&lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr align="center"&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/openrouter.svg?sanitize=true" width="50" height="50" alt="OpenRouter Icon" /&gt;&lt;br /&gt; &lt;a href="https://openrouter.ai/"&gt;OpenRouter&lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/azure-color.svg?sanitize=true" width="50" height="50" alt="Azure OpenAI Icon" /&gt;&lt;br /&gt; &lt;a href="https://azure.microsoft.com/en-us/products/ai-services/openai-service"&gt;Azure OpenAI&lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/qiniu.svg?sanitize=true" width="50" height="50" alt="Qiniu Icon" /&gt;&lt;br /&gt; &lt;a href="https://www.qiniu.com/products/ai-token-api"&gt;Qiniu&lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/grok.svg?sanitize=true" width="50" height="50" alt="Grok Icon" /&gt;&lt;br /&gt; &lt;a href="https://x.ai/"&gt;Grok&lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr align="center"&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/zhipu-color.svg?sanitize=true" width="50" height="50" alt="Zhipu Icon" /&gt;&lt;br /&gt; &lt;a href="https://open.bigmodel.cn/"&gt;Zhipu&lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/siliconcloud.svg?sanitize=true" width="50" height="50" alt="SiliconFlow Icon" /&gt;&lt;br /&gt; &lt;a href="https://www.siliconflow.cn/"&gt;SiliconFlow&lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/aihubmix.png" width="50" height="50" alt="AIHubMix Icon" /&gt;&lt;br /&gt; &lt;a href="https://aihubmix.com/"&gt;AIHubMix&lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/hunyuan-color.svg?sanitize=true" width="50" height="50" alt="Hunyuan Icon" /&gt;&lt;br /&gt; &lt;a href="https://cloud.tencent.com/product/hunyuan"&gt;Hunyuan&lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr align="center"&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/lmstudio.svg?sanitize=true" width="50" height="50" alt="LM Studio Icon" /&gt;&lt;br /&gt; &lt;a href="https://lmstudio.ai/"&gt;LM Studio&lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/src/renderer/src/assets/llm-icons/groq.svg?sanitize=true" width="50" height="50" alt="Groq Icon" /&gt;&lt;br /&gt; &lt;a href="https://groq.com/"&gt;Groq&lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h3&gt;Compatible with any model provider in OpenAI/Gemini/Anthropic API format&lt;/h3&gt; 
+&lt;h2&gt;🔍 Use Cases&lt;/h2&gt; 
+&lt;p&gt;DeepChat is suitable for various AI application scenarios:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Daily Assistant&lt;/strong&gt;: Answering questions, providing suggestions, assisting with writing and creation&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Development Aid&lt;/strong&gt;: Code generation, debugging, technical problem solving&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Learning Tool&lt;/strong&gt;: Concept explanation, knowledge exploration, learning guidance&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Content Creation&lt;/strong&gt;: Copywriting, creative inspiration, content optimization&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Data Analysis&lt;/strong&gt;: Data interpretation, chart generation, report writing&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📦 Quick Start&lt;/h2&gt; 
+&lt;h3&gt;Download and Install&lt;/h3&gt; 
+&lt;p&gt;Download the latest version for your system from the &lt;a href="https://github.com/ThinkInAIXYZ/deepchat/releases"&gt;GitHub Releases&lt;/a&gt; page:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Windows: &lt;code&gt;.exe&lt;/code&gt; installation file&lt;/li&gt; 
+ &lt;li&gt;macOS: &lt;code&gt;.dmg&lt;/code&gt; installation file&lt;/li&gt; 
+ &lt;li&gt;Linux: &lt;code&gt;.AppImage&lt;/code&gt; or &lt;code&gt;.deb&lt;/code&gt; installation file&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Configure Models&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Launch the DeepChat application&lt;/li&gt; 
+ &lt;li&gt;Click the settings icon&lt;/li&gt; 
+ &lt;li&gt;Select the "Model Providers" tab&lt;/li&gt; 
+ &lt;li&gt;Add your API keys or configure local Ollama&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Start Conversations&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Click the "+" button to create a new conversation&lt;/li&gt; 
+ &lt;li&gt;Select the model you want to use&lt;/li&gt; 
+ &lt;li&gt;Start communicating with your AI assistant&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;For a comprehensive guide on getting started and using all features, please refer to the &lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/docs/user-guide.md"&gt;User Guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;💻 Development Guide&lt;/h2&gt; 
+&lt;p&gt;Please read the &lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/CONTRIBUTING.md"&gt;Contribution Guidelines&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Windows and Linux are packaged by GitHub Action. For Mac-related signing and packaging, please refer to the &lt;a href="https://github.com/ThinkInAIXYZ/deepchat/wiki/Mac-Release-Guide"&gt;Mac Release Guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Install Dependencies&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ pnpm install
+$ pnpm run installRuntime
+# if got err: No module named 'distutils'
+$ pip install setuptools
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;For Windows: To allow non-admin users to create symlinks and hardlinks, enable &lt;code&gt;Developer Mode&lt;/code&gt; in Settings or use an administrator account. Otherwise &lt;code&gt;pnpm&lt;/code&gt; ops will fail.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Start Development&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ pnpm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Build&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# For Windows
+$ pnpm run build:win
+
+# For macOS
+$ pnpm run build:mac
+
+# For Linux
+$ pnpm run build:linux
+
+# Specify architecture packaging
+$ pnpm run build:win:x64
+$ pnpm run build:win:arm64
+$ pnpm run build:mac:x64
+$ pnpm run build:mac:arm64
+$ pnpm run build:linux:x64
+$ pnpm run build:linux:arm64
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For a more detailed guide on development, project structure, and architecture, please see the &lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/docs/developer-guide.md"&gt;Developer Guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;👥 Community &amp;amp; Contribution&lt;/h2&gt; 
+&lt;p&gt;DeepChat is an active open-source community project, and we welcome various forms of contribution:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🐛 &lt;a href="https://github.com/ThinkInAIXYZ/deepchat/issues"&gt;Report issues&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;💡 &lt;a href="https://github.com/ThinkInAIXYZ/deepchat/issues"&gt;Submit feature suggestions&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🔧 &lt;a href="https://github.com/ThinkInAIXYZ/deepchat/pulls"&gt;Submit code improvements&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;📚 &lt;a href="https://github.com/ThinkInAIXYZ/deepchat/wiki"&gt;Improve documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🌍 &lt;a href="https://github.com/ThinkInAIXYZ/deepchat/tree/main/locales"&gt;Help with translation&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Check the &lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/CONTRIBUTING.md"&gt;Contribution Guidelines&lt;/a&gt; to learn more about ways to participate in the project.&lt;/p&gt; 
+&lt;h2&gt;⭐ Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.star-history.com/#ThinkInAIXYZ/deepchat&amp;amp;Timeline"&gt;&lt;img src="https://api.star-history.com/svg?repos=ThinkInAIXYZ/deepchat&amp;amp;type=Timeline" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;👨‍💻 Contributors&lt;/h2&gt; 
+&lt;p&gt;Thank you for considering contributing to deepchat! The contribution guide can be found in the &lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/CONTRIBUTING.md"&gt;Contribution Guidelines&lt;/a&gt;.&lt;/p&gt; 
+&lt;a href="https://openomy.com/thinkinaixyz/deepchat" target="_blank" style="display: block; width: 100%;" align="center"&gt; &lt;img src="https://openomy.com/svg?repo=thinkinaixyz/deepchat&amp;amp;chart=bubble&amp;amp;latestMonth=3" target="_blank" alt="Contribution Leaderboard" style="display: block; width: 100%;" /&gt; &lt;/a&gt; 
+&lt;h2&gt;🙏🏻 Thanks&lt;/h2&gt; 
+&lt;p&gt;This project is built with the help of these awesome libraries:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://vuejs.org/"&gt;Vue&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.electronjs.org/"&gt;Electron&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://electron-vite.org/"&gt;Electron-Vite&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/oxc-project/oxc"&gt;oxlint&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📃 License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/ThinkInAIXYZ/deepchat/dev/LICENSE"&gt;LICENSE&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>daytonaio/daytona</title>
+      <link>https://github.com/daytonaio/daytona</link>
+      <description>&lt;p&gt;Daytona is a Secure and Elastic Infrastructure for Running AI-Generated Code&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;a href="https://www.daytona.io/docs"&gt;&lt;img src="https://img.shields.io/github/v/release/daytonaio/docs?label=Docs&amp;amp;color=23cc71" alt="Documentation" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/badge/License-AGPL--3-blue" alt="License" /&gt; &lt;a href="https://goreportcard.com/report/github.com/daytonaio/daytona"&gt;&lt;img src="https://goreportcard.com/badge/github.com/daytonaio/daytona" alt="Go Report Card" /&gt;&lt;/a&gt; &lt;a href="https://github.com/daytonaio/daytona/issues"&gt;&lt;img src="https://img.shields.io/github/issues/daytonaio/daytona" alt="Issues - daytona" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/github/v/release/daytonaio/daytona" alt="GitHub Release" /&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://github.com/daytonaio/daytona/raw/main/assets/images/Daytona-logotype-white.png" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://github.com/daytonaio/daytona/raw/main/assets/images/Daytona-logotype-black.png" /&gt; 
+  &lt;img alt="Daytona logo" src="https://github.com/daytonaio/daytona/raw/main/assets/images/Daytona-logotype-black.png" width="50%" /&gt; 
+ &lt;/picture&gt; 
+&lt;/div&gt; 
+&lt;h3 align="center"&gt; Run AI Code. &lt;br /&gt; Secure and Elastic Infrastructure for Running Your AI-Generated Code. &lt;/h3&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.daytona.io/docs"&gt; Documentation &lt;/a&gt;· &lt;a href="https://github.com/daytonaio/daytona/issues/new?assignees=&amp;amp;labels=bug&amp;amp;projects=&amp;amp;template=bug_report.md&amp;amp;title=%F0%9F%90%9B+Bug+Report%3A+"&gt; Report Bug &lt;/a&gt;· &lt;a href="https://github.com/daytonaio/daytona/issues/new?assignees=&amp;amp;labels=enhancement&amp;amp;projects=&amp;amp;template=feature_request.md&amp;amp;title=%F0%9F%9A%80+Feature%3A+"&gt; Request Feature &lt;/a&gt;· &lt;a href="https://go.daytona.io/slack"&gt; Join our Slack &lt;/a&gt;· &lt;a href="https://x.com/daytonaio"&gt; Connect on X &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.producthunt.com/posts/daytona-2?embed=true&amp;amp;utm_source=badge-top-post-badge&amp;amp;utm_medium=badge&amp;amp;utm_souce=badge-daytona-2" target="_blank"&gt;&lt;img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=957617&amp;amp;theme=neutral&amp;amp;period=daily&amp;amp;t=1746176740150" alt="Daytona  - Secure and elastic infra for running your AI-generated code. | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /&gt;&lt;/a&gt; &lt;a href="https://www.producthunt.com/posts/daytona-2?embed=true&amp;amp;utm_source=badge-top-post-topic-badge&amp;amp;utm_medium=badge&amp;amp;utm_souce=badge-daytona-2" target="_blank"&gt;&lt;img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=957617&amp;amp;theme=neutral&amp;amp;period=monthly&amp;amp;topic_id=237&amp;amp;t=1746176740150" alt="Daytona  - Secure and elastic infra for running your AI-generated code. | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;h3&gt;Python SDK&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pip install daytona
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;TypeScript SDK&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install @daytonaio/sdk
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Lightning-Fast Infrastructure&lt;/strong&gt;: Sub-90ms Sandbox creation from code to execution.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Separated &amp;amp; Isolated Runtime&lt;/strong&gt;: Execute AI-generated code with zero risk to your infrastructure.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Massive Parallelization for Concurrent AI Workflows&lt;/strong&gt;: Fork Sandbox filesystem and memory state (Coming soon!)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Programmatic Control&lt;/strong&gt;: File, Git, LSP, and Execute API&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Unlimited Persistence&lt;/strong&gt;: Your Sandboxes can live forever&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;OCI/Docker Compatibility&lt;/strong&gt;: Use any OCI/Docker image to create a Sandbox&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Create an account at &lt;a href="https://app.daytona.io"&gt;https://app.daytona.io&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Generate a &lt;a href="https://app.daytona.io/dashboard/keys"&gt;new API key&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Follow the &lt;a href="https://www.daytona.io/docs/getting-started/"&gt;Getting Started docs&lt;/a&gt; to start using the Daytona SDK&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Creating your first Sandbox&lt;/h2&gt; 
+&lt;h3&gt;Python SDK&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-py"&gt;from daytona import Daytona, DaytonaConfig, CreateSandboxBaseParams
+
+# Initialize the Daytona client
+daytona = Daytona(DaytonaConfig(api_key="YOUR_API_KEY"))
+
+# Create the Sandbox instance
+sandbox = daytona.create(CreateSandboxBaseParams(language="python"))
+
+# Run code securely inside the Sandbox
+response = sandbox.process.code_run('print("Sum of 3 and 4 is " + str(3 + 4))')
+if response.exit_code != 0:
+    print(f"Error running code: {response.exit_code} {response.result}")
+else:
+    print(response.result)
+
+# Clean up the Sandbox
+daytona.delete(sandbox)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Typescript SDK&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;import { Daytona } from '@daytonaio/sdk'
+
+async function main() {
+  // Initialize the Daytona client
+  const daytona = new Daytona({
+    apiKey: 'YOUR_API_KEY',
+  })
+
+  let sandbox
+  try {
+    // Create the Sandbox instance
+    sandbox = await daytona.create({
+      language: 'typescript',
+    })
+    // Run code securely inside the Sandbox
+    const response = await sandbox.process.codeRun('console.log("Sum of 3 and 4 is " + (3 + 4))')
+    if (response.exitCode !== 0) {
+      console.error('Error running code:', response.exitCode, response.result)
+    } else {
+      console.log(response.result)
+    }
+  } catch (error) {
+    console.error('Sandbox flow error:', error)
+  } finally {
+    if (sandbox) await daytona.delete(sandbox)
+  }
+}
+
+main().catch(console.error)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Daytona is Open Source under the &lt;a href="https://raw.githubusercontent.com/daytonaio/daytona/main/LICENSE"&gt;GNU AFFERO GENERAL PUBLIC LICENSE&lt;/a&gt;, and is the &lt;a href="https://raw.githubusercontent.com/daytonaio/daytona/main/NOTICE"&gt;copyright of its contributors&lt;/a&gt;. If you would like to contribute to the software, read the Developer Certificate of Origin Version 1.1 (&lt;a href="https://developercertificate.org/"&gt;https://developercertificate.org/&lt;/a&gt;). Afterwards, navigate to the &lt;a href="https://raw.githubusercontent.com/daytonaio/daytona/main/CONTRIBUTING.md"&gt;contributing guide&lt;/a&gt; to get started.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>anthropics/claude-code</title>
+      <link>https://github.com/anthropics/claude-code</link>
+      <description>&lt;p&gt;Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Claude Code&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://img.shields.io/badge/Node.js-18%2B-brightgreen?style=flat-square" alt="" /&gt; &lt;a href="https://www.npmjs.com/package/@anthropic-ai/claude-code"&gt;&lt;img src="https://img.shields.io/npm/v/@anthropic-ai/claude-code.svg?style=flat-square" alt="npm" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands. Use it in your terminal, IDE, or tag @claude on Github.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Learn more in the &lt;a href="https://docs.anthropic.com/en/docs/claude-code/overview"&gt;official documentation&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/anthropics/claude-code/main/demo.gif" /&gt; 
+&lt;h2&gt;Get started&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Install Claude Code:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;npm install -g @anthropic-ai/claude-code
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Navigate to your project directory and run &lt;code&gt;claude&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Plugins&lt;/h2&gt; 
+&lt;p&gt;This repository includes several Claude Code plugins that extend functionality with custom commands and agents. See the &lt;a href="https://raw.githubusercontent.com/anthropics/claude-code/main/plugins/README.md"&gt;plugins directory&lt;/a&gt; for detailed documentation on available plugins.&lt;/p&gt; 
+&lt;h2&gt;Reporting Bugs&lt;/h2&gt; 
+&lt;p&gt;We welcome your feedback. Use the &lt;code&gt;/bug&lt;/code&gt; command to report issues directly within Claude Code, or file a &lt;a href="https://github.com/anthropics/claude-code/issues"&gt;GitHub issue&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Connect on Discord&lt;/h2&gt; 
+&lt;p&gt;Join the &lt;a href="https://anthropic.com/discord"&gt;Claude Developers Discord&lt;/a&gt; to connect with other developers using Claude Code. Get help, share feedback, and discuss your projects with the community.&lt;/p&gt; 
+&lt;h2&gt;Data collection, usage, and retention&lt;/h2&gt; 
+&lt;p&gt;When you use Claude Code, we collect feedback, which includes usage data (such as code acceptance or rejections), associated conversation data, and user feedback submitted via the &lt;code&gt;/bug&lt;/code&gt; command.&lt;/p&gt; 
+&lt;h3&gt;How we use your data&lt;/h3&gt; 
+&lt;p&gt;See our &lt;a href="https://docs.anthropic.com/en/docs/claude-code/data-usage"&gt;data usage policies&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Privacy safeguards&lt;/h3&gt; 
+&lt;p&gt;We have implemented several safeguards to protect your data, including limited retention periods for sensitive information, restricted access to user session data, and clear policies against using feedback for model training.&lt;/p&gt; 
+&lt;p&gt;For full details, please review our &lt;a href="https://www.anthropic.com/legal/commercial-terms"&gt;Commercial Terms of Service&lt;/a&gt; and &lt;a href="https://www.anthropic.com/legal/privacy"&gt;Privacy Policy&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>lfnovo/open-notebook</title>
+      <link>https://github.com/lfnovo/open-notebook</link>
+      <description>&lt;p&gt;An Open Source implementation of Notebook LM with more flexibility and features&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a id="readme-top"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;!-- [![Contributors][contributors-shield]][contributors-url] --&gt; 
+&lt;p&gt;&lt;a href="https://github.com/lfnovo/open-notebook/network/members"&gt;&lt;img src="https://img.shields.io/github/forks/lfnovo/open-notebook.svg?style=for-the-badge" alt="Forks" /&gt;&lt;/a&gt; &lt;a href="https://github.com/lfnovo/open-notebook/stargazers"&gt;&lt;img src="https://img.shields.io/github/stars/lfnovo/open-notebook.svg?style=for-the-badge" alt="Stargazers" /&gt;&lt;/a&gt; &lt;a href="https://github.com/lfnovo/open-notebook/issues"&gt;&lt;img src="https://img.shields.io/github/issues/lfnovo/open-notebook.svg?style=for-the-badge" alt="Issues" /&gt;&lt;/a&gt; &lt;a href="https://github.com/lfnovo/open-notebook/raw/master/LICENSE.txt"&gt;&lt;img src="https://img.shields.io/github/license/lfnovo/open-notebook.svg?style=for-the-badge" alt="MIT License" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;!-- [![LinkedIn][linkedin-shield]][linkedin-url] --&gt; 
+&lt;!-- PROJECT LOGO --&gt; 
+&lt;br /&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://github.com/lfnovo/open-notebook"&gt; &lt;img src="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/assets/hero.svg?sanitize=true" alt="Logo" /&gt; &lt;/a&gt; 
+ &lt;h3 align="center"&gt;Open Notebook&lt;/h3&gt; 
+ &lt;p align="center"&gt; An open source, privacy-focused alternative to Google's Notebook LM! &lt;br /&gt;&lt;strong&gt;Join our &lt;a href="https://discord.gg/37XJPXfz2w"&gt;Discord server&lt;/a&gt; for help, to share workflow ideas, and suggest features!&lt;/strong&gt; &lt;br /&gt; &lt;a href="https://www.open-notebook.ai"&gt;&lt;strong&gt;Checkout our website »&lt;/strong&gt;&lt;/a&gt; &lt;br /&gt; &lt;br /&gt; &lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/getting-started/index.md"&gt;📚 Get Started&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/user-guide/index.md"&gt;📖 User Guide&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/features/index.md"&gt;✨ Features&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/deployment/index.md"&gt;🚀 Deploy&lt;/a&gt; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div align="center"&gt; 
+ &lt;!-- Keep these links. Translations will automatically update with the README. --&gt; 
+ &lt;a href="https://zdoc.app/de/lfnovo/open-notebook"&gt;Deutsch&lt;/a&gt; | 
+ &lt;a href="https://zdoc.app/es/lfnovo/open-notebook"&gt;Español&lt;/a&gt; | 
+ &lt;a href="https://zdoc.app/fr/lfnovo/open-notebook"&gt;français&lt;/a&gt; | 
+ &lt;a href="https://zdoc.app/ja/lfnovo/open-notebook"&gt;日本語&lt;/a&gt; | 
+ &lt;a href="https://zdoc.app/ko/lfnovo/open-notebook"&gt;한국어&lt;/a&gt; | 
+ &lt;a href="https://zdoc.app/pt/lfnovo/open-notebook"&gt;Português&lt;/a&gt; | 
+ &lt;a href="https://zdoc.app/ru/lfnovo/open-notebook"&gt;Русский&lt;/a&gt; | 
+ &lt;a href="https://zdoc.app/zh/lfnovo/open-notebook"&gt;中文&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;A private, multi-model, 100% local, full-featured alternative to Notebook LM&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/assets/asset_list.png" alt="New Notebook" /&gt;&lt;/p&gt; 
+&lt;p&gt;In a world dominated by Artificial Intelligence, having the ability to think 🧠 and acquire new knowledge 💡, is a skill that should not be a privilege for a few, nor restricted to a single provider.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Open Notebook empowers you to:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🔒 &lt;strong&gt;Control your data&lt;/strong&gt; - Keep your research private and secure&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;strong&gt;Choose your AI models&lt;/strong&gt; - Support for 16+ providers including OpenAI, Anthropic, Ollama, LM Studio, and more&lt;/li&gt; 
+ &lt;li&gt;📚 &lt;strong&gt;Organize multi-modal content&lt;/strong&gt; - PDFs, videos, audio, web pages, and more&lt;/li&gt; 
+ &lt;li&gt;🎙️ &lt;strong&gt;Generate professional podcasts&lt;/strong&gt; - Advanced multi-speaker podcast generation&lt;/li&gt; 
+ &lt;li&gt;🔍 &lt;strong&gt;Search intelligently&lt;/strong&gt; - Full-text and vector search across all your content&lt;/li&gt; 
+ &lt;li&gt;💬 &lt;strong&gt;Chat with context&lt;/strong&gt; - AI conversations powered by your research&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Learn more about our project at &lt;a href="https://www.open-notebook.ai"&gt;https://www.open-notebook.ai&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;⚠️ IMPORTANT: v1.0 Breaking Changes&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;If you're upgrading from a previous version&lt;/strong&gt;, please note:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🏷️ &lt;strong&gt;Docker tags have changed&lt;/strong&gt;: The &lt;code&gt;latest&lt;/code&gt; tag is now &lt;strong&gt;frozen&lt;/strong&gt; at the last Streamlit version&lt;/li&gt; 
+ &lt;li&gt;🆕 &lt;strong&gt;Use &lt;code&gt;v1-latest&lt;/code&gt; tag&lt;/strong&gt; for the new React/Next.js version (recommended)&lt;/li&gt; 
+ &lt;li&gt;🔌 &lt;strong&gt;Port 5055 required&lt;/strong&gt;: You must expose port 5055 for the API to work&lt;/li&gt; 
+ &lt;li&gt;📖 &lt;strong&gt;Read the migration guide&lt;/strong&gt;: See &lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/MIGRATION.md"&gt;MIGRATION.md&lt;/a&gt; for detailed upgrade instructions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;New users&lt;/strong&gt;: You can ignore this notice and proceed with the Quick Start below using the &lt;code&gt;v1-latest-single&lt;/code&gt; tag.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🆚 Open Notebook vs Google Notebook LM&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Feature&lt;/th&gt; 
+   &lt;th&gt;Open Notebook&lt;/th&gt; 
+   &lt;th&gt;Google Notebook LM&lt;/th&gt; 
+   &lt;th&gt;Advantage&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Privacy &amp;amp; Control&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Self-hosted, your data&lt;/td&gt; 
+   &lt;td&gt;Google cloud only&lt;/td&gt; 
+   &lt;td&gt;Complete data sovereignty&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;AI Provider Choice&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;16+ providers (OpenAI, Anthropic, Ollama, LM Studio, etc.)&lt;/td&gt; 
+   &lt;td&gt;Google models only&lt;/td&gt; 
+   &lt;td&gt;Flexibility and cost optimization&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Podcast Speakers&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;1-4 speakers with custom profiles&lt;/td&gt; 
+   &lt;td&gt;2 speakers only&lt;/td&gt; 
+   &lt;td&gt;Extreme flexibility&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Context Control&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;3 granular levels&lt;/td&gt; 
+   &lt;td&gt;All-or-nothing&lt;/td&gt; 
+   &lt;td&gt;Privacy and performance tuning&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Content Transformations&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Custom and built-in&lt;/td&gt; 
+   &lt;td&gt;Limited options&lt;/td&gt; 
+   &lt;td&gt;Unlimited processing power&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;API Access&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Full REST API&lt;/td&gt; 
+   &lt;td&gt;No API&lt;/td&gt; 
+   &lt;td&gt;Complete automation&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Deployment&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Docker, cloud, or local&lt;/td&gt; 
+   &lt;td&gt;Google hosted only&lt;/td&gt; 
+   &lt;td&gt;Deploy anywhere&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Citations&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Comprehensive with sources&lt;/td&gt; 
+   &lt;td&gt;Basic references&lt;/td&gt; 
+   &lt;td&gt;Research integrity&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Customization&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Open source, fully customizable&lt;/td&gt; 
+   &lt;td&gt;Closed system&lt;/td&gt; 
+   &lt;td&gt;Unlimited extensibility&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Cost&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Pay only for AI usage&lt;/td&gt; 
+   &lt;td&gt;Monthly subscription + usage&lt;/td&gt; 
+   &lt;td&gt;Transparent and controllable&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;Why Choose Open Notebook?&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🔒 &lt;strong&gt;Privacy First&lt;/strong&gt;: Your sensitive research stays completely private&lt;/li&gt; 
+ &lt;li&gt;💰 &lt;strong&gt;Cost Control&lt;/strong&gt;: Choose cheaper AI providers or run locally with Ollama&lt;/li&gt; 
+ &lt;li&gt;🎙️ &lt;strong&gt;Better Podcasts&lt;/strong&gt;: Full script control and multi-speaker flexibility vs limited 2-speaker deep-dive format&lt;/li&gt; 
+ &lt;li&gt;🔧 &lt;strong&gt;Unlimited Customization&lt;/strong&gt;: Modify, extend, and integrate as needed&lt;/li&gt; 
+ &lt;li&gt;🌐 &lt;strong&gt;No Vendor Lock-in&lt;/strong&gt;: Switch providers, deploy anywhere, own your data&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Built With&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://www.python.org/"&gt;&lt;img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&amp;amp;logo=python&amp;amp;logoColor=white" alt="Python" /&gt;&lt;/a&gt; &lt;a href="https://nextjs.org/"&gt;&lt;img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&amp;amp;logo=next.js&amp;amp;logoColor=white" alt="Next.js" /&gt;&lt;/a&gt; &lt;a href="https://reactjs.org/"&gt;&lt;img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&amp;amp;logo=react&amp;amp;logoColor=black" alt="React" /&gt;&lt;/a&gt; &lt;a href="https://surrealdb.com/"&gt;&lt;img src="https://img.shields.io/badge/SurrealDB-FF5E00?style=for-the-badge&amp;amp;logo=databricks&amp;amp;logoColor=white" alt="SurrealDB" /&gt;&lt;/a&gt; &lt;a href="https://www.langchain.com/"&gt;&lt;img src="https://img.shields.io/badge/LangChain-3A3A3A?style=for-the-badge&amp;amp;logo=chainlink&amp;amp;logoColor=white" alt="LangChain" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🚀 Quick Start&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Docker Images Available:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Docker Hub&lt;/strong&gt;: &lt;code&gt;lfnovo/open_notebook:v1-latest-single&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;GitHub Container Registry&lt;/strong&gt;: &lt;code&gt;ghcr.io/lfnovo/open-notebook:v1-latest-single&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Both registries contain identical images - choose whichever you prefer!&lt;/p&gt; 
+&lt;h3&gt;Choose Your Setup:&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td width="50%"&gt; &lt;h4&gt;🏠 &lt;strong&gt;Local Machine Setup&lt;/strong&gt;&lt;/h4&gt; &lt;p&gt;Perfect if Docker runs on the &lt;strong&gt;same computer&lt;/strong&gt; where you'll access Open Notebook.&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;mkdir open-notebook &amp;amp;&amp;amp; cd open-notebook
+
+docker run -d \
+  --name open-notebook \
+  -p 8502:8502 -p 5055:5055 \
+  -v ./notebook_data:/app/data \
+  -v ./surreal_data:/mydata \
+  -e OPENAI_API_KEY=your_key_here \
+  -e SURREAL_URL="ws://localhost:8000/rpc" \
+  -e SURREAL_USER="root" \
+  -e SURREAL_PASSWORD="root" \
+  -e SURREAL_NAMESPACE="open_notebook" \
+  -e SURREAL_DATABASE="production" \
+  lfnovo/open_notebook:v1-latest-single
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Access at:&lt;/strong&gt; &lt;a href="http://localhost:8502"&gt;http://localhost:8502&lt;/a&gt;&lt;/p&gt; &lt;/td&gt; 
+   &lt;td width="50%"&gt; &lt;h4&gt;🌐 &lt;strong&gt;Remote Server Setup&lt;/strong&gt;&lt;/h4&gt; &lt;p&gt;Use this for servers, Raspberry Pi, NAS, Proxmox, or any remote machine.&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;mkdir open-notebook &amp;amp;&amp;amp; cd open-notebook
+
+docker run -d \
+  --name open-notebook \
+  -p 8502:8502 -p 5055:5055 \
+  -v ./notebook_data:/app/data \
+  -v ./surreal_data:/mydata \
+  -e OPENAI_API_KEY=your_key_here \
+  -e API_URL=http://YOUR_SERVER_IP:5055 \
+  -e SURREAL_URL="ws://localhost:8000/rpc" \
+  -e SURREAL_USER="root" \
+  -e SURREAL_PASSWORD="root" \
+  -e SURREAL_NAMESPACE="open_notebook" \
+  -e SURREAL_DATABASE="production" \
+  lfnovo/open_notebook:v1-latest-single
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Replace &lt;code&gt;YOUR_SERVER_IP&lt;/code&gt;&lt;/strong&gt; with your server's IP (e.g., &lt;code&gt;192.168.1.100&lt;/code&gt;) or domain&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Access at:&lt;/strong&gt; http://YOUR_SERVER_IP:8502&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;⚠️ Critical Setup Notes:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;Both ports are required:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;strong&gt;Port 8502&lt;/strong&gt;: Web interface (what you see in your browser)&lt;/li&gt; 
+  &lt;li&gt;&lt;strong&gt;Port 5055&lt;/strong&gt;: API backend (required for the app to function)&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;API_URL must match how YOU access the server:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;✅ Access via &lt;code&gt;http://192.168.1.100:8502&lt;/code&gt; → set &lt;code&gt;API_URL=http://192.168.1.100:5055&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;✅ Access via &lt;code&gt;http://myserver.local:8502&lt;/code&gt; → set &lt;code&gt;API_URL=http://myserver.local:5055&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;❌ Don't use &lt;code&gt;localhost&lt;/code&gt; for remote servers - it won't work from other devices!&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Using Docker Compose (Recommended for Easy Management)&lt;/h3&gt; 
+&lt;p&gt;Create a &lt;code&gt;docker-compose.yml&lt;/code&gt; file:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-yaml"&gt;services:
+  open_notebook:
+    image: lfnovo/open_notebook:v1-latest-single
+    # Or use: ghcr.io/lfnovo/open-notebook:v1-latest-single
+    ports:
+      - "8502:8502"  # Web UI
+      - "5055:5055"  # API (required!)
+    environment:
+      - OPENAI_API_KEY=your_key_here
+      # For remote access, uncomment and set your server IP/domain:
+      # - API_URL=http://192.168.1.100:5055
+      # Database connection (required for single-container)
+      - SURREAL_URL=ws://localhost:8000/rpc
+      - SURREAL_USER=root
+      - SURREAL_PASSWORD=root
+      - SURREAL_NAMESPACE=open_notebook
+      - SURREAL_DATABASE=production
+    volumes:
+      - ./notebook_data:/app/data
+      - ./surreal_data:/mydata
+    restart: always
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Start with: &lt;code&gt;docker compose up -d&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;What gets created:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;open-notebook/
+├── docker-compose.yml # Your configuration
+├── notebook_data/     # Your notebooks and research content
+└── surreal_data/      # Database files
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;🆘 Quick Troubleshooting&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Problem&lt;/th&gt; 
+   &lt;th&gt;Solution&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;"Unable to connect to server"&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Set &lt;code&gt;API_URL&lt;/code&gt; environment variable to match how you access the server (see remote setup above)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Blank page or errors&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Ensure BOTH ports (8502 and 5055) are exposed in your docker command&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Works on server but not from other computers&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Don't use &lt;code&gt;localhost&lt;/code&gt; in &lt;code&gt;API_URL&lt;/code&gt; - use your server's actual IP address&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;"404" or "config endpoint" errors&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Don't add &lt;code&gt;/api&lt;/code&gt; to &lt;code&gt;API_URL&lt;/code&gt; - use just &lt;code&gt;http://your-ip:5055&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Still having issues?&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Check our &lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/troubleshooting/quick-fixes.md"&gt;5-minute troubleshooting guide&lt;/a&gt; or &lt;a href="https://discord.gg/37XJPXfz2w"&gt;join Discord&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;How Open Notebook Works&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────────────────┐
+│  Your Browser                                           │
+│  Access: http://your-server-ip:8502                     │
+└────────────────┬────────────────────────────────────────┘
+                 │
+                 ▼
+         ┌───────────────┐
+         │   Port 8502   │  ← Next.js Frontend (what you see)
+         │   Frontend    │
+         └───────┬───────┘
+                 │ needs to call ↓
+                 ▼
+         ┌───────────────┐
+         │   Port 5055   │  ← FastAPI Backend (handles requests)
+         │     API       │     This is why you need API_URL!
+         └───────┬───────┘
+                 │
+                 ▼
+         ┌───────────────┐
+         │   SurrealDB   │  ← Database (internal, auto-configured)
+         │   (Port 8000) │
+         └───────────────┘
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Key Point:&lt;/strong&gt; Your browser loads the frontend from port 8502, but that frontend needs to know where to find the API (port 5055). When accessing remotely, you must tell it explicitly: &lt;code&gt;API_URL=http://your-server-ip:5055&lt;/code&gt;&lt;/p&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.star-history.com/#lfnovo/open-notebook&amp;amp;type=date&amp;amp;legend=top-left"&gt;&lt;img src="https://api.star-history.com/svg?repos=lfnovo/open-notebook&amp;amp;type=date&amp;amp;legend=top-left" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;🛠️ Full Installation&lt;/h3&gt; 
+&lt;p&gt;For development or customization:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/lfnovo/open-notebook
+cd open-notebook
+make start-all
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;📖 Need Help?&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;🤖 AI Installation Assistant&lt;/strong&gt;: We have a &lt;a href="https://chatgpt.com/g/g-68776e2765b48191bd1bae3f30212631-open-notebook-installation-assistant"&gt;CustomGPT built to help you install Open Notebook&lt;/a&gt; - it will guide you through each step!&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;New to Open Notebook?&lt;/strong&gt; Start with our &lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/getting-started/index.md"&gt;Getting Started Guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Need installation help?&lt;/strong&gt; Check our &lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/getting-started/installation.md"&gt;Installation Guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Want to see it in action?&lt;/strong&gt; Try our &lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/getting-started/quick-start.md"&gt;Quick Start Tutorial&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Provider Support Matrix&lt;/h2&gt; 
+&lt;p&gt;Thanks to the &lt;a href="https://github.com/lfnovo/esperanto"&gt;Esperanto&lt;/a&gt; library, we support this providers out of the box!&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Provider&lt;/th&gt; 
+   &lt;th&gt;LLM Support&lt;/th&gt; 
+   &lt;th&gt;Embedding Support&lt;/th&gt; 
+   &lt;th&gt;Speech-to-Text&lt;/th&gt; 
+   &lt;th&gt;Text-to-Speech&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;OpenAI&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Anthropic&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Groq&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Google (GenAI)&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Vertex AI&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Ollama&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Perplexity&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;ElevenLabs&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Azure OpenAI&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Mistral&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;DeepSeek&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Voyage&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;xAI&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;OpenRouter&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;OpenAI Compatible*&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+   &lt;td&gt;❌&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;*Supports LM Studio and any OpenAI-compatible endpoint&lt;/p&gt; 
+&lt;h2&gt;✨ Key Features&lt;/h2&gt; 
+&lt;h3&gt;Core Capabilities&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;🔒 Privacy-First&lt;/strong&gt;: Your data stays under your control - no cloud dependencies&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🎯 Multi-Notebook Organization&lt;/strong&gt;: Manage multiple research projects seamlessly&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;📚 Universal Content Support&lt;/strong&gt;: PDFs, videos, audio, web pages, Office docs, and more&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🤖 Multi-Model AI Support&lt;/strong&gt;: 16+ providers including OpenAI, Anthropic, Ollama, Google, LM Studio, and more&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🎙️ Professional Podcast Generation&lt;/strong&gt;: Advanced multi-speaker podcasts with Episode Profiles&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🔍 Intelligent Search&lt;/strong&gt;: Full-text and vector search across all your content&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;💬 Context-Aware Chat&lt;/strong&gt;: AI conversations powered by your research materials&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;📝 AI-Assisted Notes&lt;/strong&gt;: Generate insights or write notes manually&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Advanced Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;⚡ Reasoning Model Support&lt;/strong&gt;: Full support for thinking models like DeepSeek-R1 and Qwen3&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🔧 Content Transformations&lt;/strong&gt;: Powerful customizable actions to summarize and extract insights&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🌐 Comprehensive REST API&lt;/strong&gt;: Full programmatic access for custom integrations &lt;a href="http://localhost:5055/docs"&gt;&lt;img src="https://img.shields.io/badge/API-Documentation-blue?style=flat-square" alt="API Docs" /&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🔐 Optional Password Protection&lt;/strong&gt;: Secure public deployments with authentication&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;📊 Fine-Grained Context Control&lt;/strong&gt;: Choose exactly what to share with AI models&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;📎 Citations&lt;/strong&gt;: Get answers with proper source citations&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Three-Column Interface&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Sources&lt;/strong&gt;: Manage all your research materials&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Notes&lt;/strong&gt;: Create manual or AI-generated notes&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Chat&lt;/strong&gt;: Converse with AI using your content as context&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=D-760MlGwaI"&gt;&lt;img src="https://img.youtube.com/vi/D-760MlGwaI/0.jpg" alt="Check out our podcast sample" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;📚 Documentation&lt;/h2&gt; 
+&lt;h3&gt;Getting Started&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/getting-started/introduction.md"&gt;📖 Introduction&lt;/a&gt;&lt;/strong&gt; - Learn what Open Notebook offers&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/getting-started/quick-start.md"&gt;⚡ Quick Start&lt;/a&gt;&lt;/strong&gt; - Get up and running in 5 minutes&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/getting-started/installation.md"&gt;🔧 Installation&lt;/a&gt;&lt;/strong&gt; - Comprehensive setup guide&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/getting-started/first-notebook.md"&gt;🎯 Your First Notebook&lt;/a&gt;&lt;/strong&gt; - Step-by-step tutorial&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;User Guide&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/user-guide/interface-overview.md"&gt;📱 Interface Overview&lt;/a&gt;&lt;/strong&gt; - Understanding the layout&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/user-guide/notebooks.md"&gt;📚 Notebooks&lt;/a&gt;&lt;/strong&gt; - Organizing your research&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/user-guide/sources.md"&gt;📄 Sources&lt;/a&gt;&lt;/strong&gt; - Managing content types&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/user-guide/notes.md"&gt;📝 Notes&lt;/a&gt;&lt;/strong&gt; - Creating and managing notes&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/user-guide/chat.md"&gt;💬 Chat&lt;/a&gt;&lt;/strong&gt; - AI conversations&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/user-guide/search.md"&gt;🔍 Search&lt;/a&gt;&lt;/strong&gt; - Finding information&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Advanced Topics&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/features/podcasts.md"&gt;🎙️ Podcast Generation&lt;/a&gt;&lt;/strong&gt; - Create professional podcasts&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/features/transformations.md"&gt;🔧 Content Transformations&lt;/a&gt;&lt;/strong&gt; - Customize content processing&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/features/ai-models.md"&gt;🤖 AI Models&lt;/a&gt;&lt;/strong&gt; - AI model configuration&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/development/api-reference.md"&gt;🔧 REST API Reference&lt;/a&gt;&lt;/strong&gt; - Complete API documentation&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/deployment/security.md"&gt;🔐 Security&lt;/a&gt;&lt;/strong&gt; - Password protection and privacy&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/docs/deployment/index.md"&gt;🚀 Deployment&lt;/a&gt;&lt;/strong&gt; - Complete deployment guides for all scenarios&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p align="right"&gt;(&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/#readme-top"&gt;back to top&lt;/a&gt;)&lt;/p&gt; 
+&lt;h2&gt;🗺️ Roadmap&lt;/h2&gt; 
+&lt;h3&gt;Upcoming Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Live Front-End Updates&lt;/strong&gt;: Real-time UI updates for smoother experience&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Async Processing&lt;/strong&gt;: Faster UI through asynchronous content processing&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Cross-Notebook Sources&lt;/strong&gt;: Reuse research materials across projects&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Bookmark Integration&lt;/strong&gt;: Connect with your favorite bookmarking apps&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Recently Completed ✅&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Next.js Frontend&lt;/strong&gt;: Modern React-based frontend with improved performance&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Comprehensive REST API&lt;/strong&gt;: Full programmatic access to all functionality&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi-Model Support&lt;/strong&gt;: 16+ AI providers including OpenAI, Anthropic, Ollama, LM Studio&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Advanced Podcast Generator&lt;/strong&gt;: Professional multi-speaker podcasts with Episode Profiles&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Content Transformations&lt;/strong&gt;: Powerful customizable actions for content processing&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Enhanced Citations&lt;/strong&gt;: Improved layout and finer control for source citations&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Multiple Chat Sessions&lt;/strong&gt;: Manage different conversations within notebooks&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See the &lt;a href="https://github.com/lfnovo/open-notebook/issues"&gt;open issues&lt;/a&gt; for a full list of proposed features and known issues.&lt;/p&gt; 
+&lt;p align="right"&gt;(&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/#readme-top"&gt;back to top&lt;/a&gt;)&lt;/p&gt; 
+&lt;h2&gt;🤝 Community &amp;amp; Contributing&lt;/h2&gt; 
+&lt;h3&gt;Join the Community&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;💬 &lt;strong&gt;&lt;a href="https://discord.gg/37XJPXfz2w"&gt;Discord Server&lt;/a&gt;&lt;/strong&gt; - Get help, share ideas, and connect with other users&lt;/li&gt; 
+ &lt;li&gt;🐛 &lt;strong&gt;&lt;a href="https://github.com/lfnovo/open-notebook/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/strong&gt; - Report bugs and request features&lt;/li&gt; 
+ &lt;li&gt;⭐ &lt;strong&gt;Star this repo&lt;/strong&gt; - Show your support and help others discover Open Notebook&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Contributing&lt;/h3&gt; 
+&lt;p&gt;We welcome contributions! We're especially looking for help with:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Frontend Development&lt;/strong&gt;: Help improve our modern Next.js/React UI&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Testing &amp;amp; Bug Fixes&lt;/strong&gt;: Make Open Notebook more robust&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Feature Development&lt;/strong&gt;: Build the coolest research tool together&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Documentation&lt;/strong&gt;: Improve guides and tutorials&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Current Tech Stack&lt;/strong&gt;: Python, FastAPI, Next.js, React, SurrealDB &lt;strong&gt;Future Roadmap&lt;/strong&gt;: Real-time updates, enhanced async processing&lt;/p&gt; 
+&lt;p&gt;See our &lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt; for detailed information on how to get started.&lt;/p&gt; 
+&lt;p align="right"&gt;(&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/#readme-top"&gt;back to top&lt;/a&gt;)&lt;/p&gt; 
+&lt;h2&gt;📄 License&lt;/h2&gt; 
+&lt;p&gt;Open Notebook is MIT licensed. See the &lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;h2&gt;📞 Contact&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Luis Novo&lt;/strong&gt; - &lt;a href="https://twitter.com/lfnovo"&gt;@lfnovo&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Community Support&lt;/strong&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;💬 &lt;a href="https://discord.gg/37XJPXfz2w"&gt;Discord Server&lt;/a&gt; - Get help, share ideas, and connect with users&lt;/li&gt; 
+ &lt;li&gt;🐛 &lt;a href="https://github.com/lfnovo/open-notebook/issues"&gt;GitHub Issues&lt;/a&gt; - Report bugs and request features&lt;/li&gt; 
+ &lt;li&gt;🌐 &lt;a href="https://www.open-notebook.ai"&gt;Website&lt;/a&gt; - Learn more about the project&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🙏 Acknowledgments&lt;/h2&gt; 
+&lt;p&gt;Open Notebook is built on the shoulders of amazing open-source projects:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/lfnovo/podcast-creator"&gt;Podcast Creator&lt;/a&gt;&lt;/strong&gt; - Advanced podcast generation capabilities&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/lfnovo/surreal-commands"&gt;Surreal Commands&lt;/a&gt;&lt;/strong&gt; - Background job processing&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/lfnovo/content-core"&gt;Content Core&lt;/a&gt;&lt;/strong&gt; - Content processing and management&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/lfnovo/esperanto"&gt;Esperanto&lt;/a&gt;&lt;/strong&gt; - Multi-provider AI model abstraction&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/docling-project/docling"&gt;Docling&lt;/a&gt;&lt;/strong&gt; - Document processing and parsing&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p align="right"&gt;(&lt;a href="https://raw.githubusercontent.com/lfnovo/open-notebook/main/#readme-top"&gt;back to top&lt;/a&gt;)&lt;/p&gt; 
+&lt;!-- MARKDOWN LINKS &amp; IMAGES --&gt; 
+&lt;!-- https://www.markdownguide.org/basic-syntax/#reference-style-links --&gt;</description>
+    </item>
+    
+    <item>
+      <title>exa-labs/exa-mcp-server</title>
+      <link>https://github.com/exa-labs/exa-mcp-server</link>
+      <description>&lt;p&gt;Exa MCP for web search and web crawling!&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Exa MCP Server 🔍&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://www.npmjs.com/package/exa-mcp-server"&gt;&lt;img src="https://badge.fury.io/js/exa-mcp-server.svg?sanitize=true" alt="npm version" /&gt;&lt;/a&gt; &lt;a href="https://smithery.ai/server/exa"&gt;&lt;img src="https://smithery.ai/badge/exa" alt="smithery badge" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🆕 &lt;code&gt;exa-code&lt;/code&gt;: fast, efficient web context for coding agents&lt;/h2&gt; 
+&lt;p&gt;Vibe coding should never have a bad vibe. &lt;code&gt;exa-code&lt;/code&gt; is a huge step towards coding agents that never hallucinate.&lt;/p&gt; 
+&lt;p&gt;When your coding agent makes a search query, &lt;code&gt;exa-code&lt;/code&gt; searches over billions of Github repos, docs pages, Stackoverflow posts, and more, to find the perfect, token-efficient context that the agent needs to code correctly. It's powered by the Exa search engine.&lt;/p&gt; 
+&lt;p&gt;Examples of queries you can make with &lt;code&gt;exa-code&lt;/code&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;use Exa search in python and make sure content is always livecrawled&lt;/li&gt; 
+ &lt;li&gt;use correct syntax for vercel ai sdk to call gpt-5 nano asking it how are you&lt;/li&gt; 
+ &lt;li&gt;how to set up a reproducible Nix Rust development environment&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;✨ Works with Cursor and Claude Code!&lt;/strong&gt; Use the HTTP-based configuration format:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "exa": {
+      "type": "http",
+      "url": "https://mcp.exa.ai/mcp",
+      "headers": {
+        "Remove-Me": "Disable web_search_exa tool if you're just coding. To 100% call exa-code, say 'use exa-code'."
+      }
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You may include your exa api key in the url like this:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;https://mcp.exa.ai/mcp?exaApiKey=YOUREXAKEY
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You may whitelist specific tools in the url with the &lt;code&gt;enabledTools&lt;/code&gt; parameter which expects a url encoded array strings like this:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;https://mcp.exa.ai/mcp?exaApiKey=YOUREXAKEY&amp;amp;enabledTools=%5B%22crawling_exa%ss%5D
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can also use &lt;code&gt;exa-code&lt;/code&gt; through &lt;a href="https://smithery.ai/server/exa"&gt;Smithery&lt;/a&gt; without an Exa API key.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;A Model Context Protocol (MCP) server that connects AI assistants like Claude to Exa AI's search capabilities, including web search, research tools, and our new code search feature.&lt;/p&gt; 
+&lt;h2&gt;Remote Exa MCP 🌐&lt;/h2&gt; 
+&lt;p&gt;Connect directly to Exa's hosted MCP server (instead of running it locally).&lt;/p&gt; 
+&lt;h3&gt;Remote Exa MCP URL&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;https://mcp.exa.ai/mcp
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Claude Desktop Configuration for Remote MCP&lt;/h3&gt; 
+&lt;p&gt;Add this to your Claude Desktop configuration file:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "exa": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.exa.ai/mcp"
+      ]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Cursor and Claude Code Configuration for Remote MCP&lt;/h3&gt; 
+&lt;p&gt;For Cursor and Claude Code, use this HTTP-based configuration format:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "exa": {
+      "type": "http",
+      "url": "https://mcp.exa.ai/mcp",
+      "headers": {}
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Codex Configuration for Remote MCP&lt;/h3&gt; 
+&lt;p&gt;Open your Codex configuration file:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;code ~/.codex/config.toml
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Add this configuration:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-toml"&gt;[mcp_servers.exa]
+command = "npx"
+args = ["-y", "mcp-remote", "https://mcp.exa.ai/mcp"]
+env = { EXA_API_KEY = "your-api-key-here" }
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Replace &lt;code&gt;your-api-key-here&lt;/code&gt; with your actual Exa API key from &lt;a href="https://dashboard.exa.ai/api-keys"&gt;dashboard.exa.ai/api-keys&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Claude Code Plugin&lt;/h3&gt; 
+&lt;p&gt;The easiest way to get started with Exa in Claude Code, using plugins:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Add the Exa marketplace
+/plugin marketplace add exa-labs/exa-mcp-server
+
+# Install the plugin
+/plugin install exa-mcp-server
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then set your API key:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;export EXA_API_KEY="your-api-key-here"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Get your API key from &lt;a href="https://dashboard.exa.ai/api-keys"&gt;dashboard.exa.ai/api-keys&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;NPM Installation&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install -g exa-mcp-server
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Using Claude Code&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;claude mcp add exa -e EXA_API_KEY=YOUR_API_KEY -- npx -y exa-mcp-server
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Using Exa MCP through Smithery&lt;/h3&gt; 
+&lt;p&gt;To install the Exa MCP server via &lt;a href="https://smithery.ai/server/exa"&gt;Smithery&lt;/a&gt;, head over to:&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://smithery.ai/server/exa"&gt;smithery.ai/server/exa&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Configuration ⚙️&lt;/h2&gt; 
+&lt;h3&gt;1. Configure Claude Desktop to recognize the Exa MCP server&lt;/h3&gt; 
+&lt;p&gt;You can find claude_desktop_config.json inside the settings of Claude Desktop app:&lt;/p&gt; 
+&lt;p&gt;Open the Claude Desktop app and enable Developer Mode from the top-left menu bar.&lt;/p&gt; 
+&lt;p&gt;Once enabled, open Settings (also from the top-left menu bar) and navigate to the Developer Option, where you'll find the Edit Config button. Clicking it will open the claude_desktop_config.json file, allowing you to make the necessary edits.&lt;/p&gt; 
+&lt;p&gt;OR (if you want to open claude_desktop_config.json from terminal)&lt;/p&gt; 
+&lt;h4&gt;For macOS:&lt;/h4&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Open your Claude Desktop configuration:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;code ~/Library/Application\ Support/Claude/claude_desktop_config.json
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;For Windows:&lt;/h4&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Open your Claude Desktop configuration:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-powershell"&gt;code %APPDATA%\Claude\claude_desktop_config.json
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;2. Add the Exa server configuration:&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "exa": {
+      "command": "npx",
+      "args": ["-y", "exa-mcp-server"],
+      "env": {
+        "EXA_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Replace &lt;code&gt;your-api-key-here&lt;/code&gt; with your actual Exa API key from &lt;a href="https://dashboard.exa.ai/api-keys"&gt;dashboard.exa.ai/api-keys&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;3. Available Tools &amp;amp; Tool Selection&lt;/h3&gt; 
+&lt;p&gt;The Exa MCP server includes powerful tools for developers and researchers:&lt;/p&gt; 
+&lt;h4&gt;🔥 &lt;strong&gt;Featured: Code Search Tool&lt;/strong&gt;&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;get_code_context_exa&lt;/strong&gt;: 🆕 &lt;strong&gt;NEW!&lt;/strong&gt; Search and get relevant code snippets, examples, and documentation from open source libraries, GitHub repositories, and programming frameworks. Perfect for finding up-to-date code documentation, implementation examples, API usage patterns, and best practices from real codebases.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;🌐 &lt;strong&gt;Other Available Tools&lt;/strong&gt;&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;web_search_exa&lt;/strong&gt;: Performs real-time web searches with optimized results and content extraction.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;company_research&lt;/strong&gt;: Comprehensive company research tool that crawls company websites to gather detailed information about businesses.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;crawling&lt;/strong&gt;: Extracts content from specific URLs, useful for reading articles, PDFs, or any web page when you have the exact URL.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;linkedin_search&lt;/strong&gt;: Search LinkedIn for companies and people using Exa AI. Simply include company names, person names, or specific LinkedIn URLs in your query.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;deep_researcher_start&lt;/strong&gt;: Start a smart AI researcher for complex questions. The AI will search the web, read many sources, and think deeply about your question to create a detailed research report.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;deep_researcher_check&lt;/strong&gt;: Check if your research is ready and get the results. Use this after starting a research task to see if it's done and get your comprehensive report.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;You can choose which tools to enable by adding the &lt;code&gt;--tools&lt;/code&gt; parameter to your Claude Desktop configuration:&lt;/p&gt; 
+&lt;h4&gt;💻 &lt;strong&gt;Setup for Code Search Only&lt;/strong&gt; (Recommended for Developers)&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "exa": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "exa-mcp-server",
+        "--tools=get_code_context_exa,web_search_exa"
+      ],
+      "env": {
+        "EXA_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Specify which tools to enable:&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "exa": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "exa-mcp-server",
+        "--tools=get_code_context_exa,web_search_exa,company_research,crawling,linkedin_search,deep_researcher_start,deep_researcher_check"
+      ],
+      "env": {
+        "EXA_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For enabling multiple tools, use a comma-separated list:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "exa": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "exa-mcp-server",
+        "--tools=get_code_context_exa,web_search_exa,company_research,crawling,linkedin_search,deep_researcher_start,deep_researcher_check"
+      ],
+      "env": {
+        "EXA_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If you don't specify any tools, all tools enabled by default will be used.&lt;/p&gt; 
+&lt;h3&gt;4. Restart Claude Desktop&lt;/h3&gt; 
+&lt;p&gt;For the changes to take effect:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Completely quit Claude Desktop (not just close the window)&lt;/li&gt; 
+ &lt;li&gt;Start Claude Desktop again&lt;/li&gt; 
+ &lt;li&gt;Look for the icon to verify the Exa server is connected&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Using via NPX&lt;/h2&gt; 
+&lt;p&gt;If you prefer to run the server directly, you can use npx:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Run with all tools enabled by default
+npx exa-mcp-server
+
+# Enable specific tools only
+npx exa-mcp-server --tools=web_search_exa
+
+# Enable multiple tools
+npx exa-mcp-server --tools=web_search_exa,get_code_context_exa
+
+# List all available tools
+npx exa-mcp-server --list-tools
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;Built with ❤️ by team Exa&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>github/docs</title>
+      <link>https://github.com/github/docs</link>
+      <description>&lt;p&gt;The open-source repo for docs.github.com&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;GitHub Docs 
+ &lt;!-- omit in toc --&gt;&lt;/h1&gt; 
+&lt;p&gt;Welcome to GitHub Docs! GitHub’s documentation is open source, meaning anyone from inside or outside the company can contribute. For full contributing guidelines, visit our &lt;a href="https://docs.github.com/en/contributing"&gt;contributing guide&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Quick links by contributor type&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Hubbers (GitHub employees):&lt;/strong&gt; See &lt;a href="https://github.com/github/docs-content/raw/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; in the &lt;code&gt;docs-content&lt;/code&gt; repository for GitHub-specific processes.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Open source contributors:&lt;/strong&gt; See &lt;a href="https://github.com/github/docs/raw/main/.github/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; in the &lt;code&gt;docs&lt;/code&gt; repository for a quick-start summary.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How we sync changes across Docs repositories&lt;/h2&gt; 
+&lt;p&gt;There are two GitHub Docs repositories:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;github/docs&lt;/code&gt;&lt;/strong&gt; (public): Open to external contributions&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;github/docs-internal&lt;/code&gt;&lt;/strong&gt; (private): For GitHub employee contributions.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The two repositories sync frequently. Content changes in one are reflected in the other. Hubbers might prefer to post in &lt;code&gt;docs&lt;/code&gt; when working with a customer, but &lt;code&gt;docs&lt;/code&gt; has limitations on the types of contributions it accepts to safeguard the site and our workflows. Internal contributions should usually go to &lt;code&gt;docs-internal&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Important:&lt;/strong&gt; The &lt;code&gt;docs&lt;/code&gt; repository accepts contributions to content files (&lt;code&gt;.md&lt;/code&gt; files in &lt;code&gt;/content&lt;/code&gt; and select &lt;code&gt;/data&lt;/code&gt; sections like reusables only). Infrastructure files, workflows, and site-building code are not open for external modification.&lt;/p&gt; 
+&lt;h2&gt;New to contributing&lt;/h2&gt; 
+&lt;p&gt;Here are some resources to help you get started with open source contributions:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.github.com/en/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github"&gt;Finding ways to contribute to open source on GitHub&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.github.com/en/get-started/git-basics/set-up-git"&gt;Set up Git&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.github.com/en/get-started/using-github/github-flow"&gt;GitHub flow&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.github.com/en/github/collaborating-with-pull-requests"&gt;Collaborating with pull requests&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>EvolutionAPI/evolution-api</title>
+      <link>https://github.com/EvolutionAPI/evolution-api</link>
+      <description>&lt;p&gt;Evolution API is an open-source WhatsApp integration API&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt;Evolution Api&lt;/h1&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;a href="https://hub.docker.com/r/evoapicloud/evolution-api"&gt;&lt;img src="https://img.shields.io/badge/Docker-image-blue" alt="Docker Image" /&gt;&lt;/a&gt; &lt;a href="https://evolution-api.com/whatsapp"&gt;&lt;img src="https://img.shields.io/badge/Group-WhatsApp-%2322BC18" alt="Whatsapp Group" /&gt;&lt;/a&gt; &lt;a href="https://evolution-api.com/discord"&gt;&lt;img src="https://img.shields.io/badge/Discord-Community-blue" alt="Discord Community" /&gt;&lt;/a&gt; &lt;a href="https://evolution-api.com/postman"&gt;&lt;img src="https://img.shields.io/badge/Postman-Collection-orange" alt="Postman Collection" /&gt;&lt;/a&gt; &lt;a href="https://doc.evolution-api.com"&gt;&lt;img src="https://img.shields.io/badge/Documentation-Official-green" alt="Documentation" /&gt;&lt;/a&gt; &lt;a href="https://evolutionapi.canny.io/feature-requests"&gt;&lt;img src="https://img.shields.io/badge/Feature-Requests-purple" alt="Feature Requests" /&gt;&lt;/a&gt; &lt;a href="https://evolutionapi.canny.io/feature-requests"&gt;&lt;img src="https://img.shields.io/badge/Roadmap-Community-blue" alt="Roadmap" /&gt;&lt;/a&gt; &lt;a href="https://evolutionapi.canny.io/changelog"&gt;&lt;img src="https://img.shields.io/badge/Changelog-Updates-green" alt="Changelog" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/EvolutionAPI/evolution-api/main/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/license-Apache--2.0-blue" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://app.picpay.com/user/davidsongomes1998"&gt;&lt;img src="https://img.shields.io/badge/Donation-picpay-green" alt="Support" /&gt;&lt;/a&gt; &lt;a href="https://github.com/sponsors/EvolutionAPI"&gt;&lt;img src="https://img.shields.io/badge/Github-sponsor-orange" alt="Sponsors" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div align="center"&gt;
+ &lt;img src="https://raw.githubusercontent.com/EvolutionAPI/evolution-api/main/public/images/cover.png" /&gt;
+&lt;/div&gt; 
+&lt;h2&gt;Evolution API&lt;/h2&gt; 
+&lt;p&gt;Evolution API began as a WhatsApp controller API based on &lt;a href="https://github.com/code-chat-br/whatsapp-api"&gt;CodeChat&lt;/a&gt;, which in turn implemented the &lt;a href="https://github.com/WhiskeySockets/Baileys"&gt;Baileys&lt;/a&gt; library. While originally focused on WhatsApp, Evolution API has grown into a comprehensive platform supporting multiple messaging services and integrations. We continue to acknowledge CodeChat for laying the groundwork.&lt;/p&gt; 
+&lt;p&gt;Today, Evolution API is not limited to WhatsApp. It integrates with various platforms such as Typebot, Chatwoot, Dify, and OpenAI, offering a broad array of functionalities beyond messaging. Evolution API supports both the Baileys-based WhatsApp API and the official WhatsApp Business API, with upcoming support for Instagram and Messenger.&lt;/p&gt; 
+&lt;h2&gt;Looking for a Lightweight Version?&lt;/h2&gt; 
+&lt;p&gt;For those who need a more streamlined and performance-optimized version, check out &lt;a href="https://github.com/EvolutionAPI/evolution-api-lite"&gt;Evolution API Lite&lt;/a&gt;. It's designed specifically for microservices, focusing solely on connectivity without integrations or audio conversion features. Ideal for environments that prioritize simplicity and efficiency.&lt;/p&gt; 
+&lt;h2&gt;Types of Connections&lt;/h2&gt; 
+&lt;p&gt;Evolution API supports multiple types of connections to WhatsApp, enabling flexible and powerful integration options:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;em&gt;WhatsApp API - Baileys&lt;/em&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;A free API based on WhatsApp Web, leveraging the &lt;a href="https://github.com/WhiskeySockets/Baileys"&gt;Baileys library&lt;/a&gt;.&lt;/li&gt; 
+   &lt;li&gt;This connection type allows control over WhatsApp Web functionalities through a RESTful API, suitable for multi-service chats, service bots, and other WhatsApp-integrated systems.&lt;/li&gt; 
+   &lt;li&gt;Note: This method relies on the web version of WhatsApp and may have limitations compared to official APIs.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;em&gt;WhatsApp Cloud API&lt;/em&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;The official API provided by Meta (formerly Facebook).&lt;/li&gt; 
+   &lt;li&gt;This connection type offers a robust and reliable solution designed for businesses needing higher volumes of messaging and better integration support.&lt;/li&gt; 
+   &lt;li&gt;The Cloud API supports features such as end-to-end encryption, advanced analytics, and more comprehensive customer service tools.&lt;/li&gt; 
+   &lt;li&gt;To use this API, you must comply with Meta's policies and potentially pay for usage based on message volume and other factors.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Integrations&lt;/h2&gt; 
+&lt;p&gt;Evolution API supports various integrations to enhance its functionality. Below is a list of available integrations and their uses:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://typebot.io/"&gt;Typebot&lt;/a&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Build conversational bots using Typebot, integrated directly into Evolution with trigger management.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://www.chatwoot.com/"&gt;Chatwoot&lt;/a&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Direct integration with Chatwoot for handling customer service for your business.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://www.rabbitmq.com/"&gt;RabbitMQ&lt;/a&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Receive events from the Evolution API via RabbitMQ.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://kafka.apache.org/"&gt;Apache Kafka&lt;/a&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Receive events from the Evolution API via Apache Kafka for real-time event streaming and processing.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://aws.amazon.com/pt/sqs/"&gt;Amazon SQS&lt;/a&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Receive events from the Evolution API via Amazon SQS.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://socket.io/"&gt;Socket.io&lt;/a&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Receive events from the Evolution API via WebSocket.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://dify.ai/"&gt;Dify&lt;/a&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Integrate your Evolution API directly with Dify AI for seamless trigger management and multiple agents.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://openai.com/"&gt;OpenAI&lt;/a&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Integrate your Evolution API with OpenAI for AI capabilities, including audio-to-text conversion, available across all Evolution integrations.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Amazon S3 / Minio:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Store media files received in &lt;a href="https://aws.amazon.com/pt/s3/"&gt;Amazon S3&lt;/a&gt; or &lt;a href="https://min.io/"&gt;Minio&lt;/a&gt;.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Community &amp;amp; Feedback&lt;/h2&gt; 
+&lt;p&gt;We value community input and feedback to continuously improve Evolution API:&lt;/p&gt; 
+&lt;h3&gt;🚀 Feature Requests &amp;amp; Roadmap&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://evolutionapi.canny.io/feature-requests"&gt;Feature Requests&lt;/a&gt;&lt;/strong&gt;: Submit new feature ideas and vote on community proposals&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://evolutionapi.canny.io/feature-requests"&gt;Roadmap&lt;/a&gt;&lt;/strong&gt;: View planned features and development progress&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://evolutionapi.canny.io/changelog"&gt;Changelog&lt;/a&gt;&lt;/strong&gt;: Stay updated with the latest releases and improvements&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;💬 Community Support&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://evolution-api.com/whatsapp"&gt;WhatsApp Group&lt;/a&gt;&lt;/strong&gt;: Join our community for support and discussions&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://evolution-api.com/discord"&gt;Discord Community&lt;/a&gt;&lt;/strong&gt;: Real-time chat with developers and users&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/EvolutionAPI/evolution-api/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/strong&gt;: Report bugs and technical issues&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🔒 Security&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/EvolutionAPI/evolution-api/main/SECURITY.md"&gt;Security Policy&lt;/a&gt;&lt;/strong&gt;: Guidelines for reporting security vulnerabilities&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Security Contact&lt;/strong&gt;: &lt;a href="mailto:contato@evolution-api.com"&gt;contato@evolution-api.com&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Telemetry Notice&lt;/h2&gt; 
+&lt;p&gt;To continuously improve our services, we have implemented telemetry that collects data on the routes used, the most accessed routes, and the version of the API in use. We would like to assure you that no sensitive or personal data is collected during this process. The telemetry helps us identify improvements and provide a better experience for users.&lt;/p&gt; 
+&lt;h2&gt;Evolution Support Premium&lt;/h2&gt; 
+&lt;p&gt;Join our Evolution Pro community for expert support and a weekly call to answer questions. Visit the link below to learn more and subscribe:&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://evolution-api.com/suporte-pro"&gt;Click here to learn more&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Donate to the project.&lt;/h1&gt; 
+&lt;h4&gt;Github Sponsors&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://github.com/sponsors/EvolutionAPI"&gt;https://github.com/sponsors/EvolutionAPI&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Content Creator Partners&lt;/h1&gt; 
+&lt;p&gt;We are proud to collaborate with the following content creators who have contributed valuable insights and tutorials about Evolution API:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/@promovaweb"&gt;Promovaweb&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/@canalsandeco"&gt;Sandeco&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/@ComunidadeZDG"&gt;Comunidade ZDG&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/@FrancisMNO"&gt;Francis MNO&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://youtube.com/@pablocabral"&gt;Pablo Cabral&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/@xpopdigital"&gt;XPop Digital&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/@costarwagnerdev"&gt;Costar Wagner Dev&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://youtube.com/@dantetesta_"&gt;Dante Testa&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://youtube.com/channel/UCnYGZIE2riiLqaN9sI6riig"&gt;Rubén Salazar&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/EvolutionAPI/evolution-api/main/youtube.com/OrionDesign_Oficial"&gt;OrionDesign&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/EvolutionAPI/evolution-api/main/youtube.com/@impa365_ofc"&gt;IMPA 365&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://youtube.com/@comunidadehubconnect"&gt;Comunidade Hub Connect&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/channel/UCG7DjUmAxtYyURlOGAIryNQ?view_as=subscriber"&gt;dSantana Automações&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/@edisonmartinsmkt"&gt;Edison Martins&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/@astraonlineweb"&gt;Astra Online&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/@sevenautomacoes"&gt;MKT Seven Automações&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/vamosautomatizar"&gt;Vamos automatizar&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Evolution API is licensed under the Apache License 2.0, with the following additional conditions:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;LOGO and copyright information&lt;/strong&gt;: In the process of using Evolution API's frontend components, you may not remove or modify the LOGO or copyright information in the Evolution API console or applications. This restriction is inapplicable to uses of Evolution API that do not involve its frontend components.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Usage Notification Requirement&lt;/strong&gt;: If Evolution API is used as part of any project, including closed-source systems (e.g., proprietary software), the user is required to display a clear notification within the system that Evolution API is being utilized. This notification should be visible to system administrators and accessible from the system's documentation or settings page. Failure to comply with this requirement may result in the necessity for a commercial license, as determined by the producer.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;Please contact &lt;a href="mailto:contato@evolution-api.com"&gt;contato@evolution-api.com&lt;/a&gt; to inquire about licensing matters.&lt;/p&gt; 
+&lt;p&gt;Apart from the specific conditions mentioned above, all other rights and restrictions follow the Apache License 2.0. Detailed information about the Apache License 2.0 can be found at &lt;a href="http://www.apache.org/licenses/LICENSE-2.0"&gt;http://www.apache.org/licenses/LICENSE-2.0&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;© 2025 Evolution API&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>huggingface/chat-ui</title>
+      <link>https://github.com/huggingface/chat-ui</link>
+      <description>&lt;p&gt;Open source codebase powering the HuggingChat app&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Chat UI&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/chat-ui/chat-ui-2026.png" alt="Chat UI repository thumbnail" /&gt;&lt;/p&gt; 
+&lt;p&gt;A chat interface for LLMs. It is a SvelteKit app and it powers the &lt;a href="https://huggingface.co/chat"&gt;HuggingChat app on hf.co/chat&lt;/a&gt;.&lt;/p&gt; 
+&lt;ol start="0"&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/huggingface/chat-ui/main/#quickstart"&gt;Quickstart&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/huggingface/chat-ui/main/#database-options"&gt;Database Options&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/huggingface/chat-ui/main/#launch"&gt;Launch&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/huggingface/chat-ui/main/#optional-docker-image"&gt;Optional Docker Image&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/huggingface/chat-ui/main/#extra-parameters"&gt;Extra parameters&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/huggingface/chat-ui/main/#building"&gt;Building&lt;/a&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] Chat UI only supports OpenAI-compatible APIs via &lt;code&gt;OPENAI_BASE_URL&lt;/code&gt; and the &lt;code&gt;/models&lt;/code&gt; endpoint. Provider-specific integrations (legacy &lt;code&gt;MODELS&lt;/code&gt; env var, GGUF discovery, embeddings, web-search helpers, etc.) are removed, but any service that speaks the OpenAI protocol (llama.cpp server, Ollama, OpenRouter, etc. will work by default).&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] The old version is still available on the &lt;a href="https://github.com/huggingface/chat-ui/tree/legacy"&gt;legacy branch&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Quickstart&lt;/h2&gt; 
+&lt;p&gt;Chat UI speaks to OpenAI-compatible APIs only. The fastest way to get running is with the Hugging Face Inference Providers router plus your personal Hugging Face access token.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Step 1 – Create &lt;code&gt;.env.local&lt;/code&gt;:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-env"&gt;OPENAI_BASE_URL=https://router.huggingface.co/v1
+OPENAI_API_KEY=hf_************************
+# Fill in once you pick a database option below
+MONGODB_URL=
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;code&gt;OPENAI_API_KEY&lt;/code&gt; can come from any OpenAI-compatible endpoint you plan to call. Pick the combo that matches your setup and drop the values into &lt;code&gt;.env.local&lt;/code&gt;:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Provider&lt;/th&gt; 
+   &lt;th&gt;Example &lt;code&gt;OPENAI_BASE_URL&lt;/code&gt;&lt;/th&gt; 
+   &lt;th&gt;Example key env&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Hugging Face Inference Providers router&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;https://router.huggingface.co/v1&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;OPENAI_API_KEY=hf_xxx&lt;/code&gt; (or &lt;code&gt;HF_TOKEN&lt;/code&gt; legacy alias)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;llama.cpp server (&lt;code&gt;llama.cpp --server --api&lt;/code&gt;)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;http://127.0.0.1:8080/v1&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;OPENAI_API_KEY=sk-local-demo&lt;/code&gt; (any string works; llama.cpp ignores it)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Ollama (with OpenAI-compatible bridge)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;http://127.0.0.1:11434/v1&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;OPENAI_API_KEY=ollama&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;OpenRouter&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;https://openrouter.ai/api/v1&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;OPENAI_API_KEY=sk-or-v1-...&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Poe&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;https://api.poe.com/v1&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;OPENAI_API_KEY=pk_...&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;Check the root &lt;a href="https://raw.githubusercontent.com/huggingface/chat-ui/main/.env"&gt;&lt;code&gt;.env&lt;/code&gt; template&lt;/a&gt; for the full list of optional variables you can override.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Step 2 – Choose where MongoDB lives:&lt;/strong&gt; Either provision a managed cluster (for example MongoDB Atlas) or run a local container. Both approaches are described in &lt;a href="https://raw.githubusercontent.com/huggingface/chat-ui/main/#database-options"&gt;Database Options&lt;/a&gt;. After you have the URI, drop it into &lt;code&gt;MONGODB_URL&lt;/code&gt; (and, if desired, set &lt;code&gt;MONGODB_DB_NAME&lt;/code&gt;).&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Step 3 – Install and launch the dev server:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/huggingface/chat-ui
+cd chat-ui
+npm install
+npm run dev -- --open
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You now have Chat UI running against the Hugging Face router without needing to host MongoDB yourself.&lt;/p&gt; 
+&lt;h2&gt;Database Options&lt;/h2&gt; 
+&lt;p&gt;Chat history, users, settings, files, and stats all live in MongoDB. You can point Chat UI at any MongoDB 6/7 deployment.&lt;/p&gt; 
+&lt;h3&gt;MongoDB Atlas (managed)&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Create a free cluster at &lt;a href="https://www.mongodb.com/pricing"&gt;mongodb.com&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Add your IP (or &lt;code&gt;0.0.0.0/0&lt;/code&gt; for development) to the network access list.&lt;/li&gt; 
+ &lt;li&gt;Create a database user and copy the connection string.&lt;/li&gt; 
+ &lt;li&gt;Paste that string into &lt;code&gt;MONGODB_URL&lt;/code&gt; in &lt;code&gt;.env.local&lt;/code&gt;. Keep the default &lt;code&gt;MONGODB_DB_NAME=chat-ui&lt;/code&gt; or change it per environment.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;Atlas keeps MongoDB off your laptop, which is ideal for teams or cloud deployments.&lt;/p&gt; 
+&lt;h3&gt;Local MongoDB (container)&lt;/h3&gt; 
+&lt;p&gt;If you prefer to run MongoDB locally:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -d -p 27017:27017 --name mongo-chatui mongo:latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then set &lt;code&gt;MONGODB_URL=mongodb://localhost:27017&lt;/code&gt; in &lt;code&gt;.env.local&lt;/code&gt;. You can also supply &lt;code&gt;MONGO_STORAGE_PATH&lt;/code&gt; if you want Chat UI’s fallback in-memory server to persist under a specific folder.&lt;/p&gt; 
+&lt;h2&gt;Launch&lt;/h2&gt; 
+&lt;p&gt;After configuring your environment variables, start Chat UI with:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install
+npm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The dev server listens on &lt;code&gt;http://localhost:5173&lt;/code&gt; by default. Use &lt;code&gt;npm run build&lt;/code&gt; / &lt;code&gt;npm run preview&lt;/code&gt; for production builds.&lt;/p&gt; 
+&lt;h2&gt;Optional Docker Image&lt;/h2&gt; 
+&lt;p&gt;Prefer containerized setup? You can run everything in one container as long as you supply a MongoDB URI (local or hosted):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run \
+  -p 3000 \
+  -e MONGODB_URL=mongodb://host.docker.internal:27017 \
+  -e OPENAI_BASE_URL=https://router.huggingface.co/v1 \
+  -e OPENAI_API_KEY=hf_*** \
+  -v db:/data \
+  ghcr.io/huggingface/chat-ui-db:latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;code&gt;host.docker.internal&lt;/code&gt; lets the container reach a MongoDB instance on your host machine; swap it for your Atlas URI if you use the hosted option. All environment variables accepted in &lt;code&gt;.env.local&lt;/code&gt; can be provided as &lt;code&gt;-e&lt;/code&gt; flags.&lt;/p&gt; 
+&lt;h2&gt;Extra parameters&lt;/h2&gt; 
+&lt;h3&gt;Theming&lt;/h3&gt; 
+&lt;p&gt;You can use a few environment variables to customize the look and feel of chat-ui. These are by default:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-env"&gt;PUBLIC_APP_NAME=ChatUI
+PUBLIC_APP_ASSETS=chatui
+PUBLIC_APP_DESCRIPTION="Making the community's best AI chat models available to everyone."
+PUBLIC_APP_DATA_SHARING=
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;PUBLIC_APP_NAME&lt;/code&gt; The name used as a title throughout the app.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;PUBLIC_APP_ASSETS&lt;/code&gt; Is used to find logos &amp;amp; favicons in &lt;code&gt;static/$PUBLIC_APP_ASSETS&lt;/code&gt;, current options are &lt;code&gt;chatui&lt;/code&gt; and &lt;code&gt;huggingchat&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;PUBLIC_APP_DATA_SHARING&lt;/code&gt; Can be set to 1 to add a toggle in the user settings that lets your users opt-in to data sharing with models creator.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Models&lt;/h3&gt; 
+&lt;p&gt;This build does not use the &lt;code&gt;MODELS&lt;/code&gt; env var or GGUF discovery. Configure models via &lt;code&gt;OPENAI_BASE_URL&lt;/code&gt; only; Chat UI will fetch &lt;code&gt;${OPENAI_BASE_URL}/models&lt;/code&gt; and populate the list automatically. Authorization uses &lt;code&gt;OPENAI_API_KEY&lt;/code&gt; (preferred). &lt;code&gt;HF_TOKEN&lt;/code&gt; remains a legacy alias.&lt;/p&gt; 
+&lt;h3&gt;LLM Router (Optional)&lt;/h3&gt; 
+&lt;p&gt;Chat UI can perform client-side routing &lt;a href="https://huggingface.co/katanemo/Arch-Router-1.5B"&gt;katanemo/Arch-Router-1.5B&lt;/a&gt; as the routing model without running a separate router service. The UI exposes a virtual model alias called "Omni" (configurable) that, when selected, chooses the best route/model for each message.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Provide a routes policy JSON via &lt;code&gt;LLM_ROUTER_ROUTES_PATH&lt;/code&gt;. No sample file ships with this branch, so you must point the variable to a JSON array you create yourself (for example, commit one in your project like &lt;code&gt;config/routes.chat.json&lt;/code&gt;). Each route entry needs &lt;code&gt;name&lt;/code&gt;, &lt;code&gt;description&lt;/code&gt;, &lt;code&gt;primary_model&lt;/code&gt;, and optional &lt;code&gt;fallback_models&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Configure the Arch router selection endpoint with &lt;code&gt;LLM_ROUTER_ARCH_BASE_URL&lt;/code&gt; (OpenAI-compatible &lt;code&gt;/chat/completions&lt;/code&gt;) and &lt;code&gt;LLM_ROUTER_ARCH_MODEL&lt;/code&gt; (e.g. &lt;code&gt;router/omni&lt;/code&gt;). The Arch call reuses &lt;code&gt;OPENAI_API_KEY&lt;/code&gt; for auth.&lt;/li&gt; 
+ &lt;li&gt;Map &lt;code&gt;other&lt;/code&gt; to a concrete route via &lt;code&gt;LLM_ROUTER_OTHER_ROUTE&lt;/code&gt; (default: &lt;code&gt;casual_conversation&lt;/code&gt;). If Arch selection fails, calls fall back to &lt;code&gt;LLM_ROUTER_FALLBACK_MODEL&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Selection timeout can be tuned via &lt;code&gt;LLM_ROUTER_ARCH_TIMEOUT_MS&lt;/code&gt; (default 10000).&lt;/li&gt; 
+ &lt;li&gt;Omni alias configuration: &lt;code&gt;PUBLIC_LLM_ROUTER_ALIAS_ID&lt;/code&gt; (default &lt;code&gt;omni&lt;/code&gt;), &lt;code&gt;PUBLIC_LLM_ROUTER_DISPLAY_NAME&lt;/code&gt; (default &lt;code&gt;Omni&lt;/code&gt;), and optional &lt;code&gt;PUBLIC_LLM_ROUTER_LOGO_URL&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;When you select Omni in the UI, Chat UI will:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Call the Arch endpoint once (non-streaming) to pick the best route for the last turns.&lt;/li&gt; 
+ &lt;li&gt;Emit RouterMetadata immediately (route and actual model used) so the UI can display it.&lt;/li&gt; 
+ &lt;li&gt;Stream from the selected model via your configured &lt;code&gt;OPENAI_BASE_URL&lt;/code&gt;. On errors, it tries route fallbacks.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Building&lt;/h2&gt; 
+&lt;p&gt;To create a production version of your app:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm run build
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can preview the production build with &lt;code&gt;npm run preview&lt;/code&gt;.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;To deploy your app, you may need to install an &lt;a href="https://kit.svelte.dev/docs/adapters"&gt;adapter&lt;/a&gt; for your target environment.&lt;/p&gt; 
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>supermemoryai/supermemory</title>
+      <link>https://github.com/supermemoryai/supermemory</link>
+      <description>&lt;p&gt;Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.&lt;/p&gt;&lt;hr&gt;&lt;div align="center" style="padding-bottom:20px;padding-top:20px"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/supermemoryai/supermemory/main/logo.svg?sanitize=true" alt="supermemory Logo" width="400" /&gt; 
+&lt;/div&gt; 
+&lt;div align="center" style="padding-bottom:10px;padding-top:10px"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/supermemoryai/supermemory/main/apps/web/public/landing-page.jpeg" alt="supermemory" width="100%" /&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;h3&gt;Core Functionality&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/supermemoryai/supermemory/main/#add-memory"&gt;Add Memories from Any Content&lt;/a&gt;&lt;/strong&gt;: Easily add memories from URLs, PDFs, and plain text—just paste, upload, or link.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/supermemoryai/supermemory/main/#chat-memories"&gt;Chat with Your Memories&lt;/a&gt;&lt;/strong&gt;: Converse with your stored content using natural language chat.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/supermemoryai/supermemory/main/#mcp-integration"&gt;Supermemory MCP Integration&lt;/a&gt;&lt;/strong&gt;: Seamlessly connect with all major AI tools (Claude, Cursor, etc.) via Supermemory MCP.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How do i use this?&lt;/h2&gt; 
+&lt;p&gt;Go to &lt;a href="https://app.supermemory.ai"&gt;app.supermemory.ai&lt;/a&gt; and sign into with your account&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;a id="add-memory"&gt;&lt;/a&gt;Start Adding Memory with your choice of format (Note, Link, File)&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;div align="center" style="padding-bottom:10px;padding-top:10px"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/supermemoryai/supermemory/main/apps/web/public/add-memory.png" alt="supermemory" width="100%" /&gt; 
+&lt;/div&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;You can also Connect to your favourite services (Notion, Google Drive, OneDrive)&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;div align="center" style="padding-bottom:10px;padding-top:10px"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/supermemoryai/supermemory/main/apps/web/public/add-connections.png" alt="supermemory" width="100%" /&gt; 
+&lt;/div&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;&lt;a id="chat-memories"&gt;&lt;/a&gt;Once Memories are added, you can chat with Supermemory by clicking on "Open Chat" and retrieve info from your saved memories&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;div align="center" style="padding-bottom:10px;padding-top:10px"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/supermemoryai/supermemory/main/apps/web/public/chat.png" alt="supermemory" width="100%" /&gt; 
+&lt;/div&gt; 
+&lt;ol start="4"&gt; 
+ &lt;li&gt;&lt;a id="mcp-integration"&gt;&lt;/a&gt;Add MCP to your AI Tools (by clicking on "Connect to your AI" and select the AI tool you are trying to integrate)&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;div align="center" style="padding-bottom:10px;padding-top:10px"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/supermemoryai/supermemory/main/apps/web/public/mcp.png" alt="supermemory" width="100%" /&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;Have questions or feedback? We're here to help:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Email: &lt;a href="mailto:dhravya@supermemory.com"&gt;dhravya@supermemory.com&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Documentation: &lt;a href="https://docs.supermemory.ai"&gt;docs.supermemory.ai&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions from developers of all skill levels! Whether you're fixing bugs, adding features, or improving documentation, your help makes supermemory better for everyone.&lt;/p&gt; 
+&lt;h3&gt;Quick Start for Contributors&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Fork and clone&lt;/strong&gt; the repository&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Install dependencies&lt;/strong&gt; with &lt;code&gt;bun install&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Set up your environment&lt;/strong&gt; by copying &lt;code&gt;.env.example&lt;/code&gt; to &lt;code&gt;.env.local&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Start developing&lt;/strong&gt; with &lt;code&gt;bun run dev&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;For detailed guidelines, development setup, coding standards, and the complete contribution workflow, please see our &lt;a href="https://raw.githubusercontent.com/supermemoryai/supermemory/main/CONTRIBUTING.md"&gt;&lt;strong&gt;Contributing Guide&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Ways to Contribute&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🐛 &lt;strong&gt;Bug fixes&lt;/strong&gt; - Help us squash those pesky issues&lt;/li&gt; 
+ &lt;li&gt;✨ &lt;strong&gt;New features&lt;/strong&gt; - Add functionality that users will love&lt;/li&gt; 
+ &lt;li&gt;🎨 &lt;strong&gt;UI/UX improvements&lt;/strong&gt; - Make the interface more intuitive&lt;/li&gt; 
+ &lt;li&gt;⚡ &lt;strong&gt;Performance optimizations&lt;/strong&gt; - Help us make supermemory faster&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Check out our &lt;a href="https://github.com/supermemoryai/supermemory/issues"&gt;Issues&lt;/a&gt; page for &lt;code&gt;good first issue&lt;/code&gt; and &lt;code&gt;help wanted&lt;/code&gt; labels to get started!&lt;/p&gt; 
+&lt;h2&gt;Updates &amp;amp; Roadmap&lt;/h2&gt; 
+&lt;p&gt;Stay up to date with the latest improvements:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.supermemory.ai/changelog/overview"&gt;Changelog&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://x.com/supermemoryai"&gt;X&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
