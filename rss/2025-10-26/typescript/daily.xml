@@ -1,0 +1,1626 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub TypeScript Daily Trending</title>
+    <description>Daily Trending of TypeScript in GitHub</description>
+    <pubDate>Sat, 25 Oct 2025 01:42:09 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>microsoft/vscode-copilot-chat</title>
+      <link>https://github.com/microsoft/vscode-copilot-chat</link>
+      <description>&lt;p&gt;Copilot Chat extension for VS Code&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;GitHub Copilot - Your AI peer programmer&lt;/h1&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://code.visualstudio.com/docs/copilot/overview"&gt;GitHub Copilot&lt;/a&gt;&lt;/strong&gt; is an AI peer programming tool that helps you write code faster and smarter.&lt;/p&gt; 
+&lt;p&gt;GitHub Copilot adapts to your unique needs allowing you to select the best model for your project, customize chat responses with custom instructions, and utilize agent mode for AI-powered, seamlessly integrated peer programming sessions.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Sign up for &lt;a href="https://github.com/settings/copilot?utm_source=vscode-chat-readme&amp;amp;utm_medium=first&amp;amp;utm_campaign=2025mar-em-MSFT-signup"&gt;GitHub Copilot Free&lt;/a&gt;!&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/microsoft/vscode-copilot-release/raw/main/images/hero-dark.png?raw=true" alt="Working with GitHub Copilot agent mode to make edits to code in your workspace" /&gt;&lt;/p&gt; 
+&lt;p&gt;When you install Copilot in Visual Studio Code, you get two extensions:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://marketplace.visualstudio.com/items?itemName=GitHub.copilot"&gt;GitHub Copilot&lt;/a&gt;&lt;/strong&gt; - Provides inline coding suggestions as you type.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat"&gt;GitHub Copilot Chat&lt;/a&gt;&lt;/strong&gt; (this extension) - A companion extension that provides conversational AI assistance.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Getting access to GitHub Copilot&lt;/h2&gt; 
+&lt;p&gt;Sign up for &lt;a href="https://github.com/settings/copilot?utm_source=vscode-chat-readme&amp;amp;utm_medium=second&amp;amp;utm_campaign=2025mar-em-MSFT-signup"&gt;GitHub Copilot Free&lt;/a&gt;, or request access from your enterprise admin.&lt;/p&gt; 
+&lt;p&gt;To access GitHub Copilot, an active GitHub Copilot subscription is required. You can read more about our business and individual offerings at &lt;a href="https://github.com/features/copilot?utm_source=vscode-chat&amp;amp;utm_medium=readme&amp;amp;utm_campaign=2025mar-em-MSFT-signup"&gt;github.com/features/copilot&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;AI-powered coding sessions&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Start an AI-powered coding session tailored to your workflow&lt;/strong&gt;. Copilot Edits allows you to quickly iterate on code changes directly in the editor, across multiple files using natural language. For a more autonomous peer programmer experience, &lt;a href="https://aka.ms/vscode-copilot-agent"&gt;agent mode&lt;/a&gt; performs multi-step coding tasks at your command. It automatically handles compile and lint errors, monitors terminal and test output, and iterates until the task is complete. &lt;a href="https://aka.ms/vscode-copilot-edit"&gt;Edit mode&lt;/a&gt; offers a conversational, step-by-step coding experience. Engage in multi-turn chat conversations while Copilot applies edits directly to your codebase, allowing you to review changes in context and maintain full control.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/microsoft/vscode-copilot-release/raw/main/images/agent-mode-readme.gif?raw=true" alt="Agent mode in Copilot Chat creating a new Vue application" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Code suggestions in the editor&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Automatically receive code suggestions in the editor&lt;/strong&gt; from &lt;a href="https://aka.ms/vscode-completions"&gt;completions&lt;/a&gt; and &lt;a href="https://aka.ms/vscode-nes"&gt;next edit suggestions&lt;/a&gt; to help you write code faster. Code completions provide suggestions at the current location, tailored to your coding style and your existing code. Copilot next edit suggestions (Copilot NES) takes it a step further and predicts what and where your next logical code change will be. Use the Tab key to navigate and accept changes in quick succession.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://code.visualstudio.com/assets/docs/copilot/inline-suggestions/nes-point.gif" alt="Copilot next edit suggestions" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Ask and learn about your code with chat&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Ask Copilot for help with any task or question&lt;/strong&gt; in the &lt;a href="https://aka.ms/vscode-chat"&gt;Chat view&lt;/a&gt;, bringing in code from your current files. Rather than giving you a generic answer, it can give answers that are relevant for your codebase using information provided by &lt;a href="https://aka.ms/vscode-chat-participants"&gt;participants&lt;/a&gt;, &lt;a href="https://aka.ms/vscode-chat-variables"&gt;variables&lt;/a&gt;, and &lt;a href="https://aka.ms/vscode-chat-commands"&gt;slash commands&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/microsoft/vscode-copilot-release/raw/main/images/participants-workspace.gif?raw=true" alt="Using the workspace chat participant" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Apply Copilot's AI suggestions directly to your code&lt;/strong&gt; using &lt;a href="https://aka.ms/vscode-inline-chat"&gt;Inline chat&lt;/a&gt;, staying in the flow. Need help with refactoring a method, adding error handling, or explaining a complex algorithm - just launch Copilot in the editor!&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://code.visualstudio.com/assets/docs/copilot/copilot-chat/inline-chat-question-example.png" alt="Inline chat in VS Code" /&gt;&lt;/p&gt; 
+&lt;h3&gt;Supported languages and frameworks&lt;/h3&gt; 
+&lt;p&gt;GitHub Copilot works on any language, including Java, PHP, Python, JavaScript, Ruby, Go, C#, or C++. Because it’s been trained on languages in public repositories, it works for most popular languages, libraries and frameworks.&lt;/p&gt; 
+&lt;h3&gt;Version compatibility&lt;/h3&gt; 
+&lt;p&gt;As Copilot Chat releases in lockstep with VS Code due to its deep UI integration, every new version of Copilot Chat is only compatible with the latest and newest release of VS Code. This means that if you are using an older version of VS Code, you will not be able to use the latest Copilot Chat.&lt;/p&gt; 
+&lt;p&gt;Only the latest Copilot Chat versions will use the latest models provided by the Copilot service, as even minor model upgrades require prompt changes and fixes in the extension. An older version of Copilot Chat will still use the latest version of Copilot completions.&lt;/p&gt; 
+&lt;h3&gt;Privacy and preview terms&lt;/h3&gt; 
+&lt;p&gt;By using Copilot Chat you agree to &lt;a href="https://docs.github.com/en/early-access/copilot/github-copilot-chat-technical-preview-license-terms"&gt;GitHub Copilot chat preview terms&lt;/a&gt;. Review the &lt;a href="https://aka.ms/CopilotChatTransparencyNote"&gt;transparency note&lt;/a&gt; to understand about usage, limitations and ways to improve Copilot Chat during the technical preview.&lt;/p&gt; 
+&lt;p&gt;Your code is yours. We follow responsible practices in accordance with our &lt;a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement"&gt;Privacy Statement&lt;/a&gt; to ensure that your code snippets will not be used as suggested code for other users of GitHub Copilot.&lt;/p&gt; 
+&lt;p&gt;To get the latest security fixes, please use the latest version of the Copilot extension and VS Code.&lt;/p&gt; 
+&lt;h3&gt;Resources &amp;amp; next steps&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Sign up for &lt;a href="https://github.com/settings/copilot?utm_source=vscode-chat-readme&amp;amp;utm_medium=third&amp;amp;utm_campaign=2025mar-em-MSFT-signup"&gt;GitHub Copilot Free&lt;/a&gt;&lt;/strong&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;If you're using Copilot for your business, check out &lt;a href="https://docs.github.com/en/copilot/copilot-business/about-github-copilot-business"&gt;Copilot Business&lt;/a&gt; and &lt;a href="https://docs.github.com/en/copilot/github-copilot-enterprise/overview/about-github-copilot-enterprise"&gt;Copilot Enterprise&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://code.visualstudio.com/docs/copilot/getting-started"&gt;Get started with Copilot in VS Code tutorial&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://www.youtube.com/watch?v=3surPGP7_4o"&gt;Copilot Chat quickstart video&lt;/a&gt;&lt;/strong&gt; to learn Copilot Chat in less than 4 minutes&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://www.youtube.com/playlist?list=PLj6YeMhvp2S5_hvBl2SE-7YCHYlLQ0bPt"&gt;VS Code Copilot Series on YouTube&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://code.visualstudio.com/docs/copilot/faq"&gt;FAQ&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/microsoft/vscode-copilot-release/issues"&gt;Feedback&lt;/a&gt;&lt;/strong&gt;: We'd love to get your help in making GitHub Copilot better!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Data and telemetry&lt;/h2&gt; 
+&lt;p&gt;The GitHub Copilot Extension for Visual Studio Code collects usage data and sends it to Microsoft to help improve our products and services. Read our &lt;a href="https://privacy.microsoft.com/privacystatement"&gt;privacy statement&lt;/a&gt; to learn more. This extension respects the &lt;code&gt;telemetry.telemetryLevel&lt;/code&gt; setting which you can learn more about at &lt;a href="https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting"&gt;https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Trademarks&lt;/h2&gt; 
+&lt;p&gt;This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to and must follow Microsoft's Trademark &amp;amp; Brand Guidelines. Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship. Any use of third-party trademarks or logos are subject to those third-party's policies.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Copyright (c) Microsoft Corporation. All rights reserved.&lt;/p&gt; 
+&lt;p&gt;Licensed under the &lt;a href="https://raw.githubusercontent.com/microsoft/vscode-copilot-chat/main/LICENSE.txt"&gt;MIT&lt;/a&gt; license.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SigNoz/signoz</title>
+      <link>https://github.com/SigNoz/signoz</link>
+      <description>&lt;p&gt;SigNoz is an open-source observability platform native to OpenTelemetry with logs, traces and metrics in a single application. An open-source alternative to DataDog, NewRelic, etc. 🔥 🖥. 👉 Open source Application Performance Monitoring (APM) &amp; Observability tool&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center" style="border-bottom: none"&gt; &lt;a href="https://signoz.io" target="_blank"&gt; &lt;img alt="SigNoz" src="https://github.com/user-attachments/assets/ef9a33f7-12d7-4c94-8908-0a02b22f0c18" width="100" height="100" /&gt; &lt;/a&gt; &lt;br /&gt;SigNoz &lt;/h1&gt; 
+&lt;p align="center"&gt;All your logs, metrics, and traces in one place. Monitor your application, spot issues before they occur and troubleshoot downtime quickly with rich context. SigNoz is a cost-effective open-source alternative to Datadog and New Relic. Visit &lt;a href="https://signoz.io" target="_blank"&gt;signoz.io&lt;/a&gt; for the full documentation, tutorials, and guide.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img alt="GitHub issues" src="https://img.shields.io/github/issues/signoz/signoz" /&gt;  &lt;a href="https://twitter.com/intent/tweet?text=Monitor%20your%20applications%20and%20troubleshoot%20problems%20with%20SigNoz,%20an%20open-source%20alternative%20to%20DataDog,%20NewRelic.&amp;amp;url=https://signoz.io/&amp;amp;via=SigNozHQ&amp;amp;hashtags=opensource,signoz,observability"&gt; &lt;img alt="tweet" src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h3 align="center"&gt; &lt;a href="https://signoz.io/docs"&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/a&gt; • &lt;a href="https://github.com/SigNoz/signoz/raw/main/README.zh-cn.md"&gt;&lt;b&gt;ReadMe in Chinese&lt;/b&gt;&lt;/a&gt; • &lt;a href="https://github.com/SigNoz/signoz/raw/main/README.de-de.md"&gt;&lt;b&gt;ReadMe in German&lt;/b&gt;&lt;/a&gt; • &lt;a href="https://github.com/SigNoz/signoz/raw/main/README.pt-br.md"&gt;&lt;b&gt;ReadMe in Portuguese&lt;/b&gt;&lt;/a&gt; • &lt;a href="https://signoz.io/slack"&gt;&lt;b&gt;Slack Community&lt;/b&gt;&lt;/a&gt; • &lt;a href="https://twitter.com/SigNozHq"&gt;&lt;b&gt;Twitter&lt;/b&gt;&lt;/a&gt; &lt;/h3&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;h3&gt;Application Performance Monitoring&lt;/h3&gt; 
+&lt;p&gt;Use SigNoz APM to monitor your applications and services. It comes with out-of-box charts for key application metrics like p99 latency, error rate, Apdex and operations per second. You can also monitor the database and external calls made from your application. Read &lt;a href="https://signoz.io/application-performance-monitoring/"&gt;more&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;You can &lt;a href="https://signoz.io/docs/instrumentation/"&gt;instrument&lt;/a&gt; your application with OpenTelemetry to get started.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/fa5c0396-0854-4c8b-b972-9b62fd2a70d2" alt="apm-cover" /&gt;&lt;/p&gt; 
+&lt;h3&gt;Logs Management&lt;/h3&gt; 
+&lt;p&gt;SigNoz can be used as a centralized log management solution. We use ClickHouse (used by likes of Uber &amp;amp; Cloudflare) as a datastore, ⎯ an extremely fast and highly optimized storage for logs data. Instantly search through all your logs using quick filters and a powerful query builder.&lt;/p&gt; 
+&lt;p&gt;You can also create charts on your logs and monitor them with customized dashboards. Read &lt;a href="https://signoz.io/log-management/"&gt;more&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/343588ee-98fb-4310-b3d2-c5bacf9c7384" alt="logs-management-cover" /&gt;&lt;/p&gt; 
+&lt;h3&gt;Distributed Tracing&lt;/h3&gt; 
+&lt;p&gt;Distributed Tracing is essential to troubleshoot issues in microservices applications. Powered by OpenTelemetry, distributed tracing in SigNoz can help you track user requests across services to help you identify performance bottlenecks.&lt;/p&gt; 
+&lt;p&gt;See user requests in a detailed breakdown with the help of Flamegraphs and Gantt Charts. Click on any span to see the entire trace represented beautifully, which will help you make sense of where issues actually occurred in the flow of requests.&lt;/p&gt; 
+&lt;p&gt;Read &lt;a href="https://signoz.io/distributed-tracing/"&gt;more&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/9bfe060a-0c40-4922-9b55-8a97e1a4076c" alt="distributed-tracing-cover" /&gt;&lt;/p&gt; 
+&lt;h3&gt;Metrics and Dashboards&lt;/h3&gt; 
+&lt;p&gt;Ingest metrics from your infrastructure or applications and create customized dashboards to monitor them. Create visualization that suits your needs with a variety of panel types like pie chart, time-series, bar chart, etc.&lt;/p&gt; 
+&lt;p&gt;Create queries on your metrics data quickly with an easy-to-use metrics query builder. Add multiple queries and combine those queries with formulae to create really complex queries quickly.&lt;/p&gt; 
+&lt;p&gt;Read &lt;a href="https://signoz.io/metrics-and-dashboards/"&gt;more&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/a536fd71-1d2c-4681-aa7e-516d754c47a5" alt="metrics-n-dashboards-cover" /&gt;&lt;/p&gt; 
+&lt;h3&gt;Alerts&lt;/h3&gt; 
+&lt;p&gt;Use alerts in SigNoz to get notified when anything unusual happens in your application. You can set alerts on any type of telemetry signal (logs, metrics, traces), create thresholds and set up a notification channel to get notified. Advanced features like alert history and anomaly detection can help you create smarter alerts.&lt;/p&gt; 
+&lt;p&gt;Alerts in SigNoz help you identify issues proactively so that you can address them before they reach your customers.&lt;/p&gt; 
+&lt;p&gt;Read &lt;a href="https://signoz.io/alerts-management/"&gt;more&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/03873bb8-1b62-4adf-8f56-28bb7b1750ea" alt="alerts-cover" /&gt;&lt;/p&gt; 
+&lt;h3&gt;Exceptions Monitoring&lt;/h3&gt; 
+&lt;p&gt;Monitor exceptions automatically in Python, Java, Ruby, and Javascript. For other languages, just drop in a few lines of code and start monitoring exceptions.&lt;/p&gt; 
+&lt;p&gt;See the detailed stack trace for all exceptions caught in your application. You can also log in custom attributes to add more context to your exceptions. For example, you can add attributes to identify users for which exceptions occurred.&lt;/p&gt; 
+&lt;p&gt;Read &lt;a href="https://signoz.io/exceptions-monitoring/"&gt;more&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/4be37864-59f2-4e8a-8d6e-e29ad04298c5" alt="exceptions-cover" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;h2&gt;Why SigNoz?&lt;/h2&gt; 
+&lt;p&gt;SigNoz is a single tool for all your monitoring and observability needs. Here are a few reasons why you should choose SigNoz:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;Single tool for observability(logs, metrics, and traces)&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Built on top of &lt;a href="https://opentelemetry.io/"&gt;OpenTelemetry&lt;/a&gt;, the open-source standard which frees you from any type of vendor lock-in&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Correlated logs, metrics and traces for much richer context while debugging&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Uses ClickHouse (used by likes of Uber &amp;amp; Cloudflare) as datastore - an extremely fast and highly optimized storage for observability data&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;DIY Query builder, PromQL, and ClickHouse queries to fulfill all your use-cases around querying observability data&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Open-Source - you can use open-source, our &lt;a href="https://signoz.io/teams/"&gt;cloud service&lt;/a&gt; or a mix of both based on your use case&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;h3&gt;Create a SigNoz Cloud Account&lt;/h3&gt; 
+&lt;p&gt;SigNoz cloud is the easiest way to get started with SigNoz. Our cloud service is for those users who want to spend more time in getting insights for their application performance without worrying about maintenance.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://signoz.io/teams/"&gt;Get started for free&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Deploy using Docker(self-hosted)&lt;/h3&gt; 
+&lt;p&gt;Please follow the steps listed &lt;a href="https://signoz.io/docs/install/docker/"&gt;here&lt;/a&gt; to install using docker&lt;/p&gt; 
+&lt;p&gt;The &lt;a href="https://signoz.io/docs/install/troubleshooting/"&gt;troubleshooting instructions&lt;/a&gt; may be helpful if you face any issues.&lt;/p&gt; 
+&lt;p&gt;&amp;nbsp; &lt;/p&gt; 
+&lt;h3&gt;Deploy in Kubernetes using Helm(self-hosted)&lt;/h3&gt; 
+&lt;p&gt;Please follow the steps listed &lt;a href="https://signoz.io/docs/deployment/helm_chart"&gt;here&lt;/a&gt; to install using helm charts&lt;/p&gt; 
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;p&gt;We also offer managed services in your infra. Check our &lt;a href="https://signoz.io/pricing/"&gt;pricing plans&lt;/a&gt; for all details.&lt;/p&gt; 
+&lt;h2&gt;Join our Slack community&lt;/h2&gt; 
+&lt;p&gt;Come say Hi to us on &lt;a href="https://signoz.io/slack"&gt;Slack&lt;/a&gt; 👋&lt;/p&gt; 
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;h3&gt;Languages supported:&lt;/h3&gt; 
+&lt;p&gt;SigNoz supports all major programming languages for monitoring. Any framework and language supported by OpenTelemetry is supported by SigNoz. Find instructions for instrumenting different languages below:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://signoz.io/docs/instrumentation/java/"&gt;Java&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://signoz.io/docs/instrumentation/python/"&gt;Python&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://signoz.io/docs/instrumentation/javascript/"&gt;Node.js or Javascript&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://signoz.io/docs/instrumentation/golang/"&gt;Go&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://signoz.io/docs/instrumentation/php/"&gt;PHP&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://signoz.io/docs/instrumentation/dotnet/"&gt;.NET&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://signoz.io/docs/instrumentation/ruby-on-rails/"&gt;Ruby&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://signoz.io/docs/instrumentation/elixir/"&gt;Elixir&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://signoz.io/docs/instrumentation/rust/"&gt;Rust&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://signoz.io/docs/instrumentation/swift/"&gt;Swift&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;You can find our entire documentation &lt;a href="https://signoz.io/docs/introduction/"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;h2&gt;Comparisons to Familiar Tools&lt;/h2&gt; 
+&lt;h3&gt;SigNoz vs Prometheus&lt;/h3&gt; 
+&lt;p&gt;Prometheus is good if you want to do just metrics. But if you want to have a seamless experience between metrics, logs and traces, then current experience of stitching together Prometheus &amp;amp; other tools is not great.&lt;/p&gt; 
+&lt;p&gt;SigNoz is a one-stop solution for metrics and other telemetry signals. And because you will use the same standard(OpenTelemetry) to collect all telemetry signals, you can also correlate these signals to troubleshoot quickly.&lt;/p&gt; 
+&lt;p&gt;For example, if you see that there are issues with infrastructure metrics of your k8s cluster at a timestamp, you can jump to other signals like logs and traces to understand the issue quickly.&lt;/p&gt; 
+&lt;p&gt;&amp;nbsp; &lt;/p&gt; 
+&lt;h3&gt;SigNoz vs Jaeger&lt;/h3&gt; 
+&lt;p&gt;Jaeger only does distributed tracing. SigNoz supports metrics, traces and logs - all the 3 pillars of observability.&lt;/p&gt; 
+&lt;p&gt;Moreover, SigNoz has few more advanced features wrt Jaeger:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Jaegar UI doesn’t show any metrics on traces or on filtered traces&lt;/li&gt; 
+ &lt;li&gt;Jaeger can’t get aggregates on filtered traces. For example, p99 latency of requests which have tag - customer_type='premium'. This can be done easily on SigNoz&lt;/li&gt; 
+ &lt;li&gt;You can also go from traces to logs easily in SigNoz&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&amp;nbsp; &lt;/p&gt; 
+&lt;h3&gt;SigNoz vs Elastic&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;SigNoz Logs management are based on ClickHouse, a columnar OLAP datastore which makes aggregate log analytics queries much more efficient&lt;/li&gt; 
+ &lt;li&gt;50% lower resource requirement compared to Elastic during ingestion&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;We have published benchmarks comparing Elastic with SigNoz. Check it out &lt;a href="https://signoz.io/blog/logs-performance-benchmark/?utm_source=github-readme&amp;amp;utm_medium=logs-benchmark"&gt;here&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&amp;nbsp; &lt;/p&gt; 
+&lt;h3&gt;SigNoz vs Loki&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;SigNoz supports aggregations on high-cardinality data over a huge volume while loki doesn’t.&lt;/li&gt; 
+ &lt;li&gt;SigNoz supports indexes over high cardinality data and has no limitations on the number of indexes, while Loki reaches max streams with a few indexes added to it.&lt;/li&gt; 
+ &lt;li&gt;Searching over a huge volume of data is difficult and slow in Loki compared to SigNoz&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;We have published benchmarks comparing Loki with SigNoz. Check it out &lt;a href="https://signoz.io/blog/logs-performance-benchmark/?utm_source=github-readme&amp;amp;utm_medium=logs-benchmark"&gt;here&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We ❤️ contributions big or small. Please read &lt;a href="https://raw.githubusercontent.com/SigNoz/signoz/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; to get started with making contributions to SigNoz.&lt;/p&gt; 
+&lt;p&gt;Not sure how to get started? Just ping us on &lt;code&gt;#contributing&lt;/code&gt; in our &lt;a href="https://signoz.io/slack"&gt;slack community&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Project maintainers&lt;/h3&gt; 
+&lt;h4&gt;Backend&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ankitnayan"&gt;Ankit Nayan&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/nityanandagohain"&gt;Nityananda Gohain&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/srikanthccv"&gt;Srikanth Chekuri&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/makeavish"&gt;Vishal Sharma&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/shivanshuraj1333"&gt;Shivanshu Raj Shrivastava&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/eKuG"&gt;Ekansh Gupta&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aniketio-ctrl"&gt;Aniket Agarwal&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Frontend&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/YounixM"&gt;Yunus M&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/vikrantgupta25"&gt;Vikrant Gupta&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/SagarRajput-7"&gt;Sagar Rajput&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ahmadshaheer"&gt;Shaheer Kochai&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/amlannandy"&gt;Amlan Kumar Nandy&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/sawhil"&gt;Sahil Khan&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aks07"&gt;Aditya Singh&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ahrefabhi"&gt;Abhi Kumar&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;DevOps&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/prashant-shahi"&gt;Prashant Shahi&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/therealpandey"&gt;Vibhu Pandey&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;You can find docs at &lt;a href="https://signoz.io/docs/"&gt;https://signoz.io/docs/&lt;/a&gt;. If you need any clarification or find something missing, feel free to raise a GitHub issue with the label &lt;code&gt;documentation&lt;/code&gt; or reach out to us at the community slack channel.&lt;/p&gt; 
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;p&gt;Join the &lt;a href="https://signoz.io/slack"&gt;slack community&lt;/a&gt; to know more about distributed tracing, observability, or SigNoz and to connect with other users and contributors.&lt;/p&gt; 
+&lt;p&gt;If you have any ideas, questions, or any feedback, please share on our &lt;a href="https://github.com/SigNoz/signoz/discussions"&gt;Github Discussions&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;As always, thanks to our amazing contributors!&lt;/p&gt; 
+&lt;a href="https://github.com/signoz/signoz/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=signoz/signoz" /&gt; &lt;/a&gt;</description>
+    </item>
+    
+    <item>
+      <title>chartdb/chartdb</title>
+      <link>https://github.com/chartdb/chartdb</link>
+      <description>&lt;p&gt;Database diagrams editor that allows you to visualize and design your DB with a single query.&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt; &lt;a href="https://chartdb.io#gh-light-mode-only"&gt; &lt;img src="https://github.com/chartdb/chartdb/raw/main/src/assets/logo-light.png" width="400" height="70" alt="ChartDB" /&gt; &lt;/a&gt; &lt;a href="https://chartdb.io##gh-dark-mode-only"&gt; &lt;img src="https://github.com/chartdb/chartdb/raw/main/src/assets/logo-dark.png" width="400" height="70" alt="ChartDB" /&gt; &lt;/a&gt; &lt;br /&gt; &lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;b&gt;Open-source database diagrams editor&lt;/b&gt; &lt;br /&gt; &lt;b&gt;No installations • No Database password required.&lt;/b&gt; &lt;br /&gt; &lt;/p&gt; 
+&lt;h3 align="center"&gt; &lt;a href="https://discord.gg/QeFwyWSKwC"&gt;Community&lt;/a&gt; • &lt;a href="https://www.chartdb.io?ref=github_readme"&gt;Website&lt;/a&gt; • &lt;a href="https://chartdb.io/templates?ref=github_readme"&gt;Examples&lt;/a&gt; • &lt;a href="https://app.chartdb.io?ref=github_readme"&gt;Demo&lt;/a&gt; &lt;/h3&gt; 
+&lt;h4 align="center"&gt; &lt;a href="https://github.com/chartdb/chartdb?tab=AGPL-3.0-1-ov-file#readme"&gt; &lt;img src="https://img.shields.io/github/license/chartdb/chartdb?color=blue" alt="ChartDB is released under the AGPL license." /&gt; &lt;/a&gt; &lt;a href="https://github.com/chartdb/chartdb/raw/main/CONTRIBUTING.md"&gt; &lt;img src="https://img.shields.io/badge/PRs-Welcome-brightgreen" alt="PRs welcome!" /&gt; &lt;/a&gt; &lt;a href="https://discord.gg/QeFwyWSKwC"&gt; &lt;img src="https://img.shields.io/discord/1277047413705670678?color=5865F2&amp;amp;label=Discord&amp;amp;logo=discord&amp;amp;logoColor=white" alt="Discord community channel" /&gt; &lt;/a&gt; &lt;a href="https://x.com/intent/follow?screen_name=jonathanfishner"&gt; &lt;img src="https://img.shields.io/twitter/follow/jonathanfishner?style=social" /&gt; &lt;/a&gt; &lt;/h4&gt; 
+&lt;hr /&gt; 
+&lt;p align="center"&gt; &lt;img width="700px" src="https://raw.githubusercontent.com/chartdb/chartdb/main/public/chartdb.png" /&gt; &lt;/p&gt; 
+&lt;h3&gt;🎉 ChartDB&lt;/h3&gt; 
+&lt;p&gt;ChartDB is a powerful, web-based database diagramming editor. Instantly visualize your database schema with a single &lt;strong&gt;"Smart Query."&lt;/strong&gt; Customize diagrams, export SQL scripts, and access all features—no account required. Experience seamless database design here.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;What it does&lt;/strong&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Instant Schema Import&lt;/strong&gt; Run a single query to instantly retrieve your database schema as JSON. This makes it incredibly fast to visualize your database schema, whether for documentation, team discussions, or simply understanding your data better.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;AI-Powered Export for Easy Migration&lt;/strong&gt; Our AI-driven export feature allows you to generate the DDL script in the dialect of your choice. Whether you're migrating from MySQL to PostgreSQL or from SQLite to MariaDB, ChartDB simplifies the process by providing the necessary scripts tailored to your target database.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Interactive Editing&lt;/strong&gt; Fine-tune your database schema using our intuitive editor. Easily make adjustments or annotations to better visualize complex structures.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Status&lt;/h3&gt; 
+&lt;p&gt;ChartDB is currently in Public Beta. Star and watch this repository to get notified of updates.&lt;/p&gt; 
+&lt;h3&gt;Supported Databases&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;✅ PostgreSQL (&lt;img src="https://raw.githubusercontent.com/chartdb/chartdb/main/src/assets/postgresql_logo_2.png" width="15" /&gt; + &lt;img src="https://raw.githubusercontent.com/chartdb/chartdb/main/src/assets/supabase.png" alt="Supabase" width="15" /&gt; + &lt;img src="https://raw.githubusercontent.com/chartdb/chartdb/main/src/assets/timescale.png" alt="Timescale" width="15" /&gt; )&lt;/li&gt; 
+ &lt;li&gt;✅ MySQL&lt;/li&gt; 
+ &lt;li&gt;✅ SQL Server&lt;/li&gt; 
+ &lt;li&gt;✅ MariaDB&lt;/li&gt; 
+ &lt;li&gt;✅ SQLite (&lt;img src="https://raw.githubusercontent.com/chartdb/chartdb/main/src/assets/sqlite_logo_2.png" width="15" /&gt; + &lt;img src="https://raw.githubusercontent.com/chartdb/chartdb/main/src/assets/cloudflare_d1.png" alt="Cloudflare D1" width="15" /&gt; Cloudflare D1)&lt;/li&gt; 
+ &lt;li&gt;✅ CockroachDB&lt;/li&gt; 
+ &lt;li&gt;✅ ClickHouse&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;Use the &lt;a href="https://app.chartdb.io?ref=github_readme_2"&gt;cloud version&lt;/a&gt; or deploy locally:&lt;/p&gt; 
+&lt;h3&gt;How To Use&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install
+npm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Build&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install
+npm run build
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Or like this if you want to have AI capabilities:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install
+VITE_OPENAI_API_KEY=&amp;lt;YOUR_OPEN_AI_KEY&amp;gt; npm run build
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Run the Docker Container&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -e OPENAI_API_KEY=&amp;lt;YOUR_OPEN_AI_KEY&amp;gt; -p 8080:80 ghcr.io/chartdb/chartdb:latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Build and Run locally&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker build -t chartdb .
+docker run -e OPENAI_API_KEY=&amp;lt;YOUR_OPEN_AI_KEY&amp;gt; -p 8080:80 chartdb
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Using Custom Inference Server&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Build
+docker build \
+  --build-arg VITE_OPENAI_API_ENDPOINT=&amp;lt;YOUR_ENDPOINT&amp;gt; \
+  --build-arg VITE_LLM_MODEL_NAME=&amp;lt;YOUR_MODEL_NAME&amp;gt; \
+  -t chartdb .
+
+# Run
+docker run \
+  -e OPENAI_API_ENDPOINT=&amp;lt;YOUR_ENDPOINT&amp;gt; \
+  -e LLM_MODEL_NAME=&amp;lt;YOUR_MODEL_NAME&amp;gt; \
+  -p 8080:80 chartdb
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Privacy Note:&lt;/strong&gt; ChartDB includes privacy-focused analytics via Fathom Analytics. You can disable this by adding &lt;code&gt;-e DISABLE_ANALYTICS=true&lt;/code&gt; to the run command or &lt;code&gt;--build-arg VITE_DISABLE_ANALYTICS=true&lt;/code&gt; when building.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You must configure either Option 1 (OpenAI API key) OR Option 2 (Custom endpoint and model name) for AI capabilities to work. Do not mix the two options.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Open your browser and navigate to &lt;code&gt;http://localhost:8080&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;Example configuration for a local vLLM server:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;VITE_OPENAI_API_ENDPOINT=http://localhost:8000/v1
+VITE_LLM_MODEL_NAME=Qwen/Qwen2.5-32B-Instruct-AWQ
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Try it on our website&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Go to &lt;a href="https://chartdb.io?ref=github_readme_2"&gt;ChartDB.io&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Click "Go to app"&lt;/li&gt; 
+ &lt;li&gt;Choose the database that you are using.&lt;/li&gt; 
+ &lt;li&gt;Take the magic query and run it in your database.&lt;/li&gt; 
+ &lt;li&gt;Copy and paste the resulting JSON set into ChartDB.&lt;/li&gt; 
+ &lt;li&gt;Enjoy Viewing &amp;amp; Editing!&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;💚 Community &amp;amp; Support&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://discord.gg/QeFwyWSKwC"&gt;Discord&lt;/a&gt; (For live discussion with the community and the ChartDB team)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/chartdb/chartdb/issues"&gt;GitHub Issues&lt;/a&gt; (For any bugs and errors you encounter using ChartDB)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://x.com/intent/follow?screen_name=jonathanfishner"&gt;Twitter&lt;/a&gt; (Get news fast)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome community contributions, big or small, and are here to guide you along the way. Message us in the &lt;a href="https://discord.gg/QeFwyWSKwC"&gt;ChartDB Community Discord&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;For more information on how to contribute, please see our &lt;a href="https://raw.githubusercontent.com/chartdb/chartdb/main/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;This project is released with a &lt;a href="https://raw.githubusercontent.com/chartdb/chartdb/main/CODE_OF_CONDUCT.md"&gt;Contributor Code of Conduct&lt;/a&gt;. By participating in this project, you agree to follow its terms.&lt;/p&gt; 
+&lt;p&gt;Thank you for helping us make ChartDB better for everyone &lt;span&gt;❤️&lt;/span&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;ChartDB is licensed under the &lt;a href="https://raw.githubusercontent.com/chartdb/chartdb/main/LICENSE"&gt;GNU Affero General Public License v3.0&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>hoppscotch/hoppscotch</title>
+      <link>https://github.com/hoppscotch/hoppscotch</link>
+      <description>&lt;p&gt;Open source API development ecosystem - https://hoppscotch.io (open-source alternative to Postman, Insomnia)&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;a href="https://hoppscotch.io"&gt; &lt;img src="https://avatars.githubusercontent.com/u/56705483" alt="Hoppscotch" height="64" /&gt; &lt;/a&gt; 
+ &lt;h3&gt; &lt;b&gt; Hoppscotch &lt;/b&gt; &lt;/h3&gt; 
+ &lt;b&gt; Open Source API Development Ecosystem &lt;/b&gt; 
+ &lt;p&gt; &lt;/p&gt;
+ &lt;p&gt;&lt;a href="https://raw.githubusercontent.com/hoppscotch/hoppscotch/main/CODE_OF_CONDUCT.md"&gt;&lt;img src="https://img.shields.io/badge/contributions-welcome-brightgreen?logo=github" alt="contributions welcome" /&gt;&lt;/a&gt; &lt;a href="https://hoppscotch.io"&gt;&lt;img src="https://img.shields.io/website?url=https%3A%2F%2Fhoppscotch.io&amp;amp;logo=hoppscotch" alt="Website" /&gt;&lt;/a&gt; &lt;a href="https://github.com/hoppscotch/hoppscotch/actions"&gt;&lt;img src="https://github.com/hoppscotch/hoppscotch/actions/workflows/tests.yml/badge.svg?sanitize=true" alt="Tests" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/share?text=%F0%9F%91%BD%20Hoppscotch%20%E2%80%A2%20Open%20source%20API%20development%20ecosystem%20-%20Helps%20you%20create%20requests%20faster,%20saving%20precious%20time%20on%20development.&amp;amp;url=https://hoppscotch.io&amp;amp;hashtags=hoppscotch&amp;amp;via=hoppscotch_io"&gt;&lt;img src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fhoppscotch.io%2F" alt="Tweet" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;/p&gt; 
+ &lt;p&gt; &lt;sub&gt; Built with ❤︎ by &lt;a href="https://github.com/hoppscotch/hoppscotch/graphs/contributors"&gt; contributors &lt;/a&gt; &lt;/sub&gt; &lt;/p&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt; &lt;a href="https://hoppscotch.io"&gt; 
+   &lt;picture&gt; 
+    &lt;source media="(prefers-color-scheme: dark)" srcset="./packages/hoppscotch-common/public/images/banner-dark.png" /&gt; 
+    &lt;source media="(prefers-color-scheme: light)" srcset="./packages/hoppscotch-common/public/images/banner-light.png" /&gt; 
+    &lt;img alt="Hoppscotch" src="https://raw.githubusercontent.com/hoppscotch/hoppscotch/main/packages/hoppscotch-common/public/images/banner-dark.png" /&gt; 
+   &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;p&gt;&lt;em&gt;We highly recommend you take a look at the &lt;a href="https://docs.hoppscotch.io"&gt;&lt;strong&gt;Hoppscotch Documentation&lt;/strong&gt;&lt;/a&gt; to learn more about the app.&lt;/em&gt;&lt;/p&gt; 
+&lt;h4&gt;&lt;strong&gt;Support&lt;/strong&gt;&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://hoppscotch.io/discord"&gt;&lt;img src="https://img.shields.io/badge/chat-Discord-7289DA?logo=discord" alt="Chat on Discord" /&gt;&lt;/a&gt; &lt;a href="https://hoppscotch.io/telegram"&gt;&lt;img src="https://img.shields.io/badge/chat-Telegram-2CA5E0?logo=telegram" alt="Chat on Telegram" /&gt;&lt;/a&gt; &lt;a href="https://github.com/hoppscotch/hoppscotch/discussions"&gt;&lt;img src="https://img.shields.io/badge/discussions-GitHub-333333?logo=github" alt="Discuss on GitHub" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;❤️ &lt;strong&gt;Lightweight:&lt;/strong&gt; Crafted with minimalistic UI design.&lt;/p&gt; 
+&lt;p&gt;⚡️ &lt;strong&gt;Fast:&lt;/strong&gt; Send requests and get responses in real time.&lt;/p&gt; 
+&lt;p&gt;🗄️ &lt;strong&gt;HTTP Methods:&lt;/strong&gt; Request methods define the type of action you are requesting to be performed.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;GET&lt;/code&gt; - Requests retrieve resource information&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;POST&lt;/code&gt; - The server creates a new entry in a database&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;PUT&lt;/code&gt; - Updates an existing resource&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;PATCH&lt;/code&gt; - Very similar to &lt;code&gt;PUT&lt;/code&gt; but makes a partial update on a resource&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;DELETE&lt;/code&gt; - Deletes resource or related component&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;HEAD&lt;/code&gt; - Retrieve response headers identical to those of a GET request, but without the response body.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;CONNECT&lt;/code&gt; - Establishes a tunnel to the server identified by the target resource&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;OPTIONS&lt;/code&gt; - Describe the communication options for the target resource&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;TRACE&lt;/code&gt; - Performs a message loop-back test along the path to the target resource&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;&amp;lt;custom&amp;gt;&lt;/code&gt; - Some APIs use custom request methods such as &lt;code&gt;LIST&lt;/code&gt;. Type in your custom methods.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;🌈 &lt;strong&gt;Theming:&lt;/strong&gt; Customizable combinations for background, foreground, and accent colors — &lt;a href="https://hoppscotch.io/settings"&gt;customize now&lt;/a&gt;.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Choose a theme: System preference, Light, Dark, and Black&lt;/li&gt; 
+ &lt;li&gt;Choose accent colors: Green, Teal, Blue, Indigo, Purple, Yellow, Orange, Red, and Pink&lt;/li&gt; 
+ &lt;li&gt;Distraction-free Zen mode&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;em&gt;Customized themes are synced with your cloud/local session.&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;🔥 &lt;strong&gt;PWA:&lt;/strong&gt; Install as a &lt;a href="https://web.dev/progressive-web-apps"&gt;Progressive Web App&lt;/a&gt; on your device.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Instant loading with Service Workers&lt;/li&gt; 
+ &lt;li&gt;Offline support&lt;/li&gt; 
+ &lt;li&gt;Low RAM/memory and CPU usage&lt;/li&gt; 
+ &lt;li&gt;Add to Home Screen&lt;/li&gt; 
+ &lt;li&gt;Desktop PWA&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;🚀 &lt;strong&gt;Request:&lt;/strong&gt; Retrieve response from endpoint instantly.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Choose &lt;code&gt;method&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Enter &lt;code&gt;URL&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Send&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Copy/share public "Share URL"&lt;/li&gt; 
+ &lt;li&gt;Generate/copy request code snippets for 10+ languages and frameworks&lt;/li&gt; 
+ &lt;li&gt;Import &lt;code&gt;cURL&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Label requests&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;🔌 &lt;strong&gt;WebSocket:&lt;/strong&gt; Establish full-duplex communication channels over a single TCP connection.&lt;/p&gt; 
+&lt;p&gt;📡 &lt;strong&gt;Server-Sent Events:&lt;/strong&gt; Receive a stream of updates from a server over an HTTP connection without resorting to polling.&lt;/p&gt; 
+&lt;p&gt;🌩 &lt;strong&gt;Socket.IO:&lt;/strong&gt; Send and Receive data with the SocketIO server.&lt;/p&gt; 
+&lt;p&gt;🦟 &lt;strong&gt;MQTT:&lt;/strong&gt; Subscribe and Publish to topics of an MQTT Broker.&lt;/p&gt; 
+&lt;p&gt;🔮 &lt;strong&gt;GraphQL:&lt;/strong&gt; GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Set endpoint and get schema&lt;/li&gt; 
+ &lt;li&gt;Multi-column docs&lt;/li&gt; 
+ &lt;li&gt;Set custom request headers&lt;/li&gt; 
+ &lt;li&gt;Query schema&lt;/li&gt; 
+ &lt;li&gt;Get query response&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;🔐 &lt;strong&gt;Authorization:&lt;/strong&gt; Allows to identify the end-user.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;None&lt;/li&gt; 
+ &lt;li&gt;Basic&lt;/li&gt; 
+ &lt;li&gt;Bearer Token&lt;/li&gt; 
+ &lt;li&gt;OAuth 2.0&lt;/li&gt; 
+ &lt;li&gt;OIDC Access Token/PKCE&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;📢 &lt;strong&gt;Headers:&lt;/strong&gt; Describes the format the body of your request is being sent in.&lt;/p&gt; 
+&lt;p&gt;📫 &lt;strong&gt;Parameters:&lt;/strong&gt; Use request parameters to set varying parts in simulated requests.&lt;/p&gt; 
+&lt;p&gt;📃 &lt;strong&gt;Request Body:&lt;/strong&gt; Used to send and receive data via the REST API.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Set &lt;code&gt;Content Type&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;FormData, JSON, and many more&lt;/li&gt; 
+ &lt;li&gt;Toggle between key-value and RAW input parameter list&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;📮 &lt;strong&gt;Response:&lt;/strong&gt; Contains the status line, headers, and the message/response body.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Copy the response to the clipboard&lt;/li&gt; 
+ &lt;li&gt;Download the response as a file&lt;/li&gt; 
+ &lt;li&gt;View response headers&lt;/li&gt; 
+ &lt;li&gt;View raw and preview HTML, image, JSON, and XML responses&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;⏰ &lt;strong&gt;History:&lt;/strong&gt; Request entries are synced with your cloud/local session storage.&lt;/p&gt; 
+&lt;p&gt;📁 &lt;strong&gt;Collections:&lt;/strong&gt; Keep your API requests organized with collections and folders. Reuse them with a single click.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Unlimited collections, folders, and requests&lt;/li&gt; 
+ &lt;li&gt;Nested folders&lt;/li&gt; 
+ &lt;li&gt;Export and import as a file or GitHub gist&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;em&gt;Collections are synced with your cloud/local session storage.&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;📜 &lt;strong&gt;Pre-Request Scripts:&lt;/strong&gt; Snippets of code associated with a request that is executed before the request is sent.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Set environment variables&lt;/li&gt; 
+ &lt;li&gt;Include timestamp in the request headers&lt;/li&gt; 
+ &lt;li&gt;Send a random alphanumeric string in the URL parameters&lt;/li&gt; 
+ &lt;li&gt;Any JavaScript functions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;👨‍👩‍👧‍👦 &lt;strong&gt;Teams:&lt;/strong&gt; Helps you collaborate across your teams to design, develop, and test APIs faster.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Create unlimited teams&lt;/li&gt; 
+ &lt;li&gt;Create unlimited shared collections&lt;/li&gt; 
+ &lt;li&gt;Create unlimited team members&lt;/li&gt; 
+ &lt;li&gt;Role-based access control&lt;/li&gt; 
+ &lt;li&gt;Cloud sync&lt;/li&gt; 
+ &lt;li&gt;Multiple devices&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;👥 &lt;strong&gt;Workspaces:&lt;/strong&gt; Organize your personal and team collections environments into workspaces. Easily switch between workspaces to manage multiple projects.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Create unlimited workspaces&lt;/li&gt; 
+ &lt;li&gt;Switch between personal and team workspaces&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;⌨️ &lt;strong&gt;Keyboard Shortcuts:&lt;/strong&gt; Optimized for efficiency.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;&lt;a href="https://docs.hoppscotch.io/documentation/features/shortcuts"&gt;Read our documentation on Keyboard Shortcuts&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;🌐 &lt;strong&gt;Proxy:&lt;/strong&gt; Enable Proxy Mode from Settings to access blocked APIs.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Hide your IP address&lt;/li&gt; 
+ &lt;li&gt;Fixes &lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS"&gt;&lt;code&gt;CORS&lt;/code&gt;&lt;/a&gt; (Cross-Origin Resource Sharing) issues&lt;/li&gt; 
+ &lt;li&gt;Access APIs served in non-HTTPS (&lt;code&gt;http://&lt;/code&gt;) endpoints&lt;/li&gt; 
+ &lt;li&gt;Use your Proxy URL&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;em&gt;Official proxy server is hosted by Hoppscotch - &lt;strong&gt;&lt;a href="https://github.com/hoppscotch/proxyscotch"&gt;GitHub&lt;/a&gt;&lt;/strong&gt; - &lt;strong&gt;&lt;a href="https://docs.hoppscotch.io/support/privacy"&gt;Privacy Policy&lt;/a&gt;&lt;/strong&gt;.&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;🌎 &lt;strong&gt;i18n:&lt;/strong&gt; Experience the app in your language.&lt;/p&gt; 
+&lt;p&gt;Help us to translate Hoppscotch. Please read &lt;a href="https://raw.githubusercontent.com/hoppscotch/hoppscotch/main/TRANSLATIONS.md"&gt;&lt;code&gt;TRANSLATIONS&lt;/code&gt;&lt;/a&gt; for details on our &lt;a href="https://raw.githubusercontent.com/hoppscotch/hoppscotch/main/CODE_OF_CONDUCT.md"&gt;&lt;code&gt;CODE OF CONDUCT&lt;/code&gt;&lt;/a&gt; and the process for submitting pull requests to us.&lt;/p&gt; 
+&lt;p&gt;☁️ &lt;strong&gt;Auth + Sync:&lt;/strong&gt; Sign in and sync your data in real-time across all your devices.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Sign in with:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;GitHub&lt;/li&gt; 
+ &lt;li&gt;Google&lt;/li&gt; 
+ &lt;li&gt;Microsoft&lt;/li&gt; 
+ &lt;li&gt;Email&lt;/li&gt; 
+ &lt;li&gt;SSO (Single Sign-On)[^EE]&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;🔄 Synchronize your data:&lt;/strong&gt; Handoff to continue tasks on your other devices.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Workspaces&lt;/li&gt; 
+ &lt;li&gt;History&lt;/li&gt; 
+ &lt;li&gt;Collections&lt;/li&gt; 
+ &lt;li&gt;Environments&lt;/li&gt; 
+ &lt;li&gt;Settings&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;✅ &lt;strong&gt;Post-Request Tests:&lt;/strong&gt; Write tests associated with a request that is executed after the request's response.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Check the status code as an integer&lt;/li&gt; 
+ &lt;li&gt;Filter response headers&lt;/li&gt; 
+ &lt;li&gt;Parse the response data&lt;/li&gt; 
+ &lt;li&gt;Set environment variables&lt;/li&gt; 
+ &lt;li&gt;Write JavaScript code&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;🌱 &lt;strong&gt;Environments:&lt;/strong&gt; Environment variables allow you to store and reuse values in your requests and scripts.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Unlimited environments and variables&lt;/li&gt; 
+ &lt;li&gt;Initialize through the pre-request script&lt;/li&gt; 
+ &lt;li&gt;Export as / import from GitHub gist&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;i&gt;Use-cases&lt;/i&gt;&lt;/summary&gt; 
+ &lt;hr /&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;By storing a value in a variable, you can reference it throughout your request section&lt;/li&gt; 
+  &lt;li&gt;If you need to update the value, you only have to change it in one place&lt;/li&gt; 
+  &lt;li&gt;Using variables increases your ability to work efficiently and minimizes the likelihood of error&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;hr /&gt; 
+&lt;/details&gt; 
+&lt;p&gt;🚚 &lt;strong&gt;Bulk Edit:&lt;/strong&gt; Edit key-value pairs in bulk.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Entries are separated by newline&lt;/li&gt; 
+ &lt;li&gt;Keys and values are separated by &lt;code&gt;:&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Prepend &lt;code&gt;#&lt;/code&gt; to any row you want to add but keep disabled&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;🎛️ &lt;strong&gt;Admin dashboard:&lt;/strong&gt; Manage your team and invite members.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Insights&lt;/li&gt; 
+ &lt;li&gt;Manage users&lt;/li&gt; 
+ &lt;li&gt;Manage teams&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;📦 &lt;strong&gt;Add-ons:&lt;/strong&gt; Official add-ons for hoppscotch.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/hoppscotch/hoppscotch/tree/main/packages/hoppscotch-cli"&gt;Hoppscotch CLI&lt;/a&gt;&lt;/strong&gt; - Command-line interface for Hoppscotch.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/hoppscotch/proxyscotch"&gt;Proxy&lt;/a&gt;&lt;/strong&gt; - A simple proxy server created for Hoppscotch.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/hoppscotch/hoppscotch-extension"&gt;Browser Extensions&lt;/a&gt;&lt;/strong&gt; - Browser extensions that enhance your Hoppscotch experience.&lt;/p&gt; &lt;p&gt;&lt;a href="https://addons.mozilla.org/en-US/firefox/addon/hoppscotch"&gt;&lt;img src="https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_16x16.png" alt="Firefox" /&gt; &lt;strong&gt;Firefox&lt;/strong&gt;&lt;/a&gt; &amp;nbsp;|&amp;nbsp; &lt;a href="https://chrome.google.com/webstore/detail/hoppscotch-extension-for-c/amknoiejhlmhancpahfcfcfhllgkpbld"&gt;&lt;img src="https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_16x16.png" alt="Chrome" /&gt; &lt;strong&gt;Chrome&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+  &lt;blockquote&gt; 
+   &lt;p&gt;&lt;strong&gt;Extensions fix &lt;code&gt;CORS&lt;/code&gt; issues.&lt;/strong&gt;&lt;/p&gt; 
+  &lt;/blockquote&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;em&gt;Add-ons are developed and maintained under &lt;strong&gt;&lt;a href="https://github.com/hoppscotch"&gt;Hoppscotch Organization&lt;/a&gt;&lt;/strong&gt;.&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;For a complete list of features, please read our &lt;a href="https://docs.hoppscotch.io"&gt;documentation&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;&lt;strong&gt;Demo&lt;/strong&gt;&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Web : &lt;a href="https://hoppscotch.io"&gt;hoppscotch.io&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Windows/Linux/macOS : &lt;a href="https://docs.hoppscotch.io/documentation/clients/desktop#download-hoppscotch-desktop-app"&gt;Desktop Apps&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Provide your API endpoint in the URL field&lt;/li&gt; 
+ &lt;li&gt;Click "Send" to simulate the request&lt;/li&gt; 
+ &lt;li&gt;View the response&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Developing&lt;/h2&gt; 
+&lt;p&gt;Follow our &lt;a href="https://docs.hoppscotch.io/documentation/self-host/getting-started"&gt;self-hosting documentation&lt;/a&gt; to get started with the development environment.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Please contribute using &lt;a href="https://guides.github.com/introduction/flow"&gt;GitHub Flow&lt;/a&gt;. Create a branch, add commits, and &lt;a href="https://github.com/hoppscotch/hoppscotch/compare"&gt;open a pull request&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Please read &lt;a href="https://raw.githubusercontent.com/hoppscotch/hoppscotch/main/CONTRIBUTING.md"&gt;&lt;code&gt;CONTRIBUTING&lt;/code&gt;&lt;/a&gt; for details on our &lt;a href="https://raw.githubusercontent.com/hoppscotch/hoppscotch/main/CODE_OF_CONDUCT.md"&gt;&lt;code&gt;CODE OF CONDUCT&lt;/code&gt;&lt;/a&gt;, and the process for submitting pull requests to us.&lt;/p&gt; 
+&lt;h2&gt;Continuous Integration&lt;/h2&gt; 
+&lt;p&gt;We use &lt;a href="https://github.com/features/actions"&gt;GitHub Actions&lt;/a&gt; for continuous integration. Check out our &lt;a href="https://github.com/hoppscotch/hoppscotch/actions"&gt;build workflows&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Changelog&lt;/h2&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/hoppscotch/hoppscotch/main/CHANGELOG.md"&gt;&lt;code&gt;CHANGELOG&lt;/code&gt;&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;h2&gt;Authors&lt;/h2&gt; 
+&lt;p&gt;This project owes its existence to the collective efforts of all those who contribute — &lt;a href="https://raw.githubusercontent.com/hoppscotch/hoppscotch/main/CONTRIBUTING.md"&gt;contribute now&lt;/a&gt;.&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://github.com/hoppscotch/hoppscotch/graphs/contributors"&gt; &lt;img src="https://opencollective.com/hoppscotch/contributors.svg?width=840&amp;amp;button=false" alt="Contributors" width="100%" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the &lt;a href="https://opensource.org/licenses/MIT"&gt;MIT License&lt;/a&gt; — see the &lt;a href="https://raw.githubusercontent.com/hoppscotch/hoppscotch/main/LICENSE"&gt;&lt;code&gt;LICENSE&lt;/code&gt;&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;p&gt;[^EE]: Enterprise edition feature. &lt;a href="https://docs.hoppscotch.io/documentation/self-host/getting-started"&gt;Learn more&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>teableio/teable</title>
+      <link>https://github.com/teableio/teable</link>
+      <description>&lt;p&gt;✨ The Next Gen Airtable Alternative: No-Code Postgres&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;h1 align="center"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="static/assets/images/teable-vertical-dark.png" /&gt; 
+   &lt;img alt="teable logo" height="150" src="https://raw.githubusercontent.com/teableio/teable/develop/static/assets/images/teable-vertical-light.png" /&gt; 
+  &lt;/picture&gt; &lt;/h1&gt; 
+ &lt;h3 align="center"&gt;&lt;strong&gt;Manage Your Data &amp;amp; Connect Your Team&lt;/strong&gt;&lt;/h3&gt; 
+ &lt;p&gt;Teable uses a simple, spreadsheet-like interface to create powerful database applications. Collaborate with your team in real-time, and scale to millions of rows &lt;/p&gt;
+ &lt;p&gt;Try out Teable using our hosted version at &lt;a href="https://teable.ai"&gt;teable.ai&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://trendshift.io/repositories/8516" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/8516" alt="teableio%2Fteable | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;p align="center"&gt; &lt;a target="_blank" href="https://teable.ai"&gt;Home&lt;/a&gt; | &lt;a target="_blank" href="https://help.teable.ai"&gt;Help&lt;/a&gt; | &lt;a target="_blank" href="https://blog.teable.ai"&gt;Blog&lt;/a&gt; | &lt;a target="_blank" href="https://app.teable.ai/public/template"&gt;Template&lt;/a&gt; | &lt;a target="_blank" href="https://help.teable.ai/en/api-doc/token"&gt;API&lt;/a&gt; | &lt;a target="_blank" href="https://app.teable.ai/share/shr04TEw1u9EOQojPmG/view"&gt;Roadmap&lt;/a&gt; | &lt;a target="_blank" href="https://discord.gg/uZwp7tDE5W"&gt;Discord&lt;/a&gt; | &lt;a target="_blank" href="https://twitter.com/teableio"&gt;Twitter&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a aria-label="Build" href="https://github.com/teableio/teable/actions?query=Build%20and%20Push%20to%20Docker%20Registry"&gt; &lt;img alt="build" src="https://img.shields.io/github/actions/workflow/status/teableio/teable/docker-push.yml?label=Build&amp;amp;logo=github&amp;amp;style=flat-quare&amp;amp;labelColor=000000" /&gt; &lt;/a&gt; &lt;a aria-label="Codefactor grade" href="https://www.codefactor.io/repository/github/teableio/teable"&gt; &lt;img alt="Codefactor" src="https://img.shields.io/codefactor/grade/github/teableio/teable?label=Codefactor&amp;amp;logo=codefactor&amp;amp;style=flat-quare&amp;amp;labelColor=000000" /&gt; &lt;/a&gt; &lt;a aria-label="Coverage Status" href="https://coveralls.io/github/teableio/teable?branch=develop"&gt; &lt;img alt="Coverage" src="https://coveralls.io/repos/github/teableio/teable/badge.svg?branch=develop" /&gt; &lt;/a&gt; &lt;a aria-label="Codacy grade" href="https://www.codacy.com/gh/teableio/teable/dashboard?utm_source=github.com&amp;amp;utm_medium=referral&amp;amp;utm_content=teableio/teable&amp;amp;utm_campaign=Badge_Grade"&gt; &lt;img alt="Codacy grade" src="https://img.shields.io/codacy/grade/dff9c944af284a0fad4e165eb1727467?logo=codacy&amp;amp;style=flat-square&amp;amp;labelColor=000&amp;amp;label=Codacy" /&gt; &lt;/a&gt; &lt;a aria-label="Top language" href="https://github.com/teableio/teable/search?l=typescript"&gt; &lt;img alt="GitHub top language" src="https://img.shields.io/github/languages/top/teableio/teable?style=flat-square&amp;amp;labelColor=000&amp;amp;color=blue" /&gt; &lt;/a&gt; &lt;a aria-label="Gurubase" href="https://gurubase.io/g/teable"&gt; &lt;img alt="Gurubase" src="https://img.shields.io/badge/Gurubase-Ask%20Teable%20Guru-006BFF" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h1 align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="static/assets/images/teable-interface-dark.png" /&gt; 
+  &lt;img alt="teable interface" width="100%" src="https://raw.githubusercontent.com/teableio/teable/develop/static/assets/images/teable-interface-light.png" /&gt; 
+ &lt;/picture&gt; &lt;/h1&gt; 
+&lt;h2&gt;Quick Guide&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Looking for a quick experience? Select a scenario from the &lt;a href="https://app.teable.ai/public/template"&gt;template center&lt;/a&gt; and click "Use this template".&lt;/li&gt; 
+ &lt;li&gt;Seeking high performance? Try the &lt;a href="https://app.teable.ai/share/shrVgdLiOvNQABtW0yX/view"&gt;1 million rows demo&lt;/a&gt; to feel the speed of Teable.&lt;/li&gt; 
+ &lt;li&gt;Interested in deploying it yourself? Click &lt;a href="https://railway.app/template/wada5e?referralCode=rE4BjB"&gt;Deploy on Railway&lt;/a&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;✨Features&lt;/h2&gt; 
+&lt;h3&gt;🍺 Feature Packed&lt;/h3&gt; 
+&lt;p&gt;Everything you need, right out of the box:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Aggregation&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Attachments Preview&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Batch Editing&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Charts&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Comments&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Custom Columns&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Field Conversion&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Filtering&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Formatting&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Formula Support&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Grouping&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; History&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Import/Export&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Millions of Rows&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Plugins&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Real-time&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Search&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Sorting&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; SQL Query&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Undo/Redo&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Validation&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🏞️ Multiple Views&lt;/h3&gt; 
+&lt;p&gt;Visualize and interact with data in various ways best suited for their specific tasks.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Grid View&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Form View&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Kanban View&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Gallery View&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Calendar View&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;table align="center" style="width: 100%;"&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td width="50%"&gt;&lt;img alt="Grid View" src="https://raw.githubusercontent.com/teableio/teable/develop/static/assets/images/view-grid.png" /&gt;&lt;/td&gt; 
+   &lt;td width="50%"&gt;&lt;img alt="Search" src="https://raw.githubusercontent.com/teableio/teable/develop/static/assets/images/search.png" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td width="50%"&gt;&lt;img alt="Calendar View" src="https://raw.githubusercontent.com/teableio/teable/develop/static/assets/images/view-calendar.png" /&gt;&lt;/td&gt; 
+   &lt;td width="50%"&gt;&lt;img alt="Gallery View" src="https://raw.githubusercontent.com/teableio/teable/develop/static/assets/images/view-gallery.png" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td width="50%"&gt;&lt;img alt="Kanban View" src="https://raw.githubusercontent.com/teableio/teable/develop/static/assets/images/view-kanban.png" /&gt;&lt;/td&gt; 
+   &lt;td width="50%"&gt;&lt;img alt="Form View" src="https://raw.githubusercontent.com/teableio/teable/develop/static/assets/images/view-form.png" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td width="50%"&gt;&lt;img alt="Comments" src="https://raw.githubusercontent.com/teableio/teable/develop/static/assets/images/comments.png" /&gt;&lt;/td&gt; 
+   &lt;td width="50%"&gt;&lt;img alt="Record history" src="https://raw.githubusercontent.com/teableio/teable/develop/static/assets/images/record-history.png" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h3&gt;📊 Charts &amp;amp; Dashboard&lt;/h3&gt; 
+&lt;img alt="Teable Dashboard" width="100%" src="https://raw.githubusercontent.com/teableio/teable/develop/static/assets/images/dashboard.png" /&gt; 
+&lt;p&gt;More features coming soon, see our &lt;a target="_blank" href="https://app.teable.ai/share/shr04TEw1u9EOQojPmG/view"&gt;Roadmap&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;Structure&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://gitpod.io/#https://github.com/teableio/teable"&gt;&lt;img src="https://img.shields.io/badge/Open%20In-Gitpod.io-%231966D2?style=for-the-badge&amp;amp;logo=gitpod" alt="Open in Gitpod" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;.
+├── apps (AGPL 3.0)
+│   ├── nextjs-app          (front-end)
+│   └── nestjs-backend      (backend)
+├── packages (MIT)
+│   ├── common-i18n         (locales)
+│   ├── core                (share code and interface)
+│   ├── sdk                 (sdk for extensions)
+│   ├── db-main-prisma      (schema, migrations, prisma client)
+│   ├── eslint-config-bases (to shared eslint configs)
+│   └── ui-lib              (ui component)
+└── plugins (AGPL 3.0)      (custom plugins)
+
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Deploy&lt;/h2&gt; 
+&lt;h3&gt;Deploy With Docker&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;cd dockers/examples/standalone/
+docker-compose up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;for more details, see &lt;a href="https://help.teable.ai/en/deploy/docker"&gt;install teable&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;One Click Deployment&lt;/h3&gt; 
+&lt;p&gt;These platforms are easy to deploy with one click and come with free credits.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://railway.app/template/wada5e?referralCode=rE4BjB"&gt;&lt;img src="https://railway.app/button.svg?sanitize=true" alt="Deploy on Railway" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://template.sealos.io/deploy?templateName=teable"&gt;&lt;img src="https://sealos.io/Deploy-on-Sealos.svg?sanitize=true" alt="Deploy on Sealos" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://zeabur.com/templates/QF8695"&gt;&lt;img src="https://zeabur.com/button.svg?sanitize=true" alt="Deploy on Zeabur" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://repocloud.io/details/?app_id=273"&gt;&lt;img src="https://d16t0pc4846x52.cloudfront.net/deploylobe.svg?sanitize=true" alt="Deploy to RepoCloud" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://elest.io/open-source/teable"&gt;&lt;img src="https://elest.io/images/logos/deploy-to-elestio-btn.png" alt="Deploy on Elestio" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://computenest.console.aliyun.com/service/instance/create/default?ServiceName=Teable%20%E7%A4%BE%E5%8C%BA%E7%89%88"&gt;&lt;img src="https://service-info-public.oss-cn-hangzhou.aliyuncs.com/computenest-en.svg?sanitize=true" alt="Deploy on AlibabaCloud ComputeNest" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;h4&gt;1. Initialize&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;# Enabling the Help Management Package Manager
+corepack enable
+
+# Install project dependencies
+pnpm install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;2. Select Database&lt;/h4&gt; 
+&lt;p&gt;we currently support &lt;code&gt;sqlite&lt;/code&gt; (dev only) and &lt;code&gt;postgres&lt;/code&gt;, you can switch between them by running the following command&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;make switch-db-mode
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;3. Custom Environment Variables（Optional）&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;cd apps/nextjs-app
+cp .env.development .env.development.local
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;4. Run Dev Server&lt;/h4&gt; 
+&lt;p&gt;you just need to start backend, it will start next server for frontend automatically, file change will be auto reload&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;cd apps/nestjs-backend
+pnpm dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;By default, the plugin development server is not started. To preview and develop plugins, run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;# build packages
+pnpm build:packages
+
+# start plugin development server
+cd plugins
+pnpm dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This will start the plugin development server on port 3002.&lt;/p&gt; 
+&lt;h2&gt;Why Teable?&lt;/h2&gt; 
+&lt;p&gt;No-code tools have significantly speed up how we get things done, allowing non-tech users to build amazing apps and changing the way many work and live. People like using spreadsheet-like UI to handle their data because it's easy, flexible, and great for team collaboration. They also prefer designing their app screens without being stuck with clunky templates.&lt;/p&gt; 
+&lt;p&gt;Giving non-techy people the ability to create their software sounds exciting. But that's just the start:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;As businesses expand, their data needs intensify. No one wishes to hear that once their orders reach 100k, they'll outgrow their current interface. Yet, many no-code platforms falter at such scales.&lt;/li&gt; 
+ &lt;li&gt;Most no-code platforms are cloud-based. This means your important data sits with the provider, and switching to another platform can be a headache.&lt;/li&gt; 
+ &lt;li&gt;Sometimes, no-code tools can't do what you want because of their limitations, leaving users stuck.&lt;/li&gt; 
+ &lt;li&gt;If a tool becomes essential, you'll eventually need some tech expertise. But developers often find these platforms tricky.&lt;/li&gt; 
+ &lt;li&gt;Maintaining systems with complex setups can be hard for developers, especially if these aren't built using common software standards.&lt;/li&gt; 
+ &lt;li&gt;Systems that don't use these standards might need revamping or replacing, costing more in the long run. It might even mean ditching the no-code route and going back to traditional coding.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;What We Think the Future Of No-code Products Look Like&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;An interface that anyone can use to build applications easily.&lt;/li&gt; 
+ &lt;li&gt;Easy access to data, letting users grab, move, and reuse their information as they wish.&lt;/li&gt; 
+ &lt;li&gt;Data privacy and choice, whether that's in the cloud, on-premise, or even just on your local.&lt;/li&gt; 
+ &lt;li&gt;It needs to work for developers too, not just non-tech users.&lt;/li&gt; 
+ &lt;li&gt;It should handle lots of data, so it can grow with your business.&lt;/li&gt; 
+ &lt;li&gt;Flexibility to integrate with other software, combining strengths to get the job done.&lt;/li&gt; 
+ &lt;li&gt;Last, native AI integration to takes usability to the next level.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;In essence, Teable isn't just another no-code solution, it's a comprehensive answer to the evolving demands of modern software development, ensuring that everyone, regardless of their technical proficiency, has a platform tailored to their needs.&lt;/p&gt; 
+&lt;h1&gt;License&lt;/h1&gt; 
+&lt;p&gt;Teable Community Edition (CE) is free for self-hosting under the AGPL license. See &lt;a href="https://raw.githubusercontent.com/teableio/teable/develop/LICENSE"&gt;./LICENSE&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;p&gt;Teable Enterprise Edition (EE) includes advanced features such as AI, authority matrix, automation and advanced admin. For detailed information and pricing, please visit &lt;a href="https://app.teable.ai/public/pricing?host=self-hosted&amp;amp;billing=year"&gt;pricing&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>wevm/viem</title>
+      <link>https://github.com/wevm/viem</link>
+      <description>&lt;p&gt;TypeScript Interface for Ethereum&lt;/p&gt;&lt;hr&gt;&lt;br /&gt; 
+&lt;p align="center"&gt; &lt;a href="https://viem.sh"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/viem/main/.github/gh-logo-dark.svg" /&gt; 
+   &lt;img alt="viem logo" src="https://raw.githubusercontent.com/wevm/viem/main/.github/gh-logo-light.svg?sanitize=true" width="auto" height="60" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; TypeScript Interface for Ethereum &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p align="center"&gt; &lt;a href="https://www.npmjs.com/package/viem"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/v/viem?colorA=21262d&amp;amp;colorB=21262d&amp;amp;style=flat" /&gt; 
+   &lt;img src="https://img.shields.io/npm/v/viem?colorA=f6f8fa&amp;amp;colorB=f6f8fa&amp;amp;style=flat" alt="Version" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;a href="https://app.codecov.io/gh/wevm/viem"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/codecov/c/github/wevm/viem?colorA=21262d&amp;amp;colorB=21262d&amp;amp;style=flat" /&gt; 
+   &lt;img src="https://img.shields.io/codecov/c/github/wevm/viem?colorA=f6f8fa&amp;amp;colorB=f6f8fa&amp;amp;style=flat" alt="Code coverage" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;a href="https://github.com/wevm/viem/raw/main/LICENSE"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/l/viem?colorA=21262d&amp;amp;colorB=21262d&amp;amp;style=flat" /&gt; 
+   &lt;img src="https://img.shields.io/npm/l/viem?colorA=f6f8fa&amp;amp;colorB=f6f8fa&amp;amp;style=flat" alt="MIT License" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;a href="https://www.npmjs.com/package/viem"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/dm/viem?colorA=21262d&amp;amp;colorB=21262d&amp;amp;style=flat" /&gt; 
+   &lt;img src="https://img.shields.io/npm/dm/viem?colorA=f6f8fa&amp;amp;colorB=f6f8fa&amp;amp;style=flat" alt="Downloads per month" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;a href="https://bestofjs.org/projects/viem"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/endpoint?colorA=21262d&amp;amp;colorB=21262d&amp;amp;style=flat&amp;amp;url=https://bestofjs-serverless.now.sh/api/project-badge?fullName=wevm%2Fviem%26since=daily" /&gt; 
+   &lt;img src="https://img.shields.io/endpoint?colorA=f6f8fa&amp;amp;colorB=f6f8fa&amp;amp;style=flat&amp;amp;url=https://bestofjs-serverless.now.sh/api/project-badge?fullName=wevm%2Fviem%26since=daily" alt="Best of JS" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Abstractions over the &lt;a href="https://ethereum.org/en/developers/docs/apis/json-rpc/"&gt;JSON-RPC API&lt;/a&gt; to make your life easier&lt;/li&gt; 
+ &lt;li&gt;First-class APIs for interacting with &lt;a href="https://ethereum.org/en/glossary/#smart-contract"&gt;Smart Contracts&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Language closely aligned to official &lt;a href="https://ethereum.org/en/glossary/"&gt;Ethereum terminology&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Import your Browser Extension, WalletConnect or Private Key Wallet&lt;/li&gt; 
+ &lt;li&gt;Browser native &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt"&gt;BigInt&lt;/a&gt;, instead of large BigNumber libraries&lt;/li&gt; 
+ &lt;li&gt;Utilities for working with &lt;a href="https://ethereum.org/en/glossary/#abi"&gt;ABIs&lt;/a&gt; (encoding/decoding/inspection)&lt;/li&gt; 
+ &lt;li&gt;TypeScript ready (&lt;a href="https://viem.sh/docs/typescript"&gt;infer types&lt;/a&gt; from ABIs and EIP-712 Typed Data)&lt;/li&gt; 
+ &lt;li&gt;First-class support for &lt;a href="https://book.getfoundry.sh/"&gt;Anvil&lt;/a&gt;, &lt;a href="https://hardhat.org/"&gt;Hardhat&lt;/a&gt; &amp;amp; &lt;a href="https://trufflesuite.com/ganache/"&gt;Ganache&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Test suite running against &lt;a href="https://ethereum.org/en/glossary/#fork"&gt;forked&lt;/a&gt; Ethereum network&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;... and a lot more.&lt;/p&gt; 
+&lt;h2&gt;Overview&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-ts"&gt;// 1. Import modules.
+import { createPublicClient, http } from 'viem';
+import { mainnet } from 'viem/chains';
+
+// 2. Set up your client with desired chain &amp;amp; transport.
+const client = createPublicClient({
+  chain: mainnet,
+  transport: http(),
+});
+
+// 3. Consume an action!
+const blockNumber = await client.getBlockNumber();
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://viem.sh/docs/getting-started"&gt;Head to the documentation&lt;/a&gt; to read and learn more about viem.&lt;/p&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;p&gt;Check out the following places for more viem-related content:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Follow &lt;a href="https://twitter.com/wevm_dev"&gt;@wevm_dev&lt;/a&gt;, &lt;a href="https://twitter.com/_jxom"&gt;@_jxom&lt;/a&gt;, and &lt;a href="https://twitter.com/awkweb"&gt;@awkweb&lt;/a&gt; on Twitter for project updates&lt;/li&gt; 
+ &lt;li&gt;Join the &lt;a href="https://github.com/wevm/viem/discussions"&gt;discussions on GitHub&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/wevm/viem/discussions/104"&gt;Share your project/organization&lt;/a&gt; that uses viem&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/sponsors/wevm?metadata_campaign=docs_support"&gt;GitHub Sponsors&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wagmi.sh/gitcoin"&gt;Gitcoin Grant&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://etherscan.io/name-lookup-search?id=wevm.eth"&gt;wevm.eth&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Sponsors&lt;/h2&gt; 
+&lt;a href="https://paradigm.xyz"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/paradigm-dark.svg" /&gt; 
+  &lt;img alt="paradigm logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/paradigm-light.svg?sanitize=true" width="auto" height="70" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://ithaca.xyz"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/ithaca-dark.svg" /&gt; 
+  &lt;img alt="ithaca logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/ithaca-light.svg?sanitize=true" width="auto" height="70" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;br /&gt; 
+&lt;a href="https://twitter.com/family"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/family-dark.svg" /&gt; 
+  &lt;img alt="family logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/family-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://twitter.com/context"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/context-dark.svg" /&gt; 
+  &lt;img alt="context logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/context-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://walletconnect.com"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/walletconnect-dark.svg" /&gt; 
+  &lt;img alt="WalletConnect logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/walletconnect-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://twitter.com/prtyDAO"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/partydao-dark.svg" /&gt; 
+  &lt;img alt="PartyDAO logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/partydao-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://dynamic.xyz"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/dynamic-dark.svg" /&gt; 
+  &lt;img alt="Dynamic logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/dynamic-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://sushi.com"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/sushi-dark.svg" /&gt; 
+  &lt;img alt="Sushi logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/sushi-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://stripe.com"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/stripe-dark.svg" /&gt; 
+  &lt;img alt="Stripe logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/stripe-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://privy.io"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/privy-dark.svg" /&gt; 
+  &lt;img alt="Privy logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/privy-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://pancakeswap.finance"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/pancake-dark.svg" /&gt; 
+  &lt;img alt="pancake logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/pancake-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://celo.org"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/celo-dark.svg" /&gt; 
+  &lt;img alt="celo logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/celo-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://rainbow.me"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/rainbow-dark.svg" /&gt; 
+  &lt;img alt="rainbow logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/rainbow-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://pimlico.io"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/pimlico-dark.svg" /&gt; 
+  &lt;img alt="pimlico logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/pimlico-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://zora.co"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/zora-dark.svg" /&gt; 
+  &lt;img alt="zora logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/zora-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://lattice.xyz"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/lattice-dark.svg" /&gt; 
+  &lt;img alt="lattice logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/lattice-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://twitter.com/supafinance"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/supa-dark.svg" /&gt; 
+  &lt;img alt="supa logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/supa-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://zksync.io"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/zksync-dark.svg" /&gt; 
+  &lt;img alt="ZKsync logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/zksync-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://syndicate.io"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/syndicate-dark.svg" /&gt; 
+  &lt;img alt="syndicate logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/syndicate-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://reservoir.tools"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/reservoir-dark.svg" /&gt; 
+  &lt;img alt="reservoir logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/reservoir-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://linea.build"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/linea-dark.svg" /&gt; 
+  &lt;img alt="linea logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/linea-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://uniswap.org"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/uniswap-dark.svg" /&gt; 
+  &lt;img alt="uniswap logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/uniswap-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://biconomy.io"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/b0276d897be98a4c94ad1d1c72ce99a1020eeb58/content/sponsors/biconomy-dark.svg" /&gt; 
+  &lt;img alt="biconomy logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/biconomy-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://thirdweb.com"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/thirdweb-dark.svg" /&gt; 
+  &lt;img alt="thirdweb logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/thirdweb-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://polymarket.com"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/polymarket-dark.svg" /&gt; 
+  &lt;img alt="polymarket logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/polymarket-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://routescan.io"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/routescan-dark.svg" /&gt; 
+  &lt;img alt="routescan logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/routescan-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://sequence.xyz"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/sequence-dark.svg" /&gt; 
+  &lt;img alt="sequence logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/sequence-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;a href="https://gemini.com"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/gemini-dark.svg" /&gt; 
+  &lt;img alt="gemini logo" src="https://raw.githubusercontent.com/wevm/.github/main/content/sponsors/gemini-light.svg?sanitize=true" width="auto" height="50" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;If you're interested in contributing, please read the &lt;a href="https://raw.githubusercontent.com/wevm/viem/main/.github/CONTRIBUTING.md"&gt;contributing docs&lt;/a&gt; &lt;strong&gt;before submitting a pull request&lt;/strong&gt;.&lt;/p&gt; 
+&lt;h2&gt;Authors&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/jxom"&gt;@jxom&lt;/a&gt; (jxom.eth, &lt;a href="https://twitter.com/_jxom"&gt;Twitter&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/tmm"&gt;@tmm&lt;/a&gt; (awkweb.eth, &lt;a href="https://twitter.com/awkweb"&gt;Twitter&lt;/a&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/wevm/viem/main/LICENSE"&gt;MIT&lt;/a&gt; License&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;a href="https://vercel.com/?utm_source=wevm&amp;amp;utm_campaign=oss"&gt; &lt;img src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg?sanitize=true" alt="Powered by Vercel" height="35" /&gt; &lt;/a&gt;</description>
+    </item>
+    
+    <item>
+      <title>vitest-dev/vitest</title>
+      <link>https://github.com/vitest-dev/vitest</link>
+      <description>&lt;p&gt;Next generation testing framework powered by Vite.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://vitest.dev"&gt; &lt;img src="https://user-images.githubusercontent.com/11247099/145112184-a9ff6727-661c-439d-9ada-963124a281f7.png" height="150" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h1 align="center"&gt; Vitest &lt;/h1&gt; 
+&lt;p align="center"&gt; Next generation testing framework powered by Vite. &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p align="center"&gt; &lt;a href="https://www.npmjs.com/package/vitest"&gt;&lt;img src="https://img.shields.io/npm/v/vitest?color=729B1B&amp;amp;label=" /&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p align="center"&gt; &lt;a href="https://chat.vitest.dev"&gt;&lt;b&gt;Get involved!&lt;/b&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://vitest.dev"&gt;Documentation&lt;/a&gt; | &lt;a href="https://vitest.dev/guide/"&gt;Getting Started&lt;/a&gt; | &lt;a href="https://vitest.dev/guide/#examples"&gt;Examples&lt;/a&gt; | &lt;a href="https://vitest.dev/guide/why"&gt;Why Vitest?&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://cn.vitest.dev"&gt;中文文档&lt;/a&gt; &lt;/p&gt; 
+&lt;h4 align="center"&gt; &lt;/h4&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://vitejs.dev/"&gt;Vite&lt;/a&gt;'s config, transformers, resolvers, and plugins. Use the same setup from your app!&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://jestjs.io/docs/snapshot-testing"&gt;Jest Snapshot&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.chaijs.com/"&gt;Chai&lt;/a&gt; built-in for assertions, with &lt;a href="https://jestjs.io/docs/expect"&gt;Jest expect&lt;/a&gt; compatible APIs&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://vitest.dev/guide/features.html#watch-mode"&gt;Smart &amp;amp; instant watch mode&lt;/a&gt;, like HMR for tests!&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://vitest.dev/guide/features.html#coverage"&gt;Native code coverage&lt;/a&gt; via &lt;a href="https://v8.dev/blog/javascript-code-coverage"&gt;&lt;code&gt;v8&lt;/code&gt;&lt;/a&gt; or &lt;a href="https://istanbul.js.org/"&gt;&lt;code&gt;istanbul&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/tinylibs/tinyspy"&gt;Tinyspy&lt;/a&gt; built-in for mocking, stubbing, and spies.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/jsdom/jsdom"&gt;JSDOM&lt;/a&gt; and &lt;a href="https://github.com/capricorn86/happy-dom"&gt;happy-dom&lt;/a&gt; for DOM and browser API mocking&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://vitest.dev/guide/browser/"&gt;Browser Mode&lt;/a&gt; for running component tests in the browser&lt;/li&gt; 
+ &lt;li&gt;Components testing (&lt;a href="https://github.com/vitest-tests/browser-examples/tree/main/examples/vue"&gt;Vue&lt;/a&gt;, &lt;a href="https://github.com/vitest-tests/browser-examples/tree/main/examples/react"&gt;React&lt;/a&gt;, &lt;a href="https://github.com/vitest-tests/browser-examples/tree/main/examples/svelte"&gt;Svelte&lt;/a&gt;, &lt;a href="https://raw.githubusercontent.com/vitest-dev/vitest/main/examples/lit"&gt;Lit&lt;/a&gt;, &lt;a href="https://github.com/marko-js/examples/tree/master/examples/library-ts"&gt;Marko&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;Benchmarking support with &lt;a href="https://github.com/tinylibs/tinybench"&gt;Tinybench&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://vitest.dev/guide/projects"&gt;Projects&lt;/a&gt; support&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/mmkal/expect-type"&gt;expect-type&lt;/a&gt; for type-level testing&lt;/li&gt; 
+ &lt;li&gt;ESM first, top level await&lt;/li&gt; 
+ &lt;li&gt;Out-of-box TypeScript / JSX support&lt;/li&gt; 
+ &lt;li&gt;Filtering, timeouts, concurrent for suite and tests&lt;/li&gt; 
+ &lt;li&gt;Sharding support&lt;/li&gt; 
+ &lt;li&gt;Reporting Uncaught Errors&lt;/li&gt; 
+ &lt;li&gt;Run your tests in the browser natively&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Vitest requires Vite &amp;gt;=v6.0.0 and Node &amp;gt;=v20.0.0&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code class="language-ts"&gt;import { assert, describe, expect, it } from 'vitest'
+
+describe('suite name', () =&amp;gt; {
+  it('foo', () =&amp;gt; {
+    expect(1 + 1).toEqual(2)
+    expect(true).to.be.true
+  })
+
+  it('bar', () =&amp;gt; {
+    assert.equal(Math.sqrt(4), 2)
+  })
+
+  it('snapshot', () =&amp;gt; {
+    expect({ foo: 'bar' }).toMatchSnapshot()
+  })
+})
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ npx vitest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Sponsors&lt;/h2&gt; 
+&lt;h3&gt;Vladimir Sponsors&lt;/h3&gt; 
+&lt;p align="center"&gt; &lt;a href="https://cdn.jsdelivr.net/gh/sheremet-va/static/sponsors.svg"&gt; &lt;img src="https://cdn.jsdelivr.net/gh/sheremet-va/static/sponsors.svg?sanitize=true" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h3&gt;Anthony Fu Sponsors&lt;/h3&gt; 
+&lt;p align="center"&gt; &lt;a href="https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg"&gt; &lt;img src="https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg?sanitize=true" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h3&gt;Patak Sponsors&lt;/h3&gt; 
+&lt;p align="center"&gt; &lt;a href="https://cdn.jsdelivr.net/gh/patak-dev/static/sponsors.svg"&gt; &lt;img src="https://cdn.jsdelivr.net/gh/patak-dev/static/sponsors.svg?sanitize=true" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;Credits&lt;/h2&gt; 
+&lt;p&gt;Thanks to:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://jestjs.io/"&gt;The Jest team and community&lt;/a&gt; for creating a delightful testing API&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/lukeed"&gt;@lukeed&lt;/a&gt; for the work on &lt;a href="https://github.com/lukeed/uvu"&gt;uvu&lt;/a&gt; where we are inspired a lot from.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/pi0"&gt;@pi0&lt;/a&gt; for the idea and implementation of using Vite to transform and bundle the server code.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/vitejs/vite"&gt;The Vite team&lt;/a&gt; for brainstorming the initial idea.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/patak-dev"&gt;@patak-dev&lt;/a&gt; for the awesome package name!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contribution&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://github.com/vitest-dev/vitest/raw/main/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/vitest-dev/vitest/main/LICENSE"&gt;MIT&lt;/a&gt; License © 2021-Present VoidZero Inc. and Vitest contributors&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>directus/directus</title>
+      <link>https://github.com/directus/directus</link>
+      <description>&lt;p&gt;The flexible backend for all your projects 🐰 Turn your DB into a headless CMS, admin panels, or apps with a custom UI, instant APIs, auth &amp; more.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt;&lt;img alt="Directus Logo" src="https://user-images.githubusercontent.com/522079/158864859-0fbeae62-9d7a-4619-b35e-f8fa5f68e0c8.png" /&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🐰 Introduction&lt;/h2&gt; 
+&lt;p&gt;Directus is a real-time API and App dashboard for managing SQL database content.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;REST &amp;amp; GraphQL API.&lt;/strong&gt; Instantly layers a blazingly fast Node.js API on top of any SQL database.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Manage Pure SQL.&lt;/strong&gt; Works with new or existing SQL databases, no migration required.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Choose your Database.&lt;/strong&gt; Supports PostgreSQL, MySQL, SQLite, OracleDB, CockroachDB, MariaDB, and MS-SQL.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;On-Prem or Cloud.&lt;/strong&gt; Run locally, install on-premises, or use our &lt;a href="https://directus.io/pricing"&gt;self-service Cloud service&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Completely Extensible.&lt;/strong&gt; Built to white-label, it is easy to customize our modular platform.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;A Modern Dashboard.&lt;/strong&gt; Our no-code Vue.js app is safe and intuitive for non-technical users, no training required.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://directus.io"&gt;Learn more about Directus&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://docs.directus.io"&gt;Documentation&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;🚀 Directus Cloud&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://directus.io/pricing"&gt;Directus Cloud&lt;/a&gt; allows you to create projects, hosted by the Directus team, from $15/month.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;A self-service dashboard to create and monitor all your projects in one place.&lt;/li&gt; 
+ &lt;li&gt;Everything you need: Directus, database, storage, auto-scaling, and a global CDN.&lt;/li&gt; 
+ &lt;li&gt;Select your desired region and provision a new project in ~90 seconds.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://directus.cloud"&gt;Create a Directus Cloud Project&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;🤔 Community Help&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://docs.directus.io"&gt;The Directus Documentation&lt;/a&gt; is a great place to start, or explore these other channels:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://community.directus.io"&gt;Community&lt;/a&gt; (Questions, Discussions)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://directus.chat"&gt;Discord&lt;/a&gt; (Live Chat)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/directus/directus/issues"&gt;GitHub Issues&lt;/a&gt; (Report Bugs)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://roadmap.directus.io/"&gt;Roadmap&lt;/a&gt; (Roadmap &amp;amp; Feature Requests)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://twitter.com/directus"&gt;Twitter&lt;/a&gt; (Latest News)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/c/DirectusVideos/featured"&gt;YouTube&lt;/a&gt; (Video Tutorials)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;❤️ Contributing &amp;amp; Sponsoring&lt;/h2&gt; 
+&lt;p&gt;Please read our &lt;a href="https://raw.githubusercontent.com/directus/directus/main/contributing.md"&gt;Contributing Guide&lt;/a&gt; before submitting Pull Requests.&lt;/p&gt; 
+&lt;p&gt;All security vulnerabilities should be reported in accordance with our &lt;a href="https://docs.directus.io/contributing/introduction/#reporting-security-vulnerabilities"&gt;Security Policy&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Directus is made possible with support from our passionate core team, talented contributors, and amazing &lt;a href="https://github.com/sponsors/directus"&gt;GitHub Sponsors&lt;/a&gt;. Thank you all!&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;📄 Understanding Our License&lt;/h2&gt; 
+&lt;p&gt;Directus is licensed under &lt;a href="https://raw.githubusercontent.com/directus/directus/main/license"&gt;the Business Source License (BSL) 1.1&lt;/a&gt; with a permissive additional use grant. For most users, it operates just like open source! Here's what that means for you:&lt;/p&gt; 
+&lt;h3&gt;Free for Most Users&lt;/h3&gt; 
+&lt;p&gt;If your organization has less than $5M in annual revenue and/or funding combined, you can use Directus freely in any way you'd like. Build that side project, launch your startup, or experiment with the platform — no strings attached.&lt;/p&gt; 
+&lt;h3&gt;Enterprise Usage&lt;/h3&gt; 
+&lt;p&gt;For larger organizations (&amp;gt;$5M in annual revenue/funding) using Directus in production, we require a commercial license. This model helps us maintain a sustainable balance: keeping Directus free for the majority of our community while ensuring larger organizations who benefit from the platform contribute to its continued development.&lt;/p&gt; 
+&lt;h3&gt;Why This Approach?&lt;/h3&gt; 
+&lt;p&gt;We believe in making powerful data tools accessible to everyone. This license lets us:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Keep Directus free for individuals, startups, and smaller companies&lt;/li&gt; 
+ &lt;li&gt;Maintain active development and strong support&lt;/li&gt; 
+ &lt;li&gt;Continue improving the platform for everyone&lt;/li&gt; 
+ &lt;li&gt;Stay sustainable as an independent project&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>dyad-sh/dyad</title>
+      <link>https://github.com/dyad-sh/dyad</link>
+      <description>&lt;p&gt;Free, local, open-source AI app builder ✨ v0 / lovable / Bolt alternative 🌟 Star if you like it!&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Dyad&lt;/h1&gt; 
+&lt;p&gt;Dyad is a local, open-source AI app builder. It's fast, private, and fully under your control — like Lovable, v0, or Bolt, but running right on your machine.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="http://dyad.sh/"&gt;&lt;img src="https://github.com/user-attachments/assets/f6c83dfc-6ffd-4d32-93dd-4b9c46d17790" alt="Image" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;More info at: &lt;a href="http://dyad.sh/"&gt;http://dyad.sh/&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🚀 Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;⚡️ &lt;strong&gt;Local&lt;/strong&gt;: Fast, private and no lock-in.&lt;/li&gt; 
+ &lt;li&gt;🛠 &lt;strong&gt;Bring your own keys&lt;/strong&gt;: Use your own AI API keys — no vendor lock-in.&lt;/li&gt; 
+ &lt;li&gt;🖥️ &lt;strong&gt;Cross-platform&lt;/strong&gt;: Easy to run on Mac or Windows.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📦 Download&lt;/h2&gt; 
+&lt;p&gt;No sign-up required. Just download and go.&lt;/p&gt; 
+&lt;h3&gt;&lt;a href="https://www.dyad.sh/#download"&gt;👉 Download for your platform&lt;/a&gt;&lt;/h3&gt; 
+&lt;h2&gt;🤝 Community&lt;/h2&gt; 
+&lt;p&gt;Join our growing community of AI app builders on &lt;strong&gt;Reddit&lt;/strong&gt;: &lt;a href="https://www.reddit.com/r/dyadbuilders/"&gt;r/dyadbuilders&lt;/a&gt; - share your projects and get help from the community!&lt;/p&gt; 
+&lt;h2&gt;🛠️ Contributing&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Dyad&lt;/strong&gt; is open-source (Apache 2.0 licensed).&lt;/p&gt; 
+&lt;p&gt;If you're interested in contributing to dyad, please read our &lt;a href="https://raw.githubusercontent.com/dyad-sh/dyad/main/CONTRIBUTING.md"&gt;contributing&lt;/a&gt; doc.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ionic-team/capacitor</title>
+      <link>https://github.com/ionic-team/capacitor</link>
+      <description>&lt;p&gt;Build cross-platform Native Progressive Web Apps for iOS, Android, and the Web ⚡️&lt;/p&gt;&lt;hr&gt;&lt;br /&gt; 
+&lt;div align="center"&gt; 
+ &lt;img src="https://user-images.githubusercontent.com/236501/105104854-e5e42e80-5a67-11eb-8cb8-46fccb079062.png" width="560" /&gt; 
+&lt;/div&gt; 
+&lt;div align="center"&gt;
+  ⚡️ Cross-platform apps with JavaScript and the Web ⚡️ 
+&lt;/div&gt; 
+&lt;br /&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/ionic-team/capacitor/actions?query=workflow%3ACI"&gt;&lt;img src="https://img.shields.io/github/actions/workflow/status/ionic-team/capacitor/ci.yml?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/@capacitor/core"&gt;&lt;img src="https://img.shields.io/npm/dw/@capacitor/core?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/@capacitor/core"&gt;&lt;img src="https://img.shields.io/npm/v/@capacitor/core?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/@capacitor/core"&gt;&lt;img src="https://img.shields.io/npm/l/@capacitor/core?style=flat-square" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://capacitorjs.com/docs"&gt;&lt;img src="https://img.shields.io/static/v1?label=docs&amp;amp;message=capacitorjs.com&amp;amp;color=blue&amp;amp;style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/capacitorjs"&gt;&lt;img src="https://img.shields.io/twitter/follow/capacitorjs" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;Capacitor lets you run web apps natively on iOS, Android, Web, and more with a single codebase and cross-platform APIs.&lt;/p&gt; 
+&lt;p&gt;Capacitor provides a cross-platform API and code execution layer that makes it easy to call Native SDKs from web code and to write custom native plugins that your app may need. Additionally, Capacitor provides first-class Progressive Web App support so you can write one app and deploy it to the app stores &lt;em&gt;and&lt;/em&gt; the mobile web.&lt;/p&gt; 
+&lt;p&gt;Capacitor comes with a Plugin API for building native plugins. Plugins can be written inside Capacitor apps or packaged into an npm dependency for community use. Plugin authors are encouraged to use Swift to develop plugins in iOS and Kotlin (or Java) in Android.&lt;/p&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;Capacitor was designed to drop-in to any existing modern web app. Run the following commands to initialize Capacitor in your app:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;npm install @capacitor/core @capacitor/cli
+npx cap init
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Next, install any of the desired native platforms:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;npm install @capacitor/android
+npx cap add android
+npm install @capacitor/ios
+npx cap add ios
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;New App?&lt;/h3&gt; 
+&lt;p&gt;For new apps, we recommend trying the &lt;a href="https://ionicframework.com/"&gt;Ionic Framework&lt;/a&gt; with Capacitor.&lt;/p&gt; 
+&lt;p&gt;To begin, install the &lt;a href="https://ionicframework.com/docs/cli/"&gt;Ionic CLI&lt;/a&gt; (&lt;code&gt;npm install -g @ionic/cli&lt;/code&gt;) and start a new app:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;ionic start --capacitor
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;FAQ&lt;/h2&gt; 
+&lt;h4&gt;What are the differences between Capacitor and Cordova?&lt;/h4&gt; 
+&lt;p&gt;In spirit, Capacitor and Cordova are very similar. Capacitor offers backward compatibility with a vast majority of Cordova plugins.&lt;/p&gt; 
+&lt;p&gt;Capacitor and Cordova differ in that Capacitor:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;takes a more modern approach to tooling and plugin development&lt;/li&gt; 
+ &lt;li&gt;treats native projects as source artifacts as opposed to build artifacts&lt;/li&gt; 
+ &lt;li&gt;is maintained by the Ionic Team 💙😊&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See &lt;a href="https://capacitorjs.com/docs/cordova#differences-between-capacitor-and-cordova"&gt;the docs&lt;/a&gt; for more details.&lt;/p&gt; 
+&lt;h4&gt;Do I need to use Ionic Framework with Capacitor?&lt;/h4&gt; 
+&lt;p&gt;No, you do not need to use Ionic Framework with Capacitor. Without the Ionic Framework, you may need to implement Native UI yourself. Without the Ionic CLI, you may need to configure tooling yourself to enable features such as &lt;a href="https://ionicframework.com/docs/cli/livereload"&gt;livereload&lt;/a&gt;. See &lt;a href="https://capacitorjs.com/docs/getting-started/with-ionic"&gt;the docs&lt;/a&gt; for more details.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/ionic-team/capacitor/main/CONTRIBUTING.md"&gt;&lt;code&gt;CONTRIBUTING.md&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Contributors&lt;/h2&gt; 
+&lt;p&gt;Made possible by the &lt;a href="https://github.com/ionic-team/capacitor/graphs/contributors"&gt;Capacitor community&lt;/a&gt;. 💖&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>berty/berty</title>
+      <link>https://github.com/berty/berty</link>
+      <description>&lt;p&gt;Berty is a secure peer-to-peer messaging app that works with or without internet access, cellular data or trust in the network&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt; &lt;img src="https://berty.tech/img/berty.svg?sanitize=true" alt="Berty" title="Berty" height="300px" /&gt; &lt;/h1&gt; 
+&lt;h3 align="center"&gt; Berty is an open, secure, offline-first, peer-to-peer and zero trust messaging app &lt;/h3&gt; 
+&lt;p align="center"&gt; &lt;a href="https://berty.tech"&gt;&lt;img alt="berty.tech" src="https://img.shields.io/badge/berty.tech-2845a7?logo=internet-explorer&amp;amp;style=flat" /&gt;&lt;/a&gt; &lt;a href="https://crpt.fyi/berty-discord"&gt;&lt;img alt="discord" src="https://img.shields.io/badge/discord-gray?logo=discord" /&gt;&lt;/a&gt; &lt;a href="https://github.com/berty"&gt;&lt;img alt="github" src="https://img.shields.io/badge/@berty-471961?logo=github" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/berty"&gt;&lt;img alt="twitter" src="https://img.shields.io/twitter/follow/berty?label=%40berty&amp;amp;style=flat&amp;amp;logo=twitter" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/berty/berty/actions?query=workflow%3AJS"&gt;&lt;img src="https://github.com/berty/berty/workflows/JS/badge.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://github.com/berty/berty/actions?query=workflow%3AGo"&gt;&lt;img src="https://github.com/berty/berty/workflows/Go/badge.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://github.com/berty/berty/actions?query=workflow%3AProtobuf"&gt;&lt;img src="https://github.com/berty/berty/workflows/Protobuf/badge.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://github.com/berty/berty/actions?query=workflow%3ARelease"&gt;&lt;img src="https://github.com/berty/berty/workflows/Release/badge.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://github.com/berty/berty/actions?query=workflow%3AAndroid"&gt;&lt;img src="https://github.com/berty/berty/workflows/Android/badge.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://github.com/berty/berty/actions?query=workflow%3AiOS"&gt;&lt;img src="https://github.com/berty/berty/workflows/iOS/badge.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://github.com/berty/berty/actions?query=workflow%3AIntegration"&gt;&lt;img src="https://github.com/berty/berty/workflows/Integration/badge.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://pkg.go.dev/berty.tech/berty/v2/go?tab=subdirectories"&gt;&lt;img alt="GoDoc" src="https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&amp;amp;logoColor=white" /&gt;&lt;/a&gt; &lt;a title="Crowdin" href="https://translate.berty.community"&gt;&lt;img src="https://badges.crowdin.net/e/a4cb8d931040fbe4a794322b86de6721/localized.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://github.com/berty/berty/releases"&gt;&lt;img alt="GitHub release" src="https://img.shields.io/github/v/release/berty/berty" /&gt;&lt;/a&gt; &lt;a href="https://www.codefactor.io/repository/github/berty/berty"&gt;&lt;img src="https://www.codefactor.io/repository/github/berty/berty/badge?s=bf5885a3b2782ead81d91cd423915f2e9ddc9196" alt="CodeFactor" /&gt;&lt;/a&gt; 
+ &lt;!--&lt;a href="https://goreportcard.com/report/berty/berty"&gt;&lt;img src="https://goreportcard.com/badge/berty/berty" alt="Go Report Card"&gt;&lt;/a&gt;--&gt; 
+ &lt;!--&lt;a href="https://bump.sh/doc/berty-messenger"/&gt;&lt;img src="https://img.shields.io/badge/bump.sh-messenger%20api-black" /&gt;&lt;/a&gt;--&gt; 
+ &lt;!--&lt;a href="https://bump.sh/doc/berty-protocol"/&gt;&lt;img src="https://img.shields.io/badge/bump.sh-protocol%20api-black" /&gt;&lt;/a&gt;--&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;TLDR : Install it!&lt;/h2&gt; 
+&lt;h3&gt;Mobile&lt;/h3&gt; 
+&lt;p&gt;To use the latest released version, install it from &lt;a href="https://play.google.com/store/apps/details?id=tech.berty.android"&gt;Google Play&lt;/a&gt; or &lt;a href="https://apps.apple.com/tt/app/berty/id1535500412"&gt;Apple App Store&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;To compile and run the mobile application on your device, see &lt;a href="https://raw.githubusercontent.com/berty/berty/master/js/README.md"&gt;js/README.md&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;CLI&lt;/h3&gt; 
+&lt;p&gt;You can &lt;code&gt;go run&lt;/code&gt; or &lt;code&gt;go install&lt;/code&gt; the CLI tool located in &lt;code&gt;go/cmd/berty&lt;/code&gt;. The two main command line utilities are:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;berty mini&lt;/code&gt;: a CLI messaging app using the Wesh Protocol.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;berty daemon&lt;/code&gt;: a full node manageable through the Wesh Protocol API.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Introduction&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;: Berty is still under active development and should not yet be used to exchange sensitive data.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://berty.tech/"&gt;Berty&lt;/a&gt;&lt;/strong&gt; is a privacy-first messaging application built on top of &lt;a href="https://berty.tech/docs/protocol/"&gt;the Wesh Protocol&lt;/a&gt;.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;em&gt;Secure and private&lt;/em&gt; : 
+  &lt;ul&gt; 
+   &lt;li&gt;Messages are end-to-end encrypted by default&lt;/li&gt; 
+   &lt;li&gt;Metadata is kept to a minimum&lt;/li&gt; 
+   &lt;li&gt;No phone number or email address is required to create an account&lt;/li&gt; 
+   &lt;li&gt;Built to retain its properties even when used on adversarial networks&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;em&gt;Censorship-resilient&lt;/em&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Decentralized, distributed, peer-to-peer and serverless&lt;/li&gt; 
+   &lt;li&gt;No internet connection is required, thanks to &lt;a href="https://en.wikipedia.org/wiki/Bluetooth_Low_Energy"&gt;BLE technology&lt;/a&gt; and &lt;a href="https://en.wikipedia.org/wiki/Multicast_DNS"&gt;mDNS&lt;/a&gt;.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;em&gt;Open&lt;/em&gt; : 
+  &lt;ul&gt; 
+   &lt;li&gt;Free forever and open-source&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Berty&lt;/strong&gt; is designed to be used as a communication tool when all other traditional messengers fail. Berty Messenger serves the following use cases:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;When you need to share sensitive information over untrusted networks, for instance while traveling&lt;/li&gt; 
+ &lt;li&gt;If you want to communicate anonymously&lt;/li&gt; 
+ &lt;li&gt;If you want full control over your data and thus don't want to rely on third-party servers&lt;/li&gt; 
+ &lt;li&gt;In countries that actively monitor and temper with their network, restricting its use and censoring some of its contents&lt;/li&gt; 
+ &lt;li&gt;In areas with weak or no connection at all&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Berty is currently developed by &lt;strong&gt;&lt;a href="https://berty.tech/about"&gt;Berty Technologies&lt;/a&gt;&lt;/strong&gt;, a French nonprofit organization.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Note: this project is led by a small team made of humans, who make mistakes. Please do not hesitate to point out bugs or missing features.&lt;/strong&gt; &lt;em&gt;See the &lt;a href="https://raw.githubusercontent.com/berty/berty/master/#contribute"&gt;contribute section&lt;/a&gt; below.&lt;/em&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;We cannot promise we will offer you the best application, but we dedicate ourselves to doing our best to create a great one.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;The philosophy behind Berty&lt;/h3&gt; 
+&lt;p&gt;We want to contribute to a world where free and secure communications are common and fear of censorship or surveillance are not.&lt;/p&gt; 
+&lt;p&gt;We believe that open-source is more secure, as anyone can examine the code and improve it: this is why we rely on and build open and free software.&lt;/p&gt; 
+&lt;p&gt;As the founding team, our ultimate goal is to progressively relinquish control over Berty and to make it become a truly global community project.&lt;/p&gt; 
+&lt;p&gt;More info on &lt;a href="https://github.com/berty/community"&gt;berty/community&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Development Status&lt;/h2&gt; 
+&lt;p&gt;The current Berty implementation is using the &lt;a href="https://berty.tech/docs/protocol/"&gt;Wesh Protocol&lt;/a&gt;, which means the encryption technique is safe, and it works as a peer-to-peer app!&lt;/p&gt; 
+&lt;p&gt;Alas, Berty has not yet been hardened, so please avoid using it on devices with weak sandboxes, such as unpatchable devices that use old Android versions.&lt;/p&gt; 
+&lt;p&gt;The current Wesh Protocol is &lt;em&gt;partially implemented&lt;/em&gt;.&lt;/p&gt; 
+&lt;p&gt;The API will continue to evolve in the near future. As such, we cannot yet guarantee none-breaking changes, or any kind of API stability. Be prepared for a rough ride if you start rolling the Wesh Protocol in your application.&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;&lt;a href="https://tech.us20.list-manage.com/subscribe/post?u=5ca3993c7f0b8f646dcda714b&amp;amp;id=4d7828715b"&gt;Subscribe&lt;/a&gt; to our newsletter if you wish to be notified about the latest features and releases.&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Note: The repositories are being opened progressively, and there will be additional modifications and updates soon.&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Under the hood&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/berty/berty/master/docs/architecture/Berty_Messenger_Architecture.jpg" alt="Berty Messenger High Level Architecture" /&gt;&lt;/p&gt; 
+&lt;h3&gt;Wesh Protocol&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://pkg.go.dev/berty.tech/berty/v2/go/pkg/bertyprotocol?tab=doc"&gt;&lt;img src="https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&amp;amp;logoColor=white" alt="go.dev reference" /&gt;&lt;/a&gt; &lt;a href="https://codecov.io/gh/berty/berty"&gt;&lt;img src="https://codecov.io/gh/berty/berty/branch/master/graph/badge.svg?token=rBPpNHNNow&amp;amp;flag=go.unittests" alt="Code coverage" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;The Wesh Protocol comes with a generic, but full-featured SDK allowing developers to write peer-to-peer applications. You can just focus on high-level features for your app, we will take care of the rest (encryption, identities, network routing, group management, account management, device management, application lifecycle).&lt;/p&gt; 
+&lt;p&gt;The main concept of the &lt;em&gt;Wesh Protocol&lt;/em&gt; is called the "group", a virtual place where multiple devices can share messages and metadata using &lt;a href="https://github.com/orbitdb"&gt;OrbitDB&lt;/a&gt;, which itself relies on the InterPlanetary File System (&lt;a href="https://en.wikipedia.org/wiki/InterPlanetary_File_System"&gt;IPFS&lt;/a&gt;)&lt;/p&gt; 
+&lt;!-- _TODO: add usage examples_ --&gt; 
+&lt;p&gt;Get it:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/berty/berty
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;The Berty Messenger&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://codecov.io/gh/berty/berty"&gt;&lt;img src="https://codecov.io/gh/berty/berty/branch/master/graph/badge.svg?token=rBPpNHNNow&amp;amp;flag=js.unittests" alt="Code coverage" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;The Berty Messenger, or simply Berty, is a messaging application written in &lt;a href="https://reactnative.dev/"&gt;React Native&lt;/a&gt;, that uses the Wesh Protocol through &lt;a href="https://github.com/ipfs-shipyard/gomobile-ipfs"&gt;gomobile-ipfs&lt;/a&gt;, which, in turns, is using &lt;a href="https://github.com/golang/mobile"&gt;gomobile&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Main items in the repo&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/berty/berty/master/go"&gt;./go&lt;/a&gt;: Where all the Golang code lies. 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/berty/berty/master/go/framework/bertybridge"&gt;./go/framework/bertybridge&lt;/a&gt;: The gomobile entrypoint.&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/berty/berty/master/go/cmd/berty"&gt;./go/cmd/&lt;strong&gt;berty&lt;/strong&gt;&lt;/a&gt;: The main &lt;strong&gt;Berty CLI&lt;/strong&gt;: 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;code&gt;berty daemon&lt;/code&gt;: Runs the whole Wesh Protocol instance.&lt;/li&gt; 
+     &lt;li&gt;&lt;code&gt;berty mini&lt;/code&gt;: Simple CLI messenger application using Wesh Protocol.&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/berty/berty/master/go/cmd/rdvp"&gt;./go/cmd/&lt;strong&gt;rdvp&lt;/strong&gt;&lt;/a&gt;: A Rendez-Vous Point server.&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/berty/berty/master/go/cmd/welcomebot"&gt;./go/cmd/&lt;strong&gt;welcomebot&lt;/strong&gt;&lt;/a&gt;: An onboarding bot used during the early phase.&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/berty/berty/master/go/cmd/testbot"&gt;./go/cmd/&lt;strong&gt;testbot&lt;/strong&gt;&lt;/a&gt;: A bot used by integration tests and developers.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/berty/berty/master/js"&gt;./js&lt;/a&gt;: Where all the Javascript/Typescript code lies: 
+  &lt;ul&gt; 
+   &lt;li&gt;The &lt;strong&gt;Berty Messenger&lt;/strong&gt; application, written in React Native.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/berty/berty/master/docs"&gt;./docs&lt;/a&gt;: Mostly auto-generated documentation.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://assets.berty.tech/files/contribute-contribute_v2--Contribute-berty-ultra-light.gif" alt="Contribute to Berty" /&gt;&lt;/p&gt; 
+&lt;p&gt;We welcome contributions! Your input is deeply appreciated and extremely valuable to us. We thank you in advance for it.&lt;/p&gt; 
+&lt;p&gt;There is no small feat: everyone is encouraged to do what they can to help, based on their ability and interest.&lt;/p&gt; 
+&lt;p&gt;There are plenty of ways to get involved and to help our community, which can roughly be divided in two distinct parts: everything that is related to the code and everything that is not.&lt;/p&gt; 
+&lt;p&gt;To put it simply:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Code-related = GitHub&lt;/li&gt; 
+ &lt;li&gt;Not code-related = Open a task&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Everything about contribution is summed up here: &lt;a href="https://github.com/berty/community/raw/master/CONTRIBUTING.md"&gt;CONTRIBUTING.MD&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Stargazers over time&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://star-history.com/#berty/berty&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=berty/berty&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Other resources&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Official website: &lt;a href="https://berty.tech"&gt;https://berty.tech&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Assets: &lt;a href="https://assets.berty.tech/"&gt;https://assets.berty.tech/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Application assets &amp;amp; mockups: &lt;a href="https://assets.berty.tech/categories/app__v2.4/"&gt;https://assets.berty.tech/categories/app__v2.4/&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contact&lt;/h2&gt; 
+&lt;p&gt;For a direct contact, see our &lt;a href="https://berty.tech/contact"&gt;contact page&lt;/a&gt; of our website. Alternatively, take a look at our &lt;a href="https://github.com/berty/community/"&gt;community repository&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Licensing&lt;/h2&gt; 
+&lt;p&gt;© 2018-2023 &lt;a href="https://berty.tech"&gt;Berty Technologies&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Licensed under the &lt;a href="https://www.apache.org/licenses/LICENSE-2.0"&gt;Apache License, Version 2.0&lt;/a&gt; (&lt;a href="https://raw.githubusercontent.com/berty/berty/master/LICENSE-APACHE"&gt;&lt;code&gt;LICENSE-APACHE&lt;/code&gt;&lt;/a&gt;) or the &lt;a href="https://opensource.org/licenses/MIT"&gt;MIT license&lt;/a&gt; (&lt;a href="https://raw.githubusercontent.com/berty/berty/master/LICENSE-MIT"&gt;&lt;code&gt;LICENSE-MIT&lt;/code&gt;&lt;/a&gt;), at your discretion. See the &lt;a href="https://raw.githubusercontent.com/berty/berty/master/COPYRIGHT"&gt;&lt;code&gt;COPYRIGHT&lt;/code&gt;&lt;/a&gt; file for more details.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>fuma-nama/fumadocs</title>
+      <link>https://github.com/fuma-nama/fumadocs</link>
+      <description>&lt;p&gt;The beautiful &amp; flexible React.js docs framework.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/fuma-nama/fumadocs/dev/apps/docs/public/banner.png" alt="banner" /&gt;&lt;/p&gt; 
+&lt;p&gt;The framework for building documentation websites in any React.js frameworks.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Officially Supported:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Next.js&lt;/li&gt; 
+ &lt;li&gt;Vite: Tanstack Start, Waku, React Router&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;📘 Learn More: &lt;a href="https://fumadocs.dev"&gt;Documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Compatibility&lt;/h2&gt; 
+&lt;p&gt;All packages are &lt;strong&gt;ESM only&lt;/strong&gt;.&lt;/p&gt; 
+&lt;h2&gt;Sticker&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/fuma-nama/fumadocs/dev/documents/logo.png" alt="logo" /&gt;&lt;/p&gt; 
+&lt;p&gt;Welcome to print it out :D&lt;/p&gt; 
+&lt;h2&gt;Contributions&lt;/h2&gt; 
+&lt;p&gt;Make sure to read the &lt;a href="https://raw.githubusercontent.com/fuma-nama/fumadocs/dev/.github/contributing.md"&gt;Contributing Guide&lt;/a&gt; before submitting a pull request.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mountain-loop/yaak</title>
+      <link>https://github.com/mountain-loop/yaak</link>
+      <description>&lt;p&gt;The most intuitive desktop API client. Organize and execute REST, GraphQL, WebSockets, Server Sent Events, and gRPC 🦬&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://github.com/JamesIves/github-sponsors-readme-action"&gt; &lt;img width="200px" src="https://github.com/mountain-loop/yaak/raw/main/src-tauri/icons/icon.png" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h1 align="center"&gt; 💫 Yaak ➟ Desktop API Client 💫 &lt;/h1&gt; 
+&lt;p align="center"&gt; A fast, privacy-first API client for REST, GraphQL, SSE, WebSocket, and gRPC – built with Tauri, Rust, and React. &lt;/p&gt; 
+&lt;p align="center"&gt; Development is funded by community-purchased &lt;a href="https://yaak.app/pricing"&gt;licenses&lt;/a&gt;. You can also &lt;a href="https://github.com/sponsors/gschier"&gt;become a sponsor&lt;/a&gt; to have your logo appear below. 💖 &lt;/p&gt; 
+&lt;br /&gt; 
+&lt;p align="center"&gt; 
+ &lt;!-- sponsors-premium --&gt;&lt;a href="https://github.com/MVST-Solutions"&gt;&lt;img src="https://github.com/MVST-Solutions.png" width="80px" alt="User avatar: MVST-Solutions" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/dharsanb"&gt;&lt;img src="https://github.com/dharsanb.png" width="80px" alt="User avatar: dharsanb" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/railwayapp"&gt;&lt;img src="https://github.com/railwayapp.png" width="80px" alt="User avatar: railwayapp" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/caseyamcl"&gt;&lt;img src="https://github.com/caseyamcl.png" width="80px" alt="User avatar: caseyamcl" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/andriyor"&gt;&lt;img src="https://github.com/andriyor.png" width="80px" alt="User avatar: andriyor" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/"&gt;&lt;img src="https://raw.githubusercontent.com/JamesIves/github-sponsors-readme-action/dev/.github/assets/placeholder.png" width="80px" alt="User avatar: " /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+ &lt;!-- sponsors-premium --&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; 
+ &lt;!-- sponsors-base --&gt;&lt;a href="https://github.com/seanwash"&gt;&lt;img src="https://github.com/seanwash.png" width="50px" alt="User avatar: seanwash" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/jerath"&gt;&lt;img src="https://github.com/jerath.png" width="50px" alt="User avatar: jerath" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/itsa-sh"&gt;&lt;img src="https://github.com/itsa-sh.png" width="50px" alt="User avatar: itsa-sh" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/dmmulroy"&gt;&lt;img src="https://github.com/dmmulroy.png" width="50px" alt="User avatar: dmmulroy" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/timcole"&gt;&lt;img src="https://github.com/timcole.png" width="50px" alt="User avatar: timcole" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/VLZH"&gt;&lt;img src="https://github.com/VLZH.png" width="50px" alt="User avatar: VLZH" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/terasaka2k"&gt;&lt;img src="https://github.com/terasaka2k.png" width="50px" alt="User avatar: terasaka2k" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/majudhu"&gt;&lt;img src="https://github.com/majudhu.png" width="50px" alt="User avatar: majudhu" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://github.com/axelrindle"&gt;&lt;img src="https://github.com/axelrindle.png" width="50px" alt="User avatar: axelrindle" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+ &lt;!-- sponsors-base --&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://yaak.app/static/screenshot.png" alt="Yaak API Client" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;p&gt;Yaak is an offline-first API client designed to stay out of your way while giving you everything you need when you need it. Built with &lt;a href="https://tauri.app"&gt;Tauri&lt;/a&gt;, Rust, and React, it’s fast, lightweight, and private. No telemetry, no VC funding, and no cloud lock-in.&lt;/p&gt; 
+&lt;h3&gt;🌐 Work with any API&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Import collections from Postman, Insomnia, OpenAPI, Swagger, or Curl.&lt;/li&gt; 
+ &lt;li&gt;Send requests via REST, GraphQL, gRPC, WebSocket, or Server-Sent Events.&lt;/li&gt; 
+ &lt;li&gt;Filter and inspect responses with JSONPath or XPath.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🔐 Stay secure&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Use OAuth 2.0, JWT, Basic Auth, or custom plugins for authentication.&lt;/li&gt; 
+ &lt;li&gt;Secure sensitive values with encrypted secrets.&lt;/li&gt; 
+ &lt;li&gt;Store secrets in your OS keychain.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;☁️ Organize &amp;amp; collaborate&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Group requests into workspaces and nested folders.&lt;/li&gt; 
+ &lt;li&gt;Use environment variables to switch between dev, staging, and prod.&lt;/li&gt; 
+ &lt;li&gt;Mirror workspaces to your filesystem for versioning in Git or syncing with Dropbox.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🧩 Extend &amp;amp; customize&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Insert dynamic values like UUIDs or timestamps with template tags.&lt;/li&gt; 
+ &lt;li&gt;Pick from built-in themes or build your own.&lt;/li&gt; 
+ &lt;li&gt;Create plugins to extend authentication, template tags, or the UI.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contribution Policy&lt;/h2&gt; 
+&lt;p&gt;Yaak is open source but only accepting contributions for bug fixes. To get started, visit &lt;a href="https://raw.githubusercontent.com/mountain-loop/yaak/main/DEVELOPMENT.md"&gt;&lt;code&gt;DEVELOPMENT.md&lt;/code&gt;&lt;/a&gt; for tips on setting up your environment.&lt;/p&gt; 
+&lt;h2&gt;Useful Resources&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://feedback.yaak.app"&gt;Feedback and Bug Reports&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://feedback.yaak.app/help"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://yaak.app/alternatives/postman"&gt;Yaak vs Postman&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://yaak.app/alternatives/bruno"&gt;Yaak vs Bruno&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://yaak.app/alternatives/insomnia"&gt;Yaak vs Insomnia&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>cypress-io/cypress</title>
+      <link>https://github.com/cypress-io/cypress</link>
+      <description>&lt;p&gt;Fast, easy and reliable testing for anything that runs in a browser.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://www.cypress.io"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="./assets/cypress-logo-dark.png" /&gt; 
+   &lt;source media="(prefers-color-scheme: light)" srcset="./assets/cypress-logo-light.png" /&gt; 
+   &lt;img alt="Cypress Logo" src="https://raw.githubusercontent.com/cypress-io/cypress/develop/assets/cypress-logo-light.png" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://on.cypress.io"&gt;Documentation&lt;/a&gt; | &lt;a href="https://on.cypress.io/changelog"&gt;Changelog&lt;/a&gt; | &lt;a href="https://on.cypress.io/roadmap"&gt;Roadmap&lt;/a&gt; &lt;/p&gt; 
+&lt;h3 align="center"&gt; The web has evolved. Finally, testing has too. &lt;/h3&gt; 
+&lt;p align="center"&gt; Fast, easy and reliable testing for anything that runs in a browser. &lt;/p&gt; 
+&lt;p align="center"&gt; Join us, we're &lt;a href="https://cypress.io/jobs"&gt;hiring&lt;/a&gt;. &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.npmjs.com/package/cypress"&gt; &lt;img src="https://img.shields.io/npm/dm/cypress.svg?sanitize=true" alt="npm" /&gt; &lt;/a&gt; &lt;a href="https://on.cypress.io/discord"&gt; &lt;img src="https://img.shields.io/badge/chat-on%20Discord-brightgreen" alt="Discord chat" /&gt; &lt;/a&gt; &lt;a href="https://stackshare.io/cypress"&gt; &lt;img src="https://img.stackshare.io/misc/follow-on-stackshare-badge.svg?sanitize=true" alt="StackShare" /&gt; &lt;/a&gt;&lt;br /&gt; &lt;/p&gt; 
+&lt;h2&gt;What is Cypress?&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;a href="https://player.vimeo.com/video/237527670"&gt; &lt;img alt="Why Cypress Video" src="https://user-images.githubusercontent.com/1271364/31739717-dbdff0ee-b41c-11e7-9b16-bfa1b6ac1814.png" width="75%" height="75%" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;Installing&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://badge.fury.io/js/cypress"&gt;&lt;img src="https://badge.fury.io/js/cypress.svg?sanitize=true" alt="npm version" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Install Cypress for Mac, Linux, or Windows, then &lt;a href="https://on.cypress.io/install"&gt;get started&lt;/a&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install cypress --save-dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;or&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn add cypress --dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;or&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm add cypress --save-dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/cypress-io/cypress/develop/assets/cypress-installation.gif" alt="installing-cli e1693232" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://cloud.cypress.io/projects/ypt4pf/runs"&gt;&lt;img src="https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/simple/ypt4pf/develop&amp;amp;style=flat&amp;amp;logo=cypress" alt="cypress" /&gt;&lt;/a&gt; &lt;a href="https://circleci.com/gh/cypress-io/cypress/tree/develop"&gt;&lt;img src="https://circleci.com/gh/cypress-io/cypress/tree/develop.svg?style=svg" alt="CircleCI" /&gt;&lt;/a&gt; - &lt;code&gt;develop&lt;/code&gt; branch&lt;/p&gt; 
+&lt;p&gt;Please see our &lt;a href="https://raw.githubusercontent.com/cypress-io/cypress/develop/CONTRIBUTING.md"&gt;Contributing Guideline&lt;/a&gt; which explains repo organization, linting, testing, and other steps.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/cypress-io/cypress/raw/develop/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/license-MIT-green.svg?sanitize=true" alt="license" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;This project is licensed under the terms of the &lt;a href="https://raw.githubusercontent.com/cypress-io/cypress/develop/LICENSE"&gt;MIT license&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Badges&lt;/h2&gt; 
+&lt;p&gt;Configure a badge for your project's README to show your test status or test count in the &lt;a href="https://www.cypress.io/cloud"&gt;Cypress Cloud&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://cloud.cypress.io/projects/ypt4pf/runs"&gt;&lt;img src="https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/simple/ypt4pf/develop&amp;amp;style=flat&amp;amp;logo=cypress" alt="cypress" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://cloud.cypress.io/projects/ypt4pf/runs"&gt;&lt;img src="https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/count/ypt4pf/develop&amp;amp;style=flat&amp;amp;logo=cypress" alt="cypress" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Or let the world know your project is using Cypress with the badge below.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.cypress.io/"&gt;&lt;img src="https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg?sanitize=true" alt="Cypress.io" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;[![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>slidevjs/slidev</title>
+      <link>https://github.com/slidevjs/slidev</link>
+      <description>&lt;p&gt;Presentation Slides for Developers&lt;/p&gt;&lt;hr&gt;&lt;br /&gt; 
+&lt;p align="center"&gt; &lt;a href="https://sli.dev" target="_blank"&gt; &lt;img src="https://sli.dev/logo-title.png" alt="Slidev" height="250" width="250" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; Presentation &lt;b&gt;slide&lt;/b&gt;s for &lt;b&gt;dev&lt;/b&gt;elopers 🧑‍💻👩‍💻👨‍💻 &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.npmjs.com/package/@slidev/cli" target="__blank"&gt;&lt;img src="https://img.shields.io/npm/v/@slidev/cli?color=2B90B6&amp;amp;label=" alt="NPM version" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/@slidev/cli" target="__blank"&gt;&lt;img alt="NPM Downloads" src="https://img.shields.io/npm/dm/@slidev/cli?color=349dbe&amp;amp;label=" /&gt;&lt;/a&gt; &lt;a href="https://sli.dev/" target="__blank"&gt;&lt;img src="https://img.shields.io/static/v1?label=&amp;amp;message=docs%20%26%20demos&amp;amp;color=45b8cd" alt="Docs &amp;amp; Demos" /&gt;&lt;/a&gt; &lt;a href="https://sli.dev/resources/theme-gallery" target="__blank"&gt;&lt;img src="https://img.shields.io/static/v1?label=&amp;amp;message=themes&amp;amp;color=4ec5d4" alt="Themes" /&gt;&lt;/a&gt; &lt;br /&gt; &lt;a href="https://github.com/slidevjs/slidev/stargazers" target="__blank"&gt;&lt;img alt="GitHub stars" src="https://img.shields.io/github/stars/slidevjs/slidev?style=social" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://twitter.com/antfu7/status/1389604687502995457"&gt;Video Preview&lt;/a&gt; | &lt;a href="https://sli.dev"&gt;Documentation&lt;/a&gt; &lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;table&gt; 
+  &lt;tbody&gt; 
+   &lt;tr&gt;
+    &lt;td align="center"&gt; &lt;img width="2000" height="0" alt="" aria-hidden /&gt;&lt;br /&gt; &lt;sub&gt;Made possible by my &lt;a href="https://github.com/sponsors/antfu"&gt;Sponsor Program 💖&lt;/a&gt;&lt;/sub&gt;&lt;br /&gt; &lt;img width="2000" height="0" alt="" aria-hidden /&gt; &lt;/td&gt; 
+   &lt;/tr&gt;
+  &lt;/tbody&gt; 
+ &lt;/table&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;📝 &lt;a href="https://sli.dev/guide/syntax"&gt;&lt;strong&gt;Markdown-based&lt;/strong&gt;&lt;/a&gt; - focus on content and use your favorite editor&lt;/li&gt; 
+ &lt;li&gt;🧑‍💻 &lt;a href="https://sli.dev/guide/syntax#code-blocks"&gt;&lt;strong&gt;Developer Friendly&lt;/strong&gt;&lt;/a&gt; - built-in code highlighting, live coding, etc.&lt;/li&gt; 
+ &lt;li&gt;🎨 &lt;a href="https://sli.dev/resources/theme-gallery"&gt;&lt;strong&gt;Themable&lt;/strong&gt;&lt;/a&gt; - theme can be shared and used with npm packages&lt;/li&gt; 
+ &lt;li&gt;🌈 &lt;a href="https://sli.dev/guide/syntax#embedded-styles"&gt;&lt;strong&gt;Stylish&lt;/strong&gt;&lt;/a&gt; - on-demand utilities via &lt;a href="https://github.com/unocss/unocss"&gt;UnoCSS&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;🤹 &lt;a href="https://sli.dev/custom/directory-structure#components"&gt;&lt;strong&gt;Interactive&lt;/strong&gt;&lt;/a&gt; - embedding Vue components seamlessly&lt;/li&gt; 
+ &lt;li&gt;🎙 &lt;a href="https://sli.dev/guide/ui#presenter-mode"&gt;&lt;strong&gt;Presenter Mode&lt;/strong&gt;&lt;/a&gt; - use another window, or even your phone to control your slides&lt;/li&gt; 
+ &lt;li&gt;🎨 &lt;a href="https://sli.dev/features/drawing"&gt;&lt;strong&gt;Drawing&lt;/strong&gt;&lt;/a&gt; - draw and annotate on your slides&lt;/li&gt; 
+ &lt;li&gt;🧮 &lt;a href="https://sli.dev/features/latex"&gt;&lt;strong&gt;LaTeX&lt;/strong&gt;&lt;/a&gt; - built-in LaTeX math equations support&lt;/li&gt; 
+ &lt;li&gt;📰 &lt;a href="https://sli.dev/guide/syntax#diagrams"&gt;&lt;strong&gt;Diagrams&lt;/strong&gt;&lt;/a&gt; - creates diagrams using textual descriptions with &lt;a href="https://mermaid.js.org/"&gt;Mermaid&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🌟 &lt;a href="https://sli.dev/features/icons"&gt;&lt;strong&gt;Icons&lt;/strong&gt;&lt;/a&gt; - access to icons from any icon set directly&lt;/li&gt; 
+ &lt;li&gt;💻 &lt;a href="https://sli.dev/guide/index#editor"&gt;&lt;strong&gt;Editor&lt;/strong&gt;&lt;/a&gt; - integrated editor, or the &lt;a href="https://sli.dev/features/vscode-extension"&gt;VSCode extension&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🎥 &lt;a href="https://sli.dev/features/recording"&gt;&lt;strong&gt;Recording&lt;/strong&gt;&lt;/a&gt; - built-in recording and camera view&lt;/li&gt; 
+ &lt;li&gt;📤 &lt;a href="https://sli.dev/guide/exporting"&gt;&lt;strong&gt;Portable&lt;/strong&gt;&lt;/a&gt; - export into PDF, PNGs, or PPTX&lt;/li&gt; 
+ &lt;li&gt;⚡️ &lt;a href="https://vitejs.dev"&gt;&lt;strong&gt;Fast&lt;/strong&gt;&lt;/a&gt; - instant reloading powered by &lt;a href="https://vitejs.dev"&gt;Vite&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🛠 &lt;a href="https://sli.dev/custom/"&gt;&lt;strong&gt;Hackable&lt;/strong&gt;&lt;/a&gt; - using Vite plugins, Vue components, or any npm packages&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;h3&gt;Try it Online ⚡️&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://sli.dev/new"&gt;sli.dev/new&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://sli.dev/new"&gt;&lt;img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg?sanitize=true" alt="" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Init Project Locally&lt;/h3&gt; 
+&lt;p&gt;Install &lt;a href="https://nodejs.org/"&gt;Node.js &amp;gt;=18&lt;/a&gt; and run the following command:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm init slidev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Documentation: &lt;strong&gt;&lt;a href="https://sli.dev"&gt;English&lt;/a&gt;&lt;/strong&gt; | &lt;a href="https://cn.sli.dev"&gt;中文文档&lt;/a&gt; | &lt;a href="https://fr.sli.dev"&gt;Français&lt;/a&gt; | &lt;a href="https://es.sli.dev"&gt;Español&lt;/a&gt; | &lt;a href="https://ru.sli.dev"&gt;Русский&lt;/a&gt; | &lt;a href="https://br.sli.dev"&gt;Português-BR&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Discord: &lt;a href="https://chat.sli.dev"&gt;chat.sli.dev&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;For a full example, you can check the &lt;a href="https://github.com/slidevjs/slidev/raw/main/demo"&gt;demo&lt;/a&gt; folder, which is also the source file for &lt;a href="https://antfu.me/posts/composable-vue-vueday-2021"&gt;my previous talk&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Tech Stack&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://vitejs.dev"&gt;Vite&lt;/a&gt; - An extremely fast frontend tooling&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://v3.vuejs.org/"&gt;Vue 3&lt;/a&gt; powered &lt;a href="https://daringfireball.net/projects/markdown/syntax"&gt;Markdown&lt;/a&gt; - Focus on the content while having the power of HTML and Vue components whenever needed&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/unocss/unocss"&gt;UnoCSS&lt;/a&gt; - On-demand utility-first CSS engine, style your slides at ease&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/shikijs/shiki"&gt;Shiki&lt;/a&gt;, &lt;a href="https://github.com/Microsoft/monaco-editor"&gt;Monaco Editor&lt;/a&gt; - First-class code snippets support with live coding capability&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://recordrtc.org"&gt;RecordRTC&lt;/a&gt; - Built-in recording and camera view&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://vueuse.org"&gt;VueUse&lt;/a&gt; family - &lt;a href="https://github.com/vueuse/vueuse"&gt;&lt;code&gt;@vueuse/core&lt;/code&gt;&lt;/a&gt;, &lt;a href="https://github.com/vueuse/motion"&gt;&lt;code&gt;@vueuse/motion&lt;/code&gt;&lt;/a&gt;, etc.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://iconify.design/"&gt;Iconify&lt;/a&gt; - Icon sets collection.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/antfu/drauu"&gt;Drauu&lt;/a&gt; - Drawing and annotations support&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://katex.org/"&gt;KaTeX&lt;/a&gt; - LaTeX math rendering.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://mermaid-js.github.io/mermaid"&gt;Mermaid&lt;/a&gt; - Textual Diagrams.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Sponsors&lt;/h2&gt; 
+&lt;p&gt;This project is made possible by all the sponsors supporting my work:&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/sponsors/antfu"&gt; &lt;img src="https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg?sanitize=true" alt="Logos from Sponsors" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT License © 2021 &lt;a href="https://github.com/antfu"&gt;Anthony Fu&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>backstage/backstage</title>
+      <link>https://github.com/backstage/backstage</link>
+      <description>&lt;p&gt;Backstage is an open framework for building developer portals&lt;/p&gt;&lt;hr&gt;&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] 🏖 From Monday October 27th through November 3rd, maintainers and Spotify employees will be on vacation due to Wellness Week. Expect the project to move a little slower than normal, and support to be limited. Normal service will resume after that! 🏝&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;a href="https://backstage.io/"&gt;&lt;img src="https://raw.githubusercontent.com/backstage/backstage/master/docs/assets/headline.png" alt="headline" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;&lt;a href="https://backstage.io"&gt;Backstage&lt;/a&gt;&lt;/h1&gt; 
+&lt;p&gt;English | &lt;a href="https://raw.githubusercontent.com/backstage/backstage/master/README-ko_kr.md"&gt;한국어&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/backstage/backstage/master/README-zh_Hans.md"&gt;中文版&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/backstage/backstage/master/README-fr_FR.md"&gt;Français&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://opensource.org/licenses/Apache-2.0"&gt;&lt;img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg?sanitize=true" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://www.cncf.io/projects"&gt;&lt;img src="https://img.shields.io/badge/cncf%20status-incubation-blue.svg?sanitize=true" alt="CNCF Status" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/backstage-687207715902193673"&gt;&lt;img src="https://img.shields.io/discord/687207715902193673?logo=discord&amp;amp;label=Discord&amp;amp;color=5865F2&amp;amp;logoColor=white" alt="Discord" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?sanitize=true" alt="Code style" /&gt; &lt;a href="https://codecov.io/gh/backstage/backstage"&gt;&lt;img src="https://img.shields.io/codecov/c/github/backstage/backstage" alt="Codecov" /&gt;&lt;/a&gt; &lt;a href="https://github.com/backstage/backstage/releases"&gt;&lt;img src="https://img.shields.io/github/v/release/backstage/backstage" alt="" /&gt;&lt;/a&gt; &lt;a href="https://bestpractices.coreinfrastructure.org/projects/7678"&gt;&lt;img src="https://bestpractices.coreinfrastructure.org/projects/7678/badge" alt="OpenSSF Best Practices" /&gt;&lt;/a&gt; &lt;a href="https://securityscorecards.dev/viewer/?uri=github.com/backstage/backstage"&gt;&lt;img src="https://api.securityscorecards.dev/projects/github.com/backstage/backstage/badge" alt="OpenSSF Scorecard" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;What is Backstage?&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://backstage.io/"&gt;Backstage&lt;/a&gt; is an open source framework for building developer portals. Powered by a centralized software catalog, Backstage restores order to your microservices and infrastructure and enables your product teams to ship high-quality code quickly without compromising autonomy.&lt;/p&gt; 
+&lt;p&gt;Backstage unifies all your infrastructure tooling, services, and documentation to create a streamlined development environment from end to end.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/backstage/backstage/master/docs/assets/header.png" alt="software-catalog" /&gt;&lt;/p&gt; 
+&lt;p&gt;Out of the box, Backstage includes:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://backstage.io/docs/features/software-catalog/"&gt;Backstage Software Catalog&lt;/a&gt; for managing all your software such as microservices, libraries, data pipelines, websites, and ML models&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://backstage.io/docs/features/software-templates/"&gt;Backstage Software Templates&lt;/a&gt; for quickly spinning up new projects and standardizing your tooling with your organization’s best practices&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://backstage.io/docs/features/techdocs/"&gt;Backstage TechDocs&lt;/a&gt; for making it easy to create, maintain, find, and use technical documentation, using a "docs like code" approach&lt;/li&gt; 
+ &lt;li&gt;Plus, a growing ecosystem of &lt;a href="https://github.com/backstage/backstage/tree/master/plugins"&gt;open source plugins&lt;/a&gt; that further expand Backstage’s customizability and functionality&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Backstage was created by Spotify but is now hosted by the &lt;a href="https://www.cncf.io"&gt;Cloud Native Computing Foundation (CNCF)&lt;/a&gt; as an Incubation level project. For more information, see the &lt;a href="https://backstage.io/blog/2022/03/16/backstage-turns-two#out-of-the-sandbox-and-into-incubation"&gt;announcement&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Project roadmap&lt;/h2&gt; 
+&lt;p&gt;For information about the detailed project roadmap including delivered milestones, see &lt;a href="https://backstage.io/docs/overview/roadmap"&gt;the Roadmap&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;To start using Backstage, see the &lt;a href="https://backstage.io/docs/getting-started"&gt;Getting Started documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;The documentation of Backstage includes:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://backstage.io/docs"&gt;Main documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://backstage.io/docs/features/software-catalog/"&gt;Software Catalog&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://backstage.io/docs/overview/architecture-overview"&gt;Architecture&lt;/a&gt; (&lt;a href="https://backstage.io/docs/architecture-decisions/"&gt;Decisions&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://backstage.io/docs/dls/design"&gt;Designing for Backstage&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://backstage.io/storybook"&gt;Storybook - UI components&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;p&gt;To engage with our community, you can use the following resources:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://discord.gg/backstage-687207715902193673"&gt;Discord chatroom&lt;/a&gt; - Get support or discuss the project&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/backstage/backstage/raw/master/CONTRIBUTING.md"&gt;Contributing to Backstage&lt;/a&gt; - Start here if you want to contribute&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/backstage/backstage/labels/rfc"&gt;RFCs&lt;/a&gt; - Help shape the technical direction&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://backstage.io/docs/faq"&gt;FAQ&lt;/a&gt; - Frequently Asked Questions&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/backstage/backstage/master/CODE_OF_CONDUCT.md"&gt;Code of Conduct&lt;/a&gt; - This is how we roll&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/backstage/backstage/master/ADOPTERS.md"&gt;Adopters&lt;/a&gt; - Companies already using Backstage&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://backstage.io/blog/"&gt;Blog&lt;/a&gt; - Announcements and updates&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://spoti.fi/backstagenewsletter"&gt;Newsletter&lt;/a&gt; - Subscribe to our email newsletter&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/backstage/community"&gt;Backstage Community Sessions&lt;/a&gt; - Join monthly meetups and explore Backstage community&lt;/li&gt; 
+ &lt;li&gt;Give us a star ⭐️ - If you are using Backstage or think it is an interesting project, we would love a star ❤️&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Governance&lt;/h2&gt; 
+&lt;p&gt;See the &lt;a href="https://github.com/backstage/community/raw/main/GOVERNANCE.md"&gt;GOVERNANCE.md&lt;/a&gt; document in the &lt;a href="https://github.com/backstage/community"&gt;backstage/community&lt;/a&gt; repository.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Copyright 2020-2025 © The Backstage Authors. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page: &lt;a href="https://www.linuxfoundation.org/trademark-usage"&gt;https://www.linuxfoundation.org/trademark-usage&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Licensed under the Apache License, Version 2.0: &lt;a href="http://www.apache.org/licenses/LICENSE-2.0"&gt;http://www.apache.org/licenses/LICENSE-2.0&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Security&lt;/h2&gt; 
+&lt;p&gt;Please report sensitive security issues using Spotify's &lt;a href="https://hackerone.com/spotify"&gt;bug-bounty program&lt;/a&gt; rather than GitHub.&lt;/p&gt; 
+&lt;p&gt;For further details, see our complete &lt;a href="https://raw.githubusercontent.com/backstage/backstage/master/SECURITY.md"&gt;security release process&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>dataelement/bisheng</title>
+      <link>https://github.com/dataelement/bisheng</link>
+      <description>&lt;p&gt;BISHENG is an open LLM devops platform for next generation Enterprise AI applications. Powerful and comprehensive features include: GenAI workflow, RAG, Agent, Unified model management, Evaluation, SFT, Dataset Management, Enterprise-level System Management, Observability and more.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;strong&gt;Proudly made by Chinese，May we, like the creators of Deepseek and Black Myth: Wukong, bring more wonder and greatness to the world.&lt;/strong&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;源自中国匠心，希望我们能像 [Deepseek]、[黑神话：悟空] 团队一样，给世界带来更多美好。&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;img src="https://dataelem.com/bs/face.png" alt="Bisheng banner" /&gt; 
+&lt;p align="center"&gt; &lt;a href="https://dataelem.feishu.cn/wiki/ZxW6wZyAJicX4WkG0NqcWsbynde"&gt;&lt;img src="https://img.shields.io/badge/docs-Wiki-brightgreen" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/github/license/dataelement/bisheng" alt="license" /&gt; &lt;a href=""&gt;&lt;img src="https://img.shields.io/github/last-commit/dataelement/bisheng" /&gt;&lt;/a&gt; &lt;a href="https://star-history.com/#dataelement/bisheng&amp;amp;Timeline"&gt;&lt;img src="https://img.shields.io/github/stars/dataelement/bisheng?color=yellow" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/dataelement/bisheng/main/README_CN.md"&gt;简体中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/dataelement/bisheng/main/README.md"&gt;English&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/dataelement/bisheng/main/README_JPN.md"&gt;日本語&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/717" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/717" alt="dataelement%2Fbisheng | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;div class="column" align="middle"&gt; 
+ &lt;!-- &lt;a href="https://bisheng.slack.com/join/shared_invite/"&gt; --&gt; 
+ &lt;!-- &lt;img src="https://img.shields.io/badge/Join-Slack-orange" alt="join-slack"/&gt; --&gt;  
+ &lt;!-- &lt;img src="https://img.shields.io/github/license/bisheng-io/bisheng" alt="license"/&gt; --&gt; 
+ &lt;!-- &lt;img src="https://img.shields.io/docker/pulls/bisheng-io/bisheng" alt="docker-pull-count" /&gt; --&gt; 
+&lt;/div&gt; 
+&lt;p&gt;BISHENG is an open LLM application devops platform, focusing on enterprise scenarios. It has been used by a large number of industry leading organizations and Fortune 500 companies.&lt;/p&gt; 
+&lt;p&gt;"Bi Sheng" was the inventor of movable type printing, which played a vital role in promoting the transmission of human knowledge. We hope that BISHENG can also provide strong support for the widespread implementation of intelligent applications. Everyone is welcome to participate.&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Lingsight, a general-purpose agent with expert-level taste&lt;/strong&gt;: Through the &lt;a href="https://github.com/dataelement/AgentGuidanceLanguage"&gt;AGL&lt;/a&gt;(Agent Guidance Language) framework, we embed domain experts’ preferences, experience, and business logic into the AI, enabling the agent to exhibit “expert-level understanding” when handling tasks.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p align="center"&gt;&lt;img src="https://dataelem.com/bs/Linsight.png" alt="sence1" /&gt;&lt;/p&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Unique &lt;a href="https://dataelem.feishu.cn/wiki/R7HZwH5ZGiJUDrkHZXicA9pInif"&gt;BISHENG Workflow&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;🧩 &lt;strong&gt;Independent and comprehensive application orchestration framework&lt;/strong&gt;: Enables the execution of various tasks within a single framework (while similar products rely on bot invocation or separate chatflow and workflow modules for different tasks).&lt;/li&gt; 
+   &lt;li&gt;🔄 &lt;strong&gt;Human in the loop&lt;/strong&gt;: Allows users to intervene and provide feedback during the execution of workflows (including multi-turn conversations), whereas similar products can only execute workflows from start to finish without intervention.&lt;/li&gt; 
+   &lt;li&gt;💥 &lt;strong&gt;Powerful&lt;/strong&gt;: Supports loops, parallelism, batch processing, conditional logic, and free combination of all logic components. It also handles complex scenarios such as multi-type input/output, report generation, content review, and more.&lt;/li&gt; 
+   &lt;li&gt;🖐️ &lt;strong&gt;User-friendly and intuitive&lt;/strong&gt;: Operations like loops, parallelism, and batch processing, which require specialized components in similar products, can be easily visualized in BISHENG as a "flowchart" (drawing a loop forms a loop, aligning elements creates parallelism, and selecting multiple items enables batch processing).&lt;/li&gt; 
+  &lt;/ul&gt; &lt;p align="center"&gt;&lt;img src="https://dataelem.com/bs/bisheng_workflow.png" alt="sence0" /&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;b&gt;Designed for Enterprise Applications&lt;/b&gt;: Document review, fixed-layout report generation, multi-agent collaboration, policy update comparison, support ticket assistance, customer service assistance, meeting minutes generation, resume screening, call record analysis, unstructured data governance, knowledge mining, data analysis, and more.&lt;br /&gt; The platform supports the construction of &lt;b&gt;highly complex enterprise application scenarios&lt;/b&gt; and offers &lt;b&gt;deep optimization&lt;/b&gt; with hundreds of components and thousands of parameters.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p align="center"&gt;&lt;img src="https://dataelem.com/bs/chat.png" alt="sence1" /&gt;&lt;/p&gt; 
+&lt;ol start="4"&gt; 
+ &lt;li&gt;&lt;b&gt;Enterprise-grade&lt;/b&gt; features are the fundamental guarantee for application implementation: security review, RBAC, user group management, traffic control by group, SSO/LDAP, vulnerability scanning and patching, high availability deployment solutions, monitoring, statistics, and more.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p align="center"&gt;&lt;img src="https://dataelem.com/bs/pro.png" alt="sence2" /&gt;&lt;/p&gt; 
+&lt;ol start="5"&gt; 
+ &lt;li&gt;&lt;b&gt;High-Precision Document Parsing&lt;/b&gt;: Our high-precision document parsing model is trained on a vast amount of high-quality data accumulated over past 5 years. It includes high-precision printed text, handwritten text, and rare character recognition models, table recognition models, layout analysis models, and seal models., table recognition models, layout analysis models, and seal models. You can deploy it privately for free.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p align="center"&gt;&lt;img src="https://dataelem.com/bs/ocr.png" alt="sence3" /&gt;&lt;/p&gt; 
+&lt;ol start="6"&gt; 
+ &lt;li&gt;A community for sharing best practices across various enterprise scenarios: An open repository of application cases and best practices.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Quick start&lt;/h2&gt; 
+&lt;p&gt;Please ensure the following conditions are met before installing BISHENG:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;CPU &amp;gt;= 4 Virtual Cores&lt;/li&gt; 
+ &lt;li&gt;RAM &amp;gt;= 16 GB&lt;/li&gt; 
+ &lt;li&gt;Docker 19.03.9+&lt;/li&gt; 
+ &lt;li&gt;Docker Compose 1.25.1+&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Recommended hardware condition: 18 virtual cores, 48G. In addition to installing BISHENG, we will also install the following third-party components by default: ES, Milvus, and Onlyoffice.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Download BISHENG&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/dataelement/bisheng.git
+# Enter the installation directory
+cd bisheng/docker
+
+# If the system does not have the git command, you can download the BISHENG code as a zip file.
+wget https://github.com/dataelement/bisheng/archive/refs/heads/main.zip
+# Unzip and enter the installation directory
+unzip main.zip &amp;amp;&amp;amp; cd bisheng-main/docker
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Start BISHENG&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker compose -f docker-compose.yml -p bisheng up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;After the startup is complete, access &lt;a href="http://IP:3001"&gt;http://IP:3001&lt;/a&gt; in the browser. The login page will appear, proceed with user registration.&lt;/p&gt; 
+&lt;p&gt;By default, the first registered user will become the system admin.&lt;/p&gt; 
+&lt;p&gt;For more installation and deployment issues, refer to:：&lt;a href="https://dataelem.feishu.cn/wiki/BSCcwKd4Yiot3IkOEC8cxGW7nPc"&gt;Self-hosting&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Acknowledgement&lt;/h2&gt; 
+&lt;p&gt;This repo benefits from &lt;a href="https://github.com/langchain-ai/langchain"&gt;langchain&lt;/a&gt; &lt;a href="https://github.com/logspace-ai/langflow"&gt;langflow&lt;/a&gt; &lt;a href="https://github.com/Unstructured-IO/unstructured"&gt;unstructured&lt;/a&gt; and &lt;a href="https://github.com/hiyouga/LLaMA-Factory"&gt;LLaMA-Factory&lt;/a&gt; . Thanks for their wonderful works.&lt;/p&gt; 
+&lt;p&gt;&lt;b&gt;Thank you to our contributors：&lt;/b&gt;&lt;/p&gt; 
+&lt;a href="https://github.com/dataelement/bisheng/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=dataelement/bisheng" /&gt; &lt;/a&gt; 
+&lt;h2&gt;Community &amp;amp; contact&lt;/h2&gt; 
+&lt;p&gt;Welcome to join our discussion group&lt;/p&gt; 
+&lt;img src="https://www.dataelem.com/nstatic/qrcode.png" alt="Wechat QR Code" /&gt; 
+&lt;!--
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=dataelement/bisheng&amp;type=Date)](https://star-history.com/#dataelement/bisheng&amp;Date)
+--&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
