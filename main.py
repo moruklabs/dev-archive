@@ -30,7 +30,6 @@ REQUEST_TIMEOUT = 10  # seconds
 
 # Our own base URL for RSS feeds - using GitHub Pages URL for this repository
 OUR_BASE_URL = "https://moruklabs.github.io/dev-archive"
-OUR_RSS_BASE_URL = f"{OUR_BASE_URL}/rss"
 
 def is_safe_path(base_dir, path):
     base_dir = os.path.realpath(base_dir)
@@ -122,7 +121,6 @@ def transform_rss_content(content, lang, feed_type):
         
         # Basic formatting: add newlines after major elements for readability
         xml_str = xml_str.replace('><', '>\n<')
-        xml_str = xml_str.replace('></', '</')
         
         return xml_str
         
@@ -245,10 +243,9 @@ def process_language_targets(language_targets):
             path_parts = filepath.split('/')
             lang = entry.get('lang', 'unknown')
             feed_type = 'unknown'
-            if len(path_parts) > 0:
-                filename = path_parts[-1]
-                if filename.endswith('.xml'):
-                    feed_type = filename[:-4]  # Remove .xml extension
+            filename = path_parts[-1]
+            if filename.endswith('.xml'):
+                feed_type = filename[:-4]  # Remove .xml extension
             
             # Transform RSS content to use our own links
             transformed_content = transform_rss_content(content, lang, feed_type)
