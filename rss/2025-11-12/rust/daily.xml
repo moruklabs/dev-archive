@@ -1,0 +1,1601 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub Rust Daily Trending</title>
+    <description>Daily Trending of Rust in GitHub</description>
+    <pubDate>Tue, 11 Nov 2025 01:38:33 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>atuinsh/atuin</title>
+      <link>https://github.com/atuinsh/atuin</link>
+      <description>&lt;p&gt;✨ Magical shell history&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://github.com/atuinsh/atuin/assets/53315310/13216a1d-1ac0-4c99-b0eb-d88290fe0efd" /&gt; 
+  &lt;img alt="Text changing depending on mode. Light: 'So light!' Dark: 'So dark!'" src="https://github.com/atuinsh/atuin/assets/53315310/08bc86d4-a781-4aaa-8d7e-478ae6bcd129" /&gt; 
+ &lt;/picture&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;em&gt;magical shell history&lt;/em&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/atuinsh/atuin/actions?query=workflow%3ARust"&gt;&lt;img src="https://img.shields.io/github/actions/workflow/status/atuinsh/atuin/rust.yml?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://crates.io/crates/atuin"&gt;&lt;img src="https://img.shields.io/crates/v/atuin.svg?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://crates.io/crates/atuin"&gt;&lt;img src="https://img.shields.io/crates/d/atuin.svg?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://github.com/atuinsh/atuin/raw/main/LICENSE"&gt;&lt;img src="https://img.shields.io/crates/l/atuin.svg?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/Fq8bJSKPHh"&gt;&lt;img src="https://img.shields.io/discord/954121165239115808" /&gt;&lt;/a&gt; &lt;a rel="me" href="https://hachyderm.io/@atuin"&gt;&lt;img src="https://img.shields.io/mastodon/follow/109944632283122560?domain=https%3A%2F%2Fhachyderm.io&amp;amp;style=social" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/atuinsh"&gt;&lt;img src="https://img.shields.io/twitter/follow/atuinsh?style=social" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/atuinsh/atuin/main/README.md"&gt;English&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/atuinsh/atuin/main/docs/zh-CN/README.md"&gt;简体中文&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Atuin replaces your existing shell history with a SQLite database, and records additional context for your commands. Additionally, it provides optional and &lt;em&gt;fully encrypted&lt;/em&gt; synchronisation of your history between machines, via an Atuin server.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/atuinsh/atuin/main/demo.gif" alt="animated" width="80%" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;em&gt;exit code, duration, time and command shown&lt;/em&gt; &lt;/p&gt; 
+&lt;p&gt;As well as the search UI, it can do things like this:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;# search for all successful `make` commands, recorded after 3pm yesterday
+atuin search --exit 0 --after "yesterday 3pm" make
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You may use either the server I host, or host your own! Or just don't use sync at all. As all history sync is encrypted, I couldn't access your data even if I wanted to. And I &lt;strong&gt;really&lt;/strong&gt; don't want to.&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;rebind &lt;code&gt;ctrl-r&lt;/code&gt; and &lt;code&gt;up&lt;/code&gt; (configurable) to a full screen history search UI&lt;/li&gt; 
+ &lt;li&gt;store shell history in a sqlite database&lt;/li&gt; 
+ &lt;li&gt;back up and sync &lt;strong&gt;encrypted&lt;/strong&gt; shell history&lt;/li&gt; 
+ &lt;li&gt;the same history across terminals, across sessions, and across machines&lt;/li&gt; 
+ &lt;li&gt;log exit code, cwd, hostname, session, command duration, etc&lt;/li&gt; 
+ &lt;li&gt;calculate statistics such as "most used command"&lt;/li&gt; 
+ &lt;li&gt;old history file is not replaced&lt;/li&gt; 
+ &lt;li&gt;quick-jump to previous items with &lt;kbd&gt;Alt-&amp;lt;num&amp;gt;&lt;/kbd&gt;&lt;/li&gt; 
+ &lt;li&gt;switch filter modes via ctrl-r; search history just from the current session, directory, or globally&lt;/li&gt; 
+ &lt;li&gt;enter to execute a command, tab to edit&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/atuinsh/atuin/main/#quickstart"&gt;Quickstart&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.atuin.sh/guide/installation/"&gt;Install&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.atuin.sh/guide/sync/"&gt;Setting up sync&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.atuin.sh/guide/import/"&gt;Import history&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.atuin.sh/guide/basic-usage/"&gt;Basic usage&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Supported Shells&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;zsh&lt;/li&gt; 
+ &lt;li&gt;bash&lt;/li&gt; 
+ &lt;li&gt;fish&lt;/li&gt; 
+ &lt;li&gt;nushell&lt;/li&gt; 
+ &lt;li&gt;xonsh&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;h3&gt;Forum&lt;/h3&gt; 
+&lt;p&gt;Atuin has a community forum, please ask here for help and support: &lt;a href="https://forum.atuin.sh/"&gt;https://forum.atuin.sh/&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Discord&lt;/h3&gt; 
+&lt;p&gt;Atuin also has a community Discord, available &lt;a href="https://discord.gg/jR3tfchVvW"&gt;here&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Quickstart&lt;/h1&gt; 
+&lt;p&gt;This will sign you up for the Atuin Cloud sync server. Everything is end-to-end encrypted, so your secrets are safe!&lt;/p&gt; 
+&lt;p&gt;Read more in the &lt;a href="https://docs.atuin.sh"&gt;docs&lt;/a&gt; for an offline setup, self hosted server, and more.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+
+atuin register -u &amp;lt;USERNAME&amp;gt; -e &amp;lt;EMAIL&amp;gt;
+atuin import auto
+atuin sync
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then restart your shell!&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE]&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;For Bash users&lt;/strong&gt;: The above sets up &lt;code&gt;bash-preexec&lt;/code&gt; for necessary hooks, but &lt;code&gt;bash-preexec&lt;/code&gt; has limitations. For details, please see the &lt;a href="https://docs.atuin.sh/guide/installation/#installing-the-shell-plugin"&gt;Bash&lt;/a&gt; section of the shell plugin documentation.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h1&gt;Security&lt;/h1&gt; 
+&lt;p&gt;If you find any security issues, we'd appreciate it if you could alert &lt;a href="mailto:ellie@atuin.sh"&gt;ellie@atuin.sh&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Contributors&lt;/h1&gt; 
+&lt;a href="https://github.com/atuinsh/atuin/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=atuinsh/atuin&amp;amp;max=300" /&gt; &lt;/a&gt; 
+&lt;p&gt;Made with &lt;a href="https://contrib.rocks"&gt;contrib.rocks&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>YaLTeR/niri</title>
+      <link>https://github.com/YaLTeR/niri</link>
+      <description>&lt;p&gt;A scrollable-tiling Wayland compositor.&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt;&lt;img alt="niri" src="https://github.com/user-attachments/assets/07d05cd0-d5dc-4a28-9a35-51bae8f119a0" /&gt;&lt;/h1&gt; 
+&lt;p align="center"&gt;A scrollable-tiling Wayland compositor.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://matrix.to/#/#niri:matrix.org"&gt;&lt;img alt="Matrix" src="https://img.shields.io/badge/matrix-%23niri-blue?logo=matrix" /&gt;&lt;/a&gt; &lt;a href="https://github.com/YaLTeR/niri/raw/main/LICENSE"&gt;&lt;img alt="GitHub License" src="https://img.shields.io/github/license/YaLTeR/niri" /&gt;&lt;/a&gt; &lt;a href="https://github.com/YaLTeR/niri/releases"&gt;&lt;img alt="GitHub Release" src="https://img.shields.io/github/v/release/YaLTeR/niri?logo=github" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://yalter.github.io/niri/Getting-Started.html"&gt;Getting Started&lt;/a&gt; | &lt;a href="https://yalter.github.io/niri/Configuration%3A-Introduction.html"&gt;Configuration&lt;/a&gt; | &lt;a href="https://github.com/YaLTeR/niri/discussions/325"&gt;Setup&amp;nbsp;Showcase&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/535e6530-2f44-4b84-a883-1240a3eee6e9" alt="niri with a few windows open" /&gt;&lt;/p&gt; 
+&lt;h2&gt;About&lt;/h2&gt; 
+&lt;p&gt;Windows are arranged in columns on an infinite strip going to the right. Opening a new window never causes existing windows to resize.&lt;/p&gt; 
+&lt;p&gt;Every monitor has its own separate window strip. Windows can never "overflow" onto an adjacent monitor.&lt;/p&gt; 
+&lt;p&gt;Workspaces are dynamic and arranged vertically. Every monitor has an independent set of workspaces, and there's always one empty workspace present all the way down.&lt;/p&gt; 
+&lt;p&gt;The workspace arrangement is preserved across disconnecting and connecting monitors where it makes sense. When a monitor disconnects, its workspaces will move to another monitor, but upon reconnection they will move back to the original monitor.&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Built from the ground up for scrollable tiling&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://yalter.github.io/niri/Workspaces.html"&gt;Dynamic workspaces&lt;/a&gt; like in GNOME&lt;/li&gt; 
+ &lt;li&gt;An &lt;a href="https://github.com/user-attachments/assets/379a5d1f-acdb-4c11-b36c-e85fd91f0995"&gt;Overview&lt;/a&gt; that zooms out workspaces and windows&lt;/li&gt; 
+ &lt;li&gt;Built-in screenshot UI&lt;/li&gt; 
+ &lt;li&gt;Monitor and window screencasting through xdg-desktop-portal-gnome 
+  &lt;ul&gt; 
+   &lt;li&gt;You can &lt;a href="https://yalter.github.io/niri/Configuration%3A-Window-Rules.html#block-out-from"&gt;block out&lt;/a&gt; sensitive windows from screencasts&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://yalter.github.io/niri/Screencasting.html#dynamic-screencast-target"&gt;Dynamic cast target&lt;/a&gt; that can change what it shows on the go&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/YaLTeR/niri/assets/1794388/946a910e-9bec-4cd1-a923-4a9421707515"&gt;Touchpad&lt;/a&gt; and &lt;a href="https://github.com/YaLTeR/niri/assets/1794388/8464e65d-4bf2-44fa-8c8e-5883355bd000"&gt;mouse&lt;/a&gt; gestures&lt;/li&gt; 
+ &lt;li&gt;Group windows into &lt;a href="https://yalter.github.io/niri/Tabs.html"&gt;tabs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Configurable layout: gaps, borders, struts, window sizes&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://yalter.github.io/niri/Configuration%3A-Layout.html#gradients"&gt;Gradient borders&lt;/a&gt; with Oklab and Oklch support&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/YaLTeR/niri/assets/1794388/ce178da2-af9e-4c51-876f-8709c241d95e"&gt;Animations&lt;/a&gt; with support for &lt;a href="https://github.com/YaLTeR/niri/assets/1794388/27a238d6-0a22-4692-b794-30dc7a626fad"&gt;custom shaders&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Live-reloading config&lt;/li&gt; 
+ &lt;li&gt;Works with &lt;a href="https://yalter.github.io/niri/Accessibility.html"&gt;screen readers&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Video Demo&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/YaLTeR/niri/assets/1794388/bce834b0-f205-434e-a027-b373495f9729"&gt;https://github.com/YaLTeR/niri/assets/1794388/bce834b0-f205-434e-a027-b373495f9729&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Also check out this video from Brodie Robertson that showcases a lot of the niri functionality: &lt;a href="https://youtu.be/DeYx2exm04M"&gt;Niri Is My New Favorite Wayland Compositor&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Status&lt;/h2&gt; 
+&lt;p&gt;Niri is stable for day-to-day use and does most things expected of a Wayland compositor. Many people are daily-driving niri, and are happy to help in our &lt;a href="https://matrix.to/#/#niri:matrix.org"&gt;Matrix channel&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Give it a try! Follow the instructions on the &lt;a href="https://yalter.github.io/niri/Getting-Started.html"&gt;Getting Started&lt;/a&gt; page. Have your &lt;a href="https://github.com/Alexays/Waybar"&gt;waybar&lt;/a&gt;s and &lt;a href="https://codeberg.org/dnkl/fuzzel"&gt;fuzzel&lt;/a&gt;s ready: niri is not a complete desktop environment. Also check out &lt;a href="https://github.com/Vortriz/awesome-niri"&gt;awesome-niri&lt;/a&gt;, a list of niri-related links and projects.&lt;/p&gt; 
+&lt;p&gt;Here are some points you may have questions about:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi-monitor&lt;/strong&gt;: yes, a core part of the design from the very start. Mixed DPI works.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Fractional scaling&lt;/strong&gt;: yes, plus all niri UI stays pixel-perfect.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;NVIDIA&lt;/strong&gt;: seems to work fine.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Floating windows&lt;/strong&gt;: yes, starting from niri 25.01.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Input devices&lt;/strong&gt;: niri supports tablets, touchpads, and touchscreens. You can map the tablet to a specific monitor, or use &lt;a href="https://opentabletdriver.net/"&gt;OpenTabletDriver&lt;/a&gt;. We have touchpad gestures, but no touchscreen gestures yet.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Wlr protocols&lt;/strong&gt;: yes, we have most of the important ones like layer-shell, gamma-control, screencopy. You can check on &lt;a href="https://wayland.app"&gt;wayland.app&lt;/a&gt; at the bottom of each protocol's page.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Performance&lt;/strong&gt;: while I run niri on beefy machines, I try to stay conscious of performance. I've seen someone use it fine on an Eee&amp;nbsp;PC&amp;nbsp;900 from&amp;nbsp;2008, of all things.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Xwayland&lt;/strong&gt;: &lt;a href="https://yalter.github.io/niri/Xwayland.html#using-xwayland-satellite"&gt;integrated&lt;/a&gt; via xwayland-satellite starting from niri 25.08.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Media&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://youtu.be/Kmz8ODolnDg?list=PLRdS-n5seLRqrmWDQY4KDqtRMfIwU0U3T"&gt;niri: Making a Wayland compositor in Rust&lt;/a&gt; · &lt;em&gt;December 2024&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;My talk from the 2024 Moscow RustCon about niri, and how I do randomized property testing and profiling, and measure input latency. The talk is in Russian, but I prepared full English subtitles that you can find in YouTube's subtitle language selector.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.trommelspeicher.de/podcast/special_the_developer_behind_niri"&gt;An interview with Ivan, the developer behind Niri&lt;/a&gt; · &lt;em&gt;June 2025&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;An interview by a German tech podcast Das Triumvirat (in English). We talk about niri development and history, and my experience building and maintaining niri.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://lwn.net/Articles/1025866/"&gt;A tour of the niri scrolling-tiling Wayland compositor&lt;/a&gt; · &lt;em&gt;July 2025&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;An LWN article with a nice overview and introduction to niri.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;If you'd like to help with niri, there are plenty of both coding- and non-coding-related ways to do so. See &lt;a href="https://github.com/YaLTeR/niri/raw/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for an overview.&lt;/p&gt; 
+&lt;h2&gt;Inspiration&lt;/h2&gt; 
+&lt;p&gt;Niri is heavily inspired by &lt;a href="https://github.com/paperwm/PaperWM"&gt;PaperWM&lt;/a&gt; which implements scrollable tiling on top of GNOME Shell.&lt;/p&gt; 
+&lt;p&gt;One of the reasons that prompted me to try writing my own compositor is being able to properly separate the monitors. Being a GNOME Shell extension, PaperWM has to work against Shell's global window coordinate space to prevent windows from overflowing.&lt;/p&gt; 
+&lt;h2&gt;Tile Scrollably Elsewhere&lt;/h2&gt; 
+&lt;p&gt;Here are some other projects which implement a similar workflow:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/paperwm/PaperWM"&gt;PaperWM&lt;/a&gt;: scrollable tiling on top of GNOME Shell.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/peterfajdiga/karousel"&gt;karousel&lt;/a&gt;: scrollable tiling on top of KDE.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/dawsers/scroll"&gt;scroll&lt;/a&gt; and &lt;a href="https://spwhitton.name/tech/code/papersway/"&gt;papersway&lt;/a&gt;: scrollable tiling on top of sway/i3.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/hyprwm/hyprland-plugins/tree/main/hyprscrolling"&gt;hyprscrolling&lt;/a&gt; and &lt;a href="https://gitlab.com/magus/hyprslidr"&gt;hyprslidr&lt;/a&gt;: scrollable tiling on top of Hyprland.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/mogenson/PaperWM.spoon"&gt;PaperWM.spoon&lt;/a&gt;: scrollable tiling on top of macOS.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contact&lt;/h2&gt; 
+&lt;p&gt;Our main communication channel is a Matrix chat, feel free to join and ask a question: &lt;a href="https://matrix.to/#/#niri:matrix.org"&gt;https://matrix.to/#/#niri:matrix.org&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;We also have a community Discord server: &lt;a href="https://discord.gg/vT8Sfjy7sx"&gt;https://discord.gg/vT8Sfjy7sx&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>librespot-org/librespot</title>
+      <link>https://github.com/librespot-org/librespot</link>
+      <description>&lt;p&gt;Open Source Spotify client library&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a href="https://github.com/librespot-org/librespot/actions"&gt;&lt;img src="https://github.com/librespot-org/librespot/workflows/build/badge.svg?sanitize=true" alt="Build Status" /&gt;&lt;/a&gt; &lt;a href="https://gitter.im/librespot-org/spotify-connect-resources"&gt;&lt;img src="https://badges.gitter.im/librespot-org/librespot.png" alt="Gitter chat" /&gt;&lt;/a&gt; &lt;a href="https://crates.io/crates/librespot"&gt;&lt;img src="https://img.shields.io/crates/v/librespot.svg?sanitize=true" alt="Crates.io" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Current maintainers are &lt;a href="https://github.com/orgs/librespot-org/people"&gt;listed on GitHub&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;librespot&lt;/h1&gt; 
+&lt;p&gt;&lt;em&gt;librespot&lt;/em&gt; is an open source client library for Spotify. It enables applications to use Spotify's service to control and play music via various backends, and to act as a Spotify Connect receiver. It is an alternative to the official and &lt;a href="https://pyspotify.mopidy.com/en/latest/#libspotify-s-deprecation"&gt;now deprecated&lt;/a&gt; closed-source &lt;code&gt;libspotify&lt;/code&gt;. Additionally, it will provide extra features which are not available in the official library.&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;Note: librespot only works with Spotify Premium. This will remain the case. We will not support any features to make librespot compatible with free accounts, such as limited skips and adverts.&lt;/em&gt;&lt;/p&gt; 
+&lt;h2&gt;Quick start&lt;/h2&gt; 
+&lt;p&gt;We're available on &lt;a href="https://crates.io/crates/librespot"&gt;crates.io&lt;/a&gt; as the &lt;em&gt;librespot&lt;/em&gt; package. Simply run &lt;code&gt;cargo install librespot&lt;/code&gt; to install librespot on your system. Check the wiki for more info and possible &lt;a href="https://github.com/librespot-org/librespot/wiki/Options"&gt;usage options&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;After installation, you can run librespot from the CLI using a command such as &lt;code&gt;librespot -n "Librespot Speaker" -b 160&lt;/code&gt; to create a speaker called &lt;em&gt;Librespot Speaker&lt;/em&gt; serving 160 kbps audio.&lt;/p&gt; 
+&lt;h2&gt;This fork&lt;/h2&gt; 
+&lt;p&gt;As the origin by &lt;a href="https://github.com/plietar/"&gt;plietar&lt;/a&gt; is no longer actively maintained, this organisation and repository have been set up so that the project may be maintained and upgraded in the future.&lt;/p&gt; 
+&lt;h1&gt;Documentation&lt;/h1&gt; 
+&lt;p&gt;Documentation is currently a work in progress, contributions are welcome!&lt;/p&gt; 
+&lt;p&gt;There is some brief documentation on how the protocol works in the &lt;a href="https://github.com/librespot-org/librespot/tree/master/docs"&gt;docs&lt;/a&gt; folder.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/librespot-org/librespot/raw/master/COMPILING.md"&gt;COMPILING.md&lt;/a&gt; contains detailed instructions on setting up a development environment, and compiling librespot. More general usage and compilation information is available on the &lt;a href="https://github.com/librespot-org/librespot/wiki"&gt;wiki&lt;/a&gt;. &lt;a href="https://github.com/librespot-org/librespot/raw/master/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; also contains our contributing guidelines.&lt;/p&gt; 
+&lt;p&gt;If you wish to learn more about how librespot works overall, the best way is to simply read the code, and ask any questions you have in our &lt;a href="https://gitter.im/librespot-org/spotify-connect-resources"&gt;Gitter Room&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;Issues &amp;amp; Discussions&lt;/h1&gt; 
+&lt;p&gt;&lt;strong&gt;We have recently started using Github discussions for general questions and feature requests, as they are a more natural medium for such cases, and allow for upvoting to prioritize feature development. Check them out &lt;a href="https://github.com/librespot-org/librespot/discussions"&gt;here&lt;/a&gt;. Bugs and issues with the underlying library should still be reported as issues.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;If you run into a bug when using librespot, please search the existing issues before opening a new one. Chances are, we've encountered it before, and have provided a resolution. If not, please open a new one, and where possible, include the backtrace librespot generates on crashing, along with anything we can use to reproduce the issue, e.g. the Spotify URI of the song that caused the crash.&lt;/p&gt; 
+&lt;h1&gt;Building&lt;/h1&gt; 
+&lt;p&gt;A quick walkthrough of the build process is outlined below, while a detailed compilation guide can be found &lt;a href="https://github.com/librespot-org/librespot/raw/master/COMPILING.md"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Additional Dependencies&lt;/h2&gt; 
+&lt;p&gt;We recently switched to using &lt;a href="https://github.com/tomaka/rodio"&gt;Rodio&lt;/a&gt; for audio playback by default, hence for macOS and Windows, you should just be able to clone and build librespot (with the command below). For Linux, you will need to run the additional commands below, depending on your distro.&lt;/p&gt; 
+&lt;p&gt;On Debian/Ubuntu, the following command will install these dependencies:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;sudo apt-get install build-essential libasound2-dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;On Fedora systems, the following command will install these dependencies:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;sudo dnf install alsa-lib-devel make gcc
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;librespot currently offers the following selection of &lt;a href="https://github.com/librespot-org/librespot/wiki/Audio-Backends"&gt;audio backends&lt;/a&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Rodio (default)
+ALSA
+GStreamer
+PortAudio
+PulseAudio
+JACK
+JACK over Rodio
+SDL
+Pipe
+Subprocess
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Please check &lt;a href="https://raw.githubusercontent.com/librespot-org/librespot/dev/COMPILING.md"&gt;COMPILING.md&lt;/a&gt; for detailed information on TLS, audio, and discovery backend dependencies, or the &lt;a href="https://github.com/librespot-org/librespot/wiki/Compiling#general-dependencies"&gt;Compiling&lt;/a&gt; entry on the wiki for additional backend specific dependencies.&lt;/p&gt; 
+&lt;p&gt;Once you've installed the dependencies and cloned this repository you can build &lt;em&gt;librespot&lt;/em&gt; with the default features using Cargo.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;cargo build --release
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;By default, this builds with native-tls (system TLS), rodio audio backend, and libmdns discovery. See &lt;a href="https://raw.githubusercontent.com/librespot-org/librespot/dev/COMPILING.md"&gt;COMPILING.md&lt;/a&gt; for information on selecting different TLS, audio, and discovery backends.&lt;/p&gt; 
+&lt;h1&gt;Packages&lt;/h1&gt; 
+&lt;p&gt;librespot is also available via official package system on various operating systems such as Linux, FreeBSD, NetBSD. &lt;a href="https://repology.org/project/librespot/versions"&gt;Repology&lt;/a&gt; offers a good overview.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://repology.org/project/librespot/versions"&gt;&lt;img src="https://repology.org/badge/vertical-allrepos/librespot.svg?sanitize=true" alt="Packaging status" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;p&gt;A sample program implementing a headless Spotify Connect receiver is provided. Once you've built &lt;em&gt;librespot&lt;/em&gt;, run it using :&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;target/release/librespot --name DEVICENAME
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The above is a minimal example. Here is a more fully fledged one:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;target/release/librespot -n "Librespot" -b 320 -c ./cache --enable-volume-normalisation --initial-volume 75 --device-type avr
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The above command will create a receiver named &lt;code&gt;Librespot&lt;/code&gt;, with bitrate set to 320 kbps, initial volume at 75%, with volume normalisation enabled, and the device displayed in the app as an Audio/Video Receiver. A folder named &lt;code&gt;cache&lt;/code&gt; will be created/used in the current directory, and be used to cache audio data and credentials.&lt;/p&gt; 
+&lt;p&gt;A full list of runtime options is available &lt;a href="https://github.com/librespot-org/librespot/wiki/Options"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;Please Note: When using the cache feature, an authentication blob is stored for your account in the cache directory. For security purposes, we recommend that you set directory permissions on the cache directory to &lt;code&gt;700&lt;/code&gt;.&lt;/em&gt;&lt;/p&gt; 
+&lt;h2&gt;Contact&lt;/h2&gt; 
+&lt;p&gt;Come and hang out on gitter if you need help or want to offer some: &lt;a href="https://gitter.im/librespot-org/spotify-connect-resources"&gt;https://gitter.im/librespot-org/spotify-connect-resources&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Disclaimer&lt;/h2&gt; 
+&lt;p&gt;Using this code to connect to Spotify's API is probably forbidden by them. Use at your own risk.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Everything in this repository is licensed under the MIT license.&lt;/p&gt; 
+&lt;h2&gt;Related Projects&lt;/h2&gt; 
+&lt;p&gt;This is a non exhaustive list of projects that either use or have modified librespot. If you'd like to include yours, submit a PR.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/librespot-org/librespot-golang"&gt;librespot-golang&lt;/a&gt; - A golang port of librespot.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/marcelveldt/plugin.audio.spotify"&gt;plugin.audio.spotify&lt;/a&gt; - A Kodi plugin for Spotify.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/dtcooper/raspotify"&gt;raspotify&lt;/a&gt; - A Spotify Connect client that mostly Just Works™&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/Spotifyd/spotifyd"&gt;Spotifyd&lt;/a&gt; - A stripped down librespot UNIX daemon.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/nicokaiser/rpi-audio-receiver"&gt;rpi-audio-receiver&lt;/a&gt; - easy Raspbian install scripts for Spotifyd, Bluetooth, Shairport and other audio receivers&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/badfortrains/spotcontrol"&gt;Spotcontrol&lt;/a&gt; - A golang implementation of a Spotify Connect controller. No Playback functionality.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/devgianlu/librespot-java"&gt;librespot-java&lt;/a&gt; - A Java port of librespot.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/hrkfdn/ncspot"&gt;ncspot&lt;/a&gt; - Cross-platform ncurses Spotify client.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/xMordax/ansible-role-librespot/tree/master"&gt;ansible-role-librespot&lt;/a&gt; - Ansible role that will build, install and configure Librespot.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/xou816/spot"&gt;Spot&lt;/a&gt; - Gtk/Rust native Spotify client for the GNOME desktop.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/badaix/snapcast"&gt;Snapcast&lt;/a&gt; - synchronised multi-room audio player that uses librespot as its source for Spotify content&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://mupibox.de/"&gt;MuPiBox&lt;/a&gt; - Portable music box for Spotify and local media based on Raspberry Pi. Operated via touchscreen. Suitable for children and older people.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://ropieee.org"&gt;RoPieee&lt;/a&gt; - An easy-to-use Raspberry Pi image for network audio streaming solutions.&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>zensical/zensical</title>
+      <link>https://github.com/zensical/zensical</link>
+      <description>&lt;p&gt;A modern static site generator by the creators of Material for MkDocs&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/zensical/zensical/master/.github/assets/zensical-dark.png" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/zensical/zensical/master/.github/assets/zensical.png" /&gt; 
+  &lt;img alt="Zensical" src="https://raw.githubusercontent.com/zensical/zensical/master/.github/assets/zensical.png" width="290" height="240" /&gt; 
+ &lt;/picture&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;strong&gt; A modern static site generator built by the creators of &lt;a href="https://github.com/squidfunk/mkdocs-material/"&gt;Material for MkDocs&lt;/a&gt; &lt;/strong&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/zensical/zensical/actions"&gt;&lt;img src="https://github.com/zensical/zensical/actions/workflows/build.yml/badge.svg?sanitize=true" alt="Build" /&gt;&lt;/a&gt; &lt;a href="https://pypi.org/project/zensical"&gt;&lt;img src="https://img.shields.io/pypi/v/zensical.svg?sanitize=true" alt="Python Package Index" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://zensical.org/"&gt;&lt;strong&gt;Home&lt;/strong&gt;&lt;/a&gt; · &lt;a href="https://zensical.org/docs/get-started/"&gt;&lt;strong&gt;Get started&lt;/strong&gt;&lt;/a&gt; · &lt;a href="https://zensical.org/compatibility/"&gt;&lt;strong&gt;Compatibility&lt;/strong&gt;&lt;/a&gt; · &lt;a href="https://zensical.org/about/roadmap/"&gt;&lt;strong&gt;Roadmap&lt;/strong&gt;&lt;/a&gt; · &lt;a href="https://zensical.org/about/newsletter/"&gt;&lt;strong&gt;Newsletter&lt;/strong&gt;&lt;/a&gt; · &lt;a href="https://zensical.org/spark/"&gt;&lt;strong&gt;Zensical Spark&lt;/strong&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; Write your documentation in Markdown and create a professional static site for your Open Source or commercial project in minutes – searchable, customizable, more than 60 languages, for all devices. &lt;/p&gt; 
+&lt;p align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/zensical/zensical/master/.github/assets/screenshot-dark.png" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/zensical/zensical/master/.github/assets/screenshot.png" /&gt; 
+  &lt;img alt="Zensical" src="https://raw.githubusercontent.com/zensical/zensical/master/.github/assets/screenshot.png" /&gt; 
+ &lt;/picture&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;em&gt; Visit our documentation at &lt;a href="https://zensical.org/docs/"&gt;zensical.org/docs/&lt;/a&gt;. &lt;/em&gt; &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>regolith-labs/ore</title>
+      <link>https://github.com/regolith-labs/ore</link>
+      <description>&lt;p&gt;It's time to mine.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;ORE&lt;/h1&gt; 
+&lt;p&gt;ORE is a crypto mining protocol.&lt;/p&gt; 
+&lt;h2&gt;API&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/api/src/consts.rs"&gt;&lt;code&gt;Consts&lt;/code&gt;&lt;/a&gt; –&amp;nbsp;Program constants.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/api/src/error.rs"&gt;&lt;code&gt;Error&lt;/code&gt;&lt;/a&gt; –&amp;nbsp;Custom program errors.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/api/src/error.rs"&gt;&lt;code&gt;Event&lt;/code&gt;&lt;/a&gt; –&amp;nbsp;Custom program events.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/api/src/instruction.rs"&gt;&lt;code&gt;Instruction&lt;/code&gt;&lt;/a&gt; –&amp;nbsp;Declared instructions and arguments.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Instructions&lt;/h2&gt; 
+&lt;h4&gt;Mining&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/program/src/automate.rs"&gt;&lt;code&gt;Automate&lt;/code&gt;&lt;/a&gt; - Configures a new automation.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/program/src/checkpoint.rs"&gt;&lt;code&gt;Checkpoint&lt;/code&gt;&lt;/a&gt; - Checkpoints rewards from an prior round.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/program/src/claim_ore.rs"&gt;&lt;code&gt;ClaimORE&lt;/code&gt;&lt;/a&gt; - Claims ORE mining rewards.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/program/src/claim_sol.rs"&gt;&lt;code&gt;ClaimSOL&lt;/code&gt;&lt;/a&gt; - Claims SOL mining rewards.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/program/src/deploy.rs"&gt;&lt;code&gt;Deploy&lt;/code&gt;&lt;/a&gt; – Deploys SOL to claim space on the board.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/program/src/initialize.rs"&gt;&lt;code&gt;Initialize&lt;/code&gt;&lt;/a&gt; - Initializes program variables.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/program/src/log.rs"&gt;&lt;code&gt;Log&lt;/code&gt;&lt;/a&gt; – Logs non-truncatable event data.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/program/src/reset.rs"&gt;&lt;code&gt;Reset&lt;/code&gt;&lt;/a&gt; - Resets the board for a new round.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/program/src/reset.rs"&gt;&lt;code&gt;Reset&lt;/code&gt;&lt;/a&gt; - Resets the board for a new round.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Staking&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/program/src/deposit.rs"&gt;&lt;code&gt;Deposit&lt;/code&gt;&lt;/a&gt; - Deposits ORE into a stake account.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/program/src/withdraw.rs"&gt;&lt;code&gt;Withdraw&lt;/code&gt;&lt;/a&gt; - Withdraws ORE from a stake account.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/program/src/claim_seeker.rs"&gt;&lt;code&gt;ClaimSeeker&lt;/code&gt;&lt;/a&gt; - Claims a Seeker genesis token.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/program/src/claim_yield.rs"&gt;&lt;code&gt;ClaimYield&lt;/code&gt;&lt;/a&gt; - Claims staking yield.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Admin&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/program/src/bury.rs"&gt;&lt;code&gt;Bury&lt;/code&gt;&lt;/a&gt; - Executes a buy-and-bury transaction.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/program/src/wrap.rs"&gt;&lt;code&gt;Wrap&lt;/code&gt;&lt;/a&gt; - Wraps SOL in the treasury for swap transactions.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/program/src/set_admin.rs"&gt;&lt;code&gt;SetAdmin&lt;/code&gt;&lt;/a&gt; - Re-assigns the admin authority.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/program/src/set_admin.rs"&gt;&lt;code&gt;SetFeeCollector&lt;/code&gt;&lt;/a&gt; - Updates the fee collection address.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/program/src/set_admin.rs"&gt;&lt;code&gt;SetFeeRate&lt;/code&gt;&lt;/a&gt; - Updates the fee charged per swap.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;State&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/api/src/state/automation.rs"&gt;&lt;code&gt;Automation&lt;/code&gt;&lt;/a&gt; - Tracks automation configs.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/api/src/state/board.rs"&gt;&lt;code&gt;Board&lt;/code&gt;&lt;/a&gt; - Tracks the current round number and timestamps.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/api/src/state/config.rs"&gt;&lt;code&gt;Config&lt;/code&gt;&lt;/a&gt; - Global program configs.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/api/src/state/miner.rs"&gt;&lt;code&gt;Miner&lt;/code&gt;&lt;/a&gt; - Tracks a miner's game state.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/api/src/state/round.rs"&gt;&lt;code&gt;Round&lt;/code&gt;&lt;/a&gt; - Tracks the game state of a given round.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/api/src/state/seeker.rs"&gt;&lt;code&gt;Seeker&lt;/code&gt;&lt;/a&gt; - Tracks whether a Seeker token has been claimed.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/api/src/state/stake.rs"&gt;&lt;code&gt;Stake&lt;/code&gt;&lt;/a&gt; - Manages a user's staking activity.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/regolith-labs/ore/master/api/src/state/treasury.rs"&gt;&lt;code&gt;Treasury&lt;/code&gt;&lt;/a&gt; - Mints, burns, and escrows ORE tokens.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Tests&lt;/h2&gt; 
+&lt;p&gt;To run the test suite, use the Solana toolchain:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;cargo test-sbf
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For line coverage, use llvm-cov:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;cargo llvm-cov
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>rust-lang/rust-analyzer</title>
+      <link>https://github.com/rust-lang/rust-analyzer</link>
+      <description>&lt;p&gt;A Rust compiler front-end for IDEs&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/rust-lang/rust-analyzer/master/assets/logo-wide.svg?sanitize=true" alt="rust-analyzer logo" /&gt; &lt;/p&gt; 
+&lt;p&gt;rust-analyzer is a language server that provides IDE functionality for writing Rust programs. You can use it with any editor that supports the &lt;a href="https://microsoft.github.io/language-server-protocol/"&gt;Language Server Protocol&lt;/a&gt; (VS Code, Vim, Emacs, Zed, etc).&lt;/p&gt; 
+&lt;p&gt;rust-analyzer features include go-to-definition, find-all-references, refactorings and code completion. rust-analyzer also supports integrated formatting (with rustfmt) and integrated diagnostics (with rustc and clippy).&lt;/p&gt; 
+&lt;p&gt;Internally, rust-analyzer is structured as a set of libraries for analyzing Rust code. See &lt;a href="https://rust-analyzer.github.io/book/contributing/architecture.html"&gt;Architecture&lt;/a&gt; in the manual.&lt;/p&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://rust-analyzer.github.io/book/installation.html"&gt;https://rust-analyzer.github.io/book/installation.html&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;If you want to &lt;strong&gt;contribute&lt;/strong&gt; to rust-analyzer check out the &lt;a href="https://raw.githubusercontent.com/rust-lang/rust-analyzer/master/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; or if you are just curious about how things work under the hood, see the &lt;a href="https://rust-analyzer.github.io/book/contributing"&gt;Contributing&lt;/a&gt; section of the manual.&lt;/p&gt; 
+&lt;p&gt;If you want to &lt;strong&gt;use&lt;/strong&gt; rust-analyzer's language server with your editor of choice, check &lt;a href="https://rust-analyzer.github.io/book/"&gt;the manual&lt;/a&gt;. It also contains some tips &amp;amp; tricks to help you be more productive when using rust-analyzer.&lt;/p&gt; 
+&lt;h2&gt;Security and Privacy&lt;/h2&gt; 
+&lt;p&gt;See the &lt;a href="https://rust-analyzer.github.io/book/security.html"&gt;security&lt;/a&gt; and &lt;a href="https://rust-analyzer.github.io/book/privacy.html"&gt;privacy&lt;/a&gt; sections of the manual.&lt;/p&gt; 
+&lt;h2&gt;Communication&lt;/h2&gt; 
+&lt;p&gt;For usage and troubleshooting requests, please use "IDEs and Editors" category of the Rust forum:&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://users.rust-lang.org/c/ide/14"&gt;https://users.rust-lang.org/c/ide/14&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;For questions about development and implementation, join rust-analyzer working group on Zulip:&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://rust-lang.zulipchat.com/#narrow/stream/185405-t-compiler.2Frust-analyzer"&gt;https://rust-lang.zulipchat.com/#narrow/stream/185405-t-compiler.2Frust-analyzer&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Quick Links&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Website: &lt;a href="https://rust-analyzer.github.io/"&gt;https://rust-analyzer.github.io/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Metrics: &lt;a href="https://rust-analyzer.github.io/metrics/"&gt;https://rust-analyzer.github.io/metrics/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;API docs: &lt;a href="https://rust-lang.github.io/rust-analyzer/ide/"&gt;https://rust-lang.github.io/rust-analyzer/ide/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Changelog: &lt;a href="https://rust-analyzer.github.io/thisweek"&gt;https://rust-analyzer.github.io/thisweek&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;rust-analyzer is primarily distributed under the terms of both the MIT license and the Apache License (Version 2.0).&lt;/p&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/rust-lang/rust-analyzer/master/LICENSE-APACHE"&gt;LICENSE-APACHE&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/rust-lang/rust-analyzer/master/LICENSE-MIT"&gt;LICENSE-MIT&lt;/a&gt; for details.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>longbridge/gpui-component</title>
+      <link>https://github.com/longbridge/gpui-component</link>
+      <description>&lt;p&gt;Rust GUI components for building fantastic cross-platform desktop application by using GPUI.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;GPUI Component&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/longbridge/gpui-component/actions/workflows/ci.yml"&gt;&lt;img src="https://github.com/longbridge/gpui-component/actions/workflows/ci.yml/badge.svg?sanitize=true" alt="Build Status" /&gt;&lt;/a&gt; &lt;a href="https://docs.rs/gpui-component/"&gt;&lt;img src="https://docs.rs/gpui-component/badge.svg?sanitize=true" alt="Docs" /&gt;&lt;/a&gt; &lt;a href="https://crates.io/crates/gpui-component"&gt;&lt;img src="https://img.shields.io/crates/v/gpui-component.svg?sanitize=true" alt="Crates.io" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;UI components for building fantastic desktop applications using &lt;a href="https://gpui.rs"&gt;GPUI&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Richness&lt;/strong&gt;: 60+ cross-platform desktop UI components.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Native&lt;/strong&gt;: Inspired by macOS and Windows controls, combined with shadcn/ui design for a modern experience.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Ease of Use&lt;/strong&gt;: Stateless &lt;code&gt;RenderOnce&lt;/code&gt; components, simple and user-friendly.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Customizable&lt;/strong&gt;: Built-in &lt;code&gt;Theme&lt;/code&gt; and &lt;code&gt;ThemeColor&lt;/code&gt;, supporting multi-theme and variable-based configurations.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Versatile&lt;/strong&gt;: Supports sizes like &lt;code&gt;xs&lt;/code&gt;, &lt;code&gt;sm&lt;/code&gt;, &lt;code&gt;md&lt;/code&gt;, and &lt;code&gt;lg&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Flexible Layout&lt;/strong&gt;: Dock layout for panel arrangements, resizing, and freeform (Tiles) layouts.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;High Performance&lt;/strong&gt;: Virtualized Table and List components for smooth large-data rendering.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Content Rendering&lt;/strong&gt;: Native support for Markdown and simple HTML.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Charting&lt;/strong&gt;: Built-in charts for visualizing your data.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Editor&lt;/strong&gt;: High performance code editor (support up to 200K lines) with LSP (diagnostics, completion, hover, etc).&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Syntax Highlighting&lt;/strong&gt;: Syntax highlighting for editor and markdown components using Tree Sitter.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Showcase&lt;/h2&gt; 
+&lt;p&gt;Here is the first application: &lt;a href="https://longbridge.com/desktop"&gt;Longbridge Pro&lt;/a&gt;, built using GPUI Component.&lt;/p&gt; 
+&lt;img width="1763" alt="Image" src="https://github.com/user-attachments/assets/e1ecb9c3-2dd3-431e-bd97-5a819c30e551" /&gt; 
+&lt;p&gt;We built multi-theme support in the application. This feature is not included in GPUI Component itself, but is based on the &lt;code&gt;Theme&lt;/code&gt; feature, so it's easy to implement.&lt;/p&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;p&gt;GPUI and GPUI Component are still in development, so you need to add dependencies by git.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-toml"&gt;gpui = "0.2.2"
+gpui-component = "0.4.0-preview1"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Basic Example&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-rs"&gt;use gpui::*;
+use gpui_component::{button::*, *};
+
+pub struct HelloWorld;
+impl Render for HelloWorld {
+    fn render(&amp;amp;mut self, _: &amp;amp;mut Window, _: &amp;amp;mut Context&amp;lt;Self&amp;gt;) -&amp;gt; impl IntoElement {
+        div()
+            .v_flex()
+            .gap_2()
+            .size_full()
+            .items_center()
+            .justify_center()
+            .child("Hello, World!")
+            .child(
+                Button::new("ok")
+                    .primary()
+                    .label("Let's Go!")
+                    .on_click(|_, _, _| println!("Clicked!")),
+            )
+    }
+}
+
+fn main() {
+    let app = Application::new();
+
+    app.run(move |cx| {
+        // This must be called before using any GPUI Component features.
+        gpui_component::init(cx);
+
+        cx.spawn(async move |cx| {
+            cx.open_window(WindowOptions::default(), |window, cx| {
+                let view = cx.new(|_| HelloWorld);
+                // This first level on the window, should be a Root.
+                cx.new(|cx| Root::new(view.into(), window, cx))
+            })?;
+
+            Ok::&amp;lt;_, anyhow::Error&amp;gt;(())
+        })
+        .detach();
+    });
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;WebView&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Still early and experimental; there are a lot of limitations.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;GPUI Component has a &lt;code&gt;WebView&lt;/code&gt; element based on &lt;a href="https://github.com/tauri-apps/wry"&gt;Wry&lt;/a&gt;. This is an optional feature, which you can enable with a feature flag.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-toml"&gt;gpui-component = { version = "0.4.0-preview1", features = ["webview"] }
+wry = { version = "0.53.3, package = "lb-wry" }
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;More usage examples can be found in the &lt;a href="https://github.com/longbridge/gpui-component/tree/main/crates/story"&gt;story&lt;/a&gt; directory.&lt;/p&gt; 
+&lt;h3&gt;Icons&lt;/h3&gt; 
+&lt;p&gt;GPUI Component has an &lt;code&gt;Icon&lt;/code&gt; element, but it does not include SVG files by default.&lt;/p&gt; 
+&lt;p&gt;The example uses &lt;a href="https://lucide.dev"&gt;Lucide&lt;/a&gt; icons, but you can use any icons you like. Just name the SVG files as defined in &lt;a href="https://github.com/longbridge/gpui-component/raw/main/crates/ui/src/icon.rs#L86"&gt;IconName&lt;/a&gt;. You can add any icons you need to your project.&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;p&gt;We have a gallery of applications built with GPUI Component.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cargo run
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;More examples can be found in the &lt;code&gt;examples&lt;/code&gt; directory. You can run them with &lt;code&gt;cargo run --example &amp;lt;example_name&amp;gt;&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;Check out &lt;a href="https://raw.githubusercontent.com/longbridge/gpui-component/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for more details.&lt;/p&gt; 
+&lt;h2&gt;Compare to others&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Features&lt;/th&gt; 
+   &lt;th&gt;GPUI Component&lt;/th&gt; 
+   &lt;th&gt;&lt;a href="https://github.com/iced-rs/iced"&gt;Iced&lt;/a&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;a href="https://github.com/emilk/egui"&gt;egui&lt;/a&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;a href="https://www.qt.io/product/qt6"&gt;Qt 6&lt;/a&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Language&lt;/td&gt; 
+   &lt;td&gt;Rust&lt;/td&gt; 
+   &lt;td&gt;Rust&lt;/td&gt; 
+   &lt;td&gt;Rust&lt;/td&gt; 
+   &lt;td&gt;C++/QML&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Core Render&lt;/td&gt; 
+   &lt;td&gt;GPUI&lt;/td&gt; 
+   &lt;td&gt;wgpu&lt;/td&gt; 
+   &lt;td&gt;wgpu&lt;/td&gt; 
+   &lt;td&gt;QT&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;License&lt;/td&gt; 
+   &lt;td&gt;Apache 2.0&lt;/td&gt; 
+   &lt;td&gt;MIT&lt;/td&gt; 
+   &lt;td&gt;MIT/Apache 2.0&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://www.qt.io/qt-licensing"&gt;Commercial/LGPL&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Min Binary Size [^1]&lt;/td&gt; 
+   &lt;td&gt;12MB&lt;/td&gt; 
+   &lt;td&gt;11MB&lt;/td&gt; 
+   &lt;td&gt;5M&lt;/td&gt; 
+   &lt;td&gt;20MB [^2]&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Cross-Platform&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Documentation&lt;/td&gt; 
+   &lt;td&gt;Simple&lt;/td&gt; 
+   &lt;td&gt;Simple&lt;/td&gt; 
+   &lt;td&gt;Simple&lt;/td&gt; 
+   &lt;td&gt;Good&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Web&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;UI Style&lt;/td&gt; 
+   &lt;td&gt;Modern&lt;/td&gt; 
+   &lt;td&gt;Basic&lt;/td&gt; 
+   &lt;td&gt;Basic&lt;/td&gt; 
+   &lt;td&gt;Basic&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;CJK Support&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Bad&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Chart&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Table (Large dataset)&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;br /&gt;(Virtual Rows, Columns)&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;br /&gt;(Virtual Rows)&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;br /&gt;(Virtual Rows, Columns)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Table Column Resize&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Text base&lt;/td&gt; 
+   &lt;td&gt;Rope&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/pop-os/cosmic-text"&gt;COSMIC Text&lt;/a&gt; [^3]&lt;/td&gt; 
+   &lt;td&gt;trait TextBuffer [^4]&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://doc.qt.io/qt-6/qtextdocument.html"&gt;QTextDocument&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;CodeEditor&lt;/td&gt; 
+   &lt;td&gt;Simple&lt;/td&gt; 
+   &lt;td&gt;Simple&lt;/td&gt; 
+   &lt;td&gt;Simple&lt;/td&gt; 
+   &lt;td&gt;Basic API&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Dock Layout&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Syntax Highlight&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://tree-sitter.github.io/tree-sitter/"&gt;Tree Sitter&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/trishume/syntect"&gt;Syntect&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/trishume/syntect"&gt;Syntect&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://doc.qt.io/qt-6/qsyntaxhighlighter.html"&gt;QSyntaxHighlighter&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Markdown Rendering&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Basic&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Markdown mix HTML&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;HTML Rendering&lt;/td&gt; 
+   &lt;td&gt;Basic&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;Basic&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Text Selection&lt;/td&gt; 
+   &lt;td&gt;TextView&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;Any Label&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Custom Theme&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Built Themes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;I18n&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Please submit an issue or PR if any mistakes or outdated are found.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;[^1]: Release builds by use simple hello world example.&lt;/p&gt; 
+&lt;p&gt;[^2]: &lt;a href="https://www.qt.io/blog/reducing-binary-size-of-qt-applications-part-3-more-platforms"&gt;Reducing Binary Size of Qt Applications&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;[^3]: Iced Editor: &lt;a href="https://github.com/iced-rs/iced/raw/db5a1f6353b9f8520c4f9633d1cdc90242c2afe1/graphics/src/text/editor.rs#L65-L68"&gt;https://github.com/iced-rs/iced/blob/db5a1f6353b9f8520c4f9633d1cdc90242c2afe1/graphics/src/text/editor.rs#L65-L68&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;[^4]: egui TextBuffer: &lt;a href="https://github.com/emilk/egui/raw/0a81372cfd3a4deda640acdecbbaf24bf78bb6a2/crates/egui/src/widgets/text_edit/text_buffer.rs#L20"&gt;https://github.com/emilk/egui/blob/0a81372cfd3a4deda640acdecbbaf24bf78bb6a2/crates/egui/src/widgets/text_edit/text_buffer.rs#L20&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Apache-2.0&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;UI design based on &lt;a href="https://ui.shadcn.com"&gt;shadcn/ui&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Icons from &lt;a href="https://lucide.dev"&gt;Lucide&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>topjohnwu/Magisk</title>
+      <link>https://github.com/topjohnwu/Magisk</link>
+      <description>&lt;p&gt;The Magic Mask for Android&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/topjohnwu/Magisk/master/docs/images/logo.png" alt="" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/topjohnwu/magisk-files/count/count.json"&gt;&lt;img src="https://img.shields.io/badge/dynamic/json?color=green&amp;amp;label=Downloads&amp;amp;query=totalString&amp;amp;url=https%3A%2F%2Fraw.githubusercontent.com%2Ftopjohnwu%2Fmagisk-files%2Fcount%2Fcount.json&amp;amp;cacheSeconds=1800" alt="Downloads" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;This is not an officially supported Google product&lt;/h4&gt; 
+&lt;h2&gt;Introduction&lt;/h2&gt; 
+&lt;p&gt;Magisk is a suite of open source software for customizing Android, supporting devices higher than Android 6.0.&lt;br /&gt; Some highlight features:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;MagiskSU&lt;/strong&gt;: Provide root access for applications&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Magisk Modules&lt;/strong&gt;: Modify read-only partitions by installing modules&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;MagiskBoot&lt;/strong&gt;: The most complete tool for unpacking and repacking Android boot images&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Zygisk&lt;/strong&gt;: Run code in every Android applications' processes&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Downloads&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/topjohnwu/Magisk/releases"&gt;Github&lt;/a&gt; is the only source where you can get official Magisk information and downloads.&lt;/p&gt; 
+&lt;h2&gt;Useful Links&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://topjohnwu.github.io/Magisk/install.html"&gt;Installation Instruction&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://topjohnwu.github.io/Magisk/build.html"&gt;Building and Development&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://topjohnwu.github.io/Magisk/"&gt;Magisk Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/topjohnwu/zygisk-module-sample"&gt;Zygisk module sample&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Bug Reports&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Only bug reports from Debug builds will be accepted.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;For installation issues, upload both boot image and install logs.&lt;br /&gt; For Magisk issues, upload boot logcat or dmesg.&lt;br /&gt; For Magisk app crashes, record and upload the logcat when the crash occurs.&lt;/p&gt; 
+&lt;h2&gt;Translation Contributions&lt;/h2&gt; 
+&lt;p&gt;Default string resources for the Magisk app and its stub APK are located here:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;app/core/src/main/res/values/strings.xml&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;app/stub/src/main/res/values/strings.xml&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Translate each and place them in the respective locations (&lt;code&gt;[module]/src/main/res/values-[lang]/strings.xml&lt;/code&gt;).&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;Magisk, including all git submodules are free software:
+you can redistribute it and/or modify it under the terms of the
+GNU General Public License as published by the Free Software Foundation,
+either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see &amp;lt;http://www.gnu.org/licenses/&amp;gt;.
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>bevyengine/bevy</title>
+      <link>https://github.com/bevyengine/bevy</link>
+      <description>&lt;p&gt;A refreshingly simple data-driven game engine built in Rust&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;&lt;a href="https://bevy.org"&gt;&lt;img src="https://bevy.org/assets/bevy_logo_light_dark_and_dimmed.svg?sanitize=true" alt="Bevy" /&gt;&lt;/a&gt;&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/bevyengine/bevy#license"&gt;&lt;img src="https://img.shields.io/badge/license-MIT%2FApache-blue.svg?sanitize=true" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://crates.io/crates/bevy"&gt;&lt;img src="https://img.shields.io/crates/v/bevy.svg?sanitize=true" alt="Crates.io" /&gt;&lt;/a&gt; &lt;a href="https://crates.io/crates/bevy"&gt;&lt;img src="https://img.shields.io/crates/d/bevy.svg?sanitize=true" alt="Downloads" /&gt;&lt;/a&gt; &lt;a href="https://docs.rs/bevy/latest/bevy/"&gt;&lt;img src="https://docs.rs/bevy/badge.svg?sanitize=true" alt="Docs" /&gt;&lt;/a&gt; &lt;a href="https://github.com/bevyengine/bevy/actions"&gt;&lt;img src="https://github.com/bevyengine/bevy/workflows/CI/badge.svg?sanitize=true" alt="CI" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/bevy"&gt;&lt;img src="https://img.shields.io/discord/691052431525675048.svg?label=&amp;amp;logo=discord&amp;amp;logoColor=ffffff&amp;amp;color=7389D8&amp;amp;labelColor=6A7EC2" alt="Discord" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;What is Bevy?&lt;/h2&gt; 
+&lt;p&gt;Bevy is a refreshingly simple data-driven game engine built in Rust. It is free and open-source forever!&lt;/p&gt; 
+&lt;h2&gt;WARNING&lt;/h2&gt; 
+&lt;p&gt;Bevy is still in the early stages of development. Important features are missing. Documentation is sparse. A new version of Bevy containing breaking changes to the API is released &lt;a href="https://bevy.org/news/bevy-0-6/#the-train-release-schedule"&gt;approximately once every 3 months&lt;/a&gt;. We provide &lt;a href="https://bevy.org/learn/migration-guides/"&gt;migration guides&lt;/a&gt;, but we can't guarantee migrations will always be easy. Use only if you are willing to work in this environment.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;MSRV:&lt;/strong&gt; Bevy relies heavily on improvements in the Rust language and compiler. As a result, the Minimum Supported Rust Version (MSRV) is generally close to "the latest stable release" of Rust.&lt;/p&gt; 
+&lt;h2&gt;Design Goals&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Capable&lt;/strong&gt;: Offer a complete 2D and 3D feature set&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Simple&lt;/strong&gt;: Easy for newbies to pick up, but infinitely flexible for power users&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Data Focused&lt;/strong&gt;: Data-oriented architecture using the Entity Component System paradigm&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Modular&lt;/strong&gt;: Use only what you need. Replace what you don't like&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Fast&lt;/strong&gt;: App logic should run quickly, and when possible, in parallel&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Productive&lt;/strong&gt;: Changes should compile quickly ... waiting isn't fun&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;About&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://bevy.org"&gt;Features&lt;/a&gt;:&lt;/strong&gt; A quick overview of Bevy's features.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://bevy.org/news/"&gt;News&lt;/a&gt;&lt;/strong&gt;: A development blog that covers our progress, plans and shiny new features.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Docs&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://bevy.org/learn/quick-start/introduction"&gt;Quick Start Guide&lt;/a&gt;:&lt;/strong&gt; Bevy's official Quick Start Guide. The best place to start learning Bevy.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.rs/bevy"&gt;Bevy Rust API Docs&lt;/a&gt;:&lt;/strong&gt; Bevy's Rust API docs, which are automatically generated from the doc comments in this repo.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/bevyengine/bevy/tree/latest/examples"&gt;Official Examples&lt;/a&gt;:&lt;/strong&gt; Bevy's dedicated, runnable examples, which are great for digging into specific concepts.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://bevy.org/assets/#learning"&gt;Community-Made Learning Resources&lt;/a&gt;&lt;/strong&gt;: More tutorials, documentation, and examples made by the Bevy community.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;p&gt;Before contributing or participating in discussions with the community, you should familiarize yourself with our &lt;a href="https://raw.githubusercontent.com/bevyengine/bevy/main/CODE_OF_CONDUCT.md"&gt;&lt;strong&gt;Code of Conduct&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://discord.gg/bevy"&gt;Discord&lt;/a&gt;:&lt;/strong&gt; Bevy's official discord server.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://reddit.com/r/bevy"&gt;Reddit&lt;/a&gt;:&lt;/strong&gt; Bevy's official subreddit.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/bevyengine/bevy/discussions"&gt;GitHub Discussions&lt;/a&gt;:&lt;/strong&gt; The best place for questions about Bevy, answered right here!&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://bevy.org/assets/"&gt;Bevy Assets&lt;/a&gt;:&lt;/strong&gt; A collection of awesome Bevy projects, tools, plugins and learning materials.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Contributing&lt;/h3&gt; 
+&lt;p&gt;If you'd like to help build Bevy, check out the &lt;strong&gt;&lt;a href="https://bevy.org/learn/contribute/introduction"&gt;Contributor's Guide&lt;/a&gt;&lt;/strong&gt;. For simple problems, feel free to &lt;a href="https://github.com/bevyengine/bevy/issues"&gt;open an issue&lt;/a&gt; or &lt;a href="https://github.com/bevyengine/bevy/pulls"&gt;PR&lt;/a&gt; and tackle it yourself!&lt;/p&gt; 
+&lt;p&gt;For more complex architecture decisions and experimental mad science, please open an &lt;a href="https://github.com/bevyengine/rfcs"&gt;RFC&lt;/a&gt; (Request For Comments) so we can brainstorm together effectively!&lt;/p&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;We recommend checking out the &lt;a href="https://bevy.org/learn/quick-start/introduction"&gt;Quick Start Guide&lt;/a&gt; for a brief introduction.&lt;/p&gt; 
+&lt;p&gt;Follow the &lt;a href="https://bevy.org/learn/quick-start/getting-started/setup"&gt;Setup guide&lt;/a&gt; to ensure your development environment is set up correctly. Once set up, you can quickly try out the &lt;a href="https://github.com/bevyengine/bevy/tree/latest/examples"&gt;examples&lt;/a&gt; by cloning this repo and running the following commands:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;# Switch to the correct version (latest release, default is main development branch)
+git checkout latest
+# Runs the "breakout" example
+cargo run --example breakout
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;To draw a window with standard functionality enabled, use:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-rust"&gt;use bevy::prelude::*;
+
+fn main() {
+    App::new()
+        .add_plugins(DefaultPlugins)
+        .run();
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Fast Compiles&lt;/h3&gt; 
+&lt;p&gt;Bevy can be built just fine using default configuration on stable Rust. However for really fast iterative compiles, you should enable the "fast compiles" setup by &lt;a href="https://bevy.org/learn/quick-start/getting-started/setup"&gt;following the instructions here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;&lt;a href="https://raw.githubusercontent.com/bevyengine/bevy/main/docs/cargo_features.md"&gt;Bevy Cargo Features&lt;/a&gt;&lt;/h2&gt; 
+&lt;p&gt;This &lt;a href="https://raw.githubusercontent.com/bevyengine/bevy/main/docs/cargo_features.md"&gt;list&lt;/a&gt; outlines the different cargo features supported by Bevy. These allow you to customize the Bevy feature set for your use-case.&lt;/p&gt; 
+&lt;h2&gt;Thanks&lt;/h2&gt; 
+&lt;p&gt;Bevy is the result of the hard work of many people. A huge thanks to all Bevy contributors, the many open source projects that have come before us, the &lt;a href="https://arewegameyet.rs/"&gt;Rust gamedev ecosystem&lt;/a&gt;, and the many libraries we build on.&lt;/p&gt; 
+&lt;p&gt;A huge thanks to Bevy's &lt;a href="https://bevy.org"&gt;generous sponsors&lt;/a&gt;. Bevy will always be free and open source, but it isn't free to make. Please consider &lt;a href="https://bevy.org/donate/"&gt;sponsoring our work&lt;/a&gt; if you like what we're building.&lt;/p&gt; 
+&lt;!-- This next line need to stay exactly as is. It is required for BrowserStack sponsorship. --&gt; 
+&lt;p&gt;This project is tested with BrowserStack.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Bevy is free, open source and permissively licensed! Except where noted (below and/or in individual files), all code in this repository is dual-licensed under either:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;MIT License (&lt;a href="https://raw.githubusercontent.com/bevyengine/bevy/main/LICENSE-MIT"&gt;LICENSE-MIT&lt;/a&gt; or &lt;a href="http://opensource.org/licenses/MIT"&gt;http://opensource.org/licenses/MIT&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;Apache License, Version 2.0 (&lt;a href="https://raw.githubusercontent.com/bevyengine/bevy/main/LICENSE-APACHE"&gt;LICENSE-APACHE&lt;/a&gt; or &lt;a href="http://www.apache.org/licenses/LICENSE-2.0"&gt;http://www.apache.org/licenses/LICENSE-2.0&lt;/a&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;at your option. This means you can select the license you prefer! This dual-licensing approach is the de-facto standard in the Rust ecosystem and there are &lt;a href="https://github.com/bevyengine/bevy/issues/2373"&gt;very good reasons&lt;/a&gt; to include both.&lt;/p&gt; 
+&lt;p&gt;Some of the engine's code carries additional copyright notices and license terms due to their external origins. These are generally BSD-like, but exact details vary by crate: If the README of a crate contains a 'License' header (or similar), the additional copyright notices and license terms applicable to that crate will be listed. The above licensing requirement still applies to contributions to those crates, and sections of those crates will carry those license terms. The &lt;a href="https://doc.rust-lang.org/cargo/reference/manifest.html#the-license-and-license-file-fields"&gt;license&lt;/a&gt; field of each crate will also reflect this.&lt;/p&gt; 
+&lt;p&gt;The &lt;a href="https://raw.githubusercontent.com/bevyengine/bevy/main/assets"&gt;assets&lt;/a&gt; included in this repository (for our &lt;a href="https://raw.githubusercontent.com/bevyengine/bevy/main/examples/README.md"&gt;examples&lt;/a&gt;) typically fall under different open licenses. These will not be included in your game (unless copied in by you), and they are not distributed in the published bevy crates. See &lt;a href="https://raw.githubusercontent.com/bevyengine/bevy/main/CREDITS.md"&gt;CREDITS.md&lt;/a&gt; for the details of the licenses of those files.&lt;/p&gt; 
+&lt;h3&gt;Your contributions&lt;/h3&gt; 
+&lt;p&gt;Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in the work by you, as defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Spotifyd/spotifyd</title>
+      <link>https://github.com/Spotifyd/spotifyd</link>
+      <description>&lt;p&gt;A spotify daemon&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Spotifyd 
+ &lt;!-- omit in toc --&gt;&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://matrix.to/#/#spotifyd:matrix.org"&gt;&lt;img src="https://img.shields.io/matrix/spotifyd:matrix.org?logo=matrix&amp;amp;server_fqdn=matrix.org" alt="Matrix" /&gt;&lt;/a&gt; &lt;a href="https://github.com/Spotifyd/spotifyd/actions"&gt;&lt;img src="https://img.shields.io/github/actions/workflow/status/Spotifyd/spotifyd/cd.yml?label=continuous%20deployment&amp;amp;logo=github" alt="GitHub Workflow Status" /&gt;&lt;/a&gt; &lt;a href="https://github.com/Spotifyd/spotifyd/actions"&gt;&lt;img src="https://img.shields.io/github/actions/workflow/status/Spotifyd/spotifyd/ci.yml?label=continuous%20integration&amp;amp;logo=github" alt="Github Actions - CI" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;An open source Spotify client running as a UNIX daemon.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;a href="https://spotifyd.rs"&gt;Project Website&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Spotifyd streams music just like the official client, but is more lightweight and supports more platforms. Spotifyd also supports the Spotify Connect protocol, which makes it show up as a device that can be controlled from the official clients.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Spotifyd requires a Spotify Premium account.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;strong&gt;To read about how to install and configure Spotifyd, take a look at our &lt;a href="https://spotifyd.github.io/spotifyd/"&gt;wiki&lt;/a&gt;!&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We always appreciate help during the development of &lt;code&gt;spotifyd&lt;/code&gt;! If you are new to programming, open source or Rust in general, take a look at issues tagged with &lt;a href="https://github.com/Spotifyd/spotifyd/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"&gt;&lt;code&gt;good first issue&lt;/code&gt;&lt;/a&gt;. These normally are easy to resolve and don't take much time to implement.&lt;/p&gt; 
+&lt;h2&gt;Credits&lt;/h2&gt; 
+&lt;p&gt;This project would not have been possible without the amazing reverse engineering work done in &lt;a href="https://github.com/librespot-org/librespot"&gt;librespot&lt;/a&gt;, mostly by &lt;a href="https://github.com/plietar"&gt;plietar&lt;/a&gt;.&lt;/p&gt; 
+&lt;!-- This section contains all links used within the document. This prevents cluttering and makes reading the raw markdown a lot easier --&gt;</description>
+    </item>
+    
+    <item>
+      <title>openai/codex</title>
+      <link>https://github.com/openai/codex</link>
+      <description>&lt;p&gt;Lightweight coding agent that runs in your terminal&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt;&lt;code&gt;npm i -g @openai/codex&lt;/code&gt;&lt;br /&gt;or &lt;code&gt;brew install --cask codex&lt;/code&gt;&lt;/p&gt; 
+&lt;p align="center"&gt;&lt;strong&gt;Codex CLI&lt;/strong&gt; is a coding agent from OpenAI that runs locally on your computer. &lt;br /&gt; &lt;br /&gt;If you want Codex in your code editor (VS Code, Cursor, Windsurf), &lt;a href="https://developers.openai.com/codex/ide"&gt;install in your IDE&lt;/a&gt; &lt;br /&gt;If you are looking for the &lt;em&gt;cloud-based agent&lt;/em&gt; from OpenAI, &lt;strong&gt;Codex Web&lt;/strong&gt;, go to &lt;a href="https://chatgpt.com/codex"&gt;chatgpt.com/codex&lt;/a&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/openai/codex/main/.github/codex-cli-splash.png" alt="Codex CLI splash" width="80%" /&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Quickstart&lt;/h2&gt; 
+&lt;h3&gt;Installing and running Codex CLI&lt;/h3&gt; 
+&lt;p&gt;Install globally with your preferred package manager. If you use npm:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;npm install -g @openai/codex
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Alternatively, if you use Homebrew:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;brew install --cask codex
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then simply run &lt;code&gt;codex&lt;/code&gt; to get started:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;codex
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If you're running into upgrade issues with Homebrew, see the &lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/faq.md#brew-upgrade-codex-isnt-upgrading-me"&gt;FAQ entry on brew upgrade codex&lt;/a&gt;.&lt;/p&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;You can also go to the &lt;a href="https://github.com/openai/codex/releases/latest"&gt;latest GitHub Release&lt;/a&gt; and download the appropriate binary for your platform.&lt;/summary&gt; 
+ &lt;p&gt;Each GitHub Release contains many executables, but in practice, you likely want one of these:&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;macOS 
+   &lt;ul&gt; 
+    &lt;li&gt;Apple Silicon/arm64: &lt;code&gt;codex-aarch64-apple-darwin.tar.gz&lt;/code&gt;&lt;/li&gt; 
+    &lt;li&gt;x86_64 (older Mac hardware): &lt;code&gt;codex-x86_64-apple-darwin.tar.gz&lt;/code&gt;&lt;/li&gt; 
+   &lt;/ul&gt; &lt;/li&gt; 
+  &lt;li&gt;Linux 
+   &lt;ul&gt; 
+    &lt;li&gt;x86_64: &lt;code&gt;codex-x86_64-unknown-linux-musl.tar.gz&lt;/code&gt;&lt;/li&gt; 
+    &lt;li&gt;arm64: &lt;code&gt;codex-aarch64-unknown-linux-musl.tar.gz&lt;/code&gt;&lt;/li&gt; 
+   &lt;/ul&gt; &lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;Each archive contains a single entry with the platform baked into the name (e.g., &lt;code&gt;codex-x86_64-unknown-linux-musl&lt;/code&gt;), so you likely want to rename it to &lt;code&gt;codex&lt;/code&gt; after extracting it.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;h3&gt;Using Codex with your ChatGPT plan&lt;/h3&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/openai/codex/main/.github/codex-cli-login.png" alt="Codex CLI login" width="80%" /&gt; &lt;/p&gt; 
+&lt;p&gt;Run &lt;code&gt;codex&lt;/code&gt; and select &lt;strong&gt;Sign in with ChatGPT&lt;/strong&gt;. We recommend signing into your ChatGPT account to use Codex as part of your Plus, Pro, Team, Edu, or Enterprise plan. &lt;a href="https://help.openai.com/en/articles/11369540-codex-in-chatgpt"&gt;Learn more about what's included in your ChatGPT plan&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;You can also use Codex with an API key, but this requires &lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/authentication.md#usage-based-billing-alternative-use-an-openai-api-key"&gt;additional setup&lt;/a&gt;. If you previously used an API key for usage-based billing, see the &lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/authentication.md#migrating-from-usage-based-billing-api-key"&gt;migration steps&lt;/a&gt;. If you're having trouble with login, please comment on &lt;a href="https://github.com/openai/codex/issues/1243"&gt;this issue&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Model Context Protocol (MCP)&lt;/h3&gt; 
+&lt;p&gt;Codex can access MCP servers. To configure them, refer to the &lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/config.md#mcp_servers"&gt;config docs&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Configuration&lt;/h3&gt; 
+&lt;p&gt;Codex CLI supports a rich set of configuration options, with preferences stored in &lt;code&gt;~/.codex/config.toml&lt;/code&gt;. For full configuration options, see &lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/config.md"&gt;Configuration&lt;/a&gt;.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Docs &amp;amp; FAQ&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/getting-started.md"&gt;&lt;strong&gt;Getting started&lt;/strong&gt;&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/getting-started.md#cli-usage"&gt;CLI usage&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/slash_commands.md"&gt;Slash Commands&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/getting-started.md#running-with-a-prompt-as-input"&gt;Running with a prompt as input&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/getting-started.md#example-prompts"&gt;Example prompts&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/prompts.md"&gt;Custom prompts&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/getting-started.md#memory-with-agentsmd"&gt;Memory with AGENTS.md&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/config.md"&gt;&lt;strong&gt;Configuration&lt;/strong&gt;&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/example-config.md"&gt;Example config&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/sandbox.md"&gt;&lt;strong&gt;Sandbox &amp;amp; approvals&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/authentication.md"&gt;&lt;strong&gt;Authentication&lt;/strong&gt;&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/authentication.md#forcing-a-specific-auth-method-advanced"&gt;Auth methods&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/authentication.md#connecting-on-a-headless-machine"&gt;Login on a "Headless" machine&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Automating Codex&lt;/strong&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/openai/codex-action"&gt;GitHub Action&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/sdk/typescript/README.md"&gt;TypeScript SDK&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/exec.md"&gt;Non-interactive mode (&lt;code&gt;codex exec&lt;/code&gt;)&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/advanced.md"&gt;&lt;strong&gt;Advanced&lt;/strong&gt;&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/advanced.md#tracing--verbose-logging"&gt;Tracing / verbose logging&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/advanced.md#model-context-protocol-mcp"&gt;Model Context Protocol (MCP)&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/zdr.md"&gt;&lt;strong&gt;Zero data retention (ZDR)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/contributing.md"&gt;&lt;strong&gt;Contributing&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/install.md"&gt;&lt;strong&gt;Install &amp;amp; build&lt;/strong&gt;&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/install.md#system-requirements"&gt;System Requirements&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/install.md#dotslash"&gt;DotSlash&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/install.md#build-from-source"&gt;Build from source&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/faq.md"&gt;&lt;strong&gt;FAQ&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/open-source-fund.md"&gt;&lt;strong&gt;Open source fund&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This repository is licensed under the &lt;a href="https://raw.githubusercontent.com/openai/codex/main/LICENSE"&gt;Apache-2.0 License&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>commonwarexyz/monorepo</title>
+      <link>https://github.com/commonwarexyz/monorepo</link>
+      <description>&lt;p&gt;Commonware Library Primitives and Examples&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;commonware&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/LICENSE-MIT"&gt;&lt;img src="https://img.shields.io/badge/License-MIT-yellow.svg?sanitize=true" alt="License: MIT" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/LICENSE-APACHE"&gt;&lt;img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg?sanitize=true" alt="License: Apache 2.0" /&gt;&lt;/a&gt; &lt;a href="https://github.com/commonwarexyz/monorepo/discussions"&gt;&lt;img src="https://img.shields.io/github/discussions/commonwarexyz/monorepo?label=Discussions&amp;amp;color=purple" alt="Discussions" /&gt;&lt;/a&gt; &lt;a href="https://commonware.xyz/benchmarks.html"&gt;&lt;img src="https://img.shields.io/badge/1042-benchmarks?style=flat&amp;amp;label=Benchmarks&amp;amp;color=orange" alt="Benchmarks" /&gt;&lt;/a&gt; &lt;a href="https://codecov.io/gh/commonwarexyz/monorepo"&gt;&lt;img src="https://codecov.io/gh/commonwarexyz/monorepo/graph/badge.svg?token=847TBNH49H" alt="Coverage" /&gt;&lt;/a&gt; &lt;a href="https://deepwiki.com/commonwarexyz/monorepo"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" alt="Ask DeepWiki" /&gt;&lt;/a&gt; &lt;a href="https://x.com/commonwarexyz"&gt;&lt;img src="https://img.shields.io/twitter/follow/commonwarexyz?style=social" alt="X Follow" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Primitives&lt;/h2&gt; 
+&lt;p&gt;&lt;em&gt;Primitives are designed for deployment in adversarial environments. If you find an exploit, please refer to our &lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/SECURITY.md"&gt;security policy&lt;/a&gt; before disclosing it publicly (an exploit may equip a malicious party to attack users of a primitive).&lt;/em&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/broadcast/README.md"&gt;broadcast&lt;/a&gt;: Disseminate data over a wide-area network.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/codec/README.md"&gt;codec&lt;/a&gt;: Serialize structured data.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/coding/README.md"&gt;coding&lt;/a&gt;: Encode data to enable recovery from a subset of fragments.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/collector/README.md"&gt;collector&lt;/a&gt;: Collect responses to committable requests.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/consensus/README.md"&gt;consensus&lt;/a&gt;: Order opaque messages in a Byzantine environment.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/cryptography/README.md"&gt;cryptography&lt;/a&gt;: Generate keys, sign arbitrary messages, and deterministically verify signatures.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/deployer/README.md"&gt;deployer&lt;/a&gt;: Deploy infrastructure across cloud providers.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/p2p/README.md"&gt;p2p&lt;/a&gt;: Communicate with authenticated peers over encrypted connections.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/resolver/README.md"&gt;resolver&lt;/a&gt;: Resolve data identified by a fixed-length key.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/runtime/README.md"&gt;runtime&lt;/a&gt;: Execute asynchronous tasks with a configurable scheduler.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/storage/README.md"&gt;storage&lt;/a&gt;: Persist and retrieve data from an abstract store.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/stream/README.md"&gt;stream&lt;/a&gt;: Exchange messages over arbitrary transport.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Examples&lt;/h2&gt; 
+&lt;p&gt;&lt;em&gt;Examples may include insecure code (i.e. deriving keypairs from an integer arguments) to make them easier to run. Examples are not intended to be used directly in production.&lt;/em&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/commonwarexyz/alto"&gt;alto&lt;/a&gt;: A minimal (and wicked fast) blockchain built with the Commonware Library.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/commonwarexyz/battleware"&gt;battleware&lt;/a&gt;: An onchain battle secured by a VRF, Timelock Encryption, and MMRs.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/examples/bridge/README.md"&gt;bridge&lt;/a&gt;: Send succinct consensus certificates between two networks.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/examples/chat/README.md"&gt;chat&lt;/a&gt;: Send encrypted messages to a group of friends.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/examples/estimator/README.md"&gt;estimator&lt;/a&gt;: Simulate mechanism performance under realistic network conditions.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/examples/flood/README.md"&gt;flood&lt;/a&gt;: Spam peers deployed to AWS EC2 with random messages.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/examples/log/README.md"&gt;log&lt;/a&gt;: Commit to a secret log and agree to its hash.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/examples/reshare/README.md"&gt;reshare&lt;/a&gt;: Reshare a threshold secret over an epoched log.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/examples/sync/README.md"&gt;sync&lt;/a&gt;: Synchronize state between a server and client.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/examples/vrf/README.md"&gt;vrf&lt;/a&gt;: Generate bias-resistant randomness with untrusted contributors.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Miscellaneous&lt;/h2&gt; 
+&lt;p&gt;&lt;em&gt;Sometimes, we opt to maintain software that is neither a primitive nor an example to make it easier to interact with the Commonware Library. Unless otherwise indicated, code in this section is intended to be used in production. Please refer to our &lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/SECURITY.md"&gt;security policy&lt;/a&gt; before disclosing an exploit publicly.&lt;/em&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/docs"&gt;docs&lt;/a&gt;: Access information about Commonware at &lt;a href="https://commonware.xyz"&gt;https://commonware.xyz&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/docker"&gt;docker&lt;/a&gt;: Dockerfiles used for cross-compilation and CI.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/macros/README.md"&gt;macros&lt;/a&gt;: Augment the development of primitives with procedural macros.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/pipeline"&gt;pipeline&lt;/a&gt;: Mechanisms under development.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/utils/README.md"&gt;utils&lt;/a&gt;: Leverage common functionality across multiple primitives.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Licensing&lt;/h2&gt; 
+&lt;p&gt;This repository is dual-licensed under both the &lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/LICENSE-APACHE"&gt;Apache 2.0&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/LICENSE-MIT"&gt;MIT&lt;/a&gt; licenses. You may choose either license when employing this code.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We encourage external contributors to submit issues and pull requests to the Commonware Library. To learn more, please refer to our &lt;a href="https://raw.githubusercontent.com/commonwarexyz/monorepo/main/CONTRIBUTING.md"&gt;contributing guidelines&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;All work is coordinated via the &lt;a href="https://github.com/orgs/commonwarexyz/projects/2"&gt;tracker&lt;/a&gt;. If something in &lt;a href="https://github.com/orgs/commonwarexyz/projects/2/views/3"&gt;the backlog&lt;/a&gt; looks particularly useful, leave a comment so we can prioritize it!&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;If you have any questions about using the Commonware Library, we encourage you to post in &lt;a href="https://github.com/commonwarexyz/monorepo/discussions"&gt;GitHub Discussions&lt;/a&gt;. We're happy to help!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>chroma-core/chroma</title>
+      <link>https://github.com/chroma-core/chroma</link>
+      <description>&lt;p&gt;Open-source search and retrieval database for AI applications.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://trychroma.com"&gt;&lt;img src="https://user-images.githubusercontent.com/891664/227103090-6624bf7d-9524-4e05-9d2c-c28d5d451481.png" alt="Chroma logo" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;b&gt;Chroma - the open-source embedding database&lt;/b&gt;. &lt;br /&gt; The fastest way to build Python or JavaScript LLM apps with memory! &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://discord.gg/MMeYNTmh3x" target="_blank"&gt; &lt;img src="https://img.shields.io/discord/1073293645303795742?cacheSeconds=3600" alt="Discord" /&gt; &lt;/a&gt; | &lt;a href="https://github.com/chroma-core/chroma/raw/master/LICENSE" target="_blank"&gt; &lt;img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg?sanitize=true" alt="License" /&gt; &lt;/a&gt; | &lt;a href="https://docs.trychroma.com/" target="_blank"&gt; Docs &lt;/a&gt; | &lt;a href="https://www.trychroma.com/" target="_blank"&gt; Homepage &lt;/a&gt; &lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pip install chromadb # python client
+# for javascript, npm install chromadb!
+# for client-server mode, chroma run --path /chroma_db_path
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Chroma Cloud&lt;/h2&gt; 
+&lt;p&gt;Our hosted service, Chroma Cloud, powers serverless vector and full-text search. It's extremely fast, cost-effective, scalable and painless. Create a DB and try it out in under 30 seconds with $5 of free credits.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://trychroma.com/signup"&gt;Get started with Chroma Cloud&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;API&lt;/h2&gt; 
+&lt;p&gt;The core API is only 4 functions (run our &lt;a href="https://colab.research.google.com/drive/1QEzFyqnoFxq7LUGyP1vzR4iLt9PpCDXv?usp=sharing"&gt;💡 Google Colab&lt;/a&gt;):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;import chromadb
+# setup Chroma in-memory, for easy prototyping. Can add persistence easily!
+client = chromadb.Client()
+
+# Create collection. get_collection, get_or_create_collection, delete_collection also available!
+collection = client.create_collection("all-my-documents")
+
+# Add docs to the collection. Can also update and delete. Row-based API coming soon!
+collection.add(
+    documents=["This is document1", "This is document2"], # we handle tokenization, embedding, and indexing automatically. You can skip that and add your own embeddings as well
+    metadatas=[{"source": "notion"}, {"source": "google-docs"}], # filter on these!
+    ids=["doc1", "doc2"], # unique for each doc
+)
+
+# Query/search 2 most similar results. You can also .get by id
+results = collection.query(
+    query_texts=["This is a query document"],
+    n_results=2,
+    # where={"metadata_field": "is_equal_to_this"}, # optional filter
+    # where_document={"$contains":"search_string"}  # optional filter
+)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Learn about all features on our &lt;a href="https://docs.trychroma.com"&gt;Docs&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Simple&lt;/strong&gt;: Fully-typed, fully-tested, fully-documented == happiness&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Integrations&lt;/strong&gt;: &lt;a href="https://blog.langchain.dev/langchain-chroma/"&gt;&lt;code&gt;🦜️🔗 LangChain&lt;/code&gt;&lt;/a&gt; (python and js), &lt;a href="https://twitter.com/atroyn/status/1628557389762007040"&gt;&lt;code&gt;🦙 LlamaIndex&lt;/code&gt;&lt;/a&gt; and more soon&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Dev, Test, Prod&lt;/strong&gt;: the same API that runs in your python notebook, scales to your cluster&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Feature-rich&lt;/strong&gt;: Queries, filtering, regex and more&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Free &amp;amp; Open Source&lt;/strong&gt;: Apache 2.0 Licensed&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Use case: ChatGPT for ______&lt;/h2&gt; 
+&lt;p&gt;For example, the &lt;code&gt;"Chat your data"&lt;/code&gt; use case:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Add documents to your database. You can pass in your own embeddings, embedding function, or let Chroma embed them for you.&lt;/li&gt; 
+ &lt;li&gt;Query relevant documents with natural language.&lt;/li&gt; 
+ &lt;li&gt;Compose documents into the context window of an LLM like &lt;code&gt;GPT4&lt;/code&gt; for additional summarization or analysis.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Embeddings?&lt;/h2&gt; 
+&lt;p&gt;What are embeddings?&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://platform.openai.com/docs/guides/embeddings/what-are-embeddings"&gt;Read the guide from OpenAI&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Literal&lt;/strong&gt;: Embedding something turns it from image/text/audio into a list of numbers. 🖼️ or 📄 =&amp;gt; &lt;code&gt;[1.2, 2.1, ....]&lt;/code&gt;. This process makes documents "understandable" to a machine learning model.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;By analogy&lt;/strong&gt;: An embedding represents the essence of a document. This enables documents and queries with the same essence to be "near" each other and therefore easy to find.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Technical&lt;/strong&gt;: An embedding is the latent-space position of a document at a layer of a deep neural network. For models trained specifically to embed data, this is the last layer.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;A small example&lt;/strong&gt;: If you search your photos for "famous bridge in San Francisco". By embedding this query and comparing it to the embeddings of your photos and their metadata - it should return photos of the Golden Gate Bridge.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Embeddings databases (also known as &lt;strong&gt;vector databases&lt;/strong&gt;) store embeddings and allow you to search by nearest neighbors rather than by substrings like a traditional database. By default, Chroma uses &lt;a href="https://docs.trychroma.com/guides/embeddings#default:-all-minilm-l6-v2"&gt;Sentence Transformers&lt;/a&gt; to embed for you but you can also use OpenAI embeddings, Cohere (multilingual) embeddings, or your own.&lt;/p&gt; 
+&lt;h2&gt;Get involved&lt;/h2&gt; 
+&lt;p&gt;Chroma is a rapidly developing project. We welcome PR contributors and ideas for how to improve the project.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://discord.gg/MMeYNTmh3x"&gt;Join the conversation on Discord&lt;/a&gt; - &lt;code&gt;#contributing&lt;/code&gt; channel&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.trychroma.com/roadmap"&gt;Review the 🛣️ Roadmap and contribute your ideas&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/chroma-core/chroma/issues"&gt;Grab an issue and open a PR&lt;/a&gt; - &lt;a href="https://github.com/chroma-core/chroma/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"&gt;&lt;code&gt;Good first issue tag&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.trychroma.com/contributing"&gt;Read our contributing guide&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Release Cadence&lt;/strong&gt; We currently release new tagged versions of the &lt;code&gt;pypi&lt;/code&gt; and &lt;code&gt;npm&lt;/code&gt; packages on Mondays. Hotfixes go out at any time during the week.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/chroma-core/chroma/main/LICENSE"&gt;Apache 2.0&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UwUDev/ygege</title>
+      <link>https://github.com/UwUDev/ygege</link>
+      <description>&lt;p&gt;High-performance indexer for YGG Torrent written in Rust&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Ygégé&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/UwUDev/ygege/master/README-fr.md"&gt;Français&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;High-performance indexer for YGG Torrent written in Rust&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Key Features&lt;/strong&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Automatic resolution of the current YGG Torrent domain&lt;/li&gt; 
+ &lt;li&gt;Automated Cloudflare bypass (no manual challenge solving)&lt;/li&gt; 
+ &lt;li&gt;Near-instant search&lt;/li&gt; 
+ &lt;li&gt;Seamless reconnection to expired sessions&lt;/li&gt; 
+ &lt;li&gt;Session caching&lt;/li&gt; 
+ &lt;li&gt;Bypassing lying DNS&lt;/li&gt; 
+ &lt;li&gt;Low memory usage (14.7MB in Linux release mode)&lt;/li&gt; 
+ &lt;li&gt;Modular torrent search (by name, seeders, leechers, comments, release date, etc.)&lt;/li&gt; 
+ &lt;li&gt;Detailed torrent metadata retrieval (description, size, seeders, leechers, etc.)&lt;/li&gt; 
+ &lt;li&gt;Zero external dependencies&lt;/li&gt; 
+ &lt;li&gt;No browser drivers required&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Compilation Requirements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Rust 1.85.0+&lt;/li&gt; 
+ &lt;li&gt;OpenSSL 3+&lt;/li&gt; 
+ &lt;li&gt;All dependencies required for building &lt;a href="https://crates.io/crates/wreq"&gt;wreq&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;Installation&lt;/h1&gt; 
+&lt;p&gt;A ready-to-use Docker image is available for Ygégé. To get started with Docker deployment and configuration, see the &lt;a href="https://raw.githubusercontent.com/UwUDev/ygege/master/docs/docker-guide.md"&gt;dedicated Docker guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Docker&lt;/h2&gt; 
+&lt;p&gt;To create a custom Docker image with your own optimizations, refer to the &lt;a href="https://raw.githubusercontent.com/UwUDev/ygege/master/docs/docker-dev.md"&gt;Docker build guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Manual Installation&lt;/h2&gt; 
+&lt;p&gt;To compile the application from sources, follow the &lt;a href="https://raw.githubusercontent.com/UwUDev/ygege/master/docs/source-guide.md"&gt;manual installation guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Prowlarr integration&lt;/h2&gt; 
+&lt;p&gt;Ygégé can be used as a custom indexer for Prowlarr. To set it up, find your AppData directory (located in the &lt;code&gt;/system/status&lt;/code&gt; page of Prowlarr) and copy the &lt;code&gt;ygege.yml&lt;/code&gt; file on the repo in the &lt;code&gt;{your prowlarr appdata path}/Definitions/Custom&lt;/code&gt; folder, you'll probably need to create the &lt;code&gt;Custom&lt;/code&gt; folder.&lt;/p&gt; 
+&lt;p&gt;Once it's done, restart Prowlarr and go to the indexer settings, you should see Ygégé in the list of available indexers.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] Prowlarr doesn't allow custom "Base URL". By default the URL is &lt;code&gt;http://localhost:8715/&lt;/code&gt;. For Docker Compose setups, use &lt;code&gt;http://ygege:8715/&lt;/code&gt;. Alternatively, use ygege-dns-redirect.local with custom DNS or hosts file redirection.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Cloudflare Bypass&lt;/h2&gt; 
+&lt;p&gt;Ygégé bypasses Cloudflare challenges without browsers or third-party services.&lt;/p&gt; 
+&lt;p&gt;YGG Torrent enforces a Cloudflare rule using the &lt;code&gt;account_created=true&lt;/code&gt; cookie to prevent challenges, theoretically validating user accounts so we can just inject this cookie. However, Cloudflare still detects fake HTTPS clients and browser spoofing.&lt;/p&gt; 
+&lt;p&gt;Ygégé uses the &lt;a href="https://crates.io/crates/wreq"&gt;wreq&lt;/a&gt; library - an HTTP client based on &lt;code&gt;reqwest&lt;/code&gt; and &lt;code&gt;tokio&lt;/code&gt; that replicates 1:1 TLS and HTTP/2 exchanges to mimic legitimate browser behavior.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Compatibility broke with Chrome 133 likely due to HTTP/3 integration, which &lt;code&gt;wreq&lt;/code&gt; doesn't yet simulate.&lt;/p&gt; 
+&lt;p&gt;For technical deep dives:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://fingerprint.com/blog/what-is-tls-fingerprinting-transport-layer-security/"&gt;TLS fingerprinting explained&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.trickster.dev/post/understanding-http2-fingerprinting/"&gt;HTTP/2 fingerprinting and bypass techniques&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Performance test&lt;/h2&gt; 
+&lt;p&gt;Query for search:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Name: &lt;code&gt;Vaiana 2&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Sort: &lt;code&gt;seeders&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Order: &lt;code&gt;descending&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;&lt;/th&gt; 
+   &lt;th&gt;Number of tests&lt;/th&gt; 
+   &lt;th&gt;Total time for all tests&lt;/th&gt; 
+   &lt;th&gt;Average time per test&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Resolution of the current YGG domain&lt;/td&gt; 
+   &lt;td&gt;25&lt;/td&gt; 
+   &lt;td&gt;3220,378ms&lt;/td&gt; 
+   &lt;td&gt;128,81512ms&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;New YGG login&lt;/td&gt; 
+   &lt;td&gt;10&lt;/td&gt; 
+   &lt;td&gt;4881.71361ms&lt;/td&gt; 
+   &lt;td&gt;488.1713616ms&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;YGG session restoration&lt;/td&gt; 
+   &lt;td&gt;10&lt;/td&gt; 
+   &lt;td&gt;2064.672142ms&lt;/td&gt; 
+   &lt;td&gt;206.4672142ms&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Search&lt;/td&gt; 
+   &lt;td&gt;100&lt;/td&gt; 
+   &lt;td&gt;17621.045874ms&lt;/td&gt; 
+   &lt;td&gt;176,21045874ms&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h1&gt;API Documentation&lt;/h1&gt; 
+&lt;p&gt;The API documentation is available &lt;a href="https://raw.githubusercontent.com/UwUDev/ygege/master/docs/api-documentation.md"&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>uutils/coreutils</title>
+      <link>https://github.com/uutils/coreutils</link>
+      <description>&lt;p&gt;Cross-platform Rust rewrite of the GNU coreutils&lt;/p&gt;&lt;hr&gt;&lt;div class="oranda-hide"&gt; 
+ &lt;div align="center"&gt; 
+  &lt;p&gt;&lt;img src="https://raw.githubusercontent.com/uutils/coreutils/main/docs/src/logo.svg?sanitize=true" alt="uutils logo" /&gt;&lt;/p&gt; 
+  &lt;h1&gt;uutils coreutils&lt;/h1&gt; 
+  &lt;p&gt;&lt;a href="https://crates.io/crates/coreutils"&gt;&lt;img src="https://img.shields.io/crates/v/coreutils.svg?sanitize=true" alt="Crates.io" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/wQVJbvJ"&gt;&lt;img src="https://img.shields.io/badge/discord-join-7289DA.svg?logo=discord&amp;amp;longCache=true&amp;amp;style=flat" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://github.com/uutils/coreutils/raw/main/LICENSE"&gt;&lt;img src="http://img.shields.io/badge/license-MIT-blue.svg?sanitize=true" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://deps.rs/repo/github/uutils/coreutils"&gt;&lt;img src="https://deps.rs/repo/github/uutils/coreutils/status.svg?sanitize=true" alt="dependency status" /&gt;&lt;/a&gt;&lt;/p&gt; 
+  &lt;p&gt;&lt;a href="https://codecov.io/gh/uutils/coreutils"&gt;&lt;img src="https://codecov.io/gh/uutils/coreutils/branch/main/graph/badge.svg?sanitize=true" alt="CodeCov" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/badge/MSRV-1.85.0-brightgreen" alt="MSRV" /&gt; &lt;a href="https://hosted.weblate.org/projects/rust-coreutils/"&gt;&lt;img src="https://hosted.weblate.org/widget/rust-coreutils/svg-badge.svg?sanitize=true" alt="Weblate" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;/div&gt; 
+ &lt;hr /&gt; 
+&lt;/div&gt; 
+&lt;p&gt;uutils coreutils is a cross-platform reimplementation of the GNU coreutils in &lt;a href="http://www.rust-lang.org"&gt;Rust&lt;/a&gt;. While all programs have been implemented, some options might be missing or different behavior might be experienced.&lt;/p&gt; 
+&lt;div class="oranda-hide"&gt; 
+ &lt;p&gt;To install it:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;cargo install coreutils
+~/.cargo/bin/coreutils
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/div&gt; 
+&lt;!-- markdownlint-disable-next-line MD026 --&gt; 
+&lt;h2&gt;Goals&lt;/h2&gt; 
+&lt;p&gt;uutils coreutils aims to be a drop-in replacement for the GNU utils. Differences with GNU are treated as bugs.&lt;/p&gt; 
+&lt;p&gt;Our key objectives include:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Matching GNU's output (stdout and error code) exactly&lt;/li&gt; 
+ &lt;li&gt;Better error messages&lt;/li&gt; 
+ &lt;li&gt;Providing comprehensive internationalization support (UTF-8)&lt;/li&gt; 
+ &lt;li&gt;Improved performances&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/uutils/coreutils/main/docs/src/extensions.md"&gt;Extensions&lt;/a&gt; when relevant (example: --progress)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;uutils aims to work on as many platforms as possible, to be able to use the same utils on Linux, macOS, Windows and other platforms. This ensures, for example, that scripts can be easily transferred between platforms.&lt;/p&gt; 
+&lt;div class="oranda-hide"&gt; 
+ &lt;h2&gt;Documentation&lt;/h2&gt; 
+ &lt;p&gt;uutils has both user and developer documentation available:&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;a href="https://uutils.github.io/coreutils/docs/"&gt;User Manual&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://docs.rs/crate/coreutils/"&gt;Developer Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;Both can also be generated locally, the instructions for that can be found in the &lt;a href="https://github.com/uutils/uutils.github.io"&gt;coreutils docs&lt;/a&gt; repository.&lt;/p&gt; 
+ &lt;p&gt;Use &lt;a href="https://hosted.weblate.org/projects/rust-coreutils/"&gt;weblate/rust-coreutils&lt;/a&gt; to translate the Rust coreutils into your language.&lt;/p&gt; 
+ &lt;!-- ANCHOR: build (this mark is needed for mdbook) --&gt; 
+ &lt;h2&gt;Requirements&lt;/h2&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Rust (&lt;code&gt;cargo&lt;/code&gt;, &lt;code&gt;rustc&lt;/code&gt;)&lt;/li&gt; 
+  &lt;li&gt;GNU Make (optional)&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;h3&gt;Rust Version&lt;/h3&gt; 
+ &lt;p&gt;uutils follows Rust's release channels and is tested against stable, beta and nightly. The current Minimum Supported Rust Version (MSRV) is &lt;code&gt;1.85.0&lt;/code&gt;.&lt;/p&gt; 
+ &lt;h2&gt;Building&lt;/h2&gt; 
+ &lt;p&gt;There are currently two methods to build the uutils binaries: either Cargo or GNU Make.&lt;/p&gt; 
+ &lt;blockquote&gt; 
+  &lt;p&gt;Building the full package, including all documentation, requires both Cargo and GNU Make on a Unix platform.&lt;/p&gt; 
+ &lt;/blockquote&gt; 
+ &lt;p&gt;For either method, we first need to fetch the repository:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;git clone https://github.com/uutils/coreutils
+cd coreutils
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;h3&gt;Cargo&lt;/h3&gt; 
+ &lt;p&gt;Building uutils using Cargo is easy because the process is the same as for every other Rust program:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;cargo build --release
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;This command builds the most portable common core set of uutils into a multicall (BusyBox-type) binary, named 'coreutils', on most Rust-supported platforms.&lt;/p&gt; 
+ &lt;p&gt;Additional platform-specific uutils are often available. Building these expanded sets of uutils for a platform (on that platform) is as simple as specifying it as a feature:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;cargo build --release --features macos
+# or ...
+cargo build --release --features windows
+# or ...
+cargo build --release --features unix
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To build SELinux-specific features, including &lt;code&gt;chcon&lt;/code&gt; and &lt;code&gt;runcon&lt;/code&gt;, ensure that &lt;code&gt;libselinux&lt;/code&gt; and &lt;code&gt;libclang&lt;/code&gt; are installed on your system. Then, run the following command:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code&gt;cargo build --release --features unix,feat_selinux
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;If you don't want to build every utility available on your platform into the final binary, you can also specify which ones you want to build manually. For example:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;cargo build --features "base32 cat echo rm" --no-default-features
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;If you want to build the utilities as individual binaries, that is also possible:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;cargo build --release --bins --workspace --exclude coreutils --exclude uu_runcon --exclude uu_chcon
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;Each utility is contained in its own package within the main repository, named "uu_UTILNAME". To build selected individual utilities, use the &lt;code&gt;--package&lt;/code&gt; [aka &lt;code&gt;-p&lt;/code&gt;] option. For example:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;cargo build -p uu_base32 -p uu_cat -p uu_echo -p uu_rm
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;h3&gt;GNU Make&lt;/h3&gt; 
+ &lt;p&gt;Building using &lt;code&gt;make&lt;/code&gt; is a simple process as well.&lt;/p&gt; 
+ &lt;p&gt;To simply build all available utilities:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;In release mode:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make PROFILE=release
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To build all but a few of the available utilities:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make SKIP_UTILS='UTILITY_1 UTILITY_2'
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To build only a few of the available utilities:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make UTILS='UTILITY_1 UTILITY_2'
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;h2&gt;Installation&lt;/h2&gt; 
+ &lt;h3&gt;Install with Cargo&lt;/h3&gt; 
+ &lt;p&gt;Likewise, installing can simply be done using:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;cargo install --path . --locked
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;This command will install uutils into Cargo's &lt;em&gt;bin&lt;/em&gt; folder (&lt;em&gt;e.g.&lt;/em&gt; &lt;code&gt;$HOME/.cargo/bin&lt;/code&gt;).&lt;/p&gt; 
+ &lt;p&gt;This does not install files necessary for shell completion or manpages. For manpages or shell completion to work, use &lt;code&gt;GNU Make&lt;/code&gt; or see &lt;code&gt;Manually install shell completions&lt;/code&gt;/&lt;code&gt;Manually install manpages&lt;/code&gt;.&lt;/p&gt; 
+ &lt;h3&gt;Install with GNU Make&lt;/h3&gt; 
+ &lt;p&gt;To install all available utilities:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make install
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To install using &lt;code&gt;sudo&lt;/code&gt; switch &lt;code&gt;-E&lt;/code&gt; must be used:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;sudo -E make install
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To install all but a few of the available utilities:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make SKIP_UTILS='UTILITY_1 UTILITY_2' install
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To install only a few of the available utilities:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make UTILS='UTILITY_1 UTILITY_2' install
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To install every program with a prefix (e.g. uu-echo uu-cat):&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make PROG_PREFIX=PREFIX_GOES_HERE install
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To install the multicall binary:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make MULTICALL=y install
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;Set install parent directory (default value is /usr/local):&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;# DESTDIR is also supported
+make PREFIX=/my/path install
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;Installing with &lt;code&gt;make&lt;/code&gt; installs shell completions for all installed utilities for &lt;code&gt;bash&lt;/code&gt;, &lt;code&gt;fish&lt;/code&gt; and &lt;code&gt;zsh&lt;/code&gt;. Completions for &lt;code&gt;elvish&lt;/code&gt; and &lt;code&gt;powershell&lt;/code&gt; can also be generated; See &lt;code&gt;Manually install shell completions&lt;/code&gt;.&lt;/p&gt; 
+ &lt;p&gt;To skip installation of completions and manpages:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make COMPLETIONS=n MANPAGES=n install
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;h3&gt;Manually install shell completions&lt;/h3&gt; 
+ &lt;p&gt;The &lt;code&gt;uudoc&lt;/code&gt; binary generates completions for the &lt;code&gt;bash&lt;/code&gt;, &lt;code&gt;elvish&lt;/code&gt;, &lt;code&gt;fish&lt;/code&gt;, &lt;code&gt;powershell&lt;/code&gt; and &lt;code&gt;zsh&lt;/code&gt; shells to stdout.&lt;/p&gt; 
+ &lt;p&gt;Install &lt;code&gt;uudoc&lt;/code&gt; by&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;cargo install --bin uudoc --features uudoc --path .
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;Then use the installed binary:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;uudoc completion &amp;lt;utility&amp;gt; &amp;lt;shell&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;So, to install completions for &lt;code&gt;ls&lt;/code&gt; on &lt;code&gt;bash&lt;/code&gt; to &lt;code&gt;/usr/local/share/bash-completion/completions/ls&lt;/code&gt;, run:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;uudoc completion ls bash &amp;gt; /usr/local/share/bash-completion/completions/ls.bash
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;Completion for prefixed &lt;code&gt;cp&lt;/code&gt; with &lt;code&gt;uu-&lt;/code&gt; on &lt;code&gt;zsh&lt;/code&gt; is generated by&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;env PROG_PREFIX=uu- uudoc completion cp zsh
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;h3&gt;Manually install manpages&lt;/h3&gt; 
+ &lt;p&gt;To generate manpages, the syntax is:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;uudoc manpage &amp;lt;utility&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;So, to install the manpage for &lt;code&gt;ls&lt;/code&gt; to &lt;code&gt;/usr/local/share/man/man1/ls.1&lt;/code&gt; run:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;uudoc manpage ls &amp;gt; /usr/local/share/man/man1/ls.1
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;h2&gt;Un-installation&lt;/h2&gt; 
+ &lt;p&gt;Un-installation differs depending on how you have installed uutils. If you used Cargo to install, use Cargo to uninstall. If you used GNU Make to install, use Make to uninstall.&lt;/p&gt; 
+ &lt;h3&gt;Uninstall with Cargo&lt;/h3&gt; 
+ &lt;p&gt;To uninstall uutils:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;cargo uninstall coreutils
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;h3&gt;Uninstall with GNU Make&lt;/h3&gt; 
+ &lt;p&gt;To uninstall all utilities:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make uninstall
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To uninstall every program with a set prefix:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make PROG_PREFIX=PREFIX_GOES_HERE uninstall
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To uninstall the multicall binary:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;make MULTICALL=y uninstall
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;To uninstall from a custom parent directory:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-shell"&gt;# DESTDIR is also supported
+make PREFIX=/my/path uninstall
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;!-- ANCHOR_END: build (this mark is needed for mdbook) --&gt; 
+ &lt;h2&gt;GNU test suite compatibility&lt;/h2&gt; 
+ &lt;p&gt;Below is the evolution of how many GNU tests uutils passes. A more detailed breakdown of the GNU test results of the main branch can be found &lt;a href="https://uutils.github.io/coreutils/docs/test_coverage.html"&gt;in the user manual&lt;/a&gt;.&lt;/p&gt; 
+ &lt;p&gt;See &lt;a href="https://github.com/orgs/uutils/projects/1"&gt;https://github.com/orgs/uutils/projects/1&lt;/a&gt; for the main meta bugs (many are missing).&lt;/p&gt; 
+ &lt;p&gt;&lt;img src="https://github.com/uutils/coreutils-tracking/raw/main/gnu-results.svg?raw=true" alt="Evolution over time" /&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;!-- close oranda-hide div --&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;To contribute to uutils, please see &lt;a href="https://raw.githubusercontent.com/uutils/coreutils/main/CONTRIBUTING.md"&gt;CONTRIBUTING&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;uutils is licensed under the MIT License - see the &lt;code&gt;LICENSE&lt;/code&gt; file for details&lt;/p&gt; 
+&lt;p&gt;GNU Coreutils is licensed under the GPL 3.0 or later.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>tree-sitter/tree-sitter</title>
+      <link>https://github.com/tree-sitter/tree-sitter</link>
+      <description>&lt;p&gt;An incremental parsing system for programming tools&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;tree-sitter&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://zenodo.org/badge/latestdoi/14164618"&gt;&lt;img src="https://zenodo.org/badge/14164618.svg?sanitize=true" alt="DOI" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/w7nTvsVJhm"&gt;&lt;img src="https://img.shields.io/discord/1063097320771698699?logo=discord&amp;amp;label=discord" alt="discord" /&gt;&lt;/a&gt; &lt;a href="https://matrix.to/#/#tree-sitter-chat:matrix.org"&gt;&lt;img src="https://img.shields.io/matrix/tree-sitter-chat%3Amatrix.org?logo=matrix&amp;amp;label=matrix" alt="matrix" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Tree-sitter is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited. Tree-sitter aims to be:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;General&lt;/strong&gt; enough to parse any programming language&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Fast&lt;/strong&gt; enough to parse on every keystroke in a text editor&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Robust&lt;/strong&gt; enough to provide useful results even in the presence of syntax errors&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Dependency-free&lt;/strong&gt; so that the runtime library (which is written in pure C) can be embedded in any application&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Links&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://tree-sitter.github.io"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/tree-sitter/tree-sitter/master/lib/binding_rust/README.md"&gt;Rust binding&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/tree-sitter/tree-sitter/master/lib/binding_web/README.md"&gt;Wasm binding&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/tree-sitter/tree-sitter/master/crates/cli/README.md"&gt;Command-line interface&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>fish-shell/fish-shell</title>
+      <link>https://github.com/fish-shell/fish-shell</link>
+      <description>&lt;p&gt;The user-friendly command line shell.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;.. |Cirrus CI| image:: &lt;a href="https://api.cirrus-ci.com/github/fish-shell/fish-shell.svg?branch=master"&gt;https://api.cirrus-ci.com/github/fish-shell/fish-shell.svg?branch=master&lt;/a&gt; :target: &lt;a href="https://cirrus-ci.com/github/fish-shell/fish-shell"&gt;https://cirrus-ci.com/github/fish-shell/fish-shell&lt;/a&gt; :alt: Cirrus CI Build Status&lt;/p&gt; 
+&lt;h1&gt;&lt;code&gt;fish &amp;lt;https://fishshell.com/&amp;gt;&lt;/code&gt;__ - the friendly interactive shell |Build Status| |Cirrus CI|&lt;/h1&gt; 
+&lt;p&gt;fish is a smart and user-friendly command line shell for macOS, Linux, and the rest of the family. fish includes features like syntax highlighting, autosuggest-as-you-type, and fancy tab completions that just work, with no configuration required.&lt;/p&gt; 
+&lt;p&gt;For downloads, screenshots and more, go to &lt;a href="https://fishshell.com/"&gt;https://fishshell.com/&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;p&gt;fish generally works like other shells, like bash or zsh. A few important differences can be found at &lt;a href="https://fishshell.com/docs/current/tutorial.html"&gt;https://fishshell.com/docs/current/tutorial.html&lt;/a&gt; by searching for the magic phrase “unlike other shells”.&lt;/p&gt; 
+&lt;p&gt;Detailed user documentation is available by running &lt;code&gt;help&lt;/code&gt; within fish, and also at &lt;a href="https://fishshell.com/docs/current/index.html"&gt;https://fishshell.com/docs/current/index.html&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Getting fish&lt;/h2&gt; 
+&lt;p&gt;macOS&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;
+fish can be installed:
+
+-  using `Homebrew &amp;lt;http://brew.sh/&amp;gt;`__: ``brew install fish``
+-  using `MacPorts &amp;lt;https://www.macports.org/&amp;gt;`__:
+   ``sudo port install fish``
+-  using the `installer from fishshell.com &amp;lt;https://fishshell.com/&amp;gt;`__
+-  as a `standalone app from fishshell.com &amp;lt;https://fishshell.com/&amp;gt;`__
+
+Note: The minimum supported macOS version is 10.10 "Yosemite".
+
+Packages for Linux
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Packages for Debian, Fedora, openSUSE, and Red Hat Enterprise Linux/CentOS are available from the &lt;code&gt;openSUSE Build Service &amp;lt;https://software.opensuse.org/download.html?project=shells%3Afish&amp;amp;package=fish&amp;gt;&lt;/code&gt;__.&lt;/p&gt; 
+&lt;p&gt;Packages for Ubuntu are available from the &lt;code&gt;fish PPA &amp;lt;https://launchpad.net/~fish-shell/+archive/ubuntu/release-4&amp;gt;&lt;/code&gt;__, and can be installed using the following commands:&lt;/p&gt; 
+&lt;p&gt;::&lt;/p&gt; 
+&lt;p&gt;sudo apt-add-repository ppa:fish-shell/release-4 sudo apt update sudo apt install fish&lt;/p&gt; 
+&lt;p&gt;Instructions for other distributions may be found at &lt;code&gt;fishshell.com &amp;lt;https://fishshell.com&amp;gt;&lt;/code&gt;__.&lt;/p&gt; 
+&lt;p&gt;Windows&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;
+-  On Windows 10/11, fish can be installed under the WSL Windows Subsystem
+   for Linux with the instructions for the appropriate distribution
+   listed above under “Packages for Linux”, or from source with the
+   instructions below.
+-  Fish can also be installed on all versions of Windows using
+   `Cygwin &amp;lt;https://cygwin.com/&amp;gt;`__ or `MSYS2 &amp;lt;https://github.com/Berrysoft/fish-msys2&amp;gt;`__.
+
+Building from source
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If packages are not available for your platform, GPG-signed tarballs are available from &lt;code&gt;fishshell.com &amp;lt;https://fishshell.com/&amp;gt;&lt;/code&gt;__ and &lt;code&gt;fish-shell on GitHub &amp;lt;https://github.com/fish-shell/fish-shell/releases&amp;gt;&lt;/code&gt;__. See the &lt;code&gt;Building &amp;lt;#building&amp;gt;&lt;/code&gt;_ section for instructions.&lt;/p&gt; 
+&lt;h2&gt;Running fish&lt;/h2&gt; 
+&lt;p&gt;Once installed, run &lt;code&gt;fish&lt;/code&gt; from your current shell to try fish out!&lt;/p&gt; 
+&lt;p&gt;Dependencies&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;
+Running fish requires:
+
+-  some common \*nix system utilities (currently ``mktemp``), in
+   addition to the basic POSIX utilities (``cat``, ``cut``, ``dirname``,
+   ``ls``, ``mkdir``, ``mkfifo``, ``rm``, ``sh``, ``sort``, ``tee``, ``tr``,
+   ``uname`` and ``sed`` at least, but the full coreutils plus ``find`` and
+   ``awk`` is preferred)
+
+The following optional features also have specific requirements:
+
+-  builtin commands that have the ``--help`` option or print usage
+   messages require ``man`` for display
+-  automated completion generation from manual pages requires Python 3.5+
+-  the ``fish_config`` web configuration tool requires Python 3.5+ and a web browser
+-  the :ref:`alt-o &amp;lt;shared-binds-alt-o&amp;gt;` binding requires the ``file`` program.
+-  system clipboard integration (with the default Ctrl-V and Ctrl-X
+   bindings) require either the ``xsel``, ``xclip``,
+   ``wl-copy``/``wl-paste`` or ``pbcopy``/``pbpaste`` utilities
+-  full completions for ``yarn`` and ``npm`` require the
+   ``all-the-package-names`` NPM module
+-  ``colorls`` is used, if installed, to add color when running ``ls`` on platforms
+   that do not have color support (such as OpenBSD)
+
+Building
+--------
+
+Dependencies
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Compiling fish requires:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Rust (version 1.85 or later)&lt;/li&gt; 
+ &lt;li&gt;CMake (version 3.15 or later)&lt;/li&gt; 
+ &lt;li&gt;a C compiler (for system feature detection and the test helper binary)&lt;/li&gt; 
+ &lt;li&gt;PCRE2 (headers and libraries) - optional, this will be downloaded if missing&lt;/li&gt; 
+ &lt;li&gt;gettext (only the msgfmt tool) - optional, for translation support&lt;/li&gt; 
+ &lt;li&gt;an Internet connection, as other dependencies will be downloaded automatically&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Sphinx is also optionally required to build the documentation from a cloned git repository.&lt;/p&gt; 
+&lt;p&gt;Additionally, running the full test suite requires diff, git, Python 3.5+, pexpect, less, tmux and wget.&lt;/p&gt; 
+&lt;p&gt;Building from source with CMake&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;
+Rather than building from source, consider using a packaged build for your platform. Using the
+steps below makes fish difficult to uninstall or upgrade. Release packages are available from the
+links above, and up-to-date `development builds of fish are available for many platforms
+&amp;lt;https://github.com/fish-shell/fish-shell/wiki/Development-builds&amp;gt;`__
+
+To install into ``/usr/local``, run:
+
+.. code:: shell
+
+   mkdir build; cd build
+   cmake ..
+   cmake --build .
+   sudo cmake --install .
+
+The install directory can be changed using the
+``-DCMAKE_INSTALL_PREFIX`` parameter for ``cmake``.
+
+CMake Build options
+~~~~~~~~~~~~~~~~~~~
+
+In addition to the normal CMake build options (like ``CMAKE_INSTALL_PREFIX``), fish's CMake build has some other options available to customize it.
+
+- Rust_COMPILER=path - the path to rustc. If not set, cmake will check $PATH and ~/.cargo/bin
+- Rust_CARGO=path - the path to cargo. If not set, cmake will check $PATH and ~/.cargo/bin
+- Rust_CARGO_TARGET=target - the target to pass to cargo. Set this for cross-compilation.
+- BUILD_DOCS=ON|OFF - whether to build the documentation. This is automatically set to OFF when Sphinx isn't installed.
+- INSTALL_DOCS=ON|OFF - whether to install the docs. This is automatically set to on when BUILD_DOCS is or prebuilt documentation is available (like when building in-tree from a tarball).
+- FISH_USE_SYSTEM_PCRE2=ON|OFF - whether to use an installed pcre2. This is normally autodetected.
+- MAC_CODESIGN_ID=String|OFF - the codesign ID to use on Mac, or "OFF" to disable codesigning.
+- WITH_GETTEXT=ON|OFF - whether to include translations.
+- extra_functionsdir, extra_completionsdir and extra_confdir - to compile in an additional directory to be searched for functions, completions and configuration snippets
+
+Building fish with Cargo
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can also build fish with Cargo.
+This example uses `uv &amp;lt;https://github.com/astral-sh/uv&amp;gt;`__ to install Sphinx (which is used for man-pages and ``--help`` options).
+You can also install Sphinx another way and drop the ``uv run --no-managed-python`` prefix.
+
+.. code:: shell
+
+    git clone https://github.com/fish-shell/fish-shell
+    cd fish-shell
+
+    # Optional: check out a specific version rather than building the latest
+    # development version.
+    git checkout "$(git for-each-ref refs/tags/ | awk '$2 == "tag" { print $3 }' | tail -1)"
+
+    uv run --no-managed-python \
+        cargo install --path .
+
+This will place standalone binaries in ``~/.cargo/bin/``, but you can move them wherever you want.
+
+To disable translations, disable the ``localize-messages`` feature by passing ``--no-default-features --features=embed-data`` to cargo.
+
+You can also link this build statically (but not against glibc) and move it to other computers.
+
+Here are the remaining advantages of a full installation, as currently done by CMake:
+
+- Man pages like ``fish(1)`` installed in standard locations, easily accessible from outside fish.
+- A local copy of the HTML documentation, typically accessed via the ``help`` fish function.
+  In Cargo builds, ``help`` will redirect to `&amp;lt;https://fishshell.com/docs/current/&amp;gt;`__
+- Ability to use our CMake options extra_functionsdir, extra_completionsdir and extra_confdir,
+  (also recorded in ``$PREFIX/share/pkgconfig/fish.pc``)
+  which are used by some package managers to house third-party completions.
+  Regardless of build system, fish uses ``$XDG_DATA_DIRS/{vendor_completion.d,vendor_conf.d,vendor_functions.d}``.
+
+Contributing Changes to the Code
+--------------------------------
+
+See the `Guide for Developers &amp;lt;CONTRIBUTING.rst&amp;gt;`__.
+
+Contact Us
+----------
+
+Questions, comments, rants and raves can be posted to the official fish
+mailing list at https://lists.sourceforge.net/lists/listinfo/fish-users
+or join us on our `matrix
+channel &amp;lt;https://matrix.to/#/#fish-shell:matrix.org&amp;gt;`__. Or use the `fish tag
+on Unix &amp;amp; Linux Stackexchange &amp;lt;https://unix.stackexchange.com/questions/tagged/fish&amp;gt;`__.
+There is also a fish tag on Stackoverflow, but it is typically a poor fit.
+
+Found a bug? Have an awesome idea? Please `open an
+issue &amp;lt;https://github.com/fish-shell/fish-shell/issues/new&amp;gt;`__.
+
+.. |Build Status| image:: https://github.com/fish-shell/fish-shell/workflows/make%20test/badge.svg
+   :target: https://github.com/fish-shell/fish-shell/actions
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>get-convex/convex-backend</title>
+      <link>https://github.com/get-convex/convex-backend</link>
+      <description>&lt;p&gt;The open-source reactive database for app developers&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://static.convex.dev/logo/convex-logo-light.svg" width="600" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://static.convex.dev/logo/convex-logo.svg" width="600" /&gt; 
+  &lt;img alt="Convex logo" src="https://static.convex.dev/logo/convex-logo.svg?sanitize=true" width="600" /&gt; 
+ &lt;/picture&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://convex.dev"&gt;Convex&lt;/a&gt; is the open-source reactive database designed to make life easy for web app developers, whether human or LLM. Fetch data and perform business logic with strong consistency by writing pure TypeScript.&lt;/p&gt; 
+&lt;p&gt;Convex provides a database, a place to write your server functions, and client libraries. It makes it easy to build and scale dynamic live-updating apps. &lt;a href="https://docs.convex.dev/understanding/"&gt;Read the docs to learn more&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Development of the Convex backend is led by the Convex team. We &lt;a href="https://raw.githubusercontent.com/get-convex/convex-backend/main/CONTRIBUTING.md"&gt;welcome bug fixes&lt;/a&gt; and &lt;a href="https://discord.gg/convex"&gt;love receiving feedback&lt;/a&gt;. We keep this repository synced with any internal development work within a handful of days.&lt;/p&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;Visit our &lt;a href="https://docs.convex.dev/"&gt;documentation&lt;/a&gt; to learn more about Convex and follow our getting started guides.&lt;/p&gt; 
+&lt;p&gt;The easiest way to build with Convex is through our &lt;a href="https://www.convex.dev/plans"&gt;cloud platform&lt;/a&gt;, which includes a generous free tier and lets you focus on building your application without worrying about infrastructure. Many small applications and side-projects can operate entirely on the free tier with zero cost and zero maintenance.&lt;/p&gt; 
+&lt;h2&gt;Self Hosting&lt;/h2&gt; 
+&lt;p&gt;The self-hosted product includes most features of the cloud product, including the dashboard and CLI. Self-hosted Convex works well with a variety of tools including Neon, Fly.io, Vercel, Netlify, RDS, Sqlite, Postgres, and more.&lt;/p&gt; 
+&lt;p&gt;You can either use Docker (recommended) or a prebuilt binary to self host Convex. Check out our &lt;a href="https://raw.githubusercontent.com/get-convex/convex-backend/main/self-hosted/README.md"&gt;self-hosting guide&lt;/a&gt; for detailed instructions. Community support for self-hosting is available in the &lt;code&gt;#self-hosted&lt;/code&gt; channel on &lt;a href="https://discord.gg/convex"&gt;Discord&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Community &amp;amp; Support&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Join our &lt;a href="https://discord.gg/convex"&gt;Discord community&lt;/a&gt; for help and discussions.&lt;/li&gt; 
+ &lt;li&gt;Report issues when building and using the open source Convex backend through &lt;a href="https://github.com/get-convex/convex-backend/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Building from source&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/get-convex/convex-backend/main/BUILD.md"&gt;BUILD.md&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Disclaimers&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;If you choose to self-host, we recommend following the self-hosting guide. If you are instead building from source, make sure to change your instance secret and admin key from the defaults in the repo.&lt;/li&gt; 
+ &lt;li&gt;Convex is battle tested most thoroughly on Linux and Mac. On Windows, it has less experience. If you run into issues, please message us on &lt;a href="https://convex.dev/community"&gt;Discord&lt;/a&gt; in the &lt;code&gt;#self-hosted&lt;/code&gt; channel.&lt;/li&gt; 
+ &lt;li&gt;Convex self-hosted builds contain a beacon to help Convex improve the product. The information is minimal and anonymous and helpful to Convex, but if you really want to disable it, you can set the &lt;code&gt;--disable-beacon&lt;/code&gt; flag on the backend binary. The beacon's messages print in the log and only include 
+  &lt;ul&gt; 
+   &lt;li&gt;A random identifier for your deployment (not used elsewhere)&lt;/li&gt; 
+   &lt;li&gt;Migration version of your database&lt;/li&gt; 
+   &lt;li&gt;Git rev of the backend&lt;/li&gt; 
+   &lt;li&gt;Uptime of the backend&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Repository layout&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;crates/&lt;/code&gt; contains Rust code&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Main binary 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;code&gt;local_backend/&lt;/code&gt; is an application server on top of the &lt;code&gt;Runtime&lt;/code&gt;. This is the serving edge for the Convex cloud.&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;code&gt;npm-packages/&lt;/code&gt; contains both our public and internal TypeScript packages.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Internal packages 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;code&gt;udf-runtime/&lt;/code&gt; sets up the user-defined functions JS environment for queries and mutations&lt;/li&gt; 
+     &lt;li&gt;&lt;code&gt;udf-tests/&lt;/code&gt; is a collection of functions used in testing the isolate layer&lt;/li&gt; 
+     &lt;li&gt;&lt;code&gt;system-udfs/&lt;/code&gt; contains functions used by the Convex system e.g. the CLI&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>ankitects/anki</title>
+      <link>https://github.com/ankitects/anki</link>
+      <description>&lt;p&gt;Anki is a smart spaced repetition flashcard program&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Anki®&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://buildkite.com/ankitects/anki-ci"&gt;&lt;img src="https://badge.buildkite.com/c9edf020a4aec976f9835e54751cc5409d843adbb66d043bd3.svg?branch=main" alt="Build status" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;This repo contains the source code for the computer version of &lt;a href="https://apps.ankiweb.net"&gt;Anki&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;About&lt;/h1&gt; 
+&lt;p&gt;Anki is a spaced repetition program. Please see the &lt;a href="https://apps.ankiweb.net"&gt;website&lt;/a&gt; to learn more.&lt;/p&gt; 
+&lt;h1&gt;Getting Started&lt;/h1&gt; 
+&lt;h3&gt;Anki Betas&lt;/h3&gt; 
+&lt;p&gt;If you'd like to try development builds of Anki but don't feel comfortable building the code, please see &lt;a href="https://betas.ankiweb.net/"&gt;Anki betas&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Developing&lt;/h3&gt; 
+&lt;p&gt;For more information on building and developing, please see &lt;a href="https://raw.githubusercontent.com/ankitects/anki/main/docs/development.md"&gt;Development&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Contributing&lt;/h3&gt; 
+&lt;p&gt;Want to contribute to Anki? Check out the &lt;a href="https://raw.githubusercontent.com/ankitects/anki/main/docs/contributing.md"&gt;Contribution Guidelines&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Anki Contributors&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/ankitects/anki/main/CONTRIBUTORS"&gt;CONTRIBUTORS&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;License&lt;/h1&gt; 
+&lt;p&gt;Anki's license: &lt;a href="https://raw.githubusercontent.com/ankitects/anki/main/LICENSE"&gt;LICENSE&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>getzola/zola</title>
+      <link>https://github.com/getzola/zola</link>
+      <description>&lt;p&gt;A fast static site generator in a single binary with everything built-in. https://www.getzola.org&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;zola (né Gutenberg) &lt;img src="https://raw.githubusercontent.com/getzola/zola/master/docs/static/logos/Zola-logo-main-coffee.svg?sanitize=true" align="right" alt="zola logo" width="30%" /&gt;&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://dev.azure.com/getzola/zola/_build/latest?definitionId=1&amp;amp;branchName=master"&gt;&lt;img src="https://dev.azure.com/getzola/zola/_apis/build/status/getzola.zola?branchName=master" alt="Build Status" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/github/downloads/getzola/zola/total" alt="GitHub all releases" /&gt;&lt;/p&gt; 
+&lt;p&gt;A fast static site generator in a single binary with everything built-in.&lt;/p&gt; 
+&lt;p&gt;To find out more see the &lt;a href="https://www.getzola.org/documentation/getting-started/overview/"&gt;Zola Documentation&lt;/a&gt;, look in the &lt;a href="https://raw.githubusercontent.com/getzola/zola/master/docs/content"&gt;docs/content&lt;/a&gt; folder of this repository or visit the &lt;a href="https://zola.discourse.group"&gt;Zola community forum&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;This tool and its template engine &lt;a href="https://keats.github.io/tera/"&gt;tera&lt;/a&gt; were born from an intense dislike of the (insane) Golang template engine and therefore of Hugo that I was using before for 6+ sites.&lt;/p&gt; 
+&lt;h1&gt;List of features&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.getzola.org/documentation/getting-started/cli-usage/"&gt;Single binary&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.getzola.org/documentation/content/syntax-highlighting/"&gt;Syntax highlighting&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.getzola.org/documentation/content/sass/"&gt;Sass compilation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Assets co-location&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.getzola.org/documentation/content/multilingual/"&gt;Multilingual site support&lt;/a&gt; (Basic currently)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.getzola.org/documentation/content/image-processing/"&gt;Image processing&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.getzola.org/documentation/themes/overview/"&gt;Themes&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.getzola.org/documentation/content/shortcodes/"&gt;Shortcodes&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.getzola.org/documentation/content/linking/"&gt;Internal links&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.getzola.org/documentation/getting-started/cli-usage/#check"&gt;External link checker&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.getzola.org/documentation/content/table-of-contents/"&gt;Table of contents automatic generation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Automatic header anchors&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.getzola.org/documentation/content/page/#front-matter"&gt;Aliases&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.getzola.org/documentation/templates/pagination/"&gt;Pagination&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.getzola.org/documentation/templates/taxonomies/"&gt;Custom taxonomies&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.getzola.org/documentation/content/search/"&gt;Search with no servers or any third parties involved&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.getzola.org/documentation/getting-started/cli-usage/#serve"&gt;Live reload&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Deploy on many platforms easily: &lt;a href="https://www.getzola.org/documentation/deployment/netlify/"&gt;Netlify&lt;/a&gt;, &lt;a href="https://www.getzola.org/documentation/deployment/vercel/"&gt;Vercel&lt;/a&gt;, &lt;a href="https://www.getzola.org/documentation/deployment/cloudflare-pages/"&gt;Cloudflare Pages&lt;/a&gt;, etc&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
