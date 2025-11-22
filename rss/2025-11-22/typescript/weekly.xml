@@ -1,0 +1,1911 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub TypeScript Weekly Trending</title>
+    <description>Weekly Trending of TypeScript in GitHub</description>
+    <pubDate>Fri, 21 Nov 2025 01:49:31 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>umami-software/umami</title>
+      <link>https://github.com/umami-software/umami</link>
+      <description>&lt;p&gt;Umami is a modern, privacy-focused analytics platform. An open-source alternative to Google Analytics, Mixpanel and Amplitude.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://content.umami.is/website/images/umami-logo.png" alt="Umami Logo" width="100" /&gt; &lt;/p&gt; 
+&lt;h1 align="center"&gt;Umami&lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;i&gt;Umami is a simple, fast, privacy-focused alternative to Google Analytics.&lt;/i&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/umami-software/umami/releases"&gt; &lt;img src="https://img.shields.io/github/release/umami-software/umami.svg?sanitize=true" alt="GitHub Release" /&gt; &lt;/a&gt; &lt;a href="https://github.com/umami-software/umami/raw/master/LICENSE"&gt; &lt;img src="https://img.shields.io/github/license/umami-software/umami.svg?sanitize=true" alt="MIT License" /&gt; &lt;/a&gt; &lt;a href="https://github.com/umami-software/umami/actions"&gt; &lt;img src="https://img.shields.io/github/actions/workflow/status/umami-software/umami/ci.yml" alt="Build Status" /&gt; &lt;/a&gt; &lt;a href="https://analytics.umami.is/share/LGazGOecbDtaIwDr/umami.is" style="text-decoration: none;"&gt; &lt;img src="https://img.shields.io/badge/Try%20Demo%20Now-Click%20Here-brightgreen" alt="Umami Demo" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🚀 Getting Started&lt;/h2&gt; 
+&lt;p&gt;A detailed getting started guide can be found at &lt;a href="https://umami.is/docs/"&gt;umami.is/docs&lt;/a&gt;.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🛠 Installing from Source&lt;/h2&gt; 
+&lt;h3&gt;Requirements&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;A server with Node.js version 18.18 or newer&lt;/li&gt; 
+ &lt;li&gt;A database. Umami supports &lt;a href="https://www.postgresql.org/"&gt;PostgreSQL&lt;/a&gt; (minimum v12.14) databases.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Get the Source Code and Install Packages&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/umami-software/umami.git
+cd umami
+pnpm install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Configure Umami&lt;/h3&gt; 
+&lt;p&gt;Create an &lt;code&gt;.env&lt;/code&gt; file with the following:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;DATABASE_URL=connection-url
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The connection URL format:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;postgresql://username:mypassword@localhost:5432/mydb
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Build the Application&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm run build
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;em&gt;The build step will create tables in your database if you are installing for the first time. It will also create a login user with username &lt;strong&gt;admin&lt;/strong&gt; and password &lt;strong&gt;umami&lt;/strong&gt;.&lt;/em&gt;&lt;/p&gt; 
+&lt;h3&gt;Start the Application&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm run start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;em&gt;By default, this will launch the application on &lt;code&gt;http://localhost:3000&lt;/code&gt;. You will need to either &lt;a href="https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/"&gt;proxy&lt;/a&gt; requests from your web server or change the &lt;a href="https://nextjs.org/docs/api-reference/cli#production"&gt;port&lt;/a&gt; to serve the application directly.&lt;/em&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🐳 Installing with Docker&lt;/h2&gt; 
+&lt;p&gt;To build the Umami container and start up a Postgres database, run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker compose up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Alternatively, to pull just the Umami Docker image with PostgreSQL support:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker pull docker.umami.is/umami-software/umami:latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🔄 Getting Updates&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!WARNING]&lt;br /&gt; If you are updating from Umami V2, image "postgresql-latest" is deprecated. You must change it to "latest". e.g., rename &lt;code&gt;docker.umami.is/umami-software/umami:postgresql-latest&lt;/code&gt; to &lt;code&gt;docker.umami.is/umami-software/umami:latest&lt;/code&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;To get the latest features, simply do a pull, install any new dependencies, and rebuild:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git pull
+pnpm install
+pnpm run build
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;To update the Docker image, simply pull the new images and rebuild:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker compose pull
+docker compose up --force-recreate -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🛟 Support&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/umami-software/umami"&gt; &lt;img src="https://img.shields.io/badge/GitHub--blue?style=social&amp;amp;logo=github" alt="GitHub" /&gt; &lt;/a&gt; &lt;a href="https://twitter.com/umami_software"&gt; &lt;img src="https://img.shields.io/badge/Twitter--blue?style=social&amp;amp;logo=twitter" alt="Twitter" /&gt; &lt;/a&gt; &lt;a href="https://linkedin.com/company/umami-software"&gt; &lt;img src="https://img.shields.io/badge/LinkedIn--blue?style=social&amp;amp;logo=linkedin" alt="LinkedIn" /&gt; &lt;/a&gt; &lt;a href="https://umami.is/discord"&gt; &lt;img src="https://img.shields.io/badge/Discord--blue?style=social&amp;amp;logo=discord" alt="Discord" /&gt; &lt;/a&gt; &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>clash-verge-rev/clash-verge-rev</title>
+      <link>https://github.com/clash-verge-rev/clash-verge-rev</link>
+      <description>&lt;p&gt;A modern GUI client based on Tauri, designed to run in Windows, macOS and Linux for tailored proxy experience&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt; &lt;img src="https://raw.githubusercontent.com/clash-verge-rev/clash-verge-rev/dev/src-tauri/icons/icon.png" alt="Clash" width="128" /&gt; &lt;br /&gt; Continuation of &lt;a href="https://github.com/zzzgydi/clash-verge"&gt;Clash Verge&lt;/a&gt; &lt;br /&gt; &lt;/h1&gt; 
+&lt;h3 align="center"&gt; A Clash Meta GUI based on &lt;a href="https://github.com/tauri-apps/tauri"&gt;Tauri&lt;/a&gt;. &lt;/h3&gt; 
+&lt;p align="center"&gt; Languages: &lt;a href="https://raw.githubusercontent.com/clash-verge-rev/clash-verge-rev/dev/README.md"&gt;简体中文&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/clash-verge-rev/clash-verge-rev/dev/docs/README_en.md"&gt;English&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/clash-verge-rev/clash-verge-rev/dev/docs/README_es.md"&gt;Español&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/clash-verge-rev/clash-verge-rev/dev/docs/README_ru.md"&gt;Русский&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/clash-verge-rev/clash-verge-rev/dev/docs/README_ja.md"&gt;日本語&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/clash-verge-rev/clash-verge-rev/dev/docs/README_ko.md"&gt;한국어&lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;Preview&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Dark&lt;/th&gt; 
+   &lt;th&gt;Light&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/clash-verge-rev/clash-verge-rev/dev/docs/preview_dark.png" alt="预览" /&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/clash-verge-rev/clash-verge-rev/dev/docs/preview_light.png" alt="预览" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Install&lt;/h2&gt; 
+&lt;p&gt;请到发布页面下载对应的安装包：&lt;a href="https://github.com/clash-verge-rev/clash-verge-rev/releases"&gt;Release page&lt;/a&gt;&lt;br /&gt; Go to the &lt;a href="https://github.com/clash-verge-rev/clash-verge-rev/releases"&gt;Release page&lt;/a&gt; to download the corresponding installation package&lt;br /&gt; Supports Windows (x64/x86), Linux (x64/arm64) and macOS 10.15+ (intel/apple).&lt;/p&gt; 
+&lt;h4&gt;我应当怎样选择发行版&lt;/h4&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="left"&gt;版本&lt;/th&gt; 
+   &lt;th align="left"&gt;特征&lt;/th&gt; 
+   &lt;th align="left"&gt;链接&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Stable&lt;/td&gt; 
+   &lt;td align="left"&gt;正式版，高可靠性，适合日常使用。&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/clash-verge-rev/clash-verge-rev/releases"&gt;Release&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Alpha(废弃)&lt;/td&gt; 
+   &lt;td align="left"&gt;测试发布流程。&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/alpha"&gt;Alpha&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;AutoBuild&lt;/td&gt; 
+   &lt;td align="left"&gt;滚动更新版，适合测试反馈，可能存在缺陷。&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/autobuild"&gt;AutoBuild&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h4&gt;安装说明和常见问题，请到 &lt;a href="https://clash-verge-rev.github.io/"&gt;文档页&lt;/a&gt; 查看&lt;/h4&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;TG 频道: &lt;a href="https://t.me/clash_verge_re"&gt;@clash_verge_rev&lt;/a&gt;&lt;/h3&gt; 
+&lt;h2&gt;Promotion&lt;/h2&gt; 
+&lt;h4&gt;&lt;a href="https://verge.dginv.click/#/register?code=oaxsAGo6"&gt;狗狗加速 —— 技术流机场 Doggygo VPN&lt;/a&gt;&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;高性能海外机场，免费试用，优惠套餐，解锁流媒体，全球首家支持 Hysteria 协议。&lt;/li&gt; 
+ &lt;li&gt;使用 Clash Verge 专属邀请链接注册送 3 天，每天 1G 流量免费试用：&lt;a href="https://verge.dginv.click/#/register?code=oaxsAGo6"&gt;点此注册&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Clash Verge 专属 8 折优惠码: verge20 (仅有 500 份)&lt;/li&gt; 
+ &lt;li&gt;优惠套餐每月仅需 15.8 元，160G 流量，年付 8 折&lt;/li&gt; 
+ &lt;li&gt;海外团队，无跑路风险，高达 50% 返佣&lt;/li&gt; 
+ &lt;li&gt;集群负载均衡设计，高速专线(兼容老客户端)，极低延迟，无视晚高峰，4K 秒开&lt;/li&gt; 
+ &lt;li&gt;全球首家 Hysteria 协议机场，现已上线更快的 &lt;code&gt;Hysteria2&lt;/code&gt; 协议(Clash Verge 客户端最佳搭配)&lt;/li&gt; 
+ &lt;li&gt;解锁流媒体及 ChatGPT&lt;/li&gt; 
+ &lt;li&gt;官网：&lt;a href="https://verge.dginv.click/#/register?code=oaxsAGo6"&gt;https://狗狗加速.com&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;本项目的构建与发布环境由 &lt;a href="https://yxvm.com/aff.php?aff=827"&gt;YXVM&lt;/a&gt; 独立服务器全力支持，&lt;/h4&gt; 
+&lt;p&gt;感谢提供 独享资源、高性能、高速网络 的强大后端环境。如果你觉得下载够快、使用够爽，那是因为我们用了好服务器！&lt;/p&gt; 
+&lt;p&gt;🧩 YXVM 独立服务器优势：&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🌎 优质网络，回程优化，下载快到飞起&lt;/li&gt; 
+ &lt;li&gt;🔧 物理机独享资源，非VPS可比，性能拉满&lt;/li&gt; 
+ &lt;li&gt;🧠 适合跑代理、搭建 WEB 站 CDN 站 、搞 CI/CD 或任何高负载应用&lt;/li&gt; 
+ &lt;li&gt;💡 支持即开即用，多机房选择，CN2 / IEPL 可选&lt;/li&gt; 
+ &lt;li&gt;📦 本项目使用配置已在售，欢迎同款入手！&lt;/li&gt; 
+ &lt;li&gt;🎯 想要同款构建体验？&lt;a href="https://yxvm.com/aff.php?aff=827"&gt;立即下单 YXVM 独立服务器！&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;基于性能强劲的 Rust 和 Tauri 2 框架&lt;/li&gt; 
+ &lt;li&gt;内置&lt;a href="https://github.com/MetaCubeX/mihomo"&gt;Clash.Meta(mihomo)&lt;/a&gt;内核，并支持切换 &lt;code&gt;Alpha&lt;/code&gt; 版本内核。&lt;/li&gt; 
+ &lt;li&gt;简洁美观的用户界面，支持自定义主题颜色、代理组/托盘图标以及 &lt;code&gt;CSS Injection&lt;/code&gt;。&lt;/li&gt; 
+ &lt;li&gt;配置文件管理和增强（Merge 和 Script），配置文件语法提示。&lt;/li&gt; 
+ &lt;li&gt;系统代理和守卫、&lt;code&gt;TUN(虚拟网卡)&lt;/code&gt; 模式。&lt;/li&gt; 
+ &lt;li&gt;可视化节点和规则编辑&lt;/li&gt; 
+ &lt;li&gt;WebDav 配置备份和同步&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;FAQ&lt;/h3&gt; 
+&lt;p&gt;Refer to &lt;a href="https://clash-verge-rev.github.io/faq/windows.html"&gt;Doc FAQ Page&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Donation&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://github.com/sponsors/clash-verge-rev"&gt;捐助Clash Verge Rev的开发&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/clash-verge-rev/clash-verge-rev/dev/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for more details.&lt;/p&gt; 
+&lt;p&gt;To run the development server, execute the following commands after all prerequisites for &lt;strong&gt;Tauri&lt;/strong&gt; are installed:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;pnpm i
+pnpm run prebuild
+pnpm dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Contributions&lt;/h2&gt; 
+&lt;p&gt;Issue and PR welcome!&lt;/p&gt; 
+&lt;h2&gt;Acknowledgement&lt;/h2&gt; 
+&lt;p&gt;Clash Verge rev was based on or inspired by these projects and so on:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/zzzgydi/clash-verge"&gt;zzzgydi/clash-verge&lt;/a&gt;: A Clash GUI based on tauri. Supports Windows, macOS and Linux.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/tauri-apps/tauri"&gt;tauri-apps/tauri&lt;/a&gt;: Build smaller, faster, and more secure desktop applications with a web frontend.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/Dreamacro/clash"&gt;Dreamacro/clash&lt;/a&gt;: A rule-based tunnel in Go.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/MetaCubeX/mihomo"&gt;MetaCubeX/mihomo&lt;/a&gt;: A rule-based tunnel in Go.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/Fndroid/clash_for_windows_pkg"&gt;Fndroid/clash_for_windows_pkg&lt;/a&gt;: A Windows/macOS GUI based on Clash.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/vitejs/vite"&gt;vitejs/vite&lt;/a&gt;: Next generation frontend tooling. It's fast!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;GPL-3.0 License. See &lt;a href="https://raw.githubusercontent.com/clash-verge-rev/clash-verge-rev/dev/LICENSE"&gt;License here&lt;/a&gt; for details.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>renovatebot/renovate</title>
+      <link>https://github.com/renovatebot/renovate</link>
+      <description>&lt;p&gt;Home of the Renovate CLI: Cross-platform Dependency Automation by Mend.io&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://docs.renovatebot.com/assets/images/mend-renovate-cli-banner.jpg" alt="Mend Renovate CLI banner" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/renovatebot/renovate/main/license"&gt;&lt;img src="https://img.shields.io/badge/license-%20%09AGPL--3.0--only-blue.svg?sanitize=true" alt="License: AGPL-3.0-only" /&gt;&lt;/a&gt; &lt;a href="https://codecov.io/gh/renovatebot/renovate"&gt;&lt;img src="https://codecov.io/gh/renovatebot/renovate/branch/main/graph/badge.svg?sanitize=true" alt="codecov" /&gt;&lt;/a&gt; &lt;a href="https://renovatebot.com/"&gt;&lt;img src="https://img.shields.io/badge/renovate-enabled-brightgreen.svg?sanitize=true" alt="Renovate enabled" /&gt;&lt;/a&gt; &lt;a href="https://github.com/renovatebot/renovate/actions/workflows/build.yml"&gt;&lt;img src="https://github.com/renovatebot/renovate/actions/workflows/build.yml/badge.svg?sanitize=true" alt="Build status" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/docker/pulls/renovate/renovate?color=turquoise" alt="Docker Pulls" /&gt; &lt;a href="https://securityscorecards.dev/viewer/?uri=github.com/renovatebot/renovate"&gt;&lt;img src="https://api.securityscorecards.dev/projects/github.com/renovatebot/renovate/badge" alt="OpenSSF Scorecard" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;What is the Mend Renovate CLI?&lt;/h1&gt; 
+&lt;p&gt;Renovate is an automated dependency update tool. It helps to update dependencies in your code without needing to do it manually. When Renovate runs on your repo, it looks for references to dependencies (both public and private) and, if there are newer versions available, Renovate can create pull requests to update your versions automatically.&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Delivers update PRs directly to your repo 
+  &lt;ul&gt; 
+   &lt;li&gt;Relevant package files are discovered automatically&lt;/li&gt; 
+   &lt;li&gt;Pull Requests automatically generated in your repo&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Provides useful information to help you decide which updates to accept (age, adoption, pass rates, merge confidence)&lt;/li&gt; 
+ &lt;li&gt;Highly configurable and flexible to fit in with your needs and repository standards&lt;/li&gt; 
+ &lt;li&gt;Largest collection of languages and platforms (listed below)&lt;/li&gt; 
+ &lt;li&gt;Connects with private repositories and package registries&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Languages&lt;/h3&gt; 
+&lt;p&gt;Renovate can provide updates for most popular languages, platforms, and registries including: npm, Java, Python, .NET, Scala, Ruby, Go, Docker and more. Supports over &lt;a href="https://docs.renovatebot.com/modules/manager/"&gt;90 different package managers&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Platforms&lt;/h3&gt; 
+&lt;p&gt;Renovate updates code repositories on the following platforms: GitHub, GitLab, Bitbucket, Azure DevOps, AWS Code Commit, Gitea, Forgejo, Gerrit (experimental)&lt;/p&gt; 
+&lt;h2&gt;Ways to run Renovate&lt;/h2&gt; 
+&lt;p&gt;The most effective way to run Renovate is to use an automated job scheduling system that regularly runs Renovate on all enabled repositories and responds with priority to user activity. Mend offers cloud-hosted and self-hosted solutions. See the options below.&lt;/p&gt; 
+&lt;h3&gt;Mend Renovate Community (Cloud-Hosted)&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Supports: GitHub.com, Bitbucket Cloud&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Hosted by Mend.io. No setup is needed. Community plan available (Free)&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;GitHub Cloud: Install the &lt;a href="https://github.com/apps/renovate"&gt;Renovate Cloud-Hosted App&lt;/a&gt; on your GitHub org, then select the repos to enable&lt;/li&gt; 
+ &lt;li&gt;Bitbucket Cloud: Add the &lt;a href="https://marketplace.atlassian.com/apps/1232072/mend"&gt;Mend App&lt;/a&gt; to your Workspace, then add the Mend Renovate user to the projects you want to enable&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Mend Renovate Community (Self-hosted)&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Supports: GitHub, GitLab, Bitbucket Data Center&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Install and run your own Renovate server. Access internal packages.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/mend/renovate-ce-ee/tree/main/docs"&gt;Mend Renovate Community Self-Hosted&lt;/a&gt; (Free)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.mend.io/mend-renovate/"&gt;Mend Renovate Enterprise&lt;/a&gt; (Paid plan)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Other ways to run Renovate&lt;/h3&gt; 
+&lt;p&gt;If you can’t use a pre-built job scheduling system, or want to build your own, the following options are available:&lt;/p&gt; 
+&lt;h4&gt;Run Renovate on your Pipeline&lt;/h4&gt; 
+&lt;p&gt;Mend provides a &lt;em&gt;&lt;strong&gt;GitHub Action&lt;/strong&gt;&lt;/em&gt; or a &lt;em&gt;&lt;strong&gt;GitLab Runner&lt;/strong&gt;&lt;/em&gt; to help you run Renovate as a CI pipeline job.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;GitHub Action: &lt;a href="https://github.com/renovatebot/github-action"&gt;renovatebot/github-action&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;GitLab Runner: &lt;a href="https://gitlab.com/renovate-bot/renovate-runner/"&gt;Renovate Runner project&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;AzureDevOps action: &lt;a href="https://marketplace.visualstudio.com/items?itemName=jyc.vsts-extensions-renovate-me"&gt;Renovate Me extension&lt;/a&gt;&lt;br /&gt; &lt;em&gt;Note: This extension is created and maintained personally by a Renovate developer/user. Support requests for the extension will not be answered directly in the main Renovate repository.&lt;/em&gt;&lt;/li&gt; 
+ &lt;li&gt;Custom pipeline: You can create a custom pipeline with a &lt;strong&gt;yml&lt;/strong&gt; definition that triggers &lt;strong&gt;npx renovate&lt;/strong&gt;. &lt;a href="https://docs.renovatebot.com/modules/platform/azure/"&gt;More details on how to configure the pipeline&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Run Renovate CLI&lt;/h4&gt; 
+&lt;p&gt;There are several ways to run the Renovate CLI directly. See docs: &lt;a href="https://docs.renovatebot.com/getting-started/running/"&gt;Running Renovate&lt;/a&gt; for all options.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Supports: all platforms&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Docs&lt;/h2&gt; 
+&lt;h3&gt;More about Renovate&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Renovate basics 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://docs.renovatebot.com/#why-use-renovate"&gt;Why use Renovate&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://docs.renovatebot.com/key-concepts/how-renovate-works/"&gt;What does it do? / How does it work?&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://docs.renovatebot.com/#who-uses-renovate"&gt;Who is using it?&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Supported platforms and languages 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://docs.renovatebot.com/#supported-platforms"&gt;Supported platforms&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://docs.renovatebot.com/modules/manager/"&gt;Supported languages / package managers&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Advanced Renovate usage 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://docs.renovatebot.com/getting-started/private-packages/"&gt;Accessing private packages&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://docs.renovatebot.com/merge-confidence/"&gt;Merge Confidence data&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Renovate Docs&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.renovatebot.com/configuration-options/"&gt;Renovate Configuration&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/mend/renovate-ce-ee/tree/main/docs"&gt;Mend Renovate Self-Hosted Docs&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Comparisons&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.mend.io/renovate/"&gt;Different ways to run Renovate&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.renovatebot.com/bot-comparison/"&gt;Renovate vs Dependabot&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Get involved&lt;/h2&gt; 
+&lt;h3&gt;Issues and Discussions&lt;/h3&gt; 
+&lt;p&gt;Please open a Discussion to get help, suggest a new feature, or to report a bug. We only want maintainers to open Issues.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/renovatebot/renovate/discussions"&gt;GitHub Discussions for Renovate&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Contributing&lt;/h3&gt; 
+&lt;p&gt;To contribute to Renovate, or run a local copy, please read the contributing guidelines.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/renovatebot/renovate/raw/main/.github/contributing.md"&gt;Guidelines for Contributing&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Items that need contribution: &lt;a href="https://github.com/renovatebot/renovate/contribute"&gt;good first issues&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Contact and Social Media&lt;/h3&gt; 
+&lt;p&gt;The Renovate project is proudly supported and actively maintained by Mend.io.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Contact &lt;a href="https://www.mend.io/"&gt;Mend.io&lt;/a&gt; for commercial support questions.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Follow us on:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Twitter: &lt;a href="https://x.com/mend_io"&gt;x.com/mend_io&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;LinkedIn: &lt;a href="https://linkedin.com/company/mend-io"&gt;linkedin.com/company/mend-io&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Security / Disclosure&lt;/h2&gt; 
+&lt;p&gt;If you find any bug with Renovate that may be a security problem, then e-mail us at: &lt;a href="mailto:renovate-disclosure@mend.io"&gt;renovate-disclosure@mend.io&lt;/a&gt;. This way we can evaluate the bug and hopefully fix it before it gets abused. Please give us enough time to investigate the bug before you report it anywhere else.&lt;/p&gt; 
+&lt;p&gt;Please do not create GitHub issues for security-related doubts or problems.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>nocobase/nocobase</title>
+      <link>https://github.com/nocobase/nocobase</link>
+      <description>&lt;p&gt;NocoBase is the most extensible AI-powered no-code/low-code platform for building business applications and enterprise solutions.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;English | &lt;a href="https://raw.githubusercontent.com/nocobase/nocobase/main/README.zh-CN.md"&gt;中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/nocobase/nocobase/main/README.ja-JP.md"&gt;日本語&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/4d11a87b-00e2-48f3-9bf7-389d21072d13"&gt;https://github.com/user-attachments/assets/4d11a87b-00e2-48f3-9bf7-389d21072d13&lt;/a&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/4112" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/4112" alt="nocobase%2Fnocobase | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt; &lt;a href="https://www.producthunt.com/posts/nocobase?embed=true&amp;amp;utm_source=badge-top-post-topic-badge&amp;amp;utm_medium=badge&amp;amp;utm_souce=badge-nocobase" target="_blank"&gt;&lt;img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=456520&amp;amp;theme=light&amp;amp;period=weekly&amp;amp;topic_id=267" alt="NocoBase - Scalability-first, open-source no-code platform | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;What is NocoBase&lt;/h2&gt; 
+&lt;p&gt;NocoBase is the most extensible AI-powered no-code platform.&lt;br /&gt; Total control. Infinite extensibility. AI collaboration.&lt;br /&gt; Enable your team to adapt quickly and cut costs dramatically.&lt;br /&gt; No years of development. No millions wasted.&lt;br /&gt; Deploy NocoBase in minutes — and take control of everything.&lt;/p&gt; 
+&lt;p&gt;Homepage:&lt;br /&gt; &lt;a href="https://www.nocobase.com/"&gt;https://www.nocobase.com/&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Online Demo:&lt;br /&gt; &lt;a href="https://demo.nocobase.com/new"&gt;https://demo.nocobase.com/new&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Documents:&lt;br /&gt; &lt;a href="https://docs.nocobase.com/"&gt;https://docs.nocobase.com/&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Forum:&lt;br /&gt; &lt;a href="https://forum.nocobase.com/"&gt;https://forum.nocobase.com/&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Use Cases:&lt;br /&gt; &lt;a href="https://www.nocobase.com/en/blog/tags/customer-stories"&gt;https://www.nocobase.com/en/blog/tags/customer-stories&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Release Notes&lt;/h2&gt; 
+&lt;p&gt;Our &lt;a href="https://www.nocobase.com/en/blog/timeline"&gt;blog&lt;/a&gt; is regularly updated with release notes and provides a weekly summary.&lt;/p&gt; 
+&lt;h2&gt;Distinctive features&lt;/h2&gt; 
+&lt;h3&gt;1. Data model-driven, not form/table–driven&lt;/h3&gt; 
+&lt;p&gt;Instead of being constrained by forms or tables, NocoBase adopts a data model–driven approach, separating data structure from user interface to unlock unlimited possibilities.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;UI and data structure are fully decoupled&lt;/li&gt; 
+ &lt;li&gt;Multiple blocks and actions can be created for the same table or record in any quantity or form&lt;/li&gt; 
+ &lt;li&gt;Supports the main database, external databases, and third-party APIs as data sources&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;img src="https://static-docs.nocobase.com/model.png" alt="model" /&gt;&lt;/p&gt; 
+&lt;h3&gt;2. AI employees, integrated into your business systems&lt;/h3&gt; 
+&lt;p&gt;Unlike standalone AI demos, NocoBase allows you to embed AI capabilities seamlessly into your interfaces, workflows, and data context, making AI truly useful in real business scenarios.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Define AI employees for roles such as translator, analyst, researcher, or assistant&lt;/li&gt; 
+ &lt;li&gt;Seamless AI–human collaboration in interfaces and workflows&lt;/li&gt; 
+ &lt;li&gt;Ensure AI usage is secure, transparent, and customizable for your business needs&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;img src="https://static-docs.nocobase.com/ai-employee-home.png" alt="AI-employee" /&gt;&lt;/p&gt; 
+&lt;h3&gt;3. What you see is what you get, incredibly easy to use&lt;/h3&gt; 
+&lt;p&gt;While enabling the development of complex business systems, NocoBase keeps the experience simple and intuitive.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;One-click switch between usage mode and configuration mode&lt;/li&gt; 
+ &lt;li&gt;Pages serve as a canvas to arrange blocks and actions, similar to Notion&lt;/li&gt; 
+ &lt;li&gt;Configuration mode is designed for ordinary users, not just programmers&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;img src="https://static-docs.nocobase.com/wysiwyg.gif" alt="wysiwyg" /&gt;&lt;/p&gt; 
+&lt;h3&gt;4. Everything is a plugin, designed for extension&lt;/h3&gt; 
+&lt;p&gt;Adding more no-code features will never cover every business case. NocoBase is built for extension through its plugin-based microkernel architecture.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;All functionalities are plugins, similar to WordPress&lt;/li&gt; 
+ &lt;li&gt;Plugins are ready to use upon installation&lt;/li&gt; 
+ &lt;li&gt;Pages, blocks, actions, APIs, and data sources can all be extended through custom plugins&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;img src="https://static-docs.nocobase.com/plugins.png" alt="plugins" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;NocoBase supports three installation methods:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a target="_blank" href="https://docs.nocobase.com/welcome/getting-started/installation/docker-compose"&gt;Installing With Docker (👍Recommended)&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Suitable for no-code scenarios, no code to write. When upgrading, just download the latest image and reboot.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a target="_blank" href="https://docs.nocobase.com/welcome/getting-started/installation/create-nocobase-app"&gt;Installing from create-nocobase-app CLI&lt;/a&gt;&lt;/p&gt; &lt;p&gt;The business code of the project is completely independent and supports low-code development.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a target="_blank" href="https://docs.nocobase.com/welcome/getting-started/installation/git-clone"&gt;Installing from Git source code&lt;/a&gt;&lt;/p&gt; &lt;p&gt;If you want to experience the latest unreleased version, or want to participate in the contribution, you need to make changes and debug on the source code, it is recommended to choose this installation method, which requires a high level of development skills, and if the code has been updated, you can git pull the latest code.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How NocoBase works&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/8d183b44-9bb5-4792-b08f-bc08fe8dfaaf"&gt;https://github.com/user-attachments/assets/8d183b44-9bb5-4792-b08f-bc08fe8dfaaf&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>yangshun/tech-interview-handbook</title>
+      <link>https://github.com/yangshun/tech-interview-handbook</link>
+      <description>&lt;p&gt;Curated coding interview preparation materials for busy software engineers&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt;Tech Interview Handbook&lt;/h1&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://www.techinterviewhandbook.org/"&gt; &lt;img src="https://raw.githubusercontent.com/yangshun/tech-interview-handbook/main/assets/logo.svg?sanitize=true" alt="Tech Interview Handbook" width="400" /&gt; &lt;/a&gt; 
+ &lt;br /&gt; 
+ &lt;h3&gt; &lt;a href="https://www.techinterviewhandbook.org/"&gt;Read on the website&lt;/a&gt; &lt;/h3&gt; 
+ &lt;p&gt; Join/follow us on &lt;a href="https://discord.com/invite/usMqNaPczq" target="_blank"&gt;Discord&lt;/a&gt; | &lt;a href="https://twitter.com/techinterviewhb" target="_blank"&gt;𝕏 (Twitter)&lt;/a&gt; | &lt;a href="https://t.me/techinterviewhandbook" target="_blank"&gt;Telegram&lt;/a&gt; | &lt;a href="https://facebook.com/techinterviewhandbook" target="_blank"&gt;Facebook&lt;/a&gt; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;a href="https://www.techinterviewhandbook.org/software-engineering-interview-guide/" target="_blank"&gt; &lt;img src="https://raw.githubusercontent.com/yangshun/tech-interview-handbook/main/assets/start-reading-button.jpg" alt="Start Reading Tech Interview Handbook" /&gt; &lt;/a&gt; 
+&lt;h2&gt;What is this?&lt;/h2&gt; 
+&lt;p&gt;Not everyone has the time to do a few hundred LeetCode questions. Here are &lt;em&gt;free and curated&lt;/em&gt; technical interview preparation materials for busy engineers, brought to you by me, the author of &lt;a href="https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU"&gt;Blind 75&lt;/a&gt;. Over 1,000,000 people have benefitted from this handbook!&lt;/p&gt; 
+&lt;p&gt;Besides the usual algorithm questions, other &lt;strong&gt;awesome&lt;/strong&gt; stuff includes:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.techinterviewhandbook.org/coding-interview-study-plan/"&gt;Best practice questions&lt;/a&gt; for coding interviews&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.techinterviewhandbook.org/grind75/"&gt;Grind 75&lt;/a&gt; - the next evolution of Blind 75, bigger and better&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.techinterviewhandbook.org/coding-interview-prep/"&gt;How to prepare&lt;/a&gt; for coding interviews&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.techinterviewhandbook.org/coding-interview-cheatsheet/"&gt;Coding interview best practices&lt;/a&gt; - Straight-to-the-point Do's and Don'ts&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.techinterviewhandbook.org/algorithms/study-cheatsheet/"&gt;Algorithm cheatsheets and tips&lt;/a&gt; categorized by topic&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.techinterviewhandbook.org/resume/"&gt;Step-by-step Software Engineer resume guide&lt;/a&gt; to prepare a FAANG-ready resume&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.techinterviewhandbook.org/behavioral-interview-questions/"&gt;Behavioral questions&lt;/a&gt; asked by the top tech companies&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.frontendinterviewhandbook.com"&gt;Front end interview preparation&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Help from you in contributing content would be very much appreciated!&lt;/p&gt; 
+&lt;h2&gt;Why would you read this?&lt;/h2&gt; 
+&lt;p&gt;This repository has &lt;strong&gt;practical&lt;/strong&gt; content that covers all phases of a technical interview, from applying for a job to passing the interviews to offer negotiation. Technically competent candidates might still find the non-technical content helpful.&lt;/p&gt; 
+&lt;p&gt;The information in this repository is condensed. Ultimately, the key to succeeding in technical interviews is consistent practice and I don't want to bore you with too many words. I tell you the minimum you need to know on how to go about navigating the interview process, you go and practice and land your dream job.&lt;/p&gt; 
+&lt;h2&gt;Who is this for?&lt;/h2&gt; 
+&lt;p&gt;Anybody who wants to land a job at a tech company but is new to technical interviews, seasoned engineers who have not been on the other side of the interviewing table in a while and want to get back into the game, or anyone who wants to be better at technical interviewing.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;div align="center"&gt; 
+ &lt;h3&gt;💡 Stop grinding mindlessly! Study coding question patterns efficiently with &lt;a href="https://www.designgurus.io/course/grokking-the-coding-interview?aff=kJSIoU"&gt;Grokking the Coding Interview&lt;/a&gt; by Design Gurus 💡 &lt;/h3&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;How is this repository different?&lt;/h2&gt; 
+&lt;p&gt;There are many awesome books like "Cracking the Coding Interview" and interview-related repositories out there on GitHub, what makes this repository different? The difference is that many existing interview repositories contain mainly links to external resources whereas this repository contains top-quality curated content directly for your consumption.&lt;/p&gt; 
+&lt;p&gt;Also, existing resources focus mainly on algorithm questions and lack coverage for more domain-specific and non-technical questions. This handbook aims to cover content beyond the typical algorithmic coding questions. 😎&lt;/p&gt; 
+&lt;h2&gt;Looking for interview courses?&lt;/h2&gt; 
+&lt;h3&gt;&lt;a href="https://shareasale.com/r.cfm?b=1873647&amp;amp;u=3114753&amp;amp;m=114505&amp;amp;urllink=&amp;amp;afftrack="&gt;AlgoMonster&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;AlgoMonster aims to help you ace the technical interview &lt;strong&gt;in the shortest time possible&lt;/strong&gt;. By Google engineers, AlgoMonster uses a data-driven approach to teach you the most useful key question patterns and has contents to help you quickly revise basic data structures and algorithms. Best of all, AlgoMonster is not subscription-based - pay a one-time fee and get &lt;strong&gt;lifetime access&lt;/strong&gt;. &lt;a href="https://shareasale.com/r.cfm?b=1873647&amp;amp;u=3114753&amp;amp;m=114505&amp;amp;urllink=&amp;amp;afftrack="&gt;&lt;strong&gt;Join today for a 70% discount →&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;&lt;a href="https://www.designgurus.io/course/grokking-the-coding-interview?aff=kJSIoU"&gt;Grokking the Coding Interview: Patterns for Coding Questions&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;This course by Design Gurus expands upon the questions on the recommended practice questions but approaches the practicing from a questions pattern perspective, which is an approach I also agree with for learning and have personally used to get better at coding interviews. The course allows you to practice selected questions in Java, Python, C++, JavaScript and also provides sample solutions in those languages. &lt;strong&gt;Learn and understand patterns, not memorize answers!&lt;/strong&gt; &lt;a href="https://www.designgurus.io/course/grokking-the-coding-interview?aff=kJSIoU"&gt;&lt;strong&gt;Get lifetime access today →&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Looking for Front End content?&lt;/h2&gt; 
+&lt;p&gt;Front-end-related content has been moved to a separate website - &lt;a href="https://frontendinterviewhandbook.com"&gt;Front End Interview Handbook&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Looking for System Design content?&lt;/h2&gt; 
+&lt;p&gt;We're still working on System Design content. In the meanwhile, check out &lt;a href="https://bytebytego.com?fpr=techinterviewhandbook"&gt;ByteByteGo's System Design Interview course&lt;/a&gt; or Design Gurus' &lt;a href="https://www.designgurus.io/course/grokking-the-system-design-interview?aff=kJSIoU"&gt;Grokking the System Design Interview course&lt;/a&gt;, which in our opinion are among the most useful resources for getting started on system design interviews preparation.&lt;/p&gt; 
+&lt;h2&gt;Contents&lt;/h2&gt; 
+&lt;p&gt;A &lt;a href="https://github.com/facebook/docusaurus"&gt;Docusaurus&lt;/a&gt; website has been created to provide a better reading experience. Check out the website &lt;a href="https://www.techinterviewhandbook.org"&gt;here&lt;/a&gt;!&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;div align="center"&gt; 
+ &lt;h3&gt;💡 Stop the grind and study with a plan! Developed by Google engineers, &lt;a href="https://shareasale.com/r.cfm?b=1873647&amp;amp;u=3114753&amp;amp;m=114505&amp;amp;urllink=&amp;amp;afftrack="&gt;AlgoMonster&lt;/a&gt; is the fastest way to get a software engineering job. &lt;a href="https://shareasale.com/r.cfm?b=1873647&amp;amp;u=3114753&amp;amp;m=114505&amp;amp;urllink=&amp;amp;afftrack="&gt;Join today for a 70% discount!&lt;/a&gt; 💡&lt;/h3&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Related&lt;/h2&gt; 
+&lt;p&gt;If you are interested in how data structures are implemented, check out &lt;a href="https://github.com/yangshun/lago"&gt;Lago&lt;/a&gt;, a Data Structures and Algorithms library for JavaScript. It is pretty much still WIP but I intend to make it into a library that can be used in production and also a reference resource for revising Data Structures and Algorithms.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;There are no formal contributing guidelines at the moment as things are still in flux and we might find a better approach to structure content as we go along. You are welcome to contribute whatever you think will be helpful to fellow engineers. If you would like to contribute content for different domains, feel free to create an issue or submit a pull request and we can discuss further.&lt;/p&gt; 
+&lt;h3&gt;Contributors&lt;/h3&gt; 
+&lt;p&gt;This project exists thanks to all the people who contributed. [&lt;a href="https://raw.githubusercontent.com/yangshun/tech-interview-handbook/main/CONTRIBUTING.md"&gt;Contribute&lt;/a&gt;]. &lt;a href="https://github.com/yangshun/tech-interview-handbook/graphs/contributors"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/contributors.svg?width=890&amp;amp;button=false" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Backers&lt;/h3&gt; 
+&lt;p&gt;Thank you to all our backers! 🙏 [&lt;a href="https://opencollective.com/tech-interview-handbook#backer"&gt;Become a backer&lt;/a&gt;]&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://opencollective.com/tech-interview-handbook#backers" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/backers.svg?width=890" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.buymeacoffee.com/yangshun" target="_blank"&gt;&lt;img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important; width: auto !important;" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Sponsors&lt;/h3&gt; 
+&lt;p&gt;Support this project by becoming a sponsor. Your logo/profile picture will show up here with a link to your website. [&lt;a href="https://opencollective.com/tech-interview-handbook#sponsor"&gt;Become a sponsor&lt;/a&gt;]&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/0/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/0/avatar.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/1/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/1/avatar.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/2/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/2/avatar.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/3/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/3/avatar.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/4/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/4/avatar.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/5/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/5/avatar.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/6/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/6/avatar.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/7/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/7/avatar.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/8/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/8/avatar.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/9/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/9/avatar.svg?sanitize=true" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Disclaimer&lt;/h2&gt; 
+&lt;p&gt;I am providing code in the repository to you under an open source license. Because this is my personal repository, the license you receive to my code is from me and not my employer (Meta).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>vuetifyjs/vuetify</title>
+      <link>https://github.com/vuetifyjs/vuetify</link>
+      <description>&lt;p&gt;🐉 Vue Component Framework&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://vuetifyjs.com" target="_blank"&gt; &lt;img alt="Vuetify Logo" width="100" src="https://cdn.vuetifyjs.com/images/logos/logo.svg?sanitize=true" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.npmjs.com/package/vuetify"&gt; &lt;img src="https://img.shields.io/npm/dt/vuetify.svg?sanitize=true" alt="Downloads" /&gt; &lt;/a&gt; &lt;a href="https://www.npmjs.com/package/vuetify"&gt; &lt;img src="https://img.shields.io/npm/dm/vuetify.svg?sanitize=true" alt="Downloads" /&gt; &lt;/a&gt; &lt;br /&gt; &lt;a href="https://github.com/vuetifyjs/vuetify/raw/master/LICENSE.md"&gt; &lt;img src="https://img.shields.io/npm/l/vuetify.svg?sanitize=true" alt="License" /&gt; &lt;/a&gt; &lt;a href="https://community.vuetifyjs.com"&gt; &lt;img src="https://discordapp.com/api/guilds/340160225338195969/widget.png" alt="Chat" /&gt; &lt;/a&gt; &lt;br /&gt; &lt;a href="https://www.npmjs.com/package/vuetify"&gt; &lt;img src="https://img.shields.io/npm/v/vuetify.svg?sanitize=true" alt="Version" /&gt; &lt;/a&gt; &lt;a href="https://cdnjs.com/libraries/vuetify"&gt; &lt;img src="https://img.shields.io/cdnjs/v/vuetify.svg?sanitize=true" alt="CDN" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h3&gt;🖥️ Documentation&lt;/h3&gt; 
+&lt;p&gt;To check out the documentation, visit &lt;a href="https://vuetifyjs.com"&gt;vuetifyjs.com&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/vuetifyjs/vuetify/workflows/Crowdin%20Uploads/badge.svg?branch=master" alt="Crowdin Uploads" /&gt;&lt;/p&gt; 
+&lt;h3&gt;⚡ Quick Start&lt;/h3&gt; 
+&lt;p&gt;Getting started with Vuetify is easy. To create a new project, choose your package manager and run one of the following commands:&lt;/p&gt; 
+&lt;p&gt;Using &lt;a href="https://pnpm.io/"&gt;pnpm&lt;/a&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm create vuetify
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Using &lt;a href="https://yarnpkg.com/"&gt;yarn&lt;/a&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn create vuetify
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Using &lt;a href="https://npmjs.com/"&gt;npm&lt;/a&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm create vuetify@latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Using &lt;a href="https://bun.sh/"&gt;bun&lt;/a&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun create vuetify
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For more information on how to get started, such as using Nuxt or Laravel, check out the official &lt;a href="https://vuetifyjs.com/getting-started/installation/"&gt;Installation guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;💖 Supporting Vuetify&lt;/h3&gt; 
+&lt;p&gt;Vuetify is a &lt;a href="http://opensource.org/licenses/MIT"&gt;MIT licensed&lt;/a&gt; project that is developed and maintained by the &lt;a href="https://vuetifyjs.com/about/meet-the-team/"&gt;Core Team&lt;/a&gt;. Sponsor Vuetify and receive some &lt;strong&gt;awesome perks&lt;/strong&gt; and support Open Source Software at the same time! 🎉&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;a href="https://github.com/users/johnleider/sponsorship"&gt;Become a backer or sponsor on GitHub&lt;/a&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;a href="https://opencollective.com/vuetify"&gt;Become a backer or sponsor on Open Collective&lt;/a&gt; &lt;strong&gt;&lt;small&gt;(supports the Core team)&lt;/small&gt;&lt;/strong&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;a href="https://tidelift.com/subscription/request-a-demo?utm_source=npm-vuetify&amp;amp;utm_medium=referral&amp;amp;utm_campaign=enterprise"&gt;Become a subscriber on Tidelift&lt;/a&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;a href="https://paypal.me/vuetify"&gt;Make a one-time payment with Paypal&lt;/a&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;What's the difference between GitHub Sponsors and OpenCollective?&lt;/h3&gt; 
+&lt;p&gt;Funds donated through GitHub Sponsors directly support &lt;a href="https://github.com/sponsors/johnleider"&gt;John Leider&lt;/a&gt; and the ongoing development and maintenance of Vuetify. Funds donated via Open Collective are managed with transparent expenses and will be used for compensating work and expenses for Core team members. Your name/logo will receive proper recognition and exposure by donating on either platform.&lt;/p&gt; 
+&lt;h3&gt;&lt;b&gt;Special Sponsor&lt;/b&gt;&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;a href="https://www.deepcloud.swiss/" target="_blank"&gt; &lt;img height="65px" src="https://cdn.cosmicjs.com/20504e40-6cbc-11ef-b5ae-a594bb4a8e67-deepcloud-light.svg?sanitize=true" /&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;&lt;b&gt;Diamond Sponsors&lt;/b&gt;&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;a href="https://route4me.com/"&gt; &lt;img height="40px" src="https://cdn.cosmicjs.com/3b7a95b0-5360-11ef-b1ea-f56c65dfade9-route-4-me-light.png" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;a href="https://www.abacus.ch/"&gt; &lt;img height="40px" src="https://cdn.cosmicjs.com/0b978be0-6cbb-11ef-b5ae-a594bb4a8e67-abacus-light.svg?sanitize=true" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;a href="https://www.hoop.swiss/"&gt; &lt;img height="40px" src="https://cdn.cosmicjs.com/94012850-6cbc-11ef-b5ae-a594bb4a8e67-hoop-light.svg?sanitize=true" /&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;&lt;b&gt;Platinum Sponsors&lt;/b&gt;&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td style="text-align: center;"&gt; &lt;a href="https://www.muenchen.de/"&gt; &lt;img height="30px" src="https://imgix.cosmicjs.com/af2ce530-eaa2-11ed-ba82-019c4666da06-itm-logo.png" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;a href="https://views4you.com/buy-instagram-followers/"&gt; &lt;img height="30px" src="https://cdn.cosmicjs.com/861b0ce0-50e4-11ef-b1ea-f56c65dfade9-views-4-you-light.png" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;a href="https://word.tips/"&gt; &lt;img height="30px" src="https://cdn.cosmicjs.com/5b16bd20-afab-11ef-bee4-3bb1d3c55332-wordtips-light.svg?sanitize=true" /&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt;&lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;a href="https://www.vso.org.uk/"&gt; &lt;img height="30px" src="https://cdn.cosmicjs.com/64287760-e7c2-11ef-b333-e101bec29f3d-horizontal_logo.svg?sanitize=true" /&gt; &lt;/a&gt; &lt;/td&gt;  
+   &lt;td style="text-align: center;"&gt; &lt;a href="https://haircenterofturkey.com/"&gt; &lt;img height="30px" src="https://cdn.cosmicjs.com/ba1af160-1a27-11f0-a229-dfe84053cfeb-hcof-logo-light-1.png" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;🚀 Introduction&lt;/h3&gt; 
+&lt;p&gt;Vuetify is a no design skills required UI Library with beautifully handcrafted Vue Components. No design skills required — everything you need to create amazing applications is at your fingertips. Vuetify has a massive API that supports any use-case. Some highlights include:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Customizable:&lt;/strong&gt; Extensive customization options with &lt;a href="https://vuetifyjs.com/features/sass-variables/"&gt;SASS/SCSS&lt;/a&gt; and &lt;a href="https://vuetifyjs.com/features/presets/"&gt;Default configuration&lt;/a&gt; and &lt;a href="https://vuetifyjs.com/features/blueprints/"&gt;Blueprints&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Responsive Layout:&lt;/strong&gt; The default configuration of Vuetify components is responsive, allowing your application to adapt to different screen sizes.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Theme System:&lt;/strong&gt; A powerful color system that makes it easy to style your application with a consistent color palette.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Vite Support:&lt;/strong&gt; &lt;em&gt;Smaller&lt;/em&gt; bundle sizes with &lt;strong&gt;automatic&lt;/strong&gt; tree-shaking&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;6 months&lt;/strong&gt; Long-term support for &lt;a href="https://vuetifyjs.com/introduction/long-term-support/"&gt;Major releases&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Internationalization:&lt;/strong&gt; 42+ supported languages&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Browser Support&lt;/h4&gt; 
+&lt;p&gt;Vuetify supports all &lt;strong&gt;modern browsers&lt;/strong&gt;, including Safari 13+ (using &lt;a href="https://vuetifyjs.com/getting-started/browser-support"&gt;polyfills&lt;/a&gt;). Components are designed for a minimum width of &lt;em&gt;320px&lt;/em&gt;.&lt;/p&gt; 
+&lt;h3&gt;🌎 Vuetify Ecosystem&lt;/h3&gt; 
+&lt;h4&gt;Resources&lt;/h4&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Name&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;a href="https://github.com/vuetifyjs/awesome/"&gt; 🕶️&amp;nbsp;Vuetify&amp;nbsp;Awesome &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt;Awesome stuff built with Vuetify.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;a href="https://bin.vuetifyjs.com/"&gt; 🗑️&amp;nbsp;Vuetify&amp;nbsp;Bin &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt;A pastebin for saving code snippets.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;a href="https://bin.vuetifyjs.com/"&gt; 🫧&amp;nbsp;Vuetify&amp;nbsp;Create &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt;Scaffolding tools for creating new Vuetify projects.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;a href="https://community.vuetifyjs.com/"&gt; 💭&amp;nbsp;Vuetify&amp;nbsp;Discord &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt;Our massive and inclusive Discord server where you can ask questions, share feedback, and connect with other Vuetify developers.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;a href="https://github.com/vuetifyjs/eslint-config-vuetify"&gt; 🧹&amp;nbsp;Vuetify&amp;nbsp;ESLint &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt;An opinionated [ESLint config](https://github.com/vuetifyjs/eslint-config-vuetify) for styling and an [ESLint plugin](https://github.com/vuetifyjs/eslint-plugin-vuetify) for upgrading Vuetify version.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;a href="https://issues.vuetifyjs.com/"&gt; 🐛&amp;nbsp;Vuetify&amp;nbsp;Issues &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt;A web application for reporting bugs and issues with Vuetify, Documentation, or one of our other packages.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;a href="https://github.com/vuetifyjs/vuetify-loader"&gt; 📦&amp;nbsp;Vuetify&amp;nbsp;Loader &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt;A monorepo of compiler plugins for autoloading Vuetify components and configuring styles.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;a href="https://github.com/vuetifyjs/mcp/"&gt; 🧠&amp;nbsp;Vuetify&amp;nbsp;MCP &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt;A Model Context Protocol server for developing with Vuetify and Agents.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;a href="https://play.vuetifyjs.com/"&gt; 🎮&amp;nbsp;Vuetify&amp;nbsp;Playground &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt;A Vuetify 3 playground built using &lt;a href="https://github.com/vuejs/repl"&gt;vuejs/repl&lt;/a&gt; where you can play with our components.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;a href="https://snips.vuetifyjs.com"&gt; ✂️&amp;nbsp;Vuetify&amp;nbsp;Snips &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt;Pre-built code snippets for Vuetify components that you can use in your projects&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;a href="https://store.vuetifyjs.com/"&gt; 🛒&amp;nbsp;Vuetify&amp;nbsp;Store &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt;The official Vuetify Store where you can download free digital products, purchase pre-made themes, and more.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;🙋‍♂️ Questions&lt;/h3&gt; 
+&lt;p&gt;For help and support questions, please use our &lt;a href="https://community.vuetifyjs.com"&gt;Discord community&lt;/a&gt;. This issue list of this repo is &lt;strong&gt;exclusively&lt;/strong&gt; for bug reports and feature requests.&lt;/p&gt; 
+&lt;h3&gt;🐛 Issues&lt;/h3&gt; 
+&lt;p&gt;Use our &lt;a href="https://issues.vuetifyjs.com"&gt;Issue generator&lt;/a&gt; to report bugs and request new features.&lt;/p&gt; 
+&lt;p&gt;Please make sure to read the &lt;a href="https://github.com/vuetifyjs/vuetify/raw/master/.github/CONTRIBUTING.md#important-information"&gt;Important Information&lt;/a&gt; before opening an issue. Issues not confirming to the guidelines may be closed immediately.&lt;/p&gt; 
+&lt;p&gt;2️⃣ Vuetify 2 Support Vuetify 2 is now End Of Life (EOL) and is no longer supported, even for security issues. Commercial support for this version is available from our partner, &lt;a href="https://www.herodevs.com/support/vuetify-nes?utm_source=partnership&amp;amp;utm_medium=partnership&amp;amp;utm_campaign=partnership&amp;amp;utm_id=vuetify2"&gt;HeroDevs&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;📝 Changelog&lt;/h3&gt; 
+&lt;p&gt;Detailed changes for each release are documented in the &lt;a href="https://vuetifyjs.com/getting-started/release-notes/"&gt;release notes&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;💁‍♂️ Contributing&lt;/h3&gt; 
+&lt;p&gt;Developers interested in contributing should read the &lt;a href="https://raw.githubusercontent.com/vuetifyjs/vuetify/master/CODE_OF_CONDUCT.md"&gt;Code of Conduct&lt;/a&gt; and the &lt;a href="https://vuetifyjs.com/getting-started/contributing/"&gt;Contribution Guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Please do &lt;strong&gt;not&lt;/strong&gt; ask general questions in an issue. Issues are only to report bugs, suggest enhancements, or request new features. For general questions and discussions, ask in the &lt;a href="https://community.vuetifyjs.com/"&gt;community chat&lt;/a&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;To help you get you familiar with our contribution process, we have a list of &lt;a href="https://github.com/vuetifyjs/vuetify/labels/good%20first%20issue"&gt;good first issues&lt;/a&gt; that contain bugs which have a relatively limited scope. This is a great place to get started. If you have any questions, please join us on the &lt;a href="https://community.vuetifyjs.com"&gt;community chat&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;We also have a list of &lt;a href="https://github.com/vuetifyjs/vuetify/labels/help%20wanted"&gt;help wanted&lt;/a&gt; issues that you might want to check.&lt;/p&gt; 
+&lt;h3&gt;📑 License&lt;/h3&gt; 
+&lt;p&gt;Vuetify is available under the &lt;a href="http://opensource.org/licenses/MIT"&gt;MIT&lt;/a&gt; software license.&lt;/p&gt; 
+&lt;p&gt;Copyright (c) 2016-present Vuetify, LLC&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;This project exists thanks to all the people who contribute 😍!&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/vuetifyjs/vuetify/graphs/contributors"&gt;&lt;img src="https://opencollective.com/vuetify/contributors.svg?width=890&amp;amp;button=false" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>nuxt/nuxt</title>
+      <link>https://github.com/nuxt/nuxt</link>
+      <description>&lt;p&gt;The Progressive Web Framework.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a href="https://nuxt.com"&gt;&lt;img src="https://raw.githubusercontent.com/nuxt/nuxt/main/.github/assets/banner.svg?sanitize=true" alt="Nuxt banner" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Nuxt&lt;/h1&gt; 
+&lt;p&gt; &lt;a href="https://www.npmjs.com/package/nuxt"&gt;&lt;img src="https://img.shields.io/npm/v/nuxt.svg?style=flat&amp;amp;colorA=18181B&amp;amp;colorB=28CF8D" alt="Version" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/nuxt"&gt;&lt;img src="https://img.shields.io/npm/dm/nuxt.svg?style=flat&amp;amp;colorA=18181B&amp;amp;colorB=28CF8D" alt="Downloads" /&gt;&lt;/a&gt; &lt;a href="https://github.com/nuxt/nuxt/raw/main/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/nuxt/nuxt.svg?style=flat&amp;amp;colorA=18181B&amp;amp;colorB=28CF8D" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://nuxt.com"&gt;&lt;img src="https://img.shields.io/badge/Nuxt%20Docs-18181B?logo=nuxt" alt="Website" /&gt;&lt;/a&gt; &lt;a href="https://chat.nuxt.dev"&gt;&lt;img src="https://img.shields.io/badge/Nuxt%20Discord-18181B?logo=discord" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://securityscorecards.dev/"&gt;&lt;img src="https://api.securityscorecards.dev/projects/github.com/nuxt/nuxt/badge" alt="Nuxt openssf scorecard score" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;Nuxt is a free and open-source framework with an intuitive and extendable way to create type-safe, performant and production-grade full-stack web applications and websites with Vue.js.&lt;/p&gt; 
+&lt;p&gt;It provides a number of features that make it easy to build fast, SEO-friendly, and scalable web applications, including:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Server-side rendering, static site generation, hybrid rendering and edge-side rendering&lt;/li&gt; 
+ &lt;li&gt;Automatic routing with code-splitting and pre-fetching&lt;/li&gt; 
+ &lt;li&gt;Data fetching and state management&lt;/li&gt; 
+ &lt;li&gt;Search engine optimization and defining meta tags&lt;/li&gt; 
+ &lt;li&gt;Auto imports of components, composables and utils&lt;/li&gt; 
+ &lt;li&gt;TypeScript with zero configuration&lt;/li&gt; 
+ &lt;li&gt;Go full-stack with our server/ directory&lt;/li&gt; 
+ &lt;li&gt;Extensible with &lt;a href="https://nuxt.com/modules"&gt;200+ modules&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Deployment to a variety of &lt;a href="https://nuxt.com/deploy"&gt;hosting platforms&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;...&lt;a href="https://nuxt.com"&gt;and much more&lt;/a&gt; 🚀&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Table of Contents&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🚀 &lt;a href="https://raw.githubusercontent.com/nuxt/nuxt/main/#getting-started"&gt;Getting Started&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;💻 &lt;a href="https://raw.githubusercontent.com/nuxt/nuxt/main/#vue-development"&gt; Vue Development&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;📖 &lt;a href="https://raw.githubusercontent.com/nuxt/nuxt/main/#documentation"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🧩 &lt;a href="https://raw.githubusercontent.com/nuxt/nuxt/main/#modules"&gt;Modules&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;❤️ &lt;a href="https://raw.githubusercontent.com/nuxt/nuxt/main/#contribute"&gt;Contribute&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🏠 &lt;a href="https://raw.githubusercontent.com/nuxt/nuxt/main/#local-development"&gt;Local Development&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🛟 &lt;a href="https://raw.githubusercontent.com/nuxt/nuxt/main/#professional-support"&gt;Professional Support&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🔗 &lt;a href="https://raw.githubusercontent.com/nuxt/nuxt/main/#follow-us"&gt;Follow Us&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;⚖️ &lt;a href="https://raw.githubusercontent.com/nuxt/nuxt/main/#license"&gt;License&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;&lt;a name="getting-started"&gt;🚀 Getting Started&lt;/a&gt;&lt;/h2&gt; 
+&lt;p&gt;Use the following command to create a new starter project. This will create a starter project with all the necessary files and dependencies:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm create nuxt@latest &amp;lt;my-project&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] Discover also &lt;a href="https://nuxt.new"&gt;nuxt.new&lt;/a&gt;: Open a Nuxt starter on CodeSandbox, StackBlitz or locally to get up and running in a few seconds.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;&lt;a name="vue-development"&gt;💻 Vue Development&lt;/a&gt;&lt;/h2&gt; 
+&lt;p&gt;Simple, intuitive and powerful, Nuxt lets you write Vue components in a way that makes sense. Every repetitive task is automated, so you can focus on writing your full-stack Vue application with confidence.&lt;/p&gt; 
+&lt;p&gt;Example of an &lt;code&gt;app.vue&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-vue"&gt;&amp;lt;script setup lang="ts"&amp;gt;
+useSeoMeta({
+  title: 'Meet Nuxt',
+  description: 'The Intuitive Vue Framework.',
+})
+&amp;lt;/script&amp;gt;
+
+&amp;lt;template&amp;gt;
+  &amp;lt;div id="app"&amp;gt;
+    &amp;lt;AppHeader /&amp;gt;
+    &amp;lt;NuxtPage /&amp;gt;
+    &amp;lt;AppFooter /&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&amp;lt;style scoped&amp;gt;
+#app {
+  background-color: #020420;
+  color: #00DC82;
+}
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;&lt;a name="documentation"&gt;📖 Documentation&lt;/a&gt;&lt;/h2&gt; 
+&lt;p&gt;We highly recommend you take a look at the &lt;a href="https://nuxt.com/docs"&gt;Nuxt documentation&lt;/a&gt; to level up. It’s a great resource for learning more about the framework. It covers everything from getting started to advanced topics.&lt;/p&gt; 
+&lt;h2&gt;&lt;a name="modules"&gt;🧩 Modules&lt;/a&gt;&lt;/h2&gt; 
+&lt;p&gt;Discover our &lt;a href="https://nuxt.com/modules"&gt;list of modules&lt;/a&gt; to supercharge your Nuxt project, created by the Nuxt team and community.&lt;/p&gt; 
+&lt;h2&gt;&lt;a name="contribute"&gt;❤️ Contribute&lt;/a&gt;&lt;/h2&gt; 
+&lt;p&gt;We invite you to contribute and help improve Nuxt 💚&lt;/p&gt; 
+&lt;p&gt;Here are a few ways you can get involved:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Reporting Bugs:&lt;/strong&gt; If you come across any bugs or issues, please check out the &lt;a href="https://nuxt.com/docs/4.x/community/reporting-bugs"&gt;reporting bugs guide&lt;/a&gt; to learn how to submit a bug report.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Suggestions:&lt;/strong&gt; Have ideas to enhance Nuxt? We'd love to hear them! Check out the &lt;a href="https://nuxt.com/docs/4.x/community/contribution"&gt;contribution guide&lt;/a&gt; to share your suggestions.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Questions:&lt;/strong&gt; If you have questions or need assistance, the &lt;a href="https://nuxt.com/docs/4.x/community/getting-help"&gt;getting help guide&lt;/a&gt; provides resources to help you out.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;&lt;a name="local-development"&gt;🏠 Local Development&lt;/a&gt;&lt;/h2&gt; 
+&lt;p&gt;Follow the docs to &lt;a href="https://nuxt.com/docs/4.x/community/framework-contribution#setup"&gt;Set Up Your Local Development Environment&lt;/a&gt; to contribute to the framework and documentation.&lt;/p&gt; 
+&lt;h2&gt;&lt;a name="professional-support"&gt;🛟 Professional Support&lt;/a&gt;&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Technical audit &amp;amp; consulting: &lt;a href="https://nuxt.com/enterprise/support"&gt;Nuxt Experts&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Custom development &amp;amp; more: &lt;a href="https://nuxt.com/enterprise/agencies"&gt;Nuxt Agencies Partners&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;&lt;a name="follow-us"&gt;🔗 Follow Us&lt;/a&gt;&lt;/h2&gt; 
+&lt;p valign="center"&gt; &lt;a href="https://go.nuxt.com/discord"&gt;&lt;img width="20px" src="https://raw.githubusercontent.com/nuxt/nuxt/main/.github/assets/discord.svg?sanitize=true" alt="Discord" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://go.nuxt.com/x"&gt;&lt;img width="20px" src="https://raw.githubusercontent.com/nuxt/nuxt/main/.github/assets/twitter.svg?sanitize=true" alt="Twitter" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://go.nuxt.com/github"&gt;&lt;img width="20px" src="https://raw.githubusercontent.com/nuxt/nuxt/main/.github/assets/github.svg?sanitize=true" alt="GitHub" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="https://go.nuxt.com/bluesky"&gt;&lt;img width="20px" src="https://raw.githubusercontent.com/nuxt/nuxt/main/.github/assets/bluesky.svg?sanitize=true" alt="Bluesky" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;&lt;a name="license"&gt;⚖️ License&lt;/a&gt;&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/nuxt/nuxt/raw/main/LICENSE"&gt;MIT&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>iptv-org/iptv</title>
+      <link>https://github.com/iptv-org/iptv</link>
+      <description>&lt;p&gt;Collection of publicly available IPTV channels from all over the world&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;IPTV &lt;a href="https://github.com/iptv-org/iptv/actions/workflows/update.yml"&gt;&lt;img src="https://github.com/iptv-org/iptv/actions/workflows/update.yml/badge.svg?sanitize=true" alt="update" /&gt;&lt;/a&gt;&lt;/h1&gt; 
+&lt;p&gt;Collection of publicly available IPTV (Internet Protocol television) channels from all over the world.&lt;/p&gt; 
+&lt;h2&gt;Table of contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🚀 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#how-to-use"&gt;How to use?&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;📺 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#playlists"&gt;Playlists&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🗓 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#epg"&gt;EPG&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🗄 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#database"&gt;Database&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;👨‍💻 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#api"&gt;API&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;📚 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#resources"&gt;Resources&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;💬 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#discussions"&gt;Discussions&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;❓ &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#faq"&gt;FAQ&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🛠 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#contribution"&gt;Contribution&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;⚖ &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#legal"&gt;Legal&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;© &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#license"&gt;License&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How to use?&lt;/h2&gt; 
+&lt;p&gt;Simply paste the link to one of the playlists into &lt;a href="https://github.com/iptv-org/awesome-iptv#apps"&gt;any video player&lt;/a&gt; that supports live streaming and press &lt;em&gt;Open&lt;/em&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/iptv-org/iptv/raw/master/.readme/preview.png" alt="VLC Network Panel" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Playlists&lt;/h2&gt; 
+&lt;p&gt;The main playlist containing all channels available in the repository can be found at:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;https://iptv-org.github.io/iptv/index.m3u
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Links to other playlists can be found in the &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/PLAYLISTS.md"&gt;PLAYLISTS.md&lt;/a&gt; file.&lt;/p&gt; 
+&lt;h2&gt;EPG&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Electronic_program_guide"&gt;Electronic Program Guide&lt;/a&gt; for most of the channels can be downloaded using utilities published in the &lt;a href="https://github.com/iptv-org/epg"&gt;iptv-org/epg&lt;/a&gt; repository.&lt;/p&gt; 
+&lt;h2&gt;Database&lt;/h2&gt; 
+&lt;p&gt;All channel data is taken from the &lt;a href="https://github.com/iptv-org/database"&gt;iptv-org/database&lt;/a&gt; repository. If you find any errors please open a new &lt;a href="https://github.com/iptv-org/database/issues"&gt;issue&lt;/a&gt; there.&lt;/p&gt; 
+&lt;h2&gt;API&lt;/h2&gt; 
+&lt;p&gt;The API documentation can be found in the &lt;a href="https://github.com/iptv-org/api"&gt;iptv-org/api&lt;/a&gt; repository.&lt;/p&gt; 
+&lt;h2&gt;Resources&lt;/h2&gt; 
+&lt;p&gt;Links to other useful IPTV-related resources can be found in the &lt;a href="https://github.com/iptv-org/awesome-iptv"&gt;iptv-org/awesome-iptv&lt;/a&gt; repository.&lt;/p&gt; 
+&lt;h2&gt;Discussions&lt;/h2&gt; 
+&lt;p&gt;If you need help finding a channel, have a question or idea, welcome to the &lt;a href="https://github.com/orgs/iptv-org/discussions"&gt;Discussions&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;FAQ&lt;/h2&gt; 
+&lt;p&gt;The answers to the most popular questions can be found in the &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/FAQ.md"&gt;FAQ.md&lt;/a&gt; file.&lt;/p&gt; 
+&lt;h2&gt;Contribution&lt;/h2&gt; 
+&lt;p&gt;Please make sure to read the &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt; before sending an issue or making a pull request.&lt;/p&gt; 
+&lt;p&gt;And thank you to everyone who has already contributed!&lt;/p&gt; 
+&lt;h3&gt;Backers&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://opencollective.com/iptv-org"&gt;&lt;img src="https://opencollective.com/iptv-org/backers.svg?width=890" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Contributors&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://github.com/iptv-org/iptv/graphs/contributors"&gt;&lt;img src="https://opencollective.com/iptv-org/contributors.svg?width=890" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Legal&lt;/h2&gt; 
+&lt;p&gt;No video files are stored in this repository. The repository simply contains user-submitted links to publicly available video stream URLs, which to the best of our knowledge have been intentionally made publicly by the copyright holders. If any links in these playlists infringe on your rights as a copyright holder, they may be removed by sending a &lt;a href="https://github.com/iptv-org/iptv/pulls"&gt;pull request&lt;/a&gt; or opening an &lt;a href="https://github.com/iptv-org/iptv/issues/new?assignees=freearhey&amp;amp;labels=removal+request&amp;amp;template=--removal-request.yml&amp;amp;title=Remove%3A+"&gt;issue&lt;/a&gt;. However, note that we have &lt;strong&gt;no control&lt;/strong&gt; over the destination of the link, and just removing the link from the playlist will not remove its contents from the web. Note that linking does not directly infringe copyright because no copy is made on the site providing the link, and thus this is &lt;strong&gt;not&lt;/strong&gt; a valid reason to send a DMCA notice to GitHub. To remove this content from the web, you should contact the web host that's actually hosting the content (&lt;strong&gt;not&lt;/strong&gt; GitHub, nor the maintainers of this repository).&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/LICENSE"&gt;&lt;img src="http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg?sanitize=true" alt="CC0" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>resend/react-email</title>
+      <link>https://github.com/resend/react-email</link>
+      <description>&lt;p&gt;💌 Build and send emails using React&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://react.email/static/covers/react-email.png" alt="React email cover" /&gt;&lt;/p&gt; 
+&lt;div align="center"&gt;
+ &lt;strong&gt;React Email&lt;/strong&gt;
+&lt;/div&gt; 
+&lt;div align="center"&gt;
+ The next generation of writing emails.
+ &lt;br /&gt;High-quality, unstyled components for creating emails.
+&lt;/div&gt; 
+&lt;br /&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://react.email"&gt;Website&lt;/a&gt; 
+ &lt;span&gt; · &lt;/span&gt; 
+ &lt;a href="https://github.com/resend/react-email"&gt;GitHub&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Introduction&lt;/h2&gt; 
+&lt;p&gt;A collection of high-quality, unstyled components for creating beautiful emails using React and TypeScript. It reduces the pain of coding responsive emails with dark mode support. It also takes care of inconsistencies between Gmail, Outlook, and other email clients for you.&lt;/p&gt; 
+&lt;h2&gt;Why&lt;/h2&gt; 
+&lt;p&gt;We believe that email is an extremely important medium for people to communicate. However, we need to stop developing emails like 2010, and rethink how email can be done in 2025 and beyond. Email development needs a revamp. A renovation. Modernized for the way we build web apps today.&lt;/p&gt; 
+&lt;h2&gt;Install&lt;/h2&gt; 
+&lt;p&gt;Install one of the components from your command line.&lt;/p&gt; 
+&lt;h4&gt;With yarn&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;yarn add @react-email/components -E
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;With npm&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;npm install @react-email/components -E
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;With pnpm&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;pnpm install @react-email/components -E
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Getting started&lt;/h2&gt; 
+&lt;p&gt;Add the component to your email template. Include styles where needed.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;import { Button } from "@react-email/components";
+
+const Email = () =&amp;gt; {
+  return (
+    &amp;lt;Button href="https://example.com" style={{ color: "#61dafb" }}&amp;gt;
+      Click me
+    &amp;lt;/Button&amp;gt;
+  );
+};
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Components&lt;/h2&gt; 
+&lt;p&gt;A set of standard components to help you build amazing emails without having to deal with the mess of creating table-based layouts and maintaining archaic markup.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/packages/body"&gt;Body&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/packages/button"&gt;Button&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/packages/code-block"&gt;CodeBlock&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/packages/code-inline"&gt;CodeInline&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/packages/column"&gt;Column&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/packages/container"&gt;Container&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/packages/hr"&gt;Divider&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/packages/font"&gt;Font&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/packages/head"&gt;Head&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/packages/heading"&gt;Heading&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/packages/html"&gt;Html&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/packages/img"&gt;Image&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/packages/link"&gt;Link&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/packages/markdown"&gt;Markdown&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/packages/text"&gt;Paragraph&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/packages/preview"&gt;Preview&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/packages/section"&gt;Section&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Integrations&lt;/h2&gt; 
+&lt;p&gt;Emails built with React Email can be converted into HTML and sent using any email service provider. Here are some examples:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/examples/resend"&gt;Resend&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/examples/nodemailer"&gt;Nodemailer&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/examples/sendgrid"&gt;SendGrid&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/examples/postmark"&gt;Postmark&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/examples/aws-ses"&gt;AWS SES&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/examples/plunk"&gt;Plunk&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/resend/react-email/tree/main/examples/scaleway"&gt;Scaleway&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;All components were tested using the most popular email clients.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;&lt;img src="https://react.email/static/icons/gmail.svg?sanitize=true" width="48px" height="48px" alt="Gmail logo" /&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;img src="https://react.email/static/icons/apple-mail.svg?sanitize=true" width="48px" height="48px" alt="Apple Mail" /&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;img src="https://react.email/static/icons/outlook.svg?sanitize=true" width="48px" height="48px" alt="Outlook logo" /&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;img src="https://react.email/static/icons/yahoo-mail.svg?sanitize=true" width="48px" height="48px" alt="Yahoo! Mail logo" /&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;img src="https://react.email/static/icons/hey.svg?sanitize=true" width="48px" height="48px" alt="HEY logo" /&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;img src="https://react.email/static/icons/superhuman.svg?sanitize=true" width="48px" height="48px" alt="Superhuman logo" /&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Gmail ✔&lt;/td&gt; 
+   &lt;td&gt;Apple Mail ✔&lt;/td&gt; 
+   &lt;td&gt;Outlook ✔&lt;/td&gt; 
+   &lt;td&gt;Yahoo! Mail ✔&lt;/td&gt; 
+   &lt;td&gt;HEY ✔&lt;/td&gt; 
+   &lt;td&gt;Superhuman ✔&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Development workflow&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;a href="https://react.email/docs/contributing/development-workflow/1-setup"&gt;Setting up your development environment&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://react.email/docs/contributing/development-workflow/2-running-tests"&gt;Running tests&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://react.email/docs/contributing/development-workflow/3-linting"&gt;Linting&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://react.email/docs/contributing/development-workflow/4-building"&gt;Building&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://react.email/docs/contributing/development-workflow/5-writing-docs"&gt;Writing documentation&lt;/a&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://react.email/docs/contributing"&gt;Contribution Guide&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Authors&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Bu Kinoshita (&lt;a href="https://twitter.com/bukinoshita"&gt;@bukinoshita&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;Zeno Rocha (&lt;a href="https://twitter.com/zenorocha"&gt;@zenorocha&lt;/a&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT License&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>NginxProxyManager/nginx-proxy-manager</title>
+      <link>https://github.com/NginxProxyManager/nginx-proxy-manager</link>
+      <description>&lt;p&gt;Docker container for managing Nginx proxy hosts with a simple, powerful interface&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://nginxproxymanager.com/github.png" /&gt; &lt;br /&gt;&lt;br /&gt; &lt;img src="https://img.shields.io/badge/version-2.13.5-green.svg?style=for-the-badge" /&gt; &lt;a href="https://hub.docker.com/repository/docker/jc21/nginx-proxy-manager"&gt; &lt;img src="https://img.shields.io/docker/stars/jc21/nginx-proxy-manager.svg?style=for-the-badge" /&gt; &lt;/a&gt; &lt;a href="https://hub.docker.com/repository/docker/jc21/nginx-proxy-manager"&gt; &lt;img src="https://img.shields.io/docker/pulls/jc21/nginx-proxy-manager.svg?style=for-the-badge" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;This project comes as a pre-built docker image that enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/NginxProxyManager/nginx-proxy-manager/develop/#quick-setup"&gt;Quick Setup&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://nginxproxymanager.com/setup/"&gt;Full Setup&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://nginxproxymanager.com/screenshots/"&gt;Screenshots&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Project Goal&lt;/h2&gt; 
+&lt;p&gt;I created this project to fill a personal need to provide users with an easy way to accomplish reverse proxying hosts with SSL termination and it had to be so easy that a monkey could do it. This goal hasn't changed. While there might be advanced options they are optional and the project should be as simple as possible so that the barrier for entry here is low.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.buymeacoffee.com/jc21" target="_blank"&gt;&lt;img src="http://public.jc21.com/github/by-me-a-coffee.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Beautiful and Secure Admin Interface based on &lt;a href="https://tabler.github.io/"&gt;Tabler&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Easily create forwarding domains, redirections, streams and 404 hosts without knowing anything about Nginx&lt;/li&gt; 
+ &lt;li&gt;Free SSL using Let's Encrypt or provide your own custom SSL certificates&lt;/li&gt; 
+ &lt;li&gt;Access Lists and basic HTTP Authentication for your hosts&lt;/li&gt; 
+ &lt;li&gt;Advanced Nginx configuration available for super users&lt;/li&gt; 
+ &lt;li&gt;User management, permissions and audit log&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Hosting your home network&lt;/h2&gt; 
+&lt;p&gt;I won't go in to too much detail here but here are the basics for someone new to this self-hosted world.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Your home router will have a Port Forwarding section somewhere. Log in and find it&lt;/li&gt; 
+ &lt;li&gt;Add port forwarding for port 80 and 443 to the server hosting this project&lt;/li&gt; 
+ &lt;li&gt;Configure your domain name details to point to your home, either with a static ip or a service like DuckDNS or &lt;a href="https://github.com/jc21/route53-ddns"&gt;Amazon Route53&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Use the Nginx Proxy Manager as your gateway to forward to your other web based services&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Quick Setup&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Install Docker and Docker-Compose&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.docker.com/install/"&gt;Docker Install documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.docker.com/compose/install/"&gt;Docker-Compose Install documentation&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Create a docker-compose.yml file similar to this:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-yml"&gt;services:
+  app:
+    image: 'docker.io/jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This is the bare minimum configuration required. See the &lt;a href="https://nginxproxymanager.com/setup/"&gt;documentation&lt;/a&gt; for more.&lt;/p&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;Bring up your stack by running&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker compose up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="4"&gt; 
+ &lt;li&gt;Log in to the Admin UI&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;When your docker container is running, connect to it on port &lt;code&gt;81&lt;/code&gt; for the admin interface. Sometimes this can take a little bit because of the entropy of keys.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="http://127.0.0.1:81"&gt;http://127.0.0.1:81&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;All are welcome to create pull requests for this project, against the &lt;code&gt;develop&lt;/code&gt; branch. Official releases are created from the &lt;code&gt;master&lt;/code&gt; branch.&lt;/p&gt; 
+&lt;p&gt;CI is used in this project. All PR's must pass before being considered. After passing, docker builds for PR's are available on dockerhub for manual verifications.&lt;/p&gt; 
+&lt;p&gt;Documentation within the &lt;code&gt;develop&lt;/code&gt; branch is available for preview at &lt;a href="https://develop.nginxproxymanager.com"&gt;https://develop.nginxproxymanager.com&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Contributors&lt;/h3&gt; 
+&lt;p&gt;Special thanks to &lt;a href="https://github.com/NginxProxyManager/nginx-proxy-manager/graphs/contributors"&gt;all of our contributors&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Getting Support&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/NginxProxyManager/nginx-proxy-manager/issues"&gt;Found a bug?&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/NginxProxyManager/nginx-proxy-manager/discussions"&gt;Discussions&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://reddit.com/r/nginxproxymanager"&gt;Reddit&lt;/a&gt;&lt;/li&gt; 
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>farion1231/cc-switch</title>
+      <link>https://github.com/farion1231/cc-switch</link>
+      <description>&lt;p&gt;A cross-platform desktop All-in-One assistant tool for Claude Code, Codex &amp; Gemini CLI.&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;h1&gt;All-in-One Assistant for Claude Code, Codex &amp;amp; Gemini CLI&lt;/h1&gt; 
+ &lt;p&gt;&lt;a href="https://github.com/farion1231/cc-switch/releases"&gt;&lt;img src="https://img.shields.io/badge/version-3.7.0-blue.svg?sanitize=true" alt="Version" /&gt;&lt;/a&gt; &lt;a href="https://github.com/trending/typescript"&gt;&lt;img src="https://img.shields.io/badge/%F0%9F%94%A5_TypeScript_Trending-Daily%20%7C%20Weekly%20%7C%20Monthly-ff6b6b.svg?sanitize=true" alt="Trending" /&gt;&lt;/a&gt; &lt;a href="https://github.com/farion1231/cc-switch/releases"&gt;&lt;img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg?sanitize=true" alt="Platform" /&gt;&lt;/a&gt; &lt;a href="https://tauri.app/"&gt;&lt;img src="https://img.shields.io/badge/built%20with-Tauri%202-orange.svg?sanitize=true" alt="Built with Tauri" /&gt;&lt;/a&gt; &lt;a href="https://github.com/farion1231/cc-switch/releases/latest"&gt;&lt;img src="https://img.shields.io/endpoint?url=https://api.pinstudios.net/api/badges/downloads/farion1231/cc-switch/total" alt="Downloads" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://trendshift.io/repositories/15372" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/15372" alt="farion1231%2Fcc-switch | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;English | &lt;a href="https://raw.githubusercontent.com/farion1231/cc-switch/main/README_ZH.md"&gt;中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/farion1231/cc-switch/main/CHANGELOG.md"&gt;Changelog&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;A desktop application for managing and switching between different provider configurations &amp;amp; MCP for Claude Code and Codex.&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;❤️Sponsor&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/farion1231/cc-switch/main/assets/partners/banners/glm-en.jpg" alt="Zhipu GLM" /&gt;&lt;/p&gt; 
+&lt;p&gt;This project is sponsored by Z.ai, supporting us with their GLM CODING PLAN.&lt;/p&gt; 
+&lt;p&gt;GLM CODING PLAN is a subscription service designed for AI coding, starting at just $3/month. It provides access to their flagship GLM-4.6 model across 10+ popular AI coding tools (Claude Code, Cline, Roo Code, etc.), offering developers top-tier, fast, and stable coding experiences.&lt;/p&gt; 
+&lt;p&gt;Get 10% OFF the GLM CODING PLAN with &lt;a href="https://z.ai/subscribe?ic=8JVLJQFSKB"&gt;this link&lt;/a&gt;!&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td width="180"&gt;&lt;img src="https://raw.githubusercontent.com/farion1231/cc-switch/main/assets/partners/logos/packycode.png" alt="PackyCode" width="150" /&gt;&lt;/td&gt; 
+   &lt;td&gt;Thanks to PackyCode for sponsoring this project! PackyCode is a reliable and efficient API relay service provider, offering relay services for Claude Code, Codex, Gemini, and more. PackyCode provides special discounts for our software users: register using &lt;a href="https://www.packyapi.com/register?aff=cc-switch"&gt;this link&lt;/a&gt; and enter the "cc-switch" promo code during recharge to get 10% off.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;Screenshots&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="center"&gt;Main Interface&lt;/th&gt; 
+   &lt;th align="center"&gt;Add Provider&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;&lt;img src="https://raw.githubusercontent.com/farion1231/cc-switch/main/assets/screenshots/main-en.png" alt="Main Interface" /&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;img src="https://raw.githubusercontent.com/farion1231/cc-switch/main/assets/screenshots/add-en.png" alt="Add Provider" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;h3&gt;Current Version: v3.7.0 | &lt;a href="https://raw.githubusercontent.com/farion1231/cc-switch/main/CHANGELOG.md"&gt;Full Changelog&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Core Capabilities&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Provider Management&lt;/strong&gt;: One-click switching between Claude Code, Codex, and Gemini API configurations&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;MCP Integration&lt;/strong&gt;: Centralized MCP server management with stdio/http support and real-time sync&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Speed Testing&lt;/strong&gt;: Measure API endpoint latency with visual quality indicators&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Import/Export&lt;/strong&gt;: Backup and restore configs with auto-rotation (keep 10 most recent)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;i18n Support&lt;/strong&gt;: Complete Chinese/English localization (UI, errors, tray)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Claude Plugin Sync&lt;/strong&gt;: One-click apply/restore Claude plugin configurations&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v3.6 Highlights&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Provider duplication &amp;amp; drag-and-drop sorting&lt;/li&gt; 
+ &lt;li&gt;Multi-endpoint management &amp;amp; custom config directory (cloud sync ready)&lt;/li&gt; 
+ &lt;li&gt;Granular model configuration (4-tier: Haiku/Sonnet/Opus/Custom)&lt;/li&gt; 
+ &lt;li&gt;WSL environment support with auto-sync on directory change&lt;/li&gt; 
+ &lt;li&gt;100% hooks test coverage &amp;amp; complete architecture refactoring&lt;/li&gt; 
+ &lt;li&gt;New presets: DMXAPI, Azure Codex, AnyRouter, AiHubMix, MiniMax&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;System Features&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;System tray with quick switching&lt;/li&gt; 
+ &lt;li&gt;Single instance daemon&lt;/li&gt; 
+ &lt;li&gt;Built-in auto-updater&lt;/li&gt; 
+ &lt;li&gt;Atomic writes with rollback protection&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Download &amp;amp; Installation&lt;/h2&gt; 
+&lt;h3&gt;System Requirements&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Windows&lt;/strong&gt;: Windows 10 and above&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;macOS&lt;/strong&gt;: macOS 10.15 (Catalina) and above&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Linux&lt;/strong&gt;: Ubuntu 22.04+ / Debian 11+ / Fedora 34+ and other mainstream distributions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Windows Users&lt;/h3&gt; 
+&lt;p&gt;Download the latest &lt;code&gt;CC-Switch-v{version}-Windows.msi&lt;/code&gt; installer or &lt;code&gt;CC-Switch-v{version}-Windows-Portable.zip&lt;/code&gt; portable version from the &lt;a href="https://raw.githubusercontent.com/farion1231/releases"&gt;Releases&lt;/a&gt; page.&lt;/p&gt; 
+&lt;h3&gt;macOS Users&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Method 1: Install via Homebrew (Recommended)&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;brew tap farion1231/ccswitch
+brew install --cask cc-switch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Update:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;brew upgrade --cask cc-switch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Method 2: Manual Download&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Download &lt;code&gt;CC-Switch-v{version}-macOS.zip&lt;/code&gt; from the &lt;a href="https://raw.githubusercontent.com/farion1231/releases"&gt;Releases&lt;/a&gt; page and extract to use.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Since the author doesn't have an Apple Developer account, you may see an "unidentified developer" warning on first launch. Please close it first, then go to "System Settings" → "Privacy &amp;amp; Security" → click "Open Anyway", and you'll be able to open it normally afterwards.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;ArchLinux 用户&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Install via paru (Recommended)&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;paru -S cc-switch-bin
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Linux Users&lt;/h3&gt; 
+&lt;p&gt;Download the latest &lt;code&gt;CC-Switch-v{version}-Linux.deb&lt;/code&gt; package or &lt;code&gt;CC-Switch-v{version}-Linux.AppImage&lt;/code&gt; from the &lt;a href="https://raw.githubusercontent.com/farion1231/releases"&gt;Releases&lt;/a&gt; page.&lt;/p&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;h3&gt;Basic Usage&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Add Provider&lt;/strong&gt;: Click "Add Provider" → Choose preset or create custom configuration&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Switch Provider&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;Main UI: Select provider → Click "Enable"&lt;/li&gt; 
+   &lt;li&gt;System Tray: Click provider name directly (instant effect)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Takes Effect&lt;/strong&gt;: Restart your terminal or Claude Code / Codex / Gemini clients to apply changes&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Back to Official&lt;/strong&gt;: Select the "Official Login" preset (Claude/Codex) or "Google Official" preset (Gemini), restart the corresponding client, then follow its login/OAuth flow&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;MCP Management&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Location&lt;/strong&gt;: Click "MCP" button in top-right corner&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Add Server&lt;/strong&gt;: Use built-in templates (mcp-fetch, mcp-filesystem) or custom config&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Enable/Disable&lt;/strong&gt;: Toggle switches to control which servers sync to live config&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Sync&lt;/strong&gt;: Enabled servers auto-sync to &lt;code&gt;~/.claude.json&lt;/code&gt; (Claude) or &lt;code&gt;~/.codex/config.toml&lt;/code&gt; (Codex)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Configuration Files&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Claude Code&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Live config: &lt;code&gt;~/.claude/settings.json&lt;/code&gt; (or &lt;code&gt;claude.json&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;API key field: &lt;code&gt;env.ANTHROPIC_AUTH_TOKEN&lt;/code&gt; or &lt;code&gt;env.ANTHROPIC_API_KEY&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;MCP servers: &lt;code&gt;~/.claude.json&lt;/code&gt; → &lt;code&gt;mcpServers&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Codex&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Live config: &lt;code&gt;~/.codex/auth.json&lt;/code&gt; (required) + &lt;code&gt;config.toml&lt;/code&gt; (optional)&lt;/li&gt; 
+ &lt;li&gt;API key field: &lt;code&gt;OPENAI_API_KEY&lt;/code&gt; in &lt;code&gt;auth.json&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;MCP servers: &lt;code&gt;~/.codex/config.toml&lt;/code&gt; → &lt;code&gt;[mcp_servers]&lt;/code&gt; tables&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Gemini&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Live config: &lt;code&gt;~/.gemini/.env&lt;/code&gt; (API key) + &lt;code&gt;~/.gemini/settings.json&lt;/code&gt; (auth type for quick switching)&lt;/li&gt; 
+ &lt;li&gt;API key field: &lt;code&gt;GEMINI_API_KEY&lt;/code&gt; inside &lt;code&gt;.env&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Tray quick switch: each provider switch rewrites &lt;code&gt;~/.gemini/.env&lt;/code&gt; so the Gemini CLI picks up the new credentials immediately&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;CC Switch Storage&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Main config (SSOT): &lt;code&gt;~/.cc-switch/config.json&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Settings: &lt;code&gt;~/.cc-switch/settings.json&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Backups: &lt;code&gt;~/.cc-switch/backups/&lt;/code&gt; (auto-rotate, keep 10)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Cloud Sync Setup&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Go to Settings → "Custom Configuration Directory"&lt;/li&gt; 
+ &lt;li&gt;Choose your cloud sync folder (Dropbox, OneDrive, iCloud, etc.)&lt;/li&gt; 
+ &lt;li&gt;Restart app to apply&lt;/li&gt; 
+ &lt;li&gt;Repeat on other devices to enable cross-device sync&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: First launch auto-imports existing Claude/Codex configs as default provider.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Architecture Overview&lt;/h2&gt; 
+&lt;h3&gt;Design Principles&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────────────────────┐
+│                    Frontend (React + TS)                    │
+│  ┌─────────────┐  ┌──────────────┐  ┌──────────────────┐    │
+│  │ Components  │  │    Hooks     │  │  TanStack Query  │    │
+│  │   (UI)      │──│ (Bus. Logic) │──│   (Cache/Sync)   │    │
+│  └─────────────┘  └──────────────┘  └──────────────────┘    │
+└────────────────────────┬────────────────────────────────────┘
+                         │ Tauri IPC
+┌────────────────────────▼────────────────────────────────────┐
+│                  Backend (Tauri + Rust)                     │
+│  ┌─────────────┐  ┌──────────────┐  ┌──────────────────┐    │
+│  │  Commands   │  │   Services   │  │  Models/Config   │    │
+│  │ (API Layer) │──│ (Bus. Layer) │──│     (Data)       │    │
+│  └─────────────┘  └──────────────┘  └──────────────────┘    │
+└─────────────────────────────────────────────────────────────┘
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Core Design Patterns&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;SSOT&lt;/strong&gt; (Single Source of Truth): All provider configs stored in &lt;code&gt;~/.cc-switch/config.json&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Dual-way Sync&lt;/strong&gt;: Write to live files on switch, backfill from live when editing active provider&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Atomic Writes&lt;/strong&gt;: Temp file + rename pattern prevents config corruption&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Concurrency Safe&lt;/strong&gt;: RwLock with scoped guards avoids deadlocks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Layered Architecture&lt;/strong&gt;: Clear separation (Commands → Services → Models)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Key Components&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;ProviderService&lt;/strong&gt;: Provider CRUD, switching, backfill, sorting&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;McpService&lt;/strong&gt;: MCP server management, import/export, live file sync&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;ConfigService&lt;/strong&gt;: Config import/export, backup rotation&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;SpeedtestService&lt;/strong&gt;: API endpoint latency measurement&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v3.6 Refactoring&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Backend: 5-phase refactoring (error handling → command split → tests → services → concurrency)&lt;/li&gt; 
+ &lt;li&gt;Frontend: 4-stage refactoring (test infra → hooks → components → cleanup)&lt;/li&gt; 
+ &lt;li&gt;Testing: 100% hooks coverage + integration tests (vitest + MSW)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;h3&gt;Environment Requirements&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Node.js 18+&lt;/li&gt; 
+ &lt;li&gt;pnpm 8+&lt;/li&gt; 
+ &lt;li&gt;Rust 1.85+&lt;/li&gt; 
+ &lt;li&gt;Tauri CLI 2.8+&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Development Commands&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Install dependencies
+pnpm install
+
+# Dev mode (hot reload)
+pnpm dev
+
+# Type check
+pnpm typecheck
+
+# Format code
+pnpm format
+
+# Check code format
+pnpm format:check
+
+# Run frontend unit tests
+pnpm test:unit
+
+# Run tests in watch mode (recommended for development)
+pnpm test:unit:watch
+
+# Build application
+pnpm build
+
+# Build debug version
+pnpm tauri build --debug
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Rust Backend Development&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd src-tauri
+
+# Format Rust code
+cargo fmt
+
+# Run clippy checks
+cargo clippy
+
+# Run backend tests
+cargo test
+
+# Run specific tests
+cargo test test_name
+
+# Run tests with test-hooks feature
+cargo test --features test-hooks
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Testing Guide (v3.6 New)&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Frontend Testing&lt;/strong&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Uses &lt;strong&gt;vitest&lt;/strong&gt; as test framework&lt;/li&gt; 
+ &lt;li&gt;Uses &lt;strong&gt;MSW (Mock Service Worker)&lt;/strong&gt; to mock Tauri API calls&lt;/li&gt; 
+ &lt;li&gt;Uses &lt;strong&gt;@testing-library/react&lt;/strong&gt; for component testing&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Test Coverage&lt;/strong&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Hooks unit tests (100% coverage) 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;code&gt;useProviderActions&lt;/code&gt; - Provider operations&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;useMcpActions&lt;/code&gt; - MCP management&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;useSettings&lt;/code&gt; series - Settings management&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;useImportExport&lt;/code&gt; - Import/export&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Integration tests 
+  &lt;ul&gt; 
+   &lt;li&gt;App main application flow&lt;/li&gt; 
+   &lt;li&gt;SettingsDialog complete interaction&lt;/li&gt; 
+   &lt;li&gt;MCP panel functionality&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Running Tests&lt;/strong&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Run all tests
+pnpm test:unit
+
+# Watch mode (auto re-run)
+pnpm test:unit:watch
+
+# With coverage report
+pnpm test:unit --coverage
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Tech Stack&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Frontend&lt;/strong&gt;: React 18 · TypeScript · Vite · TailwindCSS 4 · TanStack Query v5 · react-i18next · react-hook-form · zod · shadcn/ui · @dnd-kit&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Backend&lt;/strong&gt;: Tauri 2.8 · Rust · serde · tokio · thiserror · tauri-plugin-updater/process/dialog/store/log&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Testing&lt;/strong&gt;: vitest · MSW · @testing-library/react&lt;/p&gt; 
+&lt;h2&gt;Project Structure&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;├── src/                      # Frontend (React + TypeScript)
+│   ├── components/           # UI components (providers/settings/mcp/ui)
+│   ├── hooks/                # Custom hooks (business logic)
+│   ├── lib/
+│   │   ├── api/              # Tauri API wrapper (type-safe)
+│   │   └── query/            # TanStack Query config
+│   ├── i18n/locales/         # Translations (zh/en)
+│   ├── config/               # Presets (providers/mcp)
+│   └── types/                # TypeScript definitions
+├── src-tauri/                # Backend (Rust)
+│   └── src/
+│       ├── commands/         # Tauri command layer (by domain)
+│       ├── services/         # Business logic layer
+│       ├── app_config.rs     # Config data models
+│       ├── provider.rs       # Provider domain models
+│       ├── mcp.rs            # MCP sync &amp;amp; validation
+│       └── lib.rs            # App entry &amp;amp; tray menu
+├── tests/                    # Frontend tests
+│   ├── hooks/                # Unit tests
+│   └── components/           # Integration tests
+└── assets/                   # Screenshots &amp;amp; partner resources
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Changelog&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/farion1231/cc-switch/main/CHANGELOG.md"&gt;CHANGELOG.md&lt;/a&gt; for version update details.&lt;/p&gt; 
+&lt;h2&gt;Legacy Electron Version&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/farion1231/releases"&gt;Releases&lt;/a&gt; retains v2.0.3 legacy Electron version&lt;/p&gt; 
+&lt;p&gt;If you need legacy Electron code, you can pull the electron-legacy branch&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Issues and suggestions are welcome!&lt;/p&gt; 
+&lt;p&gt;Before submitting PRs, please ensure:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Pass type check: &lt;code&gt;pnpm typecheck&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Pass format check: &lt;code&gt;pnpm format:check&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Pass unit tests: &lt;code&gt;pnpm test:unit&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;💡 For new features, please open an issue for discussion before submitting a PR&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.star-history.com/#farion1231/cc-switch&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=farion1231/cc-switch&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT © Jason Young&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>supabase/supabase</title>
+      <link>https://github.com/supabase/supabase</link>
+      <description>&lt;p&gt;The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://user-images.githubusercontent.com/8291514/213727234-cda046d6-28c6-491a-b284-b86c5cede25d.png#gh-light-mode-only" /&gt; &lt;img src="https://user-images.githubusercontent.com/8291514/213727225-56186826-bee8-43b5-9b15-86e839d89393.png#gh-dark-mode-only" /&gt; &lt;/p&gt; 
+&lt;h1&gt;Supabase&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://supabase.com"&gt;Supabase&lt;/a&gt; is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Hosted Postgres Database. &lt;a href="https://supabase.com/docs/guides/database"&gt;Docs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Authentication and Authorization. &lt;a href="https://supabase.com/docs/guides/auth"&gt;Docs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Auto-generated APIs. 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; REST. &lt;a href="https://supabase.com/docs/guides/api"&gt;Docs&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; GraphQL. &lt;a href="https://supabase.com/docs/guides/graphql"&gt;Docs&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Realtime subscriptions. &lt;a href="https://supabase.com/docs/guides/realtime"&gt;Docs&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Functions. 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Database Functions. &lt;a href="https://supabase.com/docs/guides/database/functions"&gt;Docs&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Edge Functions &lt;a href="https://supabase.com/docs/guides/functions"&gt;Docs&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; File Storage. &lt;a href="https://supabase.com/docs/guides/storage"&gt;Docs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; AI + Vector/Embeddings Toolkit. &lt;a href="https://supabase.com/docs/guides/ai"&gt;Docs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Dashboard&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png" alt="Supabase Dashboard" /&gt;&lt;/p&gt; 
+&lt;p&gt;Watch "releases" of this repo to get notified of major updates.&lt;/p&gt; 
+&lt;p&gt;&lt;kbd&gt;&lt;img src="https://raw.githubusercontent.com/supabase/supabase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="Watch this repo" /&gt;&lt;/kbd&gt;&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;For full documentation, visit &lt;a href="https://supabase.com/docs"&gt;supabase.com/docs&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;To see how to Contribute, visit &lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/DEVELOPERS.md"&gt;Getting Started&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Community &amp;amp; Support&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/supabase/supabase/discussions"&gt;Community Forum&lt;/a&gt;. Best for: help with building, discussion about database best practices.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/supabase/supabase/issues"&gt;GitHub Issues&lt;/a&gt;. Best for: bugs and errors you encounter using Supabase.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://supabase.com/docs/support#business-support"&gt;Email Support&lt;/a&gt;. Best for: problems with your database or infrastructure.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://discord.supabase.com"&gt;Discord&lt;/a&gt;. Best for: sharing your applications and hanging out with the community.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How it works&lt;/h2&gt; 
+&lt;p&gt;Supabase is a combination of open source tools. We’re building the features of Firebase using enterprise-grade, open source products. If the tools and communities exist, with an MIT, Apache 2, or equivalent open license, we will use and support that tool. If the tool doesn't exist, we build and open source it ourselves. Supabase is not a 1-to-1 mapping of Firebase. Our aim is to give developers a Firebase-like developer experience using open source tools.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Architecture&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Supabase is a &lt;a href="https://supabase.com/dashboard"&gt;hosted platform&lt;/a&gt;. You can sign up and start using Supabase without installing anything. You can also &lt;a href="https://supabase.com/docs/guides/hosting/overview"&gt;self-host&lt;/a&gt; and &lt;a href="https://supabase.com/docs/guides/local-development"&gt;develop locally&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/supabase/supabase/master/apps/docs/public/img/supabase-architecture.svg?sanitize=true" alt="Architecture" /&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.postgresql.org/"&gt;Postgres&lt;/a&gt; is an object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/supabase/realtime"&gt;Realtime&lt;/a&gt; is an Elixir server that allows you to listen to PostgreSQL inserts, updates, and deletes using websockets. Realtime polls Postgres' built-in replication functionality for database changes, converts changes to JSON, then broadcasts the JSON over websockets to authorized clients.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="http://postgrest.org/"&gt;PostgREST&lt;/a&gt; is a web server that turns your PostgreSQL database directly into a RESTful API.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/supabase/gotrue"&gt;GoTrue&lt;/a&gt; is a JWT-based authentication API that simplifies user sign-ups, logins, and session management in your applications.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/supabase/storage-api"&gt;Storage&lt;/a&gt; a RESTful API for managing files in S3, with Postgres handling permissions.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="http://github.com/supabase/pg_graphql/"&gt;pg_graphql&lt;/a&gt; a PostgreSQL extension that exposes a GraphQL API.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/supabase/postgres-meta"&gt;postgres-meta&lt;/a&gt; is a RESTful API for managing your Postgres, allowing you to fetch tables, add roles, and run queries, etc.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/Kong/kong"&gt;Kong&lt;/a&gt; is a cloud-native API gateway.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Client libraries&lt;/h4&gt; 
+&lt;p&gt;Our approach for client libraries is modular. Each sub-library is a standalone implementation for a single external system. This is one of the ways we support existing tools.&lt;/p&gt; 
+&lt;table style="table-layout:fixed; white-space: nowrap;"&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;th&gt;Language&lt;/th&gt; 
+   &lt;th&gt;Client&lt;/th&gt; 
+   &lt;th colspan="5"&gt;Feature-Clients (bundled in Supabase client)&lt;/th&gt; 
+  &lt;/tr&gt; 
+  &lt;!-- notranslate --&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;&lt;/th&gt; 
+   &lt;th&gt;Supabase&lt;/th&gt; 
+   &lt;th&gt;&lt;a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer"&gt;PostgREST&lt;/a&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer"&gt;GoTrue&lt;/a&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer"&gt;Realtime&lt;/a&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;a href="https://github.com/supabase/storage-api" target="_blank" rel="noopener noreferrer"&gt;Storage&lt;/a&gt;&lt;/th&gt; 
+   &lt;th&gt;Functions&lt;/th&gt; 
+  &lt;/tr&gt; 
+  &lt;!-- TEMPLATE FOR NEW ROW --&gt; 
+  &lt;!-- START ROW
+  &lt;tr&gt;
+    &lt;td&gt;lang&lt;/td&gt;
+    &lt;td&gt;&lt;a href="https://github.com/supabase-community/supabase-lang" target="_blank" rel="noopener noreferrer"&gt;supabase-lang&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;a href="https://github.com/supabase-community/postgrest-lang" target="_blank" rel="noopener noreferrer"&gt;postgrest-lang&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;a href="https://github.com/supabase-community/gotrue-lang" target="_blank" rel="noopener noreferrer"&gt;gotrue-lang&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;a href="https://github.com/supabase-community/realtime-lang" target="_blank" rel="noopener noreferrer"&gt;realtime-lang&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;a href="https://github.com/supabase-community/storage-lang" target="_blank" rel="noopener noreferrer"&gt;storage-lang&lt;/a&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  END ROW --&gt; 
+  &lt;!-- /notranslate --&gt; 
+  &lt;tr&gt;
+   &lt;th colspan="7"&gt;⚡️ Official ⚡️&lt;/th&gt; 
+   &lt;!-- notranslate --&gt; 
+  &lt;/tr&gt;
+  &lt;tr&gt; 
+   &lt;td&gt;JavaScript (TypeScript)&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/supabase-js" target="_blank" rel="noopener noreferrer"&gt;supabase-js&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/postgrest-js" target="_blank" rel="noopener noreferrer"&gt;postgrest-js&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/gotrue-js" target="_blank" rel="noopener noreferrer"&gt;gotrue-js&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/realtime-js" target="_blank" rel="noopener noreferrer"&gt;realtime-js&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/storage-js" target="_blank" rel="noopener noreferrer"&gt;storage-js&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/functions-js" target="_blank" rel="noopener noreferrer"&gt;functions-js&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Flutter&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/supabase-flutter" target="_blank" rel="noopener noreferrer"&gt;supabase-flutter&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/postgrest-dart" target="_blank" rel="noopener noreferrer"&gt;postgrest-dart&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/gotrue-dart" target="_blank" rel="noopener noreferrer"&gt;gotrue-dart&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/realtime-dart" target="_blank" rel="noopener noreferrer"&gt;realtime-dart&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/storage-dart" target="_blank" rel="noopener noreferrer"&gt;storage-dart&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/functions-dart" target="_blank" rel="noopener noreferrer"&gt;functions-dart&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Swift&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/supabase-swift" target="_blank" rel="noopener noreferrer"&gt;supabase-swift&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/supabase-swift/tree/main/Sources/PostgREST" target="_blank" rel="noopener noreferrer"&gt;postgrest-swift&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/supabase-swift/tree/main/Sources/Auth" target="_blank" rel="noopener noreferrer"&gt;auth-swift&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/supabase-swift/tree/main/Sources/Realtime" target="_blank" rel="noopener noreferrer"&gt;realtime-swift&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/supabase-swift/tree/main/Sources/Storage" target="_blank" rel="noopener noreferrer"&gt;storage-swift&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/supabase-swift/tree/main/Sources/Functions" target="_blank" rel="noopener noreferrer"&gt;functions-swift&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Python&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/supabase-py" target="_blank" rel="noopener noreferrer"&gt;supabase-py&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/postgrest-py" target="_blank" rel="noopener noreferrer"&gt;postgrest-py&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/gotrue-py" target="_blank" rel="noopener noreferrer"&gt;gotrue-py&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/realtime-py" target="_blank" rel="noopener noreferrer"&gt;realtime-py&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/storage-py" target="_blank" rel="noopener noreferrer"&gt;storage-py&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase/functions-py" target="_blank" rel="noopener noreferrer"&gt;functions-py&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;!-- /notranslate --&gt; 
+  &lt;tr&gt;
+   &lt;th colspan="7"&gt;💚 Community 💚&lt;/th&gt; 
+   &lt;!-- notranslate --&gt; 
+  &lt;/tr&gt;
+  &lt;tr&gt; 
+   &lt;td&gt;C#&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/supabase-csharp" target="_blank" rel="noopener noreferrer"&gt;supabase-csharp&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/postgrest-csharp" target="_blank" rel="noopener noreferrer"&gt;postgrest-csharp&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/gotrue-csharp" target="_blank" rel="noopener noreferrer"&gt;gotrue-csharp&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/realtime-csharp" target="_blank" rel="noopener noreferrer"&gt;realtime-csharp&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/storage-csharp" target="_blank" rel="noopener noreferrer"&gt;storage-csharp&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/functions-csharp" target="_blank" rel="noopener noreferrer"&gt;functions-csharp&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Go&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/postgrest-go" target="_blank" rel="noopener noreferrer"&gt;postgrest-go&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/gotrue-go" target="_blank" rel="noopener noreferrer"&gt;gotrue-go&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/storage-go" target="_blank" rel="noopener noreferrer"&gt;storage-go&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/functions-go" target="_blank" rel="noopener noreferrer"&gt;functions-go&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Java&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/gotrue-java" target="_blank" rel="noopener noreferrer"&gt;gotrue-java&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/storage-java" target="_blank" rel="noopener noreferrer"&gt;storage-java&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Kotlin&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/supabase-kt" target="_blank" rel="noopener noreferrer"&gt;supabase-kt&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/supabase-kt/tree/master/Postgrest" target="_blank" rel="noopener noreferrer"&gt;postgrest-kt&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/supabase-kt/tree/master/Auth" target="_blank" rel="noopener noreferrer"&gt;auth-kt&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/supabase-kt/tree/master/Realtime" target="_blank" rel="noopener noreferrer"&gt;realtime-kt&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/supabase-kt/tree/master/Storage" target="_blank" rel="noopener noreferrer"&gt;storage-kt&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/supabase-kt/tree/master/Functions" target="_blank" rel="noopener noreferrer"&gt;functions-kt&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Ruby&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/supabase-rb" target="_blank" rel="noopener noreferrer"&gt;supabase-rb&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/postgrest-rb" target="_blank" rel="noopener noreferrer"&gt;postgrest-rb&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Rust&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/postgrest-rs" target="_blank" rel="noopener noreferrer"&gt;postgrest-rs&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Godot Engine (GDScript)&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/godot-engine.supabase" target="_blank" rel="noopener noreferrer"&gt;supabase-gdscript&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/postgrest-gdscript" target="_blank" rel="noopener noreferrer"&gt;postgrest-gdscript&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/gotrue-gdscript" target="_blank" rel="noopener noreferrer"&gt;gotrue-gdscript&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/realtime-gdscript" target="_blank" rel="noopener noreferrer"&gt;realtime-gdscript&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/storage-gdscript" target="_blank" rel="noopener noreferrer"&gt;storage-gdscript&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/supabase-community/functions-gdscript" target="_blank" rel="noopener noreferrer"&gt;functions-gdscript&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;!-- /notranslate --&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;!-- Remove this list if you're translating to another language, it's hard to keep updated across multiple files--&gt; 
+&lt;!-- Keep only the link to the list of translation files--&gt; 
+&lt;h2&gt;Badges&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/badge-made-with-supabase.svg?sanitize=true" alt="Made with Supabase" /&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-md"&gt;[![Made with Supabase](https://supabase.com/badge-made-with-supabase.svg)](https://supabase.com)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;a href="https://supabase.com"&amp;gt;
+  &amp;lt;img
+    width="168"
+    height="30"
+    src="https://supabase.com/badge-made-with-supabase.svg"
+    alt="Made with Supabase"
+  /&amp;gt;
+&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/badge-made-with-supabase-dark.svg?sanitize=true" alt="Made with Supabase (dark)" /&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-md"&gt;[![Made with Supabase](https://supabase.com/badge-made-with-supabase-dark.svg)](https://supabase.com)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;a href="https://supabase.com"&amp;gt;
+  &amp;lt;img
+    width="168"
+    height="30"
+    src="https://supabase.com/badge-made-with-supabase-dark.svg"
+    alt="Made with Supabase"
+  /&amp;gt;
+&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Translations&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.ar.md"&gt;Arabic | العربية&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.sq.md"&gt;Albanian / Shqip&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.bn.md"&gt;Bangla / বাংলা&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.bg.md"&gt;Bulgarian / Български&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.ca.md"&gt;Catalan / Català&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.hr.md"&gt;Croatian / Hrvatski&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.cs.md"&gt;Czech / čeština&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.da.md"&gt;Danish / Dansk&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.nl.md"&gt;Dutch / Nederlands&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/supabase/supabase"&gt;English&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.et.md"&gt;Estonian / eesti keel&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.fi.md"&gt;Finnish / Suomalainen&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.fr.md"&gt;French / Français&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.de.md"&gt;German / Deutsch&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.el.md"&gt;Greek / Ελληνικά&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.gu.md"&gt;Gujarati / ગુજરાતી&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.he.md"&gt;Hebrew / עברית&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.hi.md"&gt;Hindi / हिंदी&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.hu.md"&gt;Hungarian / Magyar&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.ne.md"&gt;Nepali / नेपाली&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.id.md"&gt;Indonesian / Bahasa Indonesia&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.it.md"&gt;Italiano / Italian&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.jp.md"&gt;Japanese / 日本語&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.ko.md"&gt;Korean / 한국어&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.lt.md"&gt;Lithuanian / lietuvių&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.lv.md"&gt;Latvian / latviski&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.ms.md"&gt;Malay / Bahasa Malaysia&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.nb.md"&gt;Norwegian (Bokmål) / Norsk (Bokmål)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.fa.md"&gt;Persian / فارسی&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.pl.md"&gt;Polish / Polski&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.pt.md"&gt;Portuguese / Português&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.pt-br.md"&gt;Portuguese (Brazilian) / Português Brasileiro&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.ro.md"&gt;Romanian / Română&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.ru.md"&gt;Russian / Pусский&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.sr.md"&gt;Serbian / Srpski&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.si.md"&gt;Sinhala / සිංහල&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.sk.md"&gt;Slovak / slovenský&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.sl.md"&gt;Slovenian / Slovenščina&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.es.md"&gt;Spanish / Español&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.zh-cn.md"&gt;Simplified Chinese / 简体中文&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.sv.md"&gt;Swedish / Svenska&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.th.md"&gt;Thai / ไทย&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.zh-tw.md"&gt;Traditional Chinese / 繁體中文&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.tr.md"&gt;Turkish / Türkçe&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.uk.md"&gt;Ukrainian / Українська&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/README.vi-vn.md"&gt;Vietnamese / Tiếng Việt&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/supabase/supabase/master/i18n/languages.md"&gt;List of translations&lt;/a&gt; 
+  &lt;!-- Keep only this --&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>sst/opencode</title>
+      <link>https://github.com/sst/opencode</link>
+      <description>&lt;p&gt;The AI coding agent built for the terminal.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://opencode.ai"&gt; 
+  &lt;picture&gt; 
+   &lt;source srcset="packages/console/app/src/asset/logo-ornate-dark.svg" media="(prefers-color-scheme: dark)" /&gt; 
+   &lt;source srcset="packages/console/app/src/asset/logo-ornate-light.svg" media="(prefers-color-scheme: light)" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/sst/opencode/dev/packages/console/app/src/asset/logo-ornate-light.svg?sanitize=true" alt="OpenCode logo" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;The AI coding agent built for the terminal.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://opencode.ai/discord"&gt;&lt;img alt="Discord" src="https://img.shields.io/discord/1391832426048651334?style=flat-square&amp;amp;label=discord" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/opencode-ai"&gt;&lt;img alt="npm" src="https://img.shields.io/npm/v/opencode-ai?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://github.com/sst/opencode/actions/workflows/publish.yml"&gt;&lt;img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/sst/opencode/publish.yml?style=flat-square&amp;amp;branch=dev" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://opencode.ai"&gt;&lt;img src="https://raw.githubusercontent.com/sst/opencode/dev/packages/web/src/assets/lander/screenshot.png" alt="OpenCode Terminal UI" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Installation&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# YOLO
+curl -fsSL https://opencode.ai/install | bash
+
+# Package managers
+npm i -g opencode-ai@latest        # or bun/pnpm/yarn
+scoop bucket add extras; scoop install extras/opencode  # Windows
+choco install opencode             # Windows
+brew install opencode              # macOS and Linux
+paru -S opencode-bin               # Arch Linux
+mise use --pin -g ubi:sst/opencode # Any OS
+nix run nixpkgs#opencode           # or github:sst/opencode for latest dev branch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] Remove versions older than 0.1.x before installing.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h4&gt;Installation Directory&lt;/h4&gt; 
+&lt;p&gt;The install script respects the following priority order for the installation path:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;code&gt;$OPENCODE_INSTALL_DIR&lt;/code&gt; - Custom installation directory&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$XDG_BIN_DIR&lt;/code&gt; - XDG Base Directory Specification compliant path&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$HOME/bin&lt;/code&gt; - Standard user binary directory (if exists or can be created)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$HOME/.opencode/bin&lt;/code&gt; - Default fallback&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Examples
+OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/install | bash
+XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/install | bash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Agents&lt;/h3&gt; 
+&lt;p&gt;OpenCode includes two built-in agents you can switch between, you can switch between these using the &lt;code&gt;Tab&lt;/code&gt; key.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;build&lt;/strong&gt; - Default, full access agent for development work&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;plan&lt;/strong&gt; - Read-only agent for analysis and code exploration 
+  &lt;ul&gt; 
+   &lt;li&gt;Denies file edits by default&lt;/li&gt; 
+   &lt;li&gt;Asks permission before running bash commands&lt;/li&gt; 
+   &lt;li&gt;Ideal for exploring unfamiliar codebases or planning changes&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Also, included is a &lt;strong&gt;general&lt;/strong&gt; subagent for complex searches and multi-step tasks. This is used internally and can be invoked using &lt;code&gt;@general&lt;/code&gt; in messages.&lt;/p&gt; 
+&lt;p&gt;Learn more about &lt;a href="https://opencode.ai/docs/agents"&gt;agents&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Documentation&lt;/h3&gt; 
+&lt;p&gt;For more info on how to configure OpenCode &lt;a href="https://opencode.ai/docs"&gt;&lt;strong&gt;head over to our docs&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Contributing&lt;/h3&gt; 
+&lt;p&gt;If you're interested in contributing to OpenCode, please read our &lt;a href="https://raw.githubusercontent.com/sst/opencode/dev/CONTRIBUTING.md"&gt;contributing docs&lt;/a&gt; before submitting a pull request.&lt;/p&gt; 
+&lt;h3&gt;Building on OpenCode&lt;/h3&gt; 
+&lt;p&gt;If you are working on a project that's related to OpenCode and is using "opencode" as a part of its name; for example, "opencode-dashboard" or "opencode-mobile", please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in anyway.&lt;/p&gt; 
+&lt;h3&gt;FAQ&lt;/h3&gt; 
+&lt;h4&gt;How is this different than Claude Code?&lt;/h4&gt; 
+&lt;p&gt;It's very similar to Claude Code in terms of capability. Here are the key differences:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;100% open source&lt;/li&gt; 
+ &lt;li&gt;Not coupled to any provider. Although we recommend the models we provide through &lt;a href="https://opencode.ai/zen"&gt;OpenCode Zen&lt;/a&gt;; OpenCode can be used with Claude, OpenAI, Google or even local models. As models evolve the gaps between them will close and pricing will drop so being provider-agnostic is important.&lt;/li&gt; 
+ &lt;li&gt;Out of the box LSP support&lt;/li&gt; 
+ &lt;li&gt;A focus on TUI. OpenCode is built by neovim users and the creators of &lt;a href="https://terminal.shop"&gt;terminal.shop&lt;/a&gt;; we are going to push the limits of what's possible in the terminal.&lt;/li&gt; 
+ &lt;li&gt;A client/server architecture. This for example can allow OpenCode to run on your computer, while you can drive it remotely from a mobile app. Meaning that the TUI frontend is just one of the possible clients.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;What's the other repo?&lt;/h4&gt; 
+&lt;p&gt;The other confusingly named repo has no relation to this one. You can &lt;a href="https://x.com/thdxr/status/1933561254481666466"&gt;read the story behind it here&lt;/a&gt;.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Join our community&lt;/strong&gt; &lt;a href="https://discord.gg/opencode"&gt;Discord&lt;/a&gt; | &lt;a href="https://x.com/opencode"&gt;X.com&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>sst/opentui</title>
+      <link>https://github.com/sst/opentui</link>
+      <description>&lt;p&gt;OpenTUI is a library for building terminal user interfaces (TUIs)&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;OpenTUI&lt;/h1&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://www.npmjs.com/package/@opentui/core"&gt;&lt;img alt="npm" src="https://img.shields.io/npm/v/@opentui/core?style=flat-square" /&gt;&lt;/a&gt; 
+ &lt;a href="https://github.com/sst/opentui/actions/workflows/build-core.yml"&gt;&lt;img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/sst/opentui/build-core.yml?style=flat-square&amp;amp;branch=main" /&gt;&lt;/a&gt; 
+ &lt;a href="https://github.com/msmps/awesome-opentui"&gt;&lt;img alt="awesome opentui list" src="https://awesome.re/badge-flat.svg?sanitize=true" /&gt;&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;p&gt;OpenTUI is a TypeScript library for building terminal user interfaces (TUIs). It is currently in development and is not ready for production use. It will be the foundational TUI framework for both &lt;a href="https://opencode.ai"&gt;opencode&lt;/a&gt; and &lt;a href="https://terminal.shop"&gt;terminaldotshop&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Quick start with &lt;a href="https://bun.sh"&gt;bun&lt;/a&gt; and &lt;a href="https://github.com/msmps/create-tui"&gt;create-tui&lt;/a&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun create tui
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This monorepo contains the following packages:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/sst/opentui/main/packages/core"&gt;&lt;code&gt;@opentui/core&lt;/code&gt;&lt;/a&gt; - The core library works completely standalone, providing an imperative API and all the primitives.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/sst/opentui/main/packages/solid"&gt;&lt;code&gt;@opentui/solid&lt;/code&gt;&lt;/a&gt; - The SolidJS reconciler for OpenTUI.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/sst/opentui/main/packages/react"&gt;&lt;code&gt;@opentui/react&lt;/code&gt;&lt;/a&gt; - The React reconciler for OpenTUI.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/sst/opentui/main/packages/vue"&gt;&lt;code&gt;@opentui/vue&lt;/code&gt;&lt;/a&gt; - The Vue reconciler (unmaintained)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/sst/opentui/main/packages/go"&gt;&lt;code&gt;@opentui/go&lt;/code&gt;&lt;/a&gt; - Go bindings (unmaintained)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Install&lt;/h2&gt; 
+&lt;p&gt;NOTE: You must have &lt;a href="https://ziglang.org/learn/getting-started/"&gt;Zig&lt;/a&gt; installed on your system to build the packages.&lt;/p&gt; 
+&lt;h3&gt;TypeScript/JavaScript&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun install @opentui/core
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Try Examples&lt;/h2&gt; 
+&lt;p&gt;You can quickly try out OpenTUI examples without cloning the repository:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;For macOS, Linux, WSL, Git Bash:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -fsSL https://raw.githubusercontent.com/sst/opentui/main/packages/core/src/examples/install.sh | sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;For Windows (PowerShell/CMD):&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Download the latest release directly from &lt;a href="https://github.com/sst/opentui/releases/latest"&gt;GitHub Releases&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Running Examples (from the repo root)&lt;/h2&gt; 
+&lt;h3&gt;TypeScript Examples&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun install
+cd packages/core
+bun run src/examples/index.ts
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;h3&gt;Local Development Linking&lt;/h3&gt; 
+&lt;p&gt;When developing OpenTUI, you may want to test your changes in another project without publishing. The &lt;code&gt;link-opentui-dev.sh&lt;/code&gt; script makes this easy by creating symlinks (or copies) from your OpenTUI workspace to another project's &lt;code&gt;node_modules&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Basic usage:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;./scripts/link-opentui-dev.sh /path/to/your/project
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This will link &lt;code&gt;@opentui/core&lt;/code&gt; to your target project.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Options:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;--react&lt;/code&gt; - Also link &lt;code&gt;@opentui/react&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;--solid&lt;/code&gt; - Also link &lt;code&gt;@opentui/solid&lt;/code&gt; and &lt;code&gt;solid-js&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;--dist&lt;/code&gt; - Link the built &lt;code&gt;dist&lt;/code&gt; directories instead of source packages&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;--copy&lt;/code&gt; - Copy the dist directories instead of symlinking (requires &lt;code&gt;--dist&lt;/code&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Link only core (default)
+./scripts/link-opentui-dev.sh /path/to/your/project
+
+# Link core and solid
+./scripts/link-opentui-dev.sh /path/to/your/project --solid
+
+# Link core and react, using dist directories
+./scripts/link-opentui-dev.sh /path/to/your/project --react --dist
+
+# Copy dist directories (useful for environments where symlinks don't work)
+./scripts/link-opentui-dev.sh /path/to/your/project --dist --copy
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The target project must have already run &lt;code&gt;bun install&lt;/code&gt; (or &lt;code&gt;npm install&lt;/code&gt;) to have a &lt;code&gt;node_modules&lt;/code&gt; directory&lt;/li&gt; 
+ &lt;li&gt;By default, the script links to the source packages, allowing hot-reloading of changes&lt;/li&gt; 
+ &lt;li&gt;Use &lt;code&gt;--dist&lt;/code&gt; when you need to test the built artifacts&lt;/li&gt; 
+ &lt;li&gt;Use &lt;code&gt;--copy&lt;/code&gt; mode when working in environments that don't support symlinks well (e.g., Docker containers, Windows)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Showcase&lt;/h2&gt; 
+&lt;p&gt;Consider showcasing your work on the &lt;a href="https://github.com/msmps/awesome-opentui"&gt;awesome-opentui&lt;/a&gt; list. A curated list of awesome resources and terminal user interfaces built with OpenTUI.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>simstudioai/sim</title>
+      <link>https://github.com/simstudioai/sim</link>
+      <description>&lt;p&gt;Open-source platform to build and deploy AI agent workflows.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://sim.ai" target="_blank" rel="noopener noreferrer"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/logo/reverse/text/large.png" alt="Sim Logo" width="500" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;Build and deploy AI agent workflows in minutes.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://sim.ai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/sim.ai-6F3DFA" alt="Sim.ai" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/Hr4UWYEcTT" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/Discord-Join%20Server-5865F2?logo=discord&amp;amp;logoColor=white" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://x.com/simdotai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/twitter/follow/simstudioai?style=social" alt="Twitter" /&gt;&lt;/a&gt; &lt;a href="https://docs.sim.ai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/Docs-6F3DFA.svg?sanitize=true" alt="Documentation" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h3&gt;Build Workflows with Ease&lt;/h3&gt; 
+&lt;p&gt;Design agent workflows visually on a canvas—connect agents, tools, and blocks, then run them instantly.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/static/workflow.gif" alt="Workflow Builder Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;h3&gt;Supercharge with Copilot&lt;/h3&gt; 
+&lt;p&gt;Leverage Copilot to generate nodes, fix errors, and iterate on flows directly from natural language.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/static/copilot.gif" alt="Copilot Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;h3&gt;Integrate Vector Databases&lt;/h3&gt; 
+&lt;p&gt;Upload documents to a vector store and let agents answer questions grounded in your specific content.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/static/knowledge.gif" alt="Knowledge Uploads and Retrieval Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;h2&gt;Quickstart&lt;/h2&gt; 
+&lt;h3&gt;Cloud-hosted: &lt;a href="https://sim.ai"&gt;sim.ai&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://sim.ai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/sim.ai-6F3DFA?logo=data:image/svg%2bxml;base64,PHN2ZyB3aWR0aD0iNjE2IiBoZWlnaHQ9IjYxNiIgdmlld0JveD0iMCAwIDYxNiA2MTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8xMTU5XzMxMykiPgo8cGF0aCBkPSJNNjE2IDBIMFY2MTZINjE2VjBaIiBmaWxsPSIjNkYzREZBIi8+CjxwYXRoIGQ9Ik04MyAzNjUuNTY3SDExM0MxMTMgMzczLjgwNSAxMTYgMzgwLjM3MyAxMjIgMzg1LjI3MkMxMjggMzg5Ljk0OCAxMzYuMTExIDM5Mi4yODUgMTQ2LjMzMyAzOTIuMjg1QzE1Ny40NDQgMzkyLjI4NSAxNjYgMzkwLjE3MSAxNzIgMzg1LjkzOUMxNzcuOTk5IDM4MS40ODcgMTgxIDM3NS41ODYgMTgxIDM2OC4yMzlDMTgxIDM2Mi44OTUgMTc5LjMzMyAzNTguNDQyIDE3NiAzNTQuODhDMTcyLjg4OSAzNTEuMzE4IDE2Ny4xMTEgMzQ4LjQyMiAxNTguNjY3IDM0Ni4xOTZMMTMwIDMzOS41MTdDMTE1LjU1NSAzMzUuOTU1IDEwNC43NzggMzMwLjQ5OSA5Ny42NjY1IDMyMy4xNTFDOTAuNzc3NSAzMTUuODA0IDg3LjMzMzQgMzA2LjExOSA4Ny4zMzM0IDI5NC4wOTZDODcuMzMzNCAyODQuMDc2IDg5Ljg4OSAyNzUuMzkyIDk0Ljk5OTYgMjY4LjA0NUMxMDAuMzMzIDI2MC42OTcgMTA3LjU1NSAyNTUuMDIgMTE2LjY2NiAyNTEuMDEyQzEyNiAyNDcuMDA0IDEzNi42NjcgMjQ1IDE0OC42NjYgMjQ1QzE2MC42NjcgMjQ1IDE3MSAyNDcuMTE2IDE3OS42NjcgMjUxLjM0NkMxODguNTU1IDI1NS41NzYgMTk1LjQ0NCAyNjEuNDc3IDIwMC4zMzMgMjY5LjA0N0MyMDUuNDQ0IDI3Ni42MTcgMjA4LjExMSAyODUuNjM0IDIwOC4zMzMgMjk2LjA5OUgxNzguMzMzQzE3OC4xMTEgMjg3LjYzOCAxNzUuMzMzIDI4MS4wNyAxNjkuOTk5IDI3Ni4zOTRDMTY0LjY2NiAyNzEuNzE5IDE1Ny4yMjIgMjY5LjM4MSAxNDcuNjY3IDI2OS4zODFDMTM3Ljg4OSAyNjkuMzgxIDEzMC4zMzMgMjcxLjQ5NiAxMjUgMjc1LjcyNkMxMTkuNjY2IDI3OS45NTcgMTE3IDI4NS43NDYgMTE3IDI5My4wOTNDMTE3IDMwNC4wMDMgMTI1IDMxMS40NjIgMTQxIDMxNS40N0wxNjkuNjY3IDMyMi40ODNDMTgzLjQ0NSAzMjUuNiAxOTMuNzc4IDMzMC43MjIgMjAwLjY2NyAzMzcuODQ3QzIwNy41NTUgMzQ0Ljc0OSAyMTEgMzU0LjIxMiAyMTEgMzY2LjIzNUMyMTEgMzc2LjQ3NyAyMDguMjIyIDM4NS40OTQgMjAyLjY2NiAzOTMuMjg3QzE5Ny4xMTEgNDAwLjg1NyAxODkuNDQ0IDQwNi43NTggMTc5LjY2NyA0MTAuOTg5QzE3MC4xMTEgNDE0Ljk5NiAxNTguNzc4IDQxNyAxNDUuNjY3IDQxN0MxMjYuNTU1IDQxNyAxMTEuMzMzIDQxMi4zMjUgOTkuOTk5NyA0MDIuOTczQzg4LjY2NjggMzkzLjYyMSA4MyAzODEuMTUzIDgzIDM2NS41NjdaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjMyLjI5MSA0MTNWMjUwLjA4MkMyNDQuNjg0IDI1NC42MTQgMjUwLjE0OCAyNTQuNjE0IDI2My4zNzEgMjUwLjA4MlY0MTNIMjMyLjI5MVpNMjQ3LjUgMjM5LjMxM0MyNDEuOTkgMjM5LjMxMyAyMzcuMTQgMjM3LjMxMyAyMzIuOTUyIDIzMy4zMTZDMjI4Ljk4NCAyMjkuMDk1IDIyNyAyMjQuMjA5IDIyNyAyMTguNjU2QzIyNyAyMTIuODgyIDIyOC45ODQgMjA3Ljk5NSAyMzIuOTUyIDIwMy45OTdDMjM3LjE0IDE5OS45OTkgMjQxLjk5IDE5OCAyNDcuNSAxOThDMjUzLjIzMSAxOTggMjU4LjA4IDE5OS45OTkgMjYyLjA0OSAyMDMuOTk3QzI2Ni4wMTYgMjA3Ljk5NSAyNjggMjEyLjg4MiAyNjggMjE4LjY1NkMyNjggMjI0LjIwOSAyNjYuMDE2IDIyOS4wOTUgMjYyLjA0OSAyMzMuMzE2QzI1OC4wOCAyMzcuMzEzIDI1My4yMzEgMjM5LjMxMyAyNDcuNSAyMzkuMzEzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTMxOS4zMzMgNDEzSDI4OFYyNDkuNjc2SDMxNlYyNzcuMjMzQzMxOS4zMzMgMjY4LjEwNCAzMjUuNzc4IDI2MC4zNjQgMzM0LjY2NyAyNTQuMzUyQzM0My43NzggMjQ4LjExNyAzNTQuNzc4IDI0NSAzNjcuNjY3IDI0NUMzODIuMTExIDI0NSAzOTQuMTEyIDI0OC44OTcgNDAzLjY2NyAyNTYuNjlDNDEzLjIyMiAyNjQuNDg0IDQxOS40NDQgMjc0LjgzNyA0MjIuMzM0IDI4Ny43NTJINDE2LjY2N0M0MTguODg5IDI3NC44MzcgNDI1IDI2NC40ODQgNDM1IDI1Ni42OUM0NDUgMjQ4Ljg5NyA0NTcuMzM0IDI0NSA0NzIgMjQ1QzQ5MC42NjYgMjQ1IDUwNS4zMzQgMjUwLjQ1NSA1MTYgMjYxLjM2NkM1MjYuNjY3IDI3Mi4yNzYgNTMyIDI4Ny4xOTUgNTMyIDMwNi4xMjFWNDEzSDUwMS4zMzNWMzEzLjgwNEM1MDEuMzMzIDMwMC44ODkgNDk4IDI5MC45ODEgNDkxLjMzMyAyODQuMDc4QzQ4NC44ODkgMjc2Ljk1MiA0NzYuMTExIDI3My4zOSA0NjUgMjczLjM5QzQ1Ny4yMjIgMjczLjM5IDQ1MC4zMzMgMjc1LjE3MSA0NDQuMzM0IDI3OC43MzRDNDM4LjU1NiAyODIuMDc0IDQzNCAyODYuOTcyIDQzMC42NjcgMjkzLjQzQzQyNy4zMzMgMjk5Ljg4NyA0MjUuNjY3IDMwNy40NTcgNDI1LjY2NyAzMTYuMTQxVjQxM0gzOTQuNjY3VjMxMy40NjlDMzk0LjY2NyAzMDAuNTU1IDM5MS40NDUgMjkwLjc1OCAzODUgMjg0LjA3OEMzNzguNTU2IDI3Ny4xNzUgMzY5Ljc3OCAyNzMuNzI0IDM1OC42NjcgMjczLjcyNEMzNTAuODg5IDI3My43MjQgMzQ0IDI3NS41MDUgMzM4IDI3OS4wNjhDMzMyLjIyMiAyODIuNDA4IDMyNy42NjcgMjg3LjMwNyAzMjQuMzMzIDI5My43NjNDMzIxIDI5OS45OTggMzE5LjMzMyAzMDcuNDU3IDMxOS4zMzMgMzE2LjE0MVY0MTNaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzExNTlfMzEzIj4KPHJlY3Qgd2lkdGg9IjYxNiIgaGVpZ2h0PSI2MTYiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==&amp;amp;logoColor=white" alt="Sim.ai" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Self-hosted: NPM Package&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx simstudio
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;→ &lt;a href="http://localhost:3000"&gt;http://localhost:3000&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;Note&lt;/h4&gt; 
+&lt;p&gt;Docker must be installed and running on your machine.&lt;/p&gt; 
+&lt;h4&gt;Options&lt;/h4&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Flag&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;-p, --port &amp;lt;port&amp;gt;&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Port to run Sim on (default &lt;code&gt;3000&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;--no-pull&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Skip pulling latest Docker images&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Self-hosted: Docker Compose&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Clone the repository
+git clone https://github.com/simstudioai/sim.git
+
+# Navigate to the project directory
+cd sim
+
+# Start Sim
+docker compose -f docker-compose.prod.yml up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Access the application at &lt;a href="http://localhost:3000/"&gt;http://localhost:3000/&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;Using Local Models with Ollama&lt;/h4&gt; 
+&lt;p&gt;Run Sim with local AI models using &lt;a href="https://ollama.ai"&gt;Ollama&lt;/a&gt; - no external APIs required:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Start with GPU support (automatically downloads gemma3:4b model)
+docker compose -f docker-compose.ollama.yml --profile setup up -d
+
+# For CPU-only systems:
+docker compose -f docker-compose.ollama.yml --profile cpu --profile setup up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Wait for the model to download, then visit &lt;a href="http://localhost:3000"&gt;http://localhost:3000&lt;/a&gt;. Add more models with:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker compose -f docker-compose.ollama.yml exec ollama ollama pull llama3.1:8b
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Self-hosted: Dev Containers&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Open VS Code with the &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers"&gt;Remote - Containers extension&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Open the project and click "Reopen in Container" when prompted&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;bun run dev:full&lt;/code&gt; in the terminal or use the &lt;code&gt;sim-start&lt;/code&gt; alias 
+  &lt;ul&gt; 
+   &lt;li&gt;This starts both the main application and the realtime socket server&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Self-hosted: Manual Setup&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://bun.sh/"&gt;Bun&lt;/a&gt; runtime&lt;/li&gt; 
+ &lt;li&gt;PostgreSQL 12+ with &lt;a href="https://github.com/pgvector/pgvector"&gt;pgvector extension&lt;/a&gt; (required for AI embeddings)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Sim uses vector embeddings for AI features like knowledge bases and semantic search, which requires the &lt;code&gt;pgvector&lt;/code&gt; PostgreSQL extension.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Clone and install dependencies:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/simstudioai/sim.git
+cd sim
+bun install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Set up PostgreSQL with pgvector:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;You need PostgreSQL with the &lt;code&gt;vector&lt;/code&gt; extension for embedding support. Choose one option:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Option A: Using Docker (Recommended)&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Start PostgreSQL with pgvector extension
+docker run --name simstudio-db \
+  -e POSTGRES_PASSWORD=your_password \
+  -e POSTGRES_DB=simstudio \
+  -p 5432:5432 -d \
+  pgvector/pgvector:pg17
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Option B: Manual Installation&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Install PostgreSQL 12+ and the pgvector extension&lt;/li&gt; 
+ &lt;li&gt;See &lt;a href="https://github.com/pgvector/pgvector#installation"&gt;pgvector installation guide&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;Set up environment:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd apps/sim
+cp .env.example .env  # Configure with required variables (DATABASE_URL, BETTER_AUTH_SECRET, BETTER_AUTH_URL)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Update your &lt;code&gt;.env&lt;/code&gt; file with the database URL:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;DATABASE_URL="postgresql://postgres:your_password@localhost:5432/simstudio"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="4"&gt; 
+ &lt;li&gt;Set up the database:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;First, configure the database package environment:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd packages/db
+cp .env.example .env 
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Update your &lt;code&gt;packages/db/.env&lt;/code&gt; file with the database URL:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;DATABASE_URL="postgresql://postgres:your_password@localhost:5432/simstudio"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then run the migrations:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bunx drizzle-kit migrate --config=./drizzle.config.ts
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="5"&gt; 
+ &lt;li&gt;Start the development servers:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Recommended approach - run both servers together (from project root):&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun run dev:full
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This starts both the main Next.js application and the realtime socket server required for full functionality.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Alternative - run servers separately:&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Next.js app (from project root):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Realtime socket server (from &lt;code&gt;apps/sim&lt;/code&gt; directory in a separate terminal):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd apps/sim
+bun run dev:sockets
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Copilot API Keys&lt;/h2&gt; 
+&lt;p&gt;Copilot is a Sim-managed service. To use Copilot on a self-hosted instance:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Go to &lt;a href="https://sim.ai"&gt;https://sim.ai&lt;/a&gt; → Settings → Copilot and generate a Copilot API key&lt;/li&gt; 
+ &lt;li&gt;Set &lt;code&gt;COPILOT_API_KEY&lt;/code&gt; environment variable in your self-hosted apps/sim/.env file to that value&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Tech Stack&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Framework&lt;/strong&gt;: &lt;a href="https://nextjs.org/"&gt;Next.js&lt;/a&gt; (App Router)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Runtime&lt;/strong&gt;: &lt;a href="https://bun.sh/"&gt;Bun&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Database&lt;/strong&gt;: PostgreSQL with &lt;a href="https://orm.drizzle.team"&gt;Drizzle ORM&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Authentication&lt;/strong&gt;: &lt;a href="https://better-auth.com"&gt;Better Auth&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;UI&lt;/strong&gt;: &lt;a href="https://ui.shadcn.com/"&gt;Shadcn&lt;/a&gt;, &lt;a href="https://tailwindcss.com"&gt;Tailwind CSS&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;State Management&lt;/strong&gt;: &lt;a href="https://zustand-demo.pmnd.rs/"&gt;Zustand&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Flow Editor&lt;/strong&gt;: &lt;a href="https://reactflow.dev/"&gt;ReactFlow&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Docs&lt;/strong&gt;: &lt;a href="https://fumadocs.vercel.app/"&gt;Fumadocs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Monorepo&lt;/strong&gt;: &lt;a href="https://turborepo.org/"&gt;Turborepo&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Realtime&lt;/strong&gt;: &lt;a href="https://socket.io/"&gt;Socket.io&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Background Jobs&lt;/strong&gt;: &lt;a href="https://trigger.dev/"&gt;Trigger.dev&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Remote Code Execution&lt;/strong&gt;: &lt;a href="https://www.e2b.dev/"&gt;E2B&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions! Please see our &lt;a href="https://raw.githubusercontent.com/simstudioai/sim/main/.github/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the Apache License 2.0 - see the &lt;a href="https://raw.githubusercontent.com/simstudioai/sim/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;p align="center"&gt;Made with ❤️ by the Sim Team&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>slidevjs/slidev</title>
+      <link>https://github.com/slidevjs/slidev</link>
+      <description>&lt;p&gt;Presentation Slides for Developers&lt;/p&gt;&lt;hr&gt;&lt;br /&gt; 
+&lt;p align="center"&gt; &lt;a href="https://sli.dev" target="_blank"&gt; &lt;img src="https://sli.dev/logo-title.png" alt="Slidev" height="250" width="250" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; Presentation &lt;b&gt;slide&lt;/b&gt;s for &lt;b&gt;dev&lt;/b&gt;elopers 🧑‍💻👩‍💻👨‍💻 &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.npmjs.com/package/@slidev/cli" target="__blank"&gt;&lt;img src="https://img.shields.io/npm/v/@slidev/cli?color=2B90B6&amp;amp;label=" alt="NPM version" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/@slidev/cli" target="__blank"&gt;&lt;img alt="NPM Downloads" src="https://img.shields.io/npm/dm/@slidev/cli?color=349dbe&amp;amp;label=" /&gt;&lt;/a&gt; &lt;a href="https://sli.dev/" target="__blank"&gt;&lt;img src="https://img.shields.io/static/v1?label=&amp;amp;message=docs%20%26%20demos&amp;amp;color=45b8cd" alt="Docs &amp;amp; Demos" /&gt;&lt;/a&gt; &lt;a href="https://sli.dev/resources/theme-gallery" target="__blank"&gt;&lt;img src="https://img.shields.io/static/v1?label=&amp;amp;message=themes&amp;amp;color=4ec5d4" alt="Themes" /&gt;&lt;/a&gt; &lt;br /&gt; &lt;a href="https://github.com/slidevjs/slidev/stargazers" target="__blank"&gt;&lt;img alt="GitHub stars" src="https://img.shields.io/github/stars/slidevjs/slidev?style=social" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://twitter.com/antfu7/status/1389604687502995457"&gt;Video Preview&lt;/a&gt; | &lt;a href="https://sli.dev"&gt;Documentation&lt;/a&gt; &lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;table&gt; 
+  &lt;tbody&gt; 
+   &lt;tr&gt;
+    &lt;td align="center"&gt; &lt;img width="2000" height="0" alt="" aria-hidden /&gt;&lt;br /&gt; &lt;sub&gt;Made possible by my &lt;a href="https://github.com/sponsors/antfu"&gt;Sponsor Program 💖&lt;/a&gt;&lt;/sub&gt;&lt;br /&gt; &lt;img width="2000" height="0" alt="" aria-hidden /&gt; &lt;/td&gt; 
+   &lt;/tr&gt;
+  &lt;/tbody&gt; 
+ &lt;/table&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;📝 &lt;a href="https://sli.dev/guide/syntax"&gt;&lt;strong&gt;Markdown-based&lt;/strong&gt;&lt;/a&gt; - focus on content and use your favorite editor&lt;/li&gt; 
+ &lt;li&gt;🧑‍💻 &lt;a href="https://sli.dev/guide/syntax#code-blocks"&gt;&lt;strong&gt;Developer Friendly&lt;/strong&gt;&lt;/a&gt; - built-in code highlighting, live coding, etc.&lt;/li&gt; 
+ &lt;li&gt;🎨 &lt;a href="https://sli.dev/resources/theme-gallery"&gt;&lt;strong&gt;Themable&lt;/strong&gt;&lt;/a&gt; - theme can be shared and used with npm packages&lt;/li&gt; 
+ &lt;li&gt;🌈 &lt;a href="https://sli.dev/guide/syntax#embedded-styles"&gt;&lt;strong&gt;Stylish&lt;/strong&gt;&lt;/a&gt; - on-demand utilities via &lt;a href="https://github.com/unocss/unocss"&gt;UnoCSS&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;🤹 &lt;a href="https://sli.dev/custom/directory-structure#components"&gt;&lt;strong&gt;Interactive&lt;/strong&gt;&lt;/a&gt; - embedding Vue components seamlessly&lt;/li&gt; 
+ &lt;li&gt;🎙 &lt;a href="https://sli.dev/guide/ui#presenter-mode"&gt;&lt;strong&gt;Presenter Mode&lt;/strong&gt;&lt;/a&gt; - use another window, or even your phone to control your slides&lt;/li&gt; 
+ &lt;li&gt;🎨 &lt;a href="https://sli.dev/features/drawing"&gt;&lt;strong&gt;Drawing&lt;/strong&gt;&lt;/a&gt; - draw and annotate on your slides&lt;/li&gt; 
+ &lt;li&gt;🧮 &lt;a href="https://sli.dev/features/latex"&gt;&lt;strong&gt;LaTeX&lt;/strong&gt;&lt;/a&gt; - built-in LaTeX math equations support&lt;/li&gt; 
+ &lt;li&gt;📰 &lt;a href="https://sli.dev/guide/syntax#diagrams"&gt;&lt;strong&gt;Diagrams&lt;/strong&gt;&lt;/a&gt; - creates diagrams using textual descriptions with &lt;a href="https://mermaid.js.org/"&gt;Mermaid&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🌟 &lt;a href="https://sli.dev/features/icons"&gt;&lt;strong&gt;Icons&lt;/strong&gt;&lt;/a&gt; - access to icons from any icon set directly&lt;/li&gt; 
+ &lt;li&gt;💻 &lt;a href="https://sli.dev/guide/index#editor"&gt;&lt;strong&gt;Editor&lt;/strong&gt;&lt;/a&gt; - integrated editor, or the &lt;a href="https://sli.dev/features/vscode-extension"&gt;VSCode extension&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🎥 &lt;a href="https://sli.dev/features/recording"&gt;&lt;strong&gt;Recording&lt;/strong&gt;&lt;/a&gt; - built-in recording and camera view&lt;/li&gt; 
+ &lt;li&gt;📤 &lt;a href="https://sli.dev/guide/exporting"&gt;&lt;strong&gt;Portable&lt;/strong&gt;&lt;/a&gt; - export into PDF, PNGs, or PPTX&lt;/li&gt; 
+ &lt;li&gt;⚡️ &lt;a href="https://vitejs.dev"&gt;&lt;strong&gt;Fast&lt;/strong&gt;&lt;/a&gt; - instant reloading powered by &lt;a href="https://vitejs.dev"&gt;Vite&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🛠 &lt;a href="https://sli.dev/custom/"&gt;&lt;strong&gt;Hackable&lt;/strong&gt;&lt;/a&gt; - using Vite plugins, Vue components, or any npm packages&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;h3&gt;Try it Online ⚡️&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://sli.dev/new"&gt;sli.dev/new&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://sli.dev/new"&gt;&lt;img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg?sanitize=true" alt="" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Init Project Locally&lt;/h3&gt; 
+&lt;p&gt;Install &lt;a href="https://nodejs.org/"&gt;Node.js &amp;gt;=18&lt;/a&gt; and run the following command:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm init slidev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Documentation: &lt;strong&gt;&lt;a href="https://sli.dev"&gt;English&lt;/a&gt;&lt;/strong&gt; | &lt;a href="https://cn.sli.dev"&gt;中文文档&lt;/a&gt; | &lt;a href="https://fr.sli.dev"&gt;Français&lt;/a&gt; | &lt;a href="https://es.sli.dev"&gt;Español&lt;/a&gt; | &lt;a href="https://ru.sli.dev"&gt;Русский&lt;/a&gt; | &lt;a href="https://br.sli.dev"&gt;Português-BR&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Discord: &lt;a href="https://chat.sli.dev"&gt;chat.sli.dev&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;For a full example, you can check the &lt;a href="https://github.com/slidevjs/slidev/raw/main/demo"&gt;demo&lt;/a&gt; folder, which is also the source file for &lt;a href="https://antfu.me/posts/composable-vue-vueday-2021"&gt;my previous talk&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Tech Stack&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://vitejs.dev"&gt;Vite&lt;/a&gt; - An extremely fast frontend tooling&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://v3.vuejs.org/"&gt;Vue 3&lt;/a&gt; powered &lt;a href="https://daringfireball.net/projects/markdown/syntax"&gt;Markdown&lt;/a&gt; - Focus on the content while having the power of HTML and Vue components whenever needed&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/unocss/unocss"&gt;UnoCSS&lt;/a&gt; - On-demand utility-first CSS engine, style your slides at ease&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/shikijs/shiki"&gt;Shiki&lt;/a&gt;, &lt;a href="https://github.com/Microsoft/monaco-editor"&gt;Monaco Editor&lt;/a&gt; - First-class code snippets support with live coding capability&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://recordrtc.org"&gt;RecordRTC&lt;/a&gt; - Built-in recording and camera view&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://vueuse.org"&gt;VueUse&lt;/a&gt; family - &lt;a href="https://github.com/vueuse/vueuse"&gt;&lt;code&gt;@vueuse/core&lt;/code&gt;&lt;/a&gt;, &lt;a href="https://github.com/vueuse/motion"&gt;&lt;code&gt;@vueuse/motion&lt;/code&gt;&lt;/a&gt;, etc.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://iconify.design/"&gt;Iconify&lt;/a&gt; - Icon sets collection.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/antfu/drauu"&gt;Drauu&lt;/a&gt; - Drawing and annotations support&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://katex.org/"&gt;KaTeX&lt;/a&gt; - LaTeX math rendering.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://mermaid-js.github.io/mermaid"&gt;Mermaid&lt;/a&gt; - Textual Diagrams.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Sponsors&lt;/h2&gt; 
+&lt;p&gt;This project is made possible by all the sponsors supporting my work:&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/sponsors/antfu"&gt; &lt;img src="https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg?sanitize=true" alt="Logos from Sponsors" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT License © 2021 &lt;a href="https://github.com/antfu"&gt;Anthony Fu&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
