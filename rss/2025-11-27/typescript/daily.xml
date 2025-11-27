@@ -1,0 +1,2282 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub TypeScript Daily Trending</title>
+    <description>Daily Trending of TypeScript in GitHub</description>
+    <pubDate>Wed, 26 Nov 2025 01:41:35 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>kubernetes-sigs/headlamp</title>
+      <link>https://github.com/kubernetes-sigs/headlamp</link>
+      <description>&lt;p&gt;A Kubernetes web UI that is fully-featured, user-friendly and extensible&lt;/p&gt;&lt;hr&gt;&lt;h1&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="frontend/src/resources/logo-light.svg" /&gt; 
+  &lt;img src="https://raw.githubusercontent.com/kubernetes-sigs/headlamp/main/frontend/src/resources/logo-dark.svg?sanitize=true" alt="Headlamp" /&gt; 
+ &lt;/picture&gt; &lt;/h1&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;NOTICE:&lt;/strong&gt; We have recently moved the project under the Kubernetes SIG UI (and the repo under the &lt;em&gt;kubernetes-sigs&lt;/em&gt; org). Container images are still at &lt;a href="https://github.com/orgs/headlamp-k8s/packages"&gt;ghcr.io&lt;/a&gt;. Please bear with us while we may experience some broken links.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;a href="https://www.bestpractices.dev/projects/7551"&gt;&lt;img src="https://www.bestpractices.dev/projects/7551/badge" alt="OpenSSF Best Practices" /&gt;&lt;/a&gt; &lt;a href="https://scorecard.dev/viewer/?uri=github.com/kubernetes-sigs/headlamp"&gt;&lt;img src="https://api.scorecard.dev/projects/github.com/kubernetes-sigs/headlamp/badge" alt="OpenSSF Scorecard" /&gt;&lt;/a&gt; &lt;a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fheadlamp-k8s%2Fheadlamp?ref=badge_shield"&gt;&lt;img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fheadlamp-k8s%2Fheadlamp.svg?type=shield" alt="FOSSA Status" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Headlamp is an easy-to-use and extensible Kubernetes web UI.&lt;/p&gt; 
+&lt;p&gt;Headlamp was created to blend the traditional feature set of other web UIs/dashboards (i.e., to list and view resources) with added functionality.&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/kubernetes-sigs/headlamp/screenshots/videos/headlamp_quick_run.gif" width="80%" /&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Vendor-independent / generic Kubernetes UI&lt;/li&gt; 
+ &lt;li&gt;Works in-cluster, or locally as a desktop app&lt;/li&gt; 
+ &lt;li&gt;Multi-cluster&lt;/li&gt; 
+ &lt;li&gt;Extensible through &lt;a href="https://github.com/headlamp-k8s/plugins"&gt;plugins&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;UI controls reflecting user roles (no deletion/update if not allowed)&lt;/li&gt; 
+ &lt;li&gt;Clean &amp;amp; modern UI&lt;/li&gt; 
+ &lt;li&gt;Cancellable creation/update/deletion operations&lt;/li&gt; 
+ &lt;li&gt;Logs, exec, and resource editor with documentation&lt;/li&gt; 
+ &lt;li&gt;Read-write / interactive (actions based on permissions)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Screenshots&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td width="33%"&gt;&lt;img src="https://raw.githubusercontent.com/kubernetes-sigs/headlamp/screenshots/screenshots/home.png" /&gt;&lt;/td&gt; 
+   &lt;td width="33%"&gt;&lt;img src="https://raw.githubusercontent.com/kubernetes-sigs/headlamp/screenshots/screenshots/cluster_chooser.png" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td width="33%"&gt;&lt;img src="https://raw.githubusercontent.com/kubernetes-sigs/headlamp/screenshots/screenshots/workloads.png" /&gt;&lt;/td&gt; 
+   &lt;td width="33%"&gt;&lt;img src="https://raw.githubusercontent.com/kubernetes-sigs/headlamp/screenshots/screenshots/resource_edition.png" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td width="33%"&gt;&lt;img src="https://raw.githubusercontent.com/kubernetes-sigs/headlamp/screenshots/screenshots/logs.png" /&gt;&lt;/td&gt; 
+   &lt;td width="33%"&gt;&lt;img src="https://raw.githubusercontent.com/kubernetes-sigs/headlamp/screenshots/screenshots/terminal.png" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;Quickstart&lt;/h2&gt; 
+&lt;p&gt;If you want to deploy Headlamp in your cluster, check out the instructions on running it &lt;a href="https://headlamp.dev/docs/latest/installation/in-cluster/"&gt;in-cluster&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;If you have a kubeconfig already, you can quickly try Headlamp locally as a &lt;a href="https://headlamp.dev/docs/latest/installation/desktop/"&gt;desktop application&lt;/a&gt; for &lt;a href="https://headlamp.dev/docs/latest/installation/desktop/linux-installation"&gt;Linux&lt;/a&gt;, &lt;a href="https://headlamp.dev/docs/latest/installation/desktop/mac-installation"&gt;Mac&lt;/a&gt;, or &lt;a href="https://headlamp.dev/docs/latest/installation/desktop/win-installation"&gt;Windows&lt;/a&gt;. &lt;strong&gt;Make sure&lt;/strong&gt; you have a kubeconfig file set up with your favorite clusters and in the default path so Headlamp can use it.&lt;/p&gt; 
+&lt;h3&gt;Accessing&lt;/h3&gt; 
+&lt;p&gt;Headlamp uses &lt;a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac"&gt;RBAC&lt;/a&gt; for checking users' access to resources. If you try Headlamp with a token that has very limited permissions, you may not be able to view your cluster resources correctly.&lt;/p&gt; 
+&lt;p&gt;See the documentation on &lt;a href="https://headlamp.dev/docs/latest/installation#create-a-service-account-token"&gt;how to easily get a Service Account token&lt;/a&gt; for your cluster.&lt;/p&gt; 
+&lt;h2&gt;Tested platforms&lt;/h2&gt; 
+&lt;p&gt;We maintain a list of the &lt;a href="https://raw.githubusercontent.com/kubernetes-sigs/headlamp/main/docs/platforms.md"&gt;Kubernetes platforms&lt;/a&gt; we have tested Headlamp with. We invite you to add any missing platforms you have tested, or comment if there are any regressions in the existing ones.&lt;/p&gt; 
+&lt;h2&gt;Extensions / Plugins&lt;/h2&gt; 
+&lt;p&gt;Please see &lt;a href="https://artifacthub.io/packages/search?kind=21&amp;amp;sort=relevance&amp;amp;page=1"&gt;headlamp plugins on Artifact Hub&lt;/a&gt; for a list of plugins published.&lt;/p&gt; 
+&lt;p&gt;See the &lt;a href="https://github.com/headlamp-k8s/plugins"&gt;plugins repo&lt;/a&gt; for some official plugins.&lt;/p&gt; 
+&lt;h3&gt;Plugin development&lt;/h3&gt; 
+&lt;p&gt;If you are interested in tweaking Headlamp to fit your use-cases, you can check out our &lt;a href="https://headlamp.dev/docs/latest/development/plugins/"&gt;plugin development guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Get involved&lt;/h2&gt; 
+&lt;p&gt;Check out our:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://headlamp.dev/docs/latest/contributing/"&gt;Guidelines&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/kubernetes-sigs/headlamp/main/code-of-conduct.md"&gt;Code of Conduct&lt;/a&gt;,&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://kubernetes.slack.com/messages/headlamp"&gt;#headlamp&lt;/a&gt; slack channel in the Kubernetes Slack&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://zoom-lfx.platform.linuxfoundation.org/meetings/headlamp"&gt;Monthly Community Meeting&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Roadmap / Release Planning&lt;/h2&gt; 
+&lt;p&gt;If you are interested in the direction of the project, we maintain a &lt;a href="https://github.com/orgs/headlamp-k8s/projects/1/views/1"&gt;Roadmap&lt;/a&gt;. It has the biggest changes planned so far, as well as a &lt;a href="https://github.com/orgs/headlamp-k8s/projects/1/"&gt;board&lt;/a&gt; tracking each release.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Headlamp is released under the terms of the &lt;a href="https://raw.githubusercontent.com/kubernetes-sigs/headlamp/main/LICENSE"&gt;Apache 2.0&lt;/a&gt; license.&lt;/p&gt; 
+&lt;h2&gt;Frequently Asked Questions&lt;/h2&gt; 
+&lt;p&gt;For more information about Headlamp, see the &lt;a href="https://headlamp.dev/docs/latest/faq/"&gt;Headlamp FAQ&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>firecrawl/firecrawl</title>
+      <link>https://github.com/firecrawl/firecrawl</link>
+      <description>&lt;p&gt;🔥 The Web Data API for AI - Turn entire websites into LLM-ready markdown or structured data&lt;/p&gt;&lt;hr&gt;&lt;h3 align="center"&gt; &lt;a name="readme-top"&gt;&lt;/a&gt; &lt;img src="https://raw.githubusercontent.com/firecrawl/firecrawl/main/img/firecrawl_logo.png" height="200" /&gt; &lt;/h3&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://github.com/firecrawl/firecrawl/raw/main/LICENSE"&gt; &lt;img src="https://img.shields.io/github/license/firecrawl/firecrawl" alt="License" /&gt; &lt;/a&gt; 
+ &lt;a href="https://pepy.tech/project/firecrawl-py"&gt; &lt;img src="https://static.pepy.tech/badge/firecrawl-py" alt="Downloads" /&gt; &lt;/a&gt; 
+ &lt;a href="https://GitHub.com/firecrawl/firecrawl/graphs/contributors"&gt; &lt;img src="https://img.shields.io/github/contributors/firecrawl/firecrawl.svg?sanitize=true" alt="GitHub Contributors" /&gt; &lt;/a&gt; 
+ &lt;a href="https://firecrawl.dev"&gt; &lt;img src="https://img.shields.io/badge/Visit-firecrawl.dev-orange" alt="Visit firecrawl.dev" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;div&gt; 
+ &lt;p align="center"&gt; &lt;a href="https://twitter.com/firecrawl_dev"&gt; &lt;img src="https://img.shields.io/badge/Follow%20on%20X-000000?style=for-the-badge&amp;amp;logo=x&amp;amp;logoColor=white" alt="Follow on X" /&gt; &lt;/a&gt; &lt;a href="https://www.linkedin.com/company/104100957"&gt; &lt;img src="https://img.shields.io/badge/Follow%20on%20LinkedIn-0077B5?style=for-the-badge&amp;amp;logo=linkedin&amp;amp;logoColor=white" alt="Follow on LinkedIn" /&gt; &lt;/a&gt; &lt;a href="https://discord.com/invite/gSmWdAkdwd"&gt; &lt;img src="https://img.shields.io/badge/Join%20our%20Discord-5865F2?style=for-the-badge&amp;amp;logo=discord&amp;amp;logoColor=white" alt="Join our Discord" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h1&gt;🔥 Firecrawl&lt;/h1&gt; 
+&lt;p&gt;Empower your AI apps with clean data from any website. Featuring advanced scraping, crawling, and data extraction capabilities.&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;This repository is in development, and we’re still integrating custom modules into the mono repo. It's not fully ready for self-hosted deployment yet, but you can run it locally.&lt;/em&gt;&lt;/p&gt; 
+&lt;h2&gt;What is Firecrawl?&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://firecrawl.dev?ref=github"&gt;Firecrawl&lt;/a&gt; is an API service that takes a URL, crawls it, and converts it into clean markdown or structured data. We crawl all accessible subpages and give you clean data for each. No sitemap required. Check out our &lt;a href="https://docs.firecrawl.dev"&gt;documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Looking for our MCP? Check out the &lt;a href="https://github.com/firecrawl/firecrawl-mcp-server"&gt;repo here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;Pst. hey, you, join our stargazers :)&lt;/em&gt;&lt;/p&gt; 
+&lt;a href="https://github.com/firecrawl/firecrawl"&gt; &lt;img src="https://img.shields.io/github/stars/firecrawl/firecrawl.svg?style=social&amp;amp;label=Star&amp;amp;maxAge=2592000" alt="GitHub stars" /&gt; &lt;/a&gt; 
+&lt;h2&gt;How to use it?&lt;/h2&gt; 
+&lt;p&gt;We provide an easy to use API with our hosted version. You can find the playground and documentation &lt;a href="https://firecrawl.dev/playground"&gt;here&lt;/a&gt;. You can also self host the backend if you'd like.&lt;/p&gt; 
+&lt;p&gt;Check out the following resources to get started:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;strong&gt;API&lt;/strong&gt;: &lt;a href="https://docs.firecrawl.dev/api-reference/introduction"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;strong&gt;SDKs&lt;/strong&gt;: &lt;a href="https://docs.firecrawl.dev/sdks/python"&gt;Python&lt;/a&gt;, &lt;a href="https://docs.firecrawl.dev/sdks/node"&gt;Node&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;strong&gt;LLM Frameworks&lt;/strong&gt;: &lt;a href="https://python.langchain.com/docs/integrations/document_loaders/firecrawl/"&gt;Langchain (python)&lt;/a&gt;, &lt;a href="https://js.langchain.com/docs/integrations/document_loaders/web_loaders/firecrawl"&gt;Langchain (js)&lt;/a&gt;, &lt;a href="https://docs.llamaindex.ai/en/latest/examples/data_connectors/WebPageDemo/#using-firecrawl-reader"&gt;Llama Index&lt;/a&gt;, &lt;a href="https://docs.crewai.com/"&gt;Crew.ai&lt;/a&gt;, &lt;a href="https://composio.dev/tools/firecrawl/all"&gt;Composio&lt;/a&gt;, &lt;a href="https://docs.praison.ai/firecrawl/"&gt;PraisonAI&lt;/a&gt;, &lt;a href="https://superinterface.ai/docs/assistants/functions/firecrawl"&gt;Superinterface&lt;/a&gt;, &lt;a href="https://docs.vectorize.io/integrations/source-connectors/firecrawl"&gt;Vectorize&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;strong&gt;Low-code Frameworks&lt;/strong&gt;: &lt;a href="https://dify.ai/blog/dify-ai-blog-integrated-with-firecrawl"&gt;Dify&lt;/a&gt;, &lt;a href="https://docs.langflow.org/"&gt;Langflow&lt;/a&gt;, &lt;a href="https://docs.flowiseai.com/integrations/langchain/document-loaders/firecrawl"&gt;Flowise AI&lt;/a&gt;, &lt;a href="https://docs.getcargo.io/integration/firecrawl"&gt;Cargo&lt;/a&gt;, &lt;a href="https://pipedream.com/apps/firecrawl/"&gt;Pipedream&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;strong&gt;Community SDKs&lt;/strong&gt;: &lt;a href="https://docs.firecrawl.dev/sdks/go"&gt;Go&lt;/a&gt;, &lt;a href="https://docs.firecrawl.dev/sdks/rust"&gt;Rust&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;strong&gt;Others&lt;/strong&gt;: &lt;a href="https://zapier.com/apps/firecrawl/integrations"&gt;Zapier&lt;/a&gt;, &lt;a href="https://www.pabbly.com/connect/integrations/firecrawl/"&gt;Pabbly Connect&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Want an SDK or Integration? Let us know by opening an issue.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;To run locally, refer to guide &lt;a href="https://github.com/firecrawl/firecrawl/raw/main/CONTRIBUTING.md"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;API Key&lt;/h3&gt; 
+&lt;p&gt;To use the API, you need to sign up on &lt;a href="https://firecrawl.dev"&gt;Firecrawl&lt;/a&gt; and get an API key.&lt;/p&gt; 
+&lt;h3&gt;Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/firecrawl/firecrawl/main/#scraping"&gt;&lt;strong&gt;Scrape&lt;/strong&gt;&lt;/a&gt;: scrapes a URL and get its content in LLM-ready format (markdown, structured data via &lt;a href="https://raw.githubusercontent.com/firecrawl/firecrawl/main/#llm-extraction-beta"&gt;LLM Extract&lt;/a&gt;, screenshot, html)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/firecrawl/firecrawl/main/#crawling"&gt;&lt;strong&gt;Crawl&lt;/strong&gt;&lt;/a&gt;: scrapes all the URLs of a web page and return content in LLM-ready format&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/firecrawl/firecrawl/main/#map"&gt;&lt;strong&gt;Map&lt;/strong&gt;&lt;/a&gt;: input a website and get all the website urls - extremely fast&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/firecrawl/firecrawl/main/#search"&gt;&lt;strong&gt;Search&lt;/strong&gt;&lt;/a&gt;: search the web and get full content from results&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/firecrawl/firecrawl/main/#extract"&gt;&lt;strong&gt;Extract&lt;/strong&gt;&lt;/a&gt;: get structured data from single page, multiple pages or entire websites with AI.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Powerful Capabilities&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;LLM-ready formats&lt;/strong&gt;: markdown, structured data, screenshot, HTML, links, metadata&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;The hard stuff&lt;/strong&gt;: proxies, anti-bot mechanisms, dynamic content (js-rendered), output parsing, orchestration&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Customizability&lt;/strong&gt;: exclude tags, crawl behind auth walls with custom headers, max crawl depth, etc...&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Media parsing&lt;/strong&gt;: pdfs, docx, images&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Reliability first&lt;/strong&gt;: designed to get the data you need - no matter how hard it is&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Actions&lt;/strong&gt;: click, scroll, input, wait and more before extracting data&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Batching&lt;/strong&gt;: scrape thousands of URLs at the same time with a new async endpoint&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Change Tracking&lt;/strong&gt;: monitor and detect changes in website content over time&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;You can find all of Firecrawl's capabilities and how to use them in our &lt;a href="https://docs.firecrawl.dev"&gt;documentation&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Crawling&lt;/h3&gt; 
+&lt;p&gt;Used to crawl a URL and all accessible subpages. This submits a crawl job and returns a job ID to check the status of the crawl.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/crawl \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer fc-YOUR_API_KEY' \
+    -d '{
+      "url": "https://docs.firecrawl.dev",
+      "limit": 10,
+      "scrapeOptions": {
+        "formats": ["markdown", "html"]
+      }
+    }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Returns a crawl job id and the url to check the status of the crawl.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "success": true,
+  "id": "123-456-789",
+  "url": "https://api.firecrawl.dev/v2/crawl/123-456-789"
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Check Crawl Job&lt;/h3&gt; 
+&lt;p&gt;Used to check the status of a crawl job and get its result.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X GET https://api.firecrawl.dev/v2/crawl/123-456-789 \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer YOUR_API_KEY'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "status": "completed",
+  "total": 36,
+  "creditsUsed": 36,
+  "expiresAt": "2024-00-00T00:00:00.000Z",
+  "data": [
+    {
+      "markdown": "[Firecrawl Docs home page![light logo](https://mintlify.s3-us-west-1.amazonaws.com/firecrawl/logo/light.svg)!...",
+      "html": "&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=\"en\" class=\"js-focus-visible lg:[--scroll-mt:9.5rem]\" data-js-focus-visible=\"\"&amp;gt;...",
+      "metadata": {
+        "title": "Build a 'Chat with website' using Groq Llama 3 | Firecrawl",
+        "language": "en",
+        "sourceURL": "https://docs.firecrawl.dev/learn/rag-llama3",
+        "description": "Learn how to use Firecrawl, Groq Llama 3, and Langchain to build a 'Chat with your website' bot.",
+        "ogLocaleAlternate": [],
+        "statusCode": 200
+      }
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Scraping&lt;/h3&gt; 
+&lt;p&gt;Used to scrape a URL and get its content in the specified formats.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/scrape \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "url": "https://docs.firecrawl.dev",
+      "formats" : ["markdown", "html"]
+    }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Response:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "success": true,
+  "data": {
+    "markdown": "Launch Week I is here! [See our Day 2 Release 🚀](https://www.firecrawl.dev/blog/launch-week-i-day-2-doubled-rate-limits)[💥 Get 2 months free...",
+    "html": "&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=\"en\" class=\"light\" style=\"color-scheme: light;\"&amp;gt;&amp;lt;body class=\"__variable_36bd41 __variable_d7dc5d font-inter ...",
+    "metadata": {
+      "title": "Home - Firecrawl",
+      "description": "Firecrawl crawls and converts any website into clean markdown.",
+      "language": "en",
+      "keywords": "Firecrawl,Markdown,Data,Mendable,Langchain",
+      "robots": "follow, index",
+      "ogTitle": "Firecrawl",
+      "ogDescription": "Turn any website into LLM-ready data.",
+      "ogUrl": "https://www.firecrawl.dev/",
+      "ogImage": "https://www.firecrawl.dev/og.png?123",
+      "ogLocaleAlternate": [],
+      "ogSiteName": "Firecrawl",
+      "sourceURL": "https://firecrawl.dev",
+      "statusCode": 200
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Map&lt;/h3&gt; 
+&lt;p&gt;Used to map a URL and get urls of the website. This returns most links present on the website.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/map \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "url": "https://firecrawl.dev"
+    }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Response:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "success": true,
+  "links": [
+    { "url": "https://firecrawl.dev", "title": "Firecrawl", "description": "Firecrawl is a tool that allows you to crawl a website and get the data you need." },
+    { "url": "https://www.firecrawl.dev/pricing", "title": "Firecrawl Pricing", "description": "Firecrawl Pricing" },
+    { "url": "https://www.firecrawl.dev/blog", "title": "Firecrawl Blog", "description": "Firecrawl Blog" },
+    { "url": "https://www.firecrawl.dev/playground", "title": "Firecrawl Playground", "description": "Firecrawl Playground" },
+    { "url": "https://www.firecrawl.dev/smart-crawl", "title": "Firecrawl Smart Crawl", "description": "Firecrawl Smart Crawl" }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Map with search&lt;/h4&gt; 
+&lt;p&gt;Map with &lt;code&gt;search&lt;/code&gt; param allows you to search for specific urls inside a website.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/map \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "url": "https://firecrawl.dev",
+      "search": "docs"
+    }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Response will be an ordered list from the most relevant to the least relevant.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "success": true,
+  "links": [
+    { "url": "https://docs.firecrawl.dev", "title": "Firecrawl Docs", "description": "Firecrawl Docs" },
+    { "url": "https://docs.firecrawl.dev/sdks/python", "title": "Firecrawl Python SDK", "description": "Firecrawl Python SDK" },
+    { "url": "https://docs.firecrawl.dev/learn/rag-llama3", "title": "Firecrawl RAG Llama 3", "description": "Firecrawl RAG Llama 3" }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Search&lt;/h3&gt; 
+&lt;p&gt;Search the web and get full content from results&lt;/p&gt; 
+&lt;p&gt;Firecrawl’s search API allows you to perform web searches and optionally scrape the search results in one operation.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Choose specific output formats (markdown, HTML, links, screenshots)&lt;/li&gt; 
+ &lt;li&gt;Search the web with customizable parameters (language, country, etc.)&lt;/li&gt; 
+ &lt;li&gt;Optionally retrieve content from search results in various formats&lt;/li&gt; 
+ &lt;li&gt;Control the number of results and set timeouts&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/search \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer fc-YOUR_API_KEY" \
+  -d '{
+    "query": "what is firecrawl?",
+    "limit": 5
+  }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Response&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "success": true,
+  "data": [
+    {
+      "url": "https://firecrawl.dev",
+      "title": "Firecrawl | Home Page",
+      "description": "Turn websites into LLM-ready data with Firecrawl"
+    },
+    {
+      "url": "https://docs.firecrawl.dev",
+      "title": "Documentation | Firecrawl",
+      "description": "Learn how to use Firecrawl in your own applications"
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;With content scraping&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/search \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer fc-YOUR_API_KEY" \
+  -d '{
+    "query": "what is firecrawl?",
+    "limit": 5,
+    "scrapeOptions": {
+      "formats": ["markdown", "links"]
+    }
+  }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Extract (Beta)&lt;/h3&gt; 
+&lt;p&gt;Get structured data from entire websites with a prompt and/or a schema.&lt;/p&gt; 
+&lt;p&gt;You can extract structured data from one or multiple URLs, including wildcards:&lt;/p&gt; 
+&lt;p&gt;Single Page: Example: &lt;a href="https://firecrawl.dev/some-page"&gt;https://firecrawl.dev/some-page&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Multiple Pages / Full Domain Example: &lt;a href="https://firecrawl.dev/"&gt;https://firecrawl.dev/&lt;/a&gt;*&lt;/p&gt; 
+&lt;p&gt;When you use /*, Firecrawl will automatically crawl and parse all URLs it can discover in that domain, then extract the requested data.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/extract \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "urls": [
+        "https://firecrawl.dev/*", 
+        "https://docs.firecrawl.dev/", 
+        "https://www.ycombinator.com/companies"
+      ],
+      "prompt": "Extract the company mission, whether it is open source, and whether it is in Y Combinator from the page.",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "company_mission": {
+            "type": "string"
+          },
+          "is_open_source": {
+            "type": "boolean"
+          },
+          "is_in_yc": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "company_mission",
+          "is_open_source",
+          "is_in_yc"
+        ]
+      }
+    }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "success": true,
+  "id": "44aa536d-f1cb-4706-ab87-ed0386685740",
+  "urlTrace": []
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If you are using the sdks, it will auto pull the response for you:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "success": true,
+  "data": {
+    "company_mission": "Firecrawl is the easiest way to extract data from the web. Developers use us to reliably convert URLs into LLM-ready markdown or structured data with a single API call.",
+    "supports_sso": false,
+    "is_open_source": true,
+    "is_in_yc": true
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;LLM Extraction (Beta)&lt;/h3&gt; 
+&lt;p&gt;Used to extract structured data from scraped pages.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/scrape \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer YOUR_API_KEY' \
+  -d '{
+    "url": "https://www.mendable.ai/",
+    "formats": [
+      {
+        "type": "json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "company_mission": { "type": "string" },
+            "supports_sso": { "type": "boolean" },
+            "is_open_source": { "type": "boolean" },
+            "is_in_yc": { "type": "boolean" }
+          }
+        }
+      }
+    ]
+  }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "success": true,
+  "data": {
+    "content": "Raw Content",
+    "metadata": {
+      "title": "Mendable",
+      "description": "Mendable allows you to easily build AI chat applications. Ingest, customize, then deploy with one line of code anywhere you want. Brought to you by SideGuide",
+      "robots": "follow, index",
+      "ogTitle": "Mendable",
+      "ogDescription": "Mendable allows you to easily build AI chat applications. Ingest, customize, then deploy with one line of code anywhere you want. Brought to you by SideGuide",
+      "ogUrl": "https://mendable.ai/",
+      "ogImage": "https://mendable.ai/mendable_new_og1.png",
+      "ogLocaleAlternate": [],
+      "ogSiteName": "Mendable",
+      "sourceURL": "https://mendable.ai/"
+    },
+    "json": {
+      "company_mission": "Train a secure AI on your technical resources that answers customer and employee questions so your team doesn't have to",
+      "supports_sso": true,
+      "is_open_source": false,
+      "is_in_yc": true
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Extracting without a schema (New)&lt;/h3&gt; 
+&lt;p&gt;You can now extract without a schema by just passing a &lt;code&gt;prompt&lt;/code&gt; to the endpoint. The llm chooses the structure of the data.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/scrape \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "url": "https://docs.firecrawl.dev/",
+      "formats": [
+        {
+          "type": "json",
+          "prompt": "Extract the company mission from the page."
+        }
+      ]
+    }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Interacting with the page with Actions (Cloud-only)&lt;/h3&gt; 
+&lt;p&gt;Firecrawl allows you to perform various actions on a web page before scraping its content. This is particularly useful for interacting with dynamic content, navigating through pages, or accessing content that requires user interaction.&lt;/p&gt; 
+&lt;p&gt;Here is an example of how to use actions to navigate to google.com, search for Firecrawl, click on the first result, and take a screenshot.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/scrape \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+        "url": "google.com",
+        "formats": ["markdown"],
+        "actions": [
+            {"type": "wait", "milliseconds": 2000},
+            {"type": "click", "selector": "textarea[title=\"Search\"]"},
+            {"type": "wait", "milliseconds": 2000},
+            {"type": "write", "text": "firecrawl"},
+            {"type": "wait", "milliseconds": 2000},
+            {"type": "press", "key": "ENTER"},
+            {"type": "wait", "milliseconds": 3000},
+            {"type": "click", "selector": "h3"},
+            {"type": "wait", "milliseconds": 3000},
+            {"type": "screenshot"}
+        ]
+    }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Batch Scraping Multiple URLs (New)&lt;/h3&gt; 
+&lt;p&gt;You can now batch scrape multiple URLs at the same time. It is very similar to how the /crawl endpoint works. It submits a batch scrape job and returns a job ID to check the status of the batch scrape.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/batch/scrape \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "urls": ["https://docs.firecrawl.dev", "https://docs.firecrawl.dev/sdks/overview"],
+      "formats" : ["markdown", "html"]
+    }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Using Python SDK&lt;/h2&gt; 
+&lt;h3&gt;Installing Python SDK&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pip install firecrawl-py
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Crawl a website&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;from firecrawl import Firecrawl
+
+firecrawl = Firecrawl(api_key="fc-YOUR_API_KEY")
+
+# Scrape a website (returns a Document)
+doc = firecrawl.scrape(
+    "https://firecrawl.dev",
+    formats=["markdown", "html"],
+)
+print(doc.markdown)
+
+# Crawl a website
+response = firecrawl.crawl(
+    "https://firecrawl.dev",
+    limit=100,
+    scrape_options={"formats": ["markdown", "html"]},
+    poll_interval=30,
+)
+print(response)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Extracting structured data from a URL&lt;/h3&gt; 
+&lt;p&gt;With LLM extraction, you can easily extract structured data from any URL. We support pydantic schemas to make it easier for you too. Here is how you to use it:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;from pydantic import BaseModel, Field
+from typing import List
+
+class Article(BaseModel):
+    title: str
+    points: int
+    by: str
+    commentsURL: str
+
+class TopArticles(BaseModel):
+    top: List[Article] = Field(..., description="Top 5 stories")
+
+# Use JSON format with a Pydantic schema
+doc = firecrawl.scrape(
+    "https://news.ycombinator.com",
+    formats=[{"type": "json", "schema": TopArticles}],
+)
+print(doc.json)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Using the Node SDK&lt;/h2&gt; 
+&lt;h3&gt;Installation&lt;/h3&gt; 
+&lt;p&gt;To install the Firecrawl Node SDK, you can use npm:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install @mendable/firecrawl-js
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Usage&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Get an API key from &lt;a href="https://firecrawl.dev"&gt;firecrawl.dev&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Set the API key as an environment variable named &lt;code&gt;FIRECRAWL_API_KEY&lt;/code&gt; or pass it as a parameter to the &lt;code&gt;Firecrawl&lt;/code&gt; class.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-js"&gt;import Firecrawl from '@mendable/firecrawl-js';
+
+const firecrawl = new Firecrawl({ apiKey: 'fc-YOUR_API_KEY' });
+
+// Scrape a website
+const doc = await firecrawl.scrape('https://firecrawl.dev', {
+  formats: ['markdown', 'html'],
+});
+console.log(doc);
+
+// Crawl a website
+const response = await firecrawl.crawl('https://firecrawl.dev', {
+  limit: 100,
+  scrapeOptions: { formats: ['markdown', 'html'] },
+});
+console.log(response);
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Extracting structured data from a URL&lt;/h3&gt; 
+&lt;p&gt;With LLM extraction, you can easily extract structured data from any URL. We support zod schema to make it easier for you too. Here is how to use it:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-js"&gt;import Firecrawl from '@mendable/firecrawl-js';
+import { z } from 'zod';
+
+const firecrawl = new Firecrawl({ apiKey: 'fc-YOUR_API_KEY' });
+
+// Define schema to extract contents into
+const schema = z.object({
+  top: z
+    .array(
+      z.object({
+        title: z.string(),
+        points: z.number(),
+        by: z.string(),
+        commentsURL: z.string(),
+      })
+    )
+    .length(5)
+    .describe('Top 5 stories on Hacker News'),
+});
+
+// Use the v2 extract API with direct Zod schema support
+const extractRes = await firecrawl.extract({
+  urls: ['https://news.ycombinator.com'],
+  schema,
+  prompt: 'Extract the top 5 stories',
+});
+
+console.log(extractRes);
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Open Source vs Cloud Offering&lt;/h2&gt; 
+&lt;p&gt;Firecrawl is open source available under the AGPL-3.0 license.&lt;/p&gt; 
+&lt;p&gt;To deliver the best possible product, we offer a hosted version of Firecrawl alongside our open-source offering. The cloud solution allows us to continuously innovate and maintain a high-quality, sustainable service for all users.&lt;/p&gt; 
+&lt;p&gt;Firecrawl Cloud is available at &lt;a href="https://firecrawl.dev"&gt;firecrawl.dev&lt;/a&gt; and offers a range of features that are not available in the open source version:&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/firecrawl/firecrawl/main/img/open-source-cloud.png" alt="Open Source vs Cloud Offering" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We love contributions! Please read our &lt;a href="https://raw.githubusercontent.com/firecrawl/firecrawl/main/CONTRIBUTING.md"&gt;contributing guide&lt;/a&gt; before submitting a pull request. If you'd like to self-host, refer to the &lt;a href="https://raw.githubusercontent.com/firecrawl/firecrawl/main/SELF_HOST.md"&gt;self-hosting guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;It is the sole responsibility of the end users to respect websites' policies when scraping, searching and crawling with Firecrawl. Users are advised to adhere to the applicable privacy policies and terms of use of the websites prior to initiating any scraping activities. By default, Firecrawl respects the directives specified in the websites' robots.txt files when crawling. By utilizing Firecrawl, you expressly agree to comply with these conditions.&lt;/em&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributors&lt;/h2&gt; 
+&lt;a href="https://github.com/firecrawl/firecrawl/graphs/contributors"&gt; &lt;img alt="contributors" src="https://contrib.rocks/image?repo=firecrawl/firecrawl" /&gt; &lt;/a&gt; 
+&lt;h2&gt;License Disclaimer&lt;/h2&gt; 
+&lt;p&gt;This project is primarily licensed under the GNU Affero General Public License v3.0 (AGPL-3.0), as specified in the LICENSE file in the root directory of this repository. However, certain components of this project are licensed under the MIT License. Refer to the LICENSE files in these specific directories for details.&lt;/p&gt; 
+&lt;p&gt;Please note:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The AGPL-3.0 license applies to all parts of the project unless otherwise specified.&lt;/li&gt; 
+ &lt;li&gt;The SDKs and some UI components are licensed under the MIT License. Refer to the LICENSE files in these specific directories for details.&lt;/li&gt; 
+ &lt;li&gt;When using or contributing to this project, ensure you comply with the appropriate license terms for the specific component you are working with.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;For more details on the licensing of specific components, please refer to the LICENSE files in the respective directories or contact the project maintainers.&lt;/p&gt; 
+&lt;p align="right" style="font-size: 14px; color: #555; margin-top: 20px;"&gt; &lt;a href="https://raw.githubusercontent.com/firecrawl/firecrawl/main/#readme-top" style="text-decoration: none; color: #007bff; font-weight: bold;"&gt; ↑ Back to Top ↑ &lt;/a&gt; &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>modelcontextprotocol/modelcontextprotocol</title>
+      <link>https://github.com/modelcontextprotocol/modelcontextprotocol</link>
+      <description>&lt;p&gt;Specification and documentation for the Model Context Protocol&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Model Context Protocol (MCP)&lt;/h1&gt; 
+&lt;p&gt;&lt;em&gt;Just heard of MCP and not sure where to start? Check out our &lt;a href="https://modelcontextprotocol.io"&gt;documentation website&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;This repo contains the:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;MCP specification&lt;/li&gt; 
+ &lt;li&gt;MCP protocol schema&lt;/li&gt; 
+ &lt;li&gt;Official MCP documentation&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The schema is &lt;a href="https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/2025-06-18/schema.ts"&gt;defined in TypeScript&lt;/a&gt; first, but &lt;a href="https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/2025-06-18/schema.json"&gt;made available as JSON Schema&lt;/a&gt; as well, for wider compatibility.&lt;/p&gt; 
+&lt;p&gt;The official MCP documentation is built using Mintlify and available at &lt;a href="https://modelcontextprotocol.io"&gt;modelcontextprotocol.io&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Authors&lt;/h2&gt; 
+&lt;p&gt;The Model Context Protocol was created by David Soria Parra (&lt;a href="https://github.com/dsp"&gt;@dsp&lt;/a&gt;) and Justin Spahr-Summers (&lt;a href="https://github.com/jspahrsummers"&gt;@jspahrsummers&lt;/a&gt;).&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the &lt;a href="https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/LICENSE"&gt;MIT License&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>portainer/portainer</title>
+      <link>https://github.com/portainer/portainer</link>
+      <description>&lt;p&gt;Making Docker and Kubernetes management easy.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img title="portainer" src="https://github.com/portainer/portainer/raw/develop/app/assets/images/portainer-github-banner.png?raw=true" /&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Portainer Community Edition&lt;/strong&gt; is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swarm, Kubernetes and ACI environments. It is designed to be as simple to deploy as it is to use. The application allows you to manage all your orchestrator resources (containers, images, volumes, networks and more) through a ‘smart’ GUI and/or an extensive API.&lt;/p&gt; 
+&lt;p&gt;Portainer consists of a single container that can run on any cluster. It can be deployed as a Linux container or a Windows native container.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Portainer Business Edition&lt;/strong&gt; builds on the open-source base and includes a range of advanced features and functions (like RBAC and Support) that are specific to the needs of business users.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.portainer.io/features"&gt;Compare Portainer CE and Compare Portainer BE&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.portainer.io/take-3"&gt;Take3 – get 3 free nodes of Portainer Business for as long as you want them&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://academy.portainer.io/install/"&gt;Portainer BE install guide&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Latest Version&lt;/h2&gt; 
+&lt;p&gt;Portainer CE is updated regularly. We aim to do an update release every couple of months.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/portainer/portainer/releases/latest"&gt;&lt;img src="https://img.shields.io/github/v/release/portainer/portainer?color=%2344cc11&amp;amp;label=Latest%20release&amp;amp;style=for-the-badge" alt="latest version" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Getting started&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.portainer.io/start/install-ce"&gt;Deploy Portainer&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.portainer.io"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.portainer.io/contribute/contribute"&gt;Contribute to the project&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Features &amp;amp; Functions&lt;/h2&gt; 
+&lt;p&gt;View &lt;a href="https://www.portainer.io/features"&gt;this&lt;/a&gt; table to see all of the Portainer CE functionality and compare to Portainer Business.&lt;/p&gt; 
+&lt;h2&gt;Getting help&lt;/h2&gt; 
+&lt;p&gt;Portainer CE is an open source project and is supported by the community. You can buy a supported version of Portainer at portainer.io&lt;/p&gt; 
+&lt;p&gt;Learn more about Portainer's community support channels &lt;a href="https://www.portainer.io/resources/get-help/get-support"&gt;here.&lt;/a&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Issues: &lt;a href="https://github.com/portainer/portainer/issues"&gt;https://github.com/portainer/portainer/issues&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Slack (chat): &lt;a href="https://portainer.io/slack"&gt;https://portainer.io/slack&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;You can join the Portainer Community by visiting &lt;a href="https://www.portainer.io/join-our-community"&gt;https://www.portainer.io/join-our-community&lt;/a&gt;. This will give you advance notice of events, content and other related Portainer content.&lt;/p&gt; 
+&lt;h2&gt;Reporting bugs and contributing&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Want to report a bug or request a feature? Please open &lt;a href="https://github.com/portainer/portainer/issues/new"&gt;an issue&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Want to help us build &lt;strong&gt;&lt;em&gt;portainer&lt;/em&gt;&lt;/strong&gt;? Follow our &lt;a href="https://docs.portainer.io/contribute/contribute"&gt;contribution guidelines&lt;/a&gt; to build it locally and make a pull request.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Security&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Here at Portainer, we believe in &lt;a href="https://en.wikipedia.org/wiki/Responsible_disclosure"&gt;responsible disclosure&lt;/a&gt; of security issues. If you have found a security issue, please report it to &lt;a href="mailto:security@portainer.io"&gt;security@portainer.io&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Work for us&lt;/h2&gt; 
+&lt;p&gt;If you are a developer, and our code in this repo makes sense to you, we would love to hear from you. We are always on the hunt for awesome devs, either freelance or employed. Drop us a line to &lt;a href="mailto:success@portainer.io"&gt;success@portainer.io&lt;/a&gt; with your details and/or visit our &lt;a href="https://apply.workable.com/portainer/"&gt;careers page&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Privacy&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;To make sure we focus our development effort in the right places we need to know which features get used most often. To give us this information we use &lt;a href="https://matomo.org/"&gt;Matomo Analytics&lt;/a&gt;, which is hosted in Germany and is fully GDPR compliant.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;When Portainer first starts, you are given the option to DISABLE analytics. If you &lt;strong&gt;don't&lt;/strong&gt; choose to disable it, we collect anonymous usage as per &lt;a href="https://www.portainer.io/legal/privacy-policy"&gt;our privacy policy&lt;/a&gt;. &lt;strong&gt;Please note&lt;/strong&gt;, there is no personally identifiable information sent or stored at any time and we only use the data to help us improve Portainer.&lt;/p&gt; 
+&lt;h2&gt;Limitations&lt;/h2&gt; 
+&lt;p&gt;Portainer supports "Current - 2 docker versions only. Prior versions may operate, however these are not supported.&lt;/p&gt; 
+&lt;h2&gt;Licensing&lt;/h2&gt; 
+&lt;p&gt;Portainer is licensed under the zlib license. See &lt;a href="https://raw.githubusercontent.com/portainer/portainer/develop/LICENSE"&gt;LICENSE&lt;/a&gt; for reference.&lt;/p&gt; 
+&lt;p&gt;Portainer also contains code from open source projects. See &lt;a href="https://raw.githubusercontent.com/portainer/portainer/develop/ATTRIBUTIONS.md"&gt;ATTRIBUTIONS.md&lt;/a&gt; for a list.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>google/adk-web</title>
+      <link>https://github.com/google/adk-web</link>
+      <description>&lt;p&gt;Agent Development Kit Web (adk web) is the built-in developer UI that is integrated with Agent Development Kit for easier agent development and debugging.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Agent Development Kit Web UI (ADK WEB)&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/google/adk-web/main/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg?sanitize=true" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://www.reddit.com/r/agentdevelopmentkit/"&gt;&lt;img src="https://img.shields.io/badge/Reddit-r%2Fagentdevelopmentkit-FF4500?style=flat&amp;amp;logo=reddit&amp;amp;logoColor=white" alt="r/agentdevelopmentkit" /&gt;&lt;/a&gt;&lt;/p&gt;  
+&lt;h2 align="center"&gt; &lt;img src="https://raw.githubusercontent.com/google/adk-python/main/assets/agent-development-kit.png" width="256" /&gt; &lt;/h2&gt; 
+&lt;h3 align="center"&gt; Agent Development Kit Web is the built-in developer UI that integrated with Google Agent Development Kit for easier agent development and debug. &lt;/h3&gt; 
+&lt;h3 align="center"&gt; Important Links: &lt;a href="https://google.github.io/adk-docs/"&gt;Docs&lt;/a&gt; &amp;amp; &lt;a href="https://github.com/google/adk-samples"&gt;Samples&lt;/a&gt;. &lt;/h3&gt;  
+&lt;p&gt;Agent Development Kit (ADK) is a flexible and modular framework for developing and deploying AI agents. While optimized for Gemini and the Google ecosystem, ADK is model-agnostic, deployment-agnostic, and is built for compatibility with other frameworks. ADK was designed to make agent development feel more like software development, to make it easier for developers to create, deploy, and orchestrate agentic architectures that range from simple tasks to complex workflows.&lt;/p&gt; 
+&lt;p&gt;ADK web is the built-in dev UI that comes along with adk for easier development and debug.&lt;/p&gt; 
+&lt;h2&gt;✨ Prerequisite&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Install &lt;a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm"&gt;npm&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Install &lt;a href="https://nodejs.org/en"&gt;NodeJs&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Install &lt;a href="https://angular.dev/tools/cli"&gt;Angular CLI&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Install &lt;a href="https://github.com/google/adk-python"&gt;google-adk (Python)&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Install &lt;a href="https://github.com/google/adk-java/"&gt;google-adk (Java)&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Clone &lt;a href="https://github.com/google/adk-web/"&gt;adk-web (this repo)&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🚀 Running adk web&lt;/h2&gt; 
+&lt;p&gt;To be able to run &lt;code&gt;adk web&lt;/code&gt;, follow the steps from the root of your local adk-web folder:&lt;/p&gt; 
+&lt;h3&gt;Install dependencies&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;sudo npm install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Run adk web&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm run serve --backend=http://localhost:8000
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Run adk api server&lt;/h3&gt; 
+&lt;p&gt;In another terminal run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;adk api_server --allow_origins=http://localhost:4200 --host=0.0.0.0
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If you see &lt;code&gt;adk command not found&lt;/code&gt;, then be sure to install &lt;code&gt;google-adk&lt;/code&gt; (or remember to activate your virtual environment if you are using one)&lt;/p&gt; 
+&lt;h3&gt;Happy development&lt;/h3&gt; 
+&lt;p&gt;Go to &lt;code&gt;localhost:4200&lt;/code&gt; and start developing!&lt;/p&gt; 
+&lt;h2&gt;Screenshots&lt;/h2&gt; 
+&lt;h3&gt;Events&lt;/h3&gt; 
+&lt;img width="2548" height="1378" alt="adk-web-events" src="https://github.com/user-attachments/assets/dc2002e4-6d2d-4b84-9d7d-3c482e8d9391" /&gt; 
+&lt;h3&gt;Tracing&lt;/h3&gt; 
+&lt;img width="2510" height="1377" alt="adk-web-tracing" src="https://github.com/user-attachments/assets/23a93480-334c-483a-828a-05b0f6117022" /&gt; 
+&lt;h3&gt;Artifacts&lt;/h3&gt; 
+&lt;img width="2530" height="1397" alt="adk-web-artifact" src="https://github.com/user-attachments/assets/aacb0866-dbb2-47e4-842c-13f27146c912" /&gt; 
+&lt;h3&gt;Evaluations&lt;/h3&gt; 
+&lt;img width="2536" height="777" alt="adk-web-eval-2" src="https://github.com/user-attachments/assets/fb5f97e7-8bcc-4512-8b8e-a1123ee78c8e" /&gt; 
+&lt;h3&gt;Agent builder &amp;amp; assistant&lt;/h3&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/f73409c4-9b75-474a-9b86-c4525d376b02" alt="1_h3_I7RjXGLKH5-Td0U2rgw" /&gt;&lt;/p&gt; 
+&lt;h3&gt;And more!&lt;/h3&gt; 
+&lt;h2&gt;🤝 Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions from the community! Whether it's bug reports, feature requests, documentation improvements, or code contributions, please see our&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://google.github.io/adk-docs/contributing-guide/#questions"&gt;General contribution guideline and flow&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Testing quirks&lt;/h3&gt; 
+&lt;p&gt;To maintain compatibility with upstream 1p code, testing code in this repo must follow a few rules:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;initTestBed()&lt;/code&gt; from &lt;code&gt;./src/app/testing/utils.ts&lt;/code&gt; must be called before &lt;code&gt;TestBed.configureTestingModule()&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📄 License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the Apache 2.0 License - see the &lt;a href="https://raw.githubusercontent.com/google/adk-web/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;h2&gt;Preview&lt;/h2&gt; 
+&lt;p&gt;This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the &lt;a href="https://cloud.google.com/terms/service-terms#1"&gt;Service Specific Terms&lt;/a&gt;. Pre-GA features are available "as is" and might have limited support. For more information, see the &lt;a href="https://cloud.google.com/products?hl=en#product-launch-stages"&gt;launch stage descriptions&lt;/a&gt;.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;em&gt;Happy Agent Building!&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>yangshun/tech-interview-handbook</title>
+      <link>https://github.com/yangshun/tech-interview-handbook</link>
+      <description>&lt;p&gt;Curated coding interview preparation materials for busy software engineers&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt;Tech Interview Handbook&lt;/h1&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://www.techinterviewhandbook.org/"&gt; &lt;img src="https://raw.githubusercontent.com/yangshun/tech-interview-handbook/main/assets/logo.svg?sanitize=true" alt="Tech Interview Handbook" width="400" /&gt; &lt;/a&gt; 
+ &lt;br /&gt; 
+ &lt;h3&gt; &lt;a href="https://www.techinterviewhandbook.org/"&gt;Read on the website&lt;/a&gt; &lt;/h3&gt; 
+ &lt;p&gt; Join/follow us on &lt;a href="https://discord.com/invite/usMqNaPczq" target="_blank"&gt;Discord&lt;/a&gt; | &lt;a href="https://twitter.com/techinterviewhb" target="_blank"&gt;𝕏 (Twitter)&lt;/a&gt; | &lt;a href="https://t.me/techinterviewhandbook" target="_blank"&gt;Telegram&lt;/a&gt; | &lt;a href="https://facebook.com/techinterviewhandbook" target="_blank"&gt;Facebook&lt;/a&gt; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;a href="https://www.techinterviewhandbook.org/software-engineering-interview-guide/" target="_blank"&gt; &lt;img src="https://raw.githubusercontent.com/yangshun/tech-interview-handbook/main/assets/start-reading-button.jpg" alt="Start Reading Tech Interview Handbook" /&gt; &lt;/a&gt; 
+&lt;h2&gt;What is this?&lt;/h2&gt; 
+&lt;p&gt;Not everyone has the time to do a few hundred LeetCode questions. Here are &lt;em&gt;free and curated&lt;/em&gt; technical interview preparation materials for busy engineers, brought to you by me, the author of &lt;a href="https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU"&gt;Blind 75&lt;/a&gt;. Over 1,000,000 people have benefitted from this handbook!&lt;/p&gt; 
+&lt;p&gt;Besides the usual algorithm questions, other &lt;strong&gt;awesome&lt;/strong&gt; stuff includes:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.techinterviewhandbook.org/coding-interview-study-plan/"&gt;Best practice questions&lt;/a&gt; for coding interviews&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.techinterviewhandbook.org/grind75/"&gt;Grind 75&lt;/a&gt; - the next evolution of Blind 75, bigger and better&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.techinterviewhandbook.org/coding-interview-prep/"&gt;How to prepare&lt;/a&gt; for coding interviews&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.techinterviewhandbook.org/coding-interview-cheatsheet/"&gt;Coding interview best practices&lt;/a&gt; - Straight-to-the-point Do's and Don'ts&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.techinterviewhandbook.org/algorithms/study-cheatsheet/"&gt;Algorithm cheatsheets and tips&lt;/a&gt; categorized by topic&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.techinterviewhandbook.org/resume/"&gt;Step-by-step Software Engineer resume guide&lt;/a&gt; to prepare a FAANG-ready resume&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.techinterviewhandbook.org/behavioral-interview-questions/"&gt;Behavioral questions&lt;/a&gt; asked by the top tech companies&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.frontendinterviewhandbook.com"&gt;Front end interview preparation&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Help from you in contributing content would be very much appreciated!&lt;/p&gt; 
+&lt;h2&gt;Why would you read this?&lt;/h2&gt; 
+&lt;p&gt;This repository has &lt;strong&gt;practical&lt;/strong&gt; content that covers all phases of a technical interview, from applying for a job to passing the interviews to offer negotiation. Technically competent candidates might still find the non-technical content helpful.&lt;/p&gt; 
+&lt;p&gt;The information in this repository is condensed. Ultimately, the key to succeeding in technical interviews is consistent practice and I don't want to bore you with too many words. I tell you the minimum you need to know on how to go about navigating the interview process, you go and practice and land your dream job.&lt;/p&gt; 
+&lt;h2&gt;Who is this for?&lt;/h2&gt; 
+&lt;p&gt;Anybody who wants to land a job at a tech company but is new to technical interviews, seasoned engineers who have not been on the other side of the interviewing table in a while and want to get back into the game, or anyone who wants to be better at technical interviewing.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;div align="center"&gt; 
+ &lt;h3&gt;💡 Stop grinding mindlessly! Study coding question patterns efficiently with &lt;a href="https://www.designgurus.io/course/grokking-the-coding-interview?aff=kJSIoU"&gt;Grokking the Coding Interview&lt;/a&gt; by Design Gurus 💡 &lt;/h3&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;How is this repository different?&lt;/h2&gt; 
+&lt;p&gt;There are many awesome books like "Cracking the Coding Interview" and interview-related repositories out there on GitHub, what makes this repository different? The difference is that many existing interview repositories contain mainly links to external resources whereas this repository contains top-quality curated content directly for your consumption.&lt;/p&gt; 
+&lt;p&gt;Also, existing resources focus mainly on algorithm questions and lack coverage for more domain-specific and non-technical questions. This handbook aims to cover content beyond the typical algorithmic coding questions. 😎&lt;/p&gt; 
+&lt;h2&gt;Looking for interview courses?&lt;/h2&gt; 
+&lt;h3&gt;&lt;a href="https://shareasale.com/r.cfm?b=1873647&amp;amp;u=3114753&amp;amp;m=114505&amp;amp;urllink=&amp;amp;afftrack="&gt;AlgoMonster&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;AlgoMonster aims to help you ace the technical interview &lt;strong&gt;in the shortest time possible&lt;/strong&gt;. By Google engineers, AlgoMonster uses a data-driven approach to teach you the most useful key question patterns and has contents to help you quickly revise basic data structures and algorithms. Best of all, AlgoMonster is not subscription-based - pay a one-time fee and get &lt;strong&gt;lifetime access&lt;/strong&gt;. &lt;a href="https://shareasale.com/r.cfm?b=1873647&amp;amp;u=3114753&amp;amp;m=114505&amp;amp;urllink=&amp;amp;afftrack="&gt;&lt;strong&gt;Join today for a 70% discount →&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;&lt;a href="https://www.designgurus.io/course/grokking-the-coding-interview?aff=kJSIoU"&gt;Grokking the Coding Interview: Patterns for Coding Questions&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;This course by Design Gurus expands upon the questions on the recommended practice questions but approaches the practicing from a questions pattern perspective, which is an approach I also agree with for learning and have personally used to get better at coding interviews. The course allows you to practice selected questions in Java, Python, C++, JavaScript and also provides sample solutions in those languages. &lt;strong&gt;Learn and understand patterns, not memorize answers!&lt;/strong&gt; &lt;a href="https://www.designgurus.io/course/grokking-the-coding-interview?aff=kJSIoU"&gt;&lt;strong&gt;Get lifetime access today →&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Looking for Front End content?&lt;/h2&gt; 
+&lt;p&gt;Front-end-related content has been moved to a separate website - &lt;a href="https://frontendinterviewhandbook.com"&gt;Front End Interview Handbook&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Looking for System Design content?&lt;/h2&gt; 
+&lt;p&gt;We're still working on System Design content. In the meanwhile, check out &lt;a href="https://bytebytego.com?fpr=techinterviewhandbook"&gt;ByteByteGo's System Design Interview course&lt;/a&gt; or Design Gurus' &lt;a href="https://www.designgurus.io/course/grokking-the-system-design-interview?aff=kJSIoU"&gt;Grokking the System Design Interview course&lt;/a&gt;, which in our opinion are among the most useful resources for getting started on system design interviews preparation.&lt;/p&gt; 
+&lt;h2&gt;Contents&lt;/h2&gt; 
+&lt;p&gt;A &lt;a href="https://github.com/facebook/docusaurus"&gt;Docusaurus&lt;/a&gt; website has been created to provide a better reading experience. Check out the website &lt;a href="https://www.techinterviewhandbook.org"&gt;here&lt;/a&gt;!&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;div align="center"&gt; 
+ &lt;h3&gt;💡 Stop the grind and study with a plan! Developed by Google engineers, &lt;a href="https://shareasale.com/r.cfm?b=1873647&amp;amp;u=3114753&amp;amp;m=114505&amp;amp;urllink=&amp;amp;afftrack="&gt;AlgoMonster&lt;/a&gt; is the fastest way to get a software engineering job. &lt;a href="https://shareasale.com/r.cfm?b=1873647&amp;amp;u=3114753&amp;amp;m=114505&amp;amp;urllink=&amp;amp;afftrack="&gt;Join today for a 70% discount!&lt;/a&gt; 💡&lt;/h3&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Related&lt;/h2&gt; 
+&lt;p&gt;If you are interested in how data structures are implemented, check out &lt;a href="https://github.com/yangshun/lago"&gt;Lago&lt;/a&gt;, a Data Structures and Algorithms library for JavaScript. It is pretty much still WIP but I intend to make it into a library that can be used in production and also a reference resource for revising Data Structures and Algorithms.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;There are no formal contributing guidelines at the moment as things are still in flux and we might find a better approach to structure content as we go along. You are welcome to contribute whatever you think will be helpful to fellow engineers. If you would like to contribute content for different domains, feel free to create an issue or submit a pull request and we can discuss further.&lt;/p&gt; 
+&lt;h3&gt;Contributors&lt;/h3&gt; 
+&lt;p&gt;This project exists thanks to all the people who contributed. [&lt;a href="https://raw.githubusercontent.com/yangshun/tech-interview-handbook/main/CONTRIBUTING.md"&gt;Contribute&lt;/a&gt;]. &lt;a href="https://github.com/yangshun/tech-interview-handbook/graphs/contributors"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/contributors.svg?width=890&amp;amp;button=false" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Backers&lt;/h3&gt; 
+&lt;p&gt;Thank you to all our backers! 🙏 [&lt;a href="https://opencollective.com/tech-interview-handbook#backer"&gt;Become a backer&lt;/a&gt;]&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://opencollective.com/tech-interview-handbook#backers" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/backers.svg?width=890" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.buymeacoffee.com/yangshun" target="_blank"&gt;&lt;img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important; width: auto !important;" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Sponsors&lt;/h3&gt; 
+&lt;p&gt;Support this project by becoming a sponsor. Your logo/profile picture will show up here with a link to your website. [&lt;a href="https://opencollective.com/tech-interview-handbook#sponsor"&gt;Become a sponsor&lt;/a&gt;]&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/0/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/0/avatar.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/1/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/1/avatar.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/2/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/2/avatar.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/3/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/3/avatar.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/4/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/4/avatar.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/5/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/5/avatar.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/6/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/6/avatar.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/7/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/7/avatar.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/8/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/8/avatar.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/tech-interview-handbook/sponsor/9/website" target="_blank"&gt;&lt;img src="https://opencollective.com/tech-interview-handbook/sponsor/9/avatar.svg?sanitize=true" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Disclaimer&lt;/h2&gt; 
+&lt;p&gt;I am providing code in the repository to you under an open source license. Because this is my personal repository, the license you receive to my code is from me and not my employer (Meta).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>freeCodeCamp/freeCodeCamp</title>
+      <link>https://github.com/freeCodeCamp/freeCodeCamp</link>
+      <description>&lt;p&gt;freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a href="https://www.freecodecamp.org/"&gt;&lt;img src="https://cdn.freecodecamp.org/platform/universal/fcc_banner_new.png" alt="freeCodeCamp Social Banner" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.firsttimersonly.com/"&gt;&lt;img src="https://img.shields.io/badge/first--timers--only-friendly-blue.svg?sanitize=true" alt="first-timers-only Friendly" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/PRyKn3Vbay"&gt;&lt;img src="https://img.shields.io/discord/692816967895220344?logo=discord&amp;amp;label=Discord&amp;amp;color=5865F2" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://insights.linuxfoundation.org/project/freecodecamp/repository/freecodecamp-freecodecamp"&gt;&lt;img src="https://insights.linuxfoundation.org/api/badge/active-contributors?project=freecodecamp&amp;amp;repos=https://github.com/freeCodeCamp/freeCodeCamp" alt="LFX Active Contributors" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;freeCodeCamp.org's open-source codebase and curriculum&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.freecodecamp.org"&gt;freeCodeCamp.org&lt;/a&gt; is a friendly community where you can learn to code for free. It is run by a &lt;a href="https://www.freecodecamp.org/donate"&gt;donor-supported 501(c)(3) charity&lt;/a&gt; to help millions of busy adults transition into tech. Our community has already helped more than 100,000 people get their first developer job.&lt;/p&gt; 
+&lt;p&gt;Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.&lt;/p&gt; 
+&lt;h2&gt;Table of Contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/#certifications"&gt;Certifications&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/#the-learning-platform"&gt;The Learning Platform&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/#reporting-bugs-and-issues"&gt;Reporting Bugs and Issues&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/#reporting-security-issues-and-responsible-disclosure"&gt;Reporting Security Issues and Responsible Disclosure&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/#contributing"&gt;Contributing&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/#platform-build-and-deployment-status"&gt;Platform, Build and Deployment Status&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/#license"&gt;License&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Certifications&lt;/h3&gt; 
+&lt;p&gt;freeCodeCamp.org offers several free developer certifications. Each of these certifications involves completing interactive lessons, workshops, labs and quizzes. Throughout the certification, you will need to complete 5 required projects to qualify for the exam. Once you pass the exam, then you can claim the certification.&lt;/p&gt; 
+&lt;p&gt;Once you've earned a certification, you will always have it. You will always be able to link to it from your LinkedIn or resume. And when your prospective employers or freelance clients click that link, they'll see a verified certification specific to you.&lt;/p&gt; 
+&lt;p&gt;The one exception to this is if we discover violations of our &lt;a href="https://www.freecodecamp.org/news/academic-honesty-policy/"&gt;Academic Honesty Policy&lt;/a&gt;. When we catch people unambiguously plagiarizing (submitting other people's code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.&lt;/p&gt; 
+&lt;h3&gt;The Learning Platform&lt;/h3&gt; 
+&lt;p&gt;This code is running live at &lt;a href="https://www.freecodecamp.org"&gt;freeCodeCamp.org&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Our community also has:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;A &lt;a href="https://forum.freecodecamp.org"&gt;forum&lt;/a&gt; where you can usually get programming help or project feedback within hours.&lt;/li&gt; 
+ &lt;li&gt;A &lt;a href="https://youtube.com/freecodecamp"&gt;YouTube channel&lt;/a&gt; with free courses on Python, SQL, Android, and a wide variety of other technologies.&lt;/li&gt; 
+ &lt;li&gt;A &lt;a href="https://www.freecodecamp.org/news"&gt;technical publication&lt;/a&gt; with thousands of programming tutorials and articles about mathematics and computer science.&lt;/li&gt; 
+ &lt;li&gt;A &lt;a href="https://discord.gg/Z7Fm39aNtZ"&gt;Discord server&lt;/a&gt; where you can hang out and talk with developers and people who are learning to code.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;h4&gt;&lt;a href="https://www.freecodecamp.org/signin"&gt;Join the community here&lt;/a&gt;.&lt;/h4&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Reporting Bugs and Issues&lt;/h3&gt; 
+&lt;p&gt;If you think you've found a bug, first read the &lt;a href="https://forum.freecodecamp.org/t/how-to-report-a-bug/19543"&gt;how to report a bug&lt;/a&gt; article and follow its instructions.&lt;/p&gt; 
+&lt;p&gt;If you're confident it's a new bug and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.&lt;/p&gt; 
+&lt;h3&gt;Reporting Security Issues and Responsible Disclosure&lt;/h3&gt; 
+&lt;p&gt;We appreciate responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;h4&gt;&lt;a href="https://contribute.freecodecamp.org/#/security"&gt;Read our security policy and follow these steps to report a vulnerability&lt;/a&gt;.&lt;/h4&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Contributing&lt;/h3&gt; 
+&lt;p&gt;The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;h4&gt;&lt;a href="https://contribute.freecodecamp.org"&gt;Please follow these steps to contribute&lt;/a&gt;.&lt;/h4&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Recent Contributions:&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://repobeats.axiom.co/api/embed/89be0a1a1c8f641c54f9234a7423e7755352c746.svg?sanitize=true" alt="Alt" title="Repobeats analytics image" /&gt;&lt;/p&gt; 
+&lt;h3&gt;License&lt;/h3&gt; 
+&lt;p&gt;Copyright © 2025 freeCodeCamp.org&lt;/p&gt; 
+&lt;p&gt;The content of this repository is bound by the following licenses:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The computer software is licensed under the &lt;a href="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/LICENSE.md"&gt;BSD-3-Clause&lt;/a&gt; license.&lt;/li&gt; 
+ &lt;li&gt;The learning resources in the &lt;a href="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum"&gt;&lt;code&gt;/curriculum&lt;/code&gt;&lt;/a&gt; directory including their subdirectories therein are copyright © 2025 freeCodeCamp.org&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>farion1231/cc-switch</title>
+      <link>https://github.com/farion1231/cc-switch</link>
+      <description>&lt;p&gt;A cross-platform desktop All-in-One assistant tool for Claude Code, Codex &amp; Gemini CLI.&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;h1&gt;All-in-One Assistant for Claude Code, Codex &amp;amp; Gemini CLI&lt;/h1&gt; 
+ &lt;p&gt;&lt;a href="https://github.com/farion1231/cc-switch/releases"&gt;&lt;img src="https://img.shields.io/badge/version-3.7.1-blue.svg?sanitize=true" alt="Version" /&gt;&lt;/a&gt; &lt;a href="https://github.com/trending/typescript"&gt;&lt;img src="https://img.shields.io/badge/%F0%9F%94%A5_TypeScript_Trending-Daily%20%7C%20Weekly%20%7C%20Monthly-ff6b6b.svg?sanitize=true" alt="Trending" /&gt;&lt;/a&gt; &lt;a href="https://github.com/farion1231/cc-switch/releases"&gt;&lt;img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg?sanitize=true" alt="Platform" /&gt;&lt;/a&gt; &lt;a href="https://tauri.app/"&gt;&lt;img src="https://img.shields.io/badge/built%20with-Tauri%202-orange.svg?sanitize=true" alt="Built with Tauri" /&gt;&lt;/a&gt; &lt;a href="https://github.com/farion1231/cc-switch/releases/latest"&gt;&lt;img src="https://img.shields.io/endpoint?url=https://api.pinstudios.net/api/badges/downloads/farion1231/cc-switch/total" alt="Downloads" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://trendshift.io/repositories/15372" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/15372" alt="farion1231%2Fcc-switch | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;English | &lt;a href="https://raw.githubusercontent.com/farion1231/cc-switch/main/README_ZH.md"&gt;中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/farion1231/cc-switch/main/CHANGELOG.md"&gt;Changelog&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;From Provider Switcher to All-in-One AI CLI Management Platform&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;Unified management for Claude Code, Codex &amp;amp; Gemini CLI provider configurations, MCP servers, Skills extensions, and system prompts.&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;❤️Sponsor&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/farion1231/cc-switch/main/assets/partners/banners/glm-en.jpg" alt="Zhipu GLM" /&gt;&lt;/p&gt; 
+&lt;p&gt;This project is sponsored by Z.ai, supporting us with their GLM CODING PLAN.&lt;/p&gt; 
+&lt;p&gt;GLM CODING PLAN is a subscription service designed for AI coding, starting at just $3/month. It provides access to their flagship GLM-4.6 model across 10+ popular AI coding tools (Claude Code, Cline, Roo Code, etc.), offering developers top-tier, fast, and stable coding experiences.&lt;/p&gt; 
+&lt;p&gt;Get 10% OFF the GLM CODING PLAN with &lt;a href="https://z.ai/subscribe?ic=8JVLJQFSKB"&gt;this link&lt;/a&gt;!&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td width="180"&gt;&lt;img src="https://raw.githubusercontent.com/farion1231/cc-switch/main/assets/partners/logos/packycode.png" alt="PackyCode" width="150" /&gt;&lt;/td&gt; 
+   &lt;td&gt;Thanks to PackyCode for sponsoring this project! PackyCode is a reliable and efficient API relay service provider, offering relay services for Claude Code, Codex, Gemini, and more. PackyCode provides special discounts for our software users: register using &lt;a href="https://www.packyapi.com/register?aff=cc-switch"&gt;this link&lt;/a&gt; and enter the "cc-switch" promo code during recharge to get 10% off.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td width="180"&gt;&lt;img src="https://raw.githubusercontent.com/farion1231/cc-switch/main/assets/partners/logos/sds-en.png" alt="ShanDianShuo" width="150" /&gt;&lt;/td&gt; 
+   &lt;td&gt;Thanks to ShanDianShuo for sponsoring this project! ShanDianShuo is a local-first AI voice input: Millisecond latency, data stays on device, 4x faster than typing, AI-powered correction, Privacy-first, completely free. Doubles your coding efficiency with Claude Code! &lt;a href="https://www.shandianshuo.cn"&gt;Free download&lt;/a&gt; for Mac/Win&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;Screenshots&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="center"&gt;Main Interface&lt;/th&gt; 
+   &lt;th align="center"&gt;Add Provider&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;&lt;img src="https://raw.githubusercontent.com/farion1231/cc-switch/main/assets/screenshots/main-en.png" alt="Main Interface" /&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;img src="https://raw.githubusercontent.com/farion1231/cc-switch/main/assets/screenshots/add-en.png" alt="Add Provider" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;h3&gt;Current Version: v3.7.0 | &lt;a href="https://raw.githubusercontent.com/farion1231/cc-switch/main/CHANGELOG.md"&gt;Full Changelog&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/farion1231/cc-switch/main/docs/release-note-v3.7.0-en.md"&gt;📋 Release Notes&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;v3.7.0 Major Update (2025-11-19)&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Six Core Features, 18,000+ Lines of New Code&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Gemini CLI Integration&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Third supported AI CLI (Claude Code / Codex / Gemini)&lt;/li&gt; 
+   &lt;li&gt;Dual-file configuration support (&lt;code&gt;.env&lt;/code&gt; + &lt;code&gt;settings.json&lt;/code&gt;)&lt;/li&gt; 
+   &lt;li&gt;Complete MCP server management&lt;/li&gt; 
+   &lt;li&gt;Presets: Google Official (OAuth) / PackyCode / Custom&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Claude Skills Management System&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Auto-scan skills from GitHub repositories (3 pre-configured curated repos)&lt;/li&gt; 
+   &lt;li&gt;One-click install/uninstall to &lt;code&gt;~/.claude/skills/&lt;/code&gt;&lt;/li&gt; 
+   &lt;li&gt;Custom repository support + subdirectory scanning&lt;/li&gt; 
+   &lt;li&gt;Complete lifecycle management (discover/install/update)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Prompts Management System&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Multi-preset system prompt management (unlimited presets, quick switching)&lt;/li&gt; 
+   &lt;li&gt;Cross-app support (Claude: &lt;code&gt;CLAUDE.md&lt;/code&gt; / Codex: &lt;code&gt;AGENTS.md&lt;/code&gt; / Gemini: &lt;code&gt;GEMINI.md&lt;/code&gt;)&lt;/li&gt; 
+   &lt;li&gt;Markdown editor (CodeMirror 6 + real-time preview)&lt;/li&gt; 
+   &lt;li&gt;Smart backfill protection, preserves manual modifications&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;MCP v3.7.0 Unified Architecture&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Single panel manages MCP servers across three applications&lt;/li&gt; 
+   &lt;li&gt;New SSE (Server-Sent Events) transport type&lt;/li&gt; 
+   &lt;li&gt;Smart JSON parser + Codex TOML format auto-correction&lt;/li&gt; 
+   &lt;li&gt;Unified import/export + bidirectional sync&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Deep Link Protocol&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;code&gt;ccswitch://&lt;/code&gt; protocol registration (all platforms)&lt;/li&gt; 
+   &lt;li&gt;One-click import provider configs via shared links&lt;/li&gt; 
+   &lt;li&gt;Security validation + lifecycle integration&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Environment Variable Conflict Detection&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Auto-detect cross-app configuration conflicts (Claude/Codex/Gemini/MCP)&lt;/li&gt; 
+   &lt;li&gt;Visual conflict indicators + resolution suggestions&lt;/li&gt; 
+   &lt;li&gt;Override warnings + backup before changes&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Core Capabilities&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Provider Management&lt;/strong&gt;: One-click switching between Claude Code, Codex, and Gemini API configurations&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Speed Testing&lt;/strong&gt;: Measure API endpoint latency with visual quality indicators&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Import/Export&lt;/strong&gt;: Backup and restore configs with auto-rotation (keep 10 most recent)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;i18n Support&lt;/strong&gt;: Complete Chinese/English localization (UI, errors, tray)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Claude Plugin Sync&lt;/strong&gt;: One-click apply/restore Claude plugin configurations&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v3.6 Highlights&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Provider duplication &amp;amp; drag-and-drop sorting&lt;/li&gt; 
+ &lt;li&gt;Multi-endpoint management &amp;amp; custom config directory (cloud sync ready)&lt;/li&gt; 
+ &lt;li&gt;Granular model configuration (4-tier: Haiku/Sonnet/Opus/Custom)&lt;/li&gt; 
+ &lt;li&gt;WSL environment support with auto-sync on directory change&lt;/li&gt; 
+ &lt;li&gt;100% hooks test coverage &amp;amp; complete architecture refactoring&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;System Features&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;System tray with quick switching&lt;/li&gt; 
+ &lt;li&gt;Single instance daemon&lt;/li&gt; 
+ &lt;li&gt;Built-in auto-updater&lt;/li&gt; 
+ &lt;li&gt;Atomic writes with rollback protection&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Download &amp;amp; Installation&lt;/h2&gt; 
+&lt;h3&gt;System Requirements&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Windows&lt;/strong&gt;: Windows 10 and above&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;macOS&lt;/strong&gt;: macOS 10.15 (Catalina) and above&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Linux&lt;/strong&gt;: Ubuntu 22.04+ / Debian 11+ / Fedora 34+ and other mainstream distributions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Windows Users&lt;/h3&gt; 
+&lt;p&gt;Download the latest &lt;code&gt;CC-Switch-v{version}-Windows.msi&lt;/code&gt; installer or &lt;code&gt;CC-Switch-v{version}-Windows-Portable.zip&lt;/code&gt; portable version from the &lt;a href="https://raw.githubusercontent.com/farion1231/releases"&gt;Releases&lt;/a&gt; page.&lt;/p&gt; 
+&lt;h3&gt;macOS Users&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Method 1: Install via Homebrew (Recommended)&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;brew tap farion1231/ccswitch
+brew install --cask cc-switch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Update:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;brew upgrade --cask cc-switch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Method 2: Manual Download&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Download &lt;code&gt;CC-Switch-v{version}-macOS.zip&lt;/code&gt; from the &lt;a href="https://raw.githubusercontent.com/farion1231/releases"&gt;Releases&lt;/a&gt; page and extract to use.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Since the author doesn't have an Apple Developer account, you may see an "unidentified developer" warning on first launch. Please close it first, then go to "System Settings" → "Privacy &amp;amp; Security" → click "Open Anyway", and you'll be able to open it normally afterwards.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;ArchLinux 用户&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Install via paru (Recommended)&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;paru -S cc-switch-bin
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Linux Users&lt;/h3&gt; 
+&lt;p&gt;Download the latest &lt;code&gt;CC-Switch-v{version}-Linux.deb&lt;/code&gt; package or &lt;code&gt;CC-Switch-v{version}-Linux.AppImage&lt;/code&gt; from the &lt;a href="https://raw.githubusercontent.com/farion1231/releases"&gt;Releases&lt;/a&gt; page.&lt;/p&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;h3&gt;Basic Usage&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Add Provider&lt;/strong&gt;: Click "Add Provider" → Choose preset or create custom configuration&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Switch Provider&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;Main UI: Select provider → Click "Enable"&lt;/li&gt; 
+   &lt;li&gt;System Tray: Click provider name directly (instant effect)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Takes Effect&lt;/strong&gt;: Restart your terminal or Claude Code / Codex / Gemini clients to apply changes&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Back to Official&lt;/strong&gt;: Select the "Official Login" preset (Claude/Codex) or "Google Official" preset (Gemini), restart the corresponding client, then follow its login/OAuth flow&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;MCP Management&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Location&lt;/strong&gt;: Click "MCP" button in top-right corner&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Add Server&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;Use built-in templates (mcp-fetch, mcp-filesystem, etc.)&lt;/li&gt; 
+   &lt;li&gt;Support stdio / http / sse transport types&lt;/li&gt; 
+   &lt;li&gt;Configure independent MCP servers for different apps&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Enable/Disable&lt;/strong&gt;: Toggle switches to control which servers sync to live config&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Sync&lt;/strong&gt;: Enabled servers auto-sync to each app's live files&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Import/Export&lt;/strong&gt;: Import existing MCP servers from Claude/Codex/Gemini config files&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Skills Management (v3.7.0 New)&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Location&lt;/strong&gt;: Click "Skills" button in top-right corner&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Discover Skills&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;Auto-scan pre-configured GitHub repositories (Anthropic official, ComposioHQ, community, etc.)&lt;/li&gt; 
+   &lt;li&gt;Add custom repositories (supports subdirectory scanning)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Install Skills&lt;/strong&gt;: Click "Install" to one-click install to &lt;code&gt;~/.claude/skills/&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Uninstall Skills&lt;/strong&gt;: Click "Uninstall" to safely remove and clean up state&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Manage Repositories&lt;/strong&gt;: Add/remove custom GitHub repositories&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Prompts Management (v3.7.0 New)&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Location&lt;/strong&gt;: Click "Prompts" button in top-right corner&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Create Presets&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;Create unlimited system prompt presets&lt;/li&gt; 
+   &lt;li&gt;Use Markdown editor to write prompts (syntax highlighting + real-time preview)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Switch Presets&lt;/strong&gt;: Select preset → Click "Activate" to apply immediately&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Sync Mechanism&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;Claude: &lt;code&gt;~/.claude/CLAUDE.md&lt;/code&gt;&lt;/li&gt; 
+   &lt;li&gt;Codex: &lt;code&gt;~/.codex/AGENTS.md&lt;/code&gt;&lt;/li&gt; 
+   &lt;li&gt;Gemini: &lt;code&gt;~/.gemini/GEMINI.md&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Protection Mechanism&lt;/strong&gt;: Auto-save current prompt content before switching, preserves manual modifications&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Configuration Files&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Claude Code&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Live config: &lt;code&gt;~/.claude/settings.json&lt;/code&gt; (or &lt;code&gt;claude.json&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;API key field: &lt;code&gt;env.ANTHROPIC_AUTH_TOKEN&lt;/code&gt; or &lt;code&gt;env.ANTHROPIC_API_KEY&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;MCP servers: &lt;code&gt;~/.claude.json&lt;/code&gt; → &lt;code&gt;mcpServers&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Codex&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Live config: &lt;code&gt;~/.codex/auth.json&lt;/code&gt; (required) + &lt;code&gt;config.toml&lt;/code&gt; (optional)&lt;/li&gt; 
+ &lt;li&gt;API key field: &lt;code&gt;OPENAI_API_KEY&lt;/code&gt; in &lt;code&gt;auth.json&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;MCP servers: &lt;code&gt;~/.codex/config.toml&lt;/code&gt; → &lt;code&gt;[mcp_servers]&lt;/code&gt; tables&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Gemini&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Live config: &lt;code&gt;~/.gemini/.env&lt;/code&gt; (API key) + &lt;code&gt;~/.gemini/settings.json&lt;/code&gt; (auth mode)&lt;/li&gt; 
+ &lt;li&gt;API key field: &lt;code&gt;GEMINI_API_KEY&lt;/code&gt; or &lt;code&gt;GOOGLE_GEMINI_API_KEY&lt;/code&gt; in &lt;code&gt;.env&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Environment variables: Support &lt;code&gt;GOOGLE_GEMINI_BASE_URL&lt;/code&gt;, &lt;code&gt;GEMINI_MODEL&lt;/code&gt;, etc.&lt;/li&gt; 
+ &lt;li&gt;MCP servers: &lt;code&gt;~/.gemini/settings.json&lt;/code&gt; → &lt;code&gt;mcpServers&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Tray quick switch: Each provider switch rewrites &lt;code&gt;~/.gemini/.env&lt;/code&gt;, no need to restart Gemini CLI&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;CC Switch Storage&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Main config (SSOT): &lt;code&gt;~/.cc-switch/config.json&lt;/code&gt; (includes providers, MCP, Prompts presets, etc.)&lt;/li&gt; 
+ &lt;li&gt;Settings: &lt;code&gt;~/.cc-switch/settings.json&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Backups: &lt;code&gt;~/.cc-switch/backups/&lt;/code&gt; (auto-rotate, keep 10)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Cloud Sync Setup&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Go to Settings → "Custom Configuration Directory"&lt;/li&gt; 
+ &lt;li&gt;Choose your cloud sync folder (Dropbox, OneDrive, iCloud, etc.)&lt;/li&gt; 
+ &lt;li&gt;Restart app to apply&lt;/li&gt; 
+ &lt;li&gt;Repeat on other devices to enable cross-device sync&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: First launch auto-imports existing Claude/Codex configs as default provider.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Architecture Overview&lt;/h2&gt; 
+&lt;h3&gt;Design Principles&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────────────────────┐
+│                    Frontend (React + TS)                    │
+│  ┌─────────────┐  ┌──────────────┐  ┌──────────────────┐    │
+│  │ Components  │  │    Hooks     │  │  TanStack Query  │    │
+│  │   (UI)      │──│ (Bus. Logic) │──│   (Cache/Sync)   │    │
+│  └─────────────┘  └──────────────┘  └──────────────────┘    │
+└────────────────────────┬────────────────────────────────────┘
+                         │ Tauri IPC
+┌────────────────────────▼────────────────────────────────────┐
+│                  Backend (Tauri + Rust)                     │
+│  ┌─────────────┐  ┌──────────────┐  ┌──────────────────┐    │
+│  │  Commands   │  │   Services   │  │  Models/Config   │    │
+│  │ (API Layer) │──│ (Bus. Layer) │──│     (Data)       │    │
+│  └─────────────┘  └──────────────┘  └──────────────────┘    │
+└─────────────────────────────────────────────────────────────┘
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Core Design Patterns&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;SSOT&lt;/strong&gt; (Single Source of Truth): All provider configs stored in &lt;code&gt;~/.cc-switch/config.json&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Dual-way Sync&lt;/strong&gt;: Write to live files on switch, backfill from live when editing active provider&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Atomic Writes&lt;/strong&gt;: Temp file + rename pattern prevents config corruption&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Concurrency Safe&lt;/strong&gt;: RwLock with scoped guards avoids deadlocks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Layered Architecture&lt;/strong&gt;: Clear separation (Commands → Services → Models)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Key Components&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;ProviderService&lt;/strong&gt;: Provider CRUD, switching, backfill, sorting&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;McpService&lt;/strong&gt;: MCP server management, import/export, live file sync&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;ConfigService&lt;/strong&gt;: Config import/export, backup rotation&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;SpeedtestService&lt;/strong&gt;: API endpoint latency measurement&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v3.6 Refactoring&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Backend: 5-phase refactoring (error handling → command split → tests → services → concurrency)&lt;/li&gt; 
+ &lt;li&gt;Frontend: 4-stage refactoring (test infra → hooks → components → cleanup)&lt;/li&gt; 
+ &lt;li&gt;Testing: 100% hooks coverage + integration tests (vitest + MSW)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;h3&gt;Environment Requirements&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Node.js 18+&lt;/li&gt; 
+ &lt;li&gt;pnpm 8+&lt;/li&gt; 
+ &lt;li&gt;Rust 1.85+&lt;/li&gt; 
+ &lt;li&gt;Tauri CLI 2.8+&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Development Commands&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Install dependencies
+pnpm install
+
+# Dev mode (hot reload)
+pnpm dev
+
+# Type check
+pnpm typecheck
+
+# Format code
+pnpm format
+
+# Check code format
+pnpm format:check
+
+# Run frontend unit tests
+pnpm test:unit
+
+# Run tests in watch mode (recommended for development)
+pnpm test:unit:watch
+
+# Build application
+pnpm build
+
+# Build debug version
+pnpm tauri build --debug
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Rust Backend Development&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd src-tauri
+
+# Format Rust code
+cargo fmt
+
+# Run clippy checks
+cargo clippy
+
+# Run backend tests
+cargo test
+
+# Run specific tests
+cargo test test_name
+
+# Run tests with test-hooks feature
+cargo test --features test-hooks
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Testing Guide (v3.6 New)&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Frontend Testing&lt;/strong&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Uses &lt;strong&gt;vitest&lt;/strong&gt; as test framework&lt;/li&gt; 
+ &lt;li&gt;Uses &lt;strong&gt;MSW (Mock Service Worker)&lt;/strong&gt; to mock Tauri API calls&lt;/li&gt; 
+ &lt;li&gt;Uses &lt;strong&gt;@testing-library/react&lt;/strong&gt; for component testing&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Test Coverage&lt;/strong&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Hooks unit tests (100% coverage) 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;code&gt;useProviderActions&lt;/code&gt; - Provider operations&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;useMcpActions&lt;/code&gt; - MCP management&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;useSettings&lt;/code&gt; series - Settings management&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;useImportExport&lt;/code&gt; - Import/export&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Integration tests 
+  &lt;ul&gt; 
+   &lt;li&gt;App main application flow&lt;/li&gt; 
+   &lt;li&gt;SettingsDialog complete interaction&lt;/li&gt; 
+   &lt;li&gt;MCP panel functionality&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Running Tests&lt;/strong&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Run all tests
+pnpm test:unit
+
+# Watch mode (auto re-run)
+pnpm test:unit:watch
+
+# With coverage report
+pnpm test:unit --coverage
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Tech Stack&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Frontend&lt;/strong&gt;: React 18 · TypeScript · Vite · TailwindCSS 4 · TanStack Query v5 · react-i18next · react-hook-form · zod · shadcn/ui · @dnd-kit&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Backend&lt;/strong&gt;: Tauri 2.8 · Rust · serde · tokio · thiserror · tauri-plugin-updater/process/dialog/store/log&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Testing&lt;/strong&gt;: vitest · MSW · @testing-library/react&lt;/p&gt; 
+&lt;h2&gt;Project Structure&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;├── src/                      # Frontend (React + TypeScript)
+│   ├── components/           # UI components (providers/settings/mcp/ui)
+│   ├── hooks/                # Custom hooks (business logic)
+│   ├── lib/
+│   │   ├── api/              # Tauri API wrapper (type-safe)
+│   │   └── query/            # TanStack Query config
+│   ├── i18n/locales/         # Translations (zh/en)
+│   ├── config/               # Presets (providers/mcp)
+│   └── types/                # TypeScript definitions
+├── src-tauri/                # Backend (Rust)
+│   └── src/
+│       ├── commands/         # Tauri command layer (by domain)
+│       ├── services/         # Business logic layer
+│       ├── app_config.rs     # Config data models
+│       ├── provider.rs       # Provider domain models
+│       ├── mcp.rs            # MCP sync &amp;amp; validation
+│       └── lib.rs            # App entry &amp;amp; tray menu
+├── tests/                    # Frontend tests
+│   ├── hooks/                # Unit tests
+│   └── components/           # Integration tests
+└── assets/                   # Screenshots &amp;amp; partner resources
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Changelog&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/farion1231/cc-switch/main/CHANGELOG.md"&gt;CHANGELOG.md&lt;/a&gt; for version update details.&lt;/p&gt; 
+&lt;h2&gt;Legacy Electron Version&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/farion1231/releases"&gt;Releases&lt;/a&gt; retains v2.0.3 legacy Electron version&lt;/p&gt; 
+&lt;p&gt;If you need legacy Electron code, you can pull the electron-legacy branch&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Issues and suggestions are welcome!&lt;/p&gt; 
+&lt;p&gt;Before submitting PRs, please ensure:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Pass type check: &lt;code&gt;pnpm typecheck&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Pass format check: &lt;code&gt;pnpm format:check&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Pass unit tests: &lt;code&gt;pnpm test:unit&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;💡 For new features, please open an issue for discussion before submitting a PR&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.star-history.com/#farion1231/cc-switch&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=farion1231/cc-switch&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT © Jason Young&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>iptv-org/iptv</title>
+      <link>https://github.com/iptv-org/iptv</link>
+      <description>&lt;p&gt;Collection of publicly available IPTV channels from all over the world&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;IPTV &lt;a href="https://github.com/iptv-org/iptv/actions/workflows/update.yml"&gt;&lt;img src="https://github.com/iptv-org/iptv/actions/workflows/update.yml/badge.svg?sanitize=true" alt="update" /&gt;&lt;/a&gt;&lt;/h1&gt; 
+&lt;p&gt;Collection of publicly available IPTV (Internet Protocol television) channels from all over the world.&lt;/p&gt; 
+&lt;h2&gt;Table of contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🚀 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#how-to-use"&gt;How to use?&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;📺 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#playlists"&gt;Playlists&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🗓 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#epg"&gt;EPG&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🗄 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#database"&gt;Database&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;👨‍💻 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#api"&gt;API&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;📚 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#resources"&gt;Resources&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;💬 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#discussions"&gt;Discussions&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;❓ &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#faq"&gt;FAQ&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🛠 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#contribution"&gt;Contribution&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;⚖ &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#legal"&gt;Legal&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;© &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#license"&gt;License&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How to use?&lt;/h2&gt; 
+&lt;p&gt;Simply paste the link to one of the playlists into &lt;a href="https://github.com/iptv-org/awesome-iptv#apps"&gt;any video player&lt;/a&gt; that supports live streaming and press &lt;em&gt;Open&lt;/em&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/iptv-org/iptv/raw/master/.readme/preview.png" alt="VLC Network Panel" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Playlists&lt;/h2&gt; 
+&lt;p&gt;The main playlist containing all channels available in the repository can be found at:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;https://iptv-org.github.io/iptv/index.m3u
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Links to other playlists can be found in the &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/PLAYLISTS.md"&gt;PLAYLISTS.md&lt;/a&gt; file.&lt;/p&gt; 
+&lt;h2&gt;EPG&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Electronic_program_guide"&gt;Electronic Program Guide&lt;/a&gt; for most of the channels can be downloaded using utilities published in the &lt;a href="https://github.com/iptv-org/epg"&gt;iptv-org/epg&lt;/a&gt; repository.&lt;/p&gt; 
+&lt;h2&gt;Database&lt;/h2&gt; 
+&lt;p&gt;All channel data is taken from the &lt;a href="https://github.com/iptv-org/database"&gt;iptv-org/database&lt;/a&gt; repository. If you find any errors please open a new &lt;a href="https://github.com/iptv-org/database/issues"&gt;issue&lt;/a&gt; there.&lt;/p&gt; 
+&lt;h2&gt;API&lt;/h2&gt; 
+&lt;p&gt;The API documentation can be found in the &lt;a href="https://github.com/iptv-org/api"&gt;iptv-org/api&lt;/a&gt; repository.&lt;/p&gt; 
+&lt;h2&gt;Resources&lt;/h2&gt; 
+&lt;p&gt;Links to other useful IPTV-related resources can be found in the &lt;a href="https://github.com/iptv-org/awesome-iptv"&gt;iptv-org/awesome-iptv&lt;/a&gt; repository.&lt;/p&gt; 
+&lt;h2&gt;Discussions&lt;/h2&gt; 
+&lt;p&gt;If you need help finding a channel, have a question or idea, welcome to the &lt;a href="https://github.com/orgs/iptv-org/discussions"&gt;Discussions&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;FAQ&lt;/h2&gt; 
+&lt;p&gt;The answers to the most popular questions can be found in the &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/FAQ.md"&gt;FAQ.md&lt;/a&gt; file.&lt;/p&gt; 
+&lt;h2&gt;Contribution&lt;/h2&gt; 
+&lt;p&gt;Please make sure to read the &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt; before sending an issue or making a pull request.&lt;/p&gt; 
+&lt;p&gt;And thank you to everyone who has already contributed!&lt;/p&gt; 
+&lt;h3&gt;Backers&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://opencollective.com/iptv-org"&gt;&lt;img src="https://opencollective.com/iptv-org/backers.svg?width=890" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Contributors&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://github.com/iptv-org/iptv/graphs/contributors"&gt;&lt;img src="https://opencollective.com/iptv-org/contributors.svg?width=890" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Legal&lt;/h2&gt; 
+&lt;p&gt;No video files are stored in this repository. The repository simply contains user-submitted links to publicly available video stream URLs, which to the best of our knowledge have been intentionally made publicly by the copyright holders. If any links in these playlists infringe on your rights as a copyright holder, they may be removed by sending a &lt;a href="https://github.com/iptv-org/iptv/pulls"&gt;pull request&lt;/a&gt; or opening an &lt;a href="https://github.com/iptv-org/iptv/issues/new?assignees=freearhey&amp;amp;labels=removal+request&amp;amp;template=--removal-request.yml&amp;amp;title=Remove%3A+"&gt;issue&lt;/a&gt;. However, note that we have &lt;strong&gt;no control&lt;/strong&gt; over the destination of the link, and just removing the link from the playlist will not remove its contents from the web. Note that linking does not directly infringe copyright because no copy is made on the site providing the link, and thus this is &lt;strong&gt;not&lt;/strong&gt; a valid reason to send a DMCA notice to GitHub. To remove this content from the web, you should contact the web host that's actually hosting the content (&lt;strong&gt;not&lt;/strong&gt; GitHub, nor the maintainers of this repository).&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/LICENSE"&gt;&lt;img src="http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg?sanitize=true" alt="CC0" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Dokploy/dokploy</title>
+      <link>https://github.com/Dokploy/dokploy</link>
+      <description>&lt;p&gt;Open Source Alternative to Vercel, Netlify and Heroku.&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;a href="https://dokploy.com"&gt; &lt;img src="https://raw.githubusercontent.com/Dokploy/dokploy/canary/.github/sponsors/logo.png" alt="Dokploy - Open Source Alternative to Vercel, Heroku and Netlify." width="100%" /&gt; &lt;/a&gt; 
+ &lt;br /&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;Join us on Discord for help, feedback, and discussions!&lt;/p&gt; 
+ &lt;a href="https://discord.gg/2tBnJ3jDJc"&gt; &lt;img src="https://discordapp.com/api/guilds/1234073262418563112/widget.png?style=banner2" alt="Discord Shield" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;br /&gt; 
+&lt;div align="center" markdown="1"&gt; 
+ &lt;sup&gt;Special thanks to:&lt;/sup&gt; 
+ &lt;br /&gt; 
+ &lt;br /&gt; 
+ &lt;a href="https://tuple.app/dokploy"&gt; &lt;img src="https://raw.githubusercontent.com/Dokploy/dokploy/canary/.github/sponsors/tuple.png" alt="Tuple's sponsorship image" width="400" /&gt; &lt;/a&gt; 
+ &lt;h3&gt;&lt;a href="https://tuple.app/dokploy"&gt;Tuple, the premier screen sharing app for developers&lt;/a&gt;&lt;/h3&gt; 
+ &lt;p&gt;&lt;a href="https://tuple.app/dokploy"&gt;Available for MacOS &amp;amp; Windows&lt;/a&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;p&gt;Dokploy is a free, self-hostable Platform as a Service (PaaS) that simplifies the deployment and management of applications and databases.&lt;/p&gt; 
+&lt;h2&gt;✨ Features&lt;/h2&gt; 
+&lt;p&gt;Dokploy includes multiple features to make your life easier.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Applications&lt;/strong&gt;: Deploy any type of application (Node.js, PHP, Python, Go, Ruby, etc.).&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Databases&lt;/strong&gt;: Create and manage databases with support for MySQL, PostgreSQL, MongoDB, MariaDB, and Redis.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Backups&lt;/strong&gt;: Automate backups for databases to an external storage destination.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Docker Compose&lt;/strong&gt;: Native support for Docker Compose to manage complex applications.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi Node&lt;/strong&gt;: Scale applications to multiple nodes using Docker Swarm to manage the cluster.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Templates&lt;/strong&gt;: Deploy open-source templates (Plausible, Pocketbase, Calcom, etc.) with a single click.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Traefik Integration&lt;/strong&gt;: Automatically integrates with Traefik for routing and load balancing.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Real-time Monitoring&lt;/strong&gt;: Monitor CPU, memory, storage, and network usage for every resource.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Docker Management&lt;/strong&gt;: Easily deploy and manage Docker containers.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;CLI/API&lt;/strong&gt;: Manage your applications and databases using the command line or through the API.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Notifications&lt;/strong&gt;: Get notified when your deployments succeed or fail (via Slack, Discord, Telegram, Email, etc.).&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi Server&lt;/strong&gt;: Deploy and manage your applications remotely to external servers.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Self-Hosted&lt;/strong&gt;: Self-host Dokploy on your VPS.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🚀 Getting Started&lt;/h2&gt; 
+&lt;p&gt;To get started, run the following command on a VPS:&lt;/p&gt; 
+&lt;p&gt;Want to skip the installation process? &lt;a href="https://app.dokploy.com"&gt;Try the Dokploy Cloud&lt;/a&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -sSL https://dokploy.com/install.sh | sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For detailed documentation, visit &lt;a href="https://docs.dokploy.com"&gt;docs.dokploy.com&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;♥️ Sponsors&lt;/h2&gt; 
+&lt;p&gt;🙏 We're deeply grateful to all our sponsors who make Dokploy possible! Your support helps cover the costs of hosting, testing, and developing new features.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://opencollective.com/dokploy"&gt;Dokploy Open Collective&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/sponsors/Siumauricio"&gt;Github Sponsors&lt;/a&gt;&lt;/p&gt; 
+&lt;!-- Hero Sponsors 🎖 --&gt; 
+&lt;!-- Add Hero Sponsors here --&gt; 
+&lt;h3&gt;Hero Sponsors 🎖&lt;/h3&gt; 
+&lt;div&gt; 
+ &lt;a href="https://www.hostinger.com/vps-hosting?ref=dokploy"&gt;&lt;img src="https://raw.githubusercontent.com/Dokploy/dokploy/canary/.github/sponsors/hostinger.jpg" alt="Hostinger" width="300" /&gt;&lt;/a&gt; 
+ &lt;a href="https://www.lxaer.com/?ref=dokploy"&gt;&lt;img src="https://raw.githubusercontent.com/Dokploy/dokploy/canary/.github/sponsors/lxaer.png" alt="LX Aer" width="100" /&gt;&lt;/a&gt; 
+ &lt;a href="https://www.lambdatest.com/?utm_source=dokploy&amp;amp;utm_medium=sponsor" target="_blank"&gt; &lt;img src="https://www.lambdatest.com/blue-logo.png" width="450" height="100" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;!-- Premium Supporters 🥇 --&gt; 
+&lt;!-- Add Premium Supporters here --&gt; 
+&lt;h3&gt;Premium Supporters 🥇&lt;/h3&gt; 
+&lt;div&gt; 
+ &lt;a href="https://supafort.com/?ref=dokploy"&gt;&lt;img src="https://supafort.com/build/q-4Ht4rBZR.webp" alt="Supafort.com" width="300" /&gt;&lt;/a&gt; 
+ &lt;a href="https://agentdock.ai/?ref=dokploy"&gt;&lt;img src="https://raw.githubusercontent.com/Dokploy/dokploy/canary/.github/sponsors/agentdock.png" alt="agentdock.ai" width="100" /&gt;&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;!-- Elite Contributors 🥈 --&gt; 
+&lt;!-- Add Elite Contributors here --&gt; 
+&lt;h3&gt;Elite Contributors 🥈&lt;/h3&gt; 
+&lt;div&gt; 
+ &lt;a href="https://americancloud.com/?ref=dokploy"&gt;&lt;img src="https://raw.githubusercontent.com/Dokploy/dokploy/canary/.github/sponsors/american-cloud.png" alt="AmericanCloud" width="300" /&gt;&lt;/a&gt; 
+ &lt;a href="https://tolgee.io/?utm_source=github_dokploy&amp;amp;utm_medium=banner&amp;amp;utm_campaign=dokploy"&gt;&lt;img src="https://dokploy.com/tolgee-logo.png" alt="Tolgee" width="100" /&gt;&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;h3&gt;Supporting Members 🥉&lt;/h3&gt; 
+&lt;div&gt; 
+ &lt;p&gt;&lt;a href="https://cloudblast.io/?ref=dokploy"&gt;&lt;img src="https://cloudblast.io/img/logo-icon.193cf13e.svg?sanitize=true" width="250px" alt="Cloudblast.io" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://synexa.ai/?ref=dokploy"&gt;&lt;img src="https://raw.githubusercontent.com/Dokploy/dokploy/canary/.github/sponsors/synexa.png" width="65px" alt="Synexa" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h3&gt;Community Backers 🤝&lt;/h3&gt; 
+&lt;h4&gt;Organizations:&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://opencollective.com/dokploy"&gt;Sponsors on Open Collective&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;Individuals:&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://opencollective.com/dokploy"&gt;&lt;img src="https://opencollective.com/dokploy/individuals.svg?width=890" alt="Individual Contributors on Open Collective" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Contributors 🤝&lt;/h3&gt; 
+&lt;a href="https://github.com/dokploy/dokploy/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=dokploy/dokploy" alt="Contributors" /&gt; &lt;/a&gt; 
+&lt;h2&gt;📺 Video Tutorial&lt;/h2&gt; 
+&lt;a href="https://youtu.be/mznYKPvhcfw"&gt; &lt;img src="https://dokploy.com/banner.png" alt="Watch the video" width="400" /&gt; &lt;/a&gt; 
+&lt;h2&gt;🤝 Contributing&lt;/h2&gt; 
+&lt;p&gt;Check out the &lt;a href="https://raw.githubusercontent.com/Dokploy/dokploy/canary/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt; for more information.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>google-gemini/gemini-cli</title>
+      <link>https://github.com/google-gemini/gemini-cli</link>
+      <description>&lt;p&gt;An open-source AI agent that brings the power of Gemini directly into your terminal.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Gemini CLI&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/google-gemini/gemini-cli/actions/workflows/ci.yml"&gt;&lt;img src="https://github.com/google-gemini/gemini-cli/actions/workflows/ci.yml/badge.svg?sanitize=true" alt="Gemini CLI CI" /&gt;&lt;/a&gt; &lt;a href="https://github.com/google-gemini/gemini-cli/actions/workflows/e2e.yml"&gt;&lt;img src="https://github.com/google-gemini/gemini-cli/actions/workflows/e2e.yml/badge.svg?sanitize=true" alt="Gemini CLI E2E" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/@google/gemini-cli"&gt;&lt;img src="https://img.shields.io/npm/v/@google/gemini-cli" alt="Version" /&gt;&lt;/a&gt; &lt;a href="https://github.com/google-gemini/gemini-cli/raw/main/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/google-gemini/gemini-cli" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://codewiki.google/github.com/google-gemini/gemini-cli"&gt;&lt;img src="https://www.gstatic.com/_/boq-sdlc-agents-ui/_/r/YUi5dj2UWvE.svg?sanitize=true" alt="View Code Wiki" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/assets/gemini-screenshot.png" alt="Gemini CLI Screenshot" /&gt;&lt;/p&gt; 
+&lt;p&gt;Gemini CLI is an open-source AI agent that brings the power of Gemini directly into your terminal. It provides lightweight access to Gemini, giving you the most direct path from your prompt to our model.&lt;/p&gt; 
+&lt;p&gt;Learn all about Gemini CLI in our &lt;a href="https://geminicli.com/docs/"&gt;documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;🚀 Why Gemini CLI?&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;🎯 Free tier&lt;/strong&gt;: 60 requests/min and 1,000 requests/day with personal Google account.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🧠 Powerful Gemini 2.5 Pro&lt;/strong&gt;: Access to 1M token context window.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🔧 Built-in tools&lt;/strong&gt;: Google Search grounding, file operations, shell commands, web fetching.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🔌 Extensible&lt;/strong&gt;: MCP (Model Context Protocol) support for custom integrations.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;💻 Terminal-first&lt;/strong&gt;: Designed for developers who live in the command line.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🛡️ Open source&lt;/strong&gt;: Apache 2.0 licensed.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📦 Installation&lt;/h2&gt; 
+&lt;h3&gt;Pre-requisites before installation&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Node.js version 20 or higher&lt;/li&gt; 
+ &lt;li&gt;macOS, Linux, or Windows&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Quick Install&lt;/h3&gt; 
+&lt;h4&gt;Run instantly with npx&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Using npx (no installation required)
+npx https://github.com/google-gemini/gemini-cli
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Install globally with npm&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install -g @google/gemini-cli
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Install globally with Homebrew (macOS/Linux)&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;brew install gemini-cli
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Release Cadence and Tags&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/releases.md"&gt;Releases&lt;/a&gt; for more details.&lt;/p&gt; 
+&lt;h3&gt;Preview&lt;/h3&gt; 
+&lt;p&gt;New preview releases will be published each week at UTC 2359 on Tuesdays. These releases will not have been fully vetted and may contain regressions or other outstanding issues. Please help us test and install with &lt;code&gt;preview&lt;/code&gt; tag.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install -g @google/gemini-cli@preview
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Stable&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;New stable releases will be published each week at UTC 2000 on Tuesdays, this will be the full promotion of last week's &lt;code&gt;preview&lt;/code&gt; release + any bug fixes and validations. Use &lt;code&gt;latest&lt;/code&gt; tag.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install -g @google/gemini-cli@latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Nightly&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;New releases will be published each week at UTC 0000 each day, This will be all changes from the main branch as represented at time of release. It should be assumed there are pending validations and issues. Use &lt;code&gt;nightly&lt;/code&gt; tag.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install -g @google/gemini-cli@nightly
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;📋 Key Features&lt;/h2&gt; 
+&lt;h3&gt;Code Understanding &amp;amp; Generation&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Query and edit large codebases&lt;/li&gt; 
+ &lt;li&gt;Generate new apps from PDFs, images, or sketches using multimodal capabilities&lt;/li&gt; 
+ &lt;li&gt;Debug issues and troubleshoot with natural language&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Automation &amp;amp; Integration&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Automate operational tasks like querying pull requests or handling complex rebases&lt;/li&gt; 
+ &lt;li&gt;Use MCP servers to connect new capabilities, including &lt;a href="https://github.com/GoogleCloudPlatform/vertex-ai-creative-studio/tree/main/experiments/mcp-genmedia"&gt;media generation with Imagen, Veo or Lyria&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Run non-interactively in scripts for workflow automation&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Advanced Capabilities&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Ground your queries with built-in &lt;a href="https://ai.google.dev/gemini-api/docs/grounding"&gt;Google Search&lt;/a&gt; for real-time information&lt;/li&gt; 
+ &lt;li&gt;Conversation checkpointing to save and resume complex sessions&lt;/li&gt; 
+ &lt;li&gt;Custom context files (GEMINI.md) to tailor behavior for your projects&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;GitHub Integration&lt;/h3&gt; 
+&lt;p&gt;Integrate Gemini CLI directly into your GitHub workflows with &lt;a href="https://github.com/google-github-actions/run-gemini-cli"&gt;&lt;strong&gt;Gemini CLI GitHub Action&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Pull Request Reviews&lt;/strong&gt;: Automated code review with contextual feedback and suggestions&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Issue Triage&lt;/strong&gt;: Automated labeling and prioritization of GitHub issues based on content analysis&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;On-demand Assistance&lt;/strong&gt;: Mention &lt;code&gt;@gemini-cli&lt;/code&gt; in issues and pull requests for help with debugging, explanations, or task delegation&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Custom Workflows&lt;/strong&gt;: Build automated, scheduled and on-demand workflows tailored to your team's needs&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🔐 Authentication Options&lt;/h2&gt; 
+&lt;p&gt;Choose the authentication method that best fits your needs:&lt;/p&gt; 
+&lt;h3&gt;Option 1: Login with Google (OAuth login using your Google Account)&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;✨ Best for:&lt;/strong&gt; Individual developers as well as anyone who has a Gemini Code Assist License. (see &lt;a href="https://cloud.google.com/gemini/docs/quotas"&gt;quota limits and terms of service&lt;/a&gt; for details)&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Benefits:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Free tier&lt;/strong&gt;: 60 requests/min and 1,000 requests/day&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Gemini 2.5 Pro&lt;/strong&gt; with 1M token context window&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;No API key management&lt;/strong&gt; - just sign in with your Google account&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Automatic updates&lt;/strong&gt; to latest models&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Start Gemini CLI, then choose &lt;em&gt;Login with Google&lt;/em&gt; and follow the browser authentication flow when prompted&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;gemini
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;If you are using a paid Code Assist License from your organization, remember to set the Google Cloud Project&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Set your Google Cloud Project
+export GOOGLE_CLOUD_PROJECT="YOUR_PROJECT_ID"
+gemini
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Option 2: Gemini API Key&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;✨ Best for:&lt;/strong&gt; Developers who need specific model control or paid tier access&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Benefits:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Free tier&lt;/strong&gt;: 100 requests/day with Gemini 2.5 Pro&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Model selection&lt;/strong&gt;: Choose specific Gemini models&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Usage-based billing&lt;/strong&gt;: Upgrade for higher limits when needed&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Get your key from https://aistudio.google.com/apikey
+export GEMINI_API_KEY="YOUR_API_KEY"
+gemini
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Option 3: Vertex AI&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;✨ Best for:&lt;/strong&gt; Enterprise teams and production workloads&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Benefits:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Enterprise features&lt;/strong&gt;: Advanced security and compliance&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Scalable&lt;/strong&gt;: Higher rate limits with billing account&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Integration&lt;/strong&gt;: Works with existing Google Cloud infrastructure&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Get your key from Google Cloud Console
+export GOOGLE_API_KEY="YOUR_API_KEY"
+export GOOGLE_GENAI_USE_VERTEXAI=true
+gemini
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For Google Workspace accounts and other authentication methods, see the &lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/get-started/authentication.md"&gt;authentication guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;🚀 Getting Started&lt;/h2&gt; 
+&lt;h3&gt;Basic Usage&lt;/h3&gt; 
+&lt;h4&gt;Start in current directory&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;gemini
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Include multiple directories&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;gemini --include-directories ../lib,../docs
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Use specific model&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;gemini -m gemini-2.5-flash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Non-interactive mode for scripts&lt;/h4&gt; 
+&lt;p&gt;Get a simple text response:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;gemini -p "Explain the architecture of this codebase"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For more advanced scripting, including how to parse JSON and handle errors, use the &lt;code&gt;--output-format json&lt;/code&gt; flag to get structured output:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;gemini -p "Explain the architecture of this codebase" --output-format json
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For real-time event streaming (useful for monitoring long-running operations), use &lt;code&gt;--output-format stream-json&lt;/code&gt; to get newline-delimited JSON events:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;gemini -p "Run tests and deploy" --output-format stream-json
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Quick Examples&lt;/h3&gt; 
+&lt;h4&gt;Start a new project&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd new-project/
+gemini
+&amp;gt; Write me a Discord bot that answers questions using a FAQ.md file I will provide
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Analyze existing code&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/google-gemini/gemini-cli
+cd gemini-cli
+gemini
+&amp;gt; Give me a summary of all of the changes that went in yesterday
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;📚 Documentation&lt;/h2&gt; 
+&lt;h3&gt;Getting Started&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/get-started/index.md"&gt;&lt;strong&gt;Quickstart Guide&lt;/strong&gt;&lt;/a&gt; - Get up and running quickly.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/get-started/authentication.md"&gt;&lt;strong&gt;Authentication Setup&lt;/strong&gt;&lt;/a&gt; - Detailed auth configuration.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/get-started/configuration.md"&gt;&lt;strong&gt;Configuration Guide&lt;/strong&gt;&lt;/a&gt; - Settings and customization.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/keyboard-shortcuts.md"&gt;&lt;strong&gt;Keyboard Shortcuts&lt;/strong&gt;&lt;/a&gt; - Productivity tips.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Core Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/commands.md"&gt;&lt;strong&gt;Commands Reference&lt;/strong&gt;&lt;/a&gt; - All slash commands (&lt;code&gt;/help&lt;/code&gt;, &lt;code&gt;/chat&lt;/code&gt;, etc).&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/custom-commands.md"&gt;&lt;strong&gt;Custom Commands&lt;/strong&gt;&lt;/a&gt; - Create your own reusable commands.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/gemini-md.md"&gt;&lt;strong&gt;Context Files (GEMINI.md)&lt;/strong&gt;&lt;/a&gt; - Provide persistent context to Gemini CLI.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/checkpointing.md"&gt;&lt;strong&gt;Checkpointing&lt;/strong&gt;&lt;/a&gt; - Save and resume conversations.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/token-caching.md"&gt;&lt;strong&gt;Token Caching&lt;/strong&gt;&lt;/a&gt; - Optimize token usage.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Tools &amp;amp; Extensions&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/index.md"&gt;&lt;strong&gt;Built-in Tools Overview&lt;/strong&gt;&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/file-system.md"&gt;File System Operations&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/shell.md"&gt;Shell Commands&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/web-fetch.md"&gt;Web Fetch &amp;amp; Search&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/mcp-server.md"&gt;&lt;strong&gt;MCP Server Integration&lt;/strong&gt;&lt;/a&gt; - Extend with custom tools.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/extensions/index.md"&gt;&lt;strong&gt;Custom Extensions&lt;/strong&gt;&lt;/a&gt; - Build and share your own commands.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Advanced Topics&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/headless.md"&gt;&lt;strong&gt;Headless Mode (Scripting)&lt;/strong&gt;&lt;/a&gt; - Use Gemini CLI in automated workflows.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/architecture.md"&gt;&lt;strong&gt;Architecture Overview&lt;/strong&gt;&lt;/a&gt; - How Gemini CLI works.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/ide-integration/index.md"&gt;&lt;strong&gt;IDE Integration&lt;/strong&gt;&lt;/a&gt; - VS Code companion.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/sandbox.md"&gt;&lt;strong&gt;Sandboxing &amp;amp; Security&lt;/strong&gt;&lt;/a&gt; - Safe execution environments.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/trusted-folders.md"&gt;&lt;strong&gt;Trusted Folders&lt;/strong&gt;&lt;/a&gt; - Control execution policies by folder.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/enterprise.md"&gt;&lt;strong&gt;Enterprise Guide&lt;/strong&gt;&lt;/a&gt; - Deploy and manage in a corporate environment.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/telemetry.md"&gt;&lt;strong&gt;Telemetry &amp;amp; Monitoring&lt;/strong&gt;&lt;/a&gt; - Usage tracking.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/core/tools-api.md"&gt;&lt;strong&gt;Tools API Development&lt;/strong&gt;&lt;/a&gt; - Create custom tools.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/local-development.md"&gt;&lt;strong&gt;Local development&lt;/strong&gt;&lt;/a&gt; - Local development tooling.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Troubleshooting &amp;amp; Support&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/troubleshooting.md"&gt;&lt;strong&gt;Troubleshooting Guide&lt;/strong&gt;&lt;/a&gt; - Common issues and solutions.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/faq.md"&gt;&lt;strong&gt;FAQ&lt;/strong&gt;&lt;/a&gt; - Frequently asked questions.&lt;/li&gt; 
+ &lt;li&gt;Use &lt;code&gt;/bug&lt;/code&gt; command to report issues directly from the CLI.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Using MCP Servers&lt;/h3&gt; 
+&lt;p&gt;Configure MCP servers in &lt;code&gt;~/.gemini/settings.json&lt;/code&gt; to extend Gemini CLI with custom tools:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-text"&gt;&amp;gt; @github List my open pull requests
+&amp;gt; @slack Send a summary of today's commits to #dev channel
+&amp;gt; @database Run a query to find inactive users
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/mcp-server.md"&gt;MCP Server Integration guide&lt;/a&gt; for setup instructions.&lt;/p&gt; 
+&lt;h2&gt;🤝 Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions! Gemini CLI is fully open source (Apache 2.0), and we encourage the community to:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Report bugs and suggest features.&lt;/li&gt; 
+ &lt;li&gt;Improve documentation.&lt;/li&gt; 
+ &lt;li&gt;Submit code improvements.&lt;/li&gt; 
+ &lt;li&gt;Share your MCP servers and extensions.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See our &lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt; for development setup, coding standards, and how to submit pull requests.&lt;/p&gt; 
+&lt;p&gt;Check our &lt;a href="https://github.com/orgs/google-gemini/projects/11"&gt;Official Roadmap&lt;/a&gt; for planned features and priorities.&lt;/p&gt; 
+&lt;h2&gt;📖 Resources&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/ROADMAP.md"&gt;Official Roadmap&lt;/a&gt;&lt;/strong&gt; - See what's coming next.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/changelogs/index.md"&gt;Changelog&lt;/a&gt;&lt;/strong&gt; - See recent notable updates.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://www.npmjs.com/package/@google/gemini-cli"&gt;NPM Package&lt;/a&gt;&lt;/strong&gt; - Package registry.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/google-gemini/gemini-cli/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/strong&gt; - Report bugs or request features.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/google-gemini/gemini-cli/security/advisories"&gt;Security Advisories&lt;/a&gt;&lt;/strong&gt; - Security updates.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Uninstall&lt;/h3&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/uninstall.md"&gt;Uninstall Guide&lt;/a&gt; for removal instructions.&lt;/p&gt; 
+&lt;h2&gt;📄 Legal&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;License&lt;/strong&gt;: &lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/LICENSE"&gt;Apache License 2.0&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Terms of Service&lt;/strong&gt;: &lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tos-privacy.md"&gt;Terms &amp;amp; Privacy&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Security&lt;/strong&gt;: &lt;a href="https://raw.githubusercontent.com/google-gemini/gemini-cli/main/SECURITY.md"&gt;Security Policy&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;p align="center"&gt; Built with ❤️ by Google and the open source community &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>stan-smith/FossFLOW</title>
+      <link>https://github.com/stan-smith/FossFLOW</link>
+      <description>&lt;p&gt;Make beautiful isometric infrastructure diagrams&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;FossFLOW - Isometric Diagramming Tool &lt;img width="30" height="30" alt="fossflow" src="https://github.com/user-attachments/assets/56d78887-601c-4336-ab87-76f8ee4cde96" /&gt;&lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/README.md"&gt;English&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.cn.md"&gt;简体中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.es.md"&gt;Español&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.pt.md"&gt;Português&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.fr.md"&gt;Français&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.hi.md"&gt;हिन्दी&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.bn.md"&gt;বাংলা&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.ru.md"&gt;Русский&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;b&gt;Hey!&lt;/b&gt; Stan here, if you've used FossFLOW and it's helped you, &lt;b&gt;I'd really appreciate if you could donate something small :)&lt;/b&gt; I work full time, and finding the time to work on this project is challenging enough. If you've had a feature that I've implemented for you, or fixed a bug it'd be great if you could :) if not, that's not a problem, this software will always remain free!&lt;/p&gt; 
+&lt;p&gt;&lt;b&gt;Also!&lt;/b&gt; If you haven't yet, please check out the underlying library this is built on by &lt;a href="https://github.com/markmanx/isoflow"&gt;@markmanx&lt;/a&gt; I truly stand on the shoulders of a giant here 🫡&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://ko-fi.com/P5P61KBXA3"&gt;&lt;img src="https://ko-fi.com/img/githubbutton_sm.svg?sanitize=true" alt="ko-fi" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.buymeacoffee.com/stan.smith" target="_blank"&gt;&lt;img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Thanks,&lt;/p&gt; 
+&lt;p&gt;-Stan&lt;/p&gt; 
+&lt;h2&gt;Try it online&lt;/h2&gt; 
+&lt;p&gt;Go to &lt;b&gt; --&amp;gt; &lt;a href="https://stan-smith.github.io/FossFLOW/"&gt;https://stan-smith.github.io/FossFLOW/&lt;/a&gt; &amp;lt;-- &lt;/b&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;FossFLOW is a powerful, open-source Progressive Web App (PWA) for creating beautiful isometric diagrams. Built with React and the &lt;a href="https://github.com/markmanx/isoflow"&gt;Isoflow&lt;/a&gt; (Now forked and published to NPM as fossflow) library, it runs entirely in your browser with offline support.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/e7f254ad-625f-4b8a-8efc-5293b5be9d55" alt="Screenshot_20250630_160954" /&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;📝 &lt;a href="https://github.com/stan-smith/FossFLOW/raw/master/FOSSFLOW_TODO.md"&gt;FOSSFLOW_TODO.md&lt;/a&gt;&lt;/strong&gt; - Current issues and roadmap with codebase mappings, most gripes are with the isoflow library itself.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🤝 &lt;a href="https://github.com/stan-smith/FossFLOW/raw/master/CONTRIBUTORS.md"&gt;CONTRIBUTORS.md&lt;/a&gt;&lt;/strong&gt; - How to contribute to the project.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Recent Updates (October 2025)&lt;/h2&gt; 
+&lt;h3&gt;Performance updates&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Reduced frame refresh delay, should look much smoother now&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Multilingual Support&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;8 Languages Supported&lt;/strong&gt; - Full interface translation in English, Chinese (Simplified), Spanish, Portuguese (Brazilian), French, Hindi, Bengali, and Russian&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Language Selector&lt;/strong&gt; - Easy-to-use language switcher in the app header&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Complete Translation&lt;/strong&gt; - All menus, dialogs, settings, tooltips, and help content translated&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Locale-Aware&lt;/strong&gt; - Automatically detects and remembers your language preference&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Improved Connector Tool&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Click-based Creation&lt;/strong&gt; - New default mode: click first node, then second node to connect&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Drag Mode Option&lt;/strong&gt; - Original drag-and-drop still available via settings&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Mode Selection&lt;/strong&gt; - Switch between click and drag modes in Settings → Connectors tab&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Better Reliability&lt;/strong&gt; - Click mode provides more predictable connection creation&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Custom Icon Import&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Import Your Own Icons&lt;/strong&gt; - Upload custom icons (PNG, JPG, SVG) to use in your diagrams&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Automatic Scaling&lt;/strong&gt; - Icons are automatically scaled to consistent sizes for professional appearance&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Isometric/Flat Toggle&lt;/strong&gt; - Choose whether imported icons appear as 3D isometric or flat 2D&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Smart Persistence&lt;/strong&gt; - Custom icons are saved with diagrams and work across all storage methods&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Icon Resources&lt;/strong&gt; - Find free icons at: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://icon-sets.iconify.design/"&gt;Iconify Icon Sets&lt;/a&gt; - Thousands of free SVG icons&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://www.flaticon.com/free-icons/isometric"&gt;Flaticon Isometric Icons&lt;/a&gt; - High-quality isometric icon packs&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Server Storage Support&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Persistent Storage&lt;/strong&gt; - Diagrams saved to server filesystem, persist across browser sessions&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi-device Access&lt;/strong&gt; - Access your diagrams from any device when using Docker deployment&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Automatic Detection&lt;/strong&gt; - UI automatically shows server storage when available&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Overwrite Protection&lt;/strong&gt; - Confirmation dialog when saving with duplicate names&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Docker Integration&lt;/strong&gt; - Server storage enabled by default in Docker deployments&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Enhanced Interaction Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Configurable Hotkeys&lt;/strong&gt; - Three profiles (QWERTY, SMNRCT, None) for tool selection with visual indicators&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Advanced Pan Controls&lt;/strong&gt; - Multiple pan methods including empty area drag, middle/right click, modifier keys (Ctrl/Alt), and keyboard navigation (Arrow/WASD/IJKL)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Toggle Connector Arrows&lt;/strong&gt; - Option to show/hide arrows on individual connectors&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Persistent Tool Selection&lt;/strong&gt; - Connector tool remains active after creating connections&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Settings Dialog&lt;/strong&gt; - Centralized configuration for hotkeys and pan controls&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Docker &amp;amp; CI/CD Improvements&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Automated Docker Builds&lt;/strong&gt; - GitHub Actions workflow for automatic Docker Hub deployment on commits&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi-architecture Support&lt;/strong&gt; - Docker images for both &lt;code&gt;linux/amd64&lt;/code&gt; and &lt;code&gt;linux/arm64&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Pre-built Images&lt;/strong&gt; - Available at &lt;code&gt;stnsmith/fossflow:latest&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Monorepo Architecture&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Single repository&lt;/strong&gt; for both library and application&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;NPM Workspaces&lt;/strong&gt; for streamlined dependency management&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Unified build process&lt;/strong&gt; with &lt;code&gt;npm run build&lt;/code&gt; at the root&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;UI Fixes&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fixed Quill editor toolbar icons display issue&lt;/li&gt; 
+ &lt;li&gt;Resolved React key warnings in context menus&lt;/li&gt; 
+ &lt;li&gt;Improved markdown editor styling&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🎨 &lt;strong&gt;Isometric Diagramming&lt;/strong&gt; - Create stunning 3D-style technical diagrams&lt;/li&gt; 
+ &lt;li&gt;💾 &lt;strong&gt;Auto-Save&lt;/strong&gt; - Your work is automatically saved every 5 seconds&lt;/li&gt; 
+ &lt;li&gt;📱 &lt;strong&gt;PWA Support&lt;/strong&gt; - Install as a native app on Mac and Linux&lt;/li&gt; 
+ &lt;li&gt;🔒 &lt;strong&gt;Privacy-First&lt;/strong&gt; - All data stored locally in your browser&lt;/li&gt; 
+ &lt;li&gt;📤 &lt;strong&gt;Import/Export&lt;/strong&gt; - Share diagrams as JSON files&lt;/li&gt; 
+ &lt;li&gt;🎯 &lt;strong&gt;Session Storage&lt;/strong&gt; - Quick save without dialogs&lt;/li&gt; 
+ &lt;li&gt;🌐 &lt;strong&gt;Offline Support&lt;/strong&gt; - Work without internet connection&lt;/li&gt; 
+ &lt;li&gt;🗄️ &lt;strong&gt;Server Storage&lt;/strong&gt; - Optional persistent storage when using Docker (enabled by default)&lt;/li&gt; 
+ &lt;li&gt;🌍 &lt;strong&gt;Multilingual&lt;/strong&gt; - Full support for 8 languages: English, 简体中文, Español, Português, Français, हिन्दी, বাংলা, Русский&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🐳 Quick Deploy with Docker&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Using Docker Compose (recommended - includes persistent storage)
+docker compose up
+
+# Or run directly from Docker Hub with persistent storage
+docker run -p 80:80 -v $(pwd)/diagrams:/data/diagrams stnsmith/fossflow:latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Server storage is enabled by default in Docker. Your diagrams will be saved to &lt;code&gt;./diagrams&lt;/code&gt; on the host.&lt;/p&gt; 
+&lt;p&gt;To disable server storage, set &lt;code&gt;ENABLE_SERVER_STORAGE=false&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -p 80:80 -e ENABLE_SERVER_STORAGE=false stnsmith/fossflow:latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Quick Start (Local Development)&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Clone the repository
+git clone https://github.com/stan-smith/FossFLOW
+cd FossFLOW
+
+# Install dependencies
+npm install
+
+# Build the library (required first time)
+npm run build:lib
+
+# Start development server
+npm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Open &lt;a href="http://localhost:3000"&gt;http://localhost:3000&lt;/a&gt; in your browser.&lt;/p&gt; 
+&lt;h2&gt;Monorepo Structure&lt;/h2&gt; 
+&lt;p&gt;This is a monorepo containing two packages:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;packages/fossflow-lib&lt;/code&gt; - React component library for drawing network diagrams (built with Webpack)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;packages/fossflow-app&lt;/code&gt; - Progressive Web App for creating isometric diagrams (built with RSBuild)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Development Commands&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Development
+npm run dev          # Start app development server
+npm run dev:lib      # Watch mode for library development
+
+# Building
+npm run build        # Build both library and app
+npm run build:lib    # Build library only
+npm run build:app    # Build app only
+
+# Testing &amp;amp; Linting
+npm test             # Run unit tests
+npm run lint         # Check for linting errors
+
+# E2E Tests (Selenium)
+cd e2e-tests
+./run-tests.sh       # Run end-to-end tests (requires Docker &amp;amp; Python)
+
+# Publishing
+npm run publish:lib  # Publish library to npm
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;How to Use&lt;/h2&gt; 
+&lt;h3&gt;Creating Diagrams&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Add Items&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Press the "+" button on the top right menu, the library of components will appear on the left&lt;/li&gt; 
+   &lt;li&gt;Drag and drop components from the library onto the canvas&lt;/li&gt; 
+   &lt;li&gt;Or right-click on the grid and select "Add node"&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Connect Items&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Select the Connector tool (press 'C' or click connector icon)&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Click mode&lt;/strong&gt; (default): Click first node, then click second node&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Drag mode&lt;/strong&gt; (optional): Click and drag from first to second node&lt;/li&gt; 
+   &lt;li&gt;Switch modes in Settings → Connectors tab&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Save Your Work&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Quick Save&lt;/strong&gt; - Saves to browser session&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Export&lt;/strong&gt; - Download as JSON file&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Import&lt;/strong&gt; - Load from JSON file&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Storage Options&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Session Storage&lt;/strong&gt;: Temporary saves cleared when browser closes&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Export/Import&lt;/strong&gt;: Permanent storage as JSON files&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Auto-Save&lt;/strong&gt;: Automatically saves changes every 5 seconds to session&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions! Please see &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/CONTRIBUTORS.md"&gt;CONTRIBUTORS.md&lt;/a&gt; for guidelines.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/FOSSFLOW_ENCYCLOPEDIA.md"&gt;FOSSFLOW_ENCYCLOPEDIA.md&lt;/a&gt; - Comprehensive guide to the codebase&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/FOSSFLOW_TODO.md"&gt;FOSSFLOW_TODO.md&lt;/a&gt; - Current issues and roadmap&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/CONTRIBUTORS.md"&gt;CONTRIBUTORS.md&lt;/a&gt; - Contributing guidelines&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>angular/angular</title>
+      <link>https://github.com/angular/angular</link>
+      <description>&lt;p&gt;Deliver web apps with confidence 🚀&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt;Angular - The modern web developer's platform&lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/angular/angular/main/adev/src/assets/images/press-kit/angular_icon_gradient.gif" alt="angular-logo" width="120px" height="120px" /&gt; &lt;br /&gt; &lt;em&gt;Angular is a development platform for building mobile and desktop web applications &lt;br /&gt; using TypeScript/JavaScript and other languages.&lt;/em&gt; &lt;br /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://angular.dev/"&gt;&lt;strong&gt;angular.dev&lt;/strong&gt;&lt;/a&gt; &lt;br /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/angular/angular/main/CONTRIBUTING.md"&gt;Contributing Guidelines&lt;/a&gt; · &lt;a href="https://github.com/angular/angular/issues"&gt;Submit an Issue&lt;/a&gt; · &lt;a href="https://blog.angular.dev/"&gt;Blog&lt;/a&gt; &lt;br /&gt; &lt;br /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.npmjs.com/@angular/core"&gt; &lt;img src="https://img.shields.io/npm/v/@angular/core.svg?logo=npm&amp;amp;logoColor=fff&amp;amp;label=NPM+package&amp;amp;color=limegreen" alt="Angular on npm" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Get started with Angular, learn the fundamentals and explore advanced topics on our documentation website.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://angular.dev/tutorials/learn-angular"&gt;Getting Started&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://angular.dev/essentials"&gt;Architecture&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://angular.dev/tutorials/learn-angular/1-components-in-angular"&gt;Components and Templates&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://angular.dev/tutorials/learn-angular/15-forms"&gt;Forms&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://angular.dev/api"&gt;API&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Advanced&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://angular.dev/guide/elements"&gt;Angular Elements&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://angular.dev/guide/ssr"&gt;Server Side Rendering&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://angular.dev/tools/cli/schematics"&gt;Schematics&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://angular.dev/guide/ngmodules/lazy-loading"&gt;Lazy Loading&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://angular.dev/guide/animations"&gt;Animations&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Local Development&lt;/h3&gt; 
+&lt;p&gt;To contribute to the Angular Docs, check out the &lt;a href="https://raw.githubusercontent.com/angular/angular/main/adev/README.md"&gt;Angular.dev README&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Development Setup&lt;/h2&gt; 
+&lt;h3&gt;Prerequisites&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Install &lt;a href="https://nodejs.org/"&gt;Node.js&lt;/a&gt; which includes &lt;a href="https://www.npmjs.com/get-npm"&gt;Node Package Manager&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Setting Up a Project&lt;/h3&gt; 
+&lt;p&gt;Install the Angular CLI globally:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;npm install -g @angular/cli
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Create workspace:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;ng new [PROJECT NAME]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Run the application:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;cd [PROJECT NAME]
+ng serve
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Angular is cross-platform, fast, scalable, has incredible tooling, and is loved by millions.&lt;/p&gt; 
+&lt;h2&gt;Quickstart&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://angular.dev/tutorials/learn-angular"&gt;Get started in 5 minutes&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Ecosystem&lt;/h2&gt; 
+&lt;p&gt; &lt;img src="https://raw.githubusercontent.com/angular/angular/main/contributing-docs/images/angular-ecosystem-logos.png" alt="angular ecosystem logos" width="500px" height="auto" /&gt; &lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://angular.dev/tools/cli"&gt;Angular Command Line (CLI)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://material.angular.dev/"&gt;Angular Material&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Changelog&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/angular/angular/main/CHANGELOG.md"&gt;Learn about the latest improvements&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Upgrading&lt;/h2&gt; 
+&lt;p&gt;Check out our &lt;a href="https://angular.dev/update-guide/"&gt;upgrade guide&lt;/a&gt; to find out the best way to upgrade your project.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;h3&gt;Contributing Guidelines&lt;/h3&gt; 
+&lt;p&gt;Read through our &lt;a href="https://raw.githubusercontent.com/angular/angular/main/CONTRIBUTING.md"&gt;contributing guidelines&lt;/a&gt; to learn about our submission process, coding rules, and more.&lt;/p&gt; 
+&lt;h3&gt;Want to Help?&lt;/h3&gt; 
+&lt;p&gt;Want to report a bug, contribute some code, or improve the documentation? Excellent! Read up on our guidelines for &lt;a href="https://raw.githubusercontent.com/angular/angular/main/CONTRIBUTING.md"&gt;contributing&lt;/a&gt; and then check out one of our issues labeled as &lt;kbd&gt;&lt;a href="https://github.com/angular/angular/labels/help%20wanted"&gt;help wanted&lt;/a&gt;&lt;/kbd&gt; or &lt;kbd&gt;&lt;a href="https://github.com/angular/angular/labels/good%20first%20issue"&gt;good first issue&lt;/a&gt;&lt;/kbd&gt;.&lt;/p&gt; 
+&lt;h3&gt;Code of Conduct&lt;/h3&gt; 
+&lt;p&gt;Help us keep Angular open and inclusive. Please read and follow our &lt;a href="https://raw.githubusercontent.com/angular/angular/main/CODE_OF_CONDUCT.md"&gt;Code of Conduct&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;p&gt;Join the conversation and help the community.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.x.com/angular"&gt;X (formerly Twitter)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://bsky.app/profile/angular.dev"&gt;Bluesky&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://discord.gg/angular"&gt;Discord&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://youtube.com/angular"&gt;YouTube&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://stackoverflow.com/questions/tagged/angular"&gt;StackOverflow&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Find a Local &lt;a href="https://www.meetup.com/find/?keywords=angular"&gt;Meetup&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;a href="https://www.github.com/angular/angular"&gt;&lt;img src="https://img.shields.io/badge/angular-love-blue?logo=angular&amp;amp;angular=love" alt="Love Angular badge" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Love Angular? Give our repo a star &lt;span&gt;⭐&lt;/span&gt; &lt;span&gt;⬆&lt;/span&gt;.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>vendure-ecommerce/vendure</title>
+      <link>https://github.com/vendure-ecommerce/vendure</link>
+      <description>&lt;p&gt;The most customizable commerce platform built with TypeScript, NestJS and GraphQL.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://vendure.io"&gt; &lt;img alt="Vendure logo" height="60" width="auto" src="https://a.storyblok.com/f/328257/699x480/8dbb4c7a3c/logo-icon.png" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h1 align="center"&gt; Vendure &lt;/h1&gt; 
+&lt;h3 align="center"&gt; Own Your Commerce. Build Without Workarounds. Ship Faster. &lt;/h3&gt; 
+&lt;h4 align="center"&gt; &lt;a href="https://docs.vendure.io"&gt;Documentation&lt;/a&gt; | &lt;a href="https://vendure.io"&gt;Website&lt;/a&gt; &lt;/h4&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/vendure-ecommerce/vendure/raw/master/LICENSE.md"&gt; &lt;img src="https://img.shields.io/badge/license-GPL-blue.svg?sanitize=true" alt="Vendure is released under the GPLv3 license." /&gt; &lt;/a&gt; &lt;a href="https://twitter.com/intent/follow?screen_name=vendure_io"&gt; &lt;img src="https://img.shields.io/twitter/follow/vendure_io" alt="Follow @vendure_io" /&gt; &lt;/a&gt; &lt;a href="https://vendure.io/community"&gt; &lt;img src="https://img.shields.io/badge/join-our%20discord-7289DA.svg?sanitize=true" alt="Join our Discord" /&gt; &lt;/a&gt; &lt;a href="https://github.com/vendure-ecommerce/vendure/raw/master/CONTRIBUTING.md"&gt; &lt;img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat" alt="PRs welcome!" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;What is Vendure&lt;/h2&gt; 
+&lt;p&gt;Vendure is an open-source headless commerce platform built with &lt;em&gt;TypeScript&lt;/em&gt; and &lt;em&gt;Node.js&lt;/em&gt;. It provides a robust foundation for building enterprise-grade digital commerce applications with exceptional scalability and maintainability.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Built for heavy customization&lt;/strong&gt;: Extensible plugin architecture allows you to tailor every aspect of your commerce solution&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Modern, AI-optimized tech stack&lt;/strong&gt;: Built on TypeScript, Node.js, NestJS, and GraphQL for outstanding performance and developer experience&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Headless architecture&lt;/strong&gt;: API-first design enables seamless multichannel commerce across any frontend&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Enterprise-ready&lt;/strong&gt;: Trusted by thousands of teams worldwide, from startups to Fortune 500 companies&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Rich feature set&lt;/strong&gt;: Comprehensive out-of-the-box functionality with customizable admin dashboard and commerce framework&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Whether you're building a B2B platform, multi-vendor marketplace, or D2C storefront, Vendure provides the flexible foundation to create unique commerce experiences tailored to your business needs.&lt;/p&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;Visit our &lt;a href="https://docs.vendure.io/guides/getting-started/installation/"&gt;Getting Started guide&lt;/a&gt; to get Vendure up and running locally in &lt;em&gt;less than 2 minutes&lt;/em&gt; with a single command.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Need Help?&lt;/strong&gt; Our community is here to help, join &lt;a href="https://www.vendure.io/community"&gt;our Discord&lt;/a&gt; for support and discussions!&lt;/p&gt; 
+&lt;h2&gt;Upgrades &amp;amp; Plugins&lt;/h2&gt; 
+&lt;p&gt;New updates get released on a bi-weekly cadence, check out our &lt;a href="https://github.com/vendure-ecommerce/vendure/releases"&gt;release notes&lt;/a&gt; to keep up-to-date with the latest releases.&lt;/p&gt; 
+&lt;p&gt;Have a look at all of our &lt;a href="https://vendure.io/plugins?page=1"&gt;ready-made Vendure plugins&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Contribution&lt;/h2&gt; 
+&lt;p&gt;Contributions to Vendure are welcome and highly appreciated! Whether you're fixing bugs, adding features, or improving documentation, your help makes Vendure better for everyone.&lt;/p&gt; 
+&lt;p&gt;Our &lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/vendure-ecommerce/vendure/master/CONTRIBUTING.md"&gt;Contribution Guide&lt;/a&gt;&lt;/strong&gt; is covering everything from setting up your development environment to submitting your first pull request.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Ready to get started?&lt;/strong&gt; Check out &lt;a href="https://github.com/vendure-ecommerce/vendure/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22%F0%9F%91%8B%20contributions%20welcome%22"&gt;these issues&lt;/a&gt; for a good first task to start!&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Licensed under the &lt;a href="https://raw.githubusercontent.com/vendure-ecommerce/vendure/master/LICENSE.md"&gt;GPLv3 license&lt;/a&gt;. Commercial license (VCL) &lt;a href="https://vendure.io/pricing"&gt;available&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>requestly/requestly</title>
+      <link>https://github.com/requestly/requestly</link>
+      <description>&lt;p&gt;Free and open-source API Client &amp; Interceptor.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a href="https://requestly.com"&gt;&lt;img src="https://github.com/user-attachments/assets/5b8cdaf9-22d6-4aa5-844c-93d70ece41ad" alt="Requestly" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Join Requestly community on Discord: &lt;a href="https://rqst.ly/join-community"&gt;Link&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Requestly - API Client with HTTP Interceptor, Modfications, Testing &amp;amp; Mocking.&lt;/h2&gt; 
+&lt;p&gt;Requestly is a powerful combination of a local API Client (like Postman) &amp;amp; HTTP Interceptor (like Charles Proxy) with API Testing and Mocking. Requestly can be used directly in the browser as a Chrome Extension or installed as a desktop application.&lt;/p&gt; 
+&lt;h4&gt;⚡ A Local-first &amp;amp; Powerful alternative to Postman &amp;amp; Charles Proxy ⚡&lt;/h4&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/04c32f25-96c4-46d9-a31d-b6887ce7bfdc" alt="requestly-overview" /&gt; &lt;br /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://img.shields.io/github/issues-closed/requestly/requestly" alt="GitHub closed issues" /&gt; &lt;a href="https://chrome.google.com/webstore/detail/redirect-url-modify-heade/mdnleldcmiljblolnjhpnblkcekpdkpa/"&gt;&lt;img src="https://img.shields.io/chrome-web-store/rating/mdnleldcmiljblolnjhpnblkcekpdkpa" alt="Chrome Web Store Rating" /&gt; &lt;img src="https://img.shields.io/chrome-web-store/rating-count/mdnleldcmiljblolnjhpnblkcekpdkpa?label=reviews" alt="Chrome Web Store Reviews" /&gt; &lt;img src="https://img.shields.io/chrome-web-store/users/mdnleldcmiljblolnjhpnblkcekpdkpa?label=downloads" alt="Chrome Web Store Downloads" /&gt;&lt;/a&gt; &lt;a href="https://status.requestly.io"&gt;&lt;img src="https://uptime.betterstack.com/status-badges/v2/monitor/13j20.svg?sanitize=true" alt="Status badge" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;🏡 Getting Started&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/requestly/requestly/master/#a-local-first-solution-local-workspaces"&gt;A Local-first Solution&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/requestly/requestly/master/#rest-api-client"&gt;REST API Client&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/requestly/requestly/master/#environments"&gt;Environments&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/requestly/requestly/master/#http-interceptor--http-rules-intercept--modify-https-requests"&gt;HTTP Interceptor - Intercept &amp;amp; Modify HTTP Requests&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/requestly/requestly/master/#api-mocking-helps-in-building-frontend-faster-without-waiting-for-backend"&gt;API Mocking&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/requestly/requestly/master/#1-click-imports"&gt;1-Click Imports from Postman, Insomnia, Modheader, Charles Proxy, and Resource Override&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/requestly/requestly/master/#-best-in-class-support"&gt;Support Channels&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/requestly/requestly/master/#-development"&gt;👩‍💻 Development&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/requestly/requestly/master/#-contributing"&gt;🙏 Contributing&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;A Local-first Solution (Local Workspaces)&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Local Workspaces&lt;/strong&gt; is a simple, powerful, and privacy-friendly approach to building, testing &amp;amp; mocking your APIs. All your data is stored in the selected directory on your disk. You can also import all your API client files (requests, collections, environments) and codebase into VSCode and edit them directly in your IDE.&lt;/p&gt; 
+&lt;p&gt;Collaborate with your colleagues using your preferred sync engine - Git, Google Drive, iCloud, or nothing at all.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Team Workspaces&lt;/strong&gt; are great for seamless collaboration through Requestly sync engine.&lt;/p&gt; 
+&lt;h4&gt;⚡ Local and team workspaces⚡&lt;/h4&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/06f17e34-1614-4396-95ee-1416003261ad" alt="requestly-local-first-support" /&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;REST API Client&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://docs.requestly.com/general/api-client/overview"&gt;&lt;strong&gt;Rest API Client&lt;/strong&gt;&lt;/a&gt; offers a local API playground to build and test your APIs. It supports features like API Collections, Environments, Environment Switcher, API Requests History with a beautiful and collaborative interface.&lt;/p&gt; 
+&lt;h4&gt;⚡ A Local-first, Beautiful &amp;amp; Powerful alternative to Postman &amp;amp; Insomina ⚡&lt;/h4&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/a962b213-8744-4ffc-bd04-fcf891f48914" alt="requestly-api-client" /&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Environments&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Environment&lt;/strong&gt; is a set of key-value pairs that can be used in API requests. Environments feature lets you manage variables across multiple environments with an easy environment selector. We support Global variables as well as Collection level variables. &lt;a href="https://docs.requestly.com/general/api-client/environments-and-variables"&gt;Docs&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;⚡ Environments feature ⚡&lt;/h4&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/2726fe0e-9f0a-4df7-bfc9-344c65e19353" alt="requestly-api-client-environments-support" /&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;HTTP Interceptor / HTTP Rules (Intercept &amp;amp; Modify HTTPs Requests)&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://docs.requestly.com/general/http-interceptor/overview"&gt;&lt;strong&gt;HTTP Rules&lt;/strong&gt;&lt;/a&gt; feature can be used to &lt;strong&gt;Intercept, Monitor &amp;amp; Modify HTTPs requests &amp;amp; responses&lt;/strong&gt; from browsers &amp;amp; mobile apps.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Use the Chrome/Firefox/Edge extension for Intercepting &amp;amp; Modifying traffic from browsers&lt;/li&gt; 
+ &lt;li&gt;Use the desktop app for capturing &amp;amp; modifying traffic from browsers, mobile apps &amp;amp; other desktop apps.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;⚡ Intercept, Monitor &amp;amp; Modify HTTP Requests &amp;amp; Responses ⚡&lt;/h4&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/791e54cb-d817-4bc2-83a6-e8bdd3b1cef7" alt="requestly-http-interceptor" /&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;p&gt;&lt;strong&gt;Different Modifications supported&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Redirect URLs (Map Local &amp;amp; Map Remote) e.g. 
+  &lt;ul&gt; 
+   &lt;li&gt;Change Hostname, QueryParams, etc in the URL&lt;/li&gt; 
+   &lt;li&gt;Redirect traffic from one environment to another (e.g. production to dev)&lt;/li&gt; 
+   &lt;li&gt;Swap Tag Manager scripts from production to staging/dev environment&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Modify HTTP Request &amp;amp; Response Headers&lt;/li&gt; 
+ &lt;li&gt;Modify API Request &amp;amp; Response body&lt;/li&gt; 
+ &lt;li&gt;Inject scripts on web pages&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;API Mocking (Helps in building frontend faster without waiting for backend)&lt;/h2&gt; 
+&lt;p&gt;Requestly offers a complete API Mocking solution. Using Requestly, you can&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.requestly.com/general/api-mocking/api-mocking"&gt;Create Local API Mocks&lt;/a&gt;: Intercept the API Requests and return the new response&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.requestly.com/general/http-rules/rule-types/modify-response-body"&gt;Static &amp;amp; Dynamic Response Overrides&lt;/a&gt;: Override the API response received from server dynamically using simple JS&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.requestly.com/general/http-rules/advanced-usage/graphql-modify-request-response"&gt;GraphQL Support&lt;/a&gt;: Override graphQL APIs by targeting on query, operationName&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.requestly.com/general/api-mocking/create-cloud-based-mocks"&gt;Create Cloud-based API Mocks&lt;/a&gt;: Create cloud-based API Mocks and get new endpoints for the mocks&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.requestly.com/general/sessions/record-api-sessions#bulk-mocking"&gt;Bulk API Mocks&lt;/a&gt;: Record API traffic &amp;amp; Serve the Mocks from the recorded Session&lt;/li&gt; 
+ &lt;li&gt;Mock APIs in e2e testing: Use Requestly in your e2e Cypress/Playwright/Selenium and mock the APIs in CI pipeline&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;⚡ API Mocks - Build &amp;amp; Test your frontend faster without waiting for backend ⚡&lt;/h4&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/7bc00c7e-c280-40eb-9a2a-c070ecdea662" alt="requestly-api-mocking" /&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;1-Click Imports&lt;/h2&gt; 
+&lt;p&gt;Requestly provides &lt;strong&gt;Importing Configuration&lt;/strong&gt; from the following tools&lt;/p&gt; 
+&lt;p&gt;API Clients&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.requestly.com/general/imports/postman"&gt;Import from Postman&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/requestly/requestly/master/#"&gt;Import from Insomnia&lt;/a&gt; - Coming Soon&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/requestly/requestly/master/#"&gt;Import from Bruno&lt;/a&gt; - Coming Soon&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;HTTP Interceptors&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.requestly.com/general/imports/charles-proxy"&gt;Import from Charles Proxy&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.requestly.com/general/imports/resource-override"&gt;Import from Resource Override&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.requestly.com/general/imports/modheader"&gt;Import from ModHeader&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;⚡ Import from Postman, Insomnia, CharlesProxy, ModHeader, etc. ⚡&lt;/h4&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/6186e916-9036-4847-95dd-53b66a4c2730" alt="requestly-api-client-environments-support" /&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;🤝 Best In-Class Support&lt;/h2&gt; 
+&lt;h4&gt;⚡ Requestly is known for best product, team and Best in-class support (4.3⭐️ in 1000+ reviews) ⚡&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.requestly.com/"&gt;Documentation&lt;/a&gt;: Product Documentation and Understanding of different features&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.requestly.com/security-privacy/"&gt;Security &amp;amp; Privacy&lt;/a&gt;: Our Security &amp;amp; Privacy document&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="mailto:contact@requestly.com"&gt;Email contact@requestly.com&lt;/a&gt;: Email Support&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://stackoverflow.com/questions/tagged/requestly"&gt;StackOverflow Questions&lt;/a&gt;: Ask Questions on StackOverflow and add "Requestly" tag&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;👩‍💻 Development&lt;/h2&gt; 
+&lt;p&gt;This repository contains the source code for Browser extension and UI application which make up the core of Requestly.&lt;br /&gt; Please follow the &lt;a href="https://raw.githubusercontent.com/requestly/requestly/master/getting-started.md"&gt;Getting Started Guide&lt;/a&gt; to get to know about the development process in this repository.&lt;/p&gt; 
+&lt;p&gt;Start working on individual modules:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/requestly/requestly/master/browser-extension"&gt;Browser extension&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/requestly/requestly/master/app"&gt;UI application&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/requestly/requestly-desktop-app"&gt;Desktop application&lt;/a&gt; (Electron-based application for MacOS, Windows)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/requestly/requestly-web-sdk"&gt;Web SDK&lt;/a&gt; (facilitates SessionBook)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/requestly/requestly-mock-server"&gt;Mock Server&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/requestly/requestly-backend"&gt;Backend&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;🙏 Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions from the community! Whether you're fixing bugs, adding new features, or improving documentation, your contributions help make Requestly better for everyone.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Getting Started:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Check out our &lt;a href="https://github.com/requestly/requestly/issues"&gt;issues&lt;/a&gt; to find something to work on&lt;/li&gt; 
+ &lt;li&gt;Read our &lt;a href="https://raw.githubusercontent.com/requestly/requestly/master/CONTRIBUTING.md"&gt;contributing guide&lt;/a&gt; to learn about our development process and guidelines&lt;/li&gt; 
+ &lt;li&gt;Join our &lt;a href="https://rqst.ly/join-community"&gt;Discord community&lt;/a&gt; if you need help or have questions&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>vercel/vercel</title>
+      <link>https://github.com/vercel/vercel</link>
+      <description>&lt;p&gt;Develop. Preview. Ship.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://vercel.com"&gt; &lt;img src="https://assets.vercel.com/image/upload/v1588805858/repositories/vercel/logo.png" height="96" /&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 align="center"&gt;&lt;a href="https://vercel.com"&gt;Vercel&lt;/a&gt;&lt;/h3&gt;
+&lt;a href="https://vercel.com"&gt; &lt;/a&gt; 
+&lt;p&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; Develop. Preview. Ship. &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://vercel.com/docs"&gt;&lt;strong&gt;Documentation&lt;/strong&gt;&lt;/a&gt; · &lt;a href="https://vercel.com/changelog"&gt;&lt;strong&gt;Changelog&lt;/strong&gt;&lt;/a&gt; · &lt;a href="https://vercel.com/templates"&gt;&lt;strong&gt;Templates&lt;/strong&gt;&lt;/a&gt; · &lt;a href="https://vercel.com/docs/cli"&gt;&lt;strong&gt;CLI&lt;/strong&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Vercel&lt;/h2&gt; 
+&lt;p&gt;Vercel’s AI Cloud is a unified platform for building modern applications, giving teams the tools to be flexible, move fast, and stay secure while focusing on their products instead of infrastructure.&lt;/p&gt; 
+&lt;h2&gt;Deploy&lt;/h2&gt; 
+&lt;p&gt;Get started by &lt;a href="https://vercel.com/new"&gt;importing a project&lt;/a&gt;, &lt;a href="https://vercel.com/templates"&gt;choosing a template&lt;/a&gt;, or using the &lt;a href="https://vercel.com/docs/cli"&gt;Vercel CLI&lt;/a&gt;. Then, &lt;code&gt;git push&lt;/code&gt; to deploy.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;For details on how to use Vercel, check out our &lt;a href="https://vercel.com/docs"&gt;documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;This project uses &lt;a href="https://pnpm.io/"&gt;pnpm&lt;/a&gt; to install dependencies and run scripts.&lt;/p&gt; 
+&lt;p&gt;You can use the &lt;code&gt;vercel&lt;/code&gt; script to run local changes as if you were invoking Vercel CLI. For example, &lt;code&gt;vercel deploy --cwd=/path/to/project&lt;/code&gt; could be run with local changes with &lt;code&gt;pnpm vercel deploy --cwd=/path/to/project&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;When contributing to this repository, please first discuss the change you wish to make via &lt;a href="https://community.vercel.com/tags/c/community/4/cli"&gt;Vercel Community&lt;/a&gt; with the owners of this repository before submitting a Pull Request.&lt;/p&gt; 
+&lt;p&gt;Please read our &lt;a href="https://raw.githubusercontent.com/vercel/vercel/main/.github/CODE_OF_CONDUCT.md"&gt;Code of Conduct&lt;/a&gt; and follow it in all your interactions with the project.&lt;/p&gt; 
+&lt;h3&gt;Local development&lt;/h3&gt; 
+&lt;p&gt;This project is configured in a monorepo, where one repository contains multiple npm packages. Dependencies are installed and managed with &lt;code&gt;pnpm&lt;/code&gt;, not &lt;code&gt;npm&lt;/code&gt; CLI.&lt;/p&gt; 
+&lt;p&gt;To get started, execute the following:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/vercel/vercel
+cd vercel
+corepack enable
+pnpm install
+pnpm build
+pnpm lint
+pnpm test-unit
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Make sure all the tests pass before making changes.&lt;/p&gt; 
+&lt;h4&gt;Running Vercel CLI Changes&lt;/h4&gt; 
+&lt;p&gt;You can use &lt;code&gt;pnpm vercel&lt;/code&gt; from the &lt;code&gt;cli&lt;/code&gt; package to invoke Vercel CLI with local changes:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;cd ./packages/cli
+pnpm vercel &amp;lt;cli-commands...&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/vercel/vercel/packages/cli#local-development"&gt;CLI Local Development&lt;/a&gt; for more details.&lt;/p&gt; 
+&lt;h3&gt;Verifying your change&lt;/h3&gt; 
+&lt;p&gt;Once you are done with your changes (we even suggest doing it along the way), make sure all the tests still pass by running:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;pnpm test-unit
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;from the root of the project.&lt;/p&gt; 
+&lt;p&gt;If any test fails, make sure to fix it along with your changes. See &lt;a href="https://raw.githubusercontent.com/vercel/vercel/main/#Interpreting-test-errors"&gt;Interpreting test errors&lt;/a&gt; for more information about how the tests are executed, especially the integration tests.&lt;/p&gt; 
+&lt;h3&gt;Pull Request Process&lt;/h3&gt; 
+&lt;p&gt;Once you are confident that your changes work properly, open a pull request on the main repository.&lt;/p&gt; 
+&lt;p&gt;The pull request will be reviewed by the maintainers and the tests will be checked by our continuous integration platform.&lt;/p&gt; 
+&lt;h3&gt;Interpreting test errors&lt;/h3&gt; 
+&lt;p&gt;There are 2 kinds of tests in this repository – Unit tests and Integration tests.&lt;/p&gt; 
+&lt;p&gt;Unit tests are run locally with &lt;code&gt;jest&lt;/code&gt; and execute quickly because they are testing the smallest units of code.&lt;/p&gt; 
+&lt;h4&gt;Integration tests&lt;/h4&gt; 
+&lt;p&gt;Integration tests create deployments to your Vercel account using the &lt;code&gt;test&lt;/code&gt; project name. After each test is deployed, the &lt;code&gt;probes&lt;/code&gt; key is used to check if the response is the expected value. If the value doesn't match, you'll see a message explaining the difference. If the deployment failed to build, you'll see a more generic message like the following:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;[Error: Fetched page https://test-8ashcdlew.vercel.app/root.js does not contain hello Root!. Instead it contains An error occurred with this application.
+
+    NO_STATUS_CODE_FRO Response headers:
+       cache-control=s-maxage=0
+      connection=close
+      content-type=text/plain; charset=utf-8
+      date=Wed, 19 Jun 2019 18:01:37 GMT
+      server=now
+      strict-transport-security=max-age=63072000
+      transfer-encoding=chunked
+      x-now-id=iad1:hgtzj-1560967297876-44ae12559f95
+      x-now-trace=iad1]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;In such cases, you can visit the URL of the failed deployment and append &lt;code&gt;/_logs&lt;/code&gt; to see the build error. In the case above, that would be &lt;a href="https://test-8ashcdlew.vercel.app/_logs"&gt;https://test-8ashcdlew.vercel.app/_logs&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;The logs of this deployment will contain the actual error which may help you to understand what went wrong.&lt;/p&gt; 
+&lt;h5&gt;Running integration tests locally&lt;/h5&gt; 
+&lt;p&gt;While running the full integration suite locally is not recommended, it's sometimes useful to isolate a failing test by running it on your machine. To do so, you'll need to ensure you have the appropriate credentials sourced in your shell:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Create an access token. Follow the instructions here &lt;a href="https://vercel.com/docs/rest-api#creating-an-access-token"&gt;https://vercel.com/docs/rest-api#creating-an-access-token&lt;/a&gt;. Ensure the token scope is for your personal account.&lt;/li&gt; 
+ &lt;li&gt;Grab the team ID from the Vercel dashboard at &lt;code&gt;https://vercel.com/&amp;lt;MY-TEAM&amp;gt;/~/settings&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Source these into your shell rc file: &lt;code&gt;echo 'export VERCEL_TOKEN=&amp;lt;MY-TOKEN&amp;gt; VERCEL_TEAM_ID=&amp;lt;MY-TEAM-ID&amp;gt;' &amp;gt;&amp;gt; ~/.zshrc&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;From there, you should be able to trigger an integration test. Choose one that's already isolated to check that things work:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;cd packages/next
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Run the test:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;pnpm test test/fixtures/00-server-build/index.test.js
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] If you receive a &lt;code&gt;401&lt;/code&gt; status code while fetching the deployment, you need to disable &lt;a href="https://vercel.com/docs/security/deployment-protection"&gt;Deployment Protection&lt;/a&gt; on the project.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h4&gt;@vercel/nft&lt;/h4&gt; 
+&lt;p&gt;Some of the Builders use &lt;code&gt;@vercel/nft&lt;/code&gt; to tree-shake files before deployment. If you suspect an error with this tree-shaking mechanism, you can create the following script in your project:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-js"&gt;const { nodeFileTrace } = require('@vercel/nft');
+nodeFileTrace(['path/to/entrypoint.js'], {
+  ts: true,
+  mixedModules: true,
+})
+  .then(o =&amp;gt; console.log(o.fileList))
+  .then(e =&amp;gt; console.error(e));
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;When you run this script, you'll see all the imported files. If files are missing, the bug is in &lt;a href="https://github.com/vercel/nft"&gt;@vercel/nft&lt;/a&gt; and not the Builder.&lt;/p&gt; 
+&lt;h3&gt;Deploy a Builder with existing project&lt;/h3&gt; 
+&lt;p&gt;Sometimes you want to test changes to a Builder against an existing project, maybe with &lt;code&gt;vercel dev&lt;/code&gt; or actual deployment. You can avoid publishing every Builder change to npm by uploading the Builder as a tarball.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Change directory to the desired Builder &lt;code&gt;cd ./packages/node&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;pnpm build&lt;/code&gt; to compile typescript and other build steps&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;npm pack&lt;/code&gt; to create a tarball file&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;vercel *.tgz&lt;/code&gt; to upload the tarball file and get a URL&lt;/li&gt; 
+ &lt;li&gt;Edit any existing &lt;code&gt;vercel.json&lt;/code&gt; project and replace &lt;code&gt;use&lt;/code&gt; with the URL&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;vercel&lt;/code&gt; or &lt;code&gt;vercel dev&lt;/code&gt; to deploy with the experimental Builder&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Reference&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/vercel/vercel/main/.github/CODE_OF_CONDUCT.md"&gt;Code of Conduct&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/vercel/vercel/main/.github/CONTRIBUTING.md"&gt;Contributing Guidelines&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/vercel/vercel/main/LICENSE"&gt;Apache 2.0 License&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>plait-board/drawnix</title>
+      <link>https://github.com/plait-board/drawnix</link>
+      <description>&lt;p&gt;开源白板工具（SaaS），一体化白板，包含思维导图、流程图、自由画等。All in one open-source whiteboard tool with mind, flowchart, freehand and etc.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; 
+ &lt;picture style="width: 320px"&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://github.com/plait-board/drawnix/blob/develop/apps/web/public/logo/logo_drawnix_h.svg?raw=true" /&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://github.com/plait-board/drawnix/blob/develop/apps/web/public/logo/logo_drawnix_h_dark.svg?raw=true" /&gt; 
+  &lt;img src="https://github.com/plait-board/drawnix/raw/develop/apps/web/public/logo/logo_drawnix_h.svg?raw=true" width="360" alt="Drawnix logo and name" /&gt; 
+ &lt;/picture&gt; &lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;h2&gt; 开源白板工具（SaaS），一体化白板，包含思维导图、流程图、自由画等 &lt;br /&gt; &lt;/h2&gt; 
+&lt;/div&gt; 
+&lt;div align="center"&gt; 
+ &lt;figure&gt; 
+  &lt;a target="_blank" rel="noopener"&gt; &lt;img src="https://github.com/plait-board/drawnix/raw/develop/apps/web/public/product_showcase/case-2.png" alt="Product showcase" width="80%" /&gt; &lt;/a&gt; 
+  &lt;figcaption&gt; 
+   &lt;p align="center"&gt; All in one 白板，思维导图、流程图、自由画等 &lt;/p&gt; 
+  &lt;/figcaption&gt; 
+ &lt;/figure&gt; 
+ &lt;a href="https://hellogithub.com/repository/plait-board/drawnix" target="_blank"&gt; 
+  &lt;picture style="width: 250"&gt; 
+   &lt;source media="(prefers-color-scheme: light)" srcset="https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=4dcea807fab7468a962c153b07ae4e4e&amp;amp;claim_uid=zmFSY5k8EuZri43&amp;amp;theme=neutral" /&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=4dcea807fab7468a962c153b07ae4e4e&amp;amp;claim_uid=zmFSY5k8EuZri43&amp;amp;theme=dark" /&gt; 
+   &lt;img src="https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=4dcea807fab7468a962c153b07ae4e4e&amp;amp;claim_uid=zmFSY5k8EuZri43&amp;amp;theme=neutral" alt="Featured｜HelloGitHub" style="width: 250px; height: 54px;" width="250" height="54" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;a href="https://trendshift.io/repositories/13979" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/13979" alt="plait-board%2Fdrawnix | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;p&gt;&lt;a href="https://github.com/plait-board/drawnix/raw/develop/README_en.md"&gt;&lt;em&gt;English README&lt;/em&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;特性&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;💯&amp;nbsp;免费 + 开源&lt;/li&gt; 
+ &lt;li&gt;⚒️&amp;nbsp;思维导图、流程图&lt;/li&gt; 
+ &lt;li&gt;🖌 画笔&lt;/li&gt; 
+ &lt;li&gt;😀 插入图片&lt;/li&gt; 
+ &lt;li&gt;🚀 基于插件机制&lt;/li&gt; 
+ &lt;li&gt;🖼️ 📃 导出为 PNG, JSON(&lt;code&gt;.drawnix&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;💾 自动保存（浏览器缓存）&lt;/li&gt; 
+ &lt;li&gt;⚡ 编辑特性：撤销、重做、复制、粘贴等&lt;/li&gt; 
+ &lt;li&gt;🌌 无限画布：缩放、滚动&lt;/li&gt; 
+ &lt;li&gt;🎨 主题模式&lt;/li&gt; 
+ &lt;li&gt;📱 移动设备适配&lt;/li&gt; 
+ &lt;li&gt;📈 支持 mermaid 语法转流程图&lt;/li&gt; 
+ &lt;li&gt;✨ 支持 markdown 文本转思维导图（新支持 🔥🔥🔥）&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;关于名称&lt;/h2&gt; 
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Drawnix&lt;/strong&gt;&lt;/em&gt; ，源于绘画( &lt;em&gt;&lt;strong&gt;Draw&lt;/strong&gt;&lt;/em&gt; )与凤凰( &lt;em&gt;&lt;strong&gt;Phoenix&lt;/strong&gt;&lt;/em&gt; )的灵感交织。&lt;/p&gt; 
+&lt;p&gt;凤凰象征着生生不息的创造力，而 &lt;em&gt;Draw&lt;/em&gt; 代表着人类最原始的表达方式。在这里，每一次创作都是一次艺术的涅槃，每一笔绘画都是灵感的重生。&lt;/p&gt; 
+&lt;p&gt;创意如同凤凰，浴火方能重生，而 &lt;em&gt;&lt;strong&gt;Drawnix&lt;/strong&gt;&lt;/em&gt; 要做技术与创意之火的守护者。&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;Draw Beyond, Rise Above.&lt;/em&gt;&lt;/p&gt; 
+&lt;h2&gt;与 Plait 画图框架&lt;/h2&gt; 
+&lt;p&gt;&lt;em&gt;Drawnix&lt;/em&gt; 的定位是一个开箱即用、开源、免费的工具产品，它的底层是 &lt;em&gt;Plait&lt;/em&gt; 框架，&lt;em&gt;Plait&lt;/em&gt; 是我司开源的一款画图框架，代表着公司在知识库产品(&lt;a href="https://pingcode.com/product/wiki?utm_source=drawnix"&gt;PingCode Wiki&lt;/a&gt;)上的重要技术沉淀。&lt;/p&gt; 
+&lt;p&gt;Drawnix 是插件架构，与前面说到开源工具比技术架构更复杂一些，但是插件架构也有优势，比如能够支持多种 UI 框架（&lt;em&gt;Angular、React&lt;/em&gt;），能够集成不同富文本框架（当前仅支持 &lt;em&gt;Slate&lt;/em&gt; 框架），在开发上可以很好的实现业务的分层，开发各种细粒度的可复用插件，可以扩展更多的画板的应用场景。&lt;/p&gt; 
+&lt;h2&gt;仓储结构&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;drawnix/
+├── apps/
+│   ├── web                   # drawnix.com
+│   │    └── index.html       # HTML
+├── dist/                     # 构建产物
+├── packages/
+│   └── drawnix/              # 白板应用
+│   └── react-board/          # 白板 React 视图层
+│   └── react-text/           # 文本渲染模块
+├── package.json
+├── ...
+└── README.md
+└── README_en.md
+
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;应用&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://drawnix.com"&gt;&lt;em&gt;https://drawnix.com&lt;/em&gt;&lt;/a&gt; 是 &lt;em&gt;drawnix&lt;/em&gt; 的最小化应用。&lt;/p&gt; 
+&lt;p&gt;近期会高频迭代 drawnix.com，直到发布 &lt;em&gt;Dawn（破晓）&lt;/em&gt; 版本。&lt;/p&gt; 
+&lt;h2&gt;开发&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;npm install
+
+npm run start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Docker&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;docker pull pubuzhixing/drawnix:latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;依赖&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/worktile/plait"&gt;plait&lt;/a&gt; - 开源画图框架&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ianstormtaylor/slate"&gt;slate&lt;/a&gt; - 富文本编辑器框架&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/floating-ui/floating-ui"&gt;floating-ui&lt;/a&gt; - 一个超级好用的创建弹出层基础库&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;贡献&lt;/h2&gt; 
+&lt;p&gt;欢迎任何形式的贡献：&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;提 Bug&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;贡献代码&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;感谢支持&lt;/h2&gt; 
+&lt;p&gt;特别感谢公司对开源项目的大力支持，也感谢为本项目贡献代码、提供建议的朋友。&lt;/p&gt; 
+&lt;p align="left"&gt; &lt;a href="https://pingcode.com?utm_source=drawnix" target="_blank"&gt; &lt;img src="https://cdn-aliyun.pingcode.com/static/site/img/pingcode-logo.4267e7b.svg?sanitize=true" width="120" alt="PingCode" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/plait-board/drawnix/raw/master/LICENSE"&gt;MIT License&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
