@@ -1,0 +1,1558 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub JavaScript Daily Trending</title>
+    <description>Daily Trending of JavaScript in GitHub</description>
+    <pubDate>Wed, 10 Dec 2025 01:35:15 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>thedotmack/claude-mem</title>
+      <link>https://github.com/thedotmack/claude-mem</link>
+      <description>&lt;p&gt;A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt; &lt;br /&gt; &lt;a href="https://github.com/thedotmack/claude-mem"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/claude-mem-logo-for-dark-mode.webp" /&gt; 
+   &lt;source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/claude-mem-logo-for-light-mode.webp" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/claude-mem-logo-for-light-mode.webp" alt="Claude-Mem" width="400" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;br /&gt; &lt;/h1&gt; 
+&lt;h4 align="center"&gt;Persistent memory compression system built for &lt;a href="https://claude.com/claude-code" target="_blank"&gt;Claude Code&lt;/a&gt;.&lt;/h4&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/LICENSE"&gt; &lt;img src="https://img.shields.io/badge/License-AGPL%203.0-blue.svg?sanitize=true" alt="License" /&gt; &lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/package.json"&gt; &lt;img src="https://img.shields.io/badge/version-6.5.0-green.svg?sanitize=true" alt="Version" /&gt; &lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/package.json"&gt; &lt;img src="https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg?sanitize=true" alt="Node" /&gt; &lt;/a&gt; &lt;a href="https://github.com/thedotmack/awesome-claude-code"&gt; &lt;img src="https://awesome.re/mentioned-badge.svg?sanitize=true" alt="Mentioned in Awesome Claude Code" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;br /&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/thedotmack/claude-mem"&gt; 
+  &lt;picture&gt; 
+   &lt;img src="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/cm-preview.gif" alt="Claude-Mem Preview" width="800" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#quick-start"&gt;Quick Start&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#how-it-works"&gt;How It Works&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#mcp-search-tools"&gt;Search Tools&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#documentation"&gt;Documentation&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#configuration"&gt;Configuration&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#troubleshooting"&gt;Troubleshooting&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#license"&gt;License&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; Claude-Mem seamlessly preserves context across sessions by automatically capturing tool usage observations, generating semantic summaries, and making them available to future sessions. This enables Claude to maintain continuity of knowledge about projects even after sessions end or reconnect. &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;p&gt;Start a new Claude Code session in the terminal and enter the following commands:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;&amp;gt; /plugin marketplace add thedotmack/claude-mem
+
+&amp;gt; /plugin install claude-mem
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Restart Claude Code. Context from previous sessions will automatically appear in new sessions.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Key Features:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🧠 &lt;strong&gt;Persistent Memory&lt;/strong&gt; - Context survives across sessions&lt;/li&gt; 
+ &lt;li&gt;📊 &lt;strong&gt;Progressive Disclosure&lt;/strong&gt; - Layered memory retrieval with token cost visibility&lt;/li&gt; 
+ &lt;li&gt;🔍 &lt;strong&gt;Skill-Based Search&lt;/strong&gt; - Query your project history with mem-search skill (~2,250 token savings)&lt;/li&gt; 
+ &lt;li&gt;🖥️ &lt;strong&gt;Web Viewer UI&lt;/strong&gt; - Real-time memory stream at &lt;a href="http://localhost:37777"&gt;http://localhost:37777&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🔒 &lt;strong&gt;Privacy Control&lt;/strong&gt; - Use &lt;code&gt;&amp;lt;private&amp;gt;&lt;/code&gt; tags to exclude sensitive content from storage&lt;/li&gt; 
+ &lt;li&gt;⚙️ &lt;strong&gt;Context Configuration&lt;/strong&gt; - Fine-grained control over what context gets injected&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;strong&gt;Automatic Operation&lt;/strong&gt; - No manual intervention required&lt;/li&gt; 
+ &lt;li&gt;🔗 &lt;strong&gt;Citations&lt;/strong&gt; - Reference past decisions with &lt;code&gt;claude-mem://&lt;/code&gt; URIs&lt;/li&gt; 
+ &lt;li&gt;🧪 &lt;strong&gt;Beta Channel&lt;/strong&gt; - Try experimental features like Endless Mode via version switching&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;📚 &lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/"&gt;View Full Documentation&lt;/a&gt;&lt;/strong&gt; - Browse markdown docs on GitHub&lt;/p&gt; 
+&lt;p&gt;💻 &lt;strong&gt;Local Preview&lt;/strong&gt;: Run Mintlify docs locally:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd docs
+npx mintlify dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Getting Started&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/installation"&gt;Installation Guide&lt;/a&gt;&lt;/strong&gt; - Quick start &amp;amp; advanced installation&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/usage/getting-started"&gt;Usage Guide&lt;/a&gt;&lt;/strong&gt; - How Claude-Mem works automatically&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/usage/search-tools"&gt;Search Tools&lt;/a&gt;&lt;/strong&gt; - Query your project history with natural language&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/beta-features"&gt;Beta Features&lt;/a&gt;&lt;/strong&gt; - Try experimental features like Endless Mode&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Best Practices&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/context-engineering"&gt;Context Engineering&lt;/a&gt;&lt;/strong&gt; - AI agent context optimization principles&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/progressive-disclosure"&gt;Progressive Disclosure&lt;/a&gt;&lt;/strong&gt; - Philosophy behind Claude-Mem's context priming strategy&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Architecture&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/overview"&gt;Overview&lt;/a&gt;&lt;/strong&gt; - System components &amp;amp; data flow&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture-evolution"&gt;Architecture Evolution&lt;/a&gt;&lt;/strong&gt; - The journey from v3 to v5&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/hooks-architecture"&gt;Hooks Architecture&lt;/a&gt;&lt;/strong&gt; - How Claude-Mem uses lifecycle hooks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/hooks"&gt;Hooks Reference&lt;/a&gt;&lt;/strong&gt; - 7 hook scripts explained&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/worker-service"&gt;Worker Service&lt;/a&gt;&lt;/strong&gt; - HTTP API &amp;amp; PM2 management&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/database"&gt;Database&lt;/a&gt;&lt;/strong&gt; - SQLite schema &amp;amp; FTS5 search&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/search-architecture"&gt;Search Architecture&lt;/a&gt;&lt;/strong&gt; - Hybrid search with Chroma vector database&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Configuration &amp;amp; Development&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/configuration"&gt;Configuration&lt;/a&gt;&lt;/strong&gt; - Environment variables &amp;amp; settings&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/development"&gt;Development&lt;/a&gt;&lt;/strong&gt; - Building, testing, contributing&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/troubleshooting"&gt;Troubleshooting&lt;/a&gt;&lt;/strong&gt; - Common issues &amp;amp; solutions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;How It Works&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────────────────────┐
+│ Session Start → Inject recent observations as context      │
+└─────────────────────────────────────────────────────────────┘
+                            ↓
+┌─────────────────────────────────────────────────────────────┐
+│ User Prompts → Create session, save user prompts           │
+└─────────────────────────────────────────────────────────────┘
+                            ↓
+┌─────────────────────────────────────────────────────────────┐
+│ Tool Executions → Capture observations (Read, Write, etc.)  │
+└─────────────────────────────────────────────────────────────┘
+                            ↓
+┌─────────────────────────────────────────────────────────────┐
+│ Worker Processes → Extract learnings via Claude Agent SDK   │
+└─────────────────────────────────────────────────────────────┘
+                            ↓
+┌─────────────────────────────────────────────────────────────┐
+│ Session Ends → Generate summary, ready for next session     │
+└─────────────────────────────────────────────────────────────┘
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Core Components:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;5 Lifecycle Hooks&lt;/strong&gt; - SessionStart, UserPromptSubmit, PostToolUse, Stop, SessionEnd (6 hook scripts)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Smart Install&lt;/strong&gt; - Cached dependency checker (pre-hook script, not a lifecycle hook)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Worker Service&lt;/strong&gt; - HTTP API on port 37777 with web viewer UI and 10 search endpoints, managed by PM2&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;SQLite Database&lt;/strong&gt; - Stores sessions, observations, summaries with FTS5 full-text search&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;mem-search Skill&lt;/strong&gt; - Natural language queries with progressive disclosure (~2,250 token savings vs MCP)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Chroma Vector Database&lt;/strong&gt; - Hybrid semantic + keyword search for intelligent context retrieval&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/architecture/overview"&gt;Architecture Overview&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;mem-search Skill&lt;/h2&gt; 
+&lt;p&gt;Claude-Mem provides intelligent search through the mem-search skill that auto-invokes when you ask about past work:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;How It Works:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Just ask naturally: &lt;em&gt;"What did we do last session?"&lt;/em&gt; or &lt;em&gt;"Did we fix this bug before?"&lt;/em&gt;&lt;/li&gt; 
+ &lt;li&gt;Claude automatically invokes the mem-search skill to find relevant context&lt;/li&gt; 
+ &lt;li&gt;~2,250 token savings per session start vs MCP approach&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Available Search Operations:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Search Observations&lt;/strong&gt; - Full-text search across observations&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Search Sessions&lt;/strong&gt; - Full-text search across session summaries&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Search Prompts&lt;/strong&gt; - Search raw user requests&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;By Concept&lt;/strong&gt; - Find by concept tags (discovery, problem-solution, pattern, etc.)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;By File&lt;/strong&gt; - Find observations referencing specific files&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;By Type&lt;/strong&gt; - Find by type (decision, bugfix, feature, refactor, discovery, change)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Recent Context&lt;/strong&gt; - Get recent session context for a project&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Timeline&lt;/strong&gt; - Get unified timeline of context around a specific point in time&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Timeline by Query&lt;/strong&gt; - Search for observations and get timeline context around best match&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;API Help&lt;/strong&gt; - Get search API documentation&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Example Natural Language Queries:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;"What bugs did we fix last session?"
+"How did we implement authentication?"
+"What changes were made to worker-service.ts?"
+"Show me recent work on this project"
+"What was happening when we added the viewer UI?"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/usage/search-tools"&gt;Search Tools Guide&lt;/a&gt; for detailed examples.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Beta Features &amp;amp; Endless Mode&lt;/h2&gt; 
+&lt;p&gt;Claude-Mem offers a &lt;strong&gt;beta channel&lt;/strong&gt; with experimental features. Switch between stable and beta versions directly from the web viewer UI.&lt;/p&gt; 
+&lt;h3&gt;How to Try Beta&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Open &lt;a href="http://localhost:37777"&gt;http://localhost:37777&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Click Settings (gear icon)&lt;/li&gt; 
+ &lt;li&gt;In &lt;strong&gt;Version Channel&lt;/strong&gt;, click "Try Beta (Endless Mode)"&lt;/li&gt; 
+ &lt;li&gt;Wait for the worker to restart&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;Your memory data is preserved when switching versions.&lt;/p&gt; 
+&lt;h3&gt;Endless Mode (Beta)&lt;/h3&gt; 
+&lt;p&gt;The flagship beta feature is &lt;strong&gt;Endless Mode&lt;/strong&gt; - a biomimetic memory architecture that dramatically extends session length:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;The Problem&lt;/strong&gt;: Standard Claude Code sessions hit context limits after ~50 tool uses. Each tool adds 1-10k+ tokens, and Claude re-synthesizes all previous outputs on every response (O(N²) complexity).&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;The Solution&lt;/strong&gt;: Endless Mode compresses tool outputs into ~500-token observations and transforms the transcript in real-time:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Working Memory (Context):     Compressed observations (~500 tokens each)
+Archive Memory (Disk):        Full tool outputs preserved for recall
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Expected Results&lt;/strong&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;~95% token reduction in context window&lt;/li&gt; 
+ &lt;li&gt;~20x more tool uses before context exhaustion&lt;/li&gt; 
+ &lt;li&gt;Linear O(N) scaling instead of quadratic O(N²)&lt;/li&gt; 
+ &lt;li&gt;Full transcripts preserved for perfect recall&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Caveats&lt;/strong&gt;: Adds latency (60-90s per tool for observation generation), still experimental.&lt;/p&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/beta-features"&gt;Beta Features Documentation&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;What's New&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;v6.4.9 - Context Configuration Settings:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;11 new settings for fine-grained control over context injection&lt;/li&gt; 
+ &lt;li&gt;Configure token economics display, observation filtering by type/concept&lt;/li&gt; 
+ &lt;li&gt;Control number of observations and which fields to display&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v6.4.0 - Dual-Tag Privacy System:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;&amp;lt;private&amp;gt;&lt;/code&gt; tags for user-controlled privacy - wrap sensitive content to exclude from storage&lt;/li&gt; 
+ &lt;li&gt;System-level &lt;code&gt;&amp;lt;claude-mem-context&amp;gt;&lt;/code&gt; tags prevent recursive observation storage&lt;/li&gt; 
+ &lt;li&gt;Edge processing ensures private content never reaches database&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v6.3.0 - Version Channel:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Switch between stable and beta versions from the web viewer UI&lt;/li&gt; 
+ &lt;li&gt;Try experimental features like Endless Mode without manual git operations&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Previous Highlights:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;v6.0.0&lt;/strong&gt;: Major session management &amp;amp; transcript processing improvements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;v5.5.0&lt;/strong&gt;: mem-search skill enhancement with 100% effectiveness rate&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;v5.4.0&lt;/strong&gt;: Skill-based search architecture (~2,250 tokens saved per session)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;v5.1.0&lt;/strong&gt;: Web-based viewer UI with real-time updates&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;v5.0.0&lt;/strong&gt;: Hybrid search with Chroma vector database&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/CHANGELOG.md"&gt;CHANGELOG.md&lt;/a&gt; for complete version history.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;System Requirements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Node.js&lt;/strong&gt;: 18.0.0 or higher&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Claude Code&lt;/strong&gt;: Latest version with plugin support&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;PM2&lt;/strong&gt;: Process manager (bundled - no global install required)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;SQLite 3&lt;/strong&gt;: For persistent storage (bundled)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Key Benefits&lt;/h2&gt; 
+&lt;h3&gt;Progressive Disclosure Context&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Layered memory retrieval&lt;/strong&gt; mirrors human memory patterns&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Layer 1 (Index)&lt;/strong&gt;: See what observations exist with token costs at session start&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Layer 2 (Details)&lt;/strong&gt;: Fetch full narratives on-demand via MCP search&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Layer 3 (Perfect Recall)&lt;/strong&gt;: Access source code and original transcripts&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Smart decision-making&lt;/strong&gt;: Token counts help Claude choose between fetching details or reading code&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Type indicators&lt;/strong&gt;: Visual cues (🔴 critical, 🟤 decision, 🔵 informational) highlight observation importance&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Automatic Memory&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Context automatically injected when Claude starts&lt;/li&gt; 
+ &lt;li&gt;No manual commands or configuration needed&lt;/li&gt; 
+ &lt;li&gt;Works transparently in the background&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Full History Search&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Search across all sessions and observations&lt;/li&gt; 
+ &lt;li&gt;FTS5 full-text search for fast queries&lt;/li&gt; 
+ &lt;li&gt;Citations link back to specific observations&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Structured Observations&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;AI-powered extraction of learnings&lt;/li&gt; 
+ &lt;li&gt;Categorized by type (decision, bugfix, feature, etc.)&lt;/li&gt; 
+ &lt;li&gt;Tagged with concepts and file references&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Multi-Prompt Sessions&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Sessions span multiple user prompts&lt;/li&gt; 
+ &lt;li&gt;Context preserved across &lt;code&gt;/clear&lt;/code&gt; commands&lt;/li&gt; 
+ &lt;li&gt;Track entire conversation threads&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Configuration&lt;/h2&gt; 
+&lt;p&gt;Settings are managed in &lt;code&gt;~/.claude-mem/settings.json&lt;/code&gt;. The file is auto-created with defaults on first run.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Available Settings:&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Setting&lt;/th&gt; 
+   &lt;th&gt;Default&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;CLAUDE_MEM_MODEL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;claude-haiku-4-5&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;AI model for observations&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;CLAUDE_MEM_WORKER_PORT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;37777&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Worker service port&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;CLAUDE_MEM_DATA_DIR&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;~/.claude-mem&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Data directory location&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;CLAUDE_MEM_LOG_LEVEL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;INFO&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Log verbosity (DEBUG, INFO, WARN, ERROR, SILENT)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;CLAUDE_MEM_PYTHON_VERSION&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;3.13&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Python version for chroma-mcp&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;CLAUDE_CODE_PATH&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;em&gt;(auto-detect)&lt;/em&gt;&lt;/td&gt; 
+   &lt;td&gt;Path to Claude executable&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;CLAUDE_MEM_CONTEXT_OBSERVATIONS&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;50&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Number of observations to inject at SessionStart&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;Settings Management:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Edit settings via CLI helper
+./claude-mem-settings.sh
+
+# Or edit directly
+nano ~/.claude-mem/settings.json
+
+# View current settings
+curl http://localhost:37777/api/settings
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Settings File Format:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "CLAUDE_MEM_MODEL": "claude-haiku-4-5",
+  "CLAUDE_MEM_WORKER_PORT": "37777",
+  "CLAUDE_MEM_CONTEXT_OBSERVATIONS": "50"
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/configuration"&gt;Configuration Guide&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Clone and build
+git clone https://github.com/thedotmack/claude-mem.git
+cd claude-mem
+npm install
+npm run build
+
+# Run tests
+npm test
+
+# Start worker
+npm run worker:start
+
+# View logs
+npm run worker:logs
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/development"&gt;Development Guide&lt;/a&gt; for detailed instructions.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Troubleshooting&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Quick Diagnostic:&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;If you're experiencing issues, describe the problem to Claude and the troubleshoot skill will automatically activate to diagnose and provide fixes.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Common Issues:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Worker not starting → &lt;code&gt;npm run worker:restart&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;No context appearing → &lt;code&gt;npm run test:context&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Database issues → &lt;code&gt;sqlite3 ~/.claude-mem/claude-mem.db "PRAGMA integrity_check;"&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Search not working → Check FTS5 tables exist&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/troubleshooting"&gt;Troubleshooting Guide&lt;/a&gt; for complete solutions.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Contributions are welcome! Please:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork the repository&lt;/li&gt; 
+ &lt;li&gt;Create a feature branch&lt;/li&gt; 
+ &lt;li&gt;Make your changes with tests&lt;/li&gt; 
+ &lt;li&gt;Update documentation&lt;/li&gt; 
+ &lt;li&gt;Submit a Pull Request&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/development"&gt;Development Guide&lt;/a&gt; for contribution workflow.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the &lt;strong&gt;GNU Affero General Public License v3.0&lt;/strong&gt; (AGPL-3.0).&lt;/p&gt; 
+&lt;p&gt;Copyright (C) 2025 Alex Newman (@thedotmack). All rights reserved.&lt;/p&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for full details.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;What This Means:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;You can use, modify, and distribute this software freely&lt;/li&gt; 
+ &lt;li&gt;If you modify and deploy on a network server, you must make your source code available&lt;/li&gt; 
+ &lt;li&gt;Derivative works must also be licensed under AGPL-3.0&lt;/li&gt; 
+ &lt;li&gt;There is NO WARRANTY for this software&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Documentation&lt;/strong&gt;: &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/"&gt;docs/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Issues&lt;/strong&gt;: &lt;a href="https://github.com/thedotmack/claude-mem/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Repository&lt;/strong&gt;: &lt;a href="https://github.com/thedotmack/claude-mem"&gt;github.com/thedotmack/claude-mem&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Author&lt;/strong&gt;: Alex Newman (&lt;a href="https://github.com/thedotmack"&gt;@thedotmack&lt;/a&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Built with Claude Agent SDK&lt;/strong&gt; | &lt;strong&gt;Powered by Claude Code&lt;/strong&gt; | &lt;strong&gt;Made with TypeScript&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UseInterstellar/Interstellar</title>
+      <link>https://github.com/UseInterstellar/Interstellar</link>
+      <description>&lt;p&gt;One of the most popular modern web proxies with blazing fast speeds and a variety of games.&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/UseInterstellar/Interstellar/main/.github/branding/in.png" /&gt; 
+ &lt;p&gt;Serving over 15 million users since 2022.&lt;/p&gt;
+ &lt;p&gt; &lt;/p&gt;
+ &lt;p&gt;Interstellar is a web proxy with a Clean and Sleek UI and easy to use menus. Our goal is to provide the best user experience to everyone.&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;p&gt;&lt;img src="https://github.com/UseInterstellar/Interstellar/assets/89202835/2669efed-5186-4932-83c4-725acae60bd2" alt="inpreview" /&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!IMPORTANT] If you fork this project, consider giving it a star in the original repository!&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;strong&gt;Join Our &lt;a href="https://discord.gg/interstellar"&gt;Discord Community&lt;/a&gt; for support, more links, and an active community!&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;About:Blank Cloaking&lt;/li&gt; 
+ &lt;li&gt;Tab Cloaking&lt;/li&gt; 
+ &lt;li&gt;Wide collection of apps &amp;amp; games&lt;/li&gt; 
+ &lt;li&gt;Clean, Easy to use UI&lt;/li&gt; 
+ &lt;li&gt;Inspect Element&lt;/li&gt; 
+ &lt;li&gt;Various Themes&lt;/li&gt; 
+ &lt;li&gt;Password Protection (Optional)&lt;/li&gt; 
+ &lt;li&gt;Built-in Tab System&lt;/li&gt; 
+ &lt;li&gt;Now.gg Support&lt;/li&gt; 
+ &lt;li&gt;Fast Speeds&lt;/li&gt; 
+ &lt;li&gt;Geforce NOW Support&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Deployment&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!IMPORTANT] You &lt;strong&gt;cannot&lt;/strong&gt; deploy to static web hosts, including Netlify, Cloudflare Pages, and GitHub Pages.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Password Protection&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Go to the &lt;code&gt;config.js&lt;/code&gt; file and set &lt;code&gt;challenge&lt;/code&gt; to &lt;strong&gt;true&lt;/strong&gt;. Then, set the environment variable as follows:&lt;/li&gt; 
+ &lt;li&gt;For PNPM: Run either &lt;code&gt;config=true pnpm start&lt;/code&gt; or &lt;code&gt;$env:config=true; pnpm start&lt;/code&gt;, depending on your server.&lt;/li&gt; 
+ &lt;li&gt;For Bun: Run either &lt;code&gt;config=true bun start&lt;/code&gt; or &lt;code&gt;$env:config=true; bun start&lt;/code&gt; if you prefer Bun.&lt;/li&gt; 
+ &lt;li&gt;For NPM: Run either &lt;code&gt;config=true npm start&lt;/code&gt; or &lt;code&gt;$env:config=true; npm start&lt;/code&gt; if you prefer NPM.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Server Deployment&lt;/h3&gt; 
+&lt;p&gt;You must run these commands on your server:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/UseInterstellar/Interstellar
+cd Interstellar
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Ad-Free Deployment&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone --branch Ad-Free https://github.com/UseInterstellar/Interstellar
+cd Interstellar
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Next depending on your package manager, run one of the following commands:&lt;/p&gt; 
+&lt;h4&gt;Bun&lt;/h4&gt; 
+&lt;p&gt;If you are using Bun, run the following commands:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun i
+bun start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;pnpm&lt;/h4&gt; 
+&lt;p&gt;If you are using pnpm, run the following commands:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm i
+pnpm start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;npm&lt;/h4&gt; 
+&lt;p&gt;If you are using npm, run the following commands:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm i
+npm run start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Updating&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd Interstellar
+git pull --force --allow-unrelated-histories # This may overwrite your local changes
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/UseInterstellar/Interstellar"&gt;&lt;img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a target="_blank" href="https://app.koyeb.com/deploy?type=git&amp;amp;repository=github.com/UseInterstellar/Interstellar"&gt;&lt;img alt="Deploy to Koyeb" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg?sanitize=true" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Deployment Alternatives&lt;/h3&gt; 
+&lt;p&gt;For more deployment options, join our &lt;a href="https://discord.gg/interstellar"&gt;Discord Server&lt;/a&gt; for various ways to deploy Interstellar. This includes methods of deploying to Render/OnRender.&lt;/p&gt; 
+&lt;h4&gt;What happened to Replit Deployment?&lt;/h4&gt; 
+&lt;p&gt;As of January 1st, 2024, Replit is &lt;a href="https://blog.replit.com/hosting-changes"&gt;no longer free&lt;/a&gt;. Try GitHub Codespaces instead.&lt;/p&gt; 
+&lt;h3&gt;GitHub Codespaces&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] If you're setting the port below 1023, then you must run &lt;code&gt;sudo PORT=1023&lt;/code&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Create a GitHub account if you haven't already.&lt;/li&gt; 
+ &lt;li&gt;Click "Code" (green button) and then "Create Codespace on main."&lt;/li&gt; 
+ &lt;li&gt;In the terminal at the bottom, paste &lt;code&gt;pnpm i &amp;amp;&amp;amp; pnpm start&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Respond to the application popup by clicking "Make public."&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!IMPORTANT] Make sure you click the "Make public." button, or the proxy won't function properly.&lt;br /&gt; If you get a Range Error, go back and make sure you clicked Make public!&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ol start="5"&gt; 
+ &lt;li&gt;Access the deployed website from the ports tab.&lt;/li&gt; 
+ &lt;li&gt;For subsequent uses in the same codespace, just run &lt;code&gt;pnpm start&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Solution for if there is no popup.&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Run &lt;code&gt;pnpm i&lt;/code&gt;, and before &lt;code&gt;pnpm start&lt;/code&gt;, prepend &lt;code&gt;PORT=8080&lt;/code&gt;, replacing 8080 with another port. For example, &lt;code&gt;PORT=6969 pnpm start&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;If this does not work then you can prepend &lt;code&gt;$env:PORT=8080;&lt;/code&gt;, replacing 8080 with another port. For example, &lt;code&gt;$env:PORT=6969; pnpm start&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Go to the ports tab, Click Forward A Port, And type the port number.&lt;/li&gt; 
+ &lt;li&gt;Right-click Visibility and set Port Visibility to Public.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] We are committed to making Interstellar easy and personalized however, as of now we need your support in making it ad-free. Consider keeping ads so Interstellar can run freely or contribute by being a supporter.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Report Issues&lt;/h2&gt; 
+&lt;p&gt;If you encounter problems, open an issue on GitHub, and we'll address it promptly.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] If you're having trouble, don't hesitate to reach out to us on &lt;a href="https://discord.gg/interstellar"&gt;Discord&lt;/a&gt; for personalized support.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h1&gt;Credits&lt;/h1&gt; 
+&lt;p&gt;A huge thanks goes out to all of the people who have contributed to Interstellar.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/UseInterstellar/Interstellar/graphs/contributors"&gt;&lt;img src="https://contrib.rocks/image?repo=UseInterstellar/Interstellar" alt="Contributors" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mindcraft-bots/mindcraft</title>
+      <link>https://github.com/mindcraft-bots/mindcraft</link>
+      <description>&lt;p&gt;Minecraft AI with LLMs+Mineflayer&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt;🧠mindcraft⛏️&lt;/h1&gt; 
+&lt;h1 align="center"&gt; &lt;a href="https://trendshift.io/repositories/9163" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/9163" alt="kolbytn%2Fmindcraft | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt; &lt;/h1&gt; 
+&lt;p align="center"&gt;Crafting minds for Minecraft with LLMs and &lt;a href="https://prismarinejs.github.io/mineflayer/#/"&gt;Mineflayer!&lt;/a&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/mindcraft-bots/mindcraft/raw/main/FAQ.md"&gt;FAQ&lt;/a&gt; | &lt;a href="https://discord.gg/mp73p35dzC"&gt;Discord Support&lt;/a&gt; | &lt;a href="https://www.youtube.com/watch?v=gRotoL8P8D8"&gt;Video Tutorial&lt;/a&gt; | &lt;a href="https://kolbynottingham.com/mindcraft/"&gt;Blog Post&lt;/a&gt; | &lt;a href="https://github.com/users/kolbytn/projects/1"&gt;Contributor TODO&lt;/a&gt; | &lt;a href="https://mindcraft-minecollab.github.io/index.html"&gt;Paper Website&lt;/a&gt; | &lt;a href="https://github.com/mindcraft-bots/mindcraft/raw/main/minecollab.md"&gt;MineCollab&lt;/a&gt; &lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!Caution] Do not connect this bot to public servers with coding enabled. This project allows an LLM to write/execute code on your computer. The code is sandboxed, but still vulnerable to injection attacks. Code writing is disabled by default, you can enable it by setting &lt;code&gt;allow_insecure_coding&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; in &lt;code&gt;settings.js&lt;/code&gt;. Ye be warned.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h1&gt;Getting Started&lt;/h1&gt; 
+&lt;h2&gt;Requirements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.minecraft.net/en-us/store/minecraft-java-bedrock-edition-pc"&gt;Minecraft Java Edition&lt;/a&gt; (up to v1.21.6, recommend v1.21.6)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://nodejs.org/"&gt;Node.js Installed&lt;/a&gt; (Node v18 or v20 LTS recommended. Node v24+ may cause issues with native dependencies)&lt;/li&gt; 
+ &lt;li&gt;At least one API key from a supported API provider. See &lt;a href="https://raw.githubusercontent.com/mindcraft-bots/mindcraft/develop/#model-customization"&gt;supported APIs&lt;/a&gt;. OpenAI is the default.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!Important] If installing node on windows, ensure you check &lt;code&gt;Automatically install the necessary tools&lt;/code&gt;&lt;/p&gt; 
+ &lt;p&gt;If you encounter &lt;code&gt;npm install&lt;/code&gt; errors on macOS, see the &lt;a href="https://raw.githubusercontent.com/mindcraft-bots/mindcraft/develop/FAQ.md#common-issues"&gt;FAQ&lt;/a&gt; for troubleshooting native module build issues&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Install and Run&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;Make sure you have the requirements above.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Download the &lt;a href="https://github.com/mindcraft-bots/mindcraft/releases/latest"&gt;latest release&lt;/a&gt; and unzip it, or clone the repository.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Rename &lt;code&gt;keys.example.json&lt;/code&gt; to &lt;code&gt;keys.json&lt;/code&gt; and fill in your API keys (you only need one). The desired model is set in &lt;code&gt;andy.json&lt;/code&gt; or other profiles. For other models refer to the table below.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;In terminal/command prompt, run &lt;code&gt;npm install&lt;/code&gt; from the installed directory&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Start a minecraft world and open it to LAN on localhost port &lt;code&gt;55916&lt;/code&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Run &lt;code&gt;node main.js&lt;/code&gt; from the installed directory&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;If you encounter issues, check the &lt;a href="https://github.com/mindcraft-bots/mindcraft/raw/main/FAQ.md"&gt;FAQ&lt;/a&gt; or find support on &lt;a href="https://discord.gg/mp73p35dzC"&gt;discord&lt;/a&gt;. We are currently not very responsive to github issues. To run tasks please refer to &lt;a href="https://raw.githubusercontent.com/mindcraft-bots/mindcraft/develop/minecollab.md#installation"&gt;Minecollab Instructions&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Configuration&lt;/h1&gt; 
+&lt;h2&gt;Model Customization&lt;/h2&gt; 
+&lt;p&gt;You can configure project details in &lt;code&gt;settings.js&lt;/code&gt;. &lt;a href="https://raw.githubusercontent.com/mindcraft-bots/mindcraft/develop/settings.js"&gt;See file.&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;You can configure the agent's name, model, and prompts in their profile like &lt;code&gt;andy.json&lt;/code&gt;. The model can be specified with the &lt;code&gt;model&lt;/code&gt; field, with values like &lt;code&gt;model: "gemini-2.5-pro"&lt;/code&gt;. You will need the correct API key for the API provider you choose. See all supported APIs below.&lt;/p&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;⭐ VIEW SUPPORTED APIs ⭐&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;table&gt; 
+  &lt;thead&gt; 
+   &lt;tr&gt; 
+    &lt;th&gt;API Name&lt;/th&gt; 
+    &lt;th&gt;Config Variable&lt;/th&gt; 
+    &lt;th&gt;Docs&lt;/th&gt; 
+   &lt;/tr&gt; 
+  &lt;/thead&gt; 
+  &lt;tbody&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;code&gt;openai&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;code&gt;OPENAI_API_KEY&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://platform.openai.com/docs/models"&gt;docs&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;code&gt;google&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;code&gt;GEMINI_API_KEY&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://ai.google.dev/gemini-api/docs/models/gemini"&gt;docs&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;code&gt;anthropic&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;code&gt;ANTHROPIC_API_KEY&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://docs.anthropic.com/claude/docs/models-overview"&gt;docs&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;code&gt;xai&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;code&gt;XAI_API_KEY&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://docs.x.ai/docs"&gt;docs&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;code&gt;deepseek&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;code&gt;DEEPSEEK_API_KEY&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://api-docs.deepseek.com/"&gt;docs&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;code&gt;ollama&lt;/code&gt; (local)&lt;/td&gt; 
+    &lt;td&gt;n/a&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://ollama.com/library"&gt;docs&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;code&gt;qwen&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;code&gt;QWEN_API_KEY&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://www.alibabacloud.com/help/en/model-studio/developer-reference/use-qwen-by-calling-api"&gt;Intl.&lt;/a&gt;/&lt;a href="https://help.aliyun.com/zh/model-studio/getting-started/models"&gt;cn&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;code&gt;mistral&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;code&gt;MISTRAL_API_KEY&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://docs.mistral.ai/getting-started/models/models_overview/"&gt;docs&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;code&gt;replicate&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;code&gt;REPLICATE_API_KEY&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://replicate.com/collections/language-models"&gt;docs&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;code&gt;groq&lt;/code&gt; (not grok)&lt;/td&gt; 
+    &lt;td&gt;&lt;code&gt;GROQCLOUD_API_KEY&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://console.groq.com/docs/models"&gt;docs&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;code&gt;huggingface&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;code&gt;HUGGINGFACE_API_KEY&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://huggingface.co/models"&gt;docs&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;code&gt;novita&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;code&gt;NOVITA_API_KEY&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://novita.ai/model-api/product/llm-api?utm_source=github_mindcraft&amp;amp;utm_medium=github_readme&amp;amp;utm_campaign=link"&gt;docs&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;code&gt;openrouter&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;code&gt;OPENROUTER_API_KEY&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://openrouter.ai/models"&gt;docs&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;code&gt;glhf&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;code&gt;GHLF_API_KEY&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://glhf.chat/user-settings/api"&gt;docs&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;code&gt;hyperbolic&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;code&gt;HYPERBOLIC_API_KEY&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://docs.hyperbolic.xyz/docs/getting-started"&gt;docs&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;code&gt;vllm&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;n/a&lt;/td&gt; 
+    &lt;td&gt;n/a&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;code&gt;cerebras&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;code&gt;CEREBRAS_API_KEY&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://inference-docs.cerebras.ai/introduction"&gt;docs&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;code&gt;mercury&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;code&gt;MERCURY_API_KEY&lt;/code&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://www.inceptionlabs.ai/"&gt;docs&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+  &lt;/tbody&gt; 
+ &lt;/table&gt; 
+&lt;/details&gt; 
+&lt;p&gt;For more comprehensive model configuration and syntax, see &lt;a href="https://raw.githubusercontent.com/mindcraft-bots/mindcraft/develop/#model-specifications"&gt;Model Specifications&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;For local models we support &lt;a href="https://ollama.com/"&gt;ollama&lt;/a&gt; and we provide our own finetuned models for you to use. To install our models, install ollama and run the following terminal command:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;ollama pull sweaterdog/andy-4:micro-q8_0 &amp;amp;&amp;amp; ollama pull embeddinggemma
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Online Servers&lt;/h2&gt; 
+&lt;p&gt;To connect to online servers your bot will need an official Microsoft/Minecraft account. You can use your own personal one, but will need another account if you want to connect too and play with it. To connect, change these lines in &lt;code&gt;settings.js&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-javascript"&gt;"host": "111.222.333.444",
+"port": 55920,
+"auth": "microsoft",
+
+// rest is same...
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!Important] The bot's name in the profile.json must exactly match the Minecraft profile name! Otherwise the bot will spam talk to itself.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;To use different accounts, Mindcraft will connect with the account that the Minecraft launcher is currently using. You can switch accounts in the launcher, then run &lt;code&gt;node main.js&lt;/code&gt;, then switch to your main account after the bot has connected.&lt;/p&gt; 
+&lt;h2&gt;Tasks&lt;/h2&gt; 
+&lt;p&gt;Tasks automatically start the bot with a prompt and a goal item to aquire or blueprint to construct. To run a simple task that involves collecting 4 oak_logs run&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;node main.js --task_path tasks/basic/single_agent.json --task_id gather_oak_logs&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;Here is an example task json format:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;{
+    "gather_oak_logs": {
+      "goal": "Collect at least four logs",
+      "initial_inventory": {
+        "0": {
+          "wooden_axe": 1
+        }
+      },
+      "agent_count": 1,
+      "target": "oak_log",
+      "number_of_target": 4,
+      "type": "techtree",
+      "max_depth": 1,
+      "depth": 0,
+      "timeout": 300,
+      "blocked_actions": {
+        "0": [],
+        "1": []
+      },
+      "missing_items": [],
+      "requires_ctable": false
+    }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The &lt;code&gt;initial_inventory&lt;/code&gt; is what the bot will have at the start of the episode, &lt;code&gt;target&lt;/code&gt; refers to the target item and &lt;code&gt;number_of_target&lt;/code&gt; refers to the number of target items the agent needs to collect to successfully complete the task.&lt;/p&gt; 
+&lt;p&gt;If you want more optimization and automatic launching of the minecraft world, you will need to follow the instructions in &lt;a href="https://raw.githubusercontent.com/mindcraft-bots/mindcraft/develop/minecollab.md#installation"&gt;Minecollab Instructions&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Docker Container&lt;/h2&gt; 
+&lt;p&gt;If you intend to &lt;code&gt;allow_insecure_coding&lt;/code&gt;, it is a good idea to run the app in a docker container to reduce risks of running unknown code. This is strongly recommended before connecting to remote servers, although still does not guarantee complete safety.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker build -t mindcraft . &amp;amp;&amp;amp; docker run --rm --add-host=host.docker.internal:host-gateway -p 8080:8080 -p 3000-3003:3000-3003 -e SETTINGS_JSON='{"auto_open_ui":false,"profiles":["./profiles/gemini.json"],"host":"host.docker.internal"}' --volume ./keys.json:/app/keys.json --name mindcraft mindcraft
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;or simply&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker-compose up --build
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;When running in docker, if you want the bot to join your local minecraft server, you have to use a special host address &lt;code&gt;host.docker.internal&lt;/code&gt; to call your localhost from inside your docker container. Put this into your &lt;a href="https://raw.githubusercontent.com/mindcraft-bots/mindcraft/develop/settings.js"&gt;settings.js&lt;/a&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-javascript"&gt;"host": "host.docker.internal", // instead of "localhost", to join your local minecraft from inside the docker container
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;To connect to an unsupported minecraft version, you can try to use &lt;a href="https://raw.githubusercontent.com/mindcraft-bots/mindcraft/develop/services/viaproxy/README.md"&gt;viaproxy&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Bot Profiles&lt;/h1&gt; 
+&lt;p&gt;Bot profiles are json files (such as &lt;code&gt;andy.json&lt;/code&gt;) that define:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Bot backend LLMs to use for talking, coding, and embedding.&lt;/li&gt; 
+ &lt;li&gt;Prompts used to influence the bot's behavior.&lt;/li&gt; 
+ &lt;li&gt;Examples help the bot perform tasks.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Model Specifications&lt;/h2&gt; 
+&lt;p&gt;LLM models can be specified simply as &lt;code&gt;"model": "gpt-4o"&lt;/code&gt;, or more specifically with &lt;code&gt;"{api}/{model}"&lt;/code&gt;, like &lt;code&gt;"openrouter/google/gemini-2.5-pro"&lt;/code&gt;. See all supported APIs &lt;a href="https://raw.githubusercontent.com/mindcraft-bots/mindcraft/develop/#model-customization"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;The &lt;code&gt;model&lt;/code&gt; field can be a string or an object. A model object must specify an &lt;code&gt;api&lt;/code&gt;, and optionally a &lt;code&gt;model&lt;/code&gt;, &lt;code&gt;url&lt;/code&gt;, and additional &lt;code&gt;params&lt;/code&gt;. You can also use different models/providers for chatting, coding, vision, embedding, and voice synthesis. See the example below.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;"model": {
+  "api": "openai",
+  "model": "gpt-4o",
+  "url": "https://api.openai.com/v1/",
+  "params": {
+    "max_tokens": 1000,
+    "temperature": 1
+  }
+},
+"code_model": {
+  "api": "openai",
+  "model": "gpt-4",
+  "url": "https://api.openai.com/v1/"
+},
+"vision_model": {
+  "api": "openai",
+  "model": "gpt-4o",
+  "url": "https://api.openai.com/v1/"
+},
+"embedding": {
+  "api": "openai",
+  "url": "https://api.openai.com/v1/",
+  "model": "text-embedding-ada-002"
+},
+"speak_model": "openai/tts-1/echo"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;code&gt;model&lt;/code&gt; is used for chat, &lt;code&gt;code_model&lt;/code&gt; is used for newAction coding, &lt;code&gt;vision_model&lt;/code&gt; is used for image interpretation, &lt;code&gt;embedding&lt;/code&gt; is used to embed text for example selection, and &lt;code&gt;speak_model&lt;/code&gt; is used for voice synthesis. &lt;code&gt;model&lt;/code&gt; will be used by default for all other models if not specified. Not all APIs support embeddings, vision, or voice synthesis.&lt;/p&gt; 
+&lt;p&gt;All apis have default models and urls, so those fields are optional. The &lt;code&gt;params&lt;/code&gt; field is optional and can be used to specify additional parameters for the model. It accepts any key-value pairs supported by the api. Is not supported for embedding models.&lt;/p&gt; 
+&lt;h2&gt;Embedding Models&lt;/h2&gt; 
+&lt;p&gt;Embedding models are used to embed and efficiently select relevant examples for conversation and coding.&lt;/p&gt; 
+&lt;p&gt;Supported Embedding APIs: &lt;code&gt;openai&lt;/code&gt;, &lt;code&gt;google&lt;/code&gt;, &lt;code&gt;replicate&lt;/code&gt;, &lt;code&gt;huggingface&lt;/code&gt;, &lt;code&gt;novita&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;If you try to use an unsupported model, then it will default to a simple word-overlap method. Expect reduced performance. We recommend using supported embedding APIs.&lt;/p&gt; 
+&lt;h2&gt;Voice Synthesis Models&lt;/h2&gt; 
+&lt;p&gt;Voice synthesis models are used to narrate bot responses and specified with &lt;code&gt;speak_model&lt;/code&gt;. This field is parsed differently than other models and only supports strings formatted as &lt;code&gt;"{api}/{model}/{voice}"&lt;/code&gt;, like &lt;code&gt;"openai/tts-1/echo"&lt;/code&gt;. We only support &lt;code&gt;openai&lt;/code&gt; and &lt;code&gt;google&lt;/code&gt; for voice synthesis.&lt;/p&gt; 
+&lt;h2&gt;Specifying Profiles via Command Line&lt;/h2&gt; 
+&lt;p&gt;By default, the program will use the profiles specified in &lt;code&gt;settings.js&lt;/code&gt;. You can specify one or more agent profiles using the &lt;code&gt;--profiles&lt;/code&gt; argument: &lt;code&gt;node main.js --profiles ./profiles/andy.json ./profiles/jill.json&lt;/code&gt;&lt;/p&gt; 
+&lt;h1&gt;Contributing&lt;/h1&gt; 
+&lt;p&gt;We welcome contributions to the project! We are generally less responsive to github issues, and more responsive to pull requests. Join the &lt;a href="https://discord.gg/mp73p35dzC"&gt;discord&lt;/a&gt; for more active support and direction.&lt;/p&gt; 
+&lt;p&gt;While AI generated code is allowed, please vet it carefully. Submitting tons of sloppy code and documentation actively harms development.&lt;/p&gt; 
+&lt;h2&gt;Patches&lt;/h2&gt; 
+&lt;p&gt;Some of the node modules that we depend on have bugs in them. To add a patch, change your local node module file and run &lt;code&gt;npx patch-package [package-name]&lt;/code&gt;&lt;/p&gt; 
+&lt;h2&gt;Development Team&lt;/h2&gt; 
+&lt;p&gt;Thanks to all who contributed to the project, especially the official development team: &lt;a href="https://github.com/MaxRobinsonTheGreat"&gt;@MaxRobinsonTheGreat&lt;/a&gt;, &lt;a href="https://github.com/kolbytn"&gt;@kolbytn&lt;/a&gt;, &lt;a href="https://github.com/icwhite"&gt;@icwhite&lt;/a&gt;, &lt;a href="https://github.com/Sweaterdog"&gt;@Sweaterdog&lt;/a&gt;, &lt;a href="https://github.com/Ninot1Quyi"&gt;@Ninot1Quyi&lt;/a&gt;, &lt;a href="https://github.com/riqvip"&gt;@riqvip&lt;/a&gt;, &lt;a href="https://github.com/uukelele-scratch"&gt;@uukelele-scratch&lt;/a&gt;, &lt;a href="https://github.com/mrelmida"&gt;@mrelmida&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Citation:&lt;/h2&gt; 
+&lt;p&gt;This work is published in the paper &lt;a href="https://arxiv.org/abs/2504.17950"&gt;Collaborating Action by Action: A Multi-agent LLM Framework for Embodied Reasoning&lt;/a&gt;. Please use this citation if you use this project in your research:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;@article{mindcraft2025,
+  title = {Collaborating Action by Action: A Multi-agent LLM Framework for Embodied Reasoning},
+  author = {White*, Isadora and Nottingham*, Kolby and Maniar, Ayush and Robinson, Max and Lillemark, Hansen and Maheshwari, Mehul and Qin, Lianhui and Ammanabrolu, Prithviraj},
+  journal = {arXiv preprint arXiv:2504.17950},
+  year = {2025},
+  url = {https://arxiv.org/abs/2504.17950},
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>gorhill/uBlock</title>
+      <link>https://github.com/gorhill/uBlock</link>
+      <description>&lt;p&gt;uBlock Origin - An efficient blocker for Chromium and Firefox. Fast and lean.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a href="https://github.com/gorhill/uBlock/commits/master"&gt;&lt;img src="https://img.shields.io/github/commit-activity/m/gorhill/ublock?label=Commits" alt="Badge Commits" /&gt;&lt;/a&gt; &lt;a href="https://github.com/uBlockOrigin/uBlock-issues/issues"&gt;&lt;img src="https://img.shields.io/github/issues/uBlockOrigin/uBlock-issues" alt="Badge Issues" /&gt;&lt;/a&gt; &lt;a href="https://crowdin.com/project/ublock"&gt;&lt;img src="https://d322cqt584bo4o.cloudfront.net/ublock/localized.svg?sanitize=true" alt="Badge Localization" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/gorhill/uBlock/master/LICENSE.txt"&gt;&lt;img src="https://img.shields.io/badge/License-GPLv3-blue.svg?sanitize=true" alt="Badge License" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/@gorhill/ubo-core"&gt;&lt;img src="https://img.shields.io/npm/v/@gorhill/ubo-core" alt="Badge NPM" /&gt;&lt;/a&gt; &lt;a href="https://addons.mozilla.org/addon/ublock-origin/"&gt;&lt;img src="https://img.shields.io/amo/rating/ublock-origin?label=Firefox" alt="Badge Mozilla" /&gt;&lt;/a&gt; &lt;a href="https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm"&gt;&lt;img src="https://img.shields.io/chrome-web-store/rating/cjpalhdlnbpafiamejdnhcphjbkeiagm?label=Chrome" alt="Badge Chrome" /&gt;&lt;/a&gt; &lt;a href="https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak"&gt;&lt;img src="https://img.shields.io/badge/dynamic/json?label=Edge&amp;amp;color=brightgreen&amp;amp;query=%24.averageRating&amp;amp;suffix=%2F%35&amp;amp;url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fodfafepnkmbhccpbejgmiehpchacaeak" alt="Badge Edge" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h1 align="center"&gt; &lt;sub&gt; &lt;img src="https://github.com/gorhill/uBlock/raw/master/src/img/ublock.svg?sanitize=true" height="38" width="38" /&gt; &lt;/sub&gt; uBlock Origin (uBO) &lt;/h1&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="center"&gt;Browser&lt;/th&gt; 
+   &lt;th&gt;Install from ...&lt;/th&gt; 
+   &lt;th&gt;Status&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;&lt;img src="https://github.com/user-attachments/assets/b0136512-56a5-4856-8c50-4971c957a24f" alt="Get uBlock Origin for Firefox" /&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://addons.mozilla.org/addon/ublock-origin/"&gt;Firefox Add-ons&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/gorhill/uBlock/wiki/uBlock-Origin-works-best-on-Firefox"&gt;uBO works best on Firefox&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;&lt;img src="https://github.com/user-attachments/assets/3a7569f8-688b-4eb1-a643-8d0fe173aefe" alt="Get uBlock Origin for Microsoft Edge" /&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak"&gt;Edge Add-ons&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;&lt;img src="https://github.com/user-attachments/assets/938f080c-fe64-4e48-8b89-4bfceabb56e6" alt="Get uBlock Origin for Opera" /&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://addons.opera.com/extensions/details/ublock/"&gt;Opera Add-ons&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;&lt;img src="https://github.com/user-attachments/assets/5463ef88-873b-4516-8514-5277664cfde7" alt="Get uBlock Origin for Chromium" /&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm"&gt;Chrome Web Store&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/uBlockOrigin/uBlock-issues/wiki/About-Google-Chrome's-%22This-extension-may-soon-no-longer-be-supported%22"&gt;About Google Chrome's "This extension may soon no longer be supported"&lt;/a&gt;&lt;br /&gt;End of support on Chrome 139&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;&lt;img src="https://github.com/user-attachments/assets/2e9037c4-836d-44c1-a716-ba96e89daaff" alt="Get uBlock Origin for Thunderbird" /&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://addons.thunderbird.net/thunderbird/addon/ublock-origin/"&gt;Thunderbird Add-ons&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/uBlockOrigin/uBlock-issues/issues/2928"&gt;No longer updated and stuck at 1.49.2.&lt;/a&gt; Later versions require "GitHub - Releases".&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;&lt;img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg?sanitize=true" height="50" alt="Get uBlock Origin through GitHub" /&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/gorhill/uBlock/releases"&gt;GitHub - Releases&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Stable and development versions on Firefox, Chromium MV2, and Thunderbird. Must be placed manually into web browsers; the Chromium and Thunderbird versions usually won't auto-update.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;uBlock Origin (uBO) is a CPU and memory-efficient &lt;a href="https://github.com/gorhill/uBlock/wiki/Blocking-mode"&gt;wide-spectrum content blocker&lt;/a&gt; for Chromium and Firefox. It blocks ads, trackers, coin miners, popups, annoying anti-blockers, malware sites, etc., by default using &lt;a href="https://easylist.to/#easylist"&gt;EasyList&lt;/a&gt;, &lt;a href="https://easylist.to/#easyprivacy"&gt;EasyPrivacy&lt;/a&gt;, &lt;a href="https://pgl.yoyo.org/adservers/"&gt;Peter Lowe's Blocklist&lt;/a&gt;, &lt;a href="https://gitlab.com/malware-filter/urlhaus-filter#malicious-url-blocklist"&gt;Online Malicious URL Blocklist&lt;/a&gt;, and uBO &lt;a href="https://github.com/uBlockOrigin/uAssets/tree/master/filters"&gt;filter lists&lt;/a&gt;. There are many other lists available to block even more. Hosts files are also supported. uBO uses the EasyList filter syntax and &lt;a href="https://github.com/gorhill/uBlock/wiki/Static-filter-syntax#extended-syntax"&gt;extends&lt;/a&gt; the syntax to work with custom rules and filters.&lt;/p&gt; 
+&lt;p&gt;You may easily unselect any preselected filter lists if you think uBO blocks too much. For reference, Adblock Plus installs with only EasyList, ABP filters, and Acceptable Ads enabled by default.&lt;/p&gt; 
+&lt;p&gt;It is important to note that using a blocker is &lt;strong&gt;NOT&lt;/strong&gt; &lt;a href="https://x.com/LeaVerou/status/518154828166725632"&gt;theft&lt;/a&gt;. Do not fall for this creepy idea. The &lt;em&gt;ultimate&lt;/em&gt; logical consequence of &lt;code&gt;blocking = theft&lt;/code&gt; is the criminalization of the inalienable right to privacy.&lt;/p&gt; 
+&lt;p&gt;Ads, "unintrusive" or not, are just the visible portion of the privacy-invading means entering your browser when you visit most sites. &lt;strong&gt;uBO's primary goal is to help users neutralize these privacy-invading methods&lt;/strong&gt; in a way that welcomes those users who do not wish to use more technical means.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gorhill/uBlock/master/#documentation"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gorhill/uBlock/master/#installation"&gt;Installation&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gorhill/uBlock/master/#firefox"&gt;Firefox&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gorhill/uBlock/master/#thunderbird"&gt;Thunderbird&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gorhill/uBlock/master/#chromium"&gt;Chromium&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gorhill/uBlock/master/#all-programs"&gt;All Programs&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gorhill/uBlock/master/#enterprise-deployment"&gt;Enterprise Deployment&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gorhill/uBlock/master/#release-history"&gt;Release History&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gorhill/uBlock/master/#translations"&gt;Translations&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gorhill/uBlock/master/#about"&gt;About&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Basic Mode&lt;/th&gt; 
+   &lt;th&gt;Advanced Mode&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;The &lt;a href="https://github.com/gorhill/uBlock/wiki/Quick-guide:-popup-user-interface"&gt;simple popup user interface&lt;/a&gt; for an install-it-and-forget-it type of installation that is configured optimally by default.&lt;/td&gt; 
+   &lt;td&gt;The &lt;a href="https://github.com/gorhill/uBlock/wiki/Dynamic-filtering:-quick-guide"&gt;advanced popup user interface&lt;/a&gt; includes a point-and-click firewall that is configurable on a per-site basis.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top"&gt;&lt;a href="https://github.com/gorhill/uBlock/wiki/Quick-guide:-popup-user-interface"&gt;&lt;img src="https://user-images.githubusercontent.com/585534/232531044-c4ac4dd5-0b60-4c1e-aabb-914be04b846c.png" /&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top"&gt;&lt;a href="https://github.com/gorhill/uBlock/wiki/Dynamic-filtering:-quick-guide"&gt;&lt;img src="https://user-images.githubusercontent.com/585534/232531439-a8f81cc3-6622-45c4-8b32-7348cecf6e98.png" /&gt;&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;Visit the &lt;a href="https://github.com/gorhill/uBlock/wiki"&gt;Wiki&lt;/a&gt; for documentation.&lt;/p&gt; 
+&lt;p&gt;For support, questions, or help, visit &lt;a href="https://www.reddit.com/r/uBlockOrigin/"&gt;/r/uBlockOrigin&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/gorhill/uBlock/wiki/Permissions"&gt;Required Permissions&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;Firefox&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://addons.mozilla.org/addon/ublock-origin/"&gt;Firefox Add-ons&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/gorhill/uBlock/raw/master/dist/README.md#for-beta-version"&gt;Development Builds&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;uBO &lt;a href="https://github.com/gorhill/uBlock/wiki/uBlock-Origin-works-best-on-Firefox"&gt;works best&lt;/a&gt; on Firefox and is available for desktop and Android versions.&lt;/p&gt; 
+&lt;h4&gt;Thunderbird&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://addons.thunderbird.net/thunderbird/addon/ublock-origin/"&gt;Thunderbird Add-ons&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;In Thunderbird, uBlock Origin does not affect emails, just feeds.&lt;/p&gt; 
+&lt;h4&gt;Chromium&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm"&gt;Chrome Web Store&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak"&gt;Microsoft Edge Add-ons&lt;/a&gt; (Published by &lt;a href="https://github.com/nicole-ashley"&gt;Nicole Rolls&lt;/a&gt; until version 1.62. Ownership transfer at version 1.64.)&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://addons.opera.com/extensions/details/ublock/"&gt;Opera Add-ons&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://chromewebstore.google.com/detail/ublock-origin-development/cgbcahbpdhpcegmbfconppldiemgcoii"&gt;Development Builds&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;uBO should be compatible with any Chromium-based browser.&lt;/p&gt; 
+&lt;h4&gt;All Programs&lt;/h4&gt; 
+&lt;p&gt;Do &lt;strong&gt;NOT&lt;/strong&gt; use uBO with any other content blocker. uBO &lt;a href="https://www.debugbear.com/blog/chrome-extensions-website-performance#the-impact-of-ad-blocking-on-website-performance"&gt;performs&lt;/a&gt; as well as or better than most popular blockers. Other blockers can prevent uBO's privacy or anti-blocker-defusing features from working correctly.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/gorhill/uBlock/tree/master/dist#install"&gt;Manual Installation&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;Enterprise Deployment&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://github.com/gorhill/uBlock/wiki/Deploying-uBlock-Origin"&gt;Deploying uBO&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Release History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/gorhill/uBlock/releases"&gt;Releases Page&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Translations&lt;/h2&gt; 
+&lt;p&gt;Help translate uBO via &lt;a href="https://crowdin.com/project/ublock"&gt;Crowdin&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;About&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/gorhill/uBlock/master/MANIFESTO.md"&gt;Manifesto&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/gorhill/uBlock/wiki/Privacy-policy"&gt;Privacy Policy&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/gorhill/uBlock/master/LICENSE.txt"&gt;GPLv3 License&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Free. Open-source. For users by users. No donations sought.&lt;/p&gt; 
+&lt;p&gt;If you ever want to contribute something, think about the people working hard to maintain the filter lists you are using, which are available to use by all for free.&lt;/p&gt; 
+&lt;!----&gt; 
+&lt;!--[ Internal ]--------------------------------&gt; 
+&lt;!--[ Badges ]---------------------------------&gt;</description>
+    </item>
+    
+    <item>
+      <title>wangrongding/wechat-bot</title>
+      <link>https://github.com/wangrongding/wechat-bot</link>
+      <description>&lt;p&gt;🤖一个基于 WeChaty 结合 DeepSeek / ChatGPT / Kimi / 讯飞等Ai服务实现的微信机器人 ，可以用来帮助你自动回复微信消息，或者管理微信群/好友，检测僵尸粉等...&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;WeChat Bot&lt;/h1&gt; 
+&lt;p&gt;一个 基于 &lt;code&gt;chatgpt&lt;/code&gt; + &lt;code&gt;wechaty&lt;/code&gt; 的微信机器人&lt;/p&gt; 
+&lt;p&gt;可以用来帮助你自动回复微信消息，或者管理微信群/好友.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;简单&lt;/code&gt;，&lt;code&gt;好用&lt;/code&gt;，&lt;code&gt;2分钟（4 个步骤）&lt;/code&gt; 就能玩起来了。🌸 如果对您有所帮助，请点个 Star ⭐️ 支持一下。&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://trendshift.io/repositories/11077" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/11077" alt="wangrongding%2Fwechat-bot | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;贡献者们&lt;/h2&gt; 
+&lt;a href="https://github.com/wangrongding/wechat-bot/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=wangrongding/wechat-bot&amp;amp;columns=20" /&gt; &lt;/a&gt; 
+&lt;p&gt;欢迎大家提交 PR 接入更多的 ai 服务(比如扣子等...)，积极贡献更好的功能实现，让 wechat-bot 变得更强！&lt;/p&gt; 
+&lt;h2&gt;注意：最近微信对此审查变得非常严格，使用默认的协议有微信警告或者封号的风险，请大家谨慎使用，关于 padlocal 这个协议，由于作者被腾讯告了，所以没有继续维护，我们最近正在重构底层实现，或切换更好的协议（目前我本地已跑通，大家可以稍加等候）。&lt;/h2&gt; 
+&lt;h2&gt;使用前需要配置的 AI 服务（目前支持 9 种，可任选其一）&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;deepseek&lt;/p&gt; &lt;p&gt;获取自己的 &lt;code&gt;api key&lt;/code&gt;，地址戳这里 👉🏻 ：&lt;a href="https://platform.deepseek.com/usage"&gt;deepseek 开放平台&lt;/a&gt;&lt;br /&gt; 将获取到的&lt;code&gt;api key&lt;/code&gt;填入 &lt;code&gt;.evn&lt;/code&gt; 文件中的 &lt;code&gt;DEEPSEEK_FREE_TOKEN&lt;/code&gt; 中。&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;ChatGPT&lt;/p&gt; &lt;p&gt;先获取自己的 &lt;code&gt;api key&lt;/code&gt;，地址戳这里 👉🏻 ：&lt;a href="https://platform.openai.com/settings/organization/api-keys"&gt;创建你的 api key&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;注意：这个是需要去付费购买的，很多人过来问为什么请求不通，请确保终端走了代理，并且付费购买了它的服务&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;# 执行下面命令，拷贝一份 .env.example 文件为 .env
+cp .env.example .env
+# 填写完善 .env 文件中的内容
+OPENAI_API_KEY='你的key'
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;豆包&lt;/p&gt; &lt;p&gt;豆包最新的Doubao-Seed-1.6模型，支持输入图片和深度思考，而且每个模型都有 50 万的免费tokens。在火山引擎注册登录账号，可以选择最新的Doubao-Seed-1.6-thinking模型，选择“API接入” -&amp;gt; “获取 API Key”。&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;# 拷贝 .env.example 文件为 .env
+cp .env.example .env
+# 修改 .env 文件中的内容
+DOUBAO_API_KEY='你的key'
+# 简单测试API是否可用
+node src/doubao/__test__.js
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;通义千问&lt;/p&gt; &lt;p&gt;通义千问是阿里云提供的 AI 服务，获取到你的 api key 之后, 填写到 .env 文件中即可&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;# 执行下面命令，拷贝一份 .env.example 文件为 .env
+cp .env.example .env
+# 填写完善 .env 文件中的内容
+# 通义千问, URL 包含 uri 路径
+TONGYI_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+# 通义千问的 API_KEY
+TONGYI_API_KEY = ''
+# 通义千问使用的模型
+TONGYI_MODEL='qwen-plus'
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;科大讯飞&lt;/p&gt; &lt;p&gt;新增科大讯飞，去这里申请一个 key：&lt;a href="https://console.xfyun.cn/services/bm35"&gt;科大讯飞&lt;/a&gt;，每个模型都有 200 万的免费 token ，感觉很难用完。&lt;br /&gt; 注意： 讯飞的配置文件几个 key，别填反了，很多人找到我说为什么不回复，都是填反了。&lt;br /&gt; 而且还有一个好处就是，接口不会像 Kimi 一样限制请求频次，相对来说稳定很多。&lt;br /&gt; 服务出错可参考： &lt;a href="https://github.com/wangrongding/wechat-bot/issues/170"&gt;issues/170&lt;/a&gt;, &lt;a href="https://github.com/wangrongding/wechat-bot/issues/180"&gt;issues/180&lt;/a&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Kimi （请求限制较严重）&lt;/p&gt; &lt;p&gt;可以去 ： &lt;a href="https://platform.moonshot.cn/console/api-keys"&gt;kimi apikey&lt;/a&gt; 获取你的 key&lt;br /&gt; 最近比较忙，大家感兴趣可以提交 PR，我会尽快合并。目前 Kimi 刚刚集成，还可以实现上传文件等功能，然后有其它较好的服务也可以提交 PR 。&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;dify&lt;/p&gt; &lt;p&gt;地址：&lt;a href="https://dify.ai/"&gt;dify&lt;/a&gt;, 创建你的应用之后, 获取到你的 api key 之后, 填写到 .env 文件中即可, 也支持私有化部署dify版本&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;# 执行下面命令，拷贝一份 .env.example 文件为 .env
+cp .env.example .env
+# 填写完善 .env 文件中的内容
+DIFY_API_KEY='你的key'
+# 如果需要私有化部署，请修改.env中下面的配置
+# DIFY_URL='https://[你的私有化部署地址]'
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;ollama&lt;/p&gt; &lt;p&gt;Ollama 是一个本地化的 AI 服务，它的 API 与 OpenAI 非常接近。配置 Ollama 的过程与各种在线服务略有不同&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;# 执行下面命令，拷贝一份 .env.example 文件为 .env
+cp .env.example .env
+# 填写完善 .env 文件中的内容
+OLLAMA_URL='http://127.0.0.1:11434/api/chat'
+OLLAMA_MODEL='qwen2.5:7b'
+OLLAMA_SYSTEM_MESSAGE='You are a personal assistant.'
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;302.AI&lt;/p&gt; &lt;p&gt;AI聚合平台，有套壳GPT的API，也有其他模型，点这里可以&lt;a href="https://dash.302.ai/apis/list"&gt;添加API&lt;/a&gt;，添加之后把API KEY配置到.env里，如下，MODEL可以自行选择配置&lt;/p&gt; &lt;pre&gt;&lt;code&gt;_302AI_API_KEY = 'xxxx'
+_302AI_MODEL= 'gpt-4o-mini'
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;由于openai充值需要国外信用卡，流程比较繁琐，大多需要搞国外虚拟卡，手续费也都不少，该平台可以直接支付宝，算是比较省事的，注册填问卷可领1刀额度，后续充值也有手续费，用户可自行酌情选择。&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;claude&lt;/p&gt; &lt;p&gt;前往 &lt;a href="https://console.anthropic.com"&gt;官网&lt;/a&gt; 注册并获取API KEY后进行配置即可&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;# 执行下面命令，拷贝一份 .env.example 文件为 .env，如果已存在则忽略此步
+cp .env.example .env
+
+# 编辑.env文件并添加claude相关配置
+
+CLAUDE_API_VERSION = '2023-06-01'
+CLAUDE_API_KEY = '你的API KEY'
+CLAUDE_MODEL = 'claude-3-5-sonnet-latest'
+# 系统人设
+CLAUDE_SYSTEM = ''
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;其他&lt;br /&gt; （待实践）理论上使用 openAI 格式的 api，都可以使用，在 env 文件中修改对应的 api_key、model、proxy_url 即可。&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;API资源/平台收录&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/xtekky/gpt4free"&gt;gpt4free&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/chatanywhere/GPT_API_free"&gt;chatanywhere&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;赞助商&lt;/h2&gt; 
+&lt;div align="center"&gt; 
+ &lt;table&gt; 
+  &lt;!-- Header --&gt; 
+  &lt;tbody&gt;
+   &lt;tr&gt; 
+    &lt;td align="center" width="50%"&gt; &lt;p align="center"&gt; &lt;a href="https://www.compshare.cn/model-api?ytag=GPU_YY-gh_wechatbot" target="_blank"&gt; &lt;img src="https://raw.githubusercontent.com/wangrongding/wechat-bot/main/sponsors/Ucloud.png" alt="UCloud" width="300px" /&gt; &lt;/a&gt; &lt;/p&gt; &lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;!-- Description --&gt; 
+   &lt;tr&gt; 
+    &lt;td align="left"&gt; 万卡RTX40系GPU+海内外主流模型API服务，秒级响应，按量计费，新客免费用。 &lt;a href="https://www.compshare.cn/model-api?ytag=GPU_YY-gh_wechatbot" target="_blank"&gt;产品链接&lt;/a&gt; &lt;/td&gt; 
+   &lt;/tr&gt; 
+  &lt;/tbody&gt;
+ &lt;/table&gt; 
+&lt;/div&gt; 
+&lt;p&gt;目前该项目流量较大，已经上过 27 次 &lt;a href="https://github.com/trending"&gt;Github Trending 榜&lt;/a&gt;，如果您的公司或者产品需要推广，可以在下方二维码处联系我，我会在项目中加入您的广告，帮助您的产品获得更多的曝光。&lt;/p&gt; 
+&lt;h2&gt;开发/使用&lt;/h2&gt; 
+&lt;p&gt;检查好自己的开发环境，确保已经安装了 &lt;code&gt;nodejs&lt;/code&gt; , 版本需要满足 Node.js &amp;gt;= v18.0 ，版本太低会导致运行报错,最好使用 LTS 版本。&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;安装依赖&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;安装依赖时，大陆的朋友推荐切到 taobao 镜像源后再安装，命令：&lt;br /&gt; &lt;code&gt;npm config set registry https://registry.npmmirror.com&lt;/code&gt;&lt;br /&gt; 想要灵活切换，推荐使用我的工具 👉🏻 &lt;a href="https://github.com/wangrongding/prm-cli"&gt;prm-cli&lt;/a&gt; 快速切换。&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;# 安装依赖
+npm i
+# 推荐用 yarn 吧，npm 安装有时会遇到 wechaty 内部依赖安装失败的问题
+yarn
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;运行服务&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;# 启动服务
+npm run dev # 或者 npm run start
+# 启动服务
+yarn dev # 或者 yarn start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;然后就可以扫码登录了，然后根据你的需求，自己修改相关逻辑文件。&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://assets.fedtop.com/picbed/202403261420468.png" alt="" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://assets.fedtop.com/picbed/202212071315670.png" alt="" /&gt;&lt;/p&gt; 
+&lt;p&gt;为了兼容 docker 部署，避免不必要的选择交互，新增指定服务运行&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;# 运行指定服务 （ 目前支持 ChatGPT | Kimi | Xunfei ）
+npm run start -- --serve Kimi
+# 交互选择服务，仍然保持原有的逻辑
+npm run start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;测试&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;安装完依赖后，运行 &lt;code&gt;npm run dev&lt;/code&gt; 前，可以先测试下 openai 的接口是否可用，运行 &lt;code&gt;npm run test&lt;/code&gt; 即可。&lt;/p&gt; 
+&lt;p&gt;遇到 timeout 问题需要自行用魔法解决。（一般就是代理未成功，或者你的魔法服务限制了 openai api 的服务）&lt;/p&gt; 
+&lt;h2&gt;你要修改的&lt;/h2&gt; 
+&lt;p&gt;很多人说运行后不会自动收发信息，不是的哈，为了防止给每一条收到的消息都自动回复（太恐怖了），所以加了限制条件。&lt;/p&gt; 
+&lt;p&gt;你要把下面提到的地方自定义修改下。&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;群聊，记得把机器人名称改成你自己微信号的名称，然后添加对应群聊的名称到白名单中，这样就可以自动回复群聊消息了。&lt;/li&gt; 
+ &lt;li&gt;私聊，记得把需要自动回复的好友名称添加到白名单中，这样就可以自动回复私聊消息了。&lt;/li&gt; 
+ &lt;li&gt;更深入的可以通过修改 &lt;code&gt;src/wechaty/sendMessage.js&lt;/code&gt; 文件来满足你自己的业务场景。（大多人反馈可能无法自动回复，也可以通过调试这个文件来排查具体原因）&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;在.env 文件中修改你的配置即可，示例如下&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;# 白名单配置
+#定义机器人的名称，这里是为了防止群聊消息太多，所以只有艾特机器人才会回复，
+#这里不要把@去掉，在@后面加上你启动机器人账号的微信名称
+BOT_NAME=@可乐
+#联系人白名单
+ALIAS_WHITELIST=微信名1,备注名2
+#群聊白名单
+ROOM_WHITELIST=XX群1,群2
+#自动回复前缀匹配，文本消息匹配到指定前缀时，才会触发自动回复，不配或配空串情况下该配置不生效（适用于用大号，不期望每次被@或者私聊时都触发自动回复的人群）
+#匹配规则：群聊消息去掉${BOT_NAME}并trim后进行前缀匹配，私聊消息trim后直接进行前缀匹配
+AUTO_REPLY_PREFIX=''
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;可以看到，自动回复都是基于 &lt;code&gt;chatgpt&lt;/code&gt; 的，记得要开代理，或者填写代理地址。&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/1c312cf4-73d8-44a1-8f36-5ea288ac0aa4" alt="" /&gt;&lt;/p&gt; 
+&lt;h2&gt;注意项&lt;/h2&gt; 
+&lt;p&gt;近期微信审查很严格，大量用户反映弹出外挂警告，由于项目内默认使用的是免费版的 web 协议，所以目前来说很容易会被微信检测到，建议使用 pad 协议，或者自行购买企业版协议，避免被封号。&lt;/p&gt; 
+&lt;p&gt;修改可参考： &lt;a href="https://github.com/wangrongding/wechat-bot/pull/263/files"&gt;https://github.com/wangrongding/wechat-bot/pull/263/files&lt;/a&gt;&lt;br /&gt; 自行购买 pad 协议渠道（wechaty 出的，购买仍需谨慎）：&lt;a href="http://pad-local.com"&gt;http://pad-local.com&lt;/a&gt;&lt;br /&gt; 由于底层依赖的 wechaty 本身不怎么维护了，听说是被腾讯告了，所以大家购买也要谨慎，群友分享目前 pad 协议可正常使用(但频繁登录登出也会收到警告)，最好别一次性买太久的。&lt;/p&gt; 
+&lt;h2&gt;常见问题&lt;/h2&gt; 
+&lt;p&gt;可以进交流群,一起交流探讨相关问题和解决方案，添加的时候记得备注来意。（如果项目对你有所帮助，也可以请我喝杯咖啡 ☕️ ~）&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;&lt;img src="https://github.com/user-attachments/assets/902b1a20-0ea0-4348-9ac1-b9eb6645223c" width="180px" /&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;img src="https://raw.githubusercontent.com/wangrongding/image-house/master/WechatIMG173.jpg" width="180px" /&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;运行报错等问题&lt;/h3&gt; 
+&lt;p&gt;首先你需要做到以下几点：&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;拉取最新代码，重新安装依赖（删除 lock 文件，删除 node_modules）&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;安装依赖时最好不要设置 npm 镜像&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;遇到 puppeteer 安装失败设置环境变量：&lt;/p&gt; &lt;pre&gt;&lt;code&gt;# Mac
+export PUPPETEER_SKIP_DOWNLOAD='true'
+
+# Windows
+SET PUPPETEER_SKIP_DOWNLOAD='true'
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;确保你们的终端走了代理 (开全局代理，或者手动设置终端走代理)&lt;/p&gt; &lt;pre&gt;&lt;code class="language-sh"&gt;# 设置代理
+export https_proxy=http://127.0.0.1:你的代理服务端口号;export http_proxy=http://127.0.0.1:你的代理服务端口号;export all_proxy=socks5://127.0.0.1:你的代理服务端口号
+# 然后再执行 npm run test
+npm run test
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;img src="https://raw.githubusercontent.com/wangrongding/image-house/master/202403231002859.png" alt="" /&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;确保你的 openai key 有余额&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;配置好 .env 文件&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;执行 npm run test 能成功拿到 openai 的回复(设置完代理后，仍然请求不通？ 可以参考： &lt;a href="https://medium.com/@chanter2d/%E5%85%B3%E4%BA%8E%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8clash%E5%AE%9E%E7%8E%B0%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86-385b2d745871"&gt;https://medium.com/@chanter2d/%E5%85%B3%E4%BA%8E%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8clash%E5%AE%9E%E7%8E%B0%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86-385b2d745871&lt;/a&gt;)&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;执行 npm run dev 愉快的玩耍吧~ 🎉&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;也可以参考这条 &lt;a href="https://github.com/wangrongding/wechat-bot/issues/54#issuecomment-1347880291"&gt;issue&lt;/a&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;怎么玩？ 完成自定义修改后，群聊时，在白名单中的群，有人 @你 时会触发自动回复，私聊中，联系人白名单中的人发消息给你时会触发自动回复。&lt;/li&gt; 
+ &lt;li&gt;运行报错？检查 node 版本是否符合，如果不符合，升级 node 版本即可，检查依赖是否安装完整，如果不完整，大陆推荐切换下 npm 镜像源，然后重新安装依赖即可。（可以用我的 &lt;a href="https://github.com/wangrongding/prm-cli"&gt;prm-cli&lt;/a&gt; 工具快速切换）&lt;/li&gt; 
+ &lt;li&gt;调整对话模式？可以修改&lt;a href="https://raw.githubusercontent.com/wangrongding/wechat-bot/main/src/openai/index.js"&gt;openai/index.js&lt;/a&gt; ,具体可以根据官方文档给出的示例（非常多，自己对应调整参数即可） ：&lt;a href="https://beta.openai.com/examples"&gt;https://beta.openai.com/examples&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;使用 Docker 部署&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;$ docker build . -t wechat-bot
+
+$ docker run -d --rm --name wechat-bot -v $(pwd)/.env:/app/.env wechat-bot
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;如果docker build过程中node反复下载超时，可先下载nodejs镜像到本地镜像库，并将DockerFile中的'node:19'修改为本地nodejs镜像版本&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Star History Chart&lt;/h2&gt; 
+&lt;p&gt;该项目于 2023/2/13 日成为 Github Trending 榜首。&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://star-history.com/#wangrongding/wechat-bot&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=wangrongding/wechat-bot&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/wangrongding/wechat-bot/main/LICENSE"&gt;MIT&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>FortAwesome/Font-Awesome</title>
+      <link>https://github.com/FortAwesome/Font-Awesome</link>
+      <description>&lt;p&gt;The iconic SVG, font, and CSS toolkit&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;&lt;img src="https://img.fortawesome.com/349cfdf6/fa-free-logo.svg?sanitize=true" alt="Font Awesome Free" width="50%" /&gt;&lt;/h1&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Version 7&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Learn how to get started with Font Awesome and then dive deeper into other and advanced topics:&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://fontawesome.com/docs"&gt;Docs for version 7&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Where did Font Awesome 6, 5, 4 (or 3) go?&lt;/h3&gt; 
+&lt;p&gt;Now that Font Awesome 7 has been released we are marking version 6 as Long Term Support (LTS). Version 6 will get critical bug fixes only. Version 3, 4, and 5 are now end-of-life and we don't plan on releasing any further versions of these.&lt;/p&gt; 
+&lt;p&gt;You can see a complete list of versions on &lt;a href="https://fontawesome.com/versions"&gt;our Versions page&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Change log&lt;/h2&gt; 
+&lt;p&gt;The change log for releases is now &lt;a href="https://fontawesome.com/docs/changelog/"&gt;available directly on our site&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Looking for older versions of Font Awesome? Check the &lt;a href="https://github.com/FortAwesome/Font-Awesome/releases"&gt;releases&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Upgrading&lt;/h2&gt; 
+&lt;p&gt;From time-to-time we'll have special upgrading instructions from one version to the next.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.fontawesome.com/upgrade/upgrade-on-web"&gt;Web upgrading guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.fontawesome.com/upgrade/upgrade-on-desktop"&gt;Desktop upgrading guide&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Code of conduct&lt;/h2&gt; 
+&lt;p&gt;We will behave ourselves if you behave yourselves. For more details see our &lt;a href="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/7.x/CODE_OF_CONDUCT.md"&gt;CODE_OF_CONDUCT.md&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Please read through our &lt;a href="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/7.x/CONTRIBUTING.md"&gt;contributing guidelines&lt;/a&gt;. Included are directions for opening issues.&lt;/p&gt; 
+&lt;h2&gt;Versioning&lt;/h2&gt; 
+&lt;p&gt;Font Awesome will be maintained under the Semantic Versioning guidelines as much as possible. Releases will be numbered with the following format:&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;&amp;lt;major&amp;gt;.&amp;lt;minor&amp;gt;.&amp;lt;patch&amp;gt;&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;For more information on SemVer, please visit &lt;a href="https://semver.org"&gt;https://semver.org&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;The major version "7" is part of an umbrella release. It includes many different types of files and technologies. Therefore we deviate from normal SemVer in the following ways:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Any release may update the design, look-and-feel, or branding of an existing icon&lt;/li&gt; 
+ &lt;li&gt;We will never intentionally release a &lt;code&gt;patch&lt;/code&gt; version update that breaks backward compatibility&lt;/li&gt; 
+ &lt;li&gt;A &lt;code&gt;minor&lt;/code&gt; release &lt;strong&gt;may include backward-incompatible changes&lt;/strong&gt; but we will write clear upgrading instructions in UPGRADING.md&lt;/li&gt; 
+ &lt;li&gt;A &lt;code&gt;minor&lt;/code&gt; or &lt;code&gt;patch&lt;/code&gt; release will never remove icons&lt;/li&gt; 
+ &lt;li&gt;Bug fixes will be addressed as &lt;code&gt;patch&lt;/code&gt; releases unless they include backward incompatibility then they will be &lt;code&gt;minor&lt;/code&gt; releases&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Font Awesome Free is free, open source, and GPL friendly. You can use it for commercial projects, open source projects, or really almost whatever you want.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Icons — CC BY 4.0 License 
+  &lt;ul&gt; 
+   &lt;li&gt;In the Font Awesome Free download, the CC BY 4.0 license applies to all icons packaged as .svg and .js files types.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Fonts — SIL OFL 1.1 License 
+  &lt;ul&gt; 
+   &lt;li&gt;In the Font Awesome Free download, the SIL OFL license applies to all icons packaged as web and desktop font files.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Code — MIT License 
+  &lt;ul&gt; 
+   &lt;li&gt;In the Font Awesome Free download, the MIT license applies to all non-font and non-icon files.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Attribution is required by MIT, SIL OFL, and CC BY licenses. Downloaded Font Awesome Free files already contain embedded comments with sufficient attribution, so you shouldn't need to do anything additional when using these files normally.&lt;/p&gt; 
+&lt;p&gt;We've kept attribution comments terse, so we ask that you do not actively work to remove them from files, especially code. They're a great way for folks to learn about Font Awesome.&lt;/p&gt; 
+&lt;h2&gt;Team&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/orgs/FortAwesome/people"&gt;https://github.com/orgs/FortAwesome/people&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>vaxilu/x-ui</title>
+      <link>https://github.com/vaxilu/x-ui</link>
+      <description>&lt;p&gt;支持多协议多用户的 xray 面板&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;x-ui&lt;/h1&gt; 
+&lt;p&gt;支持多协议多用户的 xray 面板&lt;/p&gt; 
+&lt;h1&gt;功能介绍&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;系统状态监控&lt;/li&gt; 
+ &lt;li&gt;支持多用户多协议，网页可视化操作&lt;/li&gt; 
+ &lt;li&gt;支持的协议：vmess、vless、trojan、shadowsocks、dokodemo-door、socks、http&lt;/li&gt; 
+ &lt;li&gt;支持配置更多传输配置&lt;/li&gt; 
+ &lt;li&gt;流量统计，限制流量，限制到期时间&lt;/li&gt; 
+ &lt;li&gt;可自定义 xray 配置模板&lt;/li&gt; 
+ &lt;li&gt;支持 https 访问面板（自备域名 + ssl 证书）&lt;/li&gt; 
+ &lt;li&gt;支持一键SSL证书申请且自动续签&lt;/li&gt; 
+ &lt;li&gt;更多高级配置项，详见面板&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;安装&amp;amp;升级&lt;/h1&gt; 
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;手动安装&amp;amp;升级&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;首先从 &lt;a href="https://github.com/vaxilu/x-ui/releases"&gt;https://github.com/vaxilu/x-ui/releases&lt;/a&gt; 下载最新的压缩包，一般选择 &lt;code&gt;amd64&lt;/code&gt;架构&lt;/li&gt; 
+ &lt;li&gt;然后将这个压缩包上传到服务器的 &lt;code&gt;/root/&lt;/code&gt;目录下，并使用 &lt;code&gt;root&lt;/code&gt;用户登录服务器&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;如果你的服务器 cpu 架构不是 &lt;code&gt;amd64&lt;/code&gt;，自行将命令中的 &lt;code&gt;amd64&lt;/code&gt;替换为其他架构&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code&gt;cd /root/
+rm x-ui/ /usr/local/x-ui/ /usr/bin/x-ui -rf
+tar zxvf x-ui-linux-amd64.tar.gz
+chmod +x x-ui/x-ui x-ui/bin/xray-linux-* x-ui/x-ui.sh
+cp x-ui/x-ui.sh /usr/bin/x-ui
+cp -f x-ui/x-ui.service /etc/systemd/system/
+mv x-ui/ /usr/local/
+systemctl daemon-reload
+systemctl enable x-ui
+systemctl restart x-ui
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;使用docker安装&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;此 docker 教程与 docker 镜像由&lt;a href="https://github.com/Chasing66"&gt;Chasing66&lt;/a&gt;提供&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;安装docker&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;curl -fsSL https://get.docker.com | sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;安装x-ui&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;mkdir x-ui &amp;amp;&amp;amp; cd x-ui
+docker run -itd --network=host \
+    -v $PWD/db/:/etc/x-ui/ \
+    -v $PWD/cert/:/root/cert/ \
+    --name x-ui --restart=unless-stopped \
+    enwaiax/x-ui:latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Build 自己的镜像&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;docker build -t x-ui .
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;SSL证书申请&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;此功能与教程由&lt;a href="https://github.com/FranzKafkaYu"&gt;FranzKafkaYu&lt;/a&gt;提供&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;脚本内置SSL证书申请功能，使用该脚本申请证书，需满足以下条件:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;知晓Cloudflare 注册邮箱&lt;/li&gt; 
+ &lt;li&gt;知晓Cloudflare Global API Key&lt;/li&gt; 
+ &lt;li&gt;域名已通过cloudflare进行解析到当前服务器&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;获取Cloudflare Global API Key的方法: &lt;img src="https://raw.githubusercontent.com/vaxilu/x-ui/main/media/bda84fbc2ede834deaba1c173a932223.png" alt="" /&gt; &lt;img src="https://raw.githubusercontent.com/vaxilu/x-ui/main/media/d13ffd6a73f938d1037d0708e31433bf.png" alt="" /&gt;&lt;/p&gt; 
+&lt;p&gt;使用时只需输入 &lt;code&gt;域名&lt;/code&gt;, &lt;code&gt;邮箱&lt;/code&gt;, &lt;code&gt;API KEY&lt;/code&gt;即可，示意图如下： &lt;img src="https://raw.githubusercontent.com/vaxilu/x-ui/main/media/2022-04-04_141259.png" alt="" /&gt;&lt;/p&gt; 
+&lt;p&gt;注意事项:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;该脚本使用DNS API进行证书申请&lt;/li&gt; 
+ &lt;li&gt;默认使用Let'sEncrypt作为CA方&lt;/li&gt; 
+ &lt;li&gt;证书安装目录为/root/cert目录&lt;/li&gt; 
+ &lt;li&gt;本脚本申请证书均为泛域名证书&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Tg机器人使用（开发中，暂不可使用）&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;此功能与教程由&lt;a href="https://github.com/FranzKafkaYu"&gt;FranzKafkaYu&lt;/a&gt;提供&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;X-UI支持通过Tg机器人实现每日流量通知，面板登录提醒等功能，使用Tg机器人，需要自行申请 具体申请教程可以参考&lt;a href="https://coderfan.net/how-to-use-telegram-bot-to-alarm-you-when-someone-login-into-your-vps.html"&gt;博客链接&lt;/a&gt; 使用说明:在面板后台设置机器人相关参数，具体包括&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Tg机器人Token&lt;/li&gt; 
+ &lt;li&gt;Tg机器人ChatId&lt;/li&gt; 
+ &lt;li&gt;Tg机器人周期运行时间，采用crontab语法&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;参考语法：&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;30 * * * * * //每一分的第30s进行通知&lt;/li&gt; 
+ &lt;li&gt;@hourly //每小时通知&lt;/li&gt; 
+ &lt;li&gt;@daily //每天通知（凌晨零点整）&lt;/li&gt; 
+ &lt;li&gt;@every 8h //每8小时通知&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;TG通知内容：&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;节点流量使用&lt;/li&gt; 
+ &lt;li&gt;面板登录提醒&lt;/li&gt; 
+ &lt;li&gt;节点到期提醒&lt;/li&gt; 
+ &lt;li&gt;流量预警提醒&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;更多功能规划中...&lt;/p&gt; 
+&lt;h2&gt;建议系统&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;CentOS 7+&lt;/li&gt; 
+ &lt;li&gt;Ubuntu 16+&lt;/li&gt; 
+ &lt;li&gt;Debian 8+&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;常见问题&lt;/h1&gt; 
+&lt;h2&gt;从 v2-ui 迁移&lt;/h2&gt; 
+&lt;p&gt;首先在安装了 v2-ui 的服务器上安装最新版 x-ui，然后使用以下命令进行迁移，将迁移本机 v2-ui 的 &lt;code&gt;所有 inbound 账号数据&lt;/code&gt;至 x-ui，&lt;code&gt;面板设置和用户名密码不会迁移&lt;/code&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;迁移成功后请 &lt;code&gt;关闭 v2-ui&lt;/code&gt;并且 &lt;code&gt;重启 x-ui&lt;/code&gt;，否则 v2-ui 的 inbound 会与 x-ui 的 inbound 会产生 &lt;code&gt;端口冲突&lt;/code&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code&gt;x-ui v2-ui
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;issue 关闭&lt;/h2&gt; 
+&lt;p&gt;各种小白问题看得血压很高&lt;/p&gt; 
+&lt;h2&gt;Stargazers over time&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://starchart.cc/vaxilu/x-ui"&gt;&lt;img src="https://starchart.cc/vaxilu/x-ui.svg?sanitize=true" alt="Stargazers over time" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mailcow/mailcow-dockerized</title>
+      <link>https://github.com/mailcow/mailcow-dockerized</link>
+      <description>&lt;p&gt;mailcow: dockerized - 🐮 + 🐋 = 💕&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;mailcow: dockerized - 🐮 + 🐋 = 💕&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://translate.mailcow.email/engage/mailcow-dockerized/"&gt;&lt;img src="https://translate.mailcow.email/widgets/mailcow-dockerized/-/translation/svg-badge.svg?sanitize=true" alt="Translation status" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/mailcow_email"&gt;&lt;img src="https://img.shields.io/twitter/url/https/twitter.com/mailcow_email.svg?style=social&amp;amp;label=Follow%20%40mailcow_email" alt="Twitter URL" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/mastodon/follow/109388212176073348?domain=https%3A%2F%2Fmailcow.social&amp;amp;label=Follow%20%40doncow%40mailcow.social&amp;amp;link=https%3A%2F%2Fmailcow.social%2F%40doncow" alt="Mastodon Follow" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Want to support mailcow?&lt;/h2&gt; 
+&lt;p&gt;Please &lt;a href="https://www.servercow.de/mailcow?lang=en#support"&gt;consider a support contract with Servercow&lt;/a&gt; to support further development. &lt;em&gt;We&lt;/em&gt; support &lt;em&gt;you&lt;/em&gt; while &lt;em&gt;you&lt;/em&gt; support &lt;em&gt;us&lt;/em&gt;. :)&lt;/p&gt; 
+&lt;p&gt;You can also &lt;a href="https://www.servercow.de/mailcow?lang=en#sal"&gt;get a SAL&lt;/a&gt; which is a one-time payment with no liabilities or returning fees.&lt;/p&gt; 
+&lt;p&gt;Or just spread the word: moo.&lt;/p&gt; 
+&lt;h2&gt;Many thanks to our GitHub Sponsors ❤️&lt;/h2&gt; 
+&lt;p&gt;A big thank you to everyone supporting us on GitHub Sponsors—your contributions mean the world to us! Special thanks to the following amazing supporters:&lt;/p&gt; 
+&lt;h3&gt;100$/Month Sponsors&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://www.colba.net/" target="_blank"&gt;&lt;img src="https://avatars.githubusercontent.com/u/204464723" height="58" /&gt;&lt;/a&gt; &lt;a href="https://www.maehdros.com/" target="_blank"&gt;&lt;img src="https://avatars.githubusercontent.com/u/173894712" height="58" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;50$/Month Sponsors&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://github.com/vnukhr" target="_blank"&gt;&lt;img src="https://avatars.githubusercontent.com/u/7805987?s=52&amp;amp;v=4" height="58" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Info, documentation and support&lt;/h2&gt; 
+&lt;p&gt;Please see &lt;a href="https://docs.mailcow.email/"&gt;the official documentation&lt;/a&gt; for installation and support instructions. 🐄&lt;/p&gt; 
+&lt;p&gt;🐛 &lt;strong&gt;If you found a critical security issue, please mail us to &lt;a href="mailto:info@servercow.de"&gt;info at servercow.de&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Cowmunity&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://community.mailcow.email"&gt;mailcow community&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://telegram.me/mailcow"&gt;Telegram mailcow channel&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://t.me/mailcowOfftopic"&gt;Telegram mailcow Off-Topic channel&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://twitter.com/mailcow_email"&gt;Official 𝕏 (Twitter) Account&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://mailcow.social/@doncow"&gt;Official Mastodon Account&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Telegram desktop clients are available for &lt;a href="https://desktop.telegram.org"&gt;multiple platforms&lt;/a&gt;. You can search the groups history for keywords.&lt;/p&gt; 
+&lt;h2&gt;Misc&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Important&lt;/strong&gt;: mailcow makes use of various open-source software. Please assure you agree with their license before using mailcow. Any part of mailcow itself is released under &lt;strong&gt;GNU General Public License, Version 3&lt;/strong&gt;.&lt;/p&gt; 
+&lt;p&gt;mailcow is a registered word mark of The Infrastructure Company GmbH, Parkstr. 42, 47877 Willich, Germany.&lt;/p&gt; 
+&lt;p&gt;The project is managed and maintained by The Infrastructure Company GmbH.&lt;/p&gt; 
+&lt;p&gt;Originated from @andryyy (André)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ConardLi/easy-dataset</title>
+      <link>https://github.com/ConardLi/easy-dataset</link>
+      <description>&lt;p&gt;A powerful tool for creating fine-tuning datasets for LLM&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;img src="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/public//imgs/bg2.png" alt="" /&gt;&lt;/p&gt; 
+ &lt;img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ConardLi/easy-dataset" /&gt; 
+ &lt;img alt="GitHub Downloads (all assets, all releases)" src="https://img.shields.io/github/downloads/ConardLi/easy-dataset/total" /&gt; 
+ &lt;img alt="GitHub Release" src="https://img.shields.io/github/v/release/ConardLi/easy-dataset" /&gt; 
+ &lt;img src="https://img.shields.io/badge/license-AGPL--3.0-green.svg?sanitize=true" alt="AGPL 3.0 License" /&gt; 
+ &lt;img alt="GitHub contributors" src="https://img.shields.io/github/contributors/ConardLi/easy-dataset" /&gt; 
+ &lt;img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/ConardLi/easy-dataset" /&gt; 
+ &lt;a href="https://arxiv.org/abs/2507.04009v1" target="_blank"&gt; &lt;img src="https://img.shields.io/badge/arXiv-2507.04009-b31b1b.svg?sanitize=true" alt="arXiv:2507.04009" /&gt; &lt;/a&gt; 
+ &lt;p&gt;&lt;a href="https://trendshift.io/repositories/13944" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/13944" alt="ConardLi%2Feasy-dataset | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;A powerful tool for creating fine-tuning datasets for Large Language Models&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/README.zh-CN.md"&gt;简体中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/README.md"&gt;English&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/README.tr.md"&gt;Türkçe&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/#features"&gt;Features&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/#local-run"&gt;Quick Start&lt;/a&gt; • &lt;a href="https://docs.easy-dataset.com/ed/en"&gt;Documentation&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/#contributing"&gt;Contributing&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/#license"&gt;License&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;If you like this project, please give it a Star⭐️, or buy the author a coffee =&amp;gt; &lt;a href="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/public/imgs/aw.jpg"&gt;Donate&lt;/a&gt; ❤️!&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Overview&lt;/h2&gt; 
+&lt;p&gt;Easy Dataset is an application specifically designed for creating fine-tuning datasets for Large Language Models (LLMs). It provides an intuitive interface for uploading domain-specific files, intelligently splitting content, generating questions, and producing high-quality training data for model fine-tuning.&lt;/p&gt; 
+&lt;p&gt;With Easy Dataset, you can transform domain knowledge into structured datasets, compatible with all LLM APIs that follow the OpenAI format, making the fine-tuning process simple and efficient.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/public/imgs/en-arc.png" alt="" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Intelligent Document Processing&lt;/strong&gt;: Supports intelligent recognition and processing of multiple formats including PDF, Markdown, DOCX, etc.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Intelligent Text Splitting&lt;/strong&gt;: Supports multiple intelligent text splitting algorithms and customizable visual segmentation&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Intelligent Question Generation&lt;/strong&gt;: Extracts relevant questions from each text segment&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Domain Labels&lt;/strong&gt;: Intelligently builds global domain labels for datasets, with global understanding capabilities&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Answer Generation&lt;/strong&gt;: Uses LLM API to generate comprehensive answers and Chain of Thought (COT)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Flexible Editing&lt;/strong&gt;: Edit questions, answers, and datasets at any stage of the process&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Multiple Export Formats&lt;/strong&gt;: Export datasets in various formats (Alpaca, ShareGPT, multilingual-thinking) and file types (JSON, JSONL)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Wide Model Support&lt;/strong&gt;: Compatible with all LLM APIs that follow the OpenAI format&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi-Language Support&lt;/strong&gt;: Complete Turkish language support for UI and all AI operations 🇹🇷&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;User-Friendly Interface&lt;/strong&gt;: Intuitive UI designed for both technical and non-technical users&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Custom System Prompts&lt;/strong&gt;: Add custom system prompts to guide model responses&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Quick Demo&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/6ddb1225-3d1b-4695-90cd-aa4cb01376a8"&gt;https://github.com/user-attachments/assets/6ddb1225-3d1b-4695-90cd-aa4cb01376a8&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Local Run&lt;/h2&gt; 
+&lt;h3&gt;Download Client&lt;/h3&gt; 
+&lt;table style="width: 100%"&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td width="20%" align="center"&gt; &lt;b&gt;Windows&lt;/b&gt; &lt;/td&gt; 
+   &lt;td width="30%" align="center" colspan="2"&gt; &lt;b&gt;MacOS&lt;/b&gt; &lt;/td&gt; 
+   &lt;td width="20%" align="center"&gt; &lt;b&gt;Linux&lt;/b&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr style="text-align: center"&gt; 
+   &lt;td align="center" valign="middle"&gt; &lt;a href="https://github.com/ConardLi/easy-dataset/releases/latest"&gt; &lt;img src="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/public/imgs/windows.png" style="height:24px; width: 24px" /&gt; &lt;br /&gt; &lt;b&gt;Setup.exe&lt;/b&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center" valign="middle"&gt; &lt;a href="https://github.com/ConardLi/easy-dataset/releases/latest"&gt; &lt;img src="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/public/imgs/mac.png" style="height:24px; width: 24px" /&gt; &lt;br /&gt; &lt;b&gt;Intel&lt;/b&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center" valign="middle"&gt; &lt;a href="https://github.com/ConardLi/easy-dataset/releases/latest"&gt; &lt;img src="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/public/imgs/mac.png" style="height:24px; width: 24px" /&gt; &lt;br /&gt; &lt;b&gt;M&lt;/b&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center" valign="middle"&gt; &lt;a href="https://github.com/ConardLi/easy-dataset/releases/latest"&gt; &lt;img src="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/public/imgs/linux.png" style="height:24px; width: 24px" /&gt; &lt;br /&gt; &lt;b&gt;AppImage&lt;/b&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h3&gt;Install with NPM&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Clone the repository:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;   git clone https://github.com/ConardLi/easy-dataset.git
+   cd easy-dataset
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Install dependencies:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;   npm install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;Start the development server:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;   npm run build
+
+   npm run start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="4"&gt; 
+ &lt;li&gt;Open your browser and visit &lt;code&gt;http://localhost:1717&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Using the Official Docker Image&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Clone the repository:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/ConardLi/easy-dataset.git
+cd easy-dataset
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Modify the &lt;code&gt;docker-compose.yml&lt;/code&gt; file:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-yml"&gt;services:
+  easy-dataset:
+    image: ghcr.io/conardli/easy-dataset
+    container_name: easy-dataset
+    ports:
+      - '1717:1717'
+    volumes:
+      - ./local-db:/app/local-db
+      - ./prisma:/app/prisma
+    restart: unless-stopped
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; It is recommended to use the &lt;code&gt;local-db&lt;/code&gt; and &lt;code&gt;prisma&lt;/code&gt; folders in the current code repository directory as mount paths to maintain consistency with the database paths when starting via NPM.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The database file will be automatically initialized on first startup, no need to manually run &lt;code&gt;npm run db:push&lt;/code&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;Start with docker-compose:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker-compose up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="4"&gt; 
+ &lt;li&gt;Open a browser and visit &lt;code&gt;http://localhost:1717&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Building with a Local Dockerfile&lt;/h3&gt; 
+&lt;p&gt;If you want to build the image yourself, use the Dockerfile in the project root directory:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Clone the repository:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/ConardLi/easy-dataset.git
+cd easy-dataset
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Build the Docker image:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker build -t easy-dataset .
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;Run the container:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -d \
+  -p 1717:1717 \
+  -v ./local-db:/app/local-db \
+  -v ./prisma:/app/prisma \
+  --name easy-dataset \
+  easy-dataset
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; It is recommended to use the &lt;code&gt;local-db&lt;/code&gt; and &lt;code&gt;prisma&lt;/code&gt; folders in the current code repository directory as mount paths to maintain consistency with the database paths when starting via NPM.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The database file will be automatically initialized on first startup, no need to manually run &lt;code&gt;npm run db:push&lt;/code&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ol start="4"&gt; 
+ &lt;li&gt;Open a browser and visit &lt;code&gt;http://localhost:1717&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;How to Use&lt;/h2&gt; 
+&lt;h3&gt;Create a Project&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/public/imgs/1.png" /&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/public/imgs/2.png" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Click the "Create Project" button on the homepage;&lt;/li&gt; 
+ &lt;li&gt;Enter a project name and description;&lt;/li&gt; 
+ &lt;li&gt;Configure your preferred LLM API settings&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Process Documents&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/public/imgs/3.png" /&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/public/imgs/4.png" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Upload your files in the "Text Split" section (supports PDF, Markdown, txt, DOCX);&lt;/li&gt; 
+ &lt;li&gt;View and adjust the automatically split text segments;&lt;/li&gt; 
+ &lt;li&gt;View and adjust the global domain tree&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Generate Questions&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/public/imgs/5.png" /&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/public/imgs/6.png" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Batch construct questions based on text blocks;&lt;/li&gt; 
+ &lt;li&gt;View and edit the generated questions;&lt;/li&gt; 
+ &lt;li&gt;Organize questions using the label tree&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Create Datasets&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/public/imgs/7.png" /&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/public/imgs/8.png" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Batch construct datasets based on questions;&lt;/li&gt; 
+ &lt;li&gt;Generate answers using the configured LLM;&lt;/li&gt; 
+ &lt;li&gt;View, edit, and optimize the generated answers&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Export Datasets&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/public/imgs/9.png" /&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/public/imgs/10.png" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Click the "Export" button in the Datasets section;&lt;/li&gt; 
+ &lt;li&gt;Choose your preferred format (Alpaca or ShareGPT or multilingual-thinking);&lt;/li&gt; 
+ &lt;li&gt;Select the file format (JSON or JSONL);&lt;/li&gt; 
+ &lt;li&gt;Add custom system prompts as needed;&lt;/li&gt; 
+ &lt;li&gt;Export your dataset&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;View the demo video of this project: &lt;a href="https://www.bilibili.com/video/BV1y8QpYGE57/"&gt;Easy Dataset Demo Video&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;For detailed documentation on all features and APIs, visit our &lt;a href="https://docs.easy-dataset.com/ed/en"&gt;Documentation Site&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;View the paper of this project: &lt;a href="https://arxiv.org/abs/2507.04009v1"&gt;Easy Dataset: A Unified and Extensible Framework for Synthesizing LLM Fine-Tuning Data from Unstructured Documents&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Community Practice&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://buaa-act.feishu.cn/wiki/GVzlwYcRFiR8OLkHbL6cQpYin7g"&gt;Easy Dataset × LLaMA Factory: Enabling LLMs to Efficiently Learn Domain Knowledge&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1MRMnz1EGW"&gt;Easy Dataset Practical Guide: How to Build High-Quality Datasets?&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1fyJhzHEb7/"&gt;Interpretation of Key Feature Updates in Easy Dataset&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.easy-dataset.com/zhi-shi-ke-pu"&gt;Foundation Models Fine-tuning Datasets: Basic Knowledge Popularization&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions from the community! If you'd like to contribute to Easy Dataset, please follow these steps:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork the repository&lt;/li&gt; 
+ &lt;li&gt;Create a new branch (&lt;code&gt;git checkout -b feature/amazing-feature&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Make your changes&lt;/li&gt; 
+ &lt;li&gt;Commit your changes (&lt;code&gt;git commit -m 'Add some amazing feature'&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Push to the branch (&lt;code&gt;git push origin feature/amazing-feature&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Open a Pull Request (submit to the DEV branch)&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;Please ensure that tests are appropriately updated and adhere to the existing coding style.&lt;/p&gt; 
+&lt;h2&gt;Join Discussion Group &amp;amp; Contact the Author&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://docs.easy-dataset.com/geng-duo/lian-xi-wo-men"&gt;https://docs.easy-dataset.com/geng-duo/lian-xi-wo-men&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the AGPL 3.0 License - see the &lt;a href="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;h2&gt;Citation&lt;/h2&gt; 
+&lt;p&gt;If this work is helpful, please kindly cite as:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bibtex"&gt;@misc{miao2025easydataset,
+  title={Easy Dataset: A Unified and Extensible Framework for Synthesizing LLM Fine-Tuning Data from Unstructured Documents},
+  author={Ziyang Miao and Qiyu Sun and Jingyuan Wang and Yuchen Gong and Yaowei Zheng and Shiqi Li and Richong Zhang},
+  year={2025},
+  eprint={2507.04009},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2507.04009}
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.star-history.com/#ConardLi/easy-dataset&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=ConardLi/easy-dataset&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;sub&gt;Built with ❤️ by &lt;a href="https://github.com/ConardLi"&gt;ConardLi&lt;/a&gt; • Follow me: &lt;a href="https://raw.githubusercontent.com/ConardLi/easy-dataset/main/public/imgs/weichat.jpg"&gt;WeChat Official Account&lt;/a&gt;｜&lt;a href="https://space.bilibili.com/474921808"&gt;Bilibili&lt;/a&gt;｜&lt;a href="https://juejin.cn/user/3949101466785709"&gt;Juejin&lt;/a&gt;｜&lt;a href="https://www.zhihu.com/people/wen-ti-chao-ji-duo-de-xiao-qi"&gt;Zhihu&lt;/a&gt;｜&lt;a href="https://www.youtube.com/@garden-conard"&gt;Youtube&lt;/a&gt;&lt;/sub&gt; 
+&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
