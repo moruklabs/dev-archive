@@ -1,0 +1,1662 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub JavaScript Weekly Trending</title>
+    <description>Weekly Trending of JavaScript in GitHub</description>
+    <pubDate>Tue, 16 Dec 2025 01:46:30 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>agalwood/Motrix</title>
+      <link>https://github.com/agalwood/Motrix</link>
+      <description>&lt;p&gt;A full-featured download manager.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Motrix&lt;/h1&gt; 
+&lt;p&gt; &lt;a href="https://motrix.app"&gt; &lt;img src="https://raw.githubusercontent.com/agalwood/Motrix/master/static/512x512.png" width="256" alt="Motrix App Icon" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;A full-featured download manager&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/agalwood/Motrix/releases"&gt;&lt;img src="https://img.shields.io/github/v/release/agalwood/Motrix.svg?sanitize=true" alt="GitHub release" /&gt;&lt;/a&gt; &lt;img src="https://github.com/agalwood/Motrix/workflows/Build/release/badge.svg?sanitize=true" alt="Build/release" /&gt; &lt;img src="https://img.shields.io/github/downloads/agalwood/Motrix/total.svg?sanitize=true" alt="Total Downloads" /&gt; &lt;img src="https://camo.githubusercontent.com/a50c47295f350646d08f2e1ccd797ceca3840e52/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f706c6174666f726d2d6d61634f5325323025374325323057696e646f77732532302537432532304c696e75782d6c69676874677265792e737667" alt="Support Platforms" /&gt;&lt;/p&gt; 
+&lt;p&gt;English | &lt;a href="https://raw.githubusercontent.com/agalwood/Motrix/master/README-CN.md"&gt;简体中文&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Motrix is a full-featured download manager that supports downloading HTTP, FTP, BitTorrent, Magnet, etc.&lt;/p&gt; 
+&lt;p&gt;Motrix has a clean and easy to use interface. I hope you will like it 👻.&lt;/p&gt; 
+&lt;p&gt;✈️ &lt;a href="https://motrix.app"&gt;Official Website&lt;/a&gt; | 📖 &lt;a href="https://github.com/agalwood/Motrix/wiki"&gt;Manual&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;💽 Installation&lt;/h2&gt; 
+&lt;p&gt;Download from &lt;a href="https://github.com/agalwood/Motrix/releases"&gt;GitHub Releases&lt;/a&gt; and install it.&lt;/p&gt; 
+&lt;h3&gt;Windows&lt;/h3&gt; 
+&lt;p&gt;It is recommended to install Motrix using the installation package (Motrix-Setup-x.y.z.exe) to ensure a complete experience, such as associating torrent files, capturing magnet links, etc.&lt;/p&gt; 
+&lt;p&gt;If you use package management tools to manage applications on Windows, such as &lt;a href="https://chocolatey.org"&gt;Chocolatey&lt;/a&gt;, &lt;a href="https://github.com/lukesampson/scoop"&gt;scoop&lt;/a&gt;. You can use them to install Motrix.&lt;/p&gt; 
+&lt;h4&gt;Chocolatey&lt;/h4&gt; 
+&lt;p&gt;Thanks to &lt;a href="https://github.com/iYato"&gt;@Yato&lt;/a&gt; for continuing to maintain the &lt;a href="https://community.chocolatey.org/packages/motrix"&gt;Motrix Chocolatey&lt;/a&gt; package. To install motrix, run the following command from the &lt;code&gt;command line&lt;/code&gt; or from &lt;code&gt;PowerShell&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Install
+choco install motrix
+
+# Upgrade
+choco upgrade motrix
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;scoop&lt;/h4&gt; 
+&lt;p&gt;If you prefer the portable version, you can use &lt;a href="https://github.com/lukesampson/scoop"&gt;scoop&lt;/a&gt; (need Windows 7+) to install Motrix.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;scoop bucket add extras
+scoop install motrix
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;macOS&lt;/h3&gt; 
+&lt;p&gt;The macOS users can install Motrix using &lt;code&gt;brew&lt;/code&gt;, thanks to &lt;a href="https://github.com/Homebrew/homebrew-cask/pull/59494"&gt;PR&lt;/a&gt; of &lt;a href="https://github.com/Mitscherlich"&gt;@Mitscherlich&lt;/a&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;brew update &amp;amp;&amp;amp; brew install motrix
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Auto Update&lt;/h4&gt; 
+&lt;p&gt;Since Motrix v1.8.0 and later versions changed the App BundleID ( &lt;code&gt;net.agalwood.Motrix&lt;/code&gt; =&amp;gt; &lt;code&gt;app.motrix.native&lt;/code&gt; ), the automatic update of Motrix v1.6.11 will fail. &lt;a href="https://github.com/motrixapp/motrix-install-assistant"&gt;Motrix Install Assistant&lt;/a&gt; will help you install the latest Motrix application.&lt;/p&gt; 
+&lt;p&gt; &lt;a href="https://github.com/motrixapp/motrix-install-assistant"&gt; &lt;img src="https://raw.githubusercontent.com/motrixapp/motrix-install-assistant/main/build/256x256.png" width="192" alt="Motrix Install Assistant Icon" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h3&gt;Linux&lt;/h3&gt; 
+&lt;p&gt;You can download the &lt;code&gt;AppImage&lt;/code&gt; (for all Linux distributions) or &lt;code&gt;snap&lt;/code&gt; to install Motrix, see &lt;a href="https://github.com/agalwood/Motrix/releases"&gt;GitHub/release&lt;/a&gt; for more Linux installation package formats.&lt;/p&gt; 
+&lt;p&gt;Motrix may need to run with &lt;code&gt;sudo&lt;/code&gt; for the first time in Linux because there is no permission to create the download session file (&lt;code&gt;/var/cache/aria2.session&lt;/code&gt;).&lt;/p&gt; 
+&lt;p&gt;If you want to build from source code, please read the &lt;strong&gt;Build&lt;/strong&gt; section.&lt;/p&gt; 
+&lt;h4&gt;AppImage&lt;/h4&gt; 
+&lt;p&gt;The latest version of Motrix AppImage requires you to manually perform desktop integration. Please check the documentation of &lt;a href="https://github.com/TheAssassin/AppImageLauncher"&gt;AppImageLauncher&lt;/a&gt; .&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Desktop Integration Since electron-builder 21 desktop integration is not a part of produced AppImage file. &lt;a href="https://github.com/TheAssassin/AppImageLauncher"&gt;AppImageLauncher&lt;/a&gt; is the recommended way to integrate AppImages.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Deepin 20 Beta users failed to install Motrix, please follow the steps below:&lt;/p&gt; 
+&lt;p&gt;Open the &lt;code&gt;Terminal&lt;/code&gt;, paste and run the following command to install Motrix again.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;sudo apt --fix-broken install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Snap&lt;/h4&gt; 
+&lt;p&gt;Motrix has been listed on &lt;a href="https://snapcraft.io/motrix"&gt;Snapcraft&lt;/a&gt; , Ubuntu users recommend downloading from the Snap Store.&lt;/p&gt; 
+&lt;p&gt;Tips for v1.5.10&lt;/p&gt; 
+&lt;p&gt;The tray may not display the indicator normally, which makes it inconvenient to exit the application.&lt;/p&gt; 
+&lt;p&gt;Please unchecked Preferences--Basic Settings--Hide App Menu (Windows &amp;amp; Linux Only), click Save &amp;amp; Apply. Then click "Exit" in the File menu to exit the application.&lt;/p&gt; 
+&lt;p&gt;Please update to v1.5.12 and above, you can use the keyboard shortcut &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;q&lt;/kbd&gt; to quickly exit the application.&lt;/p&gt; 
+&lt;h4&gt;AUR&lt;/h4&gt; 
+&lt;p&gt;For Arch Linux users, Motrix is available in &lt;a href="https://aur.archlinux.org/packages/motrix/"&gt;aur&lt;/a&gt;, thanks to the maintainer &lt;a href="https://github.com/weearc"&gt;@weearc&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Run the following command to install:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yay -S motrix
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Flatpak&lt;/h4&gt; 
+&lt;p&gt;Thanks to the &lt;a href="https://github.com/flathub/flathub/pull/2334"&gt;PR&lt;/a&gt; of &lt;a href="https://github.com/proletarius101"&gt;@proletarius101&lt;/a&gt;, Motrix has been listed &lt;a href="https://flathub.org/apps/details/net.agalwood.Motrix"&gt;Flathub&lt;/a&gt;, Linux users who like the Flatpak can try it.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Install
+flatpak install flathub net.agalwood.Motrix
+
+# Run
+flatpak run net.agalwood.Motrix
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;✨ Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🕹 Simple and clear user interface&lt;/li&gt; 
+ &lt;li&gt;🦄 Supports BitTorrent &amp;amp; Magnet&lt;/li&gt; 
+ &lt;li&gt;☑️ BitTorrent selective download&lt;/li&gt; 
+ &lt;li&gt;📡 Update tracker list every day automatically&lt;/li&gt; 
+ &lt;li&gt;🔌 UPnP &amp;amp; NAT-PMP Port Mapping&lt;/li&gt; 
+ &lt;li&gt;🎛 Up to 10 concurrent download tasks&lt;/li&gt; 
+ &lt;li&gt;🚀 Supports 64 threads in a single task&lt;/li&gt; 
+ &lt;li&gt;🚥 Supports speed limit&lt;/li&gt; 
+ &lt;li&gt;🕶 Mock User-Agent&lt;/li&gt; 
+ &lt;li&gt;🔔 Download completed Notification&lt;/li&gt; 
+ &lt;li&gt;💻 Ready for Touch Bar (Mac only)&lt;/li&gt; 
+ &lt;li&gt;🤖 Resident system tray for quick operation&lt;/li&gt; 
+ &lt;li&gt;📟 Tray speed meter displays real-time speed (Mac only)&lt;/li&gt; 
+ &lt;li&gt;🌑 Dark mode&lt;/li&gt; 
+ &lt;li&gt;🗑 Delete related files when removing tasks (optional)&lt;/li&gt; 
+ &lt;li&gt;🌍 I18n, &lt;a href="https://raw.githubusercontent.com/agalwood/Motrix/master/#-internationalization"&gt;View supported languages&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;🛠 More features in development&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🖥 User Interface&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://cdn.nlark.com/yuque/0/2020/png/129147/1589782238501-e7b39166-da58-4152-ae34-65a061cafa48.png" alt="motrix-screenshot-task-en.png" /&gt;&lt;/p&gt; 
+&lt;h2&gt;⌨️ Development&lt;/h2&gt; 
+&lt;h3&gt;Clone Code&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone git@github.com:agalwood/Motrix.git
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Install Dependencies&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd Motrix
+yarn
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Error: Electron failed to install correctly, please delete node_modules/electron and try installing again&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;code&gt;Electron&lt;/code&gt; failed to install correctly, please refer to &lt;a href="https://github.com/electron/electron/issues/8466#issuecomment-571425574"&gt;https://github.com/electron/electron/issues/8466#issuecomment-571425574&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Dev Mode&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Build Release&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn run build
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Build for Apple Silicon&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn run build:applesilicon
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;After building, the application will be found in the project's &lt;code&gt;release&lt;/code&gt; directory.&lt;/p&gt; 
+&lt;h2&gt;🛠 Technology Stack&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://electronjs.org/"&gt;Electron&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://vuejs.org/"&gt;Vue&lt;/a&gt; + &lt;a href="https://vuex.vuejs.org/"&gt;VueX&lt;/a&gt; + &lt;a href="https://element.eleme.io"&gt;Element&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://aria2.github.io/"&gt;Aria2&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;☑️ TODO&lt;/h2&gt; 
+&lt;p&gt;Development Roadmap see: &lt;a href="https://trello.com/b/qNUzA0bv/motrix"&gt;Trello&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🤝 Contribute &lt;a href="http://makeapullrequest.com"&gt;&lt;img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat" alt="PRs Welcome" /&gt;&lt;/a&gt;&lt;/h2&gt; 
+&lt;p&gt;If you are interested in participating in joint development, PR and Forks are welcome!&lt;/p&gt; 
+&lt;h2&gt;🌍 Internationalization&lt;/h2&gt; 
+&lt;p&gt;Translations into versions for other languages are welcome 🧐! Please read the &lt;a href="https://raw.githubusercontent.com/agalwood/Motrix/master/CONTRIBUTING.md#-translation-guide"&gt;translation guide&lt;/a&gt; before starting translations.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Key&lt;/th&gt; 
+   &lt;th align="left"&gt;Name&lt;/th&gt; 
+   &lt;th align="left"&gt;Status&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;ar&lt;/td&gt; 
+   &lt;td align="left"&gt;Arabic&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/hadialqattan"&gt;@hadialqattan&lt;/a&gt;, &lt;a href="https://github.com/AhmedElTabarani"&gt;@AhmedElTabarani&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;bg&lt;/td&gt; 
+   &lt;td align="left"&gt;Българският език&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/null-none"&gt;@null-none&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;ca&lt;/td&gt; 
+   &lt;td align="left"&gt;Català&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/marcizhu"&gt;@marcizhu&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;de&lt;/td&gt; 
+   &lt;td align="left"&gt;Deutsch&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/Schloemicher"&gt;@Schloemicher&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;el&lt;/td&gt; 
+   &lt;td align="left"&gt;Ελληνικά&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/Likecinema"&gt;@Likecinema&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;en-US&lt;/td&gt; 
+   &lt;td align="left"&gt;English&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;es&lt;/td&gt; 
+   &lt;td align="left"&gt;Español&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/Chofito"&gt;@Chofito&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;fa&lt;/td&gt; 
+   &lt;td align="left"&gt;فارسی&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/Nima-Ra"&gt;@Nima-Ra&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;fr&lt;/td&gt; 
+   &lt;td align="left"&gt;Français&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/gpatarin"&gt;@gpatarin&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;hu&lt;/td&gt; 
+   &lt;td align="left"&gt;Hungarian&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/zalnaRs"&gt;@zalnaRs&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;id&lt;/td&gt; 
+   &lt;td align="left"&gt;Indonesia&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/aarestu"&gt;@aarestu&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;it&lt;/td&gt; 
+   &lt;td align="left"&gt;Italiano&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/blackcat-917"&gt;@blackcat-917&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;ja&lt;/td&gt; 
+   &lt;td align="left"&gt;日本語&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/hbkrkzk"&gt;@hbkrkzk&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;ko&lt;/td&gt; 
+   &lt;td align="left"&gt;한국어&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/KOZ39"&gt;@KOZ39&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;nb&lt;/td&gt; 
+   &lt;td align="left"&gt;Norsk Bokmål&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/rubjo"&gt;@rubjo&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;nl&lt;/td&gt; 
+   &lt;td align="left"&gt;Nederlands&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/nickbouwhuis"&gt;@nickbouwhuis&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;pl&lt;/td&gt; 
+   &lt;td align="left"&gt;Polski&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/KanarekLife"&gt;@KanarekLife&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;pt-BR&lt;/td&gt; 
+   &lt;td align="left"&gt;Portuguese (Brazil)&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/andrenoberto"&gt;@andrenoberto&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;ro&lt;/td&gt; 
+   &lt;td align="left"&gt;Română&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/alyn3d"&gt;@alyn3d&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;ru&lt;/td&gt; 
+   &lt;td align="left"&gt;Русский&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/bladeaweb"&gt;@bladeaweb&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;th&lt;/td&gt; 
+   &lt;td align="left"&gt;แบบไทย&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/nxanywhere"&gt;@nxanywhere&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;tr&lt;/td&gt; 
+   &lt;td align="left"&gt;Türkçe&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/abdullah"&gt;@abdullah&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;uk&lt;/td&gt; 
+   &lt;td align="left"&gt;Українська&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/bladeaweb"&gt;@bladeaweb&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;vi&lt;/td&gt; 
+   &lt;td align="left"&gt;Tiếng Việt&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/duythanhvn"&gt;@duythanhvn&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;zh-CN&lt;/td&gt; 
+   &lt;td align="left"&gt;简体中文&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;zh-TW&lt;/td&gt; 
+   &lt;td align="left"&gt;繁體中文&lt;/td&gt; 
+   &lt;td align="left"&gt;✔️ &lt;a href="https://github.com/Yukaii"&gt;@Yukaii&lt;/a&gt; &lt;a href="https://github.com/5idereal"&gt;@5idereal&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;📜 License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://opensource.org/licenses/MIT"&gt;MIT&lt;/a&gt; Copyright (c) 2018-present Dr_rOot&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>pot-app/pot-desktop</title>
+      <link>https://github.com/pot-app/pot-desktop</link>
+      <description>&lt;p&gt;🌈一个跨平台的划词翻译和OCR软件 | A cross-platform software for text translation and recognition.&lt;/p&gt;&lt;hr&gt;&lt;img width="200px" src="https://raw.githubusercontent.com/pot-app/pot-desktop/master/public/icon.svg?sanitize=true" align="left" /&gt; 
+&lt;h1&gt;Pot (派了个萌的翻译器)&lt;/h1&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;🌈 一个跨平台的划词翻译软件 (&lt;a href="https://pd.qq.com/s/akns94e1r"&gt;QQ 频道&lt;/a&gt;)&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;img src="https://img.shields.io/github/license/pot-app/pot-desktop.svg?sanitize=true" alt="License" /&gt; &lt;img src="https://img.shields.io/badge/Tauri-1.6.8-blue?logo=tauri" alt="Tauri" /&gt; &lt;img src="https://img.shields.io/badge/-JavaScript-yellow?logo=javascript&amp;amp;logoColor=white" alt="JavaScript" /&gt; &lt;img src="https://img.shields.io/badge/-Rust-orange?logo=rust&amp;amp;logoColor=white" alt="Rust" /&gt; &lt;img src="https://img.shields.io/badge/-Windows-blue?logo=windows&amp;amp;logoColor=white" alt="Windows" /&gt; &lt;img src="https://img.shields.io/badge/-macOS-black?&amp;amp;logo=apple&amp;amp;logoColor=white" alt="MacOS" /&gt; &lt;img src="https://img.shields.io/badge/-Linux-yellow?logo=linux&amp;amp;logoColor=white" alt="Linux" /&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;hr /&gt; 
+&lt;div align="center"&gt; 
+ &lt;h3&gt;中文 | &lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/README_EN.md"&gt;English&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/README_KR.md"&gt; 한글 &lt;/a&gt;&lt;/h3&gt; 
+ &lt;table&gt; 
+  &lt;tbody&gt;
+   &lt;tr&gt; 
+    &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/pot-app/pot-desktop/master/asset/1.png" /&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/pot-app/pot-desktop/master/asset/2.png" /&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;img src="https://raw.githubusercontent.com/pot-app/pot-desktop/master/asset/3.png" /&gt; &lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/tbody&gt;
+ &lt;/table&gt; 
+ &lt;h1&gt;目录&lt;/h1&gt; 
+&lt;/div&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"&gt;使用说明&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E7%89%B9%E8%89%B2%E5%8A%9F%E8%83%BD"&gt;特色功能&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E6%94%AF%E6%8C%81%E6%8E%A5%E5%8F%A3"&gt;支持接口&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E6%8F%92%E4%BB%B6%E7%B3%BB%E7%BB%9F"&gt;插件系统&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97"&gt;安装指南&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E5%A4%96%E9%83%A8%E8%B0%83%E7%94%A8"&gt;外部调用&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#wayland-%E6%94%AF%E6%8C%81"&gt;Wayland 支持&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E5%9B%BD%E9%99%85%E5%8C%96weblate"&gt;国际化&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E8%B4%A1%E7%8C%AE%E8%80%85"&gt;贡献者&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E6%84%9F%E8%B0%A2"&gt;感谢&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;div align="center"&gt; 
+ &lt;h1&gt;使用说明&lt;/h1&gt; 
+ &lt;table&gt; 
+  &lt;thead&gt; 
+   &lt;tr&gt; 
+    &lt;th&gt;划词翻译&lt;/th&gt; 
+    &lt;th&gt;输入翻译&lt;/th&gt; 
+    &lt;th&gt;外部调用&lt;/th&gt; 
+   &lt;/tr&gt; 
+  &lt;/thead&gt; 
+  &lt;tbody&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;鼠标选中需要翻译的文本，按下设置的划词翻译快捷键即可&lt;/td&gt; 
+    &lt;td&gt;按下输入翻译快捷键呼出翻译窗口，输入待翻译文本后按下 回车 翻译&lt;/td&gt; 
+    &lt;td&gt;通过被其他软件调用实现更加方便高效的功能, 详见 &lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E5%A4%96%E9%83%A8%E8%B0%83%E7%94%A8"&gt;外部调用&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/pot-app/pot-desktop/master/asset/eg1.gif" /&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/pot-app/pot-desktop/master/asset/eg2.gif" /&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/pot-app/pot-desktop/master/asset/eg3.gif" /&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+  &lt;/tbody&gt; 
+ &lt;/table&gt; 
+ &lt;table&gt; 
+  &lt;thead&gt; 
+   &lt;tr&gt; 
+    &lt;th&gt;剪切板监听模式&lt;/th&gt; 
+    &lt;th&gt;截图 OCR&lt;/th&gt; 
+    &lt;th&gt;截图翻译&lt;/th&gt; 
+   &lt;/tr&gt; 
+  &lt;/thead&gt; 
+  &lt;tbody&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;在任意翻译面板上点击左上角图标启动剪切板监听默认，复制文字即可完成翻译&lt;/td&gt; 
+    &lt;td&gt;按下截图 OCR 快捷键后框选需要识别区域即可完成识别&lt;/td&gt; 
+    &lt;td&gt;按下截图翻译快捷键后框选需要识别区域即可完成翻译&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/pot-app/pot-desktop/master/asset/eg4.gif" /&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/pot-app/pot-desktop/master/asset/eg5.gif" /&gt;&lt;/td&gt; 
+    &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/pot-app/pot-desktop/master/asset/eg6.gif" /&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+  &lt;/tbody&gt; 
+ &lt;/table&gt; 
+&lt;/div&gt; 
+&lt;div align="center"&gt; 
+ &lt;h1&gt;特色功能&lt;/h1&gt; 
+&lt;/div&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 多接口并行翻译 (&lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E6%94%AF%E6%8C%81%E6%8E%A5%E5%8F%A3"&gt;支持接口&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 多接口文字识别 (&lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E6%94%AF%E6%8C%81%E6%8E%A5%E5%8F%A3"&gt;支持接口&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 多接口语音合成 (&lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E6%94%AF%E6%8C%81%E6%8E%A5%E5%8F%A3"&gt;支持接口&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 导出到生词本 (&lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E6%94%AF%E6%8C%81%E6%8E%A5%E5%8F%A3"&gt;支持接口&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 外部调用 (&lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E5%A4%96%E9%83%A8%E8%B0%83%E7%94%A8"&gt;详情&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 支持插件系统 (&lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E6%8F%92%E4%BB%B6%E7%B3%BB%E7%BB%9F"&gt;插件系统&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 支持所有 PC 平台 (Windows, macOS, Linux)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 支持 Wayland (在 KDE、Gnome 以及 Hyprland 上测试)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 多语言支持&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;div align="center"&gt; 
+ &lt;h1&gt;支持接口&lt;/h1&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;翻译&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://platform.openai.com/"&gt;OpenAI&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://www.zhipuai.cn/"&gt;智谱 AI&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://gemini.google.com/"&gt;Gemini Pro&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://www.ollama.com/"&gt;Ollama&lt;/a&gt; (离线)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://www.aliyun.com/product/ai/alimt"&gt;阿里翻译&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://fanyi.baidu.com/"&gt;百度翻译&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://fanyi.caiyunapp.com/"&gt;彩云小译&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://fanyi.qq.com/"&gt;腾讯翻译君&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://transmart.qq.com/"&gt;腾讯交互翻译&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://translate.volcengine.com/"&gt;火山翻译&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://niutrans.com/"&gt;小牛翻译&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://translate.google.com"&gt;Google&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://learn.microsoft.com/zh-cn/azure/cognitive-services/translator/"&gt;Bing&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://www.bing.com/dict"&gt;Bing 词典&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://www.deepl.com/"&gt;DeepL&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://ai.youdao.com/"&gt;有道翻译&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://dictionary.cambridge.org/"&gt;剑桥词典&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://translate.yandex.com/"&gt;Yandex&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://github.com/TheDavidDelta/lingva-translate"&gt;Lingva&lt;/a&gt; (&lt;a href="https://github.com/pot-app/pot-app-translate-plugin-template"&gt;插件&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://tatoeba.org/"&gt;Tatoeba&lt;/a&gt; (&lt;a href="https://github.com/pot-app/pot-app-translate-plugin-tatoeba"&gt;插件&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://github.com/skywind3000/ECDICT"&gt;ECDICT&lt;/a&gt; (&lt;a href="https://github.com/pot-app/pot-app-translate-plugin-ecdict"&gt;插件&lt;/a&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;更多接口支持见 &lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E6%8F%92%E4%BB%B6%E7%B3%BB%E7%BB%9F"&gt;插件系统&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;文字识别&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 系统 OCR (离线) 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://learn.microsoft.com/en-us/uwp/api/windows.media.ocr.ocrengine?view=winrt-22621"&gt;Windows.Media.OCR&lt;/a&gt; on Windows&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://developer.apple.com/documentation/vision/recognizing_text_in_images"&gt;Apple Vision Framework&lt;/a&gt; on MacOS&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://github.com/tesseract-ocr"&gt;Tesseract OCR&lt;/a&gt; on Linux&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://tesseract.projectnaptha.com/"&gt;Tesseract.js&lt;/a&gt; (离线)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://ai.baidu.com/tech/ocr/general"&gt;百度&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://cloud.tencent.com/product/ocr-catalog"&gt;腾讯&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://www.volcengine.com/product/OCR"&gt;火山&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://www.xfyun.cn/services/common-ocr"&gt;迅飞&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://cloud.tencent.com/document/product/551/17232"&gt;腾讯图片翻译&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://fanyi-api.baidu.com/product/22"&gt;百度图片翻译&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://simpletex.cn/"&gt;Simple LaTeX&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://ocr.space/"&gt;OCRSpace&lt;/a&gt; (&lt;a href="https://github.com/pot-app/pot-app-recognize-plugin-template"&gt;插件&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://github.com/RapidAI/RapidOcrOnnx"&gt;Rapid&lt;/a&gt; (离线 &lt;a href="https://github.com/pot-app/pot-app-recognize-plugin-rapid"&gt;插件&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://github.com/hiroi-sora/PaddleOCR-json"&gt;Paddle&lt;/a&gt; (离线 &lt;a href="https://github.com/pot-app/pot-app-recognize-plugin-paddle"&gt;插件&lt;/a&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;更多接口支持见 &lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E6%8F%92%E4%BB%B6%E7%B3%BB%E7%BB%9F"&gt;插件系统&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;语音合成&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://github.com/thedaviddelta/lingva-translate"&gt;Lingva&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;更多接口支持见 &lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E6%8F%92%E4%BB%B6%E7%B3%BB%E7%BB%9F"&gt;插件系统&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;生词本&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://apps.ankiweb.net/"&gt;Anki&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://dict.eudic.net/"&gt;欧路词典&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://www.youdao.com/"&gt;有道&lt;/a&gt; (&lt;a href="https://github.com/pot-app/pot-app-collection-plugin-youdao"&gt;插件&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://web.shanbay.com/web/main"&gt;扇贝&lt;/a&gt; (&lt;a href="https://github.com/pot-app/pot-app-collection-plugin-shanbay"&gt;插件&lt;/a&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;更多接口支持见 &lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E6%8F%92%E4%BB%B6%E7%B3%BB%E7%BB%9F"&gt;插件系统&lt;/a&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;h1&gt;插件系统&lt;/h1&gt; 
+&lt;/div&gt; 
+&lt;p&gt;软件内置接口数量有限，但是您可以通过插件系统来扩展软件的功能。&lt;/p&gt; 
+&lt;h2&gt;插件安装&lt;/h2&gt; 
+&lt;p&gt;你可以在 &lt;a href="https://pot-app.com/plugin.html"&gt;Plugin List&lt;/a&gt; 查找你需要的插件，然后前往插件仓库下载插件。&lt;/p&gt; 
+&lt;p&gt;pot 插件的扩展名为 &lt;code&gt;.potext&lt;/code&gt;, 下载得到&lt;code&gt;.potext&lt;/code&gt;文件之后， 在 偏好设置-服务设置-添加外部插件-安装外部插件 选择对应的 &lt;code&gt;.potext&lt;/code&gt; 即可安装成功，添加到服务列表中即可像内置服务一样正常使用了。&lt;/p&gt; 
+&lt;h3&gt;故障排除&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;找不到指定的模块 (Windows)&lt;/p&gt; &lt;p&gt;出现类似这样的报错是因为系统缺少 C++库，前往&lt;a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022"&gt;这里&lt;/a&gt;安装即可解决问题。&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;不是有效的 Win32 应用程序 (Windows)&lt;/p&gt; &lt;p&gt;出现类似这样的报错说明你没有下载对应系统或者架构的插件，前往插件仓库下载正确的插件即可解决问题。&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;插件开发&lt;/h2&gt; 
+&lt;p&gt;在 &lt;a href="https://pot-app.com/plugin.html"&gt;Plugin List&lt;/a&gt; 中的 &lt;a href="https://pot-app.com/plugin.html#%E6%A8%A1%E6%9D%BF"&gt;模板&lt;/a&gt; 章节提供了各种插件的开发模板，具体的开发文档请查看对应的模板仓库。&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;h1&gt;安装指南&lt;/h1&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Windows&lt;/h2&gt; 
+&lt;h3&gt;通过 Winget 安装&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-powershell"&gt;winget install Pylogmon.pot
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;手动安装&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;在 &lt;a href="https://github.com/pot-app/pot-desktop/releases/latest"&gt;Release&lt;/a&gt; 页面下载最新 &lt;code&gt;exe&lt;/code&gt; 安装包。&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;64 位机器下载 &lt;code&gt;pot_{version}_x64-setup.exe&lt;/code&gt;&lt;/li&gt; 
+   &lt;li&gt;32 位机器下载 &lt;code&gt;pot_{version}_x86-setup.exe&lt;/code&gt;&lt;/li&gt; 
+   &lt;li&gt;arm64 机器下载 &lt;code&gt;pot_{version}_arm64-setup.exe&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;双击安装包进行安装。&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;故障排除&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;启动后没有界面，点击托盘图标没有反应&lt;/p&gt; &lt;p&gt;检查是否卸载/禁用了 WebView2，如果卸载/禁用了 WebView2，请手动安装 WebView2 或将其恢复。&lt;/p&gt; &lt;p&gt;如果是企业版系统不方便安装或无法安装 WebView2，请尝试在 &lt;a href="https://github.com/pot-app/pot-desktop/releases/latest"&gt;Release&lt;/a&gt; 下载内置 WebView2 的版本 &lt;code&gt;pot_{version}_{arch}_fix_webview2_runtime-setup.exe&lt;/code&gt;&lt;/p&gt; &lt;p&gt;若问题仍然存在请尝试使用 Windows7 兼容模式启动。&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;MacOS&lt;/h2&gt; 
+&lt;h3&gt;通过 Brew 安装&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;添加我们的 tap:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;brew tap pot-app/homebrew-tap
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;安装 pot:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;brew install --cask pot
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;更新 pot&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;brew upgrade --cask pot
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;手动安装&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;从 &lt;a href="https://github.com/pot-app/pot-desktop/releases/latest"&gt;Release&lt;/a&gt; 页面下载最新的 &lt;code&gt;dmg&lt;/code&gt; 安装包。（如果您使用的是 M1 芯片，请下载名为&lt;code&gt;pot_{version}_aarch64.dmg&lt;/code&gt;的安装包，否则请下载名为&lt;code&gt;pot_{version}_x64.dmg&lt;/code&gt;的安装包）&lt;/li&gt; 
+ &lt;li&gt;双击下载的文件后将 pot 拖入 Applications 文件夹即可完成安装。&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;故障排除&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;由于开发者无法验证，“pot”无法打开。&lt;/p&gt; &lt;p&gt;点击 取消 按钮，然后去 设置 -&amp;gt; 隐私与安全性 页面，点击 仍要打开 按钮，然后在弹出窗口里点击 打开 按钮即可，以后打开 pot 就再也不会有任何弹窗告警了&lt;/p&gt; &lt;p&gt;如果在 隐私与安全性 中找不到以上选项，或启动时提示文件损坏。打开 Terminal.app，并输入以下命令，然后重启 pot 即可：&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;sudo xattr -d com.apple.quarantine /Applications/pot.app
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;如果每次打开时都遇到辅助功能权限提示，或者无法进行划词翻译，请前往设置 -&amp;gt; 隐私与安全 -&amp;gt; 辅助功能，移除 “pot”，并重新添加 “pot”。&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Linux&lt;/h2&gt; 
+&lt;h3&gt;Debian/Ubuntu&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;从 &lt;a href="https://github.com/pot-app/pot-desktop/releases/latest"&gt;Release&lt;/a&gt; 页面下载最新的对应架构的 &lt;code&gt;deb&lt;/code&gt; 安装包。&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;使用 &lt;code&gt;apt-get&lt;/code&gt; 进行安装&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;sudo apt-get install ./pot_{version}_amd64.deb
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Arch/Manjaro&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!WARNING] 在最新版本的 &lt;a href="https://archlinux.org/packages/extra/x86_64/webkit2gtk"&gt;Webkit2Gtk&lt;/a&gt; (2.42.0) 中，由于 Nvidia 专有驱动未完全实现 DMABUF，将导致无法启动和崩溃的情况发生。&lt;br /&gt; 请降级或在 &lt;code&gt;/etc/environment&lt;/code&gt; （或者其他设置环境变量的地方）中加入 &lt;code&gt;WEBKIT_DISABLE_DMABUF_RENDERER=1&lt;/code&gt; 环境变量关闭 DMABUF 的使用。&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;在 &lt;a href="https://aur.archlinux.org/packages?O=0&amp;amp;K=pot-translation"&gt;AUR&lt;/a&gt; 查看&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;使用 &lt;code&gt;AUR helper&lt;/code&gt; 安装：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yay -S pot-translation # 或 pot-translation-bin
+
+# paru -S pot-translation # 或 pot-translation-bin
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;如果你使用 &lt;code&gt;archlinuxcn&lt;/code&gt; 源，可以直接使用 pacman 安装&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;sudo pacman -S pot-translation
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Flatpak&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!WARNING] Flatpak 版本缺失托盘图标。&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;a href="https://flathub.org/apps/com.pot_app.pot"&gt; &lt;img width="240" alt="Download on Flathub" src="https://flathub.org/api/badge?locale=zh-Hans" /&gt; &lt;/a&gt; 
+&lt;div align="center"&gt; 
+ &lt;h1&gt;外部调用&lt;/h1&gt; 
+&lt;/div&gt; 
+&lt;p&gt;Pot 提供了完整的 HTTP 接口，以便可以被其他软件调用。您可以通过向 &lt;code&gt;127.0.0.1:port&lt;/code&gt; 发送 HTTP 请求来调用 pot，其中的&lt;code&gt;port&lt;/code&gt;是 pot 监听的端口号，默认为&lt;code&gt;60828&lt;/code&gt;,可以在软件设置中进行更改。&lt;/p&gt; 
+&lt;h2&gt;API 文档:&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;POST "/" =&amp;gt; 翻译指定文本(body为需要翻译的文本),
+GET "/config" =&amp;gt; 打开设置,
+POST "/translate" =&amp;gt; 翻译指定文本(同"/"),
+GET "/selection_translate" =&amp;gt; 划词翻译,
+GET "/input_translate" =&amp;gt; 输入翻译,
+GET "/ocr_recognize" =&amp;gt; 截图OCR,
+GET "/ocr_translate" =&amp;gt; 截图翻译,
+GET "/ocr_recognize?screenshot=false" =&amp;gt; 截图OCR(不使用软件内截图),
+GET "/ocr_translate?screenshot=false" =&amp;gt; 截图翻译(不使用软件内截图),
+GET "/ocr_recognize?screenshot=true" =&amp;gt; 截图OCR,
+GET "/ocr_translate?screenshot=true" =&amp;gt; 截图翻译,
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;示例：&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;调用划词翻译：&lt;/p&gt; &lt;p&gt;如果想要调用 pot 划词翻译，只需向&lt;code&gt;127.0.0.1:port&lt;/code&gt;发送请求即可。&lt;/p&gt; &lt;p&gt;例如通过 curl 发送请求：&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;curl "127.0.0.1:60828/selection_translate"
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;不使用软件内截图&lt;/h2&gt; 
+&lt;p&gt;这一功能可以让您在不使用软件内截图的情况下调用截图 OCR/截图翻译功能，这样您就可以使用您喜欢的截图工具来截图了，也可以解决在某些平台下 pot 自带的截图无法使用的问题。&lt;/p&gt; 
+&lt;h3&gt;调用流程&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;使用其他截图工具截图&lt;/li&gt; 
+ &lt;li&gt;将截图保存在 &lt;code&gt;$CACHE/com.pot-app.desktop/pot_screenshot_cut.png&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;向&lt;code&gt;127.0.0.1:port/ocr_recognize?screenshot=false&lt;/code&gt;发送请求即可调用成功&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;code&gt;$CACHE&lt;/code&gt;为系统缓存目录，例如在 Windows 上为&lt;code&gt;C:\Users\{用户名}\AppData\Local\com.pot-app.desktop\pot_screenshot_cut.png&lt;/code&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;示例&lt;/h3&gt; 
+&lt;p&gt;在 Linux 下调用 Flameshot 进行截图 OCR:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;rm ~/.cache/com.pot-app.desktop/pot_screenshot_cut.png &amp;amp;&amp;amp; flameshot gui -s -p ~/.cache/com.pot-app.desktop/pot_screenshot_cut.png &amp;amp;&amp;amp; curl "127.0.0.1:60828/ocr_recognize?screenshot=false"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;现有用法 (快捷划词翻译)&lt;/h2&gt; 
+&lt;h3&gt;SnipDo (Windows)&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;从 &lt;a href="https://apps.microsoft.com/store/detail/snipdo/9NPZ2TVKJVT7"&gt;Microsoft Store&lt;/a&gt; 下载安装 SnipDo。&lt;/li&gt; 
+ &lt;li&gt;从 &lt;a href="https://github.com/pot-app/pot-desktop/releases/latest"&gt;Release&lt;/a&gt; 下载 pot 的 SnipDo 扩展 (pot.pbar)&lt;/li&gt; 
+ &lt;li&gt;双击下载的扩展文件完成安装。&lt;/li&gt; 
+ &lt;li&gt;选中文字，可以看到弹出的 SnipDo 工具条，点击翻译按钮即可翻译。&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;PopClip (MacOS)&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;从 &lt;a href="https://apps.apple.com/us/app/popclip/id445189367?mt=12"&gt;App Store&lt;/a&gt; 下载安装 PopClip&lt;/li&gt; 
+ &lt;li&gt;从 &lt;a href="https://github.com/pot-app/pot-desktop/releases/latest"&gt;Release&lt;/a&gt; 下载 pot 的 PopClip 扩展 (pot.popclipextz)&lt;/li&gt; 
+ &lt;li&gt;双击下载的扩展文件完成安装。&lt;/li&gt; 
+ &lt;li&gt;在 PopClip 的扩展中启用 pot 扩展，选中文本即可点击翻译。&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Starry (Linux)&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Starry 目前仍处于开发阶段，因此您只能手动编译它。&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Github: &lt;a href="https://github.com/ccslykx/Starry"&gt;ccslykx/Starry&lt;/a&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;h1&gt;Wayland 支持&lt;/h1&gt; 
+&lt;/div&gt; 
+&lt;p&gt;由于各大发行版对于 Wayland 的支持程度不同，所以 pot 本身没法做到特别完美的支持，这里可以提供一些常见问题的解决方案，通过合理的设置之后，pot 也可以在 Wayland 下完美运行。&lt;/p&gt; 
+&lt;h2&gt;快捷键无法使用&lt;/h2&gt; 
+&lt;p&gt;由于 Tauri 的快捷键方案并没有支持 Wayland，所以 pot 应用内的快捷键设置在 Wayland 下无法使用。 您可以设置系统快捷用 curl 发送请求来触发 pot，详见&lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E5%A4%96%E9%83%A8%E8%B0%83%E7%94%A8"&gt;外部调用&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;截图无法使用&lt;/h2&gt; 
+&lt;p&gt;在一些纯 Wayland 桌面环境/窗口管理器(如 Hyprland)上，pot 内置的截图无法使用，这时可以通过使用其他截图工具代替，详见 &lt;a href="https://raw.githubusercontent.com/pot-app/pot-desktop/master/#%E4%B8%8D%E4%BD%BF%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%86%85%E6%88%AA%E5%9B%BE"&gt;不使用软件内截图&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;下面给出在 Hyprland 下的配置示例(通过 grim 和 slurp 实现截图)：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-conf"&gt;bind = ALT, X, exec, grim -g "$(slurp)" ~/.cache/com.pot-app.desktop/pot_screenshot_cut.png &amp;amp;&amp;amp; curl "127.0.0.1:60828/ocr_recognize?screenshot=false"
+bind = ALT, C, exec, grim -g "$(slurp)" ~/.cache/com.pot-app.desktop/pot_screenshot_cut.png &amp;amp;&amp;amp; curl "127.0.0.1:60828/ocr_translate?screenshot=false"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;其他桌面环境/窗口管理器也是类似的操作&lt;/p&gt; 
+&lt;h2&gt;划词翻译窗口跟随鼠标位置&lt;/h2&gt; 
+&lt;p&gt;由于目前 pot 在 Wayland 下还无法获取到正确的鼠标坐标，所以内部的实现无法工作。 对于某些桌面环境/窗口管理器，可以通过设置窗口规则来实现窗口跟随鼠标位置，这里以 Hyprland 为例：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-conf"&gt;windowrulev2 = float, class:(pot), title:(Translator|OCR|PopClip|Screenshot Translate) # Translation window floating
+windowrulev2 = move cursor 0 0, class:(pot), title:(Translator|PopClip|Screenshot Translate) # Translation window follows the mouse position.
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;div align="center"&gt; 
+ &lt;h1&gt;国际化(&lt;a href="https://hosted.weblate.org/engage/pot-app/"&gt;Weblate&lt;/a&gt;)&lt;/h1&gt; 
+ &lt;p&gt;&lt;a href="https://hosted.weblate.org/engage/pot-app/"&gt;&lt;img src="https://hosted.weblate.org/widget/pot-app/pot-desktop/svg-badge.svg?sanitize=true" alt="" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://hosted.weblate.org/engage/pot-app/"&gt;&lt;img src="https://hosted.weblate.org/widget/pot-app/pot-desktop/zh_Hans/multi-auto.svg?sanitize=true" alt="" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div align="center"&gt; 
+ &lt;h1&gt;贡献者&lt;/h1&gt; 
+&lt;/div&gt; 
+&lt;img src="https://github.com/pot-app/.github/raw/master/pot-desktop-contributions.svg?raw=true" width="100%" /&gt; 
+&lt;h2&gt;手动编译&lt;/h2&gt; 
+&lt;h3&gt;环境要求&lt;/h3&gt; 
+&lt;p&gt;Node.js &amp;gt;= 18.0.0&lt;/p&gt; 
+&lt;p&gt;pnpm &amp;gt;= 8.5.0&lt;/p&gt; 
+&lt;p&gt;Rust &amp;gt;= 1.80.0&lt;/p&gt; 
+&lt;h3&gt;开始编译&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;Clone 仓库&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/pot-app/pot-desktop.git
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;安装依赖&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;cd pot-desktop
+pnpm install
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;安装依赖(仅 Linux 需要)&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev libayatana-appindicator3-dev librsvg2-dev patchelf libxdo-dev libxcb1 libxrandr2 libdbus-1-3
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;开发调试&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;pnpm tauri dev # Run the app in development mode
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;打包构建&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;pnpm tauri build # Build into installation package
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;div align="center"&gt; 
+ &lt;h1&gt;感谢&lt;/h1&gt; 
+&lt;/div&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ripperhe/Bob"&gt;Bob&lt;/a&gt; 灵感来源&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/yetone/bob-plugin-openai-translator"&gt;bob-plugin-openai-translator&lt;/a&gt; OpenAI 接口参考&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/uiYzzi"&gt;@uiYzzi&lt;/a&gt; 实现思路&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/Lichenkass"&gt;@Lichenkass&lt;/a&gt; 维护 Deepin 应用商店中的 pot&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/tauri-apps/tauri"&gt;Tauri&lt;/a&gt; 好用的 GUI 框架&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;div align="center"&gt; 
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>FortAwesome/Font-Awesome</title>
+      <link>https://github.com/FortAwesome/Font-Awesome</link>
+      <description>&lt;p&gt;The iconic SVG, font, and CSS toolkit&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;&lt;img src="https://img.fortawesome.com/349cfdf6/fa-free-logo.svg?sanitize=true" alt="Font Awesome Free" width="50%" /&gt;&lt;/h1&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Version 7&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Learn how to get started with Font Awesome and then dive deeper into other and advanced topics:&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://fontawesome.com/docs"&gt;Docs for version 7&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Where did Font Awesome 6, 5, 4 (or 3) go?&lt;/h3&gt; 
+&lt;p&gt;Now that Font Awesome 7 has been released we are marking version 6 as Long Term Support (LTS). Version 6 will get critical bug fixes only. Version 3, 4, and 5 are now end-of-life and we don't plan on releasing any further versions of these.&lt;/p&gt; 
+&lt;p&gt;You can see a complete list of versions on &lt;a href="https://fontawesome.com/versions"&gt;our Versions page&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Change log&lt;/h2&gt; 
+&lt;p&gt;The change log for releases is now &lt;a href="https://fontawesome.com/docs/changelog/"&gt;available directly on our site&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Looking for older versions of Font Awesome? Check the &lt;a href="https://github.com/FortAwesome/Font-Awesome/releases"&gt;releases&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Upgrading&lt;/h2&gt; 
+&lt;p&gt;From time-to-time we'll have special upgrading instructions from one version to the next.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.fontawesome.com/upgrade/upgrade-on-web"&gt;Web upgrading guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.fontawesome.com/upgrade/upgrade-on-desktop"&gt;Desktop upgrading guide&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Code of conduct&lt;/h2&gt; 
+&lt;p&gt;We will behave ourselves if you behave yourselves. For more details see our &lt;a href="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/7.x/CODE_OF_CONDUCT.md"&gt;CODE_OF_CONDUCT.md&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Please read through our &lt;a href="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/7.x/CONTRIBUTING.md"&gt;contributing guidelines&lt;/a&gt;. Included are directions for opening issues.&lt;/p&gt; 
+&lt;h2&gt;Versioning&lt;/h2&gt; 
+&lt;p&gt;Font Awesome will be maintained under the Semantic Versioning guidelines as much as possible. Releases will be numbered with the following format:&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;&amp;lt;major&amp;gt;.&amp;lt;minor&amp;gt;.&amp;lt;patch&amp;gt;&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;For more information on SemVer, please visit &lt;a href="https://semver.org"&gt;https://semver.org&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;The major version "7" is part of an umbrella release. It includes many different types of files and technologies. Therefore we deviate from normal SemVer in the following ways:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Any release may update the design, look-and-feel, or branding of an existing icon&lt;/li&gt; 
+ &lt;li&gt;We will never intentionally release a &lt;code&gt;patch&lt;/code&gt; version update that breaks backward compatibility&lt;/li&gt; 
+ &lt;li&gt;A &lt;code&gt;minor&lt;/code&gt; release &lt;strong&gt;may include backward-incompatible changes&lt;/strong&gt; but we will write clear upgrading instructions in UPGRADING.md&lt;/li&gt; 
+ &lt;li&gt;A &lt;code&gt;minor&lt;/code&gt; or &lt;code&gt;patch&lt;/code&gt; release will never remove icons&lt;/li&gt; 
+ &lt;li&gt;Bug fixes will be addressed as &lt;code&gt;patch&lt;/code&gt; releases unless they include backward incompatibility then they will be &lt;code&gt;minor&lt;/code&gt; releases&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Font Awesome Free is free, open source, and GPL friendly. You can use it for commercial projects, open source projects, or really almost whatever you want.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Icons — CC BY 4.0 License 
+  &lt;ul&gt; 
+   &lt;li&gt;In the Font Awesome Free download, the CC BY 4.0 license applies to all icons packaged as .svg and .js files types.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Fonts — SIL OFL 1.1 License 
+  &lt;ul&gt; 
+   &lt;li&gt;In the Font Awesome Free download, the SIL OFL license applies to all icons packaged as web and desktop font files.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Code — MIT License 
+  &lt;ul&gt; 
+   &lt;li&gt;In the Font Awesome Free download, the MIT license applies to all non-font and non-icon files.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Attribution is required by MIT, SIL OFL, and CC BY licenses. Downloaded Font Awesome Free files already contain embedded comments with sufficient attribution, so you shouldn't need to do anything additional when using these files normally.&lt;/p&gt; 
+&lt;p&gt;We've kept attribution comments terse, so we ask that you do not actively work to remove them from files, especially code. They're a great way for folks to learn about Font Awesome.&lt;/p&gt; 
+&lt;h2&gt;Team&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/orgs/FortAwesome/people"&gt;https://github.com/orgs/FortAwesome/people&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>HeyPuter/puter</title>
+      <link>https://github.com/HeyPuter/puter</link>
+      <description>&lt;p&gt;🌐 The Internet Computer! Free, Open-Source, and Self-Hostable.&lt;/p&gt;&lt;hr&gt;&lt;h3 align="center"&gt;&lt;img width="80" alt="Puter.com, The Personal Cloud Computer: All your files, apps, and games in one place accessible from anywhere at any time." src="https://assets.puter.site/puter-logo.png" /&gt;&lt;/h3&gt; 
+&lt;h3 align="center"&gt;The Internet OS! Free, Open-Source, and Self-Hostable.&lt;/h3&gt; 
+&lt;p align="center"&gt; &lt;a href="https://puter.com/?ref=github.com"&gt;&lt;strong&gt;« LIVE DEMO »&lt;/strong&gt;&lt;/a&gt; &lt;br /&gt; &lt;br /&gt; &lt;a href="https://puter.com/?ref=github.com"&gt;Puter.com&lt;/a&gt; · &lt;a href="https://puter.com/app/app-center"&gt;App Store&lt;/a&gt; · &lt;a href="https://developer.puter.com" target="_blank"&gt;Developers&lt;/a&gt; · &lt;a href="https://github.com/heyputer/puter-cli" target="_blank"&gt;CLI&lt;/a&gt; · &lt;a href="https://discord.com/invite/PQcx7Teh8u"&gt;Discord&lt;/a&gt; · &lt;a href="https://reddit.com/r/puter"&gt;Reddit&lt;/a&gt; · &lt;a href="https://twitter.com/HeyPuter"&gt;X&lt;/a&gt; &lt;/p&gt; 
+&lt;h3 align="center"&gt;&lt;img width="800" style="border-radius:5px;" alt="screenshot" src="https://assets.puter.site/puter.com-screenshot-3.webp" /&gt;&lt;/h3&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Puter&lt;/h2&gt; 
+&lt;p&gt;Puter is an advanced, open-source internet operating system designed to be feature-rich, fast, and highly extensible. Puter can be used as:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;A privacy-first personal cloud to keep all your files, apps, and games in one secure place, accessible from anywhere at any time.&lt;/li&gt; 
+ &lt;li&gt;A platform for building and publishing websites, web apps, and games.&lt;/li&gt; 
+ &lt;li&gt;An alternative to Dropbox, Google Drive, OneDrive, etc. with a fresh interface and powerful features.&lt;/li&gt; 
+ &lt;li&gt;A remote desktop environment for servers and workstations.&lt;/li&gt; 
+ &lt;li&gt;A friendly, open-source project and community to learn about web development, cloud computing, distributed systems, and much more!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;h3&gt;💻 Local Development&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/HeyPuter/puter
+cd puter
+npm install
+npm start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;→&lt;/strong&gt; This should launch Puter at &lt;font color="red"&gt; &lt;a href="http://puter.localhost:4100"&gt;http://puter.localhost:4100&lt;/a&gt; (or the next available port). &lt;/font&gt;&lt;/p&gt; 
+&lt;p&gt;If this does not work, see &lt;a href="https://raw.githubusercontent.com/HeyPuter/puter/main/doc/self-hosters/first-run-issues.md"&gt;First Run Issues&lt;/a&gt; for troubleshooting steps.&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h3&gt;🐳 Docker&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;mkdir puter &amp;amp;&amp;amp; cd puter &amp;amp;&amp;amp; mkdir -p puter/config puter/data &amp;amp;&amp;amp; sudo chown -R 1000:1000 puter &amp;amp;&amp;amp; docker run --rm -p 4100:4100 -v `pwd`/puter/config:/etc/puter -v `pwd`/puter/data:/var/puter  ghcr.io/heyputer/puter
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;→&lt;/strong&gt; This should launch Puter at &lt;font color="red"&gt; &lt;a href="http://puter.localhost:4100"&gt;http://puter.localhost:4100&lt;/a&gt; (or the next available port). &lt;/font&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h3&gt;🐙 Docker Compose&lt;/h3&gt; 
+&lt;h4&gt;Linux/macOS&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;mkdir -p puter/config puter/data
+sudo chown -R 1000:1000 puter
+wget https://raw.githubusercontent.com/HeyPuter/puter/main/docker-compose.yml
+docker compose up
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;→&lt;/strong&gt; This should be available at &lt;font color="red"&gt; &lt;a href="http://puter.localhost:4100"&gt;http://puter.localhost:4100&lt;/a&gt; (or the next available port). &lt;/font&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h4&gt;Windows&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-powershell"&gt;mkdir -p puter
+cd puter
+New-Item -Path "puter\config" -ItemType Directory -Force
+New-Item -Path "puter\data" -ItemType Directory -Force
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/HeyPuter/puter/main/docker-compose.yml" -OutFile "docker-compose.yml"
+docker compose up
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;→&lt;/strong&gt; This should launch Puter at &lt;font color="red"&gt; &lt;a href="http://puter.localhost:4100"&gt;http://puter.localhost:4100&lt;/a&gt; (or the next available port). &lt;/font&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h3&gt;🚀 Self-Hosting&lt;/h3&gt; 
+&lt;p&gt;For detailed guides on self-hosting Puter, including configuration options and best practices, see our &lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/self-hosters/instructions.md"&gt;Self-Hosting Documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h3&gt;☁️ Puter.com&lt;/h3&gt; 
+&lt;p&gt;Puter is available as a hosted service at &lt;a href="https://puter.com"&gt;&lt;strong&gt;puter.com&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;System Requirements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Operating Systems:&lt;/strong&gt; Linux, macOS, Windows&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;RAM:&lt;/strong&gt; 2GB minimum (4GB recommended)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Disk Space:&lt;/strong&gt; 1GB free space&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Node.js:&lt;/strong&gt; Version 20.19.5+ (Version 23+ recommended)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;npm:&lt;/strong&gt; Latest stable version&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;Connect with the maintainers and community through these channels:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Bug report or feature request? Please &lt;a href="https://github.com/HeyPuter/puter/issues/new/choose"&gt;open an issue&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Discord: &lt;a href="https://discord.com/invite/PQcx7Teh8u"&gt;discord.com/invite/PQcx7Teh8u&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;X (Twitter): &lt;a href="https://x.com/HeyPuter"&gt;x.com/HeyPuter&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Reddit: &lt;a href="https://www.reddit.com/r/puter/"&gt;reddit.com/r/puter/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Mastodon: &lt;a href="https://mastodon.social/@puter"&gt;mastodon.social/@puter&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Security issues? &lt;a href="mailto:security@puter.com"&gt;security@puter.com&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Email maintainers at &lt;a href="mailto:hi@puter.com"&gt;hi@puter.com&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;We are always happy to help you with any questions you may have. Don't hesitate to ask!&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This repository, including all its contents, sub-projects, modules, and components, is licensed under &lt;a href="https://github.com/HeyPuter/puter/raw/main/LICENSE.txt"&gt;AGPL-3.0&lt;/a&gt; unless explicitly stated otherwise. Third-party libraries included in this repository may be subject to their own licenses.&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Translations&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.ar.md"&gt;Arabic / العربية&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.hy.md"&gt;Armenian / Հայերեն&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.bn.md"&gt;Bengali / বাংলা&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.zh.md"&gt;Chinese / 中文&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.da.md"&gt;Danish / Dansk&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/README.md"&gt;English&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.fa.md"&gt;Farsi / فارسی&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.fi.md"&gt;Finnish / Suomi&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.fr.md"&gt;French / Français&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.de.md"&gt;German / Deutsch&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.he.md"&gt;Hebrew/ עברית&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.hi.md"&gt;Hindi / हिंदी&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.hu.md"&gt;Hungarian / Magyar&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.id.md"&gt;Indonesian / Bahasa Indonesia&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.it.md"&gt;Italian / Italiano&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.jp.md"&gt;Japanese / 日本語&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.ko.md"&gt;Korean / 한국어&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.my.md"&gt;Malay / Bahasa Malaysia&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.ml.md"&gt;Malayalam / മലയാളം&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.pl.md"&gt;Polish / Polski&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.pt.md"&gt;Portuguese / Português&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.pa.md"&gt;Punjabi / ਪੰਜਾਬੀ&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.ro.md"&gt;Romanian / Română&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.ru.md"&gt;Russian / Русский&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.es.md"&gt;Spanish / Español&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.sv.md"&gt;Swedish / Svenska&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.ta.md"&gt;Tamil / தமிழ்&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.te.md"&gt;Telugu / తెలుగు&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.th.md"&gt;Thai / ไทย&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.tr.md"&gt;Turkish / Türkçe&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.ua.md"&gt;Ukrainian / Українська&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.ur.md"&gt;Urdu / اردو&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/HeyPuter/puter/raw/main/doc/i18n/README.vi.md"&gt;Vietnamese / Tiếng Việt&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>facebook/react</title>
+      <link>https://github.com/facebook/react</link>
+      <description>&lt;p&gt;The library for web and native user interfaces.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;&lt;a href="https://react.dev/"&gt;React&lt;/a&gt; · &lt;a href="https://github.com/facebook/react/raw/main/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/license-MIT-blue.svg?sanitize=true" alt="GitHub license" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/react"&gt;&lt;img src="https://img.shields.io/npm/v/react.svg?style=flat" alt="npm version" /&gt;&lt;/a&gt; &lt;a href="https://github.com/facebook/react/actions/workflows/runtime_build_and_test.yml"&gt;&lt;img src="https://github.com/facebook/react/actions/workflows/runtime_build_and_test.yml/badge.svg?sanitize=true" alt="(Runtime) Build and Test" /&gt;&lt;/a&gt; &lt;a href="https://github.com/facebook/react/actions/workflows/compiler_typescript.yml"&gt;&lt;img src="https://github.com/facebook/react/actions/workflows/compiler_typescript.yml/badge.svg?branch=main" alt="(Compiler) TypeScript" /&gt;&lt;/a&gt; &lt;a href="https://legacy.reactjs.org/docs/how-to-contribute.html#your-first-pull-request"&gt;&lt;img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?sanitize=true" alt="PRs Welcome" /&gt;&lt;/a&gt;&lt;/h1&gt; 
+&lt;p&gt;React is a JavaScript library for building user interfaces.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Declarative:&lt;/strong&gt; React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable, simpler to understand, and easier to debug.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Component-Based:&lt;/strong&gt; Build encapsulated components that manage their own state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep the state out of the DOM.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Learn Once, Write Anywhere:&lt;/strong&gt; We don't make assumptions about the rest of your technology stack, so you can develop new features in React without rewriting existing code. React can also render on the server using &lt;a href="https://nodejs.org/en"&gt;Node&lt;/a&gt; and power mobile apps using &lt;a href="https://reactnative.dev/"&gt;React Native&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;a href="https://react.dev/learn"&gt;Learn how to use React in your project&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;React has been designed for gradual adoption from the start, and &lt;strong&gt;you can use as little or as much React as you need&lt;/strong&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Use &lt;a href="https://react.dev/learn"&gt;Quick Start&lt;/a&gt; to get a taste of React.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://react.dev/learn/add-react-to-an-existing-project"&gt;Add React to an Existing Project&lt;/a&gt; to use as little or as much React as you need.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://react.dev/learn/start-a-new-react-project"&gt;Create a New React App&lt;/a&gt; if you're looking for a powerful JavaScript toolchain.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;You can find the React documentation &lt;a href="https://react.dev/"&gt;on the website&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Check out the &lt;a href="https://react.dev/learn"&gt;Getting Started&lt;/a&gt; page for a quick overview.&lt;/p&gt; 
+&lt;p&gt;The documentation is divided into several sections:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://react.dev/learn"&gt;Quick Start&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://react.dev/learn/tutorial-tic-tac-toe"&gt;Tutorial&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://react.dev/learn/thinking-in-react"&gt;Thinking in React&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://react.dev/learn/installation"&gt;Installation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://react.dev/learn/describing-the-ui"&gt;Describing the UI&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://react.dev/learn/adding-interactivity"&gt;Adding Interactivity&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://react.dev/learn/managing-state"&gt;Managing State&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://react.dev/learn/escape-hatches"&gt;Advanced Guides&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://react.dev/reference/react"&gt;API Reference&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://react.dev/community"&gt;Where to Get Support&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://legacy.reactjs.org/docs/how-to-contribute.html"&gt;Contributing Guide&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;You can improve it by sending pull requests to &lt;a href="https://github.com/reactjs/react.dev"&gt;this repository&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Examples&lt;/h2&gt; 
+&lt;p&gt;We have several examples &lt;a href="https://react.dev/"&gt;on the website&lt;/a&gt;. Here is the first one to get you started:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsx"&gt;import { createRoot } from 'react-dom/client';
+
+function HelloMessage({ name }) {
+  return &amp;lt;div&amp;gt;Hello {name}&amp;lt;/div&amp;gt;;
+}
+
+const root = createRoot(document.getElementById('container'));
+root.render(&amp;lt;HelloMessage name="Taylor" /&amp;gt;);
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This example will render "Hello Taylor" into a container on the page.&lt;/p&gt; 
+&lt;p&gt;You'll notice that we used an HTML-like syntax; &lt;a href="https://react.dev/learn#writing-markup-with-jsx"&gt;we call it JSX&lt;/a&gt;. JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;The main purpose of this repository is to continue evolving React core, making it faster and easier to use. Development of React happens in the open on GitHub, and we are grateful to the community for contributing bugfixes and improvements. Read below to learn how you can take part in improving React.&lt;/p&gt; 
+&lt;h3&gt;&lt;a href="https://code.fb.com/codeofconduct"&gt;Code of Conduct&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;Facebook has adopted a Code of Conduct that we expect project participants to adhere to. Please read &lt;a href="https://code.fb.com/codeofconduct"&gt;the full text&lt;/a&gt; so that you can understand what actions will and will not be tolerated.&lt;/p&gt; 
+&lt;h3&gt;&lt;a href="https://legacy.reactjs.org/docs/how-to-contribute.html"&gt;Contributing Guide&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;Read our &lt;a href="https://legacy.reactjs.org/docs/how-to-contribute.html"&gt;contributing guide&lt;/a&gt; to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to React.&lt;/p&gt; 
+&lt;h3&gt;&lt;a href="https://github.com/facebook/react/labels/good%20first%20issue"&gt;Good First Issues&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;To help you get your feet wet and get you familiar with our contribution process, we have a list of &lt;a href="https://github.com/facebook/react/labels/good%20first%20issue"&gt;good first issues&lt;/a&gt; that contain bugs that have a relatively limited scope. This is a great place to get started.&lt;/p&gt; 
+&lt;h3&gt;License&lt;/h3&gt; 
+&lt;p&gt;React is &lt;a href="https://raw.githubusercontent.com/facebook/react/main/LICENSE"&gt;MIT licensed&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SillyTavern/SillyTavern</title>
+      <link>https://github.com/SillyTavern/SillyTavern</link>
+      <description>&lt;p&gt;LLM Frontend for Power Users.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a name="readme-top"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/01a6ae9a-16aa-45f2-8bff-32b5dc587e44" alt="" /&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;English | &lt;a href="https://raw.githubusercontent.com/SillyTavern/SillyTavern/release/readme-de_de.md"&gt;German&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/SillyTavern/SillyTavern/release/readme-zh_cn.md"&gt;中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/SillyTavern/SillyTavern/release/readme-zh_tw.md"&gt;繁體中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/SillyTavern/SillyTavern/release/readme-ja_jp.md"&gt;日本語&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/SillyTavern/SillyTavern/release/readme-ru_ru.md"&gt;Русский&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/SillyTavern/SillyTavern/release/readme-ko_kr.md"&gt;한국어&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://github.com/SillyTavern/SillyTavern/stargazers"&gt;&lt;img src="https://img.shields.io/github/stars/SillyTavern/SillyTavern.svg?sanitize=true" alt="GitHub Stars" /&gt;&lt;/a&gt; &lt;a href="https://github.com/SillyTavern/SillyTavern/forks"&gt;&lt;img src="https://img.shields.io/github/forks/SillyTavern/SillyTavern.svg?sanitize=true" alt="GitHub Forks" /&gt;&lt;/a&gt; &lt;a href="https://github.com/SillyTavern/SillyTavern/issues"&gt;&lt;img src="https://img.shields.io/github/issues/SillyTavern/SillyTavern.svg?sanitize=true" alt="GitHub Issues" /&gt;&lt;/a&gt; &lt;a href="https://github.com/SillyTavern/SillyTavern/pulls"&gt;&lt;img src="https://img.shields.io/github/issues-pr/SillyTavern/SillyTavern.svg?sanitize=true" alt="GitHub Pull Requests" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;SillyTavern provides a single unified interface for many LLM APIs (KoboldAI/CPP, Horde, NovelAI, Ooba, Tabby, OpenAI, OpenRouter, Claude, Mistral and more), a mobile-friendly layout, Visual Novel Mode, Automatic1111 &amp;amp; ComfyUI API image generation integration, TTS, WorldInfo (lorebooks), customizable UI, auto-translate, more prompt options than you'd ever want or need, and endless growth potential via third-party extensions.&lt;/p&gt; 
+&lt;p&gt;We have a &lt;a href="https://docs.sillytavern.app/"&gt;Documentation website&lt;/a&gt; to answer most of your questions and help you get started.&lt;/p&gt; 
+&lt;h2&gt;What is SillyTavern?&lt;/h2&gt; 
+&lt;p&gt;SillyTavern (or ST for short) is a locally installed user interface that allows you to interact with text generation LLMs, image generation engines, and TTS voice models.&lt;/p&gt; 
+&lt;p&gt;Beginning in February 2023 as a fork of TavernAI 1.2.8, SillyTavern now has over 200 contributors and 2 years of independent development under its belt, and continues to serve as a leading software for savvy AI hobbyists.&lt;/p&gt; 
+&lt;h2&gt;Our Vision&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;We aim to empower users with as much utility and control over their LLM prompts as possible. The steep learning curve is part of the fun!&lt;/li&gt; 
+ &lt;li&gt;We do not provide any online or hosted services, nor programmatically track any user data.&lt;/li&gt; 
+ &lt;li&gt;SillyTavern is a passion project brought to you by a dedicated community of LLM enthusiasts, and will always be free and open sourced.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Do I need a powerful PC to run SillyTavern?&lt;/h2&gt; 
+&lt;p&gt;The hardware requirements are minimal: it will run on anything that can run NodeJS 18 or higher. If you intend to do LLM inference on your local machine, we recommend a 3000-series NVIDIA graphics card with at least 6GB of VRAM, but actual requirements may vary depending on the model and backend you choose to use.&lt;/p&gt; 
+&lt;h2&gt;Questions or suggestions?&lt;/h2&gt; 
+&lt;h3&gt;Discord server&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="left"&gt;&lt;a href="https://discord.gg/sillytavern"&gt;&lt;img src="https://img.shields.io/discord/1100685673633153084?color=5865F2&amp;amp;label=discord&amp;amp;labelColor=black&amp;amp;logo=discord&amp;amp;logoColor=white&amp;amp;style=for-the-badge" alt="" /&gt;&lt;/a&gt;&lt;/th&gt; 
+   &lt;th align="left"&gt;&lt;a href="https://discord.gg/sillytavern"&gt;Join our Discord community!&lt;/a&gt; Get support, share favorite characters and prompts.&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+&lt;/table&gt; 
+&lt;p&gt;Or get in touch with the developers directly:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Discord: cohee, rossascends, wolfsblvt&lt;/li&gt; 
+ &lt;li&gt;Reddit: &lt;a href="https://www.reddit.com/user/RossAscends/"&gt;/u/RossAscends&lt;/a&gt;, &lt;a href="https://www.reddit.com/user/sillylossy/"&gt;/u/sillylossy&lt;/a&gt;, &lt;a href="https://www.reddit.com/user/Wolfsblvt/"&gt;u/Wolfsblvt&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/SillyTavern/SillyTavern/issues"&gt;Post a GitHub issue&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;I like your project! How do I contribute?&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Send pull requests. Learn how to contribute: &lt;a href="https://raw.githubusercontent.com/SillyTavern/SillyTavern/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Send feature suggestions and issue reports using the provided templates.&lt;/li&gt; 
+ &lt;li&gt;Read this entire readme file and check the documentation website first, to avoid sending duplicate issues.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Screenshots&lt;/h2&gt; 
+&lt;img width="500" alt="image" src="https://github.com/user-attachments/assets/9b5f32f0-c3b3-4102-b3f5-0e9213c0f50f" /&gt; 
+&lt;img width="500" alt="image" src="https://github.com/user-attachments/assets/913fdbaa-7d33-42f1-ae2c-89dca41c53d1" /&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;For detailed installation instructions, please visit our documentation:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.sillytavern.app/installation/windows/"&gt;Windows Installation Guide&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.sillytavern.app/installation/linuxmacos/"&gt;MacOS/Linux Installation Guide&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.sillytavern.app/installation/android-(termux)/"&gt;Android (Termux) Installation Guide&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.sillytavern.app/installation/docker/"&gt;Docker Installation Guide&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License and credits&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TavernAI/TavernAI"&gt;TavernAI&lt;/a&gt; 1.2.8 by Humi: MIT License&lt;/li&gt; 
+ &lt;li&gt;Portions of CncAnon's TavernAITurbo mod used with permission&lt;/li&gt; 
+ &lt;li&gt;Visual Novel Mode inspired by the work of PepperTaco (&lt;a href="https://github.com/peppertaco/Tavern/"&gt;https://github.com/peppertaco/Tavern/&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;Noto Sans font by Google (OFL license)&lt;/li&gt; 
+ &lt;li&gt;Icon theme by Font Awesome &lt;a href="https://fontawesome.com"&gt;https://fontawesome.com&lt;/a&gt; (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)&lt;/li&gt; 
+ &lt;li&gt;Default content by @OtisAlejandro (Seraphina character and lorebook) and @kallmeflocc (10K Discord Users Celebratory Background)&lt;/li&gt; 
+ &lt;li&gt;Docker guide by &lt;a href="https://github.com/mrguymiah"&gt;@mrguymiah&lt;/a&gt; and &lt;a href="https://github.com/Bronya-Rand"&gt;@Bronya-Rand&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;kokoro-js library by &lt;a href="https://github.com/hexgrad"&gt;@hexgrad&lt;/a&gt; (Apache-2.0 License)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Top Contributors&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/SillyTavern/SillyTavern/graphs/contributors"&gt;&lt;img src="https://contrib.rocks/image?repo=SillyTavern/SillyTavern" alt="Contributors" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;!-- LINK GROUP --&gt;</description>
+    </item>
+    
+    <item>
+      <title>sohzm/cheating-daddy</title>
+      <link>https://github.com/sohzm/cheating-daddy</link>
+      <description>&lt;p&gt;a free and opensource app that lets you gain an unfair advantage&lt;/p&gt;&lt;hr&gt;&lt;img width="1299" height="424" alt="cd (1)" src="https://github.com/user-attachments/assets/b25fff4d-043d-4f38-9985-f832ae0d0f6e" /&gt; 
+&lt;h2&gt;Recall.ai - API for desktop recording&lt;/h2&gt; 
+&lt;p&gt;If you’re looking for a hosted desktop recording API, consider checking out &lt;a href="https://www.recall.ai/product/desktop-recording-sdk/?utm_source=github&amp;amp;utm_medium=sponsorship&amp;amp;utm_campaign=sohzm-cheating-daddy"&gt;Recall.ai&lt;/a&gt;, an API that records Zoom, Google Meet, Microsoft Teams, in-person meetings, and more.&lt;/p&gt; 
+&lt;p&gt;This project is sponsored by Recall.ai.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE]&lt;br /&gt; Use latest MacOS and Windows version, older versions have limited support&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE]&lt;br /&gt; During testing it wont answer if you ask something, you need to simulate interviewer asking question, which it will answer&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;A real-time AI assistant that provides contextual help during video calls, interviews, presentations, and meetings using screen capture and audio analysis.&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Live AI Assistance&lt;/strong&gt;: Real-time help powered by Google Gemini 2.0 Flash Live&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Screen &amp;amp; Audio Capture&lt;/strong&gt;: Analyzes what you see and hear for contextual responses&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Multiple Profiles&lt;/strong&gt;: Interview, Sales Call, Business Meeting, Presentation, Negotiation&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Transparent Overlay&lt;/strong&gt;: Always-on-top window that can be positioned anywhere&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Click-through Mode&lt;/strong&gt;: Make window transparent to clicks when needed&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Cross-platform&lt;/strong&gt;: Works on macOS, Windows, and Linux (kinda, dont use, just for testing rn)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Setup&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Get a Gemini API Key&lt;/strong&gt;: Visit &lt;a href="https://aistudio.google.com/apikey"&gt;Google AI Studio&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Install Dependencies&lt;/strong&gt;: &lt;code&gt;npm install&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Run the App&lt;/strong&gt;: &lt;code&gt;npm start&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Enter your Gemini API key in the main window&lt;/li&gt; 
+ &lt;li&gt;Choose your profile and language in settings&lt;/li&gt; 
+ &lt;li&gt;Click "Start Session" to begin&lt;/li&gt; 
+ &lt;li&gt;Position the window using keyboard shortcuts&lt;/li&gt; 
+ &lt;li&gt;The AI will provide real-time assistance based on your screen and what interview asks&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Keyboard Shortcuts&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Window Movement&lt;/strong&gt;: &lt;code&gt;Ctrl/Cmd + Arrow Keys&lt;/code&gt; - Move window&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Click-through&lt;/strong&gt;: &lt;code&gt;Ctrl/Cmd + M&lt;/code&gt; - Toggle mouse events&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Close/Back&lt;/strong&gt;: &lt;code&gt;Ctrl/Cmd + \&lt;/code&gt; - Close window or go back&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Send Message&lt;/strong&gt;: &lt;code&gt;Enter&lt;/code&gt; - Send text to AI&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Audio Capture&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;macOS&lt;/strong&gt;: &lt;a href="https://github.com/Mohammed-Yasin-Mulla/Sound"&gt;SystemAudioDump&lt;/a&gt; for system audio&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Windows&lt;/strong&gt;: Loopback audio capture&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Linux&lt;/strong&gt;: Microphone input&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Requirements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Electron-compatible OS (macOS, Windows, Linux)&lt;/li&gt; 
+ &lt;li&gt;Gemini API key&lt;/li&gt; 
+ &lt;li&gt;Screen recording permissions&lt;/li&gt; 
+ &lt;li&gt;Microphone/audio permissions&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>vercel/next.js</title>
+      <link>https://github.com/vercel/next.js</link>
+      <description>&lt;p&gt;The React Framework&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;a href="https://nextjs.org"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://assets.vercel.com/image/upload/v1662130559/nextjs/Icon_dark_background.png" /&gt; 
+   &lt;img alt="Next.js logo" src="https://assets.vercel.com/image/upload/v1662130559/nextjs/Icon_light_background.png" height="128" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; 
+ &lt;h1&gt;Next.js&lt;/h1&gt; 
+ &lt;p&gt;&lt;a href="https://vercel.com"&gt;&lt;img alt="Vercel logo" src="https://img.shields.io/badge/MADE%20BY%20Vercel-000000.svg?style=for-the-badge&amp;amp;logo=Vercel&amp;amp;labelColor=000" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/next"&gt;&lt;img alt="NPM version" src="https://img.shields.io/npm/v/next.svg?style=for-the-badge&amp;amp;labelColor=000000" /&gt;&lt;/a&gt; &lt;a href="https://github.com/vercel/next.js/raw/canary/license.md"&gt;&lt;img alt="License" src="https://img.shields.io/npm/l/next.svg?style=for-the-badge&amp;amp;labelColor=000000" /&gt;&lt;/a&gt; &lt;a href="https://github.com/vercel/next.js/discussions"&gt;&lt;img alt="Join the community on GitHub" src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&amp;amp;logo=Next.js&amp;amp;labelColor=000000&amp;amp;logoWidth=20" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;Used by some of the world's largest companies, Next.js enables you to create full-stack web applications by extending the latest React features, and integrating powerful Rust-based JavaScript tooling for the fastest builds.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Visit our &lt;a href="https://nextjs.org/learn"&gt;Learn Next.js&lt;/a&gt; course to get started with Next.js.&lt;/li&gt; 
+ &lt;li&gt;Visit the &lt;a href="https://nextjs.org/showcase"&gt;Next.js Showcase&lt;/a&gt; to see more sites built with Next.js.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Visit &lt;a href="https://nextjs.org/docs"&gt;https://nextjs.org/docs&lt;/a&gt; to view the full documentation.&lt;/p&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;p&gt;The Next.js community can be found on &lt;a href="https://github.com/vercel/next.js/discussions"&gt;GitHub Discussions&lt;/a&gt; where you can ask questions, voice ideas, and share your projects with other people.&lt;/p&gt; 
+&lt;p&gt;To chat with other community members you can join the Next.js &lt;a href="https://nextjs.org/discord"&gt;Discord&lt;/a&gt; server.&lt;/p&gt; 
+&lt;p&gt;Do note that our &lt;a href="https://github.com/vercel/next.js/raw/canary/CODE_OF_CONDUCT.md"&gt;Code of Conduct&lt;/a&gt; applies to all Next.js community channels. Users are &lt;strong&gt;highly encouraged&lt;/strong&gt; to read and adhere to it to avoid repercussions.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Contributions to Next.js are welcome and highly appreciated. However, before you jump right into it, we would like you to review our &lt;a href="https://raw.githubusercontent.com/vercel/next.js/canary/contributing.md"&gt;Contribution Guidelines&lt;/a&gt; to make sure you have a smooth experience contributing to Next.js.&lt;/p&gt; 
+&lt;h3&gt;Good First Issues:&lt;/h3&gt; 
+&lt;p&gt;We have a list of &lt;strong&gt;&lt;a href="https://github.com/vercel/next.js/labels/good%20first%20issue"&gt;good first issues&lt;/a&gt;&lt;/strong&gt; that contain bugs that have a relatively limited scope. This is a great place for newcomers and beginners alike to get started, gain experience, and get familiar with our contribution process.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Security&lt;/h2&gt; 
+&lt;p&gt;If you believe you have found a security vulnerability in Next.js, we encourage you to &lt;strong&gt;&lt;em&gt;responsibly disclose this and NOT open a public issue&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt; 
+&lt;p&gt;To participate in our Open Source Software Bug Bounty program, please email &lt;a href="mailto:responsible.disclosure@vercel.com"&gt;responsible.disclosure@vercel.com&lt;/a&gt;. We will add you to the program and provide further instructions for submitting your report.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>juliangarnier/anime</title>
+      <link>https://github.com/juliangarnier/anime</link>
+      <description>&lt;p&gt;JavaScript animation engine&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Anime.js&lt;/h1&gt; 
+&lt;p align="center"&gt; 
+ &lt;picture align="center"&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="./assets/images/animejs-v4-logo-animation-dark.gif" /&gt; 
+  &lt;img align="center" alt="Anime.js V4 logo animation" src="https://raw.githubusercontent.com/juliangarnier/anime/master/assets/images/animejs-v4-logo-animation.gif" width="560" /&gt; 
+ &lt;/picture&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;strong&gt; &lt;em&gt;Anime.js&lt;/em&gt; is a fast, multipurpose and lightweight JavaScript animation library with a simple, yet powerful API.&lt;br /&gt; It works with CSS properties, SVG, DOM attributes and JavaScript Objects. &lt;/strong&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img alt="NPM Downloads" src="https://img.shields.io/npm/dm/animejs?style=flat-square&amp;amp;logo=npm" /&gt; &lt;img alt="jsDelivr hits (npm)" src="https://img.shields.io/jsdelivr/npm/hm/animejs?style=flat-square&amp;amp;logo=jsdeliver" /&gt; &lt;img alt="GitHub Sponsors" src="https://img.shields.io/github/sponsors/juliangarnier?style=flat-square&amp;amp;logo=github" /&gt; &lt;/p&gt; 
+&lt;h2&gt;Sponsors&lt;/h2&gt; 
+&lt;p&gt;Anime.js is 100% free and is only made possible with the help of our sponsors. Help the project become sustainable by sponsoring us on &lt;a target="_blank" href="https://github.com/sponsors/juliangarnier"&gt;GitHub Sponsors&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Platinum sponsors&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;a target="_blank" href="https://ice.io/?ref=animejs"&gt; 
+     &lt;picture&gt; 
+      &lt;source media="(prefers-color-scheme: dark)" srcset="./assets/sponsors/ice-open-network-logomark.png?v=251108" /&gt; 
+      &lt;img align="center" src="https://raw.githubusercontent.com/juliangarnier/anime/master/assets/sponsors/ice-open-network-logomark-dark.png?v=251108" width="310" /&gt; 
+     &lt;/picture&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;a target="_blank" href="https://go.warp.dev/anime"&gt; 
+     &lt;picture&gt; 
+      &lt;source media="(prefers-color-scheme: dark)" srcset="./assets/sponsors/warp-logomark.png?v=251108" /&gt; 
+      &lt;img align="center" src="https://raw.githubusercontent.com/juliangarnier/anime/master/assets/sponsors/warp-logomark-dark.png?v=251108" width="310" /&gt; 
+     &lt;/picture&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;a target="_blank" href="https://hyperswitch.io/?utm_source=julian&amp;amp;utm_medium=github&amp;amp;utm_campaign=animejs_sponsorship"&gt; 
+     &lt;picture&gt; 
+      &lt;source media="(prefers-color-scheme: dark)" srcset="./assets/sponsors/juspay-logomark.png?v=251108" /&gt; 
+      &lt;img align="center" src="https://raw.githubusercontent.com/juliangarnier/anime/master/assets/sponsors/juspay-logomark-dark.png?v=251108" width="310" /&gt; 
+     &lt;/picture&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Silver sponsors&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;a target="_blank" href="https://www.lambdatest.com?utm_source=animeJS&amp;amp;utm_medium=organic&amp;amp;utm_campaign=july_08&amp;amp;utm_term=sk&amp;amp;utm_content=opensource"&gt; 
+     &lt;picture&gt; 
+      &lt;source media="(prefers-color-scheme: dark)" srcset="./assets/sponsors/lambdatest-logomark.png?v=251108" /&gt; 
+      &lt;img align="center" src="https://raw.githubusercontent.com/juliangarnier/anime/master/assets/sponsors/lambdatest-logomark-dark.png?v=251108" width="141" /&gt; 
+     &lt;/picture&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;a target="_blank" href="https://inspatialapp.com/?ref=animejs"&gt; 
+     &lt;picture&gt; 
+      &lt;source media="(prefers-color-scheme: dark)" srcset="./assets/sponsors/inspatial-logomark.png?v=251108" /&gt; 
+      &lt;img align="center" src="https://raw.githubusercontent.com/juliangarnier/anime/master/assets/sponsors/inspatial-logomark-dark.png?v=251108" width="141" /&gt; 
+     &lt;/picture&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;a target="_blank" href="https://github.com/sponsors/juliangarnier"&gt; 
+     &lt;picture&gt; 
+      &lt;img align="center" src="https://raw.githubusercontent.com/juliangarnier/anime/master/assets/sponsors/placeholder-small.png?v=251108" width="141" /&gt; 
+     &lt;/picture&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;a target="_blank" href="https://github.com/sponsors/juliangarnier"&gt; 
+     &lt;picture&gt; 
+      &lt;img align="center" src="https://raw.githubusercontent.com/juliangarnier/anime/master/assets/sponsors/placeholder-small.png?v=251108" width="141" /&gt; 
+     &lt;/picture&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;a target="_blank" href="https://github.com/sponsors/juliangarnier"&gt; 
+     &lt;picture&gt; 
+      &lt;img align="center" src="https://raw.githubusercontent.com/juliangarnier/anime/master/assets/sponsors/placeholder-small.png?v=251108" width="141" /&gt; 
+     &lt;/picture&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;a target="_blank" href="https://github.com/sponsors/juliangarnier"&gt; 
+     &lt;picture&gt; 
+      &lt;img align="center" src="https://raw.githubusercontent.com/juliangarnier/anime/master/assets/sponsors/placeholder-small.png?v=251108" width="141" /&gt; 
+     &lt;/picture&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;Get featured here by becoming a &lt;a target="_blank" href="https://github.com/sponsors/juliangarnier"&gt;GitHub Sponsor&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;p&gt;Anime.js V4 works by importing ES modules like so:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;pre&gt;&lt;code class="language-javascript"&gt;import {
+  animate,
+  stagger,
+} from 'animejs';
+
+animate('.square', {
+  x: 320,
+  rotate: { from: -180 },
+  duration: 1250,
+  delay: stagger(65, { from: 'center' }),
+  ease: 'inOutQuint',
+  loop: true,
+  alternate: true
+});
+&lt;/code&gt;&lt;/pre&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img align="center" alt="Anime.js code example" src="https://raw.githubusercontent.com/juliangarnier/anime/master/assets/images/usage-example-result.gif" /&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;V4 Documentation&lt;/h2&gt; 
+&lt;p&gt;The full documentation is available &lt;a href="https://animejs.com/documentation"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;V3 Migration guide&lt;/h2&gt; 
+&lt;p&gt;You can find the v3 to v4 migration guide &lt;a href="https://github.com/juliangarnier/anime/wiki/Migrating-from-v3-to-v4"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;NPM development scripts&lt;/h2&gt; 
+&lt;p&gt;First, run &lt;code&gt;npm i&lt;/code&gt; to install all the necessary packages. Then, execute the following scripts with &lt;code&gt;npm run &amp;lt;script&amp;gt;&lt;/code&gt;.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;script&lt;/th&gt; 
+   &lt;th&gt;action&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;dev&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Watches for changes in &lt;code&gt;src/**/*.js&lt;/code&gt;, bundles the ESM version to &lt;code&gt;lib/&lt;/code&gt; and creates type declarations in &lt;code&gt;types/&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;dev:test&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runs &lt;code&gt;dev&lt;/code&gt; and &lt;code&gt;test:browser&lt;/code&gt; concurrently&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;build&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Bundles ESM / UMD / CJS / IIFE versions to &lt;code&gt;lib/&lt;/code&gt; and creates type declarations in &lt;code&gt;types/&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;test:browser&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Starts a local server and runs all browser-related tests&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;test:node&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Starts Node-related tests&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;open:examples&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Starts a local server to browse the examples locally&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;© &lt;a href="http://juliangarnier.com"&gt;Julian Garnier&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/juliangarnier/anime/master/LICENSE.md"&gt;MIT License&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>harvard-edge/cs249r_book</title>
+      <link>https://github.com/harvard-edge/cs249r_book</link>
+      <description>&lt;p&gt;Introduction to Machine Learning Systems&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Machine Learning Systems&lt;/h1&gt; 
+&lt;p&gt;&lt;em&gt;Principles and Practices of Engineering Artificially Intelligent Systems&lt;/em&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;p align="center"&gt; &lt;/p&gt;
+ &lt;p&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/actions/workflows/book-validate-dev.yml"&gt;&lt;img src="https://img.shields.io/github/actions/workflow/status/harvard-edge/cs249r_book/book-validate-dev.yml?branch=dev&amp;amp;label=Book&amp;amp;logo=githubactions&amp;amp;cacheSeconds=300" alt="Book" /&gt;&lt;/a&gt; &lt;a href="https://github.com/harvard-edge/cs249r_book/actions/workflows/tinytorch-ci.yml"&gt;&lt;img src="https://img.shields.io/github/actions/workflow/status/harvard-edge/cs249r_book/tinytorch-ci.yml?branch=dev&amp;amp;label=TinyTorch&amp;amp;logo=python&amp;amp;cacheSeconds=300" alt="TinyTorch" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/github/last-commit/harvard-edge/cs249r_book/dev?label=Updated&amp;amp;logo=git&amp;amp;cacheSeconds=300" alt="Updated" /&gt; &lt;a href="https://github.com/harvard-edge/cs249r_book/raw/dev/LICENSE.md"&gt;&lt;img src="https://img.shields.io/badge/License-CC--BY--NC--ND%204.0-blue.svg?sanitize=true" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/harvard-edge/cs249r_book/dev/#-citation--license"&gt;&lt;img src="https://img.shields.io/badge/Cite-IEEE%202024-blue?logo=ieee" alt="Cite" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/mlsysbook"&gt;&lt;img src="https://img.shields.io/badge/Fund%20Us-Open%20Collective-blue.svg?logo=open-collective" alt="Fund Us" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;/p&gt; 
+ &lt;p align="center"&gt; 
+  &lt;!-- Reader Navigation --&gt; &lt;/p&gt;
+ &lt;p&gt;&lt;strong&gt;&lt;a href="https://mlsysbook.ai"&gt;📖 Read Online&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://mlsysbook.ai/tinytorch"&gt;Tiny🔥Torch&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://mlsysbook.ai/pdf"&gt;📄 Download PDF&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://mlsysbook.ai/epub"&gt;📓 Download EPUB&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://mlsysbook.org"&gt;🌐 Explore Ecosystem&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;/p&gt; 
+ &lt;p&gt;📚 &lt;strong&gt;Hardcopy edition coming 2026 with MIT Press.&lt;/strong&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;About This Project&lt;/h2&gt; 
+&lt;p&gt;This repository contains an &lt;strong&gt;open source textbook&lt;/strong&gt; and &lt;strong&gt;hands-on framework&lt;/strong&gt; for learning how to engineer AI systems. It began in Harvard's CS249r course by &lt;a href="https://vijay.seas.harvard.edu"&gt;Prof. Vijay Janapa Reddi&lt;/a&gt;. Today, it supports classrooms, study groups, and independent learners around the world.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Mission:&lt;/strong&gt; Accessible AI systems education for anyone, anywhere.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;What's Here&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Read → Experiment → Build&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Component&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+   &lt;th&gt;Getting Started&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/harvard-edge/cs249r_book/dev/book/"&gt;📖 Book&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;The Machine Learning Systems textbook that walks through design, optimization, deployment, edge computing, and responsible AI in a clear, end-to-end way&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/harvard-edge/cs249r_book/dev/book/README.md"&gt;book/README.md&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/harvard-edge/cs249r_book/dev/tinytorch/"&gt;Tiny🔥Torch&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;A from-scratch ML framework that lets you build the full stack yourself, piece by piece, and learn how real systems work under the hood&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/harvard-edge/cs249r_book/dev/tinytorch/README.md"&gt;tinytorch/README.md&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/harvard-edge/cs249r_book/dev/collabs/"&gt;🔮 Collabs&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Hands-on Colab simulations that let you experiment with ML systems, explore tradeoffs, and see how design decisions ripple through a working microchamber&lt;/td&gt; 
+   &lt;td&gt;&lt;em&gt;Coming Summer 2026&lt;/em&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;What You Will Learn&lt;/h2&gt; 
+&lt;p&gt;This textbook teaches you to think at the intersection of machine learning and systems engineering. Each chapter bridges algorithmic concepts with the infrastructure that makes them work in practice.&lt;/p&gt; 
+&lt;h3&gt;The ML ↔ Systems Bridge&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;ML Concept&lt;/th&gt; 
+   &lt;th&gt;Systems Concept&lt;/th&gt; 
+   &lt;th&gt;What You Learn&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Model parameters&lt;/td&gt; 
+   &lt;td&gt;Memory constraints&lt;/td&gt; 
+   &lt;td&gt;How to fit large models on resource-limited devices&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Inference latency&lt;/td&gt; 
+   &lt;td&gt;Hardware acceleration&lt;/td&gt; 
+   &lt;td&gt;How GPUs, TPUs, and accelerators execute neural networks&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Training convergence&lt;/td&gt; 
+   &lt;td&gt;Compute efficiency&lt;/td&gt; 
+   &lt;td&gt;How mixed-precision and optimization techniques reduce cost&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Model accuracy&lt;/td&gt; 
+   &lt;td&gt;Quantization and pruning&lt;/td&gt; 
+   &lt;td&gt;How to compress models while preserving performance&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Data requirements&lt;/td&gt; 
+   &lt;td&gt;Pipeline infrastructure&lt;/td&gt; 
+   &lt;td&gt;How to build efficient data loading and preprocessing&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Model deployment&lt;/td&gt; 
+   &lt;td&gt;MLOps practices&lt;/td&gt; 
+   &lt;td&gt;How to monitor, version, and update models in production&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Privacy constraints&lt;/td&gt; 
+   &lt;td&gt;On-device learning&lt;/td&gt; 
+   &lt;td&gt;How to train and adapt models without sending data to the cloud&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Book Structure&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Part&lt;/th&gt; 
+   &lt;th&gt;Focus&lt;/th&gt; 
+   &lt;th&gt;Chapters&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;I. Foundations&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Core concepts&lt;/td&gt; 
+   &lt;td&gt;Introduction, ML Systems, DL Primer, Architectures&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;II. Design&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Building blocks&lt;/td&gt; 
+   &lt;td&gt;Workflow, Data Engineering, Frameworks, Training&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;III. Performance&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Making it fast&lt;/td&gt; 
+   &lt;td&gt;Efficient AI, Optimizations, HW Acceleration, Benchmarking&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;IV. Deployment&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Making it work&lt;/td&gt; 
+   &lt;td&gt;MLOps, On-device Learning, Privacy, Robustness&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;V. Trust&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Making it right&lt;/td&gt; 
+   &lt;td&gt;Responsible AI, Sustainable AI, AI for Good&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;VI. Frontiers&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;What's next&lt;/td&gt; 
+   &lt;td&gt;Emerging trends and future directions&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;What Makes This Book Different&lt;/h2&gt; 
+&lt;p&gt;This project is a living textbook. I keep it updated as the field grows, with community input along the way.&lt;/p&gt; 
+&lt;p&gt;AI may feel like it is moving at lightning speed, but the engineering building blocks that make it work do not change as quickly as the headlines. This book is built around those stable foundations.&lt;/p&gt; 
+&lt;p&gt;Think of it like LEGO. New sets arrive all the time, but the bricks themselves stay the same. Once you learn how the bricks fit together, you can build anything. Here, those "AI bricks" are the solid systems principles that make AI work.&lt;/p&gt; 
+&lt;p&gt;Whether you are reading a chapter, running a lab, or sharing feedback, you are helping make these ideas more accessible to the next learner.&lt;/p&gt; 
+&lt;p&gt;Thank you for being a part of the story.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Why This Project Exists&lt;/h2&gt; 
+&lt;p&gt;&lt;em&gt;Students learn how to train ML models, but few are taught how to engineer the systems that make those models useful in practice. As AI capabilities grow, progress will depend less on developing new algorithms and more on developing the engineers who can design scalable, efficient, and responsible systems that bring those algorithms to life.&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;This project is part of a broader personal mission to &lt;strong&gt;educate one million learners worldwide&lt;/strong&gt; in the foundations of AI systems engineering. The long term impact of AI will be shaped by a generation of engineers and builders who know how to turn ideas into working systems.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;— Vijay Janapa Reddi&lt;/strong&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Start Here&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;For Readers:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Read &lt;a href="https://www.mlsysbook.ai/contents/core/introduction/introduction.html"&gt;Chapter 1&lt;/a&gt; and the overview&lt;/li&gt; 
+ &lt;li&gt;Skim the &lt;a href="https://mlsysbook.ai/contents/core/benchmarking/benchmarking.html"&gt;Benchmarking chapter&lt;/a&gt; to know what to measure&lt;/li&gt; 
+ &lt;li&gt;Pick a &lt;a href="https://www.mlsysbook.ai/contents/labs/kits.html"&gt;TinyML kit&lt;/a&gt; and run a lab&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;For Builders:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Clone this repo and explore &lt;a href="https://raw.githubusercontent.com/harvard-edge/cs249r_book/dev/tinytorch/"&gt;TinyTorch&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Start with Module 01 (Tensors) and build your way up&lt;/li&gt; 
+ &lt;li&gt;Train a CNN on CIFAR-10 with code you wrote from scratch&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;For Everyone:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Say hello in &lt;a href="https://github.com/harvard-edge/cs249r_book/discussions"&gt;Introduce Yourself&lt;/a&gt;. I will do my best to reply.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Support This Work&lt;/h2&gt; 
+&lt;p&gt;We are tracking our way to &lt;strong&gt;1 million learners by 2030&lt;/strong&gt;. Every star, share, and contribution helps us get there.&lt;/p&gt; 
+&lt;h3&gt;Why GitHub Stars Matter&lt;/h3&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;em&gt;What gets measured gets done.&lt;/em&gt; Every star represents a learner or believer in accessible AI education.&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/stargazers"&gt;&lt;img src="https://img.shields.io/github/stars/harvard-edge/cs249r_book?style=for-the-badge&amp;amp;logo=github&amp;amp;color=gold" alt="Stars" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://star-history.com/#harvard-edge/cs249r_book&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=harvard-edge/cs249r_book&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;1 ✓ → 10 ✓ → 100 ✓ → 1,000 ✓ → &lt;strong&gt;10,000 ✓&lt;/strong&gt; → 100,000 by 2026 → ... → &lt;strong&gt;1M by 2030&lt;/strong&gt;&lt;/p&gt; 
+ &lt;h3&gt;Fund the Mission&lt;/h3&gt; 
+ &lt;p&gt;All contributions go to &lt;a href="https://opencollective.com/mlsysbook"&gt;Open Collective&lt;/a&gt;, a transparent fund that supports educational outreach: TinyML system kits, workshops, and infrastructure for learners worldwide.&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://opencollective.com/mlsysbook"&gt;&lt;img src="https://img.shields.io/badge/%F0%9F%92%9D%20Support%20AI%20Education-Open%20Collective-blue.svg?style=for-the-badge" alt="Open Collective" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Community and Resources&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Resource&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://mlsysbook.ai"&gt;📖 &lt;strong&gt;Textbook&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Interactive online textbook&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://tinytorch.ai"&gt;🔥 &lt;strong&gt;TinyTorch&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Educational ML framework (Early Access)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://mlsysbook.org"&gt;🌐 &lt;strong&gt;Ecosystem&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Resources, workshops, and community&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/discussions"&gt;💬 &lt;strong&gt;Discussions&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Questions and ideas&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions to both the book and TinyTorch!&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;I want to...&lt;/th&gt; 
+   &lt;th&gt;Go here&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Fix a typo or improve a chapter&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/harvard-edge/cs249r_book/dev/book/docs/CONTRIBUTING.md"&gt;book/docs/CONTRIBUTING.md&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Add a TinyTorch module or fix a bug&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/harvard-edge/cs249r_book/dev/tinytorch/CONTRIBUTING.md"&gt;tinytorch/CONTRIBUTING.md&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Report an issue&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Ask a question&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/discussions"&gt;GitHub Discussions&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;h3&gt;For Readers&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Read online
+open https://mlsysbook.ai
+
+# Download PDF
+curl -O https://mlsysbook.ai/pdf
+
+# Download EPUB
+curl -O https://mlsysbook.ai/epub
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;For Book Contributors&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd book
+
+# First time setup
+./binder setup
+./binder doctor
+
+# Daily workflow
+./binder clean
+./binder build
+./binder preview intro
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;For TinyTorch Learners&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd tinytorch
+
+# One-command setup
+tito setup
+source .venv/bin/activate
+
+# Start building
+tito module start 01
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/harvard-edge/cs249r_book/dev/book/README.md"&gt;book/README.md&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/harvard-edge/cs249r_book/dev/tinytorch/README.md"&gt;tinytorch/README.md&lt;/a&gt; for detailed instructions.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Citation &amp;amp; License&lt;/h2&gt; 
+&lt;h3&gt;Citation&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bibtex"&gt;@inproceedings{reddi2024mlsysbook,
+  title        = {MLSysBook.AI: Principles and Practices of Machine Learning Systems Engineering},
+  author       = {Reddi, Vijay Janapa},
+  booktitle    = {2024 International Conference on Hardware/Software Codesign and System Synthesis (CODES+ ISSS)},
+  pages        = {41--42},
+  year         = {2024},
+  organization = {IEEE},
+  url          = {https://mlsysbook.org}
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;License&lt;/h3&gt; 
+&lt;p&gt;This project uses a dual-license structure:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Component&lt;/th&gt; 
+   &lt;th&gt;License&lt;/th&gt; 
+   &lt;th&gt;What It Means&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Book content&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/harvard-edge/cs249r_book/dev/LICENSE.md"&gt;CC BY-NC-ND 4.0&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Share freely with attribution; no commercial use; no derivatives&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;TinyTorch code&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/harvard-edge/cs249r_book/dev/tinytorch/LICENSE"&gt;Apache 2.0&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Use, modify, and distribute freely; includes patent protection&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;The textbook content (chapters, figures, explanations) is educational material that should circulate with attribution and without commercial exploitation. The software framework is a tool designed to be easy for anyone to use, modify, or integrate into their own projects.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Contributors&lt;/h2&gt; 
+&lt;p&gt;Thanks goes to these wonderful people who have contributed to making this resource better for everyone:&lt;/p&gt; 
+&lt;!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section --&gt; 
+&lt;!-- prettier-ignore-start --&gt; 
+&lt;!-- markdownlint-disable --&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/profvjreddi"&gt;&lt;img src="https://avatars.githubusercontent.com/profvjreddi?s=100" width="100px;" alt="Vijay Janapa Reddi" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Vijay Janapa Reddi&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/hzeljko"&gt;&lt;img src="https://avatars.githubusercontent.com/hzeljko?s=100" width="100px;" alt="Zeljko Hrcek" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Zeljko Hrcek&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/Mjrovai"&gt;&lt;img src="https://avatars.githubusercontent.com/Mjrovai?s=100" width="100px;" alt="Marcelo Rovai" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Marcelo Rovai&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/jasonjabbour"&gt;&lt;img src="https://avatars.githubusercontent.com/jasonjabbour?s=100" width="100px;" alt="Jason Jabbour" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Jason Jabbour&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/kai4avaya"&gt;&lt;img src="https://avatars.githubusercontent.com/kai4avaya?s=100" width="100px;" alt="Kai Kleinbard" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Kai Kleinbard&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/uchendui"&gt;&lt;img src="https://avatars.githubusercontent.com/uchendui?s=100" width="100px;" alt="Ikechukwu Uchendu" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Ikechukwu Uchendu&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/Naeemkh"&gt;&lt;img src="https://avatars.githubusercontent.com/Naeemkh?s=100" width="100px;" alt="Naeem Khoshnevis" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Naeem Khoshnevis&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/Sara-Khosravi"&gt;&lt;img src="https://avatars.githubusercontent.com/Sara-Khosravi?s=100" width="100px;" alt="Sara Khosravi" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Sara Khosravi&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/18jeffreyma"&gt;&lt;img src="https://avatars.githubusercontent.com/18jeffreyma?s=100" width="100px;" alt="Jeffrey Ma" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Jeffrey Ma&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/V0XNIHILI"&gt;&lt;img src="https://avatars.githubusercontent.com/V0XNIHILI?s=100" width="100px;" alt="Douwe den Blanken" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Douwe den Blanken&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/didier-durand"&gt;&lt;img src="https://avatars.githubusercontent.com/didier-durand?s=100" width="100px;" alt="Didier Durand" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Didier Durand&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/shanzehbatool"&gt;&lt;img src="https://avatars.githubusercontent.com/shanzehbatool?s=100" width="100px;" alt="shanzehbatool" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;shanzehbatool&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/eliasab16"&gt;&lt;img src="https://avatars.githubusercontent.com/eliasab16?s=100" width="100px;" alt="Elias" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Elias&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/JaredP94"&gt;&lt;img src="https://avatars.githubusercontent.com/JaredP94?s=100" width="100px;" alt="Jared Ping" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Jared Ping&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/ishapira1"&gt;&lt;img src="https://avatars.githubusercontent.com/ishapira1?s=100" width="100px;" alt="Itai Shapira" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Itai Shapira&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/8863743b4f26c1a20e730fcf7ebc3bc0?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="Maximilian Lam" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Maximilian Lam&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/jaysonzlin"&gt;&lt;img src="https://avatars.githubusercontent.com/jaysonzlin?s=100" width="100px;" alt="Jayson Lin" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Jayson Lin&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/sophiacho1"&gt;&lt;img src="https://avatars.githubusercontent.com/sophiacho1?s=100" width="100px;" alt="Sophia Cho" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Sophia Cho&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/andreamurillomtz"&gt;&lt;img src="https://avatars.githubusercontent.com/andreamurillomtz?s=100" width="100px;" alt="Andrea" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Andrea&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/alxrod"&gt;&lt;img src="https://avatars.githubusercontent.com/alxrod?s=100" width="100px;" alt="Alex Rodriguez" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Alex Rodriguez&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/korneelf1"&gt;&lt;img src="https://avatars.githubusercontent.com/korneelf1?s=100" width="100px;" alt="Korneel Van den Berghe" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Korneel Van den Berghe&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/foundingnimo"&gt;&lt;img src="https://avatars.githubusercontent.com/foundingnimo?s=100" width="100px;" alt="Nimo" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Nimo&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/zishenwan"&gt;&lt;img src="https://avatars.githubusercontent.com/zishenwan?s=100" width="100px;" alt="Zishen Wan" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Zishen Wan&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/colbybanbury"&gt;&lt;img src="https://avatars.githubusercontent.com/colbybanbury?s=100" width="100px;" alt="Colby Banbury" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Colby Banbury&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/mmaz"&gt;&lt;img src="https://avatars.githubusercontent.com/mmaz?s=100" width="100px;" alt="Mark Mazumder" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Mark Mazumder&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/srivatsankrishnan"&gt;&lt;img src="https://avatars.githubusercontent.com/srivatsankrishnan?s=100" width="100px;" alt="Srivatsan Krishnan" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Srivatsan Krishnan&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/DivyaAmirtharaj"&gt;&lt;img src="https://avatars.githubusercontent.com/DivyaAmirtharaj?s=100" width="100px;" alt="Divya Amirtharaj" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Divya Amirtharaj&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/ma3mool"&gt;&lt;img src="https://avatars.githubusercontent.com/ma3mool?s=100" width="100px;" alt="Abdulrahman Mahmoud" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Abdulrahman Mahmoud&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/arnaumarin"&gt;&lt;img src="https://avatars.githubusercontent.com/arnaumarin?s=100" width="100px;" alt="marin-llobet" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;marin-llobet&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/James-QiuHaoran"&gt;&lt;img src="https://avatars.githubusercontent.com/James-QiuHaoran?s=100" width="100px;" alt="Haoran Qiu" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Haoran Qiu&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/aptl26"&gt;&lt;img src="https://avatars.githubusercontent.com/aptl26?s=100" width="100px;" alt="Aghyad Deeb" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Aghyad Deeb&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/Ekhao"&gt;&lt;img src="https://avatars.githubusercontent.com/Ekhao?s=100" width="100px;" alt="Emil Njor" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Emil Njor&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/AditiR-42"&gt;&lt;img src="https://avatars.githubusercontent.com/AditiR-42?s=100" width="100px;" alt="Aditi Raju" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Aditi Raju&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/MichaelSchnebly"&gt;&lt;img src="https://avatars.githubusercontent.com/MichaelSchnebly?s=100" width="100px;" alt="Michael Schnebly" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Michael Schnebly&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/VThuong99"&gt;&lt;img src="https://avatars.githubusercontent.com/VThuong99?s=100" width="100px;" alt="Thuong Duong" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Thuong Duong&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/oishib"&gt;&lt;img src="https://avatars.githubusercontent.com/oishib?s=100" width="100px;" alt="oishib" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;oishib&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/GabrielAmazonas"&gt;&lt;img src="https://avatars.githubusercontent.com/GabrielAmazonas?s=100" width="100px;" alt="Gabriel Amazonas" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Gabriel Amazonas&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/ELSuitorHarvard"&gt;&lt;img src="https://avatars.githubusercontent.com/ELSuitorHarvard?s=100" width="100px;" alt="ELSuitorHarvard" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;ELSuitorHarvard&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/jared-ni"&gt;&lt;img src="https://avatars.githubusercontent.com/jared-ni?s=100" width="100px;" alt="Jared Ni" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Jared Ni&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/BaeHenryS"&gt;&lt;img src="https://avatars.githubusercontent.com/BaeHenryS?s=100" width="100px;" alt="Henry Bae" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Henry Bae&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/leo47007"&gt;&lt;img src="https://avatars.githubusercontent.com/leo47007?s=100" width="100px;" alt="Yu-Shun Hsiao" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Yu-Shun Hsiao&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/jaywonchung"&gt;&lt;img src="https://avatars.githubusercontent.com/jaywonchung?s=100" width="100px;" alt="Jae-Won Chung" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Jae-Won Chung&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/eimlav"&gt;&lt;img src="https://avatars.githubusercontent.com/eimlav?s=100" width="100px;" alt="Eimhin Laverty" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Eimhin Laverty&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/0c931fcfd03cd548d44c90602dd773ba?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="Matthew Stewart" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Matthew Stewart&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/kaiM0ves"&gt;&lt;img src="https://avatars.githubusercontent.com/kaiM0ves?s=100" width="100px;" alt="kaiM0ves" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;kaiM0ves&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/jianqingdu"&gt;&lt;img src="https://avatars.githubusercontent.com/jianqingdu?s=100" width="100px;" alt="jianqingdu" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;jianqingdu&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/jzhou1318"&gt;&lt;img src="https://avatars.githubusercontent.com/jzhou1318?s=100" width="100px;" alt="Jennifer Zhou" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Jennifer Zhou&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/marcozennaro"&gt;&lt;img src="https://avatars.githubusercontent.com/marcozennaro?s=100" width="100px;" alt="Marco Zennaro" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Marco Zennaro&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/pongtr"&gt;&lt;img src="https://avatars.githubusercontent.com/pongtr?s=100" width="100px;" alt="Pong Trairatvorakul" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Pong Trairatvorakul&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/ShvetankPrakash"&gt;&lt;img src="https://avatars.githubusercontent.com/ShvetankPrakash?s=100" width="100px;" alt="Shvetank Prakash" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Shvetank Prakash&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/arbass22"&gt;&lt;img src="https://avatars.githubusercontent.com/arbass22?s=100" width="100px;" alt="Andrew Bass" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Andrew Bass&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/af39c27c6090c50a1921a9b6366e81cc?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="Emeka Ezike" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Emeka Ezike&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/euranofshin"&gt;&lt;img src="https://avatars.githubusercontent.com/euranofshin?s=100" width="100px;" alt="Eura Nofshin" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Eura Nofshin&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/aryatschand"&gt;&lt;img src="https://avatars.githubusercontent.com/aryatschand?s=100" width="100px;" alt="Arya Tschand" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Arya Tschand&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/taunoe"&gt;&lt;img src="https://avatars.githubusercontent.com/taunoe?s=100" width="100px;" alt="Tauno Erik" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Tauno Erik&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/468ef35acc69f3266efd700992daa369?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="Fatima Shah" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Fatima Shah&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/4ad8cdf19eb3b666ace97d3eedb19278?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="Tess314" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Tess314&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/vitasam"&gt;&lt;img src="https://avatars.githubusercontent.com/vitasam?s=100" width="100px;" alt="The Random DIY" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;The Random DIY&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/serco425"&gt;&lt;img src="https://avatars.githubusercontent.com/serco425?s=100" width="100px;" alt="Sercan Aygün" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Sercan Aygün&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/Gjain234"&gt;&lt;img src="https://avatars.githubusercontent.com/Gjain234?s=100" width="100px;" alt="Gauri Jain" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Gauri Jain&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/FinAminToastCrunch"&gt;&lt;img src="https://avatars.githubusercontent.com/FinAminToastCrunch?s=100" width="100px;" alt="Fin Amin" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Fin Amin&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/BrunoScaglione"&gt;&lt;img src="https://avatars.githubusercontent.com/BrunoScaglione?s=100" width="100px;" alt="Bruno Scaglione" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Bruno Scaglione&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/Allen-Kuang"&gt;&lt;img src="https://avatars.githubusercontent.com/Allen-Kuang?s=100" width="100px;" alt="Allen-Kuang" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Allen-Kuang&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/alex-oesterling"&gt;&lt;img src="https://avatars.githubusercontent.com/alex-oesterling?s=100" width="100px;" alt="Alex Oesterling" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Alex Oesterling&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/TheHiddenLayer"&gt;&lt;img src="https://avatars.githubusercontent.com/TheHiddenLayer?s=100" width="100px;" alt="TheHiddenLayer" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;TheHiddenLayer&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/gnodipac886"&gt;&lt;img src="https://avatars.githubusercontent.com/gnodipac886?s=100" width="100px;" alt="gnodipac886" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;gnodipac886&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/AbenezerKb"&gt;&lt;img src="https://avatars.githubusercontent.com/AbenezerKb?s=100" width="100px;" alt="Abenezer Angamo" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Abenezer Angamo&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/arighosh05"&gt;&lt;img src="https://avatars.githubusercontent.com/arighosh05?s=100" width="100px;" alt="Aritra Ghosh" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Aritra Ghosh&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/aethernavshulkraven-allain"&gt;&lt;img src="https://avatars.githubusercontent.com/aethernavshulkraven-allain?s=100" width="100px;" alt="अरनव शुक्ला | Arnav Shukla" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;अरनव शुक्ला | Arnav Shukla&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/YangZhou1997"&gt;&lt;img src="https://avatars.githubusercontent.com/YangZhou1997?s=100" width="100px;" alt="Yang Zhou" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Yang Zhou&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/abigailswallow"&gt;&lt;img src="https://avatars.githubusercontent.com/abigailswallow?s=100" width="100px;" alt="abigailswallow" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;abigailswallow&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/YLab-UChicago"&gt;&lt;img src="https://avatars.githubusercontent.com/YLab-UChicago?s=100" width="100px;" alt="yanjingl" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;yanjingl&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/Jahnic-kb"&gt;&lt;img src="https://avatars.githubusercontent.com/Jahnic-kb?s=100" width="100px;" alt="Jahnic Beck" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Jahnic Beck&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/BravoBaldo"&gt;&lt;img src="https://avatars.githubusercontent.com/BravoBaldo?s=100" width="100px;" alt="Baldassarre Cesarano" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Baldassarre Cesarano&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/happyappledog"&gt;&lt;img src="https://avatars.githubusercontent.com/happyappledog?s=100" width="100px;" alt="happyappledog" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;happyappledog&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/jasonlyik"&gt;&lt;img src="https://avatars.githubusercontent.com/jasonlyik?s=100" width="100px;" alt="Jason Yik" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Jason Yik&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/jessicaquaye"&gt;&lt;img src="https://avatars.githubusercontent.com/jessicaquaye?s=100" width="100px;" alt="Jessica Quaye" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Jessica Quaye&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/emmanuel2406"&gt;&lt;img src="https://avatars.githubusercontent.com/emmanuel2406?s=100" width="100px;" alt="Emmanuel Rassou" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Emmanuel Rassou&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/atcheng2"&gt;&lt;img src="https://avatars.githubusercontent.com/atcheng2?s=100" width="100px;" alt="Andy Cheng" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Andy Cheng&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/cursoragent"&gt;&lt;img src="https://avatars.githubusercontent.com/cursoragent?s=100" width="100px;" alt="Cursor Agent" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Cursor Agent&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/bilgeacun"&gt;&lt;img src="https://avatars.githubusercontent.com/bilgeacun?s=100" width="100px;" alt="Bilge Acun" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Bilge Acun&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/sjohri20"&gt;&lt;img src="https://avatars.githubusercontent.com/sjohri20?s=100" width="100px;" alt="Shreya Johri" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Shreya Johri&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/swilcock0"&gt;&lt;img src="https://avatars.githubusercontent.com/swilcock0?s=100" width="100px;" alt="Sam Wilcock" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Sam Wilcock&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/skmur"&gt;&lt;img src="https://avatars.githubusercontent.com/skmur?s=100" width="100px;" alt="Sonia Murthy" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Sonia Murthy&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/fc4f3460cdfb9365ab59bdeafb06413e?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="Costin-Andrei Oncescu" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Costin-Andrei Oncescu&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/0d6b8616427d8b19d425c9808692e347?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="formlsysbookissue" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;formlsysbookissue&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/7cd8d5dfd83071f23979019d97655dc5?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="Annie Laurie Cook" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Annie Laurie Cook&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/b15b6e0e9adf58099905c1a0fd474cb9?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="Vijay Edupuganti" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Vijay Edupuganti&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/f88052cca4f401d9b0f43aed0a53434a?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="Jothi Ramaswamy" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Jothi Ramaswamy&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/35a8d9ffd03f05e79a2c6ce6206a56f2?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="Batur Arslan" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Batur Arslan&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/bd53d146aa888548c8db4da02bf81e7a?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="Curren Iyer" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Curren Iyer&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/468ef35acc69f3266efd700992daa369?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="Fatima Shah" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Fatima Shah&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/8d8410338458e08bd5e4b96f58e1c217?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="Edward Jin" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Edward Jin&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/28c6123d2c9f75578d3ccdedb0df3d11?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="Tess Watt" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Tess Watt&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/ef139181fe00190f21730f6912532e9e?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="bluebaer7" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;bluebaer7&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/a5a47df988ab1720dd706062e523ca32?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="a-saraf" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;a-saraf&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/c2dc311aa8122d5f5f061e1db14682b1?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="songhan" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;songhan&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/4814aad67982ab07a69006a1ce9d2a72?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="jvijay" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;jvijay&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+   &lt;td align="center" valign="top" width="20%"&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book/graphs/contributors"&gt;&lt;img src="https://www.gravatar.com/avatar/43b1feff77c8a95fd581774fb8ec891f?d=identicon&amp;amp;s=100?s=100" width="100px;" alt="Zishen" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Zishen&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;!-- markdownlint-restore --&gt; 
+&lt;!-- prettier-ignore-end --&gt; 
+&lt;!-- ALL-CONTRIBUTORS-LIST:END --&gt; 
+&lt;hr /&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/harvard-edge/cs249r_book#support-this-work"&gt;⭐ Star us on GitHub&lt;/a&gt; • &lt;a href="https://buttondown.email/mlsysbook"&gt;✉️ Subscribe&lt;/a&gt; • &lt;a href="https://github.com/harvard-edge/cs249r_book/discussions"&gt;💬 Join discussions&lt;/a&gt; • &lt;a href="https://mlsysbook.ai"&gt;🌐 Visit mlsysbook.ai&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;em&gt;Built with dedication by the MLSysBook community.&lt;/em&gt;&lt;/p&gt; 
+&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
