@@ -1,0 +1,2470 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub All Languages Daily Trending</title>
+    <description>Daily Trending of All Languages in GitHub</description>
+    <pubDate>Wed, 17 Dec 2025 01:31:48 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>jellyfin/jellyfin-desktop</title>
+      <link>https://github.com/jellyfin/jellyfin-desktop</link>
+      <description>&lt;p&gt;Jellyfin Desktop Client&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Jellyfin Desktop&lt;/h1&gt; 
+&lt;p&gt;Desktop client using jellyfin-web with embedded MPV player. Supports Windows, Mac OS, and Linux. Media plays within the same window using the jellyfin-web interface unlike Jellyfin Desktop. Supports audio passthrough.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/iwalton3/mpv-shim-misc-docs/master/images/jmp-player-win.png" alt="Screenshot of Jellyfin Desktop" /&gt;&lt;/p&gt; 
+&lt;p&gt;Downloads:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/jellyfin/jellyfin-desktop/releases"&gt;Windows, Mac, and Linux Releases&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Note for Mac users: builds for Intel require macOS 12+ and Apple Silicon builds requires macOS 14+&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://flathub.org/apps/details/org.jellyfin.JellyfinDesktop"&gt;Flathub (Linux)&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Related Documents:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Web client: Application uses server-provided web client.&lt;/li&gt; 
+ &lt;li&gt;Web client integration documentation: &lt;a href="https://github.com/jellyfin/jellyfin-desktop/raw/master/for-web-developers.md"&gt;for-web-developers.md&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;API Docs in &lt;a href="https://github.com/jellyfin/jellyfin-desktop/raw/master/client-api.md"&gt;client-api.md&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Tip: For help building, look at the GitHub Actions file!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Building at a glance (Linux)&lt;/h2&gt; 
+&lt;p&gt;To download the latest stable release, get the latest version tag from the &lt;a href="https://github.com/jellyfin/jellyfin-desktop/releases/latest"&gt;latest releases page&lt;/a&gt; and append the following to your pull command during the build phase for JMP "--branch $VERSIONTAG --single-branch"&lt;/p&gt; 
+&lt;p&gt;Example:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone --recursive https://github.com/jellyfin/jellyfin-desktop.git --branch v1.9.1 --single-branch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Ubuntu based systems&lt;/h3&gt; 
+&lt;p&gt;Install dependencies:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;sudo apt install  autoconf automake build-essential cmake curl g++ git libasound2-dev libcec-dev libegl1-mesa-dev libfontconfig1-dev libfreetype6-dev libfribidi-dev libgl1-mesa-dev libgnutls28-dev libharfbuzz-dev libpulse-dev libsdl2-dev libtool libuchardet-dev libva-dev libvdpau-dev libx11-dev libxrandr-dev mesa-common-dev meson qml6-module-qtqml-workerscript qml6-module-qtquick-controls qml6-module-qtquick-templates qml6-module-qtquick-window qml6-module-qtwebchannel qml6-module-qtwebengine qml6-module-qtwebengine-controlsdelegates qml6-module-qtwebview qt6-base-private-dev qt6-webengine-private-dev unzip wget yasm zlib1g-dev
+mkdir ~/jmp; cd ~/jmp
+git clone https://github.com/mpv-player/mpv-build.git
+cd mpv-build
+./use-mpv-release
+./update
+echo -Dlibmpv=true &amp;gt; mpv_options
+./rebuild -j$(nproc)
+sudo ./install
+sudo ln -s /usr/local/lib/x86_64-linux-gnu/libmpv.so /usr/local/lib/x86_64-linux-gnu/libmpv.so.1
+sudo ln -sf /usr/local/lib/x86_64-linux-gnu/libmpv.so /usr/local/lib/libmpv.so.2
+sudo ldconfig
+cd ~/jmp/
+git clone --recursive https://github.com/jellyfin/jellyfin-desktop.git
+cd jellyfin-desktop
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=/usr/local/ -G Ninja ..
+ninja
+sudo ninja install
+rm -rf ~/jmp/
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Fedora based systems&lt;/h3&gt; 
+&lt;p&gt;Install dependencies:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;sudo dnf install autoconf automake libtool freetype-devel libXrandr-devel libvdpau-devel libva-devel  mesa-libGL-devel libdrm-devel libX11-devel  mesa-libEGL-devel yasm  alsa-lib pulseaudio-libs-devel zlib-devel fribidi-devel git gnutls-devel mesa-libGLU-devel  SDL2-devel cmake wget g++ qt-devel libcec-devel qt6-qtbase-devel curl unzip qt6-qtwebchannel-devel qt6-qtwebengine-devel mpv.x86_64 qt6-qtbase.x86_64 meson.noarch ninja-build.x86_64 qt6-qtbase-private-devel mpv-libs.x86_64 mpv-devel qt6-qtdeclarative nasm libatomic libshaderc mpvqt-devel
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Build commands for Fedora:&lt;/p&gt; 
+&lt;p&gt;Note, the only real differences here is that libraries are in diffrent directories on Fedora systems.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;mkdir ~/jmp; cd ~/jmp
+git clone https://github.com/mpv-player/mpv-build.git
+cd mpv-build/
+echo -Dlibmpv=true &amp;gt; mpv_options
+echo -Dpipewire=disabled &amp;gt;&amp;gt; mpv_options # hopefully temporary
+./rebuild -j`nproc`
+sudo ./install
+sudo mkdir /usr/local/lib/x86_64-linux-gnu
+sudo ln -s /usr/local/lib64/libmpv.so /usr/local/lib/x86_64-linux-gnu/libmpv.so.1
+sudo ln -s /usr/local/lib64/libmpv.so /usr/local/lib/x86_64-linux-gnu/libmpv.so
+sudo ldconfig
+cd ~/jmp/
+git clone --recursive https://github.com/jellyfin/jellyfin-desktop.git
+cd jellyfin-desktop/
+mkdir build
+cd build/
+cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=/usr/local/ ..
+make -j`nproc`
+sudo make install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Building for Windows&lt;/h2&gt; 
+&lt;p&gt;Please install:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://cmake.org/download/"&gt;cmake&lt;/a&gt; - cmake-3.20.0-windows-x86_64.msi 
+  &lt;ul&gt; 
+   &lt;li&gt;Add cmake to the path.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ninja-build/ninja/releases"&gt;ninja&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Place this in the build directory.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.qt.io/download-thank-you?hsLang=en"&gt;QT&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;This package is huge. You also need to make a QT account...&lt;/li&gt; 
+   &lt;li&gt;Check "MSVC 2019 64-bit" and "Qt WebEngine" under Qt 6.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019"&gt;VS2019 Build Tools&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Again this will use a lot of disk space. The installer is small though.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://sourceforge.net/projects/mpv-player-windows/files/libmpv/"&gt;libmpv1&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Place the contents in the build directory, in a subfolder called &lt;code&gt;mpv&lt;/code&gt;.&lt;/li&gt; 
+   &lt;li&gt;Move the contents of the &lt;code&gt;include&lt;/code&gt; folder to an &lt;code&gt;mpv&lt;/code&gt; folder inside the &lt;code&gt;include&lt;/code&gt; folder.&lt;/li&gt; 
+   &lt;li&gt;Move the &lt;code&gt;mpv-1.dll&lt;/code&gt; to &lt;code&gt;mpv.dll&lt;/code&gt;.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wixtoolset.org/releases/v3.11.2/stable"&gt;WIX&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;You need to run these commands in git bash.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone --recursive https://github.com/jellyfin/jellyfin-desktop
+cd jellyfin-desktop
+mkdir build
+cd build
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Open the "x86_x64 Cross Tools Command Prompt for VS 2019". &lt;code&gt;cd&lt;/code&gt; to the &lt;code&gt;build&lt;/code&gt; directory. Run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;set PATH=%PATH%;C:\Program Files (x86)\WiX Toolset v3.11\bin
+cmake -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=output -DCMAKE_MAKE_PROGRAM=ninja.exe -DQTROOT=C:/Qt/6.x.x/msvc2019_64 -DMPV_INCLUDE_DIR=mpv/include -DMPV_LIBRARY=mpv/libmpv-2.dll -DCMAKE_INSTALL_PREFIX=output ..
+lib /def:mpv\mpv.def /out:mpv\mpv.dll.lib /MACHINE:X64
+ninja
+ninja windows_package
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Building for MacOS&lt;/h2&gt; 
+&lt;p&gt;Install &lt;a href="https://www.qt.io/download-thank-you?hsLang=en"&gt;Qt 6&lt;/a&gt;, remember to check &lt;code&gt;Qt WebEngine&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;Then run the following commands (replace &amp;lt;QT_DIR&amp;gt; with your QT installation location):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;brew install mpv ninja qt
+
+git clone --recursive https://github.com/jellyfin/jellyfin-desktop.git
+cd jellyfin-desktop
+
+cmake -B build -G Ninja -DUSE_STATIC_MPVQT=ON
+cmake --build build
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Log File Location&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Windows: &lt;code&gt;%LOCALAPPDATA%\Jellyfin Desktop\logs&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Linux: &lt;code&gt;~/.local/share/jellyfin-desktop/logs/&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Linux (Flatpak): &lt;code&gt;~/.var/app/org.jellyfin.JellyfinDesktop/data/jellyfin-desktop/logs/&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;macOS: &lt;code&gt;~/Library/Logs/Jellyfin Desktop/&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Config File Location&lt;/h2&gt; 
+&lt;p&gt;The main configuration file is called &lt;code&gt;jellyfin-desktop.conf&lt;/code&gt;. You can also add a &lt;code&gt;mpv.conf&lt;/code&gt; to configure MPV directly.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Windows: &lt;code&gt;%LOCALAPPDATA%\Jellyfin Desktop\&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Linux: &lt;code&gt;~/.local/share/jellyfin-desktop/&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Linux (Flatpak): &lt;code&gt;~/.var/app/org.jellyfin.JellyfinDesktop/data/jellyfin-desktop/&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;macOS: &lt;code&gt;~/Library/Application Support/Jellyfin Desktop/&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Web Debugger&lt;/h2&gt; 
+&lt;p&gt;To get browser devtools, use remote debugging.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Run the application with the command argument &lt;code&gt;--remote-debugging-port=9222&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Open Chromium or Google Chrome.&lt;/li&gt; 
+ &lt;li&gt;Navigate to &lt;code&gt;chrome://inspect/#devices&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;You can now access the developer tools.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;If you have problems:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Make sure "Discover Network Targets" is checked.&lt;/li&gt; 
+ &lt;li&gt;Make sure &lt;code&gt;localhost:9222&lt;/code&gt; is in the list under "Configure...".&lt;/li&gt; 
+ &lt;li&gt;Make sure &lt;code&gt;--remote-debugging-port=9222&lt;/code&gt; is specified correctly.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Jellyfin Desktop is licensed under GPL v2. See the &lt;code&gt;LICENSE&lt;/code&gt; file. Licenses of dependencies are summarized under &lt;code&gt;resources/misc/licenses.txt&lt;/code&gt;. This file can also be printed at runtime when using the &lt;code&gt;--licenses&lt;/code&gt; option.&lt;/p&gt; 
+&lt;h2&gt;Known Issues&lt;/h2&gt; 
+&lt;p&gt;If you build MPV from source, you currently need to disable pipewire or else the client will segfault.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mdn/content</title>
+      <link>https://github.com/mdn/content</link>
+      <description>&lt;p&gt;The official source for MDN Web Docs content. Home to over 14,000 pages of documentation about HTML, CSS, JS, HTTP, Web APIs, and more.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Welcome to MDN Web Docs&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/10350960/166113119-629295f6-c282-42c9-9379-af2de5ad4338.png" alt="github-profile" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://developer.mozilla.org"&gt;MDN Web Docs&lt;/a&gt; is an open-source, collaborative project that documents web technologies including CSS, HTML, JavaScript, and Web APIs. Alongside detailed reference documentation, we provide extensive learning resources for students and beginners getting started with web development.&lt;/p&gt; 
+&lt;h2&gt;MDN's mission&lt;/h2&gt; 
+&lt;p&gt;MDN's mission is to provide a blueprint for a better internet and empower a new generation of developers and content creators to build it.&lt;/p&gt; 
+&lt;p&gt;The strength of MDN Web Docs lies in its vast community of active readers and contributors. Since 2005, approximately 45,000 contributors have created the documentation we know and love. Together, contributors have created over 45,000 documents that make up an up-to-date, comprehensive, and free resource for web developers worldwide.&lt;/p&gt; 
+&lt;p&gt;In addition to English-language articles, over 35 volunteers lead translation and localization efforts for Chinese, French, Japanese, Korean, Portuguese, Russian, and Spanish.&lt;/p&gt; 
+&lt;h2&gt;Build the site&lt;/h2&gt; 
+&lt;p&gt;To set up the site locally, you need to have &lt;a href="https://nodejs.org/"&gt;Node.js&lt;/a&gt; installed, which comes bundled with &lt;a href="https://www.npmjs.com/"&gt;npm&lt;/a&gt;. You can check if these are installed by running the following commands:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;node -v
+npm -v
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;After you have installed Node.js, you can install the dependencies using &lt;code&gt;npm install&lt;/code&gt; and start the local preview:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm i
+npm start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Once started, a live preview is available at &lt;code&gt;http://localhost:5042/&lt;/code&gt;.&lt;/p&gt; 
+&lt;h2&gt;Contribute to MDN Web Docs&lt;/h2&gt; 
+&lt;p&gt;You can contribute to MDN Web Docs and be a part of our community through content contributions, engineering, or translation work. The MDN Web Docs project welcomes contributions from everyone who shares our goals and wants to contribute constructively and respectfully within our community.&lt;/p&gt; 
+&lt;p&gt;To find out how to get started, see the &lt;a href="https://raw.githubusercontent.com/mdn/content/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; document in this repository. By participating in and contributing to our projects and discussions, you acknowledge that you have read and agree to our &lt;a href="https://raw.githubusercontent.com/mdn/content/main/CODE_OF_CONDUCT.md"&gt;Code of Conduct&lt;/a&gt;, which means adhering to &lt;a href="https://www.mozilla.org/en-US/about/governance/policies/participation/"&gt;Mozilla's Community Participation Guidelines&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Get in touch&lt;/h2&gt; 
+&lt;p&gt;You can communicate with the MDN Web Docs team and community using the &lt;a href="https://developer.mozilla.org/en-US/docs/MDN/Community/Communication_channels"&gt;communication channels&lt;/a&gt;.&lt;/p&gt; 
+&lt;!--
+Reference links syntax is used here because of linting markdown files ("fqdn-moz-links" rule).
+See https://github.com/mdn/content/pull/21432 and https://github.com/mdn/content/pull/38369.
+It can be replaced with the normal links syntax after successfully closing https://github.com/DavidAnson/markdownlint/issues/673.
+--&gt;</description>
+    </item>
+    
+    <item>
+      <title>Morganamilo/paru</title>
+      <link>https://github.com/Morganamilo/paru</link>
+      <description>&lt;p&gt;Feature packed AUR helper&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Paru&lt;/h1&gt; 
+&lt;p&gt;Feature packed AUR helper&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://aur.archlinux.org/packages/paru/"&gt;&lt;img src="https://img.shields.io/aur/version/paru?color=1793d1&amp;amp;label=paru&amp;amp;logo=arch-linux&amp;amp;style=for-the-badge" alt="paru" /&gt;&lt;/a&gt; &lt;a href="https://aur.archlinux.org/packages/paru-bin/"&gt;&lt;img src="https://img.shields.io/aur/version/paru-bin?color=1793d1&amp;amp;label=paru-bin&amp;amp;logo=arch-linux&amp;amp;style=for-the-badge" alt="paru-bin" /&gt;&lt;/a&gt; &lt;a href="https://aur.archlinux.org/packages/paru-git/"&gt;&lt;img src="https://img.shields.io/aur/version/paru-git?color=1793d1&amp;amp;label=paru-git&amp;amp;logo=arch-linux&amp;amp;style=for-the-badge" alt="paru-git" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Description&lt;/h2&gt; 
+&lt;p&gt;Paru is your standard pacman wrapping AUR helper with lots of features and minimal interaction.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://asciinema.org/a/sEh1ZpZZUgXUsgqKxuDdhpdEE"&gt;&lt;img src="https://asciinema.org/a/sEh1ZpZZUgXUsgqKxuDdhpdEE.svg?sanitize=true" alt="asciicast" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/Morganamilo/paru/master/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;General Tips&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Man pages&lt;/strong&gt;: For documentation on paru's options and config file see &lt;code&gt;paru(8)&lt;/code&gt; and &lt;code&gt;paru.conf(5)&lt;/code&gt; respectively.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Color&lt;/strong&gt;: Paru only enables color if color is enabled in pacman. Enable &lt;code&gt;color&lt;/code&gt; in your &lt;code&gt;pacman.conf&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;File based review&lt;/strong&gt;: To get a more advanced review process enable &lt;code&gt;FileManager&lt;/code&gt; with your file manager of choice in &lt;code&gt;paru.conf&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Flip search order&lt;/strong&gt;: To get search results to start at the bottom and go upwards, enable &lt;code&gt;BottomUp&lt;/code&gt; in &lt;code&gt;paru.conf&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Editing PKGBUILDs&lt;/strong&gt;: When editing PKGBUILDs, you can commit your changes to make them permanent. When the package is upgraded, &lt;code&gt;git&lt;/code&gt; will try to merge your changes with upstream's.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;PKGBUILD syntax highlighting&lt;/strong&gt;: You can install &lt;a href="https://github.com/sharkdp/bat"&gt;&lt;code&gt;bat&lt;/code&gt;&lt;/a&gt; to enable syntax highlighting during PKGBUILD review.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Tracking -git packages&lt;/strong&gt;: Paru tracks -git package by monitoring the upstream repository. Paru can only do this for packages that paru itself installed. &lt;code&gt;paru --gendb&lt;/code&gt; will make paru aware of packages it did not install.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Examples&lt;/h2&gt; 
+&lt;p&gt;&lt;code&gt;paru &amp;lt;target&amp;gt;&lt;/code&gt; -- Interactively search and install &lt;code&gt;&amp;lt;target&amp;gt;&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;paru&lt;/code&gt; -- Alias for &lt;code&gt;paru -Syu&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;paru -S &amp;lt;target&amp;gt;&lt;/code&gt; -- Install a specific package.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;paru -Sua&lt;/code&gt; -- Upgrade AUR packages.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;paru -Qua&lt;/code&gt; -- Print available AUR updates.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;paru -G &amp;lt;target&amp;gt;&lt;/code&gt; -- Download the PKGBUILD and related files of &lt;code&gt;&amp;lt;target&amp;gt;&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;paru -Gp &amp;lt;target&amp;gt;&lt;/code&gt; -- Print the PKGBUILD of &lt;code&gt;&amp;lt;target&amp;gt;&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;paru -Gc &amp;lt;target&amp;gt;&lt;/code&gt; -- Print the AUR comments of &lt;code&gt;&amp;lt;target&amp;gt;&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;paru --gendb&lt;/code&gt; -- Generate the devel database for tracking &lt;code&gt;*-git&lt;/code&gt; packages. This is only needed when you initially start using paru.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;paru -Bi .&lt;/code&gt; -- Build and install a PKGBUILD in the current directory.&lt;/p&gt; 
+&lt;h2&gt;IRC&lt;/h2&gt; 
+&lt;p&gt;Paru now has an IRC. #paru on &lt;a href="https://libera.chat/"&gt;Libera Chat&lt;/a&gt;. Feel free to join for discussion and help with paru.&lt;/p&gt; 
+&lt;h2&gt;Debugging&lt;/h2&gt; 
+&lt;p&gt;Paru is not an official tool. If paru can't build a package, you should first check if makepkg can successfully build the package. If it can't, then you should report the issue to the maintainer. Otherwise, it is likely an issue with paru and should be reported here.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>simstudioai/sim</title>
+      <link>https://github.com/simstudioai/sim</link>
+      <description>&lt;p&gt;Open-source platform to build and deploy AI agent workflows.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://sim.ai" target="_blank" rel="noopener noreferrer"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/logo/reverse/text/large.png" alt="Sim Logo" width="500" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;Build and deploy AI agent workflows in minutes.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://sim.ai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/sim.ai-6F3DFA" alt="Sim.ai" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/Hr4UWYEcTT" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/Discord-Join%20Server-5865F2?logo=discord&amp;amp;logoColor=white" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://x.com/simdotai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/twitter/follow/simstudioai?style=social" alt="Twitter" /&gt;&lt;/a&gt; &lt;a href="https://docs.sim.ai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/Docs-6F3DFA.svg?sanitize=true" alt="Documentation" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h3&gt;Build Workflows with Ease&lt;/h3&gt; 
+&lt;p&gt;Design agent workflows visually on a canvas—connect agents, tools, and blocks, then run them instantly.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/static/workflow.gif" alt="Workflow Builder Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;h3&gt;Supercharge with Copilot&lt;/h3&gt; 
+&lt;p&gt;Leverage Copilot to generate nodes, fix errors, and iterate on flows directly from natural language.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/static/copilot.gif" alt="Copilot Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;h3&gt;Integrate Vector Databases&lt;/h3&gt; 
+&lt;p&gt;Upload documents to a vector store and let agents answer questions grounded in your specific content.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/static/knowledge.gif" alt="Knowledge Uploads and Retrieval Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;h2&gt;Quickstart&lt;/h2&gt; 
+&lt;h3&gt;Cloud-hosted: &lt;a href="https://sim.ai"&gt;sim.ai&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://sim.ai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/sim.ai-6F3DFA?logo=data:image/svg%2bxml;base64,PHN2ZyB3aWR0aD0iNjE2IiBoZWlnaHQ9IjYxNiIgdmlld0JveD0iMCAwIDYxNiA2MTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8xMTU5XzMxMykiPgo8cGF0aCBkPSJNNjE2IDBIMFY2MTZINjE2VjBaIiBmaWxsPSIjNkYzREZBIi8+CjxwYXRoIGQ9Ik04MyAzNjUuNTY3SDExM0MxMTMgMzczLjgwNSAxMTYgMzgwLjM3MyAxMjIgMzg1LjI3MkMxMjggMzg5Ljk0OCAxMzYuMTExIDM5Mi4yODUgMTQ2LjMzMyAzOTIuMjg1QzE1Ny40NDQgMzkyLjI4NSAxNjYgMzkwLjE3MSAxNzIgMzg1LjkzOUMxNzcuOTk5IDM4MS40ODcgMTgxIDM3NS41ODYgMTgxIDM2OC4yMzlDMTgxIDM2Mi44OTUgMTc5LjMzMyAzNTguNDQyIDE3NiAzNTQuODhDMTcyLjg4OSAzNTEuMzE4IDE2Ny4xMTEgMzQ4LjQyMiAxNTguNjY3IDM0Ni4xOTZMMTMwIDMzOS41MTdDMTE1LjU1NSAzMzUuOTU1IDEwNC43NzggMzMwLjQ5OSA5Ny42NjY1IDMyMy4xNTFDOTAuNzc3NSAzMTUuODA0IDg3LjMzMzQgMzA2LjExOSA4Ny4zMzM0IDI5NC4wOTZDODcuMzMzNCAyODQuMDc2IDg5Ljg4OSAyNzUuMzkyIDk0Ljk5OTYgMjY4LjA0NUMxMDAuMzMzIDI2MC42OTcgMTA3LjU1NSAyNTUuMDIgMTE2LjY2NiAyNTEuMDEyQzEyNiAyNDcuMDA0IDEzNi42NjcgMjQ1IDE0OC42NjYgMjQ1QzE2MC42NjcgMjQ1IDE3MSAyNDcuMTE2IDE3OS42NjcgMjUxLjM0NkMxODguNTU1IDI1NS41NzYgMTk1LjQ0NCAyNjEuNDc3IDIwMC4zMzMgMjY5LjA0N0MyMDUuNDQ0IDI3Ni42MTcgMjA4LjExMSAyODUuNjM0IDIwOC4zMzMgMjk2LjA5OUgxNzguMzMzQzE3OC4xMTEgMjg3LjYzOCAxNzUuMzMzIDI4MS4wNyAxNjkuOTk5IDI3Ni4zOTRDMTY0LjY2NiAyNzEuNzE5IDE1Ny4yMjIgMjY5LjM4MSAxNDcuNjY3IDI2OS4zODFDMTM3Ljg4OSAyNjkuMzgxIDEzMC4zMzMgMjcxLjQ5NiAxMjUgMjc1LjcyNkMxMTkuNjY2IDI3OS45NTcgMTE3IDI4NS43NDYgMTE3IDI5My4wOTNDMTE3IDMwNC4wMDMgMTI1IDMxMS40NjIgMTQxIDMxNS40N0wxNjkuNjY3IDMyMi40ODNDMTgzLjQ0NSAzMjUuNiAxOTMuNzc4IDMzMC43MjIgMjAwLjY2NyAzMzcuODQ3QzIwNy41NTUgMzQ0Ljc0OSAyMTEgMzU0LjIxMiAyMTEgMzY2LjIzNUMyMTEgMzc2LjQ3NyAyMDguMjIyIDM4NS40OTQgMjAyLjY2NiAzOTMuMjg3QzE5Ny4xMTEgNDAwLjg1NyAxODkuNDQ0IDQwNi43NTggMTc5LjY2NyA0MTAuOTg5QzE3MC4xMTEgNDE0Ljk5NiAxNTguNzc4IDQxNyAxNDUuNjY3IDQxN0MxMjYuNTU1IDQxNyAxMTEuMzMzIDQxMi4zMjUgOTkuOTk5NyA0MDIuOTczQzg4LjY2NjggMzkzLjYyMSA4MyAzODEuMTUzIDgzIDM2NS41NjdaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjMyLjI5MSA0MTNWMjUwLjA4MkMyNDQuNjg0IDI1NC42MTQgMjUwLjE0OCAyNTQuNjE0IDI2My4zNzEgMjUwLjA4MlY0MTNIMjMyLjI5MVpNMjQ3LjUgMjM5LjMxM0MyNDEuOTkgMjM5LjMxMyAyMzcuMTQgMjM3LjMxMyAyMzIuOTUyIDIzMy4zMTZDMjI4Ljk4NCAyMjkuMDk1IDIyNyAyMjQuMjA5IDIyNyAyMTguNjU2QzIyNyAyMTIuODgyIDIyOC45ODQgMjA3Ljk5NSAyMzIuOTUyIDIwMy45OTdDMjM3LjE0IDE5OS45OTkgMjQxLjk5IDE5OCAyNDcuNSAxOThDMjUzLjIzMSAxOTggMjU4LjA4IDE5OS45OTkgMjYyLjA0OSAyMDMuOTk3QzI2Ni4wMTYgMjA3Ljk5NSAyNjggMjEyLjg4MiAyNjggMjE4LjY1NkMyNjggMjI0LjIwOSAyNjYuMDE2IDIyOS4wOTUgMjYyLjA0OSAyMzMuMzE2QzI1OC4wOCAyMzcuMzEzIDI1My4yMzEgMjM5LjMxMyAyNDcuNSAyMzkuMzEzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTMxOS4zMzMgNDEzSDI4OFYyNDkuNjc2SDMxNlYyNzcuMjMzQzMxOS4zMzMgMjY4LjEwNCAzMjUuNzc4IDI2MC4zNjQgMzM0LjY2NyAyNTQuMzUyQzM0My43NzggMjQ4LjExNyAzNTQuNzc4IDI0NSAzNjcuNjY3IDI0NUMzODIuMTExIDI0NSAzOTQuMTEyIDI0OC44OTcgNDAzLjY2NyAyNTYuNjlDNDEzLjIyMiAyNjQuNDg0IDQxOS40NDQgMjc0LjgzNyA0MjIuMzM0IDI4Ny43NTJINDE2LjY2N0M0MTguODg5IDI3NC44MzcgNDI1IDI2NC40ODQgNDM1IDI1Ni42OUM0NDUgMjQ4Ljg5NyA0NTcuMzM0IDI0NSA0NzIgMjQ1QzQ5MC42NjYgMjQ1IDUwNS4zMzQgMjUwLjQ1NSA1MTYgMjYxLjM2NkM1MjYuNjY3IDI3Mi4yNzYgNTMyIDI4Ny4xOTUgNTMyIDMwNi4xMjFWNDEzSDUwMS4zMzNWMzEzLjgwNEM1MDEuMzMzIDMwMC44ODkgNDk4IDI5MC45ODEgNDkxLjMzMyAyODQuMDc4QzQ4NC44ODkgMjc2Ljk1MiA0NzYuMTExIDI3My4zOSA0NjUgMjczLjM5QzQ1Ny4yMjIgMjczLjM5IDQ1MC4zMzMgMjc1LjE3MSA0NDQuMzM0IDI3OC43MzRDNDM4LjU1NiAyODIuMDc0IDQzNCAyODYuOTcyIDQzMC42NjcgMjkzLjQzQzQyNy4zMzMgMjk5Ljg4NyA0MjUuNjY3IDMwNy40NTcgNDI1LjY2NyAzMTYuMTQxVjQxM0gzOTQuNjY3VjMxMy40NjlDMzk0LjY2NyAzMDAuNTU1IDM5MS40NDUgMjkwLjc1OCAzODUgMjg0LjA3OEMzNzguNTU2IDI3Ny4xNzUgMzY5Ljc3OCAyNzMuNzI0IDM1OC42NjcgMjczLjcyNEMzNTAuODg5IDI3My43MjQgMzQ0IDI3NS41MDUgMzM4IDI3OS4wNjhDMzMyLjIyMiAyODIuNDA4IDMyNy42NjcgMjg3LjMwNyAzMjQuMzMzIDI5My43NjNDMzIxIDI5OS45OTggMzE5LjMzMyAzMDcuNDU3IDMxOS4zMzMgMzE2LjE0MVY0MTNaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzExNTlfMzEzIj4KPHJlY3Qgd2lkdGg9IjYxNiIgaGVpZ2h0PSI2MTYiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==&amp;amp;logoColor=white" alt="Sim.ai" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Self-hosted: NPM Package&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx simstudio
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;→ &lt;a href="http://localhost:3000"&gt;http://localhost:3000&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;Note&lt;/h4&gt; 
+&lt;p&gt;Docker must be installed and running on your machine.&lt;/p&gt; 
+&lt;h4&gt;Options&lt;/h4&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Flag&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;-p, --port &amp;lt;port&amp;gt;&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Port to run Sim on (default &lt;code&gt;3000&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;--no-pull&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Skip pulling latest Docker images&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Self-hosted: Docker Compose&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Clone the repository
+git clone https://github.com/simstudioai/sim.git
+
+# Navigate to the project directory
+cd sim
+
+# Start Sim
+docker compose -f docker-compose.prod.yml up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Access the application at &lt;a href="http://localhost:3000/"&gt;http://localhost:3000/&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;Using Local Models with Ollama&lt;/h4&gt; 
+&lt;p&gt;Run Sim with local AI models using &lt;a href="https://ollama.ai"&gt;Ollama&lt;/a&gt; - no external APIs required:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Start with GPU support (automatically downloads gemma3:4b model)
+docker compose -f docker-compose.ollama.yml --profile setup up -d
+
+# For CPU-only systems:
+docker compose -f docker-compose.ollama.yml --profile cpu --profile setup up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Wait for the model to download, then visit &lt;a href="http://localhost:3000"&gt;http://localhost:3000&lt;/a&gt;. Add more models with:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker compose -f docker-compose.ollama.yml exec ollama ollama pull llama3.1:8b
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Using an External Ollama Instance&lt;/h4&gt; 
+&lt;p&gt;If you already have Ollama running on your host machine (outside Docker), you need to configure the &lt;code&gt;OLLAMA_URL&lt;/code&gt; to use &lt;code&gt;host.docker.internal&lt;/code&gt; instead of &lt;code&gt;localhost&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Docker Desktop (macOS/Windows)
+OLLAMA_URL=http://host.docker.internal:11434 docker compose -f docker-compose.prod.yml up -d
+
+# Linux (add extra_hosts or use host IP)
+docker compose -f docker-compose.prod.yml up -d  # Then set OLLAMA_URL to your host's IP
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Why?&lt;/strong&gt; When running inside Docker, &lt;code&gt;localhost&lt;/code&gt; refers to the container itself, not your host machine. &lt;code&gt;host.docker.internal&lt;/code&gt; is a special DNS name that resolves to the host.&lt;/p&gt; 
+&lt;p&gt;For Linux users, you can either:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Use your host machine's actual IP address (e.g., &lt;code&gt;http://192.168.1.100:11434&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Add &lt;code&gt;extra_hosts: ["host.docker.internal:host-gateway"]&lt;/code&gt; to the simstudio service in your compose file&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Using vLLM&lt;/h4&gt; 
+&lt;p&gt;Sim also supports &lt;a href="https://docs.vllm.ai/"&gt;vLLM&lt;/a&gt; for self-hosted models with OpenAI-compatible API:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Set these environment variables
+VLLM_BASE_URL=http://your-vllm-server:8000
+VLLM_API_KEY=your_optional_api_key  # Only if your vLLM instance requires auth
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;When running with Docker, use &lt;code&gt;host.docker.internal&lt;/code&gt; if vLLM is on your host machine (same as Ollama above).&lt;/p&gt; 
+&lt;h3&gt;Self-hosted: Dev Containers&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Open VS Code with the &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers"&gt;Remote - Containers extension&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Open the project and click "Reopen in Container" when prompted&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;bun run dev:full&lt;/code&gt; in the terminal or use the &lt;code&gt;sim-start&lt;/code&gt; alias 
+  &lt;ul&gt; 
+   &lt;li&gt;This starts both the main application and the realtime socket server&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Self-hosted: Manual Setup&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://bun.sh/"&gt;Bun&lt;/a&gt; runtime&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://nodejs.org/"&gt;Node.js&lt;/a&gt; v20+ (required for sandboxed code execution)&lt;/li&gt; 
+ &lt;li&gt;PostgreSQL 12+ with &lt;a href="https://github.com/pgvector/pgvector"&gt;pgvector extension&lt;/a&gt; (required for AI embeddings)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Sim uses vector embeddings for AI features like knowledge bases and semantic search, which requires the &lt;code&gt;pgvector&lt;/code&gt; PostgreSQL extension.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Clone and install dependencies:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/simstudioai/sim.git
+cd sim
+bun install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Set up PostgreSQL with pgvector:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;You need PostgreSQL with the &lt;code&gt;vector&lt;/code&gt; extension for embedding support. Choose one option:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Option A: Using Docker (Recommended)&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Start PostgreSQL with pgvector extension
+docker run --name simstudio-db \
+  -e POSTGRES_PASSWORD=your_password \
+  -e POSTGRES_DB=simstudio \
+  -p 5432:5432 -d \
+  pgvector/pgvector:pg17
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Option B: Manual Installation&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Install PostgreSQL 12+ and the pgvector extension&lt;/li&gt; 
+ &lt;li&gt;See &lt;a href="https://github.com/pgvector/pgvector#installation"&gt;pgvector installation guide&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;Set up environment:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd apps/sim
+cp .env.example .env  # Configure with required variables (DATABASE_URL, BETTER_AUTH_SECRET, BETTER_AUTH_URL)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Update your &lt;code&gt;.env&lt;/code&gt; file with the database URL:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;DATABASE_URL="postgresql://postgres:your_password@localhost:5432/simstudio"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="4"&gt; 
+ &lt;li&gt;Set up the database:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;First, configure the database package environment:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd packages/db
+cp .env.example .env 
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Update your &lt;code&gt;packages/db/.env&lt;/code&gt; file with the database URL:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;DATABASE_URL="postgresql://postgres:your_password@localhost:5432/simstudio"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then run the migrations:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd apps/sim # Required so drizzle picks correct .env file
+bunx drizzle-kit migrate --config=./drizzle.config.ts
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="5"&gt; 
+ &lt;li&gt;Start the development servers:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Recommended approach - run both servers together (from project root):&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun run dev:full
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This starts both the main Next.js application and the realtime socket server required for full functionality.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Alternative - run servers separately:&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Next.js app (from project root):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Realtime socket server (from &lt;code&gt;apps/sim&lt;/code&gt; directory in a separate terminal):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd apps/sim
+bun run dev:sockets
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Copilot API Keys&lt;/h2&gt; 
+&lt;p&gt;Copilot is a Sim-managed service. To use Copilot on a self-hosted instance:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Go to &lt;a href="https://sim.ai"&gt;https://sim.ai&lt;/a&gt; → Settings → Copilot and generate a Copilot API key&lt;/li&gt; 
+ &lt;li&gt;Set &lt;code&gt;COPILOT_API_KEY&lt;/code&gt; environment variable in your self-hosted apps/sim/.env file to that value&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Environment Variables&lt;/h2&gt; 
+&lt;p&gt;Key environment variables for self-hosted deployments (see &lt;code&gt;apps/sim/.env.example&lt;/code&gt; for full list):&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Variable&lt;/th&gt; 
+   &lt;th&gt;Required&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;DATABASE_URL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;PostgreSQL connection string with pgvector&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;BETTER_AUTH_SECRET&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Auth secret (&lt;code&gt;openssl rand -hex 32&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;BETTER_AUTH_URL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Your app URL (e.g., &lt;code&gt;http://localhost:3000&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;NEXT_PUBLIC_APP_URL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Public app URL (same as above)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;ENCRYPTION_KEY&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Encryption key (&lt;code&gt;openssl rand -hex 32&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;OLLAMA_URL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;Ollama server URL (default: &lt;code&gt;http://localhost:11434&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;VLLM_BASE_URL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;vLLM server URL for self-hosted models&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;COPILOT_API_KEY&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;API key from sim.ai for Copilot features&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Troubleshooting&lt;/h2&gt; 
+&lt;h3&gt;Ollama models not showing in dropdown (Docker)&lt;/h3&gt; 
+&lt;p&gt;If you're running Ollama on your host machine and Sim in Docker, change &lt;code&gt;OLLAMA_URL&lt;/code&gt; from &lt;code&gt;localhost&lt;/code&gt; to &lt;code&gt;host.docker.internal&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;OLLAMA_URL=http://host.docker.internal:11434 docker compose -f docker-compose.prod.yml up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/simstudioai/sim/main/#using-an-external-ollama-instance"&gt;Using an External Ollama Instance&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;h3&gt;Database connection issues&lt;/h3&gt; 
+&lt;p&gt;Ensure PostgreSQL has the pgvector extension installed. When using Docker, wait for the database to be healthy before running migrations.&lt;/p&gt; 
+&lt;h3&gt;Port conflicts&lt;/h3&gt; 
+&lt;p&gt;If ports 3000, 3002, or 5432 are in use, configure alternatives:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Custom ports
+NEXT_PUBLIC_APP_URL=http://localhost:3100 POSTGRES_PORT=5433 docker compose up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Tech Stack&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Framework&lt;/strong&gt;: &lt;a href="https://nextjs.org/"&gt;Next.js&lt;/a&gt; (App Router)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Runtime&lt;/strong&gt;: &lt;a href="https://bun.sh/"&gt;Bun&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Database&lt;/strong&gt;: PostgreSQL with &lt;a href="https://orm.drizzle.team"&gt;Drizzle ORM&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Authentication&lt;/strong&gt;: &lt;a href="https://better-auth.com"&gt;Better Auth&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;UI&lt;/strong&gt;: &lt;a href="https://ui.shadcn.com/"&gt;Shadcn&lt;/a&gt;, &lt;a href="https://tailwindcss.com"&gt;Tailwind CSS&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;State Management&lt;/strong&gt;: &lt;a href="https://zustand-demo.pmnd.rs/"&gt;Zustand&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Flow Editor&lt;/strong&gt;: &lt;a href="https://reactflow.dev/"&gt;ReactFlow&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Docs&lt;/strong&gt;: &lt;a href="https://fumadocs.vercel.app/"&gt;Fumadocs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Monorepo&lt;/strong&gt;: &lt;a href="https://turborepo.org/"&gt;Turborepo&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Realtime&lt;/strong&gt;: &lt;a href="https://socket.io/"&gt;Socket.io&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Background Jobs&lt;/strong&gt;: &lt;a href="https://trigger.dev/"&gt;Trigger.dev&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Remote Code Execution&lt;/strong&gt;: &lt;a href="https://www.e2b.dev/"&gt;E2B&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions! Please see our &lt;a href="https://raw.githubusercontent.com/simstudioai/sim/main/.github/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the Apache License 2.0 - see the &lt;a href="https://raw.githubusercontent.com/simstudioai/sim/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;p align="center"&gt;Made with ❤️ by the Sim Team&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>virattt/ai-hedge-fund</title>
+      <link>https://github.com/virattt/ai-hedge-fund</link>
+      <description>&lt;p&gt;An AI Hedge Fund Team&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;AI Hedge Fund&lt;/h1&gt; 
+&lt;p&gt;This is a proof of concept for an AI-powered hedge fund. The goal of this project is to explore the use of AI to make trading decisions. This project is for &lt;strong&gt;educational&lt;/strong&gt; purposes only and is not intended for real trading or investment.&lt;/p&gt; 
+&lt;p&gt;This system employs several agents working together:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Aswath Damodaran Agent - The Dean of Valuation, focuses on story, numbers, and disciplined valuation&lt;/li&gt; 
+ &lt;li&gt;Ben Graham Agent - The godfather of value investing, only buys hidden gems with a margin of safety&lt;/li&gt; 
+ &lt;li&gt;Bill Ackman Agent - An activist investor, takes bold positions and pushes for change&lt;/li&gt; 
+ &lt;li&gt;Cathie Wood Agent - The queen of growth investing, believes in the power of innovation and disruption&lt;/li&gt; 
+ &lt;li&gt;Charlie Munger Agent - Warren Buffett's partner, only buys wonderful businesses at fair prices&lt;/li&gt; 
+ &lt;li&gt;Michael Burry Agent - The Big Short contrarian who hunts for deep value&lt;/li&gt; 
+ &lt;li&gt;Mohnish Pabrai Agent - The Dhandho investor, who looks for doubles at low risk&lt;/li&gt; 
+ &lt;li&gt;Peter Lynch Agent - Practical investor who seeks "ten-baggers" in everyday businesses&lt;/li&gt; 
+ &lt;li&gt;Phil Fisher Agent - Meticulous growth investor who uses deep "scuttlebutt" research&lt;/li&gt; 
+ &lt;li&gt;Rakesh Jhunjhunwala Agent - The Big Bull of India&lt;/li&gt; 
+ &lt;li&gt;Stanley Druckenmiller Agent - Macro legend who hunts for asymmetric opportunities with growth potential&lt;/li&gt; 
+ &lt;li&gt;Warren Buffett Agent - The oracle of Omaha, seeks wonderful companies at a fair price&lt;/li&gt; 
+ &lt;li&gt;Valuation Agent - Calculates the intrinsic value of a stock and generates trading signals&lt;/li&gt; 
+ &lt;li&gt;Sentiment Agent - Analyzes market sentiment and generates trading signals&lt;/li&gt; 
+ &lt;li&gt;Fundamentals Agent - Analyzes fundamental data and generates trading signals&lt;/li&gt; 
+ &lt;li&gt;Technicals Agent - Analyzes technical indicators and generates trading signals&lt;/li&gt; 
+ &lt;li&gt;Risk Manager - Calculates risk metrics and sets position limits&lt;/li&gt; 
+ &lt;li&gt;Portfolio Manager - Makes final trading decisions and generates orders&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;img width="1042" alt="Screenshot 2025-03-22 at 6 19 07 PM" src="https://github.com/user-attachments/assets/cbae3dcf-b571-490d-b0ad-3f0f035ac0d4" /&gt; 
+&lt;p&gt;Note: the system does not actually make any trades.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://twitter.com/virattt"&gt;&lt;img src="https://img.shields.io/twitter/follow/virattt?style=social" alt="Twitter Follow" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Disclaimer&lt;/h2&gt; 
+&lt;p&gt;This project is for &lt;strong&gt;educational and research purposes only&lt;/strong&gt;.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Not intended for real trading or investment&lt;/li&gt; 
+ &lt;li&gt;No investment advice or guarantees provided&lt;/li&gt; 
+ &lt;li&gt;Creator assumes no liability for financial losses&lt;/li&gt; 
+ &lt;li&gt;Consult a financial advisor for investment decisions&lt;/li&gt; 
+ &lt;li&gt;Past performance does not indicate future results&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;By using this software, you agree to use it solely for learning purposes.&lt;/p&gt; 
+&lt;h2&gt;Table of Contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/ai-hedge-fund/main/#how-to-install"&gt;How to Install&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/ai-hedge-fund/main/#how-to-run"&gt;How to Run&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/ai-hedge-fund/main/#%EF%B8%8F-command-line-interface"&gt;⌨️ Command Line Interface&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/ai-hedge-fund/main/#%EF%B8%8F-web-application"&gt;🖥️ Web Application&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/ai-hedge-fund/main/#how-to-contribute"&gt;How to Contribute&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/ai-hedge-fund/main/#feature-requests"&gt;Feature Requests&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/ai-hedge-fund/main/#license"&gt;License&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How to Install&lt;/h2&gt; 
+&lt;p&gt;Before you can run the AI Hedge Fund, you'll need to install it and set up your API keys. These steps are common to both the full-stack web application and command line interface.&lt;/p&gt; 
+&lt;h3&gt;1. Clone the Repository&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/virattt/ai-hedge-fund.git
+cd ai-hedge-fund
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;2. Set up API keys&lt;/h3&gt; 
+&lt;p&gt;Create a &lt;code&gt;.env&lt;/code&gt; file for your API keys:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Create .env file for your API keys (in the root directory)
+cp .env.example .env
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Open and edit the &lt;code&gt;.env&lt;/code&gt; file to add your API keys:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# For running LLMs hosted by openai (gpt-4o, gpt-4o-mini, etc.)
+OPENAI_API_KEY=your-openai-api-key
+
+# For getting financial data to power the hedge fund
+FINANCIAL_DATASETS_API_KEY=your-financial-datasets-api-key
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Important&lt;/strong&gt;: You must set at least one LLM API key (e.g. &lt;code&gt;OPENAI_API_KEY&lt;/code&gt;, &lt;code&gt;GROQ_API_KEY&lt;/code&gt;, &lt;code&gt;ANTHROPIC_API_KEY&lt;/code&gt;, or &lt;code&gt;DEEPSEEK_API_KEY&lt;/code&gt;) for the hedge fund to work.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Financial Data&lt;/strong&gt;: Data for AAPL, GOOGL, MSFT, NVDA, and TSLA is free and does not require an API key. For any other ticker, you will need to set the &lt;code&gt;FINANCIAL_DATASETS_API_KEY&lt;/code&gt; in the .env file.&lt;/p&gt; 
+&lt;h2&gt;How to Run&lt;/h2&gt; 
+&lt;h3&gt;⌨️ Command Line Interface&lt;/h3&gt; 
+&lt;p&gt;You can run the AI Hedge Fund directly via terminal. This approach offers more granular control and is useful for automation, scripting, and integration purposes.&lt;/p&gt; 
+&lt;img width="992" alt="Screenshot 2025-01-06 at 5 50 17 PM" src="https://github.com/user-attachments/assets/e8ca04bf-9989-4a7d-a8b4-34e04666663b" /&gt; 
+&lt;h4&gt;Quick Start&lt;/h4&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Install Poetry (if not already installed):&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -sSL https://install.python-poetry.org | python3 -
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Install dependencies:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Run the AI Hedge Fund&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry run python src/main.py --ticker AAPL,MSFT,NVDA
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can also specify a &lt;code&gt;--ollama&lt;/code&gt; flag to run the AI hedge fund using local LLMs.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry run python src/main.py --ticker AAPL,MSFT,NVDA --ollama
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can optionally specify the start and end dates to make decisions over a specific time period.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry run python src/main.py --ticker AAPL,MSFT,NVDA --start-date 2024-01-01 --end-date 2024-03-01
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Run the Backtester&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry run python src/backtester.py --ticker AAPL,MSFT,NVDA
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Example Output:&lt;/strong&gt; &lt;img width="941" alt="Screenshot 2025-01-06 at 5 47 52 PM" src="https://github.com/user-attachments/assets/00e794ea-8628-44e6-9a84-8f8a31ad3b47" /&gt;&lt;/p&gt; 
+&lt;p&gt;Note: The &lt;code&gt;--ollama&lt;/code&gt;, &lt;code&gt;--start-date&lt;/code&gt;, and &lt;code&gt;--end-date&lt;/code&gt; flags work for the backtester, as well!&lt;/p&gt; 
+&lt;h3&gt;🖥️ Web Application&lt;/h3&gt; 
+&lt;p&gt;The new way to run the AI Hedge Fund is through our web application that provides a user-friendly interface. This is recommended for users who prefer visual interfaces over command line tools.&lt;/p&gt; 
+&lt;p&gt;Please see detailed instructions on how to install and run the web application &lt;a href="https://github.com/virattt/ai-hedge-fund/tree/main/app"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;img width="1721" alt="Screenshot 2025-06-28 at 6 41 03 PM" src="https://github.com/user-attachments/assets/b95ab696-c9f4-416c-9ad1-51feb1f5374b" /&gt; 
+&lt;h2&gt;How to Contribute&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork the repository&lt;/li&gt; 
+ &lt;li&gt;Create a feature branch&lt;/li&gt; 
+ &lt;li&gt;Commit your changes&lt;/li&gt; 
+ &lt;li&gt;Push to the branch&lt;/li&gt; 
+ &lt;li&gt;Create a Pull Request&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Important&lt;/strong&gt;: Please keep your pull requests small and focused. This will make it easier to review and merge.&lt;/p&gt; 
+&lt;h2&gt;Feature Requests&lt;/h2&gt; 
+&lt;p&gt;If you have a feature request, please open an &lt;a href="https://github.com/virattt/ai-hedge-fund/issues"&gt;issue&lt;/a&gt; and make sure it is tagged with &lt;code&gt;enhancement&lt;/code&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the MIT License - see the LICENSE file for details.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>C4illin/ConvertX</title>
+      <link>https://github.com/C4illin/ConvertX</link>
+      <description>&lt;p&gt;💾 Self-hosted online file converter. Supports 1000+ formats ⚙️&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/C4illin/ConvertX/main/images/logo.png" alt="ConvertX" /&gt;&lt;/p&gt; 
+&lt;h1&gt;ConvertX&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/C4illin/ConvertX/actions/workflows/docker-publish.yml"&gt;&lt;img src="https://github.com/C4illin/ConvertX/actions/workflows/docker-publish.yml/badge.svg?branch=main" alt="Docker" /&gt;&lt;/a&gt; &lt;a href="https://github.com/C4illin/ConvertX/pkgs/container/ConvertX"&gt;&lt;img src="https://img.shields.io/badge/dynamic/json?logo=github&amp;amp;url=https%3A%2F%2Fipitio.github.io%2Fbackage%2FC4illin%2FConvertX%2Fconvertx.json&amp;amp;query=%24.downloads&amp;amp;label=ghcr.io%20pulls&amp;amp;cacheSeconds=14400" alt="ghcr.io Pulls" /&gt;&lt;/a&gt; &lt;a href="https://hub.docker.com/r/c4illin/convertx"&gt;&lt;img src="https://img.shields.io/docker/pulls/c4illin/convertx?style=flat&amp;amp;logo=docker&amp;amp;label=dockerhub%20pulls&amp;amp;link=https%3A%2F%2Fhub.docker.com%2Frepository%2Fdocker%2Fc4illin%2Fconvertx%2Fgeneral" alt="Docker Pulls" /&gt;&lt;/a&gt; &lt;a href="https://github.com/C4illin/ConvertX/pkgs/container/convertx"&gt;&lt;img src="https://img.shields.io/github/v/release/C4illin/ConvertX" alt="GitHub Release" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/github/commits-since/C4illin/ConvertX/latest" alt="GitHub commits since latest release" /&gt; &lt;img src="https://img.shields.io/github/repo-size/C4illin/ConvertX" alt="GitHub repo size" /&gt; &lt;img src="https://ghcr-badge.egpl.dev/c4illin/convertx/size?color=%230375b6&amp;amp;tag=latest&amp;amp;label=image+size&amp;amp;trim=" alt="Docker container size" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://trendshift.io/repositories/13818" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/13818" alt="C4illin%2FConvertX | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;!-- ![Dev image size](https://ghcr-badge.egpl.dev/c4illin/convertx/size?color=%230375b6&amp;tag=main&amp;label=dev+image&amp;trim=) --&gt; 
+&lt;p&gt;A self-hosted online file converter. Supports over a thousand different formats. Written with TypeScript, Bun and Elysia.&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Convert files to different formats&lt;/li&gt; 
+ &lt;li&gt;Process multiple files at once&lt;/li&gt; 
+ &lt;li&gt;Password protection&lt;/li&gt; 
+ &lt;li&gt;Multiple accounts&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Converters supported&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Converter&lt;/th&gt; 
+   &lt;th&gt;Use case&lt;/th&gt; 
+   &lt;th&gt;Converts from&lt;/th&gt; 
+   &lt;th&gt;Converts to&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://inkscape.org/"&gt;Inkscape&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Vector images&lt;/td&gt; 
+   &lt;td&gt;7&lt;/td&gt; 
+   &lt;td&gt;17&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/libjxl/libjxl"&gt;libjxl&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;JPEG XL&lt;/td&gt; 
+   &lt;td&gt;11&lt;/td&gt; 
+   &lt;td&gt;11&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/RazrFalcon/resvg"&gt;resvg&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;SVG&lt;/td&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/libvips/libvips"&gt;Vips&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Images&lt;/td&gt; 
+   &lt;td&gt;45&lt;/td&gt; 
+   &lt;td&gt;23&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/strukturag/libheif"&gt;libheif&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;HEIF&lt;/td&gt; 
+   &lt;td&gt;2&lt;/td&gt; 
+   &lt;td&gt;4&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://tug.org/xetex/"&gt;XeLaTeX&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;LaTeX&lt;/td&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://calibre-ebook.com/"&gt;Calibre&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;E-books&lt;/td&gt; 
+   &lt;td&gt;26&lt;/td&gt; 
+   &lt;td&gt;19&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.libreoffice.org/"&gt;LibreOffice&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Documents&lt;/td&gt; 
+   &lt;td&gt;41&lt;/td&gt; 
+   &lt;td&gt;22&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/TomWright/dasel"&gt;Dasel&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Data Files&lt;/td&gt; 
+   &lt;td&gt;5&lt;/td&gt; 
+   &lt;td&gt;4&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://pandoc.org/"&gt;Pandoc&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Documents&lt;/td&gt; 
+   &lt;td&gt;43&lt;/td&gt; 
+   &lt;td&gt;65&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/mvz/email-outlook-message-perl"&gt;msgconvert&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Outlook&lt;/td&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://dvisvgm.de/"&gt;dvisvgm&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Vector images&lt;/td&gt; 
+   &lt;td&gt;4&lt;/td&gt; 
+   &lt;td&gt;2&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://imagemagick.org/"&gt;ImageMagick&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Images&lt;/td&gt; 
+   &lt;td&gt;245&lt;/td&gt; 
+   &lt;td&gt;183&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="http://www.graphicsmagick.org/"&gt;GraphicsMagick&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Images&lt;/td&gt; 
+   &lt;td&gt;167&lt;/td&gt; 
+   &lt;td&gt;130&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/assimp/assimp"&gt;Assimp&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;3D Assets&lt;/td&gt; 
+   &lt;td&gt;77&lt;/td&gt; 
+   &lt;td&gt;23&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://ffmpeg.org/"&gt;FFmpeg&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Video&lt;/td&gt; 
+   &lt;td&gt;~472&lt;/td&gt; 
+   &lt;td&gt;~199&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://potrace.sourceforge.net/"&gt;Potrace&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Raster to vector&lt;/td&gt; 
+   &lt;td&gt;4&lt;/td&gt; 
+   &lt;td&gt;11&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/visioncortex/vtracer"&gt;VTracer&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Raster to vector&lt;/td&gt; 
+   &lt;td&gt;8&lt;/td&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;!-- many ffmpeg fileformats are duplicates --&gt; 
+&lt;p&gt;Any missing converter? Open an issue or pull request!&lt;/p&gt; 
+&lt;h2&gt;Deployment&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!WARNING] If you can't login, make sure you are accessing the service over localhost or https otherwise set HTTP_ALLOWED=true&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code class="language-yml"&gt;# docker-compose.yml
+services:
+  convertx:
+    image: ghcr.io/c4illin/convertx
+    container_name: convertx
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - JWT_SECRET=aLongAndSecretStringUsedToSignTheJSONWebToken1234 # will use randomUUID() if unset
+      # - HTTP_ALLOWED=true # uncomment this if accessing it over a non-https connection
+    volumes:
+      - ./data:/app/data
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;or&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -p 3000:3000 -v ./data:/app/data ghcr.io/c4illin/convertx
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then visit &lt;code&gt;http://localhost:3000&lt;/code&gt; in your browser and create your account. Don't leave it unconfigured and open, as anyone can register the first account.&lt;/p&gt; 
+&lt;p&gt;If you get unable to open database file run &lt;code&gt;chown -R $USER:$USER path&lt;/code&gt; on the path you choose.&lt;/p&gt; 
+&lt;h3&gt;Environment variables&lt;/h3&gt; 
+&lt;p&gt;All are optional, JWT_SECRET is recommended to be set.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Name&lt;/th&gt; 
+   &lt;th&gt;Default&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;JWT_SECRET&lt;/td&gt; 
+   &lt;td&gt;when unset it will use the value from randomUUID()&lt;/td&gt; 
+   &lt;td&gt;A long and secret string used to sign the JSON Web Token&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;ACCOUNT_REGISTRATION&lt;/td&gt; 
+   &lt;td&gt;false&lt;/td&gt; 
+   &lt;td&gt;Allow users to register accounts&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;HTTP_ALLOWED&lt;/td&gt; 
+   &lt;td&gt;false&lt;/td&gt; 
+   &lt;td&gt;Allow HTTP connections, only set this to true locally&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;ALLOW_UNAUTHENTICATED&lt;/td&gt; 
+   &lt;td&gt;false&lt;/td&gt; 
+   &lt;td&gt;Allow unauthenticated users to use the service, only set this to true locally&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;AUTO_DELETE_EVERY_N_HOURS&lt;/td&gt; 
+   &lt;td&gt;24&lt;/td&gt; 
+   &lt;td&gt;Checks every n hours for files older then n hours and deletes them, set to 0 to disable&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;WEBROOT&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;The address to the root path setting this to "/convert" will serve the website on "example.com/convert/"&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;FFMPEG_ARGS&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;Arguments to pass to the input file of ffmpeg, e.g. &lt;code&gt;-hwaccel vaapi&lt;/code&gt;. See &lt;a href="https://github.com/C4illin/ConvertX/issues/190"&gt;https://github.com/C4illin/ConvertX/issues/190&lt;/a&gt; for more info about hw-acceleration.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;FFMPEG_OUTPUT_ARGS&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;Arguments to pass to the output of ffmpeg, e.g. &lt;code&gt;-preset veryfast&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;HIDE_HISTORY&lt;/td&gt; 
+   &lt;td&gt;false&lt;/td&gt; 
+   &lt;td&gt;Hide the history page&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;LANGUAGE&lt;/td&gt; 
+   &lt;td&gt;en&lt;/td&gt; 
+   &lt;td&gt;Language to format date strings in, specified as a &lt;a href="https://en.wikipedia.org/wiki/IETF_language_tag"&gt;BCP 47 language tag&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;UNAUTHENTICATED_USER_SHARING&lt;/td&gt; 
+   &lt;td&gt;false&lt;/td&gt; 
+   &lt;td&gt;Shares conversion history between all unauthenticated users&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;MAX_CONVERT_PROCESS&lt;/td&gt; 
+   &lt;td&gt;0&lt;/td&gt; 
+   &lt;td&gt;Maximum number of concurrent conversion processes allowed. Set to 0 for unlimited.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Docker images&lt;/h3&gt; 
+&lt;p&gt;There is a &lt;code&gt;:latest&lt;/code&gt; tag that is updated with every release and a &lt;code&gt;:main&lt;/code&gt; tag that is updated with every push to the main branch. &lt;code&gt;:latest&lt;/code&gt; is recommended for normal use.&lt;/p&gt; 
+&lt;p&gt;The image is available on &lt;a href="https://github.com/C4illin/ConvertX/pkgs/container/ConvertX"&gt;GitHub Container Registry&lt;/a&gt; and &lt;a href="https://hub.docker.com/r/c4illin/convertx"&gt;Docker Hub&lt;/a&gt;.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Image&lt;/th&gt; 
+   &lt;th&gt;What it is&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;image: ghcr.io/c4illin/convertx&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The latest release on ghcr&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;image: ghcr.io/c4illin/convertx:main&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The latest commit on ghcr&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;image: c4illin/convertx&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The latest release on docker hub&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;image: c4illin/convertx:main&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The latest commit on docker hub&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;img src="https://ghcr-badge.egpl.dev/c4illin/convertx/size?color=%230375b6&amp;amp;tag=latest&amp;amp;label=release+image&amp;amp;trim=" alt="Release image size" /&gt; &lt;img src="https://ghcr-badge.egpl.dev/c4illin/convertx/size?color=%230375b6&amp;amp;tag=main&amp;amp;label=dev+image&amp;amp;trim=" alt="Dev image size" /&gt;&lt;/p&gt; 
+&lt;!-- Dockerhub was introduced in 0.9.0 and older releases --&gt; 
+&lt;h3&gt;Tutorial&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] These are written by other people, and may be outdated, incorrect or wrong.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Tutorial in french: &lt;a href="https://belginux.com/installer-convertx-avec-docker/"&gt;https://belginux.com/installer-convertx-avec-docker/&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Tutorial in chinese: &lt;a href="https://xzllll.com/24092901/"&gt;https://xzllll.com/24092901/&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Screenshots&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/C4illin/ConvertX/main/images/preview.png" alt="ConvertX Preview" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;ol start="0"&gt; 
+ &lt;li&gt;Install &lt;a href="https://bun.sh/"&gt;Bun&lt;/a&gt; and Git&lt;/li&gt; 
+ &lt;li&gt;Clone the repository&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;bun install&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;bun run dev&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;Pull requests are welcome! See open issues for the list of todos. The ones tagged with "converter request" are quite easy. Help with docs and cleaning up in issues are also very welcome!&lt;/p&gt; 
+&lt;p&gt;Use &lt;a href="https://www.conventionalcommits.org/en/v1.0.0/#summary"&gt;conventional commits&lt;/a&gt; for commit messages.&lt;/p&gt; 
+&lt;h2&gt;Contributors&lt;/h2&gt; 
+&lt;a href="https://github.com/C4illin/ConvertX/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=C4illin/ConvertX" alt="Image with all contributors" /&gt; &lt;/a&gt; 
+&lt;p&gt;&lt;img src="https://repobeats.axiom.co/api/embed/dcdabd0564fcdcccbf5680c1bdc2efad54a3d4d9.svg?sanitize=true" alt="Alt" title="Repobeats analytics image" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;a href="https://github.com/C4illin/ConvertX/stargazers"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=C4illin/ConvertX&amp;amp;type=Date&amp;amp;theme=dark" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=C4illin/ConvertX&amp;amp;type=Date" /&gt; 
+  &lt;img alt="Star History Chart" src="https://api.star-history.com/svg?repos=C4illin/ConvertX&amp;amp;type=Date" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt;</description>
+    </item>
+    
+    <item>
+      <title>openai/codex</title>
+      <link>https://github.com/openai/codex</link>
+      <description>&lt;p&gt;Lightweight coding agent that runs in your terminal&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt;&lt;code&gt;npm i -g @openai/codex&lt;/code&gt;&lt;br /&gt;or &lt;code&gt;brew install --cask codex&lt;/code&gt;&lt;/p&gt; 
+&lt;p align="center"&gt;&lt;strong&gt;Codex CLI&lt;/strong&gt; is a coding agent from OpenAI that runs locally on your computer. &lt;br /&gt; &lt;br /&gt;If you want Codex in your code editor (VS Code, Cursor, Windsurf), &lt;a href="https://developers.openai.com/codex/ide"&gt;install in your IDE&lt;/a&gt; &lt;br /&gt;If you are looking for the &lt;em&gt;cloud-based agent&lt;/em&gt; from OpenAI, &lt;strong&gt;Codex Web&lt;/strong&gt;, go to &lt;a href="https://chatgpt.com/codex"&gt;chatgpt.com/codex&lt;/a&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/openai/codex/main/.github/codex-cli-splash.png" alt="Codex CLI splash" width="80%" /&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Quickstart&lt;/h2&gt; 
+&lt;h3&gt;Installing and running Codex CLI&lt;/h3&gt; 
+&lt;p&gt;Install globally with your preferred package manager. If you use npm:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;npm install -g @openai/codex
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Alternatively, if you use Homebrew:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;brew install --cask codex
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then simply run &lt;code&gt;codex&lt;/code&gt; to get started:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;codex
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If you're running into upgrade issues with Homebrew, see the &lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/faq.md#brew-upgrade-codex-isnt-upgrading-me"&gt;FAQ entry on brew upgrade codex&lt;/a&gt;.&lt;/p&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;You can also go to the &lt;a href="https://github.com/openai/codex/releases/latest"&gt;latest GitHub Release&lt;/a&gt; and download the appropriate binary for your platform.&lt;/summary&gt; 
+ &lt;p&gt;Each GitHub Release contains many executables, but in practice, you likely want one of these:&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;macOS 
+   &lt;ul&gt; 
+    &lt;li&gt;Apple Silicon/arm64: &lt;code&gt;codex-aarch64-apple-darwin.tar.gz&lt;/code&gt;&lt;/li&gt; 
+    &lt;li&gt;x86_64 (older Mac hardware): &lt;code&gt;codex-x86_64-apple-darwin.tar.gz&lt;/code&gt;&lt;/li&gt; 
+   &lt;/ul&gt; &lt;/li&gt; 
+  &lt;li&gt;Linux 
+   &lt;ul&gt; 
+    &lt;li&gt;x86_64: &lt;code&gt;codex-x86_64-unknown-linux-musl.tar.gz&lt;/code&gt;&lt;/li&gt; 
+    &lt;li&gt;arm64: &lt;code&gt;codex-aarch64-unknown-linux-musl.tar.gz&lt;/code&gt;&lt;/li&gt; 
+   &lt;/ul&gt; &lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;Each archive contains a single entry with the platform baked into the name (e.g., &lt;code&gt;codex-x86_64-unknown-linux-musl&lt;/code&gt;), so you likely want to rename it to &lt;code&gt;codex&lt;/code&gt; after extracting it.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;h3&gt;Using Codex with your ChatGPT plan&lt;/h3&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/openai/codex/main/.github/codex-cli-login.png" alt="Codex CLI login" width="80%" /&gt; &lt;/p&gt; 
+&lt;p&gt;Run &lt;code&gt;codex&lt;/code&gt; and select &lt;strong&gt;Sign in with ChatGPT&lt;/strong&gt;. We recommend signing into your ChatGPT account to use Codex as part of your Plus, Pro, Team, Edu, or Enterprise plan. &lt;a href="https://help.openai.com/en/articles/11369540-codex-in-chatgpt"&gt;Learn more about what's included in your ChatGPT plan&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;You can also use Codex with an API key, but this requires &lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/authentication.md#usage-based-billing-alternative-use-an-openai-api-key"&gt;additional setup&lt;/a&gt;. If you previously used an API key for usage-based billing, see the &lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/authentication.md#migrating-from-usage-based-billing-api-key"&gt;migration steps&lt;/a&gt;. If you're having trouble with login, please comment on &lt;a href="https://github.com/openai/codex/issues/1243"&gt;this issue&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Model Context Protocol (MCP)&lt;/h3&gt; 
+&lt;p&gt;Codex can access MCP servers. To configure them, refer to the &lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/config.md#mcp_servers"&gt;config docs&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Configuration&lt;/h3&gt; 
+&lt;p&gt;Codex CLI supports a rich set of configuration options, with preferences stored in &lt;code&gt;~/.codex/config.toml&lt;/code&gt;. For full configuration options, see &lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/config.md"&gt;Configuration&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Execpolicy&lt;/h3&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/execpolicy.md"&gt;Execpolicy quickstart&lt;/a&gt; to set up rules that govern what commands Codex can execute.&lt;/p&gt; 
+&lt;h3&gt;Docs &amp;amp; FAQ&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/getting-started.md"&gt;&lt;strong&gt;Getting started&lt;/strong&gt;&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/getting-started.md#cli-usage"&gt;CLI usage&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/slash_commands.md"&gt;Slash Commands&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/getting-started.md#running-with-a-prompt-as-input"&gt;Running with a prompt as input&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/getting-started.md#example-prompts"&gt;Example prompts&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/prompts.md"&gt;Custom prompts&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/getting-started.md#memory-with-agentsmd"&gt;Memory with AGENTS.md&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/config.md"&gt;&lt;strong&gt;Configuration&lt;/strong&gt;&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/example-config.md"&gt;Example config&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/sandbox.md"&gt;&lt;strong&gt;Sandbox &amp;amp; approvals&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/execpolicy.md"&gt;&lt;strong&gt;Execpolicy quickstart&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/authentication.md"&gt;&lt;strong&gt;Authentication&lt;/strong&gt;&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/authentication.md#forcing-a-specific-auth-method-advanced"&gt;Auth methods&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/authentication.md#connecting-on-a-headless-machine"&gt;Login on a "Headless" machine&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Automating Codex&lt;/strong&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/openai/codex-action"&gt;GitHub Action&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/sdk/typescript/README.md"&gt;TypeScript SDK&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/exec.md"&gt;Non-interactive mode (&lt;code&gt;codex exec&lt;/code&gt;)&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/advanced.md"&gt;&lt;strong&gt;Advanced&lt;/strong&gt;&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/advanced.md#tracing--verbose-logging"&gt;Tracing / verbose logging&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/advanced.md#model-context-protocol-mcp"&gt;Model Context Protocol (MCP)&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/zdr.md"&gt;&lt;strong&gt;Zero data retention (ZDR)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/contributing.md"&gt;&lt;strong&gt;Contributing&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/install.md"&gt;&lt;strong&gt;Install &amp;amp; build&lt;/strong&gt;&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/install.md#system-requirements"&gt;System Requirements&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/install.md#dotslash"&gt;DotSlash&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/install.md#build-from-source"&gt;Build from source&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/faq.md"&gt;&lt;strong&gt;FAQ&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/openai/codex/main/docs/open-source-fund.md"&gt;&lt;strong&gt;Open source fund&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This repository is licensed under the &lt;a href="https://raw.githubusercontent.com/openai/codex/main/LICENSE"&gt;Apache-2.0 License&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>eudoxia0/hashcards</title>
+      <link>https://github.com/eudoxia0/hashcards</link>
+      <description>&lt;p&gt;A plain text-based spaced repetition system.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;hashcards&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/eudoxia0/hashcards/actions/workflows/test.yaml"&gt;&lt;img src="https://github.com/eudoxia0/hashcards/actions/workflows/test.yaml/badge.svg?sanitize=true" alt="Test" /&gt;&lt;/a&gt; &lt;a href="https://github.com/eudoxia0/hashcards/actions/workflows/release.yaml"&gt;&lt;img src="https://github.com/eudoxia0/hashcards/actions/workflows/release.yaml/badge.svg?branch=master" alt="Release" /&gt;&lt;/a&gt; &lt;a href="https://codecov.io/gh/eudoxia0/hashcards"&gt;&lt;img src="https://codecov.io/gh/eudoxia0/hashcards/branch/master/graph/badge.svg?token=GDV3CYZMHQ" alt="codecov" /&gt;&lt;/a&gt; &lt;a href="https://deps.rs/repo/github/eudoxia0/hashcards"&gt;&lt;img src="https://deps.rs/repo/github/eudoxia0/hashcards/status.svg?sanitize=true" alt="dependency status" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/eudoxia0/hashcards/master/screenshot.webp" alt="Screenshot of the app, showing a front/back flashcard." /&gt;&lt;/p&gt; 
+&lt;p&gt;A plain text-based spaced repetition system. Features:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Plain Text:&lt;/strong&gt; all your flashcards are stored as plain text files, so you can operate on them with standard tools, write with your editor of choice, and track changes in a VCS.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Content Addressable:&lt;/strong&gt; cards are identified by the hash of their text. This means a card's progress is reset when the card is edited.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Low Friction:&lt;/strong&gt; you create flashcards by typing into a text file, using a lightweight notation to denote flashcard sides and cloze deletions.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Simple:&lt;/strong&gt; the only card types are front-back and cloze cards. More complex workflows (e.g.: Anki-style note types, card templates, automation) be can implemented using a Makefile and some scripts.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Efficient:&lt;/strong&gt; uses &lt;a href="https://github.com/open-spaced-repetition/fsrs4anki"&gt;FSRS&lt;/a&gt; for scheduling reviews, maximizing learning while minimizing time spent reviewing.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Announcement blog post: &lt;a href="https://borretti.me/article/hashcards-plain-text-spaced-repetition"&gt;Hashcards: A Plain-Text Spaced Repetition System&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Example&lt;/h2&gt; 
+&lt;p&gt;The following Markdown file is a valid hashcards deck:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Q: How many neurons are there in the human brain?
+A: ~80 billion.
+
+C: An [agonist] is a ligand that binds to a receptor and [activates it].
+
+Q: How many synapses are there in a human brain?
+A: ~100 trillion
+
+C: In the nervous system, [chemical] communication happens [between] neurons.
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For a larger example, see &lt;a href="https://github.com/eudoxia0/flashcards"&gt;my personal flashcards repo&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Building&lt;/h2&gt; 
+&lt;p&gt;You need &lt;a href="https://doc.rust-lang.org/cargo/"&gt;cargo&lt;/a&gt; installed. You can get it through &lt;a href="https://rustup.rs/"&gt;rustup&lt;/a&gt;. Then:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;$ git clone https://github.com/eudoxia0/hashcards.git
+$ cd hashcards
+$ make
+$ sudo make install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;To drill flashcards in a directory, run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;$ hashcards drill $DIRNAME
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Tutorial&lt;/h2&gt; 
+&lt;p&gt;Create a directory for your flashcards, and add a Markdown file with some cards:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ mkdir cards
+$ cd cards
+$ cat &amp;gt; Geography.md &amp;lt;&amp;lt; 'EOF'
+Q: What is Coulomb's constant?
+A: The proportionality constant of the electric force.
+
+Q: What is an object with zero net charge called?
+A: Neutral.
+EOF
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;A Markdown file is called a "deck", and the name of the file, sans extension, is the name of the deck. This will be shown on top of the flashcard during reviews, this saves you from having to specify the context in each of the flashcards.&lt;/p&gt; 
+&lt;p&gt;Start drilling:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ hashcards drill
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This opens a web interface at &lt;code&gt;http://localhost:8000&lt;/code&gt; where you can review your cards. The interface is simple: you read the question, mentally recall the answer, and click reveal (or press space). Then you grade yourself on how you did, with one of four choices:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Forgot (shortcut: &lt;code&gt;1&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Hard (shortcut: &lt;code&gt;2&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Good (shortcut: &lt;code&gt;3&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Easy (shortcut: &lt;code&gt;4&lt;/code&gt;)&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;Be honest. If you got the answer almost right, press "Forgot". If you mis-grade something, you can undo (shortcut: &lt;code&gt;u&lt;/code&gt;). The session ends when every card has been graded "Good" or higher. You can end the session prematurely by clicking "End", this will save your changes.&lt;/p&gt; 
+&lt;p&gt;To learn how to write good flashcards, read &lt;a href="https://borretti.me/article/effective-spaced-repetition"&gt;Effective Spaced Repetition&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Commands&lt;/h2&gt; 
+&lt;p&gt;This section documents the hashcards command line interface.&lt;/p&gt; 
+&lt;h3&gt;&lt;code&gt;drill&lt;/code&gt;&lt;/h3&gt; 
+&lt;p&gt;Start a drilling session.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ hashcards drill [DIRECTORY]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Note: your progress is not saved until the session ends, either when you run out of cards, or when you click "End".&lt;/p&gt; 
+&lt;p&gt;Options:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;--card-limit=&amp;lt;N&amp;gt;&lt;/code&gt;: Limit the session to at most N cards.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;--new-card-limit=&amp;lt;N&amp;gt;&lt;/code&gt;: Limit the number of new cards in the session.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;--port=&amp;lt;PORT&amp;gt;&lt;/code&gt;: Use a specific port (default: 8000).&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;--from-deck=&amp;lt;NAME&amp;gt;&lt;/code&gt;: Only drill cards from a deck with the given name.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;--open-browser=&amp;lt;true|false&amp;gt;&lt;/code&gt;: Whether or not to open the browser after the server starts (default: true).&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;&lt;code&gt;stats&lt;/code&gt;&lt;/h3&gt; 
+&lt;p&gt;Print collection statistics to standard output.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ hashcards stats [DIRECTORY]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Options:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;--format=&amp;lt;FORMAT&amp;gt;&lt;/code&gt;: Output format (&lt;code&gt;html&lt;/code&gt; or &lt;code&gt;json&lt;/code&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;At present, only JSON output is supported.&lt;/p&gt; 
+&lt;h3&gt;&lt;code&gt;check&lt;/code&gt;&lt;/h3&gt; 
+&lt;p&gt;Check the integrity of a collection.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ hashcards check [DIRECTORY]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;&lt;code&gt;orphans&lt;/code&gt;&lt;/h3&gt; 
+&lt;p&gt;Manage orphan cards (cards that exist in the database, but not in the collection, i.e., cards that were deleted from the collection).&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ hashcards orphans list [DIRECTORY]
+$ hashcards orphans delete [DIRECTORY]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Example:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;$ hashcards orphans list Cards
+04effc035b71692b66a90a622559479516526e7720c41afa22b29562915d58af
+059e4e0fd5c3d0ab7ef0cc902cdc402a555ec4152b842fe584109de6c8082ce3
+061b8c27e0f437d0c6ae735e829b39cc3bf0ad8218cb16387dcb4271c20b244d
+$ hashcards orphans delete Cards
+04effc035b71692b66a90a622559479516526e7720c41afa22b29562915d58af
+059e4e0fd5c3d0ab7ef0cc902cdc402a555ec4152b842fe584109de6c8082ce3
+061b8c27e0f437d0c6ae735e829b39cc3bf0ad8218cb16387dcb4271c20b244d
+$ hashcards orphans list Cards
+# no output
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;&lt;code&gt;export&lt;/code&gt;&lt;/h3&gt; 
+&lt;p&gt;Export a collection to a JSON file.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ hashcards export [DIRECTORY]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Options:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;--output=&amp;lt;PATH&amp;gt;&lt;/code&gt;: The path to the output. By default, the export is printed to stdout.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Format&lt;/h2&gt; 
+&lt;p&gt;This section describes the text format used by hashcards.&lt;/p&gt; 
+&lt;h3&gt;Basic Cards&lt;/h3&gt; 
+&lt;p&gt;Question-answer flashcards are written like this:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Q: What are the possible values of electric charge?
+A: Any integer multiple of the fundamental charge.
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Both the question and the answer can span multiple lines:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Q: List the elements of the Platinum group.
+A:
+
+- ruthenium
+- rhodium
+- palladium
+- osmium
+- iridium
+- platinum
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Cloze Cards&lt;/h3&gt; 
+&lt;p&gt;Cloze cards start with the &lt;code&gt;C:&lt;/code&gt; tag, and use square brackets to denote cloze deletions:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;C: The [order] of a group is [the cardinality of its underlying set].
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Again, cloze cards can span multiple lines:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;C:
+Better is the sight of the eyes than the wandering of the
+desire: this is also vanity and vexation of spirit.
+
+— [Ecclesiastes] [6]:[9]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;p&gt;This section documents specific hashcards features.&lt;/p&gt; 
+&lt;h3&gt;LaTeX Support&lt;/h3&gt; 
+&lt;p&gt;Cards support LaTeX math via KaTeX.&lt;/p&gt; 
+&lt;p&gt;Use &lt;code&gt;$...$&lt;/code&gt; for inline math:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Q: What is the combinatorial meaning of $\binom{n}{k}$?
+A: From a set of size $n$, we can choose $\binom{n}{k}$ subsets of size $k$.
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;And &lt;code&gt;$$...$$&lt;/code&gt; for display math:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;C: The [amount of substance] of a sample, denoted $n$, is defined as:
+
+$$
+n = \frac{N}{N_A}
+$$
+
+where $N$ is [the number of elementary entities] and $N_A$ is [Avogadro's constant].
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can define custom LaTeX macros by creating a &lt;code&gt;macros.tex&lt;/code&gt; file in your collection root:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;\C \mathbb{C}
+\R \mathbb{R}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Macro definitions can refer to arguments: &lt;code&gt;#1&lt;/code&gt; for the first, &lt;code&gt;#2&lt;/code&gt; for the second and so on.&lt;/p&gt; 
+&lt;h3&gt;Images&lt;/h3&gt; 
+&lt;p&gt;Ordinary Markdown image syntax works:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Q: Identify this painting:
+
+![](art/diagram.png)
+
+A: _The Siren_, by John William Waterhouse.
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;By default, image paths are resolved relative to the deck (the Markdown file) that contains the flashcard. For example, if you have:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;cards/
+  Art Theory/
+    Art.md
+    Images/
+      TheMermaid.jpg
+      Circe.jpg
+      Odysseus.jpg
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then flashcards in &lt;code&gt;Art.md&lt;/code&gt; can reference images with paths like &lt;code&gt;Images/Circe.jpg&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;By prefixing a path with &lt;code&gt;@/&lt;/code&gt;, you can point to images relative to the collection root directory, e.g., a path like &lt;code&gt;@/Art Theory/Images/Circe.jpg&lt;/code&gt; will always resolve to the same path, even if the deck is moved around within the collection.&lt;/p&gt; 
+&lt;h3&gt;Audio&lt;/h3&gt; 
+&lt;p&gt;Works like images:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Q: How do you pronounce "پرنده" in Persian?
+A: ![](audio/parande.mp3)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Deck Names&lt;/h3&gt; 
+&lt;p&gt;By default, the filename of a deck is the name of a deck, e.g. a file &lt;code&gt;Medicine.md&lt;/code&gt; will be parsed as a deck called &lt;code&gt;Medicine&lt;/code&gt;. It is possible to override the name using &lt;a href="https://toml.io/en/"&gt;TOML&lt;/a&gt; frontmatter, like so:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;---
+name = "Medicine"
+---
+
+C: The mitochondria is the [powerhouse] of the cell.
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Regardless of the filename, cards in this deck will have &lt;code&gt;Medicine&lt;/code&gt; as their deck name. This is particularly useful when you want to organize a large number of cards into different files, while keeping their deck name the same. For example, when taking notes from a textbook, you might have something like so:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Principles of Neural Science/
+  Ch1.md
+  Ch2.md
+  ...
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;But you don't want the cards in those Markdown files to have &lt;code&gt;Ch1&lt;/code&gt;, &lt;code&gt;Ch2&lt;/code&gt;, etc. as their deck name. TOML frontmatter allows you to give each chapter deck the same deck name.&lt;/p&gt; 
+&lt;h2&gt;Database&lt;/h2&gt; 
+&lt;p&gt;hashcards stores card performance data and the review history in an SQLite3 database. The file is called &lt;code&gt;hashcards.db&lt;/code&gt; and is found in the root of the card directory (i.e., the path you pass to the &lt;code&gt;drill&lt;/code&gt; command).&lt;/p&gt; 
+&lt;p&gt;The &lt;code&gt;cards&lt;/code&gt; table has the following schema:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Column&lt;/th&gt; 
+   &lt;th&gt;Type&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;card_hash&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;text primary key&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The hash of the card.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;added_at&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;text not null&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The timestamp when the card was first added to the database, in timestamp format.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;last_reviewed_at&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;text&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The timestamp when the card was most recently reviewed. &lt;code&gt;null&lt;/code&gt; if the card is new.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;stability&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;real&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The card's stability. &lt;code&gt;null&lt;/code&gt; if the card is new.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;difficulty&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;real&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The card's difficulty. &lt;code&gt;null&lt;/code&gt; if the card is new.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;interval_raw&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;real&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The FSRS-calculated interval, before rounding and clamping. A real number of days until the next review. &lt;code&gt;null&lt;/code&gt; if the card is new.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;interval_days&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;real&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The interval as an integer number of days, after rounding and clamping. &lt;code&gt;null&lt;/code&gt; if the card is new.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;due_date&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;text&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The date when the card is next due, in &lt;code&gt;YYYY-MM-DD&lt;/code&gt; format. &lt;code&gt;null&lt;/code&gt; if the card is new.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;review_count&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;integer not null&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The number of times the card has been reviewed.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;The &lt;code&gt;sessions&lt;/code&gt; table has the following schema:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Column&lt;/th&gt; 
+   &lt;th&gt;Type&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;session_id&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;integer primary key&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The ID of the session.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;started_at&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;text not null&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The timestamp when the session started, in timestamp format.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;ended_at&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;text not null&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The timestamp when the session ended, in timestamp format.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;The &lt;code&gt;reviews&lt;/code&gt; table has the following schema:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Column&lt;/th&gt; 
+   &lt;th&gt;Type&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;review_id&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;integer primary key&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The review ID.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;session_id&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;integer not null&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The ID of the session this review was performed in, a foreign key.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;card_hash&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;text not null&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The hash of the card that was reviewed, a foreign key.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;reviewed_at&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;text not null&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The timestamp when the review was performed (i.e., when the user submitted a grade).&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;grade&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;text not null&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;One of &lt;code&gt;forgot&lt;/code&gt;, &lt;code&gt;hard&lt;/code&gt;, &lt;code&gt;good&lt;/code&gt;, or &lt;code&gt;easy&lt;/code&gt;.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;stability&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;real not null&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The card's stability after this review.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;difficulty&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;real not null&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The card's difficulty after this review.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;interval_raw&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;real&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The FSRS-calculated interval, before rounding and clamping. A real number of days until the next review &lt;code&gt;null&lt;/code&gt; if the card is new.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;interval_days&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;real&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The interval as an integer number of days, after rounding and clamping. &lt;code&gt;null&lt;/code&gt; if the card is new.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;due_date&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;text not null&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The date, in the user's local time, when the card is next due, in &lt;code&gt;YYYY-MM-DD&lt;/code&gt; format.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;Note: "timestamp format" is &lt;code&gt;YYYY-MM-DDTHH:MM:SS.MMM&lt;/code&gt;, e.g. &lt;code&gt;2025-10-04T17:09:51.517&lt;/code&gt;.&lt;/p&gt; 
+&lt;h2&gt;Prior Art&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/l3kn/org-fc"&gt;org-fc&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://orgmode.org/worg/org-contrib/org-drill.html"&gt;org-drill&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://hackage.haskell.org/package/hascard"&gt;hascard&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/martintrojer/carddown"&gt;carddown&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://notes.andymatuschak.org/My_implementation_of_a_personal_mnemonic_medium"&gt;My implementation of a personal mnemonic medium&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;© 2025 by &lt;a href="https://borretti.me/"&gt;Fernando Borretti&lt;/a&gt;. Licensed under the &lt;a href="https://www.apache.org/licenses/LICENSE-2.0"&gt;Apache 2.0&lt;/a&gt; license.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ZJU-LLMs/Foundations-of-LLMs</title>
+      <link>https://github.com/ZJU-LLMs/Foundations-of-LLMs</link>
+      <description>&lt;p&gt;A book for Learning the Foundations of LLMs&lt;/p&gt;&lt;hr&gt;&lt;p&gt;✨ News: 我们开源了一款多智能体开发框架Agent-Kernel，让大家轻松玩转大规模多智能体系统！一百个智能体在自己的笔记本电脑上就能跑起来哦~ 科研、毕设、大创、SRTP都是让人眼前一亮的创新神器！ Github 地址: &lt;a href="https://github.com/ZJU-LLMs/Agent-Kernel"&gt;https://github.com/ZJU-LLMs/Agent-Kernel&lt;/a&gt; 快来看看吧！&lt;/p&gt; 
+&lt;h1 align="center"&gt;大模型基础&lt;/h1&gt; 
+&lt;div align="center"&gt; 
+ &lt;img src=".\figure\cover.png" style="width: 50%" /&gt; 
+&lt;/div&gt; 
+&lt;p align="center"&gt; &lt;img src="https://img.shields.io/badge/version-1.0.0-blue" /&gt; &lt;img src="https://img.shields.io/github/stars/ZJU-LLMs/Foundations-of-LLMs?style=social" /&gt; &lt;img src="https://img.shields.io/github/forks/ZJU-LLMs/Foundations-of-LLMs?style=social" /&gt; 
+ &lt;!--   &lt;img src="https://img.shields.io/github/license/ZJU-LLMs/Foundations-of-LLMs"&gt; --&gt; &lt;/p&gt; 
+&lt;p&gt;本书旨在为对大语言模型感兴趣的读者系统地讲解相关基础知识、介绍前沿技术。作者团队将认真听取开源社区以及广大专家学者的建议，持续进行&lt;strong&gt;月度更新&lt;/strong&gt;，致力打造&lt;strong&gt;易读、严谨、有深度&lt;/strong&gt;的大模型教材。并且，本书还将针对每章内容配备相关的&lt;strong&gt;Paper List&lt;/strong&gt;，以跟踪相关技术的&lt;strong&gt;最新进展&lt;/strong&gt;。&lt;/p&gt; 
+&lt;p&gt;本书第一版包括&lt;strong&gt;传统语言模型&lt;/strong&gt;、&lt;strong&gt;大语言模型架构演化&lt;/strong&gt;、&lt;strong&gt;Prompt工程&lt;/strong&gt;、&lt;strong&gt;参数高效微调&lt;/strong&gt;、&lt;strong&gt;模型编辑&lt;/strong&gt;、&lt;strong&gt;检索增强生成&lt;/strong&gt;等六章内容。为增加本书的易读性，每章分别以&lt;strong&gt;一种动物&lt;/strong&gt;为背景，对具体技术进行举例说明，故此本书以六种动物作为封面。当前版本所含内容均来源于作者团队对相关方向的探索与理解，如有谬误，恳请大家多提issue，多多赐教。后续，作者团队还将继续探索大模型推理加速、大模型智能体等方向。相关内容也将陆续补充到本书的后续版本中，期待封面上的动物越来越多。&lt;/p&gt; 
+&lt;p&gt;当前完整的本书PDF版本路径为&lt;a href="https://github.com/ZJU-LLMs/Foundations-of-LLMs/raw/main/%E3%80%8A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E3%80%8B%E6%95%99%E6%9D%90/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%20%E5%AE%8C%E6%95%B4%E7%89%88.pdf"&gt;大模型基础.pdf&lt;/a&gt;。另外，我们还提供了两个文件夹，&lt;a href="https://github.com/ZJU-LLMs/Foundations-of-LLMs/tree/main/%E3%80%8A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E3%80%8B%E6%95%99%E6%9D%90/%E3%80%8A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E3%80%8B%E5%88%86%E7%AB%A0%E8%8A%82%E5%86%85%E5%AE%B9"&gt;大语言模型分章节内容&lt;/a&gt;文件夹中包含了各章节的PDF版本。而&lt;a href="https://github.com/ZJU-LLMs/Foundations-of-LLMs/tree/main/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%BB%8F%E5%85%B8%E8%AE%BA%E6%96%87%E5%88%97%E8%A1%A8"&gt;大语言模型相关论文&lt;/a&gt;文件夹中包含了各章节的相关论文，当前正处于不断更新中。&lt;/p&gt; 
+&lt;p&gt;其中每个章节的内容目录如下表所示。&lt;/p&gt; 
+&lt;h2&gt;本书目录&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;th style="text-align:center; width: 25%;"&gt;章节&lt;/th&gt; 
+   &lt;th style="text-align:center; width: 75%;" colspan="3"&gt;所含内容&lt;/th&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td rowspan="2"&gt;&lt;b&gt;&lt;a href="https://github.com/ZJU-LLMs/Foundations-of-LLMs/raw/main/%E3%80%8A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E3%80%8B%E6%95%99%E6%9D%90/%E3%80%8A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E3%80%8B%E5%88%86%E7%AB%A0%E8%8A%82%E5%86%85%E5%AE%B9/%E7%AC%AC1%E7%AB%A0%20%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80.pdf"&gt;第 1 章：语言模型基础&lt;/a&gt;&lt;/b&gt;&lt;/td&gt; 
+   &lt;td style="width: 25%;"&gt;1.1 基于统计方法的语言模型&lt;/td&gt; 
+   &lt;td style="width: 25%;"&gt;1.2 基于 RNN 的语言模型&lt;/td&gt; 
+   &lt;td style="width: 25%;"&gt;1.3 基于 Transformer 的语言模型&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1.4 语言模型的采样方法&lt;/td&gt; 
+   &lt;td&gt;1.5 语言模型的评测&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td rowspan="2"&gt;&lt;b&gt;&lt;a href="https://github.com/ZJU-LLMs/Foundations-of-LLMs/raw/main/%E3%80%8A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E3%80%8B%E6%95%99%E6%9D%90/%E3%80%8A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E3%80%8B%E5%88%86%E7%AB%A0%E8%8A%82%E5%86%85%E5%AE%B9/%E7%AC%AC2%E7%AB%A0%20%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84.pdf"&gt;第 2 章：大语言模型&lt;/a&gt;&lt;/b&gt;&lt;/td&gt; 
+   &lt;td&gt;2.1 大数据 + 大模型 → 新智能&lt;/td&gt; 
+   &lt;td&gt;2.2 大语言模型架构概览&lt;/td&gt; 
+   &lt;td&gt;2.3 基于 Encoder-only 架构的大语言模型&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;2.4 基于 Encoder-Decoder 架构的大语言模型&lt;/td&gt; 
+   &lt;td&gt;2.5 基于 Decoder-only 架构的大语言模型&lt;/td&gt; 
+   &lt;td&gt;2.6 非 Transformer 架构&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td rowspan="2"&gt;&lt;b&gt;&lt;a href="https://github.com/ZJU-LLMs/Foundations-of-LLMs/raw/main/%E3%80%8A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E3%80%8B%E6%95%99%E6%9D%90/%E3%80%8A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E3%80%8B%E5%88%86%E7%AB%A0%E8%8A%82%E5%86%85%E5%AE%B9/%E7%AC%AC3%E7%AB%A0%20Prompt%20%E5%B7%A5%E7%A8%8B.pdf"&gt;第 3 章：Prompt 工程&lt;/a&gt;&lt;/b&gt;&lt;/td&gt; 
+   &lt;td&gt;3.1 Prompt 工程简介&lt;/td&gt; 
+   &lt;td&gt;3.2 上下文学习&lt;/td&gt; 
+   &lt;td&gt;3.3 思维链&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;3.4 Prompt 技巧&lt;/td&gt; 
+   &lt;td&gt;3.5 相关应用&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td rowspan="2"&gt;&lt;b&gt;&lt;a href="https://github.com/ZJU-LLMs/Foundations-of-LLMs/raw/main/%E3%80%8A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E3%80%8B%E6%95%99%E6%9D%90/%E3%80%8A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E3%80%8B%E5%88%86%E7%AB%A0%E8%8A%82%E5%86%85%E5%AE%B9/%E7%AC%AC4%E7%AB%A0%20%E5%8F%82%E6%95%B0%E9%AB%98%E6%95%88%E5%BE%AE%E8%B0%83.pdf"&gt;第 4 章：参数高效微调&lt;/a&gt;&lt;/b&gt;&lt;/td&gt; 
+   &lt;td&gt;4.1 参数高效微调简介&lt;/td&gt; 
+   &lt;td&gt;4.2 参数附加方法&lt;/td&gt; 
+   &lt;td&gt;4.3 参数选择方法&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;4.4 低秩适配方法&lt;/td&gt; 
+   &lt;td&gt;4.5 实践与应用&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td rowspan="2"&gt;&lt;b&gt;&lt;a href="https://github.com/ZJU-LLMs/Foundations-of-LLMs/raw/main/%E3%80%8A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E3%80%8B%E6%95%99%E6%9D%90/%E3%80%8A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E3%80%8B%E5%88%86%E7%AB%A0%E8%8A%82%E5%86%85%E5%AE%B9/%E7%AC%AC5%E7%AB%A0%20%E6%A8%A1%E5%9E%8B%E7%BC%96%E8%BE%91.pdf"&gt;第 5 章：模型编辑&lt;/a&gt;&lt;/b&gt;&lt;/td&gt; 
+   &lt;td&gt;5.1 模型编辑简介&lt;/td&gt; 
+   &lt;td&gt;5.2 模型编辑经典方法&lt;/td&gt; 
+   &lt;td&gt;5.3 附加参数法：T-Patcher&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;5.4 定位编辑法：ROME&lt;/td&gt; 
+   &lt;td&gt;5.5 模型编辑应用&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td rowspan="2"&gt;&lt;b&gt;&lt;a href="https://github.com/ZJU-LLMs/Foundations-of-LLMs/raw/main/%E3%80%8A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E3%80%8B%E6%95%99%E6%9D%90/%E3%80%8A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E3%80%8B%E5%88%86%E7%AB%A0%E8%8A%82%E5%86%85%E5%AE%B9/%E7%AC%AC6%E7%AB%A0%20%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA%E7%94%9F%E6%88%90.pdf"&gt;第 6 章：检索增强生成&lt;/a&gt;&lt;/b&gt;&lt;/td&gt; 
+   &lt;td&gt;6.1 检索增强生成简介&lt;/td&gt; 
+   &lt;td&gt;6.2 检索增强生成架构&lt;/td&gt; 
+   &lt;td&gt;6.3 知识检索&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;6.4 生成增强&lt;/td&gt; 
+   &lt;td&gt;6.5 实践与应用&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;致谢&lt;/h2&gt; 
+&lt;p&gt;本书的不断优化，将仰仗各位读者的帮助与支持。您的建议将成为我们持续向前的动力！&lt;/p&gt; 
+&lt;p&gt;所有提出issue的人，我们都列举在此，以表达我们深深的谢意。&lt;/p&gt; 
+&lt;p&gt;如果有此书相关的其他问题，请随时联系我们，可发送邮件至：&lt;a href="mailto:xuwenyi@zju.edu.cn"&gt;xuwenyi@zju.edu.cn&lt;/a&gt;。&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;img src=".\figure\wechat_QR_code.jpg" style="width: 90%" /&gt; 
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>mnh-jansson/open-battery-information</title>
+      <link>https://github.com/mnh-jansson/open-battery-information</link>
+      <description>&lt;p&gt;&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Open Battery Information&lt;/h1&gt; 
+&lt;p&gt;This project aims to provide tools and information about various batteries in order to aid repair. It is very common for manufacturers to lock the BMS when a fault is detected to protect the device and the user. Very important feature! So when is it a problem? Well, there is always a chance for false triggering of this protection, or the fault could have been temporary or even repaired. In this case it would be wasteful to throw out a perfectly good BMS just because its software says it is faulty.&lt;/p&gt; 
+&lt;p&gt;This is the problem we would like to solve!&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/mnh-jansson/open-battery-information/main/docs/images/obi-1.png" alt="screenshot" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Contact information&lt;/h2&gt; 
+&lt;p&gt;For any questions, please e-mail: &lt;a href="mailto:openbatteryinformation@gmail.com"&gt;openbatteryinformation@gmail.com&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;I have spent alot of time on this project and now releasing all this information to the public in hope that it will help other people save batteries and money. If you would like to show some appreciation for my work, please consider supporting me by buying me a coffee or sponsor me on Github!&lt;/p&gt; 
+&lt;h2&gt;&lt;a href="https://www.buymeacoffee.com/mnhjansson"&gt;&lt;img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="&amp;quot;Buy Me A Coffee&amp;quot;" /&gt;&lt;/a&gt;&lt;/h2&gt; 
+&lt;h1&gt;Instructions&lt;/h1&gt; 
+&lt;h2&gt;Step 1: Set Up ArduinoOBI&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Navigate to the ArduinoOBI folder in the project directory.&lt;/li&gt; 
+ &lt;li&gt;Follow the instructions in the README.md. This section will guide you through configuring the Arduino part of the system, ensuring everything is set up correctly.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Step 2: Set Up OpenBatteryInformation&lt;/h2&gt; 
+&lt;p&gt;After setting up the Arduino part, you have two options for setting up the software on your computer.&lt;/p&gt; 
+&lt;h3&gt;Option 1: Use Precompiled Binary for Windows&lt;/h3&gt; 
+&lt;p&gt;If you prefer not to deal with Python dependencies, you can download a precompiled binary for Windows:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Navigate to the &lt;a href="https://github.com/mnh-jansson/open-battery-information/releases"&gt;Releases&lt;/a&gt; section of the repository.&lt;/li&gt; 
+ &lt;li&gt;Download the Windows precompiled binary for your system.&lt;/li&gt; 
+ &lt;li&gt;Simply run the executable and follow any on-screen instructions to use the software.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Option 2: Install Python Requirements - Clone the Repository and Install Dependencies&lt;/h3&gt; 
+&lt;p&gt;Clone the repository to your local machine:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/yourusername/OpenBatteryInformation.git
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Navigate into the project folder:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd OpenBatteryInformation
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Install the required Python dependencies:&lt;/p&gt; 
+&lt;p&gt;If you don't have pip installed, follow the installation guide for your platform here. Install the required libraries by running:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pip install -r requirements.txt
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You should now be ready to run OpenBatteryInformation!&lt;/p&gt; 
+&lt;h2&gt;Step 3: Run OpenBatteryInformation&lt;/h2&gt; 
+&lt;p&gt;If you installed the Python version, you can run the program by executing:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;python main.py
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If you're using the Windows binary, simply double-click the downloaded OBI.exe file to start the application.&lt;/p&gt; 
+&lt;hr /&gt;</description>
+    </item>
+    
+    <item>
+      <title>thedotmack/claude-mem</title>
+      <link>https://github.com/thedotmack/claude-mem</link>
+      <description>&lt;p&gt;A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt; &lt;br /&gt; &lt;a href="https://github.com/thedotmack/claude-mem"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/claude-mem-logo-for-dark-mode.webp" /&gt; 
+   &lt;source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/claude-mem-logo-for-light-mode.webp" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/claude-mem-logo-for-light-mode.webp" alt="Claude-Mem" width="400" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;br /&gt; &lt;/h1&gt; 
+&lt;h4 align="center"&gt;Persistent memory compression system built for &lt;a href="https://claude.com/claude-code" target="_blank"&gt;Claude Code&lt;/a&gt;.&lt;/h4&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/LICENSE"&gt; &lt;img src="https://img.shields.io/badge/License-AGPL%203.0-blue.svg?sanitize=true" alt="License" /&gt; &lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/package.json"&gt; &lt;img src="https://img.shields.io/badge/version-6.5.0-green.svg?sanitize=true" alt="Version" /&gt; &lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/package.json"&gt; &lt;img src="https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg?sanitize=true" alt="Node" /&gt; &lt;/a&gt; &lt;a href="https://github.com/thedotmack/awesome-claude-code"&gt; &lt;img src="https://awesome.re/mentioned-badge.svg?sanitize=true" alt="Mentioned in Awesome Claude Code" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/15496" target="_blank"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/trendshift-badge-dark.svg" /&gt; 
+   &lt;source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/trendshift-badge.svg" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/trendshift-badge.svg?sanitize=true" alt="thedotmack/claude-mem | Trendshift" width="250" height="55" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;br /&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/thedotmack/claude-mem"&gt; 
+  &lt;picture&gt; 
+   &lt;img src="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/cm-preview.gif" alt="Claude-Mem Preview" width="800" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#quick-start"&gt;Quick Start&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#how-it-works"&gt;How It Works&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#mcp-search-tools"&gt;Search Tools&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#documentation"&gt;Documentation&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#configuration"&gt;Configuration&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#troubleshooting"&gt;Troubleshooting&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#license"&gt;License&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; Claude-Mem seamlessly preserves context across sessions by automatically capturing tool usage observations, generating semantic summaries, and making them available to future sessions. This enables Claude to maintain continuity of knowledge about projects even after sessions end or reconnect. &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;p&gt;Start a new Claude Code session in the terminal and enter the following commands:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;&amp;gt; /plugin marketplace add thedotmack/claude-mem
+
+&amp;gt; /plugin install claude-mem
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Restart Claude Code. Context from previous sessions will automatically appear in new sessions.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Key Features:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🧠 &lt;strong&gt;Persistent Memory&lt;/strong&gt; - Context survives across sessions&lt;/li&gt; 
+ &lt;li&gt;📊 &lt;strong&gt;Progressive Disclosure&lt;/strong&gt; - Layered memory retrieval with token cost visibility&lt;/li&gt; 
+ &lt;li&gt;🔍 &lt;strong&gt;Skill-Based Search&lt;/strong&gt; - Query your project history with mem-search skill&lt;/li&gt; 
+ &lt;li&gt;🖥️ &lt;strong&gt;Web Viewer UI&lt;/strong&gt; - Real-time memory stream at &lt;a href="http://localhost:37777"&gt;http://localhost:37777&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;💻 &lt;strong&gt;Claude Desktop Skill&lt;/strong&gt; - Search memory from Claude Desktop conversations&lt;/li&gt; 
+ &lt;li&gt;🔒 &lt;strong&gt;Privacy Control&lt;/strong&gt; - Use &lt;code&gt;&amp;lt;private&amp;gt;&lt;/code&gt; tags to exclude sensitive content from storage&lt;/li&gt; 
+ &lt;li&gt;⚙️ &lt;strong&gt;Context Configuration&lt;/strong&gt; - Fine-grained control over what context gets injected&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;strong&gt;Automatic Operation&lt;/strong&gt; - No manual intervention required&lt;/li&gt; 
+ &lt;li&gt;🔗 &lt;strong&gt;Citations&lt;/strong&gt; - Reference past observations with IDs (access via &lt;a href="http://localhost:37777/api/observation/%7Bid%7D"&gt;http://localhost:37777/api/observation/{id}&lt;/a&gt; or view all in the web viewer at &lt;a href="http://localhost:37777"&gt;http://localhost:37777&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;🧪 &lt;strong&gt;Beta Channel&lt;/strong&gt; - Try experimental features like Endless Mode via version switching&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;📚 &lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/"&gt;View Full Documentation&lt;/a&gt;&lt;/strong&gt; - Browse markdown docs on GitHub&lt;/p&gt; 
+&lt;p&gt;💻 &lt;strong&gt;Local Preview&lt;/strong&gt;: Run Mintlify docs locally:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd docs/public
+npx mintlify dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Getting Started&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/installation"&gt;Installation Guide&lt;/a&gt;&lt;/strong&gt; - Quick start &amp;amp; advanced installation&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/usage/getting-started"&gt;Usage Guide&lt;/a&gt;&lt;/strong&gt; - How Claude-Mem works automatically&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/usage/search-tools"&gt;Search Tools&lt;/a&gt;&lt;/strong&gt; - Query your project history with natural language&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/beta-features"&gt;Beta Features&lt;/a&gt;&lt;/strong&gt; - Try experimental features like Endless Mode&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Best Practices&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/context-engineering"&gt;Context Engineering&lt;/a&gt;&lt;/strong&gt; - AI agent context optimization principles&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/progressive-disclosure"&gt;Progressive Disclosure&lt;/a&gt;&lt;/strong&gt; - Philosophy behind Claude-Mem's context priming strategy&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Architecture&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/overview"&gt;Overview&lt;/a&gt;&lt;/strong&gt; - System components &amp;amp; data flow&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture-evolution"&gt;Architecture Evolution&lt;/a&gt;&lt;/strong&gt; - The journey from v3 to v5&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/hooks-architecture"&gt;Hooks Architecture&lt;/a&gt;&lt;/strong&gt; - How Claude-Mem uses lifecycle hooks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/hooks"&gt;Hooks Reference&lt;/a&gt;&lt;/strong&gt; - 7 hook scripts explained&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/worker-service"&gt;Worker Service&lt;/a&gt;&lt;/strong&gt; - HTTP API &amp;amp; Bun management&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/database"&gt;Database&lt;/a&gt;&lt;/strong&gt; - SQLite schema &amp;amp; FTS5 search&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/search-architecture"&gt;Search Architecture&lt;/a&gt;&lt;/strong&gt; - Hybrid search with Chroma vector database&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Configuration &amp;amp; Development&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/configuration"&gt;Configuration&lt;/a&gt;&lt;/strong&gt; - Environment variables &amp;amp; settings&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/development"&gt;Development&lt;/a&gt;&lt;/strong&gt; - Building, testing, contributing&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/troubleshooting"&gt;Troubleshooting&lt;/a&gt;&lt;/strong&gt; - Common issues &amp;amp; solutions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;How It Works&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────────────────────┐
+│ Session Start → Inject recent observations as context      │
+└─────────────────────────────────────────────────────────────┘
+                            ↓
+┌─────────────────────────────────────────────────────────────┐
+│ User Prompts → Create session, save user prompts           │
+└─────────────────────────────────────────────────────────────┘
+                            ↓
+┌─────────────────────────────────────────────────────────────┐
+│ Tool Executions → Capture observations (Read, Write, etc.)  │
+└─────────────────────────────────────────────────────────────┘
+                            ↓
+┌─────────────────────────────────────────────────────────────┐
+│ Worker Processes → Extract learnings via Claude Agent SDK   │
+└─────────────────────────────────────────────────────────────┘
+                            ↓
+┌─────────────────────────────────────────────────────────────┐
+│ Session Ends → Generate summary, ready for next session     │
+└─────────────────────────────────────────────────────────────┘
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Core Components:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;5 Lifecycle Hooks&lt;/strong&gt; - SessionStart, UserPromptSubmit, PostToolUse, Stop, SessionEnd (6 hook scripts)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Smart Install&lt;/strong&gt; - Cached dependency checker (pre-hook script, not a lifecycle hook)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Worker Service&lt;/strong&gt; - HTTP API on port 37777 with web viewer UI and 10 search endpoints, managed by Bun&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;SQLite Database&lt;/strong&gt; - Stores sessions, observations, summaries with FTS5 full-text search&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;mem-search Skill&lt;/strong&gt; - Natural language queries with progressive disclosure&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Chroma Vector Database&lt;/strong&gt; - Hybrid semantic + keyword search for intelligent context retrieval&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/architecture/overview"&gt;Architecture Overview&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;mem-search Skill&lt;/h2&gt; 
+&lt;p&gt;Claude-Mem provides intelligent search through the mem-search skill that auto-invokes when you ask about past work:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;How It Works:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Just ask naturally: &lt;em&gt;"What did we do last session?"&lt;/em&gt; or &lt;em&gt;"Did we fix this bug before?"&lt;/em&gt;&lt;/li&gt; 
+ &lt;li&gt;Claude automatically invokes the mem-search skill to find relevant context&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Available Search Operations:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Search Observations&lt;/strong&gt; - Full-text search across observations&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Search Sessions&lt;/strong&gt; - Full-text search across session summaries&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Search Prompts&lt;/strong&gt; - Search raw user requests&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;By Concept&lt;/strong&gt; - Find by concept tags (discovery, problem-solution, pattern, etc.)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;By File&lt;/strong&gt; - Find observations referencing specific files&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;By Type&lt;/strong&gt; - Find by type (decision, bugfix, feature, refactor, discovery, change)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Recent Context&lt;/strong&gt; - Get recent session context for a project&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Timeline&lt;/strong&gt; - Get unified timeline of context around a specific point in time&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Timeline by Query&lt;/strong&gt; - Search for observations and get timeline context around best match&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;API Help&lt;/strong&gt; - Get search API documentation&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Example Natural Language Queries:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;"What bugs did we fix last session?"
+"How did we implement authentication?"
+"What changes were made to worker-service.ts?"
+"Show me recent work on this project"
+"What was happening when we added the viewer UI?"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/usage/search-tools"&gt;Search Tools Guide&lt;/a&gt; for detailed examples.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Beta Features &amp;amp; Endless Mode&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Endless Mode is an &lt;strong&gt;experimental feature in the beta branch only&lt;/strong&gt;. It is not included in the stable release you install via the marketplace. You must manually switch to the beta channel to try it, and it comes with significant caveats (see below).&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Claude-Mem offers a &lt;strong&gt;beta channel&lt;/strong&gt; with experimental features. Switch between stable and beta versions directly from the web viewer UI.&lt;/p&gt; 
+&lt;h3&gt;How to Try Beta&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Open &lt;a href="http://localhost:37777"&gt;http://localhost:37777&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Click Settings (gear icon)&lt;/li&gt; 
+ &lt;li&gt;In &lt;strong&gt;Version Channel&lt;/strong&gt;, click "Try Beta (Endless Mode)"&lt;/li&gt; 
+ &lt;li&gt;Wait for the worker to restart&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;Your memory data is preserved when switching versions.&lt;/p&gt; 
+&lt;h3&gt;Endless Mode (Beta)&lt;/h3&gt; 
+&lt;p&gt;The flagship beta feature is &lt;strong&gt;Endless Mode&lt;/strong&gt; - a biomimetic memory architecture that dramatically extends session length:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;The Problem&lt;/strong&gt;: Standard Claude Code sessions hit context limits after ~50 tool uses. Each tool adds 1-10k+ tokens, and Claude re-synthesizes all previous outputs on every response (O(N²) complexity).&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;The Solution&lt;/strong&gt;: Endless Mode compresses tool outputs into ~500-token observations and transforms the transcript in real-time:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Working Memory (Context):     Compressed observations (~500 tokens each)
+Archive Memory (Disk):        Full tool outputs preserved for recall
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Projected Results&lt;/strong&gt; (based on theoretical modeling, not production measurements):&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Significant token reduction in context window&lt;/li&gt; 
+ &lt;li&gt;More tool uses before context exhaustion&lt;/li&gt; 
+ &lt;li&gt;Linear O(N) scaling instead of quadratic O(N²)&lt;/li&gt; 
+ &lt;li&gt;Full transcripts preserved for perfect recall&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Important Caveats&lt;/strong&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Not in stable release&lt;/strong&gt; - You must switch to beta branch to use this feature&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Still in development&lt;/strong&gt; - May have bugs, breaking changes, or incomplete functionality&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Slower than standard mode&lt;/strong&gt; - Blocking observation generation adds latency to each tool use&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Theoretical projections&lt;/strong&gt; - The efficiency claims above are based on simulations, not real-world production data&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/beta-features"&gt;Beta Features Documentation&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;What's New&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;v6.4.9 - Context Configuration Settings:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;11 new settings for fine-grained control over context injection&lt;/li&gt; 
+ &lt;li&gt;Configure token economics display, observation filtering by type/concept&lt;/li&gt; 
+ &lt;li&gt;Control number of observations and which fields to display&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v6.4.0 - Dual-Tag Privacy System:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;&amp;lt;private&amp;gt;&lt;/code&gt; tags for user-controlled privacy - wrap sensitive content to exclude from storage&lt;/li&gt; 
+ &lt;li&gt;System-level &lt;code&gt;&amp;lt;claude-mem-context&amp;gt;&lt;/code&gt; tags prevent recursive observation storage&lt;/li&gt; 
+ &lt;li&gt;Edge processing ensures private content never reaches database&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v6.3.0 - Version Channel:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Switch between stable and beta versions from the web viewer UI&lt;/li&gt; 
+ &lt;li&gt;Try experimental features like Endless Mode without manual git operations&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Previous Highlights:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;v6.0.0&lt;/strong&gt;: Major session management &amp;amp; transcript processing improvements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;v5.5.0&lt;/strong&gt;: mem-search skill enhancement with 100% effectiveness rate&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;v5.4.0&lt;/strong&gt;: Skill-based search architecture (~2,250 tokens saved per session)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;v5.1.0&lt;/strong&gt;: Web-based viewer UI with real-time updates&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;v5.0.0&lt;/strong&gt;: Hybrid search with Chroma vector database&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/CHANGELOG.md"&gt;CHANGELOG.md&lt;/a&gt; for complete version history.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;System Requirements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Node.js&lt;/strong&gt;: 18.0.0 or higher&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Claude Code&lt;/strong&gt;: Latest version with plugin support&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Bun&lt;/strong&gt;: JavaScript runtime and process manager (auto-installed if missing)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;uv&lt;/strong&gt;: Python package manager for vector search (auto-installed if missing)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;SQLite 3&lt;/strong&gt;: For persistent storage (bundled)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Key Benefits&lt;/h2&gt; 
+&lt;h3&gt;Progressive Disclosure Context&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Layered memory retrieval&lt;/strong&gt; mirrors human memory patterns&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Layer 1 (Index)&lt;/strong&gt;: See what observations exist with token costs at session start&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Layer 2 (Details)&lt;/strong&gt;: Fetch full narratives on-demand via MCP search&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Layer 3 (Perfect Recall)&lt;/strong&gt;: Access source code and original transcripts&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Smart decision-making&lt;/strong&gt;: Token counts help Claude choose between fetching details or reading code&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Type indicators&lt;/strong&gt;: Visual cues (🔴 critical, 🟤 decision, 🔵 informational) highlight observation importance&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Automatic Memory&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Context automatically injected when Claude starts&lt;/li&gt; 
+ &lt;li&gt;No manual commands or configuration needed&lt;/li&gt; 
+ &lt;li&gt;Works transparently in the background&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Full History Search&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Search across all sessions and observations&lt;/li&gt; 
+ &lt;li&gt;FTS5 full-text search for fast queries&lt;/li&gt; 
+ &lt;li&gt;Citations link back to specific observations&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Structured Observations&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;AI-powered extraction of learnings&lt;/li&gt; 
+ &lt;li&gt;Categorized by type (decision, bugfix, feature, etc.)&lt;/li&gt; 
+ &lt;li&gt;Tagged with concepts and file references&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Multi-Prompt Sessions&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Sessions span multiple user prompts&lt;/li&gt; 
+ &lt;li&gt;Context preserved across &lt;code&gt;/clear&lt;/code&gt; commands&lt;/li&gt; 
+ &lt;li&gt;Track entire conversation threads&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Configuration&lt;/h2&gt; 
+&lt;p&gt;Settings are managed in &lt;code&gt;~/.claude-mem/settings.json&lt;/code&gt;. The file is auto-created with defaults on first run.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Available Settings:&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Setting&lt;/th&gt; 
+   &lt;th&gt;Default&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;CLAUDE_MEM_MODEL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;claude-sonnet-4-5&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;AI model for observations&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;CLAUDE_MEM_WORKER_PORT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;37777&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Worker service port&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;CLAUDE_MEM_WORKER_HOST&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;127.0.0.1&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Worker bind address (use &lt;code&gt;0.0.0.0&lt;/code&gt; for remote access)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;CLAUDE_MEM_DATA_DIR&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;~/.claude-mem&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Data directory location&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;CLAUDE_MEM_LOG_LEVEL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;INFO&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Log verbosity (DEBUG, INFO, WARN, ERROR, SILENT)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;CLAUDE_MEM_PYTHON_VERSION&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;3.13&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Python version for chroma-mcp&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;CLAUDE_CODE_PATH&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;em&gt;(auto-detect)&lt;/em&gt;&lt;/td&gt; 
+   &lt;td&gt;Path to Claude executable&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;CLAUDE_MEM_CONTEXT_OBSERVATIONS&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;50&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Number of observations to inject at SessionStart&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;Settings Management:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Edit settings via CLI helper
+./claude-mem-settings.sh
+
+# Or edit directly
+nano ~/.claude-mem/settings.json
+
+# View current settings
+curl http://localhost:37777/api/settings
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Settings File Format:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "CLAUDE_MEM_MODEL": "claude-sonnet-4-5",
+  "CLAUDE_MEM_WORKER_PORT": "37777",
+  "CLAUDE_MEM_CONTEXT_OBSERVATIONS": "50"
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/configuration"&gt;Configuration Guide&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Clone and build
+git clone https://github.com/thedotmack/claude-mem.git
+cd claude-mem
+npm install
+npm run build
+
+# Run tests
+npm test
+
+# Start worker
+npm run worker:start
+
+# View logs
+npm run worker:logs
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/development"&gt;Development Guide&lt;/a&gt; for detailed instructions.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Troubleshooting&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Quick Diagnostic:&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;If you're experiencing issues, describe the problem to Claude and the troubleshoot skill will automatically activate to diagnose and provide fixes.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Common Issues:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Worker not starting → &lt;code&gt;npm run worker:restart&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;No context appearing → &lt;code&gt;npm run test:context&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Database issues → &lt;code&gt;sqlite3 ~/.claude-mem/claude-mem.db "PRAGMA integrity_check;"&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Search not working → Check FTS5 tables exist&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/troubleshooting"&gt;Troubleshooting Guide&lt;/a&gt; for complete solutions.&lt;/p&gt; 
+&lt;h3&gt;Windows Known Issues&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Console Window Visibility&lt;/strong&gt;: On Windows, a console window may briefly appear when the worker service starts. This is a cosmetic issue that we're working to resolve. We've prioritized stability by removing a workaround that was causing libuv crashes. The window does not affect functionality and will be addressed in a future release when the MCP SDK provides proper window hiding support.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Bug Reports&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Automated Bug Report Generator&lt;/strong&gt; - Create comprehensive bug reports with one command:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# From the plugin directory
+cd ~/.claude/plugins/marketplaces/thedotmack
+npm run bug-report
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The bug report tool will:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🌎 &lt;strong&gt;Auto-translate&lt;/strong&gt; - Write in ANY language, automatically translates to English&lt;/li&gt; 
+ &lt;li&gt;📊 &lt;strong&gt;Collect diagnostics&lt;/strong&gt; - Gathers versions, platform info, worker status, logs, and configuration&lt;/li&gt; 
+ &lt;li&gt;📝 &lt;strong&gt;Interactive prompts&lt;/strong&gt; - Guides you through describing the issue with multiline support&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;strong&gt;AI formatting&lt;/strong&gt; - Uses Claude Agent SDK to generate professional GitHub issues&lt;/li&gt; 
+ &lt;li&gt;🔒 &lt;strong&gt;Privacy-safe&lt;/strong&gt; - Auto-sanitizes paths, optional &lt;code&gt;--no-logs&lt;/code&gt; flag&lt;/li&gt; 
+ &lt;li&gt;🌐 &lt;strong&gt;Auto-submit&lt;/strong&gt; - Opens GitHub with pre-filled title and body&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Plugin Directory Paths:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;macOS/Linux&lt;/strong&gt;: &lt;code&gt;~/.claude/plugins/marketplaces/thedotmack&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Windows&lt;/strong&gt;: &lt;code&gt;%USERPROFILE%\.claude\plugins\marketplaces\thedotmack&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Options:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm run bug-report --no-logs    # Skip logs for privacy
+npm run bug-report --verbose    # Show all diagnostics
+npm run bug-report --help       # Show help
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Contributions are welcome! Please:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork the repository&lt;/li&gt; 
+ &lt;li&gt;Create a feature branch&lt;/li&gt; 
+ &lt;li&gt;Make your changes with tests&lt;/li&gt; 
+ &lt;li&gt;Update documentation&lt;/li&gt; 
+ &lt;li&gt;Submit a Pull Request&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/development"&gt;Development Guide&lt;/a&gt; for contribution workflow.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the &lt;strong&gt;GNU Affero General Public License v3.0&lt;/strong&gt; (AGPL-3.0).&lt;/p&gt; 
+&lt;p&gt;Copyright (C) 2025 Alex Newman (@thedotmack). All rights reserved.&lt;/p&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for full details.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;What This Means:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;You can use, modify, and distribute this software freely&lt;/li&gt; 
+ &lt;li&gt;If you modify and deploy on a network server, you must make your source code available&lt;/li&gt; 
+ &lt;li&gt;Derivative works must also be licensed under AGPL-3.0&lt;/li&gt; 
+ &lt;li&gt;There is NO WARRANTY for this software&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Documentation&lt;/strong&gt;: &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/"&gt;docs/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Issues&lt;/strong&gt;: &lt;a href="https://github.com/thedotmack/claude-mem/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Repository&lt;/strong&gt;: &lt;a href="https://github.com/thedotmack/claude-mem"&gt;github.com/thedotmack/claude-mem&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Author&lt;/strong&gt;: Alex Newman (&lt;a href="https://github.com/thedotmack"&gt;@thedotmack&lt;/a&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Built with Claude Agent SDK&lt;/strong&gt; | &lt;strong&gt;Powered by Claude Code&lt;/strong&gt; | &lt;strong&gt;Made with TypeScript&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>nicotsx/zerobyte</title>
+      <link>https://github.com/nicotsx/zerobyte</link>
+      <description>&lt;p&gt;Backup automation for self-hosters&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;h1&gt;Zerobyte&lt;/h1&gt; 
+ &lt;h3&gt;Powerful backup automation for your remote storage&lt;br /&gt;Encrypt, compress, and protect your data with ease&lt;/h3&gt; 
+ &lt;a href="https://github.com/nicotsx/zerobyte/raw/main/LICENSE"&gt; &lt;img src="https://img.shields.io/github/license/nicotsx/zerobyte" /&gt; &lt;/a&gt; 
+ &lt;br /&gt; 
+ &lt;figure&gt; 
+  &lt;img src="https://github.com/nicotsx/zerobyte/raw/main/screenshots/backup-details.webp?raw=true" alt="Demo" /&gt; 
+  &lt;figcaption&gt; 
+   &lt;p align="center"&gt; Backup management with scheduling and monitoring &lt;/p&gt; 
+  &lt;/figcaption&gt; 
+ &lt;/figure&gt; 
+&lt;/div&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!WARNING] Zerobyte is still in version 0.x.x and is subject to major changes from version to version. I am developing the core features and collecting feedbacks. Expect bugs! Please open issues or feature requests&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.buymeacoffee.com/nicotsx" target="_blank"&gt;&lt;img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;Intro&lt;/h2&gt; 
+&lt;p&gt;Zerobyte is a backup automation tool that helps you save your data across multiple storage backends. Built on top of Restic, it provides an modern web interface to schedule, manage, and monitor encrypted backups of your remote storage.&lt;/p&gt; 
+&lt;h3&gt;Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&amp;nbsp; &lt;strong&gt;Automated backups&lt;/strong&gt; with encryption, compression and retention policies powered by Restic&lt;/li&gt; 
+ &lt;li&gt;&amp;nbsp; &lt;strong&gt;Flexible scheduling&lt;/strong&gt; For automated backup jobs with fine-grained retention policies&lt;/li&gt; 
+ &lt;li&gt;&amp;nbsp; &lt;strong&gt;End-to-end encryption&lt;/strong&gt; ensuring your data is always protected&lt;/li&gt; 
+ &lt;li&gt;&amp;nbsp; &lt;strong&gt;Multi-protocol support&lt;/strong&gt;: Backup from NFS, SMB, WebDAV, or local directories&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;In order to run Zerobyte, you need to have Docker and Docker Compose installed on your server. Then, you can use the provided &lt;code&gt;docker-compose.yml&lt;/code&gt; file to start the application.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-yaml"&gt;services:
+  zerobyte:
+    image: ghcr.io/nicotsx/zerobyte:v0.18
+    container_name: zerobyte
+    restart: unless-stopped
+    cap_add:
+      - SYS_ADMIN
+    ports:
+      - "4096:4096"
+    devices:
+      - /dev/fuse:/dev/fuse
+    environment:
+      - TZ=Europe/Paris  # Set your timezone here
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/lib/zerobyte:/var/lib/zerobyte
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!WARNING] Do not try to point &lt;code&gt;/var/lib/zerobyte&lt;/code&gt; on a network share. You will face permission issues and strong performance degradation.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Then, run the following command to start Zerobyte:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker compose up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Once the container is running, you can access the web interface at &lt;code&gt;http://&amp;lt;your-server-ip&amp;gt;:4096&lt;/code&gt;.&lt;/p&gt; 
+&lt;h3&gt;Simplified setup (No remote mounts)&lt;/h3&gt; 
+&lt;p&gt;If you only need to back up locally mounted folders and don't require remote share mounting capabilities, you can remove the &lt;code&gt;SYS_ADMIN&lt;/code&gt; capability and FUSE device from your &lt;code&gt;docker-compose.yml&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-yaml"&gt;services:
+  zerobyte:
+    image: ghcr.io/nicotsx/zerobyte:v0.18
+    container_name: zerobyte
+    restart: unless-stopped
+    ports:
+      - "4096:4096"
+    environment:
+      - TZ=Europe/Paris  # Set your timezone here
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/lib/zerobyte:/var/lib/zerobyte
+      - /path/to/your/directory:/mydata
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Trade-offs:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;✅ Improved security by reducing container capabilities&lt;/li&gt; 
+ &lt;li&gt;✅ Support for local directories&lt;/li&gt; 
+ &lt;li&gt;✅ Keep support all repository types (local, S3, GCS, Azure, rclone)&lt;/li&gt; 
+ &lt;li&gt;❌ Cannot mount NFS, SMB, or WebDAV shares directly from Zerobyte&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;If you need remote mount capabilities, keep the original configuration with &lt;code&gt;cap_add: SYS_ADMIN&lt;/code&gt; and &lt;code&gt;devices: /dev/fuse:/dev/fuse&lt;/code&gt;.&lt;/p&gt; 
+&lt;h2&gt;Adding your first volume&lt;/h2&gt; 
+&lt;p&gt;Zerobyte supports multiple volume backends including NFS, SMB, WebDAV, and local directories. A volume represents the source data you want to back up and monitor.&lt;/p&gt; 
+&lt;p&gt;To add your first volume, navigate to the "Volumes" section in the web interface and click on "Create volume". Fill in the required details such as volume name, type, and connection settings.&lt;/p&gt; 
+&lt;p&gt;If you want to track a local directory on the same server where Zerobyte is running, you'll first need to mount that directory into the Zerobyte container. You can do this by adding a volume mapping in your &lt;code&gt;docker-compose.yml&lt;/code&gt; file. For example, to mount &lt;code&gt;/path/to/your/directory&lt;/code&gt; from the host to &lt;code&gt;/mydata&lt;/code&gt; in the container, you would add the following line under the &lt;code&gt;volumes&lt;/code&gt; section:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-diff"&gt;services:
+  zerobyte:
+    image: ghcr.io/nicotsx/zerobyte:v0.18
+    container_name: zerobyte
+    restart: unless-stopped
+    cap_add:
+      - SYS_ADMIN
+    ports:
+      - "4096:4096"
+    devices:
+      - /dev/fuse:/dev/fuse
+    environment:
+      - TZ=Europe/Paris
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/lib/zerobyte:/var/lib/zerobyte
++     - /path/to/your/directory:/mydata
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;After updating the &lt;code&gt;docker-compose.yml&lt;/code&gt; file, restart the Zerobyte container to apply the changes:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker compose down
+docker compose up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Now, when adding a new volume in the Zerobyte web interface, you can select "Directory" as the volume type and search for your mounted path (e.g., &lt;code&gt;/mydata&lt;/code&gt;) as the source path.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/nicotsx/zerobyte/raw/main/screenshots/add-volume.png?raw=true" alt="Preview" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Creating a repository&lt;/h2&gt; 
+&lt;p&gt;A repository is where your backups will be securely stored encrypted. Zerobyte supports multiple storage backends for your backup repositories:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Local directories&lt;/strong&gt; - Store backups on local disk at &lt;code&gt;/var/lib/zerobyte/repositories/&amp;lt;repository-name&amp;gt;&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;S3-compatible storage&lt;/strong&gt; - Amazon S3, MinIO, Wasabi, DigitalOcean Spaces, etc.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Google Cloud Storage&lt;/strong&gt; - Google's cloud storage service&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Azure Blob Storage&lt;/strong&gt; - Microsoft Azure storage&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;rclone remotes&lt;/strong&gt; - 40+ cloud storage providers via rclone (see below)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Repositories are optimized for storage efficiency and data integrity, leveraging Restic's deduplication and encryption features.&lt;/p&gt; 
+&lt;p&gt;To create a repository, navigate to the "Repositories" section in the web interface and click on "Create repository". Fill in the required details such as repository name, type, and connection settings.&lt;/p&gt; 
+&lt;h2&gt;Secret references (env:// and file://)&lt;/h2&gt; 
+&lt;p&gt;Any field that is normally stored encrypted in Zerobyte (passwords, tokens, access keys, etc.) also accepts secret references.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;env://VAR_NAME&lt;/code&gt; reads the value from &lt;code&gt;process.env.VAR_NAME&lt;/code&gt; inside the Zerobyte container.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;file://secret_name&lt;/code&gt; reads the value from &lt;code&gt;/run/secrets/secret_name&lt;/code&gt; (Docker secrets).&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;If you enter a normal value (not starting with &lt;code&gt;env://&lt;/code&gt; or &lt;code&gt;file://&lt;/code&gt;), Zerobyte will encrypt it before storing it in the database (values will look like &lt;code&gt;encv1:...&lt;/code&gt;).&lt;/p&gt; 
+&lt;p&gt;Examples:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-yaml"&gt;# SMB volume password from an env var
+password: env://SMB_PASSWORD
+
+# S3 secret access key from a Docker secret
+secretAccessKey: file://s3-secret-access-key
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Using rclone for cloud storage&lt;/h3&gt; 
+&lt;p&gt;Zerobyte can use &lt;a href="https://rclone.org/"&gt;rclone&lt;/a&gt; to support 40+ cloud storage providers including Google Drive, Dropbox, OneDrive, Box, pCloud, Mega, and many more. This gives you the flexibility to store your backups on virtually any cloud storage service.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Setup instructions:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Install rclone on your host system&lt;/strong&gt; (if not already installed):&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;curl https://rclone.org/install.sh | sudo bash
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Configure your cloud storage remote&lt;/strong&gt; using rclone's interactive config:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;rclone config
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Follow the prompts to set up your cloud storage provider. For OAuth providers (Google Drive, Dropbox, etc.), rclone will guide you through the authentication flow.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Verify your remote is configured&lt;/strong&gt;:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;rclone listremotes
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Mount the rclone config into the Zerobyte container&lt;/strong&gt; by updating your &lt;code&gt;docker-compose.yml&lt;/code&gt;:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-diff"&gt;services:
+  zerobyte:
+    image: ghcr.io/nicotsx/zerobyte:v0.18
+    container_name: zerobyte
+    restart: unless-stopped
+    cap_add:
+      - SYS_ADMIN
+    ports:
+      - "4096:4096"
+    devices:
+      - /dev/fuse:/dev/fuse
+    environment:
+      - TZ=Europe/Paris
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/lib/zerobyte:/var/lib/zerobyte
++     - ~/.config/rclone:/root/.config/rclone
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Restart the Zerobyte container&lt;/strong&gt;:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;docker compose down
+docker compose up -d
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Create a repository&lt;/strong&gt; in Zerobyte:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Select "rclone" as the repository type&lt;/li&gt; 
+   &lt;li&gt;Choose your configured remote from the dropdown&lt;/li&gt; 
+   &lt;li&gt;Specify the path within your remote (e.g., &lt;code&gt;backups/zerobyte&lt;/code&gt;)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;For a complete list of supported providers, see the &lt;a href="https://rclone.org/"&gt;rclone documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Your first backup job&lt;/h2&gt; 
+&lt;p&gt;Once you have added a volume and created a repository, you can create your first backup job. A backup job defines the schedule and parameters for backing up a specific volume to a designated repository.&lt;/p&gt; 
+&lt;p&gt;When creating a backup job, you can specify the following settings:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Schedule&lt;/strong&gt;: Define how often the backup should run (e.g., daily, weekly)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Retention Policy&lt;/strong&gt;: Set rules for how long backups should be retained (e.g., keep daily backups for 7 days, weekly backups for 4 weeks)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Paths&lt;/strong&gt;: Specify which files or directories to include in the backup&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;After configuring the backup job, save it and Zerobyte will automatically execute the backup according to the defined schedule. You can monitor the progress and status of your backup jobs in the "Backups" section of the web interface.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/nicotsx/zerobyte/raw/main/screenshots/backups-list.png?raw=true" alt="Preview" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Restoring data&lt;/h2&gt; 
+&lt;p&gt;Zerobyte allows you to easily restore your data from backups. To restore data, navigate to the "Backups" section and select the backup job from which you want to restore data. You can then choose a specific backup snapshot and select the files or directories you wish to restore. The data you select will be restored to their original location.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/nicotsx/zerobyte/raw/main/screenshots/restoring.png?raw=true" alt="Preview" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Third-Party Software&lt;/h2&gt; 
+&lt;p&gt;This project includes the following third-party software components:&lt;/p&gt; 
+&lt;h3&gt;Restic&lt;/h3&gt; 
+&lt;p&gt;Zerobyte includes &lt;a href="https://github.com/restic/restic"&gt;Restic&lt;/a&gt; for backup functionality.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;License&lt;/strong&gt;: BSD 2-Clause License&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Copyright&lt;/strong&gt;: Copyright (c) 2014, Alexander Neumann &lt;a href="mailto:alexander@bumpern.de"&gt;alexander@bumpern.de&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt;: Included unchanged&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;License Text&lt;/strong&gt;: See &lt;a href="https://raw.githubusercontent.com/nicotsx/zerobyte/main/LICENSES/BSD-2-Clause-Restic.txt"&gt;LICENSES/BSD-2-Clause-Restic.txt&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;For a complete list of third-party software licenses and attributions, please refer to the &lt;a href="https://raw.githubusercontent.com/nicotsx/zerobyte/main/NOTICES.md"&gt;NOTICES.md&lt;/a&gt; file.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Contributions by anyone are welcome! If you find a bug or have a feature request, please open an issue on GitHub. If you want to contribute code, feel free to fork the repository and submit a pull request. We require that all contributors sign a Contributor License Agreement (CLA) before we can accept your contributions. This is to protect both you and the project. Please see the &lt;a href="https://raw.githubusercontent.com/nicotsx/zerobyte/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; file for more details.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Raphire/Win11Debloat</title>
+      <link>https://github.com/Raphire/Win11Debloat</link>
+      <description>&lt;p&gt;A simple, lightweight PowerShell script to remove pre-installed apps, disable telemetry, as well as perform various other changes to customize, declutter and improve your Windows experience. Win11Debloat works for both Windows 10 and Windows 11.&lt;/p&gt;&lt;hr&gt;&lt;div align="center" markdown="1"&gt; 
+ &lt;sup&gt;Special thanks to:&lt;/sup&gt; 
+ &lt;br /&gt; 
+ &lt;br /&gt; 
+ &lt;a href="https://www.warp.dev/windebloat"&gt; &lt;img alt="Warp sponsorship" width="400" src="https://github.com/user-attachments/assets/c21102f7-bab9-4344-a731-0cf6b341cab2" /&gt; &lt;/a&gt; 
+ &lt;h3&gt;&lt;a href="https://www.warp.dev/windebloat"&gt;Warp, the intelligent terminal for developers&lt;/a&gt;&lt;/h3&gt; 
+ &lt;p&gt;&lt;a href="https://www.warp.dev/windebloat"&gt;Available for MacOS, Linux, &amp;amp; Windows&lt;/a&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;Win11Debloat&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/Raphire/Win11Debloat/releases/latest"&gt;&lt;img src="https://img.shields.io/github/v/release/Raphire/Win11Debloat?style=for-the-badge&amp;amp;label=Latest%20release" alt="GitHub Release" /&gt;&lt;/a&gt; &lt;a href="https://github.com/Raphire/Win11Debloat/discussions"&gt;&lt;img src="https://img.shields.io/badge/Join-the%20Discussion-2D9F2D?style=for-the-badge&amp;amp;logo=github&amp;amp;logoColor=white" alt="Join the Discussion" /&gt;&lt;/a&gt; &lt;a href="https://github.com/Raphire/Win11Debloat/wiki/"&gt;&lt;img src="https://img.shields.io/badge/Documentation-_?style=for-the-badge&amp;amp;logo=bookstack&amp;amp;color=grey" alt="Static Badge" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Win11Debloat is a lightweight, easy to use PowerShell script that allows you to quickly declutter and improve your Windows experience. It can remove pre-installed bloatware apps, disable telemetry, remove intrusive interface elements and much more. No need to painstakingly go through all the settings yourself or remove apps one by one. Win11Debloat makes the process quick and easy!&lt;/p&gt; 
+&lt;p&gt;The script also includes many features that system administrators will enjoy. Such as support for Windows Audit mode, the option to make changes to other Windows users and the ability to run the script without requiring user input during runtime. Please refer to our &lt;a href="https://github.com/Raphire/Win11Debloat/wiki/"&gt;wiki&lt;/a&gt; for more details.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/Raphire/Win11Debloat/master/Assets/menu.png" alt="Win11Debloat Menu" /&gt;&lt;/p&gt; 
+&lt;h4&gt;Did this script help you? Please consider buying me a cup of coffee to support my work&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://ko-fi.com/M4M5C6UPC"&gt;&lt;img src="https://ko-fi.com/img/githubbutton_sm.svg?sanitize=true" alt="ko-fi" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!Warning] Great care went into making sure this script does not unintentionally break any OS functionality, but use at your own risk! If you run into any issues, please report them &lt;a href="https://github.com/Raphire/Win11Debloat/issues"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Quick method&lt;/h3&gt; 
+&lt;p&gt;Download &amp;amp; run the script automatically via PowerShell.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Open PowerShell or Terminal, preferably as an administrator.&lt;/li&gt; 
+ &lt;li&gt;Copy and paste the command below into PowerShell:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-PowerShell"&gt;&amp;amp; ([scriptblock]::Create((irm "https://debloat.raphi.re/")))
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;Wait for the script to automatically download Win11Debloat.&lt;/li&gt; 
+ &lt;li&gt;Carefully read through and follow the on-screen instructions.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;This method supports command-line parameters to customize the behaviour of the script. Please click &lt;a href="https://github.com/Raphire/Win11Debloat/wiki/How-To-Use#parameters"&gt;here&lt;/a&gt; for more information.&lt;/p&gt; 
+&lt;h3&gt;Traditional method&lt;/h3&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Manually download &amp;amp; run the script.&lt;/summary&gt;
+ &lt;br /&gt; 
+ &lt;ol&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/Raphire/Win11Debloat/releases/latest"&gt;Download the latest version of the script&lt;/a&gt;, and extract the .ZIP file to your desired location.&lt;/li&gt; 
+  &lt;li&gt;Navigate to the Win11Debloat folder&lt;/li&gt; 
+  &lt;li&gt;Double click the &lt;code&gt;Run.bat&lt;/code&gt; file to start the script. NOTE: If the console window immediately closes and nothing happens, try the advanced method below.&lt;/li&gt; 
+  &lt;li&gt;Accept the Windows UAC prompt to run the script as administrator, this is required for the script to function.&lt;/li&gt; 
+  &lt;li&gt;Carefully read through and follow the on-screen instructions.&lt;/li&gt; 
+ &lt;/ol&gt; 
+&lt;/details&gt; 
+&lt;h3&gt;Advanced method&lt;/h3&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Manually download the script &amp;amp; run the script via PowerShell. Recommended for advanced users.&lt;/summary&gt;
+ &lt;br /&gt; 
+ &lt;ol&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/Raphire/Win11Debloat/releases/latest"&gt;Download the latest version of the script&lt;/a&gt;, and extract the .ZIP file to your desired location.&lt;/li&gt; 
+  &lt;li&gt;Open PowerShell or Terminal as an administrator.&lt;/li&gt; 
+  &lt;li&gt;Temporarily enable PowerShell execution by entering the following command:&lt;/li&gt; 
+ &lt;/ol&gt; 
+ &lt;pre&gt;&lt;code class="language-PowerShell"&gt;Set-ExecutionPolicy Unrestricted -Scope Process -Force
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;ol start="4"&gt; 
+  &lt;li&gt;In PowerShell, navigate to the directory where the files were extracted. Example: &lt;code&gt;cd c:\Win11Debloat&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;Now run the script by entering the following command:&lt;/li&gt; 
+ &lt;/ol&gt; 
+ &lt;pre&gt;&lt;code class="language-PowerShell"&gt;.\Win11Debloat.ps1
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;ol start="6"&gt; 
+  &lt;li&gt;Carefully read through and follow the on-screen instructions.&lt;/li&gt; 
+ &lt;/ol&gt; 
+ &lt;p&gt;This method supports command-line parameters to customize the behaviour of the script. Please click &lt;a href="https://github.com/Raphire/Win11Debloat/wiki/How-To-Use#parameters"&gt;here&lt;/a&gt; for more information.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;p&gt;Below is an overview of the key features and functionality offered by Win11Debloat. For more information about what features are included in the default mode please refer to &lt;a href="https://raw.githubusercontent.com/Raphire/Win11Debloat/master/#default-settings"&gt;this section&lt;/a&gt; below.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!Tip] All of the changes made by Win11Debloat can easily be reverted and almost all of the apps can be reinstalled through the Microsoft Store. A full guide on how to revert changes can be found &lt;a href="https://github.com/Raphire/Win11Debloat/wiki/Reverting-Changes"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h4&gt;App Removal&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Remove a wide variety of preinstalled apps. Click &lt;a href="https://github.com/Raphire/Win11Debloat/wiki/App-Removal"&gt;here&lt;/a&gt; for more info.&lt;/li&gt; 
+ &lt;li&gt;Remove or replace all pinned apps from start for the current user, or for all existing &amp;amp; new users. (W11 only)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Telemetry, Tracking &amp;amp; Suggested Content&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Disable telemetry, diagnostic data, activity history, app-launch tracking &amp;amp; targeted ads.&lt;/li&gt; 
+ &lt;li&gt;Disable tips, tricks, suggestions &amp;amp; ads across Windows.&lt;/li&gt; 
+ &lt;li&gt;Disable ads, suggestions and the MSN news feed in Microsoft Edge.&lt;/li&gt; 
+ &lt;li&gt;Disable the 'Windows Spotlight' desktop background option.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Bing Web Search, Copilot &amp;amp; AI Features&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Disable &amp;amp; remove Bing web search, Bing AI and Cortana from Windows search.&lt;/li&gt; 
+ &lt;li&gt;Disable &amp;amp; remove Microsoft Copilot.&lt;/li&gt; 
+ &lt;li&gt;Disable Windows Recall. (W11 only)&lt;/li&gt; 
+ &lt;li&gt;Disable Click to Do, AI text &amp;amp; image analysis tool. (W11 only)&lt;/li&gt; 
+ &lt;li&gt;Disable AI Features in Edge. (W11 only)&lt;/li&gt; 
+ &lt;li&gt;Disable AI Features in Paint. (W11 only)&lt;/li&gt; 
+ &lt;li&gt;Disable AI Features in Notepad. (W11 only)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Personalisation&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Enable dark mode for system and apps.&lt;/li&gt; 
+ &lt;li&gt;Disable transparency, animations and visual effects.&lt;/li&gt; 
+ &lt;li&gt;Turn off Enhance Pointer Precision, also known as mouse acceleration.&lt;/li&gt; 
+ &lt;li&gt;Disable the Sticky Keys keyboard shortcut. (W11 only)&lt;/li&gt; 
+ &lt;li&gt;Restore the old Windows 10 style context menu. (W11 only)&lt;/li&gt; 
+ &lt;li&gt;Hide the 'Include in library', 'Give access to' and 'Share' options from the context menu. (W10 only)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;File Explorer&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Change the default location that File Explorer opens to.&lt;/li&gt; 
+ &lt;li&gt;Show hidden files, folders and drives.&lt;/li&gt; 
+ &lt;li&gt;Show file extensions for known file types.&lt;/li&gt; 
+ &lt;li&gt;Hide the Home or Gallery section from the File Explorer navigation pane. (W11 only)&lt;/li&gt; 
+ &lt;li&gt;Hide the 3D objects, music or OneDrive folder from the File Explorer navigation pane. (W10 only)&lt;/li&gt; 
+ &lt;li&gt;Hide duplicate removable drive entries from the File Explorer navigation pane, so only the entry under 'This PC' remains.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Taskbar&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Align taskbar icons to the left. (W11 only)&lt;/li&gt; 
+ &lt;li&gt;Choose combine mode for taskbar buttons and labels. (W11 only)&lt;/li&gt; 
+ &lt;li&gt;Choose how app icons are shown on the taskbar when using multiple monitors. (W11 only)&lt;/li&gt; 
+ &lt;li&gt;Hide or change the search icon/box on the taskbar. (W11 only)&lt;/li&gt; 
+ &lt;li&gt;Hide the taskview button from the taskbar. (W11 only)&lt;/li&gt; 
+ &lt;li&gt;Disable widgets on the taskbar &amp;amp; lockscreen.&lt;/li&gt; 
+ &lt;li&gt;Hide the chat (meet now) icon from the taskbar. (W10 only)&lt;/li&gt; 
+ &lt;li&gt;Enable the 'End Task' option in the taskbar right click menu. (W11 only)&lt;/li&gt; 
+ &lt;li&gt;Enable the 'Last Active Click' behavior in the taskbar app area. This allows you to repeatedly click on an application's icon in the taskbar to switch focus between the open windows of that application.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Start&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Disable the recommended section in the start menu. (W11 only)&lt;/li&gt; 
+ &lt;li&gt;Disable the Phone Link mobile devices integration in the start menu. (W11 only)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Other&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Disable Xbox Game Bar integration &amp;amp; game/screen recording. This also disables &lt;code&gt;ms-gamingoverlay&lt;/code&gt;/&lt;code&gt;ms-gamebar&lt;/code&gt; popups if you uninstall the Xbox Game Bar.&lt;/li&gt; 
+ &lt;li&gt;Disable Fast Start-up to ensure a full shutdown.&lt;/li&gt; 
+ &lt;li&gt;Disable network connectivity during Modern Standby to reduce battery drain. (W11 only)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Advanced Features&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Option to &lt;a href="https://github.com/Raphire/Win11Debloat/wiki/Advanced-Features#running-as-another-user"&gt;apply changes to a different user&lt;/a&gt;, instead of the currently logged in user.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/Raphire/Win11Debloat/wiki/Advanced-Features#sysprep-mode"&gt;Sysprep mode&lt;/a&gt; to apply changes to the Windows Default user profile. Which ensures, all new users will have the changes automatically applied to them.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Default Settings&lt;/h3&gt; 
+&lt;p&gt;Win11Debloat's default mode allows you to quickly and easily apply the changes that are recommended for most people. This includes removing many annoying distractions, disabling telemetry and tracking and optionally uninstalling the default or your custom selection of apps. To apply the default settings, launch the script as you normally would and select option &lt;code&gt;1&lt;/code&gt; in the script menu.&lt;/p&gt; 
+&lt;p&gt;Alternatively, you can launch the script with the &lt;code&gt;-RunDefaults&lt;/code&gt; or &lt;code&gt;-RunDefaultsLite&lt;/code&gt; parameters to immediately run the defaults without going through the menu or the app removal options. Using the &lt;code&gt;-RunDefaults&lt;/code&gt; parameter will run the script in default mode and remove the default selection of apps. While using the &lt;code&gt;-RunDefaultsLite&lt;/code&gt; parameter will run the script in default mode without removing any apps. Example:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-Powershell"&gt;&amp;amp; ([scriptblock]::Create((irm "https://debloat.raphi.re/"))) -RunDefaults
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Changes included in the default mode&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Remove the default or your custom selection of apps. (See below for the default selection of apps)&lt;/li&gt; 
+ &lt;li&gt;Disable telemetry, diagnostic data, activity history, app-launch tracking &amp;amp; targeted ads.&lt;/li&gt; 
+ &lt;li&gt;Disable tips, tricks, suggestions &amp;amp; ads across Windows.&lt;/li&gt; 
+ &lt;li&gt;Disable ads, suggestions and the MSN news feed in Microsoft Edge.&lt;/li&gt; 
+ &lt;li&gt;Disable &amp;amp; remove Bing web search, Bing AI and Cortana from Windows search.&lt;/li&gt; 
+ &lt;li&gt;Disable &amp;amp; remove Microsoft Copilot.&lt;/li&gt; 
+ &lt;li&gt;Disable Windows Recall. (W11 only)&lt;/li&gt; 
+ &lt;li&gt;Disable Click to Do, AI text &amp;amp; image analysis tool. (W11 only)&lt;/li&gt; 
+ &lt;li&gt;Disable Fast Start-up to ensure a full shutdown.&lt;/li&gt; 
+ &lt;li&gt;Disable network connectivity during Modern Standby to reduce battery drain. (W11 only)&lt;/li&gt; 
+ &lt;li&gt;Show file extensions for known file types.&lt;/li&gt; 
+ &lt;li&gt;Hide the 3D objects folder under 'This pc' from File Explorer. (W10 only)&lt;/li&gt; 
+ &lt;li&gt;Disable widgets on the taskbar &amp;amp; lockscreen.&lt;/li&gt; 
+ &lt;li&gt;Hide the Chat (meet now) icon from the taskbar. (W10 only)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Apps that ARE removed by default&lt;/h4&gt; 
+&lt;p&gt;These apps are uninstalled when you opt to remove the default selection of apps.&lt;/p&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Click to expand&lt;/summary&gt; 
+ &lt;blockquote&gt; 
+  &lt;pre&gt;&lt;code&gt;Microsoft apps:
+- Clipchamp.Clipchamp (Video editor from Microsoft)
+- Microsoft.3DBuilder (Basic 3D modeling software)
+- Microsoft.549981C3F5F10 (Cortana app, discontinued)
+- Microsoft.BingFinance (Finance news and tracking via Bing, discontinued)
+- Microsoft.BingFoodAndDrink (Recipes and food news via Bing, discontinued)
+- Microsoft.BingHealthAndFitness (Health and fitness tracking/news via Bing, discontinued)
+- Microsoft.BingNews (News aggregator via Bing, replaced by Microsoft News/Start)
+- Microsoft.BingSports (Sports news and scores via Bing, discontinued)
+- Microsoft.BingTranslator (Translation service via Bing)
+- Microsoft.BingTravel (Travel planning and news via Bing, discontinued)
+- Microsoft.BingWeather (Weather forecast via Bing)
+- Microsoft.Copilot (AI assistant integrated into Windows)
+- Microsoft.Getstarted (Tips and introductory guide for Windows, cannot be uninstalled in Windows 11)
+- Microsoft.Messaging (Messaging app, often integrates with Skype, largely deprecated) 
+- Microsoft.Microsoft3DViewer (Viewer for 3D models)
+- Microsoft.MicrosoftJournal (Digital note-taking app optimized for pen input)
+- Microsoft.MicrosoftOfficeHub (Hub to access Microsoft Office apps and documents, precursor to Microsoft 365 app)
+- Microsoft.MicrosoftPowerBIForWindows (Business analytics service client)
+- Microsoft.MicrosoftSolitaireCollection (Collection of solitaire card games)
+- Microsoft.MicrosoftStickyNotes (Digital sticky notes app, deprecated &amp;amp; replaced by OneNote)
+- Microsoft.MixedReality.Portal (Portal for Windows Mixed Reality headsets)
+- Microsoft.NetworkSpeedTest (Internet connection speed test utility)
+- Microsoft.News (News aggregator. Replaced Bing News and now part of Microsoft Start)
+- Microsoft.Office.OneNote (Digital note-taking app, Universal Windows Platform version)
+- Microsoft.Office.Sway (Presentation and storytelling app)
+- Microsoft.OneConnect (Mobile Operator management app, replaced by Mobile Plans)
+- Microsoft.PowerAutomateDesktop (Desktop automation tool)
+- Microsoft.Print3D (3D printing preparation software)
+- Microsoft.SkypeApp (Skype communication app, Universal Windows Platform version)
+- Microsoft.Todos (To-do list and task management app)
+- Microsoft.Windows.DevHome (Developer dashboard and tool configuration utility, no longer supported)
+- Microsoft.WindowsAlarms (Alarms &amp;amp; Clock app)
+- Microsoft.WindowsFeedbackHub (App for providing feedback to Microsoft on Windows)
+- Microsoft.WindowsMaps (Mapping and navigation app)
+- Microsoft.WindowsSoundRecorder (Basic audio recording app)
+- Microsoft.XboxApp (Old Xbox Console Companion App, no longer supported)
+- Microsoft.ZuneVideo (Movies &amp;amp; TV app for renting/buying/playing video content. Rebranded as "Films &amp;amp; TV")
+- MicrosoftCorporationII.MicrosoftFamily (Family Safety App for managing family accounts and settings)
+- MicrosoftCorporationII.QuickAssist (Remote assistance tool)
+- MicrosoftTeams (Old MS Teams personal, MS Store version)
+- MSTeams (New MS Teams app. Work/School or Personal)
+
+Third party apps:    
+- ACGMediaPlayer  
+- ActiproSoftwareLLC  
+- AdobeSystemsIncorporated.AdobePhotoshopExpress  
+- Amazon.com.Amazon  
+- AmazonVideo.PrimeVideo
+- Asphalt8Airborne   
+- AutodeskSketchBook  
+- CaesarsSlotsFreeCasino  
+- COOKINGFEVER  
+- CyberLinkMediaSuiteEssentials  
+- DisneyMagicKingdoms  
+- Disney 
+- DrawboardPDF  
+- Duolingo-LearnLanguagesforFree  
+- EclipseManager  
+- Facebook  
+- FarmVille2CountryEscape  
+- fitbit  
+- Flipboard  
+- HiddenCity  
+- HULULLC.HULUPLUS  
+- iHeartRadio  
+- Instagram
+- king.com.BubbleWitch3Saga  
+- king.com.CandyCrushSaga  
+- king.com.CandyCrushSodaSaga  
+- LinkedInforWindows  
+- MarchofEmpires  
+- Netflix  
+- NYTCrossword  
+- OneCalendar  
+- PandoraMediaInc  
+- PhototasticCollage  
+- PicsArt-PhotoStudio  
+- Plex  
+- PolarrPhotoEditorAcademicEdition  
+- Royal Revolt  
+- Shazam  
+- Sidia.LiveWallpaper  
+- SlingTV  
+- Spotify  
+- TikTok
+- TuneInRadio  
+- Twitter  
+- Viber  
+- WinZipUniversal  
+- Wunderlist  
+- XING
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;/blockquote&gt; 
+&lt;/details&gt; 
+&lt;h4&gt;Apps that are NOT removed by default&lt;/h4&gt; 
+&lt;p&gt;These apps will not be removed by Win11Debloat unless explicitly selected by the user.&lt;/p&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Click to expand&lt;/summary&gt; 
+ &lt;blockquote&gt; 
+  &lt;pre&gt;&lt;code&gt;Miscellaneous apps:
+- Microsoft.Edge (Edge browser, only removeable in the EEA)
+- Microsoft.GetHelp (Required for some Windows 11 Troubleshooters)
+- Microsoft.M365Companions (Microsoft 365 Business Calendar, Files and People mini-apps, these apps may be reinstalled if enabled by your Microsoft 365 admin)
+- Microsoft.MSPaint (Paint 3D)
+- Microsoft.OutlookForWindows (New mail app)
+- Microsoft.OneDrive (OneDrive consumer)
+- Microsoft.Paint (Classic Paint)
+- Microsoft.People (Required for &amp;amp; included with Mail &amp;amp; Calendar)
+- Microsoft.RemoteDesktop
+- Microsoft.ScreenSketch (Snipping Tool)
+- Microsoft.Whiteboard (Only preinstalled on devices with touchscreen and/or pen support)
+- Microsoft.Windows.Photos
+- Microsoft.WindowsCalculator
+- Microsoft.WindowsCamera
+- Microsoft.WindowsNotepad
+- Microsoft.windowscommunicationsapps (Mail &amp;amp; Calendar)
+- Microsoft.WindowsStore (Microsoft Store, NOTE: This app cannot be reinstalled!)
+- Microsoft.WindowsTerminal (New default terminal app in Windows 11)
+- Microsoft.YourPhone (Phone Link)
+- Microsoft.Xbox.TCUI (UI framework, removing this may break MS store, photos and certain games)
+- Microsoft.ZuneMusic (Modern Media Player)
+- MicrosoftWindows.CrossDevice (Phone integration within File Explorer, Camera and more)
+
+Gaming related apps:
+- Microsoft.GamingApp (Modern Xbox Gaming App, required for installing some games)
+- Microsoft.XboxGameOverlay (Game overlay, required for some games)
+- Microsoft.XboxGamingOverlay (Game overlay, required for some games)
+- Microsoft.XboxIdentityProvider (Xbox sign-in framework, required for some games)
+- Microsoft.XboxSpeechToTextOverlay (Might be required for some games, NOTE: This app cannot be reinstalled!)
+
+HP apps:
+- AD2F1837.HPAIExperienceCenter
+- AD2F1837.HPConnectedMusic
+- AD2F1837.HPConnectedPhotopoweredbySnapfish
+- AD2F1837.HPDesktopSupportUtilities
+- AD2F1837.HPEasyClean
+- AD2F1837.HPFileViewer
+- AD2F1837.HPJumpStarts
+- AD2F1837.HPPCHardwareDiagnosticsWindows
+- AD2F1837.HPPowerManager
+- AD2F1837.HPPrinterControl
+- AD2F1837.HPPrivacySettings
+- AD2F1837.HPQuickDrop
+- AD2F1837.HPQuickTouch
+- AD2F1837.HPRegistration
+- AD2F1837.HPSupportAssistant
+- AD2F1837.HPSureShieldAI
+- AD2F1837.HPSystemInformation
+- AD2F1837.HPWelcome
+- AD2F1837.HPWorkWell
+- AD2F1837.myHP
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;/blockquote&gt; 
+&lt;/details&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Win11Debloat is licensed under the MIT license. See the LICENSE file for more information.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
