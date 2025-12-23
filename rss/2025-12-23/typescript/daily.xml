@@ -1,0 +1,1961 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub TypeScript Daily Trending</title>
+    <description>Daily Trending of TypeScript in GitHub</description>
+    <pubDate>Mon, 22 Dec 2025 01:39:29 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>mifi/lossless-cut</title>
+      <link>https://github.com/mifi/lossless-cut</link>
+      <description>&lt;p&gt;The swiss army knife of lossless video/audio editing&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;a href="https://go.warp.dev/lossless-cut" target="_blank"&gt; &lt;sup&gt;Special thanks to:&lt;/sup&gt; &lt;br /&gt; &lt;img alt="Warp sponsorship" width="400" src="https://github.com/warpdotdev/brand-assets/raw/main/Github/Sponsor/Warp-Github-LG-02.png" /&gt; &lt;br /&gt; 
+  &lt;h&gt;
+   Warp, built for coding with multiple AI agents 
+   &lt;br /&gt; 
+   &lt;sup&gt;Available for macOS, Linux and Windows&lt;/sup&gt; 
+  &lt;/h&gt;&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;br /&gt; 
+&lt;div align="center"&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;a href="https://mifi.no/losslesscut/"&gt;&lt;img src="https://raw.githubusercontent.com/mifi/lossless-cut/master/src/renderer/src/icon.svg?sanitize=true" width="120" alt="LosslessCut" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;b&gt;LosslessCut&lt;/b&gt;&lt;/p&gt; The swiss army knife of lossless video/audio editing 
+ &lt;br /&gt; 
+ &lt;img src="https://github.com/mifi/lossless-cut/workflows/Build/release/badge.svg?sanitize=true" /&gt; 
+ &lt;a href="https://paypal.me/mifino/usd"&gt;&lt;img src="https://img.shields.io/badge/Donate-PayPal-green.svg?sanitize=true" /&gt;&lt;/a&gt; 
+ &lt;a href="https://github.com/mifi/lossless-cut#download"&gt;&lt;img src="https://img.shields.io/github/v/release/mifi/lossless-cut" /&gt;&lt;/a&gt; 
+ &lt;a href="https://discord.gg/fhnEREfUJ3"&gt;&lt;img src="https://img.shields.io/discord/986051448385183804" /&gt;&lt;/a&gt; 
+ &lt;a href="https://twitter.com/losslesscut"&gt;&lt;img src="https://img.shields.io/twitter/follow/losslesscut?label=Twitter&amp;amp;style=social" alt="Twitter" /&gt;&lt;/a&gt; 
+ &lt;br /&gt; 
+ &lt;br /&gt; 
+ &lt;a href="https://mifi.no/thanks/"&gt;Thanks to my supporters&lt;/a&gt; and everyone who purchased LosslessCut! 
+ &lt;br /&gt; 
+ &lt;br /&gt; 
+ &lt;p align="center"&gt;&lt;img src="https://raw.githubusercontent.com/mifi/lossless-cut/master/main_screenshot.jpg" width="600" alt="screenshot" /&gt;&lt;/p&gt; 
+ &lt;br /&gt; 
+ &lt;br /&gt; 
+&lt;/div&gt; 
+&lt;p&gt;LosslessCut aims to be the ultimate cross platform FFmpeg GUI for extremely fast and lossless operations on video, audio, subtitle and other related media files. The main feature is lossless trimming and cutting of video and audio files, which is great for saving space by rough-cutting your large video files taken from a video camera, GoPro, drone, etc. It lets you quickly extract the good parts from your videos and discard many gigabytes of data without doing a slow re-encode and thereby losing quality. There are also many more &lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/#typical-workflow"&gt;use cases&lt;/a&gt;. Everything is extremely fast because it does an almost direct data copy, fueled by the awesome FFmpeg which does all the grunt work.&lt;/p&gt; 
+&lt;h2&gt;Table of contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/#features"&gt;Features&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/#example-lossless-use-cases"&gt;Example lossless use cases&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/#download"&gt;Download&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/#supported-formats"&gt;Supported formats&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/#documentation"&gt;Documentation &amp;amp; getting started&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/#video-demos"&gt;Video demos&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/#featured"&gt;Featured&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/#attributions"&gt;Attributions&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Lossless cutting of most video and audio formats&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/mifi/lossless-cut/issues/126"&gt;Smart cut&lt;/a&gt; (experimental)&lt;/li&gt; 
+ &lt;li&gt;Losslessly cut out parts of video/audio (for cutting away commercials etc.)&lt;/li&gt; 
+ &lt;li&gt;Losslessly rearrange the order of video/audio segments&lt;/li&gt; 
+ &lt;li&gt;Lossless merge/concatenation of arbitrary files (with identical codecs parameters, e.g. from the same camera)&lt;/li&gt; 
+ &lt;li&gt;Lossless multi track/stream editing 
+  &lt;ul&gt; 
+   &lt;li&gt;Combine arbitrary tracks from multiple files (ex. add music or subtitle track to a video file)&lt;/li&gt; 
+   &lt;li&gt;Remove unneeded tracks&lt;/li&gt; 
+   &lt;li&gt;Replace or re-encode only some tracks&lt;/li&gt; 
+   &lt;li&gt;Extract all tracks from a file (extract video, audio, subtitle, attachments and other tracks from one file into separate files)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;View technical data about all tracks. Edit file metadata, per-track metadata and per-track disposition&lt;/li&gt; 
+ &lt;li&gt;Select video/audio tracks for playback. Playback multiple audio tracks simultaneously.&lt;/li&gt; 
+ &lt;li&gt;Fast multi-file workflow (note: no mass/batch export yet)&lt;/li&gt; 
+ &lt;li&gt;Keyboard shortcut workflow&lt;/li&gt; 
+ &lt;li&gt;Losslessly remux video/audio into a different container (file) format&lt;/li&gt; 
+ &lt;li&gt;Take full-resolution snapshots from videos in JPEG/PNG format (low or high quality)&lt;/li&gt; 
+ &lt;li&gt;Export ranges of video frames to images (every nth frame, second, by scene change, best thumbnails) 
+  &lt;ul&gt; 
+   &lt;li&gt;Export only from a selected time range (segment)&lt;/li&gt; 
+   &lt;li&gt;Optionally include original timestamps in image file names&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Manual input of cutpoint times&lt;/li&gt; 
+ &lt;li&gt;Apply a per-file timecode offset (and auto load timecode from file)&lt;/li&gt; 
+ &lt;li&gt;Change rotation/orientation metadata in videos&lt;/li&gt; 
+ &lt;li&gt;Timeline zoom and frame/keyframe jumping for cutting around keyframes&lt;/li&gt; 
+ &lt;li&gt;Video thumbnails and audio waveform&lt;/li&gt; 
+ &lt;li&gt;Saves per project cut segments to project file&lt;/li&gt; 
+ &lt;li&gt;View FFmpeg last command log so you can modify and re-run recent commands on the command line&lt;/li&gt; 
+ &lt;li&gt;Undo/redo&lt;/li&gt; 
+ &lt;li&gt;Advanced segment query and mutation JS-based expression language.&lt;/li&gt; 
+ &lt;li&gt;Give labels to cut segments, annotate with tags&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/docs.md#import--export-projects"&gt;Import/export&lt;/a&gt; segments: MP4/MKV chapter marks, Text file, YouTube, CSV, CUE, XML (DaVinci, Final Cut Pro) and more&lt;/li&gt; 
+ &lt;li&gt;MKV/MP4 embedded chapters marks editor&lt;/li&gt; 
+ &lt;li&gt;View subtitles&lt;/li&gt; 
+ &lt;li&gt;Customizable keyboard hotkeys&lt;/li&gt; 
+ &lt;li&gt;Black scene detection, silent audio detection, and scene change detection&lt;/li&gt; 
+ &lt;li&gt;Divide timeline into segments of length L, size (X MB), N number of segments or even randomized segments!&lt;/li&gt; 
+ &lt;li&gt;Speed up / slow down video or audio file (&lt;a href="https://github.com/mifi/lossless-cut/issues/1712"&gt;changing FPS&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;Basic &lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/cli.md"&gt;CLI&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/api.md"&gt;HTTP API&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Show (DJI) embedded GPS track on a map&lt;/li&gt; 
+ &lt;li&gt;Losslessly Download videos over HTTP (e.g. HLS &lt;code&gt;.m3u8&lt;/code&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Example lossless use cases&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Cut out commercials from a recorded TV show (and re-format from TS to MP4).&lt;/li&gt; 
+ &lt;li&gt;Remove audio tracks from a file.&lt;/li&gt; 
+ &lt;li&gt;Extract music track from a video and cut it to your needs.&lt;/li&gt; 
+ &lt;li&gt;Add music to a video (or replace existing audio track).&lt;/li&gt; 
+ &lt;li&gt;Combine audio and video tracks from separate recordings.&lt;/li&gt; 
+ &lt;li&gt;Include an external subtitle into a video&lt;/li&gt; 
+ &lt;li&gt;Quickly change a H264/H265 MKV video to MOV or MP4 for playback on iPhone.&lt;/li&gt; 
+ &lt;li&gt;Import a list of cut times from other tool as a EDL (edit decision list, CSV) and run these cuts with LosslessCut.&lt;/li&gt; 
+ &lt;li&gt;Export a list of cut times as a CSV EDL and process these in another tool.&lt;/li&gt; 
+ &lt;li&gt;Quickly cut a file by its MP4/MKV chapters.&lt;/li&gt; 
+ &lt;li&gt;Quickly cut a &lt;a href="https://youtube-dl.org/"&gt;YouTube video&lt;/a&gt; by its chapters (or music times from a comment).&lt;/li&gt; 
+ &lt;li&gt;Change the language of a file's audio/subtitle tracks.&lt;/li&gt; 
+ &lt;li&gt;Attach cover art / thumbnail to videos / audio from an external JPEG file or from a frame on the timeline.&lt;/li&gt; 
+ &lt;li&gt;Change author, title, GPS position, recording time of a video.&lt;/li&gt; 
+ &lt;li&gt;Fix rotation of a video that has the wrong orientation flag set.&lt;/li&gt; 
+ &lt;li&gt;Loop a video / audio clip X times quickly without re-encoding, see &lt;a href="https://github.com/mifi/lossless-cut/issues/284"&gt;#284&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Convert a video or parts of it into X image files (not lossless)&lt;/li&gt; 
+ &lt;li&gt;Losslessly split a video into one file per scene (note you probably have to shift segments, see &lt;a href="https://github.com/mifi/lossless-cut/issues/330"&gt;#330&lt;/a&gt;.)&lt;/li&gt; 
+ &lt;li&gt;Cut away silent parts from an audio/video file.&lt;/li&gt; 
+ &lt;li&gt;Split video into segments to for example respect Twitter's 140 second limit.&lt;/li&gt; 
+ &lt;li&gt;Annotate each segment with one or more tags, then use those tags to organize your segments or use it to create an output folder structure or hierarchy for your segments.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See also &lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/recipes.md"&gt;Recipe cookbook&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Download&lt;/h2&gt; 
+&lt;p&gt;If you want to support my continued work on LosslessCut, and you want the advantage of a secure and simple installation process with automatic, stable updates, consider getting it from your favorite store:&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://apps.apple.com/app/id1505323402"&gt;&lt;img src="https://raw.githubusercontent.com/mifi/lossless-cut/master/mac-app-store-badge.svg?sanitize=true" alt="Mac App Store" height="50" /&gt;&lt;/a&gt; &lt;a href="https://www.microsoft.com/store/apps/9P30LSR4705L?cid=storebadge&amp;amp;ocid=badge"&gt;&lt;img src="https://raw.githubusercontent.com/mifi/lossless-cut/master/ms-store-badge.svg?sanitize=true" alt="MS badge" height="50" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;For Linux these are some alternatives:&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://snapcraft.io/losslesscut"&gt;&lt;img src="https://github.com/mifi/lossless-cut/raw/master/snap-store-black.svg?sanitize=true" alt="Snapcraft" height="50" /&gt;&lt;/a&gt; &lt;a href="https://flathub.org/apps/details/no.mifi.losslesscut"&gt;&lt;img src="https://github.com/mifi/lossless-cut/raw/master/flathub-badge.svg?sanitize=true" alt="Flathub" height="50" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;If you prefer to download the executables manually, this will of course always be free (see also &lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/requirements.md"&gt;supported operating systems&lt;/a&gt;):&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;macOS: &lt;a href="https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-mac-x64.dmg"&gt;Intel&lt;/a&gt; / &lt;a href="https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-mac-arm64.dmg"&gt;Apple Silicon&lt;/a&gt; DMG (note that PKG does &lt;strong&gt;not&lt;/strong&gt; work)&lt;/li&gt; 
+ &lt;li&gt;Windows: &lt;a href="https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-win-x64.7z"&gt;7zip&lt;/a&gt; (Windows 7, 8 and 8.1 is &lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/requirements.md"&gt;no longer supported after v3.50.0&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;Linux: &lt;a href="https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-linux-x64.tar.bz2"&gt;x64 tar.bz2&lt;/a&gt; / &lt;a href="https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-linux-x86_64.AppImage"&gt;x64 AppImage&lt;/a&gt; / &lt;a href="https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-linux-arm64.tar.bz2"&gt;arm64 tar.bz2&lt;/a&gt; / &lt;a href="https://github.com/mifi/lossless-cut/releases/latest/download/LosslessCut-linux-armv7l.tar.bz2"&gt;Raspberry Pi armv7l&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/mifi/lossless-cut/releases"&gt;More releases&lt;/a&gt; - Note that APPX (Windows) and PKG (macOS) do &lt;strong&gt;not&lt;/strong&gt; work)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://mifi.no/llc/nightly/"&gt;Latest nightly builds 🧪&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Difference between App Stores and GitHub download? &lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/issues.md#app-stores-and-github-difference"&gt;Please see FAQ&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://mifi.no/thanks"&gt;&lt;img src="https://raw.githubusercontent.com/mifi/lossless-cut/master/donate.svg?sanitize=true" alt="" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;LosslessCut is maintained by me alone and will always remain free and open source. If it's useful to you, consider supporting my work. Alternatively &lt;a href="https://www.ffmpeg.org/donations.html"&gt;donate to FFmpeg&lt;/a&gt; because they are doing the world a huge favor.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://paypal.me/mifino/usd"&gt;Paypal&lt;/a&gt; | &lt;a href="https://mifi.no/thanks"&gt;crypto&lt;/a&gt; | &lt;a href="https://mifi.no/thanks"&gt;more&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Supported formats&lt;/h2&gt; 
+&lt;p&gt;LosslessCut uses the Chromium browser's HTML5 video player, and not all formats/codecs are &lt;a href="https://www.chromium.org/audio-video"&gt;natively supported&lt;/a&gt;. Generally, the following file formats work: &lt;code&gt;MP4&lt;/code&gt;, &lt;code&gt;MOV&lt;/code&gt;, &lt;code&gt;WebM&lt;/code&gt;, &lt;code&gt;Matroska&lt;/code&gt;, &lt;code&gt;OGG&lt;/code&gt; and &lt;code&gt;WAV&lt;/code&gt;. Audio codecs: &lt;code&gt;FLAC&lt;/code&gt;, &lt;code&gt;MP3&lt;/code&gt;, &lt;code&gt;Opus&lt;/code&gt;, &lt;code&gt;PCM&lt;/code&gt;, &lt;code&gt;Vorbis&lt;/code&gt; and &lt;code&gt;AAC&lt;/code&gt;. Video codecs: &lt;code&gt;H264&lt;/code&gt;, &lt;code&gt;AV1&lt;/code&gt;, &lt;code&gt;Theora&lt;/code&gt;, &lt;code&gt;VP8&lt;/code&gt;, &lt;code&gt;VP9&lt;/code&gt; and &lt;code&gt;H265&lt;/code&gt; (with hardware decoder). Learn the &lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/docs.md#primer-video--audio-formats-vs-codecs"&gt;difference between a codec and a format&lt;/a&gt;. Codecs and formats not listed above can still be converted to a supported format/codec from the &lt;code&gt;File&lt;/code&gt; menu (try the option &lt;em&gt;Fastest: FFmpeg-assisted playback&lt;/em&gt; first). A low quality version of the file will then be created and opened in the player. Note that the actual cut/export operation will still be performed on the original file, so it will be lossless. This allows for potentially opening any file that FFmpeg is able to decode.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/docs.md"&gt;Getting started and documentation&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/issues.md"&gt;FAQ, known issues, limitations and troubleshooting&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/CONTRIBUTING.md"&gt;Contributing&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Video demos&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=pYHMxXy05Jg"&gt;Common features&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=4pYJ93cn80E"&gt;How to add a thumbnail / cover art to an MP4&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=MRBGDsuw_WU"&gt;How to add multi-language audio to a video&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Your video here?&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Featured&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://console.substack.com/p/console-93"&gt;Console newsletter&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Hacker News &lt;a href="https://news.ycombinator.com/item?id=40829494"&gt;2024&lt;/a&gt; &lt;a href="https://news.ycombinator.com/item?id=33969490"&gt;2022&lt;/a&gt; &lt;a href="https://news.ycombinator.com/item?id=24883030"&gt;2020-10&lt;/a&gt; &lt;a href="https://news.ycombinator.com/item?id=22026412"&gt;2020-01&lt;/a&gt; &lt;a href="https://news.ycombinator.com/item?id=12885585"&gt;2016&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://en.m.wikipedia.org/wiki/LosslessCut"&gt;Wikipedia&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Your link here?&lt;/li&gt; 
+ &lt;li&gt;theo (YouTube) &lt;a href="https://youtu.be/FI5ba4RRE8U?t=246"&gt;1&lt;/a&gt; &lt;a href="https://youtu.be/uaCypXEJjes?t=381"&gt;2&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;img src="https://api.star-history.com/svg?repos=mifi/lossless-cut&amp;amp;type=Date" alt="Star History Chart" width="400px" /&gt; 
+&lt;h2&gt;Attributions&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;App icon made by &lt;a href="http://www.flaticon.com/authors/dimi-kazak" title="Dimi Kazak"&gt;Dimi Kazak&lt;/a&gt; from &lt;a href="http://www.flaticon.com" title="Flaticon"&gt;www.flaticon.com&lt;/a&gt; is licensed by &lt;a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"&gt;CC 3.0 BY&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://lottiefiles.com/7077-magic-flow"&gt;Lottie animation by Chris Gannon&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Thanks to Adi Abinun and &lt;a href="https://github.com/mifi/lossless-cut/issues/2561"&gt;@abdul-alhasany&lt;/a&gt; for UI work.&lt;/li&gt; 
+ &lt;li&gt;Thanks to translators who helped translate the app. &lt;a href="https://raw.githubusercontent.com/mifi/lossless-cut/master/translation.md"&gt;You can too!&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://mifi.no/thanks/"&gt;Thanks to everyone for supporting&lt;/a&gt; my open source work 🙌&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;Made with ❤️ in &lt;a href="https://www.youtube.com/watch?v=uQIv8Vo9_Jc"&gt;🇳🇴&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://mifi.no/"&gt;More apps by mifi.no&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Follow me on &lt;a href="https://github.com/mifi/"&gt;GitHub&lt;/a&gt;, &lt;a href="https://www.youtube.com/channel/UC6XlvVH63g0H54HSJubURQA"&gt;YouTube&lt;/a&gt;, &lt;a href="https://www.instagram.com/mifi.no/"&gt;IG&lt;/a&gt;, &lt;a href="https://twitter.com/mifi_no"&gt;Twitter&lt;/a&gt; for more awesome content!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Vendicated/Vencord</title>
+      <link>https://github.com/Vendicated/Vencord</link>
+      <description>&lt;p&gt;The cutest Discord modification&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Vencord&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://img.shields.io/github/package-json/v/Vendicated/Vencord?style=for-the-badge&amp;amp;logo=github&amp;amp;logoColor=d3869b&amp;amp;label=&amp;amp;color=1d2021&amp;amp;labelColor=282828" alt="" /&gt; &lt;a href="https://codeberg.org/Vee/cord"&gt;&lt;img src="https://img.shields.io/static/v1?style=for-the-badge&amp;amp;label=Codeberg%20Mirror&amp;amp;message=codeberg.org/Vee/cord&amp;amp;color=2185D0&amp;amp;logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAKbUlEQVR4nNVae3AV5RX/nW/3Pva+b24e5HHzIICQKGoiYiW8NFBFgohaa6ctglpbFSujSGurzUinohWsOij/gGX6R2fqOK0d1FYTEZXaTrWCBbEikJCEyCvkeXNvkrunf+zdkJDkPnex/c3cmd29+53v/M6e73znnF2Cydj4Tntldzi6qrN/qKqzf2jy6b7BnL4B1dI7oMp9AyoRAIdVsNMqhlxWMZjtspzyK/Jhr036OMsm//bh2vzPzNSPzBD6xFutd7R0Dq758ky4orkjYuc05RCAkixbeEq2/UCJ1/LczxcX/c5IPfU5DMHmxpbCpu7o1k/b+xc1n43YjJI7EqV+W2RmvuPt0oDjB2vn5bQbITNjAzzdeKK8qTO0bU9T77zucNQUjzofHrvENWWu3aUBZfW6+ZOOZiIrbYXrmUXo9daX3v6i667O/iGRiRLpwqtIvKDc+0efJ3hb/UIaSkdGWgZ4sqGt9r2m3lc/P9HvSWe80ZiRp3TPL/UsX1+bvyvVsSkb4NE3WjbuPNj5SM8Fcvdk4bAKrqvwv7DxhuCPUxmXNIn6XSy3nWr6R8OhrqrU1btwqJ3m/bgwu/SqZJdEUgbYsuuka09b9/4Pm3tLMlPvwuAbpe6m+RcplfdcURBKdG9CA2zZddLV2Nx1+JO2vlxj1LswqCpynlxc6SxLZIS40bueWfy9vXvv/xt5APhXa1/u7v+EPqvfxXK8++IaoO2Vpn9+cLS33FjVLhw+bOotOX7q6N/i3TOhAX7y+rHN/+sBLxm8fah71k93tjw/0f/jGuDJxtZrdh7setA8tS4sdn7eef+v3mmfP95/Ywxw6x9Yev9I35/6Iubv83WVfl5a6Uu3VkoavZEo7TnS/Vo98xi+Yy6UKC3bDp7sd5ut1OWFDjyzNMib6oq5Oug0ezp8dqLfG3r92Nbzr48ywNONJ8obDnV/z2xlAk4ZW1aUqhaJIAvCb5YVqwFn3GBtCBoO9dz5TOPxUbnMKAM0dYa2d5lc2AgCNi8r5klui3aBgWynjE11QZbI3FV3NjQkjnYNbB+lj36wubGlcE9T71xTNQDw0Px8nlvmHl73GmfCrKCL19Tkmh4P9jT1LHz2vVP5+vmwAZq71a1m1/PXTPXwD68eS5KIEVUZd1yZwwumeEw1Qld/lJrPhF7Sz4cNsO+rUK2ZExd6rfj10iCPZ2GJCCoAZuCJxQUc9FvNVAX72kPX6ccC0Hp4zR0Ru1kT2mTCSzeXqn5l/EAniMAqoDLDYZWwqa5EVSzmhaKmsxHbLxvbbgdiBmjpHFxj2mwANlxXxBdPUib8nwgQgqAyEFUZxT4L1i/MN3UpHDsTWQvEDHDoTLjCrIluuyzAt8zMSkhGFhp5hrYUFk3z8IqZftOMcKRj4GIAEM80tFccM8n9Z+Qq+MXigqRIWCQCMzQvYIbKwH1X53FFnjkr88iZsLKpoXWa6BiIrjbDzF67hK23lKp2Obm1LAstPEZVjTwDkAio/2ZQ9dolw/VjAB0DfKfoCg9WGy2cADy1NMhBX2rR3CIRGICq8rAhAg4Jj9UWsDBhg+4MR6vF2VC0zGjB99fk8eJp3pQdyyrRMHF9KURVxswCB6+alWO4o3b2RyeLU32D2UYKnVPm5gfm5qWlrF0Wo4hzbCmoDNw0089XlboNNcLpvsFc0RtRDXuNle+x4Lkbi9PO6WWJIBFGEY+qjGjswtq5eVzosRilLnoiUavoH1INiTCyIDy/vETNcmRW1dl0L4gRVxmx3YFhlwnrry1QrZIxASE0yJIIDaiGSHt8UQFXF2Ve1zusYgzxkXGhyGvFvePUE+mgfyAqhGqAqKWVPv5udbYhSjmtkpYWq6OJqzFjqCpjTpmbl1Rk3klSGRBWmTISNC3Hjo1LgoYFJ0GA1aIVR+cTVxlQoS2Pb18a4PLszMKXzSJYuCySmq4Al03CiytKVYfBhYvLKk1IXE+XLRLhwZp81WlNf26HTFHhd0jhdAYTgKduCPLkgPHfQjitYkLiAIEZBDBlu2R6aF7euCV2Mgg45bDw2qWOdAavnp3D109PPdlJBvpTnYg4kVY3MDMuylVw62WJi63x4LHLZ0TAIR9OdWBVodPUclUQwWmT4hLXfgCIUDfDi6oiR8rzBJzyl8LnkD9KZVCOU8aLN5eoshnJ+Qh4bFJC4gztmEjgrtk5anaKnWWfXfpIuBTLjmSpSILw/E0laq7LuGxsIngVCYmIa96hLRG3TaZ1C/KTfjAEQLFIO8TPFk7aH/RZI8kMWrdgEs8udqXLKSUoMkEW4ETEQTRsoHyPlVZfmVw+Uuy3hR9bVHBQAMD0XPu/Ew24dqqH777K/La1DiKCxyYlRRzQymgG4+oyDxZOTdxZnp5r3wvEWmJ5btuL8W4uzbJh87LitLebdOFVpKSJx4IlwIzbL81CcYLO8iSX/IImGQCYae6Wg/2tXQNjNnW7LPDKyilqZd7ETU2zEBlifNTSS4i9PNFIx44x4jh2nZlBsUr0dN8QP/6XVhEaHJvnlfhtkXd/NF0BUextKRFXFznfGk+JDdcX8tdBHtDa6YpFsB4I9ac88omf8wbEgqa2XAIOme6bM35foqrQ+QZIKwGG80ifVbrXZZNGDfhOVYBvviS9JMMoaP3AEcQpPnHdOxiMGXkKbrx4dGfZY5c4T8H9+vmwAeqXFLXOKXW9r59fWuDA44sKv1byAOBzyCkTH+kdS2f4MLPgXJI0p9T17vrFxcf181GVxEUB+0qfIqt+RcKWFSWGNR4ygd4RTpW4HiCJgFWzstmnSPA7ZLU827pypPwxDB/687GXl1X6Vs6bbGz/LRN80hZCT+yLFZ0cgHED4egACeiXm89GsP9EePuzy4rvGil7jAGYmQDsBjDHUBYZ4GhHBMfORigd4rpnyIS9u6d4rqgnGrUtjCmmSYuOqwB0GcwjbWh9xviurpNnxnDA1IspMPe6bOL755MHJvhKjIgOA7jbJD4pw22Thj+kSIW47h2KRaydVezeP57sCdspRPQqgGeNJJIuBAE+ReJUiOv32mXaXjPZs21C2QnmXgdghyEsMoRfkVMiDgCywF/by9z3xJMb1wCxeHAPgDczZpAh/Iq+HSYmDjCsstgThmf5t4ii8eQm7CgS0SCA5QBezoRApnBaBSyCEhIHCLJEb4ZUd+2SqZSwzE+qpUpEQ9CC4qb01M8cRIQsh8zxiKsMtsn08nvlnrpkyAPj5AGJwMw3AtgGwJ/q2ExxvHsQB74KxfKBMblAyGmTHq4pc4/5GjQeUm6qE9FrAK4E8H6ie41GlkN/jTk6F5Ak2ueUpNmpkgfSMAAAENERAAsB3AHgZDoy0oFdFnBYpXPEBfU4beLRD6Z4qmumug+kIzPjaoeZfQDWAHgAQFam8hLh4MkwWjsHemyS2OF08IYrCjynzZ4zKTCzi5nXMvOnzBw16bevIxR95JOj7DNKb1PqXWa+HMDtAGoBXII0lxq0N2OfAmgA8Hsi2muMhudgesHPzNkA5gKoADADwFRoS8UHQO+x9wLoBNAB4AsAnwM4AOADIjLVxf8L9kdXUOE0IskAAAAASUVORK5CYII=" alt="Codeberg Mirror" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;The cutest Discord client mod&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/3fac98c0-c411-4d2a-97a3-13b7da8687a2" alt="" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Easy to install&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://vencord.dev/plugins"&gt;100+ built in plugins&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Fairly lightweight despite the many inbuilt plugins&lt;/li&gt; 
+ &lt;li&gt;Excellent Browser Support: Run Vencord in your Browser via extension or UserScript&lt;/li&gt; 
+ &lt;li&gt;Works on any Discord branch: Stable, Canary or PTB all work&lt;/li&gt; 
+ &lt;li&gt;Custom CSS and Themes: Inbuilt css editor with support to import any css files (including BetterDiscord themes)&lt;/li&gt; 
+ &lt;li&gt;Privacy friendly: blocks Discord analytics &amp;amp; crash reporting out of the box and has no telemetry&lt;/li&gt; 
+ &lt;li&gt;Maintained very actively, broken plugins are usually fixed within 12 hours&lt;/li&gt; 
+ &lt;li&gt;Settings sync: Keep your plugins and their settings synchronised between devices / apps (optional)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Installing / Uninstalling&lt;/h2&gt; 
+&lt;p&gt;Visit &lt;a href="https://vencord.dev/download"&gt;https://vencord.dev/download&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Join our Support/Community Server&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://discord.gg/D9uwnFnqmd"&gt;https://discord.gg/D9uwnFnqmd&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Sponsors&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="center"&gt;&lt;strong&gt;Thanks a lot to all Vencord &lt;a href="https://github.com/sponsors/Vendicated"&gt;sponsors&lt;/a&gt;!!&lt;/strong&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/sponsors/Vendicated"&gt;&lt;img src="https://meow.vendicated.dev/sponsors.png" alt="" /&gt;&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;&lt;em&gt;generated using &lt;a href="https://github.com/Vendicated/github-sponsor-graph"&gt;github-sponsor-graph&lt;/a&gt;&lt;/em&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;a href="https://star-history.com/#Vendicated/Vencord&amp;amp;Timeline"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Vendicated/Vencord&amp;amp;type=Timeline&amp;amp;theme=dark" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Vendicated/Vencord&amp;amp;type=Timeline" /&gt; 
+  &lt;img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Vendicated/Vencord&amp;amp;type=Timeline" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;h2&gt;Disclaimer&lt;/h2&gt; 
+&lt;p&gt;Discord is trademark of Discord Inc. and solely mentioned for the sake of descriptivity. Mention of it does not imply any affiliation with or endorsement by Discord Inc.&lt;/p&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Using Vencord violates Discord's terms of service&lt;/summary&gt; 
+ &lt;p&gt;Client modifications are against Discord’s Terms of Service.&lt;/p&gt; 
+ &lt;p&gt;However, Discord is pretty indifferent about them and there are no known cases of users getting banned for using client mods! So you should generally be fine as long as you don’t use any plugins that implement abusive behaviour. But no worries, all inbuilt plugins are safe to use!&lt;/p&gt; 
+ &lt;p&gt;Regardless, if your account is very important to you and it getting disabled would be a disaster for you, you should probably not use any client mods (not exclusive to Vencord), just to be safe&lt;/p&gt; 
+ &lt;p&gt;Additionally, make sure not to post screenshots with Vencord in a server where you might get banned for it&lt;/p&gt; 
+&lt;/details&gt;</description>
+    </item>
+    
+    <item>
+      <title>github/docs</title>
+      <link>https://github.com/github/docs</link>
+      <description>&lt;p&gt;The open-source repo for docs.github.com&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;GitHub Docs 
+ &lt;!-- omit in toc --&gt;&lt;/h1&gt; 
+&lt;p&gt;Welcome to GitHub Docs! GitHub’s documentation is open source, meaning anyone from inside or outside the company can contribute. For full contributing guidelines, visit our &lt;a href="https://docs.github.com/en/contributing"&gt;contributing guide&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Quick links by contributor type&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Hubbers (GitHub employees):&lt;/strong&gt; See &lt;a href="https://github.com/github/docs-content/raw/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; in the &lt;code&gt;docs-content&lt;/code&gt; repository for GitHub-specific processes.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Open source contributors:&lt;/strong&gt; See &lt;a href="https://github.com/github/docs/raw/main/.github/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; in the &lt;code&gt;docs&lt;/code&gt; repository for a quick-start summary.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How we sync changes across Docs repositories&lt;/h2&gt; 
+&lt;p&gt;There are two GitHub Docs repositories:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;github/docs&lt;/code&gt;&lt;/strong&gt; (public): Open to external contributions&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;github/docs-internal&lt;/code&gt;&lt;/strong&gt; (private): For GitHub employee contributions.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The two repositories sync frequently. Content changes in one are reflected in the other. Hubbers might prefer to post in &lt;code&gt;docs&lt;/code&gt; when working with a customer, but &lt;code&gt;docs&lt;/code&gt; has limitations on the types of contributions it accepts to safeguard the site and our workflows. Internal contributions should usually go to &lt;code&gt;docs-internal&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Important:&lt;/strong&gt; The &lt;code&gt;docs&lt;/code&gt; repository accepts contributions to content files (&lt;code&gt;.md&lt;/code&gt; files in &lt;code&gt;/content&lt;/code&gt; and select &lt;code&gt;/data&lt;/code&gt; sections like reusables only). Infrastructure files, workflows, and site-building code are not open for external modification.&lt;/p&gt; 
+&lt;h2&gt;New to contributing&lt;/h2&gt; 
+&lt;p&gt;Here are some resources to help you get started with open source contributions:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.github.com/en/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github"&gt;Finding ways to contribute to open source on GitHub&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.github.com/en/get-started/git-basics/set-up-git"&gt;Set up Git&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.github.com/en/get-started/using-github/github-flow"&gt;GitHub flow&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.github.com/en/github/collaborating-with-pull-requests"&gt;Collaborating with pull requests&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is dual-licensed under:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Creative Commons Attribution 4.0&lt;/strong&gt; - for documentation and content in the assets, content, and data folders (see &lt;a href="https://raw.githubusercontent.com/github/docs/main/LICENSE"&gt;LICENSE&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;MIT License&lt;/strong&gt; - for code (see &lt;a href="https://raw.githubusercontent.com/github/docs/main/LICENSE-CODE"&gt;LICENSE-CODE&lt;/a&gt;)&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>iptv-org/iptv</title>
+      <link>https://github.com/iptv-org/iptv</link>
+      <description>&lt;p&gt;Collection of publicly available IPTV channels from all over the world&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;IPTV &lt;a href="https://github.com/iptv-org/iptv/actions/workflows/update.yml"&gt;&lt;img src="https://github.com/iptv-org/iptv/actions/workflows/update.yml/badge.svg?sanitize=true" alt="update" /&gt;&lt;/a&gt;&lt;/h1&gt; 
+&lt;p&gt;Collection of publicly available IPTV (Internet Protocol television) channels from all over the world.&lt;/p&gt; 
+&lt;h2&gt;Table of contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🚀 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#how-to-use"&gt;How to use?&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;📺 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#playlists"&gt;Playlists&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🗓 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#epg"&gt;EPG&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🗄 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#database"&gt;Database&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;👨‍💻 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#api"&gt;API&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;📚 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#resources"&gt;Resources&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;💬 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#discussions"&gt;Discussions&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;❓ &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#faq"&gt;FAQ&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🛠 &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#contribution"&gt;Contribution&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;⚖ &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#legal"&gt;Legal&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;© &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/#license"&gt;License&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How to use?&lt;/h2&gt; 
+&lt;p&gt;Simply paste the link to one of the playlists into &lt;a href="https://github.com/iptv-org/awesome-iptv#apps"&gt;any video player&lt;/a&gt; that supports live streaming and press &lt;em&gt;Open&lt;/em&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/iptv-org/iptv/raw/master/.readme/preview.png" alt="VLC Network Panel" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Playlists&lt;/h2&gt; 
+&lt;p&gt;The main playlist containing all channels available in the repository can be found at:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;https://iptv-org.github.io/iptv/index.m3u
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Links to other playlists can be found in the &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/PLAYLISTS.md"&gt;PLAYLISTS.md&lt;/a&gt; file.&lt;/p&gt; 
+&lt;h2&gt;EPG&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Electronic_program_guide"&gt;Electronic Program Guide&lt;/a&gt; for most of the channels can be downloaded using utilities published in the &lt;a href="https://github.com/iptv-org/epg"&gt;iptv-org/epg&lt;/a&gt; repository.&lt;/p&gt; 
+&lt;h2&gt;Database&lt;/h2&gt; 
+&lt;p&gt;All channel data is taken from the &lt;a href="https://github.com/iptv-org/database"&gt;iptv-org/database&lt;/a&gt; repository. If you find any errors please open a new &lt;a href="https://github.com/iptv-org/database/issues"&gt;issue&lt;/a&gt; there.&lt;/p&gt; 
+&lt;h2&gt;API&lt;/h2&gt; 
+&lt;p&gt;The API documentation can be found in the &lt;a href="https://github.com/iptv-org/api"&gt;iptv-org/api&lt;/a&gt; repository.&lt;/p&gt; 
+&lt;h2&gt;Resources&lt;/h2&gt; 
+&lt;p&gt;Links to other useful IPTV-related resources can be found in the &lt;a href="https://github.com/iptv-org/awesome-iptv"&gt;iptv-org/awesome-iptv&lt;/a&gt; repository.&lt;/p&gt; 
+&lt;h2&gt;Discussions&lt;/h2&gt; 
+&lt;p&gt;If you have a question or idea, welcome to the &lt;a href="https://github.com/orgs/iptv-org/discussions"&gt;Discussions&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;FAQ&lt;/h2&gt; 
+&lt;p&gt;The answers to the most popular questions can be found in the &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/FAQ.md"&gt;FAQ.md&lt;/a&gt; file.&lt;/p&gt; 
+&lt;h2&gt;Contribution&lt;/h2&gt; 
+&lt;p&gt;Please make sure to read the &lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt; before sending an issue or making a pull request.&lt;/p&gt; 
+&lt;p&gt;And thank you to everyone who has already contributed!&lt;/p&gt; 
+&lt;h3&gt;Backers&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://opencollective.com/iptv-org"&gt;&lt;img src="https://opencollective.com/iptv-org/backers.svg?width=890" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Contributors&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://github.com/iptv-org/iptv/graphs/contributors"&gt;&lt;img src="https://opencollective.com/iptv-org/contributors.svg?width=890" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Legal&lt;/h2&gt; 
+&lt;p&gt;No video files are stored in this repository. The repository simply contains user-submitted links to publicly available video stream URLs, which to the best of our knowledge have been intentionally made publicly by the copyright holders. If any links in these playlists infringe on your rights as a copyright holder, they may be removed by sending a &lt;a href="https://github.com/iptv-org/iptv/pulls"&gt;pull request&lt;/a&gt; or opening an &lt;a href="https://github.com/iptv-org/iptv/issues/new?assignees=freearhey&amp;amp;labels=removal+request&amp;amp;template=--removal-request.yml&amp;amp;title=Remove%3A+"&gt;issue&lt;/a&gt;. However, note that we have &lt;strong&gt;no control&lt;/strong&gt; over the destination of the link, and just removing the link from the playlist will not remove its contents from the web. Note that linking does not directly infringe copyright because no copy is made on the site providing the link, and thus this is &lt;strong&gt;not&lt;/strong&gt; a valid reason to send a DMCA notice to GitHub. To remove this content from the web, you should contact the web host that's actually hosting the content (&lt;strong&gt;not&lt;/strong&gt; GitHub, nor the maintainers of this repository).&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/iptv-org/iptv/master/LICENSE"&gt;&lt;img src="http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg?sanitize=true" alt="CC0" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>google/adk-js</title>
+      <link>https://github.com/google/adk-js</link>
+      <description>&lt;p&gt;An open-source, code-first Typescript toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Agent Development Kit (ADK) for TypeScript&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/google/adk-js/main/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg?sanitize=true" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/@google/adk"&gt;&lt;img src="https://img.shields.io/npm/v/@google/adk" alt="NPM Version" /&gt;&lt;/a&gt; &lt;a href="https://www.reddit.com/r/agentdevelopmentkit/"&gt;&lt;img src="https://img.shields.io/badge/Reddit-r%2Fagentdevelopmentkit-FF4500?style=flat&amp;amp;logo=reddit&amp;amp;logoColor=white" alt="r/agentdevelopmentkit" /&gt;&lt;/a&gt;&lt;/p&gt;  
+&lt;h2 align="center"&gt; &lt;img src="https://raw.githubusercontent.com/google/adk-python/main/assets/agent-development-kit.png" width="256" /&gt; &lt;/h2&gt; 
+&lt;h3 align="center"&gt; An open-source, code-first TypeScript toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control. &lt;/h3&gt; 
+&lt;h3 align="center"&gt; Important Links: &lt;a href="https://google.github.io/adk-docs/"&gt;Docs&lt;/a&gt;, &lt;a href="https://github.com/google/adk-samples"&gt;Samples&lt;/a&gt;, &lt;a href="https://github.com/google/adk-python"&gt;Python ADK&lt;/a&gt;. &lt;a href="https://github.com/google/adk-java"&gt;Java ADK&lt;/a&gt;, &lt;a href="https://github.com/google/adk-go"&gt;Go ADK&lt;/a&gt; &amp;amp; &lt;a href="https://github.com/google/adk-web"&gt;Web ADK&lt;/a&gt;. &lt;/h3&gt;  
+&lt;p&gt;Agent Development Kit (ADK) is designed for developers seeking fine-grained control and flexibility when building advanced AI agents that are tightly integrated with services in Google Cloud. It allows you to define agent behavior, orchestration, and tool use directly in code, enabling robust debugging, versioning, and deployment anywhere – from your laptop to the cloud.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;✨ Key Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Rich Tool Ecosystem&lt;/strong&gt;: Utilize pre-built tools, custom functions, OpenAPI specs, or integrate existing tools to give agents diverse capabilities, all for tight integration with the Google ecosystem.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Code-First Development&lt;/strong&gt;: Define agent logic, tools, and orchestration directly in TypeScript for ultimate flexibility, testability, and versioning.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Modular Multi-Agent Systems&lt;/strong&gt;: Design scalable applications by composing multiple specialized agents into flexible hierarchies.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🚀 Installation&lt;/h2&gt; 
+&lt;p&gt;If you're using npm, add the following to your dependencies:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install @google/adk
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Or with yarn:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;yarn add @google/adk
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;📚 Documentation&lt;/h2&gt; 
+&lt;p&gt;For building, evaluating, and deploying agents by follow the TypeScript documentation &amp;amp; samples:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://google.github.io/adk-docs"&gt;Documentation&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/google/adk-samples"&gt;Samples&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🏁 Feature Highlight&lt;/h2&gt; 
+&lt;h3&gt;Same Features &amp;amp; Familiar Interface As Other ADKs:&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-typescript"&gt;import { LlmAgent, GOOGLE_SEARCH } from '@google/adk';
+
+const rootAgent = new LlmAgent({
+    name: 'search_assistant',
+    description: 'An assistant that can search the web.',
+    model: 'gemini-2.5-flash', // Or your preferred models
+    instruction: 'You are a helpful assistant. Answer user questions using Google Search when needed.',
+    tools: [GOOGLE_SEARCH],
+});
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Development UI&lt;/h3&gt; 
+&lt;p&gt;Same as the Python Development UI. A built-in development UI to help you test, evaluate, debug, and showcase your agent(s). &lt;img src="https://raw.githubusercontent.com/google/adk-python/main/assets/adk-web-dev-ui-function-call.png" /&gt;&lt;/p&gt; 
+&lt;h3&gt;Evaluate Agents&lt;/h3&gt; 
+&lt;p&gt;Coming soon...&lt;/p&gt; 
+&lt;h2&gt;🤖 A2A and ADK integration&lt;/h2&gt; 
+&lt;p&gt;For remote agent-to-agent communication, ADK integrates with the &lt;a href="https://github.com/google/A2A/"&gt;A2A protocol&lt;/a&gt;. Examples coming soon...&lt;/p&gt; 
+&lt;h2&gt;🏗️ Building the Project&lt;/h2&gt; 
+&lt;p&gt;This project uses &lt;code&gt;esbuild&lt;/code&gt; to compile and bundle the TypeScript source code. You can build the project using the following npm scripts:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;npm run build&lt;/code&gt;: Compiles the TypeScript code into CommonJS, ESM, and Web formats in the &lt;code&gt;dist&lt;/code&gt; directory.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;npm run build:bundle&lt;/code&gt;: Creates bundled versions of the output for easier distribution or use in environments that don't support tree-shaking well.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;npm run build:watch&lt;/code&gt;: Watches for changes in the source files and automatically rebuilds the project for ESM format only.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🤝 Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions from the community! Whether it's bug reports, feature requests, documentation improvements, or code contributions, please see our&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://google.github.io/adk-docs/contributing-guide/"&gt;General contribution guideline and flow&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Then if you want to contribute code, please read &lt;a href="https://raw.githubusercontent.com/google/adk-js/main/CONTRIBUTING.md"&gt;Code Contributing Guidelines&lt;/a&gt; to get started.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📄 License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the Apache 2.0 License - see the &lt;a href="https://raw.githubusercontent.com/google/adk-js/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;h2&gt;Preview&lt;/h2&gt; 
+&lt;p&gt;This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the &lt;a href="https://cloud.google.com/terms/service-terms#1"&gt;Service Specific Terms&lt;/a&gt;. Pre-GA features are available "as is" and might have limited support. For more information, see the &lt;a href="https://cloud.google.com/products?hl=en#product-launch-stages"&gt;launch stage descriptions&lt;/a&gt;.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;em&gt;Happy Agent Building!&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>wxt-dev/wxt</title>
+      <link>https://github.com/wxt-dev/wxt</link>
+      <description>&lt;p&gt;⚡ Next-gen Web Extension Framework&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;h1&gt;&lt;img align="top" width="44" src="https://raw.githubusercontent.com/wxt-dev/wxt/HEAD/docs/public/hero-logo.svg?sanitize=true" alt="WXT Logo" /&gt; WXT&lt;/h1&gt; 
+ &lt;p&gt;&lt;a href="https://www.npmjs.com/package/wxt"&gt;&lt;img src="https://img.shields.io/npm/v/wxt?labelColor=black&amp;amp;color=%234fa048" alt="npm version" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/wxt"&gt;&lt;img src="https://img.shields.io/npm/dm/wxt?labelColor=black&amp;amp;color=%234fa048" alt="downloads" /&gt;&lt;/a&gt; &lt;a href="https://github.com/wxt-dev/wxt/raw/main/LICENSE"&gt;&lt;img src="https://img.shields.io/npm/l/wxt?labelColor=black&amp;amp;color=%234fa048" alt="license | MIT" /&gt;&lt;/a&gt; &lt;a href="https://codecov.io/github/wxt-dev/wxt"&gt;&lt;img src="https://img.shields.io/codecov/c/github/wxt-dev/wxt?labelColor=black&amp;amp;color=%234fa048" alt="coverage" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;Next-gen framework for developing web extensions.&lt;br /&gt;⚡&lt;br /&gt;&lt;q&gt;&lt;i&gt;It's like Nuxt, but for Web Extensions&lt;/i&gt;&lt;/q&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://wxt.dev/guide/installation.html"&gt;Get Started&lt;/a&gt; • &lt;a href="https://wxt.dev/api/config.html"&gt;Configuration&lt;/a&gt; • &lt;a href="https://wxt.dev/examples.html"&gt;Examples&lt;/a&gt; • &lt;a href="https://github.com/wxt-dev/wxt/raw/main/packages/wxt/CHANGELOG.md"&gt;Changelog&lt;/a&gt; • &lt;a href="https://discord.gg/ZFsZqGery9"&gt;Discord&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/wxt-dev/wxt/HEAD/docs/assets/cli-output.png" alt="Example CLI Output" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Demo&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/wxt-dev/wxt/assets/10101283/4d678939-1bdb-495c-9c36-3aa281d84c94"&gt;https://github.com/wxt-dev/wxt/assets/10101283/4d678939-1bdb-495c-9c36-3aa281d84c94&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;p&gt;Bootstrap a new project:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;# npm
+npx wxt@latest init
+
+# pnpm
+pnpm dlx wxt@latest init
+
+# bun
+bunx wxt@latest init
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Or see the &lt;a href="https://wxt.dev/guide/installation.html"&gt;installation guide&lt;/a&gt; to get started with WXT.&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🌐 Supports all browsers&lt;/li&gt; 
+ &lt;li&gt;✅ Supports both MV2 and MV3&lt;/li&gt; 
+ &lt;li&gt;⚡ Dev mode with HMR &amp;amp; fast reload&lt;/li&gt; 
+ &lt;li&gt;📂 File based entrypoints&lt;/li&gt; 
+ &lt;li&gt;🚔 TypeScript&lt;/li&gt; 
+ &lt;li&gt;🦾 Auto-imports&lt;/li&gt; 
+ &lt;li&gt;🤖 Automated publishing&lt;/li&gt; 
+ &lt;li&gt;🎨 Frontend framework agnostic: works with Vue, React, Svelte, etc&lt;/li&gt; 
+ &lt;li&gt;📦 &lt;a href="https://wxt.dev/guide/essentials/wxt-modules.html#overview"&gt;Module system&lt;/a&gt; for reusing code between extensions&lt;/li&gt; 
+ &lt;li&gt;🖍️ Quickly bootstrap a new project&lt;/li&gt; 
+ &lt;li&gt;📏 Bundle analysis&lt;/li&gt; 
+ &lt;li&gt;⬇️ Download and bundle remote URL imports&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Sponsors&lt;/h2&gt; 
+&lt;p&gt;WXT is a &lt;a href="https://github.com/wxt-dev/wxt/raw/main/LICENSE"&gt;MIT-licensed&lt;/a&gt; open source project with its ongoing development made possible entirely by the support of these awesome backers. If you'd like to join them, please consider &lt;a href="https://github.com/sponsors/wxt-dev"&gt;sponsoring WXT's development&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/sponsors/wxt-dev"&gt;&lt;img src="https://raw.githubusercontent.com/wxt-dev/static/refs/heads/main/sponsorkit/sponsors.svg?sanitize=true" alt="WXT Sponsors" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributors&lt;/h2&gt; 
+&lt;p&gt;Published under the &lt;a href="https://github.com/wxt-dev/wxt/raw/main/LICENSE"&gt;MIT&lt;/a&gt; license. Made by &lt;a href="https://github.com/aklinker1"&gt;@aklinker1&lt;/a&gt; and &lt;a href="https://github.com/wxt-dev/wxt/graphs/contributors"&gt;community&lt;/a&gt; 💛&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/wxt-dev/wxt/graphs/contributors"&gt;&lt;img src="https://contrib.rocks/image?repo=wxt-dev/wxt" alt="WXT contributors" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Effect-TS/effect</title>
+      <link>https://github.com/Effect-TS/effect</link>
+      <description>&lt;p&gt;Build production-ready applications in TypeScript&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://img.shields.io/npm/v/effect" alt="npm version" /&gt;&lt;/p&gt; 
+&lt;h1&gt;Effect Monorepo&lt;/h1&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;An ecosystem of tools to build robust applications in TypeScript&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Introduction&lt;/h2&gt; 
+&lt;p&gt;Welcome to Effect, a powerful TypeScript framework that provides a fully-fledged functional effect system with a rich standard library.&lt;/p&gt; 
+&lt;p&gt;Effect consists of several packages that work together to help build robust TypeScript applications. The core package, &lt;code&gt;effect&lt;/code&gt;, serves as the foundation of the framework, offering primitives for managing side effects, ensuring type safety, and supporting concurrency.&lt;/p&gt; 
+&lt;h2&gt;Monorepo Structure&lt;/h2&gt; 
+&lt;p&gt;The Effect monorepo is organized into multiple packages, each extending the core functionality. Below is an overview of the packages included:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Package&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+   &lt;th&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;effect&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Core package&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/effect/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/ai&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;AI utilities&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/ai/ai/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/ai-openai&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;OpenAI utilities&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/ai/openai/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/ai-anthropic&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Anthropic utilities&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/ai/anthropic/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/ai-amazon-bedrock&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Effect modules for working with Amazon Bedrock AI apis&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/ai/amazon-bedrock/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/ai-google&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Effect modules for working with Google AI apis&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/ai/google/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/cli&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;CLI utilities&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/cli/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/cluster&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Distributed computing tools&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/cluster/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/experimental&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Experimental features and APIs&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/experimental/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/opentelemetry&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://opentelemetry.io/"&gt;OpenTelemetry&lt;/a&gt; integration&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/opentelemetry/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/platform&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Cross-platform runtime utilities&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/platform/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/platform-browser&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Platform utilities for the browser&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/platform-browser/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/platform-bun&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Platform utilities for &lt;a href="https://bun.sh/"&gt;Bun&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/platform-bun/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/platform-node&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Platform utilities for &lt;a href="https://nodejs.org"&gt;Node.js&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/platform-node/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/platform-node-shared&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Shared utilities for &lt;a href="https://nodejs.org"&gt;Node.js&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/platform-node-shared/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/printer&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;General-purpose printing utilities&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/printer/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/printer-ansi&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;ANSI-compatible printing utilities&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/printer-ansi/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/rpc&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Remote procedure call (RPC) utilities&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/rpc/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/sql&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;SQL database utilities&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/sql/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/sql-clickhouse&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;An &lt;code&gt;@effect/sql&lt;/code&gt; implementation for &lt;a href="https://clickhouse.com/"&gt;ClickHouse&lt;/a&gt;.&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/sql-clickhouse/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/sql-d1&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;An &lt;code&gt;@effect/sql&lt;/code&gt; implementation for &lt;a href="https://developers.cloudflare.com/d1/"&gt;Cloudflare D1&lt;/a&gt;.&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/sql-d1/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/sql-drizzle&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;An &lt;code&gt;@effect/sql&lt;/code&gt; implementation for &lt;a href="https://orm.drizzle.team/"&gt;Drizzle&lt;/a&gt;.&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/sql-drizzle/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/sql-kysely&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;An &lt;code&gt;@effect/sql&lt;/code&gt; implementation for &lt;a href="https://kysely.dev/"&gt;Kysely&lt;/a&gt;.&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/sql-kysely/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/sql-libsql&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;An &lt;code&gt;@effect/sql&lt;/code&gt; implementation using the &lt;code&gt;@libsql/client&lt;/code&gt; library.&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/sql-libsql/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/sql-mssql&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;An &lt;code&gt;@effect/sql&lt;/code&gt; implementation using the mssql &lt;code&gt;tedious&lt;/code&gt; library.&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/sql-mssql/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/sql-mysql2&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;An &lt;code&gt;@effect/sql&lt;/code&gt; implementation using the &lt;code&gt;mysql2&lt;/code&gt; library.&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/sql-mysql2/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/sql-pg&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;An &lt;code&gt;@effect/sql&lt;/code&gt; implementation using the &lt;code&gt;postgres.js&lt;/code&gt; library.&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/sql-pg/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/sql-sqlite-bun&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;An &lt;code&gt;@effect/sql&lt;/code&gt; implementation using the &lt;code&gt;bun:sqlite&lt;/code&gt; library.&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/sql-sqlite-bun/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/sql-sqlite-do&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;An &lt;code&gt;@effect/sql&lt;/code&gt; implementation for Cloudflare Durable Objects sqlite storage.&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/sql-sqlite-do/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/sql-sqlite-node&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;An &lt;code&gt;@effect/sql&lt;/code&gt; implementation using the &lt;code&gt;better-sqlite3&lt;/code&gt; library.&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/sql-sqlite-node/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/sql-sqlite-react-native&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;An &lt;code&gt;@effect/sql&lt;/code&gt; implementation using the &lt;code&gt;react-native-quick-sqlite&lt;/code&gt; library.&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/sql-sqlite-react-native/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/sql-sqlite-wasm&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;An &lt;code&gt;@effect/sql&lt;/code&gt; implementation using the &lt;code&gt;@sqlite.org/sqlite-wasm&lt;/code&gt; library.&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/sql-sqlite-wasm/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/typeclass&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Functional programming type classes&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/typeclass/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/vitest&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Testing utilities for &lt;a href="https://vitest.dev/"&gt;Vitest&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/vitest/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;@effect/workflow&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Durable workflows for Effect&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/Effect-TS/effect/raw/main/packages/workflow/README.md"&gt;README&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h1&gt;Documentation&lt;/h1&gt; 
+&lt;h2&gt;Website&lt;/h2&gt; 
+&lt;p&gt;For detailed information and usage examples, visit the &lt;a href="https://www.effect.website/"&gt;Effect website&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;API Reference&lt;/h2&gt; 
+&lt;p&gt;For a complete API reference of the core package &lt;code&gt;effect&lt;/code&gt;, see the &lt;a href="https://effect-ts.github.io/effect/"&gt;Effect API documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Introduction to Effect&lt;/h2&gt; 
+&lt;p&gt;Get started with Effect by watching our introductory video on YouTube. This video provides an overview of Effect and its key features:&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://youtu.be/ViSiXfBKElQ"&gt;&lt;img src="https://img.youtube.com/vi/ViSiXfBKElQ/maxresdefault.jpg" alt="Introduction to Effect" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Connect with Our Community&lt;/h1&gt; 
+&lt;p&gt;Join the Effect community on Discord to connect with other developers, ask questions, and share insights: &lt;a href="https://discord.gg/hdt7t7jpvn"&gt;Join Effect's Discord Community&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;Contributing via Pull Requests&lt;/h1&gt; 
+&lt;p&gt;We welcome contributions via pull requests! Here are some guidelines to help you get started:&lt;/p&gt; 
+&lt;h2&gt;Setting Up Your Environment&lt;/h2&gt; 
+&lt;p&gt;Begin by forking the repository and clone it to your local machine.&lt;/p&gt; 
+&lt;p&gt;Navigate into the cloned repository and create a new branch for your changes:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git checkout -b my-branch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Ensure all required dependencies are installed by running:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm install  # Requires pnpm version 10.4.0
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Making Changes&lt;/h2&gt; 
+&lt;h3&gt;Implement Your Changes&lt;/h3&gt; 
+&lt;p&gt;Make the changes you propose to the codebase. If your changes impact functionality, please &lt;strong&gt;add corresponding tests&lt;/strong&gt; to validate your updates.&lt;/p&gt; 
+&lt;h3&gt;Validate Your Changes&lt;/h3&gt; 
+&lt;p&gt;Run the following commands to ensure your changes do not introduce any issues:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;pnpm codegen&lt;/code&gt; (optional): Re-generate the package entrypoints in case you have changed the structure of a package or introduced a new module.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;pnpm check&lt;/code&gt;: Confirm that the code compiles without errors.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;pnpm test&lt;/code&gt;: Execute all unit tests to ensure your changes haven't broken existing functionality.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;pnpm circular&lt;/code&gt;: Check for any circular dependencies in imports.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;pnpm lint&lt;/code&gt;: Ensure the code adheres to our coding standards. 
+  &lt;ul&gt; 
+   &lt;li&gt;If you encounter style issues, use &lt;code&gt;pnpm lint-fix&lt;/code&gt; to automatically correct some of these.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;pnpm test-types&lt;/code&gt;: Run type-level tests. Tests are written using &lt;a href="https://tstyche.org/"&gt;tstyche&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;pnpm docgen&lt;/code&gt;: Ensure the documentation generates correctly and reflects any changes made.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Document Your Changes&lt;/h3&gt; 
+&lt;h4&gt;JSDoc Comments&lt;/h4&gt; 
+&lt;p&gt;When adding a new feature, it's important to document your code using JSDoc comments. This helps other developers understand the purpose and usage of your changes. Include at least the following in your JSDoc comments:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;A Short Description&lt;/strong&gt;: Summarize the purpose and functionality of the feature.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Example&lt;/strong&gt;: Provide a usage example under the &lt;code&gt;@example&lt;/code&gt; tag to demonstrate how to use the feature.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Since Version&lt;/strong&gt;: Use the &lt;code&gt;@since&lt;/code&gt; tag to indicate the version in which the feature was introduced. If you're unsure about the version, please consult with a project maintainer.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Category (Optional)&lt;/strong&gt;: You can categorize the feature with the &lt;code&gt;@category&lt;/code&gt; tag to help organize the documentation. If you're unsure about what category to assign, ask a project maintainer.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: A HTML utility file, &lt;a href="https://raw.githubusercontent.com/Effect-TS/effect/main/scripts/jsdocs/code2jsdoc-example.html"&gt;&lt;code&gt;code2jsdoc-example.html&lt;/code&gt;&lt;/a&gt;, has been added to assist with creating JSDoc &lt;code&gt;@example&lt;/code&gt; comments. This web-based interface includes two text areas:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;An input textarea for pasting example code.&lt;/li&gt; 
+ &lt;li&gt;An output textarea that dynamically generates formatted JSDoc &lt;code&gt;@example&lt;/code&gt; comments.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;This utility helps ensure consistent formatting and streamlines the process of documenting examples. See the following example of its usage:&lt;/p&gt; 
+&lt;p&gt;Example Input:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-ts"&gt;import { Effect } from "effect"
+
+console.log(Effect.runSyncExit(Effect.succeed(1)))
+/*
+Output:
+{
+  _id: "Exit",
+  _tag: "Success",
+  value: 1
+}
+*/
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Output:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;*
+* @example
+* ```ts
+* import { Effect } from "effect"
+*
+* console.log(Effect.runSyncExit(Effect.succeed(1)))
+* // Output:
+* // {
+* //   _id: "Exit",
+* //   _tag: "Success",
+* //   value: 1
+* // }
+* ```
+*
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;By using this utility, you can save time and maintain consistency in your JSDoc comments, especially for complex examples.&lt;/p&gt; 
+&lt;h4&gt;Changeset Documentation&lt;/h4&gt; 
+&lt;p&gt;Before committing your changes, document them with a changeset. This process helps in tracking modifications and effectively communicating them to the project team and users:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm changeset
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;During the changeset creation process, you will be prompted to select the appropriate level for your changes:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;patch&lt;/strong&gt;: Opt for this if you are making small fixes or minor changes that do not affect the library's overall functionality.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;minor&lt;/strong&gt;: Choose this for new features that enhance functionality but do not disrupt existing features.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;major&lt;/strong&gt;: Select this for any changes that result in backward-incompatible modifications to the library.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Finalizing Your Contribution&lt;/h2&gt; 
+&lt;h3&gt;Commit Your Changes&lt;/h3&gt; 
+&lt;p&gt;Once you have documented your changes with a changeset, it’s time to commit them to the repository. Use a clear and descriptive commit message, which could be the same message you used in your changeset:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git commit -am 'Add some feature'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Linking to Issues&lt;/h4&gt; 
+&lt;p&gt;If your commit addresses an open issue, reference the issue number directly in your commit message. This helps to link your contribution clearly to specific tasks or bug reports. Additionally, if your commit resolves the issue, you can indicate this by adding a phrase like &lt;code&gt;", closes #&amp;lt;issue-number&amp;gt;"&lt;/code&gt;. For example:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git commit -am 'Add some feature, closes #123'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This practice not only helps in tracking the progress of issues but also automatically closes the issue when the commit is merged, streamlining project management.&lt;/p&gt; 
+&lt;h3&gt;Push to Your Fork&lt;/h3&gt; 
+&lt;p&gt;Push the changes up to your GitHub fork:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git push origin my-branch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Create a Pull Request&lt;/h3&gt; 
+&lt;p&gt;Open a pull request against the appropriate branch on the original repository:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;main&lt;/code&gt; branch: For minor patches or bug fixes.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;next-minor&lt;/code&gt; branch: For new features that are non-breaking.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;next-major&lt;/code&gt; branch: For changes that introduce breaking modifications.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Please be patient! We will do our best to review your pull request as soon as possible.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>danielmiessler/Personal_AI_Infrastructure</title>
+      <link>https://github.com/danielmiessler/Personal_AI_Infrastructure</link>
+      <description>&lt;p&gt;Personal AI Infrastructure for upgrading humans.&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="./pai-logo.png" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="./pai-logo.png" /&gt; 
+  &lt;img alt="PAI Logo" src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/pai-logo.png" width="600" /&gt; 
+ &lt;/picture&gt; 
+ &lt;br /&gt; 
+ &lt;br /&gt; 
+ &lt;h1&gt;Personal AI Infrastructure&lt;/h1&gt; 
+ &lt;h3&gt;Open-source scaffolding for building your own AI-powered operating system&lt;/h3&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;a href="https://github.com/danielmiessler/Personal_AI_Infrastructure/releases"&gt;&lt;img src="https://img.shields.io/badge/version-0.9.1-blue?style=for-the-badge" alt="Version" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://claude.ai/code"&gt;&lt;img src="https://img.shields.io/badge/Claude_Code-Powered-8B5CF6?style=for-the-badge" alt="Claude Code" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-quick-start"&gt;&lt;strong&gt;Quick Start&lt;/strong&gt;&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-documentation"&gt;&lt;strong&gt;Documentation&lt;/strong&gt;&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-examples"&gt;&lt;strong&gt;Examples&lt;/strong&gt;&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-updating-pai"&gt;&lt;strong&gt;Updating&lt;/strong&gt;&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-community"&gt;&lt;strong&gt;Community&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;a href="https://youtu.be/iKwRWwabkEc"&gt;&lt;img src="https://img.youtube.com/vi/iKwRWwabkEc/maxresdefault.jpg" alt="PAI Overview Video" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;&lt;a href="https://youtu.be/iKwRWwabkEc"&gt;Watch the full PAI walkthrough&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href="https://danielmiessler.com/blog/real-internet-of-things"&gt;Read: The Real Internet of Things&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+ &lt;hr /&gt; 
+ &lt;h1&gt;The best AI in the world should be available to everyone&lt;/h1&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="docs/images/pai-overview.png" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="docs/images/pai-overview.png" /&gt; 
+  &lt;img alt="PAI Architecture Overview" src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/pai-overview.png" width="800" /&gt; 
+ &lt;/picture&gt; 
+&lt;/div&gt; 
+&lt;p&gt;Right now the most powerful AI setups are being built inside companies for efficiency and profits.&lt;/p&gt; 
+&lt;p&gt;That's all good, but I think the purpose of technology is to serve humans—not the other way around. These new AI frameworks should be available to everyone, including people not in technology, so that regular people can use it to help them flourish.&lt;/p&gt; 
+&lt;p&gt;That's what PAI is. It's the foundation for building a Personal AI System that understands your larger goals and context, gets better over time, and that works for &lt;em&gt;you&lt;/em&gt; because it's &lt;em&gt;yours&lt;/em&gt;. Not some generic chatbot. Not some common assistant. A full platform for magnifying yourself and your impact on the world.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Related reading:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://danielmiessler.com/blog/real-internet-of-things"&gt;The Real Internet of Things&lt;/a&gt; — The vision behind PAI (full book)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://danielmiessler.com/blog/ai-predictable-path-7-components-2024"&gt;AI's Predictable Path: 7 Components&lt;/a&gt; — Visual walkthrough of where AI is heading&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;What is PAI?&lt;/h2&gt; 
+&lt;p&gt;PAI (Personal AI Infrastructure) is an open-source template for building your own AI-powered operating system. It's currently built on &lt;a href="https://claude.ai/code"&gt;Claude Code&lt;/a&gt;, but designed to be platform-independent — the architecture, skills, and workflows are structured so future migrations to other AI platforms are straightforward.&lt;/p&gt; 
+&lt;picture&gt; 
+ &lt;source media="(prefers-color-scheme: dark)" srcset="docs/images/pai-infrastructure.png" /&gt; 
+ &lt;source media="(prefers-color-scheme: light)" srcset="docs/images/pai-infrastructure.png" /&gt; 
+ &lt;img alt="PAI Infrastructure Architecture" src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/pai-infrastructure.png" width="800" /&gt; 
+&lt;/picture&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Component&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Skills&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Self-contained AI capabilities with routing, workflows, and documentation&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Agents&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Specialized AI personalities for different tasks (engineer, researcher, designer)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Hooks&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Event-driven automation that captures work and manages state&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;History&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Automatic documentation system (UOCS) that captures everything&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] &lt;strong&gt;Start clean, small, and simple.&lt;/strong&gt; Build the scaffolding that makes AI reliable.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;What's New in v0.9.0&lt;/h2&gt; 
+&lt;p&gt;Big updates! PAI is now fully &lt;strong&gt;platform-agnostic&lt;/strong&gt; — your AI identity, your system.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Feature&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;📊 &lt;strong&gt;Observability Dashboard&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Real-time agent monitoring with live charts&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;🎭 &lt;strong&gt;Genericized Identity&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Configure your DA name, it flows everywhere&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;⚙️ &lt;strong&gt;Better Configuration&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Clear docs for all environment variables&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;👉 &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-updates"&gt;&lt;strong&gt;See full changelog&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;🚀 Quick Start&lt;/h2&gt; 
+&lt;p&gt;Choose your platform:&lt;/p&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;🍎 macOS&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;1. Clone PAI&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/danielmiessler/PAI.git ~/PAI
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;2. Create Symlink&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;# Remove existing ~/.claude if present (backup first if needed)
+[ -d ~/.claude ] &amp;amp;&amp;amp; mv ~/.claude ~/.claude.backup
+ln -s ~/PAI/.claude ~/.claude
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;3. Run the Setup Wizard&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;~/.claude/Tools/setup/bootstrap.sh
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;4. Add Your API Keys&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;cp ~/.claude/.env.example ~/.claude/.env
+nano ~/.claude/.env
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;5. Start Claude Code&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;source ~/.zshrc  # Load PAI environment
+claude
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;🐧 Linux&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;1. Clone PAI&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/danielmiessler/PAI.git ~/PAI
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;2. Create Symlink&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;# Remove existing ~/.claude if present (backup first if needed)
+[ -d ~/.claude ] &amp;amp;&amp;amp; mv ~/.claude ~/.claude.backup
+ln -s ~/PAI/.claude ~/.claude
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;3. Run the Setup Wizard&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;~/.claude/Tools/setup/bootstrap.sh
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;4. Add Your API Keys&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;cp ~/.claude/.env.example ~/.claude/.env
+nano ~/.claude/.env
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;5. Start Claude Code&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;source ~/.bashrc  # Load PAI environment
+claude
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;🪟 Windows&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;1. Clone PAI&lt;/strong&gt; (PowerShell)&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-powershell"&gt;git clone https://github.com/danielmiessler/PAI.git $env:USERPROFILE\PAI
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;2. Create Symlink&lt;/strong&gt; (Run PowerShell as Administrator)&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-powershell"&gt;# Remove existing .claude if present (backup first if needed)
+if (Test-Path "$env:USERPROFILE\.claude") { Rename-Item "$env:USERPROFILE\.claude" "$env:USERPROFILE\.claude.backup" }
+New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude" -Target "$env:USERPROFILE\PAI\.claude"
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;3. Run the Setup Wizard&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-powershell"&gt;&amp;amp; "$env:USERPROFILE\.claude\tools\setup\bootstrap.ps1"
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;4. Add Your API Keys&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-powershell"&gt;Copy-Item "$env:USERPROFILE\.claude\.env.example" "$env:USERPROFILE\.claude\.env"
+notepad "$env:USERPROFILE\.claude\.env"
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;5. Start Claude Code&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-powershell"&gt;# Restart PowerShell to load environment, then:
+claude
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;br /&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] The setup wizard will configure your name, email, AI assistant name, and environment variables to customize to your environment.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;📚 For detailed setup, see &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/QUICKSTART.md"&gt;&lt;code&gt;docs/QUICKSTART.md&lt;/code&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;📚 Documentation&lt;/h2&gt; 
+&lt;p&gt;All documentation lives in the CORE skill (&lt;code&gt;.claude/Skills/CORE/&lt;/code&gt;):&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Document&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.claude/Skills/CORE/CONSTITUTION.md"&gt;&lt;strong&gt;CONSTITUTION.md&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;System philosophy, architecture, operating principles&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.claude/Skills/CORE/SkillSystem.md"&gt;&lt;strong&gt;SkillSystem.md&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;How to create your own skills&lt;/strong&gt; — the canonical skill structure guide&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.claude/Skills/CORE/SKILL.md"&gt;&lt;strong&gt;SKILL.md&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Main PAI skill with identity, preferences, quick reference&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.claude/Skills/CORE/HookSystem.md"&gt;HookSystem.md&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Event-driven automation&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.claude/Skills/CORE/HistorySystem.md"&gt;HistorySystem.md&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Automatic work documentation (UOCS)&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;Additional Reference&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;table&gt; 
+  &lt;thead&gt; 
+   &lt;tr&gt; 
+    &lt;th&gt;Document&lt;/th&gt; 
+    &lt;th&gt;Description&lt;/th&gt; 
+   &lt;/tr&gt; 
+  &lt;/thead&gt; 
+  &lt;tbody&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.claude/Skills/CORE/Prompting.md"&gt;Prompting.md&lt;/a&gt;&lt;/td&gt; 
+    &lt;td&gt;Prompt engineering patterns&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.claude/Skills/CORE/Aesthetic.md"&gt;Aesthetic.md&lt;/a&gt;&lt;/td&gt; 
+    &lt;td&gt;Visual design system&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.claude/voice-server/README.md"&gt;voice-server/README.md&lt;/a&gt;&lt;/td&gt; 
+    &lt;td&gt;Text-to-speech feedback&lt;/td&gt; 
+   &lt;/tr&gt; 
+  &lt;/tbody&gt; 
+ &lt;/table&gt; 
+&lt;/details&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;🎨 Examples&lt;/h2&gt; 
+&lt;p&gt;Explore example skills in &lt;code&gt;.claude/Skills/&lt;/code&gt;:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Skill&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Observability/&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Real-time agent monitoring dashboard with WebSocket streaming&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;BrightData/&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Four-tier progressive web scraping with automatic fallback&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Fabric/&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Native Fabric patterns&lt;/strong&gt; — 248 patterns run directly in Claude's context (no CLI needed)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Research/&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Multi-source research workflows&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Createskill/&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Templates for creating new skills&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;Each skill demonstrates the skills-as-containers pattern with routing, workflows, and self-contained documentation.&lt;/p&gt; 
+&lt;h3&gt;Native Fabric Patterns&lt;/h3&gt; 
+&lt;p&gt;The Fabric skill now executes patterns &lt;strong&gt;natively&lt;/strong&gt; within Claude Code — no CLI spawning required:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Your subscription's power&lt;/strong&gt; — Patterns run with your Opus/Sonnet model, not Fabric's configured model&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Full context&lt;/strong&gt; — Patterns have access to your entire conversation history&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Faster execution&lt;/strong&gt; — No process spawning overhead&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;248 patterns included&lt;/strong&gt; — extract_wisdom, summarize, threat modeling, and more&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Update patterns from upstream
+.claude/Skills/Fabric/tools/update-patterns.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Only use &lt;code&gt;fabric&lt;/code&gt; CLI for YouTube transcripts (&lt;code&gt;-y&lt;/code&gt;) or pattern updates (&lt;code&gt;-U&lt;/code&gt;).&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;🏗️ The Thirteen Founding Principles&lt;/h2&gt; 
+&lt;p&gt;PAI is built on 13 foundational principles that define how to build reliable AI infrastructure.&lt;/p&gt; 
+&lt;p&gt;Complete architecture documentation: &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.claude/Skills/CORE/Architecture.md"&gt;&lt;code&gt;.claude/Skills/CORE/Architecture.md&lt;/code&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;1. Clear Thinking + Prompting is King&lt;/h3&gt; 
+&lt;p&gt;The quality of outcomes depends on the quality of thinking and prompts. Before any code, before any architecture—there must be clear thinking.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-01-clear-thinking.png" alt="Clear Thinking + Prompting" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;2. Scaffolding &amp;gt; Model&lt;/h3&gt; 
+&lt;p&gt;The system architecture matters more than the underlying AI model. A well-structured system with good scaffolding will outperform a more powerful model with poor structure.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-02-scaffolding.png" alt="Scaffolding &gt; Model" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;3. As Deterministic as Possible&lt;/h3&gt; 
+&lt;p&gt;Favor predictable, repeatable outcomes over flexibility. Same input → Same output. Always.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-03-deterministic.png" alt="Deterministic Systems" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;4. Code Before Prompts&lt;/h3&gt; 
+&lt;p&gt;Write code to solve problems, use prompts to orchestrate code. Prompts should never replicate functionality that code can provide.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-04-code-before-prompts.png" alt="Code Before Prompts" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;5. Spec / Test / Evals First&lt;/h3&gt; 
+&lt;p&gt;Define expected behavior before writing implementation. If you can't specify it, you can't test it. If you can't test it, you can't trust it.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-05-spec-test-evals.png" alt="Spec / Test / Evals First" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;6. UNIX Philosophy&lt;/h3&gt; 
+&lt;p&gt;Do one thing well. Compose tools through standard interfaces. Build small, focused tools—compose them for complex operations.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-06-unix-philosophy.png" alt="UNIX Philosophy" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;7. ENG / SRE Principles&lt;/h3&gt; 
+&lt;p&gt;Apply software engineering and site reliability practices to AI systems. AI infrastructure is infrastructure—treat it with the same rigor.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-07-eng-sre.png" alt="ENG / SRE Principles" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;8. CLI as Interface&lt;/h3&gt; 
+&lt;p&gt;Every operation should be accessible via command line. If there's no CLI command for it, you can't script it or test it reliably.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-08-cli-interface.png" alt="CLI as Interface" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;9. Goal → Code → CLI → Prompts → Agents&lt;/h3&gt; 
+&lt;p&gt;The proper development pipeline for any new feature. Each layer builds on the previous—skip a layer, get a shaky system.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-09-implementation-pipeline.png" alt="Implementation Pipeline" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;10. Meta / Self Update System&lt;/h3&gt; 
+&lt;p&gt;The system should be able to improve itself. A system that can't update itself will stagnate.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-10-self-update.png" alt="Self-Improving System" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;11. Custom Skill Management&lt;/h3&gt; 
+&lt;p&gt;Skills are the organizational unit for all domain expertise. Skills are how PAI scales—each new domain gets its own skill, maintaining organization as the system grows.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-11-skill-management.png" alt="Skill Architecture" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;12. Custom History System&lt;/h3&gt; 
+&lt;p&gt;Automatic capture and preservation of valuable work. Memory makes intelligence compound. Without history, every session starts from zero.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-12-history-system.png" alt="History System" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;13. Custom Agent Personalities / Voices&lt;/h3&gt; 
+&lt;p&gt;Specialized agents with distinct personalities for different tasks. Personality isn't decoration—it's functional.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-13-agent-personalities.png" alt="Agent Personalities" width="100%" /&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;🛠️ Technology Stack&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Category&lt;/th&gt; 
+   &lt;th&gt;Choice&lt;/th&gt; 
+   &lt;th&gt;Note&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Runtime&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Bun&lt;/td&gt; 
+   &lt;td&gt;NOT Node.js&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Language&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;TypeScript&lt;/td&gt; 
+   &lt;td&gt;NOT Python&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Package Manager&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Bun&lt;/td&gt; 
+   &lt;td&gt;NOT npm/yarn/pnpm&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Format&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Markdown&lt;/td&gt; 
+   &lt;td&gt;NOT HTML for basic content&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Testing&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Vitest&lt;/td&gt; 
+   &lt;td&gt;When needed&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Voice&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;ElevenLabs&lt;/td&gt; 
+   &lt;td&gt;TTS integration&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;🔄 Updating PAI&lt;/h2&gt; 
+&lt;p&gt;PAI includes an intelligent sideloading system that helps you update while preserving your customizations.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# In Claude Code, run:
+/paiupdate    # or just /pa
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;What happens:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Your DA fetches the latest PAI to a staging area (doesn't touch your files)&lt;/li&gt; 
+ &lt;li&gt;Analyzes differences between upstream and your customizations&lt;/li&gt; 
+ &lt;li&gt;Generates a personalized report showing conflicts vs. safe updates&lt;/li&gt; 
+ &lt;li&gt;You choose what to adopt — your DA handles the merge&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;Your custom skills, modified hooks, and personalized settings are &lt;strong&gt;never blindly overwritten&lt;/strong&gt;. The system understands that your &lt;code&gt;env.DA&lt;/code&gt;, custom environment variables, and personal tweaks are intentional.&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;💬 Community&lt;/h2&gt; 
+&lt;p&gt;Kai and I work hard to address issues and PRs throughout the week — we try not to get too far behind!&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Channel&lt;/th&gt; 
+   &lt;th&gt;Link&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;🐛 &lt;strong&gt;Issues&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/danielmiessler/Personal_AI_Infrastructure/issues"&gt;Report bugs or request features&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;💬 &lt;strong&gt;Discussions&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/danielmiessler/Personal_AI_Infrastructure/discussions"&gt;Ask questions and share ideas&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;🎥 &lt;strong&gt;Video&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://youtu.be/iKwRWwabkEc"&gt;Watch the full PAI walkthrough&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;📝 &lt;strong&gt;Blog&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://danielmiessler.com/blog/real-internet-of-things"&gt;The Real Internet of Things&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;📝 Updates&lt;/h2&gt; 
+&lt;details open&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.9.1 (2025-12-04) — Setup Script Fix&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;PAI_DIR Auto-Configuration&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;code&gt;setup.sh&lt;/code&gt; now automatically configures &lt;code&gt;PAI_DIR&lt;/code&gt; in &lt;code&gt;settings.json&lt;/code&gt; with your actual home directory path&lt;/li&gt; 
+  &lt;li&gt;No more manual editing of &lt;code&gt;__HOME__/.claude&lt;/code&gt; placeholder&lt;/li&gt; 
+  &lt;li&gt;Clear error messaging if hooks fail due to misconfigured paths&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Improved Documentation&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Added &lt;code&gt;_setupNote&lt;/code&gt; in &lt;code&gt;settings.json&lt;/code&gt; explaining the fix&lt;/li&gt; 
+  &lt;li&gt;Updated &lt;code&gt;_envDocs&lt;/code&gt; with troubleshooting guidance&lt;/li&gt; 
+  &lt;li&gt;QUICKSTART.md troubleshooting section for PAI_DIR issues&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Bug Fix&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Fixes #110 — Hook failures caused by unexpanded PAI_DIR placeholder&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.9.0 (2025-12-01) — Platform Agnostic Release&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;This release focuses on making PAI fully portable and fork-friendly. Your AI, your identity, your system.&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;Observability Dashboard&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Complete real-time agent monitoring at &lt;code&gt;.claude/Skills/Observability/&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;WebSocket streaming of all agent activity&lt;/li&gt; 
+  &lt;li&gt;Live pulse charts, event timelines, and swim lanes&lt;/li&gt; 
+  &lt;li&gt;Multiple themes (Tokyo Night, Nord, Catppuccin, etc.)&lt;/li&gt; 
+  &lt;li&gt;Security obfuscation for sensitive data&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Genericized Agent Identity&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;All agent references now use &lt;code&gt;process.env.DA || 'main'&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;No more hardcoded names — your DA name flows through the entire system&lt;/li&gt; 
+  &lt;li&gt;Observability dashboard shows your configured identity&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Platform-Agnostic Configuration&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Clear separation: &lt;code&gt;settings.json&lt;/code&gt; for identity/paths, &lt;code&gt;.env&lt;/code&gt; for API keys&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;DA&lt;/code&gt; (Digital Assistant name) — your AI's identity&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;PAI_DIR&lt;/code&gt; — root directory for all configuration&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;TIME_ZONE&lt;/code&gt; — configurable timezone for timestamps&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Skill System Improvements&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Canonical TitleCase file naming throughout&lt;/li&gt; 
+  &lt;li&gt;Standardized skill-workflow-notification script for dashboard detection&lt;/li&gt; 
+  &lt;li&gt;All paths use &lt;code&gt;${PAI_DIR}/&lt;/code&gt; for location-agnostic installation&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.8.0 (2025-11-25) — Research &amp;amp; Documentation&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;Research Skill&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Comprehensive research skill with 10 specialized workflows&lt;/li&gt; 
+  &lt;li&gt;Multi-source research with parallel agent execution&lt;/li&gt; 
+  &lt;li&gt;Fabric pattern integration (242+ AI patterns)&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Infrastructure&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Path standardization using &lt;code&gt;${PAI_DIR}/&lt;/code&gt; throughout&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;PAI_CONTRACT.md&lt;/code&gt; defining core guarantees&lt;/li&gt; 
+  &lt;li&gt;Self-test validation system for health checks&lt;/li&gt; 
+  &lt;li&gt;Protection system for PAI-specific files&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.7.0 (2025-11-20) — Protection &amp;amp; Clarity&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;PAI Path Resolution System&lt;/strong&gt; (#112)&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Centralized &lt;code&gt;pai-paths.ts&lt;/code&gt; library — single source of truth&lt;/li&gt; 
+  &lt;li&gt;Smart detection with fallback to &lt;code&gt;~/.claude&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;Updated 7 hooks to use centralized paths&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;PAI vs Kai Clarity&lt;/strong&gt; (#113)&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;code&gt;PAI_CONTRACT.md&lt;/code&gt; — official contract defining boundaries&lt;/li&gt; 
+  &lt;li&gt;Self-test system (&lt;code&gt;bun ${PAI_DIR}/hooks/self-test.ts&lt;/code&gt;)&lt;/li&gt; 
+  &lt;li&gt;Clear README section distinguishing PAI from Kai&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Protection System&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;code&gt;.pai-protected.json&lt;/code&gt; manifest of protected files&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;validate-protected.ts&lt;/code&gt; script for pre-commit validation&lt;/li&gt; 
+  &lt;li&gt;Pre-commit hook template for automated checks&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.6.5 (2025-11-18) — BrightData Integration&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;Four-Tier Progressive Web Scraping&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Tier 1: WebFetch (free, built-in)&lt;/li&gt; 
+  &lt;li&gt;Tier 2: cURL with headers (free, more reliable)&lt;/li&gt; 
+  &lt;li&gt;Tier 3: Playwright (free, JavaScript rendering)&lt;/li&gt; 
+  &lt;li&gt;Tier 4: Bright Data MCP (paid, anti-bot bypass)&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.6.0 (2025-11-15) — Major Architecture Update&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;Repository Restructure&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Moved all configuration to &lt;code&gt;.claude/&lt;/code&gt; directory&lt;/li&gt; 
+  &lt;li&gt;Skills-as-containers architecture&lt;/li&gt; 
+  &lt;li&gt;Three-tier progressive disclosure&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Skills System&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Art skill with visual content generation&lt;/li&gt; 
+  &lt;li&gt;Story-explanation skill for narrative summaries&lt;/li&gt; 
+  &lt;li&gt;Create-skill and create-cli meta-skills&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Hook System&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Comprehensive event capture system&lt;/li&gt; 
+  &lt;li&gt;Session summary and tool output capture&lt;/li&gt; 
+  &lt;li&gt;Tab title updates&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Voice Integration&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Voice server with ElevenLabs TTS&lt;/li&gt; 
+  &lt;li&gt;Session start notifications&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.5.0 and Earlier&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;v0.5.0 — Foundation&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;CORE skill as central context loader&lt;/li&gt; 
+  &lt;li&gt;Constitution defining system principles&lt;/li&gt; 
+  &lt;li&gt;CLI-First Architecture pattern&lt;/li&gt; 
+  &lt;li&gt;Initial skills: Fabric, FFUF, Alex Hormozi pitch&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Pre-v0.5.0 — Early Development&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Initial repository setup&lt;/li&gt; 
+  &lt;li&gt;Basic settings.json structure&lt;/li&gt; 
+  &lt;li&gt;Agent personality definitions&lt;/li&gt; 
+  &lt;li&gt;Foundational hook experiments&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;📜 License&lt;/h2&gt; 
+&lt;p&gt;MIT License — see &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/LICENSE"&gt;&lt;code&gt;LICENSE&lt;/code&gt;&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;🙏 Acknowledgments&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Built on &lt;a href="https://code.claude.com"&gt;Claude Code&lt;/a&gt; by Anthropic.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;PAI is the technical foundation for &lt;a href="https://human3.unsupervised-learning.com"&gt;Human 3.0&lt;/a&gt; — a program I created to help people transform into a version of themselves that can thrive in the post-corporate world that's coming. Human 3.0 means AI-augmented humans who build and control their own AI systems.&lt;/p&gt; 
+&lt;p&gt;Right now, the most sophisticated AI infrastructure exists inside corporations with massive engineering teams. PAI exists to change that. To give individuals the same scaffolding that companies spend millions building.&lt;/p&gt; 
+&lt;p&gt;Your AI, knowing how you work, learning from your patterns, serving your goals — not some corporation's engagement metrics. That's what this enables.&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;hr /&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;strong&gt;Start clean. Start small. Build the AI infrastructure you need.&lt;/strong&gt;&lt;/p&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#personal-ai-infrastructure"&gt;⬆ Back to Top&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>firecrawl/firecrawl</title>
+      <link>https://github.com/firecrawl/firecrawl</link>
+      <description>&lt;p&gt;🔥 The Web Data API for AI - Turn entire websites into LLM-ready markdown or structured data&lt;/p&gt;&lt;hr&gt;&lt;h3 align="center"&gt; &lt;a name="readme-top"&gt;&lt;/a&gt; &lt;img src="https://raw.githubusercontent.com/firecrawl/firecrawl/main/img/firecrawl_logo.png" height="200" /&gt; &lt;/h3&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://github.com/firecrawl/firecrawl/raw/main/LICENSE"&gt; &lt;img src="https://img.shields.io/github/license/firecrawl/firecrawl" alt="License" /&gt; &lt;/a&gt; 
+ &lt;a href="https://pepy.tech/project/firecrawl-py"&gt; &lt;img src="https://static.pepy.tech/badge/firecrawl-py" alt="Downloads" /&gt; &lt;/a&gt; 
+ &lt;a href="https://GitHub.com/firecrawl/firecrawl/graphs/contributors"&gt; &lt;img src="https://img.shields.io/github/contributors/firecrawl/firecrawl.svg?sanitize=true" alt="GitHub Contributors" /&gt; &lt;/a&gt; 
+ &lt;a href="https://firecrawl.dev"&gt; &lt;img src="https://img.shields.io/badge/Visit-firecrawl.dev-orange" alt="Visit firecrawl.dev" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;div&gt; 
+ &lt;p align="center"&gt; &lt;a href="https://twitter.com/firecrawl_dev"&gt; &lt;img src="https://img.shields.io/badge/Follow%20on%20X-000000?style=for-the-badge&amp;amp;logo=x&amp;amp;logoColor=white" alt="Follow on X" /&gt; &lt;/a&gt; &lt;a href="https://www.linkedin.com/company/104100957"&gt; &lt;img src="https://img.shields.io/badge/Follow%20on%20LinkedIn-0077B5?style=for-the-badge&amp;amp;logo=linkedin&amp;amp;logoColor=white" alt="Follow on LinkedIn" /&gt; &lt;/a&gt; &lt;a href="https://discord.com/invite/gSmWdAkdwd"&gt; &lt;img src="https://img.shields.io/badge/Join%20our%20Discord-5865F2?style=for-the-badge&amp;amp;logo=discord&amp;amp;logoColor=white" alt="Join our Discord" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h1&gt;🔥 Firecrawl&lt;/h1&gt; 
+&lt;p&gt;Empower your AI apps with clean data from any website. Featuring advanced scraping, crawling, and data extraction capabilities.&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;This repository is in development, and we’re still integrating custom modules into the mono repo. It's not fully ready for self-hosted deployment yet, but you can run it locally.&lt;/em&gt;&lt;/p&gt; 
+&lt;h2&gt;What is Firecrawl?&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://firecrawl.dev?ref=github"&gt;Firecrawl&lt;/a&gt; is an API service that takes a URL, crawls it, and converts it into clean markdown or structured data. We crawl all accessible subpages and give you clean data for each. No sitemap required. Check out our &lt;a href="https://docs.firecrawl.dev"&gt;documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Looking for our MCP? Check out the &lt;a href="https://github.com/firecrawl/firecrawl-mcp-server"&gt;repo here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;Pst. hey, you, join our stargazers :)&lt;/em&gt;&lt;/p&gt; 
+&lt;a href="https://github.com/firecrawl/firecrawl"&gt; &lt;img src="https://img.shields.io/github/stars/firecrawl/firecrawl.svg?style=social&amp;amp;label=Star&amp;amp;maxAge=2592000" alt="GitHub stars" /&gt; &lt;/a&gt; 
+&lt;h2&gt;How to use it?&lt;/h2&gt; 
+&lt;p&gt;We provide an easy to use API with our hosted version. You can find the playground and documentation &lt;a href="https://firecrawl.dev/playground"&gt;here&lt;/a&gt;. You can also self host the backend if you'd like.&lt;/p&gt; 
+&lt;p&gt;Check out the following resources to get started:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;strong&gt;API&lt;/strong&gt;: &lt;a href="https://docs.firecrawl.dev/api-reference/introduction"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;strong&gt;SDKs&lt;/strong&gt;: &lt;a href="https://docs.firecrawl.dev/sdks/python"&gt;Python&lt;/a&gt;, &lt;a href="https://docs.firecrawl.dev/sdks/node"&gt;Node&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;strong&gt;LLM Frameworks&lt;/strong&gt;: &lt;a href="https://python.langchain.com/docs/integrations/document_loaders/firecrawl/"&gt;Langchain (python)&lt;/a&gt;, &lt;a href="https://js.langchain.com/docs/integrations/document_loaders/web_loaders/firecrawl"&gt;Langchain (js)&lt;/a&gt;, &lt;a href="https://docs.llamaindex.ai/en/latest/examples/data_connectors/WebPageDemo/#using-firecrawl-reader"&gt;Llama Index&lt;/a&gt;, &lt;a href="https://docs.crewai.com/"&gt;Crew.ai&lt;/a&gt;, &lt;a href="https://composio.dev/tools/firecrawl/all"&gt;Composio&lt;/a&gt;, &lt;a href="https://docs.praison.ai/firecrawl/"&gt;PraisonAI&lt;/a&gt;, &lt;a href="https://superinterface.ai/docs/assistants/functions/firecrawl"&gt;Superinterface&lt;/a&gt;, &lt;a href="https://docs.vectorize.io/integrations/source-connectors/firecrawl"&gt;Vectorize&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;strong&gt;Low-code Frameworks&lt;/strong&gt;: &lt;a href="https://dify.ai/blog/dify-ai-blog-integrated-with-firecrawl"&gt;Dify&lt;/a&gt;, &lt;a href="https://docs.langflow.org/"&gt;Langflow&lt;/a&gt;, &lt;a href="https://docs.flowiseai.com/integrations/langchain/document-loaders/firecrawl"&gt;Flowise AI&lt;/a&gt;, &lt;a href="https://docs.getcargo.io/integration/firecrawl"&gt;Cargo&lt;/a&gt;, &lt;a href="https://pipedream.com/apps/firecrawl/"&gt;Pipedream&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;strong&gt;Community SDKs&lt;/strong&gt;: &lt;a href="https://docs.firecrawl.dev/sdks/go"&gt;Go&lt;/a&gt;, &lt;a href="https://docs.firecrawl.dev/sdks/rust"&gt;Rust&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;strong&gt;Others&lt;/strong&gt;: &lt;a href="https://zapier.com/apps/firecrawl/integrations"&gt;Zapier&lt;/a&gt;, &lt;a href="https://www.pabbly.com/connect/integrations/firecrawl/"&gt;Pabbly Connect&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Want an SDK or Integration? Let us know by opening an issue.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;To run locally, refer to guide &lt;a href="https://github.com/firecrawl/firecrawl/raw/main/CONTRIBUTING.md"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;API Key&lt;/h3&gt; 
+&lt;p&gt;To use the API, you need to sign up on &lt;a href="https://firecrawl.dev"&gt;Firecrawl&lt;/a&gt; and get an API key.&lt;/p&gt; 
+&lt;h3&gt;Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/firecrawl/firecrawl/main/#scraping"&gt;&lt;strong&gt;Scrape&lt;/strong&gt;&lt;/a&gt;: scrapes a URL and get its content in LLM-ready format (markdown, structured data via &lt;a href="https://raw.githubusercontent.com/firecrawl/firecrawl/main/#llm-extraction-beta"&gt;LLM Extract&lt;/a&gt;, screenshot, html)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/firecrawl/firecrawl/main/#crawling"&gt;&lt;strong&gt;Crawl&lt;/strong&gt;&lt;/a&gt;: scrapes all the URLs of a web page and return content in LLM-ready format&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/firecrawl/firecrawl/main/#map"&gt;&lt;strong&gt;Map&lt;/strong&gt;&lt;/a&gt;: input a website and get all the website urls - extremely fast&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/firecrawl/firecrawl/main/#search"&gt;&lt;strong&gt;Search&lt;/strong&gt;&lt;/a&gt;: search the web and get full content from results&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/firecrawl/firecrawl/main/#extract"&gt;&lt;strong&gt;Extract&lt;/strong&gt;&lt;/a&gt;: get structured data from single page, multiple pages or entire websites with AI.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Powerful Capabilities&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;LLM-ready formats&lt;/strong&gt;: markdown, structured data, screenshot, HTML, links, metadata&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;The hard stuff&lt;/strong&gt;: proxies, anti-bot mechanisms, dynamic content (js-rendered), output parsing, orchestration&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Customizability&lt;/strong&gt;: exclude tags, crawl behind auth walls with custom headers, max crawl depth, etc...&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Media parsing&lt;/strong&gt;: pdfs, docx, images&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Reliability first&lt;/strong&gt;: designed to get the data you need - no matter how hard it is&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Actions&lt;/strong&gt;: click, scroll, input, wait and more before extracting data&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Batching&lt;/strong&gt;: scrape thousands of URLs at the same time with a new async endpoint&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Change Tracking&lt;/strong&gt;: monitor and detect changes in website content over time&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;You can find all of Firecrawl's capabilities and how to use them in our &lt;a href="https://docs.firecrawl.dev"&gt;documentation&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Crawling&lt;/h3&gt; 
+&lt;p&gt;Used to crawl a URL and all accessible subpages. This submits a crawl job and returns a job ID to check the status of the crawl.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/crawl \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer fc-YOUR_API_KEY' \
+    -d '{
+      "url": "https://docs.firecrawl.dev",
+      "limit": 10,
+      "scrapeOptions": {
+        "formats": ["markdown", "html"]
+      }
+    }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Returns a crawl job id and the url to check the status of the crawl.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "success": true,
+  "id": "123-456-789",
+  "url": "https://api.firecrawl.dev/v2/crawl/123-456-789"
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Check Crawl Job&lt;/h3&gt; 
+&lt;p&gt;Used to check the status of a crawl job and get its result.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X GET https://api.firecrawl.dev/v2/crawl/123-456-789 \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer YOUR_API_KEY'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "status": "completed",
+  "total": 36,
+  "creditsUsed": 36,
+  "expiresAt": "2024-00-00T00:00:00.000Z",
+  "data": [
+    {
+      "markdown": "[Firecrawl Docs home page![light logo](https://mintlify.s3-us-west-1.amazonaws.com/firecrawl/logo/light.svg)!...",
+      "html": "&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=\"en\" class=\"js-focus-visible lg:[--scroll-mt:9.5rem]\" data-js-focus-visible=\"\"&amp;gt;...",
+      "metadata": {
+        "title": "Build a 'Chat with website' using Groq Llama 3 | Firecrawl",
+        "language": "en",
+        "sourceURL": "https://docs.firecrawl.dev/learn/rag-llama3",
+        "description": "Learn how to use Firecrawl, Groq Llama 3, and Langchain to build a 'Chat with your website' bot.",
+        "ogLocaleAlternate": [],
+        "statusCode": 200
+      }
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Scraping&lt;/h3&gt; 
+&lt;p&gt;Used to scrape a URL and get its content in the specified formats.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/scrape \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "url": "https://docs.firecrawl.dev",
+      "formats" : ["markdown", "html"]
+    }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Response:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "success": true,
+  "data": {
+    "markdown": "Launch Week I is here! [See our Day 2 Release 🚀](https://www.firecrawl.dev/blog/launch-week-i-day-2-doubled-rate-limits)[💥 Get 2 months free...",
+    "html": "&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=\"en\" class=\"light\" style=\"color-scheme: light;\"&amp;gt;&amp;lt;body class=\"__variable_36bd41 __variable_d7dc5d font-inter ...",
+    "metadata": {
+      "title": "Home - Firecrawl",
+      "description": "Firecrawl crawls and converts any website into clean markdown.",
+      "language": "en",
+      "keywords": "Firecrawl,Markdown,Data,Mendable,Langchain",
+      "robots": "follow, index",
+      "ogTitle": "Firecrawl",
+      "ogDescription": "Turn any website into LLM-ready data.",
+      "ogUrl": "https://www.firecrawl.dev/",
+      "ogImage": "https://www.firecrawl.dev/og.png?123",
+      "ogLocaleAlternate": [],
+      "ogSiteName": "Firecrawl",
+      "sourceURL": "https://firecrawl.dev",
+      "statusCode": 200
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Map&lt;/h3&gt; 
+&lt;p&gt;Used to map a URL and get urls of the website. This returns most links present on the website.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/map \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "url": "https://firecrawl.dev"
+    }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Response:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "success": true,
+  "links": [
+    { "url": "https://firecrawl.dev", "title": "Firecrawl", "description": "Firecrawl is a tool that allows you to crawl a website and get the data you need." },
+    { "url": "https://www.firecrawl.dev/pricing", "title": "Firecrawl Pricing", "description": "Firecrawl Pricing" },
+    { "url": "https://www.firecrawl.dev/blog", "title": "Firecrawl Blog", "description": "Firecrawl Blog" },
+    { "url": "https://www.firecrawl.dev/playground", "title": "Firecrawl Playground", "description": "Firecrawl Playground" },
+    { "url": "https://www.firecrawl.dev/smart-crawl", "title": "Firecrawl Smart Crawl", "description": "Firecrawl Smart Crawl" }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Map with search&lt;/h4&gt; 
+&lt;p&gt;Map with &lt;code&gt;search&lt;/code&gt; param allows you to search for specific urls inside a website.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/map \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "url": "https://firecrawl.dev",
+      "search": "docs"
+    }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Response will be an ordered list from the most relevant to the least relevant.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "success": true,
+  "links": [
+    { "url": "https://docs.firecrawl.dev", "title": "Firecrawl Docs", "description": "Firecrawl Docs" },
+    { "url": "https://docs.firecrawl.dev/sdks/python", "title": "Firecrawl Python SDK", "description": "Firecrawl Python SDK" },
+    { "url": "https://docs.firecrawl.dev/learn/rag-llama3", "title": "Firecrawl RAG Llama 3", "description": "Firecrawl RAG Llama 3" }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Search&lt;/h3&gt; 
+&lt;p&gt;Search the web and get full content from results&lt;/p&gt; 
+&lt;p&gt;Firecrawl’s search API allows you to perform web searches and optionally scrape the search results in one operation.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Choose specific output formats (markdown, HTML, links, screenshots)&lt;/li&gt; 
+ &lt;li&gt;Search the web with customizable parameters (language, country, etc.)&lt;/li&gt; 
+ &lt;li&gt;Optionally retrieve content from search results in various formats&lt;/li&gt; 
+ &lt;li&gt;Control the number of results and set timeouts&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/search \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer fc-YOUR_API_KEY" \
+  -d '{
+    "query": "what is firecrawl?",
+    "limit": 5
+  }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Response&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "success": true,
+  "data": [
+    {
+      "url": "https://firecrawl.dev",
+      "title": "Firecrawl | Home Page",
+      "description": "Turn websites into LLM-ready data with Firecrawl"
+    },
+    {
+      "url": "https://docs.firecrawl.dev",
+      "title": "Documentation | Firecrawl",
+      "description": "Learn how to use Firecrawl in your own applications"
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;With content scraping&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/search \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer fc-YOUR_API_KEY" \
+  -d '{
+    "query": "what is firecrawl?",
+    "limit": 5,
+    "scrapeOptions": {
+      "formats": ["markdown", "links"]
+    }
+  }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Extract (Beta)&lt;/h3&gt; 
+&lt;p&gt;Get structured data from entire websites with a prompt and/or a schema.&lt;/p&gt; 
+&lt;p&gt;You can extract structured data from one or multiple URLs, including wildcards:&lt;/p&gt; 
+&lt;p&gt;Single Page: Example: &lt;a href="https://firecrawl.dev/some-page"&gt;https://firecrawl.dev/some-page&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Multiple Pages / Full Domain Example: &lt;a href="https://firecrawl.dev/"&gt;https://firecrawl.dev/&lt;/a&gt;*&lt;/p&gt; 
+&lt;p&gt;When you use /*, Firecrawl will automatically crawl and parse all URLs it can discover in that domain, then extract the requested data.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/extract \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "urls": [
+        "https://firecrawl.dev/*", 
+        "https://docs.firecrawl.dev/", 
+        "https://www.ycombinator.com/companies"
+      ],
+      "prompt": "Extract the company mission, whether it is open source, and whether it is in Y Combinator from the page.",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "company_mission": {
+            "type": "string"
+          },
+          "is_open_source": {
+            "type": "boolean"
+          },
+          "is_in_yc": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "company_mission",
+          "is_open_source",
+          "is_in_yc"
+        ]
+      }
+    }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "success": true,
+  "id": "44aa536d-f1cb-4706-ab87-ed0386685740",
+  "urlTrace": []
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If you are using the sdks, it will auto pull the response for you:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "success": true,
+  "data": {
+    "company_mission": "Firecrawl is the easiest way to extract data from the web. Developers use us to reliably convert URLs into LLM-ready markdown or structured data with a single API call.",
+    "supports_sso": false,
+    "is_open_source": true,
+    "is_in_yc": true
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;LLM Extraction (Beta)&lt;/h3&gt; 
+&lt;p&gt;Used to extract structured data from scraped pages.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/scrape \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer YOUR_API_KEY' \
+  -d '{
+    "url": "https://www.mendable.ai/",
+    "formats": [
+      {
+        "type": "json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "company_mission": { "type": "string" },
+            "supports_sso": { "type": "boolean" },
+            "is_open_source": { "type": "boolean" },
+            "is_in_yc": { "type": "boolean" }
+          }
+        }
+      }
+    ]
+  }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "success": true,
+  "data": {
+    "content": "Raw Content",
+    "metadata": {
+      "title": "Mendable",
+      "description": "Mendable allows you to easily build AI chat applications. Ingest, customize, then deploy with one line of code anywhere you want. Brought to you by SideGuide",
+      "robots": "follow, index",
+      "ogTitle": "Mendable",
+      "ogDescription": "Mendable allows you to easily build AI chat applications. Ingest, customize, then deploy with one line of code anywhere you want. Brought to you by SideGuide",
+      "ogUrl": "https://mendable.ai/",
+      "ogImage": "https://mendable.ai/mendable_new_og1.png",
+      "ogLocaleAlternate": [],
+      "ogSiteName": "Mendable",
+      "sourceURL": "https://mendable.ai/"
+    },
+    "json": {
+      "company_mission": "Train a secure AI on your technical resources that answers customer and employee questions so your team doesn't have to",
+      "supports_sso": true,
+      "is_open_source": false,
+      "is_in_yc": true
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Extracting without a schema (New)&lt;/h3&gt; 
+&lt;p&gt;You can now extract without a schema by just passing a &lt;code&gt;prompt&lt;/code&gt; to the endpoint. The llm chooses the structure of the data.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/scrape \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "url": "https://docs.firecrawl.dev/",
+      "formats": [
+        {
+          "type": "json",
+          "prompt": "Extract the company mission from the page."
+        }
+      ]
+    }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Interacting with the page with Actions (Cloud-only)&lt;/h3&gt; 
+&lt;p&gt;Firecrawl allows you to perform various actions on a web page before scraping its content. This is particularly useful for interacting with dynamic content, navigating through pages, or accessing content that requires user interaction.&lt;/p&gt; 
+&lt;p&gt;Here is an example of how to use actions to navigate to google.com, search for Firecrawl, click on the first result, and take a screenshot.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/scrape \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+        "url": "google.com",
+        "formats": ["markdown"],
+        "actions": [
+            {"type": "wait", "milliseconds": 2000},
+            {"type": "click", "selector": "textarea[title=\"Search\"]"},
+            {"type": "wait", "milliseconds": 2000},
+            {"type": "write", "text": "firecrawl"},
+            {"type": "wait", "milliseconds": 2000},
+            {"type": "press", "key": "ENTER"},
+            {"type": "wait", "milliseconds": 3000},
+            {"type": "click", "selector": "h3"},
+            {"type": "wait", "milliseconds": 3000},
+            {"type": "screenshot"}
+        ]
+    }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Batch Scraping Multiple URLs (New)&lt;/h3&gt; 
+&lt;p&gt;You can now batch scrape multiple URLs at the same time. It is very similar to how the /crawl endpoint works. It submits a batch scrape job and returns a job ID to check the status of the batch scrape.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -X POST https://api.firecrawl.dev/v2/batch/scrape \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "urls": ["https://docs.firecrawl.dev", "https://docs.firecrawl.dev/sdks/overview"],
+      "formats" : ["markdown", "html"]
+    }'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Using Python SDK&lt;/h2&gt; 
+&lt;h3&gt;Installing Python SDK&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pip install firecrawl-py
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Crawl a website&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;from firecrawl import Firecrawl
+
+firecrawl = Firecrawl(api_key="fc-YOUR_API_KEY")
+
+# Scrape a website (returns a Document)
+doc = firecrawl.scrape(
+    "https://firecrawl.dev",
+    formats=["markdown", "html"],
+)
+print(doc.markdown)
+
+# Crawl a website
+response = firecrawl.crawl(
+    "https://firecrawl.dev",
+    limit=100,
+    scrape_options={"formats": ["markdown", "html"]},
+    poll_interval=30,
+)
+print(response)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Extracting structured data from a URL&lt;/h3&gt; 
+&lt;p&gt;With LLM extraction, you can easily extract structured data from any URL. We support pydantic schemas to make it easier for you too. Here is how you to use it:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;from pydantic import BaseModel, Field
+from typing import List
+
+class Article(BaseModel):
+    title: str
+    points: int
+    by: str
+    commentsURL: str
+
+class TopArticles(BaseModel):
+    top: List[Article] = Field(..., description="Top 5 stories")
+
+# Use JSON format with a Pydantic schema
+doc = firecrawl.scrape(
+    "https://news.ycombinator.com",
+    formats=[{"type": "json", "schema": TopArticles}],
+)
+print(doc.json)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Using the Node SDK&lt;/h2&gt; 
+&lt;h3&gt;Installation&lt;/h3&gt; 
+&lt;p&gt;To install the Firecrawl Node SDK, you can use npm:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install @mendable/firecrawl-js
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Usage&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Get an API key from &lt;a href="https://firecrawl.dev"&gt;firecrawl.dev&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Set the API key as an environment variable named &lt;code&gt;FIRECRAWL_API_KEY&lt;/code&gt; or pass it as a parameter to the &lt;code&gt;Firecrawl&lt;/code&gt; class.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-js"&gt;import Firecrawl from '@mendable/firecrawl-js';
+
+const firecrawl = new Firecrawl({ apiKey: 'fc-YOUR_API_KEY' });
+
+// Scrape a website
+const doc = await firecrawl.scrape('https://firecrawl.dev', {
+  formats: ['markdown', 'html'],
+});
+console.log(doc);
+
+// Crawl a website
+const response = await firecrawl.crawl('https://firecrawl.dev', {
+  limit: 100,
+  scrapeOptions: { formats: ['markdown', 'html'] },
+});
+console.log(response);
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Extracting structured data from a URL&lt;/h3&gt; 
+&lt;p&gt;With LLM extraction, you can easily extract structured data from any URL. We support zod schema to make it easier for you too. Here is how to use it:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-js"&gt;import Firecrawl from '@mendable/firecrawl-js';
+import { z } from 'zod';
+
+const firecrawl = new Firecrawl({ apiKey: 'fc-YOUR_API_KEY' });
+
+// Define schema to extract contents into
+const schema = z.object({
+  top: z
+    .array(
+      z.object({
+        title: z.string(),
+        points: z.number(),
+        by: z.string(),
+        commentsURL: z.string(),
+      })
+    )
+    .length(5)
+    .describe('Top 5 stories on Hacker News'),
+});
+
+// Use the v2 extract API with direct Zod schema support
+const extractRes = await firecrawl.extract({
+  urls: ['https://news.ycombinator.com'],
+  schema,
+  prompt: 'Extract the top 5 stories',
+});
+
+console.log(extractRes);
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Open Source vs Cloud Offering&lt;/h2&gt; 
+&lt;p&gt;Firecrawl is open source available under the AGPL-3.0 license.&lt;/p&gt; 
+&lt;p&gt;To deliver the best possible product, we offer a hosted version of Firecrawl alongside our open-source offering. The cloud solution allows us to continuously innovate and maintain a high-quality, sustainable service for all users.&lt;/p&gt; 
+&lt;p&gt;Firecrawl Cloud is available at &lt;a href="https://firecrawl.dev"&gt;firecrawl.dev&lt;/a&gt; and offers a range of features that are not available in the open source version:&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/firecrawl/firecrawl/main/img/open-source-cloud.png" alt="Open Source vs Cloud Offering" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We love contributions! Please read our &lt;a href="https://raw.githubusercontent.com/firecrawl/firecrawl/main/CONTRIBUTING.md"&gt;contributing guide&lt;/a&gt; before submitting a pull request. If you'd like to self-host, refer to the &lt;a href="https://raw.githubusercontent.com/firecrawl/firecrawl/main/SELF_HOST.md"&gt;self-hosting guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;It is the sole responsibility of the end users to respect websites' policies when scraping, searching and crawling with Firecrawl. Users are advised to adhere to the applicable privacy policies and terms of use of the websites prior to initiating any scraping activities. By default, Firecrawl respects the directives specified in the websites' robots.txt files when crawling. By utilizing Firecrawl, you expressly agree to comply with these conditions.&lt;/em&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributors&lt;/h2&gt; 
+&lt;a href="https://github.com/firecrawl/firecrawl/graphs/contributors"&gt; &lt;img alt="contributors" src="https://contrib.rocks/image?repo=firecrawl/firecrawl" /&gt; &lt;/a&gt; 
+&lt;h2&gt;License Disclaimer&lt;/h2&gt; 
+&lt;p&gt;This project is primarily licensed under the GNU Affero General Public License v3.0 (AGPL-3.0), as specified in the LICENSE file in the root directory of this repository. However, certain components of this project are licensed under the MIT License. Refer to the LICENSE files in these specific directories for details.&lt;/p&gt; 
+&lt;p&gt;Please note:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The AGPL-3.0 license applies to all parts of the project unless otherwise specified.&lt;/li&gt; 
+ &lt;li&gt;The SDKs and some UI components are licensed under the MIT License. Refer to the LICENSE files in these specific directories for details.&lt;/li&gt; 
+ &lt;li&gt;When using or contributing to this project, ensure you comply with the appropriate license terms for the specific component you are working with.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;For more details on the licensing of specific components, please refer to the LICENSE files in the respective directories or contact the project maintainers.&lt;/p&gt; 
+&lt;p align="right" style="font-size: 14px; color: #555; margin-top: 20px;"&gt; &lt;a href="https://raw.githubusercontent.com/firecrawl/firecrawl/main/#readme-top" style="text-decoration: none; color: #007bff; font-weight: bold;"&gt; ↑ Back to Top ↑ &lt;/a&gt; &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>nuxt-content/docus</title>
+      <link>https://github.com/nuxt-content/docus</link>
+      <description>&lt;p&gt;Write beautiful documentations with Nuxt and Markdown.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a href="https://docus.dev"&gt;&lt;img src="https://docus.dev/__og-image__/static/og.png" alt="docus" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Create beautiful docs with Markdown &amp;amp; Vue components&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;a href="https://npmjs.com/package/docus"&gt;&lt;img src="https://img.shields.io/npm/v/docus.svg?style=flat&amp;amp;colorA=020420&amp;amp;colorB=EEEEEE" alt="npm version" /&gt;&lt;/a&gt; &lt;a href="https://npm.chart.dev/docus"&gt;&lt;img src="https://img.shields.io/npm/dm/docus.svg?style=flat&amp;amp;colorA=020420&amp;amp;colorB=EEEEEE" alt="npm downloads" /&gt;&lt;/a&gt; &lt;a href="https://npmjs.com/package/docus"&gt;&lt;img src="https://img.shields.io/npm/l/docus.svg?style=flat&amp;amp;colorA=020420&amp;amp;colorB=EEEEEE" alt="License" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://docus.dev/mcp/mcp/deeplink"&gt;&lt;img src="https://mcp-toolkit.nuxt.dev/mcp/badge.svg?url=https://docus.dev/mcp" alt="Install MCP in Cursor" /&gt;&lt;/a&gt; &lt;a href="https://docus.dev/mcp/mcp/deeplink?ide=vscode"&gt;&lt;img src="https://mcp-toolkit.nuxt.dev/mcp/badge.svg?ide=vscode&amp;amp;url=https://docus.dev/mcp" alt="Install MCP in VS Code" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🚀 Quick Start&lt;/h2&gt; 
+&lt;p&gt;Create a new documentation project in seconds:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Create a new project
+npx create-docus my-docs
+
+# Or create with i18n template for multi-language docs
+npx create-docus my-docs -t i18n
+
+# Navigate to your project
+cd my-docs
+
+# Start development server
+npm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;That's it! Your documentation site will be running at &lt;code&gt;http://localhost:3000&lt;/code&gt;&lt;/p&gt; 
+&lt;h2&gt;🎯 What it creates&lt;/h2&gt; 
+&lt;p&gt;The CLI scaffolds a complete documentation project with:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;✨ &lt;strong&gt;Beautiful Design&lt;/strong&gt; - Clean, modern documentation theme&lt;/li&gt; 
+ &lt;li&gt;📱 &lt;strong&gt;Responsive&lt;/strong&gt; - Mobile-first responsive design&lt;/li&gt; 
+ &lt;li&gt;🌙 &lt;strong&gt;Dark Mode&lt;/strong&gt; - Built-in dark/light mode support&lt;/li&gt; 
+ &lt;li&gt;🌍 &lt;strong&gt;Internationalization&lt;/strong&gt; - Native i18n support for multi-language docs&lt;/li&gt; 
+ &lt;li&gt;🔍 &lt;strong&gt;Search&lt;/strong&gt; - Full-text search functionality&lt;/li&gt; 
+ &lt;li&gt;📝 &lt;strong&gt;Markdown Enhanced&lt;/strong&gt; - Extended markdown with custom components&lt;/li&gt; 
+ &lt;li&gt;🎨 &lt;strong&gt;Customizable&lt;/strong&gt; - Easy theming and brand customization&lt;/li&gt; 
+ &lt;li&gt;⚡ &lt;strong&gt;Fast&lt;/strong&gt; - Optimized for performance with Nuxt 4&lt;/li&gt; 
+ &lt;li&gt;🔧 &lt;strong&gt;TypeScript&lt;/strong&gt; - Full TypeScript support&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;strong&gt;AI-Ready&lt;/strong&gt; - Automatic generation of &lt;code&gt;llms.txt&lt;/code&gt; and &lt;code&gt;llms-full.txt&lt;/code&gt; files for LLM integration&lt;/li&gt; 
+ &lt;li&gt;🔌 &lt;strong&gt;Native MCP Server&lt;/strong&gt; - Built-in Model Context Protocol server for AI tool integration (Cursor, VS Code, Claude, etc.)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Learn more on the &lt;a href="https://docus.dev"&gt;Docus documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;📁 Project Structure&lt;/h2&gt; 
+&lt;h3&gt;Generated project&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;my-docs/
+├── content/              # Your markdown content
+│   ├── index.md         # Homepage
+│   └── docs/            # Documentation pages
+├── public/              # Static assets
+└── package.json         # Dependencies and scripts
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Optional files and folders&lt;/h3&gt; 
+&lt;p&gt;Docus uses a layer system, you can go further and use any feature or file of a classical Nuxt project:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;my-docs/
+├── app.config.ts        # App configuration
+├── nuxt.config.ts       # Nuxt configuration (add extra modules, components, etc.)
+├── app/                 # App directory
+│   ├── components/      # Components (add your own components)
+│   ├── layouts/         # Layouts (add your own layouts)
+│   └── pages/           # Pages (add your own pages)
+└── server/              # Server-side code (add your own server-side code)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;&lt;code&gt;/content&lt;/code&gt; folder structure&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Single language structure:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;content/
+├── index.md
+├── getting-started.md
+└── guide/
+    ├── introduction.md
+    └── configuration.md
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Multi-language structure (with i18n):&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;content/
+├── en/
+│   ├── index.md
+│   └── guide/
+│       └── introduction.md
+└── fr/
+    ├── index.md
+    └── guide/
+        └── introduction.md
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;⚡ Built with&lt;/h2&gt; 
+&lt;p&gt;Your project comes pre-configured with the best of the Nuxt ecosystem:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://nuxt.com"&gt;Nuxt 4&lt;/a&gt; - The web framework&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://content.nuxt.com/"&gt;Nuxt Content&lt;/a&gt; - File-based CMS&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://ui.nuxt.com"&gt;Nuxt UI&lt;/a&gt; - UI components&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://image.nuxt.com/"&gt;Nuxt Image&lt;/a&gt; - Optimized images&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://tailwindcss.com/"&gt;Tailwind CSS 4&lt;/a&gt; - Utility-first CSS&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.npmjs.com/package/docus"&gt;Docus Layer&lt;/a&gt; - Documentation theme&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://i18n.nuxtjs.org/"&gt;Nuxt i18n&lt;/a&gt; - Internationalization&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📖 Documentation&lt;/h2&gt; 
+&lt;p&gt;For detailed documentation on customizing your Docus project, visit the &lt;a href="https://docus.dev"&gt;Docus Documentation&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🛠️ Development&lt;/h2&gt; 
+&lt;p&gt;This repository contains the CLI tool source code.&lt;/p&gt; 
+&lt;h3&gt;Local Development&lt;/h3&gt; 
+&lt;p&gt;To contribute to the CLI tool:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Clone this repository
+git clone https://github.com/nuxt-content/docus
+
+# Install dependencies
+pnpm install
+
+# Run the dev server to run the docus docs
+pnpm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Package Structure&lt;/h3&gt; 
+&lt;p&gt;This is a monorepo containing:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/nuxt-content/docus/tree/main/cli"&gt;&lt;strong&gt;&lt;code&gt;/cli&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt; - CLI tool (&lt;code&gt;create-docus&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/nuxt-content/docus/tree/main/layer"&gt;&lt;strong&gt;&lt;code&gt;/layer&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt; - Docus Nuxt layer (&lt;code&gt;docus&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/nuxt-content/docus/tree/main/docs"&gt;&lt;strong&gt;&lt;code&gt;/docs&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt; - Official documentation&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/nuxt-content/docus/tree/main/.starters"&gt;&lt;strong&gt;&lt;code&gt;/.starters&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt; - Starters project&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📄 License&lt;/h2&gt; 
+&lt;p&gt;Published under the &lt;a href="https://raw.githubusercontent.com/nuxt-content/docus/main/LICENSE"&gt;MIT&lt;/a&gt; license.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;Docus has been entirely rewritten from scratch and is inspired from &lt;a href="https://github.com/unjs/undocs"&gt;undocs&lt;/a&gt; made by &lt;a href="https://github.com/pi0"&gt;@pi0&lt;/a&gt; 💚&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
