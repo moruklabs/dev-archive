@@ -1,0 +1,2288 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub All Languages Weekly Trending</title>
+    <description>Weekly Trending of All Languages in GitHub</description>
+    <pubDate>Wed, 24 Dec 2025 01:40:28 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>sst/opencode</title>
+      <link>https://github.com/sst/opencode</link>
+      <description>&lt;p&gt;The open source coding agent.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://opencode.ai"&gt; 
+  &lt;picture&gt; 
+   &lt;source srcset="packages/console/app/src/asset/logo-ornate-dark.svg" media="(prefers-color-scheme: dark)" /&gt; 
+   &lt;source srcset="packages/console/app/src/asset/logo-ornate-light.svg" media="(prefers-color-scheme: light)" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/sst/opencode/dev/packages/console/app/src/asset/logo-ornate-light.svg?sanitize=true" alt="OpenCode logo" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;The open source AI coding agent.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://opencode.ai/discord"&gt;&lt;img alt="Discord" src="https://img.shields.io/discord/1391832426048651334?style=flat-square&amp;amp;label=discord" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/opencode-ai"&gt;&lt;img alt="npm" src="https://img.shields.io/npm/v/opencode-ai?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://github.com/sst/opencode/actions/workflows/publish.yml"&gt;&lt;img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/sst/opencode/publish.yml?style=flat-square&amp;amp;branch=dev" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://opencode.ai"&gt;&lt;img src="https://raw.githubusercontent.com/sst/opencode/dev/packages/web/src/assets/lander/screenshot.png" alt="OpenCode Terminal UI" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Installation&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# YOLO
+curl -fsSL https://opencode.ai/install | bash
+
+# Package managers
+npm i -g opencode-ai@latest        # or bun/pnpm/yarn
+scoop bucket add extras; scoop install extras/opencode  # Windows
+choco install opencode             # Windows
+brew install opencode              # macOS and Linux
+paru -S opencode-bin               # Arch Linux
+mise use -g github:sst/opencode # Any OS
+nix run nixpkgs#opencode           # or github:sst/opencode for latest dev branch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] Remove versions older than 0.1.x before installing.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Desktop App (BETA)&lt;/h3&gt; 
+&lt;p&gt;OpenCode is also available as a desktop application. Download directly from the &lt;a href="https://github.com/sst/opencode/releases"&gt;releases page&lt;/a&gt; or &lt;a href="https://opencode.ai/download"&gt;opencode.ai/download&lt;/a&gt;.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Platform&lt;/th&gt; 
+   &lt;th&gt;Download&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;macOS (Apple Silicon)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-darwin-aarch64.dmg&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;macOS (Intel)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-darwin-x64.dmg&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Windows&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-windows-x64.exe&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Linux&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;.deb&lt;/code&gt;, &lt;code&gt;.rpm&lt;/code&gt;, or AppImage&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# macOS (Homebrew)
+brew install --cask opencode-desktop
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Installation Directory&lt;/h4&gt; 
+&lt;p&gt;The install script respects the following priority order for the installation path:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;code&gt;$OPENCODE_INSTALL_DIR&lt;/code&gt; - Custom installation directory&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$XDG_BIN_DIR&lt;/code&gt; - XDG Base Directory Specification compliant path&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$HOME/bin&lt;/code&gt; - Standard user binary directory (if exists or can be created)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$HOME/.opencode/bin&lt;/code&gt; - Default fallback&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Examples
+OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/install | bash
+XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/install | bash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Agents&lt;/h3&gt; 
+&lt;p&gt;OpenCode includes two built-in agents you can switch between, you can switch between these using the &lt;code&gt;Tab&lt;/code&gt; key.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;build&lt;/strong&gt; - Default, full access agent for development work&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;plan&lt;/strong&gt; - Read-only agent for analysis and code exploration 
+  &lt;ul&gt; 
+   &lt;li&gt;Denies file edits by default&lt;/li&gt; 
+   &lt;li&gt;Asks permission before running bash commands&lt;/li&gt; 
+   &lt;li&gt;Ideal for exploring unfamiliar codebases or planning changes&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Also, included is a &lt;strong&gt;general&lt;/strong&gt; subagent for complex searches and multi-step tasks. This is used internally and can be invoked using &lt;code&gt;@general&lt;/code&gt; in messages.&lt;/p&gt; 
+&lt;p&gt;Learn more about &lt;a href="https://opencode.ai/docs/agents"&gt;agents&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Documentation&lt;/h3&gt; 
+&lt;p&gt;For more info on how to configure OpenCode &lt;a href="https://opencode.ai/docs"&gt;&lt;strong&gt;head over to our docs&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Contributing&lt;/h3&gt; 
+&lt;p&gt;If you're interested in contributing to OpenCode, please read our &lt;a href="https://raw.githubusercontent.com/sst/opencode/dev/CONTRIBUTING.md"&gt;contributing docs&lt;/a&gt; before submitting a pull request.&lt;/p&gt; 
+&lt;h3&gt;Building on OpenCode&lt;/h3&gt; 
+&lt;p&gt;If you are working on a project that's related to OpenCode and is using "opencode" as a part of its name; for example, "opencode-dashboard" or "opencode-mobile", please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.&lt;/p&gt; 
+&lt;h3&gt;FAQ&lt;/h3&gt; 
+&lt;h4&gt;How is this different than Claude Code?&lt;/h4&gt; 
+&lt;p&gt;It's very similar to Claude Code in terms of capability. Here are the key differences:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;100% open source&lt;/li&gt; 
+ &lt;li&gt;Not coupled to any provider. Although we recommend the models we provide through &lt;a href="https://opencode.ai/zen"&gt;OpenCode Zen&lt;/a&gt;; OpenCode can be used with Claude, OpenAI, Google or even local models. As models evolve the gaps between them will close and pricing will drop so being provider-agnostic is important.&lt;/li&gt; 
+ &lt;li&gt;Out of the box LSP support&lt;/li&gt; 
+ &lt;li&gt;A focus on TUI. OpenCode is built by neovim users and the creators of &lt;a href="https://terminal.shop"&gt;terminal.shop&lt;/a&gt;; we are going to push the limits of what's possible in the terminal.&lt;/li&gt; 
+ &lt;li&gt;A client/server architecture. This for example can allow OpenCode to run on your computer, while you can drive it remotely from a mobile app. Meaning that the TUI frontend is just one of the possible clients.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;What's the other repo?&lt;/h4&gt; 
+&lt;p&gt;The other confusingly named repo has no relation to this one. You can &lt;a href="https://x.com/thdxr/status/1933561254481666466"&gt;read the story behind it here&lt;/a&gt;.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Join our community&lt;/strong&gt; &lt;a href="https://discord.gg/opencode"&gt;Discord&lt;/a&gt; | &lt;a href="https://x.com/opencode"&gt;X.com&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>thedotmack/claude-mem</title>
+      <link>https://github.com/thedotmack/claude-mem</link>
+      <description>&lt;p&gt;A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt; &lt;br /&gt; &lt;a href="https://github.com/thedotmack/claude-mem"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/claude-mem-logo-for-dark-mode.webp" /&gt; 
+   &lt;source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/claude-mem-logo-for-light-mode.webp" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/claude-mem-logo-for-light-mode.webp" alt="Claude-Mem" width="400" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;br /&gt; &lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.zh.md"&gt;🇨🇳 中文&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.ja.md"&gt;🇯🇵 日本語&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.pt-br.md"&gt;🇧🇷 Português&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.ko.md"&gt;🇰🇷 한국어&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.es.md"&gt;🇪🇸 Español&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.de.md"&gt;🇩🇪 Deutsch&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.fr.md"&gt;🇫🇷 Français&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.he.md"&gt;🇮🇱 עברית&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.ar.md"&gt;🇸🇦 العربية&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.ru.md"&gt;🇷🇺 Русский&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.pl.md"&gt;🇵🇱 Polski&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.cs.md"&gt;🇨🇿 Čeština&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.nl.md"&gt;🇳🇱 Nederlands&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.tr.md"&gt;🇹🇷 Türkçe&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.uk.md"&gt;🇺🇦 Українська&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.vi.md"&gt;🇻🇳 Tiếng Việt&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.id.md"&gt;🇮🇩 Indonesia&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.th.md"&gt;🇹🇭 ไทย&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.hi.md"&gt;🇮🇳 हिन्दी&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.bn.md"&gt;🇧🇩 বাংলা&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.ro.md"&gt;🇷🇴 Română&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.sv.md"&gt;🇸🇪 Svenska&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.it.md"&gt;🇮🇹 Italiano&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.el.md"&gt;🇬🇷 Ελληνικά&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.hu.md"&gt;🇭🇺 Magyar&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.fi.md"&gt;🇫🇮 Suomi&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.da.md"&gt;🇩🇰 Dansk&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.no.md"&gt;🇳🇴 Norsk&lt;/a&gt; &lt;/p&gt; 
+&lt;h4 align="center"&gt;Persistent memory compression system built for &lt;a href="https://claude.com/claude-code" target="_blank"&gt;Claude Code&lt;/a&gt;.&lt;/h4&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/LICENSE"&gt; &lt;img src="https://img.shields.io/badge/License-AGPL%203.0-blue.svg?sanitize=true" alt="License" /&gt; &lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/package.json"&gt; &lt;img src="https://img.shields.io/badge/version-6.5.0-green.svg?sanitize=true" alt="Version" /&gt; &lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/package.json"&gt; &lt;img src="https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg?sanitize=true" alt="Node" /&gt; &lt;/a&gt; &lt;a href="https://github.com/thedotmack/awesome-claude-code"&gt; &lt;img src="https://awesome.re/mentioned-badge.svg?sanitize=true" alt="Mentioned in Awesome Claude Code" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/15496" target="_blank"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/trendshift-badge-dark.svg" /&gt; 
+   &lt;source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/trendshift-badge.svg" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/trendshift-badge.svg?sanitize=true" alt="thedotmack/claude-mem | Trendshift" width="250" height="55" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;br /&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/thedotmack/claude-mem"&gt; 
+  &lt;picture&gt; 
+   &lt;img src="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/cm-preview.gif" alt="Claude-Mem Preview" width="800" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#quick-start"&gt;Quick Start&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#how-it-works"&gt;How It Works&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#mcp-search-tools"&gt;Search Tools&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#documentation"&gt;Documentation&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#configuration"&gt;Configuration&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#troubleshooting"&gt;Troubleshooting&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#license"&gt;License&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; Claude-Mem seamlessly preserves context across sessions by automatically capturing tool usage observations, generating semantic summaries, and making them available to future sessions. This enables Claude to maintain continuity of knowledge about projects even after sessions end or reconnect. &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;p&gt;Start a new Claude Code session in the terminal and enter the following commands:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;&amp;gt; /plugin marketplace add thedotmack/claude-mem
+
+&amp;gt; /plugin install claude-mem
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Restart Claude Code. Context from previous sessions will automatically appear in new sessions.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Key Features:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🧠 &lt;strong&gt;Persistent Memory&lt;/strong&gt; - Context survives across sessions&lt;/li&gt; 
+ &lt;li&gt;📊 &lt;strong&gt;Progressive Disclosure&lt;/strong&gt; - Layered memory retrieval with token cost visibility&lt;/li&gt; 
+ &lt;li&gt;🔍 &lt;strong&gt;Skill-Based Search&lt;/strong&gt; - Query your project history with mem-search skill&lt;/li&gt; 
+ &lt;li&gt;🖥️ &lt;strong&gt;Web Viewer UI&lt;/strong&gt; - Real-time memory stream at &lt;a href="http://localhost:37777"&gt;http://localhost:37777&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;💻 &lt;strong&gt;Claude Desktop Skill&lt;/strong&gt; - Search memory from Claude Desktop conversations&lt;/li&gt; 
+ &lt;li&gt;🔒 &lt;strong&gt;Privacy Control&lt;/strong&gt; - Use &lt;code&gt;&amp;lt;private&amp;gt;&lt;/code&gt; tags to exclude sensitive content from storage&lt;/li&gt; 
+ &lt;li&gt;⚙️ &lt;strong&gt;Context Configuration&lt;/strong&gt; - Fine-grained control over what context gets injected&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;strong&gt;Automatic Operation&lt;/strong&gt; - No manual intervention required&lt;/li&gt; 
+ &lt;li&gt;🔗 &lt;strong&gt;Citations&lt;/strong&gt; - Reference past observations with IDs (access via &lt;a href="http://localhost:37777/api/observation/%7Bid%7D"&gt;http://localhost:37777/api/observation/{id}&lt;/a&gt; or view all in the web viewer at &lt;a href="http://localhost:37777"&gt;http://localhost:37777&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;🧪 &lt;strong&gt;Beta Channel&lt;/strong&gt; - Try experimental features like Endless Mode via version switching&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;📚 &lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/"&gt;View Full Documentation&lt;/a&gt;&lt;/strong&gt; - Browse markdown docs on GitHub&lt;/p&gt; 
+&lt;h3&gt;Getting Started&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/installation"&gt;Installation Guide&lt;/a&gt;&lt;/strong&gt; - Quick start &amp;amp; advanced installation&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/usage/getting-started"&gt;Usage Guide&lt;/a&gt;&lt;/strong&gt; - How Claude-Mem works automatically&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/usage/search-tools"&gt;Search Tools&lt;/a&gt;&lt;/strong&gt; - Query your project history with natural language&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/beta-features"&gt;Beta Features&lt;/a&gt;&lt;/strong&gt; - Try experimental features like Endless Mode&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Best Practices&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/context-engineering"&gt;Context Engineering&lt;/a&gt;&lt;/strong&gt; - AI agent context optimization principles&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/progressive-disclosure"&gt;Progressive Disclosure&lt;/a&gt;&lt;/strong&gt; - Philosophy behind Claude-Mem's context priming strategy&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Architecture&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/overview"&gt;Overview&lt;/a&gt;&lt;/strong&gt; - System components &amp;amp; data flow&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture-evolution"&gt;Architecture Evolution&lt;/a&gt;&lt;/strong&gt; - The journey from v3 to v5&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/hooks-architecture"&gt;Hooks Architecture&lt;/a&gt;&lt;/strong&gt; - How Claude-Mem uses lifecycle hooks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/hooks"&gt;Hooks Reference&lt;/a&gt;&lt;/strong&gt; - 7 hook scripts explained&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/worker-service"&gt;Worker Service&lt;/a&gt;&lt;/strong&gt; - HTTP API &amp;amp; Bun management&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/database"&gt;Database&lt;/a&gt;&lt;/strong&gt; - SQLite schema &amp;amp; FTS5 search&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/search-architecture"&gt;Search Architecture&lt;/a&gt;&lt;/strong&gt; - Hybrid search with Chroma vector database&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Configuration &amp;amp; Development&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/configuration"&gt;Configuration&lt;/a&gt;&lt;/strong&gt; - Environment variables &amp;amp; settings&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/development"&gt;Development&lt;/a&gt;&lt;/strong&gt; - Building, testing, contributing&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/troubleshooting"&gt;Troubleshooting&lt;/a&gt;&lt;/strong&gt; - Common issues &amp;amp; solutions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;How It Works&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Core Components:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;5 Lifecycle Hooks&lt;/strong&gt; - SessionStart, UserPromptSubmit, PostToolUse, Stop, SessionEnd (6 hook scripts)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Smart Install&lt;/strong&gt; - Cached dependency checker (pre-hook script, not a lifecycle hook)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Worker Service&lt;/strong&gt; - HTTP API on port 37777 with web viewer UI and 10 search endpoints, managed by Bun&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;SQLite Database&lt;/strong&gt; - Stores sessions, observations, summaries&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;mem-search Skill&lt;/strong&gt; - Natural language queries with progressive disclosure&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Chroma Vector Database&lt;/strong&gt; - Hybrid semantic + keyword search for intelligent context retrieval&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/architecture/overview"&gt;Architecture Overview&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;mem-search Skill&lt;/h2&gt; 
+&lt;p&gt;Claude-Mem provides intelligent search through the mem-search skill that auto-invokes when you ask about past work:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;How It Works:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Just ask naturally: &lt;em&gt;"What did we do last session?"&lt;/em&gt; or &lt;em&gt;"Did we fix this bug before?"&lt;/em&gt;&lt;/li&gt; 
+ &lt;li&gt;Claude automatically invokes the mem-search skill to find relevant context&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Available Search Operations:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Search Observations&lt;/strong&gt; - Full-text search across observations&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Search Sessions&lt;/strong&gt; - Full-text search across session summaries&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Search Prompts&lt;/strong&gt; - Search raw user requests&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;By Concept&lt;/strong&gt; - Find by concept tags (discovery, problem-solution, pattern, etc.)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;By File&lt;/strong&gt; - Find observations referencing specific files&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;By Type&lt;/strong&gt; - Find by type (decision, bugfix, feature, refactor, discovery, change)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Recent Context&lt;/strong&gt; - Get recent session context for a project&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Timeline&lt;/strong&gt; - Get unified timeline of context around a specific point in time&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Timeline by Query&lt;/strong&gt; - Search for observations and get timeline context around best match&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;API Help&lt;/strong&gt; - Get search API documentation&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Example Natural Language Queries:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;"What bugs did we fix last session?"
+"How did we implement authentication?"
+"What changes were made to worker-service.ts?"
+"Show me recent work on this project"
+"What was happening when we added the viewer UI?"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/usage/search-tools"&gt;Search Tools Guide&lt;/a&gt; for detailed examples.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Beta Features&lt;/h2&gt; 
+&lt;p&gt;Claude-Mem offers a &lt;strong&gt;beta channel&lt;/strong&gt; with experimental features like &lt;strong&gt;Endless Mode&lt;/strong&gt; (biomimetic memory architecture for extended sessions). Switch between stable and beta versions from the web viewer UI at &lt;a href="http://localhost:37777"&gt;http://localhost:37777&lt;/a&gt; → Settings.&lt;/p&gt; 
+&lt;p&gt;See &lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/beta-features"&gt;Beta Features Documentation&lt;/a&gt;&lt;/strong&gt; for details on Endless Mode and how to try it.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;System Requirements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Node.js&lt;/strong&gt;: 18.0.0 or higher&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Claude Code&lt;/strong&gt;: Latest version with plugin support&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Bun&lt;/strong&gt;: JavaScript runtime and process manager (auto-installed if missing)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;uv&lt;/strong&gt;: Python package manager for vector search (auto-installed if missing)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;SQLite 3&lt;/strong&gt;: For persistent storage (bundled)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Configuration&lt;/h2&gt; 
+&lt;p&gt;Settings are managed in &lt;code&gt;~/.claude-mem/settings.json&lt;/code&gt; (auto-created with defaults on first run). Configure AI model, worker port, data directory, log level, and context injection settings.&lt;/p&gt; 
+&lt;p&gt;See the &lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/configuration"&gt;Configuration Guide&lt;/a&gt;&lt;/strong&gt; for all available settings and examples.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;p&gt;See the &lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/development"&gt;Development Guide&lt;/a&gt;&lt;/strong&gt; for build instructions, testing, and contribution workflow.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Troubleshooting&lt;/h2&gt; 
+&lt;p&gt;If experiencing issues, describe the problem to Claude and the troubleshoot skill will automatically diagnose and provide fixes.&lt;/p&gt; 
+&lt;p&gt;See the &lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/troubleshooting"&gt;Troubleshooting Guide&lt;/a&gt;&lt;/strong&gt; for common issues and solutions.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Bug Reports&lt;/h2&gt; 
+&lt;p&gt;Create comprehensive bug reports with the automated generator:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd ~/.claude/plugins/marketplaces/thedotmack
+npm run bug-report
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Contributions are welcome! Please:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork the repository&lt;/li&gt; 
+ &lt;li&gt;Create a feature branch&lt;/li&gt; 
+ &lt;li&gt;Make your changes with tests&lt;/li&gt; 
+ &lt;li&gt;Update documentation&lt;/li&gt; 
+ &lt;li&gt;Submit a Pull Request&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/development"&gt;Development Guide&lt;/a&gt; for contribution workflow.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the &lt;strong&gt;GNU Affero General Public License v3.0&lt;/strong&gt; (AGPL-3.0).&lt;/p&gt; 
+&lt;p&gt;Copyright (C) 2025 Alex Newman (@thedotmack). All rights reserved.&lt;/p&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for full details.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;What This Means:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;You can use, modify, and distribute this software freely&lt;/li&gt; 
+ &lt;li&gt;If you modify and deploy on a network server, you must make your source code available&lt;/li&gt; 
+ &lt;li&gt;Derivative works must also be licensed under AGPL-3.0&lt;/li&gt; 
+ &lt;li&gt;There is NO WARRANTY for this software&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Note on Ragtime&lt;/strong&gt;: The &lt;code&gt;ragtime/&lt;/code&gt; directory is licensed separately under the &lt;strong&gt;PolyForm Noncommercial License 1.0.0&lt;/strong&gt;. See &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/ragtime/LICENSE"&gt;ragtime/LICENSE&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Documentation&lt;/strong&gt;: &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/"&gt;docs/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Issues&lt;/strong&gt;: &lt;a href="https://github.com/thedotmack/claude-mem/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Repository&lt;/strong&gt;: &lt;a href="https://github.com/thedotmack/claude-mem"&gt;github.com/thedotmack/claude-mem&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Author&lt;/strong&gt;: Alex Newman (&lt;a href="https://github.com/thedotmack"&gt;@thedotmack&lt;/a&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Built with Claude Agent SDK&lt;/strong&gt; | &lt;strong&gt;Powered by Claude Code&lt;/strong&gt; | &lt;strong&gt;Made with TypeScript&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>davila7/claude-code-templates</title>
+      <link>https://github.com/davila7/claude-code-templates</link>
+      <description>&lt;p&gt;CLI tool for configuring and monitoring Claude Code&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a href="https://www.npmjs.com/package/claude-code-templates"&gt;&lt;img src="https://img.shields.io/npm/v/claude-code-templates.svg?sanitize=true" alt="npm version" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/claude-code-templates"&gt;&lt;img src="https://img.shields.io/npm/dt/claude-code-templates.svg?sanitize=true" alt="npm downloads" /&gt;&lt;/a&gt; &lt;a href="https://opensource.org/licenses/MIT"&gt;&lt;img src="https://img.shields.io/badge/License-MIT-yellow.svg?sanitize=true" alt="License: MIT" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/davila7/claude-code-templates/main/CONTRIBUTING.md"&gt;&lt;img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?sanitize=true" alt="PRs Welcome" /&gt;&lt;/a&gt; &lt;a href="https://z.ai/subscribe?ic=8JVLJQFSKB&amp;amp;utm_source=github&amp;amp;utm_medium=badge&amp;amp;utm_campaign=readme"&gt;&lt;img src="https://img.shields.io/badge/Sponsored%20by-Z.AI-2563eb?style=flat&amp;amp;logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMiAyMkgyMkwxMiAyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+" alt="Sponsored by Z.AI" /&gt;&lt;/a&gt; &lt;a href="https://buymeacoffee.com/daniavila"&gt;&lt;img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow?style=flat&amp;amp;logo=buy-me-a-coffee" alt="Buy Me A Coffee" /&gt;&lt;/a&gt; &lt;a href="https://github.com/davila7/claude-code-templates"&gt;&lt;img src="https://img.shields.io/github/stars/davila7/claude-code-templates.svg?style=social&amp;amp;label=Star" alt="GitHub stars" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/15113" target="_blank"&gt; &lt;img src="https://trendshift.io/api/badge/repositories/15113" alt="davila7%2Fclaude-code-templates | Trendshift" style="width: 200px; height: 40px;" width="125" height="40" /&gt; &lt;/a&gt; &lt;br /&gt; &lt;br /&gt; &lt;a href="https://vercel.com/oss"&gt; &lt;img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg?sanitize=true" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;div align="center"&gt; 
+ &lt;h3&gt;🤝 Partnership&lt;/h3&gt; 
+ &lt;p&gt; &lt;strong&gt;This project is sponsored by &lt;a href="https://z.ai" target="_blank"&gt;Z.AI&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt; Supporting Claude Code Templates with the &lt;strong&gt;GLM CODING PLAN&lt;/strong&gt; &lt;/p&gt; 
+ &lt;p&gt; &lt;a href="https://z.ai/subscribe?ic=8JVLJQFSKB&amp;amp;utm_source=github&amp;amp;utm_medium=readme&amp;amp;utm_campaign=partnership" target="_blank"&gt; &lt;img src="https://img.shields.io/badge/Get%2010%25%20OFF-GLM%20Coding%20Plan-2563eb?style=for-the-badge" alt="GLM Coding Plan" /&gt; &lt;/a&gt; &lt;/p&gt; 
+ &lt;p&gt; &lt;em&gt;Top-tier coding performance powered by GLM-4.6 • Starting at $3/month&lt;/em&gt;&lt;br /&gt; &lt;em&gt;Seamlessly integrates with Claude Code, Cursor, Cline &amp;amp; 10+ AI coding tools&lt;/em&gt; &lt;/p&gt; 
+ &lt;p&gt; &lt;code&gt;npx claude-code-templates@latest --setting partnerships/glm-coding-plan --yes&lt;/code&gt; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;Claude Code Templates (&lt;a href="https://aitmpl.com"&gt;aitmpl.com&lt;/a&gt;)&lt;/h1&gt; 
+&lt;p&gt;&lt;strong&gt;Ready-to-use configurations for Anthropic's Claude Code.&lt;/strong&gt; A comprehensive collection of AI agents, custom commands, settings, hooks, external integrations (MCPs), and project templates to enhance your development workflow.&lt;/p&gt; 
+&lt;h2&gt;Browse &amp;amp; Install Components and Templates&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://aitmpl.com"&gt;Browse All Templates&lt;/a&gt;&lt;/strong&gt; - Interactive web interface to explore and install 100+ agents, commands, settings, hooks, and MCPs.&lt;/p&gt; 
+&lt;img width="1049" height="855" alt="Screenshot 2025-08-19 at 08 09 24" src="https://github.com/user-attachments/assets/e3617410-9b1c-4731-87b7-a3858800b737" /&gt; 
+&lt;h2&gt;🚀 Quick Installation&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Install a complete development stack
+npx claude-code-templates@latest --agent development-team/frontend-developer --command testing/generate-tests --mcp development/github-integration --yes
+
+# Browse and install interactively
+npx claude-code-templates@latest
+
+# Install specific components
+npx claude-code-templates@latest --agent development-tools/code-reviewer --yes
+npx claude-code-templates@latest --command performance/optimize-bundle --yes
+npx claude-code-templates@latest --setting performance/mcp-timeouts --yes
+npx claude-code-templates@latest --hook git/pre-commit-validation --yes
+npx claude-code-templates@latest --mcp database/postgresql-integration --yes
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;What You Get&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Component&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+   &lt;th&gt;Examples&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;🤖 Agents&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;AI specialists for specific domains&lt;/td&gt; 
+   &lt;td&gt;Security auditor, React performance optimizer, database architect&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;⚡ Commands&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Custom slash commands&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;/generate-tests&lt;/code&gt;, &lt;code&gt;/optimize-bundle&lt;/code&gt;, &lt;code&gt;/check-security&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;🔌 MCPs&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;External service integrations&lt;/td&gt; 
+   &lt;td&gt;GitHub, PostgreSQL, Stripe, AWS, OpenAI&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;⚙️ Settings&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Claude Code configurations&lt;/td&gt; 
+   &lt;td&gt;Timeouts, memory settings, output styles&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;🪝 Hooks&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Automation triggers&lt;/td&gt; 
+   &lt;td&gt;Pre-commit validation, post-completion actions&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;🎨 Skills&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Reusable capabilities with progressive disclosure&lt;/td&gt; 
+   &lt;td&gt;PDF processing, Excel automation, custom workflows&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;🛠️ Additional Tools&lt;/h2&gt; 
+&lt;p&gt;Beyond the template catalog, Claude Code Templates includes powerful development tools:&lt;/p&gt; 
+&lt;h3&gt;📊 Claude Code Analytics&lt;/h3&gt; 
+&lt;p&gt;Monitor your AI-powered development sessions in real-time with live state detection and performance metrics.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx claude-code-templates@latest --analytics
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;💬 Conversation Monitor&lt;/h3&gt; 
+&lt;p&gt;Mobile-optimized interface to view Claude responses in real-time with secure remote access.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Local access
+npx claude-code-templates@latest --chats
+
+# Secure remote access via Cloudflare Tunnel
+npx claude-code-templates@latest --chats --tunnel
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;🔍 Health Check&lt;/h3&gt; 
+&lt;p&gt;Comprehensive diagnostics to ensure your Claude Code installation is optimized.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx claude-code-templates@latest --health-check
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;🔌 Plugin Dashboard&lt;/h3&gt; 
+&lt;p&gt;View marketplaces, installed plugins, and manage permissions from a unified interface.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx claude-code-templates@latest --plugins
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;📖 Documentation&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://docs.aitmpl.com/"&gt;📚 docs.aitmpl.com&lt;/a&gt;&lt;/strong&gt; - Complete guides, examples, and API reference for all components and tools.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions! &lt;strong&gt;&lt;a href="https://aitmpl.com"&gt;Browse existing templates&lt;/a&gt;&lt;/strong&gt; to see what's available, then check our &lt;a href="https://raw.githubusercontent.com/davila7/claude-code-templates/main/CONTRIBUTING.md"&gt;contributing guidelines&lt;/a&gt; to add your own agents, commands, MCPs, settings, or hooks.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Please read our &lt;a href="https://raw.githubusercontent.com/davila7/claude-code-templates/main/CODE_OF_CONDUCT.md"&gt;Code of Conduct&lt;/a&gt; before contributing.&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Attribution&lt;/h2&gt; 
+&lt;p&gt;This collection includes components from multiple sources:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Scientific Skills:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/K-Dense-AI/claude-scientific-skills"&gt;K-Dense-AI/claude-scientific-skills&lt;/a&gt;&lt;/strong&gt; by K-Dense Inc. - MIT License (139 scientific skills for biology, chemistry, medicine, and computational research)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Official Anthropic:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/anthropics/skills"&gt;anthropics/skills&lt;/a&gt;&lt;/strong&gt; - Official Anthropic skills (21 skills)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/anthropics/claude-code"&gt;anthropics/claude-code&lt;/a&gt;&lt;/strong&gt; - Development guides and examples (10 skills)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Community Skills &amp;amp; Agents:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/obra/superpowers"&gt;obra/superpowers&lt;/a&gt;&lt;/strong&gt; by Jesse Obra - MIT License (14 workflow skills)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/alirezarezvani/claude-skills"&gt;alirezarezvani/claude-skills&lt;/a&gt;&lt;/strong&gt; by Alireza Rezvani - MIT License (36 professional role skills)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/wshobson/agents"&gt;wshobson/agents&lt;/a&gt;&lt;/strong&gt; by wshobson - MIT License (48 agents)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;NerdyChefsAI Skills&lt;/strong&gt; - Community contribution - MIT License (specialized enterprise skills)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Commands &amp;amp; Tools:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/hesreallyhim/awesome-claude-code"&gt;awesome-claude-code&lt;/a&gt;&lt;/strong&gt; by hesreallyhim - CC0 1.0 Universal (21 commands)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/mehdi-lamrani/awesome-claude-skills"&gt;awesome-claude-skills&lt;/a&gt;&lt;/strong&gt; - Apache 2.0 (community skills)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;move-code-quality-skill&lt;/strong&gt; - MIT License&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;cocoindex-claude&lt;/strong&gt; - Apache 2.0&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Each of these resources retains its &lt;strong&gt;original license and attribution&lt;/strong&gt;, as defined by their respective authors. We respect and credit all original creators for their work and contributions to the Claude ecosystem.&lt;/p&gt; 
+&lt;h2&gt;📄 License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the MIT License - see the &lt;a href="https://raw.githubusercontent.com/davila7/claude-code-templates/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;h2&gt;🔗 Links&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;🌐 Browse Templates&lt;/strong&gt;: &lt;a href="https://aitmpl.com"&gt;aitmpl.com&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;📚 Documentation&lt;/strong&gt;: &lt;a href="https://docs.aitmpl.com"&gt;docs.aitmpl.com&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;💬 Community&lt;/strong&gt;: &lt;a href="https://github.com/davila7/claude-code-templates/discussions"&gt;GitHub Discussions&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🐛 Issues&lt;/strong&gt;: &lt;a href="https://github.com/davila7/claude-code-templates/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Stargazers over time&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://starchart.cc/davila7/claude-code-templates"&gt;&lt;img src="https://starchart.cc/davila7/claude-code-templates.svg?variant=adaptive" alt="Stargazers over time" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;⭐ Found this useful? Give us a star to support the project!&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://buymeacoffee.com/daniavila"&gt;&lt;img src="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&amp;amp;slug=daniavila&amp;amp;button_colour=FFDD00&amp;amp;font_colour=000000&amp;amp;font_family=Cookie&amp;amp;outline_colour=000000&amp;amp;coffee_colour=ffffff" alt="Buy Me A Coffee" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>resemble-ai/chatterbox</title>
+      <link>https://github.com/resemble-ai/chatterbox</link>
+      <description>&lt;p&gt;SoTA open-source TTS&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/resemble-ai/chatterbox/master/Chatterbox-Turbo.jpg" alt="Chatterbox Turbo Image" /&gt;&lt;/p&gt; 
+&lt;h1&gt;Chatterbox TTS&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://resemble-ai.github.io/chatterbox_turbo_demopage/"&gt;&lt;img src="https://img.shields.io/badge/listen-demo_samples-blue" alt="Alt Text" /&gt;&lt;/a&gt; &lt;a href="https://huggingface.co/spaces/ResembleAI/chatterbox-turbo-demo"&gt;&lt;img src="https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-sm.svg?sanitize=true" alt="Alt Text" /&gt;&lt;/a&gt; &lt;a href="https://podonos.com/resembleai/chatterbox"&gt;&lt;img src="https://static-public.podonos.com/badges/insight-on-pdns-sm-dark.svg?sanitize=true" alt="Alt Text" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/rJq9cRJBJ6"&gt;&lt;img src="https://img.shields.io/discord/1377773249798344776?label=join%20discord&amp;amp;logo=discord&amp;amp;style=flat" alt="Discord" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;_Made with ♥️ by &lt;a href="https://resemble.ai" target="_blank"&gt;&lt;img width="100" alt="resemble-logo-horizontal" src="https://github.com/user-attachments/assets/35cf756b-3506-4943-9c72-c05ddfa4e525" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Chatterbox&lt;/strong&gt; is a family of three state-of-the-art, open-source text-to-speech models by Resemble AI.&lt;/p&gt; 
+&lt;p&gt;We are excited to introduce &lt;strong&gt;Chatterbox-Turbo&lt;/strong&gt;, our most efficient model yet. Built on a streamlined 350M parameter architecture, &lt;strong&gt;Turbo&lt;/strong&gt; delivers high-quality speech with less compute and VRAM than our previous models. We have also distilled the speech-token-to-mel decoder, previously a bottleneck, reducing generation from 10 steps to just &lt;strong&gt;one&lt;/strong&gt;, while retaining high-fidelity audio output.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Paralinguistic tags&lt;/strong&gt; are now native to the Turbo model, allowing you to use &lt;code&gt;[cough]&lt;/code&gt;, &lt;code&gt;[laugh]&lt;/code&gt;, &lt;code&gt;[chuckle]&lt;/code&gt;, and more to add distinct realism. While Turbo was built primarily for low-latency voice agents, it excels at narration and creative workflows.&lt;/p&gt; 
+&lt;p&gt;If you like the model but need to scale or tune it for higher accuracy, check out our competitively priced TTS service (&lt;a href="https://resemble.ai"&gt;link&lt;/a&gt;). It delivers reliable performance with ultra-low latency of sub 200ms—ideal for production use in agents, applications, or interactive media.&lt;/p&gt; 
+&lt;img width="1200" height="600" alt="Podonos Turbo Eval" src="https://storage.googleapis.com/chatterbox-demo-samples/turbo/podonos_turbo.png" /&gt; 
+&lt;h3&gt;⚡ Model Zoo&lt;/h3&gt; 
+&lt;p&gt;Choose the right model for your application.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="left"&gt;Model&lt;/th&gt; 
+   &lt;th align="left"&gt;Size&lt;/th&gt; 
+   &lt;th align="left"&gt;Languages&lt;/th&gt; 
+   &lt;th align="left"&gt;Key Features&lt;/th&gt; 
+   &lt;th align="left"&gt;Best For&lt;/th&gt; 
+   &lt;th align="left"&gt;🤗&lt;/th&gt; 
+   &lt;th align="left"&gt;Examples&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;&lt;strong&gt;Chatterbox-Turbo&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;strong&gt;350M&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;strong&gt;English&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;Paralinguistic Tags (&lt;code&gt;[laugh]&lt;/code&gt;), Lower Compute and VRAM&lt;/td&gt; 
+   &lt;td align="left"&gt;Zero-shot voice agents, Production&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://huggingface.co/spaces/ResembleAI/chatterbox-turbo-demo"&gt;Demo&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://resemble-ai.github.io/chatterbox_turbo_demopage/"&gt;Listen&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Chatterbox-Multilingual &lt;a href="https://raw.githubusercontent.com/resemble-ai/chatterbox/master/#supported-languages"&gt;(Language list)&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;500M&lt;/td&gt; 
+   &lt;td align="left"&gt;23+&lt;/td&gt; 
+   &lt;td align="left"&gt;Zero-shot cloning, Multiple Languages&lt;/td&gt; 
+   &lt;td align="left"&gt;Global applications, Localization&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://huggingface.co/spaces/ResembleAI/Chatterbox-Multilingual-TTS"&gt;Demo&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://resemble-ai.github.io/chatterbox_demopage/"&gt;Listen&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;Chatterbox &lt;a href="https://raw.githubusercontent.com/resemble-ai/chatterbox/master/#original-chatterbox-tips"&gt;(Tips and Tricks)&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;500M&lt;/td&gt; 
+   &lt;td align="left"&gt;English&lt;/td&gt; 
+   &lt;td align="left"&gt;CFG &amp;amp; Exaggeration tuning&lt;/td&gt; 
+   &lt;td align="left"&gt;General zero-shot TTS with creative controls&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://huggingface.co/spaces/ResembleAI/Chatterbox"&gt;Demo&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="https://resemble-ai.github.io/chatterbox_demopage/"&gt;Listen&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;pip install chatterbox-tts
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Alternatively, you can install from source:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;# conda create -yn chatterbox python=3.11
+# conda activate chatterbox
+
+git clone https://github.com/resemble-ai/chatterbox.git
+cd chatterbox
+pip install -e .
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;We developed and tested Chatterbox on Python 3.11 on Debian 11 OS; the versions of the dependencies are pinned in &lt;code&gt;pyproject.toml&lt;/code&gt; to ensure consistency. You can modify the code or dependencies in this installation mode.&lt;/p&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;h5&gt;Chatterbox-Turbo&lt;/h5&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;import torchaudio as ta
+import torch
+from chatterbox.tts_turbo import ChatterboxTurboTTS
+
+# Load the Turbo model
+model = ChatterboxTurboTTS.from_pretrained(device="cuda")
+
+# Generate with Paralinguistic Tags
+text = "Hi there, Sarah here from MochaFone calling you back [chuckle], have you got one minute to chat about the billing issue?"
+
+# Generate audio (requires a reference clip for voice cloning)
+wav = model.generate(text, audio_prompt_path="your_10s_ref_clip.wav")
+
+ta.save("test-turbo.wav", wav, model.sr)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h5&gt;Chatterbox and Chatterbox-Multilingual&lt;/h5&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;
+import torchaudio as ta
+from chatterbox.tts import ChatterboxTTS
+from chatterbox.mtl_tts import ChatterboxMultilingualTTS
+
+# English example
+model = ChatterboxTTS.from_pretrained(device="cuda")
+
+text = "Ezreal and Jinx teamed up with Ahri, Yasuo, and Teemo to take down the enemy's Nexus in an epic late-game pentakill."
+wav = model.generate(text)
+ta.save("test-english.wav", wav, model.sr)
+
+# Multilingual examples
+multilingual_model = ChatterboxMultilingualTTS.from_pretrained(device=device)
+
+french_text = "Bonjour, comment ça va? Ceci est le modèle de synthèse vocale multilingue Chatterbox, il prend en charge 23 langues."
+wav_french = multilingual_model.generate(spanish_text, language_id="fr")
+ta.save("test-french.wav", wav_french, model.sr)
+
+chinese_text = "你好，今天天气真不错，希望你有一个愉快的周末。"
+wav_chinese = multilingual_model.generate(chinese_text, language_id="zh")
+ta.save("test-chinese.wav", wav_chinese, model.sr)
+
+# If you want to synthesize with a different voice, specify the audio prompt
+AUDIO_PROMPT_PATH = "YOUR_FILE.wav"
+wav = model.generate(text, audio_prompt_path=AUDIO_PROMPT_PATH)
+ta.save("test-2.wav", wav, model.sr)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;code&gt;example_tts.py&lt;/code&gt; and &lt;code&gt;example_vc.py&lt;/code&gt; for more examples.&lt;/p&gt; 
+&lt;h2&gt;Supported Languages&lt;/h2&gt; 
+&lt;p&gt;Arabic (ar) • Danish (da) • German (de) • Greek (el) • English (en) • Spanish (es) • Finnish (fi) • French (fr) • Hebrew (he) • Hindi (hi) • Italian (it) • Japanese (ja) • Korean (ko) • Malay (ms) • Dutch (nl) • Norwegian (no) • Polish (pl) • Portuguese (pt) • Russian (ru) • Swedish (sv) • Swahili (sw) • Turkish (tr) • Chinese (zh)&lt;/p&gt; 
+&lt;h2&gt;Original Chatterbox Tips&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;General Use (TTS and Voice Agents):&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Ensure that the reference clip matches the specified language tag. Otherwise, language transfer outputs may inherit the accent of the reference clip’s language. To mitigate this, set &lt;code&gt;cfg_weight&lt;/code&gt; to &lt;code&gt;0&lt;/code&gt;.&lt;/li&gt; 
+   &lt;li&gt;The default settings (&lt;code&gt;exaggeration=0.5&lt;/code&gt;, &lt;code&gt;cfg_weight=0.5&lt;/code&gt;) work well for most prompts across all languages.&lt;/li&gt; 
+   &lt;li&gt;If the reference speaker has a fast speaking style, lowering &lt;code&gt;cfg_weight&lt;/code&gt; to around &lt;code&gt;0.3&lt;/code&gt; can improve pacing.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Expressive or Dramatic Speech:&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Try lower &lt;code&gt;cfg_weight&lt;/code&gt; values (e.g. &lt;code&gt;~0.3&lt;/code&gt;) and increase &lt;code&gt;exaggeration&lt;/code&gt; to around &lt;code&gt;0.7&lt;/code&gt; or higher.&lt;/li&gt; 
+   &lt;li&gt;Higher &lt;code&gt;exaggeration&lt;/code&gt; tends to speed up speech; reducing &lt;code&gt;cfg_weight&lt;/code&gt; helps compensate with slower, more deliberate pacing.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Built-in PerTh Watermarking for Responsible AI&lt;/h2&gt; 
+&lt;p&gt;Every audio file generated by Chatterbox includes &lt;a href="https://github.com/resemble-ai/perth"&gt;Resemble AI's Perth (Perceptual Threshold) Watermarker&lt;/a&gt; - imperceptible neural watermarks that survive MP3 compression, audio editing, and common manipulations while maintaining nearly 100% detection accuracy.&lt;/p&gt; 
+&lt;h2&gt;Watermark extraction&lt;/h2&gt; 
+&lt;p&gt;You can look for the watermark using the following script.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;import perth
+import librosa
+
+AUDIO_PATH = "YOUR_FILE.wav"
+
+# Load the watermarked audio
+watermarked_audio, sr = librosa.load(AUDIO_PATH, sr=None)
+
+# Initialize watermarker (same as used for embedding)
+watermarker = perth.PerthImplicitWatermarker()
+
+# Extract watermark
+watermark = watermarker.get_watermark(watermarked_audio, sample_rate=sr)
+print(f"Extracted watermark: {watermark}")
+# Output: 0.0 (no watermark) or 1.0 (watermarked)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Official Discord&lt;/h2&gt; 
+&lt;p&gt;👋 Join us on &lt;a href="https://discord.gg/rJq9cRJBJ6"&gt;Discord&lt;/a&gt; and let's build something awesome together!&lt;/p&gt; 
+&lt;h2&gt;Acknowledgements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/FunAudioLLM/CosyVoice"&gt;Cosyvoice&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/CorentinJ/Real-Time-Voice-Cloning"&gt;Real-Time-Voice-Cloning&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/yl4579/HiFTNet"&gt;HiFT-GAN&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/meta-llama/llama3"&gt;Llama 3&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/xingchensong/S3Tokenizer"&gt;S3Tokenizer&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Citation&lt;/h2&gt; 
+&lt;p&gt;If you find this model useful, please consider citing.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;@misc{chatterboxtts2025,
+  author       = {{Resemble AI}},
+  title        = {{Chatterbox-TTS}},
+  year         = {2025},
+  howpublished = {\url{https://github.com/resemble-ai/chatterbox}},
+  note         = {GitHub repository}
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Disclaimer&lt;/h2&gt; 
+&lt;p&gt;Don't use this model to do bad things. Prompts are sourced from freely available data on the internet.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>anthropics/claude-code</title>
+      <link>https://github.com/anthropics/claude-code</link>
+      <description>&lt;p&gt;Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Claude Code&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://img.shields.io/badge/Node.js-18%2B-brightgreen?style=flat-square" alt="" /&gt; &lt;a href="https://www.npmjs.com/package/@anthropic-ai/claude-code"&gt;&lt;img src="https://img.shields.io/npm/v/@anthropic-ai/claude-code.svg?style=flat-square" alt="npm" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands. Use it in your terminal, IDE, or tag @claude on Github.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Learn more in the &lt;a href="https://docs.anthropic.com/en/docs/claude-code/overview"&gt;official documentation&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/anthropics/claude-code/main/demo.gif" /&gt; 
+&lt;h2&gt;Get started&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Install Claude Code:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;MacOS/Linux:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -fsSL https://claude.ai/install.sh | bash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Homebrew (MacOS):&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;brew install --cask claude-code
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Windows:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-powershell"&gt;irm https://claude.ai/install.ps1 | iex
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;NPM:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install -g @anthropic-ai/claude-code
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;NOTE: If installing with NPM, you also need to install &lt;a href="https://nodejs.org/en/download/"&gt;Node.js 18+&lt;/a&gt;&lt;/p&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Navigate to your project directory and run &lt;code&gt;claude&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Plugins&lt;/h2&gt; 
+&lt;p&gt;This repository includes several Claude Code plugins that extend functionality with custom commands and agents. See the &lt;a href="https://raw.githubusercontent.com/anthropics/claude-code/main/plugins/README.md"&gt;plugins directory&lt;/a&gt; for detailed documentation on available plugins.&lt;/p&gt; 
+&lt;h2&gt;Reporting Bugs&lt;/h2&gt; 
+&lt;p&gt;We welcome your feedback. Use the &lt;code&gt;/bug&lt;/code&gt; command to report issues directly within Claude Code, or file a &lt;a href="https://github.com/anthropics/claude-code/issues"&gt;GitHub issue&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Connect on Discord&lt;/h2&gt; 
+&lt;p&gt;Join the &lt;a href="https://anthropic.com/discord"&gt;Claude Developers Discord&lt;/a&gt; to connect with other developers using Claude Code. Get help, share feedback, and discuss your projects with the community.&lt;/p&gt; 
+&lt;h2&gt;Data collection, usage, and retention&lt;/h2&gt; 
+&lt;p&gt;When you use Claude Code, we collect feedback, which includes usage data (such as code acceptance or rejections), associated conversation data, and user feedback submitted via the &lt;code&gt;/bug&lt;/code&gt; command.&lt;/p&gt; 
+&lt;h3&gt;How we use your data&lt;/h3&gt; 
+&lt;p&gt;See our &lt;a href="https://docs.anthropic.com/en/docs/claude-code/data-usage"&gt;data usage policies&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Privacy safeguards&lt;/h3&gt; 
+&lt;p&gt;We have implemented several safeguards to protect your data, including limited retention periods for sensitive information, restricted access to user session data, and clear policies against using feedback for model training.&lt;/p&gt; 
+&lt;p&gt;For full details, please review our &lt;a href="https://www.anthropic.com/legal/commercial-terms"&gt;Commercial Terms of Service&lt;/a&gt; and &lt;a href="https://www.anthropic.com/legal/privacy"&gt;Privacy Policy&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>virattt/ai-hedge-fund</title>
+      <link>https://github.com/virattt/ai-hedge-fund</link>
+      <description>&lt;p&gt;An AI Hedge Fund Team&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;AI Hedge Fund&lt;/h1&gt; 
+&lt;p&gt;This is a proof of concept for an AI-powered hedge fund. The goal of this project is to explore the use of AI to make trading decisions. This project is for &lt;strong&gt;educational&lt;/strong&gt; purposes only and is not intended for real trading or investment.&lt;/p&gt; 
+&lt;p&gt;This system employs several agents working together:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Aswath Damodaran Agent - The Dean of Valuation, focuses on story, numbers, and disciplined valuation&lt;/li&gt; 
+ &lt;li&gt;Ben Graham Agent - The godfather of value investing, only buys hidden gems with a margin of safety&lt;/li&gt; 
+ &lt;li&gt;Bill Ackman Agent - An activist investor, takes bold positions and pushes for change&lt;/li&gt; 
+ &lt;li&gt;Cathie Wood Agent - The queen of growth investing, believes in the power of innovation and disruption&lt;/li&gt; 
+ &lt;li&gt;Charlie Munger Agent - Warren Buffett's partner, only buys wonderful businesses at fair prices&lt;/li&gt; 
+ &lt;li&gt;Michael Burry Agent - The Big Short contrarian who hunts for deep value&lt;/li&gt; 
+ &lt;li&gt;Mohnish Pabrai Agent - The Dhandho investor, who looks for doubles at low risk&lt;/li&gt; 
+ &lt;li&gt;Peter Lynch Agent - Practical investor who seeks "ten-baggers" in everyday businesses&lt;/li&gt; 
+ &lt;li&gt;Phil Fisher Agent - Meticulous growth investor who uses deep "scuttlebutt" research&lt;/li&gt; 
+ &lt;li&gt;Rakesh Jhunjhunwala Agent - The Big Bull of India&lt;/li&gt; 
+ &lt;li&gt;Stanley Druckenmiller Agent - Macro legend who hunts for asymmetric opportunities with growth potential&lt;/li&gt; 
+ &lt;li&gt;Warren Buffett Agent - The oracle of Omaha, seeks wonderful companies at a fair price&lt;/li&gt; 
+ &lt;li&gt;Valuation Agent - Calculates the intrinsic value of a stock and generates trading signals&lt;/li&gt; 
+ &lt;li&gt;Sentiment Agent - Analyzes market sentiment and generates trading signals&lt;/li&gt; 
+ &lt;li&gt;Fundamentals Agent - Analyzes fundamental data and generates trading signals&lt;/li&gt; 
+ &lt;li&gt;Technicals Agent - Analyzes technical indicators and generates trading signals&lt;/li&gt; 
+ &lt;li&gt;Risk Manager - Calculates risk metrics and sets position limits&lt;/li&gt; 
+ &lt;li&gt;Portfolio Manager - Makes final trading decisions and generates orders&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;img width="1042" alt="Screenshot 2025-03-22 at 6 19 07 PM" src="https://github.com/user-attachments/assets/cbae3dcf-b571-490d-b0ad-3f0f035ac0d4" /&gt; 
+&lt;p&gt;Note: the system does not actually make any trades.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://twitter.com/virattt"&gt;&lt;img src="https://img.shields.io/twitter/follow/virattt?style=social" alt="Twitter Follow" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Disclaimer&lt;/h2&gt; 
+&lt;p&gt;This project is for &lt;strong&gt;educational and research purposes only&lt;/strong&gt;.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Not intended for real trading or investment&lt;/li&gt; 
+ &lt;li&gt;No investment advice or guarantees provided&lt;/li&gt; 
+ &lt;li&gt;Creator assumes no liability for financial losses&lt;/li&gt; 
+ &lt;li&gt;Consult a financial advisor for investment decisions&lt;/li&gt; 
+ &lt;li&gt;Past performance does not indicate future results&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;By using this software, you agree to use it solely for learning purposes.&lt;/p&gt; 
+&lt;h2&gt;Table of Contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/ai-hedge-fund/main/#how-to-install"&gt;How to Install&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/ai-hedge-fund/main/#how-to-run"&gt;How to Run&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/ai-hedge-fund/main/#%EF%B8%8F-command-line-interface"&gt;⌨️ Command Line Interface&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/ai-hedge-fund/main/#%EF%B8%8F-web-application"&gt;🖥️ Web Application&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/ai-hedge-fund/main/#how-to-contribute"&gt;How to Contribute&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/ai-hedge-fund/main/#feature-requests"&gt;Feature Requests&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/ai-hedge-fund/main/#license"&gt;License&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How to Install&lt;/h2&gt; 
+&lt;p&gt;Before you can run the AI Hedge Fund, you'll need to install it and set up your API keys. These steps are common to both the full-stack web application and command line interface.&lt;/p&gt; 
+&lt;h3&gt;1. Clone the Repository&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/virattt/ai-hedge-fund.git
+cd ai-hedge-fund
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;2. Set up API keys&lt;/h3&gt; 
+&lt;p&gt;Create a &lt;code&gt;.env&lt;/code&gt; file for your API keys:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Create .env file for your API keys (in the root directory)
+cp .env.example .env
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Open and edit the &lt;code&gt;.env&lt;/code&gt; file to add your API keys:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# For running LLMs hosted by openai (gpt-4o, gpt-4o-mini, etc.)
+OPENAI_API_KEY=your-openai-api-key
+
+# For getting financial data to power the hedge fund
+FINANCIAL_DATASETS_API_KEY=your-financial-datasets-api-key
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Important&lt;/strong&gt;: You must set at least one LLM API key (e.g. &lt;code&gt;OPENAI_API_KEY&lt;/code&gt;, &lt;code&gt;GROQ_API_KEY&lt;/code&gt;, &lt;code&gt;ANTHROPIC_API_KEY&lt;/code&gt;, or &lt;code&gt;DEEPSEEK_API_KEY&lt;/code&gt;) for the hedge fund to work.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Financial Data&lt;/strong&gt;: Data for AAPL, GOOGL, MSFT, NVDA, and TSLA is free and does not require an API key. For any other ticker, you will need to set the &lt;code&gt;FINANCIAL_DATASETS_API_KEY&lt;/code&gt; in the .env file.&lt;/p&gt; 
+&lt;h2&gt;How to Run&lt;/h2&gt; 
+&lt;h3&gt;⌨️ Command Line Interface&lt;/h3&gt; 
+&lt;p&gt;You can run the AI Hedge Fund directly via terminal. This approach offers more granular control and is useful for automation, scripting, and integration purposes.&lt;/p&gt; 
+&lt;img width="992" alt="Screenshot 2025-01-06 at 5 50 17 PM" src="https://github.com/user-attachments/assets/e8ca04bf-9989-4a7d-a8b4-34e04666663b" /&gt; 
+&lt;h4&gt;Quick Start&lt;/h4&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Install Poetry (if not already installed):&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -sSL https://install.python-poetry.org | python3 -
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Install dependencies:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Run the AI Hedge Fund&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry run python src/main.py --ticker AAPL,MSFT,NVDA
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can also specify a &lt;code&gt;--ollama&lt;/code&gt; flag to run the AI hedge fund using local LLMs.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry run python src/main.py --ticker AAPL,MSFT,NVDA --ollama
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can optionally specify the start and end dates to make decisions over a specific time period.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry run python src/main.py --ticker AAPL,MSFT,NVDA --start-date 2024-01-01 --end-date 2024-03-01
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Run the Backtester&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry run python src/backtester.py --ticker AAPL,MSFT,NVDA
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Example Output:&lt;/strong&gt; &lt;img width="941" alt="Screenshot 2025-01-06 at 5 47 52 PM" src="https://github.com/user-attachments/assets/00e794ea-8628-44e6-9a84-8f8a31ad3b47" /&gt;&lt;/p&gt; 
+&lt;p&gt;Note: The &lt;code&gt;--ollama&lt;/code&gt;, &lt;code&gt;--start-date&lt;/code&gt;, and &lt;code&gt;--end-date&lt;/code&gt; flags work for the backtester, as well!&lt;/p&gt; 
+&lt;h3&gt;🖥️ Web Application&lt;/h3&gt; 
+&lt;p&gt;The new way to run the AI Hedge Fund is through our web application that provides a user-friendly interface. This is recommended for users who prefer visual interfaces over command line tools.&lt;/p&gt; 
+&lt;p&gt;Please see detailed instructions on how to install and run the web application &lt;a href="https://github.com/virattt/ai-hedge-fund/tree/main/app"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;img width="1721" alt="Screenshot 2025-06-28 at 6 41 03 PM" src="https://github.com/user-attachments/assets/b95ab696-c9f4-416c-9ad1-51feb1f5374b" /&gt; 
+&lt;h2&gt;How to Contribute&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork the repository&lt;/li&gt; 
+ &lt;li&gt;Create a feature branch&lt;/li&gt; 
+ &lt;li&gt;Commit your changes&lt;/li&gt; 
+ &lt;li&gt;Push to the branch&lt;/li&gt; 
+ &lt;li&gt;Create a Pull Request&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Important&lt;/strong&gt;: Please keep your pull requests small and focused. This will make it easier to review and merge.&lt;/p&gt; 
+&lt;h2&gt;Feature Requests&lt;/h2&gt; 
+&lt;p&gt;If you have a feature request, please open an &lt;a href="https://github.com/virattt/ai-hedge-fund/issues"&gt;issue&lt;/a&gt; and make sure it is tagged with &lt;code&gt;enhancement&lt;/code&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the MIT License - see the LICENSE file for details.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>v2fly/domain-list-community</title>
+      <link>https://github.com/v2fly/domain-list-community</link>
+      <description>&lt;p&gt;Community managed domain list. Generate geosite.dat for V2Ray.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Domain list community&lt;/h1&gt; 
+&lt;p&gt;This project manages a list of domains, to be used as geosites for routing purpose in Project V.&lt;/p&gt; 
+&lt;h2&gt;Purpose of this project&lt;/h2&gt; 
+&lt;p&gt;This project is not opinionated. In other words, it does NOT endorse, claim or imply that a domain should be blocked or proxied. It can be used to generate routing rules on demand.&lt;/p&gt; 
+&lt;h2&gt;Download links&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;dlc.dat&lt;/strong&gt;：&lt;a href="https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat"&gt;https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;dlc.dat.sha256sum&lt;/strong&gt;：&lt;a href="https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat.sha256sum"&gt;https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat.sha256sum&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Usage example&lt;/h2&gt; 
+&lt;p&gt;Each file in the &lt;code&gt;data&lt;/code&gt; directory can be used as a rule in this format: &lt;code&gt;geosite:filename&lt;/code&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;"routing": {
+  "domainStrategy": "IPIfNonMatch",
+  "rules": [
+    {
+      "type": "field",
+      "outboundTag": "Reject",
+      "domain": [
+        "geosite:category-ads-all",
+        "geosite:category-porn"
+      ]
+    },
+    {
+      "type": "field",
+      "outboundTag": "Direct",
+      "domain": [
+        "domain:icloud.com",
+        "domain:icloud-content.com",
+        "domain:cdn-apple.com",
+        "geosite:cn",
+        "geosite:private"
+      ]
+    },
+    {
+      "type": "field",
+      "outboundTag": "Proxy-1",
+      "domain": [
+        "geosite:category-anticensorship",
+        "geosite:category-media",
+        "geosite:category-vpnservices"
+      ]
+    },
+    {
+      "type": "field",
+      "outboundTag": "Proxy-2",
+      "domain": [
+        "geosite:category-dev"
+      ]
+    },
+    {
+      "type": "field",
+      "outboundTag": "Proxy-3",
+      "domain": [
+        "geosite:geolocation-!cn"
+      ]
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Generate &lt;code&gt;dlc.dat&lt;/code&gt; manually&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Install &lt;code&gt;golang&lt;/code&gt; and &lt;code&gt;git&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Clone project code: &lt;code&gt;git clone https://github.com/v2fly/domain-list-community.git&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Navigate to project root directory: &lt;code&gt;cd domain-list-community&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Install project dependencies: &lt;code&gt;go mod download&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Generate &lt;code&gt;dlc.dat&lt;/code&gt; (without &lt;code&gt;datapath&lt;/code&gt; option means to use domain lists in &lt;code&gt;data&lt;/code&gt; directory of current working directory): 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;code&gt;go run ./&lt;/code&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;go run ./ --datapath=/path/to/your/custom/data/directory&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Run &lt;code&gt;go run ./ --help&lt;/code&gt; for more usage information.&lt;/p&gt; 
+&lt;h2&gt;Structure of data&lt;/h2&gt; 
+&lt;p&gt;All data are under &lt;code&gt;data&lt;/code&gt; directory. Each file in the directory represents a sub-list of domains, named by the file name. File content is in the following format.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;# comments
+include:another-file
+domain:google.com @attr1 @attr2
+keyword:google
+regexp:www\.google\.com$
+full:www.google.com
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Syntax:&lt;/strong&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;The following types of rules are &lt;strong&gt;NOT&lt;/strong&gt; fully compatible with the ones that defined by user in V2Ray config file. Do &lt;strong&gt;Not&lt;/strong&gt; copy and paste directly.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Comment begins with &lt;code&gt;#&lt;/code&gt;. It may begin anywhere in the file. The content in the line after &lt;code&gt;#&lt;/code&gt; is treated as comment and ignored in production.&lt;/li&gt; 
+ &lt;li&gt;Inclusion begins with &lt;code&gt;include:&lt;/code&gt;, followed by the file name of an existing file in the same directory.&lt;/li&gt; 
+ &lt;li&gt;Subdomain begins with &lt;code&gt;domain:&lt;/code&gt;, followed by a valid domain name. The prefix &lt;code&gt;domain:&lt;/code&gt; may be omitted.&lt;/li&gt; 
+ &lt;li&gt;Keyword begins with &lt;code&gt;keyword:&lt;/code&gt;, followed by a string.&lt;/li&gt; 
+ &lt;li&gt;Regular expression begins with &lt;code&gt;regexp:&lt;/code&gt;, followed by a valid regular expression (per Golang's standard).&lt;/li&gt; 
+ &lt;li&gt;Full domain begins with &lt;code&gt;full:&lt;/code&gt;, followed by a complete and valid domain name.&lt;/li&gt; 
+ &lt;li&gt;Domains (including &lt;code&gt;domain&lt;/code&gt;, &lt;code&gt;keyword&lt;/code&gt;, &lt;code&gt;regexp&lt;/code&gt; and &lt;code&gt;full&lt;/code&gt;) may have one or more attributes. Each attribute begins with &lt;code&gt;@&lt;/code&gt; and followed by the name of the attribute.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Adding new &lt;code&gt;regexp&lt;/code&gt; and &lt;code&gt;keyword&lt;/code&gt; rules is discouraged because it is easy to use them incorrectly, and proxy software cannot efficiently match these types of rules.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;How it works&lt;/h2&gt; 
+&lt;p&gt;The entire &lt;code&gt;data&lt;/code&gt; directory will be built into an external &lt;code&gt;geosite&lt;/code&gt; file for Project V. Each file in the directory represents a section in the generated file.&lt;/p&gt; 
+&lt;p&gt;To generate a section:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Remove all the comments in the file.&lt;/li&gt; 
+ &lt;li&gt;Replace &lt;code&gt;include:&lt;/code&gt; lines with the actual content of the file.&lt;/li&gt; 
+ &lt;li&gt;Omit all empty lines.&lt;/li&gt; 
+ &lt;li&gt;Generate each &lt;code&gt;domain:&lt;/code&gt; line into a &lt;a href="https://github.com/v2fly/v2ray-core/raw/master/app/router/routercommon/common.proto#L21"&gt;sub-domain routing rule&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Generate each &lt;code&gt;full:&lt;/code&gt; line into a &lt;a href="https://github.com/v2fly/v2ray-core/raw/master/app/router/routercommon/common.proto#L23"&gt;full domain routing rule&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Generate each &lt;code&gt;keyword:&lt;/code&gt; line into a &lt;a href="https://github.com/v2fly/v2ray-core/raw/master/app/router/routercommon/common.proto#L17"&gt;plain domain routing rule&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Generate each &lt;code&gt;regexp:&lt;/code&gt; line into a &lt;a href="https://github.com/v2fly/v2ray-core/raw/master/app/router/routercommon/common.proto#L19"&gt;regex domain routing rule&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;How to organize domains&lt;/h2&gt; 
+&lt;h3&gt;File name&lt;/h3&gt; 
+&lt;p&gt;Theoretically any string can be used as the name, as long as it is a valid file name. In practice, we prefer names for determinic group of domains, such as the owner (usually a company name) of the domains, e.g., "google", "netflix". Names with unclear scope are generally unrecommended, such as "evil", or "local".&lt;/p&gt; 
+&lt;h3&gt;Attributes&lt;/h3&gt; 
+&lt;p&gt;Attribute is useful for sub-group of domains, especially for filtering purpose. For example, the list of &lt;code&gt;google&lt;/code&gt; domains may contains its main domains, as well as domains that serve ads. The ads domains may be marked by attribute &lt;code&gt;@ads&lt;/code&gt;, and can be used as &lt;code&gt;geosite:google@ads&lt;/code&gt; in V2Ray routing.&lt;/p&gt; 
+&lt;h2&gt;Contribution guideline&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fork this repo, make modifications to your own repo, file a PR.&lt;/li&gt; 
+ &lt;li&gt;Please begin with small size PRs, say modification in a single file.&lt;/li&gt; 
+ &lt;li&gt;A PR must be reviewed and approved by another member.&lt;/li&gt; 
+ &lt;li&gt;A script will verify your pull request to test whether your PR is correct or not every time you update the PR. Only the PR which passes the test will be merged. Please go to the Action label to get detailed information if you didn't pass it. We also provide the file which has been generated to make you test.&lt;/li&gt; 
+ &lt;li&gt;After a few successful PRs, you may apply for manager access to this repository.&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>AUTOMATIC1111/stable-diffusion-webui</title>
+      <link>https://github.com/AUTOMATIC1111/stable-diffusion-webui</link>
+      <description>&lt;p&gt;Stable Diffusion web UI&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Stable Diffusion web UI&lt;/h1&gt; 
+&lt;p&gt;A web interface for Stable Diffusion, implemented using Gradio library.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/screenshot.png" alt="" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features"&gt;Detailed feature showcase with images&lt;/a&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Original txt2img and img2img modes&lt;/li&gt; 
+ &lt;li&gt;One click install and run script (but you still must install python and git)&lt;/li&gt; 
+ &lt;li&gt;Outpainting&lt;/li&gt; 
+ &lt;li&gt;Inpainting&lt;/li&gt; 
+ &lt;li&gt;Color Sketch&lt;/li&gt; 
+ &lt;li&gt;Prompt Matrix&lt;/li&gt; 
+ &lt;li&gt;Stable Diffusion Upscale&lt;/li&gt; 
+ &lt;li&gt;Attention, specify parts of text that the model should pay more attention to 
+  &lt;ul&gt; 
+   &lt;li&gt;a man in a &lt;code&gt;((tuxedo))&lt;/code&gt; - will pay more attention to tuxedo&lt;/li&gt; 
+   &lt;li&gt;a man in a &lt;code&gt;(tuxedo:1.21)&lt;/code&gt; - alternative syntax&lt;/li&gt; 
+   &lt;li&gt;select text and press &lt;code&gt;Ctrl+Up&lt;/code&gt; or &lt;code&gt;Ctrl+Down&lt;/code&gt; (or &lt;code&gt;Command+Up&lt;/code&gt; or &lt;code&gt;Command+Down&lt;/code&gt; if you're on a MacOS) to automatically adjust attention to selected text (code contributed by anonymous user)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Loopback, run img2img processing multiple times&lt;/li&gt; 
+ &lt;li&gt;X/Y/Z plot, a way to draw a 3 dimensional plot of images with different parameters&lt;/li&gt; 
+ &lt;li&gt;Textual Inversion 
+  &lt;ul&gt; 
+   &lt;li&gt;have as many embeddings as you want and use any names you like for them&lt;/li&gt; 
+   &lt;li&gt;use multiple embeddings with different numbers of vectors per token&lt;/li&gt; 
+   &lt;li&gt;works with half precision floating point numbers&lt;/li&gt; 
+   &lt;li&gt;train embeddings on 8GB (also reports of 6GB working)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Extras tab with: 
+  &lt;ul&gt; 
+   &lt;li&gt;GFPGAN, neural network that fixes faces&lt;/li&gt; 
+   &lt;li&gt;CodeFormer, face restoration tool as an alternative to GFPGAN&lt;/li&gt; 
+   &lt;li&gt;RealESRGAN, neural network upscaler&lt;/li&gt; 
+   &lt;li&gt;ESRGAN, neural network upscaler with a lot of third party models&lt;/li&gt; 
+   &lt;li&gt;SwinIR and Swin2SR (&lt;a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2092"&gt;see here&lt;/a&gt;), neural network upscalers&lt;/li&gt; 
+   &lt;li&gt;LDSR, Latent diffusion super resolution upscaling&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Resizing aspect ratio options&lt;/li&gt; 
+ &lt;li&gt;Sampling method selection 
+  &lt;ul&gt; 
+   &lt;li&gt;Adjust sampler eta values (noise multiplier)&lt;/li&gt; 
+   &lt;li&gt;More advanced noise setting options&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Interrupt processing at any time&lt;/li&gt; 
+ &lt;li&gt;4GB video card support (also reports of 2GB working)&lt;/li&gt; 
+ &lt;li&gt;Correct seeds for batches&lt;/li&gt; 
+ &lt;li&gt;Live prompt token length validation&lt;/li&gt; 
+ &lt;li&gt;Generation parameters 
+  &lt;ul&gt; 
+   &lt;li&gt;parameters you used to generate images are saved with that image&lt;/li&gt; 
+   &lt;li&gt;in PNG chunks for PNG, in EXIF for JPEG&lt;/li&gt; 
+   &lt;li&gt;can drag the image to PNG info tab to restore generation parameters and automatically copy them into UI&lt;/li&gt; 
+   &lt;li&gt;can be disabled in settings&lt;/li&gt; 
+   &lt;li&gt;drag and drop an image/text-parameters to promptbox&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Read Generation Parameters Button, loads parameters in promptbox to UI&lt;/li&gt; 
+ &lt;li&gt;Settings page&lt;/li&gt; 
+ &lt;li&gt;Running arbitrary python code from UI (must run with &lt;code&gt;--allow-code&lt;/code&gt; to enable)&lt;/li&gt; 
+ &lt;li&gt;Mouseover hints for most UI elements&lt;/li&gt; 
+ &lt;li&gt;Possible to change defaults/mix/max/step values for UI elements via text config&lt;/li&gt; 
+ &lt;li&gt;Tiling support, a checkbox to create images that can be tiled like textures&lt;/li&gt; 
+ &lt;li&gt;Progress bar and live image generation preview 
+  &lt;ul&gt; 
+   &lt;li&gt;Can use a separate neural network to produce previews with almost none VRAM or compute requirement&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Negative prompt, an extra text field that allows you to list what you don't want to see in generated image&lt;/li&gt; 
+ &lt;li&gt;Styles, a way to save part of prompt and easily apply them via dropdown later&lt;/li&gt; 
+ &lt;li&gt;Variations, a way to generate same image but with tiny differences&lt;/li&gt; 
+ &lt;li&gt;Seed resizing, a way to generate same image but at slightly different resolution&lt;/li&gt; 
+ &lt;li&gt;CLIP interrogator, a button that tries to guess prompt from an image&lt;/li&gt; 
+ &lt;li&gt;Prompt Editing, a way to change prompt mid-generation, say to start making a watermelon and switch to anime girl midway&lt;/li&gt; 
+ &lt;li&gt;Batch Processing, process a group of files using img2img&lt;/li&gt; 
+ &lt;li&gt;Img2img Alternative, reverse Euler method of cross attention control&lt;/li&gt; 
+ &lt;li&gt;Highres Fix, a convenience option to produce high resolution pictures in one click without usual distortions&lt;/li&gt; 
+ &lt;li&gt;Reloading checkpoints on the fly&lt;/li&gt; 
+ &lt;li&gt;Checkpoint Merger, a tab that allows you to merge up to 3 checkpoints into one&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts"&gt;Custom scripts&lt;/a&gt; with many extensions from community&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://energy-based-model.github.io/Compositional-Visual-Generation-with-Composable-Diffusion-Models/"&gt;Composable-Diffusion&lt;/a&gt;, a way to use multiple prompts at once 
+  &lt;ul&gt; 
+   &lt;li&gt;separate prompts using uppercase &lt;code&gt;AND&lt;/code&gt;&lt;/li&gt; 
+   &lt;li&gt;also supports weights for prompts: &lt;code&gt;a cat :1.2 AND a dog AND a penguin :2.2&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;No token limit for prompts (original stable diffusion lets you use up to 75 tokens)&lt;/li&gt; 
+ &lt;li&gt;DeepDanbooru integration, creates danbooru style tags for anime prompts&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Xformers"&gt;xformers&lt;/a&gt;, major speed increase for select cards: (add &lt;code&gt;--xformers&lt;/code&gt; to commandline args)&lt;/li&gt; 
+ &lt;li&gt;via extension: &lt;a href="https://github.com/yfszzx/stable-diffusion-webui-images-browser"&gt;History tab&lt;/a&gt;: view, direct and delete images conveniently within the UI&lt;/li&gt; 
+ &lt;li&gt;Generate forever option&lt;/li&gt; 
+ &lt;li&gt;Training tab 
+  &lt;ul&gt; 
+   &lt;li&gt;hypernetworks and embeddings options&lt;/li&gt; 
+   &lt;li&gt;Preprocessing images: cropping, mirroring, autotagging using BLIP or deepdanbooru (for anime)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Clip skip&lt;/li&gt; 
+ &lt;li&gt;Hypernetworks&lt;/li&gt; 
+ &lt;li&gt;Loras (same as Hypernetworks but more pretty)&lt;/li&gt; 
+ &lt;li&gt;A separate UI where you can choose, with preview, which embeddings, hypernetworks or Loras to add to your prompt&lt;/li&gt; 
+ &lt;li&gt;Can select to load a different VAE from settings screen&lt;/li&gt; 
+ &lt;li&gt;Estimated completion time in progress bar&lt;/li&gt; 
+ &lt;li&gt;API&lt;/li&gt; 
+ &lt;li&gt;Support for dedicated &lt;a href="https://github.com/runwayml/stable-diffusion#inpainting-with-stable-diffusion"&gt;inpainting model&lt;/a&gt; by RunwayML&lt;/li&gt; 
+ &lt;li&gt;via extension: &lt;a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients"&gt;Aesthetic Gradients&lt;/a&gt;, a way to generate images with a specific aesthetic by using clip images embeds (implementation of &lt;a href="https://github.com/vicgalle/stable-diffusion-aesthetic-gradients"&gt;https://github.com/vicgalle/stable-diffusion-aesthetic-gradients&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/Stability-AI/stablediffusion"&gt;Stable Diffusion 2.0&lt;/a&gt; support - see &lt;a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#stable-diffusion-20"&gt;wiki&lt;/a&gt; for instructions&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://arxiv.org/abs/2211.06679"&gt;Alt-Diffusion&lt;/a&gt; support - see &lt;a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#alt-diffusion"&gt;wiki&lt;/a&gt; for instructions&lt;/li&gt; 
+ &lt;li&gt;Now without any bad letters!&lt;/li&gt; 
+ &lt;li&gt;Load checkpoints in safetensors format&lt;/li&gt; 
+ &lt;li&gt;Eased resolution restriction: generated image's dimensions must be a multiple of 8 rather than 64&lt;/li&gt; 
+ &lt;li&gt;Now with a license!&lt;/li&gt; 
+ &lt;li&gt;Reorder elements in the UI from settings screen&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://huggingface.co/segmind/SSD-1B"&gt;Segmind Stable Diffusion&lt;/a&gt; support&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Installation and Running&lt;/h2&gt; 
+&lt;p&gt;Make sure the required &lt;a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies"&gt;dependencies&lt;/a&gt; are met and follow the instructions available for:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs"&gt;NVidia&lt;/a&gt; (recommended)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-AMD-GPUs"&gt;AMD&lt;/a&gt; GPUs.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/openvinotoolkit/stable-diffusion-webui/wiki/Installation-on-Intel-Silicon"&gt;Intel CPUs, Intel GPUs (both integrated and discrete)&lt;/a&gt; (external wiki page)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/wangshuai09/stable-diffusion-webui/wiki/Install-and-run-on-Ascend-NPUs"&gt;Ascend NPUs&lt;/a&gt; (external wiki page)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Alternatively, use online services (like Google Colab):&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Online-Services"&gt;List of Online Services&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Installation on Windows 10/11 with NVidia-GPUs using release package&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Download &lt;code&gt;sd.webui.zip&lt;/code&gt; from &lt;a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/releases/tag/v1.0.0-pre"&gt;v1.0.0-pre&lt;/a&gt; and extract its contents.&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;update.bat&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;run.bat&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;For more details see &lt;a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs"&gt;Install-and-Run-on-NVidia-GPUs&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Automatic Installation on Windows&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Install &lt;a href="https://www.python.org/downloads/release/python-3106/"&gt;Python 3.10.6&lt;/a&gt; (Newer version of Python does not support torch), checking "Add Python to PATH".&lt;/li&gt; 
+ &lt;li&gt;Install &lt;a href="https://git-scm.com/download/win"&gt;git&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Download the stable-diffusion-webui repository, for example by running &lt;code&gt;git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;webui-user.bat&lt;/code&gt; from Windows Explorer as normal, non-administrator, user.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Automatic Installation on Linux&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Install the dependencies:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Debian-based:
+sudo apt install wget git python3 python3-venv libgl1 libglib2.0-0
+# Red Hat-based:
+sudo dnf install wget git python3 gperftools-libs libglvnd-glx
+# openSUSE-based:
+sudo zypper install wget git python3 libtcmalloc4 libglvnd
+# Arch-based:
+sudo pacman -S wget git python3
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If your system is very new, you need to install python3.11 or python3.10:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Ubuntu 24.04
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.11
+
+# Manjaro/Arch
+sudo pacman -S yay
+yay -S python311 # do not confuse with python3.11 package
+
+# Only for 3.11
+# Then set up env variable in launch script
+export python_cmd="python3.11"
+# or in webui-user.sh
+python_cmd="python3.11"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Navigate to the directory you would like the webui to be installed and execute the following command:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;wget -q https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Or just clone the repo wherever you want:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;Run &lt;code&gt;webui.sh&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;Check &lt;code&gt;webui-user.sh&lt;/code&gt; for options.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Installation on Apple Silicon&lt;/h3&gt; 
+&lt;p&gt;Find the instructions &lt;a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Installation-on-Apple-Silicon"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Here's how to add code to this repo: &lt;a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Contributing"&gt;Contributing&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;The documentation was moved from this README over to the project's &lt;a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki"&gt;wiki&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;For the purposes of getting Google and other search engines to crawl the wiki, here's a link to the (not for humans) &lt;a href="https://github-wiki-see.page/m/AUTOMATIC1111/stable-diffusion-webui/wiki"&gt;crawlable wiki&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Credits&lt;/h2&gt; 
+&lt;p&gt;Licenses for borrowed code can be found in &lt;code&gt;Settings -&amp;gt; Licenses&lt;/code&gt; screen, and also in &lt;code&gt;html/licenses.html&lt;/code&gt; file.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Stable Diffusion - &lt;a href="https://github.com/Stability-AI/stablediffusion"&gt;https://github.com/Stability-AI/stablediffusion&lt;/a&gt;, &lt;a href="https://github.com/CompVis/taming-transformers"&gt;https://github.com/CompVis/taming-transformers&lt;/a&gt;, &lt;a href="https://github.com/mcmonkey4eva/sd3-ref"&gt;https://github.com/mcmonkey4eva/sd3-ref&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;k-diffusion - &lt;a href="https://github.com/crowsonkb/k-diffusion.git"&gt;https://github.com/crowsonkb/k-diffusion.git&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Spandrel - &lt;a href="https://github.com/chaiNNer-org/spandrel"&gt;https://github.com/chaiNNer-org/spandrel&lt;/a&gt; implementing 
+  &lt;ul&gt; 
+   &lt;li&gt;GFPGAN - &lt;a href="https://github.com/TencentARC/GFPGAN.git"&gt;https://github.com/TencentARC/GFPGAN.git&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;CodeFormer - &lt;a href="https://github.com/sczhou/CodeFormer"&gt;https://github.com/sczhou/CodeFormer&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;ESRGAN - &lt;a href="https://github.com/xinntao/ESRGAN"&gt;https://github.com/xinntao/ESRGAN&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;SwinIR - &lt;a href="https://github.com/JingyunLiang/SwinIR"&gt;https://github.com/JingyunLiang/SwinIR&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;Swin2SR - &lt;a href="https://github.com/mv-lab/swin2sr"&gt;https://github.com/mv-lab/swin2sr&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;LDSR - &lt;a href="https://github.com/Hafiidz/latent-diffusion"&gt;https://github.com/Hafiidz/latent-diffusion&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;MiDaS - &lt;a href="https://github.com/isl-org/MiDaS"&gt;https://github.com/isl-org/MiDaS&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Ideas for optimizations - &lt;a href="https://github.com/basujindal/stable-diffusion"&gt;https://github.com/basujindal/stable-diffusion&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Cross Attention layer optimization - Doggettx - &lt;a href="https://github.com/Doggettx/stable-diffusion"&gt;https://github.com/Doggettx/stable-diffusion&lt;/a&gt;, original idea for prompt editing.&lt;/li&gt; 
+ &lt;li&gt;Cross Attention layer optimization - InvokeAI, lstein - &lt;a href="https://github.com/invoke-ai/InvokeAI"&gt;https://github.com/invoke-ai/InvokeAI&lt;/a&gt; (originally &lt;a href="http://github.com/lstein/stable-diffusion"&gt;http://github.com/lstein/stable-diffusion&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;Sub-quadratic Cross Attention layer optimization - Alex Birch (&lt;a href="https://github.com/Birch-san/diffusers/pull/1"&gt;https://github.com/Birch-san/diffusers/pull/1&lt;/a&gt;), Amin Rezaei (&lt;a href="https://github.com/AminRezaei0x443/memory-efficient-attention"&gt;https://github.com/AminRezaei0x443/memory-efficient-attention&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;Textual Inversion - Rinon Gal - &lt;a href="https://github.com/rinongal/textual_inversion"&gt;https://github.com/rinongal/textual_inversion&lt;/a&gt; (we're not using his code, but we are using his ideas).&lt;/li&gt; 
+ &lt;li&gt;Idea for SD upscale - &lt;a href="https://github.com/jquesnelle/txt2imghd"&gt;https://github.com/jquesnelle/txt2imghd&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Noise generation for outpainting mk2 - &lt;a href="https://github.com/parlance-zz/g-diffuser-bot"&gt;https://github.com/parlance-zz/g-diffuser-bot&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;CLIP interrogator idea and borrowing some code - &lt;a href="https://github.com/pharmapsychotic/clip-interrogator"&gt;https://github.com/pharmapsychotic/clip-interrogator&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Idea for Composable Diffusion - &lt;a href="https://github.com/energy-based-model/Compositional-Visual-Generation-with-Composable-Diffusion-Models-PyTorch"&gt;https://github.com/energy-based-model/Compositional-Visual-Generation-with-Composable-Diffusion-Models-PyTorch&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;xformers - &lt;a href="https://github.com/facebookresearch/xformers"&gt;https://github.com/facebookresearch/xformers&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;DeepDanbooru - interrogator for anime diffusers &lt;a href="https://github.com/KichangKim/DeepDanbooru"&gt;https://github.com/KichangKim/DeepDanbooru&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Sampling in float32 precision from a float16 UNet - marunine for the idea, Birch-san for the example Diffusers implementation (&lt;a href="https://github.com/Birch-san/diffusers-play/tree/92feee6"&gt;https://github.com/Birch-san/diffusers-play/tree/92feee6&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;Instruct pix2pix - Tim Brooks (star), Aleksander Holynski (star), Alexei A. Efros (no star) - &lt;a href="https://github.com/timothybrooks/instruct-pix2pix"&gt;https://github.com/timothybrooks/instruct-pix2pix&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Security advice - RyotaK&lt;/li&gt; 
+ &lt;li&gt;UniPC sampler - Wenliang Zhao - &lt;a href="https://github.com/wl-zhao/UniPC"&gt;https://github.com/wl-zhao/UniPC&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;TAESD - Ollin Boer Bohan - &lt;a href="https://github.com/madebyollin/taesd"&gt;https://github.com/madebyollin/taesd&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;LyCORIS - KohakuBlueleaf&lt;/li&gt; 
+ &lt;li&gt;Restart sampling - lambertae - &lt;a href="https://github.com/Newbeeer/diffusion_restart_sampling"&gt;https://github.com/Newbeeer/diffusion_restart_sampling&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Hypertile - tfernd - &lt;a href="https://github.com/tfernd/HyperTile"&gt;https://github.com/tfernd/HyperTile&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Initial Gradio script - posted on 4chan by an Anonymous user. Thank you Anonymous user.&lt;/li&gt; 
+ &lt;li&gt;(You)&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>LadybirdBrowser/ladybird</title>
+      <link>https://github.com/LadybirdBrowser/ladybird</link>
+      <description>&lt;p&gt;Truly independent web browser&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Ladybird&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://ladybird.org"&gt;Ladybird&lt;/a&gt; is a truly independent web browser, using a novel engine based on web standards.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!IMPORTANT] Ladybird is in a pre-alpha state, and only suitable for use by developers&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;p&gt;We aim to build a complete, usable browser for the modern web.&lt;/p&gt; 
+&lt;p&gt;Ladybird uses a multi-process architecture with a main UI process, several WebContent renderer processes, an ImageDecoder process, and a RequestServer process.&lt;/p&gt; 
+&lt;p&gt;Image decoding and network connections are done out of process to be more robust against malicious content. Each tab has its own renderer process, which is sandboxed from the rest of the system.&lt;/p&gt; 
+&lt;p&gt;At the moment, many core library support components are inherited from SerenityOS:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;LibWeb: Web rendering engine&lt;/li&gt; 
+ &lt;li&gt;LibJS: JavaScript engine&lt;/li&gt; 
+ &lt;li&gt;LibWasm: WebAssembly implementation&lt;/li&gt; 
+ &lt;li&gt;LibCrypto/LibTLS: Cryptography primitives and Transport Layer Security&lt;/li&gt; 
+ &lt;li&gt;LibHTTP: HTTP/1.1 client&lt;/li&gt; 
+ &lt;li&gt;LibGfx: 2D Graphics Library, Image Decoding and Rendering&lt;/li&gt; 
+ &lt;li&gt;LibUnicode: Unicode and locale support&lt;/li&gt; 
+ &lt;li&gt;LibMedia: Audio and video playback&lt;/li&gt; 
+ &lt;li&gt;LibCore: Event loop, OS abstraction layer&lt;/li&gt; 
+ &lt;li&gt;LibIPC: Inter-process communication&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How do I build and run this?&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/LadybirdBrowser/ladybird/master/Documentation/BuildInstructionsLadybird.md"&gt;build instructions&lt;/a&gt; for information on how to build Ladybird.&lt;/p&gt; 
+&lt;p&gt;Ladybird runs on Linux, macOS, Windows (with WSL2), and many other *Nixes.&lt;/p&gt; 
+&lt;h2&gt;How do I read the documentation?&lt;/h2&gt; 
+&lt;p&gt;Code-related documentation can be found in the &lt;a href="https://raw.githubusercontent.com/LadybirdBrowser/ladybird/master/Documentation/"&gt;documentation&lt;/a&gt; folder.&lt;/p&gt; 
+&lt;h2&gt;Get in touch and participate!&lt;/h2&gt; 
+&lt;p&gt;Join &lt;a href="https://discord.gg/nvfjVJ4Svh"&gt;our Discord server&lt;/a&gt; to participate in development discussion.&lt;/p&gt; 
+&lt;p&gt;Please read &lt;a href="https://raw.githubusercontent.com/LadybirdBrowser/ladybird/master/Documentation/GettingStartedContributing.md"&gt;Getting started contributing&lt;/a&gt; if you plan to contribute to Ladybird for the first time.&lt;/p&gt; 
+&lt;p&gt;Before opening an issue, please see the &lt;a href="https://raw.githubusercontent.com/LadybirdBrowser/ladybird/master/CONTRIBUTING.md#issue-policy"&gt;issue policy&lt;/a&gt; and the &lt;a href="https://raw.githubusercontent.com/LadybirdBrowser/ladybird/master/ISSUES.md"&gt;detailed issue-reporting guidelines&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;The full contribution guidelines can be found in &lt;a href="https://raw.githubusercontent.com/LadybirdBrowser/ladybird/master/CONTRIBUTING.md"&gt;&lt;code&gt;CONTRIBUTING.md&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Ladybird is licensed under a 2-clause BSD license.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>anthropics/skills</title>
+      <link>https://github.com/anthropics/skills</link>
+      <description>&lt;p&gt;Public repository for Agent Skills&lt;/p&gt;&lt;hr&gt;&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This repository contains Anthropic's implementation of skills for Claude. For information about the Agent Skills standard, see &lt;a href="http://agentskills.io"&gt;agentskills.io&lt;/a&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h1&gt;Skills&lt;/h1&gt; 
+&lt;p&gt;Skills are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks. Skills teach Claude how to complete specific tasks in a repeatable way, whether that's creating documents with your company's brand guidelines, analyzing data using your organization's specific workflows, or automating personal tasks.&lt;/p&gt; 
+&lt;p&gt;For more information, check out:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://support.claude.com/en/articles/12512176-what-are-skills"&gt;What are skills?&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://support.claude.com/en/articles/12512180-using-skills-in-claude"&gt;Using skills in Claude&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://support.claude.com/en/articles/12512198-creating-custom-skills"&gt;How to create custom skills&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills"&gt;Equipping agents for the real world with Agent Skills&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;About This Repository&lt;/h1&gt; 
+&lt;p&gt;This repository contains skills that demonstrate what's possible with Claude's skills system. These skills range from creative applications (art, music, design) to technical tasks (testing web apps, MCP server generation) to enterprise workflows (communications, branding, etc.).&lt;/p&gt; 
+&lt;p&gt;Each skill is self-contained in its own folder with a &lt;code&gt;SKILL.md&lt;/code&gt; file containing the instructions and metadata that Claude uses. Browse through these skills to get inspiration for your own skills or to understand different patterns and approaches.&lt;/p&gt; 
+&lt;p&gt;Many skills in this repo are open source (Apache 2.0). We've also included the document creation &amp;amp; editing skills that power &lt;a href="https://www.anthropic.com/news/create-files"&gt;Claude's document capabilities&lt;/a&gt; under the hood in the &lt;a href="https://raw.githubusercontent.com/anthropics/skills/main/skills/docx"&gt;&lt;code&gt;skills/docx&lt;/code&gt;&lt;/a&gt;, &lt;a href="https://raw.githubusercontent.com/anthropics/skills/main/skills/pdf"&gt;&lt;code&gt;skills/pdf&lt;/code&gt;&lt;/a&gt;, &lt;a href="https://raw.githubusercontent.com/anthropics/skills/main/skills/pptx"&gt;&lt;code&gt;skills/pptx&lt;/code&gt;&lt;/a&gt;, and &lt;a href="https://raw.githubusercontent.com/anthropics/skills/main/skills/xlsx"&gt;&lt;code&gt;skills/xlsx&lt;/code&gt;&lt;/a&gt; subfolders. These are source-available, not open source, but we wanted to share these with developers as a reference for more complex skills that are actively used in a production AI application.&lt;/p&gt; 
+&lt;h2&gt;Disclaimer&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;These skills are provided for demonstration and educational purposes only.&lt;/strong&gt; While some of these capabilities may be available in Claude, the implementations and behaviors you receive from Claude may differ from what is shown in these skills. These skills are meant to illustrate patterns and possibilities. Always test skills thoroughly in your own environment before relying on them for critical tasks.&lt;/p&gt; 
+&lt;h1&gt;Skill Sets&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/anthropics/skills/main/skills"&gt;./skills&lt;/a&gt;: Skill examples for Creative &amp;amp; Design, Development &amp;amp; Technical, Enterprise &amp;amp; Communication, and Document Skills&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/anthropics/skills/main/spec"&gt;./spec&lt;/a&gt;: The Agent Skills specification&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/anthropics/skills/main/template"&gt;./template&lt;/a&gt;: Skill template&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;Try in Claude Code, Claude.ai, and the API&lt;/h1&gt; 
+&lt;h2&gt;Claude Code&lt;/h2&gt; 
+&lt;p&gt;You can register this repository as a Claude Code Plugin marketplace by running the following command in Claude Code:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;/plugin marketplace add anthropics/skills
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then, to install a specific set of skills:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Select &lt;code&gt;Browse and install plugins&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Select &lt;code&gt;anthropic-agent-skills&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Select &lt;code&gt;document-skills&lt;/code&gt; or &lt;code&gt;example-skills&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Select &lt;code&gt;Install now&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;Alternatively, directly install either Plugin via:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;/plugin install document-skills@anthropic-agent-skills
+/plugin install example-skills@anthropic-agent-skills
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;After installing the plugin, you can use the skill by just mentioning it. For instance, if you install the &lt;code&gt;document-skills&lt;/code&gt; plugin from the marketplace, you can ask Claude Code to do something like: "Use the PDF skill to extract the form fields from &lt;code&gt;path/to/some-file.pdf&lt;/code&gt;"&lt;/p&gt; 
+&lt;h2&gt;Claude.ai&lt;/h2&gt; 
+&lt;p&gt;These example skills are all already available to paid plans in Claude.ai.&lt;/p&gt; 
+&lt;p&gt;To use any skill from this repository or upload custom skills, follow the instructions in &lt;a href="https://support.claude.com/en/articles/12512180-using-skills-in-claude#h_a4222fa77b"&gt;Using skills in Claude&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Claude API&lt;/h2&gt; 
+&lt;p&gt;You can use Anthropic's pre-built skills, and upload custom skills, via the Claude API. See the &lt;a href="https://docs.claude.com/en/api/skills-guide#creating-a-skill"&gt;Skills API Quickstart&lt;/a&gt; for more.&lt;/p&gt; 
+&lt;h1&gt;Creating a Basic Skill&lt;/h1&gt; 
+&lt;p&gt;Skills are simple to create - just a folder with a &lt;code&gt;SKILL.md&lt;/code&gt; file containing YAML frontmatter and instructions. You can use the &lt;strong&gt;template-skill&lt;/strong&gt; in this repository as a starting point:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-markdown"&gt;---
+name: my-skill-name
+description: A clear description of what this skill does and when to use it
+---
+
+# My Skill Name
+
+[Add your instructions here that Claude will follow when this skill is active]
+
+## Examples
+- Example usage 1
+- Example usage 2
+
+## Guidelines
+- Guideline 1
+- Guideline 2
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The frontmatter requires only two fields:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;name&lt;/code&gt; - A unique identifier for your skill (lowercase, hyphens for spaces)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;description&lt;/code&gt; - A complete description of what the skill does and when to use it&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The markdown content below contains the instructions, examples, and guidelines that Claude will follow. For more details, see &lt;a href="https://support.claude.com/en/articles/12512198-creating-custom-skills"&gt;How to create custom skills&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;Partner Skills&lt;/h1&gt; 
+&lt;p&gt;Skills are a great way to teach Claude how to get better at using specific pieces of software. As we see awesome example skills from partners, we may highlight some of them here:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Notion&lt;/strong&gt; - &lt;a href="https://www.notion.so/notiondevs/Notion-Skills-for-Claude-28da4445d27180c7af1df7d8615723d0"&gt;Notion Skills for Claude&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>danielmiessler/Personal_AI_Infrastructure</title>
+      <link>https://github.com/danielmiessler/Personal_AI_Infrastructure</link>
+      <description>&lt;p&gt;Personal AI Infrastructure for upgrading humans.&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="./pai-logo.png" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="./pai-logo.png" /&gt; 
+  &lt;img alt="PAI Logo" src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/pai-logo.png" width="600" /&gt; 
+ &lt;/picture&gt; 
+ &lt;br /&gt; 
+ &lt;br /&gt; 
+ &lt;h1&gt;Personal AI Infrastructure&lt;/h1&gt; 
+ &lt;h3&gt;Open-source scaffolding for building your own AI-powered operating system&lt;/h3&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;a href="https://github.com/danielmiessler/Personal_AI_Infrastructure/releases"&gt;&lt;img src="https://img.shields.io/badge/version-0.9.1-blue?style=for-the-badge" alt="Version" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://claude.ai/code"&gt;&lt;img src="https://img.shields.io/badge/Claude_Code-Powered-8B5CF6?style=for-the-badge" alt="Claude Code" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-quick-start"&gt;&lt;strong&gt;Quick Start&lt;/strong&gt;&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-documentation"&gt;&lt;strong&gt;Documentation&lt;/strong&gt;&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-examples"&gt;&lt;strong&gt;Examples&lt;/strong&gt;&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-updating-pai"&gt;&lt;strong&gt;Updating&lt;/strong&gt;&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-community"&gt;&lt;strong&gt;Community&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;a href="https://youtu.be/iKwRWwabkEc"&gt;&lt;img src="https://img.youtube.com/vi/iKwRWwabkEc/maxresdefault.jpg" alt="PAI Overview Video" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;&lt;a href="https://youtu.be/iKwRWwabkEc"&gt;Watch the full PAI walkthrough&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href="https://danielmiessler.com/blog/real-internet-of-things"&gt;Read: The Real Internet of Things&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+ &lt;hr /&gt; 
+ &lt;h1&gt;The best AI in the world should be available to everyone&lt;/h1&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="docs/images/pai-overview.png" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="docs/images/pai-overview.png" /&gt; 
+  &lt;img alt="PAI Architecture Overview" src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/pai-overview.png" width="800" /&gt; 
+ &lt;/picture&gt; 
+&lt;/div&gt; 
+&lt;p&gt;Right now the most powerful AI setups are being built inside companies for efficiency and profits.&lt;/p&gt; 
+&lt;p&gt;That's all good, but I think the purpose of technology is to serve humans—not the other way around. These new AI frameworks should be available to everyone, including people not in technology, so that regular people can use it to help them flourish.&lt;/p&gt; 
+&lt;p&gt;That's what PAI is. It's the foundation for building a Personal AI System that understands your larger goals and context, gets better over time, and that works for &lt;em&gt;you&lt;/em&gt; because it's &lt;em&gt;yours&lt;/em&gt;. Not some generic chatbot. Not some common assistant. A full platform for magnifying yourself and your impact on the world.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Related reading:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://danielmiessler.com/blog/real-internet-of-things"&gt;The Real Internet of Things&lt;/a&gt; — The vision behind PAI (full book)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://danielmiessler.com/blog/ai-predictable-path-7-components-2024"&gt;AI's Predictable Path: 7 Components&lt;/a&gt; — Visual walkthrough of where AI is heading&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;What is PAI?&lt;/h2&gt; 
+&lt;p&gt;PAI (Personal AI Infrastructure) is an open-source template for building your own AI-powered operating system. It's currently built on &lt;a href="https://claude.ai/code"&gt;Claude Code&lt;/a&gt;, but designed to be platform-independent — the architecture, skills, and workflows are structured so future migrations to other AI platforms are straightforward.&lt;/p&gt; 
+&lt;picture&gt; 
+ &lt;source media="(prefers-color-scheme: dark)" srcset="docs/images/pai-infrastructure.png" /&gt; 
+ &lt;source media="(prefers-color-scheme: light)" srcset="docs/images/pai-infrastructure.png" /&gt; 
+ &lt;img alt="PAI Infrastructure Architecture" src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/pai-infrastructure.png" width="800" /&gt; 
+&lt;/picture&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Component&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Skills&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Self-contained AI capabilities with routing, workflows, and documentation&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Agents&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Specialized AI personalities for different tasks (engineer, researcher, designer)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Hooks&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Event-driven automation that captures work and manages state&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;History&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Automatic documentation system (UOCS) that captures everything&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] &lt;strong&gt;Start clean, small, and simple.&lt;/strong&gt; Build the scaffolding that makes AI reliable.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;What's New in v0.9.0&lt;/h2&gt; 
+&lt;p&gt;Big updates! PAI is now fully &lt;strong&gt;platform-agnostic&lt;/strong&gt; — your AI identity, your system.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Feature&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;📊 &lt;strong&gt;Observability Dashboard&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Real-time agent monitoring with live charts&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;🎭 &lt;strong&gt;Genericized Identity&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Configure your DA name, it flows everywhere&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;⚙️ &lt;strong&gt;Better Configuration&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Clear docs for all environment variables&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;👉 &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-updates"&gt;&lt;strong&gt;See full changelog&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;🚀 Quick Start&lt;/h2&gt; 
+&lt;p&gt;Choose your platform:&lt;/p&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;🍎 macOS&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;1. Clone PAI&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/danielmiessler/PAI.git ~/PAI
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;2. Create Symlink&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;# Remove existing ~/.claude if present (backup first if needed)
+[ -d ~/.claude ] &amp;amp;&amp;amp; mv ~/.claude ~/.claude.backup
+ln -s ~/PAI/.claude ~/.claude
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;3. Run the Setup Wizard&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;~/.claude/Tools/setup/bootstrap.sh
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;4. Add Your API Keys&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;cp ~/.claude/.env.example ~/.claude/.env
+nano ~/.claude/.env
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;5. Start Claude Code&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;source ~/.zshrc  # Load PAI environment
+claude
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;🐧 Linux&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;1. Clone PAI&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/danielmiessler/PAI.git ~/PAI
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;2. Create Symlink&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;# Remove existing ~/.claude if present (backup first if needed)
+[ -d ~/.claude ] &amp;amp;&amp;amp; mv ~/.claude ~/.claude.backup
+ln -s ~/PAI/.claude ~/.claude
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;3. Run the Setup Wizard&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;~/.claude/Tools/setup/bootstrap.sh
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;4. Add Your API Keys&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;cp ~/.claude/.env.example ~/.claude/.env
+nano ~/.claude/.env
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;5. Start Claude Code&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;source ~/.bashrc  # Load PAI environment
+claude
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;🪟 Windows&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;1. Clone PAI&lt;/strong&gt; (PowerShell)&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-powershell"&gt;git clone https://github.com/danielmiessler/PAI.git $env:USERPROFILE\PAI
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;2. Create Symlink&lt;/strong&gt; (Run PowerShell as Administrator)&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-powershell"&gt;# Remove existing .claude if present (backup first if needed)
+if (Test-Path "$env:USERPROFILE\.claude") { Rename-Item "$env:USERPROFILE\.claude" "$env:USERPROFILE\.claude.backup" }
+New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude" -Target "$env:USERPROFILE\PAI\.claude"
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;3. Run the Setup Wizard&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-powershell"&gt;&amp;amp; "$env:USERPROFILE\.claude\tools\setup\bootstrap.ps1"
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;4. Add Your API Keys&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-powershell"&gt;Copy-Item "$env:USERPROFILE\.claude\.env.example" "$env:USERPROFILE\.claude\.env"
+notepad "$env:USERPROFILE\.claude\.env"
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;5. Start Claude Code&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-powershell"&gt;# Restart PowerShell to load environment, then:
+claude
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;br /&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] The setup wizard will configure your name, email, AI assistant name, and environment variables to customize to your environment.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;📚 For detailed setup, see &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/QUICKSTART.md"&gt;&lt;code&gt;docs/QUICKSTART.md&lt;/code&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;📚 Documentation&lt;/h2&gt; 
+&lt;p&gt;All documentation lives in the CORE skill (&lt;code&gt;.claude/Skills/CORE/&lt;/code&gt;):&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Document&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.claude/Skills/CORE/CONSTITUTION.md"&gt;&lt;strong&gt;CONSTITUTION.md&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;System philosophy, architecture, operating principles&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.claude/Skills/CORE/SkillSystem.md"&gt;&lt;strong&gt;SkillSystem.md&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;How to create your own skills&lt;/strong&gt; — the canonical skill structure guide&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.claude/Skills/CORE/SKILL.md"&gt;&lt;strong&gt;SKILL.md&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Main PAI skill with identity, preferences, quick reference&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.claude/Skills/CORE/HookSystem.md"&gt;HookSystem.md&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Event-driven automation&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.claude/Skills/CORE/HistorySystem.md"&gt;HistorySystem.md&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Automatic work documentation (UOCS)&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;Additional Reference&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;table&gt; 
+  &lt;thead&gt; 
+   &lt;tr&gt; 
+    &lt;th&gt;Document&lt;/th&gt; 
+    &lt;th&gt;Description&lt;/th&gt; 
+   &lt;/tr&gt; 
+  &lt;/thead&gt; 
+  &lt;tbody&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.claude/Skills/CORE/Prompting.md"&gt;Prompting.md&lt;/a&gt;&lt;/td&gt; 
+    &lt;td&gt;Prompt engineering patterns&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.claude/Skills/CORE/Aesthetic.md"&gt;Aesthetic.md&lt;/a&gt;&lt;/td&gt; 
+    &lt;td&gt;Visual design system&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.claude/voice-server/README.md"&gt;voice-server/README.md&lt;/a&gt;&lt;/td&gt; 
+    &lt;td&gt;Text-to-speech feedback&lt;/td&gt; 
+   &lt;/tr&gt; 
+  &lt;/tbody&gt; 
+ &lt;/table&gt; 
+&lt;/details&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;🎨 Examples&lt;/h2&gt; 
+&lt;p&gt;Explore example skills in &lt;code&gt;.claude/Skills/&lt;/code&gt;:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Skill&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Observability/&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Real-time agent monitoring dashboard with WebSocket streaming&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;BrightData/&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Four-tier progressive web scraping with automatic fallback&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Fabric/&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Native Fabric patterns&lt;/strong&gt; — 248 patterns run directly in Claude's context (no CLI needed)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Research/&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Multi-source research workflows&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Createskill/&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Templates for creating new skills&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;Each skill demonstrates the skills-as-containers pattern with routing, workflows, and self-contained documentation.&lt;/p&gt; 
+&lt;h3&gt;Native Fabric Patterns&lt;/h3&gt; 
+&lt;p&gt;The Fabric skill now executes patterns &lt;strong&gt;natively&lt;/strong&gt; within Claude Code — no CLI spawning required:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Your subscription's power&lt;/strong&gt; — Patterns run with your Opus/Sonnet model, not Fabric's configured model&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Full context&lt;/strong&gt; — Patterns have access to your entire conversation history&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Faster execution&lt;/strong&gt; — No process spawning overhead&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;248 patterns included&lt;/strong&gt; — extract_wisdom, summarize, threat modeling, and more&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Update patterns from upstream
+.claude/Skills/Fabric/tools/update-patterns.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Only use &lt;code&gt;fabric&lt;/code&gt; CLI for YouTube transcripts (&lt;code&gt;-y&lt;/code&gt;) or pattern updates (&lt;code&gt;-U&lt;/code&gt;).&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;🏗️ The Thirteen Founding Principles&lt;/h2&gt; 
+&lt;p&gt;PAI is built on 13 foundational principles that define how to build reliable AI infrastructure.&lt;/p&gt; 
+&lt;p&gt;Complete architecture documentation: &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.claude/Skills/CORE/Architecture.md"&gt;&lt;code&gt;.claude/Skills/CORE/Architecture.md&lt;/code&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;1. Clear Thinking + Prompting is King&lt;/h3&gt; 
+&lt;p&gt;The quality of outcomes depends on the quality of thinking and prompts. Before any code, before any architecture—there must be clear thinking.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-01-clear-thinking.png" alt="Clear Thinking + Prompting" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;2. Scaffolding &amp;gt; Model&lt;/h3&gt; 
+&lt;p&gt;The system architecture matters more than the underlying AI model. A well-structured system with good scaffolding will outperform a more powerful model with poor structure.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-02-scaffolding.png" alt="Scaffolding &gt; Model" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;3. As Deterministic as Possible&lt;/h3&gt; 
+&lt;p&gt;Favor predictable, repeatable outcomes over flexibility. Same input → Same output. Always.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-03-deterministic.png" alt="Deterministic Systems" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;4. Code Before Prompts&lt;/h3&gt; 
+&lt;p&gt;Write code to solve problems, use prompts to orchestrate code. Prompts should never replicate functionality that code can provide.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-04-code-before-prompts.png" alt="Code Before Prompts" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;5. Spec / Test / Evals First&lt;/h3&gt; 
+&lt;p&gt;Define expected behavior before writing implementation. If you can't specify it, you can't test it. If you can't test it, you can't trust it.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-05-spec-test-evals.png" alt="Spec / Test / Evals First" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;6. UNIX Philosophy&lt;/h3&gt; 
+&lt;p&gt;Do one thing well. Compose tools through standard interfaces. Build small, focused tools—compose them for complex operations.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-06-unix-philosophy.png" alt="UNIX Philosophy" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;7. ENG / SRE Principles&lt;/h3&gt; 
+&lt;p&gt;Apply software engineering and site reliability practices to AI systems. AI infrastructure is infrastructure—treat it with the same rigor.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-07-eng-sre.png" alt="ENG / SRE Principles" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;8. CLI as Interface&lt;/h3&gt; 
+&lt;p&gt;Every operation should be accessible via command line. If there's no CLI command for it, you can't script it or test it reliably.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-08-cli-interface.png" alt="CLI as Interface" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;9. Goal → Code → CLI → Prompts → Agents&lt;/h3&gt; 
+&lt;p&gt;The proper development pipeline for any new feature. Each layer builds on the previous—skip a layer, get a shaky system.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-09-implementation-pipeline.png" alt="Implementation Pipeline" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;10. Meta / Self Update System&lt;/h3&gt; 
+&lt;p&gt;The system should be able to improve itself. A system that can't update itself will stagnate.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-10-self-update.png" alt="Self-Improving System" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;11. Custom Skill Management&lt;/h3&gt; 
+&lt;p&gt;Skills are the organizational unit for all domain expertise. Skills are how PAI scales—each new domain gets its own skill, maintaining organization as the system grows.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-11-skill-management.png" alt="Skill Architecture" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;12. Custom History System&lt;/h3&gt; 
+&lt;p&gt;Automatic capture and preservation of valuable work. Memory makes intelligence compound. Without history, every session starts from zero.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-12-history-system.png" alt="History System" width="100%" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;13. Custom Agent Personalities / Voices&lt;/h3&gt; 
+&lt;p&gt;Specialized agents with distinct personalities for different tasks. Personality isn't decoration—it's functional.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/docs/images/principle-13-agent-personalities.png" alt="Agent Personalities" width="100%" /&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;🛠️ Technology Stack&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Category&lt;/th&gt; 
+   &lt;th&gt;Choice&lt;/th&gt; 
+   &lt;th&gt;Note&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Runtime&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Bun&lt;/td&gt; 
+   &lt;td&gt;NOT Node.js&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Language&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;TypeScript&lt;/td&gt; 
+   &lt;td&gt;NOT Python&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Package Manager&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Bun&lt;/td&gt; 
+   &lt;td&gt;NOT npm/yarn/pnpm&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Format&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Markdown&lt;/td&gt; 
+   &lt;td&gt;NOT HTML for basic content&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Testing&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Vitest&lt;/td&gt; 
+   &lt;td&gt;When needed&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Voice&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;ElevenLabs&lt;/td&gt; 
+   &lt;td&gt;TTS integration&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;🔄 Updating PAI&lt;/h2&gt; 
+&lt;p&gt;PAI includes an intelligent sideloading system that helps you update while preserving your customizations.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# In Claude Code, run:
+/paiupdate    # or just /pa
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;What happens:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Your DA fetches the latest PAI to a staging area (doesn't touch your files)&lt;/li&gt; 
+ &lt;li&gt;Analyzes differences between upstream and your customizations&lt;/li&gt; 
+ &lt;li&gt;Generates a personalized report showing conflicts vs. safe updates&lt;/li&gt; 
+ &lt;li&gt;You choose what to adopt — your DA handles the merge&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;Your custom skills, modified hooks, and personalized settings are &lt;strong&gt;never blindly overwritten&lt;/strong&gt;. The system understands that your &lt;code&gt;env.DA&lt;/code&gt;, custom environment variables, and personal tweaks are intentional.&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;💬 Community&lt;/h2&gt; 
+&lt;p&gt;Kai and I work hard to address issues and PRs throughout the week — we try not to get too far behind!&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Channel&lt;/th&gt; 
+   &lt;th&gt;Link&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;🐛 &lt;strong&gt;Issues&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/danielmiessler/Personal_AI_Infrastructure/issues"&gt;Report bugs or request features&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;💬 &lt;strong&gt;Discussions&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/danielmiessler/Personal_AI_Infrastructure/discussions"&gt;Ask questions and share ideas&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;🎥 &lt;strong&gt;Video&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://youtu.be/iKwRWwabkEc"&gt;Watch the full PAI walkthrough&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;📝 &lt;strong&gt;Blog&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://danielmiessler.com/blog/real-internet-of-things"&gt;The Real Internet of Things&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;📝 Updates&lt;/h2&gt; 
+&lt;details open&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.9.1 (2025-12-04) — Setup Script Fix&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;PAI_DIR Auto-Configuration&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;code&gt;setup.sh&lt;/code&gt; now automatically configures &lt;code&gt;PAI_DIR&lt;/code&gt; in &lt;code&gt;settings.json&lt;/code&gt; with your actual home directory path&lt;/li&gt; 
+  &lt;li&gt;No more manual editing of &lt;code&gt;__HOME__/.claude&lt;/code&gt; placeholder&lt;/li&gt; 
+  &lt;li&gt;Clear error messaging if hooks fail due to misconfigured paths&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Improved Documentation&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Added &lt;code&gt;_setupNote&lt;/code&gt; in &lt;code&gt;settings.json&lt;/code&gt; explaining the fix&lt;/li&gt; 
+  &lt;li&gt;Updated &lt;code&gt;_envDocs&lt;/code&gt; with troubleshooting guidance&lt;/li&gt; 
+  &lt;li&gt;QUICKSTART.md troubleshooting section for PAI_DIR issues&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Bug Fix&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Fixes #110 — Hook failures caused by unexpanded PAI_DIR placeholder&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.9.0 (2025-12-01) — Platform Agnostic Release&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;This release focuses on making PAI fully portable and fork-friendly. Your AI, your identity, your system.&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;Observability Dashboard&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Complete real-time agent monitoring at &lt;code&gt;.claude/Skills/Observability/&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;WebSocket streaming of all agent activity&lt;/li&gt; 
+  &lt;li&gt;Live pulse charts, event timelines, and swim lanes&lt;/li&gt; 
+  &lt;li&gt;Multiple themes (Tokyo Night, Nord, Catppuccin, etc.)&lt;/li&gt; 
+  &lt;li&gt;Security obfuscation for sensitive data&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Genericized Agent Identity&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;All agent references now use &lt;code&gt;process.env.DA || 'main'&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;No more hardcoded names — your DA name flows through the entire system&lt;/li&gt; 
+  &lt;li&gt;Observability dashboard shows your configured identity&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Platform-Agnostic Configuration&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Clear separation: &lt;code&gt;settings.json&lt;/code&gt; for identity/paths, &lt;code&gt;.env&lt;/code&gt; for API keys&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;DA&lt;/code&gt; (Digital Assistant name) — your AI's identity&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;PAI_DIR&lt;/code&gt; — root directory for all configuration&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;TIME_ZONE&lt;/code&gt; — configurable timezone for timestamps&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Skill System Improvements&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Canonical TitleCase file naming throughout&lt;/li&gt; 
+  &lt;li&gt;Standardized skill-workflow-notification script for dashboard detection&lt;/li&gt; 
+  &lt;li&gt;All paths use &lt;code&gt;${PAI_DIR}/&lt;/code&gt; for location-agnostic installation&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.8.0 (2025-11-25) — Research &amp;amp; Documentation&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;Research Skill&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Comprehensive research skill with 10 specialized workflows&lt;/li&gt; 
+  &lt;li&gt;Multi-source research with parallel agent execution&lt;/li&gt; 
+  &lt;li&gt;Fabric pattern integration (242+ AI patterns)&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Infrastructure&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Path standardization using &lt;code&gt;${PAI_DIR}/&lt;/code&gt; throughout&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;PAI_CONTRACT.md&lt;/code&gt; defining core guarantees&lt;/li&gt; 
+  &lt;li&gt;Self-test validation system for health checks&lt;/li&gt; 
+  &lt;li&gt;Protection system for PAI-specific files&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.7.0 (2025-11-20) — Protection &amp;amp; Clarity&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;PAI Path Resolution System&lt;/strong&gt; (#112)&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Centralized &lt;code&gt;pai-paths.ts&lt;/code&gt; library — single source of truth&lt;/li&gt; 
+  &lt;li&gt;Smart detection with fallback to &lt;code&gt;~/.claude&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;Updated 7 hooks to use centralized paths&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;PAI vs Kai Clarity&lt;/strong&gt; (#113)&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;code&gt;PAI_CONTRACT.md&lt;/code&gt; — official contract defining boundaries&lt;/li&gt; 
+  &lt;li&gt;Self-test system (&lt;code&gt;bun ${PAI_DIR}/hooks/self-test.ts&lt;/code&gt;)&lt;/li&gt; 
+  &lt;li&gt;Clear README section distinguishing PAI from Kai&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Protection System&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;code&gt;.pai-protected.json&lt;/code&gt; manifest of protected files&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;validate-protected.ts&lt;/code&gt; script for pre-commit validation&lt;/li&gt; 
+  &lt;li&gt;Pre-commit hook template for automated checks&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.6.5 (2025-11-18) — BrightData Integration&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;Four-Tier Progressive Web Scraping&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Tier 1: WebFetch (free, built-in)&lt;/li&gt; 
+  &lt;li&gt;Tier 2: cURL with headers (free, more reliable)&lt;/li&gt; 
+  &lt;li&gt;Tier 3: Playwright (free, JavaScript rendering)&lt;/li&gt; 
+  &lt;li&gt;Tier 4: Bright Data MCP (paid, anti-bot bypass)&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.6.0 (2025-11-15) — Major Architecture Update&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;Repository Restructure&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Moved all configuration to &lt;code&gt;.claude/&lt;/code&gt; directory&lt;/li&gt; 
+  &lt;li&gt;Skills-as-containers architecture&lt;/li&gt; 
+  &lt;li&gt;Three-tier progressive disclosure&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Skills System&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Art skill with visual content generation&lt;/li&gt; 
+  &lt;li&gt;Story-explanation skill for narrative summaries&lt;/li&gt; 
+  &lt;li&gt;Create-skill and create-cli meta-skills&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Hook System&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Comprehensive event capture system&lt;/li&gt; 
+  &lt;li&gt;Session summary and tool output capture&lt;/li&gt; 
+  &lt;li&gt;Tab title updates&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Voice Integration&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Voice server with ElevenLabs TTS&lt;/li&gt; 
+  &lt;li&gt;Session start notifications&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.5.0 and Earlier&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;v0.5.0 — Foundation&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;CORE skill as central context loader&lt;/li&gt; 
+  &lt;li&gt;Constitution defining system principles&lt;/li&gt; 
+  &lt;li&gt;CLI-First Architecture pattern&lt;/li&gt; 
+  &lt;li&gt;Initial skills: Fabric, FFUF, Alex Hormozi pitch&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Pre-v0.5.0 — Early Development&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Initial repository setup&lt;/li&gt; 
+  &lt;li&gt;Basic settings.json structure&lt;/li&gt; 
+  &lt;li&gt;Agent personality definitions&lt;/li&gt; 
+  &lt;li&gt;Foundational hook experiments&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;📜 License&lt;/h2&gt; 
+&lt;p&gt;MIT License — see &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/LICENSE"&gt;&lt;code&gt;LICENSE&lt;/code&gt;&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;🙏 Acknowledgments&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Built on &lt;a href="https://code.claude.com"&gt;Claude Code&lt;/a&gt; by Anthropic.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;PAI is the technical foundation for &lt;a href="https://human3.unsupervised-learning.com"&gt;Human 3.0&lt;/a&gt; — a program I created to help people transform into a version of themselves that can thrive in the post-corporate world that's coming. Human 3.0 means AI-augmented humans who build and control their own AI systems.&lt;/p&gt; 
+&lt;p&gt;Right now, the most sophisticated AI infrastructure exists inside corporations with massive engineering teams. PAI exists to change that. To give individuals the same scaffolding that companies spend millions building.&lt;/p&gt; 
+&lt;p&gt;Your AI, knowing how you work, learning from your patterns, serving your goals — not some corporation's engagement metrics. That's what this enables.&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;hr /&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;strong&gt;Start clean. Start small. Build the AI infrastructure you need.&lt;/strong&gt;&lt;/p&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#personal-ai-infrastructure"&gt;⬆ Back to Top&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>simstudioai/sim</title>
+      <link>https://github.com/simstudioai/sim</link>
+      <description>&lt;p&gt;Open-source platform to build and deploy AI agent workflows.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://sim.ai" target="_blank" rel="noopener noreferrer"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/logo/reverse/text/large.png" alt="Sim Logo" width="500" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;Build and deploy AI agent workflows in minutes.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://sim.ai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/sim.ai-6F3DFA" alt="Sim.ai" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/Hr4UWYEcTT" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/Discord-Join%20Server-5865F2?logo=discord&amp;amp;logoColor=white" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://x.com/simdotai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/twitter/follow/simstudioai?style=social" alt="Twitter" /&gt;&lt;/a&gt; &lt;a href="https://docs.sim.ai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/Docs-6F3DFA.svg?sanitize=true" alt="Documentation" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h3&gt;Build Workflows with Ease&lt;/h3&gt; 
+&lt;p&gt;Design agent workflows visually on a canvas—connect agents, tools, and blocks, then run them instantly.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/static/workflow.gif" alt="Workflow Builder Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;h3&gt;Supercharge with Copilot&lt;/h3&gt; 
+&lt;p&gt;Leverage Copilot to generate nodes, fix errors, and iterate on flows directly from natural language.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/static/copilot.gif" alt="Copilot Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;h3&gt;Integrate Vector Databases&lt;/h3&gt; 
+&lt;p&gt;Upload documents to a vector store and let agents answer questions grounded in your specific content.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/static/knowledge.gif" alt="Knowledge Uploads and Retrieval Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;h2&gt;Quickstart&lt;/h2&gt; 
+&lt;h3&gt;Cloud-hosted: &lt;a href="https://sim.ai"&gt;sim.ai&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://sim.ai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/sim.ai-6F3DFA?logo=data:image/svg%2bxml;base64,PHN2ZyB3aWR0aD0iNjE2IiBoZWlnaHQ9IjYxNiIgdmlld0JveD0iMCAwIDYxNiA2MTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8xMTU5XzMxMykiPgo8cGF0aCBkPSJNNjE2IDBIMFY2MTZINjE2VjBaIiBmaWxsPSIjNkYzREZBIi8+CjxwYXRoIGQ9Ik04MyAzNjUuNTY3SDExM0MxMTMgMzczLjgwNSAxMTYgMzgwLjM3MyAxMjIgMzg1LjI3MkMxMjggMzg5Ljk0OCAxMzYuMTExIDM5Mi4yODUgMTQ2LjMzMyAzOTIuMjg1QzE1Ny40NDQgMzkyLjI4NSAxNjYgMzkwLjE3MSAxNzIgMzg1LjkzOUMxNzcuOTk5IDM4MS40ODcgMTgxIDM3NS41ODYgMTgxIDM2OC4yMzlDMTgxIDM2Mi44OTUgMTc5LjMzMyAzNTguNDQyIDE3NiAzNTQuODhDMTcyLjg4OSAzNTEuMzE4IDE2Ny4xMTEgMzQ4LjQyMiAxNTguNjY3IDM0Ni4xOTZMMTMwIDMzOS41MTdDMTE1LjU1NSAzMzUuOTU1IDEwNC43NzggMzMwLjQ5OSA5Ny42NjY1IDMyMy4xNTFDOTAuNzc3NSAzMTUuODA0IDg3LjMzMzQgMzA2LjExOSA4Ny4zMzM0IDI5NC4wOTZDODcuMzMzNCAyODQuMDc2IDg5Ljg4OSAyNzUuMzkyIDk0Ljk5OTYgMjY4LjA0NUMxMDAuMzMzIDI2MC42OTcgMTA3LjU1NSAyNTUuMDIgMTE2LjY2NiAyNTEuMDEyQzEyNiAyNDcuMDA0IDEzNi42NjcgMjQ1IDE0OC42NjYgMjQ1QzE2MC42NjcgMjQ1IDE3MSAyNDcuMTE2IDE3OS42NjcgMjUxLjM0NkMxODguNTU1IDI1NS41NzYgMTk1LjQ0NCAyNjEuNDc3IDIwMC4zMzMgMjY5LjA0N0MyMDUuNDQ0IDI3Ni42MTcgMjA4LjExMSAyODUuNjM0IDIwOC4zMzMgMjk2LjA5OUgxNzguMzMzQzE3OC4xMTEgMjg3LjYzOCAxNzUuMzMzIDI4MS4wNyAxNjkuOTk5IDI3Ni4zOTRDMTY0LjY2NiAyNzEuNzE5IDE1Ny4yMjIgMjY5LjM4MSAxNDcuNjY3IDI2OS4zODFDMTM3Ljg4OSAyNjkuMzgxIDEzMC4zMzMgMjcxLjQ5NiAxMjUgMjc1LjcyNkMxMTkuNjY2IDI3OS45NTcgMTE3IDI4NS43NDYgMTE3IDI5My4wOTNDMTE3IDMwNC4wMDMgMTI1IDMxMS40NjIgMTQxIDMxNS40N0wxNjkuNjY3IDMyMi40ODNDMTgzLjQ0NSAzMjUuNiAxOTMuNzc4IDMzMC43MjIgMjAwLjY2NyAzMzcuODQ3QzIwNy41NTUgMzQ0Ljc0OSAyMTEgMzU0LjIxMiAyMTEgMzY2LjIzNUMyMTEgMzc2LjQ3NyAyMDguMjIyIDM4NS40OTQgMjAyLjY2NiAzOTMuMjg3QzE5Ny4xMTEgNDAwLjg1NyAxODkuNDQ0IDQwNi43NTggMTc5LjY2NyA0MTAuOTg5QzE3MC4xMTEgNDE0Ljk5NiAxNTguNzc4IDQxNyAxNDUuNjY3IDQxN0MxMjYuNTU1IDQxNyAxMTEuMzMzIDQxMi4zMjUgOTkuOTk5NyA0MDIuOTczQzg4LjY2NjggMzkzLjYyMSA4MyAzODEuMTUzIDgzIDM2NS41NjdaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjMyLjI5MSA0MTNWMjUwLjA4MkMyNDQuNjg0IDI1NC42MTQgMjUwLjE0OCAyNTQuNjE0IDI2My4zNzEgMjUwLjA4MlY0MTNIMjMyLjI5MVpNMjQ3LjUgMjM5LjMxM0MyNDEuOTkgMjM5LjMxMyAyMzcuMTQgMjM3LjMxMyAyMzIuOTUyIDIzMy4zMTZDMjI4Ljk4NCAyMjkuMDk1IDIyNyAyMjQuMjA5IDIyNyAyMTguNjU2QzIyNyAyMTIuODgyIDIyOC45ODQgMjA3Ljk5NSAyMzIuOTUyIDIwMy45OTdDMjM3LjE0IDE5OS45OTkgMjQxLjk5IDE5OCAyNDcuNSAxOThDMjUzLjIzMSAxOTggMjU4LjA4IDE5OS45OTkgMjYyLjA0OSAyMDMuOTk3QzI2Ni4wMTYgMjA3Ljk5NSAyNjggMjEyLjg4MiAyNjggMjE4LjY1NkMyNjggMjI0LjIwOSAyNjYuMDE2IDIyOS4wOTUgMjYyLjA0OSAyMzMuMzE2QzI1OC4wOCAyMzcuMzEzIDI1My4yMzEgMjM5LjMxMyAyNDcuNSAyMzkuMzEzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTMxOS4zMzMgNDEzSDI4OFYyNDkuNjc2SDMxNlYyNzcuMjMzQzMxOS4zMzMgMjY4LjEwNCAzMjUuNzc4IDI2MC4zNjQgMzM0LjY2NyAyNTQuMzUyQzM0My43NzggMjQ4LjExNyAzNTQuNzc4IDI0NSAzNjcuNjY3IDI0NUMzODIuMTExIDI0NSAzOTQuMTEyIDI0OC44OTcgNDAzLjY2NyAyNTYuNjlDNDEzLjIyMiAyNjQuNDg0IDQxOS40NDQgMjc0LjgzNyA0MjIuMzM0IDI4Ny43NTJINDE2LjY2N0M0MTguODg5IDI3NC44MzcgNDI1IDI2NC40ODQgNDM1IDI1Ni42OUM0NDUgMjQ4Ljg5NyA0NTcuMzM0IDI0NSA0NzIgMjQ1QzQ5MC42NjYgMjQ1IDUwNS4zMzQgMjUwLjQ1NSA1MTYgMjYxLjM2NkM1MjYuNjY3IDI3Mi4yNzYgNTMyIDI4Ny4xOTUgNTMyIDMwNi4xMjFWNDEzSDUwMS4zMzNWMzEzLjgwNEM1MDEuMzMzIDMwMC44ODkgNDk4IDI5MC45ODEgNDkxLjMzMyAyODQuMDc4QzQ4NC44ODkgMjc2Ljk1MiA0NzYuMTExIDI3My4zOSA0NjUgMjczLjM5QzQ1Ny4yMjIgMjczLjM5IDQ1MC4zMzMgMjc1LjE3MSA0NDQuMzM0IDI3OC43MzRDNDM4LjU1NiAyODIuMDc0IDQzNCAyODYuOTcyIDQzMC42NjcgMjkzLjQzQzQyNy4zMzMgMjk5Ljg4NyA0MjUuNjY3IDMwNy40NTcgNDI1LjY2NyAzMTYuMTQxVjQxM0gzOTQuNjY3VjMxMy40NjlDMzk0LjY2NyAzMDAuNTU1IDM5MS40NDUgMjkwLjc1OCAzODUgMjg0LjA3OEMzNzguNTU2IDI3Ny4xNzUgMzY5Ljc3OCAyNzMuNzI0IDM1OC42NjcgMjczLjcyNEMzNTAuODg5IDI3My43MjQgMzQ0IDI3NS41MDUgMzM4IDI3OS4wNjhDMzMyLjIyMiAyODIuNDA4IDMyNy42NjcgMjg3LjMwNyAzMjQuMzMzIDI5My43NjNDMzIxIDI5OS45OTggMzE5LjMzMyAzMDcuNDU3IDMxOS4zMzMgMzE2LjE0MVY0MTNaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzExNTlfMzEzIj4KPHJlY3Qgd2lkdGg9IjYxNiIgaGVpZ2h0PSI2MTYiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==&amp;amp;logoColor=white" alt="Sim.ai" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Self-hosted: NPM Package&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx simstudio
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;→ &lt;a href="http://localhost:3000"&gt;http://localhost:3000&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;Note&lt;/h4&gt; 
+&lt;p&gt;Docker must be installed and running on your machine.&lt;/p&gt; 
+&lt;h4&gt;Options&lt;/h4&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Flag&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;-p, --port &amp;lt;port&amp;gt;&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Port to run Sim on (default &lt;code&gt;3000&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;--no-pull&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Skip pulling latest Docker images&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Self-hosted: Docker Compose&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Clone the repository
+git clone https://github.com/simstudioai/sim.git
+
+# Navigate to the project directory
+cd sim
+
+# Start Sim
+docker compose -f docker-compose.prod.yml up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Access the application at &lt;a href="http://localhost:3000/"&gt;http://localhost:3000/&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;Using Local Models with Ollama&lt;/h4&gt; 
+&lt;p&gt;Run Sim with local AI models using &lt;a href="https://ollama.ai"&gt;Ollama&lt;/a&gt; - no external APIs required:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Start with GPU support (automatically downloads gemma3:4b model)
+docker compose -f docker-compose.ollama.yml --profile setup up -d
+
+# For CPU-only systems:
+docker compose -f docker-compose.ollama.yml --profile cpu --profile setup up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Wait for the model to download, then visit &lt;a href="http://localhost:3000"&gt;http://localhost:3000&lt;/a&gt;. Add more models with:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker compose -f docker-compose.ollama.yml exec ollama ollama pull llama3.1:8b
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Using an External Ollama Instance&lt;/h4&gt; 
+&lt;p&gt;If you already have Ollama running on your host machine (outside Docker), you need to configure the &lt;code&gt;OLLAMA_URL&lt;/code&gt; to use &lt;code&gt;host.docker.internal&lt;/code&gt; instead of &lt;code&gt;localhost&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Docker Desktop (macOS/Windows)
+OLLAMA_URL=http://host.docker.internal:11434 docker compose -f docker-compose.prod.yml up -d
+
+# Linux (add extra_hosts or use host IP)
+docker compose -f docker-compose.prod.yml up -d  # Then set OLLAMA_URL to your host's IP
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Why?&lt;/strong&gt; When running inside Docker, &lt;code&gt;localhost&lt;/code&gt; refers to the container itself, not your host machine. &lt;code&gt;host.docker.internal&lt;/code&gt; is a special DNS name that resolves to the host.&lt;/p&gt; 
+&lt;p&gt;For Linux users, you can either:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Use your host machine's actual IP address (e.g., &lt;code&gt;http://192.168.1.100:11434&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Add &lt;code&gt;extra_hosts: ["host.docker.internal:host-gateway"]&lt;/code&gt; to the simstudio service in your compose file&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Using vLLM&lt;/h4&gt; 
+&lt;p&gt;Sim also supports &lt;a href="https://docs.vllm.ai/"&gt;vLLM&lt;/a&gt; for self-hosted models with OpenAI-compatible API:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Set these environment variables
+VLLM_BASE_URL=http://your-vllm-server:8000
+VLLM_API_KEY=your_optional_api_key  # Only if your vLLM instance requires auth
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;When running with Docker, use &lt;code&gt;host.docker.internal&lt;/code&gt; if vLLM is on your host machine (same as Ollama above).&lt;/p&gt; 
+&lt;h3&gt;Self-hosted: Dev Containers&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Open VS Code with the &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers"&gt;Remote - Containers extension&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Open the project and click "Reopen in Container" when prompted&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;bun run dev:full&lt;/code&gt; in the terminal or use the &lt;code&gt;sim-start&lt;/code&gt; alias 
+  &lt;ul&gt; 
+   &lt;li&gt;This starts both the main application and the realtime socket server&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Self-hosted: Manual Setup&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://bun.sh/"&gt;Bun&lt;/a&gt; runtime&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://nodejs.org/"&gt;Node.js&lt;/a&gt; v20+ (required for sandboxed code execution)&lt;/li&gt; 
+ &lt;li&gt;PostgreSQL 12+ with &lt;a href="https://github.com/pgvector/pgvector"&gt;pgvector extension&lt;/a&gt; (required for AI embeddings)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Sim uses vector embeddings for AI features like knowledge bases and semantic search, which requires the &lt;code&gt;pgvector&lt;/code&gt; PostgreSQL extension.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Clone and install dependencies:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/simstudioai/sim.git
+cd sim
+bun install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Set up PostgreSQL with pgvector:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;You need PostgreSQL with the &lt;code&gt;vector&lt;/code&gt; extension for embedding support. Choose one option:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Option A: Using Docker (Recommended)&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Start PostgreSQL with pgvector extension
+docker run --name simstudio-db \
+  -e POSTGRES_PASSWORD=your_password \
+  -e POSTGRES_DB=simstudio \
+  -p 5432:5432 -d \
+  pgvector/pgvector:pg17
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Option B: Manual Installation&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Install PostgreSQL 12+ and the pgvector extension&lt;/li&gt; 
+ &lt;li&gt;See &lt;a href="https://github.com/pgvector/pgvector#installation"&gt;pgvector installation guide&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;Set up environment:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd apps/sim
+cp .env.example .env  # Configure with required variables (DATABASE_URL, BETTER_AUTH_SECRET, BETTER_AUTH_URL)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Update your &lt;code&gt;.env&lt;/code&gt; file with the database URL:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;DATABASE_URL="postgresql://postgres:your_password@localhost:5432/simstudio"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="4"&gt; 
+ &lt;li&gt;Set up the database:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;First, configure the database package environment:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd packages/db
+cp .env.example .env 
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Update your &lt;code&gt;packages/db/.env&lt;/code&gt; file with the database URL:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;DATABASE_URL="postgresql://postgres:your_password@localhost:5432/simstudio"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then run the migrations:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd packages/db # Required so drizzle picks correct .env file
+bunx drizzle-kit migrate --config=./drizzle.config.ts
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="5"&gt; 
+ &lt;li&gt;Start the development servers:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Recommended approach - run both servers together (from project root):&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun run dev:full
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This starts both the main Next.js application and the realtime socket server required for full functionality.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Alternative - run servers separately:&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Next.js app (from project root):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Realtime socket server (from &lt;code&gt;apps/sim&lt;/code&gt; directory in a separate terminal):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd apps/sim
+bun run dev:sockets
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Copilot API Keys&lt;/h2&gt; 
+&lt;p&gt;Copilot is a Sim-managed service. To use Copilot on a self-hosted instance:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Go to &lt;a href="https://sim.ai"&gt;https://sim.ai&lt;/a&gt; → Settings → Copilot and generate a Copilot API key&lt;/li&gt; 
+ &lt;li&gt;Set &lt;code&gt;COPILOT_API_KEY&lt;/code&gt; environment variable in your self-hosted apps/sim/.env file to that value&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Environment Variables&lt;/h2&gt; 
+&lt;p&gt;Key environment variables for self-hosted deployments (see &lt;code&gt;apps/sim/.env.example&lt;/code&gt; for full list):&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Variable&lt;/th&gt; 
+   &lt;th&gt;Required&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;DATABASE_URL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;PostgreSQL connection string with pgvector&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;BETTER_AUTH_SECRET&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Auth secret (&lt;code&gt;openssl rand -hex 32&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;BETTER_AUTH_URL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Your app URL (e.g., &lt;code&gt;http://localhost:3000&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;NEXT_PUBLIC_APP_URL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Public app URL (same as above)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;ENCRYPTION_KEY&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Encryption key (&lt;code&gt;openssl rand -hex 32&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;OLLAMA_URL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;Ollama server URL (default: &lt;code&gt;http://localhost:11434&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;VLLM_BASE_URL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;vLLM server URL for self-hosted models&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;COPILOT_API_KEY&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;API key from sim.ai for Copilot features&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Troubleshooting&lt;/h2&gt; 
+&lt;h3&gt;Ollama models not showing in dropdown (Docker)&lt;/h3&gt; 
+&lt;p&gt;If you're running Ollama on your host machine and Sim in Docker, change &lt;code&gt;OLLAMA_URL&lt;/code&gt; from &lt;code&gt;localhost&lt;/code&gt; to &lt;code&gt;host.docker.internal&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;OLLAMA_URL=http://host.docker.internal:11434 docker compose -f docker-compose.prod.yml up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/simstudioai/sim/main/#using-an-external-ollama-instance"&gt;Using an External Ollama Instance&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;h3&gt;Database connection issues&lt;/h3&gt; 
+&lt;p&gt;Ensure PostgreSQL has the pgvector extension installed. When using Docker, wait for the database to be healthy before running migrations.&lt;/p&gt; 
+&lt;h3&gt;Port conflicts&lt;/h3&gt; 
+&lt;p&gt;If ports 3000, 3002, or 5432 are in use, configure alternatives:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Custom ports
+NEXT_PUBLIC_APP_URL=http://localhost:3100 POSTGRES_PORT=5433 docker compose up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Tech Stack&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Framework&lt;/strong&gt;: &lt;a href="https://nextjs.org/"&gt;Next.js&lt;/a&gt; (App Router)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Runtime&lt;/strong&gt;: &lt;a href="https://bun.sh/"&gt;Bun&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Database&lt;/strong&gt;: PostgreSQL with &lt;a href="https://orm.drizzle.team"&gt;Drizzle ORM&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Authentication&lt;/strong&gt;: &lt;a href="https://better-auth.com"&gt;Better Auth&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;UI&lt;/strong&gt;: &lt;a href="https://ui.shadcn.com/"&gt;Shadcn&lt;/a&gt;, &lt;a href="https://tailwindcss.com"&gt;Tailwind CSS&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;State Management&lt;/strong&gt;: &lt;a href="https://zustand-demo.pmnd.rs/"&gt;Zustand&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Flow Editor&lt;/strong&gt;: &lt;a href="https://reactflow.dev/"&gt;ReactFlow&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Docs&lt;/strong&gt;: &lt;a href="https://fumadocs.vercel.app/"&gt;Fumadocs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Monorepo&lt;/strong&gt;: &lt;a href="https://turborepo.org/"&gt;Turborepo&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Realtime&lt;/strong&gt;: &lt;a href="https://socket.io/"&gt;Socket.io&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Background Jobs&lt;/strong&gt;: &lt;a href="https://trigger.dev/"&gt;Trigger.dev&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Remote Code Execution&lt;/strong&gt;: &lt;a href="https://www.e2b.dev/"&gt;E2B&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions! Please see our &lt;a href="https://raw.githubusercontent.com/simstudioai/sim/main/.github/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the Apache License 2.0 - see the &lt;a href="https://raw.githubusercontent.com/simstudioai/sim/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;p align="center"&gt;Made with ❤️ by the Sim Team&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GeeeekExplorer/nano-vllm</title>
+      <link>https://github.com/GeeeekExplorer/nano-vllm</link>
+      <description>&lt;p&gt;Nano vLLM&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img width="300" src="https://raw.githubusercontent.com/GeeeekExplorer/nano-vllm/main/assets/logo.png" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/15323" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/15323" alt="GeeeekExplorer%2Fnano-vllm | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h1&gt;Nano-vLLM&lt;/h1&gt; 
+&lt;p&gt;A lightweight vLLM implementation built from scratch.&lt;/p&gt; 
+&lt;h2&gt;Key Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🚀 &lt;strong&gt;Fast offline inference&lt;/strong&gt; - Comparable inference speeds to vLLM&lt;/li&gt; 
+ &lt;li&gt;📖 &lt;strong&gt;Readable codebase&lt;/strong&gt; - Clean implementation in ~ 1,200 lines of Python code&lt;/li&gt; 
+ &lt;li&gt;⚡ &lt;strong&gt;Optimization Suite&lt;/strong&gt; - Prefix caching, Tensor Parallelism, Torch compilation, CUDA graph, etc.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pip install git+https://github.com/GeeeekExplorer/nano-vllm.git
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Model Download&lt;/h2&gt; 
+&lt;p&gt;To download the model weights manually, use the following command:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;huggingface-cli download --resume-download Qwen/Qwen3-0.6B \
+  --local-dir ~/huggingface/Qwen3-0.6B/ \
+  --local-dir-use-symlinks False
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;p&gt;See &lt;code&gt;example.py&lt;/code&gt; for usage. The API mirrors vLLM's interface with minor differences in the &lt;code&gt;LLM.generate&lt;/code&gt; method:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;from nanovllm import LLM, SamplingParams
+llm = LLM("/YOUR/MODEL/PATH", enforce_eager=True, tensor_parallel_size=1)
+sampling_params = SamplingParams(temperature=0.6, max_tokens=256)
+prompts = ["Hello, Nano-vLLM."]
+outputs = llm.generate(prompts, sampling_params)
+outputs[0]["text"]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Benchmark&lt;/h2&gt; 
+&lt;p&gt;See &lt;code&gt;bench.py&lt;/code&gt; for benchmark.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Test Configuration:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Hardware: RTX 4070 Laptop (8GB)&lt;/li&gt; 
+ &lt;li&gt;Model: Qwen3-0.6B&lt;/li&gt; 
+ &lt;li&gt;Total Requests: 256 sequences&lt;/li&gt; 
+ &lt;li&gt;Input Length: Randomly sampled between 100–1024 tokens&lt;/li&gt; 
+ &lt;li&gt;Output Length: Randomly sampled between 100–1024 tokens&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Performance Results:&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Inference Engine&lt;/th&gt; 
+   &lt;th&gt;Output Tokens&lt;/th&gt; 
+   &lt;th&gt;Time (s)&lt;/th&gt; 
+   &lt;th&gt;Throughput (tokens/s)&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;vLLM&lt;/td&gt; 
+   &lt;td&gt;133,966&lt;/td&gt; 
+   &lt;td&gt;98.37&lt;/td&gt; 
+   &lt;td&gt;1361.84&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Nano-vLLM&lt;/td&gt; 
+   &lt;td&gt;133,966&lt;/td&gt; 
+   &lt;td&gt;93.41&lt;/td&gt; 
+   &lt;td&gt;1434.13&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.star-history.com/#GeeeekExplorer/nano-vllm&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=GeeeekExplorer/nano-vllm&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>abseil/abseil-cpp</title>
+      <link>https://github.com/abseil/abseil-cpp</link>
+      <description>&lt;p&gt;Abseil Common Libraries (C++)&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Abseil - C++ Common Libraries&lt;/h1&gt; 
+&lt;p&gt;The repository contains the Abseil C++ library code. Abseil is an open-source collection of C++ code (compliant to C++17) designed to augment the C++ standard library.&lt;/p&gt; 
+&lt;h2&gt;Table of Contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/#about"&gt;About Abseil&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/#quickstart"&gt;Quickstart&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/#build"&gt;Building Abseil&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/#support"&gt;Support&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/#codemap"&gt;Codemap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/#releases"&gt;Releases&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/#license"&gt;License&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/#links"&gt;Links&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;a name="about"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;About Abseil&lt;/h2&gt; 
+&lt;p&gt;Abseil is an open-source collection of C++ library code designed to augment the C++ standard library. The Abseil library code is collected from Google's own C++ code base, has been extensively tested and used in production, and is the same code we depend on in our daily coding lives.&lt;/p&gt; 
+&lt;p&gt;In some cases, Abseil provides pieces missing from the C++ standard; in others, Abseil provides alternatives to the standard for special needs we've found through usage in the Google code base. We denote those cases clearly within the library code we provide you.&lt;/p&gt; 
+&lt;p&gt;Abseil is not meant to be a competitor to the standard library; we've just found that many of these utilities serve a purpose within our code base, and we now want to provide those resources to the C++ community as a whole.&lt;/p&gt; 
+&lt;p&gt;&lt;a name="quickstart"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Quickstart&lt;/h2&gt; 
+&lt;p&gt;If you want to just get started, make sure you at least run through the &lt;a href="https://abseil.io/docs/cpp/quickstart"&gt;Abseil Quickstart&lt;/a&gt;. The Quickstart contains information about setting up your development environment, downloading the Abseil code, running tests, and getting a simple binary working.&lt;/p&gt; 
+&lt;p&gt;&lt;a name="build"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Building Abseil&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://bazel.build"&gt;Bazel&lt;/a&gt; and &lt;a href="https://cmake.org/"&gt;CMake&lt;/a&gt; are the official build systems for Abseil. See the &lt;a href="https://abseil.io/docs/cpp/quickstart"&gt;quickstart&lt;/a&gt; for more information on building Abseil using the Bazel build system. If you require CMake support, please check the &lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/CMake/README.md"&gt;CMake build instructions&lt;/a&gt; and &lt;a href="https://abseil.io/docs/cpp/quickstart-cmake"&gt;CMake Quickstart&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;a name="support"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;Abseil follows Google's &lt;a href="https://opensource.google/documentation/policies/cplusplus-support"&gt;Foundational C++ Support Policy&lt;/a&gt;. See &lt;a href="https://github.com/google/oss-policies-info/raw/main/foundational-cxx-support-matrix.md"&gt;this table&lt;/a&gt; for a list of currently supported versions compilers, platforms, and build tools.&lt;/p&gt; 
+&lt;p&gt;&lt;a name="codemap"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Codemap&lt;/h2&gt; 
+&lt;p&gt;Abseil contains the following C++ library components:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/base/"&gt;&lt;code&gt;base&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;base&lt;/code&gt; library contains initialization code and other code which all other Abseil code depends on. Code within &lt;code&gt;base&lt;/code&gt; may not depend on any other code (other than the C++ standard library).&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/algorithm/"&gt;&lt;code&gt;algorithm&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;algorithm&lt;/code&gt; library contains additions to the C++ &lt;code&gt;&amp;lt;algorithm&amp;gt;&lt;/code&gt; library and container-based versions of such algorithms.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/cleanup/"&gt;&lt;code&gt;cleanup&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;cleanup&lt;/code&gt; library contains the control-flow-construct-like type &lt;code&gt;absl::Cleanup&lt;/code&gt; which is used for executing a callback on scope exit.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/container/"&gt;&lt;code&gt;container&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;container&lt;/code&gt; library contains additional STL-style containers, including Abseil's unordered "Swiss table" containers.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/crc/"&gt;&lt;code&gt;crc&lt;/code&gt;&lt;/a&gt; The &lt;code&gt;crc&lt;/code&gt; library contains code for computing error-detecting cyclic redundancy checks on data.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/debugging/"&gt;&lt;code&gt;debugging&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;debugging&lt;/code&gt; library contains code useful for enabling leak checks, and stacktrace and symbolization utilities.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/flags/"&gt;&lt;code&gt;flags&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;flags&lt;/code&gt; library contains code for handling command line flags for libraries and binaries built with Abseil.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/hash/"&gt;&lt;code&gt;hash&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;hash&lt;/code&gt; library contains the hashing framework and default hash functor implementations for hashable types in Abseil.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/log/"&gt;&lt;code&gt;log&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;log&lt;/code&gt; library contains &lt;code&gt;LOG&lt;/code&gt; and &lt;code&gt;CHECK&lt;/code&gt; macros and facilities for writing logged messages out to disk, &lt;code&gt;stderr&lt;/code&gt;, or user-extensible destinations.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/memory/"&gt;&lt;code&gt;memory&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;memory&lt;/code&gt; library contains memory management facilities that augment C++'s &lt;code&gt;&amp;lt;memory&amp;gt;&lt;/code&gt; library.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/meta/"&gt;&lt;code&gt;meta&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;meta&lt;/code&gt; library contains type checks similar to those available in the C++ &lt;code&gt;&amp;lt;type_traits&amp;gt;&lt;/code&gt; library.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/numeric/"&gt;&lt;code&gt;numeric&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;numeric&lt;/code&gt; library contains 128-bit integer types as well as implementations of C++20's bitwise math functions.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/profiling/"&gt;&lt;code&gt;profiling&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;profiling&lt;/code&gt; library contains utility code for profiling C++ entities. It is currently a private dependency of other Abseil libraries.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/random/"&gt;&lt;code&gt;random&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;random&lt;/code&gt; library contains functions for generating pseudorandom values.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/status/"&gt;&lt;code&gt;status&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;status&lt;/code&gt; library contains abstractions for error handling, specifically &lt;code&gt;absl::Status&lt;/code&gt; and &lt;code&gt;absl::StatusOr&amp;lt;T&amp;gt;&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/strings/"&gt;&lt;code&gt;strings&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;strings&lt;/code&gt; library contains a variety of strings routines and utilities.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/synchronization/"&gt;&lt;code&gt;synchronization&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;synchronization&lt;/code&gt; library contains concurrency primitives (Abseil's &lt;code&gt;absl::Mutex&lt;/code&gt; class, an alternative to &lt;code&gt;std::mutex&lt;/code&gt;) and a variety of synchronization abstractions.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/time/"&gt;&lt;code&gt;time&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;time&lt;/code&gt; library contains abstractions for computing with absolute points in time, durations of time, and formatting and parsing time within time zones.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/types/"&gt;&lt;code&gt;types&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;types&lt;/code&gt; library contains non-container utility types.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/absl/utility/"&gt;&lt;code&gt;utility&lt;/code&gt;&lt;/a&gt; &lt;br /&gt; The &lt;code&gt;utility&lt;/code&gt; library contains utility and helper code.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;a name="releases"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Releases&lt;/h2&gt; 
+&lt;p&gt;Abseil recommends users "live-at-head" (update to the latest commit from the master branch as often as possible). However, we realize this philosophy doesn't work for every project, so we also provide &lt;a href="https://github.com/abseil/abseil-cpp/releases"&gt;Long Term Support Releases&lt;/a&gt; to which we backport fixes for severe bugs. See our &lt;a href="https://abseil.io/about/releases"&gt;release management&lt;/a&gt; document for more details.&lt;/p&gt; 
+&lt;p&gt;&lt;a name="license"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;The Abseil C++ library is licensed under the terms of the Apache license. See &lt;a href="https://raw.githubusercontent.com/abseil/abseil-cpp/master/LICENSE"&gt;LICENSE&lt;/a&gt; for more information.&lt;/p&gt; 
+&lt;p&gt;&lt;a name="links"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Links&lt;/h2&gt; 
+&lt;p&gt;For more information about Abseil:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Consult our &lt;a href="https://abseil.io/about/intro"&gt;Abseil Introduction&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Read &lt;a href="https://abseil.io/about/philosophy"&gt;Why Adopt Abseil&lt;/a&gt; to understand our design philosophy.&lt;/li&gt; 
+ &lt;li&gt;Peruse our &lt;a href="https://abseil.io/about/compatibility"&gt;Abseil Compatibility Guarantees&lt;/a&gt; to understand both what we promise to you, and what we expect of you in return.&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Morganamilo/paru</title>
+      <link>https://github.com/Morganamilo/paru</link>
+      <description>&lt;p&gt;Feature packed AUR helper&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Paru&lt;/h1&gt; 
+&lt;p&gt;Feature packed AUR helper&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://aur.archlinux.org/packages/paru/"&gt;&lt;img src="https://img.shields.io/aur/version/paru?color=1793d1&amp;amp;label=paru&amp;amp;logo=arch-linux&amp;amp;style=for-the-badge" alt="paru" /&gt;&lt;/a&gt; &lt;a href="https://aur.archlinux.org/packages/paru-bin/"&gt;&lt;img src="https://img.shields.io/aur/version/paru-bin?color=1793d1&amp;amp;label=paru-bin&amp;amp;logo=arch-linux&amp;amp;style=for-the-badge" alt="paru-bin" /&gt;&lt;/a&gt; &lt;a href="https://aur.archlinux.org/packages/paru-git/"&gt;&lt;img src="https://img.shields.io/aur/version/paru-git?color=1793d1&amp;amp;label=paru-git&amp;amp;logo=arch-linux&amp;amp;style=for-the-badge" alt="paru-git" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Description&lt;/h2&gt; 
+&lt;p&gt;Paru is your standard pacman wrapping AUR helper with lots of features and minimal interaction.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://asciinema.org/a/sEh1ZpZZUgXUsgqKxuDdhpdEE"&gt;&lt;img src="https://asciinema.org/a/sEh1ZpZZUgXUsgqKxuDdhpdEE.svg?sanitize=true" alt="asciicast" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/Morganamilo/paru/master/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;General Tips&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Man pages&lt;/strong&gt;: For documentation on paru's options and config file see &lt;code&gt;paru(8)&lt;/code&gt; and &lt;code&gt;paru.conf(5)&lt;/code&gt; respectively.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Color&lt;/strong&gt;: Paru only enables color if color is enabled in pacman. Enable &lt;code&gt;color&lt;/code&gt; in your &lt;code&gt;pacman.conf&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;File based review&lt;/strong&gt;: To get a more advanced review process enable &lt;code&gt;FileManager&lt;/code&gt; with your file manager of choice in &lt;code&gt;paru.conf&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Flip search order&lt;/strong&gt;: To get search results to start at the bottom and go upwards, enable &lt;code&gt;BottomUp&lt;/code&gt; in &lt;code&gt;paru.conf&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Editing PKGBUILDs&lt;/strong&gt;: When editing PKGBUILDs, you can commit your changes to make them permanent. When the package is upgraded, &lt;code&gt;git&lt;/code&gt; will try to merge your changes with upstream's.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;PKGBUILD syntax highlighting&lt;/strong&gt;: You can install &lt;a href="https://github.com/sharkdp/bat"&gt;&lt;code&gt;bat&lt;/code&gt;&lt;/a&gt; to enable syntax highlighting during PKGBUILD review.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Tracking -git packages&lt;/strong&gt;: Paru tracks -git package by monitoring the upstream repository. Paru can only do this for packages that paru itself installed. &lt;code&gt;paru --gendb&lt;/code&gt; will make paru aware of packages it did not install.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Examples&lt;/h2&gt; 
+&lt;p&gt;&lt;code&gt;paru &amp;lt;target&amp;gt;&lt;/code&gt; -- Interactively search and install &lt;code&gt;&amp;lt;target&amp;gt;&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;paru&lt;/code&gt; -- Alias for &lt;code&gt;paru -Syu&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;paru -S &amp;lt;target&amp;gt;&lt;/code&gt; -- Install a specific package.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;paru -Sua&lt;/code&gt; -- Upgrade AUR packages.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;paru -Qua&lt;/code&gt; -- Print available AUR updates.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;paru -G &amp;lt;target&amp;gt;&lt;/code&gt; -- Download the PKGBUILD and related files of &lt;code&gt;&amp;lt;target&amp;gt;&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;paru -Gp &amp;lt;target&amp;gt;&lt;/code&gt; -- Print the PKGBUILD of &lt;code&gt;&amp;lt;target&amp;gt;&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;paru -Gc &amp;lt;target&amp;gt;&lt;/code&gt; -- Print the AUR comments of &lt;code&gt;&amp;lt;target&amp;gt;&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;paru --gendb&lt;/code&gt; -- Generate the devel database for tracking &lt;code&gt;*-git&lt;/code&gt; packages. This is only needed when you initially start using paru.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;paru -Bi .&lt;/code&gt; -- Build and install a PKGBUILD in the current directory.&lt;/p&gt; 
+&lt;h2&gt;IRC&lt;/h2&gt; 
+&lt;p&gt;Paru now has an IRC. #paru on &lt;a href="https://libera.chat/"&gt;Libera Chat&lt;/a&gt;. Feel free to join for discussion and help with paru.&lt;/p&gt; 
+&lt;h2&gt;Debugging&lt;/h2&gt; 
+&lt;p&gt;Paru is not an official tool. If paru can't build a package, you should first check if makepkg can successfully build the package. If it can't, then you should report the issue to the maintainer. Otherwise, it is likely an issue with paru and should be reported here.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
