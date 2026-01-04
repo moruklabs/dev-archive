@@ -1,0 +1,1580 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub Java Weekly Trending</title>
+    <description>Weekly Trending of Java in GitHub</description>
+    <pubDate>Sat, 03 Jan 2026 01:45:42 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>termux/termux-app</title>
+      <link>https://github.com/termux/termux-app</link>
+      <description>&lt;p&gt;Termux - a terminal emulator application for Android OS extendible by variety of packages.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Termux application&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/termux/termux-app/actions"&gt;&lt;img src="https://github.com/termux/termux-app/workflows/Build/badge.svg?sanitize=true" alt="Build status" /&gt;&lt;/a&gt; &lt;a href="https://github.com/termux/termux-app/actions"&gt;&lt;img src="https://github.com/termux/termux-app/workflows/Unit%20tests/badge.svg?sanitize=true" alt="Testing status" /&gt;&lt;/a&gt; &lt;a href="https://gitter.im/termux/termux"&gt;&lt;img src="https://badges.gitter.im/termux/termux.svg?sanitize=true" alt="Join the chat at https://gitter.im/termux/termux" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/HXpF69X"&gt;&lt;img src="https://img.shields.io/discord/641256914684084234.svg?label=&amp;amp;logo=discord&amp;amp;logoColor=ffffff&amp;amp;color=5865F2" alt="Join the Termux discord server" /&gt;&lt;/a&gt; &lt;a href="https://jitpack.io/#termux/termux-app"&gt;&lt;img src="https://jitpack.io/v/termux/termux-app.svg?sanitize=true" alt="Termux library releases at Jitpack" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://termux.com"&gt;Termux&lt;/a&gt; is an Android terminal application and Linux environment.&lt;/p&gt; 
+&lt;p&gt;Note that this repository is for the app itself (the user interface and the terminal emulation). For the packages installable inside the app, see &lt;a href="https://github.com/termux/termux-packages"&gt;termux/termux-packages&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Quick how-to about Termux package management is available at &lt;a href="https://github.com/termux/termux-packages/wiki/Package-Management"&gt;Package Management&lt;/a&gt;. It also has info on how to fix &lt;strong&gt;&lt;code&gt;repository is under maintenance or down&lt;/code&gt;&lt;/strong&gt; errors when running &lt;code&gt;apt&lt;/code&gt; or &lt;code&gt;pkg&lt;/code&gt; commands.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;We are looking for Termux Android application maintainers.&lt;/strong&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;NOTICE: Termux may be unstable on Android 12+.&lt;/strong&gt; Android OS will kill any (phantom) processes greater than 32 (limit is for all apps combined) and also kill any processes using excessive CPU. You may get &lt;code&gt;[Process completed (signal 9) - press Enter]&lt;/code&gt; message in the terminal without actually exiting the shell process yourself. Check the related issue &lt;a href="https://github.com/termux/termux-app/issues/2366"&gt;#2366&lt;/a&gt;, &lt;a href="https://issuetracker.google.com/u/1/issues/205156966"&gt;issue tracker&lt;/a&gt;, &lt;a href="https://github.com/agnostic-apollo/Android-Docs/raw/master/en/docs/apps/processes/phantom-cached-and-empty-processes.md"&gt;phantom cached and empty processes docs&lt;/a&gt; and &lt;a href="https://github.com/termux/termux-app/issues/2366#issuecomment-1237468220"&gt;this TLDR comment&lt;/a&gt; on how to disable trimming of phantom and excessive cpu usage processes. A proper docs page will be added later. An option to disable the killing should be available in Android 12L or 13, so upgrade at your own risk if you are on Android 11, specially if you are not rooted.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#termux-app-and-plugins"&gt;Termux App and Plugins&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#installation"&gt;Installation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#uninstallation"&gt;Uninstallation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#important-links"&gt;Important Links&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#debugging"&gt;Debugging&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#for-maintainers-and-contributors"&gt;For Maintainers and Contributors&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#forking"&gt;Forking&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#sponsors-and-funders"&gt;Sponsors and Funders&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;&lt;/h2&gt; 
+&lt;h2&gt;Termux App and Plugins&lt;/h2&gt; 
+&lt;p&gt;The core &lt;a href="https://github.com/termux/termux-app"&gt;Termux&lt;/a&gt; app comes with the following optional plugin apps.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-api"&gt;Termux:API&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-boot"&gt;Termux:Boot&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-float"&gt;Termux:Float&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-styling"&gt;Termux:Styling&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-tasker"&gt;Termux:Tasker&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-widget"&gt;Termux:Widget&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;&lt;/h2&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;Latest version is &lt;code&gt;v0.118.3&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;NOTICE: It is highly recommended that you update to &lt;code&gt;v0.118.0&lt;/code&gt; or higher ASAP for various bug fixes, including a critical world-readable vulnerability reported &lt;a href="https://termux.github.io/general/2022/02/15/termux-apps-vulnerability-disclosures.html"&gt;here&lt;/a&gt;. See &lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#google-play-store-experimental-branch"&gt;below&lt;/a&gt; for information regarding Termux on Google Play.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Termux can be obtained through various sources listed below for &lt;strong&gt;only&lt;/strong&gt; Android &lt;code&gt;&amp;gt;= 7&lt;/code&gt; with full support for apps and packages.&lt;/p&gt; 
+&lt;p&gt;Support for both app and packages was dropped for Android &lt;code&gt;5&lt;/code&gt; and &lt;code&gt;6&lt;/code&gt; on &lt;a href="https://www.reddit.com/r/termux/comments/dnzdbs/end_of_android56_support_on_20200101/"&gt;2020-01-01&lt;/a&gt; at &lt;code&gt;v0.83&lt;/code&gt;, however it was re-added just for the app &lt;em&gt;without any support for package updates&lt;/em&gt; on &lt;a href="https://github.com/termux/termux-app/pull/2740"&gt;2022-05-24&lt;/a&gt; via the &lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#github"&gt;GitHub&lt;/a&gt; sources. Check &lt;a href="https://github.com/termux/termux-app/wiki/Termux-on-android-5-or-6"&gt;here&lt;/a&gt; for the details.&lt;/p&gt; 
+&lt;p&gt;The APK files of different sources are signed with different signature keys. The &lt;code&gt;Termux&lt;/code&gt; app and all its plugins use the same &lt;a href="https://developer.android.com/guide/topics/manifest/manifest-element"&gt;&lt;code&gt;sharedUserId&lt;/code&gt;&lt;/a&gt; &lt;code&gt;com.termux&lt;/code&gt; and so all their APKs installed on a device must have been signed with the same signature key to work together and so they must all be installed from the same source. Do not attempt to mix them together, i.e do not try to install an app or plugin from &lt;code&gt;F-Droid&lt;/code&gt; and another one from a different source like &lt;code&gt;GitHub&lt;/code&gt;. Android Package Manager will also normally not allow installation of APKs with different signatures and you will get errors on installation like &lt;code&gt;App not installed&lt;/code&gt;, &lt;code&gt;Failed to install due to an unknown error&lt;/code&gt;, &lt;code&gt;INSTALL_FAILED_UPDATE_INCOMPATIBLE&lt;/code&gt;, &lt;code&gt;INSTALL_FAILED_SHARED_USER_INCOMPATIBLE&lt;/code&gt;, &lt;code&gt;signatures do not match previously installed version&lt;/code&gt;, etc. This restriction can be bypassed with root or with custom roms.&lt;/p&gt; 
+&lt;p&gt;If you wish to install from a different source, then you must &lt;strong&gt;uninstall any and all existing Termux or its plugin app APKs&lt;/strong&gt; from your device first, then install all new APKs from the same new source. Check &lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#uninstallation"&gt;Uninstallation&lt;/a&gt; section for details. You may also want to consider &lt;a href="https://wiki.termux.com/wiki/Backing_up_Termux"&gt;Backing up Termux&lt;/a&gt; before the uninstallation so that you can restore it after re-installing from Termux different source.&lt;/p&gt; 
+&lt;p&gt;In the following paragraphs, &lt;em&gt;"bootstrap"&lt;/em&gt; refers to the minimal packages that are shipped with the &lt;code&gt;termux-app&lt;/code&gt; itself to start a working shell environment. Its zips are built and released &lt;a href="https://github.com/termux/termux-packages/releases"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;F-Droid&lt;/h3&gt; 
+&lt;p&gt;Termux application can be obtained from &lt;code&gt;F-Droid&lt;/code&gt; from &lt;a href="https://f-droid.org/en/packages/com.termux/"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;You &lt;strong&gt;do not&lt;/strong&gt; need to download the &lt;code&gt;F-Droid&lt;/code&gt; app (via the &lt;code&gt;Download F-Droid&lt;/code&gt; link) to install Termux. You can download the Termux APK directly from the site by clicking the &lt;code&gt;Download APK&lt;/code&gt; link at the bottom of each version section.&lt;/p&gt; 
+&lt;p&gt;It usually takes a few days (or even a week or more) for updates to be available on &lt;code&gt;F-Droid&lt;/code&gt; once an update has been released on &lt;code&gt;GitHub&lt;/code&gt;. The &lt;code&gt;F-Droid&lt;/code&gt; releases are built and published by &lt;code&gt;F-Droid&lt;/code&gt; once they &lt;a href="https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/com.termux.yml"&gt;detect&lt;/a&gt; a new &lt;code&gt;GitHub&lt;/code&gt; release. The Termux maintainers &lt;strong&gt;do not&lt;/strong&gt; have any control over the building and publishing of the Termux apps on &lt;code&gt;F-Droid&lt;/code&gt;. Moreover, the Termux maintainers also do not have access to the APK signing keys of &lt;code&gt;F-Droid&lt;/code&gt; releases, so we cannot release an APK ourselves on &lt;code&gt;GitHub&lt;/code&gt; that would be compatible with &lt;code&gt;F-Droid&lt;/code&gt; releases.&lt;/p&gt; 
+&lt;p&gt;The &lt;code&gt;F-Droid&lt;/code&gt; app often may not notify you of updates and you will manually have to do a pull down swipe action in the &lt;code&gt;Updates&lt;/code&gt; tab of the app for it to check updates. Make sure battery optimizations are disabled for the app, check &lt;a href="https://dontkillmyapp.com/"&gt;https://dontkillmyapp.com/&lt;/a&gt; for details on how to do that.&lt;/p&gt; 
+&lt;p&gt;Only a universal APK is released, which will work on all supported architectures. The APK and bootstrap installation size will be &lt;code&gt;~180MB&lt;/code&gt;. &lt;code&gt;F-Droid&lt;/code&gt; does &lt;a href="https://github.com/termux/termux-app/pull/1904"&gt;not support&lt;/a&gt; architecture specific APKs.&lt;/p&gt; 
+&lt;h3&gt;GitHub&lt;/h3&gt; 
+&lt;p&gt;Termux application can be obtained on &lt;code&gt;GitHub&lt;/code&gt; either from &lt;a href="https://github.com/termux/termux-app/releases"&gt;&lt;code&gt;GitHub Releases&lt;/code&gt;&lt;/a&gt; for version &lt;code&gt;&amp;gt;= 0.118.0&lt;/code&gt; or from &lt;a href="https://github.com/termux/termux-app/actions/workflows/debug_build.yml?query=branch%3Amaster+event%3Apush"&gt;&lt;code&gt;GitHub Build Action&lt;/code&gt;&lt;/a&gt; workflows. &lt;strong&gt;For android &lt;code&gt;&amp;gt;= 7&lt;/code&gt;, only install &lt;code&gt;apt-android-7&lt;/code&gt; variants. For android &lt;code&gt;5&lt;/code&gt; and &lt;code&gt;6&lt;/code&gt;, only install &lt;code&gt;apt-android-5&lt;/code&gt; variants.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;The APKs for &lt;code&gt;GitHub Releases&lt;/code&gt; will be listed under &lt;code&gt;Assets&lt;/code&gt; drop-down of a release. These are automatically attached when a new version is released.&lt;/p&gt; 
+&lt;p&gt;The APKs for &lt;code&gt;GitHub Build&lt;/code&gt; action workflows will be listed under &lt;code&gt;Artifacts&lt;/code&gt; section of a workflow run. These are created for each commit/push done to the repository and can be used by users who don't want to wait for releases and want to try out the latest features immediately or want to test their pull requests. Note that for action workflows, you need to be &lt;a href="https://github.com/login"&gt;&lt;strong&gt;logged into a &lt;code&gt;GitHub&lt;/code&gt; account&lt;/strong&gt;&lt;/a&gt; for the &lt;code&gt;Artifacts&lt;/code&gt; links to be enabled/clickable. If you are using the &lt;a href="https://github.com/mobile"&gt;&lt;code&gt;GitHub&lt;/code&gt; app&lt;/a&gt;, then make sure to open workflow link in a browser like Chrome or Firefox that has your GitHub account logged in since the in-app browser may not be logged in.&lt;/p&gt; 
+&lt;p&gt;The APKs for both of these are &lt;a href="https://developer.android.com/studio/debug"&gt;&lt;code&gt;debuggable&lt;/code&gt;&lt;/a&gt; and are compatible with each other but they are not compatible with other sources.&lt;/p&gt; 
+&lt;p&gt;Both universal and architecture specific APKs are released. The APK and bootstrap installation size will be &lt;code&gt;~180MB&lt;/code&gt; if using universal and &lt;code&gt;~120MB&lt;/code&gt; if using architecture specific. Check &lt;a href="https://github.com/termux/termux-app/issues/2153"&gt;here&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Security warning&lt;/strong&gt;: APK files on GitHub are signed with a test key that has been &lt;a href="https://github.com/termux/termux-app/raw/master/app/testkey_untrusted.jks"&gt;shared with community&lt;/a&gt;. This IS NOT an official developer key and everyone can use it to generate releases for own testing. Be very careful when using Termux GitHub builds obtained elsewhere except &lt;a href="https://github.com/termux/termux-app"&gt;https://github.com/termux/termux-app&lt;/a&gt;. Everyone is able to use it to forge a malicious Termux update installable over the GitHub build. Think twice about installing Termux builds distributed via Telegram or other social media. If your device get caught by malware, we will not be able to help you.&lt;/p&gt; 
+&lt;p&gt;The &lt;a href="https://github.com/termux/termux-app/raw/master/app/testkey_untrusted.jks"&gt;test key&lt;/a&gt; shall not be used to impersonate @termux and can't be used for this anyway. This key is not trusted by us and it is quite easy to detect its use in user generated content.&lt;/p&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Keystore information&lt;/summary&gt; 
+ &lt;pre&gt;&lt;code&gt;Alias name: alias
+Creation date: Oct 4, 2019
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: CN=APK Signer, OU=Earth, O=Earth
+Issuer: CN=APK Signer, OU=Earth, O=Earth
+Serial number: 29be297b
+Valid from: Wed Sep 04 02:03:24 EEST 2019 until: Tue Oct 26 02:03:24 EEST 2049
+Certificate fingerprints:
+         SHA1: 51:79:55:EA:BF:69:FC:05:7C:41:C7:D3:79:DB:BC:EF:20:AD:85:F2
+         SHA256: B6:DA:01:48:0E:EF:D5:FB:F2:CD:37:71:B8:D1:02:1E:C7:91:30:4B:DD:6C:4B:F4:1D:3F:AA:BA:D4:8E:E5:E1
+Signature algorithm name: SHA1withRSA (disabled)
+Subject Public Key Algorithm: 2048-bit RSA key
+Version: 3
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;h3&gt;Google Play Store &lt;strong&gt;(Experimental branch)&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;There is currently a build of Termux available on Google Play for Android 11+ devices, with extensive adjustments in order to pass policy requirements there. This is under development and has missing functionality and bugs (see &lt;a href="https://github.com/termux-play-store/"&gt;here&lt;/a&gt; for status updates) compared to the stable F-Droid build, which is why most users who can should still use F-Droid or GitHub build as mentioned above.&lt;/p&gt; 
+&lt;p&gt;Currently, Google Play will try to update installations away from F-Droid ones. Updating will still fail as &lt;a href="https://developer.android.com/guide/topics/manifest/manifest-element#uid"&gt;sharedUserId&lt;/a&gt; has been removed. A planned 0.118.1 F-Droid release will fix this by setting a higher version code than used for the PlayStore app. Meanwhile, to prevent Google Play from attempting to download and then fail to install the Google Play releases over existing installations, you can open the Termux apps pages on Google Play and then click on the 3 dots options button in the top right and then disable the Enable auto update toggle. However, the Termux apps updates will still show in the PlayStore app updates list.&lt;/p&gt; 
+&lt;p&gt;If you want to help out with testing the Google Play build (or cannot install Termux from other sources), be aware that it's built from a separate repository (&lt;a href="https://github.com/termux-play-store/"&gt;https://github.com/termux-play-store/&lt;/a&gt;) - be sure to report issues &lt;a href="https://github.com/termux-play-store/termux-issues/issues/new/choose"&gt;there&lt;/a&gt;, as any issues encountered might very well be specific to that repository.&lt;/p&gt; 
+&lt;h2&gt;Uninstallation&lt;/h2&gt; 
+&lt;p&gt;Uninstallation may be required if a user doesn't want Termux installed in their device anymore or is switching to a different &lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#installation"&gt;install source&lt;/a&gt;. You may also want to consider &lt;a href="https://wiki.termux.com/wiki/Backing_up_Termux"&gt;Backing up Termux&lt;/a&gt; before the uninstallation.&lt;/p&gt; 
+&lt;p&gt;To uninstall Termux completely, you must uninstall &lt;strong&gt;any and all existing Termux or its plugin app APKs&lt;/strong&gt; listed in &lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#termux-app-and-plugins"&gt;Termux App and Plugins&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Go to &lt;code&gt;Android Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Applications&lt;/code&gt; and then look for those apps. You can also use the search feature if it’s available on your device and search &lt;code&gt;termux&lt;/code&gt; in the applications list.&lt;/p&gt; 
+&lt;p&gt;Even if you think you have not installed any of the plugins, it's strongly suggested to go through the application list in Android settings and double-check.&lt;/p&gt; 
+&lt;h2&gt;&lt;/h2&gt; 
+&lt;h2&gt;Important Links&lt;/h2&gt; 
+&lt;h3&gt;Community&lt;/h3&gt; 
+&lt;p&gt;All community links are available &lt;a href="https://wiki.termux.com/wiki/Community"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;The main ones are the following.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://reddit.com/r/termux"&gt;Termux Reddit community&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://matrix.to/#/#termux_termux:gitter.im"&gt;Termux User Matrix Channel&lt;/a&gt; (&lt;a href="https://gitter.im/termux/termux"&gt;Gitter&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://matrix.to/#/#termux_dev:gitter.im"&gt;Termux Dev Matrix Channel&lt;/a&gt; (&lt;a href="https://gitter.im/termux/dev"&gt;Gitter&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://twitter.com/termuxdevs"&gt;Termux X (Twitter)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="mailto:support@termux.dev"&gt;Termux Support Email&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Wikis&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/"&gt;Termux Wiki&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-app/wiki"&gt;Termux App Wiki&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-packages/wiki"&gt;Termux Packages Wiki&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Miscellaneous&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/FAQ"&gt;FAQ&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-packages/wiki/Termux-file-system-layout"&gt;Termux File System Layout&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Differences_from_Linux"&gt;Differences From Linux&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Package_Management"&gt;Package Management&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Remote_Access"&gt;Remote Access&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Backing_up_Termux"&gt;Backing up Termux&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Terminal_Settings"&gt;Terminal Settings&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Touch_Keyboard"&gt;Touch Keyboard&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Internal_and_external_storage"&gt;Android Storage and Sharing Data with Other Apps&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Termux:API"&gt;Android APIs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-packages/issues/6348"&gt;Moved Termux Packages Hosting From Bintray to IPFS&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-app/wiki/RUN_COMMAND-Intent"&gt;Running Commands in Termux From Other Apps via &lt;code&gt;RUN_COMMAND&lt;/code&gt; intent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-packages/wiki/Termux-and-Android-10"&gt;Termux and Android 10&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Terminal&lt;/h3&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;/summary&gt; 
+ &lt;h3&gt;Terminal resources&lt;/h3&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;a href="https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"&gt;XTerm control sequences&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://vt100.net/"&gt;vt100.net&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://wiki.bash-hackers.org/scripting/terminalcodes"&gt;Terminal codes (ANSI and terminfo equivalents)&lt;/a&gt;&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;h3&gt;Terminal emulators&lt;/h3&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt; &lt;p&gt;VTE (libvte): Terminal emulator widget for GTK+, mainly used in gnome-terminal. &lt;a href="https://github.com/GNOME/vte"&gt;Source&lt;/a&gt;, &lt;a href="https://bugzilla.gnome.org/buglist.cgi?quicksearch=product%3A%22vte%22+"&gt;Open Issues&lt;/a&gt;, and &lt;a href="https://bugzilla.gnome.org/buglist.cgi?bug_status=RESOLVED&amp;amp;bug_status=VERIFIED&amp;amp;chfield=resolution&amp;amp;chfieldfrom=-2000d&amp;amp;chfieldvalue=FIXED&amp;amp;product=vte&amp;amp;resolution=FIXED"&gt;All (including closed) issues&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;iTerm 2: OS X terminal application. &lt;a href="https://github.com/gnachman/iTerm2"&gt;Source&lt;/a&gt;, &lt;a href="https://gitlab.com/gnachman/iterm2/issues"&gt;Issues&lt;/a&gt; and &lt;a href="https://iterm2.com/documentation.html"&gt;Documentation&lt;/a&gt; (which includes &lt;a href="https://iterm2.com/documentation-escape-codes.html"&gt;iTerm2 proprietary escape codes&lt;/a&gt;).&lt;/p&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;Konsole: KDE terminal application. &lt;a href="https://projects.kde.org/projects/kde/applications/konsole/repository"&gt;Source&lt;/a&gt;, in particular &lt;a href="https://projects.kde.org/projects/kde/applications/konsole/repository/revisions/master/show/tests"&gt;tests&lt;/a&gt;, &lt;a href="https://bugs.kde.org/buglist.cgi?bug_severity=critical&amp;amp;bug_severity=grave&amp;amp;bug_severity=major&amp;amp;bug_severity=crash&amp;amp;bug_severity=normal&amp;amp;bug_severity=minor&amp;amp;bug_status=UNCONFIRMED&amp;amp;bug_status=NEW&amp;amp;bug_status=ASSIGNED&amp;amp;bug_status=REOPENED&amp;amp;product=konsole"&gt;Bugs&lt;/a&gt; and &lt;a href="https://bugs.kde.org/buglist.cgi?bug_severity=wishlist&amp;amp;bug_status=UNCONFIRMED&amp;amp;bug_status=NEW&amp;amp;bug_status=ASSIGNED&amp;amp;bug_status=REOPENED&amp;amp;product=konsole"&gt;Wishes&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;hterm: JavaScript terminal implementation from Chromium. &lt;a href="https://github.com/chromium/hterm"&gt;Source&lt;/a&gt;, including &lt;a href="https://github.com/chromium/hterm/raw/master/js/hterm_vt_tests.js"&gt;tests&lt;/a&gt;, and &lt;a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-hterm"&gt;Google group&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;xterm: The grandfather of terminal emulators. &lt;a href="https://invisible-island.net/datafiles/release/xterm.tar.gz"&gt;Source&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;Connectbot: Android SSH client. &lt;a href="https://github.com/connectbot/connectbot"&gt;Source&lt;/a&gt;&lt;/p&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;Android Terminal Emulator: Android terminal app which Termux terminal handling is based on. Inactive. &lt;a href="https://github.com/jackpal/Android-Terminal-Emulator"&gt;Source&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;h2&gt;&lt;/h2&gt; 
+&lt;h3&gt;Debugging&lt;/h3&gt; 
+&lt;p&gt;You can help debug problems of the &lt;code&gt;Termux&lt;/code&gt; app and its plugins by setting appropriate &lt;code&gt;logcat&lt;/code&gt; &lt;code&gt;Log Level&lt;/code&gt; in &lt;code&gt;Termux&lt;/code&gt; app settings -&amp;gt; &lt;code&gt;&amp;lt;APP_NAME&amp;gt;&lt;/code&gt; -&amp;gt; &lt;code&gt;Debugging&lt;/code&gt; -&amp;gt; &lt;code&gt;Log Level&lt;/code&gt; (Requires &lt;code&gt;Termux&lt;/code&gt; app version &lt;code&gt;&amp;gt;= 0.118.0&lt;/code&gt;). The &lt;code&gt;Log Level&lt;/code&gt; defaults to &lt;code&gt;Normal&lt;/code&gt; and log level &lt;code&gt;Verbose&lt;/code&gt; currently logs additional information. Its best to revert log level to &lt;code&gt;Normal&lt;/code&gt; after you have finished debugging since private data may otherwise be passed to &lt;code&gt;logcat&lt;/code&gt; during normal operation and moreover, additional logging increases execution time.&lt;/p&gt; 
+&lt;p&gt;The plugin apps &lt;strong&gt;do not execute the commands themselves&lt;/strong&gt; but send execution intents to &lt;code&gt;Termux&lt;/code&gt; app, which has its own log level which can be set in &lt;code&gt;Termux&lt;/code&gt; app settings -&amp;gt; &lt;code&gt;Termux&lt;/code&gt; -&amp;gt; &lt;code&gt;Debugging&lt;/code&gt; -&amp;gt; &lt;code&gt;Log Level&lt;/code&gt;. So you must set log level for both &lt;code&gt;Termux&lt;/code&gt; and the respective plugin app settings to get all the info.&lt;/p&gt; 
+&lt;p&gt;Once log levels have been set, you can run the &lt;code&gt;logcat&lt;/code&gt; command in &lt;code&gt;Termux&lt;/code&gt; app terminal to view the logs in realtime (&lt;code&gt;Ctrl+c&lt;/code&gt; to stop) or use &lt;code&gt;logcat -d &amp;gt; logcat.txt&lt;/code&gt; to take a dump of the log. You can also view the logs from a PC over &lt;code&gt;ADB&lt;/code&gt;. For more information, check official android &lt;code&gt;logcat&lt;/code&gt; guide &lt;a href="https://developer.android.com/studio/command-line/logcat"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Moreover, users can generate termux files &lt;code&gt;stat&lt;/code&gt; info and &lt;code&gt;logcat&lt;/code&gt; dump automatically too with terminal's long hold options menu &lt;code&gt;More&lt;/code&gt; -&amp;gt; &lt;code&gt;Report Issue&lt;/code&gt; option and selecting &lt;code&gt;YES&lt;/code&gt; in the prompt shown to add debug info. This can be helpful for reporting and debugging other issues. If the report generated is too large, then &lt;code&gt;Save To File&lt;/code&gt; option in context menu (3 dots on top right) of &lt;code&gt;ReportActivity&lt;/code&gt; can be used and the file viewed/shared instead.&lt;/p&gt; 
+&lt;p&gt;Users must post complete report (optionally without sensitive info) when reporting issues. Issues opened with &lt;strong&gt;(partial) screenshots of error reports&lt;/strong&gt; instead of text will likely be automatically closed/deleted.&lt;/p&gt; 
+&lt;h5&gt;Log Levels&lt;/h5&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;Off&lt;/code&gt; - Log nothing.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Normal&lt;/code&gt; - Start logging error, warn and info messages and stacktraces.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Debug&lt;/code&gt; - Start logging debug messages.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Verbose&lt;/code&gt; - Start logging verbose messages.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;&lt;/h2&gt; 
+&lt;h2&gt;For Maintainers and Contributors&lt;/h2&gt; 
+&lt;p&gt;The &lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/termux-shared"&gt;termux-shared&lt;/a&gt; library was added in &lt;a href="https://github.com/termux/termux-app/releases/tag/v0.109"&gt;&lt;code&gt;v0.109&lt;/code&gt;&lt;/a&gt;. It defines shared constants and utils of the Termux app and its plugins. It was created to allow for the removal of all hardcoded paths in the Termux app. Some of the termux plugins are using this as well and rest will in future. If you are contributing code that is using a constant or a util that may be shared, then define it in &lt;code&gt;termux-shared&lt;/code&gt; library if it currently doesn't exist and reference it from there. Update the relevant changelogs as well. Pull requests using hardcoded values &lt;strong&gt;will/should not&lt;/strong&gt; be accepted. Termux app and plugin specific classes must be added under &lt;code&gt;com.termux.shared.termux&lt;/code&gt; package and general classes outside it. The &lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/termux-shared/LICENSE.md"&gt;&lt;code&gt;termux-shared&lt;/code&gt; &lt;code&gt;LICENSE&lt;/code&gt;&lt;/a&gt; must also be checked and updated if necessary when contributing code. The licenses of any external library or code must be honoured.&lt;/p&gt; 
+&lt;p&gt;The main Termux constants are defined by &lt;a href="https://github.com/termux/termux-app/raw/master/termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java"&gt;&lt;code&gt;TermuxConstants&lt;/code&gt;&lt;/a&gt; class. It also contains information on how to fork Termux or build it with your own package name. Changing the package name will require building the bootstrap zip packages and other packages with the new &lt;code&gt;$PREFIX&lt;/code&gt;, check &lt;a href="https://github.com/termux/termux-packages/wiki/Building-packages"&gt;Building Packages&lt;/a&gt; for more info.&lt;/p&gt; 
+&lt;p&gt;Check &lt;a href="https://github.com/termux/termux-app/wiki/Termux-Libraries"&gt;Termux Libraries&lt;/a&gt; for how to import termux libraries in plugin apps and &lt;a href="https://github.com/termux/termux-app/wiki/Termux-Libraries#forking-and-local-development"&gt;Forking and Local Development&lt;/a&gt; for how to update termux libraries for plugins.&lt;/p&gt; 
+&lt;p&gt;The &lt;code&gt;versionName&lt;/code&gt; in &lt;code&gt;build.gradle&lt;/code&gt; files of Termux and its plugin apps must follow the &lt;a href="https://semver.org/spec/v2.0.0.html"&gt;semantic version &lt;code&gt;2.0.0&lt;/code&gt; spec&lt;/a&gt; in the format &lt;code&gt;major.minor.patch(-prerelease)(+buildmetadata)&lt;/code&gt;. When bumping &lt;code&gt;versionName&lt;/code&gt; in &lt;code&gt;build.gradle&lt;/code&gt; files and when creating a tag for new releases on GitHub, make sure to include the patch number as well, like &lt;code&gt;v0.1.0&lt;/code&gt; instead of just &lt;code&gt;v0.1&lt;/code&gt;. The &lt;code&gt;build.gradle&lt;/code&gt; files and &lt;code&gt;attach_debug_apks_to_release&lt;/code&gt; workflow validates the version as well and the build/attachment will fail if &lt;code&gt;versionName&lt;/code&gt; does not follow the spec.&lt;/p&gt; 
+&lt;h3&gt;Commit Messages Guidelines&lt;/h3&gt; 
+&lt;p&gt;Commit messages &lt;strong&gt;must&lt;/strong&gt; use the &lt;a href="https://www.conventionalcommits.org"&gt;Conventional Commits&lt;/a&gt; spec so that chagelogs as per the &lt;a href="https://github.com/olivierlacan/keep-a-changelog"&gt;Keep a Changelog&lt;/a&gt; spec can automatically be generated by the &lt;a href="https://github.com/termux/create-conventional-changelog"&gt;&lt;code&gt;create-conventional-changelog&lt;/code&gt;&lt;/a&gt; script, check its repo for further details on the spec. &lt;strong&gt;The first letter for &lt;code&gt;type&lt;/code&gt; and &lt;code&gt;description&lt;/code&gt; must be capital and description should be in the present tense.&lt;/strong&gt; The space after the colon &lt;code&gt;:&lt;/code&gt; is necessary. For a breaking change, add an exclamation mark &lt;code&gt;!&lt;/code&gt; before the colon &lt;code&gt;:&lt;/code&gt;, so that it is highlighted in the chagelog automatically.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;&amp;lt;type&amp;gt;[optional scope]: &amp;lt;description&amp;gt;
+
+[optional body]
+
+[optional footer(s)]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Only the &lt;code&gt;types&lt;/code&gt; listed below must be used exactly as they are used in the changelog headings.&lt;/strong&gt; For example, &lt;code&gt;Added: Add foo&lt;/code&gt;, &lt;code&gt;Added|Fixed: Add foo and fix bar&lt;/code&gt;, &lt;code&gt;Changed!: Change baz as a breaking change&lt;/code&gt;, etc. You can optionally add a scope as well, like &lt;code&gt;Fixed(terminal): Fix some bug&lt;/code&gt;. &lt;strong&gt;Do not use anything else as type, like &lt;code&gt;add&lt;/code&gt; instead of &lt;code&gt;Added&lt;/code&gt;, etc.&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Added&lt;/strong&gt; for new features.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Changed&lt;/strong&gt; for changes in existing functionality.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Deprecated&lt;/strong&gt; for soon-to-be removed features.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Removed&lt;/strong&gt; for now removed features.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Fixed&lt;/strong&gt; for any bug fixes.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Security&lt;/strong&gt; in case of vulnerabilities.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;&lt;/h2&gt; 
+&lt;h2&gt;Forking&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Check &lt;a href="https://github.com/termux/termux-app/raw/master/termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java"&gt;&lt;code&gt;TermuxConstants&lt;/code&gt;&lt;/a&gt; javadocs for instructions on what changes to make in the app to change package name.&lt;/li&gt; 
+ &lt;li&gt;You also need to recompile bootstrap zip for the new package name. Check &lt;a href="https://github.com/termux/termux-packages/wiki/For-maintainers#build-bootstrap-archives"&gt;building bootstrap&lt;/a&gt;, &lt;a href="https://github.com/termux/termux-app/issues/1983"&gt;here&lt;/a&gt; and &lt;a href="https://github.com/termux/termux-app/issues/2081#issuecomment-865280111"&gt;here&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Currently, not all plugins use &lt;code&gt;TermuxConstants&lt;/code&gt; from &lt;code&gt;termux-shared&lt;/code&gt; library and have hardcoded &lt;code&gt;com.termux&lt;/code&gt; values and will need to be manually patched.&lt;/li&gt; 
+ &lt;li&gt;If forking termux plugins, check &lt;a href="https://github.com/termux/termux-app/wiki/Termux-Libraries#forking-and-local-development"&gt;Forking and Local Development&lt;/a&gt; for info on how to use termux libraries for plugins.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;&lt;/h2&gt; 
+&lt;h2&gt;Sponsors and Funders&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com"&gt;&lt;img alt="GitHub Accelerator" width="25%" src="https://raw.githubusercontent.com/termux/termux-app/master/site/assets/sponsors/github.png" /&gt;&lt;/a&gt;&lt;br /&gt; &lt;em&gt;&lt;a href="https://github.com/accelerator"&gt;GitHub Accelerator&lt;/a&gt; (&lt;a href="https://github.blog/2023-04-12-github-accelerator-our-first-cohort-and-whats-next"&gt;1&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com"&gt;&lt;img alt="GitHub Secure Open Source Fund" width="25%" src="https://raw.githubusercontent.com/termux/termux-app/master/site/assets/sponsors/github.png" /&gt;&lt;/a&gt;&lt;br /&gt; &lt;em&gt;&lt;a href="https://resources.github.com/github-secure-open-source-fund"&gt;GitHub Secure Open Source Fund&lt;/a&gt; (&lt;a href="https://github.blog/open-source/maintainers/securing-the-supply-chain-at-scale-starting-with-71-important-open-source-projects"&gt;1&lt;/a&gt;, &lt;a href="https://termux.dev/en/posts/general/2025/08/11/termux-selected-for-github-secure-open-source-fund-session-2.html"&gt;2&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://nlnet.nl/mobifree"&gt;&lt;img alt="NLnet NGI Mobifree" width="25%" src="https://raw.githubusercontent.com/termux/termux-app/master/site/assets/sponsors/nlnet-ngi-mobifree.png" /&gt;&lt;/a&gt;&lt;br /&gt; &lt;em&gt;&lt;a href="https://nlnet.nl/mobifree"&gt;NLnet NGI Mobifree&lt;/a&gt; (&lt;a href="https://nlnet.nl/news/2024/20241111-NGI-Mobifree-grants.html"&gt;1&lt;/a&gt;, &lt;a href="https://termux.dev/en/posts/general/2024/11/11/termux-selected-for-nlnet-ngi-mobifree-grant.html"&gt;2&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.cloudflare.com"&gt;&lt;img alt="Cloudflare" width="25%" src="https://raw.githubusercontent.com/termux/termux-app/master/site/assets/sponsors/cloudflare.png" /&gt;&lt;/a&gt;&lt;br /&gt; &lt;em&gt;&lt;a href="https://www.cloudflare.com"&gt;Cloudflare&lt;/a&gt; (&lt;a href="https://packages-cf.termux.dev"&gt;1&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.warp.dev/?utm_source=github&amp;amp;utm_medium=readme&amp;amp;utm_campaign=termux"&gt;&lt;img alt="Warp" width="25%" src="https://github.com/warpdotdev/brand-assets/raw/640dffd347439bbcb535321ab36b7281cf4446c0/Github/Sponsor/Warp-Github-LG-03.png" /&gt;&lt;/a&gt;&lt;br /&gt; &lt;a href="https://www.warp.dev/?utm_source=github&amp;amp;utm_medium=readme&amp;amp;utm_campaign=termux"&gt;&lt;em&gt;Warp, built for coding with multiple AI agents&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Anuken/Mindustry</title>
+      <link>https://github.com/Anuken/Mindustry</link>
+      <description>&lt;p&gt;The automation tower defense RTS&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/Anuken/Mindustry/master/core/assets-raw/sprites/ui/logo.png" alt="Logo" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/Anuken/Mindustry/actions"&gt;&lt;img src="https://github.com/Anuken/Mindustry/workflows/Tests/badge.svg?event=push" alt="Build Status" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/mindustry"&gt;&lt;img src="https://img.shields.io/discord/391020510269669376.svg?logo=discord&amp;amp;logoColor=white&amp;amp;logoWidth=20&amp;amp;labelColor=7289DA&amp;amp;label=Discord&amp;amp;color=17cf48" alt="Discord" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;The automation tower defense RTS, written in Java.&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;&lt;a href="https://trello.com/b/aE2tcUwF/mindustry-40-plans"&gt;Trello Board&lt;/a&gt;&lt;/em&gt;&lt;br /&gt; &lt;em&gt;&lt;a href="https://mindustrygame.github.io/wiki"&gt;Wiki&lt;/a&gt;&lt;/em&gt;&lt;br /&gt; &lt;em&gt;&lt;a href="https://mindustrygame.github.io/docs/"&gt;Javadoc&lt;/a&gt;&lt;/em&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/Anuken/Mindustry/master/CONTRIBUTING.md"&gt;CONTRIBUTING&lt;/a&gt; for general code style and PR guidelines.&lt;/p&gt; 
+&lt;p&gt;If you are a first-time contributor looking for features to implement or bugs to fix, see the issues tagged with 'candidate' &lt;a href="https://github.com/Anuken/Mindustry-Suggestions/issues?q=is%3Aissue%20state%3Aopen%20label%3Acandidate"&gt;in the Mindustry-Suggestions repostiory&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Building&lt;/h2&gt; 
+&lt;p&gt;Bleeding-edge builds are generated automatically for every commit. You can see them &lt;a href="https://github.com/Anuken/MindustryBuilds/releases"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;If you'd rather compile on your own, follow these instructions. First, make sure you have &lt;a href="https://adoptium.net/temurin/releases/?os=any&amp;amp;arch=any&amp;amp;version=17"&gt;JDK 17&lt;/a&gt; installed. &lt;strong&gt;Other JDK versions will not work.&lt;/strong&gt; Open a terminal in the Mindustry directory and run the following commands:&lt;/p&gt; 
+&lt;h3&gt;Windows&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;Running:&lt;/em&gt; &lt;code&gt;gradlew desktop:run&lt;/code&gt;&lt;br /&gt; &lt;em&gt;Building:&lt;/em&gt; &lt;code&gt;gradlew desktop:dist&lt;/code&gt;&lt;br /&gt; &lt;em&gt;Sprite Packing:&lt;/em&gt; &lt;code&gt;gradlew tools:pack&lt;/code&gt;&lt;/p&gt; 
+&lt;h3&gt;Linux/Mac OS&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;Running:&lt;/em&gt; &lt;code&gt;./gradlew desktop:run&lt;/code&gt;&lt;br /&gt; &lt;em&gt;Building:&lt;/em&gt; &lt;code&gt;./gradlew desktop:dist&lt;/code&gt;&lt;br /&gt; &lt;em&gt;Sprite Packing:&lt;/em&gt; &lt;code&gt;./gradlew tools:pack&lt;/code&gt;&lt;/p&gt; 
+&lt;h3&gt;Server&lt;/h3&gt; 
+&lt;p&gt;Server builds are bundled with each released build (in Releases). If you'd rather compile on your own, replace 'desktop' with 'server', e.g. &lt;code&gt;gradlew server:dist&lt;/code&gt;.&lt;/p&gt; 
+&lt;h3&gt;Android&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Install the Android SDK &lt;a href="https://developer.android.com/studio#command-tools"&gt;here.&lt;/a&gt; Make sure you're downloading the "Command line tools only", as Android Studio is not required.&lt;/li&gt; 
+ &lt;li&gt;In the unzipped Android SDK folder, find the cmdline-tools directory. Then create a folder inside of it called &lt;code&gt;latest&lt;/code&gt; and put all of its contents into the newly created folder.&lt;/li&gt; 
+ &lt;li&gt;In the same directory run the command &lt;code&gt;sdkmanager --licenses&lt;/code&gt; (or &lt;code&gt;./sdkmanager --licenses&lt;/code&gt; if on linux/mac)&lt;/li&gt; 
+ &lt;li&gt;Set the &lt;code&gt;ANDROID_HOME&lt;/code&gt; environment variable to point to your unzipped Android SDK directory.&lt;/li&gt; 
+ &lt;li&gt;Enable developer mode on your device/emulator. If you are on testing on a phone you can follow &lt;a href="https://developer.android.com/studio/command-line/adb#Enabling"&gt;these instructions&lt;/a&gt;, otherwise you need to google how to enable your emulator's developer mode specifically.&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;gradlew android:assembleDebug&lt;/code&gt; (or &lt;code&gt;./gradlew&lt;/code&gt; if on linux/mac). This will create an unsigned APK in &lt;code&gt;android/build/outputs/apk&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;To debug the application on a connected device/emulator, run &lt;code&gt;gradlew android:installDebug android:run&lt;/code&gt;.&lt;/p&gt; 
+&lt;h3&gt;Troubleshooting&lt;/h3&gt; 
+&lt;h4&gt;Permission Denied&lt;/h4&gt; 
+&lt;p&gt;If the terminal returns &lt;code&gt;Permission denied&lt;/code&gt; or &lt;code&gt;Command not found&lt;/code&gt; on Mac/Linux, run &lt;code&gt;chmod +x ./gradlew&lt;/code&gt; before running &lt;code&gt;./gradlew&lt;/code&gt;. &lt;em&gt;This is a one-time procedure.&lt;/em&gt;&lt;/p&gt; 
+&lt;h4&gt;Where is the &lt;code&gt;mindustry.gen&lt;/code&gt; package?&lt;/h4&gt; 
+&lt;p&gt;As the name implies, &lt;code&gt;mindustry.gen&lt;/code&gt; is generated &lt;em&gt;at build time&lt;/em&gt; based on other code. You will not find source code for this package in the repository, and it should not be edited by hand.&lt;/p&gt; 
+&lt;p&gt;The following is a non-exhaustive list of the "source" of generated code in &lt;code&gt;mindustry.gen&lt;/code&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;Call&lt;/code&gt;, &lt;code&gt;*Packet&lt;/code&gt; classes: Generated from methods marked with &lt;code&gt;@Remote&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;All entity classes (&lt;code&gt;Unit&lt;/code&gt;, &lt;code&gt;EffectState&lt;/code&gt;, &lt;code&gt;Posc&lt;/code&gt;, etc): Generated from component classes in the &lt;code&gt;mindustry.entities.comp&lt;/code&gt; package, and combined using definitions in &lt;code&gt;mindustry.content.UnitTypes&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Sounds&lt;/code&gt;, &lt;code&gt;Musics&lt;/code&gt;, &lt;code&gt;Tex&lt;/code&gt;, &lt;code&gt;Icon&lt;/code&gt;, etc: Generated based on files in the respective asset folders.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;Gradle may take up to several minutes to download files. Be patient. &lt;br /&gt; After building, the output .JAR file should be in &lt;code&gt;/desktop/build/libs/Mindustry.jar&lt;/code&gt; for desktop builds, and in &lt;code&gt;/server/build/libs/server-release.jar&lt;/code&gt; for server builds.&lt;/p&gt; 
+&lt;h2&gt;Feature Requests&lt;/h2&gt; 
+&lt;p&gt;Post feature requests and feedback &lt;a href="https://github.com/Anuken/Mindustry-Suggestions/issues/new/choose"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Downloads&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;&lt;a href="https://anuke.itch.io/mindustry"&gt;&lt;img src="https://static.itch.io/images/badge.svg?sanitize=true" alt="" /&gt;&lt;/a&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;a href="https://play.google.com/store/apps/details?id=io.anuke.mindustry"&gt;&lt;img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="" /&gt;&lt;/a&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;a href="https://f-droid.org/packages/io.anuke.mindustry"&gt;&lt;img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="" /&gt;&lt;/a&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;a href="https://flathub.org/apps/details/com.github.Anuken.Mindustry"&gt;&lt;img src="https://flathub.org/assets/badges/flathub-badge-en.svg?sanitize=true" alt="" /&gt;&lt;/a&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+&lt;/table&gt;</description>
+    </item>
+    
+    <item>
+      <title>PaperMC/Paper</title>
+      <link>https://github.com/PaperMC/Paper</link>
+      <description>&lt;p&gt;The most widely used, high performance Minecraft server that aims to fix gameplay and mechanics inconsistencies&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Paper &lt;a href="https://github.com/PaperMC/Paper/actions"&gt;&lt;img src="https://img.shields.io/github/actions/workflow/status/PaperMC/Paper/build.yml?branch=main" alt="Paper Build Status" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/papermc"&gt;&lt;img src="https://img.shields.io/discord/289587909051416579.svg?label=&amp;amp;logo=discord&amp;amp;logoColor=ffffff&amp;amp;color=7389D8&amp;amp;labelColor=6A7EC2" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://github.com/sponsors/PaperMC"&gt;&lt;img src="https://img.shields.io/github/sponsors/papermc?label=GitHub%20Sponsors" alt="GitHub Sponsors" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/papermc"&gt;&lt;img src="https://img.shields.io/opencollective/all/papermc?label=OpenCollective%20Sponsors" alt="Open Collective" /&gt;&lt;/a&gt;&lt;/h1&gt; 
+&lt;p&gt;The most widely used, high-performance Minecraft server that aims to fix gameplay and mechanics inconsistencies.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Support and Project Discussion:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://forums.papermc.io/"&gt;Our forums&lt;/a&gt; or &lt;a href="https://discord.gg/papermc"&gt;Discord&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How To (Server Admins)&lt;/h2&gt; 
+&lt;p&gt;Paperclip is a jar file that you can download and run just like a normal jar file.&lt;/p&gt; 
+&lt;p&gt;Download Paper from our &lt;a href="https://papermc.io/downloads/paper"&gt;downloads page&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Run the Paperclip jar directly from your server. Just like old times&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Documentation on using Paper: &lt;a href="https://docs.papermc.io"&gt;docs.papermc.io&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;For a sneak peek at upcoming features, &lt;a href="https://github.com/PaperMC/Paper/projects"&gt;see here&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How To (Plugin Developers)&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;See our API &lt;a href="https://raw.githubusercontent.com/PaperMC/Paper/main/paper-api"&gt;here&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;See upcoming, pending, and recently added API &lt;a href="https://github.com/orgs/PaperMC/projects/2/views/4"&gt;here&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Paper API javadocs here: &lt;a href="https://papermc.io/javadocs/"&gt;papermc.io/javadocs&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Repository (for paper-api)&lt;/h4&gt; 
+&lt;h5&gt;Maven&lt;/h5&gt; 
+&lt;pre&gt;&lt;code class="language-xml"&gt;&amp;lt;repository&amp;gt;
+    &amp;lt;id&amp;gt;papermc&amp;lt;/id&amp;gt;
+    &amp;lt;url&amp;gt;https://repo.papermc.io/repository/maven-public/&amp;lt;/url&amp;gt;
+&amp;lt;/repository&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class="language-xml"&gt;&amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;io.papermc.paper&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;paper-api&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;1.21.11-R0.1-SNAPSHOT&amp;lt;/version&amp;gt;
+    &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h5&gt;Gradle&lt;/h5&gt; 
+&lt;pre&gt;&lt;code class="language-kotlin"&gt;repositories {
+    maven {
+        url = uri("https://repo.papermc.io/repository/maven-public/")
+    }
+}
+
+dependencies {
+    compileOnly("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
+}
+
+java {
+    toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;How To (Compiling Jar From Source)&lt;/h2&gt; 
+&lt;p&gt;To compile Paper, you need JDK 21 and an internet connection.&lt;/p&gt; 
+&lt;p&gt;Clone this repo, run &lt;code&gt;./gradlew applyPatches&lt;/code&gt;, then &lt;code&gt;./gradlew createMojmapBundlerJar&lt;/code&gt; from your terminal. You can find the compiled jar in the &lt;code&gt;paper-server/build/libs&lt;/code&gt; directory.&lt;/p&gt; 
+&lt;p&gt;To get a full list of tasks, run &lt;code&gt;./gradlew tasks&lt;/code&gt;.&lt;/p&gt; 
+&lt;h2&gt;How To (Pull Request)&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/PaperMC/Paper/main/CONTRIBUTING.md"&gt;Contributing&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Old Versions (1.21.3 and below)&lt;/h2&gt; 
+&lt;p&gt;For branches of versions 1.8-1.21.3, please see our &lt;a href="https://github.com/PaperMC/Paper-archive"&gt;archive repository&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Support Us&lt;/h2&gt; 
+&lt;p&gt;First of all, thank you for considering helping out, we really appreciate that!&lt;/p&gt; 
+&lt;p&gt;PaperMC has various recurring expenses, mostly related to infrastructure. Paper uses &lt;a href="https://opencollective.com/"&gt;Open Collective&lt;/a&gt; via the &lt;a href="https://opencollective.com/opensource"&gt;Open Source Collective fiscal host&lt;/a&gt; to manage expenses. Open Collective allows us to be extremely transparent, so you can always see how your donations are used. You can read more about financially supporting PaperMC &lt;a href="https://papermc.io/sponsors"&gt;on our website&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;You can find our collective &lt;a href="https://opencollective.com/papermc"&gt;here&lt;/a&gt;, or you can donate via GitHub Sponsors &lt;a href="https://github.com/sponsors/PaperMC"&gt;here&lt;/a&gt;, which will also go towards the collective.&lt;/p&gt; 
+&lt;h2&gt;Special Thanks To:&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.yourkit.com/"&gt;&lt;img src="https://www.yourkit.com/images/yklogo.png" alt="YourKit-Logo" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.yourkit.com/"&gt;YourKit&lt;/a&gt;, makers of the outstanding java profiler, support open source projects of all kinds with their full featured &lt;a href="https://www.yourkit.com/java/profiler"&gt;Java&lt;/a&gt; and &lt;a href="https://www.yourkit.com/.net/profiler"&gt;.NET&lt;/a&gt; application profilers. We thank them for granting Paper an OSS license so that we can make our software the best it can be.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.jetbrains.com"&gt;&lt;img src="https://user-images.githubusercontent.com/21148213/121807008-8ffc6700-cc52-11eb-96a7-2f6f260f8fda.png" alt="" width="150" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.jetbrains.com/"&gt;JetBrains&lt;/a&gt;, creators of the IntelliJ IDEA, supports Paper with one of their &lt;a href="https://www.jetbrains.com/opensource/"&gt;Open Source Licenses&lt;/a&gt;. IntelliJ IDEA is the recommended IDE for working with Paper, and most of the Paper team uses it.&lt;/p&gt; 
+&lt;p&gt;All our sponsors!&lt;br /&gt; &lt;a href="https://papermc.io/sponsors"&gt;&lt;img src="https://raw.githubusercontent.com/PaperMC/papermc.io/data/sponsors.png" alt="Sponsor Image" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Creators-of-Create/Create</title>
+      <link>https://github.com/Creators-of-Create/Create</link>
+      <description>&lt;p&gt;[NeoForge Mod] Building Tools and Aesthetic Technology&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt;&lt;img src="https://raw.githubusercontent.com/Creators-of-Create/Create/mc1.21.1/dev/.idea/icon.png" alt="Logo" width="200" /&gt;&lt;/p&gt; 
+&lt;h1 align="center"&gt;Create &lt;br /&gt; &lt;a href="https://r.createmod.net/p"&gt;&lt;img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dsimibubi%26type%3Dpatrons&amp;amp;style=flat&amp;amp;label=Supporters&amp;amp;color=FF5733" alt="Patreon" /&gt;&lt;/a&gt; &lt;a href="https://r.createmod.net/d"&gt;&lt;img src="https://img.shields.io/discord/620934202875183104?color=5865F2&amp;amp;label=Discord&amp;amp;style=flat" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://r.createmod.net/cf"&gt;&lt;img src="https://img.shields.io/curseforge/dt/328085?logo=curseforge&amp;amp;label=&amp;amp;suffix=%20&amp;amp;style=flat&amp;amp;color=242629&amp;amp;labelColor=F16436&amp;amp;logoColor=1C1C1C" alt="CurseForge" /&gt;&lt;/a&gt; &lt;a href="https://r.createmod.net/mr"&gt;&lt;img src="https://img.shields.io/modrinth/dt/create?logo=modrinth&amp;amp;label=&amp;amp;suffix=%20&amp;amp;style=flat&amp;amp;color=242629&amp;amp;labelColor=5CA424&amp;amp;logoColor=1C1C1C" alt="Modrinth" /&gt;&lt;/a&gt; &lt;br /&gt;&lt;br /&gt; &lt;/h1&gt; 
+&lt;p&gt;Welcome to Create, a mod offering a variety of tools and blocks for Building, Decoration, and Aesthetic Automation.&lt;/p&gt; 
+&lt;p&gt;The added elements of tech are designed to leave as many design choices to the player as possible. With Create, the game isn't played inside a bunch of UIs, it challenges you to set up contraptions of animated components working together in many possible arrangements.&lt;/p&gt; 
+&lt;p&gt;Create's visual in-game documentation called 'Ponder' will guide you through all added mechanics and gadgets.&lt;/p&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;p align="center"&gt;&lt;a href="https://github.com/Creators-of-Create/Create/issues"&gt;&lt;img src="https://i.imgur.com/qPmjSXy.png" width="160" /&gt;&lt;/a&gt; &lt;a href="https://www.youtube.com/channel/UCrKV2QTuyGcv4E3eSJpBiYA/playlists"&gt;&lt;img src="https://i.imgur.com/L1bU9mr.png" width="160" /&gt;&lt;/a&gt;&lt;a href="https://discord.gg/hmaD7Se"&gt;&lt;img src="https://i.imgur.com/uf6V9ZX.png" width="160" /&gt;&lt;/a&gt; &lt;a href="https://github.com/Creators-of-Create/Create/wiki/Supporting-the-Project"&gt;&lt;img src="https://i.imgur.com/fHQ45KR.png" width="227" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;&lt;/h1&gt; 
+&lt;h4 align="center"&gt;Find out more about Create on our &lt;a href="https://www.curseforge.com/minecraft/mc-mods/create"&gt;Curseforge&lt;/a&gt; or &lt;a href="https://modrinth.com/mod/create"&gt;Modrinth&lt;/a&gt; Page&lt;/h4&gt; 
+&lt;h4 align="center"&gt;Looking for the Fabric port? &lt;a href="https://github.com/Fabricators-of-Create/Create"&gt;Find it here&lt;/a&gt;&lt;/h4&gt;</description>
+    </item>
+    
+    <item>
+      <title>LawnchairLauncher/lawnchair</title>
+      <link>https://github.com/LawnchairLauncher/lawnchair</link>
+      <description>&lt;p&gt;No clever tagline needed.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Lawnchair 15&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/LawnchairLauncher/lawnchair/actions/workflows/ci.yml"&gt;&lt;img src="https://github.com/LawnchairLauncher/lawnchair/actions/workflows/ci.yml/badge.svg?sanitize=true" alt="Build debug APK" /&gt;&lt;/a&gt; &lt;a href="https://github.com/LawnchairLauncher/lawnchair/actions/workflows/release_update.yml"&gt;&lt;img src="https://github.com/LawnchairLauncher/lawnchair/actions/workflows/release_update.yml/badge.svg?sanitize=true" alt="Build release APK" /&gt;&lt;/a&gt; &lt;a href="https://lawnchair.crowdin.com/lawnchair"&gt;&lt;img src="https://badges.crowdin.net/e/188ba69d884418987f0b7f1dd55e3a4e/localized.svg?sanitize=true" alt="Crowdin" /&gt;&lt;/a&gt; &lt;a href="https://opencollective.com/lawnchair"&gt;&lt;img src="https://img.shields.io/opencollective/all/lawnchair?label=financial%20contributors&amp;amp;logo=open-collective" alt="OpenCollective" /&gt;&lt;/a&gt; &lt;a href="https://t.me/lccommunity"&gt;&lt;img src="https://img.shields.io/endpoint?url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Flccommunity" alt="Telegram" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/3x8qNWxgGZ"&gt;&lt;img src="https://img.shields.io/discord/803299970169700402?label=server&amp;amp;logo=discord" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://github.com/LawnchairLauncher/lawnchair/releases"&gt;&lt;img src="https://img.shields.io/github/downloads/LawnchairLauncher/lawnchair/total.svg?label=GitHub%20Downloads&amp;amp;logo=github" alt="GitHub Downloads" /&gt;&lt;/a&gt; &lt;a href="https://play.google.com/store/apps/details?id=app.lawnchair.play"&gt;&lt;img src="https://img.shields.io/endpoint?color=green&amp;amp;logo=googleplay&amp;amp;logoColor=green&amp;amp;url=https%3A%2F%2Fplay.cuzi.workers.dev%2Fplay%3Fi%3Dapp.lawnchair.play%26l%3DPlay%2520Store%2520Installs%26m%3D%24shortinstalls" alt="Play Store Installs" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;picture&gt; 
+ &lt;!-- Avoid image being clickable with slight workaround --&gt; 
+ &lt;!-- ❤️ Credit to Raine for the original mockup on the Lawnchair Discord --&gt; 
+ &lt;!-- ❤️ Credit to Lawrence Kayku for the current mockup on Unsplash 
+            https://unsplash.com/photos/photography-of-green-leaves-ZVKr8wADhpc 
+    --&gt; 
+ &lt;source media="(prefers-color-scheme: dark)" srcset="docs/assets/device-frame.png" width="250px" /&gt; 
+ &lt;img alt="Google Pixel running Lawnchair Launcher with green wallpaper" src="https://raw.githubusercontent.com/LawnchairLauncher/lawnchair/15-dev/docs/assets/device-frame.png" width="250px" /&gt; 
+&lt;/picture&gt; 
+&lt;p&gt;Lawnchair is a free, open-source home app for Android. Taking Launcher3—Android’s default home app—as a starting point, it ports Pixel Launcher features and introduces rich customization options.&lt;/p&gt; 
+&lt;p&gt;This branch houses the codebase of Lawnchair 15, which is currently in beta and is based on Launcher3 from Android 15. For Lawnchair 9 to 14, see the branches with the &lt;code&gt;9-&lt;/code&gt; to &lt;code&gt;14-&lt;/code&gt; prefixes, respectively.&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Material You Theming:&lt;/strong&gt; Adapts to your wallpaper and system theme.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;At a Glance Widget:&lt;/strong&gt; Displays information &lt;em&gt;at a glance&lt;/em&gt; with support for &lt;a href="https://github.com/KieronQuinn/Smartspacer"&gt;Smartspacer&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;QuickSwitch Support:&lt;/strong&gt; Integrates with Android Recents on Android 10 and newer. (requires root)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Global Search:&lt;/strong&gt; Allows quick access to apps, contacts, and web results from the home screen.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Customization Options:&lt;/strong&gt; Provides options to tweak icons, fonts, and colors to your liking.&lt;/li&gt; 
+ &lt;li&gt;And more!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Download&lt;/h2&gt; 
+&lt;p align="left"&gt; &lt;a href="https://play.google.com/store/apps/details?id=app.lawnchair.play"&gt; 
+  &lt;picture&gt; 
+   &lt;!-- Avoid image being clickable with slight workaround --&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="docs/assets/badge-google-play.png" height="60" /&gt; 
+   &lt;img alt="Get it on Google Play" src="https://raw.githubusercontent.com/LawnchairLauncher/lawnchair/15-dev/docs/assets/badge-google-play.png" height="60" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;a href="https://apt.izzysoft.de/fdroid/index/apk/app.lawnchair"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="docs/assets/badge-izzyondroid.png" height="60" /&gt; 
+   &lt;img alt="Get it on IzzyOnDroid" src="https://raw.githubusercontent.com/LawnchairLauncher/lawnchair/15-dev/docs/assets/badge-izzyondroid.png" height="60" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/LawnchairLauncher/lawnchair/"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="docs/assets/badge-obtainium.png" height="60" /&gt; 
+   &lt;img alt="Get it on Obtainium" src="https://raw.githubusercontent.com/LawnchairLauncher/lawnchair/15-dev/docs/assets/badge-obtainium.png" height="60" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;a href="https://github.com/LawnchairLauncher/lawnchair/releases"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="docs/assets/badge-github.png" height="60" /&gt; 
+   &lt;img alt="Get it on GitHub" src="https://raw.githubusercontent.com/LawnchairLauncher/lawnchair/15-dev/docs/assets/badge-github.png" height="60" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;Lawnchair on Play Store will install as a different app from other sources. Some features may be restricted to comply with Google Play's publishing rules.&lt;/p&gt; 
+&lt;h3&gt;Development builds&lt;/h3&gt; 
+&lt;p&gt;Interested in keeping yourself up-to-date with every Lawnchair development? Try our development builds!&lt;/p&gt; 
+&lt;p&gt;These builds offer the latest features and bug fixes at a cost of being slower and introducing new bugs. Ensure that you make backups before installing.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Download:&lt;/strong&gt; &lt;a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22app.lawnchair.nightly%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Flawnchairlauncher%2Flawnchair%22%2C%22author%22%3A%22Lawnchair%20Launcher%22%2C%22name%22%3A%22Lawnchair%20(Debug)%22%2C%22preferredApkIndex%22%3A0%2C%22additionalSettings%22%3A%22%7B%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22fallbackToOlderReleases%5C%22%3Afalse%2C%5C%22filterReleaseTitlesByRegEx%5C%22%3A%5C%22Lawnchair%20Nightly%5C%22%2C%5C%22filterReleaseNotesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22verifyLatestTag%5C%22%3Afalse%2C%5C%22dontSortReleasesList%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Afalse%2C%5C%22trackOnly%5C%22%3Afalse%2C%5C%22versionExtractionRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22matchGroupToUse%5C%22%3A%5C%22%5C%22%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22useVersionCodeAsOSVersion%5C%22%3Afalse%2C%5C%22apkFilterRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22invertAPKFilter%5C%22%3Afalse%2C%5C%22autoApkFilterByArch%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22%5C%22%2C%5C%22shizukuPretendToBeGooglePlay%5C%22%3Afalse%2C%5C%22exemptFromBackgroundUpdates%5C%22%3Afalse%2C%5C%22skipUpdateNotifications%5C%22%3Afalse%2C%5C%22about%5C%22%3A%5C%22Lawnchair%20is%20a%20free%2C%20open-source%20home%20app%20for%20Android.%20(NOTE%3A%20This%20is%20the%20debug%20version%20of%20Lawnchair%2C%20for%20the%20beta%2Fstable%20versions%20see%20%5C%5C%5C%22Lawnchair%5C%5C%5C%22)%5C%22%7D%22%7D"&gt;Obtainium&lt;/a&gt; • &lt;a href="https://github.com/LawnchairLauncher/lawnchair/releases/tag/nightly"&gt;GitHub&lt;/a&gt; • &lt;a href="https://nightly.link/LawnchairLauncher/lawnchair/workflows/ci/15-dev"&gt;nightly.link&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Verification&lt;/h3&gt; 
+&lt;p&gt;Verify the integrity of your Lawnchair download using these SHA-256 hashes:&lt;/p&gt; 
+&lt;h6&gt;Google Play&lt;/h6&gt; 
+&lt;pre&gt;&lt;code&gt;47:AC:92:63:1C:60:35:13:CC:8D:26:DD:9C:FF:E0:71:9A:8B:36:55:44:DC:CE:C2:09:58:24:EC:25:61:20:A7
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h6&gt;Elsewhere&lt;/h6&gt; 
+&lt;pre&gt;&lt;code&gt;74:7C:36:45:B3:57:25:8B:2E:23:E8:51:E5:3C:96:74:7F:E0:AD:D0:07:E5:BA:2C:D9:7E:8C:85:57:2E:4D:C5
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Please visit the &lt;a href="https://raw.githubusercontent.com/LawnchairLauncher/lawnchair/15-dev/CONTRIBUTING.md"&gt;Lawnchair Contributing Guidelines&lt;/a&gt; for information and tips on contributing to Lawnchair.&lt;/p&gt; 
+&lt;h2&gt;Supporting Lawnchair&lt;/h2&gt; 
+&lt;p&gt;If you love what we do, consider &lt;a href="https://opencollective.com/lawnchair"&gt;supporting us on Open Collective&lt;/a&gt;! Your contributions help keep Lawnchair independent and enable us to develop faster.&lt;/p&gt; 
+&lt;p&gt;A huge thank you to our &lt;strong&gt;Core Backers ($5+)&lt;/strong&gt;: &lt;em&gt;(These backers directly fund our Project Velocity Fund)&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://opencollective.com/lawnchair"&gt;&lt;img src="https://opencollective.com/lawnchair/tiers/backer.svg?avatarHeight=64&amp;amp;width=890&amp;amp;button=false" alt="Core Backers" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://opencollective.com/lawnchair"&gt;Become a supporter&lt;/a&gt; to help us cover our operational costs, or become a Core Backer to be featured here!&lt;/p&gt; 
+&lt;h2&gt;Quick links&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://lawnchair.app"&gt;Website&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://t.me/lawnchairci"&gt;News on Telegram&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://discord.com/invite/3x8qNWxgGZ"&gt;Discord&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://x.com/lawnchairapp"&gt;Lawnchair on X (formerly Twitter)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://xdaforums.com/t/lawnchair-customizable-pixel-launcher.3627137/"&gt;&lt;em&gt;XDA&lt;/em&gt; thread&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;You can view all our links in the &lt;a href="https://github.com/LawnchairLauncher/lawnchair/wiki"&gt;Lawnchair Wiki&lt;/a&gt;.&lt;/p&gt; 
+&lt;!-- Download link --&gt;</description>
+    </item>
+    
+    <item>
+      <title>halo-dev/halo</title>
+      <link>https://github.com/halo-dev/halo</link>
+      <description>&lt;p&gt;强大易用的开源建站工具。&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://www.halo.run" target="_blank" rel="noopener noreferrer"&gt; &lt;img width="100" src="https://www.halo.run/logo" alt="Halo logo" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;&lt;b&gt;Halo&lt;/b&gt; [ˈheɪloʊ]，强大易用的开源建站工具。&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/halo-dev/halo/releases"&gt;&lt;img alt="GitHub release" src="https://img.shields.io/github/release/halo-dev/halo.svg?style=flat-square&amp;amp;include_prereleases" /&gt;&lt;/a&gt; &lt;a href="https://hub.docker.com/r/halohub/halo"&gt;&lt;img alt="Docker pulls" src="https://img.shields.io/docker/pulls/halohub/halo?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://github.com/halo-dev/halo/commits"&gt;&lt;img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/halo-dev/halo.svg?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://github.com/halo-dev/halo/actions"&gt;&lt;img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/halo-dev/halo/halo.yaml?branch=main&amp;amp;style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://codecov.io/gh/halo-dev/halo"&gt;&lt;img alt="Codecov percentage" src="https://img.shields.io/codecov/c/github/halo-dev/halo/main?style=flat-square&amp;amp;token=YsRUg9fall" /&gt;&lt;/a&gt; &lt;a href="https://gitcode.com/feizhiyun/Halo"&gt;&lt;img src="https://gitcode.com/feizhiyun/Halo/star/badge.svg?sanitize=true" alt="GitCode Stars" /&gt;&lt;/a&gt; &lt;a href="https://www.producthunt.com/posts/halo-6b401e75-bb58-4dff-9fe9-2ada3323c874?utm_source=badge-featured&amp;amp;utm_medium=badge&amp;amp;utm_souce=badge-halo-6b401e75-bb58-4dff-9fe9-2ada3323c874" target="_blank"&gt;&lt;img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=407442&amp;amp;theme=light" alt="Halo - Powerful and easy-to-use Open-Source website building tool | Product Hunt" style="height: 20px;" height="20px" /&gt;&lt;/a&gt; &lt;br /&gt; &lt;a href="https://www.halo.run"&gt;官网&lt;/a&gt; &lt;a href="https://docs.halo.run"&gt;文档&lt;/a&gt; &lt;a href="https://bbs.halo.run"&gt;社区&lt;/a&gt; &lt;a href="https://gitee.com/halo-dev"&gt;Gitee&lt;/a&gt; &lt;a href="https://t.me/halo_dev"&gt;Telegram 频道&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.bilibili.com/video/BV15x4y1U7RU/?share_source=copy_web&amp;amp;vd_source=0ab6cf86ca512a363f04f18b86f55b86"&gt;&lt;img src="https://www.halo.run/upload/halo-github-screenshot.png" alt="Watch the video" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;快速开始&lt;/h2&gt; 
+&lt;p&gt;如果你的设备有 Docker 环境，可以使用以下命令快速启动一个 Halo 的体验环境：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -d --name halo -p 8090:8090 -v ~/.halo2:/root/.halo2 halohub/halo:2.21
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;或者点击下方按钮使用 &lt;a href="https://gitpod.io/"&gt;Gitpod&lt;/a&gt; 或 &lt;a href="https://template.us-west-1.run.claw.cloud/deploy?templateName=halo"&gt;ClawCloud Run&lt;/a&gt; 启动一个体验环境：&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://gitpod.io/#https://github.com/halo-sigs/gitpod-demo"&gt;&lt;img src="https://gitpod.io/button/open-in-gitpod.svg?sanitize=true" alt="Open in Gitpod" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://template.us-west-1.run.claw.cloud/deploy?templateName=halo"&gt;&lt;img src="https://raw.githubusercontent.com/ClawCloud/Run-Template/refs/heads/main/Run-on-ClawCloud.svg?sanitize=true" alt="Run on ClawCloud" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;以上方式仅作为体验使用，推荐使用开源 Linux 服务器运维管理面板 &lt;a href="https://github.com/1Panel-dev/1Panel"&gt;1Panel&lt;/a&gt; 进行部署（&lt;a href="https://docs.halo.run/getting-started/install/1panel"&gt;查看文档&lt;/a&gt;），轻松搞定反向代理、SSL 证书及升级备份任务。更多部署方式，请&lt;a href="https://docs.halo.run/category/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97"&gt;查看文档&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;在线体验&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;环境地址：&lt;a href="https://demo.halo.run"&gt;https://demo.halo.run&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;后台地址：&lt;a href="https://demo.halo.run/console"&gt;https://demo.halo.run/console&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;用户名：&lt;code&gt;demo&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;密码：&lt;code&gt;P@ssw0rd123..&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;付费版&lt;/h2&gt; 
+&lt;p&gt;相比于社区版，Halo 付费版为用户提供了大量增强功能及技术支持服务，增强功能包括商城、短信验证码注册登录、全站私有化、LDAP 登录、三方账号登录及自定义 Logo 等。 &lt;a href="https://www.lxware.cn/halo"&gt;点击查看付费版详细介绍&lt;/a&gt;。&lt;/p&gt; 
+&lt;h2&gt;生态&lt;/h2&gt; 
+&lt;p&gt;可访问 &lt;a href="https://www.halo.run/store/apps"&gt;官方应用市场&lt;/a&gt; 或 &lt;a href="https://github.com/halo-sigs/awesome-halo"&gt;awesome-halo 仓库&lt;/a&gt; 查看适用于 Halo 2.x 的主题和插件。&lt;/p&gt; 
+&lt;h2&gt;许可证&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/halo-dev/halo/raw/master/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/halo-dev/halo.svg?style=flat-square" alt="license" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Halo 使用 GPL-v3.0 协议开源，请遵守开源协议。&lt;/p&gt; 
+&lt;h2&gt;贡献&lt;/h2&gt; 
+&lt;p&gt;参考 &lt;a href="https://github.com/halo-dev/halo/raw/main/CONTRIBUTING.md"&gt;CONTRIBUTING&lt;/a&gt;。&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/halo-dev/halo/graphs/contributors"&gt;&lt;img src="https://opencollective.com/halo/contributors.svg?width=890&amp;amp;button=false" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;状态&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://repobeats.axiom.co/api/embed/ad008b2151c22e7cf734d2688befaa795d593b95.svg?sanitize=true" alt="Repobeats analytics" title="Repobeats analytics image" /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Xed-Editor/Xed-Editor</title>
+      <link>https://github.com/Xed-Editor/Xed-Editor</link>
+      <description>&lt;p&gt;Advanced Text Editor for Android&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/Xed-Editor/Xed-Editor/main/fastlane/metadata/android/en-US/images/icon.png" alt="Karbon Editor" width="90" height="90" /&gt; &lt;/p&gt; 
+&lt;h2 align="center"&gt;&lt;b&gt;Xed-Editor&lt;/b&gt;&lt;/h2&gt; 
+&lt;div align="center"&gt; 
+ &lt;img src="https://img.shields.io/github/downloads/Xed-Editor/Xed-Editor/total?label=Downloads" alt="Download Count" /&gt; 
+ &lt;img src="https://github.com/Rohitkushvaha01/Xed-Editor/actions/workflows/android.yml/badge.svg?event=push" alt="CI" /&gt; 
+&lt;/div&gt; 
+&lt;p&gt;&lt;strong&gt;Xed-Editor&lt;/strong&gt; is a versatile text editor for Android, offering advanced functionality such as syntax highlighting, extensive customization options, and a streamlined interface for efficient editing.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;We are looking for contributors/maintainers to help keep the project alive and speed up the development. You can help by fixing bugs, implementing &amp;amp; improving features, etc.&lt;/strong&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] Join the Xed-Editor community to stay updated and engage with other users:&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://t.me/XedEditor"&gt;Telegram&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://discord.gg/6bKzcQRuef"&gt;Discord&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Download&lt;/h2&gt; 
+&lt;div&gt; 
+ &lt;a href="https://android.izzysoft.de/repo/apk/com.rk.xededitor"&gt; &lt;img src="https://img.shields.io/endpoint?url=https://apt.izzysoft.de/fdroid/api/v1/shield/com.rk.xededitor&amp;amp;label=IzzyOnDroid&amp;amp;cacheSeconds=33000" /&gt; &lt;/a&gt; 
+ &lt;a href="https://f-droid.org/packages/com.rk.xededitor"&gt; &lt;img src="https://img.shields.io/f-droid/v/com.rk.xededitor" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Latest Alpha Build&lt;/strong&gt;: Download from &lt;a href="https://github.com/Xed-Editor/Xed-Editor/actions/"&gt;Actions&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;br /&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Latest Stable Build&lt;/strong&gt;: Download from &lt;a href="https://github.com/Xed-Editor/Xed-Editor/releases"&gt;Releases&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;a href="https://f-droid.org/packages/com.rk.xededitor"&gt;&lt;img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80" /&gt;&lt;/a&gt; &lt;a href="https://apt.izzysoft.de/fdroid/index/apk/com.rk.xededitor"&gt;&lt;img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png?ref_type=heads" alt="Get it on IzzyOnDroid" height="80" /&gt;&lt;/a&gt; &lt;a href="https://github.com/Xed-Editor/Xed-Editor/releases/latest"&gt;&lt;img src="https://raw.githubusercontent.com/Kunzisoft/Github-badge/main/get-it-on-github.png" alt="Get it on GitHub" height="80" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Screenshots&lt;/h2&gt; 
+&lt;div&gt; 
+ &lt;img src="https://raw.githubusercontent.com/Xed-Editor/Xed-Editor/main/fastlane/metadata/android/en-US/images/phoneScreenshots/01.jpg" width="32%" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/Xed-Editor/Xed-Editor/main/fastlane/metadata/android/en-US/images/phoneScreenshots/02.jpg" width="32%" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/Xed-Editor/Xed-Editor/main/fastlane/metadata/android/en-US/images/phoneScreenshots/03.jpg" width="32%" /&gt; 
+&lt;/div&gt; 
+&lt;div&gt; 
+ &lt;img src="https://raw.githubusercontent.com/Xed-Editor/Xed-Editor/main/fastlane/metadata/android/en-US/images/phoneScreenshots/04.jpg" width="32%" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/Xed-Editor/Xed-Editor/main/fastlane/metadata/android/en-US/images/phoneScreenshots/05.jpg" width="32%" /&gt; 
+ &lt;img src="https://raw.githubusercontent.com/Xed-Editor/Xed-Editor/main/fastlane/metadata/android/en-US/images/phoneScreenshots/06.jpg" width="32%" /&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions! Please read the &lt;a href="https://raw.githubusercontent.com/Xed-Editor/Xed-Editor/main/docs/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; file to learn how you can get involved.&lt;/p&gt; 
+&lt;h2&gt;Get Involved&lt;/h2&gt; 
+&lt;p&gt;Translate Xed-Editor! Visit &lt;a href="https://hosted.weblate.org/engage/xed-editor/"&gt;Weblate&lt;/a&gt; to get involved:&lt;/p&gt; 
+&lt;a href="https://hosted.weblate.org/engage/xed-editor/"&gt; &lt;img src="https://hosted.weblate.org/widgets/xed-editor/-/multi-auto.svg?sanitize=true" alt="Translation Status" /&gt; &lt;/a&gt; 
+&lt;h2&gt;Find this app useful? &lt;span&gt;❤️&lt;/span&gt;&lt;/h2&gt; 
+&lt;p&gt;Support it by giving a star &lt;span&gt;⭐&lt;/span&gt; &lt;br /&gt; Also, &lt;strong&gt;&lt;strong&gt;&lt;a href="https://github.com/Rohitkushvaha01"&gt;follow&lt;/a&gt;&lt;/strong&gt;&lt;/strong&gt; me for my next creations!&lt;/p&gt; 
+&lt;h2&gt;Contributors&lt;/h2&gt; 
+&lt;a href="https://github.com/Xed-Editor/Xed-Editor/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=Xed-Editor/Xed-Editor" /&gt; &lt;/a&gt;</description>
+    </item>
+    
+    <item>
+      <title>apache/fesod</title>
+      <link>https://github.com/apache/fesod</link>
+      <description>&lt;p&gt;Fast. Easy. Done. Processing spreadsheets without worrying about large files causing OOM.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://fesod.apache.org"&gt; &lt;img alt="fesod" src="https://raw.githubusercontent.com/apache/fesod/main/logo.svg?sanitize=true" width="260" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;b&gt;Readme&lt;/b&gt;: &lt;b&gt;&lt;a href="https://raw.githubusercontent.com/apache/fesod/main/README.md"&gt;English&lt;/a&gt;&lt;/b&gt; | &lt;a href="https://raw.githubusercontent.com/apache/fesod/main/README_CN.md"&gt;中文&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/apache/fesod/actions/workflows/ci.yml"&gt;&lt;img src="https://img.shields.io/github/actions/workflow/status/apache/fesod/ci.yml?style=flat-square&amp;amp;logo=github" alt="GitHub Actions Workflow Status" /&gt;&lt;/a&gt; &lt;a href="https://github.com/apache/fesod/actions/workflows/nightly.yml"&gt;&lt;img src="https://img.shields.io/github/actions/workflow/status/apache/fesod/nightly.yml?style=flat-square&amp;amp;logo=github&amp;amp;label=nightly" alt="GitHub Actions Workflow Status" /&gt;&lt;/a&gt; &lt;a href="https://github.com/apache/fesod/raw/main/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/apache/fesod?logo=apache&amp;amp;style=flat-square" alt="GitHub License" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/maven-central/v/org.apache.fesod/fesod?logo=apachemaven&amp;amp;style=flat-square" alt="Maven Central Version" /&gt; &lt;a href="https://fesod.apache.org/"&gt;&lt;img src="https://img.shields.io/github/actions/workflow/status/apache/fesod/ci.yml?style=flat-square&amp;amp;logo=read-the-docs&amp;amp;label=Document" alt="Document" /&gt;&lt;/a&gt; &lt;a href="https://deepwiki.com/apache/fesod"&gt;&lt;img src="https://img.shields.io/badge/DeepWiki-apache%2Ffesod-blue.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAyCAYAAAAnWDnqAAAAAXNSR0IArs4c6QAAA05JREFUaEPtmUtyEzEQhtWTQyQLHNak2AB7ZnyXZMEjXMGeK/AIi+QuHrMnbChYY7MIh8g01fJoopFb0uhhEqqcbWTp06/uv1saEDv4O3n3dV60RfP947Mm9/SQc0ICFQgzfc4CYZoTPAswgSJCCUJUnAAoRHOAUOcATwbmVLWdGoH//PB8mnKqScAhsD0kYP3j/Yt5LPQe2KvcXmGvRHcDnpxfL2zOYJ1mFwrryWTz0advv1Ut4CJgf5uhDuDj5eUcAUoahrdY/56ebRWeraTjMt/00Sh3UDtjgHtQNHwcRGOC98BJEAEymycmYcWwOprTgcB6VZ5JK5TAJ+fXGLBm3FDAmn6oPPjR4rKCAoJCal2eAiQp2x0vxTPB3ALO2CRkwmDy5WohzBDwSEFKRwPbknEggCPB/imwrycgxX2NzoMCHhPkDwqYMr9tRcP5qNrMZHkVnOjRMWwLCcr8ohBVb1OMjxLwGCvjTikrsBOiA6fNyCrm8V1rP93iVPpwaE+gO0SsWmPiXB+jikdf6SizrT5qKasx5j8ABbHpFTx+vFXp9EnYQmLx02h1QTTrl6eDqxLnGjporxl3NL3agEvXdT0WmEost648sQOYAeJS9Q7bfUVoMGnjo4AZdUMQku50McDcMWcBPvr0SzbTAFDfvJqwLzgxwATnCgnp4wDl6Aa+Ax283gghmj+vj7feE2KBBRMW3FzOpLOADl0Isb5587h/U4gGvkt5v60Z1VLG8BhYjbzRwyQZemwAd6cCR5/XFWLYZRIMpX39AR0tjaGGiGzLVyhse5C9RKC6ai42ppWPKiBagOvaYk8lO7DajerabOZP46Lby5wKjw1HCRx7p9sVMOWGzb/vA1hwiWc6jm3MvQDTogQkiqIhJV0nBQBTU+3okKCFDy9WwferkHjtxib7t3xIUQtHxnIwtx4mpg26/HfwVNVDb4oI9RHmx5WGelRVlrtiw43zboCLaxv46AZeB3IlTkwouebTr1y2NjSpHz68WNFjHvupy3q8TFn3Hos2IAk4Ju5dCo8B3wP7VPr/FGaKiG+T+v+TQqIrOqMTL1VdWV1DdmcbO8KXBz6esmYWYKPwDL5b5FA1a0hwapHiom0r/cKaoqr+27/XcrS5UwSMbQAAAABJRU5ErkJggg==" alt="DeepWiki" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Home: &lt;a href="https://fesod.apache.org"&gt;fesod.apache.org&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt; &lt;strong&gt;Email: &lt;a href="mailto:dev-subscribe@fesod.apache.org"&gt;Mail to &lt;code&gt;dev-subscribe@fesod.apache.org&lt;/code&gt;&lt;/a&gt; to subscribe mailing lists&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Introduction&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Apache Fesod (Incubating)&lt;/strong&gt; is a high-performance and memory-efficient Java library for reading and writing spreadsheet files, designed to simplify development and ensure reliability.&lt;/p&gt; 
+&lt;p&gt;Apache Fesod (Incubating) can provide developers and enterprises with great freedom and flexibility. We plan to introduce more new features in the future to continually enhance user experience and tool usability. Apache Fesod ( Incubating) is committed to being your best choice for handling spreadsheet files.&lt;/p&gt; 
+&lt;p&gt;The name fesod(pronounced &lt;code&gt;/ˈfɛsɒd/&lt;/code&gt;), an acronym for "fast easy spreadsheet and other documents" expresses the project's origin, background and vision.&lt;/p&gt; 
+&lt;h3&gt;Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;High-performance Reading and Writing&lt;/strong&gt;: Apache Fesod (Incubating) focuses on performance optimization, capable of efficiently handling large-scale spreadsheet data. Compared to some traditional spreadsheet processing libraries, it can significantly reduce memory consumption.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Simplicity and Ease of Use&lt;/strong&gt;: The library offers a simple and intuitive API, allowing developers to easily integrate it into projects, whether for simple spreadsheet operations or complex data processing.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Stream Operations&lt;/strong&gt;: Apache Fesod (Incubating) supports stream reading, minimizing the problem of loading large amounts of data at once. This design is especially important when dealing with hundreds of thousands or even millions of rows of data.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;Apache Fesod (Incubating) requires &lt;strong&gt;Java 1.8&lt;/strong&gt; or later. Using the latest LTS release of Java is encouraged. We strongly recommend using the latest version of Apache Fesod (Incubating), as performance optimizations, bug fixes, and new features in the latest version will enhance your experience.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Currently, Apache Fesod (Incubating) uses POI as its underlying package. If your project already includes POI-related components, you will need to manually exclude POI-related jar files.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;We are currently preparing for the first release under the Apache Incubator. Current releases were non-Apache releases. You can see previous version in this link: &lt;a href="https://fesod.apache.org/docs/quickstart/guide/"&gt;https://fesod.apache.org/docs/quickstart/guide/&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Maven&lt;/h3&gt; 
+&lt;p&gt;If you are using Maven for project building, add the following configuration in the &lt;code&gt;pom.xml&lt;/code&gt; file:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-xml"&gt;
+&amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;org.apache.fesod&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;fesod&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;version&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Gradle&lt;/h3&gt; 
+&lt;p&gt;If you are using Gradle for project building, add the following configuration in the build.gradle file:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-gradle"&gt;dependencies {
+    implementation 'org.apache.fesod:fesod:version'
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;QuickStart&lt;/h2&gt; 
+&lt;h3&gt;Read&lt;/h3&gt; 
+&lt;p&gt;Below is an example of reading a spreadsheet document:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-java"&gt;// Implement the ReadListener interface to set up operations for reading data
+public class DemoDataListener implements ReadListener&amp;lt;DemoData&amp;gt; {
+
+    @Override
+    public void invoke(DemoData data, AnalysisContext context) {
+        System.out.println("Parsed a data entry" + JSON.toJSONString(data));
+    }
+
+    @Override
+    public void doAfterAllAnalysed(AnalysisContext context) {
+        System.out.println("All data parsed!");
+    }
+}
+
+public static void main(String[] args) {
+    String fileName = "demo.xlsx";
+    // Read spreadsheet file
+    FesodSheet.read(fileName, DemoData.class, new DemoDataListener()).sheet().doRead();
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Write&lt;/h3&gt; 
+&lt;p&gt;Below is a simple example of creating a spreadsheet document:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-java"&gt;// Sample data class
+public class DemoData {
+
+    @ExcelProperty("String Title")
+    private String string;
+
+    @ExcelProperty("Date Title")
+    private Date date;
+
+    @ExcelProperty("Number Title")
+    private Double doubleData;
+
+    @ExcelIgnore
+    private String ignore;
+}
+
+// Prepare data to write
+private static List&amp;lt;DemoData&amp;gt; data() {
+    List&amp;lt;DemoData&amp;gt; list = new ArrayList&amp;lt;&amp;gt;();
+    for (int i = 0; i &amp;lt; 10; i++) {
+        DemoData data = new DemoData();
+        data.setString("String" + i);
+        data.setDate(new Date());
+        data.setDoubleData(0.56);
+        list.add(data);
+    }
+    return list;
+}
+
+public static void main(String[] args) {
+    String fileName = "demo.xlsx";
+    // Create a "Template" sheet and write data
+    FesodSheet.write(fileName, DemoData.class).sheet("Template").doWrite(data());
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;h3&gt;Contributors&lt;/h3&gt; 
+&lt;p&gt;Contributors are welcomed to join the Apache Fesod (Incubating). Please check &lt;a href="https://raw.githubusercontent.com/apache/fesod/main/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt; about how to contribute to this project.&lt;/p&gt; 
+&lt;p&gt;Thank you to all the people who already contributed to the Apache Fesod (Incubating) !&lt;/p&gt; 
+&lt;a href="https://github.com/apache/fesod/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=apache/fesod" /&gt; &lt;/a&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Note: Showing the first 100 contributors only due to GitHub image size limitations&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Subscribe Mailing Lists&lt;/h3&gt; 
+&lt;p&gt;Mail List is the most recognized form of communication in the Apache community. Contact us through the following mailing list.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="left"&gt;Name&lt;/th&gt; 
+   &lt;th align="left"&gt;Mailing list&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;&lt;a href="mailto:dev@fesod.apache.org"&gt;dev@fesod.apache.org&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;a href="mailto:dev-subscribe@fesod.apache.org"&gt;Subscribe&lt;/a&gt; ｜ &lt;a href="mailto:dev-unsubscribe@fesod.apache.org"&gt;Unsubscribe&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Star History&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://www.star-history.com/#apache/fesod&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=apache/fesod&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Apache Fesod (Incubating) project is licensed under the &lt;a href="https://raw.githubusercontent.com/apache/fesod/main/LICENSE"&gt;Apache License 2.0&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>RikkaApps/Shizuku-API</title>
+      <link>https://github.com/RikkaApps/Shizuku-API</link>
+      <description>&lt;p&gt;The API and the developer guide for Shizuku and Sui.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Shizuku-API&lt;/h1&gt; 
+&lt;p&gt;Shizuku API is the API provided by &lt;a href="https://github.com/RikkaApps/Shizuku"&gt;Shizuku&lt;/a&gt; and &lt;a href="https://github.com/RikkaApps/Sui"&gt;Sui&lt;/a&gt;. With Shizuku API, you can call your Java/JNI code with root/shell (ADB) identity.&lt;/p&gt; 
+&lt;h2&gt;Requirements&lt;/h2&gt; 
+&lt;p&gt;To use Shizuku APIs, you need to guide the user to install Shizuku or Sui first. Both of them require Android 6.0+.&lt;/p&gt; 
+&lt;h3&gt;Shizuku&lt;/h3&gt; 
+&lt;p&gt;Shizuku is a standard Android application. You can guide the users to download Shizuku from &lt;a href="https://shizuku.rikka.app/download/"&gt;https://shizuku.rikka.app/download/&lt;/a&gt;. Shizuku works for both rooted and non-rooted devices.&lt;/p&gt; 
+&lt;p&gt;On non-rooted devices, Shizuku needs to be manually restarted with adb every time on boot. Before Android 11, a computer is required to run adb. Android 11 and above have built-in wireless debugging support, and users can start Shizuku directly on the device.&lt;/p&gt; 
+&lt;h3&gt;Sui&lt;/h3&gt; 
+&lt;p&gt;Sui is a &lt;a href="https://github.com/topjohnwu/Magisk"&gt;Magisk&lt;/a&gt; module. Magisk requires an unlocked bootloader.&lt;/p&gt; 
+&lt;p&gt;No additional setup is required except for the installation. You can guide the rooted users (searching &lt;code&gt;su&lt;/code&gt; in &lt;code&gt;PATH&lt;/code&gt; is enough) to download Sui from Magisk or &lt;a href="https://github.com/RikkaApps/Sui"&gt;https://github.com/RikkaApps/Sui&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Demo&lt;/h2&gt; 
+&lt;p&gt;A demo project is provided. See &lt;a href="https://github.com/RikkaApps/Shizuku-API/tree/master/demo"&gt;demo&lt;/a&gt; for more.&lt;/p&gt; 
+&lt;h2&gt;Guide&lt;/h2&gt; 
+&lt;p&gt;I'll say the difficult words first, using Shizuku APIs is similar to framework or system app development, some experience in developing common applications may not be enough. You have to get used to digging into Android source code to find out how things work, &lt;a href="https://cs.android.com"&gt;cs.android.com&lt;/a&gt; and AndroidXref sites will be your best friend.&lt;/p&gt; 
+&lt;h3&gt;Add dependency&lt;/h3&gt; 
+&lt;p&gt;&lt;img src="https://img.shields.io/maven-central/v/dev.rikka.shizuku/api" alt="Maven Central" /&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-groovy"&gt;def shizuku_version = (the version above)
+implementation "dev.rikka.shizuku:api:$shizuku_version"
+
+// Add this line if you want to support Shizuku
+implementation "dev.rikka.shizuku:provider:$shizuku_version"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Acquire the Binder&lt;/h3&gt; 
+&lt;p&gt;The first step is to acquire the Binder from Shizuku or Sui.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;Shizuku&lt;/code&gt; class provides listeners, &lt;code&gt;Shizuku#addBinderReceivedListener()&lt;/code&gt; and &lt;code&gt;Shizuku.addBinderDeadListener()&lt;/code&gt;, that allows you to track the life of the binder. You should call methods in &lt;code&gt;Shizuku&lt;/code&gt; class when the binder is alive or you will get an &lt;code&gt;IllegalStateException&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;The steps to get a Binder from Sui and Shizuku are different.&lt;/p&gt; 
+&lt;h4&gt;Sui&lt;/h4&gt; 
+&lt;p&gt;Call &lt;code&gt;Sui.init(packageName)&lt;/code&gt; before using &lt;code&gt;Shizuku&lt;/code&gt; class. This method only needs to be called once. If this method returns true, means Sui is installed and available.&lt;/p&gt; 
+&lt;p&gt;For multi-process applications, call this method in every process that needs to use Shizuku API.&lt;/p&gt; 
+&lt;p&gt;Note, request the binder for Sui only requires two times of binder IPC, this is significantly cheaper than initialize Shizuku which uses &lt;code&gt;ContentProvider&lt;/code&gt;. &lt;code&gt;Sui.init(packageName)&lt;/code&gt; can be used in main thread, you don't need to worry about performance.&lt;/p&gt; 
+&lt;h4&gt;Shizuku&lt;/h4&gt; 
+&lt;p&gt;Add &lt;code&gt;ShizukuProvider&lt;/code&gt; to &lt;code&gt;AndroidManifest.xml&lt;/code&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-xml"&gt;&amp;lt;provider
+    android:name="rikka.shizuku.ShizukuProvider"
+    android:authorities="${applicationId}.shizuku"
+    android:multiprocess="false"
+    android:enabled="true"
+    android:exported="true"
+    android:permission="android.permission.INTERACT_ACROSS_USERS_FULL" /&amp;gt;
+
+&amp;lt;!-- android:permission="android.permission.INTERACT_ACROSS_USERS_FULL" is to protect this provider from accessing by normal apps --&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For multi-process applications, you need to call &lt;code&gt;ShizukuProvider.enableMultiProcessSupport()&lt;/code&gt; in every process which needs to use Shizuku API.&lt;/p&gt; 
+&lt;p&gt;Starting from v12.1.0, Sui is initialized automatically in &lt;code&gt;ShizukuProvider&lt;/code&gt;. You can opt-out this behavior by calling &lt;code&gt;ShizukuProvider#disableAutomaticSuiInitialization()&lt;/code&gt; before &lt;code&gt;ShizukuProvider#onCreate()&lt;/code&gt; is called. Unless there are special reasons, apps that support Shizuku should also support Sui, otherwise it will cause user confusion.&lt;/p&gt; 
+&lt;h3&gt;Request permission&lt;/h3&gt; 
+&lt;p&gt;Requesting permission is similar to &lt;a href="https://developer.android.com/training/permissions/requesting"&gt;requesting runtime permissions&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;A simple example of requesting permission:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-java"&gt;private void onRequestPermissionsResult(int requestCode, int grantResult) {
+    boolean granted = grantResult == PackageManager.PERMISSION_GRANTED;
+    // Do stuff based on the result and the request code
+}
+
+private final Shizuku.OnRequestPermissionResultListener REQUEST_PERMISSION_RESULT_LISTENER = this::onRequestPermissionsResult;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    // ...
+    Shizuku.addRequestPermissionResultListener(REQUEST_PERMISSION_RESULT_LISTENER);
+    // ...
+}
+
+@Override
+protected void onDestroy() {
+    // ...
+    Shizuku.removeRequestPermissionResultListener(REQUEST_PERMISSION_RESULT_LISTENER);
+    // ...
+}
+
+private boolean checkPermission(int code) {
+  if (Shizuku.isPreV11()) {
+    // Pre-v11 is unsupported
+    return false;
+  }
+
+  if (Shizuku.checkSelfPermission() == PackageManager.PERMISSION_GRANTED) {
+    // Granted
+    return true;
+  } else if (Shizuku.shouldShowRequestPermissionRationale()) {
+    // Users choose "Deny and don't ask again"
+    return false;
+  } else {
+    // Request the permission
+    Shizuku.requestPermission(code);
+    return false;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Differents of the privilege betweent ADB and ROOT&lt;/h3&gt; 
+&lt;p&gt;Shizuku can be started with ADB or ROOT, and Sui is a Magisk module, so the privilege could be ADB or ROOT. You can use &lt;code&gt;Shizuku#getUid()&lt;/code&gt; to check your privilege, for ROOT it returns &lt;code&gt;0&lt;/code&gt;, for ADB is &lt;code&gt;2000&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;What ADB can do is significantly different from ROOT:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;In the Android world, the privilege is determined by Android permissions. See &lt;a href="https://cs.android.com/android/platform/superproject/+/master:frameworks/base/packages/Shell/AndroidManifest.xml"&gt;AndroidManifest of Shell&lt;/a&gt;, all the permission granted to Shell (ADB) are listed here. Be aware, the permission changes under different Android versions.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;In Linux world, the privilege is determined by Shell's uid, capabilities, SELinux context, etc. For example, Shell (ADB) cannot access other apps' data files &lt;code&gt;/data/user/0/&amp;lt;package&amp;gt;&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Remote binder call&lt;/h3&gt; 
+&lt;p&gt;This is a relatively simple way, but what you can do is limited to Binder calls. Therefore, this is only suitable for simple applications.&lt;/p&gt; 
+&lt;p&gt;Shizuku API provides &lt;code&gt;rikka.shizuku.ShizukuBinderWrapper&lt;/code&gt; class which forward Binder calls to Shizuku service which has ADB or ROOT privilege.&lt;/p&gt; 
+&lt;h3&gt;UserService&lt;/h3&gt; 
+&lt;p&gt;User Service is like &lt;a href="https://developer.android.com/guide/components/bound-services"&gt;Bound services&lt;/a&gt; which allows you to run Java or native codes (through JNI). The difference is that the service runs in a different process and as the identity (Linux UID) of root (UID 0) or shell (UID 2000, if the backend is Shizuku and user starts Shizuku with adb).&lt;/p&gt; 
+&lt;p&gt;There are no restrictions on non-SDK APIs in the user service process. However, the User Service process is not a valid Android application process. Therefore, even if you can acquire a &lt;code&gt;Context&lt;/code&gt; instance, many APIs, such as &lt;code&gt;Context#registerReceiver&lt;/code&gt; and &lt;code&gt;Context#getContentResolver&lt;/code&gt; will not work. You will need to dig into Android source code to find out how things work.&lt;/p&gt; 
+&lt;p&gt;Be aware that, to let the service to use the latest code, "Run/Debug configurations" - "Always install with package manager" in Android Studio should be checked.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;Start the User Service&lt;/p&gt; &lt;p&gt;Use &lt;code&gt;bindUserService&lt;/code&gt; method. This method has two parameters, &lt;code&gt;UserServiceArgs&lt;/code&gt; and &lt;code&gt;ServiceConnection&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;&lt;code&gt;UserServiceArgs&lt;/code&gt; is like &lt;code&gt;Intent&lt;/code&gt; in Bound services, which decides which service will be started and some options.&lt;/p&gt; &lt;p&gt;&lt;code&gt;ServiceConnection&lt;/code&gt; is same as Bound services, but only &lt;code&gt;onServiceConnected&lt;/code&gt; and &lt;code&gt;onServiceDisconnected&lt;/code&gt; are used.&lt;/p&gt; &lt;p&gt;Unlike Bound service, the service class must implement &lt;code&gt;IBinder&lt;/code&gt; interface. The usual usage is &lt;code&gt;public class YourService extends IYouAidlInterface.Stub&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;The service class can have two constructors, one is default constructor, another is with &lt;code&gt;Context&lt;/code&gt; parameter available from Shizuku v13. Shizuku v13 will try the constructor with &lt;code&gt;Context&lt;/code&gt; parameter first. Older Shizuku will always use the default constructor. Beaware that the &lt;code&gt;Context&lt;/code&gt; does not work as same as &lt;code&gt;Context&lt;/code&gt; in normal Android application. See "Use Android APIs in user service" below.&lt;/p&gt; &lt;p&gt;Shizuku uses &lt;code&gt;tag&lt;/code&gt; from &lt;code&gt;UserServiceArgs&lt;/code&gt; to determine if the User Service is same. If &lt;code&gt;tag&lt;/code&gt; is not set, class name will be uses, but class name is unstable after ProGuard/R8. If &lt;code&gt;version&lt;/code&gt; from &lt;code&gt;UserServiceArgs&lt;/code&gt; mismatches, a new User Service will be start and "destroy" method (see below) will be called for the old.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Stop the User Service&lt;/p&gt; &lt;p&gt;Use &lt;code&gt;unbindUserService&lt;/code&gt; method. However, the user service process will &lt;strong&gt;NOT&lt;/strong&gt; be killed automatically. You need to implement a "destroy" method in your service. The transaction code for that method is &lt;code&gt;16777115&lt;/code&gt; (use &lt;code&gt;16777114&lt;/code&gt; in aidl). In this method, you can do some cleanup jobs and call &lt;code&gt;System.exit()&lt;/code&gt; in the end.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;The use of non-SDK interfaces&lt;/h3&gt; 
+&lt;p&gt;For "Remote binder call", as the APIs are accessed from the app's process, you may need to use &lt;a href="https://github.com/LSPosed/AndroidHiddenApiBypass"&gt;AndroidHiddenApiBypass&lt;/a&gt; or any ways you want to bypass restrictions on non-SDK interfaces.&lt;/p&gt; 
+&lt;p&gt;We also provides &lt;a href="https://github.com/RikkaApps/HiddenApiRefinePlugin"&gt;HiddenApiRefinePlugin&lt;/a&gt; to help you to programing with hidden APIs conveniently.&lt;/p&gt; 
+&lt;h2&gt;Changelog&lt;/h2&gt; 
+&lt;h3&gt;13.1.5&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fix &lt;code&gt;ShizukuProvider#requestBinderForNonProviderProcess&lt;/code&gt; crash on Android 14 (for apps targeting Android 14)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;13.1.4&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Ask the server to remove &lt;code&gt;ShizukuServiceConnection&lt;/code&gt; if the server is new enough&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;13.1.3&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fix the problem that &lt;code&gt;Shizuku#unbindUserService(remove=false)&lt;/code&gt; does not actually remove the callback&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;13.1.2&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Avoid the use of &lt;code&gt;CopyOnWriteArrayList#removeIf&lt;/code&gt;, as using it with &lt;code&gt;coreLibraryDesugaring&lt;/code&gt; enabled will crash on Android 8+&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;13.1.1&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;Fix &lt;code&gt;Shizuku#removeXXXListener&lt;/code&gt; will crash on Android 7.1 and earlier versions&lt;/p&gt; &lt;p&gt;This is caused by &lt;code&gt;CopyOnWriteArrayList#removeIf&lt;/code&gt; is not supported (throw an &lt;code&gt;UnsupportedOperationException&lt;/code&gt;) before Android 8.0. Please note, using &lt;code&gt;coreLibraryDesugaring&lt;/code&gt; will NOT fix this issue at least in version &lt;code&gt;2.0.3&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Prepare to remove &lt;code&gt;Shizuku#newProcess&lt;/code&gt;, developers should have to use &lt;code&gt;UserService&lt;/code&gt; instead&lt;/p&gt; &lt;p&gt;First, this is already announced two years ago.&lt;/p&gt; &lt;p&gt;For those who don't understand, &lt;code&gt;UserService&lt;/code&gt; gives the developer the ability to run their own codes in a different process with root or shell privilege. This is much more powerful than just executing a command. &lt;code&gt;UserService&lt;/code&gt; can replace &lt;code&gt;newProcess&lt;/code&gt; in all cases.&lt;/p&gt; &lt;p&gt;Also, &lt;code&gt;newProcess&lt;/code&gt; uses texts to communicate , which is not efficient and unreliable. If there are apps that only uses &lt;code&gt;newProcess&lt;/code&gt; to implement its functions, it loses most of the advantage of using Shizuku.&lt;/p&gt; &lt;p&gt;Finally, &lt;code&gt;newProcess&lt;/code&gt; lacks tty support, it is not possible to implement an interactive shell with it. And we already has &lt;code&gt;rish&lt;/code&gt; that allows users to run an interactive shell with privilege in any terminal app they like.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;13.1.0&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Breaking change: &lt;a href="https://developer.android.com/studio/write/java8-support#library-desugaring"&gt;desugaring&lt;/a&gt; is required if min API of your app is 23&lt;/li&gt; 
+ &lt;li&gt;Listeners now has an optional &lt;code&gt;Handler&lt;/code&gt; parameter that determines which thread will the listener be called from&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;13.0.0&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The constructor of &lt;code&gt;UserService&lt;/code&gt; can have a &lt;code&gt;Context&lt;/code&gt; parameter which value is the &lt;code&gt;Context&lt;/code&gt; used to create the instance of &lt;code&gt;UserService&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;12.2.0&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fix &lt;code&gt;onServiceDisconnected&lt;/code&gt; is not called if the UserService is stopped by &lt;code&gt;Shizuku#unbindUserService&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;12.1.0&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;Automatically initialize Sui if you are using Shizuku&lt;/p&gt; &lt;p&gt;You can opt-out this behavior by calling &lt;code&gt;ShizukuProvider#disableAutomaticSuiInitialization()&lt;/code&gt; before &lt;code&gt;ShizukuProvider#onCreate()&lt;/code&gt; is called&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Added a lot more detailed document for most APIs&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Drop pre-v11 support&lt;/p&gt; &lt;p&gt;You don't need to worry about this problem, just show a "not supported" message if the user really uses pre-v11.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Sui was born after API v11, Sui users are not affected at all.&lt;/li&gt; 
+   &lt;li&gt;For Shizuku, according to Google Play statistics, more than 95% of users are on v11+. Shizuku drops Android 5 support from v5, many of the remaining 5% are such people who are stuck at super old versions.&lt;/li&gt; 
+   &lt;li&gt;A useful API, UserService, is added from v11 and stable on v12. I believe that many Shizuku apps already have a "version &amp;gt; 11" check.&lt;/li&gt; 
+   &lt;li&gt;I really want to drop pre-v11 support since &lt;a href="https://github.com/RikkaApps/Shizuku/issues/83"&gt;a possible system issue that may cause system soft reboot (system server crash) on uninstalling Shizuku&lt;/a&gt;.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;12.0.0&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Add &lt;code&gt;Shizuku#peekUserService&lt;/code&gt; that allows you to check if a specific user service is running&lt;/li&gt; 
+ &lt;li&gt;Add &lt;code&gt;Shizuku.UserServiceArgs#daemon&lt;/code&gt; that allows you to control if the user service should be run in the "Daemon mode"&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Migration guide for existing applications use Shizuku pre-v11&lt;/h2&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Click to expand&lt;/summary&gt; 
+ &lt;h3&gt;Changes&lt;/h3&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Dependency changed (see Guide below)&lt;/li&gt; 
+  &lt;li&gt;Self-implemented permission is used from v11, the API is the same to runtime permission (see the demo, and existing runtime permission still works)&lt;/li&gt; 
+  &lt;li&gt;Package name was renamed to &lt;code&gt;rikka.shizuku&lt;/code&gt; (replace all &lt;code&gt;moe.shizuku.api.&lt;/code&gt; to &lt;code&gt;rikka.shizuku.&lt;/code&gt;)&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;ShizukuService&lt;/code&gt; class is renamed to &lt;code&gt;Shizuku&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;Methods in &lt;code&gt;Shizuku&lt;/code&gt; class now throw &lt;code&gt;RuntimeException&lt;/code&gt; on failure rather than &lt;code&gt;RemoteException&lt;/code&gt; like other Android APIs&lt;/li&gt; 
+  &lt;li&gt;Listeners are moved from &lt;code&gt;ShizukuProvider&lt;/code&gt; class to &lt;code&gt;Shizuku&lt;/code&gt; class&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;h3&gt;Add support for Sui&lt;/h3&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Call &lt;code&gt;Sui#init()&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;It's better to use check Sui with &lt;code&gt;Sui#isSui&lt;/code&gt; before using Shizuku only methods in &lt;code&gt;ShizukuProvider&lt;/code&gt;&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt;</description>
+    </item>
+    
+    <item>
+      <title>MeteorDevelopment/meteor-client</title>
+      <link>https://github.com/MeteorDevelopment/meteor-client</link>
+      <description>&lt;p&gt;Based Minecraft utility mod.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://meteorclient.com/icon.png" alt="meteor-client-logo" width="15%" /&gt; &lt;/p&gt; 
+&lt;h1 align="center"&gt;Meteor&lt;/h1&gt; 
+&lt;p align="center"&gt;A Minecraft Fabric Utility Mod for anarchy servers.&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://discord.gg/bBGQZvd"&gt;&lt;img src="https://img.shields.io/discord/689197705683140636?logo=discord" alt="Discord" /&gt;&lt;/a&gt; 
+ &lt;br /&gt; 
+ &lt;img src="https://img.shields.io/github/last-commit/MeteorDevelopment/meteor-client" alt="GitHub last commit" /&gt; 
+ &lt;img src="https://img.shields.io/github/commit-activity/w/MeteorDevelopment/meteor-client" alt="GitHub commit activity" /&gt; 
+ &lt;img src="https://img.shields.io/github/contributors/MeteorDevelopment/meteor-client" alt="GitHub contributors" /&gt; 
+ &lt;br /&gt; 
+ &lt;img src="https://img.shields.io/github/languages/code-size/MeteorDevelopment/meteor-client" alt="GitHub code size in bytes" /&gt; 
+ &lt;img src="https://img.shields.io/endpoint?url=https://ghloc.vercel.app/api/MeteorDevelopment/meteor-client/badge?filter=.java$&amp;amp;label=lines%20of%20code&amp;amp;color=blue" alt="GitHub lines of code" /&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;h3&gt;Building&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Clone this repository&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;./gradlew build&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Installation&lt;/h3&gt; 
+&lt;p&gt;Follow the &lt;a href="https://meteorclient.com/faq/installation"&gt;guide&lt;/a&gt; on the wiki.&lt;/p&gt; 
+&lt;h2&gt;Contributions&lt;/h2&gt; 
+&lt;p&gt;We will review and help with all reasonable pull requests as long as the guidelines below are met.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The license header must be applied to all java source code files.&lt;/li&gt; 
+ &lt;li&gt;IDE or system-related files should be added to the &lt;code&gt;.gitignore&lt;/code&gt;, never committed in pull requests.&lt;/li&gt; 
+ &lt;li&gt;In general, check existing code to make sure your code matches relatively close to the code already in the project.&lt;/li&gt; 
+ &lt;li&gt;Favour readability over compactness.&lt;/li&gt; 
+ &lt;li&gt;If you need help, check out the &lt;a href="https://google.github.io/styleguide/javaguide.html"&gt;Google Java Style Guide&lt;/a&gt; for a reference.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Bugs and Suggestions&lt;/h2&gt; 
+&lt;p&gt;Bug reports and suggestions should be made in this repo's &lt;a href="https://github.com/MeteorDevelopment/meteor-client/issues"&gt;issue tracker&lt;/a&gt; using the templates provided.&lt;br /&gt; Please provide as much information as you can to best help us understand your issue and give a better chance of it being resolved.&lt;/p&gt; 
+&lt;h2&gt;Donations&lt;/h2&gt; 
+&lt;p&gt;All of our work is completely free and non-profit (donations pay only for hosting costs), therefore we are very grateful for all donations made to support us in running our community.&lt;br /&gt; Donations can be made via our &lt;a href="https://meteorclient.com/donate"&gt;website&lt;/a&gt; and the minimum amount to get donor benefits is €5.&lt;br /&gt; You will be rewarded with a role on our Discord server and a customisable in-game cape.&lt;br /&gt; ⚠️ &lt;em&gt;Make sure to create a Meteor account and link your Discord and Minecraft accounts to fully experience your rewards.&lt;/em&gt; ⚠️&lt;/p&gt; 
+&lt;h2&gt;Credits&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/cabaletta"&gt;Cabaletta&lt;/a&gt; and &lt;a href="https://github.com/wagyourtail"&gt;WagYourTail&lt;/a&gt; for &lt;a href="https://github.com/cabaletta/baritone"&gt;Baritone&lt;/a&gt;&lt;br /&gt; The &lt;a href="https://github.com/FabricMC"&gt;Fabric Team&lt;/a&gt; for &lt;a href="https://github.com/FabricMC/fabric-loader"&gt;Fabric&lt;/a&gt; and &lt;a href="https://github.com/FabricMC/yarn"&gt;Yarn&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Licensing&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the &lt;a href="https://www.gnu.org/licenses/gpl-3.0.en.html"&gt;GNU General Public License v3.0&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;If you use &lt;strong&gt;ANY&lt;/strong&gt; code from the source:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;You must disclose the source code of your modified work and the source code you took from this project. This means you are not allowed to use code from this project (even partially) in a closed-source and/or obfuscated application.&lt;/li&gt; 
+ &lt;li&gt;You must state clearly and obviously to all end users that you are using code from this project.&lt;/li&gt; 
+ &lt;li&gt;Your application must also be licensed under the same license.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;em&gt;If you have any other questions, check our &lt;a href="https://meteorclient.com/faq"&gt;FAQ&lt;/a&gt; or ask in our &lt;a href="https://meteorclient.com/discord"&gt;Discord&lt;/a&gt; server.&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>higress-group/himarket</title>
+      <link>https://github.com/higress-group/himarket</link>
+      <description>&lt;p&gt;HiMarket is an enterprise-level "AI Capability Marketplace and Developer Ecosystem Hub." It is not merely a simple aggregation of traditional APIs, but rather a comprehensive platform that packages, publishes, manages, and operates core AI assets such as enterprise Model APIs, MCP Servers, Agent APIs, etc., through standardized product formats.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a name="readme-top"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;img width="406" height="96" alt="HiMarket Logo" src="https://github.com/user-attachments/assets/e0956234-1a97-42c6-852d-411fa02c3f01" /&gt; 
+ &lt;h1&gt;HiMarket AI Open Platform&lt;/h1&gt; 
+ &lt;p align="center"&gt; &lt;b&gt;English&lt;/b&gt; | &lt;a href="https://raw.githubusercontent.com/higress-group/himarket/main/README_zh.md"&gt;简体中文&lt;/a&gt; &lt;/p&gt; 
+ &lt;p&gt; &lt;a href="https://github.com/higress-group/himarket/raw/main/LICENSE"&gt; &lt;img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg?sanitize=true" alt="License" /&gt; &lt;/a&gt; &lt;a href="https://github.com/higress-group/himarket/releases"&gt; &lt;img src="https://img.shields.io/github/v/release/higress-group/himarket" alt="Release" /&gt; &lt;/a&gt; &lt;a href="https://github.com/higress-group/himarket/stargazers"&gt; &lt;img src="https://img.shields.io/github/stars/higress-group/himarket" alt="Stars" /&gt; &lt;/a&gt; &lt;a href="https://deepwiki.com/higress-group/himarket"&gt; &lt;img src="https://deepwiki.com/badge.svg?sanitize=true" alt="Ask DeepWiki" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Table of Contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/higress-group/himarket/main/#what-is-himarket"&gt;What is HiMarket?&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/higress-group/himarket/main/#system-architecture"&gt;System Architecture&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/higress-group/himarket/main/#quick-start"&gt;Quick Start&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/higress-group/himarket/main/#documentation"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/higress-group/himarket/main/#community"&gt;Community&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/higress-group/himarket/main/#contributors"&gt;Contributors&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/higress-group/himarket/main/#star-history"&gt;Star History&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;What is HiMarket?&lt;/h2&gt; 
+&lt;p&gt;HiMarket is an enterprise-grade AI open platform built on Higress AI Gateway, helping enterprises build private AI capability marketplace to uniformly manage and distribute AI resources such as LLM, MCP Server, and Agent. The platform encapsulates distributed AI capabilities into standardized API products, supports multi-version management and gray-scale release, provides self-service developer portal, and features comprehensive enterprise-level operation capabilities including security control, observability analysis, metering and billing, making AI resource sharing and reuse efficient and convenient.&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;img src="https://github.com/user-attachments/assets/645a3962-2f0a-412e-b501-e8eb6fc50bb1" alt="HiMarket 核心能力" width="700px" /&gt; 
+ &lt;br /&gt; 
+ &lt;b&gt;Capabilities&lt;/b&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;System Architecture&lt;/h2&gt; 
+&lt;div align="center"&gt; 
+ &lt;img src="https://github.com/user-attachments/assets/ecbb3d2e-138b-4192-992e-9cd4a20b3fc3" alt="HiMarket System Architecture" width="700px" /&gt; 
+ &lt;br /&gt; 
+ &lt;b&gt;System Architecture&lt;/b&gt; 
+&lt;/div&gt; 
+&lt;p&gt;HiMarket system architecture consists of three layers:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Infrastructure&lt;/strong&gt;: Composed of AI Gateway, API Gateway, Higress and Nacos. HiMarket abstracts and encapsulates underlying AI resources based on these components to form standard API products for external use.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;AI Open Platform Admin&lt;/strong&gt;: Management platform for administrators to create and customize portals, manage AI resources such as MCP Server, Model, and Agent, including setting authentication policies and subscription approval workflows. The admin portal also provides observability dashboard to help administrators monitor AI resource usage and operational status in real-time.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;AI Open Platform Portal&lt;/strong&gt;: Developer-facing portal site, also known as AI Marketplace or AI Hub, providing one-stop self-service where developers can complete identity registration, credential application, product browsing and subscription, online debugging, and more.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; &lt;img src="https://github.com/user-attachments/assets/e7a933ea-10bb-457e-a082-550e939a1b58" width="500px" height="200px" alt="HiMarket Admin Portal" /&gt; &lt;br /&gt; &lt;b&gt;Admin Dashboard&lt;/b&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;img src="https://github.com/user-attachments/assets/41382502-12fe-45c4-9708-8dd7a103cb73" width="500px" height="200px" alt="HiMarket Developer Portal" /&gt; &lt;br /&gt; &lt;b&gt;Developer Portal&lt;/b&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;details open&gt; 
+ &lt;summary&gt;&lt;b&gt;Option 1: Local Setup&lt;/b&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt; JDK 17, Node.js 18+, Maven 3.6+, MySQL 8.0+&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;Start Backend:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;# Build project
+mvn clean package -DskipTests
+
+# Start backend service
+java --add-opens java.base/java.util=ALL-UNNAMED \
+     --add-opens java.base/java.lang=ALL-UNNAMED \
+     --add-opens java.base/java.lang.reflect=ALL-UNNAMED \
+     -Ddb.host=${DB_HOST} \
+     -Ddb.port=${DB_PORT} \
+     -Ddb.name=${DB_NAME} \
+     -Ddb.username=${DB_USERNAME} \
+     -Ddb.password=${DB_PASSWORD} \
+     -jar himarket-bootstrap/target/himarket-bootstrap-1.0-SNAPSHOT.jar
+
+# Backend API: http://localhost:8080
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;Start Frontend:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;# Start admin portal
+cd himarket-web/himarket-admin
+npm install
+npm run dev
+# Admin portal: http://localhost:5174
+
+# Start developer portal
+cd himarket-web/himarket-frontend
+npm install
+npm run dev
+# Developer portal: http://localhost:5173
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;b&gt;Option 2: Docker Compose&lt;/b&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;Use the &lt;code&gt;deploy.sh&lt;/code&gt; script to deploy HiMarket, Higress, and Nacos with data initialization.&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;# Clone repository
+git clone https://github.com/higress-group/himarket.git
+cd himarket/deploy/docker/scripts
+
+# Deploy full stack and initialize
+./deploy.sh install
+
+# Or deploy HiMarket only (without Nacos/Higress)
+./deploy.sh himarket-only
+
+# Uninstall all services
+./deploy.sh uninstall
+
+# Service URLs
+# Admin portal: http://localhost:5174
+# Developer portal: http://localhost:5173
+# Backend API: http://localhost:8081
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;blockquote&gt; 
+  &lt;p&gt;For detailed Docker deployment instructions, please refer to &lt;a href="https://raw.githubusercontent.com/higress-group/himarket/main/deploy/docker/Docker%E9%83%A8%E7%BD%B2%E8%84%9A%E6%9C%AC%E8%AF%B4%E6%98%8E.md"&gt;Docker Deployment Guide&lt;/a&gt;&lt;/p&gt; 
+ &lt;/blockquote&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;b&gt;Option 3: Helm Chart&lt;/b&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;Use the &lt;code&gt;deploy.sh&lt;/code&gt; script to deploy HiMarket to Kubernetes cluster.&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;# Clone repository
+git clone https://github.com/higress-group/himarket.git
+cd himarket/deploy/helm/scripts
+
+# Deploy full stack and initialize
+./deploy.sh install
+
+# Or deploy HiMarket only (without Nacos/Higress)
+./deploy.sh himarket-only
+
+# Uninstall
+./deploy.sh uninstall
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;blockquote&gt; 
+  &lt;p&gt;For detailed Helm deployment instructions, please refer to &lt;a href="https://raw.githubusercontent.com/higress-group/himarket/main/deploy/helm/Helm%E9%83%A8%E7%BD%B2%E8%84%9A%E6%9C%AC%E8%AF%B4%E6%98%8E.md"&gt;Helm Deployment Guide&lt;/a&gt;&lt;/p&gt; 
+ &lt;/blockquote&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;b&gt;Option 4: Cloud Deployment (Alibaba Cloud)&lt;/b&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;Alibaba Cloud ComputeNest supports out-of-the-box deployment of the community edition with one click:&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://computenest.console.aliyun.com/service/instance/create/cn-hangzhou?type=user&amp;amp;ServiceId=service-b96fefcb748f47b7b958"&gt;&lt;img src="https://service-info-public.oss-cn-hangzhou.aliyuncs.com/computenest.svg?sanitize=true" alt="Deploy on AlibabaCloud ComputeNest" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;For detailed usage instructions, please refer to:&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/higress-group/himarket/main/USER_GUIDE.md"&gt;User Guide&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;h3&gt;Join Us&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; &lt;img src="https://github.com/user-attachments/assets/e74915bb-abf2-4415-99a3-dd7c61a94670" width="200px" alt="DingTalk Group" /&gt; &lt;br /&gt; &lt;b&gt;DingTalk Group&lt;/b&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;img src="https://img.alicdn.com/imgextra/i1/O1CN01WnQt0q1tcmqVDU73u_!!6000000005923-0-tps-258-258.jpg" width="200px" alt="WeChat Official Account" /&gt; &lt;br /&gt; &lt;b&gt;WeChat Official Account&lt;/b&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;Contributors&lt;/h2&gt; 
+&lt;p&gt;Thanks to all the developers who have contributed to HiMarket!&lt;/p&gt; 
+&lt;a href="https://github.com/higress-group/himarket/graphs/contributors"&gt; &lt;img alt="contributors" src="https://contrib.rocks/image?repo=higress-group/himarket" /&gt; &lt;/a&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://star-history.com/#higress-group/himarket&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=higress-group/himarket&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>LaurieWired/GhidraMCP</title>
+      <link>https://github.com/LaurieWired/GhidraMCP</link>
+      <description>&lt;p&gt;MCP Server for Ghidra&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a href="https://www.apache.org/licenses/LICENSE-2.0"&gt;&lt;img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg?sanitize=true" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://github.com/LaurieWired/GhidraMCP/releases"&gt;&lt;img src="https://img.shields.io/github/v/release/LaurieWired/GhidraMCP" alt="GitHub release (latest by date)" /&gt;&lt;/a&gt; &lt;a href="https://github.com/LaurieWired/GhidraMCP/stargazers"&gt;&lt;img src="https://img.shields.io/github/stars/LaurieWired/GhidraMCP" alt="GitHub stars" /&gt;&lt;/a&gt; &lt;a href="https://github.com/LaurieWired/GhidraMCP/network/members"&gt;&lt;img src="https://img.shields.io/github/forks/LaurieWired/GhidraMCP" alt="GitHub forks" /&gt;&lt;/a&gt; &lt;a href="https://github.com/LaurieWired/GhidraMCP/graphs/contributors"&gt;&lt;img src="https://img.shields.io/github/contributors/LaurieWired/GhidraMCP" alt="GitHub contributors" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/lauriewired"&gt;&lt;img src="https://img.shields.io/twitter/follow/lauriewired?style=social" alt="Follow @lauriewired" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/4986d702-be3f-4697-acce-aea55cd79ad3" alt="ghidra_MCP_logo" /&gt;&lt;/p&gt; 
+&lt;h1&gt;ghidraMCP&lt;/h1&gt; 
+&lt;p&gt;ghidraMCP is an Model Context Protocol server for allowing LLMs to autonomously reverse engineer applications. It exposes numerous tools from core Ghidra functionality to MCP clients.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/36080514-f227-44bd-af84-78e29ee1d7f9"&gt;https://github.com/user-attachments/assets/36080514-f227-44bd-af84-78e29ee1d7f9&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Features&lt;/h1&gt; 
+&lt;p&gt;MCP Server + Ghidra Plugin&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Decompile and analyze binaries in Ghidra&lt;/li&gt; 
+ &lt;li&gt;Automatically rename methods and data&lt;/li&gt; 
+ &lt;li&gt;List methods, classes, imports, and exports&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;Installation&lt;/h1&gt; 
+&lt;h2&gt;Prerequisites&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Install &lt;a href="https://ghidra-sre.org"&gt;Ghidra&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Python3&lt;/li&gt; 
+ &lt;li&gt;MCP &lt;a href="https://github.com/modelcontextprotocol/python-sdk"&gt;SDK&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Ghidra&lt;/h2&gt; 
+&lt;p&gt;First, download the latest &lt;a href="https://github.com/LaurieWired/GhidraMCP/releases"&gt;release&lt;/a&gt; from this repository. This contains the Ghidra plugin and Python MCP client. Then, you can directly import the plugin into Ghidra.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Run Ghidra&lt;/li&gt; 
+ &lt;li&gt;Select &lt;code&gt;File&lt;/code&gt; -&amp;gt; &lt;code&gt;Install Extensions&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Click the &lt;code&gt;+&lt;/code&gt; button&lt;/li&gt; 
+ &lt;li&gt;Select the &lt;code&gt;GhidraMCP-1-2.zip&lt;/code&gt; (or your chosen version) from the downloaded release&lt;/li&gt; 
+ &lt;li&gt;Restart Ghidra&lt;/li&gt; 
+ &lt;li&gt;Make sure the GhidraMCPPlugin is enabled in &lt;code&gt;File&lt;/code&gt; -&amp;gt; &lt;code&gt;Configure&lt;/code&gt; -&amp;gt; &lt;code&gt;Developer&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;em&gt;Optional&lt;/em&gt;: Configure the port in Ghidra with &lt;code&gt;Edit&lt;/code&gt; -&amp;gt; &lt;code&gt;Tool Options&lt;/code&gt; -&amp;gt; &lt;code&gt;GhidraMCP HTTP Server&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;Video Installation Guide:&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/75f0c176-6da1-48dc-ad96-c182eb4648c3"&gt;https://github.com/user-attachments/assets/75f0c176-6da1-48dc-ad96-c182eb4648c3&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;MCP Clients&lt;/h2&gt; 
+&lt;p&gt;Theoretically, any MCP client should work with ghidraMCP. Three examples are given below.&lt;/p&gt; 
+&lt;h2&gt;Example 1: Claude Desktop&lt;/h2&gt; 
+&lt;p&gt;To set up Claude Desktop as a Ghidra MCP client, go to &lt;code&gt;Claude&lt;/code&gt; -&amp;gt; &lt;code&gt;Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Developer&lt;/code&gt; -&amp;gt; &lt;code&gt;Edit Config&lt;/code&gt; -&amp;gt; &lt;code&gt;claude_desktop_config.json&lt;/code&gt; and add the following:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "ghidra": {
+      "command": "python",
+      "args": [
+        "/ABSOLUTE_PATH_TO/bridge_mcp_ghidra.py",
+        "--ghidra-server",
+        "http://127.0.0.1:8080/"
+      ]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Alternatively, edit this file directly:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;/Users/YOUR_USER/Library/Application Support/Claude/claude_desktop_config.json
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The server IP and port are configurable and should be set to point to the target Ghidra instance. If not set, both will default to localhost:8080.&lt;/p&gt; 
+&lt;h2&gt;Example 2: Cline&lt;/h2&gt; 
+&lt;p&gt;To use GhidraMCP with &lt;a href="https://cline.bot"&gt;Cline&lt;/a&gt;, this requires manually running the MCP server as well. First run the following command:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;python bridge_mcp_ghidra.py --transport sse --mcp-host 127.0.0.1 --mcp-port 8081 --ghidra-server http://127.0.0.1:8080/
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The only &lt;em&gt;required&lt;/em&gt; argument is the transport. If all other arguments are unspecified, they will default to the above. Once the MCP server is running, open up Cline and select &lt;code&gt;MCP Servers&lt;/code&gt; at the top.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/88e1f336-4729-46ee-9b81-53271e9c0ce0" alt="Cline select" /&gt;&lt;/p&gt; 
+&lt;p&gt;Then select &lt;code&gt;Remote Servers&lt;/code&gt; and add the following, ensuring that the url matches the MCP host and port:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Server Name: GhidraMCP&lt;/li&gt; 
+ &lt;li&gt;Server URL: &lt;code&gt;http://127.0.0.1:8081/sse&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Example 3: 5ire&lt;/h2&gt; 
+&lt;p&gt;Another MCP client that supports multiple models on the backend is &lt;a href="https://github.com/nanbingxyz/5ire"&gt;5ire&lt;/a&gt;. To set up GhidraMCP, open 5ire and go to &lt;code&gt;Tools&lt;/code&gt; -&amp;gt; &lt;code&gt;New&lt;/code&gt; and set the following configurations:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Tool Key: ghidra&lt;/li&gt; 
+ &lt;li&gt;Name: GhidraMCP&lt;/li&gt; 
+ &lt;li&gt;Command: &lt;code&gt;python /ABSOLUTE_PATH_TO/bridge_mcp_ghidra.py&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h1&gt;Building from Source&lt;/h1&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Copy the following files from your Ghidra directory to this project's &lt;code&gt;lib/&lt;/code&gt; directory:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;Ghidra/Features/Base/lib/Base.jar&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Ghidra/Features/Decompiler/lib/Decompiler.jar&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Ghidra/Framework/Docking/lib/Docking.jar&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Ghidra/Framework/Generic/lib/Generic.jar&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Ghidra/Framework/Project/lib/Project.jar&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Ghidra/Framework/SoftwareModeling/lib/SoftwareModeling.jar&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Ghidra/Framework/Utility/lib/Utility.jar&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Ghidra/Framework/Gui/lib/Gui.jar&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Build with Maven by running:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;code&gt;mvn clean package assembly:single&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;The generated zip file includes the built Ghidra plugin and its resources. These files are required for Ghidra to recognize the new extension.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;lib/GhidraMCP.jar&lt;/li&gt; 
+ &lt;li&gt;extensions.properties&lt;/li&gt; 
+ &lt;li&gt;Module.manifest&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>MCRcortex/voxy</title>
+      <link>https://github.com/MCRcortex/voxy</link>
+      <description>&lt;p&gt;An LoD rendering mod for minecraft&lt;/p&gt;&lt;hr&gt;&lt;p&gt;Voxy is an LoD rendering mod for minecraft&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>FabricMC/fabric-example-mod</title>
+      <link>https://github.com/FabricMC/fabric-example-mod</link>
+      <description>&lt;p&gt;Example Fabric mod&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Fabric Example Mod&lt;/h1&gt; 
+&lt;h2&gt;Setup&lt;/h2&gt; 
+&lt;p&gt;For setup instructions please see the &lt;a href="https://docs.fabricmc.net/develop/getting-started/setting-up"&gt;fabric documentation page&lt;/a&gt; that relates to the IDE that you are using.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mockito/mockito</title>
+      <link>https://github.com/mockito/mockito</link>
+      <description>&lt;p&gt;Most popular Mocking framework for unit tests written in Java&lt;/p&gt;&lt;hr&gt;&lt;a href="https://site.mockito.org"&gt; &lt;img src="https://raw.githubusercontent.com/mockito/mockito/main/config/javadoc/resources/org/mockito/logo.png" srcset="https://raw.githubusercontent.com/mockito/mockito/main/config/javadoc/resources/org/mockito/logo@2x.png 2x" alt="Mockito" /&gt; &lt;/a&gt; 
+&lt;p&gt;Most popular mocking framework for Java&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/mockito/mockito/actions?query=workflow%3ACI"&gt;&lt;img src="https://github.com/mockito/mockito/workflows/CI/badge.svg?sanitize=true" alt="CI" /&gt;&lt;/a&gt; &lt;a href="https://codecov.io/github/mockito/mockito"&gt;&lt;img src="https://img.shields.io/codecov/c/github/mockito/mockito.svg?sanitize=true" alt="Coverage Status" /&gt;&lt;/a&gt; &lt;a href="https://github.com/mockito/mockito/raw/main/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/license-MIT-green.svg?sanitize=true" alt="MIT License" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/mockito/mockito/releases/"&gt;&lt;img src="https://img.shields.io/badge/release%20notes-5.x-yellow.svg?sanitize=true" alt="Release Notes" /&gt;&lt;/a&gt; &lt;a href="https://search.maven.org/artifact/org.mockito/mockito-core/"&gt;&lt;img src="https://img.shields.io/maven-central/v/org.mockito/mockito-core.svg?sanitize=true" alt="Maven Central" /&gt;&lt;/a&gt; &lt;a href="https://www.javadoc.io/doc/org.mockito/mockito-core"&gt;&lt;img src="https://www.javadoc.io/badge/org.mockito/mockito-core.svg?sanitize=true" alt="Javadoc" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Current version is 5.x&lt;/h2&gt; 
+&lt;p&gt;Still on Mockito 1.x? See &lt;a href="https://github.com/mockito/mockito/wiki/What%27s-new-in-Mockito-2"&gt;what's new&lt;/a&gt; in Mockito 2! &lt;a href="https://github.com/mockito/mockito/releases/tag/v3.0.0"&gt;Mockito 3&lt;/a&gt; does not introduce any breaking API changes, but now requires Java 8 over Java 6 for Mockito 2. &lt;a href="https://github.com/mockito/mockito/releases/tag/v4.0.0"&gt;Mockito 4&lt;/a&gt; removes deprecated API. &lt;a href="https://github.com/mockito/mockito/releases/tag/v5.0.0"&gt;Mockito 5&lt;/a&gt; switches the default mockmaker to mockito-inline, and now requires Java 11. Only one major version is supported at a time, and changes are not backported to older versions.&lt;/p&gt; 
+&lt;h2&gt;Mockito for enterprise&lt;/h2&gt; 
+&lt;p&gt;Available as part of the &lt;a href="https://tidelift.com/subscription/pkg/maven-org-mockito-mockito-core"&gt;Tidelift&lt;/a&gt; Subscription.&lt;/p&gt; 
+&lt;p&gt;The maintainers of org.mockito:mockito-core and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. &lt;a href="https://tidelift.com/subscription/pkg/maven-org-mockito-mockito-core?utm_source=maven-org-mockito-mockito-core&amp;amp;utm_medium=referral&amp;amp;utm_campaign=enterprise&amp;amp;utm_term=repo"&gt;Learn more.&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;p&gt;Mockito publishes every change as a &lt;code&gt;-SNAPSHOT&lt;/code&gt; version to a public Sonatype repository. Roughly once a month, we publish a new minor or patch version to Maven Central. For release automation we use &lt;a href="http://shipkit.org"&gt;Shipkit library&lt;/a&gt;, &lt;a href="https://github.com/gradle-nexus/publish-plugin"&gt;Gradle Nexus Publish Plugin&lt;/a&gt;. Fully automated releases are awesome, and you should do that for your libraries, too! See the &lt;a href="https://github.com/mockito/mockito/releases/"&gt;latest release notes&lt;/a&gt; and &lt;a href="https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html"&gt;latest documentation&lt;/a&gt;. Docs in javadoc.io are available 24h after release. Read also about &lt;a href="https://github.com/mockito/mockito/wiki/Semantic-Versioning"&gt;semantic versioning in Mockito&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Older 1.x and 2.x releases are available in &lt;a href="https://search.maven.org/artifact/org.mockito/mockito-core/1.10.19/jar"&gt;Central Repository&lt;/a&gt; and &lt;a href="https://javadoc.io/doc/org.mockito/mockito-core/1.10.19/org/mockito/Mockito.html"&gt;javadoc.io&lt;/a&gt; (documentation).&lt;/p&gt; 
+&lt;h2&gt;More information&lt;/h2&gt; 
+&lt;p&gt;All you want to know about Mockito is hosted at &lt;a href="https://site.mockito.org"&gt;The Mockito Site&lt;/a&gt; which is &lt;a href="https://github.com/mockito/mockito.github.io"&gt;Open Source&lt;/a&gt; and likes &lt;a href="https://github.com/mockito/mockito.github.io/pulls"&gt;pull requests&lt;/a&gt;, too.&lt;/p&gt; 
+&lt;p&gt;Want to contribute? Take a look at the &lt;a href="https://github.com/mockito/mockito/raw/main/.github/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Enjoy Mockito!&lt;/p&gt; 
+&lt;h2&gt;Need help?&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Search / Ask question on &lt;a href="https://stackoverflow.com/questions/tagged/mockito"&gt;stackoverflow&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Go to the &lt;a href="https://groups.google.com/group/mockito"&gt;mockito mailing-list&lt;/a&gt; (moderated)&lt;/li&gt; 
+ &lt;li&gt;Open a ticket in GitHub &lt;a href="https://github.com/mockito/mockito/issues"&gt;issue tracker&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How to develop Mockito?&lt;/h2&gt; 
+&lt;p&gt;To build locally:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;./gradlew build
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can open in any IDE that support Gradle, e.g. IntelliJ IDEA, or Fleet. For Eclipse, one may need to run &lt;code&gt;./gradlew eclipse&lt;/code&gt; before importing the project.&lt;/p&gt; 
+&lt;h2&gt;How to release new version?&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;Every change on the main development branch is released as &lt;code&gt;-SNAPSHOT&lt;/code&gt; version to Sonatype snapshot repo at &lt;a href="https://s01.oss.sonatype.org/content/repositories/snapshots/org/mockito/mockito-core"&gt;https://s01.oss.sonatype.org/content/repositories/snapshots/org/mockito/mockito-core&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;To release a non-snapshot version to Maven Central push an annotated tag, for example:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-shell"&gt;git tag -a -m "Release 3.4.5" v3.4.5
+git push origin v3.4.5
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;At the moment, you &lt;strong&gt;may not create releases from GitHub Web UI&lt;/strong&gt;. Doing so will make the CI build fail because the CI creates the changelog and posts to GitHub releases. We'll support this in the future.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>apache/kafka</title>
+      <link>https://github.com/apache/kafka</link>
+      <description>&lt;p&gt;Mirror of Apache Kafka&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="docs/images/kafka-logo-readme-light.svg" /&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="docs/images/kafka-logo-readme-dark.svg" /&gt; 
+  &lt;img src="https://raw.githubusercontent.com/apache/kafka/trunk/docs/images/kafka-logo-readme-light.svg?sanitize=true" alt="Kafka Logo" width="50%" /&gt; 
+ &lt;/picture&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/apache/kafka/actions/workflows/ci.yml?query=event%3Apush+branch%3Atrunk"&gt;&lt;img src="https://github.com/apache/kafka/actions/workflows/ci.yml/badge.svg?branch=trunk&amp;amp;event=push" alt="CI" /&gt;&lt;/a&gt; &lt;a href="https://github.com/apache/kafka/actions/workflows/generate-reports.yml?query=event%3Aschedule+branch%3Atrunk"&gt;&lt;img src="https://github.com/apache/kafka/actions/workflows/generate-reports.yml/badge.svg?branch=trunk&amp;amp;event=schedule" alt="Flaky Test Report" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://kafka.apache.org"&gt;&lt;strong&gt;Apache Kafka&lt;/strong&gt;&lt;/a&gt; is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications.&lt;/p&gt; 
+&lt;p&gt;You need to have &lt;a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html"&gt;Java&lt;/a&gt; installed.&lt;/p&gt; 
+&lt;p&gt;We build and test Apache Kafka with 17 and 25. The &lt;code&gt;release&lt;/code&gt; parameter in javac is set to &lt;code&gt;11&lt;/code&gt; for the clients and streams modules, and &lt;code&gt;17&lt;/code&gt; for the rest, ensuring compatibility with their respective minimum Java versions. Similarly, the &lt;code&gt;release&lt;/code&gt; parameter in scalac is set to &lt;code&gt;11&lt;/code&gt; for the streams modules and &lt;code&gt;17&lt;/code&gt; for the rest.&lt;/p&gt; 
+&lt;p&gt;Scala 2.13 is the only supported version in Apache Kafka.&lt;/p&gt; 
+&lt;h3&gt;Build a jar and run it&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew jar
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Follow instructions in &lt;a href="https://kafka.apache.org/quickstart"&gt;https://kafka.apache.org/quickstart&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Build source jar&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew srcJar
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Build aggregated javadoc&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew aggregatedJavadoc --no-parallel
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Build javadoc and scaladoc&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew javadoc
+./gradlew javadocJar # builds a javadoc jar for each module
+./gradlew scaladoc
+./gradlew scaladocJar # builds a scaladoc jar for each module
+./gradlew docsJar # builds both (if applicable) javadoc and scaladoc jars for each module
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Run unit/integration tests&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew test  # runs both unit and integration tests
+./gradlew unitTest
+./gradlew integrationTest
+./gradlew test -Pkafka.test.run.flaky=true  # runs tests that are marked as flaky
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Force re-running tests without code change&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew test --rerun-tasks
+./gradlew unitTest --rerun-tasks
+./gradlew integrationTest --rerun-tasks
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Running a particular unit/integration test&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew clients:test --tests RequestResponseTest
+./gradlew streams:integration-tests:test --tests RestoreIntegrationTest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Repeatedly running a particular unit/integration test with specific times by setting N&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;N=500; I=0; while [ $I -lt $N ] &amp;amp;&amp;amp; ./gradlew clients:test --tests RequestResponseTest --rerun --fail-fast; do (( I=$I+1 )); echo "Completed run: $I"; sleep 1; done
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Running a particular test method within a unit/integration test&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew core:test --tests kafka.api.ProducerFailureHandlingTest.testCannotSendToInternalTopic
+./gradlew clients:test --tests org.apache.kafka.clients.MetadataTest.testTimeToNextUpdate
+./gradlew streams:integration-tests:test --tests org.apache.kafka.streams.integration.RestoreIntegrationTest.shouldRestoreNullRecord
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Running a particular unit/integration test with log4j output&lt;/h3&gt; 
+&lt;p&gt;By default, there will be only small number of logs output while testing. You can adjust it by changing the &lt;code&gt;log4j2.yaml&lt;/code&gt; file in the module's &lt;code&gt;src/test/resources&lt;/code&gt; directory.&lt;/p&gt; 
+&lt;p&gt;For example, if you want to see more logs for clients project tests, you can modify &lt;a href="https://github.com/apache/kafka/raw/trunk/clients/src/test/resources/log4j2.yaml#L35"&gt;the line&lt;/a&gt; in &lt;code&gt;clients/src/test/resources/log4j2.yaml&lt;/code&gt; to &lt;code&gt;level: INFO&lt;/code&gt; and then run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew cleanTest clients:test --tests NetworkClientTest   
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;And you should see &lt;code&gt;INFO&lt;/code&gt; level logs in the file under the &lt;code&gt;clients/build/test-results/test&lt;/code&gt; directory.&lt;/p&gt; 
+&lt;h3&gt;Specifying test retries&lt;/h3&gt; 
+&lt;p&gt;Retries are disabled by default, but you can set maxTestRetryFailures and maxTestRetries to enable retries.&lt;/p&gt; 
+&lt;p&gt;The following example declares -PmaxTestRetries=1 and -PmaxTestRetryFailures=3 to enable a failed test to be retried once, with a total retry limit of 3.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew test -PmaxTestRetries=1 -PmaxTestRetryFailures=3
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;a href="https://github.com/gradle/test-retry-gradle-plugin"&gt;Test Retry Gradle Plugin&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/apache/kafka/trunk/.github/workflows/build.yml"&gt;build.yml&lt;/a&gt; for more details.&lt;/p&gt; 
+&lt;h3&gt;Generating test coverage reports&lt;/h3&gt; 
+&lt;p&gt;Generate coverage reports for the whole project:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew reportCoverage -PenableTestCoverage=true -Dorg.gradle.parallel=false
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Generate coverage for a single module, i.e.:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew clients:reportCoverage -PenableTestCoverage=true -Dorg.gradle.parallel=false
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Coverage reports are located within the module's build directory, categorized by module type:&lt;/p&gt; 
+&lt;p&gt;Core Module (:core): &lt;code&gt;core/build/reports/scoverageTest/index.html&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;Other Modules: &lt;code&gt;&amp;lt;module&amp;gt;/build/reports/jacoco/test/html/index.html&lt;/code&gt;&lt;/p&gt; 
+&lt;h3&gt;Building a binary release gzipped tar ball&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew clean releaseTarGz
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The release file can be found inside &lt;code&gt;./core/build/distributions/&lt;/code&gt;.&lt;/p&gt; 
+&lt;h3&gt;Building auto generated messages&lt;/h3&gt; 
+&lt;p&gt;Sometimes it is only necessary to rebuild the RPC auto-generated message data when switching between branches, as they could fail due to code changes. You can just run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew processMessages processTestMessages
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/apache/kafka/trunk/clients/src/main/resources/common/message/README.md"&gt;Apache Kafka Message Definitions&lt;/a&gt; for details on Apache Kafka message protocol.&lt;/p&gt; 
+&lt;h3&gt;Running a Kafka broker&lt;/h3&gt; 
+&lt;p&gt;Using compiled files:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;KAFKA_CLUSTER_ID="$(./bin/kafka-storage.sh random-uuid)"
+./bin/kafka-storage.sh format --standalone -t $KAFKA_CLUSTER_ID -c config/server.properties
+./bin/kafka-server-start.sh config/server.properties
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Using docker image:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;docker run -p 9092:9092 apache/kafka:latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/apache/kafka/trunk/docker/README.md"&gt;docker/README.md&lt;/a&gt; for detailed information.&lt;/p&gt; 
+&lt;h3&gt;Cleaning the build&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew clean
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Running a task for a specific project&lt;/h3&gt; 
+&lt;p&gt;This is for &lt;code&gt;core&lt;/code&gt;, &lt;code&gt;examples&lt;/code&gt; and &lt;code&gt;clients&lt;/code&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew core:jar
+./gradlew core:test
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Streams has multiple sub-projects, but you can run all the tests:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew :streams:testAll
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Listing all gradle tasks&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew tasks
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Building IDE project&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;Note Please ensure that JDK17 is used when developing Kafka.&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;IntelliJ supports Gradle natively and it will automatically check Java syntax and compatibility for each module, even if the Java version shown in the &lt;code&gt;Structure &amp;gt; Project Settings &amp;gt; Modules&lt;/code&gt; may not be the correct one.&lt;/p&gt; 
+&lt;p&gt;When it comes to Eclipse, run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew eclipse
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The &lt;code&gt;eclipse&lt;/code&gt; task has been configured to use &lt;code&gt;${project_dir}/build_eclipse&lt;/code&gt; as Eclipse's build directory. Eclipse's default build directory (&lt;code&gt;${project_dir}/bin&lt;/code&gt;) clashes with Kafka's scripts directory and we don't use Gradle's build directory to avoid known issues with this configuration.&lt;/p&gt; 
+&lt;h3&gt;Publishing the streams quickstart archetype artifact to maven&lt;/h3&gt; 
+&lt;p&gt;For the Streams archetype project, one cannot use gradle to upload to maven; instead the &lt;code&gt;mvn deploy&lt;/code&gt; command needs to be called at the quickstart folder:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;cd streams/quickstart
+mvn deploy
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Please note for this to work you should create/update user maven settings (typically, &lt;code&gt;${USER_HOME}/.m2/settings.xml&lt;/code&gt;) to assign the following variables&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;&amp;lt;settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                       https://maven.apache.org/xsd/settings-1.0.0.xsd"&amp;gt;
+...                           
+&amp;lt;servers&amp;gt;
+   ...
+   &amp;lt;server&amp;gt;
+      &amp;lt;id&amp;gt;apache.snapshots.https&amp;lt;/id&amp;gt;
+      &amp;lt;username&amp;gt;${maven_username}&amp;lt;/username&amp;gt;
+      &amp;lt;password&amp;gt;${maven_password}&amp;lt;/password&amp;gt;
+   &amp;lt;/server&amp;gt;
+   &amp;lt;server&amp;gt;
+      &amp;lt;id&amp;gt;apache.releases.https&amp;lt;/id&amp;gt;
+      &amp;lt;username&amp;gt;${maven_username}&amp;lt;/username&amp;gt;
+      &amp;lt;password&amp;gt;${maven_password}&amp;lt;/password&amp;gt;
+    &amp;lt;/server&amp;gt;
+    ...
+ &amp;lt;/servers&amp;gt;
+ ...
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Installing all projects to the local Maven repository&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew -PskipSigning=true publishToMavenLocal
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Installing specific projects to the local Maven repository&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew -PskipSigning=true :streams:publishToMavenLocal
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Building the test jar&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew testJar
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Running code quality checks&lt;/h3&gt; 
+&lt;p&gt;There are two code quality analysis tools that we regularly run, spotbugs and checkstyle.&lt;/p&gt; 
+&lt;h4&gt;Checkstyle&lt;/h4&gt; 
+&lt;p&gt;Checkstyle enforces a consistent coding style in Kafka. You can run checkstyle using:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew checkstyleMain checkstyleTest spotlessCheck
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The checkstyle warnings will be found in &lt;code&gt;reports/checkstyle/reports/main.html&lt;/code&gt; and &lt;code&gt;reports/checkstyle/reports/test.html&lt;/code&gt; files in the subproject build directories. They are also printed to the console. The build will fail if Checkstyle fails. For experiments (or regression testing purposes) add &lt;code&gt;-PcheckstyleVersion=X.y.z&lt;/code&gt; switch (to override project-defined checkstyle version).&lt;/p&gt; 
+&lt;h4&gt;Spotless&lt;/h4&gt; 
+&lt;p&gt;The import order is a part of static check. please call &lt;code&gt;spotlessApply&lt;/code&gt; to optimize the imports of Java codes before filing pull request.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew spotlessApply
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Spotbugs&lt;/h4&gt; 
+&lt;p&gt;Spotbugs uses static analysis to look for bugs in the code. You can run spotbugs using:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew spotbugsMain spotbugsTest -x test
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The spotbugs warnings will be found in &lt;code&gt;reports/spotbugs/main.html&lt;/code&gt; and &lt;code&gt;reports/spotbugs/test.html&lt;/code&gt; files in the subproject build directories. Use -PxmlSpotBugsReport=true to generate an XML report instead of an HTML one.&lt;/p&gt; 
+&lt;h3&gt;JMH microbenchmarks&lt;/h3&gt; 
+&lt;p&gt;We use &lt;a href="https://openjdk.java.net/projects/code-tools/jmh/"&gt;JMH&lt;/a&gt; to write microbenchmarks that produce reliable results in the JVM.&lt;/p&gt; 
+&lt;p&gt;See &lt;a href="https://github.com/apache/kafka/raw/trunk/jmh-benchmarks/README.md"&gt;jmh-benchmarks/README.md&lt;/a&gt; for details on how to run the microbenchmarks.&lt;/p&gt; 
+&lt;h3&gt;Dependency Analysis&lt;/h3&gt; 
+&lt;p&gt;The gradle &lt;a href="https://docs.gradle.org/current/userguide/viewing_debugging_dependencies.html"&gt;dependency debugging documentation&lt;/a&gt; mentions using the &lt;code&gt;dependencies&lt;/code&gt; or &lt;code&gt;dependencyInsight&lt;/code&gt; tasks to debug dependencies for the root project or individual subprojects.&lt;/p&gt; 
+&lt;p&gt;Alternatively, use the &lt;code&gt;allDeps&lt;/code&gt; or &lt;code&gt;allDepInsight&lt;/code&gt; tasks for recursively iterating through all subprojects:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew allDeps
+
+./gradlew allDepInsight --configuration runtimeClasspath --dependency com.fasterxml.jackson.core:jackson-databind
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;These take the same arguments as the builtin variants.&lt;/p&gt; 
+&lt;h3&gt;Determining if any dependencies could be updated&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew dependencyUpdates --no-parallel
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Common build options&lt;/h3&gt; 
+&lt;p&gt;The following options should be set with a &lt;code&gt;-P&lt;/code&gt; switch, for example &lt;code&gt;./gradlew -PmaxParallelForks=1 test&lt;/code&gt;.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;commitId&lt;/code&gt;: sets the build commit ID as .git/HEAD might not be correct if there are local commits added for build purposes.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;mavenUrl&lt;/code&gt;: sets the URL of the maven deployment repository (&lt;code&gt;file://path/to/repo&lt;/code&gt; can be used to point to a local repository).&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;maxParallelForks&lt;/code&gt;: maximum number of test processes to start in parallel. Defaults to the number of processors available to the JVM.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;maxScalacThreads&lt;/code&gt;: maximum number of worker threads for the scalac backend. Defaults to the lowest of &lt;code&gt;8&lt;/code&gt; and the number of processors available to the JVM. The value must be between 1 and 16 (inclusive).&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;ignoreFailures&lt;/code&gt;: ignore test failures from junit&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;showStandardStreams&lt;/code&gt;: shows standard out and standard error of the test JVM(s) on the console.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;skipSigning&lt;/code&gt;: skips signing of artifacts.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;testLoggingEvents&lt;/code&gt;: unit test events to be logged, separated by comma. For example &lt;code&gt;./gradlew -PtestLoggingEvents=started,passed,skipped,failed test&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;xmlSpotBugsReport&lt;/code&gt;: enable XML reports for spotBugs. This also disables HTML reports as only one can be enabled at a time.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;maxTestRetries&lt;/code&gt;: maximum number of retries for a failing test case.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;maxTestRetryFailures&lt;/code&gt;: maximum number of test failures before retrying is disabled for subsequent tests.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;enableTestCoverage&lt;/code&gt;: enables test coverage plugins and tasks, including bytecode enhancement of classes required to track said coverage. Note that this introduces some overhead when running tests and hence why it's disabled by default (the overhead varies, but 15-20% is a reasonable estimate).&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;keepAliveMode&lt;/code&gt;: configures the keep alive mode for the Gradle compilation daemon - reuse improves start-up time. The values should be one of &lt;code&gt;daemon&lt;/code&gt; or &lt;code&gt;session&lt;/code&gt; (the default is &lt;code&gt;daemon&lt;/code&gt;). &lt;code&gt;daemon&lt;/code&gt; keeps the daemon alive until it's explicitly stopped while &lt;code&gt;session&lt;/code&gt; keeps it alive until the end of the build session. This currently only affects the Scala compiler, see &lt;a href="https://github.com/gradle/gradle/pull/21034"&gt;https://github.com/gradle/gradle/pull/21034&lt;/a&gt; for a PR that attempts to do the same for the Java compiler.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;scalaOptimizerMode&lt;/code&gt;: configures the optimizing behavior of the scala compiler, the value should be one of &lt;code&gt;none&lt;/code&gt;, &lt;code&gt;method&lt;/code&gt;, &lt;code&gt;inline-kafka&lt;/code&gt; or &lt;code&gt;inline-scala&lt;/code&gt; (the default is &lt;code&gt;inline-kafka&lt;/code&gt;). &lt;code&gt;none&lt;/code&gt; is the scala compiler default, which only eliminates unreachable code. &lt;code&gt;method&lt;/code&gt; also includes method-local optimizations. &lt;code&gt;inline-kafka&lt;/code&gt; adds inlining of methods within the kafka packages. Finally, &lt;code&gt;inline-scala&lt;/code&gt; also includes inlining of methods within the scala library (which avoids lambda allocations for methods like &lt;code&gt;Option.exists&lt;/code&gt;). &lt;code&gt;inline-scala&lt;/code&gt; is only safe if the Scala library version is the same at compile time and runtime. Since we cannot guarantee this for all cases (for example, users may depend on the kafka jar for integration tests where they may include a scala library with a different version), we don't enable it by default. See &lt;a href="https://www.lightbend.com/blog/scala-inliner-optimizer"&gt;https://www.lightbend.com/blog/scala-inliner-optimizer&lt;/a&gt; for more details.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Upgrading Gradle version&lt;/h3&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/apache/kafka/trunk/gradle/wrapper/README.md"&gt;gradle/wrapper/README.md&lt;/a&gt; for instructions on upgrading the Gradle version.&lt;/p&gt; 
+&lt;h3&gt;Running system tests&lt;/h3&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/apache/kafka/trunk/tests/README.md"&gt;tests/README.md&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Using Trogdor for testing&lt;/h3&gt; 
+&lt;p&gt;We use Trogdor as a test framework for Apache Kafka. You can use it to run benchmarks and other workloads.&lt;/p&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/apache/kafka/trunk/trogdor/README.md"&gt;trogdor/README.md&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Running in Vagrant&lt;/h3&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/apache/kafka/trunk/vagrant/README.md"&gt;vagrant/README.md&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Kafka client examples&lt;/h3&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/apache/kafka/trunk/examples/README.md"&gt;examples/README.md&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Contribution&lt;/h3&gt; 
+&lt;p&gt;Apache Kafka is interested in building the community; we would welcome any thoughts or &lt;a href="https://issues.apache.org/jira/browse/KAFKA"&gt;patches&lt;/a&gt;. You can reach us &lt;a href="http://kafka.apache.org/contact.html"&gt;on the Apache mailing lists&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;To contribute follow the instructions here:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://kafka.apache.org/contributing.html"&gt;https://kafka.apache.org/contributing.html&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>ashishps1/awesome-leetcode-resources</title>
+      <link>https://github.com/ashishps1/awesome-leetcode-resources</link>
+      <description>&lt;p&gt;Awesome LeetCode resources to learn Data Structures and Algorithms and prepare for Coding Interviews.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/ashishps1/awesome-leetcode-resources/main/images/leetcode-repo-logo.png" width="350" height="200" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://blog.algomaster.io/"&gt;Join Free Newsletter&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;This repository contains awesome LeetCode resources to learn Data Structures and Algorithms (DSA) and prepare for Coding interviews.&lt;/p&gt; 
+&lt;p&gt;👉 If you want to master DSA patterns, checkout &lt;a href="https://algomaster.io"&gt;AlgoMaster.io&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;💡 Tips&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://blog.algomaster.io/p/how-i-mastered-data-structures-and-algorithms"&gt;How I Mastered DSA&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://blog.algomaster.io/p/how-to-start-leetcode-in-2025"&gt;How to Start LeetCode&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://blog.algomaster.io/p/15-leetcode-patterns"&gt;15 Leetcode Patterns&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📌 Fundamental Concepts&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://blog.algomaster.io/p/57bd4963-462f-4294-a972-4012691fc729"&gt;Algorithmic Complexity&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.bigocheatsheet.com/"&gt;Big-O Cheat Sheet&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=SlNq09scdWE&amp;amp;list=PLK63NuByH5o9odyBT7nfYkHZyvGQ5oVp2"&gt;Arrays&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://blog.algomaster.io/p/c650df76-f978-46ee-a572-eb13c354905d"&gt;Bit Manipulation Techniques&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://medium.com/jl-codes/understanding-sorting-algorithms-af6222995c8"&gt;Sorting Algorithms&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=FbHf0ii0WDg&amp;amp;list=PLK63NuByH5o9odyBT7nfYkHZyvGQ5oVp2"&gt;Linked List&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://medium.com/basecs/to-queue-or-not-to-queue-2653bcde5b04"&gt;Queues&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://medium.com/basecs/stacks-and-overflows-dbcf7854dc67"&gt;Stacks&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://medium.com/basecs/taking-hash-tables-off-the-shelf-139cbf4752f0"&gt;Hash Tables&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://medium.com/basecs/learning-to-love-heaps-cef2b273a238"&gt;Heaps&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/discuss/study-guide/1733447/become-master-in-recursion"&gt;Recursion&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://medium.com/algorithms-and-leetcode/backtracking-e001561b9f28"&gt;Backtracking&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/discuss/study-guide/1820334/Become-Master-in-Tree"&gt;Trees&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://medium.com/basecs/trying-to-understand-tries-3ec6bede0014"&gt;Tries&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/discuss/study-guide/786126/Python-Powerful-Ultimate-Binary-Search-Template.-Solved-many-problems"&gt;Binary Search&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.freecodecamp.org/news/greedy-algorithms/"&gt;Greedy Algorithm&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://medium.com/basecs/less-repetition-more-dynamic-programming-43d29830a630"&gt;Dynamic Programming&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=xN5VGzK9_FQ&amp;amp;list=PLK63NuByH5o9odyBT7nfYkHZyvGQ5oVp2"&gt;Graph Theory&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://blog.algomaster.io/p/master-graph-algorithms-for-coding"&gt;Master Graph Algorithms&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://medium.com/basecs/deep-dive-through-a-graph-dfs-traversal-8177df5d0f13"&gt;DFS Traversal&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://medium.com/basecs/going-broad-in-a-graph-bfs-traversal-959bd1a09255"&gt;BFS Traversal&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/discuss/general-discussion/1072418/Disjoint-Set-Union-(DSU)Union-Find-A-Complete-Guide"&gt;Union-Find&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/discuss/study-guide/1059477/A-guide-to-Dijkstra's-Algorithm"&gt;Dijkstra Algorithm&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.hackerearth.com/practice/algorithms/graphs/minimum-spanning-tree/tutorial/"&gt;Minimum Spanning Tree&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🚀 Patterns&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://blog.algomaster.io/p/15-leetcode-patterns"&gt;15 Leetcode Patterns&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://blog.algomaster.io/p/20-patterns-to-master-dynamic-programming"&gt;20 DP Patterns&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=QzZ7nmouLTI&amp;amp;list=PLK63NuByH5o9odyBT7nfYkHZyvGQ5oVp2"&gt;Two Pointers Pattern&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=y2d0VHdvfdc&amp;amp;list=PLK63NuByH5o9odyBT7nfYkHZyvGQ5oVp2"&gt;Sliding Window Pattern&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=yuws7YK0Yng&amp;amp;list=PLK63NuByH5o9odyBT7nfYkHZyvGQ5oVp2"&gt;Prefix Sum Pattern&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=b139yf7Ik-E&amp;amp;list=PLK63NuByH5o9odyBT7nfYkHZyvGQ5oVp2"&gt;Fast and Slow Pointers Pattern&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=6_v6OoxvMOE&amp;amp;list=PLK63NuByH5o9odyBT7nfYkHZyvGQ5oVp2"&gt;Top 'K' Elements Pattern&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=NUWAXbSlsws&amp;amp;list=PLK63NuByH5o9odyBT7nfYkHZyvGQ5oVp2"&gt;Kadane's Algorithm&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=auoTGovuo9A&amp;amp;list=PLK63NuByH5o9odyBT7nfYkHZyvGQ5oVp2"&gt;Linked List In-place Reversal Pattern&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=DtJVwbbicjQ&amp;amp;list=PLK63NuByH5o9odyBT7nfYkHZyvGQ5oVp2"&gt;Monotonic Stack Pattern&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://blog.algomaster.io/p/812e72f7-eced-4256-a4c1-00606ae50679"&gt;Overlapping Intervals Pattern&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://blog.algomaster.io/p/81d42ca2-600c-4252-aa33-a56462090048"&gt;Backtracking Pattern&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://blog.algomaster.io/p/d0d81b04-4c2a-4b45-a101-5137c3146686"&gt;Modified Binary Search Pattern&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/discuss/study-guide/937307/Iterative-or-Recursive-or-DFS-and-BFS-Tree-Traversal-or-In-Pre-Post-and-LevelOrder-or-Views"&gt;Tree Patterns&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://medium.com/leetcode-patterns/leetcode-pattern-0-iterative-traversals-on-trees-d373568eb0ec"&gt;Tree Iterative Traversal&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://leetcode.com/discuss/study-guide/2879240/TREE-QUESTION-PATTERN-2023-oror-TREE-STUDY-GUIDE"&gt;Tree Question Pattern&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/discuss/study-guide/655708/Graph-For-Beginners-Problems-or-Pattern-or-Sample-Solutions"&gt;Graph Patterns&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://medium.com/leetcode-patterns/leetcode-pattern-1-bfs-dfs-25-of-the-problems-part-1-519450a84353"&gt;DFS + BFS Patterns (1)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://medium.com/leetcode-patterns/leetcode-pattern-2-dfs-bfs-25-of-the-problems-part-2-a5b269597f52"&gt;DFS + BFS Patterns (2)&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📝 Must-Read Leetcode Articles&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/problems/frequency-of-the-most-frequent-element/solutions/1175088/C++-Maximum-Sliding-Window-Cheatsheet-Template/"&gt;Sliding Window Template&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/discuss/study-guide/1688903/Solved-all-two-pointers-problems-in-100-days"&gt;Two Pointers Patterns&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/discuss/study-guide/2001789/Collections-of-Important-String-questions-Pattern"&gt;Collections of Important String Questions&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/problems/minimum-window-substring/solutions/26808/Here-is-a-10-line-template-that-can-solve-most-'substring'-problems/"&gt;Substring Problem Template&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/discuss/study-guide/786126/Python-Powerful-Ultimate-Binary-Search-Template.-Solved-many-problems"&gt;Binary Search Template&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/problems/permutations/solutions/18239/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partioning)/"&gt;A General Approach to Backtracking Questions&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/discuss/study-guide/2347639/A-comprehensive-guide-and-template-for-monotonic-stack-based-problems"&gt;Monotonic Stack Template&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/discuss/general-discussion/1127238/master-heap-by-solving-23-questions-in-4-patterns-category"&gt;Heap Patterns&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/discuss/study-guide/4282051/all-types-of-patterns-for-bits-manipulations-and-how-to-use-it"&gt;Bit Manipulation Patterns&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/discuss/study-guide/458695/Dynamic-Programming-Patterns"&gt;Dynamic Programming Patterns&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/solutions/108870/most-consistent-ways-of-dealing-with-the-series-of-stock-problems/"&gt;Stock Series Patterns&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;✅ Curated Problems&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://algomaster.io/practice/dsa-patterns"&gt;AlgoMaster 300&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions"&gt;Blind 75&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/studyplan/top-100-liked/"&gt;Leetcode Top 100 Liked&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://leetcode.com/studyplan/top-interview-150/"&gt;Leetcode Top Interview 150&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📺 YouTube Playlist&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/playlist?list=PLK63NuByH5o9odyBT7nfYkHZyvGQ5oVp2&amp;amp;pp=gAQB"&gt;AlgoMaster DSA Playlist&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/playlist?list=PLK63NuByH5o-tqaMUHRA4r8ObRW7PWz45"&gt;AlgoMaster LeetCode Pattern Playlist&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O"&gt;Abdul Bari's Algorithms Playlist&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/playlist?list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu"&gt;William Fiset's Data Structure Playlist&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/playlist?list=PLDV1Zeh2NRsDGO4--qE8yH72HFL1Km93P"&gt;William Fiset's Graphs Playlist&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/playlist?list=PLrmLmBdmIlpsHaNTPP_jHHDx_os9ItYXr"&gt;Tushar Roy's Dynamic Programming Playlist&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📇 Courses&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.coursera.org/learn/algorithms-part1"&gt;Coursera - Algorithms, Part I&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.coursera.org/learn/algorithms-part2"&gt;Coursera - Algorithms, Part 2&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📚 Books&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.amazon.in/dp/B08CMLS7LZ"&gt;Data Structures And Algorithms Made Easy&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.amazon.in/dp/0984782850"&gt;Cracking the Coding Interview&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📩 Newsletter&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://blog.algomaster.io/"&gt;AlgoMaster Newsletter&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🔎 Visualization&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://algomaster.io/animations/dsa"&gt;AlgoMaster DSA Animations&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://visualgo.net/en"&gt;VisuAlgo&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📎 LeetCode Extensions&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://chromewebstore.google.com/detail/leetcode-timer/gfkgelnlcnomnahkfmhemgpahgmibofd"&gt;LeetCode Timer&lt;/a&gt;: Easily time your leetcode practise sessions with automatic time setting based on difficulty.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://chromewebstore.google.com/detail/leetcode-video-solutions/ilnmgkahgjdpkoliooildngldmilhelm"&gt;LeetCode Video Solutions&lt;/a&gt;: Watch free LeetCode video ▶ solutions on the problem page itself.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://chromewebstore.google.com/detail/leetcode-format/imogghebhifnnlgogigikjecilkicfpp"&gt;LeetCode Format&lt;/a&gt;: Adds Format code button on leetcode to format the code using Prettier code formatter.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://chromewebstore.google.com/detail/leethub-v2/mhanfgfagplhgemhjfeolkkdidbakocm?hl=en"&gt;LeetHub v2&lt;/a&gt;: Automatically integrate your Leetcode &amp;amp; GeeksforGeeks submissions to GitHub.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://marketplace.visualstudio.com/items?itemName=LeetCode.vscode-leetcode"&gt;LeetCode VS Code Extension&lt;/a&gt;: Solve LeetCode problems in VS Code.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Your contributions are most welcome!&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p align="center"&gt; &lt;i&gt;If you find this resource helpful, please give it a star ⭐️ and share it with others!&lt;/i&gt; &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>openrewrite/rewrite</title>
+      <link>https://github.com/openrewrite/rewrite</link>
+      <description>&lt;p&gt;Automated mass refactoring of source code.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://docs.openrewrite.org"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://github.com/openrewrite/rewrite/raw/main/doc/logo-oss-dark.svg" /&gt; 
+   &lt;source media="(prefers-color-scheme: light)" srcset="https://github.com/openrewrite/rewrite/raw/main/doc/logo-oss-light.svg" /&gt; 
+   &lt;img alt="OpenRewrite Logo" src="https://github.com/openrewrite/rewrite/raw/main/doc/logo-oss-light.svg?sanitize=true" width="600px" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;!-- Keep the gap above this line, otherwise they won't render correctly! --&gt; 
+ &lt;p&gt;&lt;a href="https://github.com/openrewrite/rewrite/actions/workflows/ci.yml"&gt;&lt;img src="https://github.com/openrewrite/rewrite/actions/workflows/ci.yml/badge.svg?sanitize=true" alt="ci" /&gt;&lt;/a&gt; &lt;a href="https://www.apache.org/licenses/LICENSE-2.0"&gt;&lt;img src="https://img.shields.io/github/license/openrewrite/rewrite.svg?sanitize=true" alt="Apache 2.0" /&gt;&lt;/a&gt; &lt;a href="https://mvnrepository.com/artifact/org.openrewrite/rewrite-java"&gt;&lt;img src="https://img.shields.io/maven-central/v/org.openrewrite/rewrite-java.svg?sanitize=true" alt="Maven Central" /&gt;&lt;/a&gt; &lt;a href="https://ge.openrewrite.org/scans"&gt;&lt;img src="https://img.shields.io/badge/Revved%20up%20by-Develocity-06A0CE?logo=Gradle&amp;amp;labelColor=02303A" alt="Revved up by Develocity" /&gt;&lt;/a&gt; &lt;a href="https://github.com/openrewrite/.github/raw/main/CONTRIBUTING.md"&gt;&lt;img src="https://img.shields.io/badge/Contributing-Guide-informational" alt="Contributing Guide" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h1 align="center"&gt;Fast, repeatable refactoring for developers&lt;/h1&gt; 
+&lt;p&gt;The OpenRewrite project (managed by &lt;a href="https://www.moderne.ai/"&gt;Moderne&lt;/a&gt;) is an open-source automated refactoring ecosystem for source code, enabling developers to effectively eliminate technical debt within their repositories.&lt;/p&gt; 
+&lt;p&gt;It consists of an auto-refactoring engine that runs prepackaged, open source refactoring recipes for common framework migrations, security fixes, and stylistic consistency tasks—reducing your coding effort from hours or days to minutes. Build tool plugins like &lt;a href="https://docs.openrewrite.org/reference/gradle-plugin-configuration"&gt;OpenRewrite Gradle Plugin&lt;/a&gt; and &lt;a href="https://docs.openrewrite.org/reference/rewrite-maven-plugin"&gt;OpenRewrite Maven Plugin&lt;/a&gt; help you run these recipes on one repository at a time.&lt;/p&gt; 
+&lt;p&gt;OpenRewrite recipes have bench strength in Java and are part of a growing community of languages, frameworks, and tech. It’s thousands of great individuals and teams working to make software seamless to update and continuously secure. You can also easily customize recipes for your code.&lt;/p&gt; 
+&lt;p&gt;Start with our &lt;a href="https://docs.openrewrite.org/running-recipes/getting-started"&gt;quickstart guide&lt;/a&gt; and let OpenRewrite handle the boring parts of software development for you.&lt;/p&gt; 
+&lt;p&gt;Get and stay informed:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Read the &lt;a href="http://docs.openrewrite.org"&gt;documentation&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Join us on &lt;a href="https://join.slack.com/t/rewriteoss/shared_invite/zt-nj42n3ea-b~62rIHzb3Vo0E1APKCXEA"&gt;Slack&lt;/a&gt; or &lt;a href="https://discord.gg/xk3ZKrhWAb"&gt;Discord&lt;/a&gt;! We're happy to answer your questions directly.&lt;/li&gt; 
+ &lt;li&gt;Check out &lt;a href="https://www.youtube.com/@moderne-and-openrewrite/streams"&gt;Community Office Hours&lt;/a&gt; where we deep dive topics and answer questions.&lt;/li&gt; 
+ &lt;li&gt;Subscribe to our &lt;a href="https://www.youtube.com/@moderne-and-openrewrite"&gt;YouTube&lt;/a&gt; channel for great videos on OpenRewrite recipes.&lt;/li&gt; 
+ &lt;li&gt;Follow us on &lt;a href="https://twitter.com/openrewrite"&gt;Twitter&lt;/a&gt; and &lt;a href="https://www.linkedin.com/company/moderneinc"&gt;LinkedIn&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;OpenRewrite is Apache2 licensed and maintained by Moderne. OpenRewrite's refactoring engine and recipes will always be open source.&lt;/p&gt; 
+&lt;h2&gt;Refactoring at scale with Moderne&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.moderne.io/"&gt;Moderne&lt;/a&gt; is a commercial platform designed to run the OpenRewrite recipe catalog with incredible efficiency, supporting large codebases and multiple repositories. It’s a place where platform teams and developers can collaborate to drive migrations across their codebases, mass-commit code fixes, and perform large-scale impact analyses.&lt;/p&gt; 
+&lt;p&gt;See how Moderne and OpenRewrite work in different ways to transform your code.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=Q-ej2lCJHRs"&gt;&lt;img src="https://raw.githubusercontent.com/openrewrite/rewrite/main/doc/openrewrite_v_moderne.png" alt="Moderne" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Moderne freely runs an &lt;a href="https://www.moderne.io/try-moderne"&gt;open public service&lt;/a&gt; for the benefit of tens of thousands of open source projects. The platform can streamline your recipe customization and creation, enabling quick assembly and testing. It also includes a multi-repo command line interface (CLI) to enable developers to run and customize recipes locally.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=cs-6FJ_mtro"&gt;&lt;img src="https://raw.githubusercontent.com/openrewrite/rewrite/main/doc/moderne_cli.png" alt="Moderne" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;To understand better how Moderne can help your team, &lt;a href="https://www.moderne.io/contact-us"&gt;contact us&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We appreciate all types of contributions. See the &lt;a href="https://github.com/openrewrite/.github/raw/main/CONTRIBUTING.md"&gt;contributing guide&lt;/a&gt; for detailed instructions on how to get started.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
