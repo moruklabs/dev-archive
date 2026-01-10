@@ -1,0 +1,2226 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub All Languages Weekly Trending</title>
+    <description>Weekly Trending of All Languages in GitHub</description>
+    <pubDate>Fri, 09 Jan 2026 01:39:35 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>anomalyco/opencode</title>
+      <link>https://github.com/anomalyco/opencode</link>
+      <description>&lt;p&gt;The open source coding agent.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://opencode.ai"&gt; 
+  &lt;picture&gt; 
+   &lt;source srcset="packages/console/app/src/asset/logo-ornate-dark.svg" media="(prefers-color-scheme: dark)" /&gt; 
+   &lt;source srcset="packages/console/app/src/asset/logo-ornate-light.svg" media="(prefers-color-scheme: light)" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/console/app/src/asset/logo-ornate-light.svg?sanitize=true" alt="OpenCode logo" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;The open source AI coding agent.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://opencode.ai/discord"&gt;&lt;img alt="Discord" src="https://img.shields.io/discord/1391832426048651334?style=flat-square&amp;amp;label=discord" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/opencode-ai"&gt;&lt;img alt="npm" src="https://img.shields.io/npm/v/opencode-ai?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://github.com/anomalyco/opencode/actions/workflows/publish.yml"&gt;&lt;img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/anomalyco/opencode/publish.yml?style=flat-square&amp;amp;branch=dev" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://opencode.ai"&gt;&lt;img src="https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/web/src/assets/lander/screenshot.png" alt="OpenCode Terminal UI" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Installation&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# YOLO
+curl -fsSL https://opencode.ai/install | bash
+
+# Package managers
+npm i -g opencode-ai@latest        # or bun/pnpm/yarn
+scoop bucket add extras; scoop install extras/opencode  # Windows
+choco install opencode             # Windows
+brew install anomalyco/tap/opencode # macOS and Linux (recommended, always up to date)
+brew install opencode              # macOS and Linux (official brew formula, updated less frequently)
+paru -S opencode-bin               # Arch Linux
+mise use -g opencode               # Any OS
+nix run nixpkgs#opencode           # or github:anomalyco/opencode for latest dev branch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] Remove versions older than 0.1.x before installing.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Desktop App (BETA)&lt;/h3&gt; 
+&lt;p&gt;OpenCode is also available as a desktop application. Download directly from the &lt;a href="https://github.com/anomalyco/opencode/releases"&gt;releases page&lt;/a&gt; or &lt;a href="https://opencode.ai/download"&gt;opencode.ai/download&lt;/a&gt;.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Platform&lt;/th&gt; 
+   &lt;th&gt;Download&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;macOS (Apple Silicon)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-darwin-aarch64.dmg&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;macOS (Intel)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-darwin-x64.dmg&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Windows&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-windows-x64.exe&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Linux&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;.deb&lt;/code&gt;, &lt;code&gt;.rpm&lt;/code&gt;, or AppImage&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# macOS (Homebrew)
+brew install --cask opencode-desktop
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Installation Directory&lt;/h4&gt; 
+&lt;p&gt;The install script respects the following priority order for the installation path:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;code&gt;$OPENCODE_INSTALL_DIR&lt;/code&gt; - Custom installation directory&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$XDG_BIN_DIR&lt;/code&gt; - XDG Base Directory Specification compliant path&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$HOME/bin&lt;/code&gt; - Standard user binary directory (if exists or can be created)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$HOME/.opencode/bin&lt;/code&gt; - Default fallback&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Examples
+OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/install | bash
+XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/install | bash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Agents&lt;/h3&gt; 
+&lt;p&gt;OpenCode includes two built-in agents you can switch between with the &lt;code&gt;Tab&lt;/code&gt; key.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;build&lt;/strong&gt; - Default, full access agent for development work&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;plan&lt;/strong&gt; - Read-only agent for analysis and code exploration 
+  &lt;ul&gt; 
+   &lt;li&gt;Denies file edits by default&lt;/li&gt; 
+   &lt;li&gt;Asks permission before running bash commands&lt;/li&gt; 
+   &lt;li&gt;Ideal for exploring unfamiliar codebases or planning changes&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Also, included is a &lt;strong&gt;general&lt;/strong&gt; subagent for complex searches and multistep tasks. This is used internally and can be invoked using &lt;code&gt;@general&lt;/code&gt; in messages.&lt;/p&gt; 
+&lt;p&gt;Learn more about &lt;a href="https://opencode.ai/docs/agents"&gt;agents&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Documentation&lt;/h3&gt; 
+&lt;p&gt;For more info on how to configure OpenCode &lt;a href="https://opencode.ai/docs"&gt;&lt;strong&gt;head over to our docs&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Contributing&lt;/h3&gt; 
+&lt;p&gt;If you're interested in contributing to OpenCode, please read our &lt;a href="https://raw.githubusercontent.com/anomalyco/opencode/dev/CONTRIBUTING.md"&gt;contributing docs&lt;/a&gt; before submitting a pull request.&lt;/p&gt; 
+&lt;h3&gt;Building on OpenCode&lt;/h3&gt; 
+&lt;p&gt;If you are working on a project that's related to OpenCode and is using "opencode" as a part of its name; for example, "opencode-dashboard" or "opencode-mobile", please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.&lt;/p&gt; 
+&lt;h3&gt;FAQ&lt;/h3&gt; 
+&lt;h4&gt;How is this different from Claude Code?&lt;/h4&gt; 
+&lt;p&gt;It's very similar to Claude Code in terms of capability. Here are the key differences:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;100% open source&lt;/li&gt; 
+ &lt;li&gt;Not coupled to any provider. Although we recommend the models we provide through &lt;a href="https://opencode.ai/zen"&gt;OpenCode Zen&lt;/a&gt;; OpenCode can be used with Claude, OpenAI, Google or even local models. As models evolve the gaps between them will close and pricing will drop so being provider-agnostic is important.&lt;/li&gt; 
+ &lt;li&gt;Out of the box LSP support&lt;/li&gt; 
+ &lt;li&gt;A focus on TUI. OpenCode is built by neovim users and the creators of &lt;a href="https://terminal.shop"&gt;terminal.shop&lt;/a&gt;; we are going to push the limits of what's possible in the terminal.&lt;/li&gt; 
+ &lt;li&gt;A client/server architecture. This for example can allow OpenCode to run on your computer, while you can drive it remotely from a mobile app. Meaning that the TUI frontend is just one of the possible clients.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Join our community&lt;/strong&gt; &lt;a href="https://discord.gg/opencode"&gt;Discord&lt;/a&gt; | &lt;a href="https://x.com/opencode"&gt;X.com&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ourongxing/newsnow</title>
+      <link>https://github.com/ourongxing/newsnow</link>
+      <description>&lt;p&gt;Elegant reading of real-time and hottest news&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/ourongxing/newsnow/main/public/og-image.png" alt="" /&gt;&lt;/p&gt; 
+&lt;p&gt;English | &lt;a href="https://raw.githubusercontent.com/ourongxing/newsnow/main/README.zh-CN.md"&gt;简体中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/ourongxing/newsnow/main/README.ja-JP.md"&gt;日本語&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] This is a demo version currently supporting Chinese only. A full-featured version with better customization and English content support will be released later.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Elegant reading of real-time and hottest news&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Clean and elegant UI design for optimal reading experience&lt;/li&gt; 
+ &lt;li&gt;Real-time updates on trending news&lt;/li&gt; 
+ &lt;li&gt;GitHub OAuth login with data synchronization&lt;/li&gt; 
+ &lt;li&gt;30-minute default cache duration (logged-in users can force refresh)&lt;/li&gt; 
+ &lt;li&gt;Adaptive scraping interval (minimum 2 minutes) based on source update frequency to optimize resource usage and prevent IP bans&lt;/li&gt; 
+ &lt;li&gt;support MCP server&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "newsnow": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "newsnow-mcp-server"
+      ],
+      "env": {
+        "BASE_URL": "https://newsnow.busiyi.world"
+      }
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can change the &lt;code&gt;BASE_URL&lt;/code&gt; to your own domain.&lt;/p&gt; 
+&lt;h2&gt;Deployment&lt;/h2&gt; 
+&lt;h3&gt;Basic Deployment&lt;/h3&gt; 
+&lt;p&gt;For deployments without login and caching:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork this repository&lt;/li&gt; 
+ &lt;li&gt;Import to platforms like Cloudflare Page or Vercel&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Cloudflare Page Configuration&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Build command: &lt;code&gt;pnpm run build&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Output directory: &lt;code&gt;dist/output/public&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;GitHub OAuth Setup&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/settings/applications/new"&gt;Create a GitHub App&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;No special permissions required&lt;/li&gt; 
+ &lt;li&gt;Set callback URL to: &lt;code&gt;https://your-domain.com/api/oauth/github&lt;/code&gt; (replace &lt;code&gt;your-domain&lt;/code&gt; with your actual domain)&lt;/li&gt; 
+ &lt;li&gt;Obtain Client ID and Client Secret&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Environment Variables&lt;/h3&gt; 
+&lt;p&gt;Refer to &lt;code&gt;example.env.server&lt;/code&gt;. For local development, rename it to &lt;code&gt;.env.server&lt;/code&gt; and configure:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-env"&gt;# Github Client ID
+G_CLIENT_ID=
+# Github Client Secret
+G_CLIENT_SECRET=
+# JWT Secret, usually the same as Client Secret
+JWT_SECRET=
+# Initialize database, must be set to true on first run, can be turned off afterward
+INIT_TABLE=true
+# Whether to enable cache
+ENABLE_CACHE=true
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Database Support&lt;/h3&gt; 
+&lt;p&gt;Supported database connectors: &lt;a href="https://db0.unjs.io/connectors"&gt;https://db0.unjs.io/connectors&lt;/a&gt; &lt;strong&gt;Cloudflare D1 Database&lt;/strong&gt; is recommended.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Create D1 database in Cloudflare Worker dashboard&lt;/li&gt; 
+ &lt;li&gt;Configure database_id and database_name in wrangler.toml&lt;/li&gt; 
+ &lt;li&gt;If wrangler.toml doesn't exist, rename example.wrangler.toml and modify configurations&lt;/li&gt; 
+ &lt;li&gt;Changes will take effect on next deployment&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Docker Deployment&lt;/h3&gt; 
+&lt;p&gt;In project root directory:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;docker compose up
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can also set Environment Variables in &lt;code&gt;docker-compose.yml&lt;/code&gt;.&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!Note] Requires Node.js &amp;gt;= 20&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;corepack enable
+pnpm i
+pnpm dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Adding Data Sources&lt;/h3&gt; 
+&lt;p&gt;Refer to &lt;code&gt;shared/sources&lt;/code&gt; and &lt;code&gt;server/sources&lt;/code&gt; directories. The project provides complete type definitions and a clean architecture.&lt;/p&gt; 
+&lt;p&gt;For detailed instructions on how to add new sources, see &lt;a href="https://raw.githubusercontent.com/ourongxing/newsnow/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Roadmap&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Add &lt;strong&gt;multi-language support&lt;/strong&gt; (English, Chinese, more to come).&lt;/li&gt; 
+ &lt;li&gt;Improve &lt;strong&gt;personalization options&lt;/strong&gt; (category-based news, saved preferences).&lt;/li&gt; 
+ &lt;li&gt;Expand &lt;strong&gt;data sources&lt;/strong&gt; to cover global news in multiple languages.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;release when ready&lt;/em&gt;&lt;/strong&gt; &lt;img src="https://testmnbbs.oss-cn-zhangjiakou.aliyuncs.com/pic/20250328172146_rec_.gif?x-oss-process=base_webp" alt="" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Contributions are welcome! Feel free to submit pull requests or create issues for feature requests and bug reports.&lt;/p&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/ourongxing/newsnow/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for detailed guidelines on how to contribute, especially for adding new data sources.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/ourongxing/newsnow/main/LICENSE"&gt;MIT&lt;/a&gt; © ourongxing&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>anthropics/claude-code</title>
+      <link>https://github.com/anthropics/claude-code</link>
+      <description>&lt;p&gt;Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Claude Code&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://img.shields.io/badge/Node.js-18%2B-brightgreen?style=flat-square" alt="" /&gt; &lt;a href="https://www.npmjs.com/package/@anthropic-ai/claude-code"&gt;&lt;img src="https://img.shields.io/npm/v/@anthropic-ai/claude-code.svg?style=flat-square" alt="npm" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands. Use it in your terminal, IDE, or tag @claude on Github.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Learn more in the &lt;a href="https://code.claude.com/docs/en/overview"&gt;official documentation&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/anthropics/claude-code/main/demo.gif" /&gt; 
+&lt;h2&gt;Get started&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Install Claude Code:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;MacOS/Linux:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -fsSL https://claude.ai/install.sh | bash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Homebrew (MacOS):&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;brew install --cask claude-code
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Windows:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-powershell"&gt;irm https://claude.ai/install.ps1 | iex
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;NPM:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install -g @anthropic-ai/claude-code
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;NOTE: If installing with NPM, you also need to install &lt;a href="https://nodejs.org/en/download/"&gt;Node.js 18+&lt;/a&gt;&lt;/p&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Navigate to your project directory and run &lt;code&gt;claude&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Plugins&lt;/h2&gt; 
+&lt;p&gt;This repository includes several Claude Code plugins that extend functionality with custom commands and agents. See the &lt;a href="https://raw.githubusercontent.com/anthropics/claude-code/main/plugins/README.md"&gt;plugins directory&lt;/a&gt; for detailed documentation on available plugins.&lt;/p&gt; 
+&lt;h2&gt;Reporting Bugs&lt;/h2&gt; 
+&lt;p&gt;We welcome your feedback. Use the &lt;code&gt;/bug&lt;/code&gt; command to report issues directly within Claude Code, or file a &lt;a href="https://github.com/anthropics/claude-code/issues"&gt;GitHub issue&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Connect on Discord&lt;/h2&gt; 
+&lt;p&gt;Join the &lt;a href="https://anthropic.com/discord"&gt;Claude Developers Discord&lt;/a&gt; to connect with other developers using Claude Code. Get help, share feedback, and discuss your projects with the community.&lt;/p&gt; 
+&lt;h2&gt;Data collection, usage, and retention&lt;/h2&gt; 
+&lt;p&gt;When you use Claude Code, we collect feedback, which includes usage data (such as code acceptance or rejections), associated conversation data, and user feedback submitted via the &lt;code&gt;/bug&lt;/code&gt; command.&lt;/p&gt; 
+&lt;h3&gt;How we use your data&lt;/h3&gt; 
+&lt;p&gt;See our &lt;a href="https://code.claude.com/docs/en/data-usage"&gt;data usage policies&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Privacy safeguards&lt;/h3&gt; 
+&lt;p&gt;We have implemented several safeguards to protect your data, including limited retention periods for sensitive information, restricted access to user session data, and clear policies against using feedback for model training.&lt;/p&gt; 
+&lt;p&gt;For full details, please review our &lt;a href="https://www.anthropic.com/legal/commercial-terms"&gt;Commercial Terms of Service&lt;/a&gt; and &lt;a href="https://www.anthropic.com/legal/privacy"&gt;Privacy Policy&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenBB-finance/OpenBB</title>
+      <link>https://github.com/OpenBB-finance/OpenBB</link>
+      <description>&lt;p&gt;Financial data platform for analysts, quants and AI agents.&lt;/p&gt;&lt;hr&gt;&lt;br /&gt; 
+&lt;img src="https://github.com/OpenBB-finance/OpenBB/raw/develop/images/odp-light.svg?raw=true#gh-light-mode-only" alt="Open Data Platform by OpenBB logo" width="600" /&gt; 
+&lt;img src="https://github.com/OpenBB-finance/OpenBB/raw/develop/images/odp-dark.svg?raw=true#gh-dark-mode-only" alt="Open Data Platform by OpenBB logo" width="600" /&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;p&gt;&lt;a href="https://x.com/openbb_finance"&gt;&lt;img src="https://img.shields.io/twitter/url/https/twitter.com/openbb_finance.svg?style=social&amp;amp;label=Follow%20%40openbb_finance" alt="Twitter" /&gt;&lt;/a&gt; &lt;a href="https://discord.com/invite/xPHTuHCmuV"&gt;&lt;img src="https://img.shields.io/discord/831165782750789672" alt="Discord Shield" /&gt;&lt;/a&gt; &lt;a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/OpenBB-finance/OpenBB"&gt;&lt;img src="https://img.shields.io/static/v1?label=Dev%20Containers&amp;amp;message=Open&amp;amp;color=blue&amp;amp;logo=visualstudiocode" alt="Open in Dev Containers" /&gt;&lt;/a&gt; &lt;a href="https://codespaces.new/OpenBB-finance/OpenBB"&gt; &lt;img src="https://github.com/codespaces/badge.svg?sanitize=true" height="20" /&gt; &lt;/a&gt; &lt;a target="_blank" href="https://colab.research.google.com/github/OpenBB-finance/OpenBB/blob/develop/examples/googleColab.ipynb"&gt; &lt;img src="https://colab.research.google.com/assets/colab-badge.svg?sanitize=true" alt="Open In Colab" /&gt; &lt;/a&gt; &lt;a href="https://pypi.org/project/openbb/"&gt;&lt;img src="https://img.shields.io/pypi/v/openbb?color=blue&amp;amp;label=PyPI%20Package" alt="PyPI" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Open Data Platform by OpenBB (ODP) is the open-source toolset that helps data engineers integrate proprietary, licensed, and public data sources into downstream applications like AI copilots and research dashboards.&lt;/p&gt; 
+&lt;p&gt;ODP operates as the "connect once, consume everywhere" infrastructure layer that consolidates and exposes data to multiple surfaces at once: Python environments for quants, OpenBB Workspace and Excel for analysts, MCP servers for AI agents, and REST APIs for other applications.&lt;/p&gt; 
+&lt;a href="https://pro.openbb.co"&gt; 
+ &lt;div align="center"&gt; 
+  &lt;img src="https://openbb-cms.directus.app/assets/70b971ef-7a7e-486e-b5ae-1cc602f2162c.png" alt="Logo" width="1000" /&gt; 
+ &lt;/div&gt; &lt;/a&gt; 
+&lt;p&gt;Get started with: &lt;code&gt;pip install openbb&lt;/code&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;from openbb import obb
+output = obb.equity.price.historical("AAPL")
+df = output.to_dataframe()
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Data integrations available can be found here: &lt;a href="https://docs.openbb.co/python/reference"&gt;https://docs.openbb.co/python/reference&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;OpenBB Workspace&lt;/h2&gt; 
+&lt;p&gt;While the Open Data Platform provides the open-source data integration foundation, &lt;strong&gt;OpenBB Workspace&lt;/strong&gt; offers the enterprise UI for analysts to visualize datasets and leverage AI agents. The platform's "connect once, consume everywhere" architecture enables seamless integration between the two.&lt;/p&gt; 
+&lt;p&gt;You can find OpenBB Workspace at &lt;a href="https://pro.openbb.co"&gt;https://pro.openbb.co&lt;/a&gt;. &lt;a href="https://pro.openbb.co"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://pro.openbb.co"&gt; 
+ &lt;div align="center"&gt; 
+  &lt;img src="https://openbb-cms.directus.app/assets/f69b6aaf-0821-4bc8-a43c-715e03a924ef.png" alt="Logo" width="1000" /&gt; 
+ &lt;/div&gt; &lt;/a&gt; 
+&lt;p&gt;Data integration:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;You can learn more about adding data to the OpenBB workspace from the &lt;a href="https://docs.openbb.co/workspace"&gt;docs&lt;/a&gt; or &lt;a href="https://github.com/OpenBB-finance/backends-for-openbb"&gt;this open source repository&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;AI Agents integration:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;You can learn more about adding AI agents to the OpenBB workspace from &lt;a href="https://github.com/OpenBB-finance/agents-for-openbb"&gt;this open source repository&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Integrating Open Data Platform to the OpenBB Workspace&lt;/h3&gt; 
+&lt;p&gt;Connect this library to the OpenBB Workspace with a few simple commands, in a Python (3.9.21 - 3.12) environment.&lt;/p&gt; 
+&lt;h4&gt;Run an ODP backend&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Install the packages.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;pip install "openbb[all]"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Start the API server over localhost.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;openbb-api
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This will launch a FastAPI server, via Uvicorn, at &lt;code&gt;127.0.0.1:6900&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;You can check that it works by going to &lt;a href="http://127.0.0.1:6900"&gt;http://127.0.0.1:6900&lt;/a&gt;.&lt;/p&gt; 
+&lt;h4&gt;Integrate the ODP Backend to OpenBB Workspace&lt;/h4&gt; 
+&lt;p&gt;Sign-in to the &lt;a href="https://pro.openbb.co/"&gt;OpenBB Workspace&lt;/a&gt;, and follow the following steps:&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/75cffb4a-5e95-470a-b9d0-6ffd4067e069" alt="CleanShot 2025-05-17 at 09 51 56@2x" /&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Go to the "Apps" tab&lt;/li&gt; 
+ &lt;li&gt;Click on "Connect backend"&lt;/li&gt; 
+ &lt;li&gt;Fill in the form with: Name: Open Data Platform URL: &lt;a href="http://127.0.0.1:6900"&gt;http://127.0.0.1:6900&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Click on "Test". You should get a "Test successful" with the number of apps found.&lt;/li&gt; 
+ &lt;li&gt;Click on "Add".&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;That's it.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;!-- TABLE OF CONTENTS --&gt; 
+&lt;details closed="closed"&gt; 
+ &lt;summary&gt;&lt;h2 style="display: inline-block"&gt;Table of Contents&lt;/h2&gt;&lt;/summary&gt; 
+ &lt;ol&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#1-installation"&gt;Installation&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#2-contributing"&gt;Contributing&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#3-license"&gt;License&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#4-disclaimer"&gt;Disclaimer&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#5-contacts"&gt;Contacts&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#6-star-history"&gt;Star History&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#7-contributors"&gt;Contributors&lt;/a&gt;&lt;/li&gt; 
+ &lt;/ol&gt; 
+&lt;/details&gt; 
+&lt;h2&gt;1. Installation&lt;/h2&gt; 
+&lt;p&gt;The ODP Python Package can be installed from &lt;a href="https://pypi.org/project/openbb/"&gt;PyPI package&lt;/a&gt; by running &lt;code&gt;pip install openbb&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;or by cloning the repository directly with &lt;code&gt;git clone https://github.com/OpenBB-finance/OpenBB.git&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;Please find more about the installation process, in the &lt;a href="https://docs.openbb.co/python/installation"&gt;OpenBB Documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;ODP CLI installation&lt;/h3&gt; 
+&lt;p&gt;The ODP CLI is a command-line interface that allows you to access the ODP directly from your command line.&lt;/p&gt; 
+&lt;p&gt;It can be installed by running &lt;code&gt;pip install openbb-cli&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;or by cloning the repository directly with &lt;code&gt;git clone https://github.com/OpenBB-finance/OpenBB.git&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;Please find more about the installation process in the &lt;a href="https://docs.openbb.co/cli/installation"&gt;OpenBB Documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;2. Contributing&lt;/h2&gt; 
+&lt;p&gt;There are three main ways of contributing to this project. (Hopefully you have starred the project by now ⭐️)&lt;/p&gt; 
+&lt;h3&gt;Become a Contributor&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;More information on our &lt;a href="https://docs.openbb.co/python/developer"&gt;Developer Documentation&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Create a GitHub ticket&lt;/h3&gt; 
+&lt;p&gt;Before creating a ticket make sure the one you are creating doesn't exist already &lt;a href="https://github.com/OpenBB-finance/OpenBB/issues"&gt;among the existing issues&lt;/a&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/OpenBB-finance/OpenBB/issues/new?assignees=&amp;amp;labels=bug&amp;amp;template=bug_report.md&amp;amp;title=%5BBug%5D"&gt;Report bug&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/OpenBB-finance/OpenBB/issues/new?assignees=&amp;amp;labels=enhancement&amp;amp;template=enhancement.md&amp;amp;title=%5BIMPROVE%5D"&gt;Suggest improvement&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/OpenBB-finance/OpenBB/issues/new?assignees=&amp;amp;labels=new+feature&amp;amp;template=feature_request.md&amp;amp;title=%5BFR%5D"&gt;Request a feature&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Provide feedback&lt;/h3&gt; 
+&lt;p&gt;We are most active on &lt;a href="https://openbb.co/discord"&gt;our Discord&lt;/a&gt;, but feel free to reach out to us in any of &lt;a href="https://openbb.co/links"&gt;our social media&lt;/a&gt; for feedback.&lt;/p&gt; 
+&lt;h2&gt;3. License&lt;/h2&gt; 
+&lt;p&gt;Distributed under the AGPLv3 License. See &lt;a href="https://github.com/OpenBB-finance/OpenBB/raw/main/LICENSE"&gt;LICENSE&lt;/a&gt; for more information.&lt;/p&gt; 
+&lt;h2&gt;4. Disclaimer&lt;/h2&gt; 
+&lt;p&gt;Trading in financial instruments involves high risks including the risk of losing some, or all, of your investment amount, and may not be suitable for all investors.&lt;/p&gt; 
+&lt;p&gt;Before deciding to trade in a financial instrument you should be fully informed of the risks and costs associated with trading the financial markets, carefully consider your investment objectives, level of experience, and risk appetite, and seek professional advice where needed.&lt;/p&gt; 
+&lt;p&gt;The data contained in the Open Data Platform is not necessarily accurate.&lt;/p&gt; 
+&lt;p&gt;OpenBB and any provider of the data contained in this website will not accept liability for any loss or damage as a result of your trading, or your reliance on the information displayed.&lt;/p&gt; 
+&lt;p&gt;All names, logos, and brands of third parties that may be referenced in our sites, products or documentation are trademarks of their respective owners. Unless otherwise specified, OpenBB and its products and services are not endorsed by, sponsored by, or affiliated with these third parties.&lt;/p&gt; 
+&lt;p&gt;Our use of these names, logos, and brands is for identification purposes only, and does not imply any such endorsement, sponsorship, or affiliation.&lt;/p&gt; 
+&lt;h2&gt;5. Contacts&lt;/h2&gt; 
+&lt;p&gt;If you have any questions about the platform or anything OpenBB, feel free to email us at &lt;code&gt;support@openbb.co&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;If you want to say hi, or are interested in partnering with us, feel free to reach us at &lt;code&gt;hello@openbb.co&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;Any of our social media platforms: &lt;a href="https://openbb.co/links"&gt;openbb.co/links&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;6. Star History&lt;/h2&gt; 
+&lt;p&gt;This is a proxy of our growth and that we are just getting started.&lt;/p&gt; 
+&lt;p&gt;But for more metrics important to us check &lt;a href="https://openbb.co/open"&gt;openbb.co/open&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://api.star-history.com/svg?repos=openbb-finance/OpenBB&amp;amp;type=Date&amp;amp;theme=dark"&gt;&lt;img src="https://api.star-history.com/svg?repos=openbb-finance/OpenBB&amp;amp;type=Date&amp;amp;theme=dark" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;7. Contributors&lt;/h2&gt; 
+&lt;p&gt;OpenBB wouldn't be OpenBB without you. If we are going to disrupt financial industry, every contribution counts. Thank you for being part of this journey.&lt;/p&gt; 
+&lt;a href="https://github.com/OpenBB-finance/OpenBB/graphs/contributors"&gt; &lt;img src="https://contributors-img.web.app/image?repo=OpenBB-finance/OpenBB" width="800" /&gt; &lt;/a&gt; 
+&lt;!-- MARKDOWN LINKS &amp; IMAGES --&gt; 
+&lt;!-- https://www.markdownguide.org/basic-syntax/#reference-style-links --&gt;</description>
+    </item>
+    
+    <item>
+      <title>BloopAI/vibe-kanban</title>
+      <link>https://github.com/BloopAI/vibe-kanban</link>
+      <description>&lt;p&gt;Get 10X more out of Claude Code, Codex or any coding agent&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://vibekanban.com"&gt; 
+  &lt;picture&gt; 
+   &lt;source srcset="frontend/public/vibe-kanban-logo-dark.svg" media="(prefers-color-scheme: dark)" /&gt; 
+   &lt;source srcset="frontend/public/vibe-kanban-logo.svg" media="(prefers-color-scheme: light)" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/BloopAI/vibe-kanban/main/frontend/public/vibe-kanban-logo.svg?sanitize=true" alt="Vibe Kanban Logo" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;Get 10X more out of Claude Code, Gemini CLI, Codex, Amp and other coding agents...&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.npmjs.com/package/vibe-kanban"&gt;&lt;img alt="npm" src="https://img.shields.io/npm/v/vibe-kanban?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://github.com/BloopAI/vibe-kanban/raw/main/.github/workflows/publish.yml"&gt;&lt;img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/BloopAI/vibe-kanban/.github%2Fworkflows%2Fpublish.yml" /&gt;&lt;/a&gt; &lt;a href="https://deepwiki.com/BloopAI/vibe-kanban"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" alt="Ask DeepWiki" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h1 align="center"&gt; &lt;a href="https://jobs.polymer.co/vibe-kanban?source=github"&gt;&lt;strong&gt;We're hiring!&lt;/strong&gt;&lt;/a&gt; &lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/BloopAI/vibe-kanban/main/frontend/public/vibe-kanban-screenshot-overview.png" alt="" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Overview&lt;/h2&gt; 
+&lt;p&gt;AI coding agents are increasingly writing the world's code and human engineers now spend the majority of their time planning, reviewing, and orchestrating tasks. Vibe Kanban streamlines this process, enabling you to:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Easily switch between different coding agents&lt;/li&gt; 
+ &lt;li&gt;Orchestrate the execution of multiple coding agents in parallel or in sequence&lt;/li&gt; 
+ &lt;li&gt;Quickly review work and start dev servers&lt;/li&gt; 
+ &lt;li&gt;Track the status of tasks that your coding agents are working on&lt;/li&gt; 
+ &lt;li&gt;Centralise configuration of coding agent MCP configs&lt;/li&gt; 
+ &lt;li&gt;Open projects remotely via SSH when running Vibe Kanban on a remote server&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;You can watch a video overview &lt;a href="https://youtu.be/TFT3KnZOOAk"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;Make sure you have authenticated with your favourite coding agent. A full list of supported coding agents can be found in the &lt;a href="https://vibekanban.com/docs"&gt;docs&lt;/a&gt;. Then in your terminal run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx vibe-kanban
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Please head to the &lt;a href="https://vibekanban.com/docs"&gt;website&lt;/a&gt; for the latest documentation and user guides.&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;We use &lt;a href="https://github.com/BloopAI/vibe-kanban/discussions"&gt;GitHub Discussions&lt;/a&gt; for feature requests. Please open a discussion to create a feature request. For bugs please open an issue on this repo.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We would prefer that ideas and changes are first raised with the core team via &lt;a href="https://github.com/BloopAI/vibe-kanban/discussions"&gt;GitHub Discussions&lt;/a&gt; or &lt;a href="https://discord.gg/AC4nwVtJM3"&gt;Discord&lt;/a&gt;, where we can discuss implementation details and alignment with the existing roadmap. Please do not open PRs without first discussing your proposal with the team.&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;h3&gt;Prerequisites&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://rustup.rs/"&gt;Rust&lt;/a&gt; (latest stable)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://nodejs.org/"&gt;Node.js&lt;/a&gt; (&amp;gt;=18)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://pnpm.io/"&gt;pnpm&lt;/a&gt; (&amp;gt;=8)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Additional development tools:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cargo install cargo-watch
+cargo install sqlx-cli
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Install dependencies:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm i
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Running the dev server&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This will start the backend. A blank DB will be copied from the &lt;code&gt;dev_assets_seed&lt;/code&gt; folder.&lt;/p&gt; 
+&lt;h3&gt;Building the frontend&lt;/h3&gt; 
+&lt;p&gt;To build just the frontend:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd frontend
+pnpm build
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Build from source (macOS)&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Run &lt;code&gt;./local-build.sh&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Test with &lt;code&gt;cd npx-cli &amp;amp;&amp;amp; node bin/cli.js&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Environment Variables&lt;/h3&gt; 
+&lt;p&gt;The following environment variables can be configured at build time or runtime:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Variable&lt;/th&gt; 
+   &lt;th&gt;Type&lt;/th&gt; 
+   &lt;th&gt;Default&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;POSTHOG_API_KEY&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Build-time&lt;/td&gt; 
+   &lt;td&gt;Empty&lt;/td&gt; 
+   &lt;td&gt;PostHog analytics API key (disables analytics if empty)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;POSTHOG_API_ENDPOINT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Build-time&lt;/td&gt; 
+   &lt;td&gt;Empty&lt;/td&gt; 
+   &lt;td&gt;PostHog analytics endpoint (disables analytics if empty)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;PORT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;Auto-assign&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Production&lt;/strong&gt;: Server port. &lt;strong&gt;Dev&lt;/strong&gt;: Frontend port (backend uses PORT+1)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;BACKEND_PORT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;0&lt;/code&gt; (auto-assign)&lt;/td&gt; 
+   &lt;td&gt;Backend server port (dev mode only, overrides PORT+1)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;FRONTEND_PORT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;3000&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Frontend dev server port (dev mode only, overrides PORT)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;HOST&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;127.0.0.1&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Backend server host&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;DISABLE_WORKTREE_ORPHAN_CLEANUP&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;Not set&lt;/td&gt; 
+   &lt;td&gt;Disable git worktree cleanup (for debugging)&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;Build-time variables&lt;/strong&gt; must be set when running &lt;code&gt;pnpm run build&lt;/code&gt;. &lt;strong&gt;Runtime variables&lt;/strong&gt; are read when the application starts.&lt;/p&gt; 
+&lt;h3&gt;Remote Deployment&lt;/h3&gt; 
+&lt;p&gt;When running Vibe Kanban on a remote server (e.g., via systemctl, Docker, or cloud hosting), you can configure your editor to open projects via SSH:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Access via tunnel&lt;/strong&gt;: Use Cloudflare Tunnel, ngrok, or similar to expose the web UI&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Configure remote SSH&lt;/strong&gt; in Settings → Editor Integration: 
+  &lt;ul&gt; 
+   &lt;li&gt;Set &lt;strong&gt;Remote SSH Host&lt;/strong&gt; to your server hostname or IP&lt;/li&gt; 
+   &lt;li&gt;Set &lt;strong&gt;Remote SSH User&lt;/strong&gt; to your SSH username (optional)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;SSH access from your local machine to the remote server&lt;/li&gt; 
+   &lt;li&gt;SSH keys configured (passwordless authentication)&lt;/li&gt; 
+   &lt;li&gt;VSCode Remote-SSH extension&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;When configured, the "Open in VSCode" buttons will generate URLs like &lt;code&gt;vscode://vscode-remote/ssh-remote+user@host/path&lt;/code&gt; that open your local editor and connect to the remote server.&lt;/p&gt; 
+&lt;p&gt;See the &lt;a href="https://vibekanban.com/docs/configuration-customisation/global-settings#remote-ssh-configuration"&gt;documentation&lt;/a&gt; for detailed setup instructions.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>numman-ali/opencode-openai-codex-auth</title>
+      <link>https://github.com/numman-ali/opencode-openai-codex-auth</link>
+      <description>&lt;p&gt;OAuth authentication plugin for personal coding assistance with ChatGPT Plus/Pro subscriptions - uses OpenAI's official authentication method&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/numman-ali/opencode-openai-codex-auth/main/assets/readme-hero.svg?sanitize=true" alt="Image 1: opencode-openai-codex-auth" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Curated by &lt;a href="https://x.com/nummanali"&gt;Numman Ali&lt;/a&gt;&lt;/strong&gt; &lt;a href="https://x.com/nummanali"&gt;&lt;img src="https://img.shields.io/twitter/follow/nummanali?style=social" alt="Twitter Follow" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/opencode-openai-codex-auth"&gt;&lt;img src="https://img.shields.io/npm/v/opencode-openai-codex-auth.svg?sanitize=true" alt="npm version" /&gt;&lt;/a&gt; &lt;a href="https://github.com/numman-ali/opencode-openai-codex-auth/actions"&gt;&lt;img src="https://github.com/numman-ali/opencode-openai-codex-auth/actions/workflows/ci.yml/badge.svg?sanitize=true" alt="Tests" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/opencode-openai-codex-auth"&gt;&lt;img src="https://img.shields.io/npm/dm/opencode-openai-codex-auth.svg?sanitize=true" alt="npm downloads" /&gt;&lt;/a&gt; &lt;strong&gt;One install. Every Codex model.&lt;/strong&gt; &lt;a href="https://raw.githubusercontent.com/numman-ali/opencode-openai-codex-auth/main/#-quick-start"&gt;Install&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/numman-ali/opencode-openai-codex-auth/main/#-models"&gt;Models&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/numman-ali/opencode-openai-codex-auth/main/#-configuration"&gt;Configuration&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/numman-ali/opencode-openai-codex-auth/main/#-docs"&gt;Docs&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;💡 Philosophy&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;"One config. Every model."&lt;/strong&gt; OpenCode should feel effortless. This plugin keeps the setup minimal while giving you full GPT‑5.x + Codex access via ChatGPT OAuth.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────────────────┐
+│                                                         │
+│  ChatGPT OAuth → Codex backend → OpenCode               │
+│  One command install, full model presets, done.         │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🚀 Quick Start&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx -y opencode-openai-codex-auth@latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;opencode auth login
+opencode run "write hello world to test.txt" --model=openai/gpt-5.2 --variant=medium
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Legacy OpenCode (v1.0.209 and below):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx -y opencode-openai-codex-auth@latest --legacy
+opencode run "write hello world to test.txt" --model=openai/gpt-5.2-medium
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Uninstall:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx -y opencode-openai-codex-auth@latest --uninstall
+npx -y opencode-openai-codex-auth@latest --uninstall --all
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📦 Models&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;gpt-5.2&lt;/strong&gt; (none/low/medium/high/xhigh)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;gpt-5.2-codex&lt;/strong&gt; (low/medium/high/xhigh)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;gpt-5.1-codex-max&lt;/strong&gt; (low/medium/high/xhigh)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;gpt-5.1-codex&lt;/strong&gt; (low/medium/high)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;gpt-5.1-codex-mini&lt;/strong&gt; (medium/high)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;gpt-5.1&lt;/strong&gt; (none/low/medium/high)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🧩 Configuration&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Modern (OpenCode v1.0.210+): &lt;code&gt;config/opencode-modern.json&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Legacy (OpenCode v1.0.209 and below): &lt;code&gt;config/opencode-legacy.json&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Minimal configs are not supported for GPT‑5.x; use the full configs above.&lt;/h2&gt; 
+&lt;h2&gt;✅ Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;ChatGPT Plus/Pro OAuth authentication (official flow)&lt;/li&gt; 
+ &lt;li&gt;22 model presets across GPT‑5.2 / GPT‑5.2 Codex / GPT‑5.1 families&lt;/li&gt; 
+ &lt;li&gt;Variant system support (v1.0.210+) + legacy presets&lt;/li&gt; 
+ &lt;li&gt;Multimodal input enabled for all models&lt;/li&gt; 
+ &lt;li&gt;Usage‑aware errors + automatic token refresh&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📚 Docs&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Getting Started: &lt;code&gt;docs/getting-started.md&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Configuration: &lt;code&gt;docs/configuration.md&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Troubleshooting: &lt;code&gt;docs/troubleshooting.md&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Architecture: &lt;code&gt;docs/development/ARCHITECTURE.md&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;⚠️ Usage Notice&lt;/h2&gt; 
+&lt;p&gt;This plugin is for &lt;strong&gt;personal development use&lt;/strong&gt; with your own ChatGPT Plus/Pro subscription. For production or multi‑user applications, use the OpenAI Platform API.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Built for developers who value simplicity.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>usememos/memos</title>
+      <link>https://github.com/usememos/memos</link>
+      <description>&lt;p&gt;An open-source, self-hosted note-taking service. Your thoughts, your data, your control — no tracking, no ads, no subscription fees.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Memos&lt;/h1&gt; 
+&lt;img align="right" height="96px" src="https://raw.githubusercontent.com/usememos/.github/refs/heads/main/assets/logo-rounded.png" alt="Memos" /&gt; 
+&lt;p&gt;An open-source, self-hosted note-taking service. Your thoughts, your data, your control — no tracking, no ads, no subscription fees.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://usememos.com"&gt;&lt;img src="https://img.shields.io/badge/%F0%9F%8F%A0-usememos.com-blue?style=flat-square" alt="Home" /&gt;&lt;/a&gt; &lt;a href="https://demo.usememos.com/"&gt;&lt;img src="https://img.shields.io/badge/%E2%9C%A8-Try%20Demo-orange?style=flat-square" alt="Live Demo" /&gt;&lt;/a&gt; &lt;a href="https://usememos.com/docs"&gt;&lt;img src="https://img.shields.io/badge/%F0%9F%93%9A-Documentation-green?style=flat-square" alt="Docs" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/tfPJa4UmAv"&gt;&lt;img src="https://img.shields.io/badge/%F0%9F%92%AC-Discord-5865f2?style=flat-square&amp;amp;logo=discord&amp;amp;logoColor=white" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://hub.docker.com/r/neosmemo/memos"&gt;&lt;img src="https://img.shields.io/docker/pulls/neosmemo/memos?style=flat-square&amp;amp;logo=docker" alt="Docker Pulls" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/usememos/.github/refs/heads/main/assets/demo.png" alt="Memos Demo Screenshot" height="512" /&gt; 
+&lt;h3&gt;💎 Featured Sponsors&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://go.warp.dev/memos"&gt;&lt;strong&gt;Warp&lt;/strong&gt; — The AI-powered terminal built for speed and collaboration&lt;/a&gt;&lt;/p&gt; 
+&lt;a href="https://go.warp.dev/memos" target="_blank" rel="noopener"&gt; &lt;img src="https://raw.githubusercontent.com/warpdotdev/brand-assets/main/Github/Sponsor/Warp-Github-LG-02.png" alt="Warp - The AI-powered terminal built for speed and collaboration" width="512" /&gt; &lt;/a&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;a href="https://www.lambdatest.com/?utm_source=memos&amp;amp;utm_medium=sponsor"&gt;&lt;strong&gt;LambdaTest&lt;/strong&gt; - Cross-browser testing cloud&lt;/a&gt;&lt;/p&gt; 
+&lt;a href="https://www.lambdatest.com/?utm_source=memos&amp;amp;utm_medium=sponsor" target="_blank" rel="noopener"&gt; &lt;img src="https://www.lambdatest.com/blue-logo.png" alt="LambdaTest - Cross-browser testing cloud" height="50" /&gt; &lt;/a&gt; 
+&lt;h2&gt;Overview&lt;/h2&gt; 
+&lt;p&gt;Memos is a privacy-first, self-hosted knowledge base that works seamlessly for personal notes, team wikis, and knowledge management. Built with Go and React, it offers lightning-fast performance without compromising on features or usability.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Why choose Memos over cloud services?&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Feature&lt;/th&gt; 
+   &lt;th&gt;Memos&lt;/th&gt; 
+   &lt;th&gt;Cloud Services&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Privacy&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Self-hosted, zero telemetry&lt;/td&gt; 
+   &lt;td&gt;❌ Your data on their servers&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Cost&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Free forever, MIT license&lt;/td&gt; 
+   &lt;td&gt;❌ Subscription fees&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Performance&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Instant load, no latency&lt;/td&gt; 
+   &lt;td&gt;⚠️ Depends on internet&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Ownership&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Full control &amp;amp; export&lt;/td&gt; 
+   &lt;td&gt;❌ Vendor lock-in&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;API Access&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Full REST + gRPC APIs&lt;/td&gt; 
+   &lt;td&gt;⚠️ Limited or paid&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Customization&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Open source, forkable&lt;/td&gt; 
+   &lt;td&gt;❌ Closed ecosystem&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;🔒 Privacy-First Architecture&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Self-hosted on your infrastructure with zero telemetry&lt;/li&gt; 
+   &lt;li&gt;Complete data ownership and export capabilities&lt;/li&gt; 
+   &lt;li&gt;No tracking, no ads, no vendor lock-in&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;📝 Markdown Native&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Full markdown support&lt;/li&gt; 
+   &lt;li&gt;Plain text storage — take your data anywhere&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;⚡ Blazing Fast&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Built with Go backend and React frontend&lt;/li&gt; 
+   &lt;li&gt;Optimized for performance at any scale&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;🐳 Simple Deployment&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;One-line Docker installation&lt;/li&gt; 
+   &lt;li&gt;Supports SQLite, MySQL, and PostgreSQL&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;🔗 Developer-Friendly&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Full REST and gRPC APIs&lt;/li&gt; 
+   &lt;li&gt;Easy integration with existing workflows&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;🎨 Beautiful Interface&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Clean, minimal design and dark mode support&lt;/li&gt; 
+   &lt;li&gt;Mobile-responsive layout&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;h3&gt;Docker (Recommended)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -d \
+  --name memos \
+  -p 5230:5230 \
+  -v ~/.memos:/var/opt/memos \
+  neosmemo/memos:stable
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Open &lt;code&gt;http://localhost:5230&lt;/code&gt; and start writing!&lt;/p&gt; 
+&lt;h3&gt;Try the Live Demo&lt;/h3&gt; 
+&lt;p&gt;Don't want to install yet? Try our &lt;a href="https://demo.usememos.com/"&gt;live demo&lt;/a&gt; first!&lt;/p&gt; 
+&lt;h3&gt;Other Installation Methods&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Docker Compose&lt;/strong&gt; - Recommended for production deployments&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Pre-built Binaries&lt;/strong&gt; - Available for Linux, macOS, and Windows&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt; - Helm charts and manifests available&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Build from Source&lt;/strong&gt; - For development and customization&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See our &lt;a href="https://usememos.com/docs/installation"&gt;installation guide&lt;/a&gt; for detailed instructions.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions of all kinds! Whether you're fixing bugs, adding features, improving documentation, or helping with translations — every contribution matters.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Ways to contribute:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🐛 &lt;a href="https://github.com/usememos/memos/issues/new?template=bug_report.md"&gt;Report bugs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;💡 &lt;a href="https://github.com/usememos/memos/issues/new?template=feature_request.md"&gt;Suggest features&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🔧 &lt;a href="https://github.com/usememos/memos/pulls"&gt;Submit pull requests&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;📖 &lt;a href="https://github.com/usememos/memos/tree/main/docs"&gt;Improve documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🌍 &lt;a href="https://github.com/usememos/memos/tree/main/web/src/locales"&gt;Help with translations&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Sponsors&lt;/h2&gt; 
+&lt;p&gt;Love Memos? &lt;a href="https://github.com/sponsors/usememos"&gt;Sponsor us on GitHub&lt;/a&gt; to help keep the project growing!&lt;/p&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://star-history.com/#usememos/memos&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=usememos/memos&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Memos is open-source software licensed under the &lt;a href="https://raw.githubusercontent.com/usememos/memos/main/LICENSE"&gt;MIT License&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Privacy Policy&lt;/h2&gt; 
+&lt;p&gt;Memos is built with privacy as a core principle. As a self-hosted application, all your data stays on your infrastructure. There is no telemetry, no tracking, and no data collection. See our &lt;a href="https://usememos.com/privacy"&gt;Privacy Policy&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://usememos.com"&gt;Website&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://usememos.com/docs"&gt;Documentation&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://demo.usememos.com/"&gt;Demo&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://discord.gg/tfPJa4UmAv"&gt;Discord&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://x.com/usememos"&gt;X/Twitter&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;a href="https://vercel.com/oss"&gt; &lt;img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg?sanitize=true" /&gt; &lt;/a&gt;</description>
+    </item>
+    
+    <item>
+      <title>danielmiessler/Personal_AI_Infrastructure</title>
+      <link>https://github.com/danielmiessler/Personal_AI_Infrastructure</link>
+      <description>&lt;p&gt;Personal AI Infrastructure for upgrading humans.&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="./pai-logo.png" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="./pai-logo.png" /&gt; 
+  &lt;img alt="PAI Logo" src="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/pai-logo.png" width="600" /&gt; 
+ &lt;/picture&gt; 
+ &lt;br /&gt; 
+ &lt;br /&gt; 
+ &lt;h1&gt;Personal AI Infrastructure&lt;/h1&gt; 
+ &lt;h2&gt;Everyone needs access to the best AI.&lt;/h2&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;a href="https://github.com/danielmiessler/Personal_AI_Infrastructure/releases"&gt;&lt;img src="https://img.shields.io/badge/version-2.1-blue?style=for-the-badge" alt="Version" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/Packs/"&gt;&lt;img src="https://img.shields.io/badge/packs-10-purple?style=for-the-badge" alt="Packs" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/Bundles/"&gt;&lt;img src="https://img.shields.io/badge/bundles-1-orange?style=for-the-badge" alt="Bundles" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;Getting Started:&lt;/strong&gt; &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-this-readme-is-for-your-ai-assistant"&gt;AI-First Install&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#what-is-pai"&gt;What is PAI?&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#the-algorithm"&gt;The Algorithm&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#the-15-pai-principles"&gt;Principles&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#pai-primitives"&gt;Primitives&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;Installation:&lt;/strong&gt; &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#packs--bundles"&gt;Packs &amp;amp; Bundles&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#how-ai-installation-works"&gt;How AI Install Works&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-available-packs"&gt;Browse Packs&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-available-bundles"&gt;Browse Bundles&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-quick-start"&gt;Quick Start&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;Development:&lt;/strong&gt; &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-for-pack-developers"&gt;Create a Pack&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#%EF%B8%8F-platform-compatibility"&gt;Platform Support&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-contributing"&gt;Contributing&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;Resources:&lt;/strong&gt; &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-faq"&gt;FAQ&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-documentation"&gt;Documentation&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-community"&gt;Community&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#the-journey-pai-v1x--v20"&gt;v1 → v2 Journey&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-update-history"&gt;Updates&lt;/a&gt;&lt;/p&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;a href="https://youtu.be/Le0DLrn7ta0"&gt;&lt;img src="https://img.youtube.com/vi/Le0DLrn7ta0/maxresdefault.jpg" alt="PAI Overview Video" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;&lt;a href="https://youtu.be/Le0DLrn7ta0"&gt;Watch the full PAI walkthrough&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href="https://danielmiessler.com/blog/real-internet-of-things"&gt;Read: The Real Internet of Things&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+ &lt;hr /&gt; 
+ &lt;h1&gt;AI should magnify everyone—not just the top 1%.&lt;/h1&gt; 
+&lt;/div&gt; 
+&lt;p&gt;The most powerful AI systems are being built inside companies for companies. The richest people and the biggest corporations are getting AI that knows their goals, learns from their history, and gets better at helping them over time.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Everyone deserves that.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;PAI exists to democratize access to world-class AI infrastructure. Not a chatbot. Not a generic assistant. A &lt;a href="https://danielmiessler.com/blog/personal-ai-maturity-model"&gt;&lt;em&gt;system&lt;/em&gt; that helps you become your best self&lt;/a&gt;—one that understands your goals, remembers your context, and improves at helping &lt;em&gt;you&lt;/em&gt; specifically.&lt;/p&gt; 
+&lt;p&gt;This is open-source. This is free. This is for everyone.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;What makes PAI powerful technically:&lt;/strong&gt; It's built on a universal algorithm (Current → Ideal via verifiable iteration) that works at every scale—from fixing a typo to building a company to figuring out what to do with your life. But the mission comes first: giving everyone access to the kind of AI infrastructure that was previously only available to the privileged few.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!IMPORTANT]&lt;/p&gt; 
+ &lt;h2&gt;🤖 This README Is For Your AI Assistant&lt;/h2&gt; 
+ &lt;p&gt;&lt;strong&gt;Manually reading READMEs is pre-2026 behavior.&lt;/strong&gt; In 2026+, software gets installed by your AI assistant.&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;Here's how to use this:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ol&gt; 
+  &lt;li&gt;Give this URL to your AI: &lt;code&gt;https://github.com/danielmiessler/PAI&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;Say: &lt;em&gt;"Look at this system and walk me through installing it. Customize it for me."&lt;/em&gt;&lt;/li&gt; 
+ &lt;/ol&gt; 
+ &lt;p&gt;The PAI documentation will guide your AI on how best to install it for your specific needs.&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;Feel free to read on yourself&lt;/strong&gt;—this README explains the full system. But these instructions are primarily designed for AI consumption.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;What is PAI?&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;PAI (Personal AI Infrastructure)&lt;/strong&gt; started as a framework for building personalized AI assistants. But in building it, we noticed something.&lt;/p&gt; 
+&lt;p&gt;Every goal—whether it's fixing a bug, writing a book, building a company, or figuring out what to do with your life—follows the same basic structure. There's where you are. There's where you want to be. And there's the process of getting there.&lt;/p&gt; 
+&lt;p&gt;We didn't invent this pattern. Evolution uses it. Science uses it. Every successful human endeavor uses it. We just made it explicit and built tools around it.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;PAI is three things:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;A universal algorithm&lt;/strong&gt; - Current → Ideal via verifiable iteration, at any scale&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Personal infrastructure&lt;/strong&gt; - Skills, memory, and context that make AI actually useful for &lt;em&gt;your&lt;/em&gt; life&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Open-source packs&lt;/strong&gt; - Battle-tested capabilities anyone can install or contribute&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;The Algorithm&lt;/h2&gt; 
+&lt;p&gt;At the foundation of PAI is a universal pattern: &lt;strong&gt;Current State → Ideal State&lt;/strong&gt; via verifiable iteration.&lt;/p&gt; 
+&lt;p&gt;This isn't two separate loops—it's one unified algorithm that works at every scale:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Fixing a typo&lt;/strong&gt; — Current: wrong word. Ideal: right word.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Building a feature&lt;/strong&gt; — Current: doesn't exist. Ideal: works, tested, deployed.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Building a company&lt;/strong&gt; — Current: idea. Ideal: profitable business.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Human flourishing&lt;/strong&gt; — Current: wherever you are. Ideal: the best version of your life.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The algorithm has 7 phases:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Phase&lt;/th&gt; 
+   &lt;th&gt;What You Do&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;OBSERVE&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Gather context. Understand where you actually are.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;THINK&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Generate ideas. What might work?&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;PLAN&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Pick an approach. Sequence the work.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;BUILD&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Define success criteria. How will you know if it worked?&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;EXECUTE&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Do the work.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;VERIFY&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Test against your criteria. Did it work?&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;LEARN&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Harvest insights. Iterate or complete.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;The crucial insight: &lt;strong&gt;verifiability is everything&lt;/strong&gt;. Most people skip VERIFY. They try things, vaguely check if it worked, and move on. The algorithm's power comes from defining success criteria &lt;em&gt;before&lt;/em&gt; execution and measuring against them &lt;em&gt;after&lt;/em&gt;.&lt;/p&gt; 
+&lt;p&gt;Every PAI skill, every workflow, every task implements this algorithm.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Coming Soon:&lt;/strong&gt; The Universal Algorithm will be released as a standalone Skill Pack with full tooling—effort classification, capability loading, ISC (Ideal State Criteria) management, and visual progress tracking. It will be included in the PAI Bundle.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Where Are You on the Journey?&lt;/h3&gt; 
+&lt;p&gt;See the &lt;strong&gt;&lt;a href="https://danielmiessler.com/blog/personal-ai-maturity-model"&gt;Personal AI Maturity Model (PAIMM)&lt;/a&gt;&lt;/strong&gt;—a 9-tier progression from basic chatbots to a full AI companion.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;The 15 PAI Principles&lt;/h2&gt; 
+&lt;p&gt;These principles guide how PAI systems are designed and built. &lt;strong&gt;&lt;a href="https://danielmiessler.com/blog/personal-ai-infrastructure"&gt;Full breakdown →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;#&lt;/th&gt; 
+   &lt;th&gt;Principle&lt;/th&gt; 
+   &lt;th&gt;Summary&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;The Algorithm&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Current → Ideal via verifiable iteration. Define success criteria before execution.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;2&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Clear Thinking First&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Good prompts come from clear thinking. Clarify the problem before writing the prompt.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;3&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Scaffolding &amp;gt; Model&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;System architecture matters more than which model you use.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;4&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Deterministic Infrastructure&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;AI is probabilistic; your infrastructure shouldn't be. Use templates and patterns.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;5&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Code Before Prompts&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;If you can solve it with a bash script, don't use AI.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;6&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Spec / Test / Evals First&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Write specifications and tests before building. Measure if the system works.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;7&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;UNIX Philosophy&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Do one thing well. Make tools composable. Use text interfaces.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;8&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;ENG / SRE Principles&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Treat AI infrastructure like production software: version control, automation, monitoring.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;9&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;CLI as Interface&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Command-line interfaces are faster, more scriptable, and more reliable than GUIs.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;10&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Goal → Code → CLI → Prompts → Agents&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;The decision hierarchy: clarify goal, then code, then CLI, then prompts, then agents.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;11&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Self-Updating System&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;The system should modify itself. Encode learnings so you never forget.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;12&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Skill Management&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Modular capabilities that route intelligently based on context.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;13&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;History System&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Everything worth knowing gets captured. History feeds future context.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;14&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Agent Personalities&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Different work needs different approaches. Specialized agents with unique voices.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;15&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Science as Meta-Loop&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Hypothesis → Experiment → Measure → Iterate. Every decision follows this pattern.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;PAI Primitives&lt;/h2&gt; 
+&lt;p&gt;While the 15 Principles describe the &lt;em&gt;philosophy&lt;/em&gt; of PAI, the Primitives are the &lt;em&gt;architecture&lt;/em&gt;—the core systems that make everything work.&lt;/p&gt; 
+&lt;h3&gt;The Continuous Learning Loop&lt;/h3&gt; 
+&lt;p&gt;PAI isn't static. Every interaction feeds a learning loop that makes the system better over time.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;User Interaction → Hook Captures → Signal Detection → Learning Directory → System Improvement
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;How it works:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;User gives feedback&lt;/strong&gt; - Explicit ratings (type "7" or "8 - good work") or implicit sentiment ("this is frustrating")&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Hooks capture signals&lt;/strong&gt; - Ratings, failures, loopbacks, and patterns are written to &lt;code&gt;MEMORY/Signals/&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Low ratings trigger learning&lt;/strong&gt; - Scores below 6 auto-capture to &lt;code&gt;MEMORY/Learning/&lt;/code&gt; for analysis&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;System improves&lt;/strong&gt; - Learnings are organized by algorithm phase for targeted retrieval&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;This isn't just logging—it's a feedback mechanism that identifies what's working and what isn't.&lt;/p&gt; 
+&lt;h3&gt;Memory System&lt;/h3&gt; 
+&lt;p&gt;The Memory System is PAI's brain—what happened, what we learned, what we're working on.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Location:&lt;/strong&gt; &lt;code&gt;$PAI_DIR/MEMORY/&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Three-Tier Architecture:&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Tier&lt;/th&gt; 
+   &lt;th&gt;Temperature&lt;/th&gt; 
+   &lt;th&gt;Purpose&lt;/th&gt; 
+   &lt;th&gt;Location&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;CAPTURE&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Hot&lt;/td&gt; 
+   &lt;td&gt;Active work with real-time traces&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Work/[Task-Name]/&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;SYNTHESIS&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Warm&lt;/td&gt; 
+   &lt;td&gt;Learnings organized by algorithm phase&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Learning/{OBSERVE,THINK,PLAN,BUILD,EXECUTE,VERIFY}/&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;APPLICATION&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Cold&lt;/td&gt; 
+   &lt;td&gt;Immutable historical archive&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;History/&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;Directory Structure:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;MEMORY/
+├── History/           # All historical recordings (immutable archive)
+│   ├── research/      # Research session outputs
+│   ├── sessions/      # Session summaries (auto-captured)
+│   ├── learnings/     # Learning moments
+│   ├── decisions/     # Architectural decisions
+│   └── ...
+├── Learning/          # Phase-based curated learnings
+│   ├── OBSERVE/       # Learnings about gathering context
+│   ├── THINK/         # Learnings about hypothesis generation
+│   ├── PLAN/          # Learnings about execution planning
+│   ├── BUILD/         # Learnings about success criteria
+│   ├── EXECUTE/       # Learnings about implementation
+│   ├── VERIFY/        # Learnings about verification
+│   └── ALGORITHM/     # Meta-learnings about the algorithm itself
+├── State/             # Real-time operational state
+│   ├── algorithm-stats.json
+│   ├── algorithm-streak.json
+│   └── active-work.json
+├── Signals/           # Pattern detection and anomalies
+│   ├── failures.jsonl
+│   ├── loopbacks.jsonl
+│   ├── patterns.jsonl
+│   └── ratings.jsonl
+└── Work/              # Per-task memory (active work items)
+    └── [Task-Name_TIMESTAMP]/
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Key Insight:&lt;/strong&gt; VERIFY failures are the richest source of improvement. When verification fails, it traces back to a weakness in an earlier phase—that weakness gets captured in LEARN.&lt;/p&gt; 
+&lt;h3&gt;Hook System&lt;/h3&gt; 
+&lt;p&gt;Hooks are event-driven automation that make PAI "alive"—they respond to what's happening and take action.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Hook Types:&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Event&lt;/th&gt; 
+   &lt;th&gt;When It Fires&lt;/th&gt; 
+   &lt;th&gt;Common Uses&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;SessionStart&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Opening a new session&lt;/td&gt; 
+   &lt;td&gt;Load context, set up environment&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;SessionEnd&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Session closing&lt;/td&gt; 
+   &lt;td&gt;Capture summary, archive learnings&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;UserPromptSubmit&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;User sends a message&lt;/td&gt; 
+   &lt;td&gt;Update tab title, detect sentiment&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;Stop&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;AI completes response&lt;/td&gt; 
+   &lt;td&gt;Voice notification, capture completion&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;SubagentStop&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Spawned agent completes&lt;/td&gt; 
+   &lt;td&gt;Capture agent output&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;PreToolUse&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Before tool execution&lt;/td&gt; 
+   &lt;td&gt;Security validation, logging&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;PostToolUse&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;After tool execution&lt;/td&gt; 
+   &lt;td&gt;Capture results, observability&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;PreCompact&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Before context compaction&lt;/td&gt; 
+   &lt;td&gt;Preserve critical state&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;Design Principles:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Graceful failure&lt;/strong&gt; - Hooks always exit 0; failures log but don't block&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Composable&lt;/strong&gt; - Multiple hooks can respond to the same event&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Fast&lt;/strong&gt; - Hooks run synchronously; keep them lightweight&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Example Flow:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;User types message
+  → UserPromptSubmit hook updates tab title
+  → AI generates response
+  → Stop hook extracts completion message
+  → Stop hook sends to voice server
+  → Stop hook captures to history
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Security System&lt;/h3&gt; 
+&lt;p&gt;Security is layered, not bolted on. PAI implements defense-in-depth across multiple layers.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Key Protections:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Command validation&lt;/strong&gt; - Dangerous commands (&lt;code&gt;rm -rf&lt;/code&gt;, &lt;code&gt;sudo&lt;/code&gt;, etc.) blocked before execution&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Repository separation&lt;/strong&gt; - Private (Kai) and public (PAI) repos are completely isolated&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Prompt injection defense&lt;/strong&gt; - External content is read-only; commands only come from the principal&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Secret management&lt;/strong&gt; - All API keys in &lt;code&gt;$PAI_DIR/.env&lt;/code&gt;, never in code&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;The Two-Repository Rule:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;~/.claude/ (PRIVATE)          ~/Projects/PAI/ (PUBLIC)
+├── Contains secrets          ├── Example code only
+├── Personal data             ├── No personal data
+├── Your actual system        ├── Community template
+└── NEVER PUBLIC              └── Safe to share
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;User/System Separation&lt;/h3&gt; 
+&lt;p&gt;PAI cleanly separates what's &lt;em&gt;yours&lt;/em&gt; from what's &lt;em&gt;system&lt;/em&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;$PAI_DIR/skills/CORE/
+├── USER/              # Your customizations
+│   ├── CONTACTS.md    # Your contacts
+│   ├── TELOS/         # Your goals (see below)
+│   ├── TECHSTACK.md   # Your preferences
+│   └── SECURITY.md    # Your security rules
+└── SYSTEM/            # PAI infrastructure
+    ├── PAISYSTEMARCHITECTURE.md
+    ├── MEMORYSYSTEM.md
+    ├── THEHOOKSYSTEM.md
+    └── ...
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Why This Matters:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Upgrades don't clobber customizations&lt;/strong&gt; - System files update; your files persist&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Clear ownership&lt;/strong&gt; - You know what's yours to modify&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Portable identity&lt;/strong&gt; - Move USER/ to a new system; your preferences follow&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Deep Goal Capture (TELOS)&lt;/h3&gt; 
+&lt;p&gt;TELOS is PAI's framework for understanding &lt;em&gt;you&lt;/em&gt;—your goals, beliefs, strategies, and what you're working toward.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;The TELOS Files:&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;File&lt;/th&gt; 
+   &lt;th&gt;Purpose&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;MISSION.md&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Your life mission and purpose&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;GOALS.md&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Current goals across life areas&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;PROJECTS.md&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Active projects with status&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;BELIEFS.md&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Core beliefs that guide decisions&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;MODELS.md&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Mental models you use&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;STRATEGIES.md&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Strategies you employ&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;NARRATIVES.md&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Stories you tell about yourself&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;LEARNED.md&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Key lessons learned&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;CHALLENGES.md&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Current challenges&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;IDEAS.md&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Ideas worth capturing&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;Why TELOS Exists:&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Generic AI assistants don't know what you're trying to accomplish. They treat every request as isolated. TELOS gives your AI the context to:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Prioritize based on your actual goals&lt;/li&gt; 
+ &lt;li&gt;Suggest based on your strategies&lt;/li&gt; 
+ &lt;li&gt;Warn when something conflicts with your beliefs&lt;/li&gt; 
+ &lt;li&gt;Connect today's task to your bigger picture&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Granular Customization&lt;/h3&gt; 
+&lt;p&gt;PAI doesn't force you into a structure. Everything is customizable at the level you choose.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Customization Levels:&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Level&lt;/th&gt; 
+   &lt;th&gt;What You Change&lt;/th&gt; 
+   &lt;th&gt;Example&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Identity&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Your AI's name, voice, personality&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;DA="Kai"&lt;/code&gt;, voice settings&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Preferences&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Tech stack, tool choices&lt;/td&gt; 
+   &lt;td&gt;TypeScript over Python, bun over npm&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Workflows&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;How skills execute&lt;/td&gt; 
+   &lt;td&gt;Custom research flow, different commit style&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Skills&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;What capabilities exist&lt;/td&gt; 
+   &lt;td&gt;Add new skills, modify existing ones&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Hooks&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;How events are handled&lt;/td&gt; 
+   &lt;td&gt;Custom logging, different notifications&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Memory&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;What gets captured and how&lt;/td&gt; 
+   &lt;td&gt;Retention rules, archive frequency&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;The Principle:&lt;/strong&gt; Start with defaults. Customize when you have a reason. PAI works out of the box but adapts to how &lt;em&gt;you&lt;/em&gt; work.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Packs &amp;amp; Bundles&lt;/h2&gt; 
+&lt;p&gt;PAI capabilities are distributed as &lt;strong&gt;Packs&lt;/strong&gt;—self-contained, AI-installable modules that add specific capabilities to your system.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Packs&lt;/strong&gt; are individual capabilities (e.g., History System, Voice Notifications, Browser Automation)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Bundles&lt;/strong&gt; are curated collections of packs that work together (e.g., the PAI Bundle)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Each pack includes everything needed: code, workflows, installation instructions, and verification tests. Your AI reads the pack and installs it into your system—no manual copying required.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-available-packs"&gt;Browse Available Packs →&lt;/a&gt;&lt;/strong&gt; · &lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-available-bundles"&gt;Browse Bundles →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;How AI Installation Works&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;See &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-this-readme-is-for-your-ai-assistant"&gt;🤖 This README Is For Your AI Assistant&lt;/a&gt;&lt;/strong&gt; for the quick start. This section explains the technical details.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Your system is unique—existing skills, different directory structures, conflicting configurations, missing prerequisites. A static install script can't handle this. But your AI can:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Analyze your current state&lt;/strong&gt; — What's already installed? What conflicts exist?&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Ask smart questions&lt;/strong&gt; — Only ask about things that matter for YOUR setup&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Adapt the installation&lt;/strong&gt; — Different paths, different configurations, different choices&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Verify the results&lt;/strong&gt; — Confirm everything works before declaring success&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;The Wizard Pattern&lt;/h3&gt; 
+&lt;p&gt;Every pack's &lt;code&gt;INSTALL.md&lt;/code&gt; follows a wizard-style flow:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Phase&lt;/th&gt; 
+   &lt;th&gt;What Happens&lt;/th&gt; 
+   &lt;th&gt;AI Tool Used&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;1. System Analysis&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Detect current state, find conflicts, check prerequisites&lt;/td&gt; 
+   &lt;td&gt;Bash, Read&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;2. User Questions&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Ask only relevant questions based on analysis&lt;/td&gt; 
+   &lt;td&gt;AskUserQuestion&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;3. Backup&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Create timestamped backups if replacing existing content&lt;/td&gt; 
+   &lt;td&gt;Bash&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;4. Installation&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Execute installation with live progress tracking&lt;/td&gt; 
+   &lt;td&gt;TodoWrite, Bash, Write&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;5. Verification&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Run all checks from VERIFY.md, confirm success&lt;/td&gt; 
+   &lt;td&gt;Bash, VERIFY.md&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;How to Install Any Pack&lt;/h3&gt; 
+&lt;p&gt;Give the pack directory to your AI and say:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Install this pack into my system using PAI_DIR="~/.claude"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Your AI will:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Read &lt;code&gt;README.md&lt;/code&gt; for context on what the pack does&lt;/li&gt; 
+ &lt;li&gt;Follow &lt;code&gt;INSTALL.md&lt;/code&gt; with the wizard flow&lt;/li&gt; 
+ &lt;li&gt;Copy files from &lt;code&gt;src/&lt;/code&gt; to appropriate locations&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;VERIFY.md&lt;/code&gt; checks to confirm success&lt;/li&gt; 
+ &lt;li&gt;Report what was installed and how to use it&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;No manual command copying. No guessing about your system state. Dynamic installation that adapts to you.&lt;/strong&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;How PAI Works&lt;/h2&gt; 
+&lt;p&gt;This section explains the technical architecture, installation process, and runtime mechanics of the Personal AI Infrastructure (PAI) system.&lt;/p&gt; 
+&lt;h3&gt;1. High-Level Architecture&lt;/h3&gt; 
+&lt;p&gt;PAI is not a standalone application but a &lt;strong&gt;configuration and automation layer&lt;/strong&gt; that sits on top of &lt;strong&gt;Claude Code&lt;/strong&gt; (Anthropic's CLI agent). It transforms a generic AI agent into a personalized system with persistent memory, security controls, and defined skills.&lt;/p&gt; 
+&lt;p&gt;The architecture consists of three main layers:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;The Engine (Claude Code)&lt;/strong&gt;: The underlying AI agent that executes commands and processes prompts.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;The Middleware (Hooks)&lt;/strong&gt;: A system of event listeners that intercept Claude Code's operations (like tool use, session start) to enforce security, inject context, and log activity.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;The Content (Packs)&lt;/strong&gt;: Modular bundles of markdown files and scripts that define "Skills" (workflows), "Tools" (executable code), and "Identity" (system prompts).&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;2. The Hook System (The "Magic")&lt;/h3&gt; 
+&lt;p&gt;The core mechanism that makes PAI work is the &lt;strong&gt;Hook System&lt;/strong&gt;. Claude Code has a native capability to run scripts when certain events occur. PAI leverages this to inject its logic.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;How Hooks Work:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Configuration&lt;/strong&gt;: Hooks are registered in &lt;code&gt;~/.claude/settings.json&lt;/code&gt;. This file maps events (like &lt;code&gt;PreToolUse&lt;/code&gt;) to specific scripts.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Events&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;code&gt;SessionStart&lt;/code&gt;: Fires when you open Claude Code. PAI uses this to load your "CORE" skill and context.&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;PreToolUse&lt;/code&gt;: Fires before the AI runs a command (e.g., &lt;code&gt;bash&lt;/code&gt;, &lt;code&gt;edit&lt;/code&gt;). PAI uses this for &lt;strong&gt;Security Validation&lt;/strong&gt; (blocking &lt;code&gt;rm -rf&lt;/code&gt;, etc.).&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;PostToolUse&lt;/code&gt;: Fires after a command. Used for logging and observability.&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;UserPromptSubmit&lt;/code&gt;: Fires when you type a message. Used to update terminal tab titles.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Execution&lt;/strong&gt;: When an event fires, Claude Code runs the corresponding TypeScript script (using &lt;code&gt;bun&lt;/code&gt;) located in &lt;code&gt;~/.claude/hooks/&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Communication&lt;/strong&gt;: The script receives event data via &lt;code&gt;stdin&lt;/code&gt; (JSON) and can control the outcome (e.g., allow or block a command) via exit codes or &lt;code&gt;stdout&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;3. Installation Process&lt;/h3&gt; 
+&lt;p&gt;The installation is a two-phase process: &lt;strong&gt;Bootstrapping&lt;/strong&gt; (Manual) and &lt;strong&gt;Pack Installation&lt;/strong&gt; (AI-Driven).&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Phase 1: Bootstrapping (The &lt;code&gt;install.ts&lt;/code&gt; script)&lt;/strong&gt; The user runs &lt;code&gt;bun run Bundles/Official/install.ts&lt;/code&gt;. This script &lt;strong&gt;does not&lt;/strong&gt; install the full system. Instead, it:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Creates Directory Structure&lt;/strong&gt;: Sets up &lt;code&gt;~/.claude/&lt;/code&gt; (or &lt;code&gt;$PAI_DIR&lt;/code&gt;) with folders for &lt;code&gt;skills&lt;/code&gt;, &lt;code&gt;hooks&lt;/code&gt;, &lt;code&gt;history&lt;/code&gt;, etc.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Generates Config Files&lt;/strong&gt;: Creates &lt;code&gt;SKILL.md&lt;/code&gt;, &lt;code&gt;Contacts.md&lt;/code&gt;, and &lt;code&gt;CoreStack.md&lt;/code&gt; with user preferences (name, timezone).&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Sets Environment Variables&lt;/strong&gt;: Updates &lt;code&gt;.zshrc&lt;/code&gt; or &lt;code&gt;.bashrc&lt;/code&gt; with &lt;code&gt;DA&lt;/code&gt; (Assistant Name), &lt;code&gt;PAI_DIR&lt;/code&gt;, etc.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Updates &lt;code&gt;settings.json&lt;/code&gt;&lt;/strong&gt;: Injects environment variables into Claude Code's settings.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Crucially, this phase does not install the hooks or skills.&lt;/strong&gt; It prepares the environment for the AI to do it.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Phase 2: Pack Installation (AI-Driven)&lt;/strong&gt; The user is instructed to "give each pack file to your AI". This is where the actual installation happens.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;User Action&lt;/strong&gt;: The user pastes the content of a pack file (e.g., &lt;code&gt;Packs/pai-hook-system.md&lt;/code&gt;) into Claude Code.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;AI Execution&lt;/strong&gt;: The pack file contains natural language instructions and code blocks. The AI reads these instructions and: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Writes Files&lt;/strong&gt;: Creates the TypeScript hook files (e.g., &lt;code&gt;hooks/security-validator.ts&lt;/code&gt;) and skill definitions.&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Configures System&lt;/strong&gt;: Updates &lt;code&gt;settings.json&lt;/code&gt; to register the new hooks.&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Verifies&lt;/strong&gt;: Runs verification commands to ensure the pack is working.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;This "Inception-style" installation (using the AI to build the AI's infrastructure) ensures that the system is self-documenting and the AI "knows" about its own components.&lt;/p&gt; 
+&lt;h3&gt;4. Runtime Flow&lt;/h3&gt; 
+&lt;p&gt;Here is what happens when you use PAI:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Start&lt;/strong&gt;: You run &lt;code&gt;claude&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Initialization (&lt;code&gt;SessionStart&lt;/code&gt;)&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;Claude Code fires &lt;code&gt;SessionStart&lt;/code&gt;.&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;hooks/initialize-session.ts&lt;/code&gt; runs.&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;hooks/load-core-context.ts&lt;/code&gt; runs. It reads &lt;code&gt;skills/CORE/SKILL.md&lt;/code&gt; and injects it into the context. Now the AI knows who it is and what skills it has.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;User Interaction&lt;/strong&gt;: You ask "Create a new blog post".&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Routing&lt;/strong&gt;: The AI (guided by the injected &lt;code&gt;SKILL.md&lt;/code&gt;) recognizes this matches a skill (e.g., &lt;code&gt;CreateContent&lt;/code&gt;). It loads the specific workflow for that skill.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Execution (&lt;code&gt;PreToolUse&lt;/code&gt;)&lt;/strong&gt;: The AI decides to run a command (e.g., &lt;code&gt;touch blog.md&lt;/code&gt;). 
+  &lt;ul&gt; 
+   &lt;li&gt;Claude Code fires &lt;code&gt;PreToolUse&lt;/code&gt;.&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;hooks/security-validator.ts&lt;/code&gt; runs. It checks if &lt;code&gt;touch blog.md&lt;/code&gt; is safe.&lt;/li&gt; 
+   &lt;li&gt;If safe (Exit Code 0), the command runs.&lt;/li&gt; 
+   &lt;li&gt;If unsafe (Exit Code 1+), the command is blocked.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Completion&lt;/strong&gt;: The AI finishes the task and updates its memory (via &lt;code&gt;pai-history-system&lt;/code&gt; hooks).&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;5. Key Components&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;pai-hook-system&lt;/code&gt;&lt;/strong&gt;: The engine room. Provides the event bus and security layer.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;pai-core-install&lt;/code&gt;&lt;/strong&gt;: The brain. Defines the "CORE" skill, identity, and routing logic.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;pai-history-system&lt;/code&gt;&lt;/strong&gt;: The memory. Captures session data and learnings.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;pai-voice-system&lt;/code&gt;&lt;/strong&gt;: (Optional) Adds voice capabilities via ElevenLabs.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📦 Available Packs&lt;/h2&gt; 
+&lt;h3&gt;Features (Architectural Systems)&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Pack&lt;/th&gt; 
+   &lt;th&gt;Version&lt;/th&gt; 
+   &lt;th&gt;Category&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/Packs/pai-history-system.md"&gt;&lt;strong&gt;PAI History System&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;1.0.0&lt;/td&gt; 
+   &lt;td&gt;Infrastructure&lt;/td&gt; 
+   &lt;td&gt;Automatic context-tracking system that captures all work, decisions, and learnings with zero manual effort&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Skills (Action-Oriented Capabilities)&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Pack&lt;/th&gt; 
+   &lt;th&gt;Version&lt;/th&gt; 
+   &lt;th&gt;Category&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;em&gt;Coming soon&lt;/em&gt;&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+   &lt;td&gt;Skills being extracted and packaged&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Coming Soon&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Features being packaged:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Skill System&lt;/strong&gt; - Skill routing and workflow management&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Agent Factory&lt;/strong&gt; - Custom agent creation and orchestration&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Prompting System&lt;/strong&gt; - Meta-prompting and template framework&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Skills being packaged:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Art&lt;/strong&gt; - Visual content generation system&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Research&lt;/strong&gt; - Multi-source research orchestration with parallel agents&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;OSINT&lt;/strong&gt; - Open-source intelligence gathering&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-contributing"&gt;&lt;strong&gt;Submit your own pack&lt;/strong&gt;&lt;/a&gt; →&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📦 Available Bundles&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Bundles&lt;/strong&gt; are curated collections of packs designed to work together. Instead of installing packs one-by-one, install a bundle to get a complete, tested experience.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Bundle&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+   &lt;th&gt;Packs&lt;/th&gt; 
+   &lt;th&gt;Tier&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/Bundles/Official/"&gt;&lt;strong&gt;PAI Bundle&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;The official PAI bundle - complete personal AI infrastructure extracted from Daniel Miessler's production system&lt;/td&gt; 
+   &lt;td&gt;5&lt;/td&gt; 
+   &lt;td&gt;Complete&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Why Bundles?&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Curated combinations&lt;/strong&gt; - Tested packs that work well together&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Proper installation order&lt;/strong&gt; - Dependencies handled correctly&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Emergent capabilities&lt;/strong&gt; - The whole is greater than the sum of parts&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Complete experience&lt;/strong&gt; - Everything needed for a specific goal&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Interactive wizard&lt;/strong&gt; - Guided setup with conflict detection&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;The PAI Bundle&lt;/strong&gt; is the flagship bundle. Installing all its packs recreates the PAI v1.0 "mirrored system" experience - but through modular, maintainable packs instead of a monolithic copy.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Quick install:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Clone the repo and run the interactive wizard
+git clone https://github.com/danielmiessler/PAI.git
+cd PAI/Bundles/Official &amp;amp;&amp;amp; bun run install.ts
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/Bundles/"&gt;&lt;strong&gt;Learn more about bundles →&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🚀 Quick Start&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;FOR AI AGENTS:&lt;/strong&gt; The entire PAI system is designed to be used by AI. You can read this README to understand how PAI works with its Packs and Bundles. A recommended approach: evaluate the entire system, then interact with your principal and ask them which Bundles or Packs they'd like to install—give them options based on their needs. From there, you should be able to read any Bundle or Pack file (including new ones as they're released) and guide your principal on whether they want to install it.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Option 1: Install the Complete PAI Bundle (Recommended)&lt;/h3&gt; 
+&lt;p&gt;The fastest way to get started is with the interactive bundle wizard:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Clone the repo
+git clone https://github.com/danielmiessler/PAI.git
+cd PAI/Bundles/Official
+
+# Run the interactive wizard
+bun run install.ts
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;The wizard will:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Ask for your preferences (AI name, install location, timezone)&lt;/li&gt; 
+ &lt;li&gt;Detect any existing installations and offer to merge or replace&lt;/li&gt; 
+ &lt;li&gt;Create the required directory structure&lt;/li&gt; 
+ &lt;li&gt;Configure environment variables&lt;/li&gt; 
+ &lt;li&gt;Guide you through installing each pack in order&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Option 2: AI-Assisted Pack Installation&lt;/h3&gt; 
+&lt;p&gt;Install individual packs by giving them to your AI:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Browse packs&lt;/strong&gt; - Find a pack you want in &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/Packs/"&gt;Packs/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Give it to your AI&lt;/strong&gt; - Provide the entire pack markdown file&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Ask your AI to install it:&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code&gt;Install this pack into my system. Use PAI_DIR="~/.config/pai"
+and DA="MyAI". Set up the hooks, save the code, and verify it works.
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Your AI will:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Check for required dependencies&lt;/li&gt; 
+ &lt;li&gt;Save code to appropriate directories&lt;/li&gt; 
+ &lt;li&gt;Set up routing/hooks (if applicable)&lt;/li&gt; 
+ &lt;li&gt;Validate the installation&lt;/li&gt; 
+ &lt;li&gt;Run a test to ensure it works&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Option 3: Manual Installation&lt;/h3&gt; 
+&lt;p&gt;Each pack includes detailed manual installation instructions. Open the pack file and follow the "Installation → Manual" section.&lt;/p&gt; 
+&lt;h3&gt;Option 4: Browse and Cherry-Pick&lt;/h3&gt; 
+&lt;p&gt;Packs are self-contained markdown files. You can:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Read the code directly in the pack&lt;/li&gt; 
+ &lt;li&gt;Copy specific functions or workflows&lt;/li&gt; 
+ &lt;li&gt;Adapt the approach to your own system&lt;/li&gt; 
+ &lt;li&gt;Use it as reference documentation&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;No forced structure. No mandatory setup. Take what's useful, leave the rest.&lt;/strong&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📂 Understanding PAI_DIR&lt;/h2&gt; 
+&lt;p&gt;The &lt;code&gt;PAI_DIR&lt;/code&gt; environment variable is the &lt;strong&gt;single source of truth&lt;/strong&gt; for where your PAI installation lives.&lt;/p&gt; 
+&lt;h3&gt;What is PAI_DIR?&lt;/h3&gt; 
+&lt;p&gt;&lt;code&gt;PAI_DIR&lt;/code&gt; points to the directory where your personal AI infrastructure is installed - this is where skills, hooks, history, and configuration files live.&lt;/p&gt; 
+&lt;h3&gt;Two Different Things&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Concept&lt;/th&gt; 
+   &lt;th&gt;Path&lt;/th&gt; 
+   &lt;th&gt;Purpose&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;PAI Repository&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Where you cloned &lt;code&gt;git clone https://github.com/danielmiessler/PAI.git&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Source code, packs, templates - read-only reference&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;PAI Installation&lt;/strong&gt; (&lt;code&gt;PAI_DIR&lt;/code&gt;)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;~/.claude&lt;/code&gt; (default) or your custom location&lt;/td&gt; 
+   &lt;td&gt;Your active installation - skills, hooks, history, config&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;The repository is like a cookbook. Your installation is your actual kitchen.&lt;/p&gt; 
+&lt;h3&gt;Default Behavior&lt;/h3&gt; 
+&lt;p&gt;If &lt;code&gt;PAI_DIR&lt;/code&gt; is not set, PAI tools and packs default to &lt;code&gt;~/.claude&lt;/code&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;This is the standard Claude Code configuration directory&lt;/li&gt; 
+ &lt;li&gt;Works seamlessly with Claude Code out of the box&lt;/li&gt; 
+ &lt;li&gt;Recommended for most users&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;When to Use a Custom PAI_DIR&lt;/h3&gt; 
+&lt;p&gt;Set a custom &lt;code&gt;PAI_DIR&lt;/code&gt; if you:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Use a different AI coding assistant (Cursor, Windsurf, OpenCode)&lt;/li&gt; 
+ &lt;li&gt;Want to keep PAI separate from Claude Code's config&lt;/li&gt; 
+ &lt;li&gt;Are testing or developing packs&lt;/li&gt; 
+ &lt;li&gt;Have multiple PAI installations&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Setting PAI_DIR&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;In your shell profile&lt;/strong&gt; (&lt;code&gt;~/.zshrc&lt;/code&gt; or &lt;code&gt;~/.bashrc&lt;/code&gt;):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;export PAI_DIR="$HOME/.claude"  # Default - Claude Code location
+# OR
+export PAI_DIR="$HOME/.config/pai"  # Custom location
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;How Tools Resolve PAI_DIR&lt;/h3&gt; 
+&lt;p&gt;PAI tools use this resolution order:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;code&gt;process.env.PAI_DIR&lt;/code&gt; - Explicit setting (highest priority)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;process.env.PAI_HOME&lt;/code&gt; - Legacy/alternate variable&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;~/.claude&lt;/code&gt; - Default fallback&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;This means: if you set &lt;code&gt;PAI_DIR&lt;/code&gt;, it takes precedence. If not, it defaults to Claude Code's standard location.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🔐 Authentication Setup&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;All API keys live in ONE place: &lt;code&gt;$PAI_DIR/.env&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;This is a core principle of PAI: &lt;strong&gt;no keys stored anywhere else in the system&lt;/strong&gt;. Every pack, every tool, every workflow reads from this single file.&lt;/p&gt; 
+&lt;h3&gt;Setup&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# 1. Copy the example file to your PAI directory
+cp .env.example $PAI_DIR/.env
+
+# 2. Edit and add your API keys
+nano $PAI_DIR/.env
+
+# 3. Restart Claude Code to load the new environment
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;What Goes in .env&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Core variables:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;DA&lt;/code&gt; - Your AI assistant's name&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;TIME_ZONE&lt;/code&gt; - Your timezone&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Pack-specific keys:&lt;/strong&gt; Each pack documents its required API keys in its installation section. Add them to &lt;code&gt;.env&lt;/code&gt; as you install packs.&lt;/p&gt; 
+&lt;h3&gt;Security Rules&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;NEVER commit &lt;code&gt;.env&lt;/code&gt; files to git&lt;/strong&gt; - The &lt;code&gt;.gitignore&lt;/code&gt; already excludes them&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;NEVER store API keys in pack files, configs, or code&lt;/strong&gt; - Always use environment variables&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;ALL authentication flows through &lt;code&gt;$PAI_DIR/.env&lt;/code&gt;&lt;/strong&gt; - One file, one location, no exceptions&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/.env.example"&gt;.env.example&lt;/a&gt; for the complete template with documentation.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📖 How PAI Packs Work&lt;/h2&gt; 
+&lt;p&gt;PAI offers &lt;strong&gt;two types of packs&lt;/strong&gt;, each with its own structure and purpose:&lt;/p&gt; 
+&lt;h3&gt;Pack Type 1: Skills&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Skills&lt;/strong&gt; are action-oriented capabilities that your AI can invoke - things like generating visual content, conducting research, or processing data.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt; Art (visual content generation), Research (multi-source investigation), OSINT (intelligence gathering)&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Structure:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;🤖 Assistant Install Prompt&lt;/strong&gt; - Step-by-step instructions for AI to autonomously install&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Pack Metadata&lt;/strong&gt; - Version, dependencies, API keys, platform support&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;The Problem&lt;/strong&gt; - What's broken/missing?&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;The Solution&lt;/strong&gt; - How this skill fixes it&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Quick Start&lt;/strong&gt; - Get running in 60 seconds&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Pack Contents&lt;/strong&gt; - Workflows, tools, context files (complete source code)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Examples&lt;/strong&gt; - Real usage scenarios&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Installation&lt;/strong&gt; - AI-assisted + manual steps&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Testing&lt;/strong&gt; - Smoke tests and validation&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Troubleshooting&lt;/strong&gt; - Common issues and fixes&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Credits&lt;/strong&gt; - Attribution for ideas, influences, collaborators&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Resources&lt;/strong&gt; - Additional reading, related projects, external docs&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Pack Type 2: Features&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt; are architectural patterns and systems - infrastructure pieces like custom history systems, skill routing, agent orchestration, or prompting frameworks.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt; History System (automatic context-tracking), Skill System (routing and management), Agent Factory (custom agent creation), Prompting System (meta-prompting and templates)&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Structure:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;🤖 Assistant Install Prompt&lt;/strong&gt; - Step-by-step instructions for AI to autonomously install&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Pack Metadata&lt;/strong&gt; - Version, dependencies, platform support&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;The Problem&lt;/strong&gt; - What architectural challenge exists?&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;The Solution&lt;/strong&gt; - The design pattern and approach&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Implementation&lt;/strong&gt; - Complete code, configuration files, integration guides&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Examples&lt;/strong&gt; - Real-world usage patterns&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Installation&lt;/strong&gt; - AI-assisted + manual steps&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Testing&lt;/strong&gt; - Validation procedures&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Troubleshooting&lt;/strong&gt; - Common integration issues&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Credits&lt;/strong&gt; - Attribution for architectural ideas, influences&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Resources&lt;/strong&gt; - Additional reading, similar systems, theoretical background&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Universal Elements&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;All packs include:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-yaml"&gt;pack:
+  name: PackName
+  version: 1.0.0
+  category: visual-content | infrastructure | research | automation
+  type: skill | feature
+  author: Contributor Name
+  license: MIT
+  requires:
+    - Other-Pack &amp;gt;= 1.0.0 (optional dependencies)
+  platforms: [macos, linux, windows]
+  dependencies:
+    tools: [bun, ImageMagick]
+    api_keys: [REPLICATE_API_TOKEN]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;🤖 Assistant Install Prompt&lt;/strong&gt; - Every pack starts with instructions for AI assistants to autonomously install it. Your AI reads the pack, understands what it does, verifies dependencies, sets up the code, and validates it works - all without manual intervention.&lt;/p&gt; 
+&lt;h3&gt;Why Single Files?&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Portability&lt;/strong&gt; - One file contains everything. Email it, share it, version control it.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;AI-Friendly&lt;/strong&gt; - Your AI can read the entire context at once. No navigation, no missing pieces.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;No Dependencies&lt;/strong&gt; - Packs are self-contained. They may &lt;em&gt;call&lt;/em&gt; external tools, but the pack itself is complete.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Easy Review&lt;/strong&gt; - See exactly what you're installing. No hidden files, no surprises.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Version Control&lt;/strong&gt; - Simple to track changes, fork, and merge improvements.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🛠️ For Pack Developers&lt;/h2&gt; 
+&lt;h3&gt;Creating a PAI Pack&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;1. Get the pack template:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -O https://raw.githubusercontent.com/danielmiessler/PAI/main/Tools/PAIPackTemplate.md
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;2. Fill in each section:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Assistant Install Prompt&lt;/strong&gt; - Instructions for AI to install autonomously&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Problem statement&lt;/strong&gt; - What's broken or missing?&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Solution&lt;/strong&gt; - How your pack fixes it&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Implementation/Contents&lt;/strong&gt; - All code (embedded in markdown code blocks)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Examples&lt;/strong&gt; - Real usage scenarios&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Installation steps&lt;/strong&gt; - Both AI-assisted and manual&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Testing procedures&lt;/strong&gt; - Smoke tests and validation&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Credits&lt;/strong&gt; - Attribution for ideas and influences&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Resources&lt;/strong&gt; - Additional reading and related projects&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;3. Validate it:&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Test with your own AI:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Here's my pack. Install it into a fresh system and verify it works.
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;4. Submit a PR:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git checkout -b add-pack-name
+cp MyPack.md Packs/
+git add Packs/MyPack.md
+git commit -m "Add MyPack - one-line description"
+git push origin add-pack-name
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Open a PR with:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Pack description&lt;/li&gt; 
+ &lt;li&gt;What problem it solves&lt;/li&gt; 
+ &lt;li&gt;Testing you've done&lt;/li&gt; 
+ &lt;li&gt;Screenshots/examples (if applicable)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Pack Quality Standards&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Must have:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;✅ Clear problem statement&lt;/li&gt; 
+ &lt;li&gt;✅ Complete working code (tested)&lt;/li&gt; 
+ &lt;li&gt;✅ Real examples (not placeholders)&lt;/li&gt; 
+ &lt;li&gt;✅ Both AI and manual installation instructions&lt;/li&gt; 
+ &lt;li&gt;✅ Troubleshooting section&lt;/li&gt; 
+ &lt;li&gt;✅ No hardcoded personal data&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Nice to have:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Screenshots of output&lt;/li&gt; 
+ &lt;li&gt;Video demo&lt;/li&gt; 
+ &lt;li&gt;Multiple examples for different use cases&lt;/li&gt; 
+ &lt;li&gt;Integration with other packs&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🏗️ Platform Compatibility&lt;/h2&gt; 
+&lt;p&gt;PAI packs are designed to be &lt;strong&gt;platform-agnostic&lt;/strong&gt;:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Platform&lt;/th&gt; 
+   &lt;th&gt;Status&lt;/th&gt; 
+   &lt;th&gt;Notes&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Claude Code&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Full support&lt;/td&gt; 
+   &lt;td&gt;Native integration, all features work&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;OpenCode&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Compatible&lt;/td&gt; 
+   &lt;td&gt;Skills/hooks may need adaptation&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Custom systems&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Compatible&lt;/td&gt; 
+   &lt;td&gt;Extract code, adapt to your structure&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Gemini Code / Codex&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;🔄 Testing&lt;/td&gt; 
+   &lt;td&gt;Should work with minor tweaks&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Manual use&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Always works&lt;/td&gt; 
+   &lt;td&gt;Packs are documentation + code&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;The code itself is platform-independent (TypeScript, Python, Bash). Integration points (skills, hooks) may vary by platform.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;💡 Why Packs?&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Text is the interface.&lt;/strong&gt; Everything your AI needs to implement a capability should be in one readable file.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Composability over monoliths.&lt;/strong&gt; Mix and match packs. Build your own stack.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;AI-first design.&lt;/strong&gt; Optimized for AI agents to read, understand, and implement - not just humans.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Open contribution.&lt;/strong&gt; Anyone can submit a pack. The best ideas win.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;No vendor lock-in.&lt;/strong&gt; Packs describe &lt;em&gt;how to solve a problem&lt;/em&gt;, not just "here's the code for our platform."&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🤝 Contributing&lt;/h2&gt; 
+&lt;h3&gt;Submit a Pack&lt;/h3&gt; 
+&lt;p&gt;We welcome packs that solve real problems:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Fork the repository&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Create your pack&lt;/strong&gt; - Follow &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/Tools/PAIPackTemplate.md"&gt;PAIPackTemplate.md&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Test it thoroughly&lt;/strong&gt; - Install in a fresh system with AI assistance&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Submit a PR&lt;/strong&gt; - Include examples and testing evidence&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Pack Review Process&lt;/h3&gt; 
+&lt;p&gt;Submitted packs are reviewed for:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Completeness&lt;/strong&gt; - All required sections present&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Code quality&lt;/strong&gt; - Works as described, no obvious bugs&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Security&lt;/strong&gt; - No hardcoded secrets, follows best practices&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Usefulness&lt;/strong&gt; - Solves a real problem for users&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Review timeline:&lt;/strong&gt; Most packs reviewed within 7 days.&lt;/p&gt; 
+&lt;h3&gt;Pack Maintenance&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Authors maintain their packs.&lt;/strong&gt; When you submit a pack, you're committing to:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Respond to issues about your pack&lt;/li&gt; 
+ &lt;li&gt;Fix bugs that are reported&lt;/li&gt; 
+ &lt;li&gt;Consider feature requests&lt;/li&gt; 
+ &lt;li&gt;Update for breaking changes in dependencies&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;If a pack becomes unmaintained, the community can fork and maintain a new version.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📚 Documentation&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Document&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/PACKS.md"&gt;PACKS.md&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Complete pack system documentation&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/Bundles/"&gt;Bundles/&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Bundle system documentation and available bundles&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/SECURITY.md"&gt;SECURITY.md&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Security policies and best practices&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🎯 Roadmap&lt;/h2&gt; 
+&lt;h3&gt;v1.0 (Current)&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Pack format specification&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; History System pack (context-tracking)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Pack template&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Installation documentation&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Pack discovery website&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; 5+ core packs released&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;v1.1 (Q1 2026)&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Pack dependency system&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Automated testing framework&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Pack marketplace&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Cross-pack integration examples&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; 20+ packs available&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;v1.2 (Q2 2026)&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Pack composition tools&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Version compatibility checker&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Community pack ratings&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Pack search/filter by category&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; 50+ packs available&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🌐 Community&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;GitHub Discussions:&lt;/strong&gt; &lt;a href="https://github.com/danielmiessler/Personal_AI_Infrastructure/discussions"&gt;Join the conversation&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Discord:&lt;/strong&gt; &lt;a href="https://discord.gg/danielmiessler"&gt;PAI Community&lt;/a&gt; (coming soon)&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Twitter/X:&lt;/strong&gt; &lt;a href="https://twitter.com/danielmiessler"&gt;@danielmiessler&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Blog:&lt;/strong&gt; &lt;a href="https://danielmiessler.com"&gt;danielmiessler.com&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Recognition&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Top pack contributors&lt;/strong&gt; (packs submitted/maintained):&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;(List will be populated as packs are submitted)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Special thanks:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;All early PAI users who provided feedback&lt;/li&gt; 
+ &lt;li&gt;The Claude Code team for building an incredible platform&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;❓ FAQ&lt;/h2&gt; 
+&lt;h3&gt;Isn't Claude Code and other agentic systems already pretty good? What makes this an upgrade over them?&lt;/h3&gt; 
+&lt;p&gt;PAI isn't a replacement for Claude Code—it's what you build &lt;em&gt;on top of it&lt;/em&gt;. Claude Code (and systems like Cursor, Windsurf, OpenCode) gives you an AI that can read files, write code, and execute commands. But they're generic. They don't know your goals, your preferred workflows, your history, or your specific context.&lt;/p&gt; 
+&lt;p&gt;PAI provides the scaffolding to make that generic AI &lt;em&gt;yours&lt;/em&gt;:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Persistent memory&lt;/strong&gt; — Your AI remembers past sessions, decisions, and learnings&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Custom skills&lt;/strong&gt; — Specialized capabilities for the things you do most (research, content creation, security analysis, etc.)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Your context&lt;/strong&gt; — Goals, contacts, preferences, definitions—all available to your AI without re-explaining&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Intelligent routing&lt;/strong&gt; — Say "research this" and the right workflow triggers automatically&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Self-improvement&lt;/strong&gt; — The system can modify itself based on what it learns&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Think of it this way: Claude Code is the engine. PAI is everything else that makes it &lt;em&gt;your&lt;/em&gt; car—the custom seat position, the saved radio stations, the GPS with your home address, the toolbox in the trunk.&lt;/p&gt; 
+&lt;h3&gt;Do I need to install everything?&lt;/h3&gt; 
+&lt;p&gt;No—and that's the point. The mistake of PAI v1 (and many other agentic systems) was trying to install everything all at once in an all-or-nothing fashion. That creates fragile systems where one broken piece takes down the whole thing.&lt;/p&gt; 
+&lt;p&gt;PAI v2 is modular by design:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Packs are independent&lt;/strong&gt; — Install one, install ten, install none. Each pack is self-contained.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Start small&lt;/strong&gt; — Begin with the Hook System, add History when you want persistence, add Skills when you need routing&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;No dependencies on the whole&lt;/strong&gt; — Each pack declares its dependencies explicitly. You install exactly what you need.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Incremental adoption&lt;/strong&gt; — Use PAI alongside your existing setup. Migrate at your own pace.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The best way to start: pick ONE pack that solves a problem you have today. Install it. Use it. Then decide if you want more.&lt;/p&gt; 
+&lt;h3&gt;What's the difference between PAI and Anthropic's plugin system?&lt;/h3&gt; 
+&lt;p&gt;Anthropic's plugin system (Skills, slash commands, MCP servers) provides discrete functionality—individual tools your AI can use. It's powerful, and you're free to use plugins as part of PAI as well.&lt;/p&gt; 
+&lt;p&gt;The difference is scope and integration:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Anthropic's plugins&lt;/strong&gt; = Individual pieces of functionality that don't understand overall context—they don't know how they work with other pieces of functionality, and most importantly, they don't integrate with your actual system and your actual goals.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;PAI&lt;/strong&gt; = A complete system where everything understands the context—your goals, your workflows, how pieces work together, and what you're actually trying to accomplish.&lt;/p&gt; 
+&lt;p&gt;PAI is:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;An implemented, full-setup system&lt;/strong&gt; — Not just tools, but a complete personal AI infrastructure&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Dynamically adaptive&lt;/strong&gt; — Adjusts to your existing environment and workflows&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Context-aware&lt;/strong&gt; — Understands what you're trying to accomplish in your life and work&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Customized to you&lt;/strong&gt; — Picks and chooses functionality from different sources&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Self-managing&lt;/strong&gt; — Your AI installs, configures, and maintains the system itself&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The plugin system offers building blocks. PAI offers a blueprint for a mansion—plus the AI architect to build it.&lt;/p&gt; 
+&lt;h3&gt;Is PAI only for Claude Code?&lt;/h3&gt; 
+&lt;p&gt;No. PAI packs are designed to be &lt;strong&gt;platform-agnostic&lt;/strong&gt;. While the examples use Claude Code (because that's what the author uses), the packs work with:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Claude Code&lt;/strong&gt; — Full native support&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;OpenCode&lt;/strong&gt; — Compatible with minor adaptations&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Cursor / Windsurf&lt;/strong&gt; — Works with configuration adjustments&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Gemini Code / GPT-Codex&lt;/strong&gt; — Should work with tweaks (community testing welcome)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Custom systems&lt;/strong&gt; — Extract the code and concepts, adapt to your setup&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The code is TypeScript, Python, and Bash. The concepts are universal. The integration points vary by platform, but the core value transfers.&lt;/p&gt; 
+&lt;h3&gt;Do I need to install everything?&lt;/h3&gt; 
+&lt;p&gt;No. That was the mistake of PAI v1.x—trying to install everything at once.&lt;/p&gt; 
+&lt;p&gt;PAI v2.0 is modular by design:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Start with one pack&lt;/strong&gt; — History System is a good first choice&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Add more as needed&lt;/strong&gt; — Each pack is independent&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Use the PAI Bundle&lt;/strong&gt; if you want the full experience (but even that installs one pack at a time)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Cherry-pick&lt;/strong&gt; — Read a pack, extract the ideas, adapt them yourself&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;There's no "all or nothing." Take what's useful, leave the rest.&lt;/p&gt; 
+&lt;h3&gt;How do I contribute a pack?&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Solve a real problem&lt;/strong&gt; — Packs should come from actual use, not theoretical ideas&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Use the template&lt;/strong&gt; — Download &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/Tools/PAIPackTemplate.md"&gt;PAIPackTemplate.md&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Test it&lt;/strong&gt; — Have your AI install it in a fresh environment&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Submit a PR&lt;/strong&gt; — Include examples and evidence it works&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/#-contributing"&gt;Contributing&lt;/a&gt; for full details.&lt;/p&gt; 
+&lt;h3&gt;How is this different from fabric?&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://github.com/danielmiessler/fabric"&gt;Fabric&lt;/a&gt; is a collection of AI prompts (patterns) for specific tasks—extract wisdom, analyze arguments, summarize content. It's focused on &lt;em&gt;what to ask AI&lt;/em&gt;.&lt;/p&gt; 
+&lt;p&gt;PAI is infrastructure for &lt;em&gt;how your AI operates&lt;/em&gt;—memory, skills, routing, context, self-improvement. They're complementary:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Fabric&lt;/strong&gt; = A library of expert prompts&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;PAI&lt;/strong&gt; = The system that knows when to use which prompt, remembers your preferences, and learns from results&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Many PAI users integrate Fabric patterns into their skills. They work great together.&lt;/p&gt; 
+&lt;h3&gt;What if I break something?&lt;/h3&gt; 
+&lt;p&gt;The modular design makes recovery easy:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Packs are isolated&lt;/strong&gt; — Breaking one doesn't affect others&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;History is preserved&lt;/strong&gt; — Your AI's memory survives mistakes&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Git-backed&lt;/strong&gt; — Version control everything, roll back when needed&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;AI can fix it&lt;/strong&gt; — Your AI helped build it, it can help repair it&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Start small, experiment, iterate. The system is designed for safe exploration.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📜 License&lt;/h2&gt; 
+&lt;p&gt;MIT License - see &lt;a href="https://raw.githubusercontent.com/danielmiessler/Personal_AI_Infrastructure/main/LICENSE"&gt;LICENSE&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; Do whatever you want with this. Build on it, sell it, modify it. Just don't blame us if something breaks. Attribution appreciated but not required.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🎁 Support PAI&lt;/h2&gt; 
+&lt;p&gt;PAI is &lt;strong&gt;free and open-source forever.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;If you find it valuable:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;⭐ &lt;strong&gt;Star the repo&lt;/strong&gt; - Helps others discover it&lt;/li&gt; 
+ &lt;li&gt;📢 &lt;strong&gt;Share your packs&lt;/strong&gt; - The more packs, the better PAI gets&lt;/li&gt; 
+ &lt;li&gt;💬 &lt;strong&gt;Engage in discussions&lt;/strong&gt; - Help answer questions, share ideas&lt;/li&gt; 
+ &lt;li&gt;🐛 &lt;strong&gt;Report issues&lt;/strong&gt; - Make PAI better for everyone&lt;/li&gt; 
+ &lt;li&gt;✍️ &lt;strong&gt;Write about it&lt;/strong&gt; - Blog posts, videos, tutorials&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Premium support&lt;/strong&gt; coming soon for organizations.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📚 Related Reading&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://danielmiessler.com/blog/real-internet-of-things"&gt;The Real Internet of Things&lt;/a&gt; — The vision behind PAI&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://danielmiessler.com/blog/ai-predictable-path-7-components-2024"&gt;AI's Predictable Path: 7 Components&lt;/a&gt; — Visual walkthrough of where AI is heading&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://danielmiessler.com/blog/personal-ai-infrastructure"&gt;Building a Personal AI Infrastructure&lt;/a&gt; — Full PAI walkthrough with examples&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;The Journey: PAI v1.x → v2.0&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;PAI v1.x&lt;/strong&gt; attempted to mirror my entire personal AI system (Kai) as an installable template. The idea was simple: "Here's everything I built - clone it and customize."&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;The problem:&lt;/strong&gt; It didn't work. The system was a Jenga tower of interconnected dependencies. Change one piece, and three others broke. Users couldn't easily adopt parts without understanding the whole. Updates were a nightmare because everything was coupled.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;PAI v2.0&lt;/strong&gt; takes a fundamentally different approach: &lt;strong&gt;modular packs&lt;/strong&gt;.&lt;/p&gt; 
+&lt;p&gt;Instead of "here's my whole system," it's "here are battle-tested capabilities you can install independently." Each pack is:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Self-contained&lt;/strong&gt; - Works without understanding the rest of the system&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Independently installable&lt;/strong&gt; - Add what you need, skip what you don't&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Platform-agnostic&lt;/strong&gt; - Works with Claude Code, OpenCode, or custom systems&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;AI-installable&lt;/strong&gt; - Your AI can read the pack and set it up for you&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The packs are extracted from Kai—real capabilities that have been running in production. They're not theoretical examples. They're the actual tools and systems I use daily, packaged for others to adopt.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Deep Dive: How PAI Packs Work&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;PAI Packs&lt;/strong&gt; are modular upgrade packages for AI agent systems. Think of them like learning kung-fu in The Matrix—each pack is a complete, tested capability that you can download into your system.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Each pack provides&lt;/strong&gt; everything your AI needs to implement a specific capability:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;The problem&lt;/strong&gt; being solved&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;The solution&lt;/strong&gt; and how it works&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;All code&lt;/strong&gt; (tools, CLIs, scripts)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Workflows&lt;/strong&gt; (step-by-step processes)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Context files&lt;/strong&gt; (guidelines, aesthetics, specifications)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Examples&lt;/strong&gt; and usage patterns&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Installation instructions&lt;/strong&gt; (for both AI and manual)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Testing procedures&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Troubleshooting guides&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;The key insight:&lt;/strong&gt; Give your AI the complete context it needs, and it can integrate the pack into &lt;em&gt;your&lt;/em&gt; system, whether that's Claude Code, OpenCode, Gemini Code, GPT-Codex, or a homebrew setup.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📜 Update History&lt;/h2&gt; 
+&lt;details open&gt; 
+ &lt;summary&gt;&lt;strong&gt;v2.1.0 (2025-12-31) — Directory-Based Pack Structure&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;Major Pack Format Change&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;All 8 packs migrated from single markdown files to directory-based structure&lt;/li&gt; 
+  &lt;li&gt;New pack format: &lt;code&gt;README.md&lt;/code&gt;, &lt;code&gt;INSTALL.md&lt;/code&gt;, &lt;code&gt;VERIFY.md&lt;/code&gt;, and &lt;code&gt;src/&lt;/code&gt; directory&lt;/li&gt; 
+  &lt;li&gt;Source code now lives in real files (.ts, .yaml, .hbs) instead of embedded in markdown&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Why This Matters&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Solves token limit issues (single files exceeded 28k tokens vs 25k limit)&lt;/li&gt; 
+  &lt;li&gt;Real code files can be linted, tested, and validated&lt;/li&gt; 
+  &lt;li&gt;AI agents copy actual files instead of extracting from markdown blocks&lt;/li&gt; 
+  &lt;li&gt;Eliminates "helpful simplification" where AI would reduce code complexity&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Updated Documentation&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Packs/README.md updated with v2.0 structure documentation&lt;/li&gt; 
+  &lt;li&gt;Bundles/README.md updated with new pack format description&lt;/li&gt; 
+  &lt;li&gt;Bundles/Official/README.md bumped to v2.0.0 with directory references&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;What Changed Per Pack&lt;/strong&gt; Each pack directory now contains:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code&gt;pack-name/
+├── README.md      # Overview, architecture, what it solves
+├── INSTALL.md     # Step-by-step installation instructions
+├── VERIFY.md      # Mandatory verification checklist
+└── src/           # Actual source code files
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v2.0.1 (2025-12-30) — Pack Expansion &amp;amp; Polish&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;New Packs Released&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;strong&gt;Kai Prompting Skill&lt;/strong&gt; (v1.0.0) - Meta-prompting system with templates, standards, and dynamic prompt generation&lt;/li&gt; 
+  &lt;li&gt;&lt;strong&gt;Kai Agents Skill&lt;/strong&gt; (v1.0.0) - Dynamic agent composition with personality mapping and parallel orchestration&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Pack Updates&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;strong&gt;Kai Voice System&lt;/strong&gt; - New pack icon with refined design (cache-busted for immediate updates)&lt;/li&gt; 
+  &lt;li&gt;&lt;strong&gt;Kai Art Pack&lt;/strong&gt; (v1.1.0) - Multi-reference image support for complex visual compositions&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Documentation &amp;amp; Quality&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Standardized authentication to single &lt;code&gt;$PAI_DIR/.env&lt;/code&gt; location across all packs&lt;/li&gt; 
+  &lt;li&gt;Enhanced wizard clarity for installation flows (addressing #259, #260, #261)&lt;/li&gt; 
+  &lt;li&gt;Safer verification patterns for security hooks&lt;/li&gt; 
+  &lt;li&gt;Consistency pass across all pack documentation&lt;/li&gt; 
+  &lt;li&gt;Updated pack manifests with accurate dependencies&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Infrastructure&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Reorganized Tools directory with AI usage guide&lt;/li&gt; 
+  &lt;li&gt;Added Tools README with icons and descriptions&lt;/li&gt; 
+  &lt;li&gt;Moved templates and diagnostic tools to centralized location&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;What's New Since v2.0.0?&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;v2.0.0 launched the Packs system. v2.0.1 adds:&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;8 feature packs now available with improved documentation&lt;/li&gt; 
+  &lt;li&gt;Better installation experience with clearer wizards&lt;/li&gt; 
+  &lt;li&gt;Unified authentication pattern (no more scattered .env files)&lt;/li&gt; 
+  &lt;li&gt;Professional pack icons for visual consistency&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v2.0.0 (2025-12-28) — PAI Packs System Launch&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;Major Architecture Shift&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Transitioned from "mirrored system" approach to modular &lt;strong&gt;PAI Packs&lt;/strong&gt;&lt;/li&gt; 
+  &lt;li&gt;Packs are self-contained, AI-installable capability bundles&lt;/li&gt; 
+  &lt;li&gt;Platform-agnostic design: works with Claude Code, OpenCode, Gemini Code, GPT-Codex, or custom systems&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;First Pack Released&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;strong&gt;PAI History System&lt;/strong&gt; (v1.0.0) - Automatic context-tracking for entire AI infrastructure&lt;/li&gt; 
+  &lt;li&gt;Complete implementation: 4 hooks, 3 library files, settings.json configuration&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;New Documentation&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;code&gt;Tools/PAIPackTemplate.md&lt;/code&gt; - Full pack template specification&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;PACKS.md&lt;/code&gt; - Complete pack system documentation&lt;/li&gt; 
+  &lt;li&gt;Updated README with 14 Founding Principles and full pack installation guide&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Why the Change?&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;v1.x tried to mirror the entire Kai system - too fragile, too many interdependencies&lt;/li&gt; 
+  &lt;li&gt;v2.0 extracts battle-tested features as independent, installable modules&lt;/li&gt; 
+  &lt;li&gt;Each pack is like learning kung-fu in The Matrix - a complete capability download&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.9.1 (2025-12-01) — Patch Release&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;Fixes&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;code&gt;PAI_DIR&lt;/code&gt; now auto-configures in settings.json during setup&lt;/li&gt; 
+  &lt;li&gt;Platform-agnostic paths work across macOS, Linux, Windows&lt;/li&gt; 
+  &lt;li&gt;Fixed timezone configuration in hooks&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.9.0 (2025-11-28) — Observability &amp;amp; Identity&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;Observability Dashboard&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Real-time agent monitoring with live charts&lt;/li&gt; 
+  &lt;li&gt;Bun + Vue architecture for performance&lt;/li&gt; 
+  &lt;li&gt;Multiple themes (Tokyo Night, Nord, Catppuccin, etc.)&lt;/li&gt; 
+  &lt;li&gt;Security obfuscation for sensitive data&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Genericized Agent Identity&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;All agent references now use &lt;code&gt;process.env.DA || 'main'&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;No more hardcoded names — your DA name flows through the entire system&lt;/li&gt; 
+  &lt;li&gt;Observability dashboard shows your configured identity&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Platform-Agnostic Configuration&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Clear separation: &lt;code&gt;settings.json&lt;/code&gt; for identity/paths, &lt;code&gt;.env&lt;/code&gt; for API keys&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;DA&lt;/code&gt; (Digital Assistant name) — your AI's identity&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;PAI_DIR&lt;/code&gt; — root directory for all configuration&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;TIME_ZONE&lt;/code&gt; — configurable timezone for timestamps&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Skill System Improvements&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Canonical TitleCase file naming throughout&lt;/li&gt; 
+  &lt;li&gt;Standardized skill-workflow-notification script for dashboard detection&lt;/li&gt; 
+  &lt;li&gt;All paths use &lt;code&gt;${PAI_DIR}/&lt;/code&gt; for location-agnostic installation&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.8.0 (2025-11-25) — Research &amp;amp; Documentation&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;Research Skill&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Comprehensive research skill with 10 specialized workflows&lt;/li&gt; 
+  &lt;li&gt;Multi-source research with parallel agent execution&lt;/li&gt; 
+  &lt;li&gt;Fabric pattern integration (242+ AI patterns)&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Infrastructure&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Path standardization using &lt;code&gt;${PAI_DIR}/&lt;/code&gt; throughout&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;PAI_CONTRACT.md&lt;/code&gt; defining core guarantees&lt;/li&gt; 
+  &lt;li&gt;Self-test validation system for health checks&lt;/li&gt; 
+  &lt;li&gt;Protection system for PAI-specific files&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.7.0 (2025-11-20) — Protection &amp;amp; Clarity&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;PAI Path Resolution System&lt;/strong&gt; (#112)&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Centralized &lt;code&gt;pai-paths.ts&lt;/code&gt; library — single source of truth&lt;/li&gt; 
+  &lt;li&gt;Smart detection with fallback to &lt;code&gt;~/.claude&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;Updated 7 hooks to use centralized paths&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;PAI vs Kai Clarity&lt;/strong&gt; (#113)&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;code&gt;PAI_CONTRACT.md&lt;/code&gt; — official contract defining boundaries&lt;/li&gt; 
+  &lt;li&gt;Self-test system (&lt;code&gt;bun ${PAI_DIR}/hooks/self-test.ts&lt;/code&gt;)&lt;/li&gt; 
+  &lt;li&gt;Clear README section distinguishing PAI from Kai&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Protection System&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;code&gt;.pai-protected.json&lt;/code&gt; manifest of protected files&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;validate-protected.ts&lt;/code&gt; script for pre-commit validation&lt;/li&gt; 
+  &lt;li&gt;Pre-commit hook template for automated checks&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.6.5 (2025-11-18) — BrightData Integration&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;Four-Tier Progressive Web Scraping&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Tier 1: WebFetch (free, built-in)&lt;/li&gt; 
+  &lt;li&gt;Tier 2: cURL with headers (free, more reliable)&lt;/li&gt; 
+  &lt;li&gt;Tier 3: Playwright (free, JavaScript rendering)&lt;/li&gt; 
+  &lt;li&gt;Tier 4: Bright Data MCP (paid, anti-bot bypass)&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.6.0 (2025-11-15) — Major Architecture Update&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;Repository Restructure&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Moved all configuration to &lt;code&gt;.claude/&lt;/code&gt; directory&lt;/li&gt; 
+  &lt;li&gt;Skills-as-containers architecture&lt;/li&gt; 
+  &lt;li&gt;Three-tier progressive disclosure&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Skills System&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Art skill with visual content generation&lt;/li&gt; 
+  &lt;li&gt;Story-explanation skill for narrative summaries&lt;/li&gt; 
+  &lt;li&gt;Create-skill and create-cli meta-skills&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Hook System&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Comprehensive event capture system&lt;/li&gt; 
+  &lt;li&gt;Session summary and tool output capture&lt;/li&gt; 
+  &lt;li&gt;Tab title updates&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Voice Integration&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Voice server with ElevenLabs TTS&lt;/li&gt; 
+  &lt;li&gt;Session start notifications&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;v0.5.0 and Earlier&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; 
+ &lt;p&gt;&lt;strong&gt;v0.5.0 — Foundation&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;CORE skill as central context loader&lt;/li&gt; 
+  &lt;li&gt;Constitution defining system principles&lt;/li&gt; 
+  &lt;li&gt;CLI-First Architecture pattern&lt;/li&gt; 
+  &lt;li&gt;Initial skills: Fabric, FFUF, Alex Hormozi pitch&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;Pre-v0.5.0 — Early Development&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Initial repository setup&lt;/li&gt; 
+  &lt;li&gt;Basic settings.json structure&lt;/li&gt; 
+  &lt;li&gt;Agent personality definitions&lt;/li&gt; 
+  &lt;li&gt;Foundational hook experiments&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🙏 Credits&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Anthropic and the Claude Code team&lt;/strong&gt; — First and foremost. You are moving AI further and faster than anyone right now. Claude Code is the foundation that makes all of this possible.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://www.youtube.com/@indydevdan"&gt;IndyDevDan&lt;/a&gt;&lt;/strong&gt; — For great videos on meta-prompting and custom agents that have inspired parts of PAI.&lt;/p&gt; 
+&lt;h3&gt;Contributors&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/fayerman-source"&gt;fayerman-source&lt;/a&gt;&lt;/strong&gt; — Google Cloud TTS provider integration and Linux audio support for the voice system.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;strong&gt;Built with ❤️ by &lt;a href="https://danielmiessler.com"&gt;Daniel Miessler&lt;/a&gt; and the PAI community&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;em&gt;Augment yourself.&lt;/em&gt;&lt;/p&gt; 
+&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
