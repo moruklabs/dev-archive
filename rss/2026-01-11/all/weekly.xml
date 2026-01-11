@@ -1,0 +1,2321 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub All Languages Weekly Trending</title>
+    <description>Weekly Trending of All Languages in GitHub</description>
+    <pubDate>Sat, 10 Jan 2026 01:40:21 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>anomalyco/opencode</title>
+      <link>https://github.com/anomalyco/opencode</link>
+      <description>&lt;p&gt;The open source coding agent.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://opencode.ai"&gt; 
+  &lt;picture&gt; 
+   &lt;source srcset="packages/console/app/src/asset/logo-ornate-dark.svg" media="(prefers-color-scheme: dark)" /&gt; 
+   &lt;source srcset="packages/console/app/src/asset/logo-ornate-light.svg" media="(prefers-color-scheme: light)" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/console/app/src/asset/logo-ornate-light.svg?sanitize=true" alt="OpenCode logo" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;The open source AI coding agent.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://opencode.ai/discord"&gt;&lt;img alt="Discord" src="https://img.shields.io/discord/1391832426048651334?style=flat-square&amp;amp;label=discord" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/opencode-ai"&gt;&lt;img alt="npm" src="https://img.shields.io/npm/v/opencode-ai?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://github.com/anomalyco/opencode/actions/workflows/publish.yml"&gt;&lt;img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/anomalyco/opencode/publish.yml?style=flat-square&amp;amp;branch=dev" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://opencode.ai"&gt;&lt;img src="https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/web/src/assets/lander/screenshot.png" alt="OpenCode Terminal UI" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Installation&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# YOLO
+curl -fsSL https://opencode.ai/install | bash
+
+# Package managers
+npm i -g opencode-ai@latest        # or bun/pnpm/yarn
+scoop bucket add extras; scoop install extras/opencode  # Windows
+choco install opencode             # Windows
+brew install anomalyco/tap/opencode # macOS and Linux (recommended, always up to date)
+brew install opencode              # macOS and Linux (official brew formula, updated less)
+paru -S opencode-bin               # Arch Linux
+mise use -g opencode               # Any OS
+nix run nixpkgs#opencode           # or github:anomalyco/opencode for latest dev branch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] Remove versions older than 0.1.x before installing.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Desktop App (BETA)&lt;/h3&gt; 
+&lt;p&gt;OpenCode is also available as a desktop application. Download directly from the &lt;a href="https://github.com/anomalyco/opencode/releases"&gt;releases page&lt;/a&gt; or &lt;a href="https://opencode.ai/download"&gt;opencode.ai/download&lt;/a&gt;.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Platform&lt;/th&gt; 
+   &lt;th&gt;Download&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;macOS (Apple Silicon)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-darwin-aarch64.dmg&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;macOS (Intel)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-darwin-x64.dmg&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Windows&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-windows-x64.exe&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Linux&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;.deb&lt;/code&gt;, &lt;code&gt;.rpm&lt;/code&gt;, or AppImage&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# macOS (Homebrew)
+brew install --cask opencode-desktop
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Installation Directory&lt;/h4&gt; 
+&lt;p&gt;The install script respects the following priority order for the installation path:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;code&gt;$OPENCODE_INSTALL_DIR&lt;/code&gt; - Custom installation directory&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$XDG_BIN_DIR&lt;/code&gt; - XDG Base Directory Specification compliant path&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$HOME/bin&lt;/code&gt; - Standard user binary directory (if exists or can be created)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$HOME/.opencode/bin&lt;/code&gt; - Default fallback&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Examples
+OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/install | bash
+XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/install | bash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Agents&lt;/h3&gt; 
+&lt;p&gt;OpenCode includes two built-in agents you can switch between with the &lt;code&gt;Tab&lt;/code&gt; key.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;build&lt;/strong&gt; - Default, full access agent for development work&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;plan&lt;/strong&gt; - Read-only agent for analysis and code exploration 
+  &lt;ul&gt; 
+   &lt;li&gt;Denies file edits by default&lt;/li&gt; 
+   &lt;li&gt;Asks permission before running bash commands&lt;/li&gt; 
+   &lt;li&gt;Ideal for exploring unfamiliar codebases or planning changes&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Also, included is a &lt;strong&gt;general&lt;/strong&gt; subagent for complex searches and multistep tasks. This is used internally and can be invoked using &lt;code&gt;@general&lt;/code&gt; in messages.&lt;/p&gt; 
+&lt;p&gt;Learn more about &lt;a href="https://opencode.ai/docs/agents"&gt;agents&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Documentation&lt;/h3&gt; 
+&lt;p&gt;For more info on how to configure OpenCode &lt;a href="https://opencode.ai/docs"&gt;&lt;strong&gt;head over to our docs&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Contributing&lt;/h3&gt; 
+&lt;p&gt;If you're interested in contributing to OpenCode, please read our &lt;a href="https://raw.githubusercontent.com/anomalyco/opencode/dev/CONTRIBUTING.md"&gt;contributing docs&lt;/a&gt; before submitting a pull request.&lt;/p&gt; 
+&lt;h3&gt;Building on OpenCode&lt;/h3&gt; 
+&lt;p&gt;If you are working on a project that's related to OpenCode and is using "opencode" as a part of its name; for example, "opencode-dashboard" or "opencode-mobile", please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.&lt;/p&gt; 
+&lt;h3&gt;FAQ&lt;/h3&gt; 
+&lt;h4&gt;How is this different from Claude Code?&lt;/h4&gt; 
+&lt;p&gt;It's very similar to Claude Code in terms of capability. Here are the key differences:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;100% open source&lt;/li&gt; 
+ &lt;li&gt;Not coupled to any provider. Although we recommend the models we provide through &lt;a href="https://opencode.ai/zen"&gt;OpenCode Zen&lt;/a&gt;; OpenCode can be used with Claude, OpenAI, Google or even local models. As models evolve the gaps between them will close and pricing will drop so being provider-agnostic is important.&lt;/li&gt; 
+ &lt;li&gt;Out of the box LSP support&lt;/li&gt; 
+ &lt;li&gt;A focus on TUI. OpenCode is built by neovim users and the creators of &lt;a href="https://terminal.shop"&gt;terminal.shop&lt;/a&gt;; we are going to push the limits of what's possible in the terminal.&lt;/li&gt; 
+ &lt;li&gt;A client/server architecture. This for example can allow OpenCode to run on your computer, while you can drive it remotely from a mobile app. Meaning that the TUI frontend is just one of the possible clients.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Join our community&lt;/strong&gt; &lt;a href="https://discord.gg/opencode"&gt;Discord&lt;/a&gt; | &lt;a href="https://x.com/opencode"&gt;X.com&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Lissy93/web-check</title>
+      <link>https://github.com/Lissy93/web-check</link>
+      <description>&lt;p&gt;🕵️‍♂️ All-in-one OSINT tool for analysing any website&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt;Web-Check&lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;img src="https://i.ibb.co/q1gZN2p/web-check-logo.png" width="96" /&gt;&lt;br /&gt; &lt;b&gt;&lt;i&gt;Comprehensive, on-demand open source intelligence for any website&lt;/i&gt;&lt;/b&gt; &lt;br /&gt; &lt;b&gt;🌐 &lt;a href="https://web-check.xyz/"&gt;web-check.xyz&lt;/a&gt;&lt;/b&gt;&lt;br /&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p align="center"&gt; &lt;sup&gt;Kindly supported by:&lt;/sup&gt;&lt;br /&gt; &lt;a href="https://terminaltrove.com/?utm_campaign=github&amp;amp;utm_medium=referral&amp;amp;utm_content=web-check&amp;amp;utm_source=wcgh"&gt; &lt;img src="https://i.ibb.co/8jrrcZ0/IMG-7210.jpg" width="300" alt="Terminal Trove" /&gt; &lt;br /&gt; &lt;strong&gt;The $HOME of all things in the terminal.&lt;/strong&gt; &lt;/a&gt; &lt;br /&gt; &lt;a href="https://terminaltrove.com/newsletter?utm_campaign=github&amp;amp;utm_medium=referral&amp;amp;utm_content=web-check&amp;amp;utm_source=wcgh"&gt; &lt;sub&gt;Find your next CLI / TUI tool and more at Terminal Trove,&lt;/sub&gt; &lt;br /&gt; &lt;sup&gt;Get updates on new tools on our newsletter.&lt;/sup&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h4&gt;Contents&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#about"&gt;About&lt;/a&gt;&lt;/strong&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#screenshot"&gt;Screenshot&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#live-demo"&gt;Live Demo&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#mirror"&gt;Mirror&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#features"&gt;Features&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#usage"&gt;Usage&lt;/a&gt;&lt;/strong&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#deployment"&gt;Deployment&lt;/a&gt; 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#deploying---option-1-netlify"&gt;Option#1: Netlify&lt;/a&gt;&lt;/li&gt; 
+     &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#deploying---option-2-vercel"&gt;Option#2: Vercel&lt;/a&gt;&lt;/li&gt; 
+     &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#deploying---option-3-docker"&gt;Option#3: Docker&lt;/a&gt;&lt;/li&gt; 
+     &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#deploying---option-4-from-source"&gt;Option#4: Source&lt;/a&gt;&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#configuring"&gt;Configuration Options&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#developing"&gt;Developer Setup&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#community"&gt;Community&lt;/a&gt;&lt;/strong&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#contributing"&gt;Contributing&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#reporting-bugs"&gt;Bugs&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#supporting"&gt;Support&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#license"&gt;License&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;About&lt;/h2&gt; 
+&lt;p&gt;Get an insight into the inner-workings of a given website: uncover potential attack vectors, analyse server architecture, view security configurations, and learn what technologies a site is using.&lt;/p&gt; 
+&lt;p&gt;Currently the dashboard will show: IP info, SSL chain, DNS records, cookies, headers, domain info, search crawl rules, page map, server location, redirect ledger, open ports, traceroute, DNS security extensions, site performance, trackers, associated hostnames, carbon footprint. Stay tuned, as I'll add more soon!&lt;/p&gt; 
+&lt;p&gt;The aim is to help you easily understand, optimize and secure your website.&lt;/p&gt; 
+&lt;h3&gt;Screenshot&lt;/h3&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Expand Screenshot&lt;/summary&gt; 
+ &lt;p&gt;&lt;a href="https://web-check.as93.net/"&gt;&lt;img src="https://raw.githubusercontent.com/Lissy93/web-check/master/.github/screenshots/web-check-screenshot1.png" alt="Screenshot" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;p&gt;&lt;a href="https://github.com/Lissy93/web-check/tree/master/.github/screenshots"&gt;&lt;img src="https://i.ibb.co/r0jXN6s/web-check.png" alt="Screenshot" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Live Demo&lt;/h3&gt; 
+&lt;p&gt;A hosted version can be accessed at: &lt;strong&gt;&lt;a href="https://web-check.as93.net"&gt;web-check.as93.net&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;h3&gt;Mirror&lt;/h3&gt; 
+&lt;p&gt;The source for this repo is mirrored to CodeBerg, available at: &lt;strong&gt;&lt;a href="https://codeberg.org/alicia/web-check"&gt;codeberg.org/alicia/web-check&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;h3&gt;Status&lt;/h3&gt; 
+&lt;p&gt;Build &amp;amp; Deploys: &lt;a href="https://app.netlify.com/sites/web-check/deploys"&gt;&lt;img src="https://api.netlify.com/api/v1/badges/c43453c1-5333-4df7-889b-c1d2b52183c0/deploy-status" alt="Netlify Status" /&gt;&lt;/a&gt; &lt;a href="https://vercel.com/as93/web-check/"&gt;&lt;img src="https://therealsujitk-vercel-badge.vercel.app/?app=web-check-ten" alt="Vercel Status" /&gt;&lt;/a&gt; &lt;a href="https://github.com/Lissy93/web-check/actions/workflows/docker.yml"&gt;&lt;img src="https://github.com/Lissy93/web-check/actions/workflows/docker.yml/badge.svg?sanitize=true" alt="🐳 Build + Publish Docker Image" /&gt;&lt;/a&gt; &lt;a href="https://github.com/Lissy93/web-check/actions/workflows/deploy-aws.yml"&gt;&lt;img src="https://github.com/Lissy93/web-check/actions/workflows/deploy-aws.yml/badge.svg?sanitize=true" alt="🚀 Deploy to AWS" /&gt;&lt;/a&gt; &lt;br /&gt; Repo Management &amp;amp; Miscellaneous: &lt;a href="https://github.com/Lissy93/web-check/actions/workflows/mirror.yml"&gt;&lt;img src="https://github.com/Lissy93/web-check/actions/workflows/mirror.yml/badge.svg?sanitize=true" alt="🪞 Mirror to Codeberg" /&gt;&lt;/a&gt; &lt;a href="https://github.com/Lissy93/web-check/actions/workflows/credits.yml"&gt;&lt;img src="https://github.com/Lissy93/web-check/actions/workflows/credits.yml/badge.svg?sanitize=true" alt="💓 Inserts Contributors &amp;amp; Sponsors" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Features&lt;/h3&gt; 
+&lt;details open&gt; 
+ &lt;summary&gt;&lt;b&gt;Click to expand / collapse section&lt;/b&gt;&lt;/summary&gt; 
+ &lt;p&gt;&lt;sup&gt;&lt;strong&gt;Note&lt;/strong&gt; &lt;em&gt;this list needs updating, many more jobs have been added since...&lt;/em&gt;&lt;/sup&gt;&lt;/p&gt; 
+ &lt;p&gt;The following section outlines the core features, and briefly explains why this data might be useful for you to know, as well as linking to further resources for learning more.&lt;/p&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;IP Info&lt;/b&gt;&lt;/summary&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;An IP address (Internet Protocol address) is a numerical label assigned to each device connected to a network / the internet. The IP associated with a given domain can be found by querying the Domain Name System (DNS) for the domain's A (address) record.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;Finding the IP of a given server is the first step to conducting further investigations, as it allows us to probe the server for additional info. Including creating a detailed map of a target's network infrastructure, pinpointing the physical location of a server, identifying the hosting service, and even discovering other domains that are hosted on the same IP address.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking"&gt;Understanding IP Addresses&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/IP_address"&gt;IP Addresses - Wiki&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://tools.ietf.org/html/rfc791"&gt;RFC-791 Internet Protocol&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://whatismyipaddress.com/"&gt;whatismyipaddress.com&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;SSL Chain&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/kB7LsV1/wc-ssl.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;SSL certificates are digital certificates that authenticate the identity of a website or server, enable secure encrypted communication (HTTPS), and establish trust between clients and servers. A valid SSL certificate is required for a website to be able to use the HTTPS protocol, and encrypt user + site data in transit. SSL certificates are issued by Certificate Authorities (CAs), which are trusted third parties that verify the identity and legitimacy of the certificate holder.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;SSL certificates not only provide the assurance that data transmission to and from the website is secure, but they also provide valuable OSINT data. Information from an SSL certificate can include the issuing authority, the domain name, its validity period, and sometimes even organization details. This can be useful for verifying the authenticity of a website, understanding its security setup, or even for discovering associated subdomains or other services.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Transport_Layer_Security"&gt;TLS - Wiki&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://www.cloudflare.com/learning/ssl/what-is-ssl/"&gt;What is SSL (via Cloudflare learning)&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://tools.ietf.org/html/rfc8446"&gt;RFC-8446 - TLS&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://www.sslshopper.com/ssl-checker.html"&gt;SSL Checker&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;DNS Records&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/7Q1kMwM/wc-dns.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;This task involves looking up the DNS records associated with a specific domain. DNS is a system that translates human-readable domain names into IP addresses that computers use to communicate. Various types of DNS records exist, including A (address), MX (mail exchange), NS (name server), CNAME (canonical name), and TXT (text), among others.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;Extracting DNS records can provide a wealth of information in an OSINT investigation. For example, A and AAAA records can disclose IP addresses associated with a domain, potentially revealing the location of servers. MX records can give clues about a domain's email provider. TXT records are often used for various administrative purposes and can sometimes inadvertently leak internal information. Understanding a domain's DNS setup can also be useful in understanding how its online infrastructure is built and managed.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://www.cloudflare.com/learning/dns/dns-records/"&gt;What are DNS records? (via Cloudflare learning)&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types"&gt;DNS Record Types&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://tools.ietf.org/html/rfc1035"&gt;RFC-1035 - DNS&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://mxtoolbox.com/DNSLookup.aspx"&gt;DNS Lookup (via MxToolbox)&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Cookies&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/TTQ6DtP/wc-cookies.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;The Cookies task involves examining the HTTP cookies set by the target website. Cookies are small pieces of data stored on the user's computer by the web browser while browsing a website. They hold a modest amount of data specific to a particular client and website, such as site preferences, the state of the user's session, or tracking information.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;Cookies can disclose information about how the website tracks and interacts with its users. For instance, session cookies can reveal how user sessions are managed, and tracking cookies can hint at what kind of tracking or analytics frameworks are being used. Additionally, examining cookie policies and practices can offer insights into the site's security settings and compliance with privacy regulations.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies"&gt;HTTP Cookie Docs (Mozilla)&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://www.cloudflare.com/learning/privacy/what-are-cookies/"&gt;What are Cookies (via Cloudflare Learning)&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes"&gt;Testing for Cookie Attributes (OWASP)&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://tools.ietf.org/html/rfc6265"&gt;RFC-6265 - Coolies&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Crawl Rules&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/KwQCjPf/wc-robots.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;Robots.txt is a file found (usually) at the root of a domain, and is used to implement the Robots Exclusion Protocol (REP) to indicate which pages should be ignored by which crawlers and bots. It's good practice to avoid search engine crawlers from over-loading your site, but should not be used to keep pages out of search results (use the noindex meta tag or header instead).&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;It's often useful to check the robots.txt file during an investigation, as it can sometimes disclose the directories and pages that the site owner doesn't want to be indexed, potentially because they contain sensitive information, or reveal the existence of otherwise hidden or unlinked directories. Additionally, understanding crawl rules may offer insights into a website's SEO strategies.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://developers.google.com/search/docs/advanced/robots/intro"&gt;Google Search Docs - Robots.txt&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://moz.com/learn/seo/robotstxt"&gt;Learn about robots.txt (via Moz.com)&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://datatracker.ietf.org/doc/rfc9309/"&gt;RFC-9309 - Robots Exclusion Protocol&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Robots_exclusion_standard"&gt;Robots.txt - wiki&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Headers&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/t3xcwP1/wc-headers.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;The Headers task involves extracting and interpreting the HTTP headers sent by the target website during the request-response cycle. HTTP headers are key-value pairs sent at the start of an HTTP response, or before the actual data. Headers contain important directives for how to handle the data being transferred, including cache policies, content types, encoding, server information, security policies, and more.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;Analyzing HTTP headers can provide significant insights in an OSINT investigation. Headers can reveal specific server configurations, chosen technologies, caching directives, and various security settings. This information can help to determine a website's underlying technology stack, server-side security measures, potential vulnerabilities, and general operational practices.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers"&gt;HTTP Headers - Docs&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://datatracker.ietf.org/doc/html/rfc7231#section-7"&gt;RFC-7231 Section 7 - Headers&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields"&gt;List of header response fields&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://owasp.org/www-project-secure-headers/"&gt;OWASP Secure Headers Project&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Quality Metrics&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/Kqg8rx7/wc-quality.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;Using Lighthouse, the Quality Metrics task measures the performance, accessibility, best practices, and SEO of the target website. This returns a simple checklist of 100 core metrics, along with a score for each category, to gauge the overall quality of a given site.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;Useful for assessing a site's technical health, SEO issues, identify vulnerabilities, and ensure compliance with standards.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://developer.chrome.com/docs/lighthouse/"&gt;Lighthouse Docs&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://developers.google.com/speed"&gt;Google Page Speed Tools&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://www.w3.org/WAI/test-evaluate/"&gt;W3 Accessibility Tools&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://search.google.com/search-console"&gt;Google Search Console&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://www.seobility.net/en/seocheck/"&gt;SEO Checker&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://www.pwabuilder.com/"&gt;PWA Builder&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Server Location&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/cXH2hfR/wc-location.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;The Server Location task determines the physical location of the server hosting a given website based on its IP address. This is done by looking up the IP in a location database, which maps the IP to a lat + long of known data centers and ISPs. From the latitude and longitude, it's then possible to show additional contextual info, like a pin on the map, along with address, flag, time zone, currency, etc.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;Knowing the server location is a good first step in better understanding a website. For site owners this aids in optimizing content delivery, ensuring compliance with data residency requirements, and identifying potential latency issues that may impact user experience in specific geographical regions. And for security researcher, assess the risk posed by specific regions or jurisdictions regarding cyber threats and regulations.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://geobytes.com/iplocator/"&gt;IP Locator&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Internet_geolocation"&gt;Internet Geolocation - Wiki&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Associated Hosts&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/25j1sT7/wc-hosts.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;This task involves identifying and listing all domains and subdomains (hostnames) that are associated with the website's primary domain. This process often involves DNS enumeration to discover any linked domains and hostnames, as well as looking at known DNS records.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;During an investigation, understanding the full scope of a target's web presence is critical. Associated domains could lead to uncovering related projects, backup sites, development/test sites, or services linked to the main site. These can sometimes provide additional information or potential security vulnerabilities. A comprehensive list of associated domains and hostnames can also give an overview of the organization's structure and online footprint.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/DNS_enumeration"&gt;DNS Enumeration - Wiki&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/01-Information_Gathering/04-Enumerate_Applications_on_Webserver"&gt;OWASP - Enumerate Applications on Webserver&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://dnsdumpster.com/"&gt;DNS Enumeration - DNS Dumpster&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://subdomainfinder.c99.nl/"&gt;Subdomain Finder&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Redirect Chain&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/hVVrmwh/wc-redirects.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;This task traces the sequence of HTTP redirects that occur from the original URL to the final destination URL. An HTTP redirect is a response with a status code that advises the client to go to another URL. Redirects can occur for several reasons, such as URL normalization (directing to the www version of the site), enforcing HTTPS, URL shorteners, or forwarding users to a new site location.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;Understanding the redirect chain can be useful for several reasons. From a security perspective, long or complicated redirect chains can be a sign of potential security risks, such as unencrypted redirects in the chain. Additionally, redirects can impact website performance and SEO, as each redirect introduces additional round-trip-time (RTT). For OSINT, understanding the redirect chain can help identify relationships between different domains or reveal the use of certain technologies or hosting providers.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections"&gt;HTTP Redirects - MDN&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/URL_redirection"&gt;URL Redirection - Wiki&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://ahrefs.com/blog/301-redirects/"&gt;301 Redirects explained&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;TXT Records&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/wyt21QN/wc-txt-records.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;TXT records are a type of DNS record that provides text information to sources outside your domain. They can be used for a variety of purposes, such as verifying domain ownership, ensuring email security, and even preventing unauthorized changes to your website.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;The TXT records often reveal which external services and technologies are being used with a given domain. They may reveal details about the domain's email configuration, the use of specific services like Google Workspace or Microsoft 365, or security measures in place such as SPF and DKIM. Understanding these details can give an insight into the technologies used by the organization, their email security practices, and potential vulnerabilities.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://www.cloudflare.com/learning/dns/dns-records/dns-txt-record/"&gt;TXT Records (via Cloudflare Learning)&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/TXT_record"&gt;TXT Records - Wiki&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://datatracker.ietf.org/doc/html/rfc1464"&gt;RFC-1464 - TXT Records&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://mxtoolbox.com/TXTLookup.aspx"&gt;TXT Record Lookup (via MxToolbox)&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Server Status&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/V9CNLBK/wc-status.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;Checks if a server is online and responding to requests.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Open Ports&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/F8D1hmf/wc-ports.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;Open ports on a server are endpoints of communication which are available for establishing connections with clients. Each port corresponds to a specific service or protocol, such as HTTP (port 80), HTTPS (port 443), FTP (port 21), etc. The open ports on a server can be determined using techniques such as port scanning.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;Knowing which ports are open on a server can provide information about the services running on that server, useful for understanding the potential vulnerabilities of the system, or for understanding the nature of the services the server is providing.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers"&gt;List of TCP &amp;amp; UDP Port Numbers&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://nmap.org/book/man-port-scanning-basics.html"&gt;NMAP - Port Scanning Basics&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Traceroute&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/M59qgxP/wc-trace-route.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;Traceroute is a network diagnostic tool used to track in real-time the pathway taken by a packet of information from one system to another. It records each hop along the route, providing details about the IPs of routers and the delay at each point.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;In OSINT investigations, traceroute can provide insights about the routing paths and geography of the network infrastructure supporting a website or service. This can help to identify network bottlenecks, potential censorship or manipulation of network traffic, and give an overall sense of the network's structure and efficiency. Additionally, the IP addresses collected during the traceroute may provide additional points of inquiry for further OSINT investigation.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Carbon Footprint&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/5v6fSyw/Screenshot-from-2023-07-29-19-07-50.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;This task calculates the estimated carbon footprint of a website. It's based on the amount of data being transferred and processed, and the energy usage of the servers that host and deliver the website. The larger the website and the more complex its features, the higher its carbon footprint is likely to be.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;From an OSINT perspective, understanding a website's carbon footprint doesn't directly provide insights into its internal workings or the organization behind it. However, it can still be valuable data in broader analyses, especially in contexts where environmental impact is a consideration. For example, it can be useful for activists, researchers, or ethical hackers who are interested in the sustainability of digital infrastructure, and who want to hold organizations accountable for their environmental impact.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://www.websitecarbon.com/"&gt;WebsiteCarbon - Carbon Calculator&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://www.thegreenwebfoundation.org/"&gt;The Green Web Foundation&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://ecofriendlyweb.org/"&gt;The Eco Friendly Web Alliance&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://en.reset.org/"&gt;Reset.org&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://www.wired.co.uk/article/internet-carbon-footprint"&gt;Your website is killing the planet - via Wired&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Server Info&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/Mk1jx32/wc-server.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;This task retrieves various pieces of information about the server hosting the target website. This can include the server type (e.g., Apache, Nginx), the hosting provider, the Autonomous System Number (ASN), and more. The information is usually obtained through a combination of IP address lookups and analysis of HTTP response headers.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;In an OSINT context, server information can provide valuable clues about the organization behind a website. For instance, the choice of hosting provider could suggest the geographical region in which the organization operates, while the server type could hint at the technologies used by the organization. The ASN could also be used to find other domains hosted by the same organization.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Whois Lookup&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/89WLp14/wc-domain.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;This task retrieves Whois records for the target domain. Whois records are a rich source of information, including the name and contact information of the domain registrant, the domain's creation and expiration dates, the domain's nameservers, and more. The information is usually obtained through a query to a Whois database server.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;In an OSINT context, Whois records can provide valuable clues about the entity behind a website. They can show when the domain was first registered and when it's set to expire, which could provide insights into the operational timeline of the entity. The contact information, though often redacted or anonymized, can sometimes lead to additional avenues of investigation. The nameservers could also be used to link together multiple domains owned by the same entity.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Domain Info&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/89WLp14/wc-domain.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;This task retrieves Whois records for the target domain. Whois records are a rich source of information, including the name and contact information of the domain registrant, the domain's creation and expiration dates, the domain's nameservers, and more. The information is usually obtained through a query to a Whois database server.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;In an OSINT context, Whois records can provide valuable clues about the entity behind a website. They can show when the domain was first registered and when it's set to expire, which could provide insights into the operational timeline of the entity. The contact information, though often redacted or anonymized, can sometimes lead to additional avenues of investigation. The nameservers could also be used to link together multiple domains owned by the same entity.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;DNS Security Extensions&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/J54zVmQ/wc-dnssec.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;Without DNSSEC, it's possible for MITM attackers to spoof records and lead users to phishing sites. This is because the DNS system includes no built-in methods to verify that the response to the request was not forged, or that any other part of the process wasn’t interrupted by an attacker. The DNS Security Extensions (DNSSEC) secures DNS lookups by signing your DNS records using public keys, so browsers can detect if the response has been tampered with. Another solution to this issue is DoH (DNS over HTTPS) and DoT (DNS over TLD).&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;DNSSEC information provides insight into an organization's level of cybersecurity maturity and potential vulnerabilities, particularly around DNS spoofing and cache poisoning. If no DNS secururity (DNSSEC, DoH, DoT, etc) is implemented, this may provide an entry point for an attacker.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Site Features&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/gP4P6kp/wc-features.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;Checks which core features are present on a site. If a feature as marked as dead, that means it's not being actively used at load time&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;This is useful to understand what a site is capable of, and what technologies to look for&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;HTTP Strict Transport Security&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/k253fq4/Screenshot-from-2023-07-17-20-10-52.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;HTTP Strict Transport Security (HSTS) is a web security policy mechanism that helps protect websites against protocol downgrade attacks and cookie hijacking. A website can be included in the HSTS preload list by conforming to a set of requirements and then submitting itself to the list.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;There are several reasons why it's important for a site to be HSTS enabled: 1. User bookmarks or manually types &lt;a href="http://example.com"&gt;http://example.com&lt;/a&gt; and is subject to a man-in-the-middle attacker HSTS automatically redirects HTTP requests to HTTPS for the target domain 2. Web application that is intended to be purely HTTPS inadvertently contains HTTP links or serves content over HTTP HSTS automatically redirects HTTP requests to HTTPS for the target domain 3. A man-in-the-middle attacker attempts to intercept traffic from a victim user using an invalid certificate and hopes the user will accept the bad certificate HSTS does not allow a user to override the invalid certificate message&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+   &lt;li&gt;[undefined](function link() { [native code] })&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;DNS Server&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/tKpL8F9/Screenshot-from-2023-08-12-15-43-12.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;This check determines the DNS server(s) that the requested URL / IP resolves to. Also fires off a rudimentary check to see if the DNS server supports DoH, and weather it's vulnerable to DNS cache poisoning.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Tech Stack&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/bBQSQNz/Screenshot-from-2023-08-12-15-43-46.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;Checks what technologies a site is built with. This is done by fetching and parsing the site, then comparing it against a bit list of RegEx maintained by Wappalyzer to identify the unique fingerprints that different technologies leave.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;Identifying a website's tech stack aids in evaluating its security by exposing potential vulnerabilities, informs competitive analyses and development decisions, and can guide tailored marketing strategies. Ethical application of this knowledge is crucial to avoid harmful activities like data theft or unauthorized intrusion.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/wappalyzer/wappalyzer/tree/master/src/technologies"&gt;Wappalyzer fingerprints&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://builtwith.com/"&gt;BuiltWith - Check what tech a site is using&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Listed Pages&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/GtrCQYq/Screenshot-from-2023-07-21-12-28-38.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;This job finds and parses a site's listed sitemap. This file lists public sub-pages on the site, which the author wishes to be crawled by search engines. Sitemaps help with SEO, but are also useful for seeing all a sites public content at a glance.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;Understand the structure of a site's public-facing content, and for site-owners, check that you're site's sitemap is accessible, parsable and contains everything you wish it to.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview"&gt;Learn about Sitemaps&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://www.sitemaps.org/protocol.html"&gt;Sitemap XML spec&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://www.conductor.com/academy/xml-sitemap/"&gt;Sitemap tutorial&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Security.txt&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/tq1FT5r/Screenshot-from-2023-07-24-20-31-21.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;The security.txt file tells researchers how they can responsibly disclose any security issues found on your site. The standard was proposed in RFC 9116, and specifies that this file should include a point of contact (email address), as well as optionally other info, like a link to the security disclosure policy, PGP key, proffered language, policy expiry and more. The file should be located at the root of your domain, either at /security.txt or /.well-known/security.txt.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;This is important, as without a defined point of contact a security researcher may be unable to report a critical security issue, or may use insecure or possibly public channels to do so. From an OSINT perspective, you may also glean info about a site including their posture on security, their CSAF provider, and meta data from the PGP public key.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://securitytxt.org/"&gt;securitytxt.org&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://datatracker.ietf.org/doc/html/rfc9116"&gt;RFC-9116 Proposal&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://datatracker.ietf.org/doc/rfc9116/"&gt;RFC-9116 History&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Security.txt"&gt;Security.txt (Wikipedia)&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://www.cloudflare.com/.well-known/security.txt"&gt;Example security.txt (Cloudflare)&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://pieterbakker.com/implementing-security-txt/"&gt;Tutorial for creating security.txt (Pieter Bakker)&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Linked Pages&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/LtK14XR/Screenshot-from-2023-07-29-11-16-44.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;Displays all internal and external links found on a site, identified by the href attributes attached to anchor elements.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;For site owners, this is useful for diagnosing SEO issues, improving the site structure, understanding how content is inter-connected. External links can show partnerships, dependencies, and potential reputation risks. From a security standpoint, the outbound links can help identify any potential malicious or compromised sites the website is unknowingly linking to. Analyzing internal links can aid in understanding the site's structure and potentially uncover hidden or vulnerable pages which are not intended to be public. And for an OSINT investigator, it can aid in building a comprehensive understanding of the target, uncovering related entities, resources, or even potential hidden parts of the site.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://validator.w3.org/checklink"&gt;W3C Link Checker&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Social Tags&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/4srTT1w/Screenshot-from-2023-07-29-11-15-27.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;Websites can include certain meta tags, that tell search engines and social media platforms what info to display. This usually includes a title, description, thumbnail, keywords, author, social accounts, etc.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;Adding this data to your site will boost SEO, and as an OSINT researcher it can be useful to understand how a given web app describes itself&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://socialsharepreview.com/"&gt;SocialSharePreview.com&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://css-tricks.com/essential-meta-tags-social-media/"&gt;The guide to social meta tags&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://web.dev/learn/html/metadata/"&gt;Web.dev metadata tags&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://ogp.me/"&gt;Open Graph Protocol&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards"&gt;Twitter Cards&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://developers.facebook.com/docs/sharing/webmasters"&gt;Facebook Open Graph&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Email Configuration&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/yqhwx5G/Screenshot-from-2023-07-29-18-22-20.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;DMARC (Domain-based Message Authentication, Reporting &amp;amp; Conformance): DMARC is an email authentication protocol that works with SPF and DKIM to prevent email spoofing and phishing. It allows domain owners to specify how to handle unauthenticated mail via a published policy in DNS, and provides a way for receiving mail servers to send feedback about emails' compliance to the sender. BIMI (Brand Indicators for Message Identification): BIMI is an emerging email standard that enables organizations to display a logo in their customers' email clients automatically. BIMI ties the logo to the domain's DMARC record, providing another level of visual assurance to recipients that the email is legitimate. DKIM (DomainKeys Identified Mail): DKIM is an email security standard designed to make sure that messages were not altered in transit between the sending and recipient servers. It uses digital signatures linked to the domain of the sender to verify the sender and ensure message integrity. SPF (Sender Policy Framework): SPF is an email authentication method designed to prevent email spoofing. It specifies which mail servers are authorized to send email on behalf of a domain by creating a DNS record. This helps protect against spam by providing a way for receiving mail servers to check that incoming mail from a domain comes from a host authorized by that domain's administrators.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;This information is helpful for researchers as it helps assess a domain's email security posture, uncover potential vulnerabilities, and verify the legitimacy of emails for phishing detection. These details can also provide insight into the hosting environment, potential service providers, and the configuration patterns of a target organization, assisting in investigative efforts.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://www.cloudflare.com/learning/email-security/dmarc-dkim-spf/"&gt;Intro to DMARC, DKIM, and SPF (via Cloudflare)&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://easydmarc.com/tools/domain-scanner"&gt;EasyDMARC Domain Scanner&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://mxtoolbox.com/"&gt;MX Toolbox&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://datatracker.ietf.org/doc/html/rfc7208"&gt;RFC-7208 - SPF&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://datatracker.ietf.org/doc/html/rfc6376"&gt;RFC-6376 - DKIM&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://datatracker.ietf.org/doc/html/rfc7489"&gt;RFC-7489 - DMARC&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://bimigroup.org/"&gt;BIMI Group&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Firewall Detection&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/MfcxQt2/Screenshot-from-2023-08-12-15-40-52.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;A WAF or web application firewall helps protect web applications by filtering and monitoring HTTP traffic between a web application and the Internet. It typically protects web applications from attacks such as cross-site forgery, cross-site-scripting (XSS), file inclusion, and SQL injection, among others.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;It's useful to understand if a site is using a WAF, and which firewall software / service it is using, as this provides an insight into the sites protection against several attack vectors, but also may reveal vulnerabilities in the firewall itself.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://www.cloudflare.com/learning/ddos/glossary/web-application-firewall-waf/"&gt;What is a WAF (via Cloudflare Learning)&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://owasp.org/www-community/Web_Application_Firewall"&gt;OWASP - Web Application Firewalls&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://owasp.org/www-pdf-archive/Best_Practices_Guide_WAF_v104.en.pdf"&gt;Web Application Firewall Best Practices&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Web_application_firewall"&gt;WAF - Wiki&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;HTTP Security Features&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/LP05HMV/Screenshot-from-2023-08-12-15-40-28.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;Correctly configured security HTTP headers adds a layer of protection against common attacks to your site. The main headers to be aware of are: HTTP Strict Transport Security (HSTS): Enforces the use of HTTPS, mitigating man-in-the-middle attacks and protocol downgrade attempts. Content Security Policy (CSP): Constrains web page resources to prevent cross-site scripting and data injection attacks. X-Content-Type-Options: Prevents browsers from MIME-sniffing a response away from the declared content type, curbing MIME-type confusion attacks. X-Frame-Options: Protects users from clickjacking attacks by controlling whether a browser should render the page in a &lt;code&gt;&amp;lt;frame&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;embed&amp;gt;&lt;/code&gt;, or &lt;code&gt;&amp;lt;object&amp;gt;&lt;/code&gt;.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;Reviewing security headers is important, as it offers insights into a site's defensive posture and potential vulnerabilities, enabling proactive mitigation and ensuring compliance with security best practices.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://owasp.org/www-project-secure-headers/"&gt;OWASP Secure Headers Project&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html"&gt;HTTP Header Cheatsheet&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://content-security-policy.com/"&gt;content-security-policy.com&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://resourcepolicy.fyi/"&gt;resourcepolicy.fyi&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://securityheaders.com/"&gt;HTTP Security Headers&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://observatory.mozilla.org/"&gt;Mozilla Observatory&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP"&gt;CSP Docs&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security"&gt;HSTS Docs&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options"&gt;X-Content-Type-Options Docs&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options"&gt;X-Frame-Options Docs&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection"&gt;X-XSS-Protection Docs&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Archive History&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/nB9szT1/Screenshot-from-2023-08-14-22-31-16.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;Fetches full history of archives from the Wayback machine&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;This is useful for understanding the history of a site, and how it has changed over time. It can also be useful for finding old versions of a site, or for finding content that has been removed.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://archive.org/web/"&gt;Wayback Machine&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Global Ranking&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/nkbczgb/Screenshot-from-2023-08-14-22-02-40.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;This check shows the global rank of the requested site. This is only accurate for websites which are in the top 100 million list. We're using data from the Tranco project (see below), which collates the top sites on the web from Umbrella, Majestic, Quantcast, the Chrome User Experience Report and Cloudflare Radar.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;Knowing a websites overall global rank can be useful for understanding the scale of the site, and for comparing it to other sites. It can also be useful for understanding the relative popularity of a site, and for identifying potential trends.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://tranco-list.eu/"&gt;Tranco List&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://tranco-list.eu/assets/tranco-ndss19.pdf"&gt;Tranco Research Paper&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Block Detection&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/M5JSXbW/Screenshot-from-2023-08-26-12-12-43.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;Checks access to the URL using 10+ of the most popular privacy, malware and parental control blocking DNS servers.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://threatjammer.com/osint-lists"&gt;ThreatJammer Lists&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Malware &amp;amp; Phishing Detection&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/hYgy621/Screenshot-from-2023-08-26-12-07-47.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;Checks if a site appears in several common malware and phishing lists, to determine it's threat level.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;Knowing if a site is listed as a threat by any of these services can be useful for understanding the reputation of a site, and for identifying potential trends.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://urlhaus-api.abuse.ch/"&gt;URLHaus&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://www.phishtank.com/"&gt;PhishTank&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;TLS Cipher Suites&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/6ydtH5R/Screenshot-from-2023-08-26-12-09-58.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;These are combinations of cryptographic algorithms used by the server to establish a secure connection. It includes the key exchange algorithm, bulk encryption algorithm, MAC algorithm, and PRF (pseudorandom function).&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;This is important info to test for from a security perspective. Because a cipher suite is only as secure as the algorithms that it contains. If the version of encryption or authentication algorithm in a cipher suite have known vulnerabilities the cipher suite and TLS connection may then vulnerable to a downgrade or other attack&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/rbsec/sslscan"&gt;sslscan2 CLI&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://nmap.org/nsedoc/scripts/ssl-enum-ciphers.html"&gt;ssl-enum-ciphers (NPMAP script)&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;TLS Security Config&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/FmksZJt/Screenshot-from-2023-08-26-12-12-09.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;This uses guidelines from Mozilla's TLS Observatory to check the security of the TLS configuration. It checks for bad configurations, which may leave the site vulnerable to attack, as well as giving advice on how to fix. It will also give suggestions around outdated and modern TLS configs&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;Understanding issues with a site's TLS configuration will help you address potential vulnerabilities, and ensure the site is using the latest and most secure TLS configuration.&lt;/p&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;TLS Handshake Simulation&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/F7qRZkh/Screenshot-from-2023-08-26-12-11-28.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;This simulates how different clients (browsers, operating systems) would perform a TLS handshake with the server. It helps identify compatibility issues and insecure configurations.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;h6&gt;Useful Links&lt;/h6&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/"&gt;TLS Handshakes (via Cloudflare Learning)&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://www.ssllabs.com/ssltest/"&gt;SSL Test (via SSL Labs)&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; 
+ &lt;/details&gt; 
+ &lt;details&gt; 
+  &lt;summary&gt;&lt;b&gt;Screenshot&lt;/b&gt;&lt;/summary&gt; 
+  &lt;img width="300" src="https://i.ibb.co/2F0x8kP/Screenshot-from-2023-07-29-18-34-48.png" align="right" /&gt; 
+  &lt;h6&gt;Description&lt;/h6&gt; 
+  &lt;p&gt;This check takes a screenshot of webpage that the requested URL / IP resolves to, and displays it.&lt;/p&gt; 
+  &lt;h6&gt;Use Cases&lt;/h6&gt; 
+  &lt;p&gt;This may be useful to see what a given website looks like, free of the constraints of your browser, IP, or location.&lt;/p&gt; 
+ &lt;/details&gt; 
+&lt;/details&gt; 
+&lt;p&gt;Read more here: &lt;strong&gt;&lt;a href="https://web-check.xyz/about"&gt;web-check.xyz/about&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;h3&gt;Deployment&lt;/h3&gt; 
+&lt;h3&gt;Deploying - Option #1: Netlify&lt;/h3&gt; 
+&lt;p&gt;Click the button below, to deploy to Netlify 👇&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://app.netlify.com/start/deploy?repository=https://github.com/lissy93/web-check"&gt;&lt;img src="https://img.shields.io/badge/Deploy-Netlify-%2330c8c9?style=for-the-badge&amp;amp;logo=netlify&amp;amp;labelColor=1e0e41" alt="Deploy to Netlify" title="Deploy Web-Check to Netlify, via 1-Click Script" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Deploying - Option #2: Vercel&lt;/h3&gt; 
+&lt;p&gt;Click the button below, to deploy to Vercel 👇&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flissy93%2Fweb-check&amp;amp;project-name=web-check&amp;amp;repository-name=web-check-fork&amp;amp;demo-title=Web-Check%20Demo&amp;amp;demo-description=Check%20out%20web-check.xyz%20to%20see%20a%20live%20demo%20of%20this%20application%20running.&amp;amp;demo-url=https%3A%2F%2Fweb-check.xyz&amp;amp;demo-image=https%3A%2F%2Fraw.githubusercontent.com%2FLissy93%2Fweb-check%2Fmaster%2F.github%2Fscreenshots%2Fweb-check-screenshot10.png"&gt;&lt;img src="https://img.shields.io/badge/Deploy-Vercel-%23ffffff?style=for-the-badge&amp;amp;logo=vercel&amp;amp;labelColor=1e0e41" alt="Deploy with Vercel" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Deploying - Option #3: Docker&lt;/h3&gt; 
+&lt;p&gt;Run &lt;code&gt;docker run -p 3000:3000 lissy93/web-check&lt;/code&gt;, then open &lt;a href="http://localhost:3000"&gt;&lt;code&gt;localhost:3000&lt;/code&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Docker Options&lt;/summary&gt; 
+ &lt;p&gt;You can get the Docker image from:&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;DockerHub: &lt;a href="https://hub.docker.com/r/lissy93/web-check"&gt;&lt;code&gt;lissy93/web-check&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;GHCR: &lt;a href="https://github.com/Lissy93/web-check/pkgs/container/web-check"&gt;&lt;code&gt;ghcr.io/lissy93/web-check&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;Or build the image yourself by cloning the repo and running &lt;code&gt;docker build -t web-check .&lt;/code&gt;&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;h3&gt;Deploying - Option #4: From Source&lt;/h3&gt; 
+&lt;p&gt;Install the prerequisites listed in the &lt;a href="https://raw.githubusercontent.com/Lissy93/web-check/master/#developing"&gt;Developing&lt;/a&gt; section, then run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/Lissy93/web-check.git  # Download the code from GitHub
+cd web-check                                        # Navigate into the project dir
+yarn install                                        # Install the NPM dependencies
+yarn build                                          # Build the app for production
+yarn serve                                          # Start the app (API and GUI)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Configuring&lt;/h3&gt; 
+&lt;p&gt;By default, no configuration is needed.&lt;/p&gt; 
+&lt;p&gt;But there are some optional environmental variables that you can set to give you access to some additional checks, or to increase rate-limits for some checks that use external APIs.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;API Keys &amp;amp; Credentials&lt;/strong&gt;:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Key&lt;/th&gt; 
+   &lt;th&gt;Value&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;GOOGLE_CLOUD_API_KEY&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;A Google API key (&lt;a href="https://cloud.google.com/api-gateway/docs/authenticate-api-keys"&gt;get here&lt;/a&gt;). This can be used to return quality metrics for a site&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;REACT_APP_SHODAN_API_KEY&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;A Shodan API key (&lt;a href="https://account.shodan.io/"&gt;get here&lt;/a&gt;). This will show associated host names for a given domain&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;REACT_APP_WHO_API_KEY&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;A WhoAPI key (&lt;a href="https://whoapi.com/"&gt;get here&lt;/a&gt;). This will show more comprehensive WhoIs records than the default job&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;small&gt;Full / Upcoming Vals&lt;/small&gt;&lt;/summary&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;code&gt;GOOGLE_CLOUD_API_KEY&lt;/code&gt; - A Google API key (&lt;a href="https://cloud.google.com/api-gateway/docs/authenticate-api-keys"&gt;get here&lt;/a&gt;). This can be used to return quality metrics for a site&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;REACT_APP_SHODAN_API_KEY&lt;/code&gt; - A Shodan API key (&lt;a href="https://account.shodan.io/"&gt;get here&lt;/a&gt;). This will show associated host names for a given domain&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;REACT_APP_WHO_API_KEY&lt;/code&gt; - A WhoAPI key (&lt;a href="https://whoapi.com/"&gt;get here&lt;/a&gt;). This will show more comprehensive WhoIs records than the default job&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;SECURITY_TRAILS_API_KEY&lt;/code&gt; - A Security Trails API key (&lt;a href="https://securitytrails.com/corp/api"&gt;get here&lt;/a&gt;). This will show org info associated with the IP&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;CLOUDMERSIVE_API_KEY&lt;/code&gt; - API key for Cloudmersive (&lt;a href="https://account.cloudmersive.com/"&gt;get here&lt;/a&gt;). This will show known threats associated with the IP&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;TRANCO_USERNAME&lt;/code&gt; - A Tranco email (&lt;a href="https://tranco-list.eu/"&gt;get here&lt;/a&gt;). This will show the rank of a site, based on traffic&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;TRANCO_API_KEY&lt;/code&gt; - A Tranco API key (&lt;a href="https://tranco-list.eu/"&gt;get here&lt;/a&gt;). This will show the rank of a site, based on traffic&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;URL_SCAN_API_KEY&lt;/code&gt; - A URLScan API key (&lt;a href="https://urlscan.io/"&gt;get here&lt;/a&gt;). This will fetch miscalanious info about a site&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;BUILT_WITH_API_KEY&lt;/code&gt; - A BuiltWith API key (&lt;a href="https://api.builtwith.com/"&gt;get here&lt;/a&gt;). This will show the main features of a site&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;TORRENT_IP_API_KEY&lt;/code&gt; - A torrent API key (&lt;a href="https://iknowwhatyoudownload.com/en/api/"&gt;get here&lt;/a&gt;). This will show torrents downloaded by an IP&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;p&gt;&lt;strong&gt;Configuration Settings&lt;/strong&gt;:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Key&lt;/th&gt; 
+   &lt;th&gt;Value&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;PORT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Port to serve the API, when running server.js (e.g. &lt;code&gt;3000&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;API_ENABLE_RATE_LIMIT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Enable rate-limiting for the /api endpoints (e.g. &lt;code&gt;true&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;API_TIMEOUT_LIMIT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The timeout limit for API requests, in milliseconds (e.g. &lt;code&gt;10000&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;API_CORS_ORIGIN&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Enable CORS, by setting your allowed hostname(s) here (e.g. &lt;code&gt;example.com&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;CHROME_PATH&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The path the Chromium executable (e.g. &lt;code&gt;/usr/bin/chromium&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;DISABLE_GUI&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Disable the GUI, and only serve the API (e.g. &lt;code&gt;false&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;REACT_APP_API_ENDPOINT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The endpoint for the API, either local or remote (e.g. &lt;code&gt;/api&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;All values are optional.&lt;/p&gt; 
+&lt;p&gt;You can add these as environmental variables. Either put them directly into an &lt;code&gt;.env&lt;/code&gt; file in the projects root, or via the Netlify / Vercel UI, or by passing to the Docker container with the --env flag, or using your own environmental variable management system&lt;/p&gt; 
+&lt;p&gt;Note that keys that are prefixed with &lt;code&gt;REACT_APP_&lt;/code&gt; are used client-side, and as such they must be scoped correctly with minimum privileges, since may be made visible when intercepting browser &amp;lt;-&amp;gt; server network requests&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Developing&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Clone the repo, &lt;code&gt;git clone git@github.com:Lissy93/web-check.git&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Cd into it, &lt;code&gt;cd web-check&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Install dependencies: &lt;code&gt;yarn&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Start the dev server, with &lt;code&gt;yarn dev&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;You'll need &lt;a href="https://nodejs.org/en"&gt;Node.js&lt;/a&gt; (V 18.16.1 or later) installed, plus &lt;a href="https://yarnpkg.com/getting-started/install"&gt;yarn&lt;/a&gt; as well as &lt;a href="https://git-scm.com/"&gt;git&lt;/a&gt;. Some checks also require &lt;code&gt;chromium&lt;/code&gt;, &lt;code&gt;traceroute&lt;/code&gt; and &lt;code&gt;dns&lt;/code&gt; to be installed within your environment. These jobs will just be skipped if those packages aren't present.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;h3&gt;Contributing&lt;/h3&gt; 
+&lt;p&gt;Contributions of any kind are very welcome, and would be much appreciated. For Code of Conduct, see &lt;a href="https://www.contributor-covenant.org/version/2/1/code_of_conduct/"&gt;Contributor Convent&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;To get started, fork the repo, make your changes, add, commit and push the code, then come back here to open a pull request. If you're new to GitHub or open source, &lt;a href="https://www.freecodecamp.org/news/how-to-make-your-first-pull-request-on-github-3#let-s-make-our-first-pull-request-"&gt;this guide&lt;/a&gt; or the &lt;a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request"&gt;git docs&lt;/a&gt; may help you get started, but feel free to reach out if you need any support.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/Lissy93/web-check/compare"&gt;&lt;img src="https://img.shields.io/badge/Submit_a_PR-GitHub-%23060606?style=for-the-badge&amp;amp;logo=github&amp;amp;logoColor=fff" alt="Submit a PR" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Reporting Bugs&lt;/h3&gt; 
+&lt;p&gt;If you've found something that doesn't work as it should, or would like to suggest a new feature, then go ahead and raise a ticket on GitHub. For bugs, please outline the steps needed to reproduce, and include relevant info like system info and resulting logs.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/Lissy93/web-check/issues/new/choose"&gt;&lt;img src="https://img.shields.io/badge/Raise_an_Issue-GitHub-%23060606?style=for-the-badge&amp;amp;logo=github&amp;amp;logoColor=fff" alt="Raise an Issue" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Supporting&lt;/h3&gt; 
+&lt;p&gt;The app will remain 100% free and open source. But due to the amount of traffic that the hosted instance gets, the lambda function usage is costing about $25/month. Any help with covering the costs via GitHub Sponsorship would be much appreciated. It's thanks to the support of the community that this project is able to be freely available for everyone :)&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/sponsors/Lissy93"&gt;&lt;img src="https://img.shields.io/badge/Sponsor_on_GitHub-Lissy93-%23ff4dda?style=for-the-badge&amp;amp;logo=githubsponsors&amp;amp;logoColor=ff4dda" alt="Sponsor Lissy93 on GitHub" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Contributors&lt;/h3&gt; 
+&lt;p&gt;Credit to the following users for contributing to Web-Check&lt;/p&gt; 
+&lt;!-- readme: contributors -start --&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/Lissy93"&gt; &lt;img src="https://avatars.githubusercontent.com/u/1862727?v=4" width="80;" alt="Lissy93" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Alicia Sykes&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/liss-bot"&gt; &lt;img src="https://avatars.githubusercontent.com/u/87835202?v=4" width="80;" alt="liss-bot" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Alicia Bot&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/n0a"&gt; &lt;img src="https://avatars.githubusercontent.com/u/14150948?v=4" width="80;" alt="n0a" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Denis Simonov&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/muni106"&gt; &lt;img src="https://avatars.githubusercontent.com/u/65845442?v=4" width="80;" alt="muni106" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Mounir Samite&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/ChrisCarini"&gt; &lt;img src="https://avatars.githubusercontent.com/u/6374067?v=4" width="80;" alt="ChrisCarini" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Chris Carini&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/bolens"&gt; &lt;img src="https://avatars.githubusercontent.com/u/1218380?v=4" width="80;" alt="bolens" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Michael Bolens&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/HeroGamers"&gt; &lt;img src="https://avatars.githubusercontent.com/u/15278940?v=4" width="80;" alt="HeroGamers" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Marcus Sand&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/jinnabaalu"&gt; &lt;img src="https://avatars.githubusercontent.com/u/11784253?v=4" width="80;" alt="jinnabaalu" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Jinna Baalu&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/GreyXor"&gt; &lt;img src="https://avatars.githubusercontent.com/u/79602273?v=4" width="80;" alt="GreyXor" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;GreyXor&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/brianteeman"&gt; &lt;img src="https://avatars.githubusercontent.com/u/1296369?v=4" width="80;" alt="brianteeman" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Brian Teeman&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/vitalykarasik"&gt; &lt;img src="https://avatars.githubusercontent.com/u/7628795?v=4" width="80;" alt="vitalykarasik" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Vitaly Karasik&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/Its-Just-Nans"&gt; &lt;img src="https://avatars.githubusercontent.com/u/56606507?v=4" width="80;" alt="Its-Just-Nans" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;n4n5&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/robinson"&gt; &lt;img src="https://avatars.githubusercontent.com/u/237874?v=4" width="80;" alt="robinson" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Lth&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/abhishekMuge"&gt; &lt;img src="https://avatars.githubusercontent.com/u/49590582?v=4" width="80;" alt="abhishekMuge" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Abhishek Muge&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/UlisesGascon"&gt; &lt;img src="https://avatars.githubusercontent.com/u/5110813?v=4" width="80;" alt="UlisesGascon" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Ulises Gascón&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/PhiRequiem"&gt; &lt;img src="https://avatars.githubusercontent.com/u/1323576?v=4" width="80;" alt="PhiRequiem" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;PhiRequiem&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/ntaiko"&gt; &lt;img src="https://avatars.githubusercontent.com/u/108784453?v=4" width="80;" alt="ntaiko" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Nikolaos G. Ntaiko&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/Myzel394"&gt; &lt;img src="https://avatars.githubusercontent.com/u/50424412?v=4" width="80;" alt="Myzel394" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Myzel394&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/murrple-1"&gt; &lt;img src="https://avatars.githubusercontent.com/u/5559656?v=4" width="80;" alt="murrple-1" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Murray Christopherson&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/t3chn0m4g3"&gt; &lt;img src="https://avatars.githubusercontent.com/u/4318452?v=4" width="80;" alt="t3chn0m4g3" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Marco Ochse&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/treatmesubj"&gt; &lt;img src="https://avatars.githubusercontent.com/u/39680353?v=4" width="80;" alt="treatmesubj" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;John Hupperts&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/eltociear"&gt; &lt;img src="https://avatars.githubusercontent.com/u/22633385?v=4" width="80;" alt="eltociear" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Ikko Eltociear Ashimine&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/Gertje823"&gt; &lt;img src="https://avatars.githubusercontent.com/u/36937387?v=4" width="80;" alt="Gertje823" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Gertje823&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/epreston"&gt; &lt;img src="https://avatars.githubusercontent.com/u/347224?v=4" width="80;" alt="epreston" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Ed Preston&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/dimitri-kandassamy"&gt; &lt;img src="https://avatars.githubusercontent.com/u/21193806?v=4" width="80;" alt="dimitri-kandassamy" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Dimitri Kandassamy&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/0xflotus"&gt; &lt;img src="https://avatars.githubusercontent.com/u/26602940?v=4" width="80;" alt="0xflotus" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;0xflotus&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+ &lt;tbody&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;!-- readme: contributors -end --&gt; 
+&lt;h3&gt;Sponsors&lt;/h3&gt; 
+&lt;p&gt;Huge thanks to these wonderful people, who sponsor me on GitHub, their support helps cover the costs required to keep Web-Check and my other projects free for everyone. Consider joining them, by &lt;a href="https://github.com/sponsors/Lissy93"&gt;sponsoring me on GitHub&lt;/a&gt; if you're able.&lt;/p&gt; 
+&lt;!-- readme: sponsors -start --&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/vincentkoc"&gt; &lt;img src="https://avatars.githubusercontent.com/u/25068?v=4" width="80;" alt="vincentkoc" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Vincent Koc&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/AnandChowdhary"&gt; &lt;img src="https://avatars.githubusercontent.com/u/2841780?u=747e554b3a7f12eb20b7910e1c87d817844f714f&amp;amp;v=4" width="80;" alt="AnandChowdhary" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Anand Chowdhary&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/shrippen"&gt; &lt;img src="https://avatars.githubusercontent.com/u/2873570?v=4" width="80;" alt="shrippen" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Shrippen&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/bile0026"&gt; &lt;img src="https://avatars.githubusercontent.com/u/5022496?u=aec96ad173c0ea9baaba93807efa8a848af6595c&amp;amp;v=4" width="80;" alt="bile0026" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Zach Biles&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/UlisesGascon"&gt; &lt;img src="https://avatars.githubusercontent.com/u/5110813?u=3c41facd8aa26154b9451de237c34b0f78d672a5&amp;amp;v=4" width="80;" alt="UlisesGascon" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Ulises Gascón&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/digitalarche"&gt; &lt;img src="https://avatars.githubusercontent.com/u/6546135?u=564756d7f44ab2206819eb3148f6d822673f5066&amp;amp;v=4" width="80;" alt="digitalarche" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Digital Archeology&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/InDieTasten"&gt; &lt;img src="https://avatars.githubusercontent.com/u/7047377?u=8d8f8017628b38bc46dcbf3620e194b01d3fb2d1&amp;amp;v=4" width="80;" alt="InDieTasten" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;InDieTasten&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/araguaci"&gt; &lt;img src="https://avatars.githubusercontent.com/u/7318668?v=4" width="80;" alt="araguaci" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Araguaci&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/bmcgonag"&gt; &lt;img src="https://avatars.githubusercontent.com/u/7346620?u=2a0f9284f3e12ac1cc15288c254d1ec68a5081e8&amp;amp;v=4" width="80;" alt="bmcgonag" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Brian McGonagill&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/arcestia"&gt; &lt;img src="https://avatars.githubusercontent.com/u/7936962?v=4" width="80;" alt="arcestia" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Laurensius Jeffrey&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/vlad-tim"&gt; &lt;img src="https://avatars.githubusercontent.com/u/11474041?u=eee43705b54d2ec9f51fc4fcce5ad18dd17c87e4&amp;amp;v=4" width="80;" alt="vlad-tim" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Vlad&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/helixzz"&gt; &lt;img src="https://avatars.githubusercontent.com/u/12218889?u=d06d0c103dfbdb99450623064f7da3c5a3675fb6&amp;amp;v=4" width="80;" alt="helixzz" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;HeliXZz&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/mryesiller"&gt; &lt;img src="https://avatars.githubusercontent.com/u/24632172?u=0d20f2d615158f87cd60a3398d3efb026c32f291&amp;amp;v=4" width="80;" alt="mryesiller" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Göksel Yeşiller&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/sushibait"&gt; &lt;img src="https://avatars.githubusercontent.com/u/26634535?v=4" width="80;" alt="sushibait" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Shiverme Timbers&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/getumbrel"&gt; &lt;img src="https://avatars.githubusercontent.com/u/59408891?v=4" width="80;" alt="getumbrel" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Umbrel&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/OlliVHH"&gt; &lt;img src="https://avatars.githubusercontent.com/u/84959562?v=4" width="80;" alt="OlliVHH" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;HamburgerJung&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/frankdez93"&gt; &lt;img src="https://avatars.githubusercontent.com/u/87549420?v=4" width="80;" alt="frankdez93" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Frankdez93&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/terminaltrove"&gt; &lt;img src="https://avatars.githubusercontent.com/u/121595180?v=4" width="80;" alt="terminaltrove" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Terminal Trove&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/st617"&gt; &lt;img src="https://avatars.githubusercontent.com/u/128325650?v=4" width="80;" alt="st617" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;st617&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/hudsonrock-partnerships"&gt; &lt;img src="https://avatars.githubusercontent.com/u/163282900?u=5f2667f7fe5d284ac7a2da6b0800ea8970b0fcbf&amp;amp;v=4" width="80;" alt="hudsonrock-partnerships" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;hudsonrock-partnerships&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/CarterPerez-dev"&gt; &lt;img src="https://avatars.githubusercontent.com/u/188120068?v=4" width="80;" alt="CarterPerez-dev" /&gt; &lt;br /&gt; &lt;sub&gt;&lt;b&gt;Carter Perez&lt;/b&gt;&lt;/sub&gt; &lt;/a&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+ &lt;tbody&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;!-- readme: sponsors -end --&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;em&gt;&lt;strong&gt;&lt;a href="https://github.com/Lissy93/web-check"&gt;Lissy93/Web-Check&lt;/a&gt;&lt;/strong&gt; is licensed under &lt;a href="https://github.com/Lissy93/web-check/raw/HEAD/LICENSE"&gt;MIT&lt;/a&gt; © &lt;a href="https://aliciasykes.com"&gt;Alicia Sykes&lt;/a&gt; 2023.&lt;/em&gt;&lt;br /&gt; &lt;sup align="right"&gt;For information, see &lt;a href="https://tldrlegal.com/license/mit-license"&gt;TLDR Legal &amp;gt; MIT&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Expand License&lt;/summary&gt; 
+ &lt;pre&gt;&lt;code&gt;The MIT License (MIT)
+Copyright (c) Alicia Sykes &amp;lt;alicia@omg.com&amp;gt; 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy 
+of this software and associated documentation files (the "Software"), to deal 
+in the Software without restriction, including without limitation the rights 
+to use, copy, modify, merge, publish, distribute, sub-license, and/or sell 
+copies of the Software, and to permit persons to whom the Software is furnished 
+to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included install 
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANT ABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;a href="https://app.fossa.com/projects/git%2Bgithub.com%2FLissy93%2Fweb-check?ref=badge_large&amp;amp;issueType=license"&gt;&lt;img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FLissy93%2Fweb-check.svg?type=large&amp;amp;issueType=license" alt="View Dependency Licenses &amp;amp; SBOM on FOSSA" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;!-- License + Copyright --&gt; 
+&lt;p align="center"&gt; &lt;i&gt;© &lt;a href="https://aliciasykes.com"&gt;Alicia Sykes&lt;/a&gt; 2023&lt;/i&gt;&lt;br /&gt; &lt;i&gt;Licensed under &lt;a href="https://gist.github.com/Lissy93/143d2ee01ccc5c052a17"&gt;MIT&lt;/a&gt;&lt;/i&gt;&lt;br /&gt; &lt;a href="https://github.com/lissy93"&gt;&lt;img src="https://i.ibb.co/4KtpYxb/octocat-clean-mini.png" /&gt;&lt;/a&gt;&lt;br /&gt; &lt;sup&gt;Thanks for visiting :)&lt;/sup&gt; &lt;/p&gt; 
+&lt;!-- Dinosaurs are Awesome --&gt; 
+&lt;!-- 
+                        . - ~ ~ ~ - .
+      ..     _      .-~               ~-.
+     //|     \ `..~                      `.
+    || |      }  }              /       \  \
+(\   \\ \~^..'                 |         }  \
+ \`.-~  o      /       }       |        /    \
+ (__          |       /        |       /      `.
+  `- - ~ ~ -._|      /_ - ~ ~ ^|      /- _      `.
+              |     /          |     /     ~-.     ~- _
+              |_____|          |_____|         ~ - . _ _~_-_
+--&gt;</description>
+    </item>
+    
+    <item>
+      <title>HQarroum/docker-android</title>
+      <link>https://github.com/HQarroum/docker-android</link>
+      <description>&lt;p&gt;🤖 A minimal and customizable Docker image running the Android emulator as a service.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img width="400" src="https://raw.githubusercontent.com/HQarroum/docker-android/main/assets/icon.png" /&gt; &lt;/p&gt;
+&lt;br /&gt;
+&lt;br /&gt; 
+&lt;h1&gt;docker-android&lt;/h1&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;A minimal and customizable Docker image running the Android emulator as a service.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;a href="https://github.com/HQarroum/docker-android/actions/workflows/docker-image.yml"&gt;&lt;img src="https://github.com/HQarroum/docker-android/actions/workflows/docker-image.yml/badge.svg?sanitize=true" alt="Docker Image CI" /&gt;&lt;/a&gt; &lt;a href="https://deepsource.io/gh/HQarroum/docker-android/?ref=repository-badge"&gt;&lt;img src="https://deepsource.io/gh/HQarroum/docker-android.svg/?label=active+issues&amp;amp;show_trend=true&amp;amp;token=JTfGSHolIiMj0WNfv2ES0I6X" alt="DeepSource" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/docker/pulls/halimqarroum/docker-android" alt="Docker Pulls" /&gt;&lt;/p&gt; 
+&lt;p&gt;Current version: &lt;strong&gt;1.1.0&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;📋 Table of contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/HQarroum/docker-android/main/#-features"&gt;Features&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/HQarroum/docker-android/main/#-description"&gt;Description&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/HQarroum/docker-android/main/#-usage"&gt;Usage&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/HQarroum/docker-android/main/#-see-also"&gt;See also&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🔖 Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Minimal Alpine based image bundled with the Android emulator and KVM support.&lt;/li&gt; 
+ &lt;li&gt;Bundles the Java Runtime Environment 11 in the image.&lt;/li&gt; 
+ &lt;li&gt;Customizable Android version, device type and image types.&lt;/li&gt; 
+ &lt;li&gt;Port-forwarding of emulator and ADB on the container network interface built-in.&lt;/li&gt; 
+ &lt;li&gt;Emulator images are wiped each time the emulator re-starts.&lt;/li&gt; 
+ &lt;li&gt;Runs headless, suitable for CI farms. Compatible with &lt;a href="https://github.com/Genymobile/scrcpy"&gt;&lt;code&gt;scrcpy&lt;/code&gt;&lt;/a&gt; to remotely control the Android screen.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🔰 Description&lt;/h2&gt; 
+&lt;p&gt;The focus of this project is to provide a size-optimized Docker image bundled with the minimal amount of software required to expose a fully functionning Android emulator that's remotely controllable over the network. This image only contains the Android emulator itself, an ADB server used to remotely connect into the emulator from outside the container, and QEMU with &lt;code&gt;libvirt&lt;/code&gt; support.&lt;/p&gt; 
+&lt;p&gt;You can build this image without the Android SDK and without the Android emulator to make the image smaller. Below is a size comparison between some of the possible build variants.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Variant&lt;/th&gt; 
+   &lt;th&gt;Uncompressed&lt;/th&gt; 
+   &lt;th&gt;Compressed&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;API 33 + Emulator&lt;/td&gt; 
+   &lt;td&gt;5.84 GB&lt;/td&gt; 
+   &lt;td&gt;1.97 GB&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;API 32 + Emulator&lt;/td&gt; 
+   &lt;td&gt;5.89 GB&lt;/td&gt; 
+   &lt;td&gt;1.93 GB&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;API 28 + Emulator&lt;/td&gt; 
+   &lt;td&gt;4.29 GB&lt;/td&gt; 
+   &lt;td&gt;1.46 GB&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Without SDK and emulator&lt;/td&gt; 
+   &lt;td&gt;414 MB&lt;/td&gt; 
+   &lt;td&gt;138 MB&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;📘 Usage&lt;/h2&gt; 
+&lt;p&gt;By default, a build will bundle the Android SDK, platform tools and emulator with the image.&lt;/p&gt; 
+&lt;p&gt;with docker-compose:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker compose up android-emulator
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;or with GPU acceleration&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker compose up android-emulator-cuda
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;or for example with GPU acceleration and google playstore&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker compose up android-emulator-cuda-store
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;with only docker&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker build -t android-emulator .
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Keys&lt;/h2&gt; 
+&lt;p&gt;To run google_apis_playstore image, you need to have same adbkey between emulator and client.&lt;/p&gt; 
+&lt;p&gt;You can generate one by running &lt;code&gt;adb keygen adbkey&lt;/code&gt;, that generates 2 files - adbkey and adbkey.pub.&lt;/p&gt; 
+&lt;p&gt;override them inside ./keys directory.&lt;/p&gt; 
+&lt;h3&gt;Running the container&lt;/h3&gt; 
+&lt;p&gt;Once the image is built, you can mount your KVM driver on the container and expose its ADB port.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Ensure 4GB of memory and at least 8GB of disk space for API 33.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -it --rm --device /dev/kvm -p 5555:5555 android-emulator
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Save data/storage after restart (wipe)&lt;/h3&gt; 
+&lt;p&gt;All avd save in docker dir &lt;code&gt;/data&lt;/code&gt;, name for avd is &lt;code&gt;android&lt;/code&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -it --rm --device /dev/kvm -p 5555:5555 -v ~/android_avd:/data android-emulator
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Connect ADB to the container&lt;/h3&gt; 
+&lt;p&gt;The ADB server in the container will be spawned automatically and listen on all interfaces in the container. After a few seconds, once the kernel has booted, you will be able to connect ADB to the container.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;adb connect 127.0.0.1:5555
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Additionally, you can use &lt;a href="https://github.com/Genymobile/scrcpy"&gt;&lt;code&gt;scrcpy&lt;/code&gt;&lt;/a&gt; to control the screen of the emulator remotely. To do so, you simply have to connect ADB and run it locally.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;By default, the emulator runs with a Pixel preset (1080x1920).&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;scrcpy
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;br /&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;img width="260" src="https://raw.githubusercontent.com/HQarroum/docker-android/main/assets/screenshot.png" /&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img width="260" src="https://raw.githubusercontent.com/HQarroum/docker-android/main/assets/screenshot-2.png" /&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img width="260" src="https://raw.githubusercontent.com/HQarroum/docker-android/main/assets/screenshot-3.png" /&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;br /&gt; 
+&lt;h3&gt;Customize the image&lt;/h3&gt; 
+&lt;p&gt;It is possible to customize the API level (Android version) and the image type (Google APIs vs PlayStore) when building the image.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;By default, the image will build with API 33 with support for Google APIs for an x86_64 architecture.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;This can come in handy when integrating multiple images as part of a CI pipeline where an application or a set of applications need to be tested against different Android versions. There are 2 variables that can be specified at build time to change the Android image.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;API_LEVEL&lt;/code&gt; - Specifies the &lt;a href="https://apilevels.com/"&gt;API level&lt;/a&gt; associated with the image. Use this parameter to change the Android version.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;IMG_TYPE&lt;/code&gt; - Specifies the type of image to install.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;ARCHITECTURE&lt;/code&gt; Specifies the CPU architecture of the Android image. Note that only &lt;code&gt;x86_64&lt;/code&gt; and &lt;code&gt;x86&lt;/code&gt; are actively supported by this image.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The below example will install Android Pie with support for the Google Play Store.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker build \
+  --build-arg API_LEVEL=28 \
+  --build-arg IMG_TYPE=google_apis_playstore \
+  --build-arg ARCHITECTURE=x86 \
+  --tag android-emulator .
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Variables&lt;/h3&gt; 
+&lt;h4&gt;Default variables&lt;/h4&gt; 
+&lt;h4&gt;Disable animation&lt;/h4&gt; 
+&lt;p&gt;DISABLE_ANIMATION=false&lt;/p&gt; 
+&lt;h4&gt;Disable hidden policy&lt;/h4&gt; 
+&lt;p&gt;DISABLE_HIDDEN_POLICY=false&lt;/p&gt; 
+&lt;h4&gt;Skip adb authentication&lt;/h4&gt; 
+&lt;p&gt;SKIP_AUTH=true&lt;/p&gt; 
+&lt;h4&gt;Memory for emulator&lt;/h4&gt; 
+&lt;p&gt;MEMORY=8192&lt;/p&gt; 
+&lt;h4&gt;Cores for emulator&lt;/h4&gt; 
+&lt;p&gt;CORES=4&lt;/p&gt; 
+&lt;h3&gt;Mount an external drive in the container&lt;/h3&gt; 
+&lt;p&gt;It might be sometimes useful to have the entire Android SDK folder outside of the container (stored on a shared distributed filesystem such as NFS for example), to significantly reduce the size and the build time of the image.&lt;/p&gt; 
+&lt;p&gt;To do so, you can specify a specific argument at build time to disable the download and installation of the SDK in the image.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker build -t android-emulator --build-arg INSTALL_ANDROID_SDK=0 .
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;You will need mount the SDK in the container at &lt;code&gt;/opt/android&lt;/code&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -it --rm --device /dev/kvm -p 5555:5555 -v /shared/android/sdk:/opt/android/ android-emulator
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Pull from Docker Hub&lt;/h3&gt; 
+&lt;p&gt;Different pre-built images of &lt;code&gt;docker-android&lt;/code&gt; exist on &lt;a href="https://hub.docker.com/r/halimqarroum/docker-android"&gt;Docker Hub&lt;/a&gt;. Each image variant is tagged using its the api level and image type. For example, to pull an API 33 image, you can run the following.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker pull halimqarroum/docker-android:api-33
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;👀 See also&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The &lt;a href="https://github.com/alvr/alpine-android"&gt;alpine-android&lt;/a&gt; project which is based on a different Alpine image.&lt;/li&gt; 
+ &lt;li&gt;The &lt;a href="https://github.com/budtmo/docker-android"&gt;docker-android&lt;/a&gt; project which offers a WebRTC interface to an Android emulator.&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>anthropics/claude-code</title>
+      <link>https://github.com/anthropics/claude-code</link>
+      <description>&lt;p&gt;Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Claude Code&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://img.shields.io/badge/Node.js-18%2B-brightgreen?style=flat-square" alt="" /&gt; &lt;a href="https://www.npmjs.com/package/@anthropic-ai/claude-code"&gt;&lt;img src="https://img.shields.io/npm/v/@anthropic-ai/claude-code.svg?style=flat-square" alt="npm" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands. Use it in your terminal, IDE, or tag @claude on Github.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Learn more in the &lt;a href="https://code.claude.com/docs/en/overview"&gt;official documentation&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/anthropics/claude-code/main/demo.gif" /&gt; 
+&lt;h2&gt;Get started&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Install Claude Code:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;MacOS/Linux:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -fsSL https://claude.ai/install.sh | bash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Homebrew (MacOS):&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;brew install --cask claude-code
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Windows:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-powershell"&gt;irm https://claude.ai/install.ps1 | iex
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;NPM:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install -g @anthropic-ai/claude-code
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;NOTE: If installing with NPM, you also need to install &lt;a href="https://nodejs.org/en/download/"&gt;Node.js 18+&lt;/a&gt;&lt;/p&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Navigate to your project directory and run &lt;code&gt;claude&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Plugins&lt;/h2&gt; 
+&lt;p&gt;This repository includes several Claude Code plugins that extend functionality with custom commands and agents. See the &lt;a href="https://raw.githubusercontent.com/anthropics/claude-code/main/plugins/README.md"&gt;plugins directory&lt;/a&gt; for detailed documentation on available plugins.&lt;/p&gt; 
+&lt;h2&gt;Reporting Bugs&lt;/h2&gt; 
+&lt;p&gt;We welcome your feedback. Use the &lt;code&gt;/bug&lt;/code&gt; command to report issues directly within Claude Code, or file a &lt;a href="https://github.com/anthropics/claude-code/issues"&gt;GitHub issue&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Connect on Discord&lt;/h2&gt; 
+&lt;p&gt;Join the &lt;a href="https://anthropic.com/discord"&gt;Claude Developers Discord&lt;/a&gt; to connect with other developers using Claude Code. Get help, share feedback, and discuss your projects with the community.&lt;/p&gt; 
+&lt;h2&gt;Data collection, usage, and retention&lt;/h2&gt; 
+&lt;p&gt;When you use Claude Code, we collect feedback, which includes usage data (such as code acceptance or rejections), associated conversation data, and user feedback submitted via the &lt;code&gt;/bug&lt;/code&gt; command.&lt;/p&gt; 
+&lt;h3&gt;How we use your data&lt;/h3&gt; 
+&lt;p&gt;See our &lt;a href="https://code.claude.com/docs/en/data-usage"&gt;data usage policies&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Privacy safeguards&lt;/h3&gt; 
+&lt;p&gt;We have implemented several safeguards to protect your data, including limited retention periods for sensitive information, restricted access to user session data, and clear policies against using feedback for model training.&lt;/p&gt; 
+&lt;p&gt;For full details, please review our &lt;a href="https://www.anthropic.com/legal/commercial-terms"&gt;Commercial Terms of Service&lt;/a&gt; and &lt;a href="https://www.anthropic.com/legal/privacy"&gt;Privacy Policy&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>frankbria/ralph-claude-code</title>
+      <link>https://github.com/frankbria/ralph-claude-code</link>
+      <description>&lt;p&gt;Autonomous AI development loop for Claude Code with intelligent exit detection&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Ralph for Claude Code&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://img.shields.io/badge/version-0.9.3-blue" alt="Version" /&gt; &lt;img src="https://img.shields.io/badge/status-active%20development-yellow" alt="Status" /&gt; &lt;img src="https://img.shields.io/badge/tests-165%20passing-green" alt="Tests" /&gt; &lt;img src="https://img.shields.io/badge/coverage-informational-lightgrey" alt="Coverage" /&gt; &lt;a href="https://github.com/hesreallyhim/awesome-claude-code"&gt;&lt;img src="https://awesome.re/mentioned-badge.svg?sanitize=true" alt="Mentioned in Awesome Claude Code" /&gt;&lt;/a&gt; &lt;a href="https://x.com/FrankBria18044"&gt;&lt;img src="https://img.shields.io/twitter/follow/FrankBria18044?style=social" alt="Follow on X" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Autonomous AI development loop with intelligent exit detection and rate limiting&lt;/strong&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Ralph is an implementation of the Geoffrey Huntley's technique for Claude Code that enables continuous autonomous development cycles he named after &lt;a href="https://ghuntley.com/ralph/"&gt;Ralph Wiggum&lt;/a&gt;. It enables continuous autonomous development cycles where Claude Code iteratively improves your project until completion, with built-in safeguards to prevent infinite loops and API overuse.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Install once, use everywhere&lt;/strong&gt; - Ralph becomes a global command available in any directory.&lt;/p&gt; 
+&lt;h2&gt;Project Status&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Version&lt;/strong&gt;: v0.9.3 - Active Development &lt;strong&gt;Core Features&lt;/strong&gt;: Working and tested &lt;strong&gt;Test Coverage&lt;/strong&gt;: 165 tests, 100% pass rate&lt;/p&gt; 
+&lt;h3&gt;What's Working Now&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Autonomous development loops with intelligent exit detection&lt;/li&gt; 
+ &lt;li&gt;Rate limiting with hourly reset (100 calls/hour, configurable)&lt;/li&gt; 
+ &lt;li&gt;Circuit breaker with advanced error detection (prevents runaway loops)&lt;/li&gt; 
+ &lt;li&gt;Response analyzer with semantic understanding and two-stage error filtering&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;JSON output format support with automatic fallback to text parsing&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Session continuity with &lt;code&gt;--continue&lt;/code&gt; flag for context preservation&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Modern CLI flags: &lt;code&gt;--output-format&lt;/code&gt;, &lt;code&gt;--allowed-tools&lt;/code&gt;, &lt;code&gt;--no-continue&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;Multi-line error matching for accurate stuck loop detection&lt;/li&gt; 
+ &lt;li&gt;5-hour API limit handling with user prompts&lt;/li&gt; 
+ &lt;li&gt;tmux integration for live monitoring&lt;/li&gt; 
+ &lt;li&gt;PRD import functionality&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;CI/CD pipeline with GitHub Actions&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;165 passing tests across 8 test files&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Recent Improvements&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.2 - Prompt File Fix&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fixed critical bug: replaced non-existent &lt;code&gt;--prompt-file&lt;/code&gt; CLI flag with &lt;code&gt;-p&lt;/code&gt; flag&lt;/li&gt; 
+ &lt;li&gt;Modern CLI mode now correctly passes prompt content via &lt;code&gt;-p "$(cat file)"&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Added error handling for missing prompt files in &lt;code&gt;build_claude_command()&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Added 6 new TDD tests for &lt;code&gt;build_claude_command&lt;/code&gt; function&lt;/li&gt; 
+ &lt;li&gt;Maintains shell injection safety through array-based command building&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.1 - Modern CLI Commands (Phase 1.1)&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;JSON output format support with &lt;code&gt;--output-format json&lt;/code&gt; (default)&lt;/li&gt; 
+ &lt;li&gt;Session continuity using &lt;code&gt;--continue&lt;/code&gt; flag for cross-loop context&lt;/li&gt; 
+ &lt;li&gt;Tool permissions via &lt;code&gt;--allowed-tools&lt;/code&gt; flag&lt;/li&gt; 
+ &lt;li&gt;Loop context injection with &lt;code&gt;build_loop_context()&lt;/code&gt; function&lt;/li&gt; 
+ &lt;li&gt;Backward-compatible: automatic fallback to text parsing&lt;/li&gt; 
+ &lt;li&gt;70 new tests: JSON parsing (20) + CLI modern (23) + CLI parsing (27)&lt;/li&gt; 
+ &lt;li&gt;CI/CD pipeline with kcov coverage reporting&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.0 - Circuit Breaker Enhancements&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fixed multi-line error matching in stuck loop detection&lt;/li&gt; 
+ &lt;li&gt;Eliminated JSON field false positives (e.g., &lt;code&gt;"is_error": false&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Added two-stage error filtering for accurate detection&lt;/li&gt; 
+ &lt;li&gt;Comprehensive test suite: 22 new tests for error detection&lt;/li&gt; 
+ &lt;li&gt;Fixed installation to include lib/ directory components&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;In Progress&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Expanding test coverage&lt;/li&gt; 
+ &lt;li&gt;Log rotation functionality&lt;/li&gt; 
+ &lt;li&gt;Dry-run mode&lt;/li&gt; 
+ &lt;li&gt;Configuration file support (.ralphrc)&lt;/li&gt; 
+ &lt;li&gt;Metrics and analytics tracking&lt;/li&gt; 
+ &lt;li&gt;Desktop notifications&lt;/li&gt; 
+ &lt;li&gt;Git backup and rollback system&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Timeline to v1.0&lt;/strong&gt;: ~4 weeks | &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/IMPLEMENTATION_PLAN.md"&gt;Full roadmap&lt;/a&gt; | &lt;strong&gt;Contributions welcome!&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Autonomous Development Loop&lt;/strong&gt; - Continuously executes Claude Code with your project requirements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Intelligent Exit Detection&lt;/strong&gt; - Automatically stops when project objectives are complete&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Rate Limiting&lt;/strong&gt; - Built-in API call management with hourly limits and countdown timers&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;5-Hour API Limit Handling&lt;/strong&gt; - Detects Claude's 5-hour usage limit and offers wait/exit options&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Live Monitoring&lt;/strong&gt; - Real-time dashboard showing loop status, progress, and logs&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Task Management&lt;/strong&gt; - Structured approach with prioritized task lists and progress tracking&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Project Templates&lt;/strong&gt; - Quick setup for new projects with best-practice structure&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Comprehensive Logging&lt;/strong&gt; - Detailed execution logs with timestamps and status tracking&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Configurable Timeouts&lt;/strong&gt; - Set execution timeout for Claude Code operations (1-120 minutes)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Verbose Progress Mode&lt;/strong&gt; - Optional detailed progress updates during execution&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Response Analyzer&lt;/strong&gt; - AI-powered analysis of Claude Code responses with semantic understanding&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Circuit Breaker&lt;/strong&gt; - Advanced error detection with two-stage filtering, multi-line error matching, and automatic recovery&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;CI/CD Integration&lt;/strong&gt; - GitHub Actions workflow with automated testing&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;p&gt;Ralph has two phases: &lt;strong&gt;one-time installation&lt;/strong&gt; and &lt;strong&gt;per-project setup&lt;/strong&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;INSTALL ONCE              USE MANY TIMES
++-----------------+          +----------------------+
+| ./install.sh    |    -&amp;gt;    | ralph-setup project1 |
+|                 |          | ralph-setup project2 |
+| Adds global     |          | ralph-setup project3 |
+| commands        |          | ...                  |
++-----------------+          +----------------------+
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Phase 1: Install Ralph (One Time Only)&lt;/h3&gt; 
+&lt;p&gt;Install Ralph globally on your system:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/frankbria/ralph-claude-code.git
+cd ralph-claude-code
+./install.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This adds &lt;code&gt;ralph&lt;/code&gt;, &lt;code&gt;ralph-monitor&lt;/code&gt;, and &lt;code&gt;ralph-setup&lt;/code&gt; commands to your PATH.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: You only need to do this once per system. After installation, you can delete the cloned repository if desired.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Phase 2: Initialize New Projects (Per Project)&lt;/h3&gt; 
+&lt;p&gt;For each new project you want Ralph to work on:&lt;/p&gt; 
+&lt;h4&gt;Option A: Import Existing PRD/Specifications&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Convert existing PRD/specs to Ralph format (recommended)
+ralph-import my-requirements.md my-project
+cd my-project
+
+# Review and adjust the generated files:
+# - PROMPT.md (Ralph instructions)
+# - @fix_plan.md (task priorities)
+# - specs/requirements.md (technical specs)
+
+# Start autonomous development
+ralph --monitor
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Option B: Manual Project Setup&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Create blank Ralph project
+ralph-setup my-awesome-project
+cd my-awesome-project
+
+# Configure your project requirements manually
+# Edit PROMPT.md with your project goals
+# Edit specs/ with detailed specifications
+# Edit @fix_plan.md with initial priorities
+
+# Start autonomous development
+ralph --monitor
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Ongoing Usage (After Setup)&lt;/h3&gt; 
+&lt;p&gt;Once Ralph is installed and your project is initialized:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Navigate to any Ralph project and run:
+ralph --monitor              # Integrated tmux monitoring (recommended)
+
+# Or use separate terminals:
+ralph                        # Terminal 1: Ralph loop
+ralph-monitor               # Terminal 2: Live monitor dashboard
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;How It Works&lt;/h2&gt; 
+&lt;p&gt;Ralph operates on a simple but powerful cycle:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Read Instructions&lt;/strong&gt; - Loads &lt;code&gt;PROMPT.md&lt;/code&gt; with your project requirements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Execute Claude Code&lt;/strong&gt; - Runs Claude Code with current context and priorities&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Track Progress&lt;/strong&gt; - Updates task lists and logs execution results&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Evaluate Completion&lt;/strong&gt; - Checks for exit conditions and project completion signals&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Repeat&lt;/strong&gt; - Continues until project is complete or limits are reached&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Intelligent Exit Detection&lt;/h3&gt; 
+&lt;p&gt;Ralph automatically stops when it detects:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;All tasks in &lt;code&gt;@fix_plan.md&lt;/code&gt; marked complete&lt;/li&gt; 
+ &lt;li&gt;Multiple consecutive "done" signals from Claude Code&lt;/li&gt; 
+ &lt;li&gt;Too many test-focused loops (indicating feature completeness)&lt;/li&gt; 
+ &lt;li&gt;Strong completion indicators in responses&lt;/li&gt; 
+ &lt;li&gt;Claude API 5-hour usage limit reached (with user prompt to wait or exit)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Importing Existing Requirements&lt;/h2&gt; 
+&lt;p&gt;Ralph can convert existing PRDs, specifications, or requirement documents into the proper Ralph format using Claude Code.&lt;/p&gt; 
+&lt;h3&gt;Supported Formats&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Markdown&lt;/strong&gt; (.md) - Product requirements, technical specs&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Text files&lt;/strong&gt; (.txt) - Plain text requirements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;JSON&lt;/strong&gt; (.json) - Structured requirement data&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Word documents&lt;/strong&gt; (.docx) - Business requirements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;PDFs&lt;/strong&gt; (.pdf) - Design documents, specifications&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Any text-based format&lt;/strong&gt; - Ralph will intelligently parse the content&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Usage Examples&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Convert a markdown PRD
+ralph-import product-requirements.md my-app
+
+# Convert a text specification
+ralph-import requirements.txt webapp
+
+# Convert a JSON API spec
+ralph-import api-spec.json backend-service
+
+# Let Ralph auto-name the project from filename
+ralph-import design-doc.pdf
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;What Gets Generated&lt;/h3&gt; 
+&lt;p&gt;Ralph-import creates a complete project with:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;PROMPT.md&lt;/strong&gt; - Converted into Ralph development instructions&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;@fix_plan.md&lt;/strong&gt; - Requirements broken down into prioritized tasks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;specs/requirements.md&lt;/strong&gt; - Technical specifications extracted from your document&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Standard Ralph structure&lt;/strong&gt; - All necessary directories and template files&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The conversion is intelligent and preserves your original requirements while making them actionable for autonomous development.&lt;/p&gt; 
+&lt;h2&gt;Configuration&lt;/h2&gt; 
+&lt;h3&gt;Rate Limiting &amp;amp; Circuit Breaker&lt;/h3&gt; 
+&lt;p&gt;Ralph includes intelligent rate limiting and circuit breaker functionality:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Default: 100 calls per hour
+ralph --calls 50
+
+# With integrated monitoring
+ralph --monitor --calls 50
+
+# Check current usage
+ralph --status
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The circuit breaker automatically:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Detects API errors and rate limit issues with advanced two-stage filtering&lt;/li&gt; 
+ &lt;li&gt;Opens circuit after 3 loops with no progress or 5 loops with same errors&lt;/li&gt; 
+ &lt;li&gt;Eliminates false positives from JSON fields containing "error"&lt;/li&gt; 
+ &lt;li&gt;Accurately detects stuck loops with multi-line error matching&lt;/li&gt; 
+ &lt;li&gt;Gradually recovers with half-open monitoring state&lt;/li&gt; 
+ &lt;li&gt;Provides detailed error tracking and logging with state history&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Claude API 5-Hour Limit&lt;/h3&gt; 
+&lt;p&gt;When Claude's 5-hour usage limit is reached, Ralph:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Detects the limit error automatically&lt;/li&gt; 
+ &lt;li&gt;Prompts you to choose: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Option 1&lt;/strong&gt;: Wait 60 minutes for the limit to reset (with countdown timer)&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Option 2&lt;/strong&gt;: Exit gracefully (or auto-exits after 30-second timeout)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Prevents endless retry loops that waste time&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Custom Prompts&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Use custom prompt file
+ralph --prompt my_custom_instructions.md
+
+# With integrated monitoring
+ralph --monitor --prompt my_custom_instructions.md
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Execution Timeouts&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Set Claude Code execution timeout (default: 15 minutes)
+ralph --timeout 30  # 30-minute timeout for complex tasks
+
+# With monitoring and custom timeout
+ralph --monitor --timeout 60  # 60-minute timeout
+
+# Short timeout for quick iterations
+ralph --verbose --timeout 5  # 5-minute timeout with progress
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Verbose Mode&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Enable detailed progress updates during execution
+ralph --verbose
+
+# Combine with other options
+ralph --monitor --verbose --timeout 30
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Exit Thresholds&lt;/h3&gt; 
+&lt;p&gt;Modify these variables in &lt;code&gt;~/.ralph/ralph_loop.sh&lt;/code&gt;:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Exit Detection Thresholds:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;MAX_CONSECUTIVE_TEST_LOOPS=3     # Exit after 3 test-only loops
+MAX_CONSECUTIVE_DONE_SIGNALS=2   # Exit after 2 "done" signals
+TEST_PERCENTAGE_THRESHOLD=30     # Flag if 30%+ loops are test-only
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Circuit Breaker Thresholds:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;CB_NO_PROGRESS_THRESHOLD=3       # Open circuit after 3 loops with no file changes
+CB_SAME_ERROR_THRESHOLD=5        # Open circuit after 5 loops with repeated errors
+CB_OUTPUT_DECLINE_THRESHOLD=70   # Open circuit if output declines by &amp;gt;70%
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Project Structure&lt;/h2&gt; 
+&lt;p&gt;Ralph creates a standardized structure for each project:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;my-project/
+├── PROMPT.md           # Main development instructions for Ralph
+├── @fix_plan.md        # Prioritized task list (@ prefix = Ralph control file)
+├── @AGENT.md           # Build and run instructions
+├── specs/              # Project specifications and requirements
+│   └── stdlib/         # Standard library specifications
+├── src/                # Source code implementation
+├── examples/           # Usage examples and test cases
+├── logs/               # Ralph execution logs
+└── docs/generated/     # Auto-generated documentation
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Best Practices&lt;/h2&gt; 
+&lt;h3&gt;Writing Effective Prompts&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Be Specific&lt;/strong&gt; - Clear requirements lead to better results&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Prioritize&lt;/strong&gt; - Use &lt;code&gt;@fix_plan.md&lt;/code&gt; to guide Ralph's focus&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Set Boundaries&lt;/strong&gt; - Define what's in/out of scope&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Include Examples&lt;/strong&gt; - Show expected inputs/outputs&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Project Specifications&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Place detailed requirements in &lt;code&gt;specs/&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Use &lt;code&gt;@fix_plan.md&lt;/code&gt; for prioritized task tracking&lt;/li&gt; 
+ &lt;li&gt;Keep &lt;code&gt;@AGENT.md&lt;/code&gt; updated with build instructions&lt;/li&gt; 
+ &lt;li&gt;Document key decisions and architecture&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Monitoring Progress&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Use &lt;code&gt;ralph-monitor&lt;/code&gt; for live status updates&lt;/li&gt; 
+ &lt;li&gt;Check logs in &lt;code&gt;logs/&lt;/code&gt; for detailed execution history&lt;/li&gt; 
+ &lt;li&gt;Monitor &lt;code&gt;status.json&lt;/code&gt; for programmatic access&lt;/li&gt; 
+ &lt;li&gt;Watch for exit condition signals&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;System Requirements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Bash 4.0+&lt;/strong&gt; - For script execution&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Claude Code CLI&lt;/strong&gt; - &lt;code&gt;npm install -g @anthropic-ai/claude-code&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;tmux&lt;/strong&gt; - Terminal multiplexer for integrated monitoring (recommended)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;jq&lt;/strong&gt; - JSON processing for status tracking&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Git&lt;/strong&gt; - Version control (projects are initialized as git repos)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Standard Unix tools&lt;/strong&gt; - grep, date, etc.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Testing Requirements (Development)&lt;/h3&gt; 
+&lt;p&gt;If you want to run the test suite:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Install BATS testing framework
+npm install -g bats bats-support bats-assert
+
+# Run all tests (165 tests)
+npm test
+
+# Run specific test suites
+bats tests/unit/test_rate_limiting.bats
+bats tests/unit/test_exit_detection.bats
+bats tests/unit/test_json_parsing.bats
+bats tests/unit/test_cli_modern.bats
+bats tests/unit/test_cli_parsing.bats
+bats tests/integration/test_loop_execution.bats
+
+# Run error detection and circuit breaker tests
+./tests/test_error_detection.sh
+./tests/test_stuck_loop_detection.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Current test status:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;165 tests&lt;/strong&gt; across 8 test files&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;100% pass rate&lt;/strong&gt; (165/165 passing)&lt;/li&gt; 
+ &lt;li&gt;Comprehensive unit and integration tests&lt;/li&gt; 
+ &lt;li&gt;Specialized tests for JSON parsing, CLI flags, circuit breaker, and installation workflows&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note on Coverage&lt;/strong&gt;: Bash code coverage measurement with kcov has fundamental limitations when tracing subprocess executions. Test pass rate (100%) is the quality gate. See &lt;a href="https://github.com/bats-core/bats-core/issues/15"&gt;bats-core#15&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Installing tmux&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Ubuntu/Debian
+sudo apt-get install tmux
+
+# macOS
+brew install tmux
+
+# CentOS/RHEL
+sudo yum install tmux
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Monitoring and Debugging&lt;/h2&gt; 
+&lt;h3&gt;Live Dashboard&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Integrated tmux monitoring (recommended)
+ralph --monitor
+
+# Manual monitoring in separate terminal
+ralph-monitor
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Shows real-time:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Current loop count and status&lt;/li&gt; 
+ &lt;li&gt;API calls used vs. limit&lt;/li&gt; 
+ &lt;li&gt;Recent log entries&lt;/li&gt; 
+ &lt;li&gt;Rate limit countdown&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;tmux Controls:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;Ctrl+B&lt;/code&gt; then &lt;code&gt;D&lt;/code&gt; - Detach from session (keeps Ralph running)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Ctrl+B&lt;/code&gt; then &lt;code&gt;←/→&lt;/code&gt; - Switch between panes&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;tmux list-sessions&lt;/code&gt; - View active sessions&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;tmux attach -t &amp;lt;session-name&amp;gt;&lt;/code&gt; - Reattach to session&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Status Checking&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# JSON status output
+ralph --status
+
+# Manual log inspection
+tail -f logs/ralph.log
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Common Issues&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Rate Limits&lt;/strong&gt; - Ralph automatically waits and displays countdown&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;5-Hour API Limit&lt;/strong&gt; - Ralph detects and prompts for user action (wait or exit)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Stuck Loops&lt;/strong&gt; - Check &lt;code&gt;@fix_plan.md&lt;/code&gt; for unclear or conflicting tasks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Early Exit&lt;/strong&gt; - Review exit thresholds if Ralph stops too soon&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Execution Timeouts&lt;/strong&gt; - Increase &lt;code&gt;--timeout&lt;/code&gt; value for complex operations&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Missing Dependencies&lt;/strong&gt; - Ensure Claude Code CLI and tmux are installed&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;tmux Session Lost&lt;/strong&gt; - Use &lt;code&gt;tmux list-sessions&lt;/code&gt; and &lt;code&gt;tmux attach&lt;/code&gt; to reconnect&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Ralph is actively seeking contributors! We're working toward v1.0.0 with clear priorities and a detailed roadmap.&lt;/p&gt; 
+&lt;h3&gt;Quick Start for Contributors&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Fork and Clone&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/YOUR_USERNAME/ralph-claude-code.git
+cd ralph-claude-code
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Install Dependencies&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;npm install -g bats bats-support bats-assert
+./install.sh  # Install Ralph globally for testing
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Run Tests&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;npm test                    # Run all tests
+npm run test:unit          # Run unit tests only
+npm run test:integration   # Run integration tests only
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Priority Contribution Areas&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;High Priority (Help Needed!)&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Test Implementation&lt;/strong&gt; - We need more tests to reach comprehensive coverage&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/IMPLEMENTATION_PLAN.md"&gt;IMPLEMENTATION_PLAN.md&lt;/a&gt; for detailed test specifications&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Feature Development&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Log rotation functionality&lt;/li&gt; 
+   &lt;li&gt;Dry-run mode&lt;/li&gt; 
+   &lt;li&gt;Config file support&lt;/li&gt; 
+   &lt;li&gt;Metrics tracking&lt;/li&gt; 
+   &lt;li&gt;Notifications&lt;/li&gt; 
+   &lt;li&gt;Backup/rollback&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Documentation&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;TESTING.md guide&lt;/li&gt; 
+   &lt;li&gt;CONTRIBUTING.md (expand this section)&lt;/li&gt; 
+   &lt;li&gt;Usage tutorials and examples&lt;/li&gt; 
+   &lt;li&gt;Troubleshooting guides&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Real-World Testing&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Use Ralph on your projects&lt;/li&gt; 
+   &lt;li&gt;Report bugs and edge cases&lt;/li&gt; 
+   &lt;li&gt;Share your experience&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Development Guidelines&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Tests Required&lt;/strong&gt;: All new features must include tests&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Code Style&lt;/strong&gt;: Follow existing bash patterns and conventions&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Documentation&lt;/strong&gt;: Update README and relevant docs for user-facing changes&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Commit Messages&lt;/strong&gt;: Clear, descriptive commit messages&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Branch Naming&lt;/strong&gt;: &lt;code&gt;feature/feature-name&lt;/code&gt; or &lt;code&gt;fix/bug-description&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Pull Request Process&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Create a feature branch (&lt;code&gt;git checkout -b feature/amazing-feature&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Make your changes with tests&lt;/li&gt; 
+ &lt;li&gt;Run full test suite: &lt;code&gt;npm test&lt;/code&gt; (must pass 100%)&lt;/li&gt; 
+ &lt;li&gt;Update documentation if needed&lt;/li&gt; 
+ &lt;li&gt;Commit changes (&lt;code&gt;git commit -m 'Add amazing feature'&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Push to your fork (&lt;code&gt;git push origin feature/amazing-feature&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Open a Pull Request with: 
+  &lt;ul&gt; 
+   &lt;li&gt;Clear description of changes&lt;/li&gt; 
+   &lt;li&gt;Link to related issues&lt;/li&gt; 
+   &lt;li&gt;Test results&lt;/li&gt; 
+   &lt;li&gt;Screenshots (if UI/output changes)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Development Roadmap Reference&lt;/h3&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/IMPLEMENTATION_PLAN.md"&gt;IMPLEMENTATION_PLAN.md&lt;/a&gt; for the complete roadmap including:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Detailed test specifications&lt;/li&gt; 
+ &lt;li&gt;Feature implementation guides&lt;/li&gt; 
+ &lt;li&gt;Code examples for new functionality&lt;/li&gt; 
+ &lt;li&gt;Success metrics and milestones&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Questions or Ideas?&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Open an issue for discussion&lt;/li&gt; 
+ &lt;li&gt;Check existing issues for planned work&lt;/li&gt; 
+ &lt;li&gt;Join discussions on pull requests&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Every contribution matters&lt;/strong&gt; - from fixing typos to implementing major features. Thank you for helping make Ralph better!&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the MIT License - see the &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;h2&gt;Acknowledgments&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Inspired by the &lt;a href="https://ghuntley.com/ralph/"&gt;Ralph technique&lt;/a&gt; created by Geoffrey Huntley&lt;/li&gt; 
+ &lt;li&gt;Built for &lt;a href="https://claude.ai/code"&gt;Claude Code&lt;/a&gt; by Anthropic&lt;/li&gt; 
+ &lt;li&gt;Community feedback and contributions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Related Projects&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://claude.ai/code"&gt;Claude Code&lt;/a&gt; - The AI coding assistant that powers Ralph&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/paul-gauthier/aider"&gt;Aider&lt;/a&gt; - Original Ralph technique implementation&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Command Reference&lt;/h2&gt; 
+&lt;h3&gt;Installation Commands (Run Once)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;./install.sh              # Install Ralph globally
+./install.sh uninstall    # Remove Ralph from system
+./install.sh --help       # Show installation help
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Ralph Loop Options&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;ralph [OPTIONS]
+  -h, --help              Show help message
+  -c, --calls NUM         Set max calls per hour (default: 100)
+  -p, --prompt FILE       Set prompt file (default: PROMPT.md)
+  -s, --status            Show current status and exit
+  -m, --monitor           Start with tmux session and live monitor
+  -v, --verbose           Show detailed progress updates during execution
+  -t, --timeout MIN       Set Claude Code execution timeout in minutes (1-120, default: 15)
+  --output-format FORMAT  Set output format: json (default) or text
+  --allowed-tools TOOLS   Set allowed Claude tools (default: Write,Bash(git *),Read)
+  --no-continue           Disable session continuity (start fresh each loop)
+  --reset-circuit         Reset the circuit breaker
+  --circuit-status        Show circuit breaker status
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Project Commands (Per Project)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;ralph-setup project-name     # Create new Ralph project
+ralph-import prd.md project  # Convert PRD/specs to Ralph project
+ralph --monitor              # Start with integrated monitoring
+ralph --status               # Check current loop status
+ralph --verbose              # Enable detailed progress updates
+ralph --timeout 30           # Set 30-minute execution timeout
+ralph --calls 50             # Limit to 50 API calls per hour
+ralph-monitor                # Manual monitoring dashboard
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;tmux Session Management&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;tmux list-sessions        # View active Ralph sessions
+tmux attach -t &amp;lt;name&amp;gt;     # Reattach to detached session
+# Ctrl+B then D           # Detach from session (keeps running)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Development Roadmap&lt;/h2&gt; 
+&lt;p&gt;Ralph is under active development with a clear path to v1.0.0. See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/IMPLEMENTATION_PLAN.md"&gt;IMPLEMENTATION_PLAN.md&lt;/a&gt; for the complete roadmap.&lt;/p&gt; 
+&lt;h3&gt;Current Status: v0.9.3&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;What's Delivered:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Core loop functionality with intelligent exit detection&lt;/li&gt; 
+ &lt;li&gt;Rate limiting (100 calls/hour) and circuit breaker pattern&lt;/li&gt; 
+ &lt;li&gt;Response analyzer with semantic understanding&lt;/li&gt; 
+ &lt;li&gt;165 comprehensive tests (100% pass rate)&lt;/li&gt; 
+ &lt;li&gt;tmux integration and live monitoring&lt;/li&gt; 
+ &lt;li&gt;PRD import functionality&lt;/li&gt; 
+ &lt;li&gt;Installation system and project templates&lt;/li&gt; 
+ &lt;li&gt;Modern CLI commands with JSON output support&lt;/li&gt; 
+ &lt;li&gt;CI/CD pipeline with GitHub Actions&lt;/li&gt; 
+ &lt;li&gt;Comprehensive installation test suite&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Test Coverage Breakdown:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Unit Tests: 111 (CLI parsing, JSON, exit detection, rate limiting)&lt;/li&gt; 
+ &lt;li&gt;Integration Tests: 54 (loop execution, edge cases, installation)&lt;/li&gt; 
+ &lt;li&gt;Test Files: 8&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Path to v1.0.0 (~4 weeks)&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Enhanced Testing&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Installation and setup workflow tests&lt;/li&gt; 
+ &lt;li&gt;tmux integration tests&lt;/li&gt; 
+ &lt;li&gt;Monitor dashboard tests&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Core Features&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Log rotation functionality&lt;/li&gt; 
+ &lt;li&gt;Dry-run mode&lt;/li&gt; 
+ &lt;li&gt;Configuration file support - .ralphrc&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Advanced Features &amp;amp; Polish&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Metrics and analytics tracking&lt;/li&gt; 
+ &lt;li&gt;Desktop notifications&lt;/li&gt; 
+ &lt;li&gt;Git backup and rollback system&lt;/li&gt; 
+ &lt;li&gt;End-to-end tests&lt;/li&gt; 
+ &lt;li&gt;Final documentation and release prep&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/IMPLEMENTATION_STATUS.md"&gt;IMPLEMENTATION_STATUS.md&lt;/a&gt; for detailed progress tracking.&lt;/p&gt; 
+&lt;h3&gt;How to Contribute&lt;/h3&gt; 
+&lt;p&gt;Ralph is seeking contributors! Priority areas:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Test Implementation&lt;/strong&gt; - Help expand test coverage (&lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/IMPLEMENTATION_PLAN.md"&gt;see plan&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Feature Development&lt;/strong&gt; - Log rotation, dry-run mode, config files&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Documentation&lt;/strong&gt; - Usage examples, tutorials, troubleshooting guides&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Bug Reports&lt;/strong&gt; - Real-world usage feedback and edge cases&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/#contributing"&gt;Contributing&lt;/a&gt; section above for guidelines.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Ready to let AI build your project?&lt;/strong&gt; Start with &lt;code&gt;./install.sh&lt;/code&gt; and let Ralph take it from there!&lt;/p&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.star-history.com/#frankbria/ralph-claude-code&amp;amp;type=date&amp;amp;legend=top-left"&gt;&lt;img src="https://api.star-history.com/svg?repos=frankbria/ralph-claude-code&amp;amp;type=date&amp;amp;legend=top-left" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>usememos/memos</title>
+      <link>https://github.com/usememos/memos</link>
+      <description>&lt;p&gt;An open-source, self-hosted note-taking service. Your thoughts, your data, your control — no tracking, no ads, no subscription fees.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Memos&lt;/h1&gt; 
+&lt;img align="right" height="96px" src="https://raw.githubusercontent.com/usememos/.github/refs/heads/main/assets/logo-rounded.png" alt="Memos" /&gt; 
+&lt;p&gt;An open-source, self-hosted note-taking service. Your thoughts, your data, your control — no tracking, no ads, no subscription fees.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://usememos.com"&gt;&lt;img src="https://img.shields.io/badge/%F0%9F%8F%A0-usememos.com-blue?style=flat-square" alt="Home" /&gt;&lt;/a&gt; &lt;a href="https://demo.usememos.com/"&gt;&lt;img src="https://img.shields.io/badge/%E2%9C%A8-Try%20Demo-orange?style=flat-square" alt="Live Demo" /&gt;&lt;/a&gt; &lt;a href="https://usememos.com/docs"&gt;&lt;img src="https://img.shields.io/badge/%F0%9F%93%9A-Documentation-green?style=flat-square" alt="Docs" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/tfPJa4UmAv"&gt;&lt;img src="https://img.shields.io/badge/%F0%9F%92%AC-Discord-5865f2?style=flat-square&amp;amp;logo=discord&amp;amp;logoColor=white" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://hub.docker.com/r/neosmemo/memos"&gt;&lt;img src="https://img.shields.io/docker/pulls/neosmemo/memos?style=flat-square&amp;amp;logo=docker" alt="Docker Pulls" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/usememos/.github/refs/heads/main/assets/demo.png" alt="Memos Demo Screenshot" height="512" /&gt; 
+&lt;h3&gt;💎 Featured Sponsors&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://go.warp.dev/memos"&gt;&lt;strong&gt;Warp&lt;/strong&gt; — The AI-powered terminal built for speed and collaboration&lt;/a&gt;&lt;/p&gt; 
+&lt;a href="https://go.warp.dev/memos" target="_blank" rel="noopener"&gt; &lt;img src="https://raw.githubusercontent.com/warpdotdev/brand-assets/main/Github/Sponsor/Warp-Github-LG-02.png" alt="Warp - The AI-powered terminal built for speed and collaboration" width="512" /&gt; &lt;/a&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;a href="https://www.lambdatest.com/?utm_source=memos&amp;amp;utm_medium=sponsor"&gt;&lt;strong&gt;LambdaTest&lt;/strong&gt; - Cross-browser testing cloud&lt;/a&gt;&lt;/p&gt; 
+&lt;a href="https://www.lambdatest.com/?utm_source=memos&amp;amp;utm_medium=sponsor" target="_blank" rel="noopener"&gt; &lt;img src="https://www.lambdatest.com/blue-logo.png" alt="LambdaTest - Cross-browser testing cloud" height="50" /&gt; &lt;/a&gt; 
+&lt;h2&gt;Overview&lt;/h2&gt; 
+&lt;p&gt;Memos is a privacy-first, self-hosted knowledge base that works seamlessly for personal notes, team wikis, and knowledge management. Built with Go and React, it offers lightning-fast performance without compromising on features or usability.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Why choose Memos over cloud services?&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Feature&lt;/th&gt; 
+   &lt;th&gt;Memos&lt;/th&gt; 
+   &lt;th&gt;Cloud Services&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Privacy&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Self-hosted, zero telemetry&lt;/td&gt; 
+   &lt;td&gt;❌ Your data on their servers&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Cost&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Free forever, MIT license&lt;/td&gt; 
+   &lt;td&gt;❌ Subscription fees&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Performance&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Instant load, no latency&lt;/td&gt; 
+   &lt;td&gt;⚠️ Depends on internet&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Ownership&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Full control &amp;amp; export&lt;/td&gt; 
+   &lt;td&gt;❌ Vendor lock-in&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;API Access&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Full REST + gRPC APIs&lt;/td&gt; 
+   &lt;td&gt;⚠️ Limited or paid&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Customization&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Open source, forkable&lt;/td&gt; 
+   &lt;td&gt;❌ Closed ecosystem&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;🔒 Privacy-First Architecture&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Self-hosted on your infrastructure with zero telemetry&lt;/li&gt; 
+   &lt;li&gt;Complete data ownership and export capabilities&lt;/li&gt; 
+   &lt;li&gt;No tracking, no ads, no vendor lock-in&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;📝 Markdown Native&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Full markdown support&lt;/li&gt; 
+   &lt;li&gt;Plain text storage — take your data anywhere&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;⚡ Blazing Fast&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Built with Go backend and React frontend&lt;/li&gt; 
+   &lt;li&gt;Optimized for performance at any scale&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;🐳 Simple Deployment&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;One-line Docker installation&lt;/li&gt; 
+   &lt;li&gt;Supports SQLite, MySQL, and PostgreSQL&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;🔗 Developer-Friendly&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Full REST and gRPC APIs&lt;/li&gt; 
+   &lt;li&gt;Easy integration with existing workflows&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;🎨 Beautiful Interface&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Clean, minimal design and dark mode support&lt;/li&gt; 
+   &lt;li&gt;Mobile-responsive layout&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;h3&gt;Docker (Recommended)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -d \
+  --name memos \
+  -p 5230:5230 \
+  -v ~/.memos:/var/opt/memos \
+  neosmemo/memos:stable
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Open &lt;code&gt;http://localhost:5230&lt;/code&gt; and start writing!&lt;/p&gt; 
+&lt;h3&gt;Try the Live Demo&lt;/h3&gt; 
+&lt;p&gt;Don't want to install yet? Try our &lt;a href="https://demo.usememos.com/"&gt;live demo&lt;/a&gt; first!&lt;/p&gt; 
+&lt;h3&gt;Other Installation Methods&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Docker Compose&lt;/strong&gt; - Recommended for production deployments&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Pre-built Binaries&lt;/strong&gt; - Available for Linux, macOS, and Windows&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt; - Helm charts and manifests available&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Build from Source&lt;/strong&gt; - For development and customization&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See our &lt;a href="https://usememos.com/docs/installation"&gt;installation guide&lt;/a&gt; for detailed instructions.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions of all kinds! Whether you're fixing bugs, adding features, improving documentation, or helping with translations — every contribution matters.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Ways to contribute:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🐛 &lt;a href="https://github.com/usememos/memos/issues/new?template=bug_report.md"&gt;Report bugs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;💡 &lt;a href="https://github.com/usememos/memos/issues/new?template=feature_request.md"&gt;Suggest features&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🔧 &lt;a href="https://github.com/usememos/memos/pulls"&gt;Submit pull requests&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;📖 &lt;a href="https://github.com/usememos/memos/tree/main/docs"&gt;Improve documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🌍 &lt;a href="https://github.com/usememos/memos/tree/main/web/src/locales"&gt;Help with translations&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Sponsors&lt;/h2&gt; 
+&lt;p&gt;Love Memos? &lt;a href="https://github.com/sponsors/usememos"&gt;Sponsor us on GitHub&lt;/a&gt; to help keep the project growing!&lt;/p&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://star-history.com/#usememos/memos&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=usememos/memos&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Memos is open-source software licensed under the &lt;a href="https://raw.githubusercontent.com/usememos/memos/main/LICENSE"&gt;MIT License&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Privacy Policy&lt;/h2&gt; 
+&lt;p&gt;Memos is built with privacy as a core principle. As a self-hosted application, all your data stays on your infrastructure. There is no telemetry, no tracking, and no data collection. See our &lt;a href="https://usememos.com/privacy"&gt;Privacy Policy&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://usememos.com"&gt;Website&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://usememos.com/docs"&gt;Documentation&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://demo.usememos.com/"&gt;Demo&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://discord.gg/tfPJa4UmAv"&gt;Discord&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://x.com/usememos"&gt;X/Twitter&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;a href="https://vercel.com/oss"&gt; &lt;img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg?sanitize=true" /&gt; &lt;/a&gt;</description>
+    </item>
+    
+    <item>
+      <title>BloopAI/vibe-kanban</title>
+      <link>https://github.com/BloopAI/vibe-kanban</link>
+      <description>&lt;p&gt;Get 10X more out of Claude Code, Codex or any coding agent&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://vibekanban.com"&gt; 
+  &lt;picture&gt; 
+   &lt;source srcset="frontend/public/vibe-kanban-logo-dark.svg" media="(prefers-color-scheme: dark)" /&gt; 
+   &lt;source srcset="frontend/public/vibe-kanban-logo.svg" media="(prefers-color-scheme: light)" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/BloopAI/vibe-kanban/main/frontend/public/vibe-kanban-logo.svg?sanitize=true" alt="Vibe Kanban Logo" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;Get 10X more out of Claude Code, Gemini CLI, Codex, Amp and other coding agents...&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.npmjs.com/package/vibe-kanban"&gt;&lt;img alt="npm" src="https://img.shields.io/npm/v/vibe-kanban?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://github.com/BloopAI/vibe-kanban/raw/main/.github/workflows/publish.yml"&gt;&lt;img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/BloopAI/vibe-kanban/.github%2Fworkflows%2Fpublish.yml" /&gt;&lt;/a&gt; &lt;a href="https://deepwiki.com/BloopAI/vibe-kanban"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" alt="Ask DeepWiki" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h1 align="center"&gt; &lt;a href="https://jobs.polymer.co/vibe-kanban?source=github"&gt;&lt;strong&gt;We're hiring!&lt;/strong&gt;&lt;/a&gt; &lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/BloopAI/vibe-kanban/main/frontend/public/vibe-kanban-screenshot-overview.png" alt="" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Overview&lt;/h2&gt; 
+&lt;p&gt;AI coding agents are increasingly writing the world's code and human engineers now spend the majority of their time planning, reviewing, and orchestrating tasks. Vibe Kanban streamlines this process, enabling you to:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Easily switch between different coding agents&lt;/li&gt; 
+ &lt;li&gt;Orchestrate the execution of multiple coding agents in parallel or in sequence&lt;/li&gt; 
+ &lt;li&gt;Quickly review work and start dev servers&lt;/li&gt; 
+ &lt;li&gt;Track the status of tasks that your coding agents are working on&lt;/li&gt; 
+ &lt;li&gt;Centralise configuration of coding agent MCP configs&lt;/li&gt; 
+ &lt;li&gt;Open projects remotely via SSH when running Vibe Kanban on a remote server&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;You can watch a video overview &lt;a href="https://youtu.be/TFT3KnZOOAk"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;Make sure you have authenticated with your favourite coding agent. A full list of supported coding agents can be found in the &lt;a href="https://vibekanban.com/docs"&gt;docs&lt;/a&gt;. Then in your terminal run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx vibe-kanban
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Please head to the &lt;a href="https://vibekanban.com/docs"&gt;website&lt;/a&gt; for the latest documentation and user guides.&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;We use &lt;a href="https://github.com/BloopAI/vibe-kanban/discussions"&gt;GitHub Discussions&lt;/a&gt; for feature requests. Please open a discussion to create a feature request. For bugs please open an issue on this repo.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We would prefer that ideas and changes are first raised with the core team via &lt;a href="https://github.com/BloopAI/vibe-kanban/discussions"&gt;GitHub Discussions&lt;/a&gt; or &lt;a href="https://discord.gg/AC4nwVtJM3"&gt;Discord&lt;/a&gt;, where we can discuss implementation details and alignment with the existing roadmap. Please do not open PRs without first discussing your proposal with the team.&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;h3&gt;Prerequisites&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://rustup.rs/"&gt;Rust&lt;/a&gt; (latest stable)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://nodejs.org/"&gt;Node.js&lt;/a&gt; (&amp;gt;=18)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://pnpm.io/"&gt;pnpm&lt;/a&gt; (&amp;gt;=8)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Additional development tools:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cargo install cargo-watch
+cargo install sqlx-cli
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Install dependencies:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm i
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Running the dev server&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This will start the backend. A blank DB will be copied from the &lt;code&gt;dev_assets_seed&lt;/code&gt; folder.&lt;/p&gt; 
+&lt;h3&gt;Building the frontend&lt;/h3&gt; 
+&lt;p&gt;To build just the frontend:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd frontend
+pnpm build
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Build from source (macOS)&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Run &lt;code&gt;./local-build.sh&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Test with &lt;code&gt;cd npx-cli &amp;amp;&amp;amp; node bin/cli.js&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Environment Variables&lt;/h3&gt; 
+&lt;p&gt;The following environment variables can be configured at build time or runtime:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Variable&lt;/th&gt; 
+   &lt;th&gt;Type&lt;/th&gt; 
+   &lt;th&gt;Default&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;POSTHOG_API_KEY&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Build-time&lt;/td&gt; 
+   &lt;td&gt;Empty&lt;/td&gt; 
+   &lt;td&gt;PostHog analytics API key (disables analytics if empty)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;POSTHOG_API_ENDPOINT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Build-time&lt;/td&gt; 
+   &lt;td&gt;Empty&lt;/td&gt; 
+   &lt;td&gt;PostHog analytics endpoint (disables analytics if empty)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;PORT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;Auto-assign&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Production&lt;/strong&gt;: Server port. &lt;strong&gt;Dev&lt;/strong&gt;: Frontend port (backend uses PORT+1)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;BACKEND_PORT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;0&lt;/code&gt; (auto-assign)&lt;/td&gt; 
+   &lt;td&gt;Backend server port (dev mode only, overrides PORT+1)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;FRONTEND_PORT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;3000&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Frontend dev server port (dev mode only, overrides PORT)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;HOST&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;127.0.0.1&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Backend server host&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;DISABLE_WORKTREE_ORPHAN_CLEANUP&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;Not set&lt;/td&gt; 
+   &lt;td&gt;Disable git worktree cleanup (for debugging)&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;Build-time variables&lt;/strong&gt; must be set when running &lt;code&gt;pnpm run build&lt;/code&gt;. &lt;strong&gt;Runtime variables&lt;/strong&gt; are read when the application starts.&lt;/p&gt; 
+&lt;h3&gt;Remote Deployment&lt;/h3&gt; 
+&lt;p&gt;When running Vibe Kanban on a remote server (e.g., via systemctl, Docker, or cloud hosting), you can configure your editor to open projects via SSH:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Access via tunnel&lt;/strong&gt;: Use Cloudflare Tunnel, ngrok, or similar to expose the web UI&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Configure remote SSH&lt;/strong&gt; in Settings → Editor Integration: 
+  &lt;ul&gt; 
+   &lt;li&gt;Set &lt;strong&gt;Remote SSH Host&lt;/strong&gt; to your server hostname or IP&lt;/li&gt; 
+   &lt;li&gt;Set &lt;strong&gt;Remote SSH User&lt;/strong&gt; to your SSH username (optional)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;SSH access from your local machine to the remote server&lt;/li&gt; 
+   &lt;li&gt;SSH keys configured (passwordless authentication)&lt;/li&gt; 
+   &lt;li&gt;VSCode Remote-SSH extension&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;When configured, the "Open in VSCode" buttons will generate URLs like &lt;code&gt;vscode://vscode-remote/ssh-remote+user@host/path&lt;/code&gt; that open your local editor and connect to the remote server.&lt;/p&gt; 
+&lt;p&gt;See the &lt;a href="https://vibekanban.com/docs/configuration-customisation/global-settings#remote-ssh-configuration"&gt;documentation&lt;/a&gt; for detailed setup instructions.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenBB-finance/OpenBB</title>
+      <link>https://github.com/OpenBB-finance/OpenBB</link>
+      <description>&lt;p&gt;Financial data platform for analysts, quants and AI agents.&lt;/p&gt;&lt;hr&gt;&lt;br /&gt; 
+&lt;img src="https://github.com/OpenBB-finance/OpenBB/raw/develop/images/odp-light.svg?raw=true#gh-light-mode-only" alt="Open Data Platform by OpenBB logo" width="600" /&gt; 
+&lt;img src="https://github.com/OpenBB-finance/OpenBB/raw/develop/images/odp-dark.svg?raw=true#gh-dark-mode-only" alt="Open Data Platform by OpenBB logo" width="600" /&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;p&gt;&lt;a href="https://x.com/openbb_finance"&gt;&lt;img src="https://img.shields.io/twitter/url/https/twitter.com/openbb_finance.svg?style=social&amp;amp;label=Follow%20%40openbb_finance" alt="Twitter" /&gt;&lt;/a&gt; &lt;a href="https://discord.com/invite/xPHTuHCmuV"&gt;&lt;img src="https://img.shields.io/discord/831165782750789672" alt="Discord Shield" /&gt;&lt;/a&gt; &lt;a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/OpenBB-finance/OpenBB"&gt;&lt;img src="https://img.shields.io/static/v1?label=Dev%20Containers&amp;amp;message=Open&amp;amp;color=blue&amp;amp;logo=visualstudiocode" alt="Open in Dev Containers" /&gt;&lt;/a&gt; &lt;a href="https://codespaces.new/OpenBB-finance/OpenBB"&gt; &lt;img src="https://github.com/codespaces/badge.svg?sanitize=true" height="20" /&gt; &lt;/a&gt; &lt;a target="_blank" href="https://colab.research.google.com/github/OpenBB-finance/OpenBB/blob/develop/examples/googleColab.ipynb"&gt; &lt;img src="https://colab.research.google.com/assets/colab-badge.svg?sanitize=true" alt="Open In Colab" /&gt; &lt;/a&gt; &lt;a href="https://pypi.org/project/openbb/"&gt;&lt;img src="https://img.shields.io/pypi/v/openbb?color=blue&amp;amp;label=PyPI%20Package" alt="PyPI" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Open Data Platform by OpenBB (ODP) is the open-source toolset that helps data engineers integrate proprietary, licensed, and public data sources into downstream applications like AI copilots and research dashboards.&lt;/p&gt; 
+&lt;p&gt;ODP operates as the "connect once, consume everywhere" infrastructure layer that consolidates and exposes data to multiple surfaces at once: Python environments for quants, OpenBB Workspace and Excel for analysts, MCP servers for AI agents, and REST APIs for other applications.&lt;/p&gt; 
+&lt;a href="https://pro.openbb.co"&gt; 
+ &lt;div align="center"&gt; 
+  &lt;img src="https://openbb-cms.directus.app/assets/70b971ef-7a7e-486e-b5ae-1cc602f2162c.png" alt="Logo" width="1000" /&gt; 
+ &lt;/div&gt; &lt;/a&gt; 
+&lt;p&gt;Get started with: &lt;code&gt;pip install openbb&lt;/code&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;from openbb import obb
+output = obb.equity.price.historical("AAPL")
+df = output.to_dataframe()
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Data integrations available can be found here: &lt;a href="https://docs.openbb.co/python/reference"&gt;https://docs.openbb.co/python/reference&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;OpenBB Workspace&lt;/h2&gt; 
+&lt;p&gt;While the Open Data Platform provides the open-source data integration foundation, &lt;strong&gt;OpenBB Workspace&lt;/strong&gt; offers the enterprise UI for analysts to visualize datasets and leverage AI agents. The platform's "connect once, consume everywhere" architecture enables seamless integration between the two.&lt;/p&gt; 
+&lt;p&gt;You can find OpenBB Workspace at &lt;a href="https://pro.openbb.co"&gt;https://pro.openbb.co&lt;/a&gt;. &lt;a href="https://pro.openbb.co"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://pro.openbb.co"&gt; 
+ &lt;div align="center"&gt; 
+  &lt;img src="https://openbb-cms.directus.app/assets/f69b6aaf-0821-4bc8-a43c-715e03a924ef.png" alt="Logo" width="1000" /&gt; 
+ &lt;/div&gt; &lt;/a&gt; 
+&lt;p&gt;Data integration:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;You can learn more about adding data to the OpenBB workspace from the &lt;a href="https://docs.openbb.co/workspace"&gt;docs&lt;/a&gt; or &lt;a href="https://github.com/OpenBB-finance/backends-for-openbb"&gt;this open source repository&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;AI Agents integration:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;You can learn more about adding AI agents to the OpenBB workspace from &lt;a href="https://github.com/OpenBB-finance/agents-for-openbb"&gt;this open source repository&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Integrating Open Data Platform to the OpenBB Workspace&lt;/h3&gt; 
+&lt;p&gt;Connect this library to the OpenBB Workspace with a few simple commands, in a Python (3.9.21 - 3.12) environment.&lt;/p&gt; 
+&lt;h4&gt;Run an ODP backend&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Install the packages.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;pip install "openbb[all]"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Start the API server over localhost.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;openbb-api
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This will launch a FastAPI server, via Uvicorn, at &lt;code&gt;127.0.0.1:6900&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;You can check that it works by going to &lt;a href="http://127.0.0.1:6900"&gt;http://127.0.0.1:6900&lt;/a&gt;.&lt;/p&gt; 
+&lt;h4&gt;Integrate the ODP Backend to OpenBB Workspace&lt;/h4&gt; 
+&lt;p&gt;Sign-in to the &lt;a href="https://pro.openbb.co/"&gt;OpenBB Workspace&lt;/a&gt;, and follow the following steps:&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/75cffb4a-5e95-470a-b9d0-6ffd4067e069" alt="CleanShot 2025-05-17 at 09 51 56@2x" /&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Go to the "Apps" tab&lt;/li&gt; 
+ &lt;li&gt;Click on "Connect backend"&lt;/li&gt; 
+ &lt;li&gt;Fill in the form with: Name: Open Data Platform URL: &lt;a href="http://127.0.0.1:6900"&gt;http://127.0.0.1:6900&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Click on "Test". You should get a "Test successful" with the number of apps found.&lt;/li&gt; 
+ &lt;li&gt;Click on "Add".&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;That's it.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;!-- TABLE OF CONTENTS --&gt; 
+&lt;details closed="closed"&gt; 
+ &lt;summary&gt;&lt;h2 style="display: inline-block"&gt;Table of Contents&lt;/h2&gt;&lt;/summary&gt; 
+ &lt;ol&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#1-installation"&gt;Installation&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#2-contributing"&gt;Contributing&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#3-license"&gt;License&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#4-disclaimer"&gt;Disclaimer&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#5-contacts"&gt;Contacts&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#6-star-history"&gt;Star History&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#7-contributors"&gt;Contributors&lt;/a&gt;&lt;/li&gt; 
+ &lt;/ol&gt; 
+&lt;/details&gt; 
+&lt;h2&gt;1. Installation&lt;/h2&gt; 
+&lt;p&gt;The ODP Python Package can be installed from &lt;a href="https://pypi.org/project/openbb/"&gt;PyPI package&lt;/a&gt; by running &lt;code&gt;pip install openbb&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;or by cloning the repository directly with &lt;code&gt;git clone https://github.com/OpenBB-finance/OpenBB.git&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;Please find more about the installation process, in the &lt;a href="https://docs.openbb.co/python/installation"&gt;OpenBB Documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;ODP CLI installation&lt;/h3&gt; 
+&lt;p&gt;The ODP CLI is a command-line interface that allows you to access the ODP directly from your command line.&lt;/p&gt; 
+&lt;p&gt;It can be installed by running &lt;code&gt;pip install openbb-cli&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;or by cloning the repository directly with &lt;code&gt;git clone https://github.com/OpenBB-finance/OpenBB.git&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;Please find more about the installation process in the &lt;a href="https://docs.openbb.co/cli/installation"&gt;OpenBB Documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;2. Contributing&lt;/h2&gt; 
+&lt;p&gt;There are three main ways of contributing to this project. (Hopefully you have starred the project by now ⭐️)&lt;/p&gt; 
+&lt;h3&gt;Become a Contributor&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;More information on our &lt;a href="https://docs.openbb.co/python/developer"&gt;Developer Documentation&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Create a GitHub ticket&lt;/h3&gt; 
+&lt;p&gt;Before creating a ticket make sure the one you are creating doesn't exist already &lt;a href="https://github.com/OpenBB-finance/OpenBB/issues"&gt;among the existing issues&lt;/a&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/OpenBB-finance/OpenBB/issues/new?assignees=&amp;amp;labels=bug&amp;amp;template=bug_report.md&amp;amp;title=%5BBug%5D"&gt;Report bug&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/OpenBB-finance/OpenBB/issues/new?assignees=&amp;amp;labels=enhancement&amp;amp;template=enhancement.md&amp;amp;title=%5BIMPROVE%5D"&gt;Suggest improvement&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/OpenBB-finance/OpenBB/issues/new?assignees=&amp;amp;labels=new+feature&amp;amp;template=feature_request.md&amp;amp;title=%5BFR%5D"&gt;Request a feature&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Provide feedback&lt;/h3&gt; 
+&lt;p&gt;We are most active on &lt;a href="https://openbb.co/discord"&gt;our Discord&lt;/a&gt;, but feel free to reach out to us in any of &lt;a href="https://openbb.co/links"&gt;our social media&lt;/a&gt; for feedback.&lt;/p&gt; 
+&lt;h2&gt;3. License&lt;/h2&gt; 
+&lt;p&gt;Distributed under the AGPLv3 License. See &lt;a href="https://github.com/OpenBB-finance/OpenBB/raw/main/LICENSE"&gt;LICENSE&lt;/a&gt; for more information.&lt;/p&gt; 
+&lt;h2&gt;4. Disclaimer&lt;/h2&gt; 
+&lt;p&gt;Trading in financial instruments involves high risks including the risk of losing some, or all, of your investment amount, and may not be suitable for all investors.&lt;/p&gt; 
+&lt;p&gt;Before deciding to trade in a financial instrument you should be fully informed of the risks and costs associated with trading the financial markets, carefully consider your investment objectives, level of experience, and risk appetite, and seek professional advice where needed.&lt;/p&gt; 
+&lt;p&gt;The data contained in the Open Data Platform is not necessarily accurate.&lt;/p&gt; 
+&lt;p&gt;OpenBB and any provider of the data contained in this website will not accept liability for any loss or damage as a result of your trading, or your reliance on the information displayed.&lt;/p&gt; 
+&lt;p&gt;All names, logos, and brands of third parties that may be referenced in our sites, products or documentation are trademarks of their respective owners. Unless otherwise specified, OpenBB and its products and services are not endorsed by, sponsored by, or affiliated with these third parties.&lt;/p&gt; 
+&lt;p&gt;Our use of these names, logos, and brands is for identification purposes only, and does not imply any such endorsement, sponsorship, or affiliation.&lt;/p&gt; 
+&lt;h2&gt;5. Contacts&lt;/h2&gt; 
+&lt;p&gt;If you have any questions about the platform or anything OpenBB, feel free to email us at &lt;code&gt;support@openbb.co&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;If you want to say hi, or are interested in partnering with us, feel free to reach us at &lt;code&gt;hello@openbb.co&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;Any of our social media platforms: &lt;a href="https://openbb.co/links"&gt;openbb.co/links&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;6. Star History&lt;/h2&gt; 
+&lt;p&gt;This is a proxy of our growth and that we are just getting started.&lt;/p&gt; 
+&lt;p&gt;But for more metrics important to us check &lt;a href="https://openbb.co/open"&gt;openbb.co/open&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://api.star-history.com/svg?repos=openbb-finance/OpenBB&amp;amp;type=Date&amp;amp;theme=dark"&gt;&lt;img src="https://api.star-history.com/svg?repos=openbb-finance/OpenBB&amp;amp;type=Date&amp;amp;theme=dark" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;7. Contributors&lt;/h2&gt; 
+&lt;p&gt;OpenBB wouldn't be OpenBB without you. If we are going to disrupt financial industry, every contribution counts. Thank you for being part of this journey.&lt;/p&gt; 
+&lt;a href="https://github.com/OpenBB-finance/OpenBB/graphs/contributors"&gt; &lt;img src="https://contributors-img.web.app/image?repo=OpenBB-finance/OpenBB" width="800" /&gt; &lt;/a&gt; 
+&lt;!-- MARKDOWN LINKS &amp; IMAGES --&gt; 
+&lt;!-- https://www.markdownguide.org/basic-syntax/#reference-style-links --&gt;</description>
+    </item>
+    
+    <item>
+      <title>ourongxing/newsnow</title>
+      <link>https://github.com/ourongxing/newsnow</link>
+      <description>&lt;p&gt;Elegant reading of real-time and hottest news&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/ourongxing/newsnow/main/public/og-image.png" alt="" /&gt;&lt;/p&gt; 
+&lt;p&gt;English | &lt;a href="https://raw.githubusercontent.com/ourongxing/newsnow/main/README.zh-CN.md"&gt;简体中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/ourongxing/newsnow/main/README.ja-JP.md"&gt;日本語&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] This is a demo version currently supporting Chinese only. A full-featured version with better customization and English content support will be released later.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Elegant reading of real-time and hottest news&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Clean and elegant UI design for optimal reading experience&lt;/li&gt; 
+ &lt;li&gt;Real-time updates on trending news&lt;/li&gt; 
+ &lt;li&gt;GitHub OAuth login with data synchronization&lt;/li&gt; 
+ &lt;li&gt;30-minute default cache duration (logged-in users can force refresh)&lt;/li&gt; 
+ &lt;li&gt;Adaptive scraping interval (minimum 2 minutes) based on source update frequency to optimize resource usage and prevent IP bans&lt;/li&gt; 
+ &lt;li&gt;support MCP server&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "newsnow": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "newsnow-mcp-server"
+      ],
+      "env": {
+        "BASE_URL": "https://newsnow.busiyi.world"
+      }
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can change the &lt;code&gt;BASE_URL&lt;/code&gt; to your own domain.&lt;/p&gt; 
+&lt;h2&gt;Deployment&lt;/h2&gt; 
+&lt;h3&gt;Basic Deployment&lt;/h3&gt; 
+&lt;p&gt;For deployments without login and caching:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork this repository&lt;/li&gt; 
+ &lt;li&gt;Import to platforms like Cloudflare Page or Vercel&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Cloudflare Page Configuration&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Build command: &lt;code&gt;pnpm run build&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Output directory: &lt;code&gt;dist/output/public&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;GitHub OAuth Setup&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/settings/applications/new"&gt;Create a GitHub App&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;No special permissions required&lt;/li&gt; 
+ &lt;li&gt;Set callback URL to: &lt;code&gt;https://your-domain.com/api/oauth/github&lt;/code&gt; (replace &lt;code&gt;your-domain&lt;/code&gt; with your actual domain)&lt;/li&gt; 
+ &lt;li&gt;Obtain Client ID and Client Secret&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Environment Variables&lt;/h3&gt; 
+&lt;p&gt;Refer to &lt;code&gt;example.env.server&lt;/code&gt;. For local development, rename it to &lt;code&gt;.env.server&lt;/code&gt; and configure:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-env"&gt;# Github Client ID
+G_CLIENT_ID=
+# Github Client Secret
+G_CLIENT_SECRET=
+# JWT Secret, usually the same as Client Secret
+JWT_SECRET=
+# Initialize database, must be set to true on first run, can be turned off afterward
+INIT_TABLE=true
+# Whether to enable cache
+ENABLE_CACHE=true
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Database Support&lt;/h3&gt; 
+&lt;p&gt;Supported database connectors: &lt;a href="https://db0.unjs.io/connectors"&gt;https://db0.unjs.io/connectors&lt;/a&gt; &lt;strong&gt;Cloudflare D1 Database&lt;/strong&gt; is recommended.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Create D1 database in Cloudflare Worker dashboard&lt;/li&gt; 
+ &lt;li&gt;Configure database_id and database_name in wrangler.toml&lt;/li&gt; 
+ &lt;li&gt;If wrangler.toml doesn't exist, rename example.wrangler.toml and modify configurations&lt;/li&gt; 
+ &lt;li&gt;Changes will take effect on next deployment&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Docker Deployment&lt;/h3&gt; 
+&lt;p&gt;In project root directory:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;docker compose up
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can also set Environment Variables in &lt;code&gt;docker-compose.yml&lt;/code&gt;.&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!Note] Requires Node.js &amp;gt;= 20&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;corepack enable
+pnpm i
+pnpm dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Adding Data Sources&lt;/h3&gt; 
+&lt;p&gt;Refer to &lt;code&gt;shared/sources&lt;/code&gt; and &lt;code&gt;server/sources&lt;/code&gt; directories. The project provides complete type definitions and a clean architecture.&lt;/p&gt; 
+&lt;p&gt;For detailed instructions on how to add new sources, see &lt;a href="https://raw.githubusercontent.com/ourongxing/newsnow/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Roadmap&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Add &lt;strong&gt;multi-language support&lt;/strong&gt; (English, Chinese, more to come).&lt;/li&gt; 
+ &lt;li&gt;Improve &lt;strong&gt;personalization options&lt;/strong&gt; (category-based news, saved preferences).&lt;/li&gt; 
+ &lt;li&gt;Expand &lt;strong&gt;data sources&lt;/strong&gt; to cover global news in multiple languages.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;release when ready&lt;/em&gt;&lt;/strong&gt; &lt;img src="https://testmnbbs.oss-cn-zhangjiakou.aliyuncs.com/pic/20250328172146_rec_.gif?x-oss-process=base_webp" alt="" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Contributions are welcome! Feel free to submit pull requests or create issues for feature requests and bug reports.&lt;/p&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/ourongxing/newsnow/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for detailed guidelines on how to contribute, especially for adding new data sources.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/ourongxing/newsnow/main/LICENSE"&gt;MIT&lt;/a&gt; © ourongxing&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>numman-ali/opencode-openai-codex-auth</title>
+      <link>https://github.com/numman-ali/opencode-openai-codex-auth</link>
+      <description>&lt;p&gt;OAuth authentication plugin for personal coding assistance with ChatGPT Plus/Pro subscriptions - uses OpenAI's official authentication method&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/numman-ali/opencode-openai-codex-auth/main/assets/readme-hero.svg?sanitize=true" alt="Image 1: opencode-openai-codex-auth" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Curated by &lt;a href="https://x.com/nummanali"&gt;Numman Ali&lt;/a&gt;&lt;/strong&gt; &lt;a href="https://x.com/nummanali"&gt;&lt;img src="https://img.shields.io/twitter/follow/nummanali?style=social" alt="Twitter Follow" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/opencode-openai-codex-auth"&gt;&lt;img src="https://img.shields.io/npm/v/opencode-openai-codex-auth.svg?sanitize=true" alt="npm version" /&gt;&lt;/a&gt; &lt;a href="https://github.com/numman-ali/opencode-openai-codex-auth/actions"&gt;&lt;img src="https://github.com/numman-ali/opencode-openai-codex-auth/actions/workflows/ci.yml/badge.svg?sanitize=true" alt="Tests" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/opencode-openai-codex-auth"&gt;&lt;img src="https://img.shields.io/npm/dm/opencode-openai-codex-auth.svg?sanitize=true" alt="npm downloads" /&gt;&lt;/a&gt; &lt;strong&gt;One install. Every Codex model.&lt;/strong&gt; &lt;a href="https://raw.githubusercontent.com/numman-ali/opencode-openai-codex-auth/main/#-quick-start"&gt;Install&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/numman-ali/opencode-openai-codex-auth/main/#-models"&gt;Models&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/numman-ali/opencode-openai-codex-auth/main/#-configuration"&gt;Configuration&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/numman-ali/opencode-openai-codex-auth/main/#-docs"&gt;Docs&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;💡 Philosophy&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;"One config. Every model."&lt;/strong&gt; OpenCode should feel effortless. This plugin keeps the setup minimal while giving you full GPT‑5.x + Codex access via ChatGPT OAuth.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────────────────┐
+│                                                         │
+│  ChatGPT OAuth → Codex backend → OpenCode               │
+│  One command install, full model presets, done.         │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🚀 Quick Start&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx -y opencode-openai-codex-auth@latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;opencode auth login
+opencode run "write hello world to test.txt" --model=openai/gpt-5.2 --variant=medium
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Legacy OpenCode (v1.0.209 and below):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx -y opencode-openai-codex-auth@latest --legacy
+opencode run "write hello world to test.txt" --model=openai/gpt-5.2-medium
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Uninstall:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx -y opencode-openai-codex-auth@latest --uninstall
+npx -y opencode-openai-codex-auth@latest --uninstall --all
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📦 Models&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;gpt-5.2&lt;/strong&gt; (none/low/medium/high/xhigh)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;gpt-5.2-codex&lt;/strong&gt; (low/medium/high/xhigh)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;gpt-5.1-codex-max&lt;/strong&gt; (low/medium/high/xhigh)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;gpt-5.1-codex&lt;/strong&gt; (low/medium/high)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;gpt-5.1-codex-mini&lt;/strong&gt; (medium/high)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;gpt-5.1&lt;/strong&gt; (none/low/medium/high)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🧩 Configuration&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Modern (OpenCode v1.0.210+): &lt;code&gt;config/opencode-modern.json&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Legacy (OpenCode v1.0.209 and below): &lt;code&gt;config/opencode-legacy.json&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Minimal configs are not supported for GPT‑5.x; use the full configs above.&lt;/h2&gt; 
+&lt;h2&gt;✅ Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;ChatGPT Plus/Pro OAuth authentication (official flow)&lt;/li&gt; 
+ &lt;li&gt;22 model presets across GPT‑5.2 / GPT‑5.2 Codex / GPT‑5.1 families&lt;/li&gt; 
+ &lt;li&gt;Variant system support (v1.0.210+) + legacy presets&lt;/li&gt; 
+ &lt;li&gt;Multimodal input enabled for all models&lt;/li&gt; 
+ &lt;li&gt;Usage‑aware errors + automatic token refresh&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📚 Docs&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Getting Started: &lt;code&gt;docs/getting-started.md&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Configuration: &lt;code&gt;docs/configuration.md&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Troubleshooting: &lt;code&gt;docs/troubleshooting.md&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Architecture: &lt;code&gt;docs/development/ARCHITECTURE.md&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;⚠️ Usage Notice&lt;/h2&gt; 
+&lt;p&gt;This plugin is for &lt;strong&gt;personal development use&lt;/strong&gt; with your own ChatGPT Plus/Pro subscription. For production or multi‑user applications, use the OpenAI Platform API.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Built for developers who value simplicity.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
