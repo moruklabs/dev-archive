@@ -1,0 +1,1990 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub All Languages Weekly Trending</title>
+    <description>Weekly Trending of All Languages in GitHub</description>
+    <pubDate>Sun, 11 Jan 2026 01:42:31 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>anomalyco/opencode</title>
+      <link>https://github.com/anomalyco/opencode</link>
+      <description>&lt;p&gt;The open source coding agent.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://opencode.ai"&gt; 
+  &lt;picture&gt; 
+   &lt;source srcset="packages/console/app/src/asset/logo-ornate-dark.svg" media="(prefers-color-scheme: dark)" /&gt; 
+   &lt;source srcset="packages/console/app/src/asset/logo-ornate-light.svg" media="(prefers-color-scheme: light)" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/console/app/src/asset/logo-ornate-light.svg?sanitize=true" alt="OpenCode logo" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;The open source AI coding agent.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://opencode.ai/discord"&gt;&lt;img alt="Discord" src="https://img.shields.io/discord/1391832426048651334?style=flat-square&amp;amp;label=discord" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/opencode-ai"&gt;&lt;img alt="npm" src="https://img.shields.io/npm/v/opencode-ai?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://github.com/anomalyco/opencode/actions/workflows/publish.yml"&gt;&lt;img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/anomalyco/opencode/publish.yml?style=flat-square&amp;amp;branch=dev" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://opencode.ai"&gt;&lt;img src="https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/web/src/assets/lander/screenshot.png" alt="OpenCode Terminal UI" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Installation&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# YOLO
+curl -fsSL https://opencode.ai/install | bash
+
+# Package managers
+npm i -g opencode-ai@latest        # or bun/pnpm/yarn
+scoop bucket add extras; scoop install extras/opencode  # Windows
+choco install opencode             # Windows
+brew install anomalyco/tap/opencode # macOS and Linux (recommended, always up to date)
+brew install opencode              # macOS and Linux (official brew formula, updated less)
+paru -S opencode-bin               # Arch Linux
+mise use -g opencode               # Any OS
+nix run nixpkgs#opencode           # or github:anomalyco/opencode for latest dev branch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] Remove versions older than 0.1.x before installing.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Desktop App (BETA)&lt;/h3&gt; 
+&lt;p&gt;OpenCode is also available as a desktop application. Download directly from the &lt;a href="https://github.com/anomalyco/opencode/releases"&gt;releases page&lt;/a&gt; or &lt;a href="https://opencode.ai/download"&gt;opencode.ai/download&lt;/a&gt;.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Platform&lt;/th&gt; 
+   &lt;th&gt;Download&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;macOS (Apple Silicon)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-darwin-aarch64.dmg&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;macOS (Intel)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-darwin-x64.dmg&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Windows&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-windows-x64.exe&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Linux&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;.deb&lt;/code&gt;, &lt;code&gt;.rpm&lt;/code&gt;, or AppImage&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# macOS (Homebrew)
+brew install --cask opencode-desktop
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Installation Directory&lt;/h4&gt; 
+&lt;p&gt;The install script respects the following priority order for the installation path:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;code&gt;$OPENCODE_INSTALL_DIR&lt;/code&gt; - Custom installation directory&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$XDG_BIN_DIR&lt;/code&gt; - XDG Base Directory Specification compliant path&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$HOME/bin&lt;/code&gt; - Standard user binary directory (if exists or can be created)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$HOME/.opencode/bin&lt;/code&gt; - Default fallback&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Examples
+OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/install | bash
+XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/install | bash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Agents&lt;/h3&gt; 
+&lt;p&gt;OpenCode includes two built-in agents you can switch between with the &lt;code&gt;Tab&lt;/code&gt; key.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;build&lt;/strong&gt; - Default, full access agent for development work&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;plan&lt;/strong&gt; - Read-only agent for analysis and code exploration 
+  &lt;ul&gt; 
+   &lt;li&gt;Denies file edits by default&lt;/li&gt; 
+   &lt;li&gt;Asks permission before running bash commands&lt;/li&gt; 
+   &lt;li&gt;Ideal for exploring unfamiliar codebases or planning changes&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Also, included is a &lt;strong&gt;general&lt;/strong&gt; subagent for complex searches and multistep tasks. This is used internally and can be invoked using &lt;code&gt;@general&lt;/code&gt; in messages.&lt;/p&gt; 
+&lt;p&gt;Learn more about &lt;a href="https://opencode.ai/docs/agents"&gt;agents&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Documentation&lt;/h3&gt; 
+&lt;p&gt;For more info on how to configure OpenCode &lt;a href="https://opencode.ai/docs"&gt;&lt;strong&gt;head over to our docs&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Contributing&lt;/h3&gt; 
+&lt;p&gt;If you're interested in contributing to OpenCode, please read our &lt;a href="https://raw.githubusercontent.com/anomalyco/opencode/dev/CONTRIBUTING.md"&gt;contributing docs&lt;/a&gt; before submitting a pull request.&lt;/p&gt; 
+&lt;h3&gt;Building on OpenCode&lt;/h3&gt; 
+&lt;p&gt;If you are working on a project that's related to OpenCode and is using "opencode" as a part of its name; for example, "opencode-dashboard" or "opencode-mobile", please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.&lt;/p&gt; 
+&lt;h3&gt;FAQ&lt;/h3&gt; 
+&lt;h4&gt;How is this different from Claude Code?&lt;/h4&gt; 
+&lt;p&gt;It's very similar to Claude Code in terms of capability. Here are the key differences:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;100% open source&lt;/li&gt; 
+ &lt;li&gt;Not coupled to any provider. Although we recommend the models we provide through &lt;a href="https://opencode.ai/zen"&gt;OpenCode Zen&lt;/a&gt;; OpenCode can be used with Claude, OpenAI, Google or even local models. As models evolve the gaps between them will close and pricing will drop so being provider-agnostic is important.&lt;/li&gt; 
+ &lt;li&gt;Out of the box LSP support&lt;/li&gt; 
+ &lt;li&gt;A focus on TUI. OpenCode is built by neovim users and the creators of &lt;a href="https://terminal.shop"&gt;terminal.shop&lt;/a&gt;; we are going to push the limits of what's possible in the terminal.&lt;/li&gt; 
+ &lt;li&gt;A client/server architecture. This for example can allow OpenCode to run on your computer, while you can drive it remotely from a mobile app. Meaning that the TUI frontend is just one of the possible clients.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Join our community&lt;/strong&gt; &lt;a href="https://discord.gg/opencode"&gt;Discord&lt;/a&gt; | &lt;a href="https://x.com/opencode"&gt;X.com&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>bytedance/UI-TARS-desktop</title>
+      <link>https://github.com/bytedance/UI-TARS-desktop</link>
+      <description>&lt;p&gt;The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra&lt;/p&gt;&lt;hr&gt;&lt;picture&gt; 
+ &lt;img alt="Agent TARS Banner" src="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/images/tars.png" /&gt; 
+&lt;/picture&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Introduction&lt;/h2&gt; 
+&lt;p&gt;English | &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/README.zh-CN.md"&gt;简体中文&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://trendshift.io/repositories/13584"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/13584" alt="" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;b&gt;TARS&lt;sup&gt;*&lt;/sup&gt;&lt;/b&gt; is a Multimodal AI Agent stack, currently shipping two projects: &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#agent-tars"&gt;Agent TARS&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#ui-tars-desktop"&gt;UI-TARS-desktop&lt;/a&gt;:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th width="50%" align="center"&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#agent-tars"&gt;Agent TARS&lt;/a&gt;&lt;/th&gt; 
+   &lt;th width="50%" align="center"&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#ui-tars-desktop"&gt;UI-TARS-desktop&lt;/a&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; 
+    &lt;video src="https://github.com/user-attachments/assets/c9489936-afdc-4d12-adda-d4b90d2a869d" width="50%"&gt;&lt;/video&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; 
+    &lt;video src="https://github.com/user-attachments/assets/e0914ce9-ad33-494b-bdec-0c25c1b01a27" width="50%"&gt;&lt;/video&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt; &lt;b&gt;Agent TARS&lt;/b&gt; is a general multimodal AI Agent stack, it brings the power of GUI Agent and Vision into your terminal, computer, browser and product. &lt;br /&gt; &lt;br /&gt; It primarily ships with a &lt;a href="https://agent-tars.com/guide/basic/cli.html" target="_blank"&gt;CLI&lt;/a&gt; and &lt;a href="https://agent-tars.com/guide/basic/web-ui.html" target="_blank"&gt;Web UI&lt;/a&gt; for usage. It aims to provide a workflow that is closer to human-like task completion through cutting-edge multimodal LLMs and seamless integration with various real-world &lt;a href="https://agent-tars.com/guide/basic/mcp.html" target="_blank"&gt;MCP&lt;/a&gt; tools. &lt;/td&gt; 
+   &lt;td align="left"&gt; &lt;b&gt;UI-TARS Desktop&lt;/b&gt; is a desktop application that provides a native GUI Agent based on the &lt;a href="https://github.com/bytedance/UI-TARS" target="_blank"&gt;UI-TARS&lt;/a&gt; model. &lt;br /&gt; &lt;br /&gt; It primarily ships a &lt;a href="https://github.com/bytedance/UI-TARS-desktop/raw/main/docs/quick-start.md#get-model-and-run-local-operator" target="_blank"&gt;local&lt;/a&gt; and &lt;a href="https://github.com/bytedance/UI-TARS-desktop/raw/main/docs/quick-start.md#run-remote-operator" target="_blank"&gt;remote&lt;/a&gt; computer as well as browser operators. &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Table of Contents&lt;/h2&gt; 
+&lt;!-- START doctoc generated TOC please keep comment here to allow auto update --&gt; 
+&lt;!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#news"&gt;News&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#agent-tars"&gt;Agent TARS&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#showcase"&gt;Showcase&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#core-features"&gt;Core Features&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#quick-start"&gt;Quick Start&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#documentation"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#ui-tars-desktop"&gt;UI-TARS Desktop&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#showcase-1"&gt;Showcase&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#features"&gt;Features&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#quick-start-1"&gt;Quick Start&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#contributing"&gt;Contributing&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#license"&gt;License&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#citation"&gt;Citation&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;!-- END doctoc generated TOC please keep comment here to allow auto update --&gt; 
+&lt;h2&gt;News&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-11-05]&lt;/strong&gt; 🎉 We're excited to announce the release of &lt;a href="https://github.com/bytedance/UI-TARS-desktop/releases/tag/v0.3.0"&gt;Agent TARS CLI v0.3.0&lt;/a&gt;! This version brings streaming support for multiple tools (shell commands, multi-file structured display), runtime settings with timing statistics for tool calls and deep thinking, Event Stream Viewer for data flow tracking and debugging. Additionally, it features exclusive support for &lt;a href="https://github.com/agent-infra/sandbox"&gt;AIO agent Sandbox&lt;/a&gt; as isolated all-in-one tools execution environment.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-06-25]&lt;/strong&gt; We released a Agent TARS Beta and Agent TARS CLI - &lt;a href="https://agent-tars.com/blog/2025-06-25-introducing-agent-tars-beta.html"&gt;Introducing Agent TARS Beta&lt;/a&gt;, a multimodal AI agent that aims to explore a work form that is closer to human-like task completion through rich multimodal capabilities (such as GUI Agent, Vision) and seamless integration with various real-world tools.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-06-12]&lt;/strong&gt; - 🎁 We are thrilled to announce the release of UI-TARS Desktop v0.2.0! This update introduces two powerful new features: &lt;strong&gt;Remote Computer Operator&lt;/strong&gt; and &lt;strong&gt;Remote Browser Operator&lt;/strong&gt;—both completely free. No configuration required: simply click to remotely control any computer or browser, and experience a new level of convenience and intelligence.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-04-17]&lt;/strong&gt; - 🎉 We're thrilled to announce the release of new UI-TARS Desktop application v0.1.0, featuring a redesigned Agent UI. The application enhances the computer using experience, introduces new browser operation features, and supports &lt;a href="https://seed-tars.com/1.5"&gt;the advanced UI-TARS-1.5 model&lt;/a&gt; for improved performance and precise control.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-02-20]&lt;/strong&gt; - 📦 Introduced &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/docs/sdk.md"&gt;UI TARS SDK&lt;/a&gt;, is a powerful cross-platform toolkit for building GUI automation agents.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-01-23]&lt;/strong&gt; - 🚀 We updated the &lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/docs/deployment.md#cloud-deployment"&gt;Cloud Deployment&lt;/a&gt;&lt;/strong&gt; section in the 中文版: &lt;a href="https://bytedance.sg.larkoffice.com/docx/TCcudYwyIox5vyxiSDLlgIsTgWf#U94rdCxzBoJMLex38NPlHL21gNb"&gt;GUI模型部署教程&lt;/a&gt; with new information related to the ModelScope platform. You can now use the ModelScope platform for deployment.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Agent TARS&lt;/h2&gt; 
+&lt;p&gt; &lt;a href="https://npmjs.com/package/@agent-tars/cli?activeTab=readme"&gt;&lt;img src="https://img.shields.io/npm/v/@agent-tars/cli?style=for-the-badge&amp;amp;colorA=1a1a2e&amp;amp;colorB=3B82F6&amp;amp;logo=npm&amp;amp;logoColor=white" alt="npm version" /&gt;&lt;/a&gt; &lt;a href="https://npmcharts.com/compare/@agent-tars/cli?minimal=true"&gt;&lt;img src="https://img.shields.io/npm/dm/@agent-tars/cli.svg?style=for-the-badge&amp;amp;colorA=1a1a2e&amp;amp;colorB=0EA5E9&amp;amp;logo=npm&amp;amp;logoColor=white" alt="downloads" /&gt;&lt;/a&gt; &lt;a href="https://nodejs.org/en/about/previous-releases"&gt;&lt;img src="https://img.shields.io/node/v/@agent-tars/cli.svg?style=for-the-badge&amp;amp;colorA=1a1a2e&amp;amp;colorB=06B6D4&amp;amp;logo=node.js&amp;amp;logoColor=white" alt="node version" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/HnKcSBgTVx"&gt;&lt;img src="https://img.shields.io/badge/Discord-Join%20Community-5865F2?style=for-the-badge&amp;amp;logo=discord&amp;amp;logoColor=white" alt="Discord Community" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/agent_tars"&gt;&lt;img src="https://img.shields.io/badge/Twitter-Follow%20%40agent__tars-1DA1F2?style=for-the-badge&amp;amp;logo=twitter&amp;amp;logoColor=white" alt="Official Twitter" /&gt;&lt;/a&gt; &lt;a href="https://applink.larkoffice.com/client/chat/chatter/add_by_link?link_token=deen76f4-ea3c-4964-93a3-78f126f39651"&gt;&lt;img src="https://img.shields.io/badge/飞书群-加入交流群-00D4AA?style=for-the-badge&amp;amp;logo=lark&amp;amp;logoColor=white" alt="飞书交流群" /&gt;&lt;/a&gt; &lt;a href="https://deepwiki.com/bytedance/UI-TARS-desktop"&gt;&lt;img src="https://img.shields.io/badge/DeepWiki-Ask%20AI-8B5CF6?style=for-the-badge&amp;amp;logo=gitbook&amp;amp;logoColor=white" alt="Ask DeepWiki" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;b&gt;Agent TARS&lt;/b&gt; is a general multimodal AI Agent stack, it brings the power of GUI Agent and Vision into your terminal, computer, browser and product. &lt;br /&gt; &lt;br /&gt; It primarily ships with a &lt;a href="https://agent-tars.com/guide/basic/cli.html" target="_blank"&gt;CLI&lt;/a&gt; and &lt;a href="https://agent-tars.com/guide/basic/web-ui.html" target="_blank"&gt;Web UI&lt;/a&gt; for usage. It aims to provide a workflow that is closer to human-like task completion through cutting-edge multimodal LLMs and seamless integration with various real-world &lt;a href="https://agent-tars.com/guide/basic/mcp.html" target="_blank"&gt;MCP&lt;/a&gt; tools.&lt;/p&gt; 
+&lt;h3&gt;Showcase&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;Please help me book the earliest flight from San Jose to New York on September 1st and the last return flight on September 6th on Priceline
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/772b0eef-aef7-4ab9-8cb0-9611820539d8"&gt;https://github.com/user-attachments/assets/772b0eef-aef7-4ab9-8cb0-9611820539d8&lt;/a&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th width="50%" align="center"&gt;Booking Hotel&lt;/th&gt; 
+   &lt;th width="50%" align="center"&gt;Generate Chart with extra MCP Servers&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; 
+    &lt;video src="https://github.com/user-attachments/assets/c9489936-afdc-4d12-adda-d4b90d2a869d" width="50%"&gt;&lt;/video&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; 
+    &lt;video src="https://github.com/user-attachments/assets/a9fd72d0-01bb-4233-aa27-ca95194bbce9" width="50%"&gt;&lt;/video&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt; &lt;b&gt;Instruction:&lt;/b&gt; &lt;i&gt;I am in Los Angeles from September 1st to September 6th, with a budget of $5,000. Please help me book a Ritz-Carlton hotel closest to the airport on booking.com and compile a transportation guide for me&lt;/i&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt; &lt;b&gt;Instruction:&lt;/b&gt; &lt;i&gt;Draw me a chart of Hangzhou's weather for one month&lt;/i&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;For more use cases, please check out &lt;a href="https://github.com/bytedance/UI-TARS-desktop/issues/842"&gt;#842&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Core Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🖱️ &lt;strong&gt;One-Click Out-of-the-box CLI&lt;/strong&gt; - Supports both &lt;strong&gt;headful&lt;/strong&gt; &lt;a href="https://agent-tars.com/guide/basic/web-ui.html"&gt;Web UI&lt;/a&gt; and &lt;strong&gt;headless&lt;/strong&gt; &lt;a href="https://agent-tars.com/guide/advanced/server.html"&gt;server&lt;/a&gt;) &lt;a href="https://agent-tars.com/guide/basic/cli.html"&gt;execution&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;🌐 &lt;strong&gt;Hybrid Browser Agent&lt;/strong&gt; - Control browsers using &lt;a href="https://agent-tars.com/guide/basic/browser.html#visual-grounding"&gt;GUI Agent&lt;/a&gt;, &lt;a href="https://agent-tars.com/guide/basic/browser.html#dom"&gt;DOM&lt;/a&gt;, or a hybrid strategy.&lt;/li&gt; 
+ &lt;li&gt;🔄 &lt;strong&gt;Event Stream&lt;/strong&gt; - Protocol-driven Event Stream drives &lt;a href="https://agent-tars.com/beta#context-engineering"&gt;Context Engineering&lt;/a&gt; and &lt;a href="https://agent-tars.com/blog/2025-06-25-introducing-agent-tars-beta.html#easy-to-build-applications"&gt;Agent UI&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;🧰 &lt;strong&gt;MCP Integration&lt;/strong&gt; - The kernel is built on MCP and also supports mounting &lt;a href="https://agent-tars.com/guide/basic/mcp.html"&gt;MCP Servers&lt;/a&gt; to connect to real-world tools.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Quick Start&lt;/h3&gt; 
+&lt;img alt="Agent TARS CLI" src="https://agent-tars.com/agent-tars-cli.png" /&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Launch with `npx`.
+npx @agent-tars/cli@latest
+
+# Install globally, required Node.js &amp;gt;= 22
+npm install @agent-tars/cli@latest -g
+
+# Run with your preferred model provider
+agent-tars --provider volcengine --model doubao-1-5-thinking-vision-pro-250428 --apiKey your-api-key
+agent-tars --provider anthropic --model claude-3-7-sonnet-latest --apiKey your-api-key
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Visit the comprehensive &lt;a href="https://agent-tars.com/guide/get-started/quick-start.html"&gt;Quick Start&lt;/a&gt; guide for detailed setup instructions.&lt;/p&gt; 
+&lt;h3&gt;Documentation&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;🌟 &lt;strong&gt;Explore Agent TARS Universe&lt;/strong&gt; 🌟&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th width="20%" align="center"&gt;Category&lt;/th&gt; 
+   &lt;th width="30%" align="center"&gt;Resource Link&lt;/th&gt; 
+   &lt;th width="50%" align="left"&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🏠 &lt;strong&gt;Central Hub&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com"&gt; &lt;img src="https://img.shields.io/badge/Visit-Website-4F46E5?style=for-the-badge&amp;amp;logo=globe&amp;amp;logoColor=white" alt="Website" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Your gateway to Agent TARS ecosystem&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;📚 &lt;strong&gt;Quick Start&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com/guide/get-started/quick-start.html"&gt; &lt;img src="https://img.shields.io/badge/Get-Started-06B6D4?style=for-the-badge&amp;amp;logo=rocket&amp;amp;logoColor=white" alt="Quick Start" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Zero to hero in 5 minutes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🚀 &lt;strong&gt;What's New&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com/beta"&gt; &lt;img src="https://img.shields.io/badge/Read-Blog-F59E0B?style=for-the-badge&amp;amp;logo=rss&amp;amp;logoColor=white" alt="Blog" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Discover cutting-edge features &amp;amp; vision&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🛠️ &lt;strong&gt;Developer Zone&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com/guide/get-started/introduction.html"&gt; &lt;img src="https://img.shields.io/badge/View-Docs-10B981?style=for-the-badge&amp;amp;logo=gitbook&amp;amp;logoColor=white" alt="Docs" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Master every command &amp;amp; features&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🎯 &lt;strong&gt;Showcase&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/bytedance/UI-TARS-desktop/issues/842"&gt; &lt;img src="https://img.shields.io/badge/View-Examples-8B5CF6?style=for-the-badge&amp;amp;logo=github&amp;amp;logoColor=white" alt="Examples" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;View use cases built by the official and community&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🔧 &lt;strong&gt;Reference&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com/api/"&gt; &lt;img src="https://img.shields.io/badge/API-Reference-EF4444?style=for-the-badge&amp;amp;logo=book&amp;amp;logoColor=white" alt="API" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Complete technical reference&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;UI-TARS Desktop&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;img alt="UI-TARS" width="260" src="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/apps/ui-tars/resources/icon.png" /&gt; &lt;/p&gt; 
+&lt;p&gt;UI-TARS Desktop is a native GUI agent for your local computer, driven by &lt;a href="https://github.com/bytedance/UI-TARS"&gt;UI-TARS&lt;/a&gt; and Seed-1.5-VL/1.6 series models.&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt; &amp;nbsp;&amp;nbsp; 📑 &lt;a href="https://arxiv.org/abs/2501.12326"&gt;Paper&lt;/a&gt; &amp;nbsp;&amp;nbsp; | 🤗 &lt;a href="https://huggingface.co/ByteDance-Seed/UI-TARS-1.5-7B"&gt;Hugging Face Models&lt;/a&gt;&amp;nbsp;&amp;nbsp; | &amp;nbsp;&amp;nbsp;🫨 &lt;a href="https://discord.gg/pTXwYVjfcs"&gt;Discord&lt;/a&gt;&amp;nbsp;&amp;nbsp; | &amp;nbsp;&amp;nbsp;🤖 &lt;a href="https://www.modelscope.cn/collections/UI-TARS-bccb56fa1ef640"&gt;ModelScope&lt;/a&gt;&amp;nbsp;&amp;nbsp; &lt;br /&gt; 🖥️ Desktop Application &amp;nbsp;&amp;nbsp; | &amp;nbsp;&amp;nbsp; 👓 &lt;a href="https://github.com/web-infra-dev/midscene"&gt;Midscene (use in browser)&lt;/a&gt; &amp;nbsp;&amp;nbsp; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h3&gt;Showcase&lt;/h3&gt; 
+&lt;!-- // FIXME: Choose only two demo, one local computer and one remote computer showcase. --&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="center"&gt;Instruction&lt;/th&gt; 
+   &lt;th align="center"&gt;Local Operator&lt;/th&gt; 
+   &lt;th align="center"&gt;Remote Operator&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Please help me open the autosave feature of VS Code and delay AutoSave operations for 500 milliseconds in the VS Code setting.&lt;/td&gt; 
+   &lt;td align="center"&gt;
+    &lt;video src="https://github.com/user-attachments/assets/e0914ce9-ad33-494b-bdec-0c25c1b01a27" height="300"&gt;&lt;/video&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;
+    &lt;video src="https://github.com/user-attachments/assets/01e49b69-7070-46c8-b3e3-2aaaaec71800" height="300"&gt;&lt;/video&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Could you help me check the latest open issue of the UI-TARS-Desktop project on GitHub?&lt;/td&gt; 
+   &lt;td align="center"&gt;
+    &lt;video src="https://github.com/user-attachments/assets/3d159f54-d24a-4268-96c0-e149607e9199" height="300"&gt;&lt;/video&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;
+    &lt;video src="https://github.com/user-attachments/assets/072fb72d-7394-4bfa-95f5-4736e29f7e58" height="300"&gt;&lt;/video&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🤖 Natural language control powered by Vision-Language Model&lt;/li&gt; 
+ &lt;li&gt;🖥️ Screenshot and visual recognition support&lt;/li&gt; 
+ &lt;li&gt;🎯 Precise mouse and keyboard control&lt;/li&gt; 
+ &lt;li&gt;💻 Cross-platform support (Windows/MacOS/Browser)&lt;/li&gt; 
+ &lt;li&gt;🔄 Real-time feedback and status display&lt;/li&gt; 
+ &lt;li&gt;🔐 Private and secure - fully local processing&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Quick Start&lt;/h3&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/docs/quick-start.md"&gt;Quick Start&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the Apache License 2.0.&lt;/p&gt; 
+&lt;h2&gt;Citation&lt;/h2&gt; 
+&lt;p&gt;If you find our paper and code useful in your research, please consider giving a star &lt;span&gt;⭐&lt;/span&gt; and citation &lt;span&gt;📝&lt;/span&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-BibTeX"&gt;@article{qin2025ui,
+  title={UI-TARS: Pioneering Automated GUI Interaction with Native Agents},
+  author={Qin, Yujia and Ye, Yining and Fang, Junjie and Wang, Haoming and Liang, Shihao and Tian, Shizuo and Zhang, Junda and Li, Jiahao and Li, Yunxin and Huang, Shijue and others},
+  journal={arXiv preprint arXiv:2501.12326},
+  year={2025}
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>ChromeDevTools/chrome-devtools-mcp</title>
+      <link>https://github.com/ChromeDevTools/chrome-devtools-mcp</link>
+      <description>&lt;p&gt;Chrome DevTools for coding agents&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Chrome DevTools MCP&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://npmjs.org/package/chrome-devtools-mcp"&gt;&lt;img src="https://img.shields.io/npm/v/chrome-devtools-mcp.svg?sanitize=true" alt="npm chrome-devtools-mcp package" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;chrome-devtools-mcp&lt;/code&gt; lets your coding agent (such as Gemini, Claude, Cursor or Copilot) control and inspect a live Chrome browser. It acts as a Model-Context-Protocol (MCP) server, giving your AI coding assistant access to the full power of Chrome DevTools for reliable automation, in-depth debugging, and performance analysis.&lt;/p&gt; 
+&lt;h2&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md"&gt;Tool reference&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/CHANGELOG.md"&gt;Changelog&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/CONTRIBUTING.md"&gt;Contributing&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/troubleshooting.md"&gt;Troubleshooting&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/design-principles.md"&gt;Design Principles&lt;/a&gt;&lt;/h2&gt; 
+&lt;h2&gt;Key features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Get performance insights&lt;/strong&gt;: Uses &lt;a href="https://github.com/ChromeDevTools/devtools-frontend"&gt;Chrome DevTools&lt;/a&gt; to record traces and extract actionable performance insights.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Advanced browser debugging&lt;/strong&gt;: Analyze network requests, take screenshots and check the browser console.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Reliable automation&lt;/strong&gt;. Uses &lt;a href="https://github.com/puppeteer/puppeteer"&gt;puppeteer&lt;/a&gt; to automate actions in Chrome and automatically wait for action results.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Disclaimers&lt;/h2&gt; 
+&lt;p&gt;&lt;code&gt;chrome-devtools-mcp&lt;/code&gt; exposes content of the browser instance to the MCP clients allowing them to inspect, debug, and modify any data in the browser or DevTools. Avoid sharing sensitive or personal information that you don't want to share with MCP clients.&lt;/p&gt; 
+&lt;h2&gt;Requirements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://nodejs.org/"&gt;Node.js&lt;/a&gt; v20.19 or a newer &lt;a href="https://github.com/nodejs/Release#release-schedule"&gt;latest maintenance LTS&lt;/a&gt; version.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.google.com/chrome/"&gt;Chrome&lt;/a&gt; current stable version or newer.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.npmjs.com/"&gt;npm&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Getting started&lt;/h2&gt; 
+&lt;p&gt;Add the following config to your MCP client:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest"]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE]&lt;br /&gt; Using &lt;code&gt;chrome-devtools-mcp@latest&lt;/code&gt; ensures that your MCP client will always use the latest version of the Chrome DevTools MCP server.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;MCP Client configuration&lt;/h3&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Amp&lt;/summary&gt; Follow https://ampcode.com/manual#mcp and use the config provided above. You can also install the Chrome DevTools MCP server using the CLI: 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;amp mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Antigravity&lt;/summary&gt; 
+ &lt;p&gt;To use the Chrome DevTools MCP server follow the instructions from &lt;a href="https://antigravity.google/docs/mcp"&gt;Antigravity's docs&lt;/a&gt;&lt;a&gt;&lt;/a&gt; to install a custom MCP server. Add the following config to the MCP servers config:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "chrome-devtools-mcp@latest",
+        "--browser-url=http://127.0.0.1:9222",
+        "-y"
+      ]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;This will make the Chrome DevTools MCP server automatically connect to the browser that Antigravity is using. If you are not using port 9222, make sure to adjust accordingly.&lt;/p&gt; 
+ &lt;p&gt;Chrome DevTools MCP will not start the browser instance automatically using this approach as as the Chrome DevTools MCP server runs in Antigravity's built-in browser. If the browser is not already running, you have to start it first by clicking the Chrome icon at the top right corner.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Claude Code&lt;/summary&gt; Use the Claude Code CLI to add the Chrome DevTools MCP server (
+ &lt;a href="https://docs.anthropic.com/en/docs/claude-code/mcp"&gt;guide&lt;/a&gt;): 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;claude mcp add chrome-devtools npx chrome-devtools-mcp@latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Cline&lt;/summary&gt; Follow https://docs.cline.bot/mcp/configuring-mcp-servers and use the config provided above. 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Codex&lt;/summary&gt; Follow the 
+ &lt;a href="https://github.com/openai/codex/raw/main/docs/advanced.md#model-context-protocol-mcp"&gt;configure MCP guide&lt;/a&gt; using the standard config from above. You can also install the Chrome DevTools MCP server using the Codex CLI: 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;codex mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;On Windows 11&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;Configure the Chrome install location and increase the startup timeout by updating &lt;code&gt;.codex/config.toml&lt;/code&gt; and adding the following &lt;code&gt;env&lt;/code&gt; and &lt;code&gt;startup_timeout_ms&lt;/code&gt; parameters:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code&gt;[mcp_servers.chrome-devtools]
+command = "cmd"
+args = [
+    "/c",
+    "npx",
+    "-y",
+    "chrome-devtools-mcp@latest",
+]
+env = { SystemRoot="C:\\Windows", PROGRAMFILES="C:\\Program Files" }
+startup_timeout_ms = 20_000
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Copilot CLI&lt;/summary&gt; 
+ &lt;p&gt;Start Copilot CLI:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code&gt;copilot
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;Start the dialog to add a new MCP server by running:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code&gt;/mcp add
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;Configure the following fields and press &lt;code&gt;CTRL+S&lt;/code&gt; to save the configuration:&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;strong&gt;Server name:&lt;/strong&gt; &lt;code&gt;chrome-devtools&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;strong&gt;Server Type:&lt;/strong&gt; &lt;code&gt;[1] Local&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;strong&gt;Command:&lt;/strong&gt; &lt;code&gt;npx -y chrome-devtools-mcp@latest&lt;/code&gt;&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Copilot / VS Code&lt;/summary&gt; 
+ &lt;p&gt;&lt;strong&gt;Click the button to install:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://vscode.dev/redirect/mcp/install?name=io.github.ChromeDevTools%2Fchrome-devtools-mcp&amp;amp;config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22chrome-devtools-mcp%22%5D%2C%22env%22%3A%7B%7D%7D"&gt;&lt;img src="https://img.shields.io/badge/VS_Code-VS_Code?style=flat-square&amp;amp;label=Install%20Server&amp;amp;color=0098FF" alt="Install in VS Code" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://insiders.vscode.dev/redirect?url=vscode-insiders%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522io.github.ChromeDevTools%252Fchrome-devtools-mcp%2522%252C%2522config%2522%253A%257B%2522command%2522%253A%2522npx%2522%252C%2522args%2522%253A%255B%2522-y%2522%252C%2522chrome-devtools-mcp%2522%255D%252C%2522env%2522%253A%257B%257D%257D%257D"&gt;&lt;img src="https://img.shields.io/badge/VS_Code_Insiders-VS_Code_Insiders?style=flat-square&amp;amp;label=Install%20Server&amp;amp;color=24bfa5" alt="Install in VS Code Insiders" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;Or install manually:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;Follow the MCP install &lt;a href="https://code.visualstudio.com/docs/copilot/chat/mcp-servers#_add-an-mcp-server"&gt;guide&lt;/a&gt;, with the standard config from above. You can also install the Chrome DevTools MCP server using the VS Code CLI:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;code --add-mcp '{"name":"io.github.ChromeDevTools/chrome-devtools-mcp","command":"npx","args":["-y","chrome-devtools-mcp"],"env":{}}'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Cursor&lt;/summary&gt; 
+ &lt;p&gt;&lt;strong&gt;Click the button to install:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://cursor.com/en/install-mcp?name=chrome-devtools&amp;amp;config=eyJjb21tYW5kIjoibnB4IC15IGNocm9tZS1kZXZ0b29scy1tY3BAbGF0ZXN0In0%3D"&gt;&lt;img src="https://cursor.com/deeplink/mcp-install-dark.svg?sanitize=true" alt="Install in Cursor" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;Or install manually:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;Go to &lt;code&gt;Cursor Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;MCP&lt;/code&gt; -&amp;gt; &lt;code&gt;New MCP Server&lt;/code&gt;. Use the config provided above.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Factory CLI&lt;/summary&gt; Use the Factory CLI to add the Chrome DevTools MCP server (
+ &lt;a href="https://docs.factory.ai/cli/configuration/mcp"&gt;guide&lt;/a&gt;): 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;droid mcp add chrome-devtools "npx -y chrome-devtools-mcp@latest"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Gemini CLI&lt;/summary&gt; Install the Chrome DevTools MCP server using the Gemini CLI. 
+ &lt;p&gt;&lt;strong&gt;Project wide:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;gemini mcp add chrome-devtools npx chrome-devtools-mcp@latest
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;Globally:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;gemini mcp add -s user chrome-devtools npx chrome-devtools-mcp@latest
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;Alternatively, follow the &lt;a href="https://github.com/google-gemini/gemini-cli/raw/main/docs/tools/mcp-server.md#how-to-set-up-your-mcp-server"&gt;MCP guide&lt;/a&gt; and use the standard config from above.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Gemini Code Assist&lt;/summary&gt; Follow the 
+ &lt;a href="https://cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer#configure-mcp-servers"&gt;configure MCP guide&lt;/a&gt; using the standard config from above. 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;JetBrains AI Assistant &amp;amp; Junie&lt;/summary&gt; 
+ &lt;p&gt;Go to &lt;code&gt;Settings | Tools | AI Assistant | Model Context Protocol (MCP)&lt;/code&gt; -&amp;gt; &lt;code&gt;Add&lt;/code&gt;. Use the config provided above. The same way chrome-devtools-mcp can be configured for JetBrains Junie in &lt;code&gt;Settings | Tools | Junie | MCP Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Add&lt;/code&gt;. Use the config provided above.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Kiro&lt;/summary&gt; 
+ &lt;p&gt;In &lt;strong&gt;Kiro Settings&lt;/strong&gt;, go to &lt;code&gt;Configure MCP&lt;/code&gt; &amp;gt; &lt;code&gt;Open Workspace or User MCP Config&lt;/code&gt; &amp;gt; Use the configuration snippet provided above.&lt;/p&gt; 
+ &lt;p&gt;Or, from the IDE &lt;strong&gt;Activity Bar&lt;/strong&gt; &amp;gt; &lt;code&gt;Kiro&lt;/code&gt; &amp;gt; &lt;code&gt;MCP Servers&lt;/code&gt; &amp;gt; &lt;code&gt;Click Open MCP Config&lt;/code&gt;. Use the configuration snippet provided above.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;OpenCode&lt;/summary&gt; 
+ &lt;p&gt;Add the following configuration to your &lt;code&gt;opencode.json&lt;/code&gt; file. If you don't have one, create it at &lt;code&gt;~/.config/opencode/opencode.json&lt;/code&gt; (&lt;a href="https://opencode.ai/docs/mcp-servers"&gt;guide&lt;/a&gt;):&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-json"&gt;{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "chrome-devtools": {
+      "type": "local",
+      "command": ["npx", "-y", "chrome-devtools-mcp@latest"]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Qoder&lt;/summary&gt; 
+ &lt;p&gt;In &lt;strong&gt;Qoder Settings&lt;/strong&gt;, go to &lt;code&gt;MCP Server&lt;/code&gt; &amp;gt; &lt;code&gt;+ Add&lt;/code&gt; &amp;gt; Use the configuration snippet provided above.&lt;/p&gt; 
+ &lt;p&gt;Alternatively, follow the &lt;a href="https://docs.qoder.com/user-guide/chat/model-context-protocol"&gt;MCP guide&lt;/a&gt; and use the standard config from above.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Qoder CLI&lt;/summary&gt; 
+ &lt;p&gt;Install the Chrome DevTools MCP server using the Qoder CLI (&lt;a href="https://docs.qoder.com/cli/using-cli#mcp-servsers"&gt;guide&lt;/a&gt;):&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;Project wide:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;qodercli mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;Globally:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;qodercli mcp add -s user chrome-devtools -- npx chrome-devtools-mcp@latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Visual Studio&lt;/summary&gt; 
+ &lt;p&gt;&lt;strong&gt;Click the button to install:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://vs-open.link/mcp-install?%7B%22name%22%3A%22chrome-devtools%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22chrome-devtools-mcp%40latest%22%5D%7D"&gt;&lt;img src="https://img.shields.io/badge/Visual_Studio-Install-C16FDE?logo=visualstudio&amp;amp;logoColor=white" alt="Install in Visual Studio" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Warp&lt;/summary&gt; 
+ &lt;p&gt;Go to &lt;code&gt;Settings | AI | Manage MCP Servers&lt;/code&gt; -&amp;gt; &lt;code&gt;+ Add&lt;/code&gt; to &lt;a href="https://docs.warp.dev/knowledge-and-collaboration/mcp#adding-an-mcp-server"&gt;add an MCP Server&lt;/a&gt;. Use the config provided above.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Windsurf&lt;/summary&gt; Follow the 
+ &lt;a href="https://docs.windsurf.com/windsurf/cascade/mcp#mcp-config-json"&gt;configure MCP guide&lt;/a&gt; using the standard config from above. 
+&lt;/details&gt; 
+&lt;h3&gt;Your first prompt&lt;/h3&gt; 
+&lt;p&gt;Enter the following prompt in your MCP Client to check if everything is working:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Check the performance of https://developers.chrome.com
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Your MCP client should open the browser and record a performance trace.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE]&lt;br /&gt; The MCP server will start the browser automatically once the MCP client uses a tool that requires a running browser instance. Connecting to the Chrome DevTools MCP server on its own will not automatically start the browser.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Tools&lt;/h2&gt; 
+&lt;p&gt;If you run into any issues, checkout our &lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/troubleshooting.md"&gt;troubleshooting guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;!-- BEGIN AUTO GENERATED TOOLS --&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Input automation&lt;/strong&gt; (8 tools) 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#click"&gt;&lt;code&gt;click&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#drag"&gt;&lt;code&gt;drag&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#fill"&gt;&lt;code&gt;fill&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#fill_form"&gt;&lt;code&gt;fill_form&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#handle_dialog"&gt;&lt;code&gt;handle_dialog&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#hover"&gt;&lt;code&gt;hover&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#press_key"&gt;&lt;code&gt;press_key&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#upload_file"&gt;&lt;code&gt;upload_file&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Navigation automation&lt;/strong&gt; (6 tools) 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#close_page"&gt;&lt;code&gt;close_page&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#list_pages"&gt;&lt;code&gt;list_pages&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#navigate_page"&gt;&lt;code&gt;navigate_page&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#new_page"&gt;&lt;code&gt;new_page&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#select_page"&gt;&lt;code&gt;select_page&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#wait_for"&gt;&lt;code&gt;wait_for&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Emulation&lt;/strong&gt; (2 tools) 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#emulate"&gt;&lt;code&gt;emulate&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#resize_page"&gt;&lt;code&gt;resize_page&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Performance&lt;/strong&gt; (3 tools) 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#performance_analyze_insight"&gt;&lt;code&gt;performance_analyze_insight&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#performance_start_trace"&gt;&lt;code&gt;performance_start_trace&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#performance_stop_trace"&gt;&lt;code&gt;performance_stop_trace&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Network&lt;/strong&gt; (2 tools) 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#get_network_request"&gt;&lt;code&gt;get_network_request&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#list_network_requests"&gt;&lt;code&gt;list_network_requests&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Debugging&lt;/strong&gt; (5 tools) 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#evaluate_script"&gt;&lt;code&gt;evaluate_script&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#get_console_message"&gt;&lt;code&gt;get_console_message&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#list_console_messages"&gt;&lt;code&gt;list_console_messages&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#take_screenshot"&gt;&lt;code&gt;take_screenshot&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#take_snapshot"&gt;&lt;code&gt;take_snapshot&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;!-- END AUTO GENERATED TOOLS --&gt; 
+&lt;h2&gt;Configuration&lt;/h2&gt; 
+&lt;p&gt;The Chrome DevTools MCP server supports the following configuration option:&lt;/p&gt; 
+&lt;!-- BEGIN AUTO GENERATED OPTIONS --&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--autoConnect&lt;/code&gt;/ &lt;code&gt;--auto-connect&lt;/code&gt;&lt;/strong&gt; If specified, automatically connects to a browser (Chrome 145+) running in the user data directory identified by the channel param. Requires remote debugging being enabled in Chrome here: chrome://inspect/#remote-debugging.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; boolean&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Default:&lt;/strong&gt; &lt;code&gt;false&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--browserUrl&lt;/code&gt;/ &lt;code&gt;--browser-url&lt;/code&gt;, &lt;code&gt;-u&lt;/code&gt;&lt;/strong&gt; Connect to a running, debuggable Chrome instance (e.g. &lt;code&gt;http://127.0.0.1:9222&lt;/code&gt;). For more details see: &lt;a href="https://github.com/ChromeDevTools/chrome-devtools-mcp#connecting-to-a-running-chrome-instance"&gt;https://github.com/ChromeDevTools/chrome-devtools-mcp#connecting-to-a-running-chrome-instance&lt;/a&gt;.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; string&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--wsEndpoint&lt;/code&gt;/ &lt;code&gt;--ws-endpoint&lt;/code&gt;, &lt;code&gt;-w&lt;/code&gt;&lt;/strong&gt; WebSocket endpoint to connect to a running Chrome instance (e.g., ws://127.0.0.1:9222/devtools/browser/
+   &lt;id&gt;
+    ). Alternative to --browserUrl.
+   &lt;/id&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; string&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--wsHeaders&lt;/code&gt;/ &lt;code&gt;--ws-headers&lt;/code&gt;&lt;/strong&gt; Custom headers for WebSocket connection in JSON format (e.g., '{"Authorization":"Bearer token"}'). Only works with --wsEndpoint.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; string&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--headless&lt;/code&gt;&lt;/strong&gt; Whether to run in headless (no UI) mode.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; boolean&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Default:&lt;/strong&gt; &lt;code&gt;false&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--executablePath&lt;/code&gt;/ &lt;code&gt;--executable-path&lt;/code&gt;, &lt;code&gt;-e&lt;/code&gt;&lt;/strong&gt; Path to custom Chrome executable.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; string&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--isolated&lt;/code&gt;&lt;/strong&gt; If specified, creates a temporary user-data-dir that is automatically cleaned up after the browser is closed. Defaults to false.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; boolean&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--userDataDir&lt;/code&gt;/ &lt;code&gt;--user-data-dir&lt;/code&gt;&lt;/strong&gt; Path to the user data directory for Chrome. Default is $HOME/.cache/chrome-devtools-mcp/chrome-profile$CHANNEL_SUFFIX_IF_NON_STABLE&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; string&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--channel&lt;/code&gt;&lt;/strong&gt; Specify a different Chrome channel that should be used. The default is the stable channel version.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; string&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Choices:&lt;/strong&gt; &lt;code&gt;stable&lt;/code&gt;, &lt;code&gt;canary&lt;/code&gt;, &lt;code&gt;beta&lt;/code&gt;, &lt;code&gt;dev&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--logFile&lt;/code&gt;/ &lt;code&gt;--log-file&lt;/code&gt;&lt;/strong&gt; Path to a file to write debug logs to. Set the env variable &lt;code&gt;DEBUG&lt;/code&gt; to &lt;code&gt;*&lt;/code&gt; to enable verbose logs. Useful for submitting bug reports.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; string&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--viewport&lt;/code&gt;&lt;/strong&gt; Initial viewport size for the Chrome instances started by the server. For example, &lt;code&gt;1280x720&lt;/code&gt;. In headless mode, max size is 3840x2160px.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; string&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--proxyServer&lt;/code&gt;/ &lt;code&gt;--proxy-server&lt;/code&gt;&lt;/strong&gt; Proxy server configuration for Chrome passed as --proxy-server when launching the browser. See &lt;a href="https://www.chromium.org/developers/design-documents/network-settings/"&gt;https://www.chromium.org/developers/design-documents/network-settings/&lt;/a&gt; for details.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; string&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--acceptInsecureCerts&lt;/code&gt;/ &lt;code&gt;--accept-insecure-certs&lt;/code&gt;&lt;/strong&gt; If enabled, ignores errors relative to self-signed and expired certificates. Use with caution.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; boolean&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--chromeArg&lt;/code&gt;/ &lt;code&gt;--chrome-arg&lt;/code&gt;&lt;/strong&gt; Additional arguments for Chrome. Only applies when Chrome is launched by chrome-devtools-mcp.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; array&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--categoryEmulation&lt;/code&gt;/ &lt;code&gt;--category-emulation&lt;/code&gt;&lt;/strong&gt; Set to false to exclude tools related to emulation.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; boolean&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Default:&lt;/strong&gt; &lt;code&gt;true&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--categoryPerformance&lt;/code&gt;/ &lt;code&gt;--category-performance&lt;/code&gt;&lt;/strong&gt; Set to false to exclude tools related to performance.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; boolean&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Default:&lt;/strong&gt; &lt;code&gt;true&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--categoryNetwork&lt;/code&gt;/ &lt;code&gt;--category-network&lt;/code&gt;&lt;/strong&gt; Set to false to exclude tools related to network.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; boolean&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Default:&lt;/strong&gt; &lt;code&gt;true&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;!-- END AUTO GENERATED OPTIONS --&gt; 
+&lt;p&gt;Pass them via the &lt;code&gt;args&lt;/code&gt; property in the JSON configuration. For example:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "chrome-devtools-mcp@latest",
+        "--channel=canary",
+        "--headless=true",
+        "--isolated=true"
+      ]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Connecting via WebSocket with custom headers&lt;/h3&gt; 
+&lt;p&gt;You can connect directly to a Chrome WebSocket endpoint and include custom headers (e.g., for authentication):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "chrome-devtools-mcp@latest",
+        "--wsEndpoint=ws://127.0.0.1:9222/devtools/browser/&amp;lt;id&amp;gt;",
+        "--wsHeaders={\"Authorization\":\"Bearer YOUR_TOKEN\"}"
+      ]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;To get the WebSocket endpoint from a running Chrome instance, visit &lt;code&gt;http://127.0.0.1:9222/json/version&lt;/code&gt; and look for the &lt;code&gt;webSocketDebuggerUrl&lt;/code&gt; field.&lt;/p&gt; 
+&lt;p&gt;You can also run &lt;code&gt;npx chrome-devtools-mcp@latest --help&lt;/code&gt; to see all available configuration options.&lt;/p&gt; 
+&lt;h2&gt;Concepts&lt;/h2&gt; 
+&lt;h3&gt;User data directory&lt;/h3&gt; 
+&lt;p&gt;&lt;code&gt;chrome-devtools-mcp&lt;/code&gt; starts a Chrome's stable channel instance using the following user data directory:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Linux / macOS: &lt;code&gt;$HOME/.cache/chrome-devtools-mcp/chrome-profile-$CHANNEL&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Windows: &lt;code&gt;%HOMEPATH%/.cache/chrome-devtools-mcp/chrome-profile-$CHANNEL&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The user data directory is not cleared between runs and shared across all instances of &lt;code&gt;chrome-devtools-mcp&lt;/code&gt;. Set the &lt;code&gt;isolated&lt;/code&gt; option to &lt;code&gt;true&lt;/code&gt; to use a temporary user data dir instead which will be cleared automatically after the browser is closed.&lt;/p&gt; 
+&lt;h3&gt;Connecting to a running Chrome instance&lt;/h3&gt; 
+&lt;p&gt;By default, the Chrome DevTools MCP server will start a new Chrome instance with a dedicated profile. This might not be ideal in all situations:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;If you would like to maintain the same application state when alternating between manual site testing and agent-driven testing.&lt;/li&gt; 
+ &lt;li&gt;When the MCP needs to sign into a website. Some accounts may prevent sign-in when the browser is controlled via WebDriver (the default launch mechanism for the Chrome DevTools MCP server).&lt;/li&gt; 
+ &lt;li&gt;If you're running your LLM inside a sandboxed environment, but you would like to connect to a Chrome instance that runs outside the sandbox.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;In these cases, start Chrome first and let the Chrome DevTools MCP server connect to it. There are two ways to do so:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Automatic connection (available in Chrome 144)&lt;/strong&gt;: best for sharing state between manual and agent-driven testing.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Manual connection via remote debugging port&lt;/strong&gt;: best when running inside a sandboxed environment.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Automatically connecting to a running Chrome instance&lt;/h4&gt; 
+&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Set up remote debugging in Chrome&lt;/p&gt; 
+&lt;p&gt;In Chrome (&amp;gt;= M144), do the following to set up remote debugging:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Navigate to &lt;code&gt;chrome://inspect/#remote-debugging&lt;/code&gt; to enable remote debugging.&lt;/li&gt; 
+ &lt;li&gt;Follow the dialog UI to allow or disallow incoming debugging connections.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; Configure Chrome DevTools MCP server to automatically connect to a running Chrome Instance&lt;/p&gt; 
+&lt;p&gt;To connect the &lt;code&gt;chrome-devtools-mcp&lt;/code&gt; server to the running Chrome instance, use &lt;code&gt;--autoConnect&lt;/code&gt; command line argument for the MCP server.&lt;/p&gt; 
+&lt;p&gt;The following code snippet is an example configuration for gemini-cli:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["chrome-devtools-mcp@latest", "--autoConnect", "--channel=beta"]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Note: you have to specify &lt;code&gt;--channel=beta&lt;/code&gt; until Chrome M144 has reached the stable channel.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; Test your setup&lt;/p&gt; 
+&lt;p&gt;Make sure your browser is running. Open gemini-cli and run the following prompt:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-none"&gt;Check the performance of https://developers.chrome.com
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE]&lt;br /&gt; The &lt;code&gt;autoConnect&lt;/code&gt; option requires the user to start Chrome. If the user has multiple active profiles, the MCP server will connect to the default profile (as determined by Chrome). The MCP server has access to all open windows for the selected profile.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;The Chrome DevTools MCP server will try to connect to your running Chrome instance. It shows a dialog asking for user permission.&lt;/p&gt; 
+&lt;p&gt;Clicking &lt;strong&gt;Allow&lt;/strong&gt; results in the Chrome DevTools MCP server opening &lt;a href="http://developers.chrome.com"&gt;developers.chrome.com&lt;/a&gt; and taking a performance trace.&lt;/p&gt; 
+&lt;h4&gt;Manual connection using port forwarding&lt;/h4&gt; 
+&lt;p&gt;You can connect to a running Chrome instance by using the &lt;code&gt;--browser-url&lt;/code&gt; option. This is useful if you are running the MCP server in a sandboxed environment that does not allow starting a new Chrome instance.&lt;/p&gt; 
+&lt;p&gt;Here is a step-by-step guide on how to connect to a running Chrome instance:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Step 1: Configure the MCP client&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Add the &lt;code&gt;--browser-url&lt;/code&gt; option to your MCP client configuration. The value of this option should be the URL of the running Chrome instance. &lt;code&gt;http://127.0.0.1:9222&lt;/code&gt; is a common default.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "chrome-devtools-mcp@latest",
+        "--browser-url=http://127.0.0.1:9222"
+      ]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Step 2: Start the Chrome browser&lt;/strong&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!WARNING]&lt;br /&gt; Enabling the remote debugging port opens up a debugging port on the running browser instance. Any application on your machine can connect to this port and control the browser. Make sure that you are not browsing any sensitive websites while the debugging port is open.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Start the Chrome browser with the remote debugging port enabled. Make sure to close any running Chrome instances before starting a new one with the debugging port enabled. The port number you choose must be the same as the one you specified in the &lt;code&gt;--browser-url&lt;/code&gt; option in your MCP client configuration.&lt;/p&gt; 
+&lt;p&gt;For security reasons, &lt;a href="https://developer.chrome.com/blog/remote-debugging-port"&gt;Chrome requires you to use a non-default user data directory&lt;/a&gt; when enabling the remote debugging port. You can specify a custom directory using the &lt;code&gt;--user-data-dir&lt;/code&gt; flag. This ensures that your regular browsing profile and data are not exposed to the debugging session.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;macOS&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir=/tmp/chrome-profile-stable
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Linux&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/usr/bin/google-chrome --remote-debugging-port=9222 --user-data-dir=/tmp/chrome-profile-stable
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Windows&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;"C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="%TEMP%\chrome-profile-stable"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Step 3: Test your setup&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;After configuring the MCP client and starting the Chrome browser, you can test your setup by running a simple prompt in your MCP client:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Check the performance of https://developers.chrome.com
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Your MCP client should connect to the running Chrome instance and receive a performance report.&lt;/p&gt; 
+&lt;p&gt;If you hit VM-to-host port forwarding issues, see the “Remote debugging between virtual machine (VM) and host fails” section in &lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/troubleshooting.md#remote-debugging-between-virtual-machine-vm-and-host-fails"&gt;&lt;code&gt;docs/troubleshooting.md&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;For more details on remote debugging, see the &lt;a href="https://developer.chrome.com/docs/devtools/remote-debugging/"&gt;Chrome DevTools documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Known limitations&lt;/h2&gt; 
+&lt;h3&gt;Operating system sandboxes&lt;/h3&gt; 
+&lt;p&gt;Some MCP clients allow sandboxing the MCP server using macOS Seatbelt or Linux containers. If sandboxes are enabled, &lt;code&gt;chrome-devtools-mcp&lt;/code&gt; is not able to start Chrome that requires permissions to create its own sandboxes. As a workaround, either disable sandboxing for &lt;code&gt;chrome-devtools-mcp&lt;/code&gt; in your MCP client or use &lt;code&gt;--browser-url&lt;/code&gt; to connect to a Chrome instance that you start manually outside of the MCP client sandbox.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>usememos/memos</title>
+      <link>https://github.com/usememos/memos</link>
+      <description>&lt;p&gt;An open-source, self-hosted note-taking service. Your thoughts, your data, your control — no tracking, no ads, no subscription fees.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Memos&lt;/h1&gt; 
+&lt;img align="right" height="96px" src="https://raw.githubusercontent.com/usememos/.github/refs/heads/main/assets/logo-rounded.png" alt="Memos" /&gt; 
+&lt;p&gt;An open-source, self-hosted note-taking service. Your thoughts, your data, your control — no tracking, no ads, no subscription fees.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://usememos.com"&gt;&lt;img src="https://img.shields.io/badge/%F0%9F%8F%A0-usememos.com-blue?style=flat-square" alt="Home" /&gt;&lt;/a&gt; &lt;a href="https://demo.usememos.com/"&gt;&lt;img src="https://img.shields.io/badge/%E2%9C%A8-Try%20Demo-orange?style=flat-square" alt="Live Demo" /&gt;&lt;/a&gt; &lt;a href="https://usememos.com/docs"&gt;&lt;img src="https://img.shields.io/badge/%F0%9F%93%9A-Documentation-green?style=flat-square" alt="Docs" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/tfPJa4UmAv"&gt;&lt;img src="https://img.shields.io/badge/%F0%9F%92%AC-Discord-5865f2?style=flat-square&amp;amp;logo=discord&amp;amp;logoColor=white" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://hub.docker.com/r/neosmemo/memos"&gt;&lt;img src="https://img.shields.io/docker/pulls/neosmemo/memos?style=flat-square&amp;amp;logo=docker" alt="Docker Pulls" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/usememos/.github/refs/heads/main/assets/demo.png" alt="Memos Demo Screenshot" height="512" /&gt; 
+&lt;h3&gt;💎 Featured Sponsors&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://go.warp.dev/memos"&gt;&lt;strong&gt;Warp&lt;/strong&gt; — The AI-powered terminal built for speed and collaboration&lt;/a&gt;&lt;/p&gt; 
+&lt;a href="https://go.warp.dev/memos" target="_blank" rel="noopener"&gt; &lt;img src="https://raw.githubusercontent.com/warpdotdev/brand-assets/main/Github/Sponsor/Warp-Github-LG-02.png" alt="Warp - The AI-powered terminal built for speed and collaboration" width="512" /&gt; &lt;/a&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;a href="https://www.lambdatest.com/?utm_source=memos&amp;amp;utm_medium=sponsor"&gt;&lt;strong&gt;LambdaTest&lt;/strong&gt; - Cross-browser testing cloud&lt;/a&gt;&lt;/p&gt; 
+&lt;a href="https://www.lambdatest.com/?utm_source=memos&amp;amp;utm_medium=sponsor" target="_blank" rel="noopener"&gt; &lt;img src="https://www.lambdatest.com/blue-logo.png" alt="LambdaTest - Cross-browser testing cloud" height="50" /&gt; &lt;/a&gt; 
+&lt;h2&gt;Overview&lt;/h2&gt; 
+&lt;p&gt;Memos is a privacy-first, self-hosted knowledge base that works seamlessly for personal notes, team wikis, and knowledge management. Built with Go and React, it offers lightning-fast performance without compromising on features or usability.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Why choose Memos over cloud services?&lt;/strong&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Feature&lt;/th&gt; 
+   &lt;th&gt;Memos&lt;/th&gt; 
+   &lt;th&gt;Cloud Services&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Privacy&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Self-hosted, zero telemetry&lt;/td&gt; 
+   &lt;td&gt;❌ Your data on their servers&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Cost&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Free forever, MIT license&lt;/td&gt; 
+   &lt;td&gt;❌ Subscription fees&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Performance&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Instant load, no latency&lt;/td&gt; 
+   &lt;td&gt;⚠️ Depends on internet&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Ownership&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Full control &amp;amp; export&lt;/td&gt; 
+   &lt;td&gt;❌ Vendor lock-in&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;API Access&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Full REST + gRPC APIs&lt;/td&gt; 
+   &lt;td&gt;⚠️ Limited or paid&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Customization&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;✅ Open source, forkable&lt;/td&gt; 
+   &lt;td&gt;❌ Closed ecosystem&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;🔒 Privacy-First Architecture&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Self-hosted on your infrastructure with zero telemetry&lt;/li&gt; 
+   &lt;li&gt;Complete data ownership and export capabilities&lt;/li&gt; 
+   &lt;li&gt;No tracking, no ads, no vendor lock-in&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;📝 Markdown Native&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Full markdown support&lt;/li&gt; 
+   &lt;li&gt;Plain text storage — take your data anywhere&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;⚡ Blazing Fast&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Built with Go backend and React frontend&lt;/li&gt; 
+   &lt;li&gt;Optimized for performance at any scale&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;🐳 Simple Deployment&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;One-line Docker installation&lt;/li&gt; 
+   &lt;li&gt;Supports SQLite, MySQL, and PostgreSQL&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;🔗 Developer-Friendly&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Full REST and gRPC APIs&lt;/li&gt; 
+   &lt;li&gt;Easy integration with existing workflows&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;🎨 Beautiful Interface&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Clean, minimal design and dark mode support&lt;/li&gt; 
+   &lt;li&gt;Mobile-responsive layout&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;h3&gt;Docker (Recommended)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -d \
+  --name memos \
+  -p 5230:5230 \
+  -v ~/.memos:/var/opt/memos \
+  neosmemo/memos:stable
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Open &lt;code&gt;http://localhost:5230&lt;/code&gt; and start writing!&lt;/p&gt; 
+&lt;h3&gt;Try the Live Demo&lt;/h3&gt; 
+&lt;p&gt;Don't want to install yet? Try our &lt;a href="https://demo.usememos.com/"&gt;live demo&lt;/a&gt; first!&lt;/p&gt; 
+&lt;h3&gt;Other Installation Methods&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Docker Compose&lt;/strong&gt; - Recommended for production deployments&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Pre-built Binaries&lt;/strong&gt; - Available for Linux, macOS, and Windows&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt; - Helm charts and manifests available&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Build from Source&lt;/strong&gt; - For development and customization&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See our &lt;a href="https://usememos.com/docs/installation"&gt;installation guide&lt;/a&gt; for detailed instructions.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions of all kinds! Whether you're fixing bugs, adding features, improving documentation, or helping with translations — every contribution matters.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Ways to contribute:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🐛 &lt;a href="https://github.com/usememos/memos/issues/new?template=bug_report.md"&gt;Report bugs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;💡 &lt;a href="https://github.com/usememos/memos/issues/new?template=feature_request.md"&gt;Suggest features&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🔧 &lt;a href="https://github.com/usememos/memos/pulls"&gt;Submit pull requests&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;📖 &lt;a href="https://github.com/usememos/memos/tree/main/docs"&gt;Improve documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🌍 &lt;a href="https://github.com/usememos/memos/tree/main/web/src/locales"&gt;Help with translations&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Sponsors&lt;/h2&gt; 
+&lt;p&gt;Love Memos? &lt;a href="https://github.com/sponsors/usememos"&gt;Sponsor us on GitHub&lt;/a&gt; to help keep the project growing!&lt;/p&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://star-history.com/#usememos/memos&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=usememos/memos&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Memos is open-source software licensed under the &lt;a href="https://raw.githubusercontent.com/usememos/memos/main/LICENSE"&gt;MIT License&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Privacy Policy&lt;/h2&gt; 
+&lt;p&gt;Memos is built with privacy as a core principle. As a self-hosted application, all your data stays on your infrastructure. There is no telemetry, no tracking, and no data collection. See our &lt;a href="https://usememos.com/privacy"&gt;Privacy Policy&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://usememos.com"&gt;Website&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://usememos.com/docs"&gt;Documentation&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://demo.usememos.com/"&gt;Demo&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://discord.gg/tfPJa4UmAv"&gt;Discord&lt;/a&gt;&lt;/strong&gt; • &lt;strong&gt;&lt;a href="https://x.com/usememos"&gt;X/Twitter&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;a href="https://vercel.com/oss"&gt; &lt;img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg?sanitize=true" /&gt; &lt;/a&gt;</description>
+    </item>
+    
+    <item>
+      <title>HQarroum/docker-android</title>
+      <link>https://github.com/HQarroum/docker-android</link>
+      <description>&lt;p&gt;🤖 A minimal and customizable Docker image running the Android emulator as a service.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img width="400" src="https://raw.githubusercontent.com/HQarroum/docker-android/main/assets/icon.png" /&gt; &lt;/p&gt;
+&lt;br /&gt;
+&lt;br /&gt; 
+&lt;h1&gt;docker-android&lt;/h1&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;A minimal and customizable Docker image running the Android emulator as a service.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;a href="https://github.com/HQarroum/docker-android/actions/workflows/docker-image.yml"&gt;&lt;img src="https://github.com/HQarroum/docker-android/actions/workflows/docker-image.yml/badge.svg?sanitize=true" alt="Docker Image CI" /&gt;&lt;/a&gt; &lt;a href="https://deepsource.io/gh/HQarroum/docker-android/?ref=repository-badge"&gt;&lt;img src="https://deepsource.io/gh/HQarroum/docker-android.svg/?label=active+issues&amp;amp;show_trend=true&amp;amp;token=JTfGSHolIiMj0WNfv2ES0I6X" alt="DeepSource" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/docker/pulls/halimqarroum/docker-android" alt="Docker Pulls" /&gt;&lt;/p&gt; 
+&lt;p&gt;Current version: &lt;strong&gt;1.1.0&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;📋 Table of contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/HQarroum/docker-android/main/#-features"&gt;Features&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/HQarroum/docker-android/main/#-description"&gt;Description&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/HQarroum/docker-android/main/#-usage"&gt;Usage&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/HQarroum/docker-android/main/#-see-also"&gt;See also&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🔖 Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Minimal Alpine based image bundled with the Android emulator and KVM support.&lt;/li&gt; 
+ &lt;li&gt;Bundles the Java Runtime Environment 11 in the image.&lt;/li&gt; 
+ &lt;li&gt;Customizable Android version, device type and image types.&lt;/li&gt; 
+ &lt;li&gt;Port-forwarding of emulator and ADB on the container network interface built-in.&lt;/li&gt; 
+ &lt;li&gt;Emulator images are wiped each time the emulator re-starts.&lt;/li&gt; 
+ &lt;li&gt;Runs headless, suitable for CI farms. Compatible with &lt;a href="https://github.com/Genymobile/scrcpy"&gt;&lt;code&gt;scrcpy&lt;/code&gt;&lt;/a&gt; to remotely control the Android screen.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🔰 Description&lt;/h2&gt; 
+&lt;p&gt;The focus of this project is to provide a size-optimized Docker image bundled with the minimal amount of software required to expose a fully functionning Android emulator that's remotely controllable over the network. This image only contains the Android emulator itself, an ADB server used to remotely connect into the emulator from outside the container, and QEMU with &lt;code&gt;libvirt&lt;/code&gt; support.&lt;/p&gt; 
+&lt;p&gt;You can build this image without the Android SDK and without the Android emulator to make the image smaller. Below is a size comparison between some of the possible build variants.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Variant&lt;/th&gt; 
+   &lt;th&gt;Uncompressed&lt;/th&gt; 
+   &lt;th&gt;Compressed&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;API 33 + Emulator&lt;/td&gt; 
+   &lt;td&gt;5.84 GB&lt;/td&gt; 
+   &lt;td&gt;1.97 GB&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;API 32 + Emulator&lt;/td&gt; 
+   &lt;td&gt;5.89 GB&lt;/td&gt; 
+   &lt;td&gt;1.93 GB&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;API 28 + Emulator&lt;/td&gt; 
+   &lt;td&gt;4.29 GB&lt;/td&gt; 
+   &lt;td&gt;1.46 GB&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Without SDK and emulator&lt;/td&gt; 
+   &lt;td&gt;414 MB&lt;/td&gt; 
+   &lt;td&gt;138 MB&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;📘 Usage&lt;/h2&gt; 
+&lt;p&gt;By default, a build will bundle the Android SDK, platform tools and emulator with the image.&lt;/p&gt; 
+&lt;p&gt;with docker-compose:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker compose up android-emulator
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;or with GPU acceleration&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker compose up android-emulator-cuda
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;or for example with GPU acceleration and google playstore&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker compose up android-emulator-cuda-store
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;with only docker&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker build -t android-emulator .
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Keys&lt;/h2&gt; 
+&lt;p&gt;To run google_apis_playstore image, you need to have same adbkey between emulator and client.&lt;/p&gt; 
+&lt;p&gt;You can generate one by running &lt;code&gt;adb keygen adbkey&lt;/code&gt;, that generates 2 files - adbkey and adbkey.pub.&lt;/p&gt; 
+&lt;p&gt;override them inside ./keys directory.&lt;/p&gt; 
+&lt;h3&gt;Running the container&lt;/h3&gt; 
+&lt;p&gt;Once the image is built, you can mount your KVM driver on the container and expose its ADB port.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Ensure 4GB of memory and at least 8GB of disk space for API 33.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -it --rm --device /dev/kvm -p 5555:5555 android-emulator
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Save data/storage after restart (wipe)&lt;/h3&gt; 
+&lt;p&gt;All avd save in docker dir &lt;code&gt;/data&lt;/code&gt;, name for avd is &lt;code&gt;android&lt;/code&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -it --rm --device /dev/kvm -p 5555:5555 -v ~/android_avd:/data android-emulator
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Connect ADB to the container&lt;/h3&gt; 
+&lt;p&gt;The ADB server in the container will be spawned automatically and listen on all interfaces in the container. After a few seconds, once the kernel has booted, you will be able to connect ADB to the container.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;adb connect 127.0.0.1:5555
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Additionally, you can use &lt;a href="https://github.com/Genymobile/scrcpy"&gt;&lt;code&gt;scrcpy&lt;/code&gt;&lt;/a&gt; to control the screen of the emulator remotely. To do so, you simply have to connect ADB and run it locally.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;By default, the emulator runs with a Pixel preset (1080x1920).&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;scrcpy
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;br /&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;img width="260" src="https://raw.githubusercontent.com/HQarroum/docker-android/main/assets/screenshot.png" /&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img width="260" src="https://raw.githubusercontent.com/HQarroum/docker-android/main/assets/screenshot-2.png" /&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;img width="260" src="https://raw.githubusercontent.com/HQarroum/docker-android/main/assets/screenshot-3.png" /&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;br /&gt; 
+&lt;h3&gt;Customize the image&lt;/h3&gt; 
+&lt;p&gt;It is possible to customize the API level (Android version) and the image type (Google APIs vs PlayStore) when building the image.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;By default, the image will build with API 33 with support for Google APIs for an x86_64 architecture.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;This can come in handy when integrating multiple images as part of a CI pipeline where an application or a set of applications need to be tested against different Android versions. There are 2 variables that can be specified at build time to change the Android image.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;API_LEVEL&lt;/code&gt; - Specifies the &lt;a href="https://apilevels.com/"&gt;API level&lt;/a&gt; associated with the image. Use this parameter to change the Android version.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;IMG_TYPE&lt;/code&gt; - Specifies the type of image to install.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;ARCHITECTURE&lt;/code&gt; Specifies the CPU architecture of the Android image. Note that only &lt;code&gt;x86_64&lt;/code&gt; and &lt;code&gt;x86&lt;/code&gt; are actively supported by this image.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The below example will install Android Pie with support for the Google Play Store.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker build \
+  --build-arg API_LEVEL=28 \
+  --build-arg IMG_TYPE=google_apis_playstore \
+  --build-arg ARCHITECTURE=x86 \
+  --tag android-emulator .
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Variables&lt;/h3&gt; 
+&lt;h4&gt;Default variables&lt;/h4&gt; 
+&lt;h4&gt;Disable animation&lt;/h4&gt; 
+&lt;p&gt;DISABLE_ANIMATION=false&lt;/p&gt; 
+&lt;h4&gt;Disable hidden policy&lt;/h4&gt; 
+&lt;p&gt;DISABLE_HIDDEN_POLICY=false&lt;/p&gt; 
+&lt;h4&gt;Skip adb authentication&lt;/h4&gt; 
+&lt;p&gt;SKIP_AUTH=true&lt;/p&gt; 
+&lt;h4&gt;Memory for emulator&lt;/h4&gt; 
+&lt;p&gt;MEMORY=8192&lt;/p&gt; 
+&lt;h4&gt;Cores for emulator&lt;/h4&gt; 
+&lt;p&gt;CORES=4&lt;/p&gt; 
+&lt;h3&gt;Mount an external drive in the container&lt;/h3&gt; 
+&lt;p&gt;It might be sometimes useful to have the entire Android SDK folder outside of the container (stored on a shared distributed filesystem such as NFS for example), to significantly reduce the size and the build time of the image.&lt;/p&gt; 
+&lt;p&gt;To do so, you can specify a specific argument at build time to disable the download and installation of the SDK in the image.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker build -t android-emulator --build-arg INSTALL_ANDROID_SDK=0 .
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;You will need mount the SDK in the container at &lt;code&gt;/opt/android&lt;/code&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -it --rm --device /dev/kvm -p 5555:5555 -v /shared/android/sdk:/opt/android/ android-emulator
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Pull from Docker Hub&lt;/h3&gt; 
+&lt;p&gt;Different pre-built images of &lt;code&gt;docker-android&lt;/code&gt; exist on &lt;a href="https://hub.docker.com/r/halimqarroum/docker-android"&gt;Docker Hub&lt;/a&gt;. Each image variant is tagged using its the api level and image type. For example, to pull an API 33 image, you can run the following.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker pull halimqarroum/docker-android:api-33
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;👀 See also&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The &lt;a href="https://github.com/alvr/alpine-android"&gt;alpine-android&lt;/a&gt; project which is based on a different Alpine image.&lt;/li&gt; 
+ &lt;li&gt;The &lt;a href="https://github.com/budtmo/docker-android"&gt;docker-android&lt;/a&gt; project which offers a WebRTC interface to an Android emulator.&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>anthropics/claude-code</title>
+      <link>https://github.com/anthropics/claude-code</link>
+      <description>&lt;p&gt;Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Claude Code&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://img.shields.io/badge/Node.js-18%2B-brightgreen?style=flat-square" alt="" /&gt; &lt;a href="https://www.npmjs.com/package/@anthropic-ai/claude-code"&gt;&lt;img src="https://img.shields.io/npm/v/@anthropic-ai/claude-code.svg?style=flat-square" alt="npm" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands. Use it in your terminal, IDE, or tag @claude on Github.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Learn more in the &lt;a href="https://code.claude.com/docs/en/overview"&gt;official documentation&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/anthropics/claude-code/main/demo.gif" /&gt; 
+&lt;h2&gt;Get started&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Install Claude Code:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;MacOS/Linux:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -fsSL https://claude.ai/install.sh | bash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Homebrew (MacOS):&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;brew install --cask claude-code
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Windows:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-powershell"&gt;irm https://claude.ai/install.ps1 | iex
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;NPM:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install -g @anthropic-ai/claude-code
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;NOTE: If installing with NPM, you also need to install &lt;a href="https://nodejs.org/en/download/"&gt;Node.js 18+&lt;/a&gt;&lt;/p&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Navigate to your project directory and run &lt;code&gt;claude&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Plugins&lt;/h2&gt; 
+&lt;p&gt;This repository includes several Claude Code plugins that extend functionality with custom commands and agents. See the &lt;a href="https://raw.githubusercontent.com/anthropics/claude-code/main/plugins/README.md"&gt;plugins directory&lt;/a&gt; for detailed documentation on available plugins.&lt;/p&gt; 
+&lt;h2&gt;Reporting Bugs&lt;/h2&gt; 
+&lt;p&gt;We welcome your feedback. Use the &lt;code&gt;/bug&lt;/code&gt; command to report issues directly within Claude Code, or file a &lt;a href="https://github.com/anthropics/claude-code/issues"&gt;GitHub issue&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Connect on Discord&lt;/h2&gt; 
+&lt;p&gt;Join the &lt;a href="https://anthropic.com/discord"&gt;Claude Developers Discord&lt;/a&gt; to connect with other developers using Claude Code. Get help, share feedback, and discuss your projects with the community.&lt;/p&gt; 
+&lt;h2&gt;Data collection, usage, and retention&lt;/h2&gt; 
+&lt;p&gt;When you use Claude Code, we collect feedback, which includes usage data (such as code acceptance or rejections), associated conversation data, and user feedback submitted via the &lt;code&gt;/bug&lt;/code&gt; command.&lt;/p&gt; 
+&lt;h3&gt;How we use your data&lt;/h3&gt; 
+&lt;p&gt;See our &lt;a href="https://code.claude.com/docs/en/data-usage"&gt;data usage policies&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Privacy safeguards&lt;/h3&gt; 
+&lt;p&gt;We have implemented several safeguards to protect your data, including limited retention periods for sensitive information, restricted access to user session data, and clear policies against using feedback for model training.&lt;/p&gt; 
+&lt;p&gt;For full details, please review our &lt;a href="https://www.anthropic.com/legal/commercial-terms"&gt;Commercial Terms of Service&lt;/a&gt; and &lt;a href="https://www.anthropic.com/legal/privacy"&gt;Privacy Policy&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>frankbria/ralph-claude-code</title>
+      <link>https://github.com/frankbria/ralph-claude-code</link>
+      <description>&lt;p&gt;Autonomous AI development loop for Claude Code with intelligent exit detection&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Ralph for Claude Code&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://img.shields.io/badge/version-0.9.8-blue" alt="Version" /&gt; &lt;img src="https://img.shields.io/badge/status-active%20development-yellow" alt="Status" /&gt; &lt;img src="https://img.shields.io/badge/tests-276%20passing-green" alt="Tests" /&gt; &lt;img src="https://img.shields.io/badge/coverage-informational-lightgrey" alt="Coverage" /&gt; &lt;a href="https://github.com/hesreallyhim/awesome-claude-code"&gt;&lt;img src="https://awesome.re/mentioned-badge.svg?sanitize=true" alt="Mentioned in Awesome Claude Code" /&gt;&lt;/a&gt; &lt;a href="https://x.com/FrankBria18044"&gt;&lt;img src="https://img.shields.io/twitter/follow/FrankBria18044?style=social" alt="Follow on X" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Autonomous AI development loop with intelligent exit detection and rate limiting&lt;/strong&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Ralph is an implementation of the Geoffrey Huntley's technique for Claude Code that enables continuous autonomous development cycles he named after &lt;a href="https://ghuntley.com/ralph/"&gt;Ralph Wiggum&lt;/a&gt;. It enables continuous autonomous development cycles where Claude Code iteratively improves your project until completion, with built-in safeguards to prevent infinite loops and API overuse.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Install once, use everywhere&lt;/strong&gt; - Ralph becomes a global command available in any directory.&lt;/p&gt; 
+&lt;h2&gt;Project Status&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Version&lt;/strong&gt;: v0.9.8 - Active Development &lt;strong&gt;Core Features&lt;/strong&gt;: Working and tested &lt;strong&gt;Test Coverage&lt;/strong&gt;: 276 tests, 100% pass rate&lt;/p&gt; 
+&lt;h3&gt;What's Working Now&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Autonomous development loops with intelligent exit detection&lt;/li&gt; 
+ &lt;li&gt;Rate limiting with hourly reset (100 calls/hour, configurable)&lt;/li&gt; 
+ &lt;li&gt;Circuit breaker with advanced error detection (prevents runaway loops)&lt;/li&gt; 
+ &lt;li&gt;Response analyzer with semantic understanding and two-stage error filtering&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;JSON output format support with automatic fallback to text parsing&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Session continuity with &lt;code&gt;--continue&lt;/code&gt; flag for context preservation&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Modern CLI flags: &lt;code&gt;--output-format&lt;/code&gt;, &lt;code&gt;--allowed-tools&lt;/code&gt;, &lt;code&gt;--no-continue&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;Multi-line error matching for accurate stuck loop detection&lt;/li&gt; 
+ &lt;li&gt;5-hour API limit handling with user prompts&lt;/li&gt; 
+ &lt;li&gt;tmux integration for live monitoring&lt;/li&gt; 
+ &lt;li&gt;PRD import functionality&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;CI/CD pipeline with GitHub Actions&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;276 passing tests across 11 test files&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Recent Improvements&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.8 - Modern CLI for PRD Import&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Modernized &lt;code&gt;ralph_import.sh&lt;/code&gt; to use Claude Code CLI JSON output format&lt;/li&gt; 
+ &lt;li&gt;JSON output format support with &lt;code&gt;--output-format json&lt;/code&gt; for structured responses&lt;/li&gt; 
+ &lt;li&gt;Enhanced error handling with structured JSON error messages&lt;/li&gt; 
+ &lt;li&gt;Improved file verification with JSON-derived status information&lt;/li&gt; 
+ &lt;li&gt;Backward compatibility with older CLI versions (automatic text fallback)&lt;/li&gt; 
+ &lt;li&gt;Added 11 new tests for modern CLI features&lt;/li&gt; 
+ &lt;li&gt;Test count: 276 (up from 265)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.7 - Session Lifecycle Management&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Complete session lifecycle management with automatic reset triggers&lt;/li&gt; 
+ &lt;li&gt;Session auto-reset on: circuit breaker open, manual interrupt, project completion&lt;/li&gt; 
+ &lt;li&gt;Added &lt;code&gt;--reset-session&lt;/code&gt; CLI flag for manual session reset&lt;/li&gt; 
+ &lt;li&gt;Session history tracking (last 50 transitions) for debugging&lt;/li&gt; 
+ &lt;li&gt;Added 26 new tests for session continuity features&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.6 - JSON Output &amp;amp; Session Management&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Extended &lt;code&gt;parse_json_response()&lt;/code&gt; to support Claude Code CLI JSON format&lt;/li&gt; 
+ &lt;li&gt;Added session management functions: &lt;code&gt;store_session_id()&lt;/code&gt;, &lt;code&gt;get_last_session_id()&lt;/code&gt;, &lt;code&gt;should_resume_session()&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Cross-platform epoch time utilities in date_utils.sh&lt;/li&gt; 
+ &lt;li&gt;Added 16 new tests covering Claude CLI format and session management&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.5 - PRD Import Tests&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Added 22 comprehensive tests for &lt;code&gt;ralph_import.sh&lt;/code&gt; PRD conversion script&lt;/li&gt; 
+ &lt;li&gt;Tests cover: file format support, output file creation, project naming, error handling&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.4 - Project Setup Tests&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Added 36 comprehensive tests for &lt;code&gt;setup.sh&lt;/code&gt; project initialization script&lt;/li&gt; 
+ &lt;li&gt;Tests cover: directory creation, template copying, git initialization&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.3 - Installation Tests&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Added 14 comprehensive tests for &lt;code&gt;install.sh&lt;/code&gt; global installation script&lt;/li&gt; 
+ &lt;li&gt;Tests cover: directory creation, command installation, dependency detection&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.2 - Prompt File Fix&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fixed critical bug: replaced non-existent &lt;code&gt;--prompt-file&lt;/code&gt; CLI flag with &lt;code&gt;-p&lt;/code&gt; flag&lt;/li&gt; 
+ &lt;li&gt;Modern CLI mode now correctly passes prompt content via &lt;code&gt;-p "$(cat file)"&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Added error handling for missing prompt files in &lt;code&gt;build_claude_command()&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.1 - Modern CLI Commands (Phase 1.1)&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;JSON output format support with &lt;code&gt;--output-format json&lt;/code&gt; (default)&lt;/li&gt; 
+ &lt;li&gt;Session continuity using &lt;code&gt;--continue&lt;/code&gt; flag for cross-loop context&lt;/li&gt; 
+ &lt;li&gt;Tool permissions via &lt;code&gt;--allowed-tools&lt;/code&gt; flag&lt;/li&gt; 
+ &lt;li&gt;CI/CD pipeline with kcov coverage reporting&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.0 - Circuit Breaker Enhancements&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fixed multi-line error matching in stuck loop detection&lt;/li&gt; 
+ &lt;li&gt;Eliminated JSON field false positives (e.g., &lt;code&gt;"is_error": false&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Added two-stage error filtering for accurate detection&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;In Progress&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Expanding test coverage&lt;/li&gt; 
+ &lt;li&gt;Log rotation functionality&lt;/li&gt; 
+ &lt;li&gt;Dry-run mode&lt;/li&gt; 
+ &lt;li&gt;Configuration file support (.ralphrc)&lt;/li&gt; 
+ &lt;li&gt;Metrics and analytics tracking&lt;/li&gt; 
+ &lt;li&gt;Desktop notifications&lt;/li&gt; 
+ &lt;li&gt;Git backup and rollback system&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Timeline to v1.0&lt;/strong&gt;: ~4 weeks | &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/IMPLEMENTATION_PLAN.md"&gt;Full roadmap&lt;/a&gt; | &lt;strong&gt;Contributions welcome!&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Autonomous Development Loop&lt;/strong&gt; - Continuously executes Claude Code with your project requirements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Intelligent Exit Detection&lt;/strong&gt; - Automatically stops when project objectives are complete&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Session Continuity&lt;/strong&gt; - Preserves context across loop iterations with automatic session management&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Rate Limiting&lt;/strong&gt; - Built-in API call management with hourly limits and countdown timers&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;5-Hour API Limit Handling&lt;/strong&gt; - Detects Claude's 5-hour usage limit and offers wait/exit options&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Live Monitoring&lt;/strong&gt; - Real-time dashboard showing loop status, progress, and logs&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Task Management&lt;/strong&gt; - Structured approach with prioritized task lists and progress tracking&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Project Templates&lt;/strong&gt; - Quick setup for new projects with best-practice structure&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Comprehensive Logging&lt;/strong&gt; - Detailed execution logs with timestamps and status tracking&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Configurable Timeouts&lt;/strong&gt; - Set execution timeout for Claude Code operations (1-120 minutes)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Verbose Progress Mode&lt;/strong&gt; - Optional detailed progress updates during execution&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Response Analyzer&lt;/strong&gt; - AI-powered analysis of Claude Code responses with semantic understanding&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Circuit Breaker&lt;/strong&gt; - Advanced error detection with two-stage filtering, multi-line error matching, and automatic recovery&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;CI/CD Integration&lt;/strong&gt; - GitHub Actions workflow with automated testing&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;p&gt;Ralph has two phases: &lt;strong&gt;one-time installation&lt;/strong&gt; and &lt;strong&gt;per-project setup&lt;/strong&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;INSTALL ONCE              USE MANY TIMES
++-----------------+          +----------------------+
+| ./install.sh    |    -&amp;gt;    | ralph-setup project1 |
+|                 |          | ralph-setup project2 |
+| Adds global     |          | ralph-setup project3 |
+| commands        |          | ...                  |
++-----------------+          +----------------------+
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Phase 1: Install Ralph (One Time Only)&lt;/h3&gt; 
+&lt;p&gt;Install Ralph globally on your system:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/frankbria/ralph-claude-code.git
+cd ralph-claude-code
+./install.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This adds &lt;code&gt;ralph&lt;/code&gt;, &lt;code&gt;ralph-monitor&lt;/code&gt;, and &lt;code&gt;ralph-setup&lt;/code&gt; commands to your PATH.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: You only need to do this once per system. After installation, you can delete the cloned repository if desired.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Phase 2: Initialize New Projects (Per Project)&lt;/h3&gt; 
+&lt;p&gt;For each new project you want Ralph to work on:&lt;/p&gt; 
+&lt;h4&gt;Option A: Import Existing PRD/Specifications&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Convert existing PRD/specs to Ralph format (recommended)
+ralph-import my-requirements.md my-project
+cd my-project
+
+# Review and adjust the generated files:
+# - PROMPT.md (Ralph instructions)
+# - @fix_plan.md (task priorities)
+# - specs/requirements.md (technical specs)
+
+# Start autonomous development
+ralph --monitor
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Option B: Manual Project Setup&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Create blank Ralph project
+ralph-setup my-awesome-project
+cd my-awesome-project
+
+# Configure your project requirements manually
+# Edit PROMPT.md with your project goals
+# Edit specs/ with detailed specifications
+# Edit @fix_plan.md with initial priorities
+
+# Start autonomous development
+ralph --monitor
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Ongoing Usage (After Setup)&lt;/h3&gt; 
+&lt;p&gt;Once Ralph is installed and your project is initialized:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Navigate to any Ralph project and run:
+ralph --monitor              # Integrated tmux monitoring (recommended)
+
+# Or use separate terminals:
+ralph                        # Terminal 1: Ralph loop
+ralph-monitor               # Terminal 2: Live monitor dashboard
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;How It Works&lt;/h2&gt; 
+&lt;p&gt;Ralph operates on a simple but powerful cycle:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Read Instructions&lt;/strong&gt; - Loads &lt;code&gt;PROMPT.md&lt;/code&gt; with your project requirements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Execute Claude Code&lt;/strong&gt; - Runs Claude Code with current context and priorities&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Track Progress&lt;/strong&gt; - Updates task lists and logs execution results&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Evaluate Completion&lt;/strong&gt; - Checks for exit conditions and project completion signals&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Repeat&lt;/strong&gt; - Continues until project is complete or limits are reached&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Intelligent Exit Detection&lt;/h3&gt; 
+&lt;p&gt;Ralph automatically stops when it detects:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;All tasks in &lt;code&gt;@fix_plan.md&lt;/code&gt; marked complete&lt;/li&gt; 
+ &lt;li&gt;Multiple consecutive "done" signals from Claude Code&lt;/li&gt; 
+ &lt;li&gt;Too many test-focused loops (indicating feature completeness)&lt;/li&gt; 
+ &lt;li&gt;Strong completion indicators in responses&lt;/li&gt; 
+ &lt;li&gt;Claude API 5-hour usage limit reached (with user prompt to wait or exit)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Importing Existing Requirements&lt;/h2&gt; 
+&lt;p&gt;Ralph can convert existing PRDs, specifications, or requirement documents into the proper Ralph format using Claude Code.&lt;/p&gt; 
+&lt;h3&gt;Supported Formats&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Markdown&lt;/strong&gt; (.md) - Product requirements, technical specs&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Text files&lt;/strong&gt; (.txt) - Plain text requirements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;JSON&lt;/strong&gt; (.json) - Structured requirement data&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Word documents&lt;/strong&gt; (.docx) - Business requirements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;PDFs&lt;/strong&gt; (.pdf) - Design documents, specifications&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Any text-based format&lt;/strong&gt; - Ralph will intelligently parse the content&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Usage Examples&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Convert a markdown PRD
+ralph-import product-requirements.md my-app
+
+# Convert a text specification
+ralph-import requirements.txt webapp
+
+# Convert a JSON API spec
+ralph-import api-spec.json backend-service
+
+# Let Ralph auto-name the project from filename
+ralph-import design-doc.pdf
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;What Gets Generated&lt;/h3&gt; 
+&lt;p&gt;Ralph-import creates a complete project with:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;PROMPT.md&lt;/strong&gt; - Converted into Ralph development instructions&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;@fix_plan.md&lt;/strong&gt; - Requirements broken down into prioritized tasks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;specs/requirements.md&lt;/strong&gt; - Technical specifications extracted from your document&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Standard Ralph structure&lt;/strong&gt; - All necessary directories and template files&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The conversion is intelligent and preserves your original requirements while making them actionable for autonomous development.&lt;/p&gt; 
+&lt;h3&gt;Modern CLI Features (v0.9.8)&lt;/h3&gt; 
+&lt;p&gt;Ralph-import uses modern Claude Code CLI features for improved reliability:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;JSON Output Format&lt;/strong&gt;: Structured responses enable precise parsing of conversion results&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Automatic Fallback&lt;/strong&gt;: Gracefully handles older CLI versions with text-based parsing&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Enhanced Error Reporting&lt;/strong&gt;: Extracts specific error messages and codes from JSON responses&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Session Tracking&lt;/strong&gt;: Captures session IDs for potential continuation of interrupted conversions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: These features require Claude Code CLI version 2.0.76 or later. Older versions will work with standard text output.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Configuration&lt;/h2&gt; 
+&lt;h3&gt;Rate Limiting &amp;amp; Circuit Breaker&lt;/h3&gt; 
+&lt;p&gt;Ralph includes intelligent rate limiting and circuit breaker functionality:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Default: 100 calls per hour
+ralph --calls 50
+
+# With integrated monitoring
+ralph --monitor --calls 50
+
+# Check current usage
+ralph --status
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The circuit breaker automatically:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Detects API errors and rate limit issues with advanced two-stage filtering&lt;/li&gt; 
+ &lt;li&gt;Opens circuit after 3 loops with no progress or 5 loops with same errors&lt;/li&gt; 
+ &lt;li&gt;Eliminates false positives from JSON fields containing "error"&lt;/li&gt; 
+ &lt;li&gt;Accurately detects stuck loops with multi-line error matching&lt;/li&gt; 
+ &lt;li&gt;Gradually recovers with half-open monitoring state&lt;/li&gt; 
+ &lt;li&gt;Provides detailed error tracking and logging with state history&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Claude API 5-Hour Limit&lt;/h3&gt; 
+&lt;p&gt;When Claude's 5-hour usage limit is reached, Ralph:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Detects the limit error automatically&lt;/li&gt; 
+ &lt;li&gt;Prompts you to choose: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Option 1&lt;/strong&gt;: Wait 60 minutes for the limit to reset (with countdown timer)&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Option 2&lt;/strong&gt;: Exit gracefully (or auto-exits after 30-second timeout)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Prevents endless retry loops that waste time&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Custom Prompts&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Use custom prompt file
+ralph --prompt my_custom_instructions.md
+
+# With integrated monitoring
+ralph --monitor --prompt my_custom_instructions.md
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Execution Timeouts&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Set Claude Code execution timeout (default: 15 minutes)
+ralph --timeout 30  # 30-minute timeout for complex tasks
+
+# With monitoring and custom timeout
+ralph --monitor --timeout 60  # 60-minute timeout
+
+# Short timeout for quick iterations
+ralph --verbose --timeout 5  # 5-minute timeout with progress
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Verbose Mode&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Enable detailed progress updates during execution
+ralph --verbose
+
+# Combine with other options
+ralph --monitor --verbose --timeout 30
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Session Continuity&lt;/h3&gt; 
+&lt;p&gt;Ralph maintains session context across loop iterations for improved coherence:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Sessions are enabled by default with --continue flag
+ralph --monitor                 # Uses session continuity
+
+# Start fresh without session context
+ralph --no-continue             # Isolated iterations
+
+# Reset session manually (clears context)
+ralph --reset-session           # Clears current session
+
+# Check session status
+cat .ralph_session              # View current session file
+cat .ralph_session_history      # View session transition history
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Session Auto-Reset Triggers:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Circuit breaker opens (stagnation detected)&lt;/li&gt; 
+ &lt;li&gt;Manual interrupt (Ctrl+C / SIGINT)&lt;/li&gt; 
+ &lt;li&gt;Project completion (graceful exit)&lt;/li&gt; 
+ &lt;li&gt;Manual circuit breaker reset (&lt;code&gt;--reset-circuit&lt;/code&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Sessions are persisted to &lt;code&gt;.ralph_session&lt;/code&gt; with a 24-hour expiration. The last 50 session transitions are logged to &lt;code&gt;.ralph_session_history&lt;/code&gt; for debugging.&lt;/p&gt; 
+&lt;h3&gt;Exit Thresholds&lt;/h3&gt; 
+&lt;p&gt;Modify these variables in &lt;code&gt;~/.ralph/ralph_loop.sh&lt;/code&gt;:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Exit Detection Thresholds:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;MAX_CONSECUTIVE_TEST_LOOPS=3     # Exit after 3 test-only loops
+MAX_CONSECUTIVE_DONE_SIGNALS=2   # Exit after 2 "done" signals
+TEST_PERCENTAGE_THRESHOLD=30     # Flag if 30%+ loops are test-only
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Circuit Breaker Thresholds:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;CB_NO_PROGRESS_THRESHOLD=3       # Open circuit after 3 loops with no file changes
+CB_SAME_ERROR_THRESHOLD=5        # Open circuit after 5 loops with repeated errors
+CB_OUTPUT_DECLINE_THRESHOLD=70   # Open circuit if output declines by &amp;gt;70%
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Project Structure&lt;/h2&gt; 
+&lt;p&gt;Ralph creates a standardized structure for each project:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;my-project/
+├── PROMPT.md           # Main development instructions for Ralph
+├── @fix_plan.md        # Prioritized task list (@ prefix = Ralph control file)
+├── @AGENT.md           # Build and run instructions
+├── specs/              # Project specifications and requirements
+│   └── stdlib/         # Standard library specifications
+├── src/                # Source code implementation
+├── examples/           # Usage examples and test cases
+├── logs/               # Ralph execution logs
+└── docs/generated/     # Auto-generated documentation
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Best Practices&lt;/h2&gt; 
+&lt;h3&gt;Writing Effective Prompts&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Be Specific&lt;/strong&gt; - Clear requirements lead to better results&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Prioritize&lt;/strong&gt; - Use &lt;code&gt;@fix_plan.md&lt;/code&gt; to guide Ralph's focus&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Set Boundaries&lt;/strong&gt; - Define what's in/out of scope&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Include Examples&lt;/strong&gt; - Show expected inputs/outputs&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Project Specifications&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Place detailed requirements in &lt;code&gt;specs/&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Use &lt;code&gt;@fix_plan.md&lt;/code&gt; for prioritized task tracking&lt;/li&gt; 
+ &lt;li&gt;Keep &lt;code&gt;@AGENT.md&lt;/code&gt; updated with build instructions&lt;/li&gt; 
+ &lt;li&gt;Document key decisions and architecture&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Monitoring Progress&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Use &lt;code&gt;ralph-monitor&lt;/code&gt; for live status updates&lt;/li&gt; 
+ &lt;li&gt;Check logs in &lt;code&gt;logs/&lt;/code&gt; for detailed execution history&lt;/li&gt; 
+ &lt;li&gt;Monitor &lt;code&gt;status.json&lt;/code&gt; for programmatic access&lt;/li&gt; 
+ &lt;li&gt;Watch for exit condition signals&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;System Requirements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Bash 4.0+&lt;/strong&gt; - For script execution&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Claude Code CLI&lt;/strong&gt; - &lt;code&gt;npm install -g @anthropic-ai/claude-code&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;tmux&lt;/strong&gt; - Terminal multiplexer for integrated monitoring (recommended)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;jq&lt;/strong&gt; - JSON processing for status tracking&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Git&lt;/strong&gt; - Version control (projects are initialized as git repos)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Standard Unix tools&lt;/strong&gt; - grep, date, etc.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Testing Requirements (Development)&lt;/h3&gt; 
+&lt;p&gt;If you want to run the test suite:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Install BATS testing framework
+npm install -g bats bats-support bats-assert
+
+# Run all tests (276 tests)
+npm test
+
+# Run specific test suites
+bats tests/unit/test_rate_limiting.bats
+bats tests/unit/test_exit_detection.bats
+bats tests/unit/test_json_parsing.bats
+bats tests/unit/test_cli_modern.bats
+bats tests/unit/test_cli_parsing.bats
+bats tests/unit/test_session_continuity.bats
+bats tests/integration/test_loop_execution.bats
+bats tests/integration/test_prd_import.bats
+bats tests/integration/test_project_setup.bats
+bats tests/integration/test_installation.bats
+
+# Run error detection and circuit breaker tests
+./tests/test_error_detection.sh
+./tests/test_stuck_loop_detection.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Current test status:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;276 tests&lt;/strong&gt; across 11 test files&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;100% pass rate&lt;/strong&gt; (276/276 passing)&lt;/li&gt; 
+ &lt;li&gt;Comprehensive unit and integration tests&lt;/li&gt; 
+ &lt;li&gt;Specialized tests for JSON parsing, CLI flags, circuit breaker, and installation workflows&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note on Coverage&lt;/strong&gt;: Bash code coverage measurement with kcov has fundamental limitations when tracing subprocess executions. Test pass rate (100%) is the quality gate. See &lt;a href="https://github.com/bats-core/bats-core/issues/15"&gt;bats-core#15&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Installing tmux&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Ubuntu/Debian
+sudo apt-get install tmux
+
+# macOS
+brew install tmux
+
+# CentOS/RHEL
+sudo yum install tmux
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Monitoring and Debugging&lt;/h2&gt; 
+&lt;h3&gt;Live Dashboard&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Integrated tmux monitoring (recommended)
+ralph --monitor
+
+# Manual monitoring in separate terminal
+ralph-monitor
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Shows real-time:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Current loop count and status&lt;/li&gt; 
+ &lt;li&gt;API calls used vs. limit&lt;/li&gt; 
+ &lt;li&gt;Recent log entries&lt;/li&gt; 
+ &lt;li&gt;Rate limit countdown&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;tmux Controls:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;Ctrl+B&lt;/code&gt; then &lt;code&gt;D&lt;/code&gt; - Detach from session (keeps Ralph running)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Ctrl+B&lt;/code&gt; then &lt;code&gt;←/→&lt;/code&gt; - Switch between panes&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;tmux list-sessions&lt;/code&gt; - View active sessions&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;tmux attach -t &amp;lt;session-name&amp;gt;&lt;/code&gt; - Reattach to session&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Status Checking&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# JSON status output
+ralph --status
+
+# Manual log inspection
+tail -f logs/ralph.log
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Common Issues&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Rate Limits&lt;/strong&gt; - Ralph automatically waits and displays countdown&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;5-Hour API Limit&lt;/strong&gt; - Ralph detects and prompts for user action (wait or exit)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Stuck Loops&lt;/strong&gt; - Check &lt;code&gt;@fix_plan.md&lt;/code&gt; for unclear or conflicting tasks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Early Exit&lt;/strong&gt; - Review exit thresholds if Ralph stops too soon&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Execution Timeouts&lt;/strong&gt; - Increase &lt;code&gt;--timeout&lt;/code&gt; value for complex operations&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Missing Dependencies&lt;/strong&gt; - Ensure Claude Code CLI and tmux are installed&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;tmux Session Lost&lt;/strong&gt; - Use &lt;code&gt;tmux list-sessions&lt;/code&gt; and &lt;code&gt;tmux attach&lt;/code&gt; to reconnect&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Ralph is actively seeking contributors! We're working toward v1.0.0 with clear priorities and a detailed roadmap.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for the complete contributor guide&lt;/strong&gt; including:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Getting started and setup instructions&lt;/li&gt; 
+ &lt;li&gt;Development workflow and commit conventions&lt;/li&gt; 
+ &lt;li&gt;Code style guidelines&lt;/li&gt; 
+ &lt;li&gt;Testing requirements (100% pass rate mandatory)&lt;/li&gt; 
+ &lt;li&gt;Pull request process and code review guidelines&lt;/li&gt; 
+ &lt;li&gt;Quality standards and checklists&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Quick Start&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Fork and clone
+git clone https://github.com/YOUR_USERNAME/ralph-claude-code.git
+cd ralph-claude-code
+
+# Install dependencies and run tests
+npm install
+npm test  # All 276 tests must pass
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Priority Contribution Areas&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Test Implementation&lt;/strong&gt; - Help expand test coverage&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Feature Development&lt;/strong&gt; - Log rotation, dry-run mode, config files, metrics&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Documentation&lt;/strong&gt; - Tutorials, troubleshooting guides, examples&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Real-World Testing&lt;/strong&gt; - Use Ralph, report bugs, share feedback&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Every contribution matters&lt;/strong&gt; - from fixing typos to implementing major features!&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the MIT License - see the &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;h2&gt;Acknowledgments&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Inspired by the &lt;a href="https://ghuntley.com/ralph/"&gt;Ralph technique&lt;/a&gt; created by Geoffrey Huntley&lt;/li&gt; 
+ &lt;li&gt;Built for &lt;a href="https://claude.ai/code"&gt;Claude Code&lt;/a&gt; by Anthropic&lt;/li&gt; 
+ &lt;li&gt;Community feedback and contributions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Related Projects&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://claude.ai/code"&gt;Claude Code&lt;/a&gt; - The AI coding assistant that powers Ralph&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/paul-gauthier/aider"&gt;Aider&lt;/a&gt; - Original Ralph technique implementation&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Command Reference&lt;/h2&gt; 
+&lt;h3&gt;Installation Commands (Run Once)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;./install.sh              # Install Ralph globally
+./install.sh uninstall    # Remove Ralph from system
+./install.sh --help       # Show installation help
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Ralph Loop Options&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;ralph [OPTIONS]
+  -h, --help              Show help message
+  -c, --calls NUM         Set max calls per hour (default: 100)
+  -p, --prompt FILE       Set prompt file (default: PROMPT.md)
+  -s, --status            Show current status and exit
+  -m, --monitor           Start with tmux session and live monitor
+  -v, --verbose           Show detailed progress updates during execution
+  -t, --timeout MIN       Set Claude Code execution timeout in minutes (1-120, default: 15)
+  --output-format FORMAT  Set output format: json (default) or text
+  --allowed-tools TOOLS   Set allowed Claude tools (default: Write,Bash(git *),Read)
+  --no-continue           Disable session continuity (start fresh each loop)
+  --reset-circuit         Reset the circuit breaker
+  --circuit-status        Show circuit breaker status
+  --reset-session         Reset session state manually
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Project Commands (Per Project)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;ralph-setup project-name     # Create new Ralph project
+ralph-import prd.md project  # Convert PRD/specs to Ralph project
+ralph --monitor              # Start with integrated monitoring
+ralph --status               # Check current loop status
+ralph --verbose              # Enable detailed progress updates
+ralph --timeout 30           # Set 30-minute execution timeout
+ralph --calls 50             # Limit to 50 API calls per hour
+ralph --reset-session        # Reset session state manually
+ralph-monitor                # Manual monitoring dashboard
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;tmux Session Management&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;tmux list-sessions        # View active Ralph sessions
+tmux attach -t &amp;lt;name&amp;gt;     # Reattach to detached session
+# Ctrl+B then D           # Detach from session (keeps running)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Development Roadmap&lt;/h2&gt; 
+&lt;p&gt;Ralph is under active development with a clear path to v1.0.0. See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/IMPLEMENTATION_PLAN.md"&gt;IMPLEMENTATION_PLAN.md&lt;/a&gt; for the complete roadmap.&lt;/p&gt; 
+&lt;h3&gt;Current Status: v0.9.8&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;What's Delivered:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Core loop functionality with intelligent exit detection&lt;/li&gt; 
+ &lt;li&gt;Rate limiting (100 calls/hour) and circuit breaker pattern&lt;/li&gt; 
+ &lt;li&gt;Response analyzer with semantic understanding&lt;/li&gt; 
+ &lt;li&gt;276 comprehensive tests (100% pass rate)&lt;/li&gt; 
+ &lt;li&gt;tmux integration and live monitoring&lt;/li&gt; 
+ &lt;li&gt;PRD import functionality with modern CLI JSON parsing&lt;/li&gt; 
+ &lt;li&gt;Installation system and project templates&lt;/li&gt; 
+ &lt;li&gt;Modern CLI commands with JSON output support&lt;/li&gt; 
+ &lt;li&gt;CI/CD pipeline with GitHub Actions&lt;/li&gt; 
+ &lt;li&gt;Comprehensive installation test suite&lt;/li&gt; 
+ &lt;li&gt;Session lifecycle management with auto-reset triggers&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Test Coverage Breakdown:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Unit Tests: 154 (CLI parsing, JSON, exit detection, rate limiting, session continuity)&lt;/li&gt; 
+ &lt;li&gt;Integration Tests: 122 (loop execution, edge cases, installation, project setup, PRD import)&lt;/li&gt; 
+ &lt;li&gt;Test Files: 11&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Path to v1.0.0 (~4 weeks)&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Enhanced Testing&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Installation and setup workflow tests&lt;/li&gt; 
+ &lt;li&gt;tmux integration tests&lt;/li&gt; 
+ &lt;li&gt;Monitor dashboard tests&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Core Features&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Log rotation functionality&lt;/li&gt; 
+ &lt;li&gt;Dry-run mode&lt;/li&gt; 
+ &lt;li&gt;Configuration file support - .ralphrc&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Advanced Features &amp;amp; Polish&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Metrics and analytics tracking&lt;/li&gt; 
+ &lt;li&gt;Desktop notifications&lt;/li&gt; 
+ &lt;li&gt;Git backup and rollback system&lt;/li&gt; 
+ &lt;li&gt;End-to-end tests&lt;/li&gt; 
+ &lt;li&gt;Final documentation and release prep&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/IMPLEMENTATION_STATUS.md"&gt;IMPLEMENTATION_STATUS.md&lt;/a&gt; for detailed progress tracking.&lt;/p&gt; 
+&lt;h3&gt;How to Contribute&lt;/h3&gt; 
+&lt;p&gt;Ralph is seeking contributors! See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for the complete guide. Priority areas:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Test Implementation&lt;/strong&gt; - Help expand test coverage (&lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/IMPLEMENTATION_PLAN.md"&gt;see plan&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Feature Development&lt;/strong&gt; - Log rotation, dry-run mode, config files&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Documentation&lt;/strong&gt; - Usage examples, tutorials, troubleshooting guides&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Bug Reports&lt;/strong&gt; - Real-world usage feedback and edge cases&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Ready to let AI build your project?&lt;/strong&gt; Start with &lt;code&gt;./install.sh&lt;/code&gt; and let Ralph take it from there!&lt;/p&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.star-history.com/#frankbria/ralph-claude-code&amp;amp;type=date&amp;amp;legend=top-left"&gt;&lt;img src="https://api.star-history.com/svg?repos=frankbria/ralph-claude-code&amp;amp;type=date&amp;amp;legend=top-left" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>BloopAI/vibe-kanban</title>
+      <link>https://github.com/BloopAI/vibe-kanban</link>
+      <description>&lt;p&gt;Get 10X more out of Claude Code, Codex or any coding agent&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://vibekanban.com"&gt; 
+  &lt;picture&gt; 
+   &lt;source srcset="frontend/public/vibe-kanban-logo-dark.svg" media="(prefers-color-scheme: dark)" /&gt; 
+   &lt;source srcset="frontend/public/vibe-kanban-logo.svg" media="(prefers-color-scheme: light)" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/BloopAI/vibe-kanban/main/frontend/public/vibe-kanban-logo.svg?sanitize=true" alt="Vibe Kanban Logo" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;Get 10X more out of Claude Code, Gemini CLI, Codex, Amp and other coding agents...&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.npmjs.com/package/vibe-kanban"&gt;&lt;img alt="npm" src="https://img.shields.io/npm/v/vibe-kanban?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://github.com/BloopAI/vibe-kanban/raw/main/.github/workflows/publish.yml"&gt;&lt;img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/BloopAI/vibe-kanban/.github%2Fworkflows%2Fpublish.yml" /&gt;&lt;/a&gt; &lt;a href="https://deepwiki.com/BloopAI/vibe-kanban"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" alt="Ask DeepWiki" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h1 align="center"&gt; &lt;a href="https://jobs.polymer.co/vibe-kanban?source=github"&gt;&lt;strong&gt;We're hiring!&lt;/strong&gt;&lt;/a&gt; &lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/BloopAI/vibe-kanban/main/frontend/public/vibe-kanban-screenshot-overview.png" alt="" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Overview&lt;/h2&gt; 
+&lt;p&gt;AI coding agents are increasingly writing the world's code and human engineers now spend the majority of their time planning, reviewing, and orchestrating tasks. Vibe Kanban streamlines this process, enabling you to:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Easily switch between different coding agents&lt;/li&gt; 
+ &lt;li&gt;Orchestrate the execution of multiple coding agents in parallel or in sequence&lt;/li&gt; 
+ &lt;li&gt;Quickly review work and start dev servers&lt;/li&gt; 
+ &lt;li&gt;Track the status of tasks that your coding agents are working on&lt;/li&gt; 
+ &lt;li&gt;Centralise configuration of coding agent MCP configs&lt;/li&gt; 
+ &lt;li&gt;Open projects remotely via SSH when running Vibe Kanban on a remote server&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;You can watch a video overview &lt;a href="https://youtu.be/TFT3KnZOOAk"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;Make sure you have authenticated with your favourite coding agent. A full list of supported coding agents can be found in the &lt;a href="https://vibekanban.com/docs"&gt;docs&lt;/a&gt;. Then in your terminal run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx vibe-kanban
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Please head to the &lt;a href="https://vibekanban.com/docs"&gt;website&lt;/a&gt; for the latest documentation and user guides.&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;We use &lt;a href="https://github.com/BloopAI/vibe-kanban/discussions"&gt;GitHub Discussions&lt;/a&gt; for feature requests. Please open a discussion to create a feature request. For bugs please open an issue on this repo.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We would prefer that ideas and changes are first raised with the core team via &lt;a href="https://github.com/BloopAI/vibe-kanban/discussions"&gt;GitHub Discussions&lt;/a&gt; or &lt;a href="https://discord.gg/AC4nwVtJM3"&gt;Discord&lt;/a&gt;, where we can discuss implementation details and alignment with the existing roadmap. Please do not open PRs without first discussing your proposal with the team.&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;h3&gt;Prerequisites&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://rustup.rs/"&gt;Rust&lt;/a&gt; (latest stable)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://nodejs.org/"&gt;Node.js&lt;/a&gt; (&amp;gt;=18)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://pnpm.io/"&gt;pnpm&lt;/a&gt; (&amp;gt;=8)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Additional development tools:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cargo install cargo-watch
+cargo install sqlx-cli
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Install dependencies:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm i
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Running the dev server&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This will start the backend. A blank DB will be copied from the &lt;code&gt;dev_assets_seed&lt;/code&gt; folder.&lt;/p&gt; 
+&lt;h3&gt;Building the frontend&lt;/h3&gt; 
+&lt;p&gt;To build just the frontend:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd frontend
+pnpm build
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Build from source (macOS)&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Run &lt;code&gt;./local-build.sh&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Test with &lt;code&gt;cd npx-cli &amp;amp;&amp;amp; node bin/cli.js&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Environment Variables&lt;/h3&gt; 
+&lt;p&gt;The following environment variables can be configured at build time or runtime:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Variable&lt;/th&gt; 
+   &lt;th&gt;Type&lt;/th&gt; 
+   &lt;th&gt;Default&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;POSTHOG_API_KEY&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Build-time&lt;/td&gt; 
+   &lt;td&gt;Empty&lt;/td&gt; 
+   &lt;td&gt;PostHog analytics API key (disables analytics if empty)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;POSTHOG_API_ENDPOINT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Build-time&lt;/td&gt; 
+   &lt;td&gt;Empty&lt;/td&gt; 
+   &lt;td&gt;PostHog analytics endpoint (disables analytics if empty)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;PORT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;Auto-assign&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Production&lt;/strong&gt;: Server port. &lt;strong&gt;Dev&lt;/strong&gt;: Frontend port (backend uses PORT+1)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;BACKEND_PORT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;0&lt;/code&gt; (auto-assign)&lt;/td&gt; 
+   &lt;td&gt;Backend server port (dev mode only, overrides PORT+1)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;FRONTEND_PORT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;3000&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Frontend dev server port (dev mode only, overrides PORT)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;HOST&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;127.0.0.1&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Backend server host&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;DISABLE_WORKTREE_ORPHAN_CLEANUP&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;Not set&lt;/td&gt; 
+   &lt;td&gt;Disable git worktree cleanup (for debugging)&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;Build-time variables&lt;/strong&gt; must be set when running &lt;code&gt;pnpm run build&lt;/code&gt;. &lt;strong&gt;Runtime variables&lt;/strong&gt; are read when the application starts.&lt;/p&gt; 
+&lt;h3&gt;Remote Deployment&lt;/h3&gt; 
+&lt;p&gt;When running Vibe Kanban on a remote server (e.g., via systemctl, Docker, or cloud hosting), you can configure your editor to open projects via SSH:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Access via tunnel&lt;/strong&gt;: Use Cloudflare Tunnel, ngrok, or similar to expose the web UI&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Configure remote SSH&lt;/strong&gt; in Settings → Editor Integration: 
+  &lt;ul&gt; 
+   &lt;li&gt;Set &lt;strong&gt;Remote SSH Host&lt;/strong&gt; to your server hostname or IP&lt;/li&gt; 
+   &lt;li&gt;Set &lt;strong&gt;Remote SSH User&lt;/strong&gt; to your SSH username (optional)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;SSH access from your local machine to the remote server&lt;/li&gt; 
+   &lt;li&gt;SSH keys configured (passwordless authentication)&lt;/li&gt; 
+   &lt;li&gt;VSCode Remote-SSH extension&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;When configured, the "Open in VSCode" buttons will generate URLs like &lt;code&gt;vscode://vscode-remote/ssh-remote+user@host/path&lt;/code&gt; that open your local editor and connect to the remote server.&lt;/p&gt; 
+&lt;p&gt;See the &lt;a href="https://vibekanban.com/docs/configuration-customisation/global-settings#remote-ssh-configuration"&gt;documentation&lt;/a&gt; for detailed setup instructions.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenBB-finance/OpenBB</title>
+      <link>https://github.com/OpenBB-finance/OpenBB</link>
+      <description>&lt;p&gt;Financial data platform for analysts, quants and AI agents.&lt;/p&gt;&lt;hr&gt;&lt;br /&gt; 
+&lt;img src="https://github.com/OpenBB-finance/OpenBB/raw/develop/images/odp-light.svg?raw=true#gh-light-mode-only" alt="Open Data Platform by OpenBB logo" width="600" /&gt; 
+&lt;img src="https://github.com/OpenBB-finance/OpenBB/raw/develop/images/odp-dark.svg?raw=true#gh-dark-mode-only" alt="Open Data Platform by OpenBB logo" width="600" /&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;p&gt;&lt;a href="https://x.com/openbb_finance"&gt;&lt;img src="https://img.shields.io/twitter/url/https/twitter.com/openbb_finance.svg?style=social&amp;amp;label=Follow%20%40openbb_finance" alt="Twitter" /&gt;&lt;/a&gt; &lt;a href="https://discord.com/invite/xPHTuHCmuV"&gt;&lt;img src="https://img.shields.io/discord/831165782750789672" alt="Discord Shield" /&gt;&lt;/a&gt; &lt;a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/OpenBB-finance/OpenBB"&gt;&lt;img src="https://img.shields.io/static/v1?label=Dev%20Containers&amp;amp;message=Open&amp;amp;color=blue&amp;amp;logo=visualstudiocode" alt="Open in Dev Containers" /&gt;&lt;/a&gt; &lt;a href="https://codespaces.new/OpenBB-finance/OpenBB"&gt; &lt;img src="https://github.com/codespaces/badge.svg?sanitize=true" height="20" /&gt; &lt;/a&gt; &lt;a target="_blank" href="https://colab.research.google.com/github/OpenBB-finance/OpenBB/blob/develop/examples/googleColab.ipynb"&gt; &lt;img src="https://colab.research.google.com/assets/colab-badge.svg?sanitize=true" alt="Open In Colab" /&gt; &lt;/a&gt; &lt;a href="https://pypi.org/project/openbb/"&gt;&lt;img src="https://img.shields.io/pypi/v/openbb?color=blue&amp;amp;label=PyPI%20Package" alt="PyPI" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Open Data Platform by OpenBB (ODP) is the open-source toolset that helps data engineers integrate proprietary, licensed, and public data sources into downstream applications like AI copilots and research dashboards.&lt;/p&gt; 
+&lt;p&gt;ODP operates as the "connect once, consume everywhere" infrastructure layer that consolidates and exposes data to multiple surfaces at once: Python environments for quants, OpenBB Workspace and Excel for analysts, MCP servers for AI agents, and REST APIs for other applications.&lt;/p&gt; 
+&lt;a href="https://pro.openbb.co"&gt; 
+ &lt;div align="center"&gt; 
+  &lt;img src="https://openbb-cms.directus.app/assets/70b971ef-7a7e-486e-b5ae-1cc602f2162c.png" alt="Logo" width="1000" /&gt; 
+ &lt;/div&gt; &lt;/a&gt; 
+&lt;p&gt;Get started with: &lt;code&gt;pip install openbb&lt;/code&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;from openbb import obb
+output = obb.equity.price.historical("AAPL")
+df = output.to_dataframe()
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Data integrations available can be found here: &lt;a href="https://docs.openbb.co/python/reference"&gt;https://docs.openbb.co/python/reference&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;OpenBB Workspace&lt;/h2&gt; 
+&lt;p&gt;While the Open Data Platform provides the open-source data integration foundation, &lt;strong&gt;OpenBB Workspace&lt;/strong&gt; offers the enterprise UI for analysts to visualize datasets and leverage AI agents. The platform's "connect once, consume everywhere" architecture enables seamless integration between the two.&lt;/p&gt; 
+&lt;p&gt;You can find OpenBB Workspace at &lt;a href="https://pro.openbb.co"&gt;https://pro.openbb.co&lt;/a&gt;. &lt;a href="https://pro.openbb.co"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://pro.openbb.co"&gt; 
+ &lt;div align="center"&gt; 
+  &lt;img src="https://openbb-cms.directus.app/assets/f69b6aaf-0821-4bc8-a43c-715e03a924ef.png" alt="Logo" width="1000" /&gt; 
+ &lt;/div&gt; &lt;/a&gt; 
+&lt;p&gt;Data integration:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;You can learn more about adding data to the OpenBB workspace from the &lt;a href="https://docs.openbb.co/workspace"&gt;docs&lt;/a&gt; or &lt;a href="https://github.com/OpenBB-finance/backends-for-openbb"&gt;this open source repository&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;AI Agents integration:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;You can learn more about adding AI agents to the OpenBB workspace from &lt;a href="https://github.com/OpenBB-finance/agents-for-openbb"&gt;this open source repository&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Integrating Open Data Platform to the OpenBB Workspace&lt;/h3&gt; 
+&lt;p&gt;Connect this library to the OpenBB Workspace with a few simple commands, in a Python (3.9.21 - 3.12) environment.&lt;/p&gt; 
+&lt;h4&gt;Run an ODP backend&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Install the packages.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;pip install "openbb[all]"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Start the API server over localhost.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;openbb-api
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This will launch a FastAPI server, via Uvicorn, at &lt;code&gt;127.0.0.1:6900&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;You can check that it works by going to &lt;a href="http://127.0.0.1:6900"&gt;http://127.0.0.1:6900&lt;/a&gt;.&lt;/p&gt; 
+&lt;h4&gt;Integrate the ODP Backend to OpenBB Workspace&lt;/h4&gt; 
+&lt;p&gt;Sign-in to the &lt;a href="https://pro.openbb.co/"&gt;OpenBB Workspace&lt;/a&gt;, and follow the following steps:&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/75cffb4a-5e95-470a-b9d0-6ffd4067e069" alt="CleanShot 2025-05-17 at 09 51 56@2x" /&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Go to the "Apps" tab&lt;/li&gt; 
+ &lt;li&gt;Click on "Connect backend"&lt;/li&gt; 
+ &lt;li&gt;Fill in the form with: Name: Open Data Platform URL: &lt;a href="http://127.0.0.1:6900"&gt;http://127.0.0.1:6900&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Click on "Test". You should get a "Test successful" with the number of apps found.&lt;/li&gt; 
+ &lt;li&gt;Click on "Add".&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;That's it.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;!-- TABLE OF CONTENTS --&gt; 
+&lt;details closed="closed"&gt; 
+ &lt;summary&gt;&lt;h2 style="display: inline-block"&gt;Table of Contents&lt;/h2&gt;&lt;/summary&gt; 
+ &lt;ol&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#1-installation"&gt;Installation&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#2-contributing"&gt;Contributing&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#3-license"&gt;License&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#4-disclaimer"&gt;Disclaimer&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#5-contacts"&gt;Contacts&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#6-star-history"&gt;Star History&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/OpenBB-finance/OpenBB/develop/#7-contributors"&gt;Contributors&lt;/a&gt;&lt;/li&gt; 
+ &lt;/ol&gt; 
+&lt;/details&gt; 
+&lt;h2&gt;1. Installation&lt;/h2&gt; 
+&lt;p&gt;The ODP Python Package can be installed from &lt;a href="https://pypi.org/project/openbb/"&gt;PyPI package&lt;/a&gt; by running &lt;code&gt;pip install openbb&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;or by cloning the repository directly with &lt;code&gt;git clone https://github.com/OpenBB-finance/OpenBB.git&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;Please find more about the installation process, in the &lt;a href="https://docs.openbb.co/python/installation"&gt;OpenBB Documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;ODP CLI installation&lt;/h3&gt; 
+&lt;p&gt;The ODP CLI is a command-line interface that allows you to access the ODP directly from your command line.&lt;/p&gt; 
+&lt;p&gt;It can be installed by running &lt;code&gt;pip install openbb-cli&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;or by cloning the repository directly with &lt;code&gt;git clone https://github.com/OpenBB-finance/OpenBB.git&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;Please find more about the installation process in the &lt;a href="https://docs.openbb.co/cli/installation"&gt;OpenBB Documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;2. Contributing&lt;/h2&gt; 
+&lt;p&gt;There are three main ways of contributing to this project. (Hopefully you have starred the project by now ⭐️)&lt;/p&gt; 
+&lt;h3&gt;Become a Contributor&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;More information on our &lt;a href="https://docs.openbb.co/python/developer"&gt;Developer Documentation&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Create a GitHub ticket&lt;/h3&gt; 
+&lt;p&gt;Before creating a ticket make sure the one you are creating doesn't exist already &lt;a href="https://github.com/OpenBB-finance/OpenBB/issues"&gt;among the existing issues&lt;/a&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/OpenBB-finance/OpenBB/issues/new?assignees=&amp;amp;labels=bug&amp;amp;template=bug_report.md&amp;amp;title=%5BBug%5D"&gt;Report bug&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/OpenBB-finance/OpenBB/issues/new?assignees=&amp;amp;labels=enhancement&amp;amp;template=enhancement.md&amp;amp;title=%5BIMPROVE%5D"&gt;Suggest improvement&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/OpenBB-finance/OpenBB/issues/new?assignees=&amp;amp;labels=new+feature&amp;amp;template=feature_request.md&amp;amp;title=%5BFR%5D"&gt;Request a feature&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Provide feedback&lt;/h3&gt; 
+&lt;p&gt;We are most active on &lt;a href="https://openbb.co/discord"&gt;our Discord&lt;/a&gt;, but feel free to reach out to us in any of &lt;a href="https://openbb.co/links"&gt;our social media&lt;/a&gt; for feedback.&lt;/p&gt; 
+&lt;h2&gt;3. License&lt;/h2&gt; 
+&lt;p&gt;Distributed under the AGPLv3 License. See &lt;a href="https://github.com/OpenBB-finance/OpenBB/raw/main/LICENSE"&gt;LICENSE&lt;/a&gt; for more information.&lt;/p&gt; 
+&lt;h2&gt;4. Disclaimer&lt;/h2&gt; 
+&lt;p&gt;Trading in financial instruments involves high risks including the risk of losing some, or all, of your investment amount, and may not be suitable for all investors.&lt;/p&gt; 
+&lt;p&gt;Before deciding to trade in a financial instrument you should be fully informed of the risks and costs associated with trading the financial markets, carefully consider your investment objectives, level of experience, and risk appetite, and seek professional advice where needed.&lt;/p&gt; 
+&lt;p&gt;The data contained in the Open Data Platform is not necessarily accurate.&lt;/p&gt; 
+&lt;p&gt;OpenBB and any provider of the data contained in this website will not accept liability for any loss or damage as a result of your trading, or your reliance on the information displayed.&lt;/p&gt; 
+&lt;p&gt;All names, logos, and brands of third parties that may be referenced in our sites, products or documentation are trademarks of their respective owners. Unless otherwise specified, OpenBB and its products and services are not endorsed by, sponsored by, or affiliated with these third parties.&lt;/p&gt; 
+&lt;p&gt;Our use of these names, logos, and brands is for identification purposes only, and does not imply any such endorsement, sponsorship, or affiliation.&lt;/p&gt; 
+&lt;h2&gt;5. Contacts&lt;/h2&gt; 
+&lt;p&gt;If you have any questions about the platform or anything OpenBB, feel free to email us at &lt;code&gt;support@openbb.co&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;If you want to say hi, or are interested in partnering with us, feel free to reach us at &lt;code&gt;hello@openbb.co&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;Any of our social media platforms: &lt;a href="https://openbb.co/links"&gt;openbb.co/links&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;6. Star History&lt;/h2&gt; 
+&lt;p&gt;This is a proxy of our growth and that we are just getting started.&lt;/p&gt; 
+&lt;p&gt;But for more metrics important to us check &lt;a href="https://openbb.co/open"&gt;openbb.co/open&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://api.star-history.com/svg?repos=openbb-finance/OpenBB&amp;amp;type=Date&amp;amp;theme=dark"&gt;&lt;img src="https://api.star-history.com/svg?repos=openbb-finance/OpenBB&amp;amp;type=Date&amp;amp;theme=dark" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;7. Contributors&lt;/h2&gt; 
+&lt;p&gt;OpenBB wouldn't be OpenBB without you. If we are going to disrupt financial industry, every contribution counts. Thank you for being part of this journey.&lt;/p&gt; 
+&lt;a href="https://github.com/OpenBB-finance/OpenBB/graphs/contributors"&gt; &lt;img src="https://contributors-img.web.app/image?repo=OpenBB-finance/OpenBB" width="800" /&gt; &lt;/a&gt; 
+&lt;!-- MARKDOWN LINKS &amp; IMAGES --&gt; 
+&lt;!-- https://www.markdownguide.org/basic-syntax/#reference-style-links --&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
