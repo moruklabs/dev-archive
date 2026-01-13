@@ -1,0 +1,2234 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub All Languages Daily Trending</title>
+    <description>Daily Trending of All Languages in GitHub</description>
+    <pubDate>Mon, 12 Jan 2026 01:31:53 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>frankbria/ralph-claude-code</title>
+      <link>https://github.com/frankbria/ralph-claude-code</link>
+      <description>&lt;p&gt;Autonomous AI development loop for Claude Code with intelligent exit detection&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Ralph for Claude Code&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/frankbria/ralph-claude-code/actions/workflows/test.yml"&gt;&lt;img src="https://github.com/frankbria/ralph-claude-code/actions/workflows/test.yml/badge.svg?sanitize=true" alt="CI" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/License-MIT-blue.svg?sanitize=true" alt="License: MIT" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/badge/version-0.9.8-blue" alt="Version" /&gt; &lt;img src="https://img.shields.io/badge/tests-276%20passing-green" alt="Tests" /&gt; &lt;a href="https://github.com/frankbria/ralph-claude-code/issues"&gt;&lt;img src="https://img.shields.io/github/issues/frankbria/ralph-claude-code" alt="GitHub Issues" /&gt;&lt;/a&gt; &lt;a href="https://github.com/hesreallyhim/awesome-claude-code"&gt;&lt;img src="https://awesome.re/mentioned-badge.svg?sanitize=true" alt="Mentioned in Awesome Claude Code" /&gt;&lt;/a&gt; &lt;a href="https://x.com/FrankBria18044"&gt;&lt;img src="https://img.shields.io/twitter/follow/FrankBria18044?style=social" alt="Follow on X" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Autonomous AI development loop with intelligent exit detection and rate limiting&lt;/strong&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Ralph is an implementation of the Geoffrey Huntley's technique for Claude Code that enables continuous autonomous development cycles he named after &lt;a href="https://ghuntley.com/ralph/"&gt;Ralph Wiggum&lt;/a&gt;. It enables continuous autonomous development cycles where Claude Code iteratively improves your project until completion, with built-in safeguards to prevent infinite loops and API overuse.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Install once, use everywhere&lt;/strong&gt; - Ralph becomes a global command available in any directory.&lt;/p&gt; 
+&lt;h2&gt;Project Status&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Version&lt;/strong&gt;: v0.9.8 - Active Development &lt;strong&gt;Core Features&lt;/strong&gt;: Working and tested &lt;strong&gt;Test Coverage&lt;/strong&gt;: 276 tests, 100% pass rate&lt;/p&gt; 
+&lt;h3&gt;What's Working Now&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Autonomous development loops with intelligent exit detection&lt;/li&gt; 
+ &lt;li&gt;Rate limiting with hourly reset (100 calls/hour, configurable)&lt;/li&gt; 
+ &lt;li&gt;Circuit breaker with advanced error detection (prevents runaway loops)&lt;/li&gt; 
+ &lt;li&gt;Response analyzer with semantic understanding and two-stage error filtering&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;JSON output format support with automatic fallback to text parsing&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Session continuity with &lt;code&gt;--continue&lt;/code&gt; flag for context preservation&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Modern CLI flags: &lt;code&gt;--output-format&lt;/code&gt;, &lt;code&gt;--allowed-tools&lt;/code&gt;, &lt;code&gt;--no-continue&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;Multi-line error matching for accurate stuck loop detection&lt;/li&gt; 
+ &lt;li&gt;5-hour API limit handling with user prompts&lt;/li&gt; 
+ &lt;li&gt;tmux integration for live monitoring&lt;/li&gt; 
+ &lt;li&gt;PRD import functionality&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;CI/CD pipeline with GitHub Actions&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;276 passing tests across 11 test files&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Recent Improvements&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.8 - Modern CLI for PRD Import&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Modernized &lt;code&gt;ralph_import.sh&lt;/code&gt; to use Claude Code CLI JSON output format&lt;/li&gt; 
+ &lt;li&gt;JSON output format support with &lt;code&gt;--output-format json&lt;/code&gt; for structured responses&lt;/li&gt; 
+ &lt;li&gt;Enhanced error handling with structured JSON error messages&lt;/li&gt; 
+ &lt;li&gt;Improved file verification with JSON-derived status information&lt;/li&gt; 
+ &lt;li&gt;Backward compatibility with older CLI versions (automatic text fallback)&lt;/li&gt; 
+ &lt;li&gt;Added 11 new tests for modern CLI features&lt;/li&gt; 
+ &lt;li&gt;Test count: 276 (up from 265)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.7 - Session Lifecycle Management&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Complete session lifecycle management with automatic reset triggers&lt;/li&gt; 
+ &lt;li&gt;Session auto-reset on: circuit breaker open, manual interrupt, project completion&lt;/li&gt; 
+ &lt;li&gt;Added &lt;code&gt;--reset-session&lt;/code&gt; CLI flag for manual session reset&lt;/li&gt; 
+ &lt;li&gt;Session history tracking (last 50 transitions) for debugging&lt;/li&gt; 
+ &lt;li&gt;Added 26 new tests for session continuity features&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.6 - JSON Output &amp;amp; Session Management&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Extended &lt;code&gt;parse_json_response()&lt;/code&gt; to support Claude Code CLI JSON format&lt;/li&gt; 
+ &lt;li&gt;Added session management functions: &lt;code&gt;store_session_id()&lt;/code&gt;, &lt;code&gt;get_last_session_id()&lt;/code&gt;, &lt;code&gt;should_resume_session()&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Cross-platform epoch time utilities in date_utils.sh&lt;/li&gt; 
+ &lt;li&gt;Added 16 new tests covering Claude CLI format and session management&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.5 - PRD Import Tests&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Added 22 comprehensive tests for &lt;code&gt;ralph_import.sh&lt;/code&gt; PRD conversion script&lt;/li&gt; 
+ &lt;li&gt;Tests cover: file format support, output file creation, project naming, error handling&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.4 - Project Setup Tests&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Added 36 comprehensive tests for &lt;code&gt;setup.sh&lt;/code&gt; project initialization script&lt;/li&gt; 
+ &lt;li&gt;Tests cover: directory creation, template copying, git initialization&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.3 - Installation Tests&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Added 14 comprehensive tests for &lt;code&gt;install.sh&lt;/code&gt; global installation script&lt;/li&gt; 
+ &lt;li&gt;Tests cover: directory creation, command installation, dependency detection&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.2 - Prompt File Fix&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fixed critical bug: replaced non-existent &lt;code&gt;--prompt-file&lt;/code&gt; CLI flag with &lt;code&gt;-p&lt;/code&gt; flag&lt;/li&gt; 
+ &lt;li&gt;Modern CLI mode now correctly passes prompt content via &lt;code&gt;-p "$(cat file)"&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Added error handling for missing prompt files in &lt;code&gt;build_claude_command()&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.1 - Modern CLI Commands (Phase 1.1)&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;JSON output format support with &lt;code&gt;--output-format json&lt;/code&gt; (default)&lt;/li&gt; 
+ &lt;li&gt;Session continuity using &lt;code&gt;--continue&lt;/code&gt; flag for cross-loop context&lt;/li&gt; 
+ &lt;li&gt;Tool permissions via &lt;code&gt;--allowed-tools&lt;/code&gt; flag&lt;/li&gt; 
+ &lt;li&gt;CI/CD pipeline with kcov coverage reporting&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.0 - Circuit Breaker Enhancements&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fixed multi-line error matching in stuck loop detection&lt;/li&gt; 
+ &lt;li&gt;Eliminated JSON field false positives (e.g., &lt;code&gt;"is_error": false&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Added two-stage error filtering for accurate detection&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;In Progress&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Expanding test coverage&lt;/li&gt; 
+ &lt;li&gt;Log rotation functionality&lt;/li&gt; 
+ &lt;li&gt;Dry-run mode&lt;/li&gt; 
+ &lt;li&gt;Configuration file support (.ralphrc)&lt;/li&gt; 
+ &lt;li&gt;Metrics and analytics tracking&lt;/li&gt; 
+ &lt;li&gt;Desktop notifications&lt;/li&gt; 
+ &lt;li&gt;Git backup and rollback system&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Timeline to v1.0&lt;/strong&gt;: ~4 weeks | &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/IMPLEMENTATION_PLAN.md"&gt;Full roadmap&lt;/a&gt; | &lt;strong&gt;Contributions welcome!&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Autonomous Development Loop&lt;/strong&gt; - Continuously executes Claude Code with your project requirements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Intelligent Exit Detection&lt;/strong&gt; - Automatically stops when project objectives are complete&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Session Continuity&lt;/strong&gt; - Preserves context across loop iterations with automatic session management&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Rate Limiting&lt;/strong&gt; - Built-in API call management with hourly limits and countdown timers&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;5-Hour API Limit Handling&lt;/strong&gt; - Detects Claude's 5-hour usage limit and offers wait/exit options&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Live Monitoring&lt;/strong&gt; - Real-time dashboard showing loop status, progress, and logs&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Task Management&lt;/strong&gt; - Structured approach with prioritized task lists and progress tracking&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Project Templates&lt;/strong&gt; - Quick setup for new projects with best-practice structure&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Comprehensive Logging&lt;/strong&gt; - Detailed execution logs with timestamps and status tracking&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Configurable Timeouts&lt;/strong&gt; - Set execution timeout for Claude Code operations (1-120 minutes)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Verbose Progress Mode&lt;/strong&gt; - Optional detailed progress updates during execution&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Response Analyzer&lt;/strong&gt; - AI-powered analysis of Claude Code responses with semantic understanding&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Circuit Breaker&lt;/strong&gt; - Advanced error detection with two-stage filtering, multi-line error matching, and automatic recovery&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;CI/CD Integration&lt;/strong&gt; - GitHub Actions workflow with automated testing&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;p&gt;Ralph has two phases: &lt;strong&gt;one-time installation&lt;/strong&gt; and &lt;strong&gt;per-project setup&lt;/strong&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;INSTALL ONCE              USE MANY TIMES
++-----------------+          +----------------------+
+| ./install.sh    |    -&amp;gt;    | ralph-setup project1 |
+|                 |          | ralph-setup project2 |
+| Adds global     |          | ralph-setup project3 |
+| commands        |          | ...                  |
++-----------------+          +----------------------+
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Phase 1: Install Ralph (One Time Only)&lt;/h3&gt; 
+&lt;p&gt;Install Ralph globally on your system:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/frankbria/ralph-claude-code.git
+cd ralph-claude-code
+./install.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This adds &lt;code&gt;ralph&lt;/code&gt;, &lt;code&gt;ralph-monitor&lt;/code&gt;, and &lt;code&gt;ralph-setup&lt;/code&gt; commands to your PATH.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: You only need to do this once per system. After installation, you can delete the cloned repository if desired.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Phase 2: Initialize New Projects (Per Project)&lt;/h3&gt; 
+&lt;p&gt;For each new project you want Ralph to work on:&lt;/p&gt; 
+&lt;h4&gt;Option A: Import Existing PRD/Specifications&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Convert existing PRD/specs to Ralph format (recommended)
+ralph-import my-requirements.md my-project
+cd my-project
+
+# Review and adjust the generated files:
+# - PROMPT.md (Ralph instructions)
+# - @fix_plan.md (task priorities)
+# - specs/requirements.md (technical specs)
+
+# Start autonomous development
+ralph --monitor
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Option B: Manual Project Setup&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Create blank Ralph project
+ralph-setup my-awesome-project
+cd my-awesome-project
+
+# Configure your project requirements manually
+# Edit PROMPT.md with your project goals
+# Edit specs/ with detailed specifications
+# Edit @fix_plan.md with initial priorities
+
+# Start autonomous development
+ralph --monitor
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Ongoing Usage (After Setup)&lt;/h3&gt; 
+&lt;p&gt;Once Ralph is installed and your project is initialized:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Navigate to any Ralph project and run:
+ralph --monitor              # Integrated tmux monitoring (recommended)
+
+# Or use separate terminals:
+ralph                        # Terminal 1: Ralph loop
+ralph-monitor               # Terminal 2: Live monitor dashboard
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;How It Works&lt;/h2&gt; 
+&lt;p&gt;Ralph operates on a simple but powerful cycle:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Read Instructions&lt;/strong&gt; - Loads &lt;code&gt;PROMPT.md&lt;/code&gt; with your project requirements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Execute Claude Code&lt;/strong&gt; - Runs Claude Code with current context and priorities&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Track Progress&lt;/strong&gt; - Updates task lists and logs execution results&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Evaluate Completion&lt;/strong&gt; - Checks for exit conditions and project completion signals&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Repeat&lt;/strong&gt; - Continues until project is complete or limits are reached&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Intelligent Exit Detection&lt;/h3&gt; 
+&lt;p&gt;Ralph automatically stops when it detects:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;All tasks in &lt;code&gt;@fix_plan.md&lt;/code&gt; marked complete&lt;/li&gt; 
+ &lt;li&gt;Multiple consecutive "done" signals from Claude Code&lt;/li&gt; 
+ &lt;li&gt;Too many test-focused loops (indicating feature completeness)&lt;/li&gt; 
+ &lt;li&gt;Strong completion indicators in responses&lt;/li&gt; 
+ &lt;li&gt;Claude API 5-hour usage limit reached (with user prompt to wait or exit)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Importing Existing Requirements&lt;/h2&gt; 
+&lt;p&gt;Ralph can convert existing PRDs, specifications, or requirement documents into the proper Ralph format using Claude Code.&lt;/p&gt; 
+&lt;h3&gt;Supported Formats&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Markdown&lt;/strong&gt; (.md) - Product requirements, technical specs&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Text files&lt;/strong&gt; (.txt) - Plain text requirements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;JSON&lt;/strong&gt; (.json) - Structured requirement data&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Word documents&lt;/strong&gt; (.docx) - Business requirements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;PDFs&lt;/strong&gt; (.pdf) - Design documents, specifications&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Any text-based format&lt;/strong&gt; - Ralph will intelligently parse the content&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Usage Examples&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Convert a markdown PRD
+ralph-import product-requirements.md my-app
+
+# Convert a text specification
+ralph-import requirements.txt webapp
+
+# Convert a JSON API spec
+ralph-import api-spec.json backend-service
+
+# Let Ralph auto-name the project from filename
+ralph-import design-doc.pdf
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;What Gets Generated&lt;/h3&gt; 
+&lt;p&gt;Ralph-import creates a complete project with:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;PROMPT.md&lt;/strong&gt; - Converted into Ralph development instructions&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;@fix_plan.md&lt;/strong&gt; - Requirements broken down into prioritized tasks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;specs/requirements.md&lt;/strong&gt; - Technical specifications extracted from your document&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Standard Ralph structure&lt;/strong&gt; - All necessary directories and template files&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The conversion is intelligent and preserves your original requirements while making them actionable for autonomous development.&lt;/p&gt; 
+&lt;h3&gt;Modern CLI Features (v0.9.8)&lt;/h3&gt; 
+&lt;p&gt;Ralph-import uses modern Claude Code CLI features for improved reliability:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;JSON Output Format&lt;/strong&gt;: Structured responses enable precise parsing of conversion results&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Automatic Fallback&lt;/strong&gt;: Gracefully handles older CLI versions with text-based parsing&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Enhanced Error Reporting&lt;/strong&gt;: Extracts specific error messages and codes from JSON responses&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Session Tracking&lt;/strong&gt;: Captures session IDs for potential continuation of interrupted conversions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: These features require Claude Code CLI version 2.0.76 or later. Older versions will work with standard text output.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Configuration&lt;/h2&gt; 
+&lt;h3&gt;Rate Limiting &amp;amp; Circuit Breaker&lt;/h3&gt; 
+&lt;p&gt;Ralph includes intelligent rate limiting and circuit breaker functionality:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Default: 100 calls per hour
+ralph --calls 50
+
+# With integrated monitoring
+ralph --monitor --calls 50
+
+# Check current usage
+ralph --status
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The circuit breaker automatically:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Detects API errors and rate limit issues with advanced two-stage filtering&lt;/li&gt; 
+ &lt;li&gt;Opens circuit after 3 loops with no progress or 5 loops with same errors&lt;/li&gt; 
+ &lt;li&gt;Eliminates false positives from JSON fields containing "error"&lt;/li&gt; 
+ &lt;li&gt;Accurately detects stuck loops with multi-line error matching&lt;/li&gt; 
+ &lt;li&gt;Gradually recovers with half-open monitoring state&lt;/li&gt; 
+ &lt;li&gt;Provides detailed error tracking and logging with state history&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Claude API 5-Hour Limit&lt;/h3&gt; 
+&lt;p&gt;When Claude's 5-hour usage limit is reached, Ralph:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Detects the limit error automatically&lt;/li&gt; 
+ &lt;li&gt;Prompts you to choose: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Option 1&lt;/strong&gt;: Wait 60 minutes for the limit to reset (with countdown timer)&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Option 2&lt;/strong&gt;: Exit gracefully (or auto-exits after 30-second timeout)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Prevents endless retry loops that waste time&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Custom Prompts&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Use custom prompt file
+ralph --prompt my_custom_instructions.md
+
+# With integrated monitoring
+ralph --monitor --prompt my_custom_instructions.md
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Execution Timeouts&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Set Claude Code execution timeout (default: 15 minutes)
+ralph --timeout 30  # 30-minute timeout for complex tasks
+
+# With monitoring and custom timeout
+ralph --monitor --timeout 60  # 60-minute timeout
+
+# Short timeout for quick iterations
+ralph --verbose --timeout 5  # 5-minute timeout with progress
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Verbose Mode&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Enable detailed progress updates during execution
+ralph --verbose
+
+# Combine with other options
+ralph --monitor --verbose --timeout 30
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Session Continuity&lt;/h3&gt; 
+&lt;p&gt;Ralph maintains session context across loop iterations for improved coherence:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Sessions are enabled by default with --continue flag
+ralph --monitor                 # Uses session continuity
+
+# Start fresh without session context
+ralph --no-continue             # Isolated iterations
+
+# Reset session manually (clears context)
+ralph --reset-session           # Clears current session
+
+# Check session status
+cat .ralph_session              # View current session file
+cat .ralph_session_history      # View session transition history
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Session Auto-Reset Triggers:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Circuit breaker opens (stagnation detected)&lt;/li&gt; 
+ &lt;li&gt;Manual interrupt (Ctrl+C / SIGINT)&lt;/li&gt; 
+ &lt;li&gt;Project completion (graceful exit)&lt;/li&gt; 
+ &lt;li&gt;Manual circuit breaker reset (&lt;code&gt;--reset-circuit&lt;/code&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Sessions are persisted to &lt;code&gt;.ralph_session&lt;/code&gt; with a 24-hour expiration. The last 50 session transitions are logged to &lt;code&gt;.ralph_session_history&lt;/code&gt; for debugging.&lt;/p&gt; 
+&lt;h3&gt;Exit Thresholds&lt;/h3&gt; 
+&lt;p&gt;Modify these variables in &lt;code&gt;~/.ralph/ralph_loop.sh&lt;/code&gt;:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Exit Detection Thresholds:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;MAX_CONSECUTIVE_TEST_LOOPS=3     # Exit after 3 test-only loops
+MAX_CONSECUTIVE_DONE_SIGNALS=2   # Exit after 2 "done" signals
+TEST_PERCENTAGE_THRESHOLD=30     # Flag if 30%+ loops are test-only
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Circuit Breaker Thresholds:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;CB_NO_PROGRESS_THRESHOLD=3       # Open circuit after 3 loops with no file changes
+CB_SAME_ERROR_THRESHOLD=5        # Open circuit after 5 loops with repeated errors
+CB_OUTPUT_DECLINE_THRESHOLD=70   # Open circuit if output declines by &amp;gt;70%
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Project Structure&lt;/h2&gt; 
+&lt;p&gt;Ralph creates a standardized structure for each project:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;my-project/
+├── PROMPT.md           # Main development instructions for Ralph
+├── @fix_plan.md        # Prioritized task list (@ prefix = Ralph control file)
+├── @AGENT.md           # Build and run instructions
+├── specs/              # Project specifications and requirements
+│   └── stdlib/         # Standard library specifications
+├── src/                # Source code implementation
+├── examples/           # Usage examples and test cases
+├── logs/               # Ralph execution logs
+└── docs/generated/     # Auto-generated documentation
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Best Practices&lt;/h2&gt; 
+&lt;h3&gt;Writing Effective Prompts&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Be Specific&lt;/strong&gt; - Clear requirements lead to better results&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Prioritize&lt;/strong&gt; - Use &lt;code&gt;@fix_plan.md&lt;/code&gt; to guide Ralph's focus&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Set Boundaries&lt;/strong&gt; - Define what's in/out of scope&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Include Examples&lt;/strong&gt; - Show expected inputs/outputs&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Project Specifications&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Place detailed requirements in &lt;code&gt;specs/&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Use &lt;code&gt;@fix_plan.md&lt;/code&gt; for prioritized task tracking&lt;/li&gt; 
+ &lt;li&gt;Keep &lt;code&gt;@AGENT.md&lt;/code&gt; updated with build instructions&lt;/li&gt; 
+ &lt;li&gt;Document key decisions and architecture&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Monitoring Progress&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Use &lt;code&gt;ralph-monitor&lt;/code&gt; for live status updates&lt;/li&gt; 
+ &lt;li&gt;Check logs in &lt;code&gt;logs/&lt;/code&gt; for detailed execution history&lt;/li&gt; 
+ &lt;li&gt;Monitor &lt;code&gt;status.json&lt;/code&gt; for programmatic access&lt;/li&gt; 
+ &lt;li&gt;Watch for exit condition signals&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;System Requirements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Bash 4.0+&lt;/strong&gt; - For script execution&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Claude Code CLI&lt;/strong&gt; - &lt;code&gt;npm install -g @anthropic-ai/claude-code&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;tmux&lt;/strong&gt; - Terminal multiplexer for integrated monitoring (recommended)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;jq&lt;/strong&gt; - JSON processing for status tracking&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Git&lt;/strong&gt; - Version control (projects are initialized as git repos)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Standard Unix tools&lt;/strong&gt; - grep, date, etc.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Testing Requirements (Development)&lt;/h3&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/TESTING.md"&gt;TESTING.md&lt;/a&gt; for the comprehensive testing guide.&lt;/p&gt; 
+&lt;p&gt;If you want to run the test suite:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Install BATS testing framework
+npm install -g bats bats-support bats-assert
+
+# Run all tests (276 tests)
+npm test
+
+# Run specific test suites
+bats tests/unit/test_rate_limiting.bats
+bats tests/unit/test_exit_detection.bats
+bats tests/unit/test_json_parsing.bats
+bats tests/unit/test_cli_modern.bats
+bats tests/unit/test_cli_parsing.bats
+bats tests/unit/test_session_continuity.bats
+bats tests/integration/test_loop_execution.bats
+bats tests/integration/test_prd_import.bats
+bats tests/integration/test_project_setup.bats
+bats tests/integration/test_installation.bats
+
+# Run error detection and circuit breaker tests
+./tests/test_error_detection.sh
+./tests/test_stuck_loop_detection.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Current test status:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;276 tests&lt;/strong&gt; across 11 test files&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;100% pass rate&lt;/strong&gt; (276/276 passing)&lt;/li&gt; 
+ &lt;li&gt;Comprehensive unit and integration tests&lt;/li&gt; 
+ &lt;li&gt;Specialized tests for JSON parsing, CLI flags, circuit breaker, and installation workflows&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note on Coverage&lt;/strong&gt;: Bash code coverage measurement with kcov has fundamental limitations when tracing subprocess executions. Test pass rate (100%) is the quality gate. See &lt;a href="https://github.com/bats-core/bats-core/issues/15"&gt;bats-core#15&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Installing tmux&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Ubuntu/Debian
+sudo apt-get install tmux
+
+# macOS
+brew install tmux
+
+# CentOS/RHEL
+sudo yum install tmux
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Monitoring and Debugging&lt;/h2&gt; 
+&lt;h3&gt;Live Dashboard&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Integrated tmux monitoring (recommended)
+ralph --monitor
+
+# Manual monitoring in separate terminal
+ralph-monitor
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Shows real-time:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Current loop count and status&lt;/li&gt; 
+ &lt;li&gt;API calls used vs. limit&lt;/li&gt; 
+ &lt;li&gt;Recent log entries&lt;/li&gt; 
+ &lt;li&gt;Rate limit countdown&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;tmux Controls:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;Ctrl+B&lt;/code&gt; then &lt;code&gt;D&lt;/code&gt; - Detach from session (keeps Ralph running)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Ctrl+B&lt;/code&gt; then &lt;code&gt;←/→&lt;/code&gt; - Switch between panes&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;tmux list-sessions&lt;/code&gt; - View active sessions&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;tmux attach -t &amp;lt;session-name&amp;gt;&lt;/code&gt; - Reattach to session&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Status Checking&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# JSON status output
+ralph --status
+
+# Manual log inspection
+tail -f logs/ralph.log
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Common Issues&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Rate Limits&lt;/strong&gt; - Ralph automatically waits and displays countdown&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;5-Hour API Limit&lt;/strong&gt; - Ralph detects and prompts for user action (wait or exit)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Stuck Loops&lt;/strong&gt; - Check &lt;code&gt;@fix_plan.md&lt;/code&gt; for unclear or conflicting tasks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Early Exit&lt;/strong&gt; - Review exit thresholds if Ralph stops too soon&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Execution Timeouts&lt;/strong&gt; - Increase &lt;code&gt;--timeout&lt;/code&gt; value for complex operations&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Missing Dependencies&lt;/strong&gt; - Ensure Claude Code CLI and tmux are installed&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;tmux Session Lost&lt;/strong&gt; - Use &lt;code&gt;tmux list-sessions&lt;/code&gt; and &lt;code&gt;tmux attach&lt;/code&gt; to reconnect&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Ralph is actively seeking contributors! We're working toward v1.0.0 with clear priorities and a detailed roadmap.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for the complete contributor guide&lt;/strong&gt; including:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Getting started and setup instructions&lt;/li&gt; 
+ &lt;li&gt;Development workflow and commit conventions&lt;/li&gt; 
+ &lt;li&gt;Code style guidelines&lt;/li&gt; 
+ &lt;li&gt;Testing requirements (100% pass rate mandatory)&lt;/li&gt; 
+ &lt;li&gt;Pull request process and code review guidelines&lt;/li&gt; 
+ &lt;li&gt;Quality standards and checklists&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Quick Start&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Fork and clone
+git clone https://github.com/YOUR_USERNAME/ralph-claude-code.git
+cd ralph-claude-code
+
+# Install dependencies and run tests
+npm install
+npm test  # All 276 tests must pass
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Priority Contribution Areas&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Test Implementation&lt;/strong&gt; - Help expand test coverage&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Feature Development&lt;/strong&gt; - Log rotation, dry-run mode, config files, metrics&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Documentation&lt;/strong&gt; - Tutorials, troubleshooting guides, examples&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Real-World Testing&lt;/strong&gt; - Use Ralph, report bugs, share feedback&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Every contribution matters&lt;/strong&gt; - from fixing typos to implementing major features!&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the MIT License - see the &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;h2&gt;Acknowledgments&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Inspired by the &lt;a href="https://ghuntley.com/ralph/"&gt;Ralph technique&lt;/a&gt; created by Geoffrey Huntley&lt;/li&gt; 
+ &lt;li&gt;Built for &lt;a href="https://claude.ai/code"&gt;Claude Code&lt;/a&gt; by Anthropic&lt;/li&gt; 
+ &lt;li&gt;Community feedback and contributions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Related Projects&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://claude.ai/code"&gt;Claude Code&lt;/a&gt; - The AI coding assistant that powers Ralph&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/paul-gauthier/aider"&gt;Aider&lt;/a&gt; - Original Ralph technique implementation&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Command Reference&lt;/h2&gt; 
+&lt;h3&gt;Installation Commands (Run Once)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;./install.sh              # Install Ralph globally
+./install.sh uninstall    # Remove Ralph from system
+./install.sh --help       # Show installation help
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Ralph Loop Options&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;ralph [OPTIONS]
+  -h, --help              Show help message
+  -c, --calls NUM         Set max calls per hour (default: 100)
+  -p, --prompt FILE       Set prompt file (default: PROMPT.md)
+  -s, --status            Show current status and exit
+  -m, --monitor           Start with tmux session and live monitor
+  -v, --verbose           Show detailed progress updates during execution
+  -t, --timeout MIN       Set Claude Code execution timeout in minutes (1-120, default: 15)
+  --output-format FORMAT  Set output format: json (default) or text
+  --allowed-tools TOOLS   Set allowed Claude tools (default: Write,Bash(git *),Read)
+  --no-continue           Disable session continuity (start fresh each loop)
+  --reset-circuit         Reset the circuit breaker
+  --circuit-status        Show circuit breaker status
+  --reset-session         Reset session state manually
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Project Commands (Per Project)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;ralph-setup project-name     # Create new Ralph project
+ralph-import prd.md project  # Convert PRD/specs to Ralph project
+ralph --monitor              # Start with integrated monitoring
+ralph --status               # Check current loop status
+ralph --verbose              # Enable detailed progress updates
+ralph --timeout 30           # Set 30-minute execution timeout
+ralph --calls 50             # Limit to 50 API calls per hour
+ralph --reset-session        # Reset session state manually
+ralph-monitor                # Manual monitoring dashboard
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;tmux Session Management&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;tmux list-sessions        # View active Ralph sessions
+tmux attach -t &amp;lt;name&amp;gt;     # Reattach to detached session
+# Ctrl+B then D           # Detach from session (keeps running)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Development Roadmap&lt;/h2&gt; 
+&lt;p&gt;Ralph is under active development with a clear path to v1.0.0. See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/IMPLEMENTATION_PLAN.md"&gt;IMPLEMENTATION_PLAN.md&lt;/a&gt; for the complete roadmap.&lt;/p&gt; 
+&lt;h3&gt;Current Status: v0.9.8&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;What's Delivered:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Core loop functionality with intelligent exit detection&lt;/li&gt; 
+ &lt;li&gt;Rate limiting (100 calls/hour) and circuit breaker pattern&lt;/li&gt; 
+ &lt;li&gt;Response analyzer with semantic understanding&lt;/li&gt; 
+ &lt;li&gt;276 comprehensive tests (100% pass rate)&lt;/li&gt; 
+ &lt;li&gt;tmux integration and live monitoring&lt;/li&gt; 
+ &lt;li&gt;PRD import functionality with modern CLI JSON parsing&lt;/li&gt; 
+ &lt;li&gt;Installation system and project templates&lt;/li&gt; 
+ &lt;li&gt;Modern CLI commands with JSON output support&lt;/li&gt; 
+ &lt;li&gt;CI/CD pipeline with GitHub Actions&lt;/li&gt; 
+ &lt;li&gt;Comprehensive installation test suite&lt;/li&gt; 
+ &lt;li&gt;Session lifecycle management with auto-reset triggers&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Test Coverage Breakdown:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Unit Tests: 154 (CLI parsing, JSON, exit detection, rate limiting, session continuity)&lt;/li&gt; 
+ &lt;li&gt;Integration Tests: 122 (loop execution, edge cases, installation, project setup, PRD import)&lt;/li&gt; 
+ &lt;li&gt;Test Files: 11&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Path to v1.0.0 (~4 weeks)&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Enhanced Testing&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Installation and setup workflow tests&lt;/li&gt; 
+ &lt;li&gt;tmux integration tests&lt;/li&gt; 
+ &lt;li&gt;Monitor dashboard tests&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Core Features&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Log rotation functionality&lt;/li&gt; 
+ &lt;li&gt;Dry-run mode&lt;/li&gt; 
+ &lt;li&gt;Configuration file support - .ralphrc&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Advanced Features &amp;amp; Polish&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Metrics and analytics tracking&lt;/li&gt; 
+ &lt;li&gt;Desktop notifications&lt;/li&gt; 
+ &lt;li&gt;Git backup and rollback system&lt;/li&gt; 
+ &lt;li&gt;End-to-end tests&lt;/li&gt; 
+ &lt;li&gt;Final documentation and release prep&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/IMPLEMENTATION_STATUS.md"&gt;IMPLEMENTATION_STATUS.md&lt;/a&gt; for detailed progress tracking.&lt;/p&gt; 
+&lt;h3&gt;How to Contribute&lt;/h3&gt; 
+&lt;p&gt;Ralph is seeking contributors! See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for the complete guide. Priority areas:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Test Implementation&lt;/strong&gt; - Help expand test coverage (&lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/IMPLEMENTATION_PLAN.md"&gt;see plan&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Feature Development&lt;/strong&gt; - Log rotation, dry-run mode, config files&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Documentation&lt;/strong&gt; - Usage examples, tutorials, troubleshooting guides&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Bug Reports&lt;/strong&gt; - Real-world usage feedback and edge cases&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Ready to let AI build your project?&lt;/strong&gt; Start with &lt;code&gt;./install.sh&lt;/code&gt; and let Ralph take it from there!&lt;/p&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.star-history.com/#frankbria/ralph-claude-code&amp;amp;type=date&amp;amp;legend=top-left"&gt;&lt;img src="https://api.star-history.com/svg?repos=frankbria/ralph-claude-code&amp;amp;type=date&amp;amp;legend=top-left" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>obra/superpowers</title>
+      <link>https://github.com/obra/superpowers</link>
+      <description>&lt;p&gt;Claude Code superpowers: core skills library&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Superpowers&lt;/h1&gt; 
+&lt;p&gt;Superpowers is a complete software development workflow for your coding agents, built on top of a set of composable "skills" and some initial instructions that make sure your agent uses them.&lt;/p&gt; 
+&lt;h2&gt;How it works&lt;/h2&gt; 
+&lt;p&gt;It starts from the moment you fire up your coding agent. As soon as it sees that you're building something, it &lt;em&gt;doesn't&lt;/em&gt; just jump into trying to write code. Instead, it steps back and asks you what you're really trying to do.&lt;/p&gt; 
+&lt;p&gt;Once it's teased a spec out of the conversation, it shows it to you in chunks short enough to actually read and digest.&lt;/p&gt; 
+&lt;p&gt;After you've signed off on the design, your agent puts together an implementation plan that's clear enough for an enthusiastic junior engineer with poor taste, no judgement, no project context, and an aversion to testing to follow. It emphasizes true red/green TDD, YAGNI (You Aren't Gonna Need It), and DRY.&lt;/p&gt; 
+&lt;p&gt;Next up, once you say "go", it launches a &lt;em&gt;subagent-driven-development&lt;/em&gt; process, having agents work through each engineering task, inspecting and reviewing their work, and continuing forward. It's not uncommon for Claude to be able to work autonomously for a couple hours at a time without deviating from the plan you put together.&lt;/p&gt; 
+&lt;p&gt;There's a bunch more to it, but that's the core of the system. And because the skills trigger automatically, you don't need to do anything special. Your coding agent just has Superpowers.&lt;/p&gt; 
+&lt;h2&gt;Sponsorship&lt;/h2&gt; 
+&lt;p&gt;If Superpowers has helped you do stuff that makes money and you are so inclined, I'd greatly appreciate it if you'd consider &lt;a href="https://github.com/sponsors/obra"&gt;sponsoring my opensource work&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Thanks!&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Jesse&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Installation differs by platform. Claude Code has a built-in plugin system. Codex and OpenCode require manual setup.&lt;/p&gt; 
+&lt;h3&gt;Claude Code (via Plugin Marketplace)&lt;/h3&gt; 
+&lt;p&gt;In Claude Code, register the marketplace first:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/plugin marketplace add obra/superpowers-marketplace
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then install the plugin from this marketplace:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/plugin install superpowers@superpowers-marketplace
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Verify Installation&lt;/h3&gt; 
+&lt;p&gt;Check that commands appear:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/help
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code&gt;# Should see:
+# /superpowers:brainstorm - Interactive design refinement
+# /superpowers:write-plan - Create implementation plan
+# /superpowers:execute-plan - Execute plan in batches
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Codex&lt;/h3&gt; 
+&lt;p&gt;Tell Codex:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.codex/INSTALL.md
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Detailed docs:&lt;/strong&gt; &lt;a href="https://raw.githubusercontent.com/obra/superpowers/main/docs/README.codex.md"&gt;docs/README.codex.md&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;OpenCode&lt;/h3&gt; 
+&lt;p&gt;Tell OpenCode:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INSTALL.md
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Detailed docs:&lt;/strong&gt; &lt;a href="https://raw.githubusercontent.com/obra/superpowers/main/docs/README.opencode.md"&gt;docs/README.opencode.md&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;The Basic Workflow&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;brainstorming&lt;/strong&gt; - Activates before writing code. Refines rough ideas through questions, explores alternatives, presents design in sections for validation. Saves design document.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;using-git-worktrees&lt;/strong&gt; - Activates after design approval. Creates isolated workspace on new branch, runs project setup, verifies clean test baseline.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;writing-plans&lt;/strong&gt; - Activates with approved design. Breaks work into bite-sized tasks (2-5 minutes each). Every task has exact file paths, complete code, verification steps.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;subagent-driven-development&lt;/strong&gt; or &lt;strong&gt;executing-plans&lt;/strong&gt; - Activates with plan. Dispatches fresh subagent per task with two-stage review (spec compliance, then code quality), or executes in batches with human checkpoints.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;test-driven-development&lt;/strong&gt; - Activates during implementation. Enforces RED-GREEN-REFACTOR: write failing test, watch it fail, write minimal code, watch it pass, commit. Deletes code written before tests.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;requesting-code-review&lt;/strong&gt; - Activates between tasks. Reviews against plan, reports issues by severity. Critical issues block progress.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;finishing-a-development-branch&lt;/strong&gt; - Activates when tasks complete. Verifies tests, presents options (merge/PR/keep/discard), cleans up worktree.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;The agent checks for relevant skills before any task.&lt;/strong&gt; Mandatory workflows, not suggestions.&lt;/p&gt; 
+&lt;h2&gt;What's Inside&lt;/h2&gt; 
+&lt;h3&gt;Skills Library&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Testing&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;test-driven-development&lt;/strong&gt; - RED-GREEN-REFACTOR cycle (includes testing anti-patterns reference)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Debugging&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;systematic-debugging&lt;/strong&gt; - 4-phase root cause process (includes root-cause-tracing, defense-in-depth, condition-based-waiting techniques)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;verification-before-completion&lt;/strong&gt; - Ensure it's actually fixed&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Collaboration&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;brainstorming&lt;/strong&gt; - Socratic design refinement&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;writing-plans&lt;/strong&gt; - Detailed implementation plans&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;executing-plans&lt;/strong&gt; - Batch execution with checkpoints&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;dispatching-parallel-agents&lt;/strong&gt; - Concurrent subagent workflows&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;requesting-code-review&lt;/strong&gt; - Pre-review checklist&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;receiving-code-review&lt;/strong&gt; - Responding to feedback&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;using-git-worktrees&lt;/strong&gt; - Parallel development branches&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;finishing-a-development-branch&lt;/strong&gt; - Merge/PR decision workflow&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;subagent-driven-development&lt;/strong&gt; - Fast iteration with two-stage review (spec compliance, then code quality)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Meta&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;writing-skills&lt;/strong&gt; - Create new skills following best practices (includes testing methodology)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;using-superpowers&lt;/strong&gt; - Introduction to the skills system&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Philosophy&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Test-Driven Development&lt;/strong&gt; - Write tests first, always&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Systematic over ad-hoc&lt;/strong&gt; - Process over guessing&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Complexity reduction&lt;/strong&gt; - Simplicity as primary goal&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Evidence over claims&lt;/strong&gt; - Verify before declaring success&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Read more: &lt;a href="https://blog.fsck.com/2025/10/09/superpowers/"&gt;Superpowers for Claude Code&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Skills live directly in this repository. To contribute:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork the repository&lt;/li&gt; 
+ &lt;li&gt;Create a branch for your skill&lt;/li&gt; 
+ &lt;li&gt;Follow the &lt;code&gt;writing-skills&lt;/code&gt; skill for creating and testing new skills&lt;/li&gt; 
+ &lt;li&gt;Submit a PR&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;See &lt;code&gt;skills/writing-skills/SKILL.md&lt;/code&gt; for the complete guide.&lt;/p&gt; 
+&lt;h2&gt;Updating&lt;/h2&gt; 
+&lt;p&gt;Skills update automatically when you update the plugin:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/plugin update superpowers
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT License - see LICENSE file for details&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Issues&lt;/strong&gt;: &lt;a href="https://github.com/obra/superpowers/issues"&gt;https://github.com/obra/superpowers/issues&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Marketplace&lt;/strong&gt;: &lt;a href="https://github.com/obra/superpowers-marketplace"&gt;https://github.com/obra/superpowers-marketplace&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>twentyhq/twenty</title>
+      <link>https://github.com/twentyhq/twenty</link>
+      <description>&lt;p&gt;Building a modern alternative to Salesforce, powered by the community.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://www.twenty.com"&gt; &lt;img src="https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-website/public/images/core/logo.svg?sanitize=true" width="100px" alt="Twenty logo" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h2 align="center"&gt;The #1 Open-Source CRM &lt;/h2&gt; 
+&lt;p align="center"&gt;&lt;a href="https://twenty.com"&gt;🌐 Website&lt;/a&gt; · &lt;a href="https://docs.twenty.com"&gt;📚 Documentation&lt;/a&gt; · &lt;a href="https://github.com/orgs/twentyhq/projects/1"&gt;&lt;img src="https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-website/public/images/readme/planner-icon.svg?sanitize=true" width="12" height="12" /&gt; Roadmap &lt;/a&gt; · &lt;a href="https://discord.gg/cx5n4Jzs57"&gt;&lt;img src="https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-website/public/images/readme/discord-icon.svg?sanitize=true" width="12" height="12" /&gt; Discord&lt;/a&gt; · &lt;a href="https://www.figma.com/file/xt8O9mFeLl46C5InWwoMrN/Twenty"&gt;&lt;img src="https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-website/public/images/readme/figma-icon.png" width="12" height="12" /&gt; Figma&lt;/a&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.twenty.com"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/refs/heads/main/packages/twenty-website/public/images/readme/github-cover-dark.png" /&gt; 
+   &lt;source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/refs/heads/main/packages/twenty-website/public/images/readme/github-cover-light.png" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-website/public/images/readme/github-cover-light.png" alt="Cover" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h1&gt;Installation&lt;/h1&gt; 
+&lt;p&gt;See: 🚀 &lt;a href="https://docs.twenty.com/developers/self-hosting/docker-compose"&gt;Self-hosting&lt;/a&gt; 🖥️ &lt;a href="https://docs.twenty.com/developers/local-setup"&gt;Local Setup&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Does the world need another CRM?&lt;/h1&gt; 
+&lt;p&gt;We built Twenty for three reasons:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;CRMs are too expensive, and users are trapped.&lt;/strong&gt; Companies use locked-in customer data to hike prices. It shouldn't be that way.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;A fresh start is required to build a better experience.&lt;/strong&gt; We can learn from past mistakes and craft a cohesive experience inspired by new UX patterns from tools like Notion, Airtable or Linear.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;We believe in Open-source and community.&lt;/strong&gt; Hundreds of developers are already building Twenty together. Once we have plugin capabilities, a whole ecosystem will grow around it.&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h1&gt;What You Can Do With Twenty&lt;/h1&gt; 
+&lt;p&gt;Please feel free to flag any specific needs you have by creating an issue.&lt;/p&gt; 
+&lt;p&gt;Below are a few features we have implemented to date:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/twentyhq/twenty/main/#personalize-layouts-with-filters-sort-group-by-kanban-and-table-views"&gt;Personalize layouts with filters, sort, group by, kanban and table views&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/twentyhq/twenty/main/#customize-your-objects-and-fields"&gt;Customize your objects and fields&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/twentyhq/twenty/main/#create-and-manage-permissions-with-custom-roles"&gt;Create and manage permissions with custom roles&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/twentyhq/twenty/main/#automate-workflow-with-triggers-and-actions"&gt;Automate workflow with triggers and actions&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/twentyhq/twenty/main/#emails-calendar-events-files-and-more"&gt;Emails, calendar events, files, and more&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Personalize layouts with filters, sort, group by, kanban and table views&lt;/h2&gt; 
+&lt;p align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/refs/heads/main/packages/twenty-website/public/images/readme/views-dark.png" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/refs/heads/main/packages/twenty-website/public/images/readme/views-light.png" /&gt; 
+  &lt;img src="https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-website/public/images/readme/views-light.png" alt="Companies Kanban Views" /&gt; 
+ &lt;/picture&gt; &lt;/p&gt; 
+&lt;h2&gt;Customize your objects and fields&lt;/h2&gt; 
+&lt;p align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/refs/heads/main/packages/twenty-website/public/images/readme/data-model-dark.png" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/refs/heads/main/packages/twenty-website/public/images/readme/data-model-light.png" /&gt; 
+  &lt;img src="https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-website/public/images/readme/data-model-light.png" alt="Setting Custom Objects" /&gt; 
+ &lt;/picture&gt; &lt;/p&gt; 
+&lt;h2&gt;Create and manage permissions with custom roles&lt;/h2&gt; 
+&lt;p align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/refs/heads/main/packages/twenty-website/public/images/readme/permissions-dark.png" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/refs/heads/main/packages/twenty-website/public/images/readme/permissions-light.png" /&gt; 
+  &lt;img src="https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-website/public/images/readme/permissions-light.png" alt="Permissions" /&gt; 
+ &lt;/picture&gt; &lt;/p&gt; 
+&lt;h2&gt;Automate workflow with triggers and actions&lt;/h2&gt; 
+&lt;p align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/refs/heads/main/packages/twenty-website/public/images/readme/workflows-dark.png" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/refs/heads/main/packages/twenty-website/public/images/readme/workflows-light.png" /&gt; 
+  &lt;img src="https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-website/public/images/readme/workflows-light.png" alt="Workflows" /&gt; 
+ &lt;/picture&gt; &lt;/p&gt; 
+&lt;h2&gt;Emails, calendar events, files, and more&lt;/h2&gt; 
+&lt;p align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/refs/heads/main/packages/twenty-website/public/images/readme/plus-other-features-dark.png" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/twentyhq/twenty/refs/heads/main/packages/twenty-website/public/images/readme/plus-other-features-light.png" /&gt; 
+  &lt;img src="https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-website/public/images/readme/plus-other-features-light.png" alt="Other Features" /&gt; 
+ &lt;/picture&gt; &lt;/p&gt; 
+&lt;br /&gt; 
+&lt;h1&gt;Stack&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.typescriptlang.org/"&gt;TypeScript&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://nx.dev/"&gt;Nx&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://nestjs.com/"&gt;NestJS&lt;/a&gt;, with &lt;a href="https://bullmq.io/"&gt;BullMQ&lt;/a&gt;, &lt;a href="https://www.postgresql.org/"&gt;PostgreSQL&lt;/a&gt;, &lt;a href="https://redis.io/"&gt;Redis&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://reactjs.org/"&gt;React&lt;/a&gt;, with &lt;a href="https://recoiljs.org/"&gt;Recoil&lt;/a&gt;, &lt;a href="https://emotion.sh/"&gt;Emotion&lt;/a&gt; and &lt;a href="https://lingui.dev/"&gt;Lingui&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;Thanks&lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.chromatic.com/"&gt;&lt;img src="https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-website/public/images/readme/chromatic.png" height="30" alt="Chromatic" /&gt;&lt;/a&gt; &lt;a href="https://greptile.com"&gt;&lt;img src="https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-website/public/images/readme/greptile.png" height="30" alt="Greptile" /&gt;&lt;/a&gt; &lt;a href="https://sentry.io/"&gt;&lt;img src="https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-website/public/images/readme/sentry.png" height="30" alt="Sentry" /&gt;&lt;/a&gt; &lt;a href="https://crowdin.com/"&gt;&lt;img src="https://raw.githubusercontent.com/twentyhq/twenty/main/packages/twenty-website/public/images/readme/crowdin.png" height="30" alt="Crowdin" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;Thanks to these amazing services that we use and recommend for UI testing (Chromatic), code review (Greptile), catching bugs (Sentry) and translating (Crowdin).&lt;/p&gt; 
+&lt;h1&gt;Join the Community&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Star the repo&lt;/li&gt; 
+ &lt;li&gt;Subscribe to releases (watch -&amp;gt; custom -&amp;gt; releases)&lt;/li&gt; 
+ &lt;li&gt;Follow us on &lt;a href="https://twitter.com/twentycrm"&gt;Twitter&lt;/a&gt; or &lt;a href="https://www.linkedin.com/company/twenty/"&gt;LinkedIn&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Join our &lt;a href="https://discord.gg/cx5n4Jzs57"&gt;Discord&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Improve translations on &lt;a href="https://twenty.crowdin.com/twenty"&gt;Crowdin&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/twentyhq/twenty/contribute"&gt;Contributions&lt;/a&gt; are, of course, most welcome!&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>bytedance/UI-TARS-desktop</title>
+      <link>https://github.com/bytedance/UI-TARS-desktop</link>
+      <description>&lt;p&gt;The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra&lt;/p&gt;&lt;hr&gt;&lt;picture&gt; 
+ &lt;img alt="Agent TARS Banner" src="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/images/tars.png" /&gt; 
+&lt;/picture&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Introduction&lt;/h2&gt; 
+&lt;p&gt;English | &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/README.zh-CN.md"&gt;简体中文&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://trendshift.io/repositories/13584"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/13584" alt="" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;b&gt;TARS&lt;sup&gt;*&lt;/sup&gt;&lt;/b&gt; is a Multimodal AI Agent stack, currently shipping two projects: &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#agent-tars"&gt;Agent TARS&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#ui-tars-desktop"&gt;UI-TARS-desktop&lt;/a&gt;:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th width="50%" align="center"&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#agent-tars"&gt;Agent TARS&lt;/a&gt;&lt;/th&gt; 
+   &lt;th width="50%" align="center"&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#ui-tars-desktop"&gt;UI-TARS-desktop&lt;/a&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; 
+    &lt;video src="https://github.com/user-attachments/assets/c9489936-afdc-4d12-adda-d4b90d2a869d" width="50%"&gt;&lt;/video&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; 
+    &lt;video src="https://github.com/user-attachments/assets/e0914ce9-ad33-494b-bdec-0c25c1b01a27" width="50%"&gt;&lt;/video&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt; &lt;b&gt;Agent TARS&lt;/b&gt; is a general multimodal AI Agent stack, it brings the power of GUI Agent and Vision into your terminal, computer, browser and product. &lt;br /&gt; &lt;br /&gt; It primarily ships with a &lt;a href="https://agent-tars.com/guide/basic/cli.html" target="_blank"&gt;CLI&lt;/a&gt; and &lt;a href="https://agent-tars.com/guide/basic/web-ui.html" target="_blank"&gt;Web UI&lt;/a&gt; for usage. It aims to provide a workflow that is closer to human-like task completion through cutting-edge multimodal LLMs and seamless integration with various real-world &lt;a href="https://agent-tars.com/guide/basic/mcp.html" target="_blank"&gt;MCP&lt;/a&gt; tools. &lt;/td&gt; 
+   &lt;td align="left"&gt; &lt;b&gt;UI-TARS Desktop&lt;/b&gt; is a desktop application that provides a native GUI Agent based on the &lt;a href="https://github.com/bytedance/UI-TARS" target="_blank"&gt;UI-TARS&lt;/a&gt; model. &lt;br /&gt; &lt;br /&gt; It primarily ships a &lt;a href="https://github.com/bytedance/UI-TARS-desktop/raw/main/docs/quick-start.md#get-model-and-run-local-operator" target="_blank"&gt;local&lt;/a&gt; and &lt;a href="https://github.com/bytedance/UI-TARS-desktop/raw/main/docs/quick-start.md#run-remote-operator" target="_blank"&gt;remote&lt;/a&gt; computer as well as browser operators. &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Table of Contents&lt;/h2&gt; 
+&lt;!-- START doctoc generated TOC please keep comment here to allow auto update --&gt; 
+&lt;!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#news"&gt;News&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#agent-tars"&gt;Agent TARS&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#showcase"&gt;Showcase&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#core-features"&gt;Core Features&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#quick-start"&gt;Quick Start&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#documentation"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#ui-tars-desktop"&gt;UI-TARS Desktop&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#showcase-1"&gt;Showcase&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#features"&gt;Features&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#quick-start-1"&gt;Quick Start&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#contributing"&gt;Contributing&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#license"&gt;License&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#citation"&gt;Citation&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;!-- END doctoc generated TOC please keep comment here to allow auto update --&gt; 
+&lt;h2&gt;News&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-11-05]&lt;/strong&gt; 🎉 We're excited to announce the release of &lt;a href="https://github.com/bytedance/UI-TARS-desktop/releases/tag/v0.3.0"&gt;Agent TARS CLI v0.3.0&lt;/a&gt;! This version brings streaming support for multiple tools (shell commands, multi-file structured display), runtime settings with timing statistics for tool calls and deep thinking, Event Stream Viewer for data flow tracking and debugging. Additionally, it features exclusive support for &lt;a href="https://github.com/agent-infra/sandbox"&gt;AIO agent Sandbox&lt;/a&gt; as isolated all-in-one tools execution environment.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-06-25]&lt;/strong&gt; We released a Agent TARS Beta and Agent TARS CLI - &lt;a href="https://agent-tars.com/blog/2025-06-25-introducing-agent-tars-beta.html"&gt;Introducing Agent TARS Beta&lt;/a&gt;, a multimodal AI agent that aims to explore a work form that is closer to human-like task completion through rich multimodal capabilities (such as GUI Agent, Vision) and seamless integration with various real-world tools.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-06-12]&lt;/strong&gt; - 🎁 We are thrilled to announce the release of UI-TARS Desktop v0.2.0! This update introduces two powerful new features: &lt;strong&gt;Remote Computer Operator&lt;/strong&gt; and &lt;strong&gt;Remote Browser Operator&lt;/strong&gt;—both completely free. No configuration required: simply click to remotely control any computer or browser, and experience a new level of convenience and intelligence.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-04-17]&lt;/strong&gt; - 🎉 We're thrilled to announce the release of new UI-TARS Desktop application v0.1.0, featuring a redesigned Agent UI. The application enhances the computer using experience, introduces new browser operation features, and supports &lt;a href="https://seed-tars.com/1.5"&gt;the advanced UI-TARS-1.5 model&lt;/a&gt; for improved performance and precise control.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-02-20]&lt;/strong&gt; - 📦 Introduced &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/docs/sdk.md"&gt;UI TARS SDK&lt;/a&gt;, is a powerful cross-platform toolkit for building GUI automation agents.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-01-23]&lt;/strong&gt; - 🚀 We updated the &lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/docs/deployment.md#cloud-deployment"&gt;Cloud Deployment&lt;/a&gt;&lt;/strong&gt; section in the 中文版: &lt;a href="https://bytedance.sg.larkoffice.com/docx/TCcudYwyIox5vyxiSDLlgIsTgWf#U94rdCxzBoJMLex38NPlHL21gNb"&gt;GUI模型部署教程&lt;/a&gt; with new information related to the ModelScope platform. You can now use the ModelScope platform for deployment.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Agent TARS&lt;/h2&gt; 
+&lt;p&gt; &lt;a href="https://npmjs.com/package/@agent-tars/cli?activeTab=readme"&gt;&lt;img src="https://img.shields.io/npm/v/@agent-tars/cli?style=for-the-badge&amp;amp;colorA=1a1a2e&amp;amp;colorB=3B82F6&amp;amp;logo=npm&amp;amp;logoColor=white" alt="npm version" /&gt;&lt;/a&gt; &lt;a href="https://npmcharts.com/compare/@agent-tars/cli?minimal=true"&gt;&lt;img src="https://img.shields.io/npm/dm/@agent-tars/cli.svg?style=for-the-badge&amp;amp;colorA=1a1a2e&amp;amp;colorB=0EA5E9&amp;amp;logo=npm&amp;amp;logoColor=white" alt="downloads" /&gt;&lt;/a&gt; &lt;a href="https://nodejs.org/en/about/previous-releases"&gt;&lt;img src="https://img.shields.io/node/v/@agent-tars/cli.svg?style=for-the-badge&amp;amp;colorA=1a1a2e&amp;amp;colorB=06B6D4&amp;amp;logo=node.js&amp;amp;logoColor=white" alt="node version" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/HnKcSBgTVx"&gt;&lt;img src="https://img.shields.io/badge/Discord-Join%20Community-5865F2?style=for-the-badge&amp;amp;logo=discord&amp;amp;logoColor=white" alt="Discord Community" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/agent_tars"&gt;&lt;img src="https://img.shields.io/badge/Twitter-Follow%20%40agent__tars-1DA1F2?style=for-the-badge&amp;amp;logo=twitter&amp;amp;logoColor=white" alt="Official Twitter" /&gt;&lt;/a&gt; &lt;a href="https://applink.larkoffice.com/client/chat/chatter/add_by_link?link_token=deen76f4-ea3c-4964-93a3-78f126f39651"&gt;&lt;img src="https://img.shields.io/badge/飞书群-加入交流群-00D4AA?style=for-the-badge&amp;amp;logo=lark&amp;amp;logoColor=white" alt="飞书交流群" /&gt;&lt;/a&gt; &lt;a href="https://deepwiki.com/bytedance/UI-TARS-desktop"&gt;&lt;img src="https://img.shields.io/badge/DeepWiki-Ask%20AI-8B5CF6?style=for-the-badge&amp;amp;logo=gitbook&amp;amp;logoColor=white" alt="Ask DeepWiki" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;b&gt;Agent TARS&lt;/b&gt; is a general multimodal AI Agent stack, it brings the power of GUI Agent and Vision into your terminal, computer, browser and product. &lt;br /&gt; &lt;br /&gt; It primarily ships with a &lt;a href="https://agent-tars.com/guide/basic/cli.html" target="_blank"&gt;CLI&lt;/a&gt; and &lt;a href="https://agent-tars.com/guide/basic/web-ui.html" target="_blank"&gt;Web UI&lt;/a&gt; for usage. It aims to provide a workflow that is closer to human-like task completion through cutting-edge multimodal LLMs and seamless integration with various real-world &lt;a href="https://agent-tars.com/guide/basic/mcp.html" target="_blank"&gt;MCP&lt;/a&gt; tools.&lt;/p&gt; 
+&lt;h3&gt;Showcase&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;Please help me book the earliest flight from San Jose to New York on September 1st and the last return flight on September 6th on Priceline
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/772b0eef-aef7-4ab9-8cb0-9611820539d8"&gt;https://github.com/user-attachments/assets/772b0eef-aef7-4ab9-8cb0-9611820539d8&lt;/a&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th width="50%" align="center"&gt;Booking Hotel&lt;/th&gt; 
+   &lt;th width="50%" align="center"&gt;Generate Chart with extra MCP Servers&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; 
+    &lt;video src="https://github.com/user-attachments/assets/c9489936-afdc-4d12-adda-d4b90d2a869d" width="50%"&gt;&lt;/video&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; 
+    &lt;video src="https://github.com/user-attachments/assets/a9fd72d0-01bb-4233-aa27-ca95194bbce9" width="50%"&gt;&lt;/video&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt; &lt;b&gt;Instruction:&lt;/b&gt; &lt;i&gt;I am in Los Angeles from September 1st to September 6th, with a budget of $5,000. Please help me book a Ritz-Carlton hotel closest to the airport on booking.com and compile a transportation guide for me&lt;/i&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt; &lt;b&gt;Instruction:&lt;/b&gt; &lt;i&gt;Draw me a chart of Hangzhou's weather for one month&lt;/i&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;For more use cases, please check out &lt;a href="https://github.com/bytedance/UI-TARS-desktop/issues/842"&gt;#842&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Core Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🖱️ &lt;strong&gt;One-Click Out-of-the-box CLI&lt;/strong&gt; - Supports both &lt;strong&gt;headful&lt;/strong&gt; &lt;a href="https://agent-tars.com/guide/basic/web-ui.html"&gt;Web UI&lt;/a&gt; and &lt;strong&gt;headless&lt;/strong&gt; &lt;a href="https://agent-tars.com/guide/advanced/server.html"&gt;server&lt;/a&gt;) &lt;a href="https://agent-tars.com/guide/basic/cli.html"&gt;execution&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;🌐 &lt;strong&gt;Hybrid Browser Agent&lt;/strong&gt; - Control browsers using &lt;a href="https://agent-tars.com/guide/basic/browser.html#visual-grounding"&gt;GUI Agent&lt;/a&gt;, &lt;a href="https://agent-tars.com/guide/basic/browser.html#dom"&gt;DOM&lt;/a&gt;, or a hybrid strategy.&lt;/li&gt; 
+ &lt;li&gt;🔄 &lt;strong&gt;Event Stream&lt;/strong&gt; - Protocol-driven Event Stream drives &lt;a href="https://agent-tars.com/beta#context-engineering"&gt;Context Engineering&lt;/a&gt; and &lt;a href="https://agent-tars.com/blog/2025-06-25-introducing-agent-tars-beta.html#easy-to-build-applications"&gt;Agent UI&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;🧰 &lt;strong&gt;MCP Integration&lt;/strong&gt; - The kernel is built on MCP and also supports mounting &lt;a href="https://agent-tars.com/guide/basic/mcp.html"&gt;MCP Servers&lt;/a&gt; to connect to real-world tools.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Quick Start&lt;/h3&gt; 
+&lt;img alt="Agent TARS CLI" src="https://agent-tars.com/agent-tars-cli.png" /&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Launch with `npx`.
+npx @agent-tars/cli@latest
+
+# Install globally, required Node.js &amp;gt;= 22
+npm install @agent-tars/cli@latest -g
+
+# Run with your preferred model provider
+agent-tars --provider volcengine --model doubao-1-5-thinking-vision-pro-250428 --apiKey your-api-key
+agent-tars --provider anthropic --model claude-3-7-sonnet-latest --apiKey your-api-key
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Visit the comprehensive &lt;a href="https://agent-tars.com/guide/get-started/quick-start.html"&gt;Quick Start&lt;/a&gt; guide for detailed setup instructions.&lt;/p&gt; 
+&lt;h3&gt;Documentation&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;🌟 &lt;strong&gt;Explore Agent TARS Universe&lt;/strong&gt; 🌟&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th width="20%" align="center"&gt;Category&lt;/th&gt; 
+   &lt;th width="30%" align="center"&gt;Resource Link&lt;/th&gt; 
+   &lt;th width="50%" align="left"&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🏠 &lt;strong&gt;Central Hub&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com"&gt; &lt;img src="https://img.shields.io/badge/Visit-Website-4F46E5?style=for-the-badge&amp;amp;logo=globe&amp;amp;logoColor=white" alt="Website" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Your gateway to Agent TARS ecosystem&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;📚 &lt;strong&gt;Quick Start&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com/guide/get-started/quick-start.html"&gt; &lt;img src="https://img.shields.io/badge/Get-Started-06B6D4?style=for-the-badge&amp;amp;logo=rocket&amp;amp;logoColor=white" alt="Quick Start" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Zero to hero in 5 minutes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🚀 &lt;strong&gt;What's New&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com/beta"&gt; &lt;img src="https://img.shields.io/badge/Read-Blog-F59E0B?style=for-the-badge&amp;amp;logo=rss&amp;amp;logoColor=white" alt="Blog" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Discover cutting-edge features &amp;amp; vision&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🛠️ &lt;strong&gt;Developer Zone&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com/guide/get-started/introduction.html"&gt; &lt;img src="https://img.shields.io/badge/View-Docs-10B981?style=for-the-badge&amp;amp;logo=gitbook&amp;amp;logoColor=white" alt="Docs" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Master every command &amp;amp; features&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🎯 &lt;strong&gt;Showcase&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/bytedance/UI-TARS-desktop/issues/842"&gt; &lt;img src="https://img.shields.io/badge/View-Examples-8B5CF6?style=for-the-badge&amp;amp;logo=github&amp;amp;logoColor=white" alt="Examples" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;View use cases built by the official and community&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🔧 &lt;strong&gt;Reference&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com/api/"&gt; &lt;img src="https://img.shields.io/badge/API-Reference-EF4444?style=for-the-badge&amp;amp;logo=book&amp;amp;logoColor=white" alt="API" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Complete technical reference&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;UI-TARS Desktop&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;img alt="UI-TARS" width="260" src="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/apps/ui-tars/resources/icon.png" /&gt; &lt;/p&gt; 
+&lt;p&gt;UI-TARS Desktop is a native GUI agent for your local computer, driven by &lt;a href="https://github.com/bytedance/UI-TARS"&gt;UI-TARS&lt;/a&gt; and Seed-1.5-VL/1.6 series models.&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt; &amp;nbsp;&amp;nbsp; 📑 &lt;a href="https://arxiv.org/abs/2501.12326"&gt;Paper&lt;/a&gt; &amp;nbsp;&amp;nbsp; | 🤗 &lt;a href="https://huggingface.co/ByteDance-Seed/UI-TARS-1.5-7B"&gt;Hugging Face Models&lt;/a&gt;&amp;nbsp;&amp;nbsp; | &amp;nbsp;&amp;nbsp;🫨 &lt;a href="https://discord.gg/pTXwYVjfcs"&gt;Discord&lt;/a&gt;&amp;nbsp;&amp;nbsp; | &amp;nbsp;&amp;nbsp;🤖 &lt;a href="https://www.modelscope.cn/collections/UI-TARS-bccb56fa1ef640"&gt;ModelScope&lt;/a&gt;&amp;nbsp;&amp;nbsp; &lt;br /&gt; 🖥️ Desktop Application &amp;nbsp;&amp;nbsp; | &amp;nbsp;&amp;nbsp; 👓 &lt;a href="https://github.com/web-infra-dev/midscene"&gt;Midscene (use in browser)&lt;/a&gt; &amp;nbsp;&amp;nbsp; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h3&gt;Showcase&lt;/h3&gt; 
+&lt;!-- // FIXME: Choose only two demo, one local computer and one remote computer showcase. --&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="center"&gt;Instruction&lt;/th&gt; 
+   &lt;th align="center"&gt;Local Operator&lt;/th&gt; 
+   &lt;th align="center"&gt;Remote Operator&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Please help me open the autosave feature of VS Code and delay AutoSave operations for 500 milliseconds in the VS Code setting.&lt;/td&gt; 
+   &lt;td align="center"&gt;
+    &lt;video src="https://github.com/user-attachments/assets/e0914ce9-ad33-494b-bdec-0c25c1b01a27" height="300"&gt;&lt;/video&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;
+    &lt;video src="https://github.com/user-attachments/assets/01e49b69-7070-46c8-b3e3-2aaaaec71800" height="300"&gt;&lt;/video&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Could you help me check the latest open issue of the UI-TARS-Desktop project on GitHub?&lt;/td&gt; 
+   &lt;td align="center"&gt;
+    &lt;video src="https://github.com/user-attachments/assets/3d159f54-d24a-4268-96c0-e149607e9199" height="300"&gt;&lt;/video&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;
+    &lt;video src="https://github.com/user-attachments/assets/072fb72d-7394-4bfa-95f5-4736e29f7e58" height="300"&gt;&lt;/video&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🤖 Natural language control powered by Vision-Language Model&lt;/li&gt; 
+ &lt;li&gt;🖥️ Screenshot and visual recognition support&lt;/li&gt; 
+ &lt;li&gt;🎯 Precise mouse and keyboard control&lt;/li&gt; 
+ &lt;li&gt;💻 Cross-platform support (Windows/MacOS/Browser)&lt;/li&gt; 
+ &lt;li&gt;🔄 Real-time feedback and status display&lt;/li&gt; 
+ &lt;li&gt;🔐 Private and secure - fully local processing&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Quick Start&lt;/h3&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/docs/quick-start.md"&gt;Quick Start&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the Apache License 2.0.&lt;/p&gt; 
+&lt;h2&gt;Citation&lt;/h2&gt; 
+&lt;p&gt;If you find our paper and code useful in your research, please consider giving a star &lt;span&gt;⭐&lt;/span&gt; and citation &lt;span&gt;📝&lt;/span&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-BibTeX"&gt;@article{qin2025ui,
+  title={UI-TARS: Pioneering Automated GUI Interaction with Native Agents},
+  author={Qin, Yujia and Ye, Yining and Fang, Junjie and Wang, Haoming and Liang, Shihao and Tian, Shizuo and Zhang, Junda and Li, Jiahao and Li, Yunxin and Huang, Shijue and others},
+  journal={arXiv preprint arXiv:2501.12326},
+  year={2025}
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>anthropics/claude-code</title>
+      <link>https://github.com/anthropics/claude-code</link>
+      <description>&lt;p&gt;Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Claude Code&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://img.shields.io/badge/Node.js-18%2B-brightgreen?style=flat-square" alt="" /&gt; &lt;a href="https://www.npmjs.com/package/@anthropic-ai/claude-code"&gt;&lt;img src="https://img.shields.io/npm/v/@anthropic-ai/claude-code.svg?style=flat-square" alt="npm" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands. Use it in your terminal, IDE, or tag @claude on Github.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Learn more in the &lt;a href="https://code.claude.com/docs/en/overview"&gt;official documentation&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/anthropics/claude-code/main/demo.gif" /&gt; 
+&lt;h2&gt;Get started&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Install Claude Code:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;MacOS/Linux:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -fsSL https://claude.ai/install.sh | bash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Homebrew (MacOS):&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;brew install --cask claude-code
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Windows:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-powershell"&gt;irm https://claude.ai/install.ps1 | iex
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;NPM:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install -g @anthropic-ai/claude-code
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;NOTE: If installing with NPM, you also need to install &lt;a href="https://nodejs.org/en/download/"&gt;Node.js 18+&lt;/a&gt;&lt;/p&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Navigate to your project directory and run &lt;code&gt;claude&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Plugins&lt;/h2&gt; 
+&lt;p&gt;This repository includes several Claude Code plugins that extend functionality with custom commands and agents. See the &lt;a href="https://raw.githubusercontent.com/anthropics/claude-code/main/plugins/README.md"&gt;plugins directory&lt;/a&gt; for detailed documentation on available plugins.&lt;/p&gt; 
+&lt;h2&gt;Reporting Bugs&lt;/h2&gt; 
+&lt;p&gt;We welcome your feedback. Use the &lt;code&gt;/bug&lt;/code&gt; command to report issues directly within Claude Code, or file a &lt;a href="https://github.com/anthropics/claude-code/issues"&gt;GitHub issue&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Connect on Discord&lt;/h2&gt; 
+&lt;p&gt;Join the &lt;a href="https://anthropic.com/discord"&gt;Claude Developers Discord&lt;/a&gt; to connect with other developers using Claude Code. Get help, share feedback, and discuss your projects with the community.&lt;/p&gt; 
+&lt;h2&gt;Data collection, usage, and retention&lt;/h2&gt; 
+&lt;p&gt;When you use Claude Code, we collect feedback, which includes usage data (such as code acceptance or rejections), associated conversation data, and user feedback submitted via the &lt;code&gt;/bug&lt;/code&gt; command.&lt;/p&gt; 
+&lt;h3&gt;How we use your data&lt;/h3&gt; 
+&lt;p&gt;See our &lt;a href="https://code.claude.com/docs/en/data-usage"&gt;data usage policies&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Privacy safeguards&lt;/h3&gt; 
+&lt;p&gt;We have implemented several safeguards to protect your data, including limited retention periods for sensitive information, restricted access to user session data, and clear policies against using feedback for model training.&lt;/p&gt; 
+&lt;p&gt;For full details, please review our &lt;a href="https://www.anthropic.com/legal/commercial-terms"&gt;Commercial Terms of Service&lt;/a&gt; and &lt;a href="https://www.anthropic.com/legal/privacy"&gt;Privacy Policy&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>davila7/claude-code-templates</title>
+      <link>https://github.com/davila7/claude-code-templates</link>
+      <description>&lt;p&gt;CLI tool for configuring and monitoring Claude Code&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a href="https://www.npmjs.com/package/claude-code-templates"&gt;&lt;img src="https://img.shields.io/npm/v/claude-code-templates.svg?sanitize=true" alt="npm version" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/claude-code-templates"&gt;&lt;img src="https://img.shields.io/npm/dt/claude-code-templates.svg?sanitize=true" alt="npm downloads" /&gt;&lt;/a&gt; &lt;a href="https://opensource.org/licenses/MIT"&gt;&lt;img src="https://img.shields.io/badge/License-MIT-yellow.svg?sanitize=true" alt="License: MIT" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/davila7/claude-code-templates/main/CONTRIBUTING.md"&gt;&lt;img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?sanitize=true" alt="PRs Welcome" /&gt;&lt;/a&gt; &lt;a href="https://z.ai/subscribe?ic=8JVLJQFSKB&amp;amp;utm_source=github&amp;amp;utm_medium=badge&amp;amp;utm_campaign=readme"&gt;&lt;img src="https://img.shields.io/badge/Sponsored%20by-Z.AI-2563eb?style=flat&amp;amp;logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMiAyMkgyMkwxMiAyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+" alt="Sponsored by Z.AI" /&gt;&lt;/a&gt; &lt;a href="https://buymeacoffee.com/daniavila"&gt;&lt;img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow?style=flat&amp;amp;logo=buy-me-a-coffee" alt="Buy Me A Coffee" /&gt;&lt;/a&gt; &lt;a href="https://github.com/davila7/claude-code-templates"&gt;&lt;img src="https://img.shields.io/github/stars/davila7/claude-code-templates.svg?style=social&amp;amp;label=Star" alt="GitHub stars" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/15113" target="_blank"&gt; &lt;img src="https://trendshift.io/api/badge/repositories/15113" alt="davila7%2Fclaude-code-templates | Trendshift" style="width: 200px; height: 40px;" width="125" height="40" /&gt; &lt;/a&gt; &lt;br /&gt; &lt;br /&gt; &lt;a href="https://vercel.com/oss"&gt; &lt;img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg?sanitize=true" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;div align="center"&gt; 
+ &lt;h3&gt;🤝 Partnership&lt;/h3&gt; 
+ &lt;p&gt; &lt;strong&gt;This project is sponsored by &lt;a href="https://z.ai" target="_blank"&gt;Z.AI&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt; Supporting Claude Code Templates with the &lt;strong&gt;GLM CODING PLAN&lt;/strong&gt; &lt;/p&gt; 
+ &lt;p&gt; &lt;a href="https://z.ai/subscribe?ic=8JVLJQFSKB&amp;amp;utm_source=github&amp;amp;utm_medium=readme&amp;amp;utm_campaign=partnership" target="_blank"&gt; &lt;img src="https://img.shields.io/badge/Get%2010%25%20OFF-GLM%20Coding%20Plan-2563eb?style=for-the-badge" alt="GLM Coding Plan" /&gt; &lt;/a&gt; &lt;/p&gt; 
+ &lt;p&gt; &lt;em&gt;Top-tier coding performance powered by GLM-4.6 • Starting at $3/month&lt;/em&gt;&lt;br /&gt; &lt;em&gt;Seamlessly integrates with Claude Code, Cursor, Cline &amp;amp; 10+ AI coding tools&lt;/em&gt; &lt;/p&gt; 
+ &lt;p&gt; &lt;code&gt;npx claude-code-templates@latest --setting partnerships/glm-coding-plan --yes&lt;/code&gt; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;Claude Code Templates (&lt;a href="https://aitmpl.com"&gt;aitmpl.com&lt;/a&gt;)&lt;/h1&gt; 
+&lt;p&gt;&lt;strong&gt;Ready-to-use configurations for Anthropic's Claude Code.&lt;/strong&gt; A comprehensive collection of AI agents, custom commands, settings, hooks, external integrations (MCPs), and project templates to enhance your development workflow.&lt;/p&gt; 
+&lt;h2&gt;Browse &amp;amp; Install Components and Templates&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://aitmpl.com"&gt;Browse All Templates&lt;/a&gt;&lt;/strong&gt; - Interactive web interface to explore and install 100+ agents, commands, settings, hooks, and MCPs.&lt;/p&gt; 
+&lt;img width="1049" height="855" alt="Screenshot 2025-08-19 at 08 09 24" src="https://github.com/user-attachments/assets/e3617410-9b1c-4731-87b7-a3858800b737" /&gt; 
+&lt;h2&gt;🚀 Quick Installation&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Install a complete development stack
+npx claude-code-templates@latest --agent development-team/frontend-developer --command testing/generate-tests --mcp development/github-integration --yes
+
+# Browse and install interactively
+npx claude-code-templates@latest
+
+# Install specific components
+npx claude-code-templates@latest --agent development-tools/code-reviewer --yes
+npx claude-code-templates@latest --command performance/optimize-bundle --yes
+npx claude-code-templates@latest --setting performance/mcp-timeouts --yes
+npx claude-code-templates@latest --hook git/pre-commit-validation --yes
+npx claude-code-templates@latest --mcp database/postgresql-integration --yes
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;What You Get&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Component&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+   &lt;th&gt;Examples&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;🤖 Agents&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;AI specialists for specific domains&lt;/td&gt; 
+   &lt;td&gt;Security auditor, React performance optimizer, database architect&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;⚡ Commands&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Custom slash commands&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;/generate-tests&lt;/code&gt;, &lt;code&gt;/optimize-bundle&lt;/code&gt;, &lt;code&gt;/check-security&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;🔌 MCPs&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;External service integrations&lt;/td&gt; 
+   &lt;td&gt;GitHub, PostgreSQL, Stripe, AWS, OpenAI&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;⚙️ Settings&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Claude Code configurations&lt;/td&gt; 
+   &lt;td&gt;Timeouts, memory settings, output styles&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;🪝 Hooks&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Automation triggers&lt;/td&gt; 
+   &lt;td&gt;Pre-commit validation, post-completion actions&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;🎨 Skills&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Reusable capabilities with progressive disclosure&lt;/td&gt; 
+   &lt;td&gt;PDF processing, Excel automation, custom workflows&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;🛠️ Additional Tools&lt;/h2&gt; 
+&lt;p&gt;Beyond the template catalog, Claude Code Templates includes powerful development tools:&lt;/p&gt; 
+&lt;h3&gt;📊 Claude Code Analytics&lt;/h3&gt; 
+&lt;p&gt;Monitor your AI-powered development sessions in real-time with live state detection and performance metrics.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx claude-code-templates@latest --analytics
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;💬 Conversation Monitor&lt;/h3&gt; 
+&lt;p&gt;Mobile-optimized interface to view Claude responses in real-time with secure remote access.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Local access
+npx claude-code-templates@latest --chats
+
+# Secure remote access via Cloudflare Tunnel
+npx claude-code-templates@latest --chats --tunnel
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;🔍 Health Check&lt;/h3&gt; 
+&lt;p&gt;Comprehensive diagnostics to ensure your Claude Code installation is optimized.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx claude-code-templates@latest --health-check
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;🔌 Plugin Dashboard&lt;/h3&gt; 
+&lt;p&gt;View marketplaces, installed plugins, and manage permissions from a unified interface.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx claude-code-templates@latest --plugins
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;📖 Documentation&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://docs.aitmpl.com/"&gt;📚 docs.aitmpl.com&lt;/a&gt;&lt;/strong&gt; - Complete guides, examples, and API reference for all components and tools.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions! &lt;strong&gt;&lt;a href="https://aitmpl.com"&gt;Browse existing templates&lt;/a&gt;&lt;/strong&gt; to see what's available, then check our &lt;a href="https://raw.githubusercontent.com/davila7/claude-code-templates/main/CONTRIBUTING.md"&gt;contributing guidelines&lt;/a&gt; to add your own agents, commands, MCPs, settings, or hooks.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Please read our &lt;a href="https://raw.githubusercontent.com/davila7/claude-code-templates/main/CODE_OF_CONDUCT.md"&gt;Code of Conduct&lt;/a&gt; before contributing.&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Attribution&lt;/h2&gt; 
+&lt;p&gt;This collection includes components from multiple sources:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Scientific Skills:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/K-Dense-AI/claude-scientific-skills"&gt;K-Dense-AI/claude-scientific-skills&lt;/a&gt;&lt;/strong&gt; by K-Dense Inc. - MIT License (139 scientific skills for biology, chemistry, medicine, and computational research)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Official Anthropic:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/anthropics/skills"&gt;anthropics/skills&lt;/a&gt;&lt;/strong&gt; - Official Anthropic skills (21 skills)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/anthropics/claude-code"&gt;anthropics/claude-code&lt;/a&gt;&lt;/strong&gt; - Development guides and examples (10 skills)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Community Skills &amp;amp; Agents:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/obra/superpowers"&gt;obra/superpowers&lt;/a&gt;&lt;/strong&gt; by Jesse Obra - MIT License (14 workflow skills)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/alirezarezvani/claude-skills"&gt;alirezarezvani/claude-skills&lt;/a&gt;&lt;/strong&gt; by Alireza Rezvani - MIT License (36 professional role skills)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/wshobson/agents"&gt;wshobson/agents&lt;/a&gt;&lt;/strong&gt; by wshobson - MIT License (48 agents)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;NerdyChefsAI Skills&lt;/strong&gt; - Community contribution - MIT License (specialized enterprise skills)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Commands &amp;amp; Tools:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/hesreallyhim/awesome-claude-code"&gt;awesome-claude-code&lt;/a&gt;&lt;/strong&gt; by hesreallyhim - CC0 1.0 Universal (21 commands)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://github.com/mehdi-lamrani/awesome-claude-skills"&gt;awesome-claude-skills&lt;/a&gt;&lt;/strong&gt; - Apache 2.0 (community skills)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;move-code-quality-skill&lt;/strong&gt; - MIT License&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;cocoindex-claude&lt;/strong&gt; - Apache 2.0&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Each of these resources retains its &lt;strong&gt;original license and attribution&lt;/strong&gt;, as defined by their respective authors. We respect and credit all original creators for their work and contributions to the Claude ecosystem.&lt;/p&gt; 
+&lt;h2&gt;📄 License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the MIT License - see the &lt;a href="https://raw.githubusercontent.com/davila7/claude-code-templates/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;h2&gt;🔗 Links&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;🌐 Browse Templates&lt;/strong&gt;: &lt;a href="https://aitmpl.com"&gt;aitmpl.com&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;📚 Documentation&lt;/strong&gt;: &lt;a href="https://docs.aitmpl.com"&gt;docs.aitmpl.com&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;💬 Community&lt;/strong&gt;: &lt;a href="https://github.com/davila7/claude-code-templates/discussions"&gt;GitHub Discussions&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🐛 Issues&lt;/strong&gt;: &lt;a href="https://github.com/davila7/claude-code-templates/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Stargazers over time&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://starchart.cc/davila7/claude-code-templates"&gt;&lt;img src="https://starchart.cc/davila7/claude-code-templates.svg?variant=adaptive" alt="Stargazers over time" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;⭐ Found this useful? Give us a star to support the project!&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://buymeacoffee.com/daniavila"&gt;&lt;img src="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&amp;amp;slug=daniavila&amp;amp;button_colour=FFDD00&amp;amp;font_colour=000000&amp;amp;font_family=Cookie&amp;amp;outline_colour=000000&amp;amp;coffee_colour=ffffff" alt="Buy Me A Coffee" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>anomalyco/opencode</title>
+      <link>https://github.com/anomalyco/opencode</link>
+      <description>&lt;p&gt;The open source coding agent.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://opencode.ai"&gt; 
+  &lt;picture&gt; 
+   &lt;source srcset="packages/console/app/src/asset/logo-ornate-dark.svg" media="(prefers-color-scheme: dark)" /&gt; 
+   &lt;source srcset="packages/console/app/src/asset/logo-ornate-light.svg" media="(prefers-color-scheme: light)" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/console/app/src/asset/logo-ornate-light.svg?sanitize=true" alt="OpenCode logo" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;The open source AI coding agent.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://opencode.ai/discord"&gt;&lt;img alt="Discord" src="https://img.shields.io/discord/1391832426048651334?style=flat-square&amp;amp;label=discord" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/opencode-ai"&gt;&lt;img alt="npm" src="https://img.shields.io/npm/v/opencode-ai?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://github.com/anomalyco/opencode/actions/workflows/publish.yml"&gt;&lt;img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/anomalyco/opencode/publish.yml?style=flat-square&amp;amp;branch=dev" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://opencode.ai"&gt;&lt;img src="https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/web/src/assets/lander/screenshot.png" alt="OpenCode Terminal UI" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Installation&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# YOLO
+curl -fsSL https://opencode.ai/install | bash
+
+# Package managers
+npm i -g opencode-ai@latest        # or bun/pnpm/yarn
+scoop bucket add extras; scoop install extras/opencode  # Windows
+choco install opencode             # Windows
+brew install anomalyco/tap/opencode # macOS and Linux (recommended, always up to date)
+brew install opencode              # macOS and Linux (official brew formula, updated less)
+paru -S opencode-bin               # Arch Linux
+mise use -g opencode               # Any OS
+nix run nixpkgs#opencode           # or github:anomalyco/opencode for latest dev branch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] Remove versions older than 0.1.x before installing.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Desktop App (BETA)&lt;/h3&gt; 
+&lt;p&gt;OpenCode is also available as a desktop application. Download directly from the &lt;a href="https://github.com/anomalyco/opencode/releases"&gt;releases page&lt;/a&gt; or &lt;a href="https://opencode.ai/download"&gt;opencode.ai/download&lt;/a&gt;.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Platform&lt;/th&gt; 
+   &lt;th&gt;Download&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;macOS (Apple Silicon)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-darwin-aarch64.dmg&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;macOS (Intel)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-darwin-x64.dmg&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Windows&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-windows-x64.exe&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Linux&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;.deb&lt;/code&gt;, &lt;code&gt;.rpm&lt;/code&gt;, or AppImage&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# macOS (Homebrew)
+brew install --cask opencode-desktop
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Installation Directory&lt;/h4&gt; 
+&lt;p&gt;The install script respects the following priority order for the installation path:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;code&gt;$OPENCODE_INSTALL_DIR&lt;/code&gt; - Custom installation directory&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$XDG_BIN_DIR&lt;/code&gt; - XDG Base Directory Specification compliant path&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$HOME/bin&lt;/code&gt; - Standard user binary directory (if exists or can be created)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$HOME/.opencode/bin&lt;/code&gt; - Default fallback&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Examples
+OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/install | bash
+XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/install | bash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Agents&lt;/h3&gt; 
+&lt;p&gt;OpenCode includes two built-in agents you can switch between with the &lt;code&gt;Tab&lt;/code&gt; key.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;build&lt;/strong&gt; - Default, full access agent for development work&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;plan&lt;/strong&gt; - Read-only agent for analysis and code exploration 
+  &lt;ul&gt; 
+   &lt;li&gt;Denies file edits by default&lt;/li&gt; 
+   &lt;li&gt;Asks permission before running bash commands&lt;/li&gt; 
+   &lt;li&gt;Ideal for exploring unfamiliar codebases or planning changes&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Also, included is a &lt;strong&gt;general&lt;/strong&gt; subagent for complex searches and multistep tasks. This is used internally and can be invoked using &lt;code&gt;@general&lt;/code&gt; in messages.&lt;/p&gt; 
+&lt;p&gt;Learn more about &lt;a href="https://opencode.ai/docs/agents"&gt;agents&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Documentation&lt;/h3&gt; 
+&lt;p&gt;For more info on how to configure OpenCode &lt;a href="https://opencode.ai/docs"&gt;&lt;strong&gt;head over to our docs&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Contributing&lt;/h3&gt; 
+&lt;p&gt;If you're interested in contributing to OpenCode, please read our &lt;a href="https://raw.githubusercontent.com/anomalyco/opencode/dev/CONTRIBUTING.md"&gt;contributing docs&lt;/a&gt; before submitting a pull request.&lt;/p&gt; 
+&lt;h3&gt;Building on OpenCode&lt;/h3&gt; 
+&lt;p&gt;If you are working on a project that's related to OpenCode and is using "opencode" as a part of its name; for example, "opencode-dashboard" or "opencode-mobile", please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.&lt;/p&gt; 
+&lt;h3&gt;FAQ&lt;/h3&gt; 
+&lt;h4&gt;How is this different from Claude Code?&lt;/h4&gt; 
+&lt;p&gt;It's very similar to Claude Code in terms of capability. Here are the key differences:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;100% open source&lt;/li&gt; 
+ &lt;li&gt;Not coupled to any provider. Although we recommend the models we provide through &lt;a href="https://opencode.ai/zen"&gt;OpenCode Zen&lt;/a&gt;; OpenCode can be used with Claude, OpenAI, Google or even local models. As models evolve the gaps between them will close and pricing will drop so being provider-agnostic is important.&lt;/li&gt; 
+ &lt;li&gt;Out of the box LSP support&lt;/li&gt; 
+ &lt;li&gt;A focus on TUI. OpenCode is built by neovim users and the creators of &lt;a href="https://terminal.shop"&gt;terminal.shop&lt;/a&gt;; we are going to push the limits of what's possible in the terminal.&lt;/li&gt; 
+ &lt;li&gt;A client/server architecture. This for example can allow OpenCode to run on your computer, while you can drive it remotely from a mobile app. Meaning that the TUI frontend is just one of the possible clients.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Join our community&lt;/strong&gt; &lt;a href="https://discord.gg/opencode"&gt;Discord&lt;/a&gt; | &lt;a href="https://x.com/opencode"&gt;X.com&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>home-assistant/home-assistant.io</title>
+      <link>https://github.com/home-assistant/home-assistant.io</link>
+      <description>&lt;p&gt;📘 Home Assistant User documentation&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a href="https://www.home-assistant.io/join-chat/"&gt;&lt;img src="https://img.shields.io/discord/330944238910963714.svg?sanitize=true" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;&lt;img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg?sanitize=true" alt="License: CC BY-NC-SA 4.0" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.netlify.com"&gt;&lt;img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg?sanitize=true" alt="Deploys by netlify" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Home Assistant website&lt;/h1&gt; 
+&lt;p&gt;This is the source for the &lt;a href="https://home-assistant.io"&gt;Home-Assistant.io website&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Access&lt;/h2&gt; 
+&lt;p&gt;You can access the site at the following URLs, depending on the target branch:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt; (&lt;code&gt;current&lt;/code&gt; branch): &lt;a href="https://www.home-assistant.io"&gt;https://www.home-assistant.io&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Beta&lt;/strong&gt; (&lt;code&gt;rc&lt;/code&gt; branch): &lt;a href="https://rc.home-assistant.io"&gt;https://rc.home-assistant.io&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Development&lt;/strong&gt; (&lt;code&gt;next&lt;/code&gt; branch): &lt;a href="https://next.home-assistant.io"&gt;https://next.home-assistant.io&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Additionally, Netlify provides a preview deployment for every pull request, linked in the first PR comment.&lt;/p&gt; 
+&lt;h2&gt;Setup&lt;/h2&gt; 
+&lt;p&gt;Setting up to contribute to documentation and the process for submitting pull requests is explained in the &lt;a href="https://developers.home-assistant.io/docs/documenting/"&gt;developer documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Site preview&lt;/h2&gt; 
+&lt;p&gt;In order to make the preview available on &lt;code&gt;http://127.0.0.1:4000&lt;/code&gt;, use the following &lt;a href="https://bundler.io/"&gt;bundler&lt;/a&gt; command:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bundle exec rake preview
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If the preview is not running on your local machine, pass the IP of the target machine from where it should be served as a parameter, i.e. to access on &lt;code&gt;http://192.168.0.123:4000&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bundle exec rake preview[192.168.0.123]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Speeding up site generation&lt;/h2&gt; 
+&lt;p&gt;Every release we post long changelogs to the website. This slows down generation of the website significantly! We include some tools to temporarily exclude the blog posts that you're not working on out of the way.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bundle exec rake isolate[filename-of-blogpost]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;When you're done working on the site, run the following command to move the posts back again:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bundle exec rake integrate
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;a href="https://www.openhomefoundation.org/"&gt;&lt;img src="https://www.openhomefoundation.org/badges/home-assistant.png" alt="Home Assistant - A project from the Open Home Foundation" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>gyoridavid/ai_agents_az</title>
+      <link>https://github.com/gyoridavid/ai_agents_az</link>
+      <description>&lt;p&gt;&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;AI Agents A-Z&lt;/h1&gt; 
+&lt;p&gt;In this repo, you can find the n8n templates we created for the episodes of &lt;a href="https://www.youtube.com/channel/UCloXqLhp_KGhHBe1kwaL2Tg"&gt;AI Agents A-Z&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Season 1&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_1"&gt;Episode 1: Creating a prescription agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_2"&gt;Episode 2: Making a daily digest agent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_3"&gt;Episode 3: Making LinkedIn posts using Human in the Loop approval process&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_4"&gt;Episode 4: Deep Research Agent using Google&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_5"&gt;Episode 5: Creating a blog writing system using deep research&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_6"&gt;Episode 6: Lead generation with X-Ray search and LinkedIn&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_7"&gt;Episode 7: Creating Youtube short videos using our custom MCP server&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_8"&gt;Episode 8: Creating an AI influencer on Instagram using n8n&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_9"&gt;Episode 9: Create revenge story videos for YouTube&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_10"&gt;Episode 10: n8n best practices&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_11"&gt;Episode 11: Create short (motivational) stories for YouTube and TikTok&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_12"&gt;Episode 12: Scheduling social media posts with Postiz and n8n&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_13"&gt;Episode 13: Create AI videos with MiniMax Hailuo 2 and n8n&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_14"&gt;Episode 14: Create AI videos with Seedance and n8n&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_15"&gt;Episode 15: Generate AI startup ideas from Reddit&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_16"&gt;Episode 16: Create AI poem videos with n8n for TikTok&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_17"&gt;Episode 17: Create Shopify product videos with Seedance, ElevenLabs, Latentsync, Flux Kontext and n8n&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_18"&gt;Episode 18: Scary story TikTok videos workflow&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_19"&gt;Episode 19: Run FLUX.1 Kontext [dev] with modal.com&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_20"&gt;Episode 20: Use Wan 2.2, ComfyUI and n8n to generate videos for free&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_21"&gt;Episode 21: 10 EASY faceless niches that pay well - monetize in a MONTH (2025)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_22"&gt;Episode 22: Sleep long-form videos with GPT-5, ElevenMusic, Imagen4, Seendance and n8n&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_23"&gt;Episode 23: UGC videos with nanobanana and n8n&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_24"&gt;Episode 24: generate images with Qwen Image, Flux.1 [dev] and Flux.1 Schnell with modal.com and Cloudflare Workers AI&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_25"&gt;Episode 25: Fal.ai n8n subworkflows for Qwen Image Edit Plus and Wan 2.2 animate&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_31"&gt;Episode 31: Veo 3.1 is now in n8n - how to use it for FREE&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_35"&gt;Episode 35: Instagram influencer machine&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_36"&gt;Episode 36: Viral bodycam footage creator with Sora 2&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_38"&gt;Episode 38: Create AI reaction videos with Veo 3.1 and n8n&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_39"&gt;Episode 39: Create infographics with Nano Banana Pro in n8n&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_40"&gt;Episode 40: Flux.2[dev] with n8n&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_41"&gt;Episode 41: FREE z-image-turbo with n8n&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/gyoridavid/ai_agents_az/main/episode_42"&gt;Episode 42: 100% FREE explainer videos with n8n and Z-Image&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;servers&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://hub.docker.com/r/gyoridavid/ai-agents-no-code-tools"&gt;AI Agents No-Code Tools&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/gyoridavid/short-video-maker"&gt;Short video maker MCP/REST server&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://hub.docker.com/r/gyoridavid/narrated-story-creator"&gt;Narrated story creator REST/MCP server&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>twitter/twemoji</title>
+      <link>https://github.com/twitter/twemoji</link>
+      <description>&lt;p&gt;Emoji for everyone. https://twemoji.twitter.com/&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Twitter Emoji (Twemoji) &lt;a href="https://travis-ci.org/twitter/twemoji"&gt;&lt;img src="https://travis-ci.org/twitter/twemoji.svg?branch=gh-pages" alt="Build Status" /&gt;&lt;/a&gt;&lt;/h1&gt; 
+&lt;p&gt;A simple library that provides standard Unicode &lt;a href="http://en.wikipedia.org/wiki/Emoji"&gt;emoji&lt;/a&gt; support across all platforms.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Twemoji v14.0&lt;/strong&gt; adheres to the &lt;a href="https://unicode.org/versions/Unicode14.0.0/"&gt;Unicode 14.0 spec&lt;/a&gt; and supports the &lt;a href="https://www.unicode.org/reports/tr51/tr51-21.html"&gt;Emoji 14.0 spec&lt;/a&gt;. &lt;em&gt;We do not support custom emoji.&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;The Twemoji library offers support for all Unicode-defined emoji which are recommended for general interchange (RGI).&lt;/p&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;h3&gt;CDN Support&lt;/h3&gt; 
+&lt;p&gt;&lt;del&gt;The folks over at &lt;a href="https://www.maxcdn.com"&gt;MaxCDN&lt;/a&gt; have graciously provided CDN support.&lt;/del&gt;&lt;/p&gt; 
+&lt;p&gt;MaxCDN is shut down right now, so in the meanwhile use a different CDN or download the assets. (See &lt;a href="https://github.com/twitter/twemoji/issues/580"&gt;Maxcdn has shut down, cdn not working anymore. · Issue #580 · twitter/twemoji&lt;/a&gt;).&lt;/p&gt; 
+&lt;p&gt;Use the following in the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; tag of your HTML document(s):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This guarantees that you will always use the latest version of the library.&lt;/p&gt; 
+&lt;p&gt;If, instead, you'd like to include the latest version explicitly, you can add the following tag:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;script src="https://unpkg.com/twemoji@14.0.3/dist/twemoji.min.js" integrity="sha384-eoGiwFCoIsUzdZGbvJ/7h/ICofqh5LolgoDnsgdbLptvnpK4+/swGDdkv3sb6bq+" crossorigin="anonymous"&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Download&lt;/h3&gt; 
+&lt;p&gt;If instead you want to download a specific version, please look at the &lt;code&gt;gh-pages&lt;/code&gt; branch, where you will find the built assets for both our latest and older versions.&lt;/p&gt; 
+&lt;h2&gt;API&lt;/h2&gt; 
+&lt;p&gt;Following are all the methods exposed in the &lt;code&gt;twemoji&lt;/code&gt; namespace.&lt;/p&gt; 
+&lt;h3&gt;twemoji.parse( ... ) V1&lt;/h3&gt; 
+&lt;p&gt;This is the main parsing utility and has 3 overloads per parsing type.&lt;/p&gt; 
+&lt;p&gt;Although there are two kinds of parsing supported by this utility, we recommend you use &lt;a href="https://github.com/twitter/twemoji#dom-parsing"&gt;DOM parsing&lt;/a&gt;, explained below. Each type of parsing accepts a callback to generate an image source or an options object with parsing info.&lt;/p&gt; 
+&lt;p&gt;The second kind of parsing is string parsing, explained in the legacy documentation &lt;a href="https://github.com/twitter/twemoji/raw/master/LEGACY.md#string-parsing"&gt;here&lt;/a&gt;. This is unrecommended because this method does not sanitize the string or otherwise prevent malicious code from being executed; such sanitization is out of scope.&lt;/p&gt; 
+&lt;h4&gt;DOM parsing&lt;/h4&gt; 
+&lt;p&gt;If the first argument to &lt;code&gt;twemoji.parse&lt;/code&gt; is an &lt;code&gt;HTMLElement&lt;/code&gt;, generated image tags will replace emoji that are &lt;strong&gt;inside &lt;code&gt;#text&lt;/code&gt; nodes only&lt;/strong&gt; without compromising surrounding nodes or listeners, and completely avoiding the usage of &lt;code&gt;innerHTML&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;If security is a major concern, this parsing can be considered the safest option but with a slight performance penalty due to DOM operations that are inevitably &lt;em&gt;costly&lt;/em&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-js"&gt;var div = document.createElement('div');
+div.textContent = 'I \u2764\uFE0F emoji!';
+document.body.appendChild(div);
+
+twemoji.parse(document.body);
+
+var img = div.querySelector('img');
+
+// note the div is preserved
+img.parentNode === div; // true
+
+img.src;        // https://twemoji.maxcdn.com/v/latest/72x72/2764.png
+img.alt;        // \u2764\uFE0F
+img.className;  // emoji
+img.draggable;  // false
+
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;All other overloads described for &lt;code&gt;string&lt;/code&gt; are available in exactly the same way for DOM parsing.&lt;/p&gt; 
+&lt;h3&gt;Object as parameter&lt;/h3&gt; 
+&lt;p&gt;Here's the list of properties accepted by the optional object that can be passed to the &lt;code&gt;parse&lt;/code&gt; function.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-js"&gt;  {
+    callback: Function,   // default the common replacer
+    attributes: Function, // default returns {}
+    base: string,         // default MaxCDN
+    ext: string,          // default ".png"
+    className: string,    // default "emoji"
+    size: string|number,  // default "72x72"
+    folder: string        // in case it's specified
+                          // it replaces .size info, if any
+  }
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;callback&lt;/h4&gt; 
+&lt;p&gt;The function to invoke in order to generate image &lt;code&gt;src&lt;/code&gt;(s).&lt;/p&gt; 
+&lt;p&gt;By default it is a function like the following one:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-js"&gt;function imageSourceGenerator(icon, options) {
+  return ''.concat(
+    options.base, // by default Twitter Inc. CDN
+    options.size, // by default "72x72" string
+    '/',
+    icon,         // the found emoji as code point
+    options.ext   // by default ".png"
+  );
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;base&lt;/h4&gt; 
+&lt;p&gt;The default url is the same as &lt;code&gt;twemoji.base&lt;/code&gt;, so if you modify the former, it will reflect as default for all parsed strings or nodes.&lt;/p&gt; 
+&lt;h4&gt;ext&lt;/h4&gt; 
+&lt;p&gt;The default image extension is the same as &lt;code&gt;twemoji.ext&lt;/code&gt; which is &lt;code&gt;".png"&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;If you modify the former, it will reflect as default for all parsed strings or nodes.&lt;/p&gt; 
+&lt;h4&gt;className&lt;/h4&gt; 
+&lt;p&gt;The default &lt;code&gt;class&lt;/code&gt; for each generated image is &lt;code&gt;emoji&lt;/code&gt;. It is possible to specify a different one through this property.&lt;/p&gt; 
+&lt;h5&gt;size&lt;/h5&gt; 
+&lt;p&gt;The default asset size is the same as &lt;code&gt;twemoji.size&lt;/code&gt; which is &lt;code&gt;"72x72"&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;If you modify the former, it will reflect as default for all parsed strings or nodes.&lt;/p&gt; 
+&lt;h4&gt;folder&lt;/h4&gt; 
+&lt;p&gt;In case you don't want to specify a size for the image. It is possible to choose a folder, as in the case of SVG emoji.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-js"&gt;twemoji.parse(genericNode, {
+  folder: 'svg',
+  ext: '.svg'
+});
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This will generate urls such &lt;code&gt;https://twemoji.maxcdn.com/svg/2764.svg&lt;/code&gt; instead of using a specific size based image.&lt;/p&gt; 
+&lt;h2&gt;Utilities&lt;/h2&gt; 
+&lt;p&gt;Basic utilities / helpers to convert code points to JavaScript surrogates and vice versa.&lt;/p&gt; 
+&lt;h3&gt;twemoji.convert.fromCodePoint()&lt;/h3&gt; 
+&lt;p&gt;For a given HEX codepoint, returns UTF-16 surrogate pairs.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-js"&gt;twemoji.convert.fromCodePoint('1f1e8');
+ // "\ud83c\udde8"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;twemoji.convert.toCodePoint()&lt;/h3&gt; 
+&lt;p&gt;For given UTF-16 surrogate pairs, returns the equivalent HEX codepoint.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-js"&gt; twemoji.convert.toCodePoint('\ud83c\udde8\ud83c\uddf3');
+ // "1f1e8-1f1f3"
+
+ twemoji.convert.toCodePoint('\ud83c\udde8\ud83c\uddf3', '~');
+ // "1f1e8~1f1f3"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Tips&lt;/h2&gt; 
+&lt;h3&gt;Inline Styles&lt;/h3&gt; 
+&lt;p&gt;If you'd like to size the emoji according to the surrounding text, you can add the following CSS to your stylesheet:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-css"&gt;img.emoji {
+   height: 1em;
+   width: 1em;
+   margin: 0 .05em 0 .1em;
+   vertical-align: -0.1em;
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This will make sure emoji derive their width and height from the &lt;code&gt;font-size&lt;/code&gt; of the text they're shown with. It also adds just a little bit of space before and after each emoji, and pulls them upwards a little bit for better optical alignment.&lt;/p&gt; 
+&lt;h3&gt;UTF-8 Character Set&lt;/h3&gt; 
+&lt;p&gt;To properly support emoji, the document character set must be set to UTF-8. This can be done by including the following meta tag in the document &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;meta charset="utf-8"&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Exclude Characters (V1)&lt;/h3&gt; 
+&lt;p&gt;To exclude certain characters from being replaced by twemoji.js, call twemoji.parse() with a callback, returning false for the specific unicode icon. For example:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-js"&gt;twemoji.parse(document.body, {
+    callback: function(icon, options, variant) {
+        switch ( icon ) {
+            case 'a9':      // © copyright
+            case 'ae':      // ® registered trademark
+            case '2122':    // ™ trademark
+                return false;
+        }
+        return ''.concat(options.base, options.size, '/', icon, options.ext);
+    }
+});
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Legacy API (V1)&lt;/h2&gt; 
+&lt;p&gt;If you're still using our V1 API, you can read our legacy documentation &lt;a href="https://github.com/twitter/twemoji/tree/master/LEGACY.md"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;The contributing documentation can be found &lt;a href="https://github.com/twitter/twemoji/tree/master/CONTRIBUTING.md"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Attribution Requirements&lt;/h2&gt; 
+&lt;p&gt;As an open source project, attribution is critical from a legal, practical and motivational perspective in our opinion. The graphics are licensed under the CC-BY 4.0 which has a pretty good guide on &lt;a href="https://wiki.creativecommons.org/Best_practices_for_attribution"&gt;best practices for attribution&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;However, we consider the guide a bit onerous and as a project, will accept a mention in a project README or an 'About' section or footer on a website. In mobile applications, a common place would be in the Settings/About section (for example, see the mobile Twitter application Settings-&amp;gt;About-&amp;gt;Legal section). We would consider a mention in the HTML/JS source sufficient also.&lt;/p&gt; 
+&lt;h2&gt;Community Projects&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://twemoji-cheatsheet.vercel.app"&gt;Twemoji Cheatsheet&lt;/a&gt; by &lt;a href="https://github.com/ShahriarKh"&gt;@ShahriarKh&lt;/a&gt;: An easy-to-use cheatsheet for exploring, copying and downloading emojis!&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/SebastianAigner/twemoji-amazing"&gt;Twemoji Amazing&lt;/a&gt; by &lt;a href="https://github.com/SebastianAigner"&gt;@SebastianAigner&lt;/a&gt;: Use Twemoji using CSS classes (like &lt;a href="http://fortawesome.github.io/Font-Awesome/"&gt;Font Awesome&lt;/a&gt;).&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/jollygoodcode/twemoji"&gt;Twemoji Ruby&lt;/a&gt; by &lt;a href="https://twitter.com/jollygoodcode"&gt;@JollyGoodCode&lt;/a&gt;: Use Twemoji in Ruby.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/gustavwilliam/twemoji-utils"&gt;Twemoji Utils&lt;/a&gt; by &lt;a href="https://github.com/gustavwilliam"&gt;@gustavwilliam&lt;/a&gt;: Utilities for finding and downloading Twemoji source files.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/nathanielw/Twemoji-for-Pencil"&gt;Twemoji for Pencil&lt;/a&gt; by &lt;a href="https://twitter.com/nathanielnw"&gt;@Nathanielnw&lt;/a&gt;: Use Twemoji in Pencil.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="http://github.frenchw.net/FrwTwemoji/"&gt;FrwTwemoji - Twemoji in dotnet&lt;/a&gt; by &lt;a href="https://twitter.com/frenchw"&gt;@FrenchW&lt;/a&gt;: Use Twemoji in any dotnet project (C#, asp.net ...).&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/datenstrom/yellow-extensions/tree/master/source/emojiawesome"&gt;Emojiawesome - Twemoji for Yellow&lt;/a&gt; by &lt;a href="https://github.com/datenstrom/"&gt;@datenstrom&lt;/a&gt;: Use Twemoji on your website.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/danbovey/EmojiPanel"&gt;EmojiPanel for Twitter&lt;/a&gt; by &lt;a href="https://twitter.com/danielbovey/status/749580050274582528"&gt;@danielbovey&lt;/a&gt;: Insert Twemoji into your tweets on twitter.com.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/eosrei/twemoji-color-font"&gt;Twitter Color Emoji font&lt;/a&gt; by &lt;a href="https://twitter.com/bderickson"&gt;@bderickson&lt;/a&gt;: Use Twemoji as your system default font on Linux &amp;amp; OS X.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/xoudini/emojica"&gt;Emojica&lt;/a&gt; by &lt;a href="https://twitter.com/xoudini"&gt;@xoudini&lt;/a&gt;: An iOS framework allowing you to replace all standard emoji in strings with Twemoji.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/phpmonkeys-de/gwt-twemoji"&gt;gwt-twemoji&lt;/a&gt; by &lt;a href="https://github.com/nbartels"&gt;@nbartels&lt;/a&gt;: Use Twemoji in GWT&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/pavlobu/emoji-text-flow-javafx"&gt;JavaFXEmojiTextFlow&lt;/a&gt; by &lt;a href="https://github.com/pavlobu"&gt;@pavlobu&lt;/a&gt;: A JavaFX library allowing you to replace all standard emoji in extended EmojiTextFlow with Twemoji.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/kevinfaguiar/vue-twemoji-picker"&gt;Vue Twemoji Picker&lt;/a&gt; by &lt;a href="https://github.com/kevinfaguiar"&gt;@kevinfaguiar&lt;/a&gt;: A fast plug-n-play Twemoji Picker (+textarea for Twemoji rendering) for Vue.&lt;/li&gt; 
+ &lt;li&gt;[Unmaintained] &lt;a href="http://ellekasai.github.io/twemoji-awesome/"&gt;Twemoji Awesome&lt;/a&gt; by &lt;a href="https://twitter.com/ellekasai/"&gt;@ellekasai&lt;/a&gt;: Use Twemoji using CSS classes (like &lt;a href="http://fortawesome.github.io/Font-Awesome/"&gt;Font Awesome&lt;/a&gt;).&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/KasperGam/EmojiOnRoku"&gt;EmojiOnRoku&lt;/a&gt; by &lt;a href="https://github.com/KasperGam"&gt;@KasperGam&lt;/a&gt;: Use Twemoji on Roku!&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://gitlab.com/rossel.jost/latex-twemojis"&gt;LaTeX Twemoji&lt;/a&gt; by &lt;a href="https://gitlab.com/rossel.jost"&gt;@rossel.jost&lt;/a&gt;: Use Twemoji in LaTeX.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/Astrotomic/php-twemoji"&gt;PHP Twemoji&lt;/a&gt; by &lt;a href="https://github.com/Astrotomic"&gt;@Astrotomic&lt;/a&gt;: Use twemoji within your PHP website project's by replacing standard Emoji with twemoji urls.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Committers and Contributors&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Justine De Caires (Twitter)&lt;/li&gt; 
+ &lt;li&gt;Jason Sofonia (Twitter)&lt;/li&gt; 
+ &lt;li&gt;Bryan Haggerty (ex-Twitter)&lt;/li&gt; 
+ &lt;li&gt;Nathan Downs (ex-Twitter)&lt;/li&gt; 
+ &lt;li&gt;Tom Wuttke (ex-Twitter)&lt;/li&gt; 
+ &lt;li&gt;Andrea Giammarchi (ex-Twitter)&lt;/li&gt; 
+ &lt;li&gt;Joen Asmussen (WordPress)&lt;/li&gt; 
+ &lt;li&gt;Marcus Kazmierczak (WordPress)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The goal of this project is to simply provide emoji for everyone. We definitely welcome improvements and fixes, but we may not merge every pull request suggested by the community due to the simple nature of the project.&lt;/p&gt; 
+&lt;p&gt;The rules for contributing are available in the &lt;code&gt;CONTRIBUTING.md&lt;/code&gt; file.&lt;/p&gt; 
+&lt;p&gt;Thank you to all of our &lt;a href="https://github.com/twitter/twemoji/graphs/contributors"&gt;contributors&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Copyright 2019 Twitter, Inc and other contributors&lt;/p&gt; 
+&lt;p&gt;Code licensed under the MIT License: &lt;a href="http://opensource.org/licenses/MIT"&gt;http://opensource.org/licenses/MIT&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Graphics licensed under CC-BY 4.0: &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;https://creativecommons.org/licenses/by/4.0/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>simstudioai/sim</title>
+      <link>https://github.com/simstudioai/sim</link>
+      <description>&lt;p&gt;Open-source platform to build and deploy AI agent workflows.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://sim.ai" target="_blank" rel="noopener noreferrer"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/logo/reverse/text/large.png" alt="Sim Logo" width="500" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;Build and deploy AI agent workflows in minutes.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://sim.ai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/sim.ai-6F3DFA" alt="Sim.ai" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/Hr4UWYEcTT" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/Discord-Join%20Server-5865F2?logo=discord&amp;amp;logoColor=white" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://x.com/simdotai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/twitter/follow/simstudioai?style=social" alt="Twitter" /&gt;&lt;/a&gt; &lt;a href="https://docs.sim.ai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/Docs-6F3DFA.svg?sanitize=true" alt="Documentation" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h3&gt;Build Workflows with Ease&lt;/h3&gt; 
+&lt;p&gt;Design agent workflows visually on a canvas—connect agents, tools, and blocks, then run them instantly.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/static/workflow.gif" alt="Workflow Builder Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;h3&gt;Supercharge with Copilot&lt;/h3&gt; 
+&lt;p&gt;Leverage Copilot to generate nodes, fix errors, and iterate on flows directly from natural language.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/static/copilot.gif" alt="Copilot Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;h3&gt;Integrate Vector Databases&lt;/h3&gt; 
+&lt;p&gt;Upload documents to a vector store and let agents answer questions grounded in your specific content.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/static/knowledge.gif" alt="Knowledge Uploads and Retrieval Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;h2&gt;Quickstart&lt;/h2&gt; 
+&lt;h3&gt;Cloud-hosted: &lt;a href="https://sim.ai"&gt;sim.ai&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://sim.ai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/sim.ai-6F3DFA?logo=data:image/svg%2bxml;base64,PHN2ZyB3aWR0aD0iNjE2IiBoZWlnaHQ9IjYxNiIgdmlld0JveD0iMCAwIDYxNiA2MTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8xMTU5XzMxMykiPgo8cGF0aCBkPSJNNjE2IDBIMFY2MTZINjE2VjBaIiBmaWxsPSIjNkYzREZBIi8+CjxwYXRoIGQ9Ik04MyAzNjUuNTY3SDExM0MxMTMgMzczLjgwNSAxMTYgMzgwLjM3MyAxMjIgMzg1LjI3MkMxMjggMzg5Ljk0OCAxMzYuMTExIDM5Mi4yODUgMTQ2LjMzMyAzOTIuMjg1QzE1Ny40NDQgMzkyLjI4NSAxNjYgMzkwLjE3MSAxNzIgMzg1LjkzOUMxNzcuOTk5IDM4MS40ODcgMTgxIDM3NS41ODYgMTgxIDM2OC4yMzlDMTgxIDM2Mi44OTUgMTc5LjMzMyAzNTguNDQyIDE3NiAzNTQuODhDMTcyLjg4OSAzNTEuMzE4IDE2Ny4xMTEgMzQ4LjQyMiAxNTguNjY3IDM0Ni4xOTZMMTMwIDMzOS41MTdDMTE1LjU1NSAzMzUuOTU1IDEwNC43NzggMzMwLjQ5OSA5Ny42NjY1IDMyMy4xNTFDOTAuNzc3NSAzMTUuODA0IDg3LjMzMzQgMzA2LjExOSA4Ny4zMzM0IDI5NC4wOTZDODcuMzMzNCAyODQuMDc2IDg5Ljg4OSAyNzUuMzkyIDk0Ljk5OTYgMjY4LjA0NUMxMDAuMzMzIDI2MC42OTcgMTA3LjU1NSAyNTUuMDIgMTE2LjY2NiAyNTEuMDEyQzEyNiAyNDcuMDA0IDEzNi42NjcgMjQ1IDE0OC42NjYgMjQ1QzE2MC42NjcgMjQ1IDE3MSAyNDcuMTE2IDE3OS42NjcgMjUxLjM0NkMxODguNTU1IDI1NS41NzYgMTk1LjQ0NCAyNjEuNDc3IDIwMC4zMzMgMjY5LjA0N0MyMDUuNDQ0IDI3Ni42MTcgMjA4LjExMSAyODUuNjM0IDIwOC4zMzMgMjk2LjA5OUgxNzguMzMzQzE3OC4xMTEgMjg3LjYzOCAxNzUuMzMzIDI4MS4wNyAxNjkuOTk5IDI3Ni4zOTRDMTY0LjY2NiAyNzEuNzE5IDE1Ny4yMjIgMjY5LjM4MSAxNDcuNjY3IDI2OS4zODFDMTM3Ljg4OSAyNjkuMzgxIDEzMC4zMzMgMjcxLjQ5NiAxMjUgMjc1LjcyNkMxMTkuNjY2IDI3OS45NTcgMTE3IDI4NS43NDYgMTE3IDI5My4wOTNDMTE3IDMwNC4wMDMgMTI1IDMxMS40NjIgMTQxIDMxNS40N0wxNjkuNjY3IDMyMi40ODNDMTgzLjQ0NSAzMjUuNiAxOTMuNzc4IDMzMC43MjIgMjAwLjY2NyAzMzcuODQ3QzIwNy41NTUgMzQ0Ljc0OSAyMTEgMzU0LjIxMiAyMTEgMzY2LjIzNUMyMTEgMzc2LjQ3NyAyMDguMjIyIDM4NS40OTQgMjAyLjY2NiAzOTMuMjg3QzE5Ny4xMTEgNDAwLjg1NyAxODkuNDQ0IDQwNi43NTggMTc5LjY2NyA0MTAuOTg5QzE3MC4xMTEgNDE0Ljk5NiAxNTguNzc4IDQxNyAxNDUuNjY3IDQxN0MxMjYuNTU1IDQxNyAxMTEuMzMzIDQxMi4zMjUgOTkuOTk5NyA0MDIuOTczQzg4LjY2NjggMzkzLjYyMSA4MyAzODEuMTUzIDgzIDM2NS41NjdaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjMyLjI5MSA0MTNWMjUwLjA4MkMyNDQuNjg0IDI1NC42MTQgMjUwLjE0OCAyNTQuNjE0IDI2My4zNzEgMjUwLjA4MlY0MTNIMjMyLjI5MVpNMjQ3LjUgMjM5LjMxM0MyNDEuOTkgMjM5LjMxMyAyMzcuMTQgMjM3LjMxMyAyMzIuOTUyIDIzMy4zMTZDMjI4Ljk4NCAyMjkuMDk1IDIyNyAyMjQuMjA5IDIyNyAyMTguNjU2QzIyNyAyMTIuODgyIDIyOC45ODQgMjA3Ljk5NSAyMzIuOTUyIDIwMy45OTdDMjM3LjE0IDE5OS45OTkgMjQxLjk5IDE5OCAyNDcuNSAxOThDMjUzLjIzMSAxOTggMjU4LjA4IDE5OS45OTkgMjYyLjA0OSAyMDMuOTk3QzI2Ni4wMTYgMjA3Ljk5NSAyNjggMjEyLjg4MiAyNjggMjE4LjY1NkMyNjggMjI0LjIwOSAyNjYuMDE2IDIyOS4wOTUgMjYyLjA0OSAyMzMuMzE2QzI1OC4wOCAyMzcuMzEzIDI1My4yMzEgMjM5LjMxMyAyNDcuNSAyMzkuMzEzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTMxOS4zMzMgNDEzSDI4OFYyNDkuNjc2SDMxNlYyNzcuMjMzQzMxOS4zMzMgMjY4LjEwNCAzMjUuNzc4IDI2MC4zNjQgMzM0LjY2NyAyNTQuMzUyQzM0My43NzggMjQ4LjExNyAzNTQuNzc4IDI0NSAzNjcuNjY3IDI0NUMzODIuMTExIDI0NSAzOTQuMTEyIDI0OC44OTcgNDAzLjY2NyAyNTYuNjlDNDEzLjIyMiAyNjQuNDg0IDQxOS40NDQgMjc0LjgzNyA0MjIuMzM0IDI4Ny43NTJINDE2LjY2N0M0MTguODg5IDI3NC44MzcgNDI1IDI2NC40ODQgNDM1IDI1Ni42OUM0NDUgMjQ4Ljg5NyA0NTcuMzM0IDI0NSA0NzIgMjQ1QzQ5MC42NjYgMjQ1IDUwNS4zMzQgMjUwLjQ1NSA1MTYgMjYxLjM2NkM1MjYuNjY3IDI3Mi4yNzYgNTMyIDI4Ny4xOTUgNTMyIDMwNi4xMjFWNDEzSDUwMS4zMzNWMzEzLjgwNEM1MDEuMzMzIDMwMC44ODkgNDk4IDI5MC45ODEgNDkxLjMzMyAyODQuMDc4QzQ4NC44ODkgMjc2Ljk1MiA0NzYuMTExIDI3My4zOSA0NjUgMjczLjM5QzQ1Ny4yMjIgMjczLjM5IDQ1MC4zMzMgMjc1LjE3MSA0NDQuMzM0IDI3OC43MzRDNDM4LjU1NiAyODIuMDc0IDQzNCAyODYuOTcyIDQzMC42NjcgMjkzLjQzQzQyNy4zMzMgMjk5Ljg4NyA0MjUuNjY3IDMwNy40NTcgNDI1LjY2NyAzMTYuMTQxVjQxM0gzOTQuNjY3VjMxMy40NjlDMzk0LjY2NyAzMDAuNTU1IDM5MS40NDUgMjkwLjc1OCAzODUgMjg0LjA3OEMzNzguNTU2IDI3Ny4xNzUgMzY5Ljc3OCAyNzMuNzI0IDM1OC42NjcgMjczLjcyNEMzNTAuODg5IDI3My43MjQgMzQ0IDI3NS41MDUgMzM4IDI3OS4wNjhDMzMyLjIyMiAyODIuNDA4IDMyNy42NjcgMjg3LjMwNyAzMjQuMzMzIDI5My43NjNDMzIxIDI5OS45OTggMzE5LjMzMyAzMDcuNDU3IDMxOS4zMzMgMzE2LjE0MVY0MTNaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzExNTlfMzEzIj4KPHJlY3Qgd2lkdGg9IjYxNiIgaGVpZ2h0PSI2MTYiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==&amp;amp;logoColor=white" alt="Sim.ai" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Self-hosted: NPM Package&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx simstudio
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;→ &lt;a href="http://localhost:3000"&gt;http://localhost:3000&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;Note&lt;/h4&gt; 
+&lt;p&gt;Docker must be installed and running on your machine.&lt;/p&gt; 
+&lt;h4&gt;Options&lt;/h4&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Flag&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;-p, --port &amp;lt;port&amp;gt;&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Port to run Sim on (default &lt;code&gt;3000&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;--no-pull&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Skip pulling latest Docker images&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Self-hosted: Docker Compose&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Clone the repository
+git clone https://github.com/simstudioai/sim.git
+
+# Navigate to the project directory
+cd sim
+
+# Start Sim
+docker compose -f docker-compose.prod.yml up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Access the application at &lt;a href="http://localhost:3000/"&gt;http://localhost:3000/&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;Using Local Models with Ollama&lt;/h4&gt; 
+&lt;p&gt;Run Sim with local AI models using &lt;a href="https://ollama.ai"&gt;Ollama&lt;/a&gt; - no external APIs required:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Start with GPU support (automatically downloads gemma3:4b model)
+docker compose -f docker-compose.ollama.yml --profile setup up -d
+
+# For CPU-only systems:
+docker compose -f docker-compose.ollama.yml --profile cpu --profile setup up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Wait for the model to download, then visit &lt;a href="http://localhost:3000"&gt;http://localhost:3000&lt;/a&gt;. Add more models with:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker compose -f docker-compose.ollama.yml exec ollama ollama pull llama3.1:8b
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Using an External Ollama Instance&lt;/h4&gt; 
+&lt;p&gt;If you already have Ollama running on your host machine (outside Docker), you need to configure the &lt;code&gt;OLLAMA_URL&lt;/code&gt; to use &lt;code&gt;host.docker.internal&lt;/code&gt; instead of &lt;code&gt;localhost&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Docker Desktop (macOS/Windows)
+OLLAMA_URL=http://host.docker.internal:11434 docker compose -f docker-compose.prod.yml up -d
+
+# Linux (add extra_hosts or use host IP)
+docker compose -f docker-compose.prod.yml up -d  # Then set OLLAMA_URL to your host's IP
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Why?&lt;/strong&gt; When running inside Docker, &lt;code&gt;localhost&lt;/code&gt; refers to the container itself, not your host machine. &lt;code&gt;host.docker.internal&lt;/code&gt; is a special DNS name that resolves to the host.&lt;/p&gt; 
+&lt;p&gt;For Linux users, you can either:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Use your host machine's actual IP address (e.g., &lt;code&gt;http://192.168.1.100:11434&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Add &lt;code&gt;extra_hosts: ["host.docker.internal:host-gateway"]&lt;/code&gt; to the simstudio service in your compose file&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Using vLLM&lt;/h4&gt; 
+&lt;p&gt;Sim also supports &lt;a href="https://docs.vllm.ai/"&gt;vLLM&lt;/a&gt; for self-hosted models with OpenAI-compatible API:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Set these environment variables
+VLLM_BASE_URL=http://your-vllm-server:8000
+VLLM_API_KEY=your_optional_api_key  # Only if your vLLM instance requires auth
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;When running with Docker, use &lt;code&gt;host.docker.internal&lt;/code&gt; if vLLM is on your host machine (same as Ollama above).&lt;/p&gt; 
+&lt;h3&gt;Self-hosted: Dev Containers&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Open VS Code with the &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers"&gt;Remote - Containers extension&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Open the project and click "Reopen in Container" when prompted&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;bun run dev:full&lt;/code&gt; in the terminal or use the &lt;code&gt;sim-start&lt;/code&gt; alias 
+  &lt;ul&gt; 
+   &lt;li&gt;This starts both the main application and the realtime socket server&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Self-hosted: Manual Setup&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://bun.sh/"&gt;Bun&lt;/a&gt; runtime&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://nodejs.org/"&gt;Node.js&lt;/a&gt; v20+ (required for sandboxed code execution)&lt;/li&gt; 
+ &lt;li&gt;PostgreSQL 12+ with &lt;a href="https://github.com/pgvector/pgvector"&gt;pgvector extension&lt;/a&gt; (required for AI embeddings)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Sim uses vector embeddings for AI features like knowledge bases and semantic search, which requires the &lt;code&gt;pgvector&lt;/code&gt; PostgreSQL extension.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Clone and install dependencies:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/simstudioai/sim.git
+cd sim
+bun install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Set up PostgreSQL with pgvector:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;You need PostgreSQL with the &lt;code&gt;vector&lt;/code&gt; extension for embedding support. Choose one option:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Option A: Using Docker (Recommended)&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Start PostgreSQL with pgvector extension
+docker run --name simstudio-db \
+  -e POSTGRES_PASSWORD=your_password \
+  -e POSTGRES_DB=simstudio \
+  -p 5432:5432 -d \
+  pgvector/pgvector:pg17
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Option B: Manual Installation&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Install PostgreSQL 12+ and the pgvector extension&lt;/li&gt; 
+ &lt;li&gt;See &lt;a href="https://github.com/pgvector/pgvector#installation"&gt;pgvector installation guide&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;Set up environment:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd apps/sim
+cp .env.example .env  # Configure with required variables (DATABASE_URL, BETTER_AUTH_SECRET, BETTER_AUTH_URL)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Update your &lt;code&gt;.env&lt;/code&gt; file with the database URL:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;DATABASE_URL="postgresql://postgres:your_password@localhost:5432/simstudio"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="4"&gt; 
+ &lt;li&gt;Set up the database:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;First, configure the database package environment:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd packages/db
+cp .env.example .env 
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Update your &lt;code&gt;packages/db/.env&lt;/code&gt; file with the database URL:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;DATABASE_URL="postgresql://postgres:your_password@localhost:5432/simstudio"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then run the migrations:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd packages/db # Required so drizzle picks correct .env file
+bunx drizzle-kit migrate --config=./drizzle.config.ts
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="5"&gt; 
+ &lt;li&gt;Start the development servers:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Recommended approach - run both servers together (from project root):&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun run dev:full
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This starts both the main Next.js application and the realtime socket server required for full functionality.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Alternative - run servers separately:&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Next.js app (from project root):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Realtime socket server (from &lt;code&gt;apps/sim&lt;/code&gt; directory in a separate terminal):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd apps/sim
+bun run dev:sockets
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Copilot API Keys&lt;/h2&gt; 
+&lt;p&gt;Copilot is a Sim-managed service. To use Copilot on a self-hosted instance:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Go to &lt;a href="https://sim.ai"&gt;https://sim.ai&lt;/a&gt; → Settings → Copilot and generate a Copilot API key&lt;/li&gt; 
+ &lt;li&gt;Set &lt;code&gt;COPILOT_API_KEY&lt;/code&gt; environment variable in your self-hosted apps/sim/.env file to that value&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Environment Variables&lt;/h2&gt; 
+&lt;p&gt;Key environment variables for self-hosted deployments (see &lt;code&gt;apps/sim/.env.example&lt;/code&gt; for full list):&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Variable&lt;/th&gt; 
+   &lt;th&gt;Required&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;DATABASE_URL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;PostgreSQL connection string with pgvector&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;BETTER_AUTH_SECRET&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Auth secret (&lt;code&gt;openssl rand -hex 32&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;BETTER_AUTH_URL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Your app URL (e.g., &lt;code&gt;http://localhost:3000&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;NEXT_PUBLIC_APP_URL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Public app URL (same as above)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;ENCRYPTION_KEY&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Encryption key (&lt;code&gt;openssl rand -hex 32&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;OLLAMA_URL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;Ollama server URL (default: &lt;code&gt;http://localhost:11434&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;VLLM_BASE_URL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;vLLM server URL for self-hosted models&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;COPILOT_API_KEY&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;API key from sim.ai for Copilot features&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Troubleshooting&lt;/h2&gt; 
+&lt;h3&gt;Ollama models not showing in dropdown (Docker)&lt;/h3&gt; 
+&lt;p&gt;If you're running Ollama on your host machine and Sim in Docker, change &lt;code&gt;OLLAMA_URL&lt;/code&gt; from &lt;code&gt;localhost&lt;/code&gt; to &lt;code&gt;host.docker.internal&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;OLLAMA_URL=http://host.docker.internal:11434 docker compose -f docker-compose.prod.yml up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/simstudioai/sim/main/#using-an-external-ollama-instance"&gt;Using an External Ollama Instance&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;h3&gt;Database connection issues&lt;/h3&gt; 
+&lt;p&gt;Ensure PostgreSQL has the pgvector extension installed. When using Docker, wait for the database to be healthy before running migrations.&lt;/p&gt; 
+&lt;h3&gt;Port conflicts&lt;/h3&gt; 
+&lt;p&gt;If ports 3000, 3002, or 5432 are in use, configure alternatives:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Custom ports
+NEXT_PUBLIC_APP_URL=http://localhost:3100 POSTGRES_PORT=5433 docker compose up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Tech Stack&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Framework&lt;/strong&gt;: &lt;a href="https://nextjs.org/"&gt;Next.js&lt;/a&gt; (App Router)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Runtime&lt;/strong&gt;: &lt;a href="https://bun.sh/"&gt;Bun&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Database&lt;/strong&gt;: PostgreSQL with &lt;a href="https://orm.drizzle.team"&gt;Drizzle ORM&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Authentication&lt;/strong&gt;: &lt;a href="https://better-auth.com"&gt;Better Auth&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;UI&lt;/strong&gt;: &lt;a href="https://ui.shadcn.com/"&gt;Shadcn&lt;/a&gt;, &lt;a href="https://tailwindcss.com"&gt;Tailwind CSS&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;State Management&lt;/strong&gt;: &lt;a href="https://zustand-demo.pmnd.rs/"&gt;Zustand&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Flow Editor&lt;/strong&gt;: &lt;a href="https://reactflow.dev/"&gt;ReactFlow&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Docs&lt;/strong&gt;: &lt;a href="https://fumadocs.vercel.app/"&gt;Fumadocs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Monorepo&lt;/strong&gt;: &lt;a href="https://turborepo.org/"&gt;Turborepo&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Realtime&lt;/strong&gt;: &lt;a href="https://socket.io/"&gt;Socket.io&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Background Jobs&lt;/strong&gt;: &lt;a href="https://trigger.dev/"&gt;Trigger.dev&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Remote Code Execution&lt;/strong&gt;: &lt;a href="https://www.e2b.dev/"&gt;E2B&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions! Please see our &lt;a href="https://raw.githubusercontent.com/simstudioai/sim/main/.github/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the Apache License 2.0 - see the &lt;a href="https://raw.githubusercontent.com/simstudioai/sim/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;p align="center"&gt;Made with ❤️ by the Sim Team&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>makeplane/plane</title>
+      <link>https://github.com/makeplane/plane</link>
+      <description>&lt;p&gt;🔥🔥🔥 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://plane.so"&gt; &lt;img src="https://media.docs.plane.so/logo/plane_github_readme.png" alt="Plane Logo" width="400" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;&lt;b&gt;Modern project management for all teams&lt;/b&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://discord.com/invite/A92xrEGCge"&gt; &lt;img alt="Discord online members" src="https://img.shields.io/discord/1031547764020084846?color=5865F2&amp;amp;label=Discord&amp;amp;style=for-the-badge" /&gt; &lt;/a&gt; &lt;img alt="Commit activity per month" src="https://img.shields.io/github/commit-activity/m/makeplane/plane?style=for-the-badge" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://plane.so/"&gt;&lt;b&gt;Website&lt;/b&gt;&lt;/a&gt; • &lt;a href="https://github.com/makeplane/plane/releases"&gt;&lt;b&gt;Releases&lt;/b&gt;&lt;/a&gt; • &lt;a href="https://twitter.com/planepowers"&gt;&lt;b&gt;Twitter&lt;/b&gt;&lt;/a&gt; • &lt;a href="https://docs.plane.so/"&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt; &lt;a href="https://app.plane.so/#gh-light-mode-only" target="_blank"&gt; &lt;img src="https://media.docs.plane.so/GitHub-readme/github-top.webp" alt="Plane Screens" width="100%" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;Meet &lt;a href="https://plane.so/"&gt;Plane&lt;/a&gt;, an open-source project management tool to track issues, run &lt;del&gt;sprints&lt;/del&gt; cycles, and manage product roadmaps without the chaos of managing the tool itself. 🧘‍♀️&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Plane is evolving every day. Your suggestions, ideas, and reported bugs help us immensely. Do not hesitate to join in the conversation on &lt;a href="https://discord.com/invite/A92xrEGCge"&gt;Discord&lt;/a&gt; or raise a GitHub issue. We read everything and respond to most.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;🚀 Installation&lt;/h2&gt; 
+&lt;p&gt;Getting started with Plane is simple. Choose the setup that works best for you:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Plane Cloud&lt;/strong&gt; Sign up for a free account on &lt;a href="https://app.plane.so"&gt;Plane Cloud&lt;/a&gt;—it's the fastest way to get up and running without worrying about infrastructure.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Self-host Plane&lt;/strong&gt; Prefer full control over your data and infrastructure? Install and run Plane on your own servers. Follow our detailed &lt;a href="https://developers.plane.so/self-hosting/overview"&gt;deployment guides&lt;/a&gt; to get started.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Installation methods&lt;/th&gt; 
+   &lt;th&gt;Docs link&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Docker&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://developers.plane.so/self-hosting/methods/docker-compose"&gt;&lt;img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&amp;amp;logo=docker&amp;amp;logoColor=white" alt="Docker" /&gt;&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Kubernetes&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://developers.plane.so/self-hosting/methods/kubernetes"&gt;&lt;img src="https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&amp;amp;logo=kubernetes&amp;amp;logoColor=white" alt="Kubernetes" /&gt;&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;code&gt;Instance admins&lt;/code&gt; can configure instance settings with &lt;a href="https://developers.plane.so/self-hosting/govern/instance-admin"&gt;God mode&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;🌟 Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Work Items&lt;/strong&gt; Efficiently create and manage tasks with a robust rich text editor that supports file uploads. Enhance organization and tracking by adding sub-properties and referencing related issues.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Cycles&lt;/strong&gt; Maintain your team’s momentum with Cycles. Track progress effortlessly using burn-down charts and other insightful tools.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Modules&lt;/strong&gt; Simplify complex projects by dividing them into smaller, manageable modules.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Views&lt;/strong&gt; Customize your workflow by creating filters to display only the most relevant issues. Save and share these views with ease.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Pages&lt;/strong&gt; Capture and organize ideas using Plane Pages, complete with AI capabilities and a rich text editor. Format text, insert images, add hyperlinks, or convert your notes into actionable items.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Analytics&lt;/strong&gt; Access real-time insights across all your Plane data. Visualize trends, remove blockers, and keep your projects moving forward.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🛠️ Local development&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/makeplane/plane/preview/CONTRIBUTING.md"&gt;CONTRIBUTING&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;⚙️ Built with&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://reactrouter.com/"&gt;&lt;img src="https://img.shields.io/badge/-React%20Router-CA4245?logo=react-router&amp;amp;style=for-the-badge&amp;amp;logoColor=white" alt="React Router" /&gt;&lt;/a&gt; &lt;a href="https://www.djangoproject.com/"&gt;&lt;img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&amp;amp;logo=django&amp;amp;logoColor=green" alt="Django" /&gt;&lt;/a&gt; &lt;a href="https://nodejs.org/en"&gt;&lt;img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&amp;amp;logo=Node.js&amp;amp;logoColor=white" alt="Node JS" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;📸 Screenshots&lt;/h2&gt; 
+&lt;p&gt; &lt;a href="https://plane.so" target="_blank"&gt; &lt;img src="https://media.docs.plane.so/GitHub-readme/github-work-items.webp" alt="Plane Views" width="100%" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt; &lt;a href="https://plane.so" target="_blank"&gt; &lt;img src="https://media.docs.plane.so/GitHub-readme/github-cycles.webp" width="100%" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt; &lt;a href="https://plane.so" target="_blank"&gt; &lt;img src="https://media.docs.plane.so/GitHub-readme/github-modules.webp" alt="Plane Cycles and Modules" width="100%" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt; &lt;a href="https://plane.so" target="_blank"&gt; &lt;img src="https://media.docs.plane.so/GitHub-readme/github-views.webp" alt="Plane Analytics" width="100%" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt; &lt;a href="https://plane.so" target="_blank"&gt; &lt;img src="https://media.docs.plane.so/GitHub-readme/github-analytics.webp" alt="Plane Pages" width="100%" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;/p&gt; 
+&lt;h2&gt;📝 Documentation&lt;/h2&gt; 
+&lt;p&gt;Explore Plane's &lt;a href="https://docs.plane.so/"&gt;product documentation&lt;/a&gt; and &lt;a href="https://developers.plane.so/"&gt;developer documentation&lt;/a&gt; to learn about features, setup, and usage.&lt;/p&gt; 
+&lt;h2&gt;❤️ Community&lt;/h2&gt; 
+&lt;p&gt;Join the Plane community on &lt;a href="https://github.com/orgs/makeplane/discussions"&gt;GitHub Discussions&lt;/a&gt; and our &lt;a href="https://discord.com/invite/A92xrEGCge"&gt;Discord server&lt;/a&gt;. We follow a &lt;a href="https://github.com/makeplane/plane/raw/master/CODE_OF_CONDUCT.md"&gt;Code of conduct&lt;/a&gt; in all our community channels.&lt;/p&gt; 
+&lt;p&gt;Feel free to ask questions, report bugs, participate in discussions, share ideas, request features, or showcase your projects. We’d love to hear from you!&lt;/p&gt; 
+&lt;h2&gt;🛡️ Security&lt;/h2&gt; 
+&lt;p&gt;If you discover a security vulnerability in Plane, please report it responsibly instead of opening a public issue. We take all legitimate reports seriously and will investigate them promptly. See &lt;a href="https://github.com/makeplane/plane/raw/master/SECURITY.md"&gt;Security policy&lt;/a&gt; for more info.&lt;/p&gt; 
+&lt;p&gt;To disclose any security issues, please email us at &lt;a href="mailto:security@plane.so"&gt;security@plane.so&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;🤝 Contributing&lt;/h2&gt; 
+&lt;p&gt;There are many ways you can contribute to Plane:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Report &lt;a href="https://github.com/makeplane/plane/issues/new?assignees=srinivaspendem%2Cpushya22&amp;amp;labels=%F0%9F%90%9Bbug&amp;amp;projects=&amp;amp;template=--bug-report.yaml&amp;amp;title=%5Bbug%5D%3A+"&gt;bugs&lt;/a&gt; or submit &lt;a href="https://github.com/makeplane/plane/issues/new?assignees=srinivaspendem%2Cpushya22&amp;amp;labels=%E2%9C%A8feature&amp;amp;projects=&amp;amp;template=--feature-request.yaml&amp;amp;title=%5Bfeature%5D%3A+"&gt;feature requests&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Review the &lt;a href="https://docs.plane.so/"&gt;documentation&lt;/a&gt; and submit &lt;a href="https://github.com/makeplane/docs"&gt;pull requests&lt;/a&gt; to improve it—whether it's fixing typos or adding new content.&lt;/li&gt; 
+ &lt;li&gt;Talk or write about Plane or any other ecosystem integration and &lt;a href="https://discord.com/invite/A92xrEGCge"&gt;let us know&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Show your support by upvoting &lt;a href="https://github.com/makeplane/plane/issues"&gt;popular feature requests&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Please read &lt;a href="https://github.com/makeplane/plane/raw/master/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for details on the process for submitting pull requests to us.&lt;/p&gt; 
+&lt;h3&gt;Repo activity&lt;/h3&gt; 
+&lt;p&gt;&lt;img src="https://repobeats.axiom.co/api/embed/2523c6ed2f77c082b7908c33e2ab208981d76c39.svg?sanitize=true" alt="Plane Repo Activity" title="Repobeats analytics image" /&gt;&lt;/p&gt; 
+&lt;h3&gt;We couldn't have done this without you.&lt;/h3&gt; 
+&lt;a href="https://github.com/makeplane/plane/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=makeplane/plane" /&gt; &lt;/a&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the &lt;a href="https://github.com/makeplane/plane/raw/master/LICENSE.txt"&gt;GNU Affero General Public License v3.0&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>C4illin/ConvertX</title>
+      <link>https://github.com/C4illin/ConvertX</link>
+      <description>&lt;p&gt;💾 Self-hosted online file converter. Supports 1000+ formats ⚙️&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/C4illin/ConvertX/main/images/logo.png" alt="ConvertX" /&gt;&lt;/p&gt; 
+&lt;h1&gt;ConvertX&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/C4illin/ConvertX/actions/workflows/docker-publish.yml"&gt;&lt;img src="https://github.com/C4illin/ConvertX/actions/workflows/docker-publish.yml/badge.svg?branch=main" alt="Docker" /&gt;&lt;/a&gt; &lt;a href="https://github.com/C4illin/ConvertX/pkgs/container/ConvertX"&gt;&lt;img src="https://img.shields.io/badge/dynamic/json?logo=github&amp;amp;url=https%3A%2F%2Fipitio.github.io%2Fbackage%2FC4illin%2FConvertX%2Fconvertx.json&amp;amp;query=%24.downloads&amp;amp;label=ghcr.io%20pulls&amp;amp;cacheSeconds=14400" alt="ghcr.io Pulls" /&gt;&lt;/a&gt; &lt;a href="https://hub.docker.com/r/c4illin/convertx"&gt;&lt;img src="https://img.shields.io/docker/pulls/c4illin/convertx?style=flat&amp;amp;logo=docker&amp;amp;label=dockerhub%20pulls&amp;amp;link=https%3A%2F%2Fhub.docker.com%2Frepository%2Fdocker%2Fc4illin%2Fconvertx%2Fgeneral" alt="Docker Pulls" /&gt;&lt;/a&gt; &lt;a href="https://github.com/C4illin/ConvertX/pkgs/container/convertx"&gt;&lt;img src="https://img.shields.io/github/v/release/C4illin/ConvertX" alt="GitHub Release" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/github/commits-since/C4illin/ConvertX/latest" alt="GitHub commits since latest release" /&gt; &lt;img src="https://img.shields.io/github/repo-size/C4illin/ConvertX" alt="GitHub repo size" /&gt; &lt;img src="https://ghcr-badge.egpl.dev/c4illin/convertx/size?color=%230375b6&amp;amp;tag=latest&amp;amp;label=image+size&amp;amp;trim=" alt="Docker container size" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://trendshift.io/repositories/13818" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/13818" alt="C4illin%2FConvertX | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;!-- ![Dev image size](https://ghcr-badge.egpl.dev/c4illin/convertx/size?color=%230375b6&amp;tag=main&amp;label=dev+image&amp;trim=) --&gt; 
+&lt;p&gt;A self-hosted online file converter. Supports over a thousand different formats. Written with TypeScript, Bun and Elysia.&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Convert files to different formats&lt;/li&gt; 
+ &lt;li&gt;Process multiple files at once&lt;/li&gt; 
+ &lt;li&gt;Password protection&lt;/li&gt; 
+ &lt;li&gt;Multiple accounts&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Converters supported&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Converter&lt;/th&gt; 
+   &lt;th&gt;Use case&lt;/th&gt; 
+   &lt;th&gt;Converts from&lt;/th&gt; 
+   &lt;th&gt;Converts to&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://inkscape.org/"&gt;Inkscape&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Vector images&lt;/td&gt; 
+   &lt;td&gt;7&lt;/td&gt; 
+   &lt;td&gt;17&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/libjxl/libjxl"&gt;libjxl&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;JPEG XL&lt;/td&gt; 
+   &lt;td&gt;11&lt;/td&gt; 
+   &lt;td&gt;11&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/RazrFalcon/resvg"&gt;resvg&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;SVG&lt;/td&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/libvips/libvips"&gt;Vips&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Images&lt;/td&gt; 
+   &lt;td&gt;45&lt;/td&gt; 
+   &lt;td&gt;23&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/strukturag/libheif"&gt;libheif&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;HEIF&lt;/td&gt; 
+   &lt;td&gt;2&lt;/td&gt; 
+   &lt;td&gt;4&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://tug.org/xetex/"&gt;XeLaTeX&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;LaTeX&lt;/td&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://calibre-ebook.com/"&gt;Calibre&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;E-books&lt;/td&gt; 
+   &lt;td&gt;26&lt;/td&gt; 
+   &lt;td&gt;19&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://www.libreoffice.org/"&gt;LibreOffice&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Documents&lt;/td&gt; 
+   &lt;td&gt;41&lt;/td&gt; 
+   &lt;td&gt;22&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/TomWright/dasel"&gt;Dasel&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Data Files&lt;/td&gt; 
+   &lt;td&gt;5&lt;/td&gt; 
+   &lt;td&gt;4&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://pandoc.org/"&gt;Pandoc&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Documents&lt;/td&gt; 
+   &lt;td&gt;43&lt;/td&gt; 
+   &lt;td&gt;65&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/mvz/email-outlook-message-perl"&gt;msgconvert&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Outlook&lt;/td&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;VCF to CSV&lt;/td&gt; 
+   &lt;td&gt;Contacts&lt;/td&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://dvisvgm.de/"&gt;dvisvgm&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Vector images&lt;/td&gt; 
+   &lt;td&gt;4&lt;/td&gt; 
+   &lt;td&gt;2&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://imagemagick.org/"&gt;ImageMagick&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Images&lt;/td&gt; 
+   &lt;td&gt;245&lt;/td&gt; 
+   &lt;td&gt;183&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="http://www.graphicsmagick.org/"&gt;GraphicsMagick&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Images&lt;/td&gt; 
+   &lt;td&gt;167&lt;/td&gt; 
+   &lt;td&gt;130&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/assimp/assimp"&gt;Assimp&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;3D Assets&lt;/td&gt; 
+   &lt;td&gt;77&lt;/td&gt; 
+   &lt;td&gt;23&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://ffmpeg.org/"&gt;FFmpeg&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Video&lt;/td&gt; 
+   &lt;td&gt;~472&lt;/td&gt; 
+   &lt;td&gt;~199&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://potrace.sourceforge.net/"&gt;Potrace&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Raster to vector&lt;/td&gt; 
+   &lt;td&gt;4&lt;/td&gt; 
+   &lt;td&gt;11&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/visioncortex/vtracer"&gt;VTracer&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Raster to vector&lt;/td&gt; 
+   &lt;td&gt;8&lt;/td&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/microsoft/markitdown"&gt;Markitdown&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Documents&lt;/td&gt; 
+   &lt;td&gt;6&lt;/td&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;!-- many ffmpeg fileformats are duplicates --&gt; 
+&lt;p&gt;Any missing converter? Open an issue or pull request!&lt;/p&gt; 
+&lt;h2&gt;Deployment&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!WARNING] If you can't login, make sure you are accessing the service over localhost or https otherwise set HTTP_ALLOWED=true&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code class="language-yml"&gt;# docker-compose.yml
+services:
+  convertx:
+    image: ghcr.io/c4illin/convertx
+    container_name: convertx
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - JWT_SECRET=aLongAndSecretStringUsedToSignTheJSONWebToken1234 # will use randomUUID() if unset
+      # - HTTP_ALLOWED=true # uncomment this if accessing it over a non-https connection
+    volumes:
+      - ./data:/app/data
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;or&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -p 3000:3000 -v ./data:/app/data ghcr.io/c4illin/convertx
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then visit &lt;code&gt;http://localhost:3000&lt;/code&gt; in your browser and create your account. Don't leave it unconfigured and open, as anyone can register the first account.&lt;/p&gt; 
+&lt;p&gt;If you get unable to open database file run &lt;code&gt;chown -R $USER:$USER path&lt;/code&gt; on the path you choose.&lt;/p&gt; 
+&lt;h3&gt;Environment variables&lt;/h3&gt; 
+&lt;p&gt;All are optional, JWT_SECRET is recommended to be set.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Name&lt;/th&gt; 
+   &lt;th&gt;Default&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;JWT_SECRET&lt;/td&gt; 
+   &lt;td&gt;when unset it will use the value from randomUUID()&lt;/td&gt; 
+   &lt;td&gt;A long and secret string used to sign the JSON Web Token&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;ACCOUNT_REGISTRATION&lt;/td&gt; 
+   &lt;td&gt;false&lt;/td&gt; 
+   &lt;td&gt;Allow users to register accounts&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;HTTP_ALLOWED&lt;/td&gt; 
+   &lt;td&gt;false&lt;/td&gt; 
+   &lt;td&gt;Allow HTTP connections, only set this to true locally&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;ALLOW_UNAUTHENTICATED&lt;/td&gt; 
+   &lt;td&gt;false&lt;/td&gt; 
+   &lt;td&gt;Allow unauthenticated users to use the service, only set this to true locally&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;AUTO_DELETE_EVERY_N_HOURS&lt;/td&gt; 
+   &lt;td&gt;24&lt;/td&gt; 
+   &lt;td&gt;Checks every n hours for files older then n hours and deletes them, set to 0 to disable&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;WEBROOT&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;The address to the root path setting this to "/convert" will serve the website on "example.com/convert/"&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;FFMPEG_ARGS&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;Arguments to pass to the input file of ffmpeg, e.g. &lt;code&gt;-hwaccel vaapi&lt;/code&gt;. See &lt;a href="https://github.com/C4illin/ConvertX/issues/190"&gt;https://github.com/C4illin/ConvertX/issues/190&lt;/a&gt; for more info about hw-acceleration.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;FFMPEG_OUTPUT_ARGS&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;Arguments to pass to the output of ffmpeg, e.g. &lt;code&gt;-preset veryfast&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;HIDE_HISTORY&lt;/td&gt; 
+   &lt;td&gt;false&lt;/td&gt; 
+   &lt;td&gt;Hide the history page&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;LANGUAGE&lt;/td&gt; 
+   &lt;td&gt;en&lt;/td&gt; 
+   &lt;td&gt;Language to format date strings in, specified as a &lt;a href="https://en.wikipedia.org/wiki/IETF_language_tag"&gt;BCP 47 language tag&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;UNAUTHENTICATED_USER_SHARING&lt;/td&gt; 
+   &lt;td&gt;false&lt;/td&gt; 
+   &lt;td&gt;Shares conversion history between all unauthenticated users&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;MAX_CONVERT_PROCESS&lt;/td&gt; 
+   &lt;td&gt;0&lt;/td&gt; 
+   &lt;td&gt;Maximum number of concurrent conversion processes allowed. Set to 0 for unlimited.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Docker images&lt;/h3&gt; 
+&lt;p&gt;There is a &lt;code&gt;:latest&lt;/code&gt; tag that is updated with every release and a &lt;code&gt;:main&lt;/code&gt; tag that is updated with every push to the main branch. &lt;code&gt;:latest&lt;/code&gt; is recommended for normal use.&lt;/p&gt; 
+&lt;p&gt;The image is available on &lt;a href="https://github.com/C4illin/ConvertX/pkgs/container/ConvertX"&gt;GitHub Container Registry&lt;/a&gt; and &lt;a href="https://hub.docker.com/r/c4illin/convertx"&gt;Docker Hub&lt;/a&gt;.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Image&lt;/th&gt; 
+   &lt;th&gt;What it is&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;image: ghcr.io/c4illin/convertx&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The latest release on ghcr&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;image: ghcr.io/c4illin/convertx:main&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The latest commit on ghcr&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;image: c4illin/convertx&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The latest release on docker hub&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;image: c4illin/convertx:main&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;The latest commit on docker hub&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;img src="https://ghcr-badge.egpl.dev/c4illin/convertx/size?color=%230375b6&amp;amp;tag=latest&amp;amp;label=release+image&amp;amp;trim=" alt="Release image size" /&gt; &lt;img src="https://ghcr-badge.egpl.dev/c4illin/convertx/size?color=%230375b6&amp;amp;tag=main&amp;amp;label=dev+image&amp;amp;trim=" alt="Dev image size" /&gt;&lt;/p&gt; 
+&lt;!-- Dockerhub was introduced in 0.9.0 and older releases --&gt; 
+&lt;h3&gt;Tutorial&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] These are written by other people, and may be outdated, incorrect or wrong.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Tutorial in french: &lt;a href="https://belginux.com/installer-convertx-avec-docker/"&gt;https://belginux.com/installer-convertx-avec-docker/&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Tutorial in chinese: &lt;a href="https://xzllll.com/24092901/"&gt;https://xzllll.com/24092901/&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Tutorial in polish: &lt;a href="https://www.kreatywnyprogramista.pl/convertx-lokalny-konwerter-plikow"&gt;https://www.kreatywnyprogramista.pl/convertx-lokalny-konwerter-plikow&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Screenshots&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/C4illin/ConvertX/main/images/preview.png" alt="ConvertX Preview" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;ol start="0"&gt; 
+ &lt;li&gt;Install &lt;a href="https://bun.sh/"&gt;Bun&lt;/a&gt; and Git&lt;/li&gt; 
+ &lt;li&gt;Clone the repository&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;bun install&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;bun run dev&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;Pull requests are welcome! See open issues for the list of todos. The ones tagged with "converter request" are quite easy. Help with docs and cleaning up in issues are also very welcome!&lt;/p&gt; 
+&lt;p&gt;Use &lt;a href="https://www.conventionalcommits.org/en/v1.0.0/#summary"&gt;conventional commits&lt;/a&gt; for commit messages.&lt;/p&gt; 
+&lt;h2&gt;Contributors&lt;/h2&gt; 
+&lt;a href="https://github.com/C4illin/ConvertX/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=C4illin/ConvertX" alt="Image with all contributors" /&gt; &lt;/a&gt; 
+&lt;p&gt;&lt;img src="https://repobeats.axiom.co/api/embed/dcdabd0564fcdcccbf5680c1bdc2efad54a3d4d9.svg?sanitize=true" alt="Alt" title="Repobeats analytics image" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;a href="https://github.com/C4illin/ConvertX/stargazers"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=C4illin/ConvertX&amp;amp;type=Date&amp;amp;theme=dark" /&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=C4illin/ConvertX&amp;amp;type=Date" /&gt; 
+  &lt;img alt="Star History Chart" src="https://api.star-history.com/svg?repos=C4illin/ConvertX&amp;amp;type=Date" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
