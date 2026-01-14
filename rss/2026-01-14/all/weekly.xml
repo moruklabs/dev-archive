@@ -1,0 +1,2045 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub All Languages Weekly Trending</title>
+    <description>Weekly Trending of All Languages in GitHub</description>
+    <pubDate>Tue, 13 Jan 2026 01:44:41 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>anomalyco/opencode</title>
+      <link>https://github.com/anomalyco/opencode</link>
+      <description>&lt;p&gt;The open source coding agent.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://opencode.ai"&gt; 
+  &lt;picture&gt; 
+   &lt;source srcset="packages/console/app/src/asset/logo-ornate-dark.svg" media="(prefers-color-scheme: dark)" /&gt; 
+   &lt;source srcset="packages/console/app/src/asset/logo-ornate-light.svg" media="(prefers-color-scheme: light)" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/console/app/src/asset/logo-ornate-light.svg?sanitize=true" alt="OpenCode logo" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;The open source AI coding agent.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://opencode.ai/discord"&gt;&lt;img alt="Discord" src="https://img.shields.io/discord/1391832426048651334?style=flat-square&amp;amp;label=discord" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/opencode-ai"&gt;&lt;img alt="npm" src="https://img.shields.io/npm/v/opencode-ai?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://github.com/anomalyco/opencode/actions/workflows/publish.yml"&gt;&lt;img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/anomalyco/opencode/publish.yml?style=flat-square&amp;amp;branch=dev" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://opencode.ai"&gt;&lt;img src="https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/web/src/assets/lander/screenshot.png" alt="OpenCode Terminal UI" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Installation&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# YOLO
+curl -fsSL https://opencode.ai/install | bash
+
+# Package managers
+npm i -g opencode-ai@latest        # or bun/pnpm/yarn
+scoop bucket add extras; scoop install extras/opencode  # Windows
+choco install opencode             # Windows
+brew install anomalyco/tap/opencode # macOS and Linux (recommended, always up to date)
+brew install opencode              # macOS and Linux (official brew formula, updated less)
+paru -S opencode-bin               # Arch Linux
+mise use -g opencode               # Any OS
+nix run nixpkgs#opencode           # or github:anomalyco/opencode for latest dev branch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] Remove versions older than 0.1.x before installing.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Desktop App (BETA)&lt;/h3&gt; 
+&lt;p&gt;OpenCode is also available as a desktop application. Download directly from the &lt;a href="https://github.com/anomalyco/opencode/releases"&gt;releases page&lt;/a&gt; or &lt;a href="https://opencode.ai/download"&gt;opencode.ai/download&lt;/a&gt;.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Platform&lt;/th&gt; 
+   &lt;th&gt;Download&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;macOS (Apple Silicon)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-darwin-aarch64.dmg&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;macOS (Intel)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-darwin-x64.dmg&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Windows&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-windows-x64.exe&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Linux&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;.deb&lt;/code&gt;, &lt;code&gt;.rpm&lt;/code&gt;, or AppImage&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# macOS (Homebrew)
+brew install --cask opencode-desktop
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Installation Directory&lt;/h4&gt; 
+&lt;p&gt;The install script respects the following priority order for the installation path:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;code&gt;$OPENCODE_INSTALL_DIR&lt;/code&gt; - Custom installation directory&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$XDG_BIN_DIR&lt;/code&gt; - XDG Base Directory Specification compliant path&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$HOME/bin&lt;/code&gt; - Standard user binary directory (if exists or can be created)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$HOME/.opencode/bin&lt;/code&gt; - Default fallback&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Examples
+OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/install | bash
+XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/install | bash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Agents&lt;/h3&gt; 
+&lt;p&gt;OpenCode includes two built-in agents you can switch between with the &lt;code&gt;Tab&lt;/code&gt; key.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;build&lt;/strong&gt; - Default, full access agent for development work&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;plan&lt;/strong&gt; - Read-only agent for analysis and code exploration 
+  &lt;ul&gt; 
+   &lt;li&gt;Denies file edits by default&lt;/li&gt; 
+   &lt;li&gt;Asks permission before running bash commands&lt;/li&gt; 
+   &lt;li&gt;Ideal for exploring unfamiliar codebases or planning changes&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Also, included is a &lt;strong&gt;general&lt;/strong&gt; subagent for complex searches and multistep tasks. This is used internally and can be invoked using &lt;code&gt;@general&lt;/code&gt; in messages.&lt;/p&gt; 
+&lt;p&gt;Learn more about &lt;a href="https://opencode.ai/docs/agents"&gt;agents&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Documentation&lt;/h3&gt; 
+&lt;p&gt;For more info on how to configure OpenCode &lt;a href="https://opencode.ai/docs"&gt;&lt;strong&gt;head over to our docs&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Contributing&lt;/h3&gt; 
+&lt;p&gt;If you're interested in contributing to OpenCode, please read our &lt;a href="https://raw.githubusercontent.com/anomalyco/opencode/dev/CONTRIBUTING.md"&gt;contributing docs&lt;/a&gt; before submitting a pull request.&lt;/p&gt; 
+&lt;h3&gt;Building on OpenCode&lt;/h3&gt; 
+&lt;p&gt;If you are working on a project that's related to OpenCode and is using "opencode" as a part of its name; for example, "opencode-dashboard" or "opencode-mobile", please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.&lt;/p&gt; 
+&lt;h3&gt;FAQ&lt;/h3&gt; 
+&lt;h4&gt;How is this different from Claude Code?&lt;/h4&gt; 
+&lt;p&gt;It's very similar to Claude Code in terms of capability. Here are the key differences:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;100% open source&lt;/li&gt; 
+ &lt;li&gt;Not coupled to any provider. Although we recommend the models we provide through &lt;a href="https://opencode.ai/zen"&gt;OpenCode Zen&lt;/a&gt;; OpenCode can be used with Claude, OpenAI, Google or even local models. As models evolve the gaps between them will close and pricing will drop so being provider-agnostic is important.&lt;/li&gt; 
+ &lt;li&gt;Out of the box LSP support&lt;/li&gt; 
+ &lt;li&gt;A focus on TUI. OpenCode is built by neovim users and the creators of &lt;a href="https://terminal.shop"&gt;terminal.shop&lt;/a&gt;; we are going to push the limits of what's possible in the terminal.&lt;/li&gt; 
+ &lt;li&gt;A client/server architecture. This for example can allow OpenCode to run on your computer, while you can drive it remotely from a mobile app. Meaning that the TUI frontend is just one of the possible clients.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Join our community&lt;/strong&gt; &lt;a href="https://discord.gg/opencode"&gt;Discord&lt;/a&gt; | &lt;a href="https://x.com/opencode"&gt;X.com&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>bytedance/UI-TARS-desktop</title>
+      <link>https://github.com/bytedance/UI-TARS-desktop</link>
+      <description>&lt;p&gt;The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra&lt;/p&gt;&lt;hr&gt;&lt;picture&gt; 
+ &lt;img alt="Agent TARS Banner" src="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/images/tars.png" /&gt; 
+&lt;/picture&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Introduction&lt;/h2&gt; 
+&lt;p&gt;English | &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/README.zh-CN.md"&gt;简体中文&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://trendshift.io/repositories/13584"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/13584" alt="" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;b&gt;TARS&lt;sup&gt;*&lt;/sup&gt;&lt;/b&gt; is a Multimodal AI Agent stack, currently shipping two projects: &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#agent-tars"&gt;Agent TARS&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#ui-tars-desktop"&gt;UI-TARS-desktop&lt;/a&gt;:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th width="50%" align="center"&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#agent-tars"&gt;Agent TARS&lt;/a&gt;&lt;/th&gt; 
+   &lt;th width="50%" align="center"&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#ui-tars-desktop"&gt;UI-TARS-desktop&lt;/a&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; 
+    &lt;video src="https://github.com/user-attachments/assets/c9489936-afdc-4d12-adda-d4b90d2a869d" width="50%"&gt;&lt;/video&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; 
+    &lt;video src="https://github.com/user-attachments/assets/e0914ce9-ad33-494b-bdec-0c25c1b01a27" width="50%"&gt;&lt;/video&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt; &lt;b&gt;Agent TARS&lt;/b&gt; is a general multimodal AI Agent stack, it brings the power of GUI Agent and Vision into your terminal, computer, browser and product. &lt;br /&gt; &lt;br /&gt; It primarily ships with a &lt;a href="https://agent-tars.com/guide/basic/cli.html" target="_blank"&gt;CLI&lt;/a&gt; and &lt;a href="https://agent-tars.com/guide/basic/web-ui.html" target="_blank"&gt;Web UI&lt;/a&gt; for usage. It aims to provide a workflow that is closer to human-like task completion through cutting-edge multimodal LLMs and seamless integration with various real-world &lt;a href="https://agent-tars.com/guide/basic/mcp.html" target="_blank"&gt;MCP&lt;/a&gt; tools. &lt;/td&gt; 
+   &lt;td align="left"&gt; &lt;b&gt;UI-TARS Desktop&lt;/b&gt; is a desktop application that provides a native GUI Agent based on the &lt;a href="https://github.com/bytedance/UI-TARS" target="_blank"&gt;UI-TARS&lt;/a&gt; model. &lt;br /&gt; &lt;br /&gt; It primarily ships a &lt;a href="https://github.com/bytedance/UI-TARS-desktop/raw/main/docs/quick-start.md#get-model-and-run-local-operator" target="_blank"&gt;local&lt;/a&gt; and &lt;a href="https://github.com/bytedance/UI-TARS-desktop/raw/main/docs/quick-start.md#run-remote-operator" target="_blank"&gt;remote&lt;/a&gt; computer as well as browser operators. &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Table of Contents&lt;/h2&gt; 
+&lt;!-- START doctoc generated TOC please keep comment here to allow auto update --&gt; 
+&lt;!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#news"&gt;News&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#agent-tars"&gt;Agent TARS&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#showcase"&gt;Showcase&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#core-features"&gt;Core Features&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#quick-start"&gt;Quick Start&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#documentation"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#ui-tars-desktop"&gt;UI-TARS Desktop&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#showcase-1"&gt;Showcase&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#features"&gt;Features&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#quick-start-1"&gt;Quick Start&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#contributing"&gt;Contributing&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#license"&gt;License&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/#citation"&gt;Citation&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;!-- END doctoc generated TOC please keep comment here to allow auto update --&gt; 
+&lt;h2&gt;News&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-11-05]&lt;/strong&gt; 🎉 We're excited to announce the release of &lt;a href="https://github.com/bytedance/UI-TARS-desktop/releases/tag/v0.3.0"&gt;Agent TARS CLI v0.3.0&lt;/a&gt;! This version brings streaming support for multiple tools (shell commands, multi-file structured display), runtime settings with timing statistics for tool calls and deep thinking, Event Stream Viewer for data flow tracking and debugging. Additionally, it features exclusive support for &lt;a href="https://github.com/agent-infra/sandbox"&gt;AIO agent Sandbox&lt;/a&gt; as isolated all-in-one tools execution environment.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-06-25]&lt;/strong&gt; We released a Agent TARS Beta and Agent TARS CLI - &lt;a href="https://agent-tars.com/blog/2025-06-25-introducing-agent-tars-beta.html"&gt;Introducing Agent TARS Beta&lt;/a&gt;, a multimodal AI agent that aims to explore a work form that is closer to human-like task completion through rich multimodal capabilities (such as GUI Agent, Vision) and seamless integration with various real-world tools.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-06-12]&lt;/strong&gt; - 🎁 We are thrilled to announce the release of UI-TARS Desktop v0.2.0! This update introduces two powerful new features: &lt;strong&gt;Remote Computer Operator&lt;/strong&gt; and &lt;strong&gt;Remote Browser Operator&lt;/strong&gt;—both completely free. No configuration required: simply click to remotely control any computer or browser, and experience a new level of convenience and intelligence.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-04-17]&lt;/strong&gt; - 🎉 We're thrilled to announce the release of new UI-TARS Desktop application v0.1.0, featuring a redesigned Agent UI. The application enhances the computer using experience, introduces new browser operation features, and supports &lt;a href="https://seed-tars.com/1.5"&gt;the advanced UI-TARS-1.5 model&lt;/a&gt; for improved performance and precise control.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-02-20]&lt;/strong&gt; - 📦 Introduced &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/docs/sdk.md"&gt;UI TARS SDK&lt;/a&gt;, is a powerful cross-platform toolkit for building GUI automation agents.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;[2025-01-23]&lt;/strong&gt; - 🚀 We updated the &lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/docs/deployment.md#cloud-deployment"&gt;Cloud Deployment&lt;/a&gt;&lt;/strong&gt; section in the 中文版: &lt;a href="https://bytedance.sg.larkoffice.com/docx/TCcudYwyIox5vyxiSDLlgIsTgWf#U94rdCxzBoJMLex38NPlHL21gNb"&gt;GUI模型部署教程&lt;/a&gt; with new information related to the ModelScope platform. You can now use the ModelScope platform for deployment.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Agent TARS&lt;/h2&gt; 
+&lt;p&gt; &lt;a href="https://npmjs.com/package/@agent-tars/cli?activeTab=readme"&gt;&lt;img src="https://img.shields.io/npm/v/@agent-tars/cli?style=for-the-badge&amp;amp;colorA=1a1a2e&amp;amp;colorB=3B82F6&amp;amp;logo=npm&amp;amp;logoColor=white" alt="npm version" /&gt;&lt;/a&gt; &lt;a href="https://npmcharts.com/compare/@agent-tars/cli?minimal=true"&gt;&lt;img src="https://img.shields.io/npm/dm/@agent-tars/cli.svg?style=for-the-badge&amp;amp;colorA=1a1a2e&amp;amp;colorB=0EA5E9&amp;amp;logo=npm&amp;amp;logoColor=white" alt="downloads" /&gt;&lt;/a&gt; &lt;a href="https://nodejs.org/en/about/previous-releases"&gt;&lt;img src="https://img.shields.io/node/v/@agent-tars/cli.svg?style=for-the-badge&amp;amp;colorA=1a1a2e&amp;amp;colorB=06B6D4&amp;amp;logo=node.js&amp;amp;logoColor=white" alt="node version" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/HnKcSBgTVx"&gt;&lt;img src="https://img.shields.io/badge/Discord-Join%20Community-5865F2?style=for-the-badge&amp;amp;logo=discord&amp;amp;logoColor=white" alt="Discord Community" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/agent_tars"&gt;&lt;img src="https://img.shields.io/badge/Twitter-Follow%20%40agent__tars-1DA1F2?style=for-the-badge&amp;amp;logo=twitter&amp;amp;logoColor=white" alt="Official Twitter" /&gt;&lt;/a&gt; &lt;a href="https://applink.larkoffice.com/client/chat/chatter/add_by_link?link_token=deen76f4-ea3c-4964-93a3-78f126f39651"&gt;&lt;img src="https://img.shields.io/badge/飞书群-加入交流群-00D4AA?style=for-the-badge&amp;amp;logo=lark&amp;amp;logoColor=white" alt="飞书交流群" /&gt;&lt;/a&gt; &lt;a href="https://deepwiki.com/bytedance/UI-TARS-desktop"&gt;&lt;img src="https://img.shields.io/badge/DeepWiki-Ask%20AI-8B5CF6?style=for-the-badge&amp;amp;logo=gitbook&amp;amp;logoColor=white" alt="Ask DeepWiki" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;b&gt;Agent TARS&lt;/b&gt; is a general multimodal AI Agent stack, it brings the power of GUI Agent and Vision into your terminal, computer, browser and product. &lt;br /&gt; &lt;br /&gt; It primarily ships with a &lt;a href="https://agent-tars.com/guide/basic/cli.html" target="_blank"&gt;CLI&lt;/a&gt; and &lt;a href="https://agent-tars.com/guide/basic/web-ui.html" target="_blank"&gt;Web UI&lt;/a&gt; for usage. It aims to provide a workflow that is closer to human-like task completion through cutting-edge multimodal LLMs and seamless integration with various real-world &lt;a href="https://agent-tars.com/guide/basic/mcp.html" target="_blank"&gt;MCP&lt;/a&gt; tools.&lt;/p&gt; 
+&lt;h3&gt;Showcase&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;Please help me book the earliest flight from San Jose to New York on September 1st and the last return flight on September 6th on Priceline
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/772b0eef-aef7-4ab9-8cb0-9611820539d8"&gt;https://github.com/user-attachments/assets/772b0eef-aef7-4ab9-8cb0-9611820539d8&lt;/a&gt;&lt;/p&gt; 
+&lt;br /&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th width="50%" align="center"&gt;Booking Hotel&lt;/th&gt; 
+   &lt;th width="50%" align="center"&gt;Generate Chart with extra MCP Servers&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; 
+    &lt;video src="https://github.com/user-attachments/assets/c9489936-afdc-4d12-adda-d4b90d2a869d" width="50%"&gt;&lt;/video&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; 
+    &lt;video src="https://github.com/user-attachments/assets/a9fd72d0-01bb-4233-aa27-ca95194bbce9" width="50%"&gt;&lt;/video&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt; &lt;b&gt;Instruction:&lt;/b&gt; &lt;i&gt;I am in Los Angeles from September 1st to September 6th, with a budget of $5,000. Please help me book a Ritz-Carlton hotel closest to the airport on booking.com and compile a transportation guide for me&lt;/i&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt; &lt;b&gt;Instruction:&lt;/b&gt; &lt;i&gt;Draw me a chart of Hangzhou's weather for one month&lt;/i&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;For more use cases, please check out &lt;a href="https://github.com/bytedance/UI-TARS-desktop/issues/842"&gt;#842&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Core Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🖱️ &lt;strong&gt;One-Click Out-of-the-box CLI&lt;/strong&gt; - Supports both &lt;strong&gt;headful&lt;/strong&gt; &lt;a href="https://agent-tars.com/guide/basic/web-ui.html"&gt;Web UI&lt;/a&gt; and &lt;strong&gt;headless&lt;/strong&gt; &lt;a href="https://agent-tars.com/guide/advanced/server.html"&gt;server&lt;/a&gt;) &lt;a href="https://agent-tars.com/guide/basic/cli.html"&gt;execution&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;🌐 &lt;strong&gt;Hybrid Browser Agent&lt;/strong&gt; - Control browsers using &lt;a href="https://agent-tars.com/guide/basic/browser.html#visual-grounding"&gt;GUI Agent&lt;/a&gt;, &lt;a href="https://agent-tars.com/guide/basic/browser.html#dom"&gt;DOM&lt;/a&gt;, or a hybrid strategy.&lt;/li&gt; 
+ &lt;li&gt;🔄 &lt;strong&gt;Event Stream&lt;/strong&gt; - Protocol-driven Event Stream drives &lt;a href="https://agent-tars.com/beta#context-engineering"&gt;Context Engineering&lt;/a&gt; and &lt;a href="https://agent-tars.com/blog/2025-06-25-introducing-agent-tars-beta.html#easy-to-build-applications"&gt;Agent UI&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;🧰 &lt;strong&gt;MCP Integration&lt;/strong&gt; - The kernel is built on MCP and also supports mounting &lt;a href="https://agent-tars.com/guide/basic/mcp.html"&gt;MCP Servers&lt;/a&gt; to connect to real-world tools.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Quick Start&lt;/h3&gt; 
+&lt;img alt="Agent TARS CLI" src="https://agent-tars.com/agent-tars-cli.png" /&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Launch with `npx`.
+npx @agent-tars/cli@latest
+
+# Install globally, required Node.js &amp;gt;= 22
+npm install @agent-tars/cli@latest -g
+
+# Run with your preferred model provider
+agent-tars --provider volcengine --model doubao-1-5-thinking-vision-pro-250428 --apiKey your-api-key
+agent-tars --provider anthropic --model claude-3-7-sonnet-latest --apiKey your-api-key
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Visit the comprehensive &lt;a href="https://agent-tars.com/guide/get-started/quick-start.html"&gt;Quick Start&lt;/a&gt; guide for detailed setup instructions.&lt;/p&gt; 
+&lt;h3&gt;Documentation&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;🌟 &lt;strong&gt;Explore Agent TARS Universe&lt;/strong&gt; 🌟&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th width="20%" align="center"&gt;Category&lt;/th&gt; 
+   &lt;th width="30%" align="center"&gt;Resource Link&lt;/th&gt; 
+   &lt;th width="50%" align="left"&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🏠 &lt;strong&gt;Central Hub&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com"&gt; &lt;img src="https://img.shields.io/badge/Visit-Website-4F46E5?style=for-the-badge&amp;amp;logo=globe&amp;amp;logoColor=white" alt="Website" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Your gateway to Agent TARS ecosystem&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;📚 &lt;strong&gt;Quick Start&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com/guide/get-started/quick-start.html"&gt; &lt;img src="https://img.shields.io/badge/Get-Started-06B6D4?style=for-the-badge&amp;amp;logo=rocket&amp;amp;logoColor=white" alt="Quick Start" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Zero to hero in 5 minutes&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🚀 &lt;strong&gt;What's New&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com/beta"&gt; &lt;img src="https://img.shields.io/badge/Read-Blog-F59E0B?style=for-the-badge&amp;amp;logo=rss&amp;amp;logoColor=white" alt="Blog" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Discover cutting-edge features &amp;amp; vision&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🛠️ &lt;strong&gt;Developer Zone&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com/guide/get-started/introduction.html"&gt; &lt;img src="https://img.shields.io/badge/View-Docs-10B981?style=for-the-badge&amp;amp;logo=gitbook&amp;amp;logoColor=white" alt="Docs" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Master every command &amp;amp; features&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🎯 &lt;strong&gt;Showcase&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://github.com/bytedance/UI-TARS-desktop/issues/842"&gt; &lt;img src="https://img.shields.io/badge/View-Examples-8B5CF6?style=for-the-badge&amp;amp;logo=github&amp;amp;logoColor=white" alt="Examples" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;View use cases built by the official and community&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;🔧 &lt;strong&gt;Reference&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;a href="https://agent-tars.com/api/"&gt; &lt;img src="https://img.shields.io/badge/API-Reference-EF4444?style=for-the-badge&amp;amp;logo=book&amp;amp;logoColor=white" alt="API" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td align="left"&gt;Complete technical reference&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;UI-TARS Desktop&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;img alt="UI-TARS" width="260" src="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/apps/ui-tars/resources/icon.png" /&gt; &lt;/p&gt; 
+&lt;p&gt;UI-TARS Desktop is a native GUI agent for your local computer, driven by &lt;a href="https://github.com/bytedance/UI-TARS"&gt;UI-TARS&lt;/a&gt; and Seed-1.5-VL/1.6 series models.&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt; &amp;nbsp;&amp;nbsp; 📑 &lt;a href="https://arxiv.org/abs/2501.12326"&gt;Paper&lt;/a&gt; &amp;nbsp;&amp;nbsp; | 🤗 &lt;a href="https://huggingface.co/ByteDance-Seed/UI-TARS-1.5-7B"&gt;Hugging Face Models&lt;/a&gt;&amp;nbsp;&amp;nbsp; | &amp;nbsp;&amp;nbsp;🫨 &lt;a href="https://discord.gg/pTXwYVjfcs"&gt;Discord&lt;/a&gt;&amp;nbsp;&amp;nbsp; | &amp;nbsp;&amp;nbsp;🤖 &lt;a href="https://www.modelscope.cn/collections/UI-TARS-bccb56fa1ef640"&gt;ModelScope&lt;/a&gt;&amp;nbsp;&amp;nbsp; &lt;br /&gt; 🖥️ Desktop Application &amp;nbsp;&amp;nbsp; | &amp;nbsp;&amp;nbsp; 👓 &lt;a href="https://github.com/web-infra-dev/midscene"&gt;Midscene (use in browser)&lt;/a&gt; &amp;nbsp;&amp;nbsp; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h3&gt;Showcase&lt;/h3&gt; 
+&lt;!-- // FIXME: Choose only two demo, one local computer and one remote computer showcase. --&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="center"&gt;Instruction&lt;/th&gt; 
+   &lt;th align="center"&gt;Local Operator&lt;/th&gt; 
+   &lt;th align="center"&gt;Remote Operator&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Please help me open the autosave feature of VS Code and delay AutoSave operations for 500 milliseconds in the VS Code setting.&lt;/td&gt; 
+   &lt;td align="center"&gt;
+    &lt;video src="https://github.com/user-attachments/assets/e0914ce9-ad33-494b-bdec-0c25c1b01a27" height="300"&gt;&lt;/video&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;
+    &lt;video src="https://github.com/user-attachments/assets/01e49b69-7070-46c8-b3e3-2aaaaec71800" height="300"&gt;&lt;/video&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Could you help me check the latest open issue of the UI-TARS-Desktop project on GitHub?&lt;/td&gt; 
+   &lt;td align="center"&gt;
+    &lt;video src="https://github.com/user-attachments/assets/3d159f54-d24a-4268-96c0-e149607e9199" height="300"&gt;&lt;/video&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;
+    &lt;video src="https://github.com/user-attachments/assets/072fb72d-7394-4bfa-95f5-4736e29f7e58" height="300"&gt;&lt;/video&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🤖 Natural language control powered by Vision-Language Model&lt;/li&gt; 
+ &lt;li&gt;🖥️ Screenshot and visual recognition support&lt;/li&gt; 
+ &lt;li&gt;🎯 Precise mouse and keyboard control&lt;/li&gt; 
+ &lt;li&gt;💻 Cross-platform support (Windows/MacOS/Browser)&lt;/li&gt; 
+ &lt;li&gt;🔄 Real-time feedback and status display&lt;/li&gt; 
+ &lt;li&gt;🔐 Private and secure - fully local processing&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Quick Start&lt;/h3&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/docs/quick-start.md"&gt;Quick Start&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the Apache License 2.0.&lt;/p&gt; 
+&lt;h2&gt;Citation&lt;/h2&gt; 
+&lt;p&gt;If you find our paper and code useful in your research, please consider giving a star &lt;span&gt;⭐&lt;/span&gt; and citation &lt;span&gt;📝&lt;/span&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-BibTeX"&gt;@article{qin2025ui,
+  title={UI-TARS: Pioneering Automated GUI Interaction with Native Agents},
+  author={Qin, Yujia and Ye, Yining and Fang, Junjie and Wang, Haoming and Liang, Shihao and Tian, Shizuo and Zhang, Junda and Li, Jiahao and Li, Yunxin and Huang, Shijue and others},
+  journal={arXiv preprint arXiv:2501.12326},
+  year={2025}
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>steveyegge/beads</title>
+      <link>https://github.com/steveyegge/beads</link>
+      <description>&lt;p&gt;Beads - A memory upgrade for your coding agent&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;bd - Beads&lt;/h1&gt; 
+&lt;p&gt;&lt;strong&gt;Distributed, git-backed graph issue tracker for AI agents.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/steveyegge/beads/main/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/steveyegge/beads" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://goreportcard.com/report/github.com/steveyegge/beads"&gt;&lt;img src="https://goreportcard.com/badge/github.com/steveyegge/beads" alt="Go Report Card" /&gt;&lt;/a&gt; &lt;a href="https://github.com/steveyegge/beads/releases"&gt;&lt;img src="https://img.shields.io/github/v/release/steveyegge/beads" alt="Release" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/@beads/bd"&gt;&lt;img src="https://img.shields.io/npm/v/@beads/bd" alt="npm version" /&gt;&lt;/a&gt; &lt;a href="https://pypi.org/project/beads-mcp/"&gt;&lt;img src="https://img.shields.io/pypi/v/beads-mcp" alt="PyPI" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Beads provides a persistent, structured memory for coding agents. It replaces messy markdown plans with a dependency-aware graph, allowing agents to handle long-horizon tasks without losing context.&lt;/p&gt; 
+&lt;h2&gt;⚡ Quick Start&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Install (macOS/Linux/FreeBSD)
+curl -fsSL https://raw.githubusercontent.com/steveyegge/beads/main/scripts/install.sh | bash
+
+# Initialize (Humans run this once)
+bd init
+
+# Tell your agent
+echo "Use 'bd' for task tracking" &amp;gt;&amp;gt; AGENTS.md
+
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;🛠 Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Git as Database:&lt;/strong&gt; Issues stored as JSONL in &lt;code&gt;.beads/&lt;/code&gt;. Versioned, branched, and merged like code.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Agent-Optimized:&lt;/strong&gt; JSON output, dependency tracking, and auto-ready task detection.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Zero Conflict:&lt;/strong&gt; Hash-based IDs (&lt;code&gt;bd-a1b2&lt;/code&gt;) prevent merge collisions in multi-agent/multi-branch workflows.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Invisible Infrastructure:&lt;/strong&gt; SQLite local cache for speed; background daemon for auto-sync.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Compaction:&lt;/strong&gt; Semantic "memory decay" summarizes old closed tasks to save context window.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📖 Essential Commands&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Command&lt;/th&gt; 
+   &lt;th&gt;Action&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;bd ready&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;List tasks with no open blockers.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;bd create "Title" -p 0&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Create a P0 task.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;bd dep add &amp;lt;child&amp;gt; &amp;lt;parent&amp;gt;&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Link tasks (blocks, related, parent-child).&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;bd show &amp;lt;id&amp;gt;&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;View task details and audit trail.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;🔗 Hierarchy &amp;amp; Workflow&lt;/h2&gt; 
+&lt;p&gt;Beads supports hierarchical IDs for epics:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;bd-a3f8&lt;/code&gt; (Epic)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;bd-a3f8.1&lt;/code&gt; (Task)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;bd-a3f8.1.1&lt;/code&gt; (Sub-task)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Stealth Mode:&lt;/strong&gt; Run &lt;code&gt;bd init --stealth&lt;/code&gt; to use Beads locally without committing files to the main repo. Perfect for personal use on shared projects.&lt;/p&gt; 
+&lt;h2&gt;📦 Installation&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;npm:&lt;/strong&gt; &lt;code&gt;npm install -g @beads/bd&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Homebrew:&lt;/strong&gt; &lt;code&gt;brew install steveyegge/beads/bd&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Go:&lt;/strong&gt; &lt;code&gt;go install github.com/steveyegge/beads/cmd/bd@latest&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt; Linux (glibc 2.32+), FreeBSD, macOS, or Windows.&lt;/p&gt; 
+&lt;h2&gt;🌐 Community Tools&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/steveyegge/beads/main/docs/COMMUNITY_TOOLS.md"&gt;docs/COMMUNITY_TOOLS.md&lt;/a&gt; for a curated list of community-built UIs, extensions, and integrations—including terminal interfaces, web UIs, editor extensions, and native apps.&lt;/p&gt; 
+&lt;h2&gt;📝 Documentation&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/steveyegge/beads/main/docs/INSTALLING.md"&gt;Installing&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/steveyegge/beads/main/AGENT_INSTRUCTIONS.md"&gt;Agent Workflow&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/steveyegge/beads/main/docs/PROTECTED_BRANCHES.md"&gt;Sync Branch Mode&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/steveyegge/beads/main/docs/TROUBLESHOOTING.md"&gt;Troubleshooting&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/steveyegge/beads/main/docs/FAQ.md"&gt;FAQ&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://deepwiki.com/steveyegge/beads"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" alt="Ask DeepWiki" /&gt;&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>obra/superpowers</title>
+      <link>https://github.com/obra/superpowers</link>
+      <description>&lt;p&gt;Claude Code superpowers: core skills library&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Superpowers&lt;/h1&gt; 
+&lt;p&gt;Superpowers is a complete software development workflow for your coding agents, built on top of a set of composable "skills" and some initial instructions that make sure your agent uses them.&lt;/p&gt; 
+&lt;h2&gt;How it works&lt;/h2&gt; 
+&lt;p&gt;It starts from the moment you fire up your coding agent. As soon as it sees that you're building something, it &lt;em&gt;doesn't&lt;/em&gt; just jump into trying to write code. Instead, it steps back and asks you what you're really trying to do.&lt;/p&gt; 
+&lt;p&gt;Once it's teased a spec out of the conversation, it shows it to you in chunks short enough to actually read and digest.&lt;/p&gt; 
+&lt;p&gt;After you've signed off on the design, your agent puts together an implementation plan that's clear enough for an enthusiastic junior engineer with poor taste, no judgement, no project context, and an aversion to testing to follow. It emphasizes true red/green TDD, YAGNI (You Aren't Gonna Need It), and DRY.&lt;/p&gt; 
+&lt;p&gt;Next up, once you say "go", it launches a &lt;em&gt;subagent-driven-development&lt;/em&gt; process, having agents work through each engineering task, inspecting and reviewing their work, and continuing forward. It's not uncommon for Claude to be able to work autonomously for a couple hours at a time without deviating from the plan you put together.&lt;/p&gt; 
+&lt;p&gt;There's a bunch more to it, but that's the core of the system. And because the skills trigger automatically, you don't need to do anything special. Your coding agent just has Superpowers.&lt;/p&gt; 
+&lt;h2&gt;Sponsorship&lt;/h2&gt; 
+&lt;p&gt;If Superpowers has helped you do stuff that makes money and you are so inclined, I'd greatly appreciate it if you'd consider &lt;a href="https://github.com/sponsors/obra"&gt;sponsoring my opensource work&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Thanks!&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Jesse&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Installation differs by platform. Claude Code has a built-in plugin system. Codex and OpenCode require manual setup.&lt;/p&gt; 
+&lt;h3&gt;Claude Code (via Plugin Marketplace)&lt;/h3&gt; 
+&lt;p&gt;In Claude Code, register the marketplace first:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/plugin marketplace add obra/superpowers-marketplace
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then install the plugin from this marketplace:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/plugin install superpowers@superpowers-marketplace
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Verify Installation&lt;/h3&gt; 
+&lt;p&gt;Check that commands appear:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/help
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code&gt;# Should see:
+# /superpowers:brainstorm - Interactive design refinement
+# /superpowers:write-plan - Create implementation plan
+# /superpowers:execute-plan - Execute plan in batches
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Codex&lt;/h3&gt; 
+&lt;p&gt;Tell Codex:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.codex/INSTALL.md
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Detailed docs:&lt;/strong&gt; &lt;a href="https://raw.githubusercontent.com/obra/superpowers/main/docs/README.codex.md"&gt;docs/README.codex.md&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;OpenCode&lt;/h3&gt; 
+&lt;p&gt;Tell OpenCode:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INSTALL.md
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Detailed docs:&lt;/strong&gt; &lt;a href="https://raw.githubusercontent.com/obra/superpowers/main/docs/README.opencode.md"&gt;docs/README.opencode.md&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;The Basic Workflow&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;brainstorming&lt;/strong&gt; - Activates before writing code. Refines rough ideas through questions, explores alternatives, presents design in sections for validation. Saves design document.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;using-git-worktrees&lt;/strong&gt; - Activates after design approval. Creates isolated workspace on new branch, runs project setup, verifies clean test baseline.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;writing-plans&lt;/strong&gt; - Activates with approved design. Breaks work into bite-sized tasks (2-5 minutes each). Every task has exact file paths, complete code, verification steps.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;subagent-driven-development&lt;/strong&gt; or &lt;strong&gt;executing-plans&lt;/strong&gt; - Activates with plan. Dispatches fresh subagent per task with two-stage review (spec compliance, then code quality), or executes in batches with human checkpoints.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;test-driven-development&lt;/strong&gt; - Activates during implementation. Enforces RED-GREEN-REFACTOR: write failing test, watch it fail, write minimal code, watch it pass, commit. Deletes code written before tests.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;requesting-code-review&lt;/strong&gt; - Activates between tasks. Reviews against plan, reports issues by severity. Critical issues block progress.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;finishing-a-development-branch&lt;/strong&gt; - Activates when tasks complete. Verifies tests, presents options (merge/PR/keep/discard), cleans up worktree.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;The agent checks for relevant skills before any task.&lt;/strong&gt; Mandatory workflows, not suggestions.&lt;/p&gt; 
+&lt;h2&gt;What's Inside&lt;/h2&gt; 
+&lt;h3&gt;Skills Library&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Testing&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;test-driven-development&lt;/strong&gt; - RED-GREEN-REFACTOR cycle (includes testing anti-patterns reference)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Debugging&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;systematic-debugging&lt;/strong&gt; - 4-phase root cause process (includes root-cause-tracing, defense-in-depth, condition-based-waiting techniques)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;verification-before-completion&lt;/strong&gt; - Ensure it's actually fixed&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Collaboration&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;brainstorming&lt;/strong&gt; - Socratic design refinement&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;writing-plans&lt;/strong&gt; - Detailed implementation plans&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;executing-plans&lt;/strong&gt; - Batch execution with checkpoints&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;dispatching-parallel-agents&lt;/strong&gt; - Concurrent subagent workflows&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;requesting-code-review&lt;/strong&gt; - Pre-review checklist&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;receiving-code-review&lt;/strong&gt; - Responding to feedback&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;using-git-worktrees&lt;/strong&gt; - Parallel development branches&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;finishing-a-development-branch&lt;/strong&gt; - Merge/PR decision workflow&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;subagent-driven-development&lt;/strong&gt; - Fast iteration with two-stage review (spec compliance, then code quality)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Meta&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;writing-skills&lt;/strong&gt; - Create new skills following best practices (includes testing methodology)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;using-superpowers&lt;/strong&gt; - Introduction to the skills system&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Philosophy&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Test-Driven Development&lt;/strong&gt; - Write tests first, always&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Systematic over ad-hoc&lt;/strong&gt; - Process over guessing&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Complexity reduction&lt;/strong&gt; - Simplicity as primary goal&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Evidence over claims&lt;/strong&gt; - Verify before declaring success&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Read more: &lt;a href="https://blog.fsck.com/2025/10/09/superpowers/"&gt;Superpowers for Claude Code&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Skills live directly in this repository. To contribute:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork the repository&lt;/li&gt; 
+ &lt;li&gt;Create a branch for your skill&lt;/li&gt; 
+ &lt;li&gt;Follow the &lt;code&gt;writing-skills&lt;/code&gt; skill for creating and testing new skills&lt;/li&gt; 
+ &lt;li&gt;Submit a PR&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;See &lt;code&gt;skills/writing-skills/SKILL.md&lt;/code&gt; for the complete guide.&lt;/p&gt; 
+&lt;h2&gt;Updating&lt;/h2&gt; 
+&lt;p&gt;Skills update automatically when you update the plugin:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/plugin update superpowers
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT License - see LICENSE file for details&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Issues&lt;/strong&gt;: &lt;a href="https://github.com/obra/superpowers/issues"&gt;https://github.com/obra/superpowers/issues&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Marketplace&lt;/strong&gt;: &lt;a href="https://github.com/obra/superpowers-marketplace"&gt;https://github.com/obra/superpowers-marketplace&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>anthropics/claude-code</title>
+      <link>https://github.com/anthropics/claude-code</link>
+      <description>&lt;p&gt;Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Claude Code&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://img.shields.io/badge/Node.js-18%2B-brightgreen?style=flat-square" alt="" /&gt; &lt;a href="https://www.npmjs.com/package/@anthropic-ai/claude-code"&gt;&lt;img src="https://img.shields.io/npm/v/@anthropic-ai/claude-code.svg?style=flat-square" alt="npm" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands. Use it in your terminal, IDE, or tag @claude on Github.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Learn more in the &lt;a href="https://code.claude.com/docs/en/overview"&gt;official documentation&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt; 
+&lt;img src="https://raw.githubusercontent.com/anthropics/claude-code/main/demo.gif" /&gt; 
+&lt;h2&gt;Get started&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] Installation via npm is deprecated. Use one of the recommended methods below.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;For more installation options, uninstall steps, and troubleshooting, see the &lt;a href="https://code.claude.com/docs/en/setup"&gt;setup documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;Install Claude Code:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;MacOS/Linux (Recommended):&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;curl -fsSL https://claude.ai/install.sh | bash
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Homebrew (MacOS/Linux):&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;brew install --cask claude-code
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Windows (Recommended):&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-powershell"&gt;irm https://claude.ai/install.ps1 | iex
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;WinGet (Windows):&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-powershell"&gt;winget install Anthropic.ClaudeCode
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;NPM (Deprecated):&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;npm install -g @anthropic-ai/claude-code
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Navigate to your project directory and run &lt;code&gt;claude&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Plugins&lt;/h2&gt; 
+&lt;p&gt;This repository includes several Claude Code plugins that extend functionality with custom commands and agents. See the &lt;a href="https://raw.githubusercontent.com/anthropics/claude-code/main/plugins/README.md"&gt;plugins directory&lt;/a&gt; for detailed documentation on available plugins.&lt;/p&gt; 
+&lt;h2&gt;Reporting Bugs&lt;/h2&gt; 
+&lt;p&gt;We welcome your feedback. Use the &lt;code&gt;/bug&lt;/code&gt; command to report issues directly within Claude Code, or file a &lt;a href="https://github.com/anthropics/claude-code/issues"&gt;GitHub issue&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Connect on Discord&lt;/h2&gt; 
+&lt;p&gt;Join the &lt;a href="https://anthropic.com/discord"&gt;Claude Developers Discord&lt;/a&gt; to connect with other developers using Claude Code. Get help, share feedback, and discuss your projects with the community.&lt;/p&gt; 
+&lt;h2&gt;Data collection, usage, and retention&lt;/h2&gt; 
+&lt;p&gt;When you use Claude Code, we collect feedback, which includes usage data (such as code acceptance or rejections), associated conversation data, and user feedback submitted via the &lt;code&gt;/bug&lt;/code&gt; command.&lt;/p&gt; 
+&lt;h3&gt;How we use your data&lt;/h3&gt; 
+&lt;p&gt;See our &lt;a href="https://code.claude.com/docs/en/data-usage"&gt;data usage policies&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Privacy safeguards&lt;/h3&gt; 
+&lt;p&gt;We have implemented several safeguards to protect your data, including limited retention periods for sensitive information, restricted access to user session data, and clear policies against using feedback for model training.&lt;/p&gt; 
+&lt;p&gt;For full details, please review our &lt;a href="https://www.anthropic.com/legal/commercial-terms"&gt;Commercial Terms of Service&lt;/a&gt; and &lt;a href="https://www.anthropic.com/legal/privacy"&gt;Privacy Policy&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>frankbria/ralph-claude-code</title>
+      <link>https://github.com/frankbria/ralph-claude-code</link>
+      <description>&lt;p&gt;Autonomous AI development loop for Claude Code with intelligent exit detection&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Ralph for Claude Code&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/frankbria/ralph-claude-code/actions/workflows/test.yml"&gt;&lt;img src="https://github.com/frankbria/ralph-claude-code/actions/workflows/test.yml/badge.svg?sanitize=true" alt="CI" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/License-MIT-blue.svg?sanitize=true" alt="License: MIT" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/badge/version-0.9.8-blue" alt="Version" /&gt; &lt;img src="https://img.shields.io/badge/tests-276%20passing-green" alt="Tests" /&gt; &lt;a href="https://github.com/frankbria/ralph-claude-code/issues"&gt;&lt;img src="https://img.shields.io/github/issues/frankbria/ralph-claude-code" alt="GitHub Issues" /&gt;&lt;/a&gt; &lt;a href="https://github.com/hesreallyhim/awesome-claude-code"&gt;&lt;img src="https://awesome.re/mentioned-badge.svg?sanitize=true" alt="Mentioned in Awesome Claude Code" /&gt;&lt;/a&gt; &lt;a href="https://x.com/FrankBria18044"&gt;&lt;img src="https://img.shields.io/twitter/follow/FrankBria18044?style=social" alt="Follow on X" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Autonomous AI development loop with intelligent exit detection and rate limiting&lt;/strong&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Ralph is an implementation of the Geoffrey Huntley's technique for Claude Code that enables continuous autonomous development cycles he named after &lt;a href="https://ghuntley.com/ralph/"&gt;Ralph Wiggum&lt;/a&gt;. It enables continuous autonomous development cycles where Claude Code iteratively improves your project until completion, with built-in safeguards to prevent infinite loops and API overuse.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Install once, use everywhere&lt;/strong&gt; - Ralph becomes a global command available in any directory.&lt;/p&gt; 
+&lt;h2&gt;Project Status&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Version&lt;/strong&gt;: v0.9.8 - Active Development &lt;strong&gt;Core Features&lt;/strong&gt;: Working and tested &lt;strong&gt;Test Coverage&lt;/strong&gt;: 276 tests, 100% pass rate&lt;/p&gt; 
+&lt;h3&gt;What's Working Now&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Autonomous development loops with intelligent exit detection&lt;/li&gt; 
+ &lt;li&gt;Rate limiting with hourly reset (100 calls/hour, configurable)&lt;/li&gt; 
+ &lt;li&gt;Circuit breaker with advanced error detection (prevents runaway loops)&lt;/li&gt; 
+ &lt;li&gt;Response analyzer with semantic understanding and two-stage error filtering&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;JSON output format support with automatic fallback to text parsing&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Session continuity with &lt;code&gt;--continue&lt;/code&gt; flag for context preservation&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Modern CLI flags: &lt;code&gt;--output-format&lt;/code&gt;, &lt;code&gt;--allowed-tools&lt;/code&gt;, &lt;code&gt;--no-continue&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;Multi-line error matching for accurate stuck loop detection&lt;/li&gt; 
+ &lt;li&gt;5-hour API limit handling with user prompts&lt;/li&gt; 
+ &lt;li&gt;tmux integration for live monitoring&lt;/li&gt; 
+ &lt;li&gt;PRD import functionality&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;CI/CD pipeline with GitHub Actions&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;276 passing tests across 11 test files&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Recent Improvements&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.8 - Modern CLI for PRD Import&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Modernized &lt;code&gt;ralph_import.sh&lt;/code&gt; to use Claude Code CLI JSON output format&lt;/li&gt; 
+ &lt;li&gt;JSON output format support with &lt;code&gt;--output-format json&lt;/code&gt; for structured responses&lt;/li&gt; 
+ &lt;li&gt;Enhanced error handling with structured JSON error messages&lt;/li&gt; 
+ &lt;li&gt;Improved file verification with JSON-derived status information&lt;/li&gt; 
+ &lt;li&gt;Backward compatibility with older CLI versions (automatic text fallback)&lt;/li&gt; 
+ &lt;li&gt;Added 11 new tests for modern CLI features&lt;/li&gt; 
+ &lt;li&gt;Test count: 276 (up from 265)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.7 - Session Lifecycle Management&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Complete session lifecycle management with automatic reset triggers&lt;/li&gt; 
+ &lt;li&gt;Session auto-reset on: circuit breaker open, manual interrupt, project completion&lt;/li&gt; 
+ &lt;li&gt;Added &lt;code&gt;--reset-session&lt;/code&gt; CLI flag for manual session reset&lt;/li&gt; 
+ &lt;li&gt;Session history tracking (last 50 transitions) for debugging&lt;/li&gt; 
+ &lt;li&gt;Added 26 new tests for session continuity features&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.6 - JSON Output &amp;amp; Session Management&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Extended &lt;code&gt;parse_json_response()&lt;/code&gt; to support Claude Code CLI JSON format&lt;/li&gt; 
+ &lt;li&gt;Added session management functions: &lt;code&gt;store_session_id()&lt;/code&gt;, &lt;code&gt;get_last_session_id()&lt;/code&gt;, &lt;code&gt;should_resume_session()&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Cross-platform epoch time utilities in date_utils.sh&lt;/li&gt; 
+ &lt;li&gt;Added 16 new tests covering Claude CLI format and session management&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.5 - PRD Import Tests&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Added 22 comprehensive tests for &lt;code&gt;ralph_import.sh&lt;/code&gt; PRD conversion script&lt;/li&gt; 
+ &lt;li&gt;Tests cover: file format support, output file creation, project naming, error handling&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.4 - Project Setup Tests&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Added 36 comprehensive tests for &lt;code&gt;setup.sh&lt;/code&gt; project initialization script&lt;/li&gt; 
+ &lt;li&gt;Tests cover: directory creation, template copying, git initialization&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.3 - Installation Tests&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Added 14 comprehensive tests for &lt;code&gt;install.sh&lt;/code&gt; global installation script&lt;/li&gt; 
+ &lt;li&gt;Tests cover: directory creation, command installation, dependency detection&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.2 - Prompt File Fix&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fixed critical bug: replaced non-existent &lt;code&gt;--prompt-file&lt;/code&gt; CLI flag with &lt;code&gt;-p&lt;/code&gt; flag&lt;/li&gt; 
+ &lt;li&gt;Modern CLI mode now correctly passes prompt content via &lt;code&gt;-p "$(cat file)"&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Added error handling for missing prompt files in &lt;code&gt;build_claude_command()&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.1 - Modern CLI Commands (Phase 1.1)&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;JSON output format support with &lt;code&gt;--output-format json&lt;/code&gt; (default)&lt;/li&gt; 
+ &lt;li&gt;Session continuity using &lt;code&gt;--continue&lt;/code&gt; flag for cross-loop context&lt;/li&gt; 
+ &lt;li&gt;Tool permissions via &lt;code&gt;--allowed-tools&lt;/code&gt; flag&lt;/li&gt; 
+ &lt;li&gt;CI/CD pipeline with kcov coverage reporting&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;v0.9.0 - Circuit Breaker Enhancements&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fixed multi-line error matching in stuck loop detection&lt;/li&gt; 
+ &lt;li&gt;Eliminated JSON field false positives (e.g., &lt;code&gt;"is_error": false&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Added two-stage error filtering for accurate detection&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;In Progress&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Expanding test coverage&lt;/li&gt; 
+ &lt;li&gt;Log rotation functionality&lt;/li&gt; 
+ &lt;li&gt;Dry-run mode&lt;/li&gt; 
+ &lt;li&gt;Configuration file support (.ralphrc)&lt;/li&gt; 
+ &lt;li&gt;Metrics and analytics tracking&lt;/li&gt; 
+ &lt;li&gt;Desktop notifications&lt;/li&gt; 
+ &lt;li&gt;Git backup and rollback system&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Timeline to v1.0&lt;/strong&gt;: ~4 weeks | &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/IMPLEMENTATION_PLAN.md"&gt;Full roadmap&lt;/a&gt; | &lt;strong&gt;Contributions welcome!&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Autonomous Development Loop&lt;/strong&gt; - Continuously executes Claude Code with your project requirements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Intelligent Exit Detection&lt;/strong&gt; - Automatically stops when project objectives are complete&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Session Continuity&lt;/strong&gt; - Preserves context across loop iterations with automatic session management&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Rate Limiting&lt;/strong&gt; - Built-in API call management with hourly limits and countdown timers&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;5-Hour API Limit Handling&lt;/strong&gt; - Detects Claude's 5-hour usage limit and offers wait/exit options&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Live Monitoring&lt;/strong&gt; - Real-time dashboard showing loop status, progress, and logs&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Task Management&lt;/strong&gt; - Structured approach with prioritized task lists and progress tracking&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Project Templates&lt;/strong&gt; - Quick setup for new projects with best-practice structure&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Comprehensive Logging&lt;/strong&gt; - Detailed execution logs with timestamps and status tracking&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Configurable Timeouts&lt;/strong&gt; - Set execution timeout for Claude Code operations (1-120 minutes)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Verbose Progress Mode&lt;/strong&gt; - Optional detailed progress updates during execution&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Response Analyzer&lt;/strong&gt; - AI-powered analysis of Claude Code responses with semantic understanding&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Circuit Breaker&lt;/strong&gt; - Advanced error detection with two-stage filtering, multi-line error matching, and automatic recovery&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;CI/CD Integration&lt;/strong&gt; - GitHub Actions workflow with automated testing&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;p&gt;Ralph has two phases: &lt;strong&gt;one-time installation&lt;/strong&gt; and &lt;strong&gt;per-project setup&lt;/strong&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;INSTALL ONCE              USE MANY TIMES
++-----------------+          +----------------------+
+| ./install.sh    |    -&amp;gt;    | ralph-setup project1 |
+|                 |          | ralph-setup project2 |
+| Adds global     |          | ralph-setup project3 |
+| commands        |          | ...                  |
++-----------------+          +----------------------+
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Phase 1: Install Ralph (One Time Only)&lt;/h3&gt; 
+&lt;p&gt;Install Ralph globally on your system:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/frankbria/ralph-claude-code.git
+cd ralph-claude-code
+./install.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This adds &lt;code&gt;ralph&lt;/code&gt;, &lt;code&gt;ralph-monitor&lt;/code&gt;, and &lt;code&gt;ralph-setup&lt;/code&gt; commands to your PATH.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: You only need to do this once per system. After installation, you can delete the cloned repository if desired.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Phase 2: Initialize New Projects (Per Project)&lt;/h3&gt; 
+&lt;p&gt;For each new project you want Ralph to work on:&lt;/p&gt; 
+&lt;h4&gt;Option A: Import Existing PRD/Specifications&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Convert existing PRD/specs to Ralph format (recommended)
+ralph-import my-requirements.md my-project
+cd my-project
+
+# Review and adjust the generated files:
+# - PROMPT.md (Ralph instructions)
+# - @fix_plan.md (task priorities)
+# - specs/requirements.md (technical specs)
+
+# Start autonomous development
+ralph --monitor
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Option B: Manual Project Setup&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Create blank Ralph project
+ralph-setup my-awesome-project
+cd my-awesome-project
+
+# Configure your project requirements manually
+# Edit PROMPT.md with your project goals
+# Edit specs/ with detailed specifications
+# Edit @fix_plan.md with initial priorities
+
+# Start autonomous development
+ralph --monitor
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Ongoing Usage (After Setup)&lt;/h3&gt; 
+&lt;p&gt;Once Ralph is installed and your project is initialized:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Navigate to any Ralph project and run:
+ralph --monitor              # Integrated tmux monitoring (recommended)
+
+# Or use separate terminals:
+ralph                        # Terminal 1: Ralph loop
+ralph-monitor               # Terminal 2: Live monitor dashboard
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;How It Works&lt;/h2&gt; 
+&lt;p&gt;Ralph operates on a simple but powerful cycle:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Read Instructions&lt;/strong&gt; - Loads &lt;code&gt;PROMPT.md&lt;/code&gt; with your project requirements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Execute Claude Code&lt;/strong&gt; - Runs Claude Code with current context and priorities&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Track Progress&lt;/strong&gt; - Updates task lists and logs execution results&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Evaluate Completion&lt;/strong&gt; - Checks for exit conditions and project completion signals&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Repeat&lt;/strong&gt; - Continues until project is complete or limits are reached&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Intelligent Exit Detection&lt;/h3&gt; 
+&lt;p&gt;Ralph automatically stops when it detects:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;All tasks in &lt;code&gt;@fix_plan.md&lt;/code&gt; marked complete&lt;/li&gt; 
+ &lt;li&gt;Multiple consecutive "done" signals from Claude Code&lt;/li&gt; 
+ &lt;li&gt;Too many test-focused loops (indicating feature completeness)&lt;/li&gt; 
+ &lt;li&gt;Strong completion indicators in responses&lt;/li&gt; 
+ &lt;li&gt;Claude API 5-hour usage limit reached (with user prompt to wait or exit)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Importing Existing Requirements&lt;/h2&gt; 
+&lt;p&gt;Ralph can convert existing PRDs, specifications, or requirement documents into the proper Ralph format using Claude Code.&lt;/p&gt; 
+&lt;h3&gt;Supported Formats&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Markdown&lt;/strong&gt; (.md) - Product requirements, technical specs&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Text files&lt;/strong&gt; (.txt) - Plain text requirements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;JSON&lt;/strong&gt; (.json) - Structured requirement data&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Word documents&lt;/strong&gt; (.docx) - Business requirements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;PDFs&lt;/strong&gt; (.pdf) - Design documents, specifications&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Any text-based format&lt;/strong&gt; - Ralph will intelligently parse the content&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Usage Examples&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Convert a markdown PRD
+ralph-import product-requirements.md my-app
+
+# Convert a text specification
+ralph-import requirements.txt webapp
+
+# Convert a JSON API spec
+ralph-import api-spec.json backend-service
+
+# Let Ralph auto-name the project from filename
+ralph-import design-doc.pdf
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;What Gets Generated&lt;/h3&gt; 
+&lt;p&gt;Ralph-import creates a complete project with:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;PROMPT.md&lt;/strong&gt; - Converted into Ralph development instructions&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;@fix_plan.md&lt;/strong&gt; - Requirements broken down into prioritized tasks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;specs/requirements.md&lt;/strong&gt; - Technical specifications extracted from your document&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Standard Ralph structure&lt;/strong&gt; - All necessary directories and template files&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The conversion is intelligent and preserves your original requirements while making them actionable for autonomous development.&lt;/p&gt; 
+&lt;h3&gt;Modern CLI Features (v0.9.8)&lt;/h3&gt; 
+&lt;p&gt;Ralph-import uses modern Claude Code CLI features for improved reliability:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;JSON Output Format&lt;/strong&gt;: Structured responses enable precise parsing of conversion results&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Automatic Fallback&lt;/strong&gt;: Gracefully handles older CLI versions with text-based parsing&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Enhanced Error Reporting&lt;/strong&gt;: Extracts specific error messages and codes from JSON responses&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Session Tracking&lt;/strong&gt;: Captures session IDs for potential continuation of interrupted conversions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: These features require Claude Code CLI version 2.0.76 or later. Older versions will work with standard text output.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Configuration&lt;/h2&gt; 
+&lt;h3&gt;Rate Limiting &amp;amp; Circuit Breaker&lt;/h3&gt; 
+&lt;p&gt;Ralph includes intelligent rate limiting and circuit breaker functionality:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Default: 100 calls per hour
+ralph --calls 50
+
+# With integrated monitoring
+ralph --monitor --calls 50
+
+# Check current usage
+ralph --status
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The circuit breaker automatically:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Detects API errors and rate limit issues with advanced two-stage filtering&lt;/li&gt; 
+ &lt;li&gt;Opens circuit after 3 loops with no progress or 5 loops with same errors&lt;/li&gt; 
+ &lt;li&gt;Eliminates false positives from JSON fields containing "error"&lt;/li&gt; 
+ &lt;li&gt;Accurately detects stuck loops with multi-line error matching&lt;/li&gt; 
+ &lt;li&gt;Gradually recovers with half-open monitoring state&lt;/li&gt; 
+ &lt;li&gt;Provides detailed error tracking and logging with state history&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Claude API 5-Hour Limit&lt;/h3&gt; 
+&lt;p&gt;When Claude's 5-hour usage limit is reached, Ralph:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Detects the limit error automatically&lt;/li&gt; 
+ &lt;li&gt;Prompts you to choose: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Option 1&lt;/strong&gt;: Wait 60 minutes for the limit to reset (with countdown timer)&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Option 2&lt;/strong&gt;: Exit gracefully (or auto-exits after 30-second timeout)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Prevents endless retry loops that waste time&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Custom Prompts&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Use custom prompt file
+ralph --prompt my_custom_instructions.md
+
+# With integrated monitoring
+ralph --monitor --prompt my_custom_instructions.md
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Execution Timeouts&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Set Claude Code execution timeout (default: 15 minutes)
+ralph --timeout 30  # 30-minute timeout for complex tasks
+
+# With monitoring and custom timeout
+ralph --monitor --timeout 60  # 60-minute timeout
+
+# Short timeout for quick iterations
+ralph --verbose --timeout 5  # 5-minute timeout with progress
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Verbose Mode&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Enable detailed progress updates during execution
+ralph --verbose
+
+# Combine with other options
+ralph --monitor --verbose --timeout 30
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Session Continuity&lt;/h3&gt; 
+&lt;p&gt;Ralph maintains session context across loop iterations for improved coherence:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Sessions are enabled by default with --continue flag
+ralph --monitor                 # Uses session continuity
+
+# Start fresh without session context
+ralph --no-continue             # Isolated iterations
+
+# Reset session manually (clears context)
+ralph --reset-session           # Clears current session
+
+# Check session status
+cat .ralph_session              # View current session file
+cat .ralph_session_history      # View session transition history
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Session Auto-Reset Triggers:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Circuit breaker opens (stagnation detected)&lt;/li&gt; 
+ &lt;li&gt;Manual interrupt (Ctrl+C / SIGINT)&lt;/li&gt; 
+ &lt;li&gt;Project completion (graceful exit)&lt;/li&gt; 
+ &lt;li&gt;Manual circuit breaker reset (&lt;code&gt;--reset-circuit&lt;/code&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Sessions are persisted to &lt;code&gt;.ralph_session&lt;/code&gt; with a 24-hour expiration. The last 50 session transitions are logged to &lt;code&gt;.ralph_session_history&lt;/code&gt; for debugging.&lt;/p&gt; 
+&lt;h3&gt;Exit Thresholds&lt;/h3&gt; 
+&lt;p&gt;Modify these variables in &lt;code&gt;~/.ralph/ralph_loop.sh&lt;/code&gt;:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Exit Detection Thresholds:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;MAX_CONSECUTIVE_TEST_LOOPS=3     # Exit after 3 test-only loops
+MAX_CONSECUTIVE_DONE_SIGNALS=2   # Exit after 2 "done" signals
+TEST_PERCENTAGE_THRESHOLD=30     # Flag if 30%+ loops are test-only
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Circuit Breaker Thresholds:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;CB_NO_PROGRESS_THRESHOLD=3       # Open circuit after 3 loops with no file changes
+CB_SAME_ERROR_THRESHOLD=5        # Open circuit after 5 loops with repeated errors
+CB_OUTPUT_DECLINE_THRESHOLD=70   # Open circuit if output declines by &amp;gt;70%
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Project Structure&lt;/h2&gt; 
+&lt;p&gt;Ralph creates a standardized structure for each project:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;my-project/
+├── PROMPT.md           # Main development instructions for Ralph
+├── @fix_plan.md        # Prioritized task list (@ prefix = Ralph control file)
+├── @AGENT.md           # Build and run instructions
+├── specs/              # Project specifications and requirements
+│   └── stdlib/         # Standard library specifications
+├── src/                # Source code implementation
+├── examples/           # Usage examples and test cases
+├── logs/               # Ralph execution logs
+└── docs/generated/     # Auto-generated documentation
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Best Practices&lt;/h2&gt; 
+&lt;h3&gt;Writing Effective Prompts&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Be Specific&lt;/strong&gt; - Clear requirements lead to better results&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Prioritize&lt;/strong&gt; - Use &lt;code&gt;@fix_plan.md&lt;/code&gt; to guide Ralph's focus&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Set Boundaries&lt;/strong&gt; - Define what's in/out of scope&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Include Examples&lt;/strong&gt; - Show expected inputs/outputs&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Project Specifications&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Place detailed requirements in &lt;code&gt;specs/&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Use &lt;code&gt;@fix_plan.md&lt;/code&gt; for prioritized task tracking&lt;/li&gt; 
+ &lt;li&gt;Keep &lt;code&gt;@AGENT.md&lt;/code&gt; updated with build instructions&lt;/li&gt; 
+ &lt;li&gt;Document key decisions and architecture&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Monitoring Progress&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Use &lt;code&gt;ralph-monitor&lt;/code&gt; for live status updates&lt;/li&gt; 
+ &lt;li&gt;Check logs in &lt;code&gt;logs/&lt;/code&gt; for detailed execution history&lt;/li&gt; 
+ &lt;li&gt;Monitor &lt;code&gt;status.json&lt;/code&gt; for programmatic access&lt;/li&gt; 
+ &lt;li&gt;Watch for exit condition signals&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;System Requirements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Bash 4.0+&lt;/strong&gt; - For script execution&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Claude Code CLI&lt;/strong&gt; - &lt;code&gt;npm install -g @anthropic-ai/claude-code&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;tmux&lt;/strong&gt; - Terminal multiplexer for integrated monitoring (recommended)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;jq&lt;/strong&gt; - JSON processing for status tracking&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Git&lt;/strong&gt; - Version control (projects are initialized as git repos)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Standard Unix tools&lt;/strong&gt; - grep, date, etc.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Testing Requirements (Development)&lt;/h3&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/TESTING.md"&gt;TESTING.md&lt;/a&gt; for the comprehensive testing guide.&lt;/p&gt; 
+&lt;p&gt;If you want to run the test suite:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Install BATS testing framework
+npm install -g bats bats-support bats-assert
+
+# Run all tests (276 tests)
+npm test
+
+# Run specific test suites
+bats tests/unit/test_rate_limiting.bats
+bats tests/unit/test_exit_detection.bats
+bats tests/unit/test_json_parsing.bats
+bats tests/unit/test_cli_modern.bats
+bats tests/unit/test_cli_parsing.bats
+bats tests/unit/test_session_continuity.bats
+bats tests/integration/test_loop_execution.bats
+bats tests/integration/test_prd_import.bats
+bats tests/integration/test_project_setup.bats
+bats tests/integration/test_installation.bats
+
+# Run error detection and circuit breaker tests
+./tests/test_error_detection.sh
+./tests/test_stuck_loop_detection.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Current test status:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;276 tests&lt;/strong&gt; across 11 test files&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;100% pass rate&lt;/strong&gt; (276/276 passing)&lt;/li&gt; 
+ &lt;li&gt;Comprehensive unit and integration tests&lt;/li&gt; 
+ &lt;li&gt;Specialized tests for JSON parsing, CLI flags, circuit breaker, and installation workflows&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note on Coverage&lt;/strong&gt;: Bash code coverage measurement with kcov has fundamental limitations when tracing subprocess executions. Test pass rate (100%) is the quality gate. See &lt;a href="https://github.com/bats-core/bats-core/issues/15"&gt;bats-core#15&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Installing tmux&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Ubuntu/Debian
+sudo apt-get install tmux
+
+# macOS
+brew install tmux
+
+# CentOS/RHEL
+sudo yum install tmux
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Monitoring and Debugging&lt;/h2&gt; 
+&lt;h3&gt;Live Dashboard&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Integrated tmux monitoring (recommended)
+ralph --monitor
+
+# Manual monitoring in separate terminal
+ralph-monitor
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Shows real-time:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Current loop count and status&lt;/li&gt; 
+ &lt;li&gt;API calls used vs. limit&lt;/li&gt; 
+ &lt;li&gt;Recent log entries&lt;/li&gt; 
+ &lt;li&gt;Rate limit countdown&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;tmux Controls:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;Ctrl+B&lt;/code&gt; then &lt;code&gt;D&lt;/code&gt; - Detach from session (keeps Ralph running)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Ctrl+B&lt;/code&gt; then &lt;code&gt;←/→&lt;/code&gt; - Switch between panes&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;tmux list-sessions&lt;/code&gt; - View active sessions&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;tmux attach -t &amp;lt;session-name&amp;gt;&lt;/code&gt; - Reattach to session&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Status Checking&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# JSON status output
+ralph --status
+
+# Manual log inspection
+tail -f logs/ralph.log
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Common Issues&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Rate Limits&lt;/strong&gt; - Ralph automatically waits and displays countdown&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;5-Hour API Limit&lt;/strong&gt; - Ralph detects and prompts for user action (wait or exit)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Stuck Loops&lt;/strong&gt; - Check &lt;code&gt;@fix_plan.md&lt;/code&gt; for unclear or conflicting tasks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Early Exit&lt;/strong&gt; - Review exit thresholds if Ralph stops too soon&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Execution Timeouts&lt;/strong&gt; - Increase &lt;code&gt;--timeout&lt;/code&gt; value for complex operations&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Missing Dependencies&lt;/strong&gt; - Ensure Claude Code CLI and tmux are installed&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;tmux Session Lost&lt;/strong&gt; - Use &lt;code&gt;tmux list-sessions&lt;/code&gt; and &lt;code&gt;tmux attach&lt;/code&gt; to reconnect&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Ralph is actively seeking contributors! We're working toward v1.0.0 with clear priorities and a detailed roadmap.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for the complete contributor guide&lt;/strong&gt; including:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Getting started and setup instructions&lt;/li&gt; 
+ &lt;li&gt;Development workflow and commit conventions&lt;/li&gt; 
+ &lt;li&gt;Code style guidelines&lt;/li&gt; 
+ &lt;li&gt;Testing requirements (100% pass rate mandatory)&lt;/li&gt; 
+ &lt;li&gt;Pull request process and code review guidelines&lt;/li&gt; 
+ &lt;li&gt;Quality standards and checklists&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Quick Start&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Fork and clone
+git clone https://github.com/YOUR_USERNAME/ralph-claude-code.git
+cd ralph-claude-code
+
+# Install dependencies and run tests
+npm install
+npm test  # All 276 tests must pass
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Priority Contribution Areas&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Test Implementation&lt;/strong&gt; - Help expand test coverage&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Feature Development&lt;/strong&gt; - Log rotation, dry-run mode, config files, metrics&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Documentation&lt;/strong&gt; - Tutorials, troubleshooting guides, examples&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Real-World Testing&lt;/strong&gt; - Use Ralph, report bugs, share feedback&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Every contribution matters&lt;/strong&gt; - from fixing typos to implementing major features!&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the MIT License - see the &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;h2&gt;Acknowledgments&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Inspired by the &lt;a href="https://ghuntley.com/ralph/"&gt;Ralph technique&lt;/a&gt; created by Geoffrey Huntley&lt;/li&gt; 
+ &lt;li&gt;Built for &lt;a href="https://claude.ai/code"&gt;Claude Code&lt;/a&gt; by Anthropic&lt;/li&gt; 
+ &lt;li&gt;Community feedback and contributions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Related Projects&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://claude.ai/code"&gt;Claude Code&lt;/a&gt; - The AI coding assistant that powers Ralph&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/paul-gauthier/aider"&gt;Aider&lt;/a&gt; - Original Ralph technique implementation&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Command Reference&lt;/h2&gt; 
+&lt;h3&gt;Installation Commands (Run Once)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;./install.sh              # Install Ralph globally
+./install.sh uninstall    # Remove Ralph from system
+./install.sh --help       # Show installation help
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Ralph Loop Options&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;ralph [OPTIONS]
+  -h, --help              Show help message
+  -c, --calls NUM         Set max calls per hour (default: 100)
+  -p, --prompt FILE       Set prompt file (default: PROMPT.md)
+  -s, --status            Show current status and exit
+  -m, --monitor           Start with tmux session and live monitor
+  -v, --verbose           Show detailed progress updates during execution
+  -t, --timeout MIN       Set Claude Code execution timeout in minutes (1-120, default: 15)
+  --output-format FORMAT  Set output format: json (default) or text
+  --allowed-tools TOOLS   Set allowed Claude tools (default: Write,Bash(git *),Read)
+  --no-continue           Disable session continuity (start fresh each loop)
+  --reset-circuit         Reset the circuit breaker
+  --circuit-status        Show circuit breaker status
+  --reset-session         Reset session state manually
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Project Commands (Per Project)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;ralph-setup project-name     # Create new Ralph project
+ralph-import prd.md project  # Convert PRD/specs to Ralph project
+ralph --monitor              # Start with integrated monitoring
+ralph --status               # Check current loop status
+ralph --verbose              # Enable detailed progress updates
+ralph --timeout 30           # Set 30-minute execution timeout
+ralph --calls 50             # Limit to 50 API calls per hour
+ralph --reset-session        # Reset session state manually
+ralph-monitor                # Manual monitoring dashboard
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;tmux Session Management&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;tmux list-sessions        # View active Ralph sessions
+tmux attach -t &amp;lt;name&amp;gt;     # Reattach to detached session
+# Ctrl+B then D           # Detach from session (keeps running)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Development Roadmap&lt;/h2&gt; 
+&lt;p&gt;Ralph is under active development with a clear path to v1.0.0. See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/IMPLEMENTATION_PLAN.md"&gt;IMPLEMENTATION_PLAN.md&lt;/a&gt; for the complete roadmap.&lt;/p&gt; 
+&lt;h3&gt;Current Status: v0.9.8&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;What's Delivered:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Core loop functionality with intelligent exit detection&lt;/li&gt; 
+ &lt;li&gt;Rate limiting (100 calls/hour) and circuit breaker pattern&lt;/li&gt; 
+ &lt;li&gt;Response analyzer with semantic understanding&lt;/li&gt; 
+ &lt;li&gt;276 comprehensive tests (100% pass rate)&lt;/li&gt; 
+ &lt;li&gt;tmux integration and live monitoring&lt;/li&gt; 
+ &lt;li&gt;PRD import functionality with modern CLI JSON parsing&lt;/li&gt; 
+ &lt;li&gt;Installation system and project templates&lt;/li&gt; 
+ &lt;li&gt;Modern CLI commands with JSON output support&lt;/li&gt; 
+ &lt;li&gt;CI/CD pipeline with GitHub Actions&lt;/li&gt; 
+ &lt;li&gt;Comprehensive installation test suite&lt;/li&gt; 
+ &lt;li&gt;Session lifecycle management with auto-reset triggers&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Test Coverage Breakdown:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Unit Tests: 154 (CLI parsing, JSON, exit detection, rate limiting, session continuity)&lt;/li&gt; 
+ &lt;li&gt;Integration Tests: 122 (loop execution, edge cases, installation, project setup, PRD import)&lt;/li&gt; 
+ &lt;li&gt;Test Files: 11&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Path to v1.0.0 (~4 weeks)&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Enhanced Testing&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Installation and setup workflow tests&lt;/li&gt; 
+ &lt;li&gt;tmux integration tests&lt;/li&gt; 
+ &lt;li&gt;Monitor dashboard tests&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Core Features&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Log rotation functionality&lt;/li&gt; 
+ &lt;li&gt;Dry-run mode&lt;/li&gt; 
+ &lt;li&gt;Configuration file support - .ralphrc&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Advanced Features &amp;amp; Polish&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Metrics and analytics tracking&lt;/li&gt; 
+ &lt;li&gt;Desktop notifications&lt;/li&gt; 
+ &lt;li&gt;Git backup and rollback system&lt;/li&gt; 
+ &lt;li&gt;End-to-end tests&lt;/li&gt; 
+ &lt;li&gt;Final documentation and release prep&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/IMPLEMENTATION_STATUS.md"&gt;IMPLEMENTATION_STATUS.md&lt;/a&gt; for detailed progress tracking.&lt;/p&gt; 
+&lt;h3&gt;How to Contribute&lt;/h3&gt; 
+&lt;p&gt;Ralph is seeking contributors! See &lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for the complete guide. Priority areas:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Test Implementation&lt;/strong&gt; - Help expand test coverage (&lt;a href="https://raw.githubusercontent.com/frankbria/ralph-claude-code/main/IMPLEMENTATION_PLAN.md"&gt;see plan&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Feature Development&lt;/strong&gt; - Log rotation, dry-run mode, config files&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Documentation&lt;/strong&gt; - Usage examples, tutorials, troubleshooting guides&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Bug Reports&lt;/strong&gt; - Real-world usage feedback and edge cases&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Ready to let AI build your project?&lt;/strong&gt; Start with &lt;code&gt;./install.sh&lt;/code&gt; and let Ralph take it from there!&lt;/p&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.star-history.com/#frankbria/ralph-claude-code&amp;amp;type=date&amp;amp;legend=top-left"&gt;&lt;img src="https://api.star-history.com/svg?repos=frankbria/ralph-claude-code&amp;amp;type=date&amp;amp;legend=top-left" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>BloopAI/vibe-kanban</title>
+      <link>https://github.com/BloopAI/vibe-kanban</link>
+      <description>&lt;p&gt;Get 10X more out of Claude Code, Codex or any coding agent&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://vibekanban.com"&gt; 
+  &lt;picture&gt; 
+   &lt;source srcset="frontend/public/vibe-kanban-logo-dark.svg" media="(prefers-color-scheme: dark)" /&gt; 
+   &lt;source srcset="frontend/public/vibe-kanban-logo.svg" media="(prefers-color-scheme: light)" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/BloopAI/vibe-kanban/main/frontend/public/vibe-kanban-logo.svg?sanitize=true" alt="Vibe Kanban Logo" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;Get 10X more out of Claude Code, Gemini CLI, Codex, Amp and other coding agents...&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.npmjs.com/package/vibe-kanban"&gt;&lt;img alt="npm" src="https://img.shields.io/npm/v/vibe-kanban?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://github.com/BloopAI/vibe-kanban/raw/main/.github/workflows/publish.yml"&gt;&lt;img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/BloopAI/vibe-kanban/.github%2Fworkflows%2Fpublish.yml" /&gt;&lt;/a&gt; &lt;a href="https://deepwiki.com/BloopAI/vibe-kanban"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" alt="Ask DeepWiki" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h1 align="center"&gt; &lt;a href="https://jobs.polymer.co/vibe-kanban?source=github"&gt;&lt;strong&gt;We're hiring!&lt;/strong&gt;&lt;/a&gt; &lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/BloopAI/vibe-kanban/main/frontend/public/vibe-kanban-screenshot-overview.png" alt="" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Overview&lt;/h2&gt; 
+&lt;p&gt;AI coding agents are increasingly writing the world's code and human engineers now spend the majority of their time planning, reviewing, and orchestrating tasks. Vibe Kanban streamlines this process, enabling you to:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Easily switch between different coding agents&lt;/li&gt; 
+ &lt;li&gt;Orchestrate the execution of multiple coding agents in parallel or in sequence&lt;/li&gt; 
+ &lt;li&gt;Quickly review work and start dev servers&lt;/li&gt; 
+ &lt;li&gt;Track the status of tasks that your coding agents are working on&lt;/li&gt; 
+ &lt;li&gt;Centralise configuration of coding agent MCP configs&lt;/li&gt; 
+ &lt;li&gt;Open projects remotely via SSH when running Vibe Kanban on a remote server&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;You can watch a video overview &lt;a href="https://youtu.be/TFT3KnZOOAk"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;Make sure you have authenticated with your favourite coding agent. A full list of supported coding agents can be found in the &lt;a href="https://vibekanban.com/docs"&gt;docs&lt;/a&gt;. Then in your terminal run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx vibe-kanban
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Please head to the &lt;a href="https://vibekanban.com/docs"&gt;website&lt;/a&gt; for the latest documentation and user guides.&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;We use &lt;a href="https://github.com/BloopAI/vibe-kanban/discussions"&gt;GitHub Discussions&lt;/a&gt; for feature requests. Please open a discussion to create a feature request. For bugs please open an issue on this repo.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We would prefer that ideas and changes are first raised with the core team via &lt;a href="https://github.com/BloopAI/vibe-kanban/discussions"&gt;GitHub Discussions&lt;/a&gt; or &lt;a href="https://discord.gg/AC4nwVtJM3"&gt;Discord&lt;/a&gt;, where we can discuss implementation details and alignment with the existing roadmap. Please do not open PRs without first discussing your proposal with the team.&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;h3&gt;Prerequisites&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://rustup.rs/"&gt;Rust&lt;/a&gt; (latest stable)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://nodejs.org/"&gt;Node.js&lt;/a&gt; (&amp;gt;=18)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://pnpm.io/"&gt;pnpm&lt;/a&gt; (&amp;gt;=8)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Additional development tools:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cargo install cargo-watch
+cargo install sqlx-cli
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Install dependencies:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm i
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Running the dev server&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pnpm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This will start the backend. A blank DB will be copied from the &lt;code&gt;dev_assets_seed&lt;/code&gt; folder.&lt;/p&gt; 
+&lt;h3&gt;Building the frontend&lt;/h3&gt; 
+&lt;p&gt;To build just the frontend:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd frontend
+pnpm build
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Build from source (macOS)&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Run &lt;code&gt;./local-build.sh&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Test with &lt;code&gt;cd npx-cli &amp;amp;&amp;amp; node bin/cli.js&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Environment Variables&lt;/h3&gt; 
+&lt;p&gt;The following environment variables can be configured at build time or runtime:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Variable&lt;/th&gt; 
+   &lt;th&gt;Type&lt;/th&gt; 
+   &lt;th&gt;Default&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;POSTHOG_API_KEY&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Build-time&lt;/td&gt; 
+   &lt;td&gt;Empty&lt;/td&gt; 
+   &lt;td&gt;PostHog analytics API key (disables analytics if empty)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;POSTHOG_API_ENDPOINT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Build-time&lt;/td&gt; 
+   &lt;td&gt;Empty&lt;/td&gt; 
+   &lt;td&gt;PostHog analytics endpoint (disables analytics if empty)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;PORT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;Auto-assign&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Production&lt;/strong&gt;: Server port. &lt;strong&gt;Dev&lt;/strong&gt;: Frontend port (backend uses PORT+1)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;BACKEND_PORT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;0&lt;/code&gt; (auto-assign)&lt;/td&gt; 
+   &lt;td&gt;Backend server port (dev mode only, overrides PORT+1)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;FRONTEND_PORT&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;3000&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Frontend dev server port (dev mode only, overrides PORT)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;HOST&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;127.0.0.1&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Backend server host&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;DISABLE_WORKTREE_ORPHAN_CLEANUP&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Runtime&lt;/td&gt; 
+   &lt;td&gt;Not set&lt;/td&gt; 
+   &lt;td&gt;Disable git worktree cleanup (for debugging)&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;Build-time variables&lt;/strong&gt; must be set when running &lt;code&gt;pnpm run build&lt;/code&gt;. &lt;strong&gt;Runtime variables&lt;/strong&gt; are read when the application starts.&lt;/p&gt; 
+&lt;h3&gt;Remote Deployment&lt;/h3&gt; 
+&lt;p&gt;When running Vibe Kanban on a remote server (e.g., via systemctl, Docker, or cloud hosting), you can configure your editor to open projects via SSH:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Access via tunnel&lt;/strong&gt;: Use Cloudflare Tunnel, ngrok, or similar to expose the web UI&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Configure remote SSH&lt;/strong&gt; in Settings → Editor Integration: 
+  &lt;ul&gt; 
+   &lt;li&gt;Set &lt;strong&gt;Remote SSH Host&lt;/strong&gt; to your server hostname or IP&lt;/li&gt; 
+   &lt;li&gt;Set &lt;strong&gt;Remote SSH User&lt;/strong&gt; to your SSH username (optional)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;SSH access from your local machine to the remote server&lt;/li&gt; 
+   &lt;li&gt;SSH keys configured (passwordless authentication)&lt;/li&gt; 
+   &lt;li&gt;VSCode Remote-SSH extension&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;When configured, the "Open in VSCode" buttons will generate URLs like &lt;code&gt;vscode://vscode-remote/ssh-remote+user@host/path&lt;/code&gt; that open your local editor and connect to the remote server.&lt;/p&gt; 
+&lt;p&gt;See the &lt;a href="https://vibekanban.com/docs/configuration-customisation/global-settings#remote-ssh-configuration"&gt;documentation&lt;/a&gt; for detailed setup instructions.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ChromeDevTools/chrome-devtools-mcp</title>
+      <link>https://github.com/ChromeDevTools/chrome-devtools-mcp</link>
+      <description>&lt;p&gt;Chrome DevTools for coding agents&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Chrome DevTools MCP&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://npmjs.org/package/chrome-devtools-mcp"&gt;&lt;img src="https://img.shields.io/npm/v/chrome-devtools-mcp.svg?sanitize=true" alt="npm chrome-devtools-mcp package" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;chrome-devtools-mcp&lt;/code&gt; lets your coding agent (such as Gemini, Claude, Cursor or Copilot) control and inspect a live Chrome browser. It acts as a Model-Context-Protocol (MCP) server, giving your AI coding assistant access to the full power of Chrome DevTools for reliable automation, in-depth debugging, and performance analysis.&lt;/p&gt; 
+&lt;h2&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md"&gt;Tool reference&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/CHANGELOG.md"&gt;Changelog&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/CONTRIBUTING.md"&gt;Contributing&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/troubleshooting.md"&gt;Troubleshooting&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/design-principles.md"&gt;Design Principles&lt;/a&gt;&lt;/h2&gt; 
+&lt;h2&gt;Key features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Get performance insights&lt;/strong&gt;: Uses &lt;a href="https://github.com/ChromeDevTools/devtools-frontend"&gt;Chrome DevTools&lt;/a&gt; to record traces and extract actionable performance insights.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Advanced browser debugging&lt;/strong&gt;: Analyze network requests, take screenshots and check the browser console.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Reliable automation&lt;/strong&gt;. Uses &lt;a href="https://github.com/puppeteer/puppeteer"&gt;puppeteer&lt;/a&gt; to automate actions in Chrome and automatically wait for action results.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Disclaimers&lt;/h2&gt; 
+&lt;p&gt;&lt;code&gt;chrome-devtools-mcp&lt;/code&gt; exposes content of the browser instance to the MCP clients allowing them to inspect, debug, and modify any data in the browser or DevTools. Avoid sharing sensitive or personal information that you don't want to share with MCP clients.&lt;/p&gt; 
+&lt;h2&gt;Requirements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://nodejs.org/"&gt;Node.js&lt;/a&gt; v20.19 or a newer &lt;a href="https://github.com/nodejs/Release#release-schedule"&gt;latest maintenance LTS&lt;/a&gt; version.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.google.com/chrome/"&gt;Chrome&lt;/a&gt; current stable version or newer.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.npmjs.com/"&gt;npm&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Getting started&lt;/h2&gt; 
+&lt;p&gt;Add the following config to your MCP client:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest"]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE]&lt;br /&gt; Using &lt;code&gt;chrome-devtools-mcp@latest&lt;/code&gt; ensures that your MCP client will always use the latest version of the Chrome DevTools MCP server.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;MCP Client configuration&lt;/h3&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Amp&lt;/summary&gt; Follow https://ampcode.com/manual#mcp and use the config provided above. You can also install the Chrome DevTools MCP server using the CLI: 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;amp mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Antigravity&lt;/summary&gt; 
+ &lt;p&gt;To use the Chrome DevTools MCP server follow the instructions from &lt;a href="https://antigravity.google/docs/mcp"&gt;Antigravity's docs&lt;/a&gt;&lt;a&gt;&lt;/a&gt; to install a custom MCP server. Add the following config to the MCP servers config:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "chrome-devtools-mcp@latest",
+        "--browser-url=http://127.0.0.1:9222",
+        "-y"
+      ]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;This will make the Chrome DevTools MCP server automatically connect to the browser that Antigravity is using. If you are not using port 9222, make sure to adjust accordingly.&lt;/p&gt; 
+ &lt;p&gt;Chrome DevTools MCP will not start the browser instance automatically using this approach as as the Chrome DevTools MCP server runs in Antigravity's built-in browser. If the browser is not already running, you have to start it first by clicking the Chrome icon at the top right corner.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Claude Code&lt;/summary&gt; Use the Claude Code CLI to add the Chrome DevTools MCP server (
+ &lt;a href="https://code.claude.com/docs/en/mcp"&gt;guide&lt;/a&gt;): 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;claude mcp add chrome-devtools npx chrome-devtools-mcp@latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Cline&lt;/summary&gt; Follow https://docs.cline.bot/mcp/configuring-mcp-servers and use the config provided above. 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Codex&lt;/summary&gt; Follow the 
+ &lt;a href="https://github.com/openai/codex/raw/main/docs/advanced.md#model-context-protocol-mcp"&gt;configure MCP guide&lt;/a&gt; using the standard config from above. You can also install the Chrome DevTools MCP server using the Codex CLI: 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;codex mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;On Windows 11&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;Configure the Chrome install location and increase the startup timeout by updating &lt;code&gt;.codex/config.toml&lt;/code&gt; and adding the following &lt;code&gt;env&lt;/code&gt; and &lt;code&gt;startup_timeout_ms&lt;/code&gt; parameters:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code&gt;[mcp_servers.chrome-devtools]
+command = "cmd"
+args = [
+    "/c",
+    "npx",
+    "-y",
+    "chrome-devtools-mcp@latest",
+]
+env = { SystemRoot="C:\\Windows", PROGRAMFILES="C:\\Program Files" }
+startup_timeout_ms = 20_000
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Copilot CLI&lt;/summary&gt; 
+ &lt;p&gt;Start Copilot CLI:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code&gt;copilot
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;Start the dialog to add a new MCP server by running:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code&gt;/mcp add
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;Configure the following fields and press &lt;code&gt;CTRL+S&lt;/code&gt; to save the configuration:&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;strong&gt;Server name:&lt;/strong&gt; &lt;code&gt;chrome-devtools&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;strong&gt;Server Type:&lt;/strong&gt; &lt;code&gt;[1] Local&lt;/code&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;strong&gt;Command:&lt;/strong&gt; &lt;code&gt;npx -y chrome-devtools-mcp@latest&lt;/code&gt;&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Copilot / VS Code&lt;/summary&gt; 
+ &lt;p&gt;&lt;strong&gt;Click the button to install:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://vscode.dev/redirect/mcp/install?name=io.github.ChromeDevTools%2Fchrome-devtools-mcp&amp;amp;config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22chrome-devtools-mcp%22%5D%2C%22env%22%3A%7B%7D%7D"&gt;&lt;img src="https://img.shields.io/badge/VS_Code-VS_Code?style=flat-square&amp;amp;label=Install%20Server&amp;amp;color=0098FF" alt="Install in VS Code" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://insiders.vscode.dev/redirect?url=vscode-insiders%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522io.github.ChromeDevTools%252Fchrome-devtools-mcp%2522%252C%2522config%2522%253A%257B%2522command%2522%253A%2522npx%2522%252C%2522args%2522%253A%255B%2522-y%2522%252C%2522chrome-devtools-mcp%2522%255D%252C%2522env%2522%253A%257B%257D%257D%257D"&gt;&lt;img src="https://img.shields.io/badge/VS_Code_Insiders-VS_Code_Insiders?style=flat-square&amp;amp;label=Install%20Server&amp;amp;color=24bfa5" alt="Install in VS Code Insiders" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;Or install manually:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;Follow the MCP install &lt;a href="https://code.visualstudio.com/docs/copilot/chat/mcp-servers#_add-an-mcp-server"&gt;guide&lt;/a&gt;, with the standard config from above. You can also install the Chrome DevTools MCP server using the VS Code CLI:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;code --add-mcp '{"name":"io.github.ChromeDevTools/chrome-devtools-mcp","command":"npx","args":["-y","chrome-devtools-mcp"],"env":{}}'
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Cursor&lt;/summary&gt; 
+ &lt;p&gt;&lt;strong&gt;Click the button to install:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://cursor.com/en/install-mcp?name=chrome-devtools&amp;amp;config=eyJjb21tYW5kIjoibnB4IC15IGNocm9tZS1kZXZ0b29scy1tY3BAbGF0ZXN0In0%3D"&gt;&lt;img src="https://cursor.com/deeplink/mcp-install-dark.svg?sanitize=true" alt="Install in Cursor" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;Or install manually:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;Go to &lt;code&gt;Cursor Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;MCP&lt;/code&gt; -&amp;gt; &lt;code&gt;New MCP Server&lt;/code&gt;. Use the config provided above.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Factory CLI&lt;/summary&gt; Use the Factory CLI to add the Chrome DevTools MCP server (
+ &lt;a href="https://docs.factory.ai/cli/configuration/mcp"&gt;guide&lt;/a&gt;): 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;droid mcp add chrome-devtools "npx -y chrome-devtools-mcp@latest"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Gemini CLI&lt;/summary&gt; Install the Chrome DevTools MCP server using the Gemini CLI. 
+ &lt;p&gt;&lt;strong&gt;Project wide:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;gemini mcp add chrome-devtools npx chrome-devtools-mcp@latest
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;Globally:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;gemini mcp add -s user chrome-devtools npx chrome-devtools-mcp@latest
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;Alternatively, follow the &lt;a href="https://github.com/google-gemini/gemini-cli/raw/main/docs/tools/mcp-server.md#how-to-set-up-your-mcp-server"&gt;MCP guide&lt;/a&gt; and use the standard config from above.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Gemini Code Assist&lt;/summary&gt; Follow the 
+ &lt;a href="https://cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer#configure-mcp-servers"&gt;configure MCP guide&lt;/a&gt; using the standard config from above. 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;JetBrains AI Assistant &amp;amp; Junie&lt;/summary&gt; 
+ &lt;p&gt;Go to &lt;code&gt;Settings | Tools | AI Assistant | Model Context Protocol (MCP)&lt;/code&gt; -&amp;gt; &lt;code&gt;Add&lt;/code&gt;. Use the config provided above. The same way chrome-devtools-mcp can be configured for JetBrains Junie in &lt;code&gt;Settings | Tools | Junie | MCP Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Add&lt;/code&gt;. Use the config provided above.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Kiro&lt;/summary&gt; 
+ &lt;p&gt;In &lt;strong&gt;Kiro Settings&lt;/strong&gt;, go to &lt;code&gt;Configure MCP&lt;/code&gt; &amp;gt; &lt;code&gt;Open Workspace or User MCP Config&lt;/code&gt; &amp;gt; Use the configuration snippet provided above.&lt;/p&gt; 
+ &lt;p&gt;Or, from the IDE &lt;strong&gt;Activity Bar&lt;/strong&gt; &amp;gt; &lt;code&gt;Kiro&lt;/code&gt; &amp;gt; &lt;code&gt;MCP Servers&lt;/code&gt; &amp;gt; &lt;code&gt;Click Open MCP Config&lt;/code&gt;. Use the configuration snippet provided above.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;OpenCode&lt;/summary&gt; 
+ &lt;p&gt;Add the following configuration to your &lt;code&gt;opencode.json&lt;/code&gt; file. If you don't have one, create it at &lt;code&gt;~/.config/opencode/opencode.json&lt;/code&gt; (&lt;a href="https://opencode.ai/docs/mcp-servers"&gt;guide&lt;/a&gt;):&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-json"&gt;{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "chrome-devtools": {
+      "type": "local",
+      "command": ["npx", "-y", "chrome-devtools-mcp@latest"]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Qoder&lt;/summary&gt; 
+ &lt;p&gt;In &lt;strong&gt;Qoder Settings&lt;/strong&gt;, go to &lt;code&gt;MCP Server&lt;/code&gt; &amp;gt; &lt;code&gt;+ Add&lt;/code&gt; &amp;gt; Use the configuration snippet provided above.&lt;/p&gt; 
+ &lt;p&gt;Alternatively, follow the &lt;a href="https://docs.qoder.com/user-guide/chat/model-context-protocol"&gt;MCP guide&lt;/a&gt; and use the standard config from above.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Qoder CLI&lt;/summary&gt; 
+ &lt;p&gt;Install the Chrome DevTools MCP server using the Qoder CLI (&lt;a href="https://docs.qoder.com/cli/using-cli#mcp-servsers"&gt;guide&lt;/a&gt;):&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;Project wide:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;qodercli mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;strong&gt;Globally:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;qodercli mcp add -s user chrome-devtools -- npx chrome-devtools-mcp@latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Visual Studio&lt;/summary&gt; 
+ &lt;p&gt;&lt;strong&gt;Click the button to install:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://vs-open.link/mcp-install?%7B%22name%22%3A%22chrome-devtools%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22chrome-devtools-mcp%40latest%22%5D%7D"&gt;&lt;img src="https://img.shields.io/badge/Visual_Studio-Install-C16FDE?logo=visualstudio&amp;amp;logoColor=white" alt="Install in Visual Studio" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Warp&lt;/summary&gt; 
+ &lt;p&gt;Go to &lt;code&gt;Settings | AI | Manage MCP Servers&lt;/code&gt; -&amp;gt; &lt;code&gt;+ Add&lt;/code&gt; to &lt;a href="https://docs.warp.dev/knowledge-and-collaboration/mcp#adding-an-mcp-server"&gt;add an MCP Server&lt;/a&gt;. Use the config provided above.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Windsurf&lt;/summary&gt; Follow the 
+ &lt;a href="https://docs.windsurf.com/windsurf/cascade/mcp#mcp-config-json"&gt;configure MCP guide&lt;/a&gt; using the standard config from above. 
+&lt;/details&gt; 
+&lt;h3&gt;Your first prompt&lt;/h3&gt; 
+&lt;p&gt;Enter the following prompt in your MCP Client to check if everything is working:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Check the performance of https://developers.chrome.com
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Your MCP client should open the browser and record a performance trace.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE]&lt;br /&gt; The MCP server will start the browser automatically once the MCP client uses a tool that requires a running browser instance. Connecting to the Chrome DevTools MCP server on its own will not automatically start the browser.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Tools&lt;/h2&gt; 
+&lt;p&gt;If you run into any issues, checkout our &lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/troubleshooting.md"&gt;troubleshooting guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;!-- BEGIN AUTO GENERATED TOOLS --&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Input automation&lt;/strong&gt; (8 tools) 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#click"&gt;&lt;code&gt;click&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#drag"&gt;&lt;code&gt;drag&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#fill"&gt;&lt;code&gt;fill&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#fill_form"&gt;&lt;code&gt;fill_form&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#handle_dialog"&gt;&lt;code&gt;handle_dialog&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#hover"&gt;&lt;code&gt;hover&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#press_key"&gt;&lt;code&gt;press_key&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#upload_file"&gt;&lt;code&gt;upload_file&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Navigation automation&lt;/strong&gt; (6 tools) 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#close_page"&gt;&lt;code&gt;close_page&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#list_pages"&gt;&lt;code&gt;list_pages&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#navigate_page"&gt;&lt;code&gt;navigate_page&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#new_page"&gt;&lt;code&gt;new_page&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#select_page"&gt;&lt;code&gt;select_page&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#wait_for"&gt;&lt;code&gt;wait_for&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Emulation&lt;/strong&gt; (2 tools) 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#emulate"&gt;&lt;code&gt;emulate&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#resize_page"&gt;&lt;code&gt;resize_page&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Performance&lt;/strong&gt; (3 tools) 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#performance_analyze_insight"&gt;&lt;code&gt;performance_analyze_insight&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#performance_start_trace"&gt;&lt;code&gt;performance_start_trace&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#performance_stop_trace"&gt;&lt;code&gt;performance_stop_trace&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Network&lt;/strong&gt; (2 tools) 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#get_network_request"&gt;&lt;code&gt;get_network_request&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#list_network_requests"&gt;&lt;code&gt;list_network_requests&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Debugging&lt;/strong&gt; (5 tools) 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#evaluate_script"&gt;&lt;code&gt;evaluate_script&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#get_console_message"&gt;&lt;code&gt;get_console_message&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#list_console_messages"&gt;&lt;code&gt;list_console_messages&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#take_screenshot"&gt;&lt;code&gt;take_screenshot&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/tool-reference.md#take_snapshot"&gt;&lt;code&gt;take_snapshot&lt;/code&gt;&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;!-- END AUTO GENERATED TOOLS --&gt; 
+&lt;h2&gt;Configuration&lt;/h2&gt; 
+&lt;p&gt;The Chrome DevTools MCP server supports the following configuration option:&lt;/p&gt; 
+&lt;!-- BEGIN AUTO GENERATED OPTIONS --&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--autoConnect&lt;/code&gt;/ &lt;code&gt;--auto-connect&lt;/code&gt;&lt;/strong&gt; If specified, automatically connects to a browser (Chrome 145+) running in the user data directory identified by the channel param. Requires remote debugging being enabled in Chrome here: chrome://inspect/#remote-debugging.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; boolean&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Default:&lt;/strong&gt; &lt;code&gt;false&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--browserUrl&lt;/code&gt;/ &lt;code&gt;--browser-url&lt;/code&gt;, &lt;code&gt;-u&lt;/code&gt;&lt;/strong&gt; Connect to a running, debuggable Chrome instance (e.g. &lt;code&gt;http://127.0.0.1:9222&lt;/code&gt;). For more details see: &lt;a href="https://github.com/ChromeDevTools/chrome-devtools-mcp#connecting-to-a-running-chrome-instance"&gt;https://github.com/ChromeDevTools/chrome-devtools-mcp#connecting-to-a-running-chrome-instance&lt;/a&gt;.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; string&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--wsEndpoint&lt;/code&gt;/ &lt;code&gt;--ws-endpoint&lt;/code&gt;, &lt;code&gt;-w&lt;/code&gt;&lt;/strong&gt; WebSocket endpoint to connect to a running Chrome instance (e.g., ws://127.0.0.1:9222/devtools/browser/
+   &lt;id&gt;
+    ). Alternative to --browserUrl.
+   &lt;/id&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; string&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--wsHeaders&lt;/code&gt;/ &lt;code&gt;--ws-headers&lt;/code&gt;&lt;/strong&gt; Custom headers for WebSocket connection in JSON format (e.g., '{"Authorization":"Bearer token"}'). Only works with --wsEndpoint.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; string&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--headless&lt;/code&gt;&lt;/strong&gt; Whether to run in headless (no UI) mode.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; boolean&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Default:&lt;/strong&gt; &lt;code&gt;false&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--executablePath&lt;/code&gt;/ &lt;code&gt;--executable-path&lt;/code&gt;, &lt;code&gt;-e&lt;/code&gt;&lt;/strong&gt; Path to custom Chrome executable.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; string&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--isolated&lt;/code&gt;&lt;/strong&gt; If specified, creates a temporary user-data-dir that is automatically cleaned up after the browser is closed. Defaults to false.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; boolean&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--userDataDir&lt;/code&gt;/ &lt;code&gt;--user-data-dir&lt;/code&gt;&lt;/strong&gt; Path to the user data directory for Chrome. Default is $HOME/.cache/chrome-devtools-mcp/chrome-profile$CHANNEL_SUFFIX_IF_NON_STABLE&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; string&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--channel&lt;/code&gt;&lt;/strong&gt; Specify a different Chrome channel that should be used. The default is the stable channel version.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; string&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Choices:&lt;/strong&gt; &lt;code&gt;stable&lt;/code&gt;, &lt;code&gt;canary&lt;/code&gt;, &lt;code&gt;beta&lt;/code&gt;, &lt;code&gt;dev&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--logFile&lt;/code&gt;/ &lt;code&gt;--log-file&lt;/code&gt;&lt;/strong&gt; Path to a file to write debug logs to. Set the env variable &lt;code&gt;DEBUG&lt;/code&gt; to &lt;code&gt;*&lt;/code&gt; to enable verbose logs. Useful for submitting bug reports.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; string&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--viewport&lt;/code&gt;&lt;/strong&gt; Initial viewport size for the Chrome instances started by the server. For example, &lt;code&gt;1280x720&lt;/code&gt;. In headless mode, max size is 3840x2160px.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; string&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--proxyServer&lt;/code&gt;/ &lt;code&gt;--proxy-server&lt;/code&gt;&lt;/strong&gt; Proxy server configuration for Chrome passed as --proxy-server when launching the browser. See &lt;a href="https://www.chromium.org/developers/design-documents/network-settings/"&gt;https://www.chromium.org/developers/design-documents/network-settings/&lt;/a&gt; for details.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; string&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--acceptInsecureCerts&lt;/code&gt;/ &lt;code&gt;--accept-insecure-certs&lt;/code&gt;&lt;/strong&gt; If enabled, ignores errors relative to self-signed and expired certificates. Use with caution.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; boolean&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--chromeArg&lt;/code&gt;/ &lt;code&gt;--chrome-arg&lt;/code&gt;&lt;/strong&gt; Additional arguments for Chrome. Only applies when Chrome is launched by chrome-devtools-mcp.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; array&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--ignoreDefaultChromeArg&lt;/code&gt;/ &lt;code&gt;--ignore-default-chrome-arg&lt;/code&gt;&lt;/strong&gt; Explicitly disable default arguments for Chrome. Only applies when Chrome is launched by chrome-devtools-mcp.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; array&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--categoryEmulation&lt;/code&gt;/ &lt;code&gt;--category-emulation&lt;/code&gt;&lt;/strong&gt; Set to false to exclude tools related to emulation.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; boolean&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Default:&lt;/strong&gt; &lt;code&gt;true&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--categoryPerformance&lt;/code&gt;/ &lt;code&gt;--category-performance&lt;/code&gt;&lt;/strong&gt; Set to false to exclude tools related to performance.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; boolean&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Default:&lt;/strong&gt; &lt;code&gt;true&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;code&gt;--categoryNetwork&lt;/code&gt;/ &lt;code&gt;--category-network&lt;/code&gt;&lt;/strong&gt; Set to false to exclude tools related to network.&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; boolean&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Default:&lt;/strong&gt; &lt;code&gt;true&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;!-- END AUTO GENERATED OPTIONS --&gt; 
+&lt;p&gt;Pass them via the &lt;code&gt;args&lt;/code&gt; property in the JSON configuration. For example:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "chrome-devtools-mcp@latest",
+        "--channel=canary",
+        "--headless=true",
+        "--isolated=true"
+      ]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Connecting via WebSocket with custom headers&lt;/h3&gt; 
+&lt;p&gt;You can connect directly to a Chrome WebSocket endpoint and include custom headers (e.g., for authentication):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "chrome-devtools-mcp@latest",
+        "--wsEndpoint=ws://127.0.0.1:9222/devtools/browser/&amp;lt;id&amp;gt;",
+        "--wsHeaders={\"Authorization\":\"Bearer YOUR_TOKEN\"}"
+      ]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;To get the WebSocket endpoint from a running Chrome instance, visit &lt;code&gt;http://127.0.0.1:9222/json/version&lt;/code&gt; and look for the &lt;code&gt;webSocketDebuggerUrl&lt;/code&gt; field.&lt;/p&gt; 
+&lt;p&gt;You can also run &lt;code&gt;npx chrome-devtools-mcp@latest --help&lt;/code&gt; to see all available configuration options.&lt;/p&gt; 
+&lt;h2&gt;Concepts&lt;/h2&gt; 
+&lt;h3&gt;User data directory&lt;/h3&gt; 
+&lt;p&gt;&lt;code&gt;chrome-devtools-mcp&lt;/code&gt; starts a Chrome's stable channel instance using the following user data directory:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Linux / macOS: &lt;code&gt;$HOME/.cache/chrome-devtools-mcp/chrome-profile-$CHANNEL&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Windows: &lt;code&gt;%HOMEPATH%/.cache/chrome-devtools-mcp/chrome-profile-$CHANNEL&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The user data directory is not cleared between runs and shared across all instances of &lt;code&gt;chrome-devtools-mcp&lt;/code&gt;. Set the &lt;code&gt;isolated&lt;/code&gt; option to &lt;code&gt;true&lt;/code&gt; to use a temporary user data dir instead which will be cleared automatically after the browser is closed.&lt;/p&gt; 
+&lt;h3&gt;Connecting to a running Chrome instance&lt;/h3&gt; 
+&lt;p&gt;By default, the Chrome DevTools MCP server will start a new Chrome instance with a dedicated profile. This might not be ideal in all situations:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;If you would like to maintain the same application state when alternating between manual site testing and agent-driven testing.&lt;/li&gt; 
+ &lt;li&gt;When the MCP needs to sign into a website. Some accounts may prevent sign-in when the browser is controlled via WebDriver (the default launch mechanism for the Chrome DevTools MCP server).&lt;/li&gt; 
+ &lt;li&gt;If you're running your LLM inside a sandboxed environment, but you would like to connect to a Chrome instance that runs outside the sandbox.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;In these cases, start Chrome first and let the Chrome DevTools MCP server connect to it. There are two ways to do so:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Automatic connection (available in Chrome 144)&lt;/strong&gt;: best for sharing state between manual and agent-driven testing.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Manual connection via remote debugging port&lt;/strong&gt;: best when running inside a sandboxed environment.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Automatically connecting to a running Chrome instance&lt;/h4&gt; 
+&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Set up remote debugging in Chrome&lt;/p&gt; 
+&lt;p&gt;In Chrome (&amp;gt;= M144), do the following to set up remote debugging:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Navigate to &lt;code&gt;chrome://inspect/#remote-debugging&lt;/code&gt; to enable remote debugging.&lt;/li&gt; 
+ &lt;li&gt;Follow the dialog UI to allow or disallow incoming debugging connections.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; Configure Chrome DevTools MCP server to automatically connect to a running Chrome Instance&lt;/p&gt; 
+&lt;p&gt;To connect the &lt;code&gt;chrome-devtools-mcp&lt;/code&gt; server to the running Chrome instance, use &lt;code&gt;--autoConnect&lt;/code&gt; command line argument for the MCP server.&lt;/p&gt; 
+&lt;p&gt;The following code snippet is an example configuration for gemini-cli:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["chrome-devtools-mcp@latest", "--autoConnect", "--channel=beta"]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Note: you have to specify &lt;code&gt;--channel=beta&lt;/code&gt; until Chrome M144 has reached the stable channel.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; Test your setup&lt;/p&gt; 
+&lt;p&gt;Make sure your browser is running. Open gemini-cli and run the following prompt:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-none"&gt;Check the performance of https://developers.chrome.com
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE]&lt;br /&gt; The &lt;code&gt;autoConnect&lt;/code&gt; option requires the user to start Chrome. If the user has multiple active profiles, the MCP server will connect to the default profile (as determined by Chrome). The MCP server has access to all open windows for the selected profile.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;The Chrome DevTools MCP server will try to connect to your running Chrome instance. It shows a dialog asking for user permission.&lt;/p&gt; 
+&lt;p&gt;Clicking &lt;strong&gt;Allow&lt;/strong&gt; results in the Chrome DevTools MCP server opening &lt;a href="http://developers.chrome.com"&gt;developers.chrome.com&lt;/a&gt; and taking a performance trace.&lt;/p&gt; 
+&lt;h4&gt;Manual connection using port forwarding&lt;/h4&gt; 
+&lt;p&gt;You can connect to a running Chrome instance by using the &lt;code&gt;--browser-url&lt;/code&gt; option. This is useful if you are running the MCP server in a sandboxed environment that does not allow starting a new Chrome instance.&lt;/p&gt; 
+&lt;p&gt;Here is a step-by-step guide on how to connect to a running Chrome instance:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Step 1: Configure the MCP client&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Add the &lt;code&gt;--browser-url&lt;/code&gt; option to your MCP client configuration. The value of this option should be the URL of the running Chrome instance. &lt;code&gt;http://127.0.0.1:9222&lt;/code&gt; is a common default.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "chrome-devtools-mcp@latest",
+        "--browser-url=http://127.0.0.1:9222"
+      ]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Step 2: Start the Chrome browser&lt;/strong&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!WARNING]&lt;br /&gt; Enabling the remote debugging port opens up a debugging port on the running browser instance. Any application on your machine can connect to this port and control the browser. Make sure that you are not browsing any sensitive websites while the debugging port is open.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Start the Chrome browser with the remote debugging port enabled. Make sure to close any running Chrome instances before starting a new one with the debugging port enabled. The port number you choose must be the same as the one you specified in the &lt;code&gt;--browser-url&lt;/code&gt; option in your MCP client configuration.&lt;/p&gt; 
+&lt;p&gt;For security reasons, &lt;a href="https://developer.chrome.com/blog/remote-debugging-port"&gt;Chrome requires you to use a non-default user data directory&lt;/a&gt; when enabling the remote debugging port. You can specify a custom directory using the &lt;code&gt;--user-data-dir&lt;/code&gt; flag. This ensures that your regular browsing profile and data are not exposed to the debugging session.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;macOS&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir=/tmp/chrome-profile-stable
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Linux&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/usr/bin/google-chrome --remote-debugging-port=9222 --user-data-dir=/tmp/chrome-profile-stable
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Windows&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;"C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="%TEMP%\chrome-profile-stable"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Step 3: Test your setup&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;After configuring the MCP client and starting the Chrome browser, you can test your setup by running a simple prompt in your MCP client:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Check the performance of https://developers.chrome.com
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Your MCP client should connect to the running Chrome instance and receive a performance report.&lt;/p&gt; 
+&lt;p&gt;If you hit VM-to-host port forwarding issues, see the “Remote debugging between virtual machine (VM) and host fails” section in &lt;a href="https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/troubleshooting.md#remote-debugging-between-virtual-machine-vm-and-host-fails"&gt;&lt;code&gt;docs/troubleshooting.md&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;For more details on remote debugging, see the &lt;a href="https://developer.chrome.com/docs/devtools/remote-debugging/"&gt;Chrome DevTools documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Known limitations&lt;/h2&gt; 
+&lt;h3&gt;Operating system sandboxes&lt;/h3&gt; 
+&lt;p&gt;Some MCP clients allow sandboxing the MCP server using macOS Seatbelt or Linux containers. If sandboxes are enabled, &lt;code&gt;chrome-devtools-mcp&lt;/code&gt; is not able to start Chrome that requires permissions to create its own sandboxes. As a workaround, either disable sandboxing for &lt;code&gt;chrome-devtools-mcp&lt;/code&gt; in your MCP client or use &lt;code&gt;--browser-url&lt;/code&gt; to connect to a Chrome instance that you start manually outside of the MCP client sandbox.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>microsoft/PowerToys</title>
+      <link>https://github.com/microsoft/PowerToys</link>
+      <description>&lt;p&gt;Microsoft PowerToys is a collection of utilities that help you customize Windows and streamline everyday tasks&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: light)" srcset="./doc/images/readme/pt-hero.light.png" /&gt; 
+  &lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/readme/pt-hero.dark.png" /&gt; 
+ &lt;/picture&gt; &lt;/p&gt; 
+&lt;h1 align="center"&gt; &lt;span&gt;Microsoft PowerToys&lt;/span&gt; &lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;span align="center"&gt;Microsoft PowerToys is a collection of utilities that help you customize Windows and streamline everyday tasks.&lt;/span&gt; &lt;/p&gt; 
+&lt;h3 align="center"&gt; &lt;a href="https://raw.githubusercontent.com/microsoft/PowerToys/main/#-installation"&gt;Installation&lt;/a&gt; &lt;span&gt; · &lt;/span&gt; &lt;a href="https://aka.ms/powertoys-docs"&gt;Documentation&lt;/a&gt; &lt;span&gt; · &lt;/span&gt; &lt;a href="https://aka.ms/powertoys-releaseblog"&gt;Blog&lt;/a&gt; &lt;span&gt; · &lt;/span&gt; &lt;a href="https://raw.githubusercontent.com/microsoft/PowerToys/main/#-whats-new"&gt;Release notes&lt;/a&gt; &lt;/h3&gt; 
+&lt;br /&gt;
+&lt;br /&gt; 
+&lt;h2&gt;🔨 Utilities&lt;/h2&gt; 
+&lt;p&gt;PowerToys includes over 25 utilities to help you customize and optimize your Windows experience:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;/th&gt; 
+   &lt;th&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_AdvancedPaste"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/AdvancedPaste.png" alt="Advanced Paste icon" height="16" /&gt; Advanced Paste&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_AoT"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/Always%20On%20Top.png" alt="Always on Top icon" height="16" /&gt; Always on Top&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_Awake"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/Awake.png" alt="Awake icon" height="16" /&gt; Awake&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_ColorPicker"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/Color%20Picker.png" alt="Color Picker icon" height="16" /&gt; Color Picker&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_CmdNotFound"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/Command%20Not%20Found.png" alt="Command Not Found icon" height="16" /&gt; Command Not Found&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_CmdPal"&gt;&lt;img src="doc/images/icons/Command Palette.png" alt="Command Palette icon" height="16" /&gt; Command Palette&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_CropAndLock"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/Crop%20And%20Lock.png" alt="Crop and Lock icon" height="16" /&gt; Crop And Lock&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_EnvironmentVariables"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/Environment%20Manager.png" alt="Environment Variables icon" height="16" /&gt; Environment Variables&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_FancyZones"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/FancyZones.png" alt="FancyZones icon" height="16" /&gt; FancyZones&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_FileExplorerAddOns"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/File%20Explorer%20Preview.png" alt="File Explorer Add-ons icon" height="16" /&gt; File Explorer Add-ons&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_FileLocksmith"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/File%20Locksmith.png" alt="File Locksmith icon" height="16" /&gt; File Locksmith&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_HostsFileEditor"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/Host%20File%20Editor.png" alt="Hosts File Editor icon" height="16" /&gt; Hosts File Editor&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_ImageResizer"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/Image%20Resizer.png" alt="Image Resizer icon" height="16" /&gt; Image Resizer&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_KeyboardManager"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/Keyboard%20Manager.png" alt="Keyboard Manager icon" height="16" /&gt; Keyboard Manager&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_LightSwitch"&gt;&lt;img src="doc/images/icons/Light Switch.png" alt="Light Switch icon" height="16" /&gt; Light Switch&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_MouseUtilities"&gt;&lt;img src="doc/images/icons/Find My Mouse.png" alt="Mouse Utilities icon" height="16" /&gt; Mouse Utilities&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_MouseWithoutBorders"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/MouseWithoutBorders.png" alt="Mouse Without Borders icon" height="16" /&gt; Mouse Without Borders&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_NewPlus"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/NewPlus.png" alt="New+ icon" height="16" /&gt; New+&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_Peek"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/Peek.png" alt="Peek icon" height="16" /&gt; Peek&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_PowerRename"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/PowerRename.png" alt="PowerRename icon" height="16" /&gt; PowerRename&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_PowerToysRun"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/PowerToys%20Run.png" alt="PowerToys Run icon" height="16" /&gt; PowerToys Run&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_QuickAccent"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/PowerAccent.png" alt="Quick Accent icon" height="16" /&gt; Quick Accent&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_RegistryPreview"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/Registry%20Preview.png" alt="Registry Preview icon" height="16" /&gt; Registry Preview&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_ScreenRuler"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/MeasureTool.png" alt="Screen Ruler icon" height="16" /&gt; Screen Ruler&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_ShortcutGuide"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/Shortcut%20Guide.png" alt="Shortcut Guide icon" height="16" /&gt; Shortcut Guide&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_TextExtractor"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/PowerOCR.png" alt="Text Extractor icon" height="16" /&gt; Text Extractor&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_Workspaces"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/Workspaces.png" alt="Workspaces icon" height="16" /&gt; Workspaces&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://aka.ms/PowerToysOverview_ZoomIt"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/icons/ZoomIt.png" alt="ZoomIt icon" height="16" /&gt; ZoomIt&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;📋 Installation&lt;/h2&gt; 
+&lt;p&gt;For detailed installation instructions and system requirements, visit the &lt;a href="https://learn.microsoft.com/windows/powertoys/install"&gt;installation docs&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;But to get started quickly, choose one of the installation methods below: &lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;details open&gt; 
+ &lt;summary&gt;&lt;strong&gt;Download .exe from GitHub&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; Go to the [PowerToys GitHub releases][github-release-link], click Assets to reveal the downloads, and choose the installer that matches your architecture and install scope. For most devices, that's the x64 per-user installer. 
+ &lt;!-- items that need to be updated release to release --&gt; 
+ &lt;table&gt; 
+  &lt;thead&gt; 
+   &lt;tr&gt; 
+    &lt;th&gt;Description&lt;/th&gt; 
+    &lt;th&gt;Filename&lt;/th&gt; 
+   &lt;/tr&gt; 
+  &lt;/thead&gt; 
+  &lt;tbody&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;Per user - x64&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://github.com/microsoft/PowerToys/releases/download/v0.96.1/PowerToysUserSetup-0.96.1-x64.exe"&gt;PowerToysUserSetup-0.96.1-x64.exe&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;Per user - ARM64&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://github.com/microsoft/PowerToys/releases/download/v0.96.1/PowerToysUserSetup-0.96.1-arm64.exe"&gt;PowerToysUserSetup-0.96.1-arm64.exe&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;Machine wide - x64&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://github.com/microsoft/PowerToys/releases/download/v0.96.1/PowerToysSetup-0.96.1-x64.exe"&gt;PowerToysSetup-0.96.1-x64.exe&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td&gt;Machine wide - ARM64&lt;/td&gt; 
+    &lt;td&gt;&lt;a href="https://github.com/microsoft/PowerToys/releases/download/v0.96.1/PowerToysSetup-0.96.1-arm64.exe"&gt;PowerToysSetup-0.96.1-arm64.exe&lt;/a&gt;&lt;/td&gt; 
+   &lt;/tr&gt; 
+  &lt;/tbody&gt; 
+ &lt;/table&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;Microsoft Store&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; You can easily install PowerToys from the Microsoft Store: 
+ &lt;p&gt; &lt;a style="text-decoration:none" href="https://aka.ms/getPowertoys"&gt; 
+   &lt;picture&gt; 
+    &lt;source media="(prefers-color-scheme: light)" srcset="doc/images/readme/StoreBadge-dark.png" width="148" /&gt; 
+    &lt;img src="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/readme/StoreBadge-light.png" width="148" /&gt; 
+   &lt;/picture&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;WinGet&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; Download PowerToys from [WinGet][winget-link]. Updating PowerToys via winget will respect the current PowerToys installation scope. To install PowerToys, run the following command from the command line / PowerShell: 
+ &lt;p&gt;&lt;em&gt;User scope installer [default]&lt;/em&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-powershell"&gt;winget install Microsoft.PowerToys -s winget
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;&lt;em&gt;Machine-wide scope installer&lt;/em&gt;&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-powershell"&gt;winget install --scope machine Microsoft.PowerToys -s winget
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;Other methods&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; There are [community driven install methods](./doc/unofficialInstallMethods.md) such as Chocolatey and Scoop. If these are your preferred install solutions, you can find the install instructions there. 
+&lt;/details&gt; 
+&lt;h2&gt;✨ What's new&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Version 0.96 (November 2025)&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;For an in-depth look at the latest changes, visit the &lt;a href="https://aka.ms/powertoys-releaseblog"&gt;Windows Command Line blog&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;✨ Highlights&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Advanced Paste now supports multiple online and on-device AI model providers: Azure OpenAI, OpenAI, Google Gemini, Mistral, Foundry Local and Ollama.&lt;/li&gt; 
+ &lt;li&gt;Command Palette received extensive improvements including file search filters, better clipboard history metadata, context-menu styling, and dozens of bug fixes and enhancements.&lt;/li&gt; 
+ &lt;li&gt;PowerRename can now extract and use photo metadata (EXIF, XMP) in renaming patterns like &lt;code&gt;%Camera&lt;/code&gt;, &lt;code&gt;%Lens&lt;/code&gt;, and &lt;code&gt;%ExposureTime&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Advanced Paste&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Advanced Paste now lets you connect to multiple AI providers instead of being limited to a single OpenAI provider. See &lt;a href="https://learn.microsoft.com/windows/powertoys/advanced-paste"&gt;Advanced Paste documentation&lt;/a&gt; for usage.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Awake&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The Awake countdown timer now stays accurate over long periods. Thanks &lt;a href="https://github.com/daverayment"&gt;@daverayment&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Fixed Awake context menu positioning. The fix removed the conversion of the mouse cursor from screen to client-window coordinates, instead using the raw screen coordinates returned by GetCursorPos; the context menu now appears at the correct screen position. Thanks &lt;a href="https://github.com/lzandman"&gt;@lzandman&lt;/a&gt;!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Command Palette&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The search field in context menus now matches the look of the Command Palette, with a smoke backdrop and improved padding.&lt;/li&gt; 
+ &lt;li&gt;Fallback items such as math calculations or the Run command now appear in results more quickly. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Ensured the command bar updates correctly after navigating to another page and commands are displayed correctly. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;The Command Palette settings page has been reorganized. Activation-key options are grouped under an expander and extension settings are framed for improved readability.&lt;/li&gt; 
+ &lt;li&gt;When you modify a command, its alias, hotkey, and tags now update in the top-level list, keeping the displayed information in sync. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Press &lt;code&gt;Ctrl + ,&lt;/code&gt; to open Command Palette settings from anywhere. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;You can use &lt;code&gt;Page Up&lt;/code&gt; and &lt;code&gt;Page Down&lt;/code&gt; to navigate the list while focus is in the search box. Thanks &lt;a href="https://github.com/samrueby"&gt;@samrueby&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Fixed an issue where the search box could disappear when navigating pages. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Ensured search text is selected when &lt;em&gt;Go home when activated&lt;/em&gt; and &lt;em&gt;Highlight search on activate&lt;/em&gt; are both enabled. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Fixed an issue where Command Palette window occasionally appeared on the taskbar under certain Windows settings. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Ensured that labels and icons of list items and menu items update when they change. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Fixed visibility of list filters when navigating to a content page. Thanks &lt;a href="https://github.com/DevLGuilherme"&gt;@DevLGuilherme&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Added search to the extension list and a link to extensions on the Microsoft Store. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Added options to open the Command Palette window at its last position or re-center it.&lt;/li&gt; 
+ &lt;li&gt;The Command Palette now remembers its window size after restarting.&lt;/li&gt; 
+ &lt;li&gt;Added a global error handler that logs fatal errors and provides feedback when unexpected failures force Command Palette to close. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Fixed forms and extension settings not showing on some machines due to a missing VC++ runtime.&lt;/li&gt; 
+ &lt;li&gt;Restored ranking of fallback commands for built-in extensions (Sleep, Shutdown, Windows settings, Web search, etc.). Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Improved and unified labels and texts across the application!&lt;/li&gt; 
+ &lt;li&gt;Maintainance: Resolved numerous build warnings in Command Palette projects; no user-visible impact. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Maintainance: Fixed a logging issue so exception messages are properly recorded instead of placeholder text, improving troubleshooting. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Command Palette Extensions&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Bookmarks: Added hints about bookmark placeholders to the Add/Edit Bookmark form. — Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Bookmarks: Improved migration of bookmarks from older versions and fixed an issue where aliases or keyboard shortcuts could be lost after restart. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Clipboard history: Items shown in Command Palette’s clipboard history now include helpful metadata. For example, image items show dimensions, text files show names and sizes, web links include page titles, and text entries display word counts. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;File search: Added filter buttons to show &lt;em&gt;all items&lt;/em&gt;, &lt;em&gt;files only&lt;/em&gt;, or &lt;em&gt;folders only&lt;/em&gt;. Selecting a filter adds &lt;code&gt;kind:folders&lt;/code&gt; or &lt;code&gt;kind:not folders&lt;/code&gt; to narrow results.&lt;/li&gt; 
+ &lt;li&gt;System commands: Replaced the &lt;code&gt;&lt;span&gt;🔴&lt;/span&gt;&lt;/code&gt; placeholder with an actual red-circle emoji so the correct icon appears in the UI. Thanks &lt;a href="https://github.com/samrueby"&gt;@samrueby&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;WinGet: Search performance feels more responsive because typed input is now processed via a task queue rather than complex cancellation tokens!&lt;/li&gt; 
+ &lt;li&gt;Window Walker: UWP apps no longer show a "not responding" label when suspended. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Window Walker: Now displays the actual icon of each window rather than using the process icon, improving recognition of PWAs and Python GUIs. Thanks &lt;a href="https://github.com/Lee-WonJun"&gt;@Lee-WonJun&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Windows Terminal profiles: Fixed a rare crash in the Windows Terminal extension when the &lt;code&gt;LOCALAPPDATA&lt;/code&gt; environment variable was missing. The path is now retrieved via a reliable API. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Find My Mouse&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Activating Find My Mouse no longer makes the cursor change to the busy (hourglass) icon or steals focus from your active application.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Hosts File Editor&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Added customizable backup settings allowing users to configure backup frequency, location, and auto-deletion policies. Thanks &lt;a href="https://github.com/davidegiacometti"&gt;@davidegiacometti&lt;/a&gt;!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Image Resizer&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fixed settings consistency during batch resize operations by capturing settings once before processing. Thanks &lt;a href="https://github.com/daverayment"&gt;@daverayment&lt;/a&gt;!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Light Switch&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Introduced new UI to allow users to manually enter their latitude and longitude in Sunrise to Sunset mode.&lt;/li&gt; 
+ &lt;li&gt;Refactored service with cleaner state management for stability.&lt;/li&gt; 
+ &lt;li&gt;Removed logs from every tick, only logging key events to largely reduce log size.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Mouse Pointer Crosshairs&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Enabled switching between Mouse Pointer Crosshairs and Gliding Cursor modes. Thanks &lt;a href="https://github.com/mikehall-ms"&gt;@mikehall-ms&lt;/a&gt;!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Mouse Without Borders&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Added horizontal scrolling support. Thanks &lt;a href="https://github.com/MasonBergstrom"&gt;@MasonBergstrom&lt;/a&gt;!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Peek&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fixed media files remaining locked after preview window closes. Thanks &lt;a href="https://github.com/daverayment"&gt;@daverayment&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Added a command-line interface for file previewing. See the &lt;a href="https://learn.microsoft.com/windows/powertoys/peek"&gt;Peek documentation&lt;/a&gt; for usage. Thanks &lt;a href="https://github.com/prochan2"&gt;@prochan2&lt;/a&gt;!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;PowerRename&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;PowerRename no longer crashes due to a missing resources file.&lt;/li&gt; 
+ &lt;li&gt;Added photo metadata extraction support using EXIF and XMP for pattern-based renaming with camera info, GPS coordinates, and date taken. See &lt;a href="https://learn.microsoft.com/en-us/windows/powertoys/powerrename"&gt;PowerRename Documentation&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;PowerToys Run&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Added retry logic with exponential backoff to handle DWM composition errors during theme changes. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Updated OneNote icons to reflect new Microsoft 365 design. Thanks &lt;a href="https://github.com/trevorNgo"&gt;@trevorNgo&lt;/a&gt;!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Quick Accent&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Added diameter symbol (⌀) for Shift+O in Special Characters mode, thanks to &lt;a href="https://github.com/anselumjuju"&gt;@anselumjuju&lt;/a&gt;!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Zoomit&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Smoothed out zoom-animation in ZoomIt by coalescing mouse-move and timer events, thanks to &lt;a href="https://github.com/foxmsft"&gt;@foxmsft&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Enabled GIF support for ZoomIt, thanks to &lt;a href="https://github.com/MarioHewardt"&gt;@MarioHewardt&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Fixed spelling mistakes, and refactored some literal strings to string constants, thanks to &lt;a href="https://github.com/lzandman"&gt;@lzandman&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Fixed inaccurate "actual size" screenshots in ZoomIt and resolves a GDI handle leak, improving capture fidelity and long-session stability. thanks to &lt;a href="https://github.com/daverayment"&gt;@daverayment&lt;/a&gt;!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Settings&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fixed title bar overlapping issue at smaller window sizes.&lt;/li&gt; 
+ &lt;li&gt;Refined shortcut control visual design with improved consistency and spacing.&lt;/li&gt; 
+ &lt;li&gt;Added dashboard utilities sorting by name or status.&lt;/li&gt; 
+ &lt;li&gt;Made update notification InfoBar in flyout clickable for direct navigation to update page.&lt;/li&gt; 
+ &lt;li&gt;Expanded installation instructions by default in README.&lt;/li&gt; 
+ &lt;li&gt;Improved accessibility for shortcut conflict button with static resource-based automation properties.&lt;/li&gt; 
+ &lt;li&gt;Added ScrollViewer to Command Palette page in PowerToys Settings. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Fixed module list glitches and Sort Status checkmark issue. Thanks &lt;a href="https://github.com/daverayment"&gt;@daverayment&lt;/a&gt;!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Development&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Fixed accessibility by associating controls with labels for screen readers.&lt;/li&gt; 
+ &lt;li&gt;Added accessible name to Shortcut Conflicts button for screen readers.&lt;/li&gt; 
+ &lt;li&gt;Excluded TitleBars from tab navigation across multiple utilities. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Migrated build infrastructure from Windows Server 2019 to Server 2022 with improved failure logging and predictable NuGet package paths.&lt;/li&gt; 
+ &lt;li&gt;Configured build agents to use larger P: drive for release builds to address disk space constraints.&lt;/li&gt; 
+ &lt;li&gt;Enhanced DSC v3 support by organizing resource manifests in a dedicated subfolder with PATH configuration.&lt;/li&gt; 
+ &lt;li&gt;Reduced installer bundle size by 6-7MB through centralized Hybrid CRT configuration across all C++ projects.&lt;/li&gt; 
+ &lt;li&gt;Updated .NET packages to version 9.0.10 for security fixes. Thanks &lt;a href="https://github.com/snickler"&gt;@snickler&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Fixed spell check dictionary entries for consistency.&lt;/li&gt; 
+ &lt;li&gt;Restored accidentally deleted NuGet configuration file for Command Palette extensions.&lt;/li&gt; 
+ &lt;li&gt;Fixed package identity build by updating AppxManifest entry points to use PowerShell Core.&lt;/li&gt; 
+ &lt;li&gt;Optimized CI pipeline by replacing file copy operations with hard links and moves, reducing build time and disk usage by 10-15GB.&lt;/li&gt; 
+ &lt;li&gt;Updated Copilot guidance and PR prompt workflow.&lt;/li&gt; 
+ &lt;li&gt;Included high-volume bugs in issue template header. Thanks &lt;a href="https://github.com/daverayment"&gt;@daverayment&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Fixed incorrect HRESULT logging for inner exceptions. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+ &lt;li&gt;Introduced shared sparse package identity for PowerToys Win32 components to enable access to Windows platform APIs.&lt;/li&gt; 
+ &lt;li&gt;Consolidated installer builds to produce both machine and user installers simultaneously, reducing build time and complexity.&lt;/li&gt; 
+ &lt;li&gt;Migrated exclusively to WiX v5 installer infrastructure, removing legacy WiX v3 support.&lt;/li&gt; 
+ &lt;li&gt;Temporarily removed PowerToys installer path from PATH environment variable to prevent application crashes.&lt;/li&gt; 
+ &lt;li&gt;Added complete OCR UI test coverage with automated tests for activation, settings, language selection, and text extraction.&lt;/li&gt; 
+ &lt;li&gt;Fixed test input for drive path normalization in bookmark resolver unit tests.&lt;/li&gt; 
+ &lt;li&gt;Fixed Peek UI tests by restoring Ctrl+Space activation shortcut for test scenarios.&lt;/li&gt; 
+ &lt;li&gt;Hided apps in PowerToys.SpareApps package from Start Menu. Thanks &lt;a href="https://github.com/jiripolasek"&gt;@jiripolasek&lt;/a&gt;!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🛣️ Roadmap&lt;/h2&gt; 
+&lt;p&gt;We are planning some nice new features and improvements for the next releases – a revamped Keyboard Manager UI, custom endpoint and local model support for Advanced Paste, Command Palette improvements and a brand-new Shortcut Guide experience! Stay tuned for &lt;a href="https://github.com/microsoft/PowerToys/issues?q=is%3Aissue+milestone%3A%22PowerToys+0.97%22"&gt;v0.96&lt;/a&gt;!&lt;/p&gt; 
+&lt;h2&gt;❤️ PowerToys Community&lt;/h2&gt; 
+&lt;p&gt;The PowerToys team is extremely grateful to have the &lt;a href="https://raw.githubusercontent.com/microsoft/PowerToys/main/COMMUNITY.md"&gt;support of an amazing active community&lt;/a&gt;. The work you do is incredibly important. PowerToys wouldn't be nearly what it is today without your help filing bugs, updating documentation, guiding the design, or writing features. We want to say thank you and take time to recognize your work. Your contributions and feedback improve PowerToys month after month!&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;This project welcomes contributions of all types. Besides coding features / bug fixes, other ways to assist include spec writing, design, documentation, and finding bugs. We are excited to work with the power user community to build a set of tools for helping you get the most out of Windows. We ask that &lt;strong&gt;before you start work on a feature that you would like to contribute&lt;/strong&gt;, please read our &lt;a href="https://raw.githubusercontent.com/microsoft/PowerToys/main/CONTRIBUTING.md"&gt;Contributor's Guide&lt;/a&gt;. We would be happy to work with you to figure out the best approach, provide guidance and mentorship throughout feature development, and help avoid any wasted or duplicate effort. Most contributions require you to agree to a &lt;a href="https://cla.opensource.microsoft.com"&gt;Contributor License Agreement (CLA)&lt;/a&gt; declaring that you grant us the rights to use your contribution and that you have permission to do so. For guidance on developing for PowerToys, please read the &lt;a href="https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/devdocs"&gt;developer docs&lt;/a&gt; for a detailed breakdown. This includes how to setup your computer to compile.&lt;/p&gt; 
+&lt;h2&gt;Code of Conduct&lt;/h2&gt; 
+&lt;p&gt;This project has adopted the &lt;a href="https://raw.githubusercontent.com/microsoft/PowerToys/main/CODE_OF_CONDUCT.md"&gt;Microsoft Open Source Code of Conduct&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Privacy Statement&lt;/h2&gt; 
+&lt;p&gt;The application logs basic diagnostic data (telemetry). For more privacy information and what we collect, see our &lt;a href="https://aka.ms/powertoys-data-and-privacy-documentation"&gt;PowerToys Data and Privacy documentation&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
