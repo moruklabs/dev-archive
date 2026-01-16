@@ -1,0 +1,1406 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub TypeScript Daily Trending</title>
+    <description>Daily Trending of TypeScript in GitHub</description>
+    <pubDate>Thu, 15 Jan 2026 01:40:39 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>anomalyco/opencode</title>
+      <link>https://github.com/anomalyco/opencode</link>
+      <description>&lt;p&gt;The open source coding agent.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://opencode.ai"&gt; 
+  &lt;picture&gt; 
+   &lt;source srcset="packages/console/app/src/asset/logo-ornate-dark.svg" media="(prefers-color-scheme: dark)" /&gt; 
+   &lt;source srcset="packages/console/app/src/asset/logo-ornate-light.svg" media="(prefers-color-scheme: light)" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/console/app/src/asset/logo-ornate-light.svg?sanitize=true" alt="OpenCode logo" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;The open source AI coding agent.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://opencode.ai/discord"&gt;&lt;img alt="Discord" src="https://img.shields.io/discord/1391832426048651334?style=flat-square&amp;amp;label=discord" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/opencode-ai"&gt;&lt;img alt="npm" src="https://img.shields.io/npm/v/opencode-ai?style=flat-square" /&gt;&lt;/a&gt; &lt;a href="https://github.com/anomalyco/opencode/actions/workflows/publish.yml"&gt;&lt;img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/anomalyco/opencode/publish.yml?style=flat-square&amp;amp;branch=dev" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://opencode.ai"&gt;&lt;img src="https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/web/src/assets/lander/screenshot.png" alt="OpenCode Terminal UI" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Installation&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# YOLO
+curl -fsSL https://opencode.ai/install | bash
+
+# Package managers
+npm i -g opencode-ai@latest        # or bun/pnpm/yarn
+scoop bucket add extras; scoop install extras/opencode  # Windows
+choco install opencode             # Windows
+brew install anomalyco/tap/opencode # macOS and Linux (recommended, always up to date)
+brew install opencode              # macOS and Linux (official brew formula, updated less)
+paru -S opencode-bin               # Arch Linux
+mise use -g opencode               # Any OS
+nix run nixpkgs#opencode           # or github:anomalyco/opencode for latest dev branch
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] Remove versions older than 0.1.x before installing.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Desktop App (BETA)&lt;/h3&gt; 
+&lt;p&gt;OpenCode is also available as a desktop application. Download directly from the &lt;a href="https://github.com/anomalyco/opencode/releases"&gt;releases page&lt;/a&gt; or &lt;a href="https://opencode.ai/download"&gt;opencode.ai/download&lt;/a&gt;.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Platform&lt;/th&gt; 
+   &lt;th&gt;Download&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;macOS (Apple Silicon)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-darwin-aarch64.dmg&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;macOS (Intel)&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-darwin-x64.dmg&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Windows&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;opencode-desktop-windows-x64.exe&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Linux&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;.deb&lt;/code&gt;, &lt;code&gt;.rpm&lt;/code&gt;, or AppImage&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# macOS (Homebrew)
+brew install --cask opencode-desktop
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Installation Directory&lt;/h4&gt; 
+&lt;p&gt;The install script respects the following priority order for the installation path:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;code&gt;$OPENCODE_INSTALL_DIR&lt;/code&gt; - Custom installation directory&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$XDG_BIN_DIR&lt;/code&gt; - XDG Base Directory Specification compliant path&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$HOME/bin&lt;/code&gt; - Standard user binary directory (if exists or can be created)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;$HOME/.opencode/bin&lt;/code&gt; - Default fallback&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Examples
+OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/install | bash
+XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/install | bash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Agents&lt;/h3&gt; 
+&lt;p&gt;OpenCode includes two built-in agents you can switch between with the &lt;code&gt;Tab&lt;/code&gt; key.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;build&lt;/strong&gt; - Default, full access agent for development work&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;plan&lt;/strong&gt; - Read-only agent for analysis and code exploration 
+  &lt;ul&gt; 
+   &lt;li&gt;Denies file edits by default&lt;/li&gt; 
+   &lt;li&gt;Asks permission before running bash commands&lt;/li&gt; 
+   &lt;li&gt;Ideal for exploring unfamiliar codebases or planning changes&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Also, included is a &lt;strong&gt;general&lt;/strong&gt; subagent for complex searches and multistep tasks. This is used internally and can be invoked using &lt;code&gt;@general&lt;/code&gt; in messages.&lt;/p&gt; 
+&lt;p&gt;Learn more about &lt;a href="https://opencode.ai/docs/agents"&gt;agents&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Documentation&lt;/h3&gt; 
+&lt;p&gt;For more info on how to configure OpenCode &lt;a href="https://opencode.ai/docs"&gt;&lt;strong&gt;head over to our docs&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Contributing&lt;/h3&gt; 
+&lt;p&gt;If you're interested in contributing to OpenCode, please read our &lt;a href="https://raw.githubusercontent.com/anomalyco/opencode/dev/CONTRIBUTING.md"&gt;contributing docs&lt;/a&gt; before submitting a pull request.&lt;/p&gt; 
+&lt;h3&gt;Building on OpenCode&lt;/h3&gt; 
+&lt;p&gt;If you are working on a project that's related to OpenCode and is using "opencode" as a part of its name; for example, "opencode-dashboard" or "opencode-mobile", please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.&lt;/p&gt; 
+&lt;h3&gt;FAQ&lt;/h3&gt; 
+&lt;h4&gt;How is this different from Claude Code?&lt;/h4&gt; 
+&lt;p&gt;It's very similar to Claude Code in terms of capability. Here are the key differences:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;100% open source&lt;/li&gt; 
+ &lt;li&gt;Not coupled to any provider. Although we recommend the models we provide through &lt;a href="https://opencode.ai/zen"&gt;OpenCode Zen&lt;/a&gt;; OpenCode can be used with Claude, OpenAI, Google or even local models. As models evolve the gaps between them will close and pricing will drop so being provider-agnostic is important.&lt;/li&gt; 
+ &lt;li&gt;Out of the box LSP support&lt;/li&gt; 
+ &lt;li&gt;A focus on TUI. OpenCode is built by neovim users and the creators of &lt;a href="https://terminal.shop"&gt;terminal.shop&lt;/a&gt;; we are going to push the limits of what's possible in the terminal.&lt;/li&gt; 
+ &lt;li&gt;A client/server architecture. This for example can allow OpenCode to run on your computer, while you can drive it remotely from a mobile app. Meaning that the TUI frontend is just one of the possible clients.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Join our community&lt;/strong&gt; &lt;a href="https://discord.gg/opencode"&gt;Discord&lt;/a&gt; | &lt;a href="https://x.com/opencode"&gt;X.com&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>blakeblackshear/frigate</title>
+      <link>https://github.com/blakeblackshear/frigate</link>
+      <description>&lt;p&gt;NVR with realtime local object detection for IP cameras&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img align="center" alt="logo" src="https://raw.githubusercontent.com/blakeblackshear/frigate/dev/docs/static/img/branding/frigate.png" /&gt; &lt;/p&gt; 
+&lt;h1&gt;Frigate NVR™ - Realtime Object Detection for IP Cameras&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://opensource.org/licenses/MIT"&gt;&lt;img src="https://img.shields.io/badge/License-MIT-yellow.svg?sanitize=true" alt="License: MIT" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;a href="https://hosted.weblate.org/engage/frigate-nvr/"&gt; &lt;img src="https://hosted.weblate.org/widget/frigate-nvr/language-badge.svg?sanitize=true" alt="Translation status" /&gt; &lt;/a&gt; 
+&lt;p&gt;[English] | &lt;a href="https://github.com/blakeblackshear/frigate/raw/dev/README_CN.md"&gt;简体中文&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;A complete and local NVR designed for &lt;a href="https://www.home-assistant.io"&gt;Home Assistant&lt;/a&gt; with AI object detection. Uses OpenCV and Tensorflow to perform realtime object detection locally for IP cameras.&lt;/p&gt; 
+&lt;p&gt;Use of a GPU or AI accelerator is highly recommended. AI accelerators will outperform even the best CPUs with very little overhead. See Frigate's supported &lt;a href="https://docs.frigate.video/configuration/object_detectors/"&gt;object detectors&lt;/a&gt;.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Tight integration with Home Assistant via a &lt;a href="https://github.com/blakeblackshear/frigate-hass-integration"&gt;custom component&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Designed to minimize resource use and maximize performance by only looking for objects when and where it is necessary&lt;/li&gt; 
+ &lt;li&gt;Leverages multiprocessing heavily with an emphasis on realtime over processing every frame&lt;/li&gt; 
+ &lt;li&gt;Uses a very low overhead motion detection to determine where to run object detection&lt;/li&gt; 
+ &lt;li&gt;Object detection with TensorFlow runs in separate processes for maximum FPS&lt;/li&gt; 
+ &lt;li&gt;Communicates over MQTT for easy integration into other systems&lt;/li&gt; 
+ &lt;li&gt;Records video with retention settings based on detected objects&lt;/li&gt; 
+ &lt;li&gt;24/7 recording&lt;/li&gt; 
+ &lt;li&gt;Re-streaming via RTSP to reduce the number of connections to your camera&lt;/li&gt; 
+ &lt;li&gt;WebRTC &amp;amp; MSE support for low-latency live view&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;View the documentation at &lt;a href="https://docs.frigate.video"&gt;https://docs.frigate.video&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Donations&lt;/h2&gt; 
+&lt;p&gt;If you would like to make a donation to support development, please use &lt;a href="https://github.com/sponsors/blakeblackshear"&gt;Github Sponsors&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the &lt;strong&gt;MIT License&lt;/strong&gt;.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Code:&lt;/strong&gt; The source code, configuration files, and documentation in this repository are available under the &lt;a href="https://raw.githubusercontent.com/blakeblackshear/frigate/dev/LICENSE"&gt;MIT License&lt;/a&gt;. You are free to use, modify, and distribute the code as long as you include the original copyright notice.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Trademarks:&lt;/strong&gt; The "Frigate" name, the "Frigate NVR" brand, and the Frigate logo are &lt;strong&gt;trademarks of Frigate, Inc.&lt;/strong&gt; and are &lt;strong&gt;not&lt;/strong&gt; covered by the MIT License.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Please see our &lt;a href="https://raw.githubusercontent.com/blakeblackshear/frigate/dev/TRADEMARK.md"&gt;Trademark Policy&lt;/a&gt; for details on acceptable use of our brand assets.&lt;/p&gt; 
+&lt;h2&gt;Screenshots&lt;/h2&gt; 
+&lt;h3&gt;Live dashboard&lt;/h3&gt; 
+&lt;div&gt; 
+ &lt;img width="800" alt="Live dashboard" src="https://github.com/blakeblackshear/frigate/assets/569905/5e713cb9-9db5-41dc-947a-6937c3bc376e" /&gt; 
+&lt;/div&gt; 
+&lt;h3&gt;Streamlined review workflow&lt;/h3&gt; 
+&lt;div&gt; 
+ &lt;img width="800" alt="Streamlined review workflow" src="https://github.com/blakeblackshear/frigate/assets/569905/6fed96e8-3b18-40e5-9ddc-31e6f3c9f2ff" /&gt; 
+&lt;/div&gt; 
+&lt;h3&gt;Multi-camera scrubbing&lt;/h3&gt; 
+&lt;div&gt; 
+ &lt;img width="800" alt="Multi-camera scrubbing" src="https://github.com/blakeblackshear/frigate/assets/569905/d6788a15-0eeb-4427-a8d4-80b93cae3d74" /&gt; 
+&lt;/div&gt; 
+&lt;h3&gt;Built-in mask and zone editor&lt;/h3&gt; 
+&lt;div&gt; 
+ &lt;img width="800" alt="Built-in mask and zone editor" src="https://github.com/blakeblackshear/frigate/assets/569905/d7885fc3-bfe6-452f-b7d0-d957cb3e31f5" /&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Translations&lt;/h2&gt; 
+&lt;p&gt;We use &lt;a href="https://hosted.weblate.org/projects/frigate-nvr/"&gt;Weblate&lt;/a&gt; to support language translations. Contributions are always welcome.&lt;/p&gt; 
+&lt;a href="https://hosted.weblate.org/engage/frigate-nvr/"&gt; &lt;img src="https://hosted.weblate.org/widget/frigate-nvr/multi-auto.svg?sanitize=true" alt="Translation status" /&gt; &lt;/a&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Copyright © 2026 Frigate, Inc.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>onlook-dev/onlook</title>
+      <link>https://github.com/onlook-dev/onlook</link>
+      <description>&lt;p&gt;The Cursor for Designers • An Open-Source AI-First Design tool • Visually build, style, and edit your React App with AI&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;img width="800" alt="header image" src="https://raw.githubusercontent.com/onlook-dev/onlook/main/assets/web-preview.png" /&gt; 
+ &lt;h3 align="center"&gt;Onlook&lt;/h3&gt; 
+ &lt;p align="center"&gt; Cursor for Designers &lt;br /&gt; &lt;a href="https://docs.onlook.com"&gt;&lt;strong&gt;Explore the docs »&lt;/strong&gt;&lt;/a&gt; &lt;br /&gt; &lt;/p&gt; 
+ &lt;p align="center"&gt; 👨‍💻👩‍💻👨‍💻 &lt;a href="https://www.ycombinator.com/companies/onlook/jobs/e4gHv1n-founding-engineer-fullstack"&gt;We're hiring engineers in SF!&lt;/a&gt; 👩‍💻👨‍💻👩‍💻 &lt;/p&gt; 
+ &lt;br /&gt; 
+ &lt;a href="https://youtu.be/RSX_3EaO5eU?feature=shared"&gt;View Demo&lt;/a&gt; · 
+ &lt;a href="https://github.com/onlook-dev/onlook/issues/new?labels=bug&amp;amp;template=bug-report---.md"&gt;Report Bug&lt;/a&gt; · 
+ &lt;a href="https://github.com/onlook-dev/onlook/issues/new?labels=enhancement&amp;amp;template=feature-request---.md"&gt;Request Feature&lt;/a&gt; 
+ &lt;p&gt;&lt;/p&gt; 
+ &lt;!-- PROJECT SHIELDS --&gt; 
+ &lt;!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+--&gt; 
+ &lt;!-- [![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![Apache License][license-shield]][license-url] --&gt; 
+ &lt;p&gt;&lt;a href="https://discord.gg/hERDfFZCsH"&gt;&lt;img src="https://img.shields.io/badge/-Discord-black?logo=discord&amp;amp;colorB=555" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://www.linkedin.com/company/onlook-dev"&gt;&lt;img src="https://img.shields.io/badge/-LinkedIn-black.svg?logo=linkedin&amp;amp;colorB=555" alt="LinkedIn" /&gt;&lt;/a&gt; &lt;a href="https://x.com/onlookdev"&gt;&lt;img src="https://img.shields.io/badge/-Twitter-black?logo=x&amp;amp;colorB=555" alt="Twitter" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://www.readme-i18n.com/onlook-dev/onlook?lang=zh"&gt;中文&lt;/a&gt; | &lt;a href="https://www.readme-i18n.com/onlook-dev/onlook?lang=es"&gt;Español&lt;/a&gt; | &lt;a href="https://www.readme-i18n.com/onlook-dev/onlook?lang=de"&gt;Deutsch&lt;/a&gt; | &lt;a href="https://www.readme-i18n.com/onlook-dev/onlook?lang=fr"&gt;français&lt;/a&gt; | &lt;a href="https://www.readme-i18n.com/onlook-dev/onlook?lang=pt"&gt;Português&lt;/a&gt; | &lt;a href="https://www.readme-i18n.com/onlook-dev/onlook?lang=ru"&gt;Русский&lt;/a&gt; | &lt;a href="https://www.readme-i18n.com/onlook-dev/onlook?lang=ja"&gt;日本語&lt;/a&gt; | &lt;a href="https://www.readme-i18n.com/onlook-dev/onlook?lang=ko"&gt;한국어&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h1&gt;An Open-Source, Visual-First Code Editor&lt;/h1&gt; 
+&lt;p&gt;Craft websites, prototypes, and designs with AI in Next.js + TailwindCSS. Make edits directly in the browser DOM with a visual editor. Design in realtime with code. An open-source alternative to Bolt.new, Lovable, V0, Replit Agent, Figma Make, Webflow, etc.&lt;/p&gt; 
+&lt;h3&gt;🚧 🚧 🚧 Onlook is still under development 🚧 🚧 🚧&lt;/h3&gt; 
+&lt;p&gt;We're actively looking for contributors to help make Onlook for Web an incredible prompt-to-build experience. Check the &lt;a href="https://github.com/onlook-dev/onlook/issues"&gt;open issues&lt;/a&gt; for a full list of proposed features (and known issues), and join our &lt;a href="https://discord.gg/hERDfFZCsH"&gt;Discord&lt;/a&gt; to collaborate with hundreds of other builders.&lt;/p&gt; 
+&lt;h2&gt;What you can do with Onlook:&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Create Next.js app in seconds 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Start from text or image&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Use prebuilt templates&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Import from Figma&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Import from GitHub repo&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Make a PR to a GitHub repo&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Visually edit your app 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Use Figma-like UI&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Preview your app in real-time&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Manage brand assets and tokens&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Create and navigate to Pages&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Browse layers&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Manage project Images&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Detect and use Components – &lt;em&gt;Previously in &lt;a href="https://github.com/onlook-dev/desktop"&gt;Onlook Desktop&lt;/a&gt;&lt;/em&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Drag-and-drop Components Panel&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Use Branching to experiment with designs&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Development Tools 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Real-time code editor&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Save and restore from checkpoints&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Run commands via CLI&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Connect with app marketplace&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Deploy your app in seconds 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Generate sharable links&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Link your custom domain&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Collaborate with your team 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Real-time editing&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Leave comments&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Advanced AI capabilities 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Queue multiple messages at once&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Use Images as references and as assets in a project&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Setup and use MCPs in projects&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Allow Onlook to use itself as a toolcall for branch creation and iteration&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Advanced project support 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Support non-NextJS projects&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Support non-Tailwind projects&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/642de37a-72cc-4056-8eb7-8eb42714cdc4" alt="Onlook-GitHub-Example" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;Use our &lt;a href="https://onlook.com"&gt;hosted app&lt;/a&gt; or &lt;a href="https://docs.onlook.com/developers/running-locally"&gt;run locally&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Usage&lt;/h3&gt; 
+&lt;p&gt;Onlook will run on any Next.js + TailwindCSS project, import your project into Onlook or start from scratch within the editor.&lt;/p&gt; 
+&lt;p&gt;Use the AI chat to create or edit a project you're working on. At any time, you can always right-click an element to open up the exact location of the element in code.&lt;/p&gt; 
+&lt;img width="600" alt="image" src="https://github.com/user-attachments/assets/4ad9f411-b172-4430-81ef-650f4f314666" /&gt; 
+&lt;br /&gt; 
+&lt;p&gt;Draw-in new divs and re-arrange them within their parent containers by dragging-and-dropping.&lt;/p&gt; 
+&lt;img width="600" alt="image" src="https://raw.githubusercontent.com/onlook-dev/onlook/main/assets/insert-div.png" /&gt; 
+&lt;br /&gt; 
+&lt;p&gt;Preview the code side-by-side with your site design.&lt;/p&gt; 
+&lt;img width="600" alt="image" src="https://raw.githubusercontent.com/onlook-dev/onlook/main/assets/code-connect.png" /&gt; 
+&lt;br /&gt; 
+&lt;p&gt;Use Onlook's editor toolbar to adjust Tailwind styles, directly manipulate objects, and experiment with layouts.&lt;/p&gt; 
+&lt;img width="600" alt="image" src="https://raw.githubusercontent.com/onlook-dev/onlook/main/assets/text-styling.png" /&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;For full documentation, visit &lt;a href="https://docs.onlook.com"&gt;docs.onlook.com&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;To see how to Contribute, visit &lt;a href="https://docs.onlook.com/developers"&gt;Contributing to Onlook&lt;/a&gt; in our docs.&lt;/p&gt; 
+&lt;h2&gt;How it works&lt;/h2&gt; 
+&lt;img width="676" alt="architecture" src="https://raw.githubusercontent.com/onlook-dev/onlook/main/assets/architecture.png" /&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;When you create an app, we load the code into a web container&lt;/li&gt; 
+ &lt;li&gt;The container runs and serves the code&lt;/li&gt; 
+ &lt;li&gt;Our editor receives the preview link and displays it in an iFrame&lt;/li&gt; 
+ &lt;li&gt;Our editor reads and indexes the code from the container&lt;/li&gt; 
+ &lt;li&gt;We instrument the code in order to map elements to their place in code&lt;/li&gt; 
+ &lt;li&gt;When the element is edited, we edit the element in our iFrame, then in code&lt;/li&gt; 
+ &lt;li&gt;Our AI chat also has code access and tools to understand and edit the code&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;This architecture can theoretically scale to any language or framework that displays DOM elements declaratively (e.g. jsx/tsx/html). We are focused on making it work well with Next.js and TailwindCSS for now.&lt;/p&gt; 
+&lt;p&gt;For a full walkthrough, check out our &lt;a href="https://docs.onlook.com/developers/architecture"&gt;Architecture Docs&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Our Tech Stack&lt;/h3&gt; 
+&lt;h4&gt;Front-end&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://nextjs.org/"&gt;Next.js&lt;/a&gt; - Full stack&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://tailwindcss.com/"&gt;TailwindCSS&lt;/a&gt; - Styling&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://trpc.io/"&gt;tRPC&lt;/a&gt; - Server interface&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Database&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://supabase.com/"&gt;Supabase&lt;/a&gt; - Auth, Database, Storage&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://orm.drizzle.team/"&gt;Drizzle&lt;/a&gt; - ORM&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;AI&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://ai-sdk.dev/"&gt;AI SDK&lt;/a&gt; - LLM client&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://openrouter.ai/"&gt;OpenRouter&lt;/a&gt; - LLM model provider&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://morphllm.com"&gt;Morph Fast Apply&lt;/a&gt; - Fast apply model provider&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://relace.ai"&gt;Relace&lt;/a&gt; - Fast apply model provider&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Sandbox and hosting&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://codesandbox.io/docs/sdk"&gt;CodeSandboxSDK&lt;/a&gt; - Dev sandbox&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.freestyle.sh/"&gt;Freestyle&lt;/a&gt; - Hosting&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Runtime&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://bun.sh/"&gt;Bun&lt;/a&gt; - Monorepo, runtime, bundler&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.docker.com/"&gt;Docker&lt;/a&gt; - Container management&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/ecc94303-df23-46ae-87dc-66b040396e0b" alt="image" /&gt;&lt;/p&gt; 
+&lt;p&gt;If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also &lt;a href="https://github.com/onlook-dev/onlook/issues"&gt;open issues&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/onlook-dev/onlook/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for instructions and code of conduct.&lt;/p&gt; 
+&lt;h4&gt;Contributors&lt;/h4&gt; 
+&lt;a href="https://github.com/onlook-dev/onlook/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=onlook-dev/onlook" /&gt; &lt;/a&gt; 
+&lt;h2&gt;Contact&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/60684b68-1925-4550-8efd-51a1509fc953" alt="image" /&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Team: &lt;a href="https://discord.gg/hERDfFZCsH"&gt;Discord&lt;/a&gt; - &lt;a href="https://twitter.com/onlookdev"&gt;Twitter&lt;/a&gt; - &lt;a href="https://www.linkedin.com/company/onlook-dev/"&gt;LinkedIn&lt;/a&gt; - &lt;a href="mailto:contact@onlook.com"&gt;Email&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Project: &lt;a href="https://github.com/onlook-dev/onlook"&gt;https://github.com/onlook-dev/onlook&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Website: &lt;a href="https://onlook.com"&gt;https://onlook.com&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Distributed under the Apache 2.0 License. See &lt;a href="https://raw.githubusercontent.com/onlook-dev/onlook/main/LICENSE.md"&gt;LICENSE.md&lt;/a&gt; for more information.&lt;/p&gt; 
+&lt;!-- https://www.markdownguide.org/basic-syntax/#reference-style-links --&gt;</description>
+    </item>
+    
+    <item>
+      <title>badlogic/pi-mono</title>
+      <link>https://github.com/badlogic/pi-mono</link>
+      <description>&lt;p&gt;AI agent toolkit: coding agent CLI, unified LLM API, TUI &amp; web UI libraries, Slack bot, vLLM pods&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://shittycodingagent.ai"&gt; &lt;img src="https://shittycodingagent.ai/logo.svg?sanitize=true" alt="pi logo" width="128" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://discord.com/invite/nKXTsAcmbT"&gt;&lt;img alt="Discord" src="https://img.shields.io/badge/discord-community-5865F2?style=flat-square&amp;amp;logo=discord&amp;amp;logoColor=white" /&gt;&lt;/a&gt; &lt;a href="https://github.com/badlogic/pi-mono/actions/workflows/ci.yml"&gt;&lt;img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/badlogic/pi-mono/ci.yml?style=flat-square&amp;amp;branch=main" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h1&gt;Pi Monorepo&lt;/h1&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Looking for the pi coding agent?&lt;/strong&gt; See &lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/coding-agent"&gt;packages/coding-agent&lt;/a&gt;&lt;/strong&gt; for installation and usage.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Tools for building AI agents and managing LLM deployments.&lt;/p&gt; 
+&lt;h2&gt;Packages&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Package&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/ai"&gt;@mariozechner/pi-ai&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Unified multi-provider LLM API (OpenAI, Anthropic, Google, etc.)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/agent"&gt;@mariozechner/pi-agent-core&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Agent runtime with tool calling and state management&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/coding-agent"&gt;@mariozechner/pi-coding-agent&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Interactive coding agent CLI&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/mom"&gt;@mariozechner/pi-mom&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Slack bot that delegates messages to the pi coding agent&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/tui"&gt;@mariozechner/pi-tui&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Terminal UI library with differential rendering&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/web-ui"&gt;@mariozechner/pi-web-ui&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Web components for AI chat interfaces&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/pods"&gt;@mariozechner/pi-pods&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;CLI for managing vLLM deployments on GPU pods&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;h3&gt;Setup&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install          # Install all dependencies
+npm run build        # Build all packages
+npm run check        # Lint, format, and type check
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;code&gt;npm run check&lt;/code&gt; requires &lt;code&gt;npm run build&lt;/code&gt; to be run first. The web-ui package uses &lt;code&gt;tsc&lt;/code&gt; which needs compiled &lt;code&gt;.d.ts&lt;/code&gt; files from dependencies.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;CI&lt;/h3&gt; 
+&lt;p&gt;GitHub Actions runs on push to &lt;code&gt;main&lt;/code&gt; and on pull requests. The workflow runs &lt;code&gt;npm run check&lt;/code&gt; and &lt;code&gt;npm run test&lt;/code&gt; for each package in parallel.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Do not add LLM API keys as secrets to this repository.&lt;/strong&gt; Tests that require LLM access use &lt;code&gt;describe.skipIf()&lt;/code&gt; to skip when API keys are missing. This is intentional:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;PRs from external contributors would have access to secrets in the CI environment&lt;/li&gt; 
+ &lt;li&gt;Malicious PR code could exfiltrate API keys&lt;/li&gt; 
+ &lt;li&gt;Tests that need LLM calls are skipped on CI and run locally by developers who have keys configured&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;If you need to run LLM-dependent tests, run them locally with your own API keys.&lt;/p&gt; 
+&lt;h3&gt;Development&lt;/h3&gt; 
+&lt;p&gt;Start watch builds for all packages:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then run with tsx:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd packages/coding-agent &amp;amp;&amp;amp; npx tsx src/cli.ts
+cd packages/pods &amp;amp;&amp;amp; npx tsx src/cli.ts
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;To run tests that don't require an LLM endpoint:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;./test.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Versioning (Lockstep)&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;All packages MUST always have the same version number.&lt;/strong&gt; Use these commands to bump versions:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm run version:patch    # 0.7.5 -&amp;gt; 0.7.6
+npm run version:minor    # 0.7.5 -&amp;gt; 0.8.0
+npm run version:major    # 0.7.5 -&amp;gt; 1.0.0
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;These commands:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Update all package versions to the same number&lt;/li&gt; 
+ &lt;li&gt;Update inter-package dependency versions (e.g., &lt;code&gt;pi-agent&lt;/code&gt; depends on &lt;code&gt;pi-ai@^0.7.7&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Update &lt;code&gt;package-lock.json&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Never manually edit version numbers.&lt;/strong&gt; The lockstep system ensures consistency across the monorepo.&lt;/p&gt; 
+&lt;h3&gt;Publishing&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm run release:patch    # Bug fixes
+npm run release:minor    # New features
+npm run release:major    # Breaking changes
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This handles version bump, CHANGELOG updates, commit, tag, publish, and push.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;NPM Token Setup&lt;/strong&gt;: Requires a granular access token with "Bypass 2FA on publish" enabled.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Go to &lt;a href="https://www.npmjs.com/settings/badlogic/tokens/"&gt;https://www.npmjs.com/settings/badlogic/tokens/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Create a new "Granular Access Token" with "Bypass 2FA on publish"&lt;/li&gt; 
+ &lt;li&gt;Set the token: &lt;code&gt;npm config set //registry.npmjs.org/:_authToken=YOUR_TOKEN&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>docmost/docmost</title>
+      <link>https://github.com/docmost/docmost</link>
+      <description>&lt;p&gt;Docmost is an open-source collaborative wiki and documentation software. It is an open-source alternative to Confluence and Notion.&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;h1&gt;&lt;b&gt;Docmost&lt;/b&gt;&lt;/h1&gt; 
+ &lt;p&gt; Open-source collaborative wiki and documentation software. &lt;br /&gt; &lt;a href="https://docmost.com"&gt;&lt;strong&gt;Website&lt;/strong&gt;&lt;/a&gt; | &lt;a href="https://docmost.com/docs"&gt;&lt;strong&gt;Documentation&lt;/strong&gt;&lt;/a&gt; | &lt;a href="https://twitter.com/DocmostHQ"&gt;&lt;strong&gt;Twitter / X&lt;/strong&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;br /&gt; 
+&lt;h2&gt;Getting started&lt;/h2&gt; 
+&lt;p&gt;To get started with Docmost, please refer to our &lt;a href="https://docmost.com/docs"&gt;documentation&lt;/a&gt; or try our &lt;a href="https://docmost.com/pricing"&gt;cloud version&lt;/a&gt; .&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Real-time collaboration&lt;/li&gt; 
+ &lt;li&gt;Diagrams (Draw.io, Excalidraw and Mermaid)&lt;/li&gt; 
+ &lt;li&gt;Spaces&lt;/li&gt; 
+ &lt;li&gt;Permissions management&lt;/li&gt; 
+ &lt;li&gt;Groups&lt;/li&gt; 
+ &lt;li&gt;Comments&lt;/li&gt; 
+ &lt;li&gt;Page history&lt;/li&gt; 
+ &lt;li&gt;Search&lt;/li&gt; 
+ &lt;li&gt;File attachments&lt;/li&gt; 
+ &lt;li&gt;Embeds (Airtable, Loom, Miro and more)&lt;/li&gt; 
+ &lt;li&gt;Translations (10+ languages)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Screenshots&lt;/h3&gt; 
+&lt;p align="center"&gt; &lt;img alt="home" src="https://docmost.com/screenshots/home.png" width="70%" /&gt; &lt;img alt="editor" src="https://docmost.com/screenshots/editor.png" width="70%" /&gt; &lt;/p&gt; 
+&lt;h3&gt;License&lt;/h3&gt; 
+&lt;p&gt;Docmost core is licensed under the open-source AGPL 3.0 license.&lt;br /&gt; Enterprise features are available under an enterprise license (Enterprise Edition).&lt;/p&gt; 
+&lt;p&gt;All files in the following directories are licensed under the Docmost Enterprise license defined in &lt;code&gt;packages/ee/License&lt;/code&gt;.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;apps/server/src/ee&lt;/li&gt; 
+ &lt;li&gt;apps/client/src/ee&lt;/li&gt; 
+ &lt;li&gt;packages/ee&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Contributing&lt;/h3&gt; 
+&lt;p&gt;See the &lt;a href="https://docmost.com/docs/self-hosting/development"&gt;development documentation&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Thanks&lt;/h2&gt; 
+&lt;p&gt;Special thanks to;&lt;/p&gt; 
+&lt;img width="100" alt="Crowdin" src="https://github.com/user-attachments/assets/a6c3d352-e41b-448d-b6cd-3fbca3109f07" /&gt; 
+&lt;p&gt;&lt;a href="https://crowdin.com/"&gt;Crowdin&lt;/a&gt; for providing access to their localization platform.&lt;/p&gt; 
+&lt;img width="48" alt="Algolia-mark-square-white" src="https://github.com/user-attachments/assets/6ccad04a-9589-4965-b6a1-d5cb1f4f9e94" /&gt; 
+&lt;p&gt;&lt;a href="https://www.algolia.com/"&gt;Algolia&lt;/a&gt; for providing full-text search to the docs.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>stan-smith/FossFLOW</title>
+      <link>https://github.com/stan-smith/FossFLOW</link>
+      <description>&lt;p&gt;Make beautiful isometric infrastructure diagrams&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;FossFLOW - Isometric Diagramming Tool &lt;img width="30" height="30" alt="fossflow" src="https://github.com/user-attachments/assets/56d78887-601c-4336-ab87-76f8ee4cde96" /&gt;&lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/README.md"&gt;English&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.cn.md"&gt;简体中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.es.md"&gt;Español&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.pt.md"&gt;Português&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.fr.md"&gt;Français&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.hi.md"&gt;हिन्दी&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.bn.md"&gt;বাংলা&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.ru.md"&gt;Русский&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.id.md"&gt;Bahasa Indonesia&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/docs/README.de.md"&gt;Deutsch&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/15118" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/15118" alt="stan-smith%2FFossFLOW | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;b&gt;Hey!&lt;/b&gt; Stan here, if you've used FossFLOW and it's helped you, &lt;b&gt;I'd really appreciate if you could donate something small :)&lt;/b&gt; I work full time, and finding the time to work on this project is challenging enough. If you've had a feature that I've implemented for you, or fixed a bug it'd be great if you could :) if not, that's not a problem, this software will always remain free!&lt;/p&gt; 
+&lt;p&gt;&lt;b&gt;Also!&lt;/b&gt; If you haven't yet, please check out the underlying library this is built on by &lt;a href="https://github.com/markmanx/isoflow"&gt;@markmanx&lt;/a&gt; I truly stand on the shoulders of a giant here 🫡&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://ko-fi.com/P5P61KBXA3"&gt;&lt;img src="https://ko-fi.com/img/githubbutton_sm.svg?sanitize=true" alt="ko-fi" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.buymeacoffee.com/stan.smith" target="_blank"&gt;&lt;img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Thanks,&lt;/p&gt; 
+&lt;p&gt;-Stan&lt;/p&gt; 
+&lt;h2&gt;Try it online&lt;/h2&gt; 
+&lt;p align="center"&gt; Go to &lt;b&gt; --&amp;gt; https://stan-smith.github.io/FossFLOW/ &amp;lt;-- &lt;/b&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/stan-smith/SlingShot"&gt; Check out my latest project: &lt;b&gt;SlingShot&lt;/b&gt; - Dead easy video streaming over QUIC &lt;/a&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;FossFLOW is a powerful, open-source Progressive Web App (PWA) for creating beautiful isometric diagrams. Built with React and the &lt;a href="https://github.com/markmanx/isoflow"&gt;Isoflow&lt;/a&gt; (Now forked and published to NPM as fossflow) library, it runs entirely in your browser with offline support.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/e7f254ad-625f-4b8a-8efc-5293b5be9d55" alt="Screenshot_20250630_160954" /&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;📝 &lt;a href="https://github.com/stan-smith/FossFLOW/raw/master/FOSSFLOW_TODO.md"&gt;FOSSFLOW_TODO.md&lt;/a&gt;&lt;/strong&gt; - Current issues and roadmap with codebase mappings, most gripes are with the isoflow library itself.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;🤝 &lt;a href="https://github.com/stan-smith/FossFLOW/raw/master/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt;&lt;/strong&gt; - How to contribute to the project.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Performance updates&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Reduced frame refresh delay, should look much smoother now&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Multilingual Support&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;9 Languages Supported&lt;/strong&gt; - Full interface translation in English, Chinese (Simplified), Spanish, Portuguese (Brazilian), French, Hindi, Bengali, Russian, and Indonesian&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Language Selector&lt;/strong&gt; - Easy-to-use language switcher in the app header&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Complete Translation&lt;/strong&gt; - All menus, dialogs, settings, tooltips, and help content translated&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Locale-Aware&lt;/strong&gt; - Automatically detects and remembers your language preference&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Improved Connector Tool&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Click-based Creation&lt;/strong&gt; - New default mode: click first node, then second node to connect&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Drag Mode Option&lt;/strong&gt; - Original drag-and-drop still available via settings&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Mode Selection&lt;/strong&gt; - Switch between click and drag modes in Settings → Connectors tab&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Better Reliability&lt;/strong&gt; - Click mode provides more predictable connection creation&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🐳 Quick Deploy with Docker&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Using Docker Compose (recommended - includes persistent storage)
+docker compose up
+
+# Or run directly from Docker Hub with persistent storage
+docker run -p 80:80 -v $(pwd)/diagrams:/data/diagrams stnsmith/fossflow:latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Server storage is enabled by default in Docker. Your diagrams will be saved to &lt;code&gt;./diagrams&lt;/code&gt; on the host.&lt;/p&gt; 
+&lt;p&gt;To disable server storage, set &lt;code&gt;ENABLE_SERVER_STORAGE=false&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -p 80:80 -e ENABLE_SERVER_STORAGE=false stnsmith/fossflow:latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Quick Start (Local Development)&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Clone the repository
+git clone https://github.com/stan-smith/FossFLOW
+cd FossFLOW
+
+# Install dependencies
+npm install
+
+# Build the library (required first time)
+npm run build:lib
+
+# Start development server
+npm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Open &lt;a href="http://localhost:3000"&gt;http://localhost:3000&lt;/a&gt; in your browser.&lt;/p&gt; 
+&lt;h2&gt;Monorepo Structure&lt;/h2&gt; 
+&lt;p&gt;This is a monorepo containing two packages:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;packages/fossflow-lib&lt;/code&gt; - React component library for drawing network diagrams (built with Webpack)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;packages/fossflow-app&lt;/code&gt; - Progressive Web App which wraps the lib and presents it (built with RSBuild)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Development Commands&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Development
+npm run dev          # Start app development server
+npm run dev:lib      # Watch mode for library development
+
+# Building
+npm run build        # Build both library and app
+npm run build:lib    # Build library only
+npm run build:app    # Build app only
+
+# Testing &amp;amp; Linting
+npm test             # Run unit tests
+npm run lint         # Check for linting errors
+
+# E2E Tests (Selenium)
+cd e2e-tests
+./run-tests.sh       # Run end-to-end tests (requires Docker &amp;amp; Python)
+
+# Publishing
+npm run publish:lib  # Publish library to npm
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;How to Use&lt;/h2&gt; 
+&lt;h3&gt;Creating Diagrams&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Add Items&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Press the "+" button on the top right menu, the library of components will appear on the left&lt;/li&gt; 
+   &lt;li&gt;Drag and drop components from the library onto the canvas&lt;/li&gt; 
+   &lt;li&gt;Or right-click on the grid and select "Add node"&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Connect Items&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Select the Connector tool (press 'C' or click connector icon)&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Click mode&lt;/strong&gt; (default): Click first node, then click second node&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Drag mode&lt;/strong&gt; (optional): Click and drag from first to second node&lt;/li&gt; 
+   &lt;li&gt;Switch modes in Settings → Connectors tab&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Save Your Work&lt;/strong&gt;:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Quick Save&lt;/strong&gt; - Saves to browser session&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Export&lt;/strong&gt; - Download as JSON file&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Import&lt;/strong&gt; - Load from JSON file&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Storage Options&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Session Storage&lt;/strong&gt;: Temporary saves cleared when browser closes&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Export/Import&lt;/strong&gt;: Permanent storage as JSON files&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Auto-Save&lt;/strong&gt;: Automatically saves changes every 5 seconds to session&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions! Please see &lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for guidelines.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/FOSSFLOW_ENCYCLOPEDIA.md"&gt;FOSSFLOW_ENCYCLOPEDIA.md&lt;/a&gt; - Comprehensive guide to the codebase&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/FOSSFLOW_TODO.md"&gt;FOSSFLOW_TODO.md&lt;/a&gt; - Current issues and roadmap&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/stan-smith/FossFLOW/master/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; - Contributing guidelines&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>moeru-ai/airi</title>
+      <link>https://github.com/moeru-ai/airi</link>
+      <description>&lt;p&gt;💖🧸 Self hosted, you owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported.&lt;/p&gt;&lt;hr&gt;&lt;picture&gt; 
+ &lt;source width="100%" srcset="./docs/content/public/banner-dark-1280x640.avif" media="(prefers-color-scheme: dark)" /&gt; 
+ &lt;source width="100%" srcset="./docs/content/public/banner-light-1280x640.avif" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" /&gt; 
+ &lt;img width="250" src="https://raw.githubusercontent.com/moeru-ai/airi/main/docs/content/public/banner-light-1280x640.avif" /&gt; 
+&lt;/picture&gt; 
+&lt;h1 align="center"&gt;Project AIRI&lt;/h1&gt; 
+&lt;p align="center"&gt;Re-creating Neuro-sama, a soul container of AI waifu / virtual characters to bring them into our world.&lt;/p&gt; 
+&lt;p align="center"&gt; [&lt;a href="https://discord.gg/TgQ3Cu2F7A"&gt;Join Discord Server&lt;/a&gt;] [&lt;a href="https://airi.moeru.ai"&gt;Try it&lt;/a&gt;] [&lt;a href="https://github.com/moeru-ai/airi/raw/main/docs/README.zh-CN.md"&gt;简体中文&lt;/a&gt;] [&lt;a href="https://github.com/moeru-ai/airi/raw/main/docs/README.ja-JP.md"&gt;日本語&lt;/a&gt;] [&lt;a href="https://github.com/moeru-ai/airi/raw/main/docs/README.ru-RU.md"&gt;Русский&lt;/a&gt;] [&lt;a href="https://github.com/moeru-ai/airi/raw/main/docs/README.vi.md"&gt;Tiếng Việt&lt;/a&gt;] [&lt;a href="https://github.com/moeru-ai/airi/raw/main/docs/README.fr.md"&gt;Français&lt;/a&gt;] &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://deepwiki.com/moeru-ai/airi"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" /&gt;&lt;/a&gt; &lt;a href="https://github.com/moeru-ai/airi/raw/main/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/moeru-ai/airi.svg?style=flat&amp;amp;colorA=080f12&amp;amp;colorB=1fa669" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/TgQ3Cu2F7A"&gt;&lt;img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscord.com%2Fapi%2Finvites%2FTgQ3Cu2F7A%3Fwith_counts%3Dtrue&amp;amp;query=%24.approximate_member_count&amp;amp;suffix=%20members&amp;amp;logo=discord&amp;amp;logoColor=white&amp;amp;label=%20&amp;amp;color=7389D8&amp;amp;labelColor=6A7EC2" /&gt;&lt;/a&gt; &lt;a href="https://x.com/proj_airi"&gt;&lt;img src="https://img.shields.io/badge/%40proj__airi-black?style=flat&amp;amp;logo=x&amp;amp;labelColor=%23101419&amp;amp;color=%232d2e30" /&gt;&lt;/a&gt; &lt;a href="https://t.me/+7M_ZKO3zUHFlOThh"&gt;&lt;img src="https://img.shields.io/badge/Telegram-%235AA9E6?logo=telegram&amp;amp;labelColor=FFFFFF" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/moeru-ai/airi/main/docs/wechat.md"&gt;&lt;img src="https://img.shields.io/badge/WeChat-%2307C160?logo=wechat&amp;amp;logoColor=%2307C160&amp;amp;labelColor=FFFFFF" /&gt;&lt;/a&gt; &lt;a href="https://qun.qq.com/universal-share/share?ac=1&amp;amp;authKey=9g00d%2BZS7nORzcJugNNddJ7rCghZTIR7fhXabGwch2S%2BG%2BKGIKwlN1N2nIqkh2jg&amp;amp;busi_data=eyJncm91cENvZGUiOiIxMDU4MTU2Njk3IiwidG9rZW4iOiJmcnkra1hWNFIxNytEcG0zcHRUdVJIaldlRDFxN0dzK080QWtvTEdOQjJkNEY2eUFta1g1clNpbkxSMS9FQWFYIiwidWluIjoiMTI2MDkwNzMzNSJ9&amp;amp;data=b1eJrwn3GVOUh7YIxZ7l9vHQo99HPmRxKPpMKlDCmfzx8Y57IXb2EZCMaOC9rVTd2U558qpNjwUYUWlPHxVHvg&amp;amp;svctype=4&amp;amp;tempid=h5_group_info"&gt;&lt;img src="https://img.shields.io/badge/QQ-%2312B7F5?logo=qq&amp;amp;labelColor=FFFFFF" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.producthunt.com/products/airi?embed=true&amp;amp;utm_source=badge-featured&amp;amp;utm_medium=badge&amp;amp;utm_source=badge-airi" target="_blank"&gt;&lt;img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=993524&amp;amp;theme=neutral&amp;amp;t=1752696535380" alt="AIRI - A container of cyber living souls, re-creation of Neuro-sama | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /&gt;&lt;/a&gt; &lt;a href="https://trendshift.io/repositories/14636" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/14636" alt="moeru-ai%2Fairi | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Heavily inspired by &lt;a href="https://www.youtube.com/@Neurosama"&gt;Neuro-sama&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!WARNING] &lt;strong&gt;Attention:&lt;/strong&gt; We &lt;strong&gt;do not&lt;/strong&gt; have any officially minted cryptocurrency or token associated with this project. Please check the information and proceed with caution.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE]&lt;/p&gt; 
+ &lt;p&gt;We've got a whole dedicated organization &lt;a href="https://github.com/proj-airi"&gt;@proj-airi&lt;/a&gt; for all the sub-projects born from Project AIRI. Check it out!&lt;/p&gt; 
+ &lt;p&gt;RAG, memory system, embedded database, icons, Live2D utilities, and more!&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] We have a translation project on &lt;a href="https://crowdin.com/project/proj-airi"&gt;Crowdin&lt;/a&gt;. If you find any inaccurate translations, feel free to contribute improvements there. &lt;a href="https://crowdin.com/project/proj-airi" target="_blank" rel="nofollow"&gt;&lt;img style="width: 140px; height: 40px;" src="https://badges.crowdin.net/badge/light/crowdin-on-dark.png" srcset="https://badges.crowdin.net/badge/light/crowdin-on-dark.png 1x, https://badges.crowdin.net/badge/light/crowdin-on-dark@2x.png 2x" alt="Crowdin | Agile localization for tech companies" width="140" height="40" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Have you dreamed about having a cyber living being (cyber waifu, digital pet) or digital companion that could play with and talk to you?&lt;/p&gt; 
+&lt;p&gt;With the power of modern large language models like &lt;a href="https://chatgpt.com"&gt;ChatGPT&lt;/a&gt; and famous &lt;a href="https://claude.ai"&gt;Claude&lt;/a&gt;, asking a virtual being to roleplay and chat with us is already easy enough for everyone. Platforms like &lt;a href="https://character.ai"&gt;Character.ai (a.k.a. c.ai)&lt;/a&gt; and &lt;a href="https://janitorai.com/"&gt;JanitorAI&lt;/a&gt; as well as local playgrounds like &lt;a href="https://github.com/SillyTavern/SillyTavern"&gt;SillyTavern&lt;/a&gt; are already good-enough solutions for a chat based or visual adventure game like experience.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;But, what about the abilities to play games? And see what you are coding at? Chatting while playing games, watching videos, and is capable of doing many other things.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Perhaps you know &lt;a href="https://www.youtube.com/@Neurosama"&gt;Neuro-sama&lt;/a&gt; already. She is currently the best virtual streamer capable of playing games, chatting, and interacting with you and the participants. Some also call this kind of being "digital human." &lt;strong&gt;Sadly, as it's not open sourced, you cannot interact with her after her live streams go offline&lt;/strong&gt;.&lt;/p&gt; 
+&lt;p&gt;Therefore, this project, AIRI, offers another possibility here: &lt;strong&gt;let you own your digital life, cyber living, easily, anywhere, anytime&lt;/strong&gt;.&lt;/p&gt; 
+&lt;h2&gt;DevLogs We Posted &amp;amp; Recent Updates&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://airi.moeru.ai/docs/en/blog/DevLog-2026.01.01/"&gt;DevLog @ 2026.01.01&lt;/a&gt; on January 1, 2026&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://airi.moeru.ai/docs/en/blog/DevLog-2025.10.20/"&gt;DevLog @ 2025.10.20&lt;/a&gt; on October 20, 2025&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://airi.moeru.ai/docs/en/blog/DevLog-2025.08.05/"&gt;DevLog @ 2025.08.05&lt;/a&gt; on August 5, 2025&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://airi.moeru.ai/docs/en/blog/DevLog-2025.08.01/"&gt;DevLog @ 2025.08.01&lt;/a&gt; on August 1, 2025&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://airi.moeru.ai/docs/en/blog/DevLog-2025.07.18/"&gt;DevLog @ 2025.07.18&lt;/a&gt; on July 18, 2025&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://airi.moeru.ai/docs/en/blog/dreamlog-0x1/"&gt;DreamLog 0x1&lt;/a&gt; on June 16, 2025&lt;/li&gt; 
+ &lt;li&gt;...more on &lt;a href="https://airi.moeru.ai/docs/en/"&gt;documentation site&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;What's So Special About This Project?&lt;/h2&gt; 
+&lt;p&gt;Unlike the other AI driven VTuber open source projects, アイリ was built with support of many Web technologies such as &lt;a href="https://www.w3.org/TR/webgpu/"&gt;WebGPU&lt;/a&gt;, &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API"&gt;WebAudio&lt;/a&gt;, &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers"&gt;Web Workers&lt;/a&gt;, &lt;a href="https://webassembly.org/"&gt;WebAssembly&lt;/a&gt;, &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket"&gt;WebSocket&lt;/a&gt;, etc. from the first day.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] Worrying about the performance drop since we are using Web related technologies?&lt;/p&gt; 
+ &lt;p&gt;Don't worry, while Web browser version is meant to give an insight about how much we can push and do inside browsers, and webviews, we will never fully rely on this, the desktop version of AIRI is capable of using native &lt;a href="https://developer.nvidia.com/cuda-toolkit"&gt;NVIDIA CUDA&lt;/a&gt; and &lt;a href="https://developer.apple.com/metal/"&gt;Apple Metal&lt;/a&gt; by default (thanks to HuggingFace &amp;amp; beloved &lt;a href="https://github.com/huggingface/candle"&gt;candle&lt;/a&gt; project), without any complex dependency managements, considering the tradeoff, it was partially powered by Web technologies for graphics, layouts, animations, and the WIP plugin systems for everyone to integrate things.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;This means that &lt;strong&gt;アイリ is capable of running on modern browsers and devices&lt;/strong&gt; and even on mobile devices (already done with PWA support). This brings a lot of possibilities for us (the developers) to build and extend the power of アイリ VTuber to the next level, while still leaving the flexibilities for users to enable features that requires TCP connections or other non-Web technologies such as connecting to a Discord voice channel or playing Minecraft and Factorio with friends.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE]&lt;/p&gt; 
+ &lt;p&gt;We are still in the early stage of development where we are seeking out talented developers to join us and help us to make アイリ a reality.&lt;/p&gt; 
+ &lt;p&gt;It's ok if you are not familiar with Vue.js, TypeScript, and devtools required for this project, you can join us as an artist, designer, or even help us to launch our first live stream.&lt;/p&gt; 
+ &lt;p&gt;Even if you are a big fan of React, Svelte or even Solid, we welcome you. You can open a sub-directory to add features that you want to see in アイリ, or would like to experiment with.&lt;/p&gt; 
+ &lt;p&gt;Fields (and related projects) that we are looking for:&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;Live2D modeller&lt;/li&gt; 
+  &lt;li&gt;VRM modeller&lt;/li&gt; 
+  &lt;li&gt;VRChat avatar designer&lt;/li&gt; 
+  &lt;li&gt;Computer Vision&lt;/li&gt; 
+  &lt;li&gt;Reinforcement Learning&lt;/li&gt; 
+  &lt;li&gt;Speech Recognition&lt;/li&gt; 
+  &lt;li&gt;Speech Synthesis&lt;/li&gt; 
+  &lt;li&gt;ONNX Runtime&lt;/li&gt; 
+  &lt;li&gt;Transformers.js&lt;/li&gt; 
+  &lt;li&gt;vLLM&lt;/li&gt; 
+  &lt;li&gt;WebGPU&lt;/li&gt; 
+  &lt;li&gt;Three.js&lt;/li&gt; 
+  &lt;li&gt;WebXR (&lt;a href="https://github.com/moeru-ai/chat"&gt;checkout the another project&lt;/a&gt; we have under the @moeru-ai organization)&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;&lt;strong&gt;If you are interested, why not introduce yourself here? &lt;a href="https://github.com/moeru-ai/airi/discussions/33"&gt;Would like to join part of us to build AIRI?&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Current Progress&lt;/h2&gt; 
+&lt;p&gt;Capable of&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Brain 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Play &lt;a href="https://www.minecraft.net"&gt;Minecraft&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Play &lt;a href="https://www.factorio.com"&gt;Factorio&lt;/a&gt; (WIP, but &lt;a href="https://github.com/moeru-ai/airi-factorio"&gt;PoC and demo available&lt;/a&gt;)&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Chat in &lt;a href="https://telegram.org"&gt;Telegram&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Chat in &lt;a href="https://discord.com"&gt;Discord&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Memory 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Pure in-browser database support (DuckDB WASM | &lt;code&gt;pglite&lt;/code&gt;)&lt;/li&gt; 
+     &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Memory Alaya (WIP)&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" disabled /&gt; Pure in-browser local (WebGPU) inference&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Ears 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Audio input from browser&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Audio input from &lt;a href="https://discord.com"&gt;Discord&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Client side speech recognition&lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Client side talking detection&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Mouth 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://elevenlabs.io/"&gt;ElevenLabs&lt;/a&gt; voice synthesis&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Body 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; VRM support 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Control VRM model&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; VRM model animations 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Auto blink&lt;/li&gt; 
+     &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Auto look at&lt;/li&gt; 
+     &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Idle eye movement&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Live2D support 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Control Live2D model&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+   &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Live2D model animations 
+    &lt;ul&gt; 
+     &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Auto blink&lt;/li&gt; 
+     &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Auto look at&lt;/li&gt; 
+     &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; Idle eye movement&lt;/li&gt; 
+    &lt;/ul&gt; &lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;For detailed instructions to develop this project, follow &lt;a href="https://raw.githubusercontent.com/moeru-ai/airi/main/.github/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] By default, &lt;code&gt;pnpm dev&lt;/code&gt; will start the development server for the Stage Web (browser version). If you would like to try developing the desktop version, please make sure you read &lt;a href="https://raw.githubusercontent.com/moeru-ai/airi/main/.github/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; to setup the environment correctly.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;pnpm i
+pnpm dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Stage Web (Browser Version at &lt;a href="https://airi.moeru.ai"&gt;airi.moeru.ai&lt;/a&gt;)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;pnpm dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Stage Tamagotchi (Desktop Version)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;pnpm dev:tamagotchi
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;A Nix package for Tamagotchi is included. To run airi with Nix, first make sure to enable flakes, then run:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;nix run github:moeru-ai/airi
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Stage Capacitor (Mobile Version)&lt;/h3&gt; 
+&lt;p&gt;Start the development server for the capacitor web version:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;pnpm dev:capacitor
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Check your IP address in the output of the command above:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;  ROLLDOWN-VITE v7.3.0  ready in 1073 ms
+
+  ➜  Local:   https://localhost:5273/
+  ➜  Network: https://&amp;lt;ip-will-be-here&amp;gt;:5273/
+  ➜  Vue DevTools: Open https://localhost:5273/__devtools__/ as a separate window
+  ➜  Vue DevTools: Press Option(⌥)+Shift(⇧)+D in App to toggle the Vue DevTools
+  ➜  UnoCSS Inspector: https://localhost:5273/__unocss/
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Open the Xcode project:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;CAPACITOR_DEV_SERVER_URL=https://&amp;lt;your-ip-address&amp;gt;:5273 pnpm open:ios
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then Xcode will open and you can click the "Run" button to run the app on your iPhone.&lt;/p&gt; 
+&lt;h3&gt;Documentation Site&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;pnpm dev:docs
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Publish&lt;/h3&gt; 
+&lt;p&gt;Please update the version in &lt;code&gt;Cargo.toml&lt;/code&gt; after running &lt;code&gt;bumpp&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;npx bumpp --no-commit --no-tag
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Support of LLM API Providers (powered by &lt;a href="https://github.com/moeru-ai/xsai"&gt;xsai&lt;/a&gt;)&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://share.302.ai/514k2v"&gt;302.AI (sponsored)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://openrouter.ai/"&gt;OpenRouter&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://github.com/vllm-project/vllm"&gt;vLLM&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://github.com/sgl-project/sglang"&gt;SGLang&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://github.com/ollama/ollama"&gt;Ollama&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://developers.generativeai.google"&gt;Google Gemini&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://platform.openai.com/docs/guides/gpt/chat-completions-api"&gt;OpenAI&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" disabled /&gt; &lt;a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/reference"&gt;Azure OpenAI API&lt;/a&gt; (PR welcome)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://anthropic.com"&gt;Anthropic Claude&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;input type="checkbox" disabled /&gt; &lt;a href="https://docs.anthropic.com/en/api/claude-on-amazon-bedrock"&gt;AWS Claude&lt;/a&gt; (PR welcome)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://www.deepseek.com/"&gt;DeepSeek&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://help.aliyun.com/document_detail/2400395.html"&gt;Qwen&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://x.ai/"&gt;xAI&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://wow.groq.com/"&gt;Groq&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://mistral.ai/"&gt;Mistral&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://developers.cloudflare.com/workers-ai/"&gt;Cloudflare Workers AI&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://www.together.ai/"&gt;Together.ai&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://www.together.ai/"&gt;Fireworks.ai&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://www.novita.ai/"&gt;Novita&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://bigmodel.cn"&gt;Zhipu&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://cloud.siliconflow.cn/i/rKXmRobW"&gt;SiliconFlow&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://platform.stepfun.com/"&gt;Stepfun&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://platform.baichuan-ai.com"&gt;Baichuan&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://api.minimax.chat/"&gt;Minimax&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://platform.moonshot.cn/"&gt;Moonshot AI&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://modelscope.cn/docs/model-service/API-Inference/intro"&gt;ModelScope&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://player2.game/"&gt;Player2&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; &lt;a href="https://cloud.tencent.com/document/product/1729"&gt;Tencent Cloud&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; &lt;a href="https://www.xfyun.cn/doc/spark/Web.html"&gt;Sparks&lt;/a&gt; (PR welcome)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" disabled /&gt; &lt;a href="https://www.volcengine.com/experience/ark?utm_term=202502dsinvite&amp;amp;ac=DSASUQY5&amp;amp;rc=2QXCA1VI"&gt;Volcano Engine&lt;/a&gt; (PR welcome)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Sub-projects Born from This Project&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/proj-airi/awesome-ai-vtuber"&gt;Awesome AI VTuber&lt;/a&gt;: A curated list of AI VTubers and related projects&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/unspeech"&gt;&lt;code&gt;unspeech&lt;/code&gt;&lt;/a&gt;: Universal endpoint proxy server for &lt;code&gt;/audio/transcriptions&lt;/code&gt; and &lt;code&gt;/audio/speech&lt;/code&gt;, like LiteLLM but for any ASR and TTS&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/hfup"&gt;&lt;code&gt;hfup&lt;/code&gt;&lt;/a&gt;: tools to help on deploying, bundling to HuggingFace Spaces&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/xsai-transformers"&gt;&lt;code&gt;xsai-transformers&lt;/code&gt;&lt;/a&gt;: Experimental &lt;a href="https://github.com/huggingface/transformers.js"&gt;🤗 Transformers.js&lt;/a&gt; provider for &lt;a href="https://github.com/moeru-ai/xsai"&gt;xsAI&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/proj-airi/webai-realtime-voice-chat"&gt;WebAI: Realtime Voice Chat&lt;/a&gt;: Full example of implementing ChatGPT's realtime voice from scratch with VAD + STT + LLM + TTS.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/airi/tree/main/packages/drizzle-duckdb-wasm/README.md"&gt;&lt;code&gt;@proj-airi/drizzle-duckdb-wasm&lt;/code&gt;&lt;/a&gt;: Drizzle ORM driver for DuckDB WASM&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/airi/tree/main/packages/duckdb-wasm/README.md"&gt;&lt;code&gt;@proj-airi/duckdb-wasm&lt;/code&gt;&lt;/a&gt;: Easy to use wrapper for &lt;code&gt;@duckdb/duckdb-wasm&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/airi/raw/main/crates/tauri-plugin-mcp/README.md"&gt;&lt;code&gt;tauri-plugin-mcp&lt;/code&gt;&lt;/a&gt;: A Tauri plugin for interacting with MCP servers.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/airi-factorio"&gt;AIRI Factorio&lt;/a&gt;: Allow AIRI to play Factorio&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/nekomeowww/factorio-rcon-api"&gt;Factorio RCON API&lt;/a&gt;: RESTful API wrapper for Factorio headless server console&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/airi-factorio/tree/main/packages/autorio"&gt;&lt;code&gt;autorio&lt;/code&gt;&lt;/a&gt;: Factorio automation library&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/airi-factorio/tree/main/packages/tstl-plugin-reload-factorio-mod"&gt;&lt;code&gt;tstl-plugin-reload-factorio-mod&lt;/code&gt;&lt;/a&gt;: Reload Factorio mod when developing&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/luoling8192/velin"&gt;Velin&lt;/a&gt;: Use Vue SFC and Markdown to write easy to manage stateful prompts for LLM&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/demodel"&gt;&lt;code&gt;demodel&lt;/code&gt;&lt;/a&gt;: Easily boost the speed of pulling your models and datasets from various of inference runtimes.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/inventory"&gt;&lt;code&gt;inventory&lt;/code&gt;&lt;/a&gt;: Centralized model catalog and default provider configurations backend service&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/mcp-launcher"&gt;MCP Launcher&lt;/a&gt;: Easy to use MCP builder &amp;amp; launcher for all possible MCP servers, just like Ollama for models!&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/sad"&gt;🥺 SAD&lt;/a&gt;: Documentation and notes for self-host and browser running LLMs.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-mermaid"&gt;%%{ init: { 'flowchart': { 'curve': 'catmullRom' } } }%%
+
+flowchart TD
+  Core("Core")
+  Unspeech("unspeech")
+  DBDriver("@proj-airi/drizzle-duckdb-wasm")
+  MemoryDriver("[WIP] Memory Alaya")
+  DB1("@proj-airi/duckdb-wasm")
+  SVRT("@proj-airi/server-runtime")
+  Memory("Memory")
+  STT("STT")
+  Stage("Stage")
+  StageUI("@proj-airi/stage-ui")
+  UI("@proj-airi/ui")
+
+  subgraph AIRI
+    DB1 --&amp;gt; DBDriver --&amp;gt; MemoryDriver --&amp;gt; Memory --&amp;gt; Core
+    UI --&amp;gt; StageUI --&amp;gt; Stage --&amp;gt; Core
+    Core --&amp;gt; STT
+    Core --&amp;gt; SVRT
+  end
+
+  subgraph UI_Components
+    UI --&amp;gt; StageUI
+    UITransitions("@proj-airi/ui-transitions") --&amp;gt; StageUI
+    UILoadingScreens("@proj-airi/ui-loading-screens") --&amp;gt; StageUI
+    FontCJK("@proj-airi/font-cjkfonts-allseto") --&amp;gt; StageUI
+    FontXiaolai("@proj-airi/font-xiaolai") --&amp;gt; StageUI
+  end
+
+  subgraph Apps
+    Stage --&amp;gt; StageWeb("@proj-airi/stage-web")
+    Stage --&amp;gt; StageTamagotchi("@proj-airi/stage-tamagotchi")
+    Core --&amp;gt; RealtimeAudio("@proj-airi/realtime-audio")
+    Core --&amp;gt; PromptEngineering("@proj-airi/playground-prompt-engineering")
+  end
+
+  subgraph Server_Components
+    Core --&amp;gt; ServerSDK("@proj-airi/server-sdk")
+    ServerShared("@proj-airi/server-shared") --&amp;gt; SVRT
+    ServerShared --&amp;gt; ServerSDK
+  end
+
+  STT --&amp;gt;|Speaking| Unspeech
+  SVRT --&amp;gt;|Playing Factorio| F_AGENT
+  SVRT --&amp;gt;|Playing Minecraft| MC_AGENT
+
+  subgraph Factorio_Agent
+    F_AGENT("Factorio Agent")
+    F_API("Factorio RCON API")
+    factorio-server("factorio-server")
+    F_MOD1("autorio")
+
+    F_AGENT --&amp;gt; F_API -.-&amp;gt; factorio-server
+    F_MOD1 -.-&amp;gt; factorio-server
+  end
+
+  subgraph Minecraft_Agent
+    MC_AGENT("Minecraft Agent")
+    Mineflayer("Mineflayer")
+    minecraft-server("minecraft-server")
+
+    MC_AGENT --&amp;gt; Mineflayer -.-&amp;gt; minecraft-server
+  end
+
+  XSAI("xsAI") --&amp;gt; Core
+  XSAI --&amp;gt; F_AGENT
+  XSAI --&amp;gt; MC_AGENT
+
+  Core --&amp;gt; TauriMCP("@proj-airi/tauri-plugin-mcp")
+  Memory_PGVector("@proj-airi/memory-pgvector") --&amp;gt; Memory
+
+  style Core fill:#f9d4d4,stroke:#333,stroke-width:1px
+  style AIRI fill:#fcf7f7,stroke:#333,stroke-width:1px
+  style UI fill:#d4f9d4,stroke:#333,stroke-width:1px
+  style Stage fill:#d4f9d4,stroke:#333,stroke-width:1px
+  style UI_Components fill:#d4f9d4,stroke:#333,stroke-width:1px
+  style Server_Components fill:#d4e6f9,stroke:#333,stroke-width:1px
+  style Apps fill:#d4d4f9,stroke:#333,stroke-width:1px
+  style Factorio_Agent fill:#f9d4f2,stroke:#333,stroke-width:1px
+  style Minecraft_Agent fill:#f9d4f2,stroke:#333,stroke-width:1px
+
+  style DBDriver fill:#f9f9d4,stroke:#333,stroke-width:1px
+  style MemoryDriver fill:#f9f9d4,stroke:#333,stroke-width:1px
+  style DB1 fill:#f9f9d4,stroke:#333,stroke-width:1px
+  style Memory fill:#f9f9d4,stroke:#333,stroke-width:1px
+  style Memory_PGVector fill:#f9f9d4,stroke:#333,stroke-width:1px
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Similar Projects&lt;/h2&gt; 
+&lt;h3&gt;Open sourced ones&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/kimjammer/Neuro"&gt;kimjammer/Neuro: A recreation of Neuro-Sama originally created in 7 days.&lt;/a&gt;: very well completed implementation.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/SugarcaneDefender/z-waif"&gt;SugarcaneDefender/z-waif&lt;/a&gt;: Great at gaming, autonomous, and prompt engineering&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/semperai/amica/"&gt;semperai/amica&lt;/a&gt;: Great at VRM, WebXR&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/elizaOS/eliza"&gt;elizaOS/eliza&lt;/a&gt;: Great examples and software engineering on how to integrate agent into various of systems and APIs&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ardha27/AI-Waifu-Vtuber"&gt;ardha27/AI-Waifu-Vtuber&lt;/a&gt;: Great about Twitch API integrations&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/InsanityLabs/AIVTuber"&gt;InsanityLabs/AIVTuber&lt;/a&gt;: Nice UI and UX&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/IRedDragonICY/vixevia"&gt;IRedDragonICY/vixevia&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/t41372/Open-LLM-VTuber"&gt;t41372/Open-LLM-VTuber&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/PeterH0323/Streamer-Sales"&gt;PeterH0323/Streamer-Sales&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Non-open-sourced ones&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://clips.twitch.tv/WanderingCaringDeerDxCat-Qt55xtiGDSoNmDDr"&gt;https://clips.twitch.tv/WanderingCaringDeerDxCat-Qt55xtiGDSoNmDDr&lt;/a&gt; &lt;a href="https://www.youtube.com/watch?v=8Giv5mupJNE"&gt;https://www.youtube.com/watch?v=8Giv5mupJNE&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://clips.twitch.tv/TriangularAthleticBunnySoonerLater-SXpBk1dFso21VcWD"&gt;https://clips.twitch.tv/TriangularAthleticBunnySoonerLater-SXpBk1dFso21VcWD&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/@NOWA_Mirai"&gt;https://www.youtube.com/@NOWA_Mirai&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Project Status&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://repobeats.axiom.co/api/embed/a1d6fe2c13ea2bb53a5154435a71e2431f70c2ee.svg?sanitize=true" alt="Repobeats analytics image" title="Repobeats analytics image" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Acknowledgements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/unovue/reka-ui"&gt;Reka UI&lt;/a&gt;: for designing the documentation site, the new landing page is based on this, as well as implementing a massive amount of UI components. (shadcn-vue is using Reka UI as the headless, do checkout!)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/pixiv/ChatVRM"&gt;pixiv/ChatVRM&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/josephrocca/ChatVRM-js"&gt;josephrocca/ChatVRM-js: A JS conversion/adaptation of parts of the ChatVRM (TypeScript) code for standalone use in OpenCharacters and elsewhere&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Design of UI and style was inspired by &lt;a href="https://store.steampowered.com/app/2919650/Cookard/"&gt;Cookard&lt;/a&gt;, &lt;a href="https://store.steampowered.com/app/2240620/UNBEATABLE/"&gt;UNBEATABLE&lt;/a&gt;, and &lt;a href="https://store.steampowered.com/app/2957700/_/"&gt;Sensei! I like you so much!&lt;/a&gt;, and artworks of &lt;a href="https://dribbble.com/shots/22157656-Ayame"&gt;Ayame by Mercedes Bazan&lt;/a&gt; with &lt;a href="https://dribbble.com/shots/24501019-Wish"&gt;Wish by Mercedes Bazan&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/mallorbc/whisper_mic"&gt;mallorbc/whisper_mic&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/moeru-ai/xsai"&gt;&lt;code&gt;xsai&lt;/code&gt;&lt;/a&gt;: Implemented a decent amount of packages to interact with LLMs and models, like &lt;a href="https://sdk.vercel.ai/"&gt;Vercel AI SDK&lt;/a&gt; but way small.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.star-history.com/#moeru-ai/airi&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=moeru-ai/airi&amp;amp;type=Date" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>iOfficeAI/AionUi</title>
+      <link>https://github.com/iOfficeAI/AionUi</link>
+      <description>&lt;p&gt;Free, local, open-source Cowork for Gemini CLI, Claude Code, Codex, Qwen Code, Goose Cli, Auggie, and more | 🌟 Star if you like it!&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="./resources/aionui-banner-1 copy.png" alt="AionUi - Cowork with Your CLI AI Agent" width="100%" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://img.shields.io/github/v/release/iOfficeAI/AionUi?style=flat-square&amp;amp;color=32CD32" alt="Version" /&gt; &amp;nbsp; &lt;img src="https://img.shields.io/badge/license-Apache--2.0-32CD32?style=flat-square&amp;amp;logo=apache&amp;amp;logoColor=white" alt="License" /&gt; &amp;nbsp; &lt;img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-6C757D?style=flat-square&amp;amp;logo=linux&amp;amp;logoColor=white" alt="Platform" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/15423" target="_blank"&gt; &lt;img src="https://trendshift.io/api/badge/repositories/15423" alt="GitHub Trending" height="80" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p align="center"&gt; &lt;strong&gt;🚀 Cowork with Your AI, Gemini CLI, Claude Code, Codex, Qwen Code, Goose CLI, Auggie, and more&lt;/strong&gt;&lt;br /&gt; &lt;em&gt;User-friendly | Visual graphical interface | Multi-model support | Local data security&lt;/em&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/iOfficeAI/AionUi/releases"&gt; &lt;img src="https://img.shields.io/badge/⬇️%20Download%20Now-Latest%20Release-32CD32?style=for-the-badge&amp;amp;logo=github&amp;amp;logoColor=white" alt="Download Latest Release" height="50" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;strong&gt;English&lt;/strong&gt; | &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/readme_ch.md"&gt;简体中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/readme_jp.md"&gt;日本語&lt;/a&gt; | &lt;a href="https://www.aionui.com" target="_blank"&gt;Official Website&lt;/a&gt; | &lt;a href="https://twitter.com/AionUI" target="_blank"&gt;Twitter&lt;/a&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📋 Quick Navigation&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/#%E2%9C%A8-what-can-aionui-do"&gt;✨ What Can AionUi Do?&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/#%F0%9F%A4%94-why-choose-aionui"&gt;🤔 Why Choose AionUi?&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/#%E2%9C%A8-core-features"&gt;✨ Core Features&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/#%F0%9F%9A%80-quick-start"&gt;🚀 Quick Start&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/#%F0%9F%93%96-detailed-usage-guide"&gt;📖 Detailed Usage Guide&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/#%F0%9F%A4%9D-community--support"&gt;💬 Community&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;✨ What Can AionUi Do?&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;img src="./resources/offica-ai BANNER-function copy.png" alt="AionUi - Cowork with Your CLI AI Agent" width="800" /&gt; &lt;/p&gt; 
+&lt;h3&gt;🤖 &lt;strong&gt;Multi-Agent Mode - Cowork for Your Command-Line AI Tools, Unified Graphical Interface&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;If you have installed command-line tools like Gemini CLI, Claude Code, CodeX, Qwen Code, Goose AI, Augment Code, AionUi can automatically detect them and provide a unified graphical interface&lt;/em&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;Auto Detection + Unified Interface&lt;/strong&gt; - Automatically recognizes local CLI tools, provides a unified graphical interface, say goodbye to command line&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;Local Storage + Multi-Session&lt;/strong&gt; - Conversations saved locally, supports multiple parallel sessions, each session with independent context&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p align="center"&gt; &lt;img src="./resources/acp home page.gif" alt="Multi-Agent Mode Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;📄 &lt;strong&gt;Preview Panel - Quickly View AI-Generated Results&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;Supports 9+ formats of visual preview (PDF, Word, Excel, PPT, code, Markdown, images, HTML, Diff, etc.)&lt;/em&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;View Results Instantly&lt;/strong&gt; - After AI generates files, view preview immediately without switching apps&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;Real-time Tracking + Editable&lt;/strong&gt; - Automatically tracks file changes, editor and preview sync intelligently; supports real-time editing of Markdown, code, HTML, WYSIWYG&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/resources/preview.gif" alt="Preview Panel Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;🎨 &lt;strong&gt;AI Image Generation &amp;amp; Editing&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;Intelligent image generation, editing, and recognition, powered by Gemini&lt;/em&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/resources/Image_Generation.gif" alt="AI Image Generation Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;💡 &lt;strong&gt;Need help setting up free image generation?&lt;/strong&gt; &lt;a href="https://github.com/iOfficeAI/AionUi/wiki/AionUi-Image-Generation-Tool-Model-Configuration-Guide"&gt;Follow the tutorial to configure image generation models&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;📁 &lt;strong&gt;Smart File Management&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;Batch renaming, automatic organization, smart classification, file merging&lt;/em&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://github.com/iOfficeAI/AionUi/wiki/assets/gifs/file-management/file-organization.gif" alt="File Management Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;💬 &lt;strong&gt;Multi-Task Parallel Processing&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;Open multiple conversations, tasks don't get mixed up, independent memory, double efficiency&lt;/em&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/resources/multichat-side-by-side.gif" alt="Conversation Management Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;🌐 &lt;strong&gt;Access Anywhere - WebUI Mode&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;Remotely control your AI tools - Access AionUi from any device on the network! Securely control local Gemini CLI, Claude Code, Codex, and other tools, data never leaves your device&lt;/em&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Basic startup
+AionUi --webui
+
+# Remote access (accessible from other devices on the local network)
+AionUi --webui --remote
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;💡 &lt;strong&gt;Need detailed configuration guide?&lt;/strong&gt; Check out the &lt;a href="https://github.com/iOfficeAI/AionUi/wiki/WebUI-Configuration-Guide"&gt;WebUI Configuration Tutorial&lt;/a&gt; - includes complete startup commands for all platforms&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p align="center"&gt; &lt;img src="./resources/webui banner.png" alt="WebUI Remote Access Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🤔 Why Choose AionUi?&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Just like Claude Cowork makes Claude Code easier to use, AionUi is the Cowork platform for all your command-line AI tools&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;While command-line tools like Gemini CLI, Claude Code, Codex, Qwen Code are powerful, they share common pain points: conversations can't be saved, single-session limitations, cumbersome file operations, and only support a single model.&lt;/p&gt; 
+&lt;p&gt;AionUi provides unified &lt;strong&gt;Cowork capabilities&lt;/strong&gt; for these command-line tools:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🎯 &lt;strong&gt;Unified Platform&lt;/strong&gt; - One interface to manage all command-line AI tools, no switching needed&lt;/li&gt; 
+ &lt;li&gt;🚀 &lt;strong&gt;Multi-Tool Support&lt;/strong&gt; - Not only supports Claude Code, but also Gemini CLI, Codex, Qwen Code, and more&lt;/li&gt; 
+ &lt;li&gt;🌐 &lt;strong&gt;Cross-Platform&lt;/strong&gt; - Full platform support for macOS, Windows, Linux (Claude Cowork currently only macOS)&lt;/li&gt; 
+ &lt;li&gt;🔄 &lt;strong&gt;Multi-Model Switching&lt;/strong&gt; - Flexibly switch between different models in the same interface, meeting different task requirements&lt;/li&gt; 
+ &lt;li&gt;📄 &lt;strong&gt;Real-time Preview&lt;/strong&gt; - Visual preview for 9+ formats, immediately view the effects of AI-generated files&lt;/li&gt; 
+ &lt;li&gt;💾 &lt;strong&gt;Local Data Security&lt;/strong&gt; - All conversations and files saved locally, data never leaves your device&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;📊 AionUi vs Command-Line AI Tools&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Feature&lt;/th&gt; 
+   &lt;th&gt;AionUi&lt;/th&gt; 
+   &lt;th&gt;Command-Line AI Tools&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Interface&lt;/td&gt; 
+   &lt;td&gt;🎨 Graphical Interface&lt;/td&gt; 
+   &lt;td&gt;💻 Command Line&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Conversation Storage&lt;/td&gt; 
+   &lt;td&gt;✅ Local Storage&lt;/td&gt; 
+   &lt;td&gt;❌ Lost on Close&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Multi-Session&lt;/td&gt; 
+   &lt;td&gt;✅ Supported&lt;/td&gt; 
+   &lt;td&gt;❌ Not Supported&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Context Management&lt;/td&gt; 
+   &lt;td&gt;✅ Independent Context, No Interference&lt;/td&gt; 
+   &lt;td&gt;❌ Single Context, Easy to Confuse&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;File Selection&lt;/td&gt; 
+   &lt;td&gt;🖱️ Click to Select&lt;/td&gt; 
+   &lt;td&gt;⌨️ @ Command&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Multi-Model&lt;/td&gt; 
+   &lt;td&gt;✅ Supported&lt;/td&gt; 
+   &lt;td&gt;❌ Single Model&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;File Preview&lt;/td&gt; 
+   &lt;td&gt;✅ 9+ Format Visual Preview&lt;/td&gt; 
+   &lt;td&gt;❌ No Preview&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Remote Access&lt;/td&gt; 
+   &lt;td&gt;✅ WebUI Mode&lt;/td&gt; 
+   &lt;td&gt;❌ Not Supported&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;❓ Quick Q&amp;amp;A&lt;/h3&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;Q: Is AionUi ready to use out of the box?&lt;/strong&gt;&lt;/summary&gt; A: Yes! After installation, you can directly use Google account login, AionUi will automatically associate with Gemini CLI, no additional configuration needed to start using. 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;Q: Is it free?&lt;/strong&gt;&lt;/summary&gt; A: AionUi is completely free and open source, but using AI models requires corresponding API Keys. 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;Q: Which AI models are supported?&lt;/strong&gt;&lt;/summary&gt; A: Supports mainstream models like Gemini, OpenAI, Claude, Qwen, as well as local models like Ollama, LM Studio. 
+ &lt;p&gt;You can also run multiple AI Agents simultaneously (such as Gemini CLI, Claude Code, Qwen Code, etc.), see the configuration guide for details.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;Q: Is my data secure?&lt;/strong&gt;&lt;/summary&gt; A: All conversation data is stored in a local SQLite database and will not be uploaded to any server. 
+&lt;/details&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;✨ Core Features&lt;/h2&gt; 
+&lt;h3&gt;💬 &lt;strong&gt;Multi-Session Chat&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi-Session + Independent Context&lt;/strong&gt; - Open multiple chats simultaneously, each session has independent context memory, no confusion&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Local Storage&lt;/strong&gt; - All conversations are saved locally and will not be lost&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🤖 &lt;strong&gt;Multi-Model Support&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi-Platform Support&lt;/strong&gt; - Supports mainstream models like Gemini, OpenAI, Claude, Qwen, flexible switching&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Local Model Support&lt;/strong&gt; - Supports local model deployment like Ollama, LM Studio, select Custom platform and set local API address (e.g., &lt;code&gt;http://localhost:11434/v1&lt;/code&gt;) to connect&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Gemini 3 Subscription Optimization&lt;/strong&gt; - Automatically identifies subscribed users, recommends advanced models&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🗂️ &lt;strong&gt;File Management&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;File Tree Browsing + Drag &amp;amp; Drop Upload&lt;/strong&gt; - Browse files like folders, support drag and drop files or folders for one-click import&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Smart Organization&lt;/strong&gt; - You can let AI help organize folders, automatic classification&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;📄 &lt;strong&gt;Preview Panel - Give AI Agent a Display&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;9+ Format Preview&lt;/strong&gt; - Supports PDF, Word, Excel, PPT, code, Markdown, images, etc., view results immediately after AI generation&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Real-time Tracking + Editable&lt;/strong&gt; - Automatically tracks file changes, supports real-time editing and debugging of Markdown, code, HTML&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🎨 &lt;strong&gt;AI Image Generation &amp;amp; Editing&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Intelligent Image Generation&lt;/strong&gt; - Supports multiple image generation models like Gemini 2.5 Flash Image Preview, Nano, Banana&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Image Recognition &amp;amp; Editing&lt;/strong&gt; - AI-driven image analysis and editing features&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🌐 &lt;strong&gt;WebUI Remote Access&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Cross-Device Access&lt;/strong&gt; - Access from any device on the network via browser, supports mobile devices&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Local Data Security&lt;/strong&gt; - All data stored locally in SQLite database, suitable for server deployment&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🎨 &lt;strong&gt;Personalized Interface Customization&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;Customize with your own CSS code, make your interface match your preferences&lt;/em&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="./resources/css with skin.gif" alt="CSS Custom Interface Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Fully Customizable&lt;/strong&gt; - Freely customize interface colors, styles, layout through CSS code, create your exclusive experience&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📖 Detailed Usage Guide&lt;/h2&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;📖 Expand to View Complete Usage Guide&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;h3&gt;🚀 Quick Start&lt;/h3&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/Getting-Started"&gt;📖 Complete Installation Guide&lt;/a&gt; - Detailed steps from download to configuration&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/LLM-Configuration"&gt;⚙️ LLM Configuration Guide&lt;/a&gt; - Multi-platform AI model configuration&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/ACP-Setup"&gt;🤖 Multi-Agent Mode Setup&lt;/a&gt; - Integrate terminal AI agents&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/MCP-Configuration-Guide"&gt;🔌 MCP Tool Configuration&lt;/a&gt; - Model Context Protocol server setup&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/AionUi-Image-Generation-Tool-Model-Configuration-Guide"&gt;🎨 Image Generation Configuration&lt;/a&gt; - AI image generation setup tutorial&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/WebUI-Configuration-Guide"&gt;🌐 WebUI Configuration Guide&lt;/a&gt; - Complete WebUI setup and configuration tutorial&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;h3&gt;🎯 Use Cases&lt;/h3&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/file-management"&gt;📁 File Management&lt;/a&gt; - Smart file organization&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/excel-processing"&gt;📊 Excel Processing&lt;/a&gt; - AI-driven data processing&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/AionUi-Image-Generation-Tool-Model-Configuration-Guide"&gt;🎨 Image Generation&lt;/a&gt; - AI image creation&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/Use-Cases-Overview"&gt;📚 More Use Cases&lt;/a&gt;&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;h3&gt;❓ Support &amp;amp; Help&lt;/h3&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/FAQ"&gt;❓ FAQ&lt;/a&gt; - Questions and troubleshooting&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/Configuration-Guides"&gt;🔧 Configuration &amp;amp; Usage Tutorials&lt;/a&gt; - Complete configuration documentation&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🚀 Quick Start&lt;/h2&gt; 
+&lt;h3&gt;💻 System Requirements&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;macOS&lt;/strong&gt;: 10.15 or higher&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Windows&lt;/strong&gt;: Windows 10 or higher&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Linux&lt;/strong&gt;: Ubuntu 18.04+ / Debian 10+ / Fedora 32+&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Memory&lt;/strong&gt;: Recommended 4GB or more&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Storage&lt;/strong&gt;: At least 500MB available space&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;📥 Download&lt;/h3&gt; 
+&lt;p&gt; &lt;a href="https://github.com/iOfficeAI/AionUi/releases"&gt; &lt;img src="https://img.shields.io/badge/Download-Latest%20Release-32CD32?style=for-the-badge&amp;amp;logo=github&amp;amp;logoColor=white" alt="Download Latest Release" height="50" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h3&gt;🔧 Simple Installation&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Download and install&lt;/strong&gt; AionUi application&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Configure AI service&lt;/strong&gt; - Support Google account login or API Key authentication&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Start using&lt;/strong&gt; - Immediately experience modern AI chat interface&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;💡 &lt;strong&gt;Need detailed configuration guide?&lt;/strong&gt; Check out our &lt;a href="https://github.com/iOfficeAI/AionUi/wiki/Getting-Started"&gt;Complete Installation Tutorial&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🤝 Community &amp;amp; Support&lt;/h2&gt; 
+&lt;h3&gt;💬 Community&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;💡 Your ideas matter!&lt;/strong&gt; We highly value every user's suggestions and feedback. Whether it's feature ideas, user experience, or issues you encounter, feel free to contact us anytime!&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://x.com/AionUi" target="_blank"&gt; &lt;img src="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/resources/contactus-x.png" alt="Contact Us on X" width="600" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/discussions"&gt;💬 GitHub Discussions&lt;/a&gt; - &lt;strong&gt;Share ideas, make suggestions, exchange usage tips&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/issues"&gt;🐛 Report Issues&lt;/a&gt; - Report bugs or feature requests&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/releases"&gt;📦 Release Updates&lt;/a&gt; - Get the latest version&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🤝 Contributing&lt;/h3&gt; 
+&lt;p&gt;Welcome to submit Issues and Pull Requests!&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork this project&lt;/li&gt; 
+ &lt;li&gt;Create a feature branch (&lt;code&gt;git checkout -b feature/AmazingFeature&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Commit your changes (&lt;code&gt;git commit -m 'Add some AmazingFeature'&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Push to the branch (&lt;code&gt;git push origin feature/AmazingFeature&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Open a Pull Request&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📄 License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/LICENSE"&gt;Apache-2.0&lt;/a&gt;.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;👥 Contributors&lt;/h2&gt; 
+&lt;p&gt;Thanks to all developers who have contributed to AionUi!&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/iOfficeAI/AionUi/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=iOfficeAI/AionUi&amp;amp;max=20" alt="Contributors" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;📊 Star History&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.star-history.com/#iOfficeAI/aionui&amp;amp;Date" target="_blank"&gt; &lt;img src="https://api.star-history.com/svg?repos=iOfficeAI/aionui&amp;amp;type=Date" alt="GitHub Star Trends" width="600" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;strong&gt;⭐ If you like it, give us a star&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/issues"&gt;Report Bug&lt;/a&gt; · &lt;a href="https://github.com/iOfficeAI/AionUi/issues"&gt;Request Feature&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>open-metadata/OpenMetadata</title>
+      <link>https://github.com/open-metadata/OpenMetadata</link>
+      <description>&lt;p&gt;OpenMetadata is a unified metadata platform for data discovery, data observability, and data governance powered by a central metadata repository, in-depth column level lineage, and seamless team collaboration.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://open-metadata.org"&gt; &lt;img alt="Logo" src="https://github.com/open-metadata/OpenMetadata/assets/40225091/e794ced8-7220-4393-8efc-3faf93bfb503" width="49%" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;&lt;b&gt;Empower your Data Journey with OpenMetadata&lt;/b&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;img src="https://img.shields.io/github/commit-activity/m/open-metadata/OpenMetadata?style=for-the-badge" alt="Commit Activity" /&gt; &lt;a href="https://github.com/open-metadata/OpenMetadata/releases"&gt;&lt;img src="https://img.shields.io/github/release/open-metadata/OpenMetadata/all.svg?style=for-the-badge" alt="Release" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;What is OpenMetadata?&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://open-metadata.org/"&gt;OpenMetadata&lt;/a&gt; is a unified metadata platform for data discovery, data observability, and data governance powered by a central metadata repository, in-depth column-level lineage, and seamless team collaboration. It is one of the fastest-growing open-source projects with a vibrant community and adoption by a diverse set of companies in a variety of industry verticals. Based on Open Metadata Standards and APIs, supporting connectors to a wide range of data services, OpenMetadata enables end-to-end metadata management, giving you the freedom to unlock the value of your data assets.&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;img src="https://github.com/open-metadata/OpenMetadata/assets/40225091/ebfb4ec5-f0a2-4d58-8ce5-a082b5cf0f76" width="800" /&gt; 
+&lt;/div&gt; 
+&lt;br /&gt; Contents: 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/open-metadata/OpenMetadata/main/#key-features-of-openmetadata"&gt;Features&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/open-metadata/OpenMetadata/main/#try-our-sandbox"&gt;Try our Sandbox&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/open-metadata/OpenMetadata/main/#install-and-run-openmetadata"&gt;Install &amp;amp; Run&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.open-metadata.org/latest/roadmap"&gt;Roadmap&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/open-metadata/OpenMetadata/main/#documentation-and-support"&gt;Documentation and Support&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/open-metadata/OpenMetadata/main/#contributors"&gt;Contributors&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;OpenMetadata Consists of Four Main Components:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Metadata Schemas&lt;/strong&gt;: These are the core definitions and vocabulary for metadata based on common abstractions and types. They also allow for custom extensions and properties to suit different use cases and domains.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Metadata Store&lt;/strong&gt;: This is the central repository for storing and managing the metadata graph, which connects data assets, users, and tool-generated metadata in a unified way.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Metadata APIs&lt;/strong&gt;: These are the interfaces for producing and consuming metadata, built on top of the metadata schemas. They enable seamless integration of user interfaces and tools, systems, and services with the metadata store.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Ingestion Framework&lt;/strong&gt;: This is a pluggable framework for ingesting metadata from various sources and tools to the metadata store. It supports about 84+ connectors for data warehouses, databases, dashboard services, messaging services, pipeline services, and more.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Key Features of OpenMetadata&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Data Discovery&lt;/strong&gt;: Find and explore all your data assets in a single place using various strategies, such as keyword search, data associations, and advanced queries. You can search across tables, topics, dashboards, pipelines, and services.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/open-metadata/OpenMetadata/assets/40225091/0dbd2746-c93d-4a47-8d3e-ceb3ae01436f" alt="12" /&gt; &lt;br /&gt;&lt;br /&gt;&lt;br /&gt; &lt;strong&gt;Data Collaboration&lt;/strong&gt;: Communicate, converse, and cooperate with other users and teams on data assets. You can get event notifications, send alerts, add announcements, create tasks, and use conversation threads.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/open-metadata/OpenMetadata/assets/40225091/7df29e12-8a29-44b7-9466-42474823783f" alt="11" /&gt; &lt;br /&gt;&lt;br /&gt;&lt;br /&gt; &lt;strong&gt;Data Quality and Profiler&lt;/strong&gt;: Measure and monitor the quality with &lt;strong&gt;no-code&lt;/strong&gt; to build trust in your data. You can define and run data quality tests, group them into test suites, and view the results in an interactive dashboard. With powerful collaboration, make data quality a shared responsibility in your organization.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/open-metadata/OpenMetadata/assets/40225091/6b330827-cc2d-4d06-abf0-a4d42ce532ba" alt="8" /&gt; &lt;br /&gt;&lt;br /&gt;&lt;br /&gt; &lt;strong&gt;Data Governance&lt;/strong&gt;: Enforce data policies and standards across your organization. You can define data domains and data products, assign owners and stakeholders, and classify data assets using tags and terms. Use powerful automation features to auto-classify your data.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/open-metadata/OpenMetadata/assets/40225091/f7384a71-6b58-44ad-983f-e302718ee3f1" alt="10" /&gt; &lt;br /&gt;&lt;br /&gt;&lt;br /&gt; &lt;strong&gt;Data Insights and KPIs&lt;/strong&gt;: Use reports and platform analytics to understand how your organization's data is doing. Data Insights provides a single-pane view of all the key metrics to reflect the state of your data best. Define the Key Performance Indicators (KPIs) and set goals within OpenMetadata to work towards better documentation, ownership, and tiering. Alerts can be set against the KPIs to be received on a specified schedule.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/open-metadata/OpenMetadata/assets/40225091/61fc2f65-2436-4fc9-9434-c27ee9b25183" alt="9" /&gt; &lt;br /&gt;&lt;br /&gt;&lt;br /&gt; &lt;strong&gt;Data Lineage&lt;/strong&gt;: Track and visualize the origin and transformation of your data assets end-to-end. You can view column-level lineage, filter queries, and edit lineage manually using a no-code editor.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Data Documentation&lt;/strong&gt;: Document your data assets and metadata entities using rich text, images, and links. You can also add comments and annotations and generate data dictionaries and data catalogs.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Data Observability&lt;/strong&gt;: Monitor the health and performance of your data assets and pipelines. You can view metrics such as data freshness, data volume, data quality, and data latency. You can also set up alerts and notifications for any anomalies or failures.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Data Security&lt;/strong&gt;: Secure your data and metadata using various authentication and authorization mechanisms. You can integrate with different identity providers for single sign-on and define roles and policies for access control.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Webhooks&lt;/strong&gt;: Integrate with external applications and services using webhooks. You can register URLs to receive metadata event notifications and integrate with Slack, Microsoft Teams, and Google Chat.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Connectors&lt;/strong&gt;: Ingest metadata from various sources and tools using connectors. OpenMetadata supports about 84+ connectors for data warehouses, databases, dashboard services, messaging services, pipeline services, and more.&lt;/p&gt; 
+&lt;h2&gt;Try our Sandbox&lt;/h2&gt; 
+&lt;p&gt;Take a look and play with sample data at &lt;a href="http://sandbox.open-metadata.org"&gt;http://sandbox.open-metadata.org&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Install and Run OpenMetadata&lt;/h2&gt; 
+&lt;p&gt;Get up and running in a few minutes. See the OpenMetadata documentation for &lt;a href="https://docs.open-metadata.org/quick-start/local-docker-deployment"&gt;installation instructions&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Documentation and Support&lt;/h2&gt; 
+&lt;p&gt;We're here to help and make OpenMetadata even better! Check out &lt;a href="https://docs.open-metadata.org/"&gt;OpenMetadata documentation&lt;/a&gt; for a complete description of OpenMetadata's features. Join our &lt;a href="https://slack.open-metadata.org/"&gt;Slack Community&lt;/a&gt; to get in touch with us if you want to chat, need help, or discuss new feature requirements.&lt;/p&gt; 
+&lt;h2&gt;Contributors&lt;/h2&gt; 
+&lt;p&gt;We ❤️ all contributions, big and small! Check out our &lt;a href="https://raw.githubusercontent.com/open-metadata/OpenMetadata/main/CONTRIBUTING.md"&gt;CONTRIBUTING&lt;/a&gt; guide to get started, and let us know how we can help.&lt;/p&gt; 
+&lt;p&gt;Don't want to miss anything? Give the project a ⭐ 🚀&lt;/p&gt; 
+&lt;p&gt;A HUGE THANK YOU to all our supporters!&lt;/p&gt; 
+&lt;a href="https://github.com/open-metadata/OpenMetadata/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=open-metadata/OpenMetadata&amp;amp;max=4000&amp;amp;columns=30" /&gt; &lt;/a&gt; 
+&lt;h2&gt;Stargazers&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/open-metadata/OpenMetadata/stargazers"&gt;&lt;img src="http://reporoster.com/stars/open-metadata/OpenMetadata" alt="Stargazers of @open-metadata/OpenMetadata repo" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;OpenMetadata is released under &lt;a href="http://www.apache.org/licenses/LICENSE-2.0"&gt;Apache License, Version 2.0&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GitbookIO/gitbook</title>
+      <link>https://github.com/GitbookIO/gitbook</link>
+      <description>&lt;p&gt;The open source frontend for GitBook doc sites&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt;GitBook&lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;a href="https://gitbook.com/docs/"&gt;Docs&lt;/a&gt; - &lt;a href="https://github.com/GitbookIO/community"&gt;Community&lt;/a&gt; - &lt;a href="https://developer.gitbook.com/"&gt;Developer Docs&lt;/a&gt; - &lt;a href="https://changelog.gitbook.com/"&gt;Changelog&lt;/a&gt; - &lt;a href="https://github.com/GitbookIO/gitbook/issues/new?assignees=&amp;amp;labels=bug&amp;amp;template=bug_report.md"&gt;Bug reports&lt;/a&gt; - &lt;a href="https://github.com/orgs/GitbookIO/discussions/categories/feature-requests"&gt;Feature requests&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://gitbook.com"&gt;&lt;img src="https://img.shields.io/static/v1?message=Documented%20on%20GitBook&amp;amp;logo=gitbook&amp;amp;logoColor=ffffff&amp;amp;label=%20&amp;amp;labelColor=5c5c5c&amp;amp;color=3F89A1" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/GitbookIO/gitbook/main/#"&gt;&lt;img src="https://img.shields.io/badge/Open_Source-❤️-FDA599?" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/GitbookIO/gitbook/main/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/License-GNU_GPLv3-F4E28D" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/GitbookIO/gitbook/main/.github/CONTRIBUTING.md"&gt;&lt;img src="https://img.shields.io/github/contributors/gitbookIO/gitbook" /&gt;&lt;/a&gt; &lt;a href="https://github.com/gitbookIO/gitbook/issues"&gt;&lt;img src="https://img.shields.io/github/issues/gitbookIO/gitbook" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;Welcome to GitBook, the platform for managing technical knowledge for teams.&lt;/p&gt; 
+&lt;p align="center"&gt;This repository contains the open source code used to render GitBook's published content.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img alt="GitBook Open Published Site" src="https://raw.githubusercontent.com/GitbookIO/gitbook/main/assets/published-site.png" /&gt; &lt;/p&gt; 
+&lt;h2&gt;Table of Contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/GitbookIO/gitbook/main/#getting-started"&gt;Getting Started&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/GitbookIO/gitbook/main/#contributing"&gt;Contributing&lt;/a&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/GitbookIO/gitbook/main/#types-of-contributions"&gt;Types of contributions&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/GitbookIO/gitbook/main/#license"&gt;Licensing&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/GitbookIO/gitbook/main/#acknowledgements"&gt;Acknowledgements&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/GitbookIO/gitbook/main/#legacy-gitbook-deprecated"&gt;Legacy GitBook&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;To run a local version of this project, please follow these simple steps.&lt;/p&gt; 
+&lt;h3&gt;Prerequisites&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Node.js (Version: &amp;gt;= 22.3) 
+  &lt;ul&gt; 
+   &lt;li&gt;Use nvm for easy Node management&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://bun.sh/"&gt;Bun&lt;/a&gt; (Version: &amp;gt;=1.2.15) 
+  &lt;ul&gt; 
+   &lt;li&gt;We use a text-based lockfile which isn't supported below 1.2.15&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Set up&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Clone the repo into a &lt;strong&gt;public&lt;/strong&gt; GitHub repository. If you plan to distribute the code, keep the source code public to comply with GNU GPLv3. To clone in a private repository, acquire a &lt;a href="https://www.gitbook.com/pricing"&gt;commercial license&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/gitbookIO/gitbook.git
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt; &lt;p&gt;Ensure you are using the project's version of &lt;code&gt;node&lt;/code&gt;. Running &lt;code&gt;nvm use&lt;/code&gt; will change your local version to the correct one.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Install the project's dependencies through Bun.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code&gt;bun install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="4"&gt; 
+ &lt;li&gt;Start your local development server.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code&gt;bun dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="6"&gt; 
+ &lt;li&gt;Open a published GitBook space in your web browser, prefixing it with &lt;code&gt;http://localhost:3000/url&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;examples:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="http://localhost:3000/url/gitbook.com/docs"&gt;http://localhost:3000/url/gitbook.com/docs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="http://localhost:3000/url/open-source.gitbook.io/midjourney"&gt;http://localhost:3000/url/open-source.gitbook.io/midjourney&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Any published GitBook site can be accessed through your local development instance, and any updates you make to the codebase will be reflected in your browser.&lt;/p&gt; 
+&lt;h3&gt;CI and testing&lt;/h3&gt; 
+&lt;p&gt;All pull-requests will be tested against both visual and performances testing to prevent regressions.&lt;/p&gt; 
+&lt;h2&gt;Fonts and Icons&lt;/h2&gt; 
+&lt;p&gt;GitBook Open uses fontawesome. During development, your local environment will use the free version. However, only the pro version will be accepted by CI. If you see the following error:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;The GitBook icon is missing. It indicates that the dependencies were installed without the correct font-awesome package. These changes have probably been persisted in the Bun lockfile. Read the README for more information.
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;It means that you've changed the GBO dependencies and bundled in the free version. Only GitBook staff can help with this - if you're not on the GitBook team, please ping us in the PR and we'll help get things moving.&lt;/p&gt; 
+&lt;p&gt;If you are GitBook staff, you'll need our NPM token in your local environment.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;.env.local
+
+BUN_NPM_TOKEN=xxx
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;and then reinstall dependencies.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;GitBook's rendering engine is fully open source and built on top of &lt;a href="https://nextjs.org/"&gt;Next.js&lt;/a&gt;. Head to our &lt;a href="https://github.com/GitbookIO/gitbook/raw/main/.github/CONTRIBUTING.md"&gt;contributing guide&lt;/a&gt; to learn more about the workflow on adding your first Pull Request.&lt;/p&gt; 
+&lt;h3&gt;Types of contributions&lt;/h3&gt; 
+&lt;p&gt;We encourage you to contribute to GitBook to help us build the best tool for documenting technical knowledge. If you're looking for some quick ways to contribute, continue reading to learn more about popular contributions.&lt;/p&gt; 
+&lt;h4&gt;Translations&lt;/h4&gt; 
+&lt;p&gt;The GitBook UI is rendered using a set of translation files found in &lt;a href="https://raw.githubusercontent.com/GitbookIO/gitbook/main/packages/gitbook/src/intl/translations/"&gt;&lt;code&gt;packages/gitbook/src/intl/translations&lt;/code&gt;&lt;/a&gt;. We welcome all additional translations for the UI.&lt;/p&gt; 
+&lt;h4&gt;Bugs&lt;/h4&gt; 
+&lt;p&gt;Encounter a bug or find an issue you'd like to fix? Helping us fix issues related to GitBook greatly improves the experience for everyone. Head to the issues section of this repository to learn more about the types of bugs you can already help out with.&lt;/p&gt; 
+&lt;h2&gt;Deployment&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!WARNING]&lt;br /&gt; While it is possible to self-host this project, we do not recommend this unless you are certain this option fits your need.&lt;/p&gt; 
+ &lt;p&gt;&lt;em&gt;Looking to add a specific feature in GitBook? Head to our &lt;a href="https://github.com/GitbookIO/gitbook/raw/main/.github/CONTRIBUTING.md"&gt;contributing guide&lt;/a&gt; to get started.&lt;/em&gt;&lt;/p&gt; 
+ &lt;p&gt;Self-hosting this project puts the responsibility of maintaining and merging future updates on &lt;strong&gt;you&lt;/strong&gt;. We cannot guarantee support, maintenance, or updates to forked and self-hosted instances of this project.&lt;/p&gt; 
+ &lt;p&gt;We want to make it as easy as possible for our community to collaborate and push the future of GitBook, which is why we encourage you to contribute to our product directly instead of creating your own version.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;This project allows you to self-host the rendering portion of your GitBook published content. Self-hosting has pros and cons.&lt;/p&gt; 
+&lt;p&gt;On the pro side, you can customize the look and feel of your content, and better embed your documentation in your application.&lt;/p&gt; 
+&lt;p&gt;On the con side, you become responsible for the reliability of your published site, and keeping the renderer up-to-date with the changes made to the GitBook platform.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Distributed under the &lt;a href="https://github.com/GitBookIO/gitbook/raw/main/LICENSE"&gt;GNU GPLv3 License&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;If you plan to distribute the code, you must make the source code public to comply with the GNU GPLv3. To clone in a private repository, acquire a &lt;a href="https://www.gitbook.com/pricing"&gt;commercial license&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;See &lt;code&gt;LICENSE&lt;/code&gt; for more information.&lt;/p&gt; 
+&lt;h2&gt;Badges&lt;/h2&gt; 
+&lt;p align="left"&gt; &lt;a href="https://gitbook.com"&gt;&lt;img src="https://img.shields.io/static/v1?message=Documented%20on%20GitBook&amp;amp;logo=gitbook&amp;amp;logoColor=ffffff&amp;amp;label=%20&amp;amp;labelColor=5c5c5c&amp;amp;color=3F89A1" /&gt;&lt;/a&gt; &lt;a href="https://gitbook.com"&gt;&lt;img src="https://img.shields.io/static/v1?message=Documented%20on%20GitBook&amp;amp;logo=gitbook&amp;amp;logoColor=ffffff&amp;amp;label=%20&amp;amp;labelColor=5c5c5c&amp;amp;color=F4E28D" /&gt;&lt;/a&gt; &lt;a href="https://gitbook.com"&gt;&lt;img src="https://img.shields.io/static/v1?message=Documented%20on%20GitBook&amp;amp;logo=gitbook&amp;amp;logoColor=ffffff&amp;amp;label=%20&amp;amp;labelColor=5c5c5c&amp;amp;color=FDA599" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-md"&gt;[![GitBook](https://img.shields.io/static/v1?message=Documented%20on%20GitBook&amp;amp;logo=gitbook&amp;amp;logoColor=ffffff&amp;amp;label=%20&amp;amp;labelColor=5c5c5c&amp;amp;color=3F89A1)](https://www.gitbook.com/preview?utm_source=gitbook_readme_badge&amp;amp;utm_medium=organic&amp;amp;utm_campaign=preview_documentation&amp;amp;utm_content=link)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;a href="https://www.gitbook.com/preview?utm_source=gitbook_readme_badge&amp;amp;utm_medium=organic&amp;amp;utm_campaign=preview_documentation&amp;amp;utm_content=link"&amp;gt;
+    &amp;lt;img
+        src="https://img.shields.io/static/v1?message=Documented%20on%20GitBook&amp;amp;logo=gitbook&amp;amp;logoColor=ffffff&amp;amp;label=%20&amp;amp;labelColor=5c5c5c&amp;amp;color=3F89A1"
+    /&amp;gt;
+&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Acknowledgements&lt;/h2&gt; 
+&lt;p&gt;GitBook wouldn't be possible without these projects:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://nextjs.org/"&gt;Next.js&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://bun.sh/"&gt;Bun&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://tailwindcss.com/"&gt;Tailwind CSS&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.npmjs.com/package/framer-motion"&gt;Framer Motion&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributors&lt;/h2&gt; 
+&lt;a href="https://github.com/gitbookIO/gitbook/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=gitbookIO/gitbook" /&gt; &lt;/a&gt; 
+&lt;h2&gt;Legacy GitBook (Deprecated)&lt;/h2&gt; 
+&lt;p&gt;Our previous version of GitBook and it's CLI tool are now deprecated. You can still view the old repository and it's commits on this &lt;a href="https://github.com/GitbookIO/gitbook/tree/legacy"&gt;branch&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

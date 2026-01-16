@@ -1,0 +1,1417 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub All Languages Daily Trending</title>
+    <description>Daily Trending of All Languages in GitHub</description>
+    <pubDate>Thu, 15 Jan 2026 01:31:19 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>grab/cursor-talk-to-figma-mcp</title>
+      <link>https://github.com/grab/cursor-talk-to-figma-mcp</link>
+      <description>&lt;p&gt;TalkToFigma: MCP integration between Cursor and Figma, allowing Cursor Agentic AI to communicate with Figma for reading designs and modifying them programmatically.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Cursor Talk to Figma MCP&lt;/h1&gt; 
+&lt;p&gt;This project implements a Model Context Protocol (MCP) integration between Cursor AI and Figma, allowing Cursor to communicate with Figma for reading designs and modifying them programmatically.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/129a14d2-ed73-470f-9a4c-2240b2a4885c"&gt;https://github.com/user-attachments/assets/129a14d2-ed73-470f-9a4c-2240b2a4885c&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Project Structure&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;src/talk_to_figma_mcp/&lt;/code&gt; - TypeScript MCP server for Figma integration&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;src/cursor_mcp_plugin/&lt;/code&gt; - Figma plugin for communicating with Cursor&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;src/socket.ts&lt;/code&gt; - WebSocket server that facilitates communication between the MCP server and Figma plugin&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Get Started&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Install Bun if you haven't already:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -fsSL https://bun.sh/install | bash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Run setup, this will also install MCP in your Cursor's active project&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun setup
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;Start the Websocket server&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun socket
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="4"&gt; 
+ &lt;li&gt;&lt;strong&gt;NEW&lt;/strong&gt; Install Figma plugin from &lt;a href="https://www.figma.com/community/plugin/1485687494525374295/cursor-talk-to-figma-mcp-plugin"&gt;Figma community page&lt;/a&gt; or &lt;a href="https://raw.githubusercontent.com/grab/cursor-talk-to-figma-mcp/main/#figma-plugin"&gt;install locally&lt;/a&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Quick Video Tutorial&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.linkedin.com/posts/sonnylazuardi_just-wanted-to-share-my-latest-experiment-activity-7307821553654657024-yrh8"&gt;Video Link&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Design Automation Example&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Bulk text content replacement&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Thanks to &lt;a href="https://github.com/dusskapark"&gt;@dusskapark&lt;/a&gt; for contributing the bulk text replacement feature. Here is the &lt;a href="https://www.youtube.com/watch?v=j05gGT3xfCs"&gt;demo video&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Instance Override Propagation&lt;/strong&gt; Another contribution from &lt;a href="https://github.com/dusskapark"&gt;@dusskapark&lt;/a&gt; Propagate component instance overrides from a source instance to multiple target instances with a single command. This feature dramatically reduces repetitive design work when working with component instances that need similar customizations. Check out our &lt;a href="https://youtu.be/uvuT8LByroI"&gt;demo video&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Development Setup&lt;/h2&gt; 
+&lt;p&gt;To develop, update your mcp config to direct to your local directory.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "TalkToFigma": {
+      "command": "bun",
+      "args": ["/path-to-repo/src/talk_to_figma_mcp/server.ts"]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Manual Setup and Installation&lt;/h2&gt; 
+&lt;h3&gt;MCP Server: Integration with Cursor&lt;/h3&gt; 
+&lt;p&gt;Add the server to your Cursor MCP configuration in &lt;code&gt;~/.cursor/mcp.json&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{
+  "mcpServers": {
+    "TalkToFigma": {
+      "command": "bunx",
+      "args": ["cursor-talk-to-figma-mcp@latest"]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;WebSocket Server&lt;/h3&gt; 
+&lt;p&gt;Start the WebSocket server:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun socket
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Figma Plugin&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;In Figma, go to Plugins &amp;gt; Development &amp;gt; New Plugin&lt;/li&gt; 
+ &lt;li&gt;Choose "Link existing plugin"&lt;/li&gt; 
+ &lt;li&gt;Select the &lt;code&gt;src/cursor_mcp_plugin/manifest.json&lt;/code&gt; file&lt;/li&gt; 
+ &lt;li&gt;The plugin should now be available in your Figma development plugins&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Windows + WSL Guide&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Install bun via powershell&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;powershell -c "irm bun.sh/install.ps1|iex"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Uncomment the hostname &lt;code&gt;0.0.0.0&lt;/code&gt; in &lt;code&gt;src/socket.ts&lt;/code&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-typescript"&gt;// uncomment this to allow connections in windows wsl
+hostname: "0.0.0.0",
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;Start the websocket&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun socket
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Start the WebSocket server&lt;/li&gt; 
+ &lt;li&gt;Install the MCP server in Cursor&lt;/li&gt; 
+ &lt;li&gt;Open Figma and run the Cursor MCP Plugin&lt;/li&gt; 
+ &lt;li&gt;Connect the plugin to the WebSocket server by joining a channel using &lt;code&gt;join_channel&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Use Cursor to communicate with Figma using the MCP tools&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;MCP Tools&lt;/h2&gt; 
+&lt;p&gt;The MCP server provides the following tools for interacting with Figma:&lt;/p&gt; 
+&lt;h3&gt;Document &amp;amp; Selection&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;get_document_info&lt;/code&gt; - Get information about the current Figma document&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;get_selection&lt;/code&gt; - Get information about the current selection&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;read_my_design&lt;/code&gt; - Get detailed node information about the current selection without parameters&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;get_node_info&lt;/code&gt; - Get detailed information about a specific node&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;get_nodes_info&lt;/code&gt; - Get detailed information about multiple nodes by providing an array of node IDs&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;set_focus&lt;/code&gt; - Set focus on a specific node by selecting it and scrolling viewport to it&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;set_selections&lt;/code&gt; - Set selection to multiple nodes and scroll viewport to show them&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Annotations&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;get_annotations&lt;/code&gt; - Get all annotations in the current document or specific node&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;set_annotation&lt;/code&gt; - Create or update an annotation with markdown support&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;set_multiple_annotations&lt;/code&gt; - Batch create/update multiple annotations efficiently&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;scan_nodes_by_types&lt;/code&gt; - Scan for nodes with specific types (useful for finding annotation targets)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Prototyping &amp;amp; Connections&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;get_reactions&lt;/code&gt; - Get all prototype reactions from nodes with visual highlight animation&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;set_default_connector&lt;/code&gt; - Set a copied FigJam connector as the default connector style for creating connections (must be set before creating connections)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;create_connections&lt;/code&gt; - Create FigJam connector lines between nodes, based on prototype flows or custom mapping&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Creating Elements&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;create_rectangle&lt;/code&gt; - Create a new rectangle with position, size, and optional name&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;create_frame&lt;/code&gt; - Create a new frame with position, size, and optional name&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;create_text&lt;/code&gt; - Create a new text node with customizable font properties&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Modifying text content&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;scan_text_nodes&lt;/code&gt; - Scan text nodes with intelligent chunking for large designs&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;set_text_content&lt;/code&gt; - Set the text content of a single text node&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;set_multiple_text_contents&lt;/code&gt; - Batch update multiple text nodes efficiently&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Auto Layout &amp;amp; Spacing&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;set_layout_mode&lt;/code&gt; - Set the layout mode and wrap behavior of a frame (NONE, HORIZONTAL, VERTICAL)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;set_padding&lt;/code&gt; - Set padding values for an auto-layout frame (top, right, bottom, left)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;set_axis_align&lt;/code&gt; - Set primary and counter axis alignment for auto-layout frames&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;set_layout_sizing&lt;/code&gt; - Set horizontal and vertical sizing modes for auto-layout frames (FIXED, HUG, FILL)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;set_item_spacing&lt;/code&gt; - Set distance between children in an auto-layout frame&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Styling&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;set_fill_color&lt;/code&gt; - Set the fill color of a node (RGBA)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;set_stroke_color&lt;/code&gt; - Set the stroke color and weight of a node&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;set_corner_radius&lt;/code&gt; - Set the corner radius of a node with optional per-corner control&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Layout &amp;amp; Organization&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;move_node&lt;/code&gt; - Move a node to a new position&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;resize_node&lt;/code&gt; - Resize a node with new dimensions&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;delete_node&lt;/code&gt; - Delete a node&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;delete_multiple_nodes&lt;/code&gt; - Delete multiple nodes at once efficiently&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;clone_node&lt;/code&gt; - Create a copy of an existing node with optional position offset&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Components &amp;amp; Styles&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;get_styles&lt;/code&gt; - Get information about local styles&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;get_local_components&lt;/code&gt; - Get information about local components&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;create_component_instance&lt;/code&gt; - Create an instance of a component&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;get_instance_overrides&lt;/code&gt; - Extract override properties from a selected component instance&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;set_instance_overrides&lt;/code&gt; - Apply extracted overrides to target instances&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Export &amp;amp; Advanced&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;export_node_as_image&lt;/code&gt; - Export a node as an image (PNG, JPG, SVG, or PDF) - limited support on image currently returning base64 as text&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Connection Management&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;join_channel&lt;/code&gt; - Join a specific channel to communicate with Figma&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;MCP Prompts&lt;/h3&gt; 
+&lt;p&gt;The MCP server includes several helper prompts to guide you through complex design tasks:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;design_strategy&lt;/code&gt; - Best practices for working with Figma designs&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;read_design_strategy&lt;/code&gt; - Best practices for reading Figma designs&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;text_replacement_strategy&lt;/code&gt; - Systematic approach for replacing text in Figma designs&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;annotation_conversion_strategy&lt;/code&gt; - Strategy for converting manual annotations to Figma's native annotations&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;swap_overrides_instances&lt;/code&gt; - Strategy for transferring overrides between component instances in Figma&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;reaction_to_connector_strategy&lt;/code&gt; - Strategy for converting Figma prototype reactions to connector lines using the output of 'get_reactions', and guiding the use 'create_connections' in sequence&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;h3&gt;Building the Figma Plugin&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;Navigate to the Figma plugin directory:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;cd src/cursor_mcp_plugin
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Edit code.js and ui.html&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Best Practices&lt;/h2&gt; 
+&lt;p&gt;When working with the Figma MCP:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Always join a channel before sending commands&lt;/li&gt; 
+ &lt;li&gt;Get document overview using &lt;code&gt;get_document_info&lt;/code&gt; first&lt;/li&gt; 
+ &lt;li&gt;Check current selection with &lt;code&gt;get_selection&lt;/code&gt; before modifications&lt;/li&gt; 
+ &lt;li&gt;Use appropriate creation tools based on needs: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;code&gt;create_frame&lt;/code&gt; for containers&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;create_rectangle&lt;/code&gt; for basic shapes&lt;/li&gt; 
+   &lt;li&gt;&lt;code&gt;create_text&lt;/code&gt; for text elements&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Verify changes using &lt;code&gt;get_node_info&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;Use component instances when possible for consistency&lt;/li&gt; 
+ &lt;li&gt;Handle errors appropriately as all commands can throw exceptions&lt;/li&gt; 
+ &lt;li&gt;For large designs: 
+  &lt;ul&gt; 
+   &lt;li&gt;Use chunking parameters in &lt;code&gt;scan_text_nodes&lt;/code&gt;&lt;/li&gt; 
+   &lt;li&gt;Monitor progress through WebSocket updates&lt;/li&gt; 
+   &lt;li&gt;Implement appropriate error handling&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;For text operations: 
+  &lt;ul&gt; 
+   &lt;li&gt;Use batch operations when possible&lt;/li&gt; 
+   &lt;li&gt;Consider structural relationships&lt;/li&gt; 
+   &lt;li&gt;Verify changes with targeted exports&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;For converting legacy annotations: 
+  &lt;ul&gt; 
+   &lt;li&gt;Scan text nodes to identify numbered markers and descriptions&lt;/li&gt; 
+   &lt;li&gt;Use &lt;code&gt;scan_nodes_by_types&lt;/code&gt; to find UI elements that annotations refer to&lt;/li&gt; 
+   &lt;li&gt;Match markers with their target elements using path, name, or proximity&lt;/li&gt; 
+   &lt;li&gt;Categorize annotations appropriately with &lt;code&gt;get_annotations&lt;/code&gt;&lt;/li&gt; 
+   &lt;li&gt;Create native annotations with &lt;code&gt;set_multiple_annotations&lt;/code&gt; in batches&lt;/li&gt; 
+   &lt;li&gt;Verify all annotations are properly linked to their targets&lt;/li&gt; 
+   &lt;li&gt;Delete legacy annotation nodes after successful conversion&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Visualize prototype noodles as FigJam connectors:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Use &lt;code&gt;get_reactions&lt;/code&gt; to extract prototype flows,&lt;/li&gt; 
+ &lt;li&gt;set a default connector with &lt;code&gt;set_default_connector&lt;/code&gt;,&lt;/li&gt; 
+ &lt;li&gt;and generate connector lines with &lt;code&gt;create_connections&lt;/code&gt; for clear visual flow mapping.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>zoicware/RemoveWindowsAI</title>
+      <link>https://github.com/zoicware/RemoveWindowsAI</link>
+      <description>&lt;p&gt;Force Remove Copilot, Recall and More in Windows 11&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Remove Windows Ai&lt;/h1&gt; 
+&lt;h2&gt;Why?&lt;/h2&gt; 
+&lt;p&gt;The current 25H2 build of Windows 11 and future builds will include increasingly more AI features and components. This script aims to remove ALL of these features to improve user experience, privacy and security.&lt;/p&gt; 
+&lt;img width="150" alt="AI-Explorer-icon" src="https://github.com/zoicware/RemoveWindowsAI/assets/118035521/33efb033-c935-416c-977d-777bb69a3737" /&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Script Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Disable Registry Keys&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Disable Copilot&lt;/li&gt; 
+   &lt;li&gt;Disable Recall&lt;/li&gt; 
+   &lt;li&gt;Disable Input Insights and typing data harvesting&lt;/li&gt; 
+   &lt;li&gt;Copilot in Edge&lt;/li&gt; 
+   &lt;li&gt;Image Creator in Paint&lt;/li&gt; 
+   &lt;li&gt;Remove AI Fabric Service&lt;/li&gt; 
+   &lt;li&gt;Disable AI Actions&lt;/li&gt; 
+   &lt;li&gt;Disable AI in Paint&lt;/li&gt; 
+   &lt;li&gt;Disable Voice Access&lt;/li&gt; 
+   &lt;li&gt;Disable AI Voice Effects&lt;/li&gt; 
+   &lt;li&gt;Disable AI in Settings Search&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Prevent Reinstall of AI Packages&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Installs custom Windows Update package to prevent reinstall of AI packages in the CBS (Component-Based Servicing) store&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Disable Copilot policies&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Disables policies related to Copilot and Recall in IntegratedServicesRegionPolicySet.json&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Remove AI Appx Packages&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Removes all AI appx packages including &lt;code&gt;Nonremovable&lt;/code&gt; packages and WindowsWorkload&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Remove Recall Optional Feature&lt;/strong&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Remove AI Packages in CBS&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;This will remove hidden and locked AI packages in the CBS (Component-Based Servicing) store&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Remove AI Files&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;This will do a full system cleanup removing all remaining AI installers, registry keys, and package files&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Hide AI Components&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;This will hide the settings page &lt;code&gt;AI Components&lt;/code&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Disable Rewrite AI Feature in Notepad&lt;/strong&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Remove Recall Tasks&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Forcibly removes all instances of Recall's scheduled tasks&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;h4&gt;Install Classic Apps&lt;/h4&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;These options will allow you to replace the modern AI infested apps with their classic version&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Options:&lt;/strong&gt; Replace Notepad, Paint, Snipping Tool, Photo Viewer, and Install Photos Legacy&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Manual AI Disabling&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Unfortunately, not all features and settings can be disabled via a script. This guide will show additional AI features to disable.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/zoicware/RemoveWindowsAI/raw/main/OtherAIFeatures.md"&gt;Disable Other AI Features&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Read the Script Docs Here&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/zoicware/RemoveWindowsAI/raw/main/Documentation.md"&gt;Documentation&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!WARNING] Some third party anti-viruses will falsely detect the script as malicious, obviously this is a false positive and the anti-virus will need to be temporarily disabled or set the script as an exclusion.&lt;/p&gt; 
+ &lt;p&gt;Due to the nature of making advanced changes to the system many debloat tools/scripts will be falsely detected as malware... if you are unsure about the script I always recommend testing any software in a virtual machine first&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;How to Use&lt;/h3&gt; 
+&lt;h4&gt;Run From Powershell Console as Administrator&lt;/h4&gt; 
+&lt;hr /&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!WARNING] Running the script with PowerShell 7 is no longer supported and it WILL cause issues, to avoid this ensure you are running Windows PowerShell (5.1)&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Launch with UI&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-PowerShell"&gt;&amp;amp; ([scriptblock]::Create((irm "https://raw.githubusercontent.com/zoicware/RemoveWindowsAI/main/RemoveWindowsAi.ps1")))
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Compact Command:&lt;/h3&gt; 
+&lt;h5&gt;Link shortened using open source link shortener: &lt;a href="https://kutt.it/"&gt;https://kutt.it/&lt;/a&gt;&lt;/h5&gt; 
+&lt;pre&gt;&lt;code class="language-PowerShell"&gt;&amp;amp; ([scriptblock]::Create((irm 'https://kutt.it/RWAI')))
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Click to View UI&lt;/summary&gt; 
+ &lt;img width="586" height="693" alt="Capture2" src="https://github.com/user-attachments/assets/fa105ba5-c1dc-447c-ae2e-7ee373291042" /&gt; 
+ &lt;img width="586" height="693" alt="Capture2" src="https://github.com/user-attachments/assets/8a446a23-7c47-468e-856b-1e783205c511" /&gt; 
+&lt;/details&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;h3&gt;Command Line Options&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Run in Non-Interactive Mode with All Options&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-PowerShell"&gt;&amp;amp; ([scriptblock]::Create((irm "https://raw.githubusercontent.com/zoicware/RemoveWindowsAI/main/RemoveWindowsAi.ps1"))) -nonInteractive -AllOptions
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Run with Specific Options Example&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-PowerShell"&gt;&amp;amp; ([scriptblock]::Create((irm "https://raw.githubusercontent.com/zoicware/RemoveWindowsAI/main/RemoveWindowsAi.ps1"))) -nonInteractive -Options DisableRegKeys,RemoveAppxPackages,DisableCopilotPolicies 
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;All Possible Options:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;DisableRegKeys          
+PreventAIPackageReinstall     
+DisableCopilotPolicies       
+RemoveAppxPackages        
+RemoveRecallFeature 
+RemoveCBSPackages         
+RemoveAIFiles               
+HideAIComponents            
+DisableRewrite      
+RemoveRecallTasks
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Run Install Classic Apps&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-PowerShell"&gt;&amp;amp; ([scriptblock]::Create((irm "https://raw.githubusercontent.com/zoicware/RemoveWindowsAI/main/RemoveWindowsAi.ps1"))) -nonInteractive -InstallClassicApps photoviewer,mspaint,snippingtool,notepad  
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;All Possible Options:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;photoviewer          
+mspaint     
+snippingtool       
+notepad        
+photoslegacy 
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Run with Backup Mode Enabled&lt;/strong&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] Backup Mode needs to be enabled to be able to fully revert&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;pre&gt;&lt;code class="language-PowerShell"&gt;&amp;amp; ([scriptblock]::Create((irm "https://raw.githubusercontent.com/zoicware/RemoveWindowsAI/main/RemoveWindowsAi.ps1"))) -nonInteractive -backupMode -AllOptions
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Revert Changes&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-PowerShell"&gt;&amp;amp; ([scriptblock]::Create((irm "https://raw.githubusercontent.com/zoicware/RemoveWindowsAI/main/RemoveWindowsAi.ps1"))) -nonInteractive -revertMode -AllOptions
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Updates&lt;/h3&gt; 
+&lt;p&gt;Given that Microsoft are continually updating and adding new AI features this script will attempt to stay updated for the newest stable build.&lt;/p&gt; 
+&lt;p&gt;You can view the newest updates to the script here: &lt;a href="https://github.com/zoicware/RemoveWindowsAI/commits/main/"&gt;https://github.com/zoicware/RemoveWindowsAI/commits/main/&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE]&lt;br /&gt; Any feature added to an Insider build will not be added to this script till it's added to the latest stable release&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] &lt;strong&gt;Submitting an AI Feature&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;If you find an AI feature or registry key that is not currently removed or disabled by the script submit an issue with as much information as possible and I will add it to the script.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Donation&lt;/h3&gt; 
+&lt;p&gt;If you would like to support my work consider donating :)&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.buymeacoffee.com/zoicware"&gt;&lt;img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="&amp;quot;Buy Me A Coffee&amp;quot;" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Join The Discord&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://discord.gg/VsC7XS5vgA"&gt;&lt;img src="https://discordapp.com/api/guilds/1173717737017716777/widget.png?style=banner1" alt="Discord" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;YT Guide&lt;/h3&gt; 
+&lt;h4&gt;&lt;a href="https://youtu.be/j5_eEBWGHFw"&gt;How to Remove ALL Windows AI Features&lt;/a&gt;&lt;/h4&gt;</description>
+    </item>
+    
+    <item>
+      <title>obra/superpowers</title>
+      <link>https://github.com/obra/superpowers</link>
+      <description>&lt;p&gt;Claude Code superpowers: core skills library&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Superpowers&lt;/h1&gt; 
+&lt;p&gt;Superpowers is a complete software development workflow for your coding agents, built on top of a set of composable "skills" and some initial instructions that make sure your agent uses them.&lt;/p&gt; 
+&lt;h2&gt;How it works&lt;/h2&gt; 
+&lt;p&gt;It starts from the moment you fire up your coding agent. As soon as it sees that you're building something, it &lt;em&gt;doesn't&lt;/em&gt; just jump into trying to write code. Instead, it steps back and asks you what you're really trying to do.&lt;/p&gt; 
+&lt;p&gt;Once it's teased a spec out of the conversation, it shows it to you in chunks short enough to actually read and digest.&lt;/p&gt; 
+&lt;p&gt;After you've signed off on the design, your agent puts together an implementation plan that's clear enough for an enthusiastic junior engineer with poor taste, no judgement, no project context, and an aversion to testing to follow. It emphasizes true red/green TDD, YAGNI (You Aren't Gonna Need It), and DRY.&lt;/p&gt; 
+&lt;p&gt;Next up, once you say "go", it launches a &lt;em&gt;subagent-driven-development&lt;/em&gt; process, having agents work through each engineering task, inspecting and reviewing their work, and continuing forward. It's not uncommon for Claude to be able to work autonomously for a couple hours at a time without deviating from the plan you put together.&lt;/p&gt; 
+&lt;p&gt;There's a bunch more to it, but that's the core of the system. And because the skills trigger automatically, you don't need to do anything special. Your coding agent just has Superpowers.&lt;/p&gt; 
+&lt;h2&gt;Sponsorship&lt;/h2&gt; 
+&lt;p&gt;If Superpowers has helped you do stuff that makes money and you are so inclined, I'd greatly appreciate it if you'd consider &lt;a href="https://github.com/sponsors/obra"&gt;sponsoring my opensource work&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Thanks!&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Jesse&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Installation differs by platform. Claude Code has a built-in plugin system. Codex and OpenCode require manual setup.&lt;/p&gt; 
+&lt;h3&gt;Claude Code (via Plugin Marketplace)&lt;/h3&gt; 
+&lt;p&gt;In Claude Code, register the marketplace first:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/plugin marketplace add obra/superpowers-marketplace
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then install the plugin from this marketplace:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/plugin install superpowers@superpowers-marketplace
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Verify Installation&lt;/h3&gt; 
+&lt;p&gt;Check that commands appear:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/help
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code&gt;# Should see:
+# /superpowers:brainstorm - Interactive design refinement
+# /superpowers:write-plan - Create implementation plan
+# /superpowers:execute-plan - Execute plan in batches
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Codex&lt;/h3&gt; 
+&lt;p&gt;Tell Codex:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.codex/INSTALL.md
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Detailed docs:&lt;/strong&gt; &lt;a href="https://raw.githubusercontent.com/obra/superpowers/main/docs/README.codex.md"&gt;docs/README.codex.md&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;OpenCode&lt;/h3&gt; 
+&lt;p&gt;Tell OpenCode:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INSTALL.md
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Detailed docs:&lt;/strong&gt; &lt;a href="https://raw.githubusercontent.com/obra/superpowers/main/docs/README.opencode.md"&gt;docs/README.opencode.md&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;The Basic Workflow&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;brainstorming&lt;/strong&gt; - Activates before writing code. Refines rough ideas through questions, explores alternatives, presents design in sections for validation. Saves design document.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;using-git-worktrees&lt;/strong&gt; - Activates after design approval. Creates isolated workspace on new branch, runs project setup, verifies clean test baseline.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;writing-plans&lt;/strong&gt; - Activates with approved design. Breaks work into bite-sized tasks (2-5 minutes each). Every task has exact file paths, complete code, verification steps.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;subagent-driven-development&lt;/strong&gt; or &lt;strong&gt;executing-plans&lt;/strong&gt; - Activates with plan. Dispatches fresh subagent per task with two-stage review (spec compliance, then code quality), or executes in batches with human checkpoints.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;test-driven-development&lt;/strong&gt; - Activates during implementation. Enforces RED-GREEN-REFACTOR: write failing test, watch it fail, write minimal code, watch it pass, commit. Deletes code written before tests.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;requesting-code-review&lt;/strong&gt; - Activates between tasks. Reviews against plan, reports issues by severity. Critical issues block progress.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;finishing-a-development-branch&lt;/strong&gt; - Activates when tasks complete. Verifies tests, presents options (merge/PR/keep/discard), cleans up worktree.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;The agent checks for relevant skills before any task.&lt;/strong&gt; Mandatory workflows, not suggestions.&lt;/p&gt; 
+&lt;h2&gt;What's Inside&lt;/h2&gt; 
+&lt;h3&gt;Skills Library&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Testing&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;test-driven-development&lt;/strong&gt; - RED-GREEN-REFACTOR cycle (includes testing anti-patterns reference)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Debugging&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;systematic-debugging&lt;/strong&gt; - 4-phase root cause process (includes root-cause-tracing, defense-in-depth, condition-based-waiting techniques)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;verification-before-completion&lt;/strong&gt; - Ensure it's actually fixed&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Collaboration&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;brainstorming&lt;/strong&gt; - Socratic design refinement&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;writing-plans&lt;/strong&gt; - Detailed implementation plans&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;executing-plans&lt;/strong&gt; - Batch execution with checkpoints&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;dispatching-parallel-agents&lt;/strong&gt; - Concurrent subagent workflows&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;requesting-code-review&lt;/strong&gt; - Pre-review checklist&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;receiving-code-review&lt;/strong&gt; - Responding to feedback&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;using-git-worktrees&lt;/strong&gt; - Parallel development branches&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;finishing-a-development-branch&lt;/strong&gt; - Merge/PR decision workflow&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;subagent-driven-development&lt;/strong&gt; - Fast iteration with two-stage review (spec compliance, then code quality)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Meta&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;writing-skills&lt;/strong&gt; - Create new skills following best practices (includes testing methodology)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;using-superpowers&lt;/strong&gt; - Introduction to the skills system&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Philosophy&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Test-Driven Development&lt;/strong&gt; - Write tests first, always&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Systematic over ad-hoc&lt;/strong&gt; - Process over guessing&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Complexity reduction&lt;/strong&gt; - Simplicity as primary goal&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Evidence over claims&lt;/strong&gt; - Verify before declaring success&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Read more: &lt;a href="https://blog.fsck.com/2025/10/09/superpowers/"&gt;Superpowers for Claude Code&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Skills live directly in this repository. To contribute:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork the repository&lt;/li&gt; 
+ &lt;li&gt;Create a branch for your skill&lt;/li&gt; 
+ &lt;li&gt;Follow the &lt;code&gt;writing-skills&lt;/code&gt; skill for creating and testing new skills&lt;/li&gt; 
+ &lt;li&gt;Submit a PR&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;See &lt;code&gt;skills/writing-skills/SKILL.md&lt;/code&gt; for the complete guide.&lt;/p&gt; 
+&lt;h2&gt;Updating&lt;/h2&gt; 
+&lt;p&gt;Skills update automatically when you update the plugin:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/plugin update superpowers
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT License - see LICENSE file for details&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Issues&lt;/strong&gt;: &lt;a href="https://github.com/obra/superpowers/issues"&gt;https://github.com/obra/superpowers/issues&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Marketplace&lt;/strong&gt;: &lt;a href="https://github.com/obra/superpowers-marketplace"&gt;https://github.com/obra/superpowers-marketplace&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>twitter/the-algorithm</title>
+      <link>https://github.com/twitter/the-algorithm</link>
+      <description>&lt;p&gt;Source code for the X Recommendation Algorithm&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;X's Recommendation Algorithm&lt;/h1&gt; 
+&lt;p&gt;X's Recommendation Algorithm is a set of services and jobs that are responsible for serving feeds of posts and other content across all X product surfaces (e.g. For You Timeline, Search, Explore, Notifications). For an introduction to how the algorithm works, please refer to our &lt;a href="https://blog.x.com/engineering/en_us/topics/open-source/2023/twitter-recommendation-algorithm"&gt;engineering blog&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Architecture&lt;/h2&gt; 
+&lt;p&gt;Product surfaces at X are built on a shared set of data, models, and software frameworks. The shared components included in this repository are listed below:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Type&lt;/th&gt; 
+   &lt;th&gt;Component&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Data&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/tweetypie/server/README.md"&gt;tweetypie&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Core service that handles the reading and writing of post data.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/unified_user_actions/README.md"&gt;unified-user-actions&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Real-time stream of user actions on X.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/user-signal-service/README.md"&gt;user-signal-service&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Centralized platform to retrieve explicit (e.g. likes, replies) and implicit (e.g. profile visits, tweet clicks) user signals.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Model&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/src/scala/com/twitter/simclusters_v2/README.md"&gt;SimClusters&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Community detection and sparse embeddings into those communities.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/twitter/the-algorithm-ml/raw/main/projects/twhin/README.md"&gt;TwHIN&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Dense knowledge graph embeddings for Users and Posts.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/trust_and_safety_models/README.md"&gt;trust-and-safety-models&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Models for detecting NSFW or abusive content.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/src/scala/com/twitter/interaction_graph/README.md"&gt;real-graph&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Model to predict the likelihood of an X User interacting with another User.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/src/scala/com/twitter/graph/batch/job/tweepcred/README"&gt;tweepcred&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Page-Rank algorithm for calculating X User reputation.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/recos-injector/README.md"&gt;recos-injector&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Streaming event processor for building input streams for &lt;a href="https://github.com/twitter/GraphJet"&gt;GraphJet&lt;/a&gt; based services.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/graph-feature-service/README.md"&gt;graph-feature-service&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Serves graph features for a directed pair of users (e.g. how many of User A's following liked posts from User B).&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/topic-social-proof/README.md"&gt;topic-social-proof&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Identifies topics related to individual posts.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/representation-scorer/README.md"&gt;representation-scorer&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Compute scores between pairs of entities (Users, Posts, etc.) using embedding similarity.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Software framework&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/navi/README.md"&gt;navi&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;High performance, machine learning model serving written in Rust.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/product-mixer/README.md"&gt;product-mixer&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Software framework for building feeds of content.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/timelines/data_processing/ml_util/aggregation_framework/README.md"&gt;timelines-aggregation-framework&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Framework for generating aggregate features in batch or real time.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/representation-manager/README.md"&gt;representation-manager&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Service to retrieve embeddings (i.e. SimClusers and TwHIN).&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/twml/README.md"&gt;twml&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Legacy machine learning framework built on TensorFlow v1.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;The product surfaces currently included in this repository are the For You Timeline and Recommended Notifications.&lt;/p&gt; 
+&lt;h3&gt;For You Timeline&lt;/h3&gt; 
+&lt;p&gt;The diagram below illustrates how major services and jobs interconnect to construct a For You Timeline.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/twitter/the-algorithm/main/docs/system-diagram.png" alt="" /&gt;&lt;/p&gt; 
+&lt;p&gt;The core components of the For You Timeline included in this repository are listed below:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Type&lt;/th&gt; 
+   &lt;th&gt;Component&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Candidate Source&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/src/java/com/twitter/search/README.md"&gt;search-index&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Find and rank In-Network posts. ~50% of posts come from this candidate source.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/tweet-mixer"&gt;tweet-mixer&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Coordination layer for fetching Out-of-Network tweet candidates from underlying compute services.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/src/scala/com/twitter/recos/user_tweet_entity_graph/README.md"&gt;user-tweet-entity-graph&lt;/a&gt; (UTEG)&lt;/td&gt; 
+   &lt;td&gt;Maintains an in memory User to Post interaction graph, and finds candidates based on traversals of this graph. This is built on the &lt;a href="https://github.com/twitter/GraphJet"&gt;GraphJet&lt;/a&gt; framework. Several other GraphJet based features and candidate sources are located &lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/src/scala/com/twitter/recos"&gt;here&lt;/a&gt;.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/follow-recommendations-service/README.md"&gt;follow-recommendation-service&lt;/a&gt; (FRS)&lt;/td&gt; 
+   &lt;td&gt;Provides Users with recommendations for accounts to follow, and posts from those accounts.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Ranking&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/src/python/twitter/deepbird/projects/timelines/scripts/models/earlybird/README.md"&gt;light-ranker&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Light Ranker model used by search index (Earlybird) to rank posts.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/twitter/the-algorithm-ml/raw/main/projects/home/recap/README.md"&gt;heavy-ranker&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Neural network for ranking candidate posts. One of the main signals used to select timeline posts post candidate sourcing.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Post mixing &amp;amp; filtering&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/home-mixer/README.md"&gt;home-mixer&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Main service used to construct and serve the Home Timeline. Built on &lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/product-mixer/README.md"&gt;product-mixer&lt;/a&gt;.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/visibilitylib/README.md"&gt;visibility-filters&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Responsible for filtering X content to support legal compliance, improve product quality, increase user trust, protect revenue through the use of hard-filtering, visible product treatments, and coarse-grained downranking.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/timelineranker/README.md"&gt;timelineranker&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Legacy service which provides relevance-scored posts from the Earlybird Search Index and UTEG service.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Recommended Notifications&lt;/h3&gt; 
+&lt;p&gt;The core components of Recommended Notifications included in this repository are listed below:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Type&lt;/th&gt; 
+   &lt;th&gt;Component&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Service&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/pushservice/README.md"&gt;pushservice&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Main recommendation service at X used to surface recommendations to our users via notifications.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Ranking&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/pushservice/src/main/python/models/light_ranking/README.md"&gt;pushservice-light-ranker&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Light Ranker model used by pushservice to rank posts. Bridges candidate generation and heavy ranking by pre-selecting highly-relevant candidates from the initial huge candidate pool.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/pushservice/src/main/python/models/heavy_ranking/README.md"&gt;pushservice-heavy-ranker&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Multi-task learning model to predict the probabilities that the target users will open and engage with the sent notifications.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Build and test code&lt;/h2&gt; 
+&lt;p&gt;We include Bazel BUILD files for most components, but not a top-level BUILD or WORKSPACE file. We plan to add a more complete build and test system in the future.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We invite the community to submit GitHub issues and pull requests for suggestions on improving the recommendation algorithm. We are working on tools to manage these suggestions and sync changes to our internal repository. Any security concerns or issues should be routed to our official &lt;a href="https://hackerone.com/x"&gt;bug bounty program&lt;/a&gt; through HackerOne. We hope to benefit from the collective intelligence and expertise of the global community in helping us identify issues and suggest improvements, ultimately leading to a better X.&lt;/p&gt; 
+&lt;p&gt;Read our blog on the open source initiative &lt;a href="https://blog.x.com/en_us/topics/company/2023/a-new-era-of-transparency-for-twitter"&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>rancher/rancher</title>
+      <link>https://github.com/rancher/rancher</link>
+      <description>&lt;p&gt;Complete container management platform&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Rancher&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://store.docker.com/community/images/rancher/rancher"&gt;&lt;img src="https://img.shields.io/docker/pulls/rancher/rancher.svg?sanitize=true" alt="Docker Pulls" /&gt;&lt;/a&gt; &lt;a href="https://goreportcard.com/report/github.com/rancher/rancher"&gt;&lt;img src="https://goreportcard.com/badge/github.com/rancher/rancher" alt="Go Report Card" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Rancher is an open source container management platform built for organizations that deploy containers in production. Rancher makes it easy to run Kubernetes everywhere, meet IT requirements, and empower DevOps teams.&lt;/p&gt; 
+&lt;h2&gt;Stable Release&lt;/h2&gt; 
+&lt;!-- stable v2.13.1 DO NOT REMOVE THIS LINE --&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;v2.13 
+  &lt;ul&gt; 
+   &lt;li&gt;Stable - v2.13.1 - &lt;code&gt;rancher/rancher:v2.13.1&lt;/code&gt; / &lt;code&gt;rancher/rancher:stable&lt;/code&gt; - Read the full release &lt;a href="https://github.com/rancher/rancher/releases/tag/v2.13.1"&gt;notes&lt;/a&gt;.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;v2.12 
+  &lt;ul&gt; 
+   &lt;li&gt;Stable - v2.12.3 - &lt;code&gt;rancher/rancher:v2.12.3&lt;/code&gt; - Read the full release &lt;a href="https://github.com/rancher/rancher/releases/tag/v2.12.3"&gt;notes&lt;/a&gt;.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;v2.11 
+  &lt;ul&gt; 
+   &lt;li&gt;Stable - v2.11.3 - &lt;code&gt;rancher/rancher:v2.11.3&lt;/code&gt; - Read the full release &lt;a href="https://github.com/rancher/rancher/releases/tag/v2.11.3"&gt;notes&lt;/a&gt;.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;To get automated notifications of our latest release, you can watch the announcements category in our &lt;a href="http://forums.rancher.com/c/announcements"&gt;forums&lt;/a&gt;, or subscribe to the RSS feed &lt;code&gt;https://forums.rancher.com/c/announcements.rss&lt;/code&gt;.&lt;/p&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;sudo docker run -d --restart=unless-stopped -p 80:80 -p 443:443 --privileged rancher/rancher
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Open your browser to &lt;a href="https://localhost"&gt;https://localhost&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://ranchermanager.docs.rancher.com/v2.8/pages-for-subheaders/installation-and-upgrade"&gt;Installing/Upgrading Rancher&lt;/a&gt; for all installation options.&lt;/p&gt; 
+&lt;h3&gt;Minimum Requirements&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Operating Systems 
+  &lt;ul&gt; 
+   &lt;li&gt;Please see &lt;a href="https://rancher.com/support-matrix/"&gt;Support Matrix&lt;/a&gt; for specific OS versions for each Rancher version. Note that the link will default to the support matrix for the latest version of Rancher. Use the left navigation menu to select a different Rancher version.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Hardware &amp;amp; Software 
+  &lt;ul&gt; 
+   &lt;li&gt;Please see &lt;a href="https://ranchermanager.docs.rancher.com/v2.8/pages-for-subheaders/installation-requirements"&gt;Installation Requirements&lt;/a&gt; for hardware and software requirements.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Using Rancher&lt;/h3&gt; 
+&lt;p&gt;To learn more about using Rancher, please refer to our &lt;a href="https://ranchermanager.docs.rancher.com/v2.8"&gt;Rancher Documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Source Code&lt;/h2&gt; 
+&lt;p&gt;This repo is a meta-repo used for packaging and contains the majority of Rancher codebase. For other Rancher projects and modules, &lt;a href="https://github.com/rancher/rancher/raw/release/v2.8/go.mod"&gt;see go.mod&lt;/a&gt; for the full list.&lt;/p&gt; 
+&lt;p&gt;Rancher also includes other open source libraries and projects, &lt;a href="https://github.com/rancher/rancher/raw/release/v2.8/go.mod"&gt;see go.mod&lt;/a&gt; for the full list.&lt;/p&gt; 
+&lt;h2&gt;Build configuration&lt;/h2&gt; 
+&lt;p&gt;Refer to the &lt;a href="https://raw.githubusercontent.com/rancher/rancher/main/docs/build.md"&gt;build docs&lt;/a&gt; on how to customize the building and packaging of Rancher.&lt;/p&gt; 
+&lt;h2&gt;Support, Discussion, and Community&lt;/h2&gt; 
+&lt;p&gt;If you need any help with Rancher, please join us at either our &lt;a href="http://forums.rancher.com/"&gt;Rancher forums&lt;/a&gt; or &lt;a href="https://slack.rancher.io/"&gt;Slack&lt;/a&gt; where most of our team hangs out at.&lt;/p&gt; 
+&lt;p&gt;Please submit any Rancher bugs, issues, and feature requests to &lt;a href="https://github.com/rancher/rancher/issues"&gt;rancher/rancher&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;For security issues, please first check our &lt;a href="https://github.com/rancher/rancher/security"&gt;security policy&lt;/a&gt; and email &lt;a href="mailto:security-rancher@suse.com"&gt;security-rancher@suse.com&lt;/a&gt; instead of posting a public issue in GitHub. You may (but are not required to) use the GPG key located on &lt;a href="https://keybase.io/rancher"&gt;Keybase&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;License&lt;/h1&gt; 
+&lt;p&gt;Copyright (c) 2014-2025 &lt;a href="http://rancher.com"&gt;SUSE&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at&lt;/p&gt; 
+&lt;p&gt;&lt;a href="http://www.apache.org/licenses/LICENSE-2.0"&gt;http://www.apache.org/licenses/LICENSE-2.0&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mudler/LocalAI</title>
+      <link>https://github.com/mudler/LocalAI</link>
+      <description>&lt;p&gt;🤖 The free, Open Source alternative to OpenAI, Claude and others. Self-hosted and local-first. Drop-in replacement for OpenAI, running on consumer-grade hardware. No GPU required. Runs gguf, transformers, diffusers and many more. Features: Generate Text, MCP, Audio, Video, Images, Voice Cloning, Distributed, P2P and decentralized inference&lt;/p&gt;&lt;hr&gt;&lt;h1 align="center"&gt; &lt;br /&gt; &lt;img width="300" src="https://raw.githubusercontent.com/mudler/LocalAI/master/core/http/static/logo.png" /&gt; &lt;br /&gt; &lt;br /&gt; &lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/go-skynet/LocalAI/fork" target="blank"&gt; &lt;img src="https://img.shields.io/github/forks/go-skynet/LocalAI?style=for-the-badge" alt="LocalAI forks" /&gt; &lt;/a&gt; &lt;a href="https://github.com/go-skynet/LocalAI/stargazers" target="blank"&gt; &lt;img src="https://img.shields.io/github/stars/go-skynet/LocalAI?style=for-the-badge" alt="LocalAI stars" /&gt; &lt;/a&gt; &lt;a href="https://github.com/go-skynet/LocalAI/pulls" target="blank"&gt; &lt;img src="https://img.shields.io/github/issues-pr/go-skynet/LocalAI?style=for-the-badge" alt="LocalAI pull-requests" /&gt; &lt;/a&gt; &lt;a href="https://github.com/go-skynet/LocalAI/releases"&gt; &lt;img src="https://img.shields.io/github/release/go-skynet/LocalAI?&amp;amp;label=Latest&amp;amp;style=for-the-badge" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://hub.docker.com/r/localai/localai" target="blank"&gt; &lt;img src="https://img.shields.io/badge/dockerhub-images-important.svg?logo=Docker" alt="LocalAI Docker hub" /&gt; &lt;/a&gt; &lt;a href="https://quay.io/repository/go-skynet/local-ai?tab=tags&amp;amp;tag=latest" target="blank"&gt; &lt;img src="https://img.shields.io/badge/quay.io-images-important.svg?" alt="LocalAI Quay.io" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://twitter.com/LocalAI_API" target="blank"&gt; &lt;img src="https://img.shields.io/badge/X-%23000000.svg?style=for-the-badge&amp;amp;logo=X&amp;amp;logoColor=white&amp;amp;label=LocalAI_API" alt="Follow LocalAI_API" /&gt; &lt;/a&gt; &lt;a href="https://discord.gg/uJAeKSAGDy" target="blank"&gt; &lt;img src="https://img.shields.io/badge/dynamic/json?color=blue&amp;amp;label=Discord&amp;amp;style=for-the-badge&amp;amp;query=approximate_member_count&amp;amp;url=https%3A%2F%2Fdiscordapp.com%2Fapi%2Finvites%2FuJAeKSAGDy%3Fwith_counts%3Dtrue&amp;amp;logo=discord" alt="Join LocalAI Discord Community" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/5539" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/5539" alt="mudler%2FLocalAI | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;span&gt;💡&lt;/span&gt; Get help - &lt;a href="https://localai.io/faq/"&gt;❓FAQ&lt;/a&gt; &lt;a href="https://github.com/go-skynet/LocalAI/discussions"&gt;💭Discussions&lt;/a&gt; &lt;a href="https://discord.gg/uJAeKSAGDy"&gt;&lt;span&gt;💬&lt;/span&gt; Discord&lt;/a&gt; &lt;a href="https://localai.io/"&gt;&lt;span&gt;📖&lt;/span&gt; Documentation website&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://localai.io/basics/getting_started/"&gt;💻 Quickstart&lt;/a&gt; &lt;a href="https://models.localai.io/"&gt;🖼️ Models&lt;/a&gt; &lt;a href="https://github.com/mudler/LocalAI/issues?q=is%3Aissue+is%3Aopen+label%3Aroadmap"&gt;🚀 Roadmap&lt;/a&gt; &lt;a href="https://github.com/mudler/LocalAI-examples"&gt;🛫 Examples&lt;/a&gt; Try on &lt;a href="https://t.me/localaiofficial_bot"&gt;&lt;img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&amp;amp;logo=telegram&amp;amp;logoColor=white" alt="Telegram" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;a href="https://github.com/go-skynet/LocalAI/actions/workflows/test.yml"&gt;&lt;img src="https://github.com/go-skynet/LocalAI/actions/workflows/test.yml/badge.svg?sanitize=true" alt="tests" /&gt;&lt;/a&gt;&lt;a href="https://github.com/go-skynet/LocalAI/actions/workflows/release.yaml"&gt;&lt;img src="https://github.com/go-skynet/LocalAI/actions/workflows/release.yaml/badge.svg?sanitize=true" alt="Build and Release" /&gt;&lt;/a&gt;&lt;a href="https://github.com/go-skynet/LocalAI/actions/workflows/image.yml"&gt;&lt;img src="https://github.com/go-skynet/LocalAI/actions/workflows/image.yml/badge.svg?sanitize=true" alt="build container images" /&gt;&lt;/a&gt;&lt;a href="https://github.com/go-skynet/LocalAI/actions/workflows/bump_deps.yaml"&gt;&lt;img src="https://github.com/go-skynet/LocalAI/actions/workflows/bump_deps.yaml/badge.svg?sanitize=true" alt="Bump dependencies" /&gt;&lt;/a&gt;&lt;a href="https://artifacthub.io/packages/search?repo=localai"&gt;&lt;img src="https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/localai" alt="Artifact Hub" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;LocalAI&lt;/strong&gt; is the free, Open Source OpenAI alternative. LocalAI act as a drop-in replacement REST API that's compatible with OpenAI (Elevenlabs, Anthropic... ) API specifications for local AI inferencing. It allows you to run LLMs, generate images, audio (and not only) locally or on-prem with consumer grade hardware, supporting multiple model families. Does not require GPU. It is created and maintained by &lt;a href="https://github.com/mudler"&gt;Ettore Di Giacinto&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;📚🆕 Local Stack Family&lt;/h2&gt; 
+&lt;p&gt;🆕 LocalAI is now part of a comprehensive suite of AI tools designed to work together:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td width="50%" valign="top"&gt; &lt;a href="https://github.com/mudler/LocalAGI"&gt; &lt;img src="https://raw.githubusercontent.com/mudler/LocalAGI/refs/heads/main/webui/react-ui/public/logo_2.png" width="300" alt="LocalAGI Logo" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td width="50%" valign="top"&gt; &lt;h3&gt;&lt;a href="https://github.com/mudler/LocalAGI"&gt;LocalAGI&lt;/a&gt;&lt;/h3&gt; &lt;p&gt;A powerful Local AI agent management platform that serves as a drop-in replacement for OpenAI's Responses API, enhanced with advanced agentic capabilities.&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td width="50%" valign="top"&gt; &lt;a href="https://github.com/mudler/LocalRecall"&gt; &lt;img src="https://raw.githubusercontent.com/mudler/LocalRecall/refs/heads/main/static/localrecall_horizontal.png" width="300" alt="LocalRecall Logo" /&gt; &lt;/a&gt; &lt;/td&gt; 
+   &lt;td width="50%" valign="top"&gt; &lt;h3&gt;&lt;a href="https://github.com/mudler/LocalRecall"&gt;LocalRecall&lt;/a&gt;&lt;/h3&gt; &lt;p&gt;A REST-ful API and knowledge base management system that provides persistent memory and storage capabilities for AI agents.&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;Screenshots / Video&lt;/h2&gt; 
+&lt;h3&gt;Youtube video&lt;/h3&gt; 
+&lt;h1 align="center"&gt; &lt;br /&gt; &lt;a href="https://www.youtube.com/watch?v=PDqYhB9nNHA" target="_blank"&gt; &lt;img width="300" src="https://img.youtube.com/vi/PDqYhB9nNHA/0.jpg" /&gt; &lt;/a&gt;&lt;br /&gt; &lt;br /&gt; &lt;/h1&gt; 
+&lt;h3&gt;Screenshots&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Talk Interface&lt;/th&gt; 
+   &lt;th&gt;Generate Audio&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/mudler/LocalAI/master/docs/assets/images/screenshots/screenshot_tts.png" alt="Screenshot 2025-03-31 at 12-01-36 LocalAI - Talk" /&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/mudler/LocalAI/master/docs/assets/images/screenshots/screenshot_tts.png" alt="Screenshot 2025-03-31 at 12-01-29 LocalAI - Generate audio with voice-en-us-ryan-low" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Models Overview&lt;/th&gt; 
+   &lt;th&gt;Generate Images&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/mudler/LocalAI/master/docs/assets/images/screenshots/screenshot_gallery.png" alt="Screenshot 2025-03-31 at 12-01-20 LocalAI - Models" /&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/mudler/LocalAI/master/docs/assets/images/screenshots/screenshot_image.png" alt="Screenshot 2025-03-31 at 12-31-41 LocalAI - Generate images with flux 1-dev" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Chat Interface&lt;/th&gt; 
+   &lt;th&gt;Home&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/mudler/LocalAI/master/docs/assets/images/screenshots/screenshot_chat.png" alt="Screenshot 2025-03-31 at 11-57-44 LocalAI - Chat with localai-functioncall-qwen2 5-7b-v0 5" /&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/mudler/LocalAI/master/docs/assets/images/screenshots/screenshot_home.png" alt="Screenshot 2025-03-31 at 11-57-23 LocalAI API - c2a39e3 (c2a39e3639227cfd94ffffe9f5691239acc275a8)" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Login&lt;/th&gt; 
+   &lt;th&gt;Swarm&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/mudler/LocalAI/master/docs/assets/images/screenshots/screenshot_login.png" alt="Screenshot 2025-03-31 at 12-09-59 " /&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/mudler/LocalAI/master/docs/assets/images/screenshots/screenshot_p2p.png" alt="Screenshot 2025-03-31 at 12-10-39 LocalAI - P2P dashboard" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;💻 Quickstart&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;⚠️ &lt;strong&gt;Note:&lt;/strong&gt; The &lt;code&gt;install.sh&lt;/code&gt; script is currently experiencing issues due to the heavy changes currently undergoing in LocalAI and may produce broken or misconfigured installations. Please use Docker installation (see below) or manual binary installation until &lt;a href="https://github.com/mudler/LocalAI/issues/8032"&gt;issue #8032&lt;/a&gt; is resolved.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Run the installer script:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Basic installation
+curl https://localai.io/install.sh | sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For more installation options, see &lt;a href="https://localai.io/installation/"&gt;Installer Options&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;macOS Download:&lt;/h3&gt; 
+&lt;a href="https://github.com/mudler/LocalAI/releases/latest/download/LocalAI.dmg"&gt; &lt;img src="https://img.shields.io/badge/Download-macOS-blue?style=for-the-badge&amp;amp;logo=apple&amp;amp;logoColor=white" alt="Download LocalAI for macOS" /&gt; &lt;/a&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Note: the DMGs are not signed by Apple as quarantined. See &lt;a href="https://github.com/mudler/LocalAI/issues/6268"&gt;https://github.com/mudler/LocalAI/issues/6268&lt;/a&gt; for a workaround, fix is tracked here: &lt;a href="https://github.com/mudler/LocalAI/issues/6244"&gt;https://github.com/mudler/LocalAI/issues/6244&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Containers (Docker, podman, ...)&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;💡 Docker Run vs Docker Start&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;code&gt;docker run&lt;/code&gt; creates and starts a new container. If a container with the same name already exists, this command will fail.&lt;/li&gt; 
+  &lt;li&gt;&lt;code&gt;docker start&lt;/code&gt; starts an existing container that was previously created with &lt;code&gt;docker run&lt;/code&gt;.&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;p&gt;If you've already run LocalAI before and want to start it again, use: &lt;code&gt;docker start -i local-ai&lt;/code&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h4&gt;CPU only image:&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -ti --name local-ai -p 8080:8080 localai/localai:latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;NVIDIA GPU Images:&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# CUDA 13.0
+docker run -ti --name local-ai -p 8080:8080 --gpus all localai/localai:latest-gpu-nvidia-cuda-13
+
+# CUDA 12.0
+docker run -ti --name local-ai -p 8080:8080 --gpus all localai/localai:latest-gpu-nvidia-cuda-12
+
+# NVIDIA Jetson (L4T) ARM64
+# CUDA 12 (for Nvidia AGX Orin and similar platforms)
+docker run -ti --name local-ai -p 8080:8080 --gpus all localai/localai:latest-nvidia-l4t-arm64
+
+# CUDA 13 (for Nvidia DGX Spark)
+docker run -ti --name local-ai -p 8080:8080 --gpus all localai/localai:latest-nvidia-l4t-arm64-cuda-13
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;AMD GPU Images (ROCm):&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -ti --name local-ai -p 8080:8080 --device=/dev/kfd --device=/dev/dri --group-add=video localai/localai:latest-gpu-hipblas
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Intel GPU Images (oneAPI):&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -ti --name local-ai -p 8080:8080 --device=/dev/dri/card1 --device=/dev/dri/renderD128 localai/localai:latest-gpu-intel
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Vulkan GPU Images:&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -ti --name local-ai -p 8080:8080 localai/localai:latest-gpu-vulkan
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;AIO Images (pre-downloaded models):&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# CPU version
+docker run -ti --name local-ai -p 8080:8080 localai/localai:latest-aio-cpu
+
+# NVIDIA CUDA 13 version
+docker run -ti --name local-ai -p 8080:8080 --gpus all localai/localai:latest-aio-gpu-nvidia-cuda-13
+
+# NVIDIA CUDA 12 version
+docker run -ti --name local-ai -p 8080:8080 --gpus all localai/localai:latest-aio-gpu-nvidia-cuda-12
+
+# Intel GPU version
+docker run -ti --name local-ai -p 8080:8080 localai/localai:latest-aio-gpu-intel
+
+# AMD GPU version
+docker run -ti --name local-ai -p 8080:8080 --device=/dev/kfd --device=/dev/dri --group-add=video localai/localai:latest-aio-gpu-hipblas
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For more information about the AIO images and pre-downloaded models, see &lt;a href="https://localai.io/basics/container/"&gt;Container Documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;To load models:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# From the model gallery (see available models with `local-ai models list`, in the WebUI from the model tab, or visiting https://models.localai.io)
+local-ai run llama-3.2-1b-instruct:q4_k_m
+# Start LocalAI with the phi-2 model directly from huggingface
+local-ai run huggingface://TheBloke/phi-2-GGUF/phi-2.Q8_0.gguf
+# Install and run a model from the Ollama OCI registry
+local-ai run ollama://gemma:2b
+# Run a model from a configuration file
+local-ai run https://gist.githubusercontent.com/.../phi-2.yaml
+# Install and run a model from a standard OCI registry (e.g., Docker Hub)
+local-ai run oci://localai/phi-2:latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;⚡ &lt;strong&gt;Automatic Backend Detection&lt;/strong&gt;: When you install models from the gallery or YAML files, LocalAI automatically detects your system's GPU capabilities (NVIDIA, AMD, Intel) and downloads the appropriate backend. For advanced configuration options, see &lt;a href="https://localai.io/features/gpu-acceleration/#automatic-backend-detection"&gt;GPU Acceleration&lt;/a&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;For more information, see &lt;a href="https://localai.io/basics/getting_started/index.html"&gt;💻 Getting started&lt;/a&gt;, if you are interested in our roadmap items and future enhancements, you can see the &lt;a href="https://github.com/mudler/LocalAI/issues?q=is%3Aissue+is%3Aopen+label%3Aroadmap"&gt;Issues labeled as Roadmap here&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;📰 Latest project news&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;December 2025: &lt;a href="https://github.com/mudler/LocalAI/pull/7583"&gt;Dynamic Memory Resource reclaimer&lt;/a&gt;, &lt;a href="https://github.com/mudler/LocalAI/pull/7584"&gt;Automatic fitting of models to multiple GPUS(llama.cpp)&lt;/a&gt;, &lt;a href="https://github.com/mudler/LocalAI/pull/7494"&gt;Added Vibevoice backend&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;November 2025: Major improvements to the UX. Among these: &lt;a href="https://github.com/mudler/LocalAI/pull/7245"&gt;Import models via URL&lt;/a&gt; and &lt;a href="https://github.com/mudler/LocalAI/pull/7325"&gt;Multiple chats and history&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;October 2025: 🔌 &lt;a href="https://localai.io/docs/features/mcp/"&gt;Model Context Protocol (MCP)&lt;/a&gt; support added for agentic capabilities with external tools&lt;/li&gt; 
+ &lt;li&gt;September 2025: New Launcher application for MacOS and Linux, extended support to many backends for Mac and Nvidia L4T devices. Models: Added MLX-Audio, WAN 2.2. WebUI improvements and Python-based backends now ships portable python environments.&lt;/li&gt; 
+ &lt;li&gt;August 2025: MLX, MLX-VLM, Diffusers and llama.cpp are now supported on Mac M1/M2/M3+ chips ( with &lt;code&gt;development&lt;/code&gt; suffix in the gallery ): &lt;a href="https://github.com/mudler/LocalAI/pull/6049"&gt;https://github.com/mudler/LocalAI/pull/6049&lt;/a&gt; &lt;a href="https://github.com/mudler/LocalAI/pull/6119"&gt;https://github.com/mudler/LocalAI/pull/6119&lt;/a&gt; &lt;a href="https://github.com/mudler/LocalAI/pull/6121"&gt;https://github.com/mudler/LocalAI/pull/6121&lt;/a&gt; &lt;a href="https://github.com/mudler/LocalAI/pull/6060"&gt;https://github.com/mudler/LocalAI/pull/6060&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;July/August 2025: 🔍 &lt;a href="https://localai.io/features/object-detection/"&gt;Object Detection&lt;/a&gt; added to the API featuring &lt;a href="https://github.com/roboflow/rf-detr"&gt;rf-detr&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;July 2025: All backends migrated outside of the main binary. LocalAI is now more lightweight, small, and automatically downloads the required backend to run the model. &lt;a href="https://github.com/mudler/LocalAI/releases/tag/v3.2.0"&gt;Read the release notes&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;June 2025: &lt;a href="https://github.com/mudler/LocalAI/pull/5607"&gt;Backend management&lt;/a&gt; has been added. Attention: extras images are going to be deprecated from the next release! Read &lt;a href="https://github.com/mudler/LocalAI/pull/5607"&gt;the backend management PR&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;May 2025: &lt;a href="https://github.com/mudler/LocalAI/pull/5466"&gt;Audio input&lt;/a&gt; and &lt;a href="https://github.com/mudler/LocalAI/pull/5396"&gt;Reranking&lt;/a&gt; in llama.cpp backend, &lt;a href="https://github.com/mudler/LocalAI/pull/5392"&gt;Realtime API&lt;/a&gt;, Support to Gemma, SmollVLM, and more multimodal models (available in the gallery).&lt;/li&gt; 
+ &lt;li&gt;May 2025: Important: image name changes &lt;a href="https://github.com/mudler/LocalAI/releases/tag/v2.29.0"&gt;See release&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Apr 2025: Rebrand, WebUI enhancements&lt;/li&gt; 
+ &lt;li&gt;Apr 2025: &lt;a href="https://github.com/mudler/LocalAGI"&gt;LocalAGI&lt;/a&gt; and &lt;a href="https://github.com/mudler/LocalRecall"&gt;LocalRecall&lt;/a&gt; join the LocalAI family stack.&lt;/li&gt; 
+ &lt;li&gt;Apr 2025: WebUI overhaul, AIO images updates&lt;/li&gt; 
+ &lt;li&gt;Feb 2025: Backend cleanup, Breaking changes, new backends (kokoro, OutelTTS, faster-whisper), Nvidia L4T images&lt;/li&gt; 
+ &lt;li&gt;Jan 2025: LocalAI model release: &lt;a href="https://huggingface.co/mudler/LocalAI-functioncall-phi-4-v0.3"&gt;https://huggingface.co/mudler/LocalAI-functioncall-phi-4-v0.3&lt;/a&gt;, SANA support in diffusers: &lt;a href="https://github.com/mudler/LocalAI/pull/4603"&gt;https://github.com/mudler/LocalAI/pull/4603&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Dec 2024: stablediffusion.cpp backend (ggml) added ( &lt;a href="https://github.com/mudler/LocalAI/pull/4289"&gt;https://github.com/mudler/LocalAI/pull/4289&lt;/a&gt; )&lt;/li&gt; 
+ &lt;li&gt;Nov 2024: Bark.cpp backend added ( &lt;a href="https://github.com/mudler/LocalAI/pull/4287"&gt;https://github.com/mudler/LocalAI/pull/4287&lt;/a&gt; )&lt;/li&gt; 
+ &lt;li&gt;Nov 2024: Voice activity detection models (&lt;strong&gt;VAD&lt;/strong&gt;) added to the API: &lt;a href="https://github.com/mudler/LocalAI/pull/4204"&gt;https://github.com/mudler/LocalAI/pull/4204&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Oct 2024: examples moved to &lt;a href="https://github.com/mudler/LocalAI-examples"&gt;LocalAI-examples&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Aug 2024: 🆕 FLUX-1, &lt;a href="https://explorer.localai.io"&gt;P2P Explorer&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;July 2024: 🔥🔥 🆕 P2P Dashboard, LocalAI Federated mode and AI Swarms: &lt;a href="https://github.com/mudler/LocalAI/pull/2723"&gt;https://github.com/mudler/LocalAI/pull/2723&lt;/a&gt;. P2P Global community pools: &lt;a href="https://github.com/mudler/LocalAI/issues/3113"&gt;https://github.com/mudler/LocalAI/issues/3113&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;May 2024: 🔥🔥 Decentralized P2P llama.cpp: &lt;a href="https://github.com/mudler/LocalAI/pull/2343"&gt;https://github.com/mudler/LocalAI/pull/2343&lt;/a&gt; (peer2peer llama.cpp!) 👉 Docs &lt;a href="https://localai.io/features/distribute/"&gt;https://localai.io/features/distribute/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;May 2024: 🔥🔥 Distributed inferencing: &lt;a href="https://github.com/mudler/LocalAI/pull/2324"&gt;https://github.com/mudler/LocalAI/pull/2324&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;April 2024: Reranker API: &lt;a href="https://github.com/mudler/LocalAI/pull/2121"&gt;https://github.com/mudler/LocalAI/pull/2121&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Roadmap items: &lt;a href="https://github.com/mudler/LocalAI/issues?q=is%3Aissue+is%3Aopen+label%3Aroadmap"&gt;List of issues&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🚀 &lt;a href="https://localai.io/features/"&gt;Features&lt;/a&gt;&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🧩 &lt;a href="https://localai.io/backends/"&gt;Backend Gallery&lt;/a&gt;: Install/remove backends on the fly, powered by OCI images — fully customizable and API-driven.&lt;/li&gt; 
+ &lt;li&gt;📖 &lt;a href="https://localai.io/features/text-generation/"&gt;Text generation with GPTs&lt;/a&gt; (&lt;code&gt;llama.cpp&lt;/code&gt;, &lt;code&gt;transformers&lt;/code&gt;, &lt;code&gt;vllm&lt;/code&gt; ... &lt;a href="https://localai.io/model-compatibility/index.html#model-compatibility-table"&gt;&lt;span&gt;📖&lt;/span&gt; and more&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;🗣 &lt;a href="https://localai.io/features/text-to-audio/"&gt;Text to Audio&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🔈 &lt;a href="https://localai.io/features/audio-to-text/"&gt;Audio to Text&lt;/a&gt; (Audio transcription with &lt;code&gt;whisper.cpp&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;🎨 &lt;a href="https://localai.io/features/image-generation"&gt;Image generation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🔥 &lt;a href="https://localai.io/features/openai-functions/"&gt;OpenAI-alike tools API&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🧠 &lt;a href="https://localai.io/features/embeddings/"&gt;Embeddings generation for vector databases&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;✍️ &lt;a href="https://localai.io/features/constrained_grammars/"&gt;Constrained grammars&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🖼️ &lt;a href="https://localai.io/models/"&gt;Download Models directly from Huggingface &lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🥽 &lt;a href="https://localai.io/features/gpt-vision/"&gt;Vision API&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🔍 &lt;a href="https://localai.io/features/object-detection/"&gt;Object Detection&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;📈 &lt;a href="https://localai.io/features/reranker/"&gt;Reranker API&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🆕🖧 &lt;a href="https://localai.io/features/distribute/"&gt;P2P Inferencing&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🆕🔌 &lt;a href="https://localai.io/docs/features/mcp/"&gt;Model Context Protocol (MCP)&lt;/a&gt; - Agentic capabilities with external tools and &lt;a href="https://github.com/mudler/LocalAGI"&gt;LocalAGI's Agentic capabilities&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🔊 Voice activity detection (Silero-VAD support)&lt;/li&gt; 
+ &lt;li&gt;🌍 Integrated WebUI!&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🧩 Supported Backends &amp;amp; Acceleration&lt;/h2&gt; 
+&lt;p&gt;LocalAI supports a comprehensive range of AI backends with multiple acceleration options:&lt;/p&gt; 
+&lt;h3&gt;Text Generation &amp;amp; Language Models&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Backend&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+   &lt;th&gt;Acceleration Support&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;llama.cpp&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;LLM inference in C/C++&lt;/td&gt; 
+   &lt;td&gt;CUDA 12/13, ROCm, Intel SYCL, Vulkan, Metal, CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;vLLM&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Fast LLM inference with PagedAttention&lt;/td&gt; 
+   &lt;td&gt;CUDA 12/13, ROCm, Intel&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;transformers&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;HuggingFace transformers framework&lt;/td&gt; 
+   &lt;td&gt;CUDA 12/13, ROCm, Intel, CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;exllama2&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;GPTQ inference library&lt;/td&gt; 
+   &lt;td&gt;CUDA 12/13&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;MLX&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Apple Silicon LLM inference&lt;/td&gt; 
+   &lt;td&gt;Metal (M1/M2/M3+)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;MLX-VLM&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Apple Silicon Vision-Language Models&lt;/td&gt; 
+   &lt;td&gt;Metal (M1/M2/M3+)&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Audio &amp;amp; Speech Processing&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Backend&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+   &lt;th&gt;Acceleration Support&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;whisper.cpp&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;OpenAI Whisper in C/C++&lt;/td&gt; 
+   &lt;td&gt;CUDA 12/13, ROCm, Intel SYCL, Vulkan, CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;faster-whisper&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Fast Whisper with CTranslate2&lt;/td&gt; 
+   &lt;td&gt;CUDA 12/13, ROCm, Intel, CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;bark&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Text-to-audio generation&lt;/td&gt; 
+   &lt;td&gt;CUDA 12/13, ROCm, Intel&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;bark-cpp&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;C++ implementation of Bark&lt;/td&gt; 
+   &lt;td&gt;CUDA, Metal, CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;coqui&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Advanced TTS with 1100+ languages&lt;/td&gt; 
+   &lt;td&gt;CUDA 12/13, ROCm, Intel, CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;kokoro&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Lightweight TTS model&lt;/td&gt; 
+   &lt;td&gt;CUDA 12/13, ROCm, Intel, CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;chatterbox&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Production-grade TTS&lt;/td&gt; 
+   &lt;td&gt;CUDA 12/13, CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;piper&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Fast neural TTS system&lt;/td&gt; 
+   &lt;td&gt;CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;kitten-tts&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Kitten TTS models&lt;/td&gt; 
+   &lt;td&gt;CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;silero-vad&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Voice Activity Detection&lt;/td&gt; 
+   &lt;td&gt;CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;neutts&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Text-to-speech with voice cloning&lt;/td&gt; 
+   &lt;td&gt;CUDA 12/13, ROCm, CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;vibevoice&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Real-time TTS with voice cloning&lt;/td&gt; 
+   &lt;td&gt;CUDA 12/13, ROCm, Intel, CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;pocket-tts&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Lightweight CPU-based TTS&lt;/td&gt; 
+   &lt;td&gt;CUDA 12/13, ROCm, Intel, CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Image &amp;amp; Video Generation&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Backend&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+   &lt;th&gt;Acceleration Support&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;stablediffusion.cpp&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Stable Diffusion in C/C++&lt;/td&gt; 
+   &lt;td&gt;CUDA 12/13, Intel SYCL, Vulkan, CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;diffusers&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;HuggingFace diffusion models&lt;/td&gt; 
+   &lt;td&gt;CUDA 12/13, ROCm, Intel, Metal, CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Specialized AI Tasks&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Backend&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+   &lt;th&gt;Acceleration Support&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;rfdetr&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Real-time object detection&lt;/td&gt; 
+   &lt;td&gt;CUDA 12/13, Intel, CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;rerankers&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Document reranking API&lt;/td&gt; 
+   &lt;td&gt;CUDA 12/13, ROCm, Intel, CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;local-store&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Vector database&lt;/td&gt; 
+   &lt;td&gt;CPU&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;huggingface&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;HuggingFace API integration&lt;/td&gt; 
+   &lt;td&gt;API-based&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Hardware Acceleration Matrix&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Acceleration Type&lt;/th&gt; 
+   &lt;th&gt;Supported Backends&lt;/th&gt; 
+   &lt;th&gt;Hardware Support&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;NVIDIA CUDA 12&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;All CUDA-compatible backends&lt;/td&gt; 
+   &lt;td&gt;Nvidia hardware&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;NVIDIA CUDA 13&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;All CUDA-compatible backends&lt;/td&gt; 
+   &lt;td&gt;Nvidia hardware&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;AMD ROCm&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;llama.cpp, whisper, vllm, transformers, diffusers, rerankers, coqui, kokoro, bark, neutts, vibevoice, pocket-tts&lt;/td&gt; 
+   &lt;td&gt;AMD Graphics&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Intel oneAPI&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;llama.cpp, whisper, stablediffusion, vllm, transformers, diffusers, rfdetr, rerankers, exllama2, coqui, kokoro, bark, vibevoice, pocket-tts&lt;/td&gt; 
+   &lt;td&gt;Intel Arc, Intel iGPUs&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Apple Metal&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;llama.cpp, whisper, diffusers, MLX, MLX-VLM, bark-cpp&lt;/td&gt; 
+   &lt;td&gt;Apple M1/M2/M3+&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Vulkan&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;llama.cpp, whisper, stablediffusion&lt;/td&gt; 
+   &lt;td&gt;Cross-platform GPUs&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;NVIDIA Jetson (CUDA 12)&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;llama.cpp, whisper, stablediffusion, diffusers, rfdetr&lt;/td&gt; 
+   &lt;td&gt;ARM64 embedded AI (AGX Orin, etc.)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;NVIDIA Jetson (CUDA 13)&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;llama.cpp, whisper, stablediffusion, diffusers, rfdetr&lt;/td&gt; 
+   &lt;td&gt;ARM64 embedded AI (DGX Spark)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;CPU Optimized&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;All backends&lt;/td&gt; 
+   &lt;td&gt;AVX/AVX2/AVX512, quantization support&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;🔗 Community and integrations&lt;/h3&gt; 
+&lt;p&gt;Build and deploy custom containers:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/sozercan/aikit"&gt;https://github.com/sozercan/aikit&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;WebUIs:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/Jirubizu/localai-admin"&gt;https://github.com/Jirubizu/localai-admin&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/go-skynet/LocalAI-frontend"&gt;https://github.com/go-skynet/LocalAI-frontend&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;QA-Pilot(An interactive chat project that leverages LocalAI LLMs for rapid understanding and navigation of GitHub code repository) &lt;a href="https://github.com/reid41/QA-Pilot"&gt;https://github.com/reid41/QA-Pilot&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Agentic Libraries:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/mudler/cogito"&gt;https://github.com/mudler/cogito&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;MCPs:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/mudler/MCPs"&gt;https://github.com/mudler/MCPs&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Model galleries&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/go-skynet/model-gallery"&gt;https://github.com/go-skynet/model-gallery&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Voice:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/richiejp/VoxInput"&gt;https://github.com/richiejp/VoxInput&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Other:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Helm chart &lt;a href="https://github.com/go-skynet/helm-charts"&gt;https://github.com/go-skynet/helm-charts&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;VSCode extension &lt;a href="https://github.com/badgooooor/localai-vscode-plugin"&gt;https://github.com/badgooooor/localai-vscode-plugin&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Langchain: &lt;a href="https://python.langchain.com/docs/integrations/providers/localai/"&gt;https://python.langchain.com/docs/integrations/providers/localai/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Terminal utility &lt;a href="https://github.com/djcopley/ShellOracle"&gt;https://github.com/djcopley/ShellOracle&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Local Smart assistant &lt;a href="https://github.com/mudler/LocalAGI"&gt;https://github.com/mudler/LocalAGI&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Home Assistant &lt;a href="https://github.com/sammcj/homeassistant-localai"&gt;https://github.com/sammcj/homeassistant-localai&lt;/a&gt; / &lt;a href="https://github.com/drndos/hass-openai-custom-conversation"&gt;https://github.com/drndos/hass-openai-custom-conversation&lt;/a&gt; / &lt;a href="https://github.com/valentinfrlch/ha-gpt4vision"&gt;https://github.com/valentinfrlch/ha-gpt4vision&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Discord bot &lt;a href="https://github.com/mudler/LocalAGI/tree/main/examples/discord"&gt;https://github.com/mudler/LocalAGI/tree/main/examples/discord&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Slack bot &lt;a href="https://github.com/mudler/LocalAGI/tree/main/examples/slack"&gt;https://github.com/mudler/LocalAGI/tree/main/examples/slack&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Shell-Pilot(Interact with LLM using LocalAI models via pure shell scripts on your Linux or MacOS system) &lt;a href="https://github.com/reid41/shell-pilot"&gt;https://github.com/reid41/shell-pilot&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Telegram bot &lt;a href="https://github.com/mudler/LocalAI/tree/master/examples/telegram-bot"&gt;https://github.com/mudler/LocalAI/tree/master/examples/telegram-bot&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Another Telegram Bot &lt;a href="https://github.com/JackBekket/Hellper"&gt;https://github.com/JackBekket/Hellper&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Auto-documentation &lt;a href="https://github.com/JackBekket/Reflexia"&gt;https://github.com/JackBekket/Reflexia&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Github bot which answer on issues, with code and documentation as context &lt;a href="https://github.com/JackBekket/GitHelper"&gt;https://github.com/JackBekket/GitHelper&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Github Actions: &lt;a href="https://github.com/marketplace/actions/start-localai"&gt;https://github.com/marketplace/actions/start-localai&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Examples: &lt;a href="https://github.com/mudler/LocalAI/tree/master/examples/"&gt;https://github.com/mudler/LocalAI/tree/master/examples/&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🔗 Resources&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://localai.io/docs/advanced/fine-tuning/"&gt;LLM finetuning guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://localai.io/basics/build/index.html"&gt;How to build locally&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://localai.io/basics/getting_started/index.html#run-localai-in-kubernetes"&gt;How to install in Kubernetes&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://localai.io/docs/integrations/"&gt;Projects integrating LocalAI&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://io.midori-ai.xyz/howtos/"&gt;How tos section&lt;/a&gt; (curated by our community)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;&lt;span&gt;📖&lt;/span&gt; 🎥 &lt;a href="https://localai.io/basics/news/#media-blogs-social"&gt;Media, Blogs, Social&lt;/a&gt;&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.suse.com/c/running-ai-locally/"&gt;Run Visual studio code with LocalAI (SUSE)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;🆕 &lt;a href="https://mudler.pm/posts/local-ai-jetson-nano-devkit/"&gt;Run LocalAI on Jetson Nano Devkit&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.pulumi.com/blog/low-code-llm-apps-with-local-ai-flowise-and-pulumi/"&gt;Run LocalAI on AWS EKS with Pulumi&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://staleks.hashnode.dev/installing-localai-on-aws-ec2-instance"&gt;Run LocalAI on AWS&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://mudler.pm/posts/smart-slackbot-for-teams/"&gt;Create a slackbot for teams and OSS projects that answer to documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=PKrDNuJ_dfE"&gt;LocalAI meets k8sgpt&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://mudler.pm/posts/localai-question-answering/"&gt;Question Answering on Documents locally with LangChain, LocalAI, Chroma, and GPT4All&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://medium.com/@tyler_97636/k8sgpt-localai-unlock-kubernetes-superpowers-for-free-584790de9b65"&gt;Tutorial to use k8sgpt with LocalAI&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Citation&lt;/h2&gt; 
+&lt;p&gt;If you utilize this repository, data in a downstream project, please consider citing it with:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;@misc{localai,
+  author = {Ettore Di Giacinto},
+  title = {LocalAI: The free, Open source OpenAI alternative},
+  year = {2023},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/go-skynet/LocalAI}},
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;❤️ Sponsors&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Do you find LocalAI useful?&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Support the project by becoming &lt;a href="https://github.com/sponsors/mudler"&gt;a backer or sponsor&lt;/a&gt;. Your logo will show up here with a link to your website.&lt;/p&gt; 
+&lt;p&gt;A huge thank you to our generous sponsors who support this project covering CI expenses, and our &lt;a href="https://github.com/sponsors/mudler"&gt;Sponsor list&lt;/a&gt;:&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.spectrocloud.com/" target="blank"&gt; &lt;img height="200" src="https://github.com/user-attachments/assets/72eab1dd-8b93-4fc0-9ade-84db49f24962" /&gt; &lt;/a&gt; &lt;a href="https://www.premai.io/" target="blank"&gt; &lt;img height="200" src="https://github.com/mudler/LocalAI/assets/2420543/42e4ca83-661e-4f79-8e46-ae43689683d6" /&gt; &lt;br /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h3&gt;Individual sponsors&lt;/h3&gt; 
+&lt;p&gt;A special thanks to individual sponsors that contributed to the project, a full list is in &lt;a href="https://github.com/sponsors/mudler"&gt;Github&lt;/a&gt; and &lt;a href="https://buymeacoffee.com/mudler"&gt;buymeacoffee&lt;/a&gt;, a special shout out goes to &lt;a href="https://github.com/drikster80"&gt;drikster80&lt;/a&gt; for being generous. Thank you everyone!&lt;/p&gt; 
+&lt;h2&gt;🌟 Star history&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://star-history.com/#go-skynet/LocalAI&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=go-skynet/LocalAI&amp;amp;type=Date" alt="LocalAI Star history Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;📖 License&lt;/h2&gt; 
+&lt;p&gt;LocalAI is a community-driven project created by &lt;a href="https://github.com/mudler/"&gt;Ettore Di Giacinto&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;MIT - Author Ettore Di Giacinto &lt;a href="mailto:mudler@localai.io"&gt;mudler@localai.io&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🙇 Acknowledgements&lt;/h2&gt; 
+&lt;p&gt;LocalAI couldn't have been built without the help of great software already available from the community. Thank you!&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ggerganov/llama.cpp"&gt;llama.cpp&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/tatsu-lab/stanford_alpaca"&gt;https://github.com/tatsu-lab/stanford_alpaca&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/cornelk/llama-go"&gt;https://github.com/cornelk/llama-go&lt;/a&gt; for the initial ideas&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/antimatter15/alpaca.cpp"&gt;https://github.com/antimatter15/alpaca.cpp&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/EdVince/Stable-Diffusion-NCNN"&gt;https://github.com/EdVince/Stable-Diffusion-NCNN&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ggerganov/whisper.cpp"&gt;https://github.com/ggerganov/whisper.cpp&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/rhasspy/piper"&gt;https://github.com/rhasspy/piper&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🤗 Contributors&lt;/h2&gt; 
+&lt;p&gt;This is a community project, a special thanks to our contributors! 🤗 &lt;a href="https://github.com/go-skynet/LocalAI/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=go-skynet/LocalAI" /&gt; &lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>dev-sec/ansible-collection-hardening</title>
+      <link>https://github.com/dev-sec/ansible-collection-hardening</link>
+      <description>&lt;p&gt;This Ansible collection provides battle tested hardening for Linux, SSH, nginx, MySQL&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Ansible Collection - devsec.hardening&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/dev-sec/ansible-collection-hardening/actions/workflows/os_hardening.yml"&gt;&lt;img src="https://github.com/dev-sec/ansible-collection-hardening/actions/workflows/os_hardening.yml/badge.svg?sanitize=true" alt="devsec.os_hardening" /&gt;&lt;/a&gt; &lt;a href="https://github.com/dev-sec/ansible-collection-hardening/actions/workflows/os_hardening_vm.yml"&gt;&lt;img src="https://github.com/dev-sec/ansible-collection-hardening/actions/workflows/os_hardening_vm.yml/badge.svg?sanitize=true" alt="devsec.os_hardening VM" /&gt;&lt;/a&gt; &lt;a href="https://github.com/dev-sec/ansible-collection-hardening/actions/workflows/ssh_hardening.yml"&gt;&lt;img src="https://github.com/dev-sec/ansible-collection-hardening/actions/workflows/ssh_hardening.yml/badge.svg?sanitize=true" alt="devsec.ssh_hardening" /&gt;&lt;/a&gt; &lt;a href="https://github.com/dev-sec/ansible-collection-hardening/actions/workflows/ssh_hardening_bsd.yml"&gt;&lt;img src="https://github.com/dev-sec/ansible-collection-hardening/actions/workflows/ssh_hardening_bsd.yml/badge.svg?sanitize=true" alt="devsec.ssh_hardening BSD" /&gt;&lt;/a&gt; &lt;a href="https://github.com/dev-sec/ansible-collection-hardening/actions/workflows/ssh_hardening_custom_tests.yml"&gt;&lt;img src="https://github.com/dev-sec/ansible-collection-hardening/actions/workflows/ssh_hardening_custom_tests.yml/badge.svg?sanitize=true" alt="devsec.ssh_hardening with custom tests" /&gt;&lt;/a&gt; &lt;a href="https://github.com/dev-sec/ansible-collection-hardening/actions/workflows/nginx_hardening.yml"&gt;&lt;img src="https://github.com/dev-sec/ansible-collection-hardening/actions/workflows/nginx_hardening.yml/badge.svg?sanitize=true" alt="devsec.nginx_hardening" /&gt;&lt;/a&gt; &lt;a href="https://github.com/dev-sec/ansible-collection-hardening/actions/workflows/mysql_hardening.yml"&gt;&lt;img src="https://github.com/dev-sec/ansible-collection-hardening/actions/workflows/mysql_hardening.yml/badge.svg?sanitize=true" alt="devsec.mysql_hardening" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Description&lt;/h2&gt; 
+&lt;p&gt;This collection provides battle tested hardening for:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Linux operating systems: 
+  &lt;ul&gt; 
+   &lt;li&gt;CentOS Stream 9&lt;/li&gt; 
+   &lt;li&gt;AlmaLinux 8/9/10&lt;/li&gt; 
+   &lt;li&gt;Rocky Linux 8/9/10&lt;/li&gt; 
+   &lt;li&gt;Debian 11/12/13&lt;/li&gt; 
+   &lt;li&gt;Ubuntu 20.04/22.04/24.04&lt;/li&gt; 
+   &lt;li&gt;Amazon Linux (some roles supported)&lt;/li&gt; 
+   &lt;li&gt;Arch Linux (some roles supported)&lt;/li&gt; 
+   &lt;li&gt;Fedora 39/40 (some roles supported)&lt;/li&gt; 
+   &lt;li&gt;Suse Tumbleweed (some roles supported)&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;MySQL 
+  &lt;ul&gt; 
+   &lt;li&gt;MariaDB &amp;gt;= 5.5.65, &amp;gt;= 10.1.45, &amp;gt;= 10.3.17&lt;/li&gt; 
+   &lt;li&gt;MySQL &amp;gt;= 5.7.31, &amp;gt;= 8.0.3&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Nginx 1.0.16 or later&lt;/li&gt; 
+ &lt;li&gt;OpenSSH 5.3 and later&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The hardening is intended to be compliant with the Inspec DevSec Baselines:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/dev-sec/linux-baseline"&gt;https://github.com/dev-sec/linux-baseline&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/dev-sec/mysql-baseline"&gt;https://github.com/dev-sec/mysql-baseline&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/dev-sec/nginx-baseline"&gt;https://github.com/dev-sec/nginx-baseline&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/dev-sec/ssh-baseline"&gt;https://github.com/dev-sec/ssh-baseline&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Looking for the old roles?&lt;/h2&gt; 
+&lt;p&gt;The roles are now part of the hardening-collection. We have kept the old releases of the &lt;code&gt;os-hardening&lt;/code&gt; role in this repository, so you can find the them by exploring older tags. The last release of the standalone role was &lt;a href="https://github.com/dev-sec/ansible-collection-hardening/tree/6.2.0"&gt;6.2.0&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;The other roles are in separate archives repositories:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/dev-sec/ansible-apache-hardening"&gt;apache_hardening&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/dev-sec/ansible-mysql-hardening"&gt;mysql_hardening&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/dev-sec/ansible-nginx-hardening"&gt;nginx_hardening&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/dev-sec/ansible-ssh-hardening"&gt;ssh_hardening&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/dev-sec/ansible-windows-hardening"&gt;windows_hardening&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Minimum required Ansible-version&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Ansible &amp;gt;= 2.16&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Included content&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/dev-sec/ansible-collection-hardening/master/roles/os_hardening/"&gt;os_hardening&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/dev-sec/ansible-collection-hardening/master/roles/mysql_hardening/"&gt;mysql_hardening&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/dev-sec/ansible-collection-hardening/master/roles/nginx_hardening/"&gt;nginx_hardening&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/dev-sec/ansible-collection-hardening/master/roles/ssh_hardening/"&gt;ssh_hardening&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;In progress, not working:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/dev-sec/ansible-collection-hardening/master/roles/apache_hardening/"&gt;apache_hardening&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/dev-sec/ansible-collection-hardening/master/roles/windows_hardening/"&gt;windows_hardening&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;Install the collection via ansible-galaxy:&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;ansible-galaxy collection install devsec.hardening&lt;/code&gt;&lt;/p&gt; 
+&lt;h2&gt;Using this collection&lt;/h2&gt; 
+&lt;p&gt;Please refer to the examples in the readmes of the role.&lt;/p&gt; 
+&lt;p&gt;See &lt;a href="https://docs.ansible.com/ansible/latest/user_guide/collections_using.html"&gt;Ansible Using collections&lt;/a&gt; for more details.&lt;/p&gt; 
+&lt;h2&gt;Contributing to this collection&lt;/h2&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/dev-sec/ansible-collection-hardening/master/CONTRIBUTING.md"&gt;contributor guideline&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Release notes&lt;/h2&gt; 
+&lt;p&gt;See the &lt;a href="https://github.com/dev-sec/ansible-os-hardening/tree/master/CHANGELOG.md"&gt;changelog&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Roadmap&lt;/h2&gt; 
+&lt;p&gt;Todos:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Work on &lt;a href="https://raw.githubusercontent.com/dev-sec/ansible-collection-hardening/master/roles/apache_hardening/"&gt;apache_hardening&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/dev-sec/ansible-collection-hardening/master/roles/windows_hardening/"&gt;windows_hardening&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Add support for more operating systems&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;More information&lt;/h2&gt; 
+&lt;p&gt;General information:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ansible-collections/overview"&gt;Ansible Collection overview&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.ansible.com/ansible/latest/user_guide/index.html"&gt;Ansible User guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.ansible.com/ansible/latest/dev_guide/index.html"&gt;Ansible Developer guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ansible-collections/overview/raw/master/collection_requirements.rst"&gt;Ansible Collections Checklist&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.ansible.com/ansible/latest/community/code_of_conduct.html"&gt;Ansible Community code of conduct&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://us19.campaign-archive.com/home/?u=56d874e027110e35dea0e03c1&amp;amp;id=d6635f5420"&gt;The Bullhorn (the Ansible Contributor newsletter)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/ansible-collections/overview/issues/45"&gt;Changes impacting Contributors&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Licensing&lt;/h2&gt; 
+&lt;p&gt;Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at&lt;/p&gt; 
+&lt;p&gt;&lt;a href="http://www.apache.org/licenses/LICENSE-2.0"&gt;http://www.apache.org/licenses/LICENSE-2.0&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
