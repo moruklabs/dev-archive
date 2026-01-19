@@ -1,0 +1,1403 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub Java Daily Trending</title>
+    <description>Daily Trending of Java in GitHub</description>
+    <pubDate>Sun, 18 Jan 2026 01:36:27 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>aeron-io/aeron</title>
+      <link>https://github.com/aeron-io/aeron</link>
+      <description>&lt;p&gt;Efficient reliable UDP unicast, UDP multicast, and IPC message transport&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Aeron&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/aeron-io/aeron/raw/master/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/aeron-io/Aeron.svg?sanitize=true" alt="GitHub" /&gt;&lt;/a&gt; &lt;a href="https://www.javadoc.io/doc/io.aeron/aeron-all"&gt;&lt;img src="https://www.javadoc.io/badge/io.aeron/aeron-all.svg?sanitize=true" alt="Javadocs" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/aeron-io/aeron/actions"&gt;&lt;img src="https://github.com/aeron-io/aeron/workflows/Continuous%20Integration/badge.svg?sanitize=true" alt="Actions Status" /&gt;&lt;/a&gt; &lt;a href="https://github.com/aeron-io/aeron/actions"&gt;&lt;img src="https://github.com/aeron-io/aeron/workflows/CodeQL/badge.svg?sanitize=true" alt="CodeQL Status" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Efficient reliable UDP unicast, UDP multicast, and IPC message transport. Java, C, and C++ clients are available in this repository, and a &lt;a href="https://github.com/AdaptiveConsulting/Aeron.NET"&gt;.NET client&lt;/a&gt; is available. All clients can exchange messages across machines, or on the same machine via IPC, very efficiently. Message streams can be recorded by the &lt;a href="https://github.com/aeron-io/aeron/tree/master/aeron-archive"&gt;Archive&lt;/a&gt; module to persistent storage for later, or real-time, replay. Aeron &lt;a href="https://github.com/aeron-io/aeron/tree/master/aeron-cluster"&gt;Cluster&lt;/a&gt; provides support for fault-tolerant services as replicated state machines based on the &lt;a href="https://raft.github.io/"&gt;Raft&lt;/a&gt; consensus algorithm.&lt;/p&gt; 
+&lt;p&gt;Performance is the key focus. A design goal for Aeron is to be the highest throughput with the lowest and most predictable latency of any messaging system. Aeron integrates with &lt;a href="https://github.com/aeron-io/simple-binary-encoding"&gt;Simple Binary Encoding (SBE)&lt;/a&gt; for the best possible message encoding and decoding performance. Many of the data structures used in the creation of Aeron have been factored out to the &lt;a href="https://github.com/aeron-io/agrona"&gt;Agrona&lt;/a&gt; project.&lt;/p&gt; 
+&lt;p&gt;For details of usage, protocol specification, FAQ, etc. please check out the &lt;a href="https://github.com/aeron-io/aeron/wiki"&gt;Wiki&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;For the latest version information and changes see the &lt;a href="https://github.com/aeron-io/aeron/wiki/Change-Log"&gt;Change Log&lt;/a&gt; with Java &lt;strong&gt;downloads&lt;/strong&gt; at &lt;a href="http://search.maven.org/#search%7Cga%7C1%7Caeron"&gt;Maven Central&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Aeron is owned and operated by Adaptive Financial Consulting. Originally created by Martin Thompson and Todd Montgomery, the Aeron team joined Adaptive in 2022.&lt;/p&gt; 
+&lt;p&gt;For Business users, to get started with Aeron Premium, please visit &lt;a href="https://aeron.io"&gt;Aeron.io&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;We provide a range of services including:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Training for development and operations with Aeron and Aeron Cluster.&lt;/li&gt; 
+ &lt;li&gt;Consulting, for example if you’re not sure how to design your system or need help tuning your system.&lt;/li&gt; 
+ &lt;li&gt;We also offer a number of proprietary enhancements on top of Aeron and Aeron Cluster such as kernel bypass (ef_vi, AWS DPDK, and VMA) for increased performance, and blazing fast encryption with ATS.&lt;/li&gt; 
+ &lt;li&gt;If you’re building a new trading system, we have experienced Aeron developers who can help.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Please get in touch at &lt;a href="mailto:sales@aeron.io?subject=Aeron"&gt;sales@aeron.io&lt;/a&gt; if you would like to learn more about any of these.&lt;/p&gt; 
+&lt;h3&gt;How do I use Aeron?&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aeron-io/aeron/wiki/Java-Programming-Guide"&gt;Java Programming Guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aeron-io/aeron/wiki/Cpp-Programming-Guide"&gt;C++11 Programming Guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aeron-io/aeron/wiki/Best-Practices-Guide"&gt;Best Practices Guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aeron-io/aeron/wiki/Monitoring-and-Debugging"&gt;Monitoring and Debugging&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aeron-io/aeron/wiki/Configuration-Options"&gt;Configuration Options&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aeron-io/aeron/wiki/Channel-Configuration"&gt;Channel Specific Configuration&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aeron-io/aeron/wiki/Aeron-Archive"&gt;Aeron Archive (Durable/Persistent Stream Storage)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aeron-io/aeron/tree/master/aeron-cluster"&gt;Aeron Cluster (Fault Tolerant Services)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://aeron.io/docs/"&gt;Aeron Docs&lt;/a&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;How does Aeron work?&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aeron-io/aeron/wiki/Transport-Protocol-Specification"&gt;Transport Protocol Specification&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aeron-io/aeron/wiki/Design-Overview"&gt;Design Overview&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aeron-io/aeron/wiki/Design-Principles"&gt;Design Principles&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aeron-io/aeron/wiki/Flow-and-Congestion-Control"&gt;Flow Control Semantics&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aeron-io/aeron/wiki/Media-Driver-Operation"&gt;Media Driver Operation&lt;/a&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;How do I hack on Aeron?&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aeron-io/aeron/wiki/Hacking-on-Aeron"&gt;Hacking on Aeron&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aeron-io/aeron/wiki/Performance-Testing"&gt;Performance Testing&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aeron-io/aeron/wiki/Building-Aeron"&gt;Building Aeron&lt;/a&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;License (See LICENSE file for full license)&lt;/h2&gt; 
+&lt;p&gt;Copyright 2014-2025 Real Logic Limited.&lt;/p&gt; 
+&lt;p&gt;Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;https://www.apache.org/licenses/LICENSE-2.0
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>AutoMQ/automq</title>
+      <link>https://github.com/AutoMQ/automq</link>
+      <description>&lt;p&gt;AutoMQ is a diskless Kafka® on S3. 10x Cost-Effective. No Cross-AZ Traffic Cost. Autoscale in seconds. Single-digit ms latency. Multi-AZ Availability.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;A Diskless Kafka® on S3, Offering 10x Cost Savings and Scaling in Seconds.&lt;/h1&gt; 
+&lt;div align="center"&gt; 
+ &lt;p align="center"&gt; 📑&amp;nbsp; &lt;a href="https://www.automq.com/docs/automq/what-is-automq/overview?utm_source=github_automq" target="_blank"&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; 🔥&amp;nbsp; &lt;a href="https://www.automq.com/docs/automq-cloud/getting-started/install-byoc-environment/aws/install-env-from-marketplace?utm_source=github_automq" target="_blank"&gt;&lt;b&gt;Free trial of AutoMQ on AWS&lt;/b&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://www.linkedin.com/company/automq"&gt;&lt;img src="https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&amp;amp;logo=Linkedin&amp;amp;logoColor=white&amp;amp;link=https://www.linkedin.com/company/automq" alt="Linkedin Badge" /&gt;&lt;/a&gt; &lt;a href="https://go.automq.com/slack"&gt;&lt;img src="https://badgen.net/badge/Slack/Join%20AutoMQ/0abd59?icon=slack" alt="" /&gt;&lt;/a&gt; &lt;a href="https://www.automq.com/blog/automq-vs-apache-kafka-a-real-aws-cloud-bill-comparison?utm_source=github_automq"&gt;&lt;img src="https://img.shields.io/badge/AutoMQ%20vs.%20Kafka(Cost)-yellow" alt="" /&gt;&lt;/a&gt; &lt;a href="https://www.automq.com/docs/automq/benchmarks/automq-vs-apache-kafka-benchmarks-and-cost?utm_source=github_automq"&gt;&lt;img src="https://img.shields.io/badge/AutoMQ%20vs.%20Kafka(Performance)-orange" alt="" /&gt;&lt;/a&gt; &lt;a href="https://gurubase.io/g/automq"&gt;&lt;img src="https://img.shields.io/badge/Gurubase-Ask%20AutoMQ%20Guru-006BFF" alt="Gurubase" /&gt;&lt;/a&gt; &lt;a href="https://deepwiki.com/AutoMQ/automq"&gt;&lt;img src="https://img.shields.io/badge/DeepWiki-AutoMQ%2Fautomq-blue.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAyCAYAAAAnWDnqAAAAAXNSR0IArs4c6QAAA05JREFUaEPtmUtyEzEQhtWTQyQLHNak2AB7ZnyXZMEjXMGeK/AIi+QuHrMnbChYY7MIh8g01fJoopFb0uhhEqqcbWTp06/uv1saEDv4O3n3dV60RfP947Mm9/SQc0ICFQgzfc4CYZoTPAswgSJCCUJUnAAoRHOAUOcATwbmVLWdGoH//PB8mnKqScAhsD0kYP3j/Yt5LPQe2KvcXmGvRHcDnpxfL2zOYJ1mFwrryWTz0advv1Ut4CJgf5uhDuDj5eUcAUoahrdY/56ebRWeraTjMt/00Sh3UDtjgHtQNHwcRGOC98BJEAEymycmYcWwOprTgcB6VZ5JK5TAJ+fXGLBm3FDAmn6oPPjR4rKCAoJCal2eAiQp2x0vxTPB3ALO2CRkwmDy5WohzBDwSEFKRwPbknEggCPB/imwrycgxX2NzoMCHhPkDwqYMr9tRcP5qNrMZHkVnOjRMWwLCcr8ohBVb1OMjxLwGCvjTikrsBOiA6fNyCrm8V1rP93iVPpwaE+gO0SsWmPiXB+jikdf6SizrT5qKasx5j8ABbHpFTx+vFXp9EnYQmLx02h1QTTrl6eDqxLnGjporxl3NL3agEvXdT0WmEost648sQOYAeJS9Q7bfUVoMGnjo4AZdUMQku50McDcMWcBPvr0SzbTAFDfvJqwLzgxwATnCgnp4wDl6Aa+Ax283gghmj+vj7feE2KBBRMW3FzOpLOADl0Isb5587h/U4gGvkt5v60Z1VLG8BhYjbzRwyQZemwAd6cCR5/XFWLYZRIMpX39AR0tjaGGiGzLVyhse5C9RKC6ai42ppWPKiBagOvaYk8lO7DajerabOZP46Lby5wKjw1HCRx7p9sVMOWGzb/vA1hwiWc6jm3MvQDTogQkiqIhJV0nBQBTU+3okKCFDy9WwferkHjtxib7t3xIUQtHxnIwtx4mpg26/HfwVNVDb4oI9RHmx5WGelRVlrtiw43zboCLaxv46AZeB3IlTkwouebTr1y2NjSpHz68WNFjHvupy3q8TFn3Hos2IAk4Ju5dCo8B3wP7VPr/FGaKiG+T+v+TQqIrOqMTL1VdWV1DdmcbO8KXBz6esmYWYKPwDL5b5FA1a0hwapHiom0r/cKaoqr+27/XcrS5UwSMbQAAAABJRU5ErkJggg==" alt="DeepWiki" /&gt;&lt;/a&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://trendshift.io/repositories/9782" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/9782" alt="AutoMQ%2Fautomq | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div align="center"&gt; 
+ &lt;img width="97%" alt="automq-solgan" src="https://github.com/user-attachments/assets/bdf6c5f5-7fe1-4004-8e15-54f1aa6bc32f" /&gt; 
+ &lt;a href="https://www.youtube.com/watch?v=IB8sh639Rsg" target="_blank"&gt; &lt;img alt="Grab" src="https://github.com/user-attachments/assets/01668da4-3916-4f49-97af-18f91b25f8c1" width="19%" /&gt; &lt;/a&gt; 
+ &lt;a href="https://www.automq.com/customer" target="_blank"&gt; &lt;img alt="Avia" src="https://github.com/user-attachments/assets/d2845e1c-caf4-444a-93f0-97b13c9c8490" width="19%" /&gt; &lt;/a&gt; 
+ &lt;a href="https://www.automq.com/customer" target="_blank"&gt; &lt;img alt="Tencent" src="https://github.com/user-attachments/assets/2bdd205f-38c1-4110-9af1-d4c782db3395" width="19%" /&gt; &lt;/a&gt; 
+ &lt;a href="https://www.automq.com/customer" target="_blank"&gt; &lt;img alt="Honda" src="https://github.com/user-attachments/assets/ee65af29-8ee3-404b-bf81-a004fe0c327c" width="19%" /&gt; &lt;/a&gt; 
+ &lt;a href="https://www.automq.com/customer" target="_blank"&gt; &lt;img alt="Trip" src="https://github.com/user-attachments/assets/0cb4ae63-6dc1-43dc-9416-625a08dca2e5" width="19%" /&gt; &lt;/a&gt; 
+ &lt;a href="https://www.automq.com/customer" target="_blank"&gt; &lt;img alt="LG" src="https://github.com/user-attachments/assets/ed9e0f87-abc6-4552-977c-f342ecb105a0" width="19%" /&gt; &lt;/a&gt; 
+ &lt;a href="https://www.automq.com/blog/jdcom-automq-cubefs-trillion-scale-kafka-messaging" target="_blank"&gt; &lt;img alt="JD" src="https://github.com/user-attachments/assets/a7a86d2c-66fa-4575-b181-6cf56a31f880" width="19%" /&gt; &lt;/a&gt; 
+ &lt;a href="https://www.automq.com/blog/automq-help-geely-auto-solve-the-pain-points-of-kafka-elasticity-in-the-v2x-scenario" target="_blank"&gt; &lt;img alt="Geely" src="https://github.com/user-attachments/assets/d61f7c51-0d80-4290-a428-a941441c7ec9" width="19%" /&gt; &lt;/a&gt; 
+ &lt;a href="https://www.automq.com/blog/dewu-builds-trillion-level-monitoring-system-based-on-automq" target="_blank"&gt; &lt;img alt="Poizon" src="https://github.com/user-attachments/assets/45f4c642-0495-4bcc-9224-d2c5c2b2f0d5" width="19%" /&gt; &lt;/a&gt; 
+ &lt;a href="https://www.automq.com/customer" target="_blank"&gt; &lt;img alt="Bitkub" src="https://github.com/user-attachments/assets/3b95cd26-973d-4405-9d2c-289c5807bb39" width="19%" /&gt; &lt;/a&gt; 
+ &lt;a href="https://www.automq.com/customer" target="_blank"&gt; &lt;img alt="PalmPay" src="https://github.com/user-attachments/assets/b22f70f5-7553-4283-ac20-f034868b0121" width="19%" /&gt; &lt;/a&gt; 
+ &lt;a href="https://www.automq.com/blog/automq-vs-kafka-evaluation-and-comparison-by-little-red-book" target="_blank"&gt; &lt;img alt="RedNote" src="https://github.com/user-attachments/assets/4a62f1f3-e171-4d58-9d7e-ebabad6f8e23" width="19%" /&gt; &lt;/a&gt; 
+ &lt;a href="https://www.automq.com/blog/xpeng-motors-reduces-costs-by-50-by-replacing-kafka-with-automq" target="_blank"&gt; &lt;img alt="XPENG" src="https://github.com/user-attachments/assets/8b32c484-a4bf-4793-80d0-f454da254337" width="19%" /&gt; &lt;/a&gt; 
+ &lt;a href="https://www.automq.com/customer" target="_blank"&gt; &lt;img alt="OPPO" src="https://github.com/user-attachments/assets/2b6d3cf0-ae54-4073-bc06-c6623e31c6d0" width="19%" /&gt; &lt;/a&gt; 
+ &lt;a href="https://www.automq.com/customer" target="_blank"&gt; &lt;img alt="BambuLab" src="https://github.com/user-attachments/assets/d09ded1b-3696-49ac-b38f-d02f9598b3bb" width="19%" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=IB8sh639Rsg"&gt;Grab: Driving Efficiency with AutoMQ in DataStreaming Platform&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.automq.com/blog/jdcom-automq-cubefs-trillion-scale-kafka-messaging?utm_source=github_automq"&gt;JD.com x AutoMQ x CubeFS: A Cost-Effective Journey&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.automq.com/blog/palmpay-uses-automq-to-replace-kafka?utm_source=github_automq"&gt;Palmpay Uses AutoMQ to Replace Kafka, Optimizing Costs by 50%+&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.automq.com/blog/automq-help-geely-auto-solve-the-pain-points-of-kafka-elasticity-in-the-v2x-scenario?utm_source=github_automq"&gt;AutoMQ help Geely Auto(Fortune Global 500) solve the pain points of Kafka elasticity in the V2X scenario&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.automq.com/blog/how-asias-quora-zhihu-use-automq-to-reduce-kafka-cost-and-maintenance-complexity?utm_source=github_automq"&gt;How Asia’s Quora Zhihu uses AutoMQ to reduce Kafka cost and maintenance complexity&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.automq.com/blog/xpeng-motors-reduces-costs-by-50-by-replacing-kafka-with-automq?utm_source=github_automq"&gt;XPENG Motors Reduces Costs by 50%+ by Replacing Kafka with AutoMQ&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.automq.com/blog/asiax27s-goat-poizon-uses-automq-kafka-to-build-a-new-generation-observability-platform-for-massive-data?utm_source=github_automq"&gt;Asia's GOAT, Poizon uses AutoMQ Kafka to build observability platform for massive data(30 GB/s)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.automq.com/blog/automq-helps-caocao-mobility-address-kafka-scalability-issues-during-mid-autumn-and-national-day?utm_source=github_automq"&gt;AutoMQ Helps CaoCao Mobility Address Kafka Scalability During Holidays&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Prerequisites&lt;/h3&gt; 
+&lt;p&gt;Before running AutoMQ locally, please ensure:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Docker version 20.x or later&lt;/li&gt; 
+ &lt;li&gt;Docker Compose v2&lt;/li&gt; 
+ &lt;li&gt;At least 4 GB RAM allocated to Docker&lt;/li&gt; 
+ &lt;li&gt;Ports 9092 and 9000 are available on your system&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!Tip] Deploying a production-ready AutoMQ cluster is challenging. This Quick Start is only for evaluating AutoMQ features and is not suitable for production use. For production deployment best practices, please &lt;a href="https://www.automq.com/contact"&gt;contact&lt;/a&gt; our community for support.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;The &lt;code&gt;docker/docker-compose.yaml&lt;/code&gt; file provides a simple single-node setup for quick evaluation and development:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;curl -O https://raw.githubusercontent.com/AutoMQ/automq/refs/tags/1.5.5/docker/docker-compose.yaml &amp;amp;&amp;amp; docker compose -f docker-compose.yaml up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This setup features a single AutoMQ node serving as both controller and broker, alongside MinIO for S3 storage. All services operate within a Docker bridge network called &lt;code&gt;automq_net&lt;/code&gt;, allowing you to start a Kafka producer in this network to test AutoMQ:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;docker run --network automq_net automqinc/automq:latest /bin/bash -c \
+"/opt/automq/kafka/bin/kafka-producer-perf-test.sh --topic test-topic --num-records=1024000 --throughput 5120 --record-size 1024 \
+--producer-props bootstrap.servers=server1:9092 linger.ms=100 batch.size=524288 buffer.memory=134217728 max.request.size=67108864"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;After testing, you can destroy the setup with:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;docker compose -f docker-compose.yaml down
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The &lt;code&gt;docker/docker-compose-cluster.yaml&lt;/code&gt; file offers a more complex setup with three AutoMQ nodes, ideal for testing AutoMQ's cluster features, and can be run in the same way.&lt;/p&gt; 
+&lt;p&gt;There are more deployment options available:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://www.automq.com/docs/automq/getting-started/deploy-multi-nodes-test-cluster-on-docker?utm_source=github_automq"&gt;Deploy Multi-Nodes Test Cluster on Docker&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.automq.com/docs/automq/deployment/deploy-multi-nodes-cluster-on-linux?utm_source=github_automq"&gt;Deploy on Linux with 5 Nodes&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.automq.com/docs/automq/deployment/deploy-multi-nodes-cluster-on-kubernetes?utm_source=github_automq"&gt;Deploy on Kubernetes&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.automq.com/automq-cloud/getting-started/install-byoc-environment/aws/install-env-from-marketplace?utm_source=github_automq"&gt;Try AutoMQ on AWS Marketplace (Two Weeks Free Trial)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://market.aliyun.com/products/55530001/cmgj00065841.html"&gt;Try AutoMQ on Alibaba Cloud Marketplace (Two Weeks Free Trial)&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🗞️ Newest Feature - Table Topic&lt;/h2&gt; 
+&lt;p&gt;Table Topic is a new feature in AutoMQ that combines stream and table functionalities to unify streaming and data analysis. Currently, it supports Apache Iceberg and integrates with catalog services such as AWS Glue, HMS, and the Rest catalog. Additionally, it natively supports S3 tables, a new AWS product announced at the 2024 re:Invent. &lt;a href="https://www.automq.com/blog/automq-table-topic-seamless-integration-with-s3-tables-and-iceberg?utm_source=github_automq"&gt;Learn more&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/6b2a514a-cc3e-442e-84f6-d953206865e0" alt="image" /&gt;&lt;/p&gt; 
+&lt;h2&gt;🔶 Why AutoMQ&lt;/h2&gt; 
+&lt;p&gt;AutoMQ is a stateless Kafka alternative that runs on S3 or any S3-compatible storage, such as MinIO. It is designed to address two major issues of Apache Kafka. First, Kafka clusters are difficult to scale out or in due to the stateful nature of its brokers. Data movement is required, and even reassigning partitions between brokers is a complex process. Second, hosting Kafka in the cloud can be prohibitively expensive. You face high costs for EBS storage, cross-AZ traffic, and significant over-provisioning due to Kafka's limited scalability.&lt;/p&gt; 
+&lt;p&gt;Here are some key highlights of AutoMQ that make it an ideal choice to replace your Apache Kafka cluster, whether in the cloud or on-premise, as long as you have S3-compatible storage:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Cost effective&lt;/strong&gt;: The first true cloud-native streaming storage system, designed for optimal cost and efficiency on the cloud. Refer to &lt;a href="https://www.automq.com/docs/automq/benchmarks/cost-effective-automq-vs-apache-kafka?utm_source=github_automq"&gt;this report&lt;/a&gt; to see how we cut Apache Kafka billing by 90% on the cloud.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;High Reliability&lt;/strong&gt;: Leverage object storage service to achieve zero RPO, RTO in seconds and 99.999999999% durability.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Zero Cross-AZ Traffic&lt;/strong&gt;: By using cloud object storage as the priority storage solution, AutoMQ eliminates cross-AZ traffic costs on AWS and GCP. In traditional Kafka setups, over 80% of costs arise from cross-AZ traffic, including producer, consumer, and replication sides.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Serverless&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;Auto Scaling: Monitor cluster metrics and automatically scale in/out to align with your workload, enabling a pay-as-you-go model.&lt;/li&gt; 
+   &lt;li&gt;Scaling in seconds: The computing layer (broker) is stateless and can scale in/out within seconds, making AutoMQ a truly serverless solution.&lt;/li&gt; 
+   &lt;li&gt;Infinite scalable: Utilize cloud object storage as the primary storage solution, eliminating concerns about storage capacity.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Manage-less&lt;/strong&gt;: The built-in auto-balancer component automatically schedules partitions and network traffic between brokers, eliminating manual partition reassignment.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;High performance&lt;/strong&gt;: 
+  &lt;ul&gt; 
+   &lt;li&gt;High throughput: Leverage pre-fetching, batch processing, and parallel technologies to maximize the capabilities of cloud object storage. Refer to the &lt;a href="https://www.automq.com/docs/automq/benchmarks/automq-vs-apache-kafka-benchmarks-and-cost?utm_source=github_automq"&gt;AutoMQ Performance White Paper&lt;/a&gt; to see how we achieve this.&lt;/li&gt; 
+   &lt;li&gt;Low Latency: AutoMQ defaults to running on S3 directly, resulting in hundreds of milliseconds of latency. The enterprise version offers single-digit millisecond latency. &lt;a href="https://www.automq.com/contact?utm_source=github_automq"&gt;Contact us&lt;/a&gt; for more details.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Built-in Metrics Export&lt;/strong&gt;: Natively export Prometheus and OpenTelemetry metrics, supporting both push and pull. Ditch inefficient JMX and monitor your cluster with modern tools. Refer to &lt;a href="https://www.automq.com/docs/automq/observability/metrics?utm_source=github_automq"&gt;full metrics list&lt;/a&gt; provided by AutoMQ.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;100% Kafka Compatible&lt;/strong&gt;: Fully compatible with Apache Kafka, offering all features with greater cost-effectiveness and operational efficiency.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;✨Architecture&lt;/h2&gt; 
+&lt;p&gt;AutoMQ is a fork of the open-source &lt;a href="https://github.com/apache/kafka"&gt;Apache Kafka&lt;/a&gt;. We've introduced a new storage engine based on object storage, transforming the classic shared-nothing architecture into a shared storage architecture.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/AutoMQ/automq/main/docs/images/automq_simple_arch.png" alt="image" /&gt;&lt;/p&gt; 
+&lt;p&gt;Regarding the architecture of AutoMQ, it is fundamentally different from Kafka. The core difference lies in the storage layer of Apache Kafka and how we leverage object storage to achieve a stateless broker architecture. AutoMQ consists of below key components:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;S3 Storage Adapter: an adapter layer that reimplements the UnifiedLog, LocalLog, and LogSegment classes to create logs on S3 instead of a local disk. Traditional local disk storage is still supported if desired.&lt;/li&gt; 
+ &lt;li&gt;S3Stream: a shared streaming storage library that encapsulates various storage modules, including WAL and object storage. WAL is a write-ahead log optimized for frequent writes and low IOPS to reduce S3 API costs. To boost read performance, we use LogCache and BlockCache for improved efficiency.&lt;/li&gt; 
+ &lt;li&gt;Auto Balancer: a component that automatically balances traffic and partitions between brokers, eliminating the need for manual reassignment. Unlike Kafka, this built-in feature removes the need for cruise control.&lt;/li&gt; 
+ &lt;li&gt;Rack-aware Router: Kafka has long faced cross-AZ traffic fees on AWS and GCP. Our shared storage architecture addresses this by using a rack-aware router to provide clients in different AZs with specific partition metadata, avoiding cross-AZ fees while exchanging data through object storage.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;For more on AutoMQ's architecture, visit &lt;a href="https://www.automq.com/docs/automq/architecture/overview?utm_source=github_automq"&gt;AutoMQ Architecture&lt;/a&gt; or explore the source code directly.&lt;/p&gt; 
+&lt;h2&gt;🌟 Stay Ahead&lt;/h2&gt; 
+&lt;p&gt;Star AutoMQ on GitHub for instant updates on new releases. &lt;img src="https://github.com/user-attachments/assets/80a12561-2507-4283-8322-3512fec66f12" alt="star-automq" /&gt;&lt;/p&gt; 
+&lt;h2&gt;💬 Community&lt;/h2&gt; 
+&lt;p&gt;You can join the following groups or channels to discuss or ask questions about AutoMQ:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Ask questions or report a bug by &lt;a href="https://github.com/AutoMQ/automq/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Discuss about AutoMQ or Kafka by &lt;a href="https://go.automq.com/slack"&gt;Slack&lt;/a&gt; or &lt;a href="https://raw.githubusercontent.com/AutoMQ/automq/main/docs/images/automq-wechat.png"&gt;Wechat Group&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;👥 How to contribute&lt;/h2&gt; 
+&lt;p&gt;If you've found a problem with AutoMQ, please open a &lt;a href="https://github.com/AutoMQ/automq/issues"&gt;GitHub Issues&lt;/a&gt;. To contribute to AutoMQ please see &lt;a href="https://raw.githubusercontent.com/AutoMQ/automq/main/CODE_OF_CONDUCT.md"&gt;Code of Conduct&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/AutoMQ/automq/main/CONTRIBUTING_GUIDE.md"&gt;Contributing Guide&lt;/a&gt;. We have a list of &lt;a href="https://github.com/AutoMQ/automq/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"&gt;good first issues&lt;/a&gt; that help you to get started, gain experience, and get familiar with our contribution process.&lt;/p&gt; 
+&lt;h2&gt;👍 AutoMQ Enterprise Edition&lt;/h2&gt; 
+&lt;p&gt;The enterprise edition of AutoMQ offers a robust, user-friendly control plane for seamless cluster management, with enhanced availability and observability over the open-source version. Additionally, we offer &lt;a href="https://www.automq.com/solutions/kafka-linking?utm_source=github_automq"&gt;Kafka Linking&lt;/a&gt; for zero-downtime migration from any Kafka-compatible cluster to AutoMQ.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.automq.com/contact?utm_source=github_automq"&gt;Contact us&lt;/a&gt; for more information about the AutoMQ enterprise edition, and we'll gladly assist with your free trial.&lt;/p&gt; 
+&lt;h2&gt;📜 License&lt;/h2&gt; 
+&lt;p&gt;AutoMQ is under the Apache 2.0 license. See the &lt;a href="https://github.com/AutoMQ/automq/raw/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;h2&gt;📝 Trademarks&lt;/h2&gt; 
+&lt;p&gt;Apache®, Apache Kafka®, Kafka®, Apache Iceberg®, Iceberg® and associated open source project names are trademarks of the Apache Software Foundation&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>microg/GmsCore</title>
+      <link>https://github.com/microg/GmsCore</link>
+      <description>&lt;p&gt;Free implementation of Play Services&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;microG Services&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/microg/GmsCore/actions/workflows/build.yml"&gt;&lt;img src="https://github.com/microg/GmsCore/actions/workflows/build.yml/badge.svg?sanitize=true" alt="Build status" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/microg/GmsCore/master/TRANSLATION.md"&gt; &lt;img src="https://hosted.weblate.org/widget/microg/svg-badge.svg?sanitize=true" alt="Translation status" /&gt; &lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;microG Services is a FLOSS (Free/Libre Open Source Software) framework to allow applications designed for Google Play Services to run on systems, where Play Services is not available.&lt;/p&gt; 
+&lt;h3&gt;Please refer to the &lt;a href="https://github.com/microg/GmsCore/wiki"&gt;wiki&lt;/a&gt; for downloads and instructions&lt;/h3&gt; 
+&lt;h2&gt;Translations&lt;/h2&gt; 
+&lt;p&gt;If you'd like to help translate microG, take a look at &lt;a href="https://raw.githubusercontent.com/microg/GmsCore/master/TRANSLATION.md"&gt;TRANSLATION&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;Copyright 2013-2025 microG Project Team
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>apache/solr</title>
+      <link>https://github.com/apache/solr</link>
+      <description>&lt;p&gt;Apache Solr open-source search software&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Welcome to the Apache Solr project!&lt;/h1&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;Solr is the blazing-fast, open source, multi-modal search platform built on &lt;a href="https://lucene.apache.org/"&gt;Apache Lucene&lt;/a&gt;. It powers full-text, vector, and geospatial search at many of the world's largest organizations.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://ci-builds.apache.org/job/Solr/job/Solr-Artifacts-main/"&gt;&lt;img src="https://ci-builds.apache.org/job/Solr/job/Solr-Artifacts-main/badge/icon?subject=Solr%20Artifacts" alt="Build Status" /&gt;&lt;/a&gt; &lt;a href="https://ci-builds.apache.org/job/Solr/job/Solr-Lint-main/"&gt;&lt;img src="https://ci-builds.apache.org/job/Solr/job/Solr-Lint-main/badge/icon?subject=Solr%20Lint" alt="Build Status" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;For a complete description of the Solr project, team composition, source code repositories, and other details, please see the Solr web site at &lt;a href="https://solr.apache.org/"&gt;https://solr.apache.org/&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Download&lt;/h2&gt; 
+&lt;p&gt;Downloads for Apache Solr distributions are available at &lt;a href="https://solr.apache.org/downloads.html"&gt;https://solr.apache.org/downloads.html&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Running Solr&lt;/h2&gt; 
+&lt;h3&gt;Installing Solr&lt;/h3&gt; 
+&lt;p&gt;The Reference Guide contains an entire &lt;a href="https://solr.apache.org/guide/solr/latest/deployment-guide/system-requirements.html"&gt;Deployment Guide&lt;/a&gt; to walk you through installing Solr.&lt;/p&gt; 
+&lt;h3&gt;Running Solr in Docker&lt;/h3&gt; 
+&lt;p&gt;You can run Solr in Docker via the &lt;a href="https://hub.docker.com/_/solr"&gt;official image&lt;/a&gt;. Learn more about &lt;a href="https://solr.apache.org/guide/solr/latest/deployment-guide/solr-in-docker.html"&gt;Solr in Docker&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Running Solr on Kubernetes&lt;/h3&gt; 
+&lt;p&gt;Solr has official support for running on Kubernetes, in the official Docker image. Please refer to the &lt;a href="https://solr.apache.org/operator"&gt;Solr Operator&lt;/a&gt; home for details, tutorials and instructions.&lt;/p&gt; 
+&lt;h2&gt;How to Use&lt;/h2&gt; 
+&lt;p&gt;Solr includes a few examples to help you get started. To run a specific example, enter:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;  bin/solr start -e &amp;lt;EXAMPLE&amp;gt; where &amp;lt;EXAMPLE&amp;gt; is one of:
+    cloud:         SolrCloud example
+    techproducts:  Comprehensive example illustrating many of Solr's core capabilities
+    schemaless:    Schema-less example (schema is inferred from data during indexing)
+    films:         Example of starting with _default configset and adding explicit fields dynamically    
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For instance, if you want to run the techproducts example, enter:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;  bin/solr start -e techproducts
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For a more in-depth introduction, please check out the &lt;a href="https://solr.apache.org/guide/solr/latest/getting-started/solr-tutorial.html"&gt;tutorials in the Solr Reference Guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://solr.apache.org/community.html#mailing-lists-chat"&gt;Users Mailing List&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Slack: Solr Community Channel. Sign up at &lt;a href="https://s.apache.org/solr-slack"&gt;https://s.apache.org/solr-slack&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;IRC: &lt;code&gt;#solr&lt;/code&gt; on &lt;a href="https://web.libera.chat/?channels=#solr"&gt;libera.chat&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Developer Documentation&lt;/h2&gt; 
+&lt;p&gt;Learn more about developing Solr by reading through the developer docs in &lt;a href="https://raw.githubusercontent.com/apache/solr/main/dev-docs"&gt;./dev-docs&lt;/a&gt; source tree or building Solr from source in &lt;a href="https://raw.githubusercontent.com/apache/solr/main/dev-docs/solr-source-code.adoc"&gt;./dev-docs/solr-source-code.adoc&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Quickstart&lt;/h3&gt; 
+&lt;p&gt;Solr uses &lt;a href="https://gradle.org/"&gt;Gradle&lt;/a&gt; for its build system. Here are some useful hints to build and run Solr locally:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;To build a Solr dev distribution:&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code&gt;./gradlew dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;To run the Solr dev distribution locally:&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code&gt;cd ./solr/packaging/build/dev
+bin/solr start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Open a web browser and go to &lt;a href="http://localhost:8983/solr/"&gt;http://localhost:8983/solr/&lt;/a&gt; to access the Solr Admin interface. You can also use the &lt;code&gt;bin/solr&lt;/code&gt; script to create and manage Solr collections. For example use the &lt;code&gt;bin/solr post&lt;/code&gt; tool to index some sample data.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Get Involved&lt;/h2&gt; 
+&lt;p&gt;Please review &lt;a href="https://raw.githubusercontent.com/apache/solr/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for information on contributing to the project.&lt;/p&gt; 
+&lt;p&gt;To get involved in the developer community:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://solr.apache.org/community.html#mailing-lists-chat"&gt;Mailing Lists&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Slack: &lt;code&gt;#solr-dev&lt;/code&gt; in the &lt;code&gt;the-asf&lt;/code&gt; organization. Sign up at &lt;a href="https://the-asf.slack.com/messages/CE70MDPMF"&gt;https://the-asf.slack.com/messages/CE70MDPMF&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://issues.apache.org/jira/browse/SOLR"&gt;Issue Tracker (JIRA)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;IRC: &lt;code&gt;#solr-dev&lt;/code&gt; on &lt;a href="https://web.libera.chat/?channels=#solr-dev"&gt;libera.chat&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>alibaba/spring-ai-alibaba</title>
+      <link>https://github.com/alibaba/spring-ai-alibaba</link>
+      <description>&lt;p&gt;Agentic AI Framework for Java Developers&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;&lt;a href="https://java2ai.com"&gt;Spring AI Alibaba&lt;/a&gt;&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://www.apache.org/licenses/LICENSE-2.0.html"&gt;&lt;img src="https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?sanitize=true" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://github.com/alibaba/spring-ai-alibaba/actions?query=workflow%3A%22%F0%9F%9B%A0%EF%B8%8F+Build+and+Test%22"&gt;&lt;img src="https://github.com/alibaba/spring-ai-alibaba/workflows/%F0%9F%9B%A0%EF%B8%8F%20Build%20and%20Test/badge.svg?sanitize=true" alt="CI Status" /&gt;&lt;/a&gt; &lt;a href="https://deepwiki.com/alibaba/spring-ai-alibaba"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" alt="Ask DeepWiki" /&gt;&lt;/a&gt; &lt;a href="https://img.shields.io/maven-central/v/com.alibaba.cloud.ai/spring-ai-alibaba"&gt;&lt;img src="https://img.shields.io/maven-central/v/com.alibaba.cloud.ai/spring-ai-alibaba.svg?sanitize=true" alt="Maven central" /&gt;&lt;/a&gt; &lt;img alt="gitleaks badge" src="https://img.shields.io/badge/protected%20by-gitleaks-blue" /&gt;&lt;/p&gt;  
+&lt;h3 align="center"&gt; A production-ready framework for building Agentic, Workflow, and Multi-agent applications. &lt;/h3&gt; 
+&lt;h3 align="center"&gt; &lt;a href="https://java2ai.com/docs/quick-start/" target="_blank"&gt;Agent Framework Docs&lt;/a&gt;, &lt;a href="https://java2ai.com/docs/frameworks/graph-core/quick-start/" target="_blank"&gt;Graph Docs&lt;/a&gt;, &lt;a href="https://java2ai.com/ecosystem/spring-ai/reference/concepts/" target="_blank"&gt;Spring AI&lt;/a&gt;, &lt;a href="https://github.com/alibaba/spring-ai-alibaba/tree/main/examples" target="_blank"&gt;Examples&lt;/a&gt;. &lt;/h3&gt;  
+&lt;h2&gt;Architecture&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/alibaba/spring-ai-alibaba/main/docs/imgs/architecture-new.png" alt="architecture" style="max-width: 740px; height: auto" /&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Spring AI Alibaba Admin&lt;/strong&gt; is a one-stop Agent platform that supports visualized Agent development, observability, evaluation, and MCP management, etc. It also integrates with open-source low-code platforms like Dify, enabling rapid migration from DSL to Spring AI Alibaba project.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Spring AI Alibaba Agent Framework&lt;/strong&gt; is an agent development framework that can quickly develop agents with builtin &lt;strong&gt;Context Engineering&lt;/strong&gt; and &lt;strong&gt;Human In The Loop&lt;/strong&gt; support. For scenarios requiring more complex process control, Agent Framework offers built-in workflows like &lt;code&gt;SequentialAgent&lt;/code&gt;, &lt;code&gt;ParallelAgent&lt;/code&gt;, &lt;code&gt;RoutingAgent&lt;/code&gt;, &lt;code&gt;LoopAgent&lt;/code&gt; and &lt;code&gt;SupervisorAgent&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Spring AI Alibaba Graph&lt;/strong&gt; serves as the underlying runtime of the Agent Framework, providing essential capabilities such as persistence, workflow orchestration, and streaming required for long-running stateful agents. Compared to the Agent Framework, users can build more flexible multi-agent workflows based on the Graph API.&lt;/p&gt; 
+&lt;h2&gt;Core Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://java2ai.com/docs/frameworks/agent-framework/advanced/multi-agent"&gt;Multi-Agent Orchestration&lt;/a&gt;&lt;/strong&gt;: Compose multiple agents with built-in patterns including &lt;code&gt;SequentialAgent&lt;/code&gt;, &lt;code&gt;ParallelAgent&lt;/code&gt;, &lt;code&gt;LlmRoutingAgent&lt;/code&gt;, and &lt;code&gt;LoopAgent&lt;/code&gt; for complex task execution.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://java2ai.com/docs/frameworks/agent-framework/tutorials/hooks"&gt;Context Engineering&lt;/a&gt;&lt;/strong&gt;: Built-in best practices for context engineering policies to improve agent reliability and performance, including human-in-the-loop, context compaction, context editing, model &amp;amp; tool call limit, tool retry, planning, dynamic tool selection.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://java2ai.com/docs/frameworks/graph-core/quick-start"&gt;Graph-based Workflow&lt;/a&gt;&lt;/strong&gt;: Graph based workflow runtime and api for conditional routing, nested graphs, parallel execution, and state management. Export workflows to PlantUML and Mermaid formats.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://java2ai.com/docs/frameworks/agent-framework/advanced/a2a"&gt;A2A Support&lt;/a&gt;&lt;/strong&gt;: Agent-to-Agent communication support with Nacos integration, enabling distributed agent coordination and collaboration across services.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://java2ai.com/integration/chatmodels/dashScope"&gt;Rich Model, Tool and MCP Support&lt;/a&gt;&lt;/strong&gt;: Leveraging core concepts of Spring AI, supports multiple LLM providers (DashScope, OpenAI, etc.), tool calling, and Model Context Protocol (MCP).&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://java2ai.com/ecosystem/admin/quick-start"&gt;One-stop Agent Platform&lt;/a&gt;&lt;/strong&gt;: Build agent in a visualized way, deploy agent without code or export as a standalone java project.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/alibaba/spring-ai-alibaba/main/docs/imgs/saa-admin.png" alt="architecture" style="max-width: 740px; height: auto" /&gt; &lt;/p&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;h3&gt;Prerequisites&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Requires JDK 17+.&lt;/li&gt; 
+ &lt;li&gt;Choose your LLM provider and get the API-KEY.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Quickly Run a ChatBot&lt;/h3&gt; 
+&lt;p&gt;There's a ChatBot example provided by the community at &lt;a href="https://github.com/alibaba/spring-ai-alibaba/tree/main/examples/chatbot"&gt;examples/chatbot&lt;/a&gt;.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;Download the code.&lt;/p&gt; &lt;pre&gt;&lt;code class="language-shell"&gt;git clone --depth=1 https://github.com/alibaba/spring-ai-alibaba.git
+cd spring-ai-alibaba/examples/chatbot
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Start the ChatBot.&lt;/p&gt; &lt;p&gt;Before starting, set API-KEY first (visit &lt;a href="https://bailian.console.aliyun.com/?apiKey=1&amp;amp;tab=api#/api" target="_blank"&gt;Aliyun Bailian&lt;/a&gt; to get API-KEY):&lt;/p&gt; &lt;pre&gt;&lt;code class="language-shell"&gt;# this example uses 'spring-ai-alibaba-starter-dashscope', visit https://java2ai.com to learn how to use OpenAI/DeepSeek.
+export AI_DASHSCOPE_API_KEY=your-api-key
+&lt;/code&gt;&lt;/pre&gt; &lt;pre&gt;&lt;code class="language-shell"&gt;mvn spring-boot:run
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Chat with ChatBot.&lt;/p&gt; &lt;p&gt;Open the browser and visit &lt;a href="http://localhost:8080/chatui/index.html"&gt;http://localhost:8080/chatui/index.html&lt;/a&gt; to chat with the ChatBot.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/alibaba/spring-ai-alibaba/main/docs/imgs/chatbot-chat-ui.gif" alt="chatbot-ui" style="max-width: 740px; height: auto" /&gt; &lt;/p&gt; 
+&lt;h2&gt;Chatbot Code Explained&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;Add dependencies&lt;/p&gt; &lt;pre&gt;&lt;code class="language-xml"&gt;&amp;lt;dependencies&amp;gt;
+  &amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;com.alibaba.cloud.ai&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;spring-ai-alibaba-agent-framework&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;1.1.0.0&amp;lt;/version&amp;gt;
+  &amp;lt;/dependency&amp;gt;
+  &amp;lt;!-- Assume you are going to use DashScope Model. Refer to docs for how to choose model.--&amp;gt;
+  &amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;com.alibaba.cloud.ai&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;spring-ai-alibaba-starter-dashscope&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;1.1.0.0&amp;lt;/version&amp;gt;
+  &amp;lt;/dependency&amp;gt;
+&amp;lt;/dependencies&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;Define Chatbot&lt;/p&gt; &lt;p&gt;For more details of how to write a Chatbot, please check the &lt;a href="https://java2ai.com/docs/quick-start"&gt;Quick Start&lt;/a&gt; on our official website.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;📚 Documentation&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://java2ai.com/docs/overview"&gt;Overview&lt;/a&gt; - High level overview of the framework&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://java2ai.com/docs/quick-start"&gt;Quick Start&lt;/a&gt; - Get started with a simple agent&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://java2ai.com/docs/frameworks/agent-framework/tutorials/agents"&gt;Agent Framework Tutorials&lt;/a&gt; - Step by step tutorials&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://java2ai.com/docs/frameworks/agent-framework/advanced/context-engineering"&gt;Use Graph API to Build Complex Workflows&lt;/a&gt; - In-depth user guide for building multi-agent and workflows&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://java2ai.com/ecosystem/spring-ai/reference/concepts"&gt;Spring AI Basics&lt;/a&gt; - Ai Application basic concepts, including ChatModel, MCP, Tool, Messages, etc.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Project Structure&lt;/h2&gt; 
+&lt;p&gt;This project consists of several core components:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;spring-ai-alibaba-agent-framework: A multi-agent framework designed for building intelligent agents with built-in context engineering best practices.&lt;/li&gt; 
+ &lt;li&gt;spring-ai-alibaba-graph: The underlying runtime for Agent Framework. We recommend developers to use Agent Framework but it's totally fine to use the Graph API directly.&lt;/li&gt; 
+ &lt;li&gt;spring-ai-alibaba-admin: A one-stop Agent platform that supports visualized Agent development, observability, evaluation, and MCP management, etc.&lt;/li&gt; 
+ &lt;li&gt;spring-ai-alibaba-studio: The embedded ui for quickly debugging agent in a visualized way.&lt;/li&gt; 
+ &lt;li&gt;spring-boot-starters: Starters integrating Agent Framework with Nacos to provide A2A and dynamic config features.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Spring AI Alibaba Ecosystem&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Repository&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+   &lt;th&gt;⭐&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/alibaba/spring-ai-alibaba/tree/main/spring-ai-alibaba-graph-core"&gt;Spring AI Alibaba Graph&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;A low-level orchestration framework and runtime for building, managing, and deploying long-running, stateful agents.&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://img.shields.io/github/stars/alibaba/spring-ai-alibaba?style=for-the-badge&amp;amp;label=" alt="GitHub Repo stars" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/spring-ai-alibaba/spring-ai-alibaba-admin"&gt;Spring AI Alibaba Admin&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Local visualization toolkit for the development of agent applications, supporting project management, runtime visualization, tracing, and agent evaluation.&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://img.shields.io/github/stars/spring-ai-alibaba/spring-ai-alibaba-admin?style=for-the-badge&amp;amp;label=" alt="GitHub Repo stars" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/spring-ai-alibaba/spring-ai-extensions"&gt;Spring AI Extensions&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Extended implementations for Spring AI core concepts, including DashScopeChatModel, MCP registry, etc.&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://img.shields.io/github/stars/spring-ai-alibaba/spring-ai-extensions?style=for-the-badge&amp;amp;label=" alt="GitHub Repo stars" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/spring-ai-alibaba/examples"&gt;Spring AI Alibaba Examples&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Spring AI Alibaba Examples.&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://img.shields.io/github/stars/spring-ai-alibaba/examples?style=for-the-badge&amp;amp;label=" alt="GitHub Repo stars" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/spring-ai-alibaba/jmanus"&gt;JManus&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;A Java implementation of Manus built with Spring AI Alibaba, currently used in many applications within Alibaba Group.&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://img.shields.io/github/stars/spring-ai-alibaba/jmanus?style=for-the-badge&amp;amp;label=" alt="GitHub Repo stars" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/spring-ai-alibaba/dataagent"&gt;DataAgent&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;A natural language to SQL project based on Spring AI Alibaba, enabling you to query databases directly with natural language without writing complex SQL.&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://img.shields.io/github/stars/spring-ai-alibaba/dataagent?style=for-the-badge&amp;amp;label=" alt="GitHub Repo stars" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/spring-ai-alibaba/deepresearch"&gt;DeepResearch&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Deep Research implemented based on spring-ai-alibaba-graph.&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://img.shields.io/github/stars/spring-ai-alibaba/deepresearch?style=for-the-badge&amp;amp;label=" alt="GitHub Repo stars" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Contact Us&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Dingtalk Group (钉钉群), search &lt;code&gt;130240015687&lt;/code&gt; and join.&lt;/li&gt; 
+ &lt;li&gt;WeChat Group (微信公众号), scan the QR code below and follow us.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;img src="https://raw.githubusercontent.com/alibaba/spring-ai-alibaba/main/docs/imgs/wechat-account.jpg" style="width: 260px; height: auto" /&gt; 
+&lt;h2&gt;Resources&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://developer.aliyun.com/ebook/8479"&gt;AI-Native Application Architecture White Paper&lt;/a&gt;：Co-authored by 40 frontline engineers and endorsed by 15 industry experts, this 200,000+ word white paper is the first comprehensive guide dedicated to the full DevOps lifecycle of AI-native applications. It systematically breaks down core concepts and key challenges, offering practical problem-solving approaches and architectural insights.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://starchart.cc/alibaba/spring-ai-alibaba"&gt;&lt;img src="https://starchart.cc/alibaba/spring-ai-alibaba.svg?variant=adaptive" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p align="center"&gt; Made with ❤️ by the Spring AI Alibaba Team &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>neo4j/neo4j</title>
+      <link>https://github.com/neo4j/neo4j</link>
+      <description>&lt;p&gt;Graphs for Everyone&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Neo4j: Graphs for Everyone&lt;/h1&gt; 
+&lt;div id="preamble"&gt; 
+ &lt;div class="sectionbody"&gt; 
+  &lt;div class="paragraph"&gt; 
+   &lt;p&gt;&lt;a href="https://neo4j.com"&gt;Neo4j&lt;/a&gt; is the world’s leading Graph Database. It is a high performance graph store with all the features expected of a mature and robust database, like a friendly query language and ACID transactions. The programmer works with a flexible network structure of nodes and relationships rather than static tables — yet enjoys all the benefits of enterprise-quality database. For many applications, Neo4j offers orders of magnitude performance benefits compared to relational DBs.&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;div class="paragraph"&gt; 
+   &lt;p&gt;Learn more on the &lt;a href="https://neo4j.com"&gt;Neo4j website&lt;/a&gt;.&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;div class="paragraph"&gt; 
+   &lt;p&gt;&lt;a href="https://discord.gg/neo4j"&gt;&lt;span class="image"&gt;&lt;img src="https://img.shields.io/discord/787399249741479977?label=Chat&amp;amp;logo=discord&amp;amp;style=for-the-badge" alt="Discord" /&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;div class="paragraph"&gt; 
+   &lt;p&gt;&lt;a href="https://community.neo4j.com"&gt;&lt;span class="image"&gt;&lt;img src="https://img.shields.io/discourse/users?label=Forums&amp;amp;logo=discourse&amp;amp;server=https%3A%2F%2Fcommunity.neo4j.com&amp;amp;style=for-the-badge" alt="Discourse users" /&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt; 
+  &lt;/div&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;div class="sect1"&gt; 
+ &lt;h2 id="_using_neo4j"&gt;Using Neo4j&lt;/h2&gt; 
+ &lt;div class="sectionbody"&gt; 
+  &lt;div class="paragraph"&gt; 
+   &lt;p&gt;Neo4j is available both as a standalone server, or an embeddable component. You can &lt;a href="https://neo4j.com/download/"&gt;download&lt;/a&gt; or &lt;a href="https://neo4j.com/sandbox/"&gt;try online&lt;/a&gt;.&lt;/p&gt; 
+  &lt;/div&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;div class="sect1"&gt; 
+ &lt;h2 id="_extending_neo4j"&gt;Extending Neo4j&lt;/h2&gt; 
+ &lt;div class="sectionbody"&gt; 
+  &lt;div class="paragraph"&gt; 
+   &lt;p&gt;We encourage experimentation with Neo4j. You can build extensions to Neo4j, develop library or drivers atop the product, or make contributions directly to the product core. You’ll need to sign a Contributor License Agreement in order for us to accept your patches.&lt;/p&gt; 
+  &lt;/div&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;div class="sect1"&gt; 
+ &lt;h2 id="_dependencies"&gt;Dependencies&lt;/h2&gt; 
+ &lt;div class="sectionbody"&gt; 
+  &lt;div class="paragraph"&gt; 
+   &lt;p&gt;Neo4j is built using &lt;a href="https://maven.apache.org/"&gt;Apache Maven&lt;/a&gt; version 3.8.2 and a recent version of supported VM. Bash and Make are also required. Note that maven needs more memory than the standard configuration, this can be achieved with &lt;code&gt;export MAVEN_OPTS="-Xmx2048m"&lt;/code&gt;.&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;div class="paragraph"&gt; 
+   &lt;p&gt;macOS users need to have &lt;a href="https://brew.sh/"&gt;Homebrew&lt;/a&gt; installed.&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;div class="sect2"&gt; 
+   &lt;h3 id="_with_brew_on_macos"&gt;With brew on macOS&lt;/h3&gt; 
+   &lt;div class="literalblock"&gt; 
+    &lt;div class="content"&gt; 
+     &lt;pre&gt;brew install maven&lt;/pre&gt; 
+    &lt;/div&gt; 
+   &lt;/div&gt; 
+   &lt;div class="paragraph"&gt; 
+    &lt;p&gt;Please note that we do not support building Debian packages on macOS.&lt;/p&gt; 
+   &lt;/div&gt; 
+  &lt;/div&gt; 
+  &lt;div class="sect2"&gt; 
+   &lt;h3 id="_with_apt_get_on_ubuntu"&gt;With apt-get on Ubuntu&lt;/h3&gt; 
+   &lt;div class="literalblock"&gt; 
+    &lt;div class="content"&gt; 
+     &lt;pre&gt;sudo apt install maven openjdk-17-jdk&lt;/pre&gt; 
+    &lt;/div&gt; 
+   &lt;/div&gt; 
+   &lt;div class="paragraph"&gt; 
+    &lt;p&gt;Be sure that the &lt;code&gt;JAVA_HOME&lt;/code&gt; environment variable points to &lt;code&gt;/usr/lib/jvm/java-17-openjdk-amd64&lt;/code&gt; (you may have various java versions installed).&lt;/p&gt; 
+   &lt;/div&gt; 
+  &lt;/div&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;div class="sect1"&gt; 
+ &lt;h2 id="_building_neo4j"&gt;Building Neo4j&lt;/h2&gt; 
+ &lt;div class="sectionbody"&gt; 
+  &lt;div class="paragraph"&gt; 
+   &lt;p&gt;Before you start running the unit and integration tests in the Neo4j Maven project on a Linux-like system, you should ensure your limit on open files is set to a reasonable value. You can test it with &lt;code&gt;ulimit -n&lt;/code&gt;. We recommend you have a limit of at least 40K.&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;div class="ulist"&gt; 
+   &lt;ul&gt; 
+    &lt;li&gt; &lt;p&gt;A plain &lt;code&gt;mvn clean install -T1C&lt;/code&gt; will only build the individual jar files.&lt;/p&gt; &lt;/li&gt; 
+    &lt;li&gt; &lt;p&gt;Test execution is, of course, part of the build.&lt;/p&gt; &lt;/li&gt; 
+    &lt;li&gt; &lt;p&gt;In case you just want the jars, without running tests, this is for you: &lt;code&gt;mvn clean install -DskipTests -T1C&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; 
+    &lt;li&gt; &lt;p&gt;You may need to increase the memory available to Maven: &lt;code&gt;export MAVEN_OPTS="-Xmx2048m"&lt;/code&gt; (try this first if you get build errors).&lt;/p&gt; &lt;/li&gt; 
+   &lt;/ul&gt; 
+  &lt;/div&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;div class="sect1"&gt; 
+ &lt;h2 id="_running_neo4j"&gt;Running Neo4j&lt;/h2&gt; 
+ &lt;div class="sectionbody"&gt; 
+  &lt;div class="paragraph"&gt; 
+   &lt;p&gt;After running a &lt;code&gt;mvn clean install&lt;/code&gt;, &lt;code&gt;cd&lt;/code&gt; into &lt;code&gt;packaging/standalone/target&lt;/code&gt; and extract the version you want, then:&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;div class="literalblock"&gt; 
+   &lt;div class="content"&gt; 
+    &lt;pre&gt;bin/neo4j-admin server start&lt;/pre&gt; 
+   &lt;/div&gt; 
+  &lt;/div&gt; 
+  &lt;div class="paragraph"&gt; 
+   &lt;p&gt;in the extracted folder to start Neo4j on &lt;code&gt;localhost:7474&lt;/code&gt;. On Windows you want to run:&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;div class="literalblock"&gt; 
+   &lt;div class="content"&gt; 
+    &lt;pre&gt;  bin
+eo4j-admin server start&lt;/pre&gt; 
+   &lt;/div&gt; 
+  &lt;/div&gt; 
+  &lt;div class="paragraph"&gt; 
+   &lt;p&gt;instead.&lt;/p&gt; 
+  &lt;/div&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;div class="sect1"&gt; 
+ &lt;h2 id="_neo4j_desktop"&gt;Neo4j Desktop&lt;/h2&gt; 
+ &lt;div class="sectionbody"&gt; 
+  &lt;div class="paragraph"&gt; 
+   &lt;p&gt;Neo4j Desktop is a convenient way for developers to work with local Neo4j databases.&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;div class="paragraph"&gt; 
+   &lt;p&gt;To install Neo4j Desktop, go to &lt;a href="https://neo4j.com/download-center/"&gt;Neo4j Download Center&lt;/a&gt; and follow the instructions.&lt;/p&gt; 
+  &lt;/div&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;div class="sect1"&gt; 
+ &lt;h2 id="_licensing"&gt;Licensing&lt;/h2&gt; 
+ &lt;div class="sectionbody"&gt; 
+  &lt;div class="paragraph"&gt; 
+   &lt;p&gt;Neo4j Community Edition is an open source product licensed under GPLv3.&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;div class="paragraph"&gt; 
+   &lt;p&gt;Neo4j Enterprise Edition includes additional closed-source components &lt;em&gt;not available in this repository&lt;/em&gt; and requires a commercial license from Neo4j or one of its affiliates.&lt;/p&gt; 
+  &lt;/div&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;div class="sect1"&gt; 
+ &lt;h2 id="_trademark"&gt;Trademark&lt;/h2&gt; 
+ &lt;div class="sectionbody"&gt; 
+  &lt;div class="paragraph"&gt; 
+   &lt;p&gt;Neo4j’s trademark policy is available at &lt;a href="https://neo4j.com/trademark-policy/"&gt;our trademark policy page&lt;/a&gt;.&lt;/p&gt; 
+  &lt;/div&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>zaproxy/zaproxy</title>
+      <link>https://github.com/zaproxy/zaproxy</link>
+      <description>&lt;p&gt;The ZAP by Checkmarx Core project&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;&lt;a href="https://www.zaproxy.org"&gt;&lt;img src="https://raw.githubusercontent.com/wiki/zaproxy/zaproxy/images/zap-by-checkmarx.png" alt="" /&gt;&lt;/a&gt;&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://www.apache.org/licenses/LICENSE-2.0.html"&gt;&lt;img src="https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?sanitize=true" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://www.zaproxy.org/download/"&gt;&lt;img src="https://img.shields.io/github/release/zaproxy/zaproxy.svg?sanitize=true" alt="GitHub release" /&gt;&lt;/a&gt; &lt;a href="https://github.com/zaproxy/zaproxy/actions/workflows/ci.yml"&gt;&lt;img src="https://github.com/zaproxy/zaproxy/actions/workflows/ci.yml/badge.svg?sanitize=true" alt="Java CI" /&gt;&lt;/a&gt; &lt;a href="https://bestpractices.coreinfrastructure.org/projects/24"&gt;&lt;img src="https://bestpractices.coreinfrastructure.org/projects/24/badge" alt="CII Best Practices" /&gt;&lt;/a&gt; &lt;a href="https://zapbot.github.io/zap-mgmt-scripts/downloads.html"&gt;&lt;img src="https://img.shields.io/github/downloads/zaproxy/zaproxy/latest/total.svg?maxAge=2592000" alt="Github Releases" /&gt;&lt;/a&gt; &lt;a href="https://javadoc.io/doc/org.zaproxy/zap"&gt;&lt;img src="https://javadoc.io/badge2/org.zaproxy/zap/javadoc.svg?sanitize=true" alt="javadoc" /&gt;&lt;/a&gt; &lt;a href="https://github.com/zaproxy/zaproxy/actions/workflows/codeql.yml"&gt;&lt;img src="https://github.com/zaproxy/zaproxy/actions/workflows/codeql.yml/badge.svg?sanitize=true" alt="CodeQL" /&gt;&lt;/a&gt; &lt;a href="https://sonarcloud.io/dashboard?id=zaproxy_zaproxy"&gt;&lt;img src="https://sonarcloud.io/api/project_badges/measure?project=zaproxy_zaproxy&amp;amp;metric=alert_status" alt="Quality Gate Status" /&gt;&lt;/a&gt; &lt;a href="https://www.codetriage.com/zaproxy/zaproxy"&gt;&lt;img src="https://www.codetriage.com/zaproxy/zaproxy/badges/users.svg?sanitize=true" alt="Open Source Helpers" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/zaproxy"&gt;&lt;img src="https://img.shields.io/twitter/follow/zaproxy.svg?style=social&amp;amp;label=Follow&amp;amp;maxAge=2592000" alt="Twitter Follow" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://github.com/zaproxy/zaproxy/actions/workflows/run-integration-tests.yml/badge.svg?sanitize=true" alt="Integration Tests" /&gt; &lt;img src="https://github.com/zaproxy/zaproxy/actions/workflows/release-live-docker.yml/badge.svg?sanitize=true" alt="Docker Live Release" /&gt;&lt;/p&gt; 
+&lt;p&gt;The Zed Attack Proxy (ZAP) by Checkmarx is the world’s most widely used web app scanner. Free and open source. A community based GitHub Top 1000 project that anyone can contribute to.&lt;/p&gt; 
+&lt;p&gt;It can help you automatically find security vulnerabilities in your web applications while you are developing and testing your applications. It's also a great tool for experienced pentesters to use for manual security testing.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.zaproxy.org/download/"&gt;&lt;img src="https://raw.githubusercontent.com/wiki/zaproxy/zaproxy/images/ZAP-Download.png" alt="" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;For more details about ZAP see the website: &lt;a href="https://www.zaproxy.org/"&gt;zaproxy.org&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.zaproxy.org/"&gt;&lt;img src="https://raw.githubusercontent.com/wiki/zaproxy/zaproxy/images/zap-website.png" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>kestra-io/kestra</title>
+      <link>https://github.com/kestra-io/kestra</link>
+      <description>&lt;p&gt;Event Driven Orchestration &amp; Scheduling Platform for Mission Critical Applications&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://www.kestra.io"&gt; &lt;img src="https://kestra.io/banner.png" alt="Kestra workflow orchestrator" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h1 align="center" style="border-bottom: none"&gt; Event-Driven Declarative Orchestration Platform &lt;/h1&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://github.com/kestra-io/kestra/releases"&gt;&lt;img src="https://img.shields.io/github/tag-pre/kestra-io/kestra.svg?color=blueviolet" alt="Last Version" /&gt;&lt;/a&gt; 
+ &lt;a href="https://github.com/kestra-io/kestra/raw/develop/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/kestra-io/kestra?color=blueviolet" alt="License" /&gt;&lt;/a&gt; 
+ &lt;a href="https://github.com/kestra-io/kestra/stargazers"&gt;&lt;img src="https://img.shields.io/github/stars/kestra-io/kestra?color=blueviolet&amp;amp;logo=github" alt="Github star" /&gt;&lt;/a&gt; 
+ &lt;br /&gt; 
+ &lt;a href="https://kestra.io"&gt;&lt;img src="https://img.shields.io/badge/Website-kestra.io-192A4E?color=blueviolet" alt="Kestra infinitely scalable orchestration and scheduling platform" /&gt;&lt;/a&gt; 
+ &lt;a href="https://kestra.io/slack"&gt;&lt;img src="https://img.shields.io/badge/Slack-Join%20Community-blueviolet?logo=slack" alt="Slack" /&gt;&lt;/a&gt; 
+&lt;/div&gt; 
+&lt;br /&gt; 
+&lt;p align="center"&gt; &lt;a href="https://twitter.com/kestra_io" style="margin: 0 10px;"&gt; &lt;img height="25" src="https://kestra.io/twitter.svg?sanitize=true" alt="twitter" width="35" /&gt;&lt;/a&gt; &lt;a href="https://www.linkedin.com/company/kestra/" style="margin: 0 10px;"&gt; &lt;img height="25" src="https://kestra.io/linkedin.svg?sanitize=true" alt="linkedin" width="35" /&gt;&lt;/a&gt; &lt;a href="https://www.youtube.com/@kestra-io" style="margin: 0 10px;"&gt; &lt;img height="25" src="https://kestra.io/youtube.svg?sanitize=true" alt="youtube" width="35" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/2714" target="_blank"&gt; &lt;img src="https://trendshift.io/api/badge/repositories/2714" alt="kestra-io%2Fkestra | Trendshift" width="250" height="55" /&gt; &lt;/a&gt; &lt;a href="https://www.producthunt.com/posts/kestra?embed=true&amp;amp;utm_source=badge-top-post-badge&amp;amp;utm_medium=badge&amp;amp;utm_souce=badge-kestra" target="_blank"&gt;&lt;img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=612077&amp;amp;theme=light&amp;amp;period=daily&amp;amp;t=1740737506162" alt="Kestra - All-in-one automation &amp;amp; orchestration platform | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://go.kestra.io/video/product-overview" target="_blank"&gt; &lt;img src="https://kestra.io/startvideo.png" alt="Get started in 3 minutes with Kestra" width="640px" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center" style="color:grey;"&gt;&lt;i&gt;Click on the image to learn how to get started with Kestra in 3 minutes.&lt;/i&gt;&lt;/p&gt; 
+&lt;h2&gt;🌟 What is Kestra?&lt;/h2&gt; 
+&lt;p&gt;Kestra is an open-source, event-driven orchestration platform that makes both &lt;strong&gt;scheduled&lt;/strong&gt; and &lt;strong&gt;event-driven&lt;/strong&gt; workflows easy. By bringing &lt;strong&gt;Infrastructure as Code&lt;/strong&gt; best practices to data, process, and microservice orchestration, you can build reliable &lt;a href="https://kestra.io/docs/getting-started"&gt;workflows&lt;/a&gt; directly from the UI in just a few lines of YAML.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Key Features:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Everything as Code and from the UI:&lt;/strong&gt; keep &lt;strong&gt;workflows as code&lt;/strong&gt; with a &lt;strong&gt;Git Version Control&lt;/strong&gt; integration, even when building them from the UI.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Event-Driven &amp;amp; Scheduled Workflows:&lt;/strong&gt; automate both &lt;strong&gt;scheduled&lt;/strong&gt; and &lt;strong&gt;real-time&lt;/strong&gt; event-driven workflows via a simple &lt;code&gt;trigger&lt;/code&gt; definition.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Declarative YAML Interface:&lt;/strong&gt; define workflows using a simple configuration in the &lt;strong&gt;built-in code editor&lt;/strong&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Rich Plugin Ecosystem:&lt;/strong&gt; hundreds of plugins built in to extract data from any database, cloud storage, or API, and &lt;strong&gt;run scripts in any language&lt;/strong&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Intuitive UI &amp;amp; Code Editor:&lt;/strong&gt; build and visualize workflows directly from the UI with syntax highlighting, auto-completion and real-time syntax validation.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Scalable:&lt;/strong&gt; designed to handle millions of workflows, with high availability and fault tolerance.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Version Control Friendly:&lt;/strong&gt; write your workflows from the built-in code Editor and push them to your preferred Git branch directly from Kestra, enabling best practices with CI/CD pipelines and version control systems.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Structure &amp;amp; Resilience&lt;/strong&gt;: tame chaos and bring resilience to your workflows with &lt;strong&gt;namespaces&lt;/strong&gt;, &lt;strong&gt;labels&lt;/strong&gt;, &lt;strong&gt;subflows&lt;/strong&gt;, &lt;strong&gt;retries&lt;/strong&gt;, &lt;strong&gt;timeout&lt;/strong&gt;, &lt;strong&gt;error handling&lt;/strong&gt;, &lt;strong&gt;inputs&lt;/strong&gt;, &lt;strong&gt;outputs&lt;/strong&gt; that generate artifacts in the UI, &lt;strong&gt;variables&lt;/strong&gt;, &lt;strong&gt;conditional branching&lt;/strong&gt;, &lt;strong&gt;advanced scheduling&lt;/strong&gt;, &lt;strong&gt;event triggers&lt;/strong&gt;, &lt;strong&gt;backfills&lt;/strong&gt;, &lt;strong&gt;dynamic tasks&lt;/strong&gt;, &lt;strong&gt;sequential and parallel tasks&lt;/strong&gt;, and skip tasks or triggers when needed by setting the flag &lt;code&gt;disabled&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;🧑‍💻 The YAML definition gets automatically adjusted any time you make changes to a workflow from the UI or via an API call. Therefore, the orchestration logic is &lt;strong&gt;always managed declaratively in code&lt;/strong&gt;, even if you modify your workflows in other ways (UI, CI/CD, Terraform, API calls).&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://kestra.io/adding-tasks.gif" alt="Adding new tasks in the UI" /&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🚀 Quick Start&lt;/h2&gt; 
+&lt;h3&gt;Launch on AWS (CloudFormation)&lt;/h3&gt; 
+&lt;p&gt;Deploy Kestra on AWS using our CloudFormation template:&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://console.aws.amazon.com/cloudformation/home#/stacks/create/review?templateURL=https://kestra-deployment-templates.s3.eu-west-3.amazonaws.com/aws/cloudformation/ec2-rds-s3/kestra-oss.yaml&amp;amp;stackName=kestra-oss"&gt;&lt;img src="https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg?sanitize=true" alt="Launch Stack" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Launch on Google Cloud (Terraform deployment)&lt;/h3&gt; 
+&lt;p&gt;Deploy Kestra on Google Cloud Infrastructure Manager using &lt;a href="https://github.com/kestra-io/deployment-templates/tree/main/gcp/terraform/infrastructure-manager/vm-sql-gcs"&gt;our Terraform module&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Get Started Locally in 5 Minutes&lt;/h3&gt; 
+&lt;h4&gt;Launch Kestra in Docker&lt;/h4&gt; 
+&lt;p&gt;Make sure that Docker is running. Then, start Kestra in a single command:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run --pull=always --rm -it -p 8080:8080 --user=root \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /tmp:/tmp kestra/kestra:latest server local
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If you're on Windows and use PowerShell:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-powershell"&gt;docker run --pull=always --rm -it -p 8080:8080 --user=root `
+    -v "/var/run/docker.sock:/var/run/docker.sock" `
+    -v "C:/Temp:/tmp" kestra/kestra:latest server local
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If you're on Windows and use Command Prompt (CMD):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-cmd"&gt;docker run --pull=always --rm -it -p 8080:8080 --user=root ^
+    -v "/var/run/docker.sock:/var/run/docker.sock" ^
+    -v "C:/Temp:/tmp" kestra/kestra:latest server local
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If you're on Windows and use WSL (Linux-based environment in Windows):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run --pull=always --rm -it -p 8080:8080 --user=root \
+    -v "/var/run/docker.sock:/var/run/docker.sock" \
+    -v "/mnt/c/Temp:/tmp" kestra/kestra:latest server local
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Check our &lt;a href="https://kestra.io/docs/installation"&gt;Installation Guide&lt;/a&gt; for other deployment options (Docker Compose, Podman, Kubernetes, AWS, GCP, Azure, and more).&lt;/p&gt; 
+&lt;p&gt;Access the Kestra UI at &lt;a href="http://localhost:8080"&gt;http://localhost:8080&lt;/a&gt; and start building your first flow!&lt;/p&gt; 
+&lt;h4&gt;Your First Hello World Flow&lt;/h4&gt; 
+&lt;p&gt;Create a new flow with the following content:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-yaml"&gt;id: hello_world
+namespace: dev
+
+tasks:
+  - id: say_hello
+    type: io.kestra.plugin.core.log.Log
+    message: "Hello, World!"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Run the flow and see the output in the UI!&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🧩 Plugin Ecosystem&lt;/h2&gt; 
+&lt;p&gt;Kestra's functionality is extended through a rich &lt;a href="https://kestra.io/plugins"&gt;ecosystem of plugins&lt;/a&gt; that empower you to run tasks anywhere and code in any language, including Python, Node.js, R, Go, Shell, and more. Here's how Kestra plugins enhance your workflows:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Run Anywhere:&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Local or Remote Execution:&lt;/strong&gt; Execute tasks on your local machine, remote servers via SSH, or scale out to serverless containers using &lt;a href="https://kestra.io/docs/task-runners"&gt;Task Runners&lt;/a&gt;.&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Docker and Kubernetes Support:&lt;/strong&gt; Seamlessly run Docker containers within your workflows or launch Kubernetes jobs to handle compute-intensive workloads.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Code in Any Language:&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Scripting Support:&lt;/strong&gt; Write scripts in your preferred programming language. Kestra supports Python, Node.js, R, Go, Shell, and others, allowing you to integrate existing codebases and deployment patterns.&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Flexible Automation:&lt;/strong&gt; Execute shell commands, run SQL queries against various databases, and make HTTP requests to interact with APIs.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Event-Driven and Real-Time Processing:&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Real-Time Triggers:&lt;/strong&gt; React to events from external systems in real-time, such as file arrivals, new messages in message buses (Kafka, Redis, Pulsar, AMQP, MQTT, NATS, AWS SQS, Google Pub/Sub, Azure Event Hubs), and more.&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Custom Events:&lt;/strong&gt; Define custom events to trigger flows based on specific conditions or external signals, enabling highly responsive workflows.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Cloud Integrations:&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;AWS, Google Cloud, Azure:&lt;/strong&gt; Integrate with a variety of cloud services to interact with storage solutions, messaging systems, compute resources, and more.&lt;/li&gt; 
+   &lt;li&gt;&lt;strong&gt;Big Data Processing:&lt;/strong&gt; Run big data processing tasks using tools like Apache Spark or interact with analytics platforms like Google BigQuery.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Monitoring and Notifications:&lt;/strong&gt;&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;strong&gt;Stay Informed:&lt;/strong&gt; Send messages to Slack channels, email notifications, or trigger alerts in PagerDuty to keep your team updated on workflow statuses.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Kestra's plugin ecosystem is continually expanding, allowing you to tailor the platform to your specific needs. Whether you're orchestrating complex data pipelines, automating scripts across multiple environments, or integrating with cloud services, there's likely a plugin to assist. And if not, you can always &lt;a href="https://kestra.io/docs/plugin-developer-guide/"&gt;build your own plugins&lt;/a&gt; to extend Kestra's capabilities.&lt;/p&gt; 
+&lt;p&gt;🧑‍💻 &lt;strong&gt;Note:&lt;/strong&gt; This is just a glimpse of what Kestra plugins can do. Explore the full list on our &lt;a href="https://kestra.io/plugins"&gt;Plugins Page&lt;/a&gt;.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📚 Key Concepts&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Flows:&lt;/strong&gt; the core unit in Kestra, representing a workflow composed of tasks.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Tasks:&lt;/strong&gt; individual units of work, such as running a script, moving data, or calling an API.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Namespaces:&lt;/strong&gt; logical grouping of flows for organization and isolation.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Triggers:&lt;/strong&gt; schedule or events that initiate the execution of flows.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Inputs &amp;amp; Variables:&lt;/strong&gt; parameters and dynamic data passed into flows and tasks.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🎨 Build Workflows Visually&lt;/h2&gt; 
+&lt;p&gt;Kestra provides an intuitive UI that allows you to interactively build and visualize your workflows:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Drag-and-Drop Interface:&lt;/strong&gt; add and rearrange tasks from the Topology Editor.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Real-Time Validation:&lt;/strong&gt; instant feedback on your workflow's syntax and structure to catch errors early.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Auto-Completion:&lt;/strong&gt; smart suggestions as you type to write flow code quickly and without syntax errors.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Live Topology View:&lt;/strong&gt; see your workflow as a Directed Acyclic Graph (DAG) that updates in real-time.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🔧 Extensible and Developer-Friendly&lt;/h2&gt; 
+&lt;h3&gt;Plugin Development&lt;/h3&gt; 
+&lt;p&gt;Create custom plugins to extend Kestra's capabilities. Check out our &lt;a href="https://kestra.io/docs/plugin-developer-guide/"&gt;Plugin Developer Guide&lt;/a&gt; to get started.&lt;/p&gt; 
+&lt;h3&gt;Infrastructure as Code&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Version Control:&lt;/strong&gt; store your flows in Git repositories.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;CI/CD Integration:&lt;/strong&gt; automate deployment of flows using CI/CD pipelines.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Terraform Provider:&lt;/strong&gt; manage Kestra resources with the &lt;a href="https://kestra.io/docs/terraform/"&gt;official Terraform provider&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🌐 Join the Community&lt;/h2&gt; 
+&lt;p&gt;Stay connected and get support:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Slack:&lt;/strong&gt; Join our &lt;a href="https://kestra.io/slack"&gt;Slack community&lt;/a&gt; to ask questions and share ideas.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;LinkedIn:&lt;/strong&gt; Follow us on &lt;a href="https://www.linkedin.com/company/kestra/"&gt;LinkedIn&lt;/a&gt; — next to Slack and GitHub, this is our main channel to share updates and product announcements.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;YouTube:&lt;/strong&gt; Subscribe to our &lt;a href="https://www.youtube.com/@kestra-io"&gt;YouTube channel&lt;/a&gt; for educational video content. We publish new videos every week!&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;X:&lt;/strong&gt; Follow us on &lt;a href="https://x.com/kestra_io"&gt;X&lt;/a&gt; if you're still active there.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🤝 Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions of all kinds!&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Report Issues:&lt;/strong&gt; Found a bug or have a feature request? Open an &lt;a href="https://github.com/kestra-io/kestra/issues"&gt;issue on GitHub&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Contribute Code:&lt;/strong&gt; Check out our &lt;a href="https://kestra.io/docs/getting-started/contributing"&gt;Contributor Guide&lt;/a&gt; for initial guidelines, and explore our &lt;a href="https://go.kestra.io/contributing"&gt;good first issues&lt;/a&gt; for beginner-friendly tasks to tackle first.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Develop Plugins:&lt;/strong&gt; Build and share plugins using our &lt;a href="https://kestra.io/docs/plugin-developer-guide/"&gt;Plugin Developer Guide&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Contribute to our Docs:&lt;/strong&gt; Contribute edits or updates to keep our &lt;a href="https://github.com/kestra-io/docs"&gt;documentation&lt;/a&gt; top-notch.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📄 License&lt;/h2&gt; 
+&lt;p&gt;Kestra is licensed under the Apache 2.0 License © &lt;a href="https://kestra.io"&gt;Kestra Technologies&lt;/a&gt;.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;⭐️ Stay Updated&lt;/h2&gt; 
+&lt;p&gt;Give our repository a star to stay informed about the latest features and updates!&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/kestra-io/kestra"&gt;&lt;img src="https://kestra.io/star.gif" alt="Star the Repo" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;Thank you for considering Kestra for your workflow orchestration needs. We can't wait to see what you'll build!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>quarkusio/quarkus</title>
+      <link>https://github.com/quarkusio/quarkus</link>
+      <description>&lt;p&gt;Quarkus: Supersonic Subatomic Java.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a href="https://quarkus.io/#gh-light-mode-only"&gt;&lt;img src="https://design.jboss.org/quarkus/logo/final/PNG/quarkus_logo_horizontal_rgb_1280px_default.png#gh-light-mode-only" alt="Quarkus" /&gt;&lt;/a&gt; &lt;a href="https://quarkus.io/#gh-dark-mode-only"&gt;&lt;img src="https://design.jboss.org/quarkus/logo/final/PNG/quarkus_logo_horizontal_rgb_1280px_reverse.png#gh-dark-mode-only" alt="Quarkus" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://search.maven.org/artifact/io.quarkus/quarkus-bom"&gt;&lt;img src="https://img.shields.io/maven-central/v/io.quarkus/quarkus-bom?logo=apache-maven&amp;amp;style=for-the-badge" alt="Version" /&gt;&lt;/a&gt; &lt;a href="https://github.com/quarkusio/quarkus/actions?query=workflow%3A%22Quarkus+CI%22"&gt;&lt;img src="https://img.shields.io/github/actions/workflow/status/QuarkusIO/quarkus/ci-actions-incremental.yml?branch=main&amp;amp;logo=GitHub&amp;amp;style=for-the-badge" alt="GitHub Actions Status" /&gt;&lt;/a&gt; &lt;a href="https://github.com/quarkusio/quarkus/pulse"&gt;&lt;img src="https://img.shields.io/github/commit-activity/m/quarkusio/quarkus.svg?label=commits&amp;amp;style=for-the-badge&amp;amp;logo=git&amp;amp;logoColor=white" alt="Commits" /&gt;&lt;/a&gt; &lt;a href="https://www.apache.org/licenses/LICENSE-2.0"&gt;&lt;img src="https://img.shields.io/github/license/quarkusio/quarkus?style=for-the-badge&amp;amp;logo=apache&amp;amp;color=brightgreen" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://quarkusio.zulipchat.com/"&gt;&lt;img src="https://img.shields.io/badge/zulip-join_chat-brightgreen.svg?style=for-the-badge&amp;amp;logo=zulip" alt="Project Chat" /&gt;&lt;/a&gt; &lt;a href="https://gitpod.io/#https://github.com/quarkusio/quarkus/-/tree/main/"&gt;&lt;img src="https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?style=for-the-badge&amp;amp;logo=gitpod&amp;amp;logoColor=white" alt="Gitpod Ready-to-Code" /&gt;&lt;/a&gt; &lt;a href="https://github.com/quarkusio/quarkus/actions/runs/113853915/"&gt;&lt;img src="https://img.shields.io/badge/JVM-17--21-brightgreen.svg?style=for-the-badge&amp;amp;logo=openjdk" alt="Supported JVM Versions" /&gt;&lt;/a&gt; &lt;a href="https://ge.quarkus.io/scans"&gt;&lt;img src="https://img.shields.io/badge/Revved%20up%20by-Develocity-007EC5?style=for-the-badge&amp;amp;logo=gradle" alt="Develocity" /&gt;&lt;/a&gt; &lt;a href="https://github.com/quarkusio/quarkus/stargazers"&gt;&lt;img src="https://img.shields.io/github/stars/quarkusio/quarkus?style=for-the-badge" alt="GitHub Repo stars" /&gt;&lt;/a&gt; &lt;a href="https://gurubase.io/g/quarkus"&gt;&lt;img src="https://img.shields.io/badge/Gurubase-Ask%20Quarkus%20Guru-007EC5?style=for-the-badge" alt="Gurubase" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Quarkus - Supersonic Subatomic Java&lt;/h1&gt; 
+&lt;p&gt;Quarkus is a Cloud Native, (Linux) Container First framework for writing Java applications.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Container First&lt;/strong&gt;: Minimal footprint Java applications optimal for running in containers.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Cloud Native&lt;/strong&gt;: Embraces &lt;a href="https://12factor.net"&gt;12 factor architecture&lt;/a&gt; in environments like Kubernetes.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Unify imperative and reactive&lt;/strong&gt;: Brings under one programming model non-blocking and imperative styles of development.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Standards-based&lt;/strong&gt;: Based on the standards and frameworks you love and use (RESTEasy and JAX-RS, Hibernate ORM and JPA, Netty, Eclipse Vert.x, Eclipse MicroProfile, Apache Camel...).&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Microservice First&lt;/strong&gt;: Brings lightning fast startup time and code turnaround to Java apps.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Developer Joy&lt;/strong&gt;: Development centric experience without compromise to bring your amazing apps to life in no time.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;em&gt;All under ONE framework.&lt;/em&gt;&lt;/p&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://quarkus.io"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/quarkusio/quarkus/wiki"&gt;Wiki&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Migration Guides&lt;/h2&gt; 
+&lt;p&gt;We collect all the migration notes in our &lt;a href="https://github.com/quarkusio/quarkus/wiki/Migration-Guides"&gt;migration guides&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Release Planning&lt;/h2&gt; 
+&lt;p&gt;Interested in when the next release is coming? Check our &lt;a href="https://github.com/quarkusio/quarkus/wiki/Release-Planning"&gt;release planning&lt;/a&gt; document for details.&lt;/p&gt; 
+&lt;h2&gt;How to build Quarkus&lt;/h2&gt; 
+&lt;p&gt;The build instructions are available in the &lt;a href="https://raw.githubusercontent.com/quarkusio/quarkus/main/CONTRIBUTING.md"&gt;contribution guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>apache/nifi</title>
+      <link>https://github.com/apache/nifi</link>
+      <description>&lt;p&gt;Apache NiFi&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Apache NiFi&lt;/h1&gt; 
+&lt;img src="https://nifi.apache.org/images/apache-nifi-logo.svg?sanitize=true" width="300" alt="Apache NiFi" /&gt; 
+&lt;h3&gt;Status&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://github.com/apache/nifi/actions/workflows/ci-workflow.yml"&gt;&lt;img src="https://github.com/apache/nifi/workflows/ci-workflow/badge.svg?sanitize=true" alt="ci-workflow" /&gt;&lt;/a&gt; &lt;a href="https://github.com/apache/nifi/actions/workflows/system-tests.yml"&gt;&lt;img src="https://github.com/apache/nifi/workflows/system-tests/badge.svg?sanitize=true" alt="system-tests" /&gt;&lt;/a&gt; &lt;a href="https://github.com/apache/nifi/actions/workflows/integration-tests.yml"&gt;&lt;img src="https://github.com/apache/nifi/actions/workflows/integration-tests.yml/badge.svg?sanitize=true" alt="integration-tests" /&gt;&lt;/a&gt; &lt;a href="https://github.com/apache/nifi/actions/workflows/docker-tests.yml"&gt;&lt;img src="https://github.com/apache/nifi/actions/workflows/docker-tests.yml/badge.svg?sanitize=true" alt="docker-tests" /&gt;&lt;/a&gt; &lt;a href="https://github.com/apache/nifi/actions/workflows/code-compliance.yml"&gt;&lt;img src="https://github.com/apache/nifi/actions/workflows/code-compliance.yml/badge.svg?sanitize=true" alt="code-compliance" /&gt;&lt;/a&gt; &lt;a href="https://github.com/apache/nifi/actions/workflows/code-coverage.yml"&gt;&lt;img src="https://github.com/apache/nifi/actions/workflows/code-coverage.yml/badge.svg?sanitize=true" alt="code-coverage" /&gt;&lt;/a&gt; &lt;a href="https://codecov.io/gh/apache/nifi"&gt;&lt;img src="https://codecov.io/gh/apache/nifi/branch/main/graph/badge.svg?sanitize=true" alt="codecov" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Resources&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://central.sonatype.com/artifact/org.apache.nifi/nifi-api"&gt;&lt;img src="https://img.shields.io/maven-central/v/org.apache.nifi/nifi-api.svg?label=nifi-api&amp;amp;logo=apachenifi&amp;amp;logoColor=ffffff&amp;amp;color=728e9b" alt="NiFi API" /&gt;&lt;/a&gt; &lt;a href="https://central.sonatype.com/artifact/org.apache.nifi/nifi-nar-maven-plugin"&gt;&lt;img src="https://img.shields.io/maven-central/v/org.apache.nifi/nifi-nar-maven-plugin.svg?label=nifi-nar-maven-plugin&amp;amp;logo=apachenifi&amp;amp;logoColor=ffffff&amp;amp;color=728e9b" alt="NiFi NAR Maven Plugin" /&gt;&lt;/a&gt; &lt;a href="https://nifi.apache.org/download/"&gt;&lt;img src="https://img.shields.io/maven-central/v/org.apache.nifi/nifi.svg?label=nifi-framework&amp;amp;logo=apachenifi&amp;amp;logoColor=ffffff&amp;amp;color=728e9b" alt="NiFi Framework" /&gt;&lt;/a&gt; &lt;a href="https://hub.docker.com/r/apache/nifi/"&gt;&lt;img src="https://img.shields.io/docker/pulls/apache/nifi.svg?logo=docker&amp;amp;logoColor=ffffff" alt="NiFI Docker Pulls" /&gt;&lt;/a&gt; &lt;a href="https://github.com/apache/nifi/raw/main/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/apache/nifi" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://javadoc.io/doc/org.apache.nifi/nifi-api"&gt;&lt;img src="https://javadoc.io/badge2/org.apache.nifi/nifi-api/javadoc.svg?sanitize=true" alt="NiFi API Javadoc" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Contacts&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://issues.apache.org/jira/browse/NIFI"&gt;&lt;img src="https://img.shields.io/badge/track-Issues-728e9b.svg?logo=jirasoftware" alt="Track Issues" /&gt;&lt;/a&gt; &lt;a href="https://s.apache.org/nifi-community-slack"&gt;&lt;img src="https://img.shields.io/badge/chat-Slack-728e9b.svg?logo=slack" alt="Chat on Slack" /&gt;&lt;/a&gt; &lt;a href="https://lists.apache.org/list.html?dev@nifi.apache.org"&gt;&lt;img src="https://img.shields.io/badge/contact-Developers-728e9b.svg?logo=apache" alt="Contact Developers" /&gt;&lt;/a&gt; &lt;a href="https://lists.apache.org/list.html?users@nifi.apache.org"&gt;&lt;img src="https://img.shields.io/badge/contact-Users-728e9b.svg?logo=apache" alt="Contact Users" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Community&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://join.slack.com/t/apachenifi/shared_invite/zt-11njbtkdx-ZRU8FKYSWoEHRJetidy0zA"&gt;&lt;img src="https://img.shields.io/badge/join-Slack-728e9b.svg?logo=slack" alt="Join Slack Community" /&gt;&lt;/a&gt; &lt;a href="https://www.linkedin.com/company/apache-nifi/"&gt;&lt;img src="https://img.shields.io/badge/follow-Apache%20NiFi-728e9b.svg?logo=linkedin" alt="Follow on LinkedIn" /&gt;&lt;/a&gt; &lt;a href="https://x.com/apachenifi"&gt;&lt;img src="https://img.shields.io/badge/follow-apachenifi-728e9b.svg?logo=x" alt="Follow on X" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://nifi.apache.org/"&gt;Apache NiFi&lt;/a&gt; is an easy to use, powerful, and reliable system to process and distribute data.&lt;/p&gt; 
+&lt;p&gt;NiFi automates cybersecurity, observability, event streams, and generative AI data pipelines and distribution for thousands of companies worldwide across every industry.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Browser User Interface 
+  &lt;ul&gt; 
+   &lt;li&gt;Seamless experience for design, control, and monitoring&lt;/li&gt; 
+   &lt;li&gt;Runtime management and versioned pipelines&lt;/li&gt; 
+   &lt;li&gt;Secure by default with HTTPS&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Scalable Processing 
+  &lt;ul&gt; 
+   &lt;li&gt;Configurable prioritization for throughput and latency&lt;/li&gt; 
+   &lt;li&gt;Guaranteed delivery with retry and backoff strategies&lt;/li&gt; 
+   &lt;li&gt;Horizontal scaling with clustering&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Provenance Tracking 
+  &lt;ul&gt; 
+   &lt;li&gt;Searchable history with configurable attributes&lt;/li&gt; 
+   &lt;li&gt;Graph data lineage from source to destination&lt;/li&gt; 
+   &lt;li&gt;Metadata and content for each processing decision&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Extensible Design 
+  &lt;ul&gt; 
+   &lt;li&gt;Plugin interface for Processors and Controller Services&lt;/li&gt; 
+   &lt;li&gt;Support for Processors in native Python&lt;/li&gt; 
+   &lt;li&gt;REST API for orchestration and monitoring&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Secure Configuration 
+  &lt;ul&gt; 
+   &lt;li&gt;Single sign-on with OpenID Connect or SAML 2&lt;/li&gt; 
+   &lt;li&gt;Flexible authorization policies for role-based access&lt;/li&gt; 
+   &lt;li&gt;Encrypted communication with TLS and SFTP&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Requirements&lt;/h2&gt; 
+&lt;p&gt;NiFi supports modern operating systems and requires recent language versions for developing and running the application.&lt;/p&gt; 
+&lt;h3&gt;Platform Requirements&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Java 21&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Optional Dependencies&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Python 3.10 or higher&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Projects&lt;/h2&gt; 
+&lt;p&gt;The source repository includes several component projects.&lt;/p&gt; 
+&lt;p&gt;Please review individual project documentation for additional details.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://nifi.apache.org/documentation/"&gt;Apache NiFi&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apache/nifi/raw/main/nifi-registry/nifi-registry-assembly/README.md"&gt;Apache NiFi Registry&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/apache/nifi/raw/main/minifi/minifi-assembly/README.md"&gt;Apache NiFi MiNiFi&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Getting Started&lt;/h2&gt; 
+&lt;p&gt;Project guides provide extensive documentation for installing and extending the application.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://nifi.apache.org/documentation/nifi-latest/html/getting-started.html"&gt;Getting Started&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://nifi.apache.org/documentation/nifi-latest/html/user-guide.html"&gt;User Guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://nifi.apache.org/documentation/nifi-latest/html/administration-guide.html"&gt;Administrator Guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://nifi.apache.org/documentation/nifi-latest/html/developer-guide.html"&gt;Developer Guide&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Developing&lt;/h2&gt; 
+&lt;p&gt;NiFi uses the &lt;a href="https://maven.apache.org/wrapper/"&gt;Maven Wrapper&lt;/a&gt; for project development. The Maven Wrapper provides shell scripts that download and cache a selected version of &lt;a href="https://maven.apache.org/"&gt;Apache Maven&lt;/a&gt; for running build commands.&lt;/p&gt; 
+&lt;p&gt;Developing on Microsoft Windows requires using &lt;code&gt;mvnw.cmd&lt;/code&gt; instead of &lt;code&gt;mvnw&lt;/code&gt; to run Maven commands.&lt;/p&gt; 
+&lt;h3&gt;Building&lt;/h3&gt; 
+&lt;p&gt;Run the following command to build project modules using parallel execution:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;./mvnw install -T1C
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Run the following command to build project modules using parallel execution with static analysis to confirm compliance with code and licensing requirements:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;./mvnw install -T1C -P contrib-check
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Run the following command to build the application binaries without building other optional modules:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;./mvnw install -T1C -am -pl :nifi-assembly
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Binaries&lt;/h3&gt; 
+&lt;p&gt;The &lt;code&gt;nifi-assembly&lt;/code&gt; module contains the binary distribution.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;ls nifi-assembly/target/nifi-*-bin.zip
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The &lt;code&gt;nifi-assembly&lt;/code&gt; module includes the binary distribution in a directory for local development and testing.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;cd nifi-assembly/target/nifi-*-bin/nifi-*/
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Running&lt;/h2&gt; 
+&lt;p&gt;NiFi provides shell scripts for starting and stopping the system.&lt;/p&gt; 
+&lt;p&gt;Running on Microsoft Windows requires using &lt;code&gt;nifi.cmd&lt;/code&gt; instead of &lt;code&gt;nifi.sh&lt;/code&gt; for system commands.&lt;/p&gt; 
+&lt;h3&gt;Starting&lt;/h3&gt; 
+&lt;p&gt;Run the following command to start NiFi from the distribution directory:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;./bin/nifi.sh start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Accessing&lt;/h3&gt; 
+&lt;p&gt;The default configuration generates a random username and password on startup. NiFi writes the generated credentials to the application log located in &lt;code&gt;logs/nifi-app.log&lt;/code&gt; under the NiFi installation directory.&lt;/p&gt; 
+&lt;p&gt;The following command can be used to find the generated credentials on operating systems with &lt;code&gt;grep&lt;/code&gt; installed:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;grep Generated logs/nifi-app*log
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;NiFi logs the generated credentials as follows:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;Generated Username [USERNAME]
+Generated Password [PASSWORD]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The &lt;code&gt;USERNAME&lt;/code&gt; will be a random UUID composed of 36 characters. The &lt;code&gt;PASSWORD&lt;/code&gt; will be a random string.&lt;/p&gt; 
+&lt;p&gt;The username and password can be replaced with custom credentials using the following command:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;./bin/nifi.sh set-single-user-credentials &amp;lt;username&amp;gt; &amp;lt;password&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;NiFi defaults to running on the &lt;code&gt;localhost&lt;/code&gt; address with HTTPS on port &lt;code&gt;8443&lt;/code&gt; at the following URL:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;https://localhost:8443/nifi
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Browsers will display a warning message indicating a potential security risk due to the self-signed certificate generated during initialization. Production deployments should provision a certificate from a trusted certificate authority and update the NiFi keystore and truststore configuration.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Except as otherwise noted this software is licensed under the &lt;a href="https://www.apache.org/licenses/LICENSE-2.0.html"&gt;Apache License, Version 2.0&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.apache.org/licenses/LICENSE-2.0"&gt;https://www.apache.org/licenses/LICENSE-2.0&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.&lt;/p&gt; 
+&lt;h2&gt;Export Control&lt;/h2&gt; 
+&lt;p&gt;This distribution includes cryptographic software. The country in which you currently reside may have restrictions on the import, possession, use, and/or re-export to another country, of encryption software. BEFORE using any encryption software, please check your country's laws, regulations and policies concerning the import, possession, or use, and re-export of encryption software, to see if this is permitted. See &lt;a href="https://www.wassenaar.org"&gt;https://www.wassenaar.org&lt;/a&gt; for more information.&lt;/p&gt; 
+&lt;p&gt;The U.S. Government Department of Commerce, Bureau of Industry and Security (BIS), has classified this software as Export Commodity Control Number (ECCN) 5D002.C.1, which includes information security software using or performing cryptographic functions with asymmetric algorithms. The form and manner of this Apache Software Foundation distribution makes it eligible for export under the License Exception ENC Technology Software Unrestricted (TSU) exception (see the BIS Export Administration Regulations, Section 740.13) for both object code and source code.&lt;/p&gt; 
+&lt;p&gt;The following provides more details on the included cryptographic software:&lt;/p&gt; 
+&lt;p&gt;Apache NiFi uses the following libraries and frameworks for encrypted communication and storage of sensitive information:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://mina.apache.org/sshd-project/"&gt;Apache MINA SSHD&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.bouncycastle.org"&gt;Bouncy Castle&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/exceptionfactory/jagged"&gt;Jagged&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.oracle.com/en/java/javase/21/security/java-cryptography-architecture-jca-reference-guide.html"&gt;Java Cryptography Architecture&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>jd-opensource/joyagent-jdgenie</title>
+      <link>https://github.com/jd-opensource/joyagent-jdgenie</link>
+      <description>&lt;p&gt;开源的端到端产品级通用智能体&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Agent开源git开源文档&lt;/h1&gt; 
+&lt;p&gt;简体中文 | &lt;a href="https://raw.githubusercontent.com/jd-opensource/joyagent-jdgenie/data_agent/README_EN.md"&gt;English Version&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;业界首个开源高完成度轻量化通用多智能体产品(JoyAgent-JDGenie)&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;解决快速构建多智能体产品的最后一公里问题&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;new release&lt;/h2&gt; 
+&lt;p&gt;多模态知识管理平台是一款面向多模态非结构化知识的RAG解决方案，集成解析、检索与生成能力，能够高效处理复杂文档，为智能问答与内容生成提供一站式支持。&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/jd-opensource/joyagent-jdgenie/data_agent/README_mrag.md"&gt;&lt;strong&gt;&lt;font color="red"&gt;多模态知识管理：面向多模态文档的综合性RAG平台，为复杂文档的智能问答与内容生成提供一站式解决方案。&lt;/font&gt;&lt;/strong&gt;&lt;/a&gt; （注意使用mrag分支） &lt;img src="https://raw.githubusercontent.com/jd-opensource/joyagent-jdgenie/data_agent/docs/img/mrag/mrag_struct.png" alt="" /&gt;&lt;/p&gt; 
+&lt;p&gt;企业内部知识主要包括结构化表格知识和非结构化知识。因此对于结构化表格知识建设了开箱即用的DataAgent能力，主要包括数据治理DGP协议、智能问数和智能诊断分析。&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/jd-opensource/joyagent-jdgenie/data_agent/README_DataAgent.md"&gt;&lt;strong&gt;&lt;font color="red"&gt;JoyDataAgent：首个开源的包含数据治理DGP协议、智能问数和智能诊断分析的智能体&lt;/font&gt;&lt;/strong&gt;&lt;/a&gt; （注意使用data_agent分支） &lt;img width="1200" height="675" alt="image" src="https://github.com/user-attachments/assets/3a449185-4863-4171-8dda-72cb70b2fa91" /&gt;&lt;/p&gt; 
+&lt;h2&gt;简介&lt;/h2&gt; 
+&lt;p&gt;当前相关开源agent主要是SDK或者框架，用户还需基于此做进一步的开发，无法直接做到开箱即用。我们开源的JoyAgent-JDGenie是端到端的多Agent产品，对于输入的query或者任务，可以直接回答或者解决。例如用户query"给我做一个最近美元和黄金的走势分析"，JoyAgent-Genie可以直接给出网页版或者PPT版的报告文档。&lt;/p&gt; 
+&lt;p&gt;JoyAgent-JDGenie是一个通用的多智能体框架，对于用户需要定制的一些新场景功能，只需将相关的子智能体或者工具挂载到JoyAgent-Genie即可。为了验证JoyAgent-JDGenie的通用性，在GAIA榜单Validation集准确率&lt;strong&gt;75.15%、&lt;strong&gt;Test集&lt;/strong&gt;65.12%&lt;/strong&gt;，已超越OWL（CAMEL）、Smolagent（Huggingface）、LRC-Huawei（Huawei）、xManus（OpenManus）、AutoAgent（香港大学）等行业知名产品。&lt;/p&gt; 
+&lt;p&gt;此外，我们的开源多智能体产品JoyAgent-JDGenie相对比较轻量，不像阿里的SpringAI-Alibaba需要依赖阿里云百炼平台相关功能（基于百炼平台调用LLM），Coze依赖火山引擎平台。&lt;/p&gt; 
+&lt;p&gt;我们整体开源了智能体产品JoyAgent-JDGenie，包括前端、后端、框架、引擎、核心子智能体（报告生成智能体、代码智能体、PPT智能体、文件智能体等）、想用微调后效果更好的欢迎使用JoyAgent。&lt;/p&gt; 
+&lt;h2&gt;案例展示&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;img src="./docs/img/首页.png" alt="" /&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/jd-opensource/joyagent-jdgenie/data_agent/docs/img/ppt.png" alt="" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/jd-opensource/joyagent-jdgenie/data_agent/docs/img/report.png" alt="" /&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;img src="https://raw.githubusercontent.com/jd-opensource/joyagent-jdgenie/data_agent/docs/img/table_analysis.png" alt="" /&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; 
+    &lt;video src="https://private-user-images.githubusercontent.com/49786633/469170308-065b8d1a-92e4-470a-bbe3-426fafeca5c4.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTMxOTEzNzEsIm5iZiI6MTc1MzE5MTA3MSwicGF0aCI6Ii80OTc4NjYzMy80NjkxNzAzMDgtMDY1YjhkMWEtOTJlNC00NzBhLWJiZTMtNDI2ZmFmZWNhNWM0Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA3MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNzIyVDEzMzExMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWRjNGY5ZTlmMTA4ODVhMWE0ZmEzYzU3YTIwYzJkYmIyY2Y0ZWE0NGUwZWU2ODAxNDA2MzQ0NzMyMWFlNTdiNWImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.fJyoUGcWjPWyG64ZwIcWWKz3FrBWuXAHHfdTLpIaaeU" data-canonical-src="https://private-user-images.githubusercontent.com/49786633/469170308-065b8d1a-92e4-470a-bbe3-426fafeca5c4.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTMxOTEzNzEsIm5iZiI6MTc1MzE5MTA3MSwicGF0aCI6Ii80OTc4NjYzMy80NjkxNzAzMDgtMDY1YjhkMWEtOTJlNC00NzBhLWJiZTMtNDI2ZmFmZWNhNWM0Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA3MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNzIyVDEzMzExMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWRjNGY5ZTlmMTA4ODVhMWE0ZmEzYzU3YTIwYzJkYmIyY2Y0ZWE0NGUwZWU2ODAxNDA2MzQ0NzMyMWFlNTdiNWImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.fJyoUGcWjPWyG64ZwIcWWKz3FrBWuXAHHfdTLpIaaeU" controls muted class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"&gt; 
+    &lt;/video&gt; &lt;/td&gt;
+   &lt;td&gt; 
+    &lt;video src="https://private-user-images.githubusercontent.com/49786633/469171050-15dcf089-5659-489e-849d-39c651ca7e5a.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTMxOTEzNzEsIm5iZiI6MTc1MzE5MTA3MSwicGF0aCI6Ii80OTc4NjYzMy80NjkxNzEwNTAtMTVkY2YwODktNTY1OS00ODllLTg0OWQtMzljNjUxY2E3ZTVhLm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA3MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNzIyVDEzMzExMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTY5ZGU2MWU3NzA5NjYxM2ZhZDYxYTZjMWQxYWMzNGM2MTY2ODkzMTIzYjQ1NzRiOGZkOWUyODYzNmQ4N2Y5ZTUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.7KW-JGmFACnf5IS3kL7M0eV8uZhlxDD8Br61XvcgmjY" data-canonical-src="https://private-user-images.githubusercontent.com/49786633/469171050-15dcf089-5659-489e-849d-39c651ca7e5a.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTMxOTEzNzEsIm5iZiI6MTc1MzE5MTA3MSwicGF0aCI6Ii80OTc4NjYzMy80NjkxNzEwNTAtMTVkY2YwODktNTY1OS00ODllLTg0OWQtMzljNjUxY2E3ZTVhLm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA3MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNzIyVDEzMzExMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTY5ZGU2MWU3NzA5NjYxM2ZhZDYxYTZjMWQxYWMzNGM2MTY2ODkzMTIzYjQ1NzRiOGZkOWUyODYzNmQ4N2Y5ZTUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.7KW-JGmFACnf5IS3kL7M0eV8uZhlxDD8Br61XvcgmjY" controls muted class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"&gt; 
+    &lt;/video&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; 
+    &lt;video src="https://private-user-images.githubusercontent.com/49786633/469171112-cd99e2f8-9887-459f-ae51-00e7883fa050.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTMxOTEzNzEsIm5iZiI6MTc1MzE5MTA3MSwicGF0aCI6Ii80OTc4NjYzMy80NjkxNzExMTItY2Q5OWUyZjgtOTg4Ny00NTlmLWFlNTEtMDBlNzg4M2ZhMDUwLm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA3MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNzIyVDEzMzExMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYyYmU5ODg4ZjI5NDNjZjBiYTVjYWRjMTI2ZGEyMDdjOWU2OTk2M2EwZjU4N2ZkYzU5NTQ5ZDJjMmUxMWNjNjAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.OSPODm-E7K7PJaao8uThG1toIKsX3h93UEXS5GDqruQ" data-canonical-src="https://private-user-images.githubusercontent.com/49786633/469171112-cd99e2f8-9887-459f-ae51-00e7883fa050.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTMxOTEzNzEsIm5iZiI6MTc1MzE5MTA3MSwicGF0aCI6Ii80OTc4NjYzMy80NjkxNzExMTItY2Q5OWUyZjgtOTg4Ny00NTlmLWFlNTEtMDBlNzg4M2ZhMDUwLm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA3MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNzIyVDEzMzExMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYyYmU5ODg4ZjI5NDNjZjBiYTVjYWRjMTI2ZGEyMDdjOWU2OTk2M2EwZjU4N2ZkYzU5NTQ5ZDJjMmUxMWNjNjAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.OSPODm-E7K7PJaao8uThG1toIKsX3h93UEXS5GDqruQ" controls muted class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"&gt; 
+    &lt;/video&gt; &lt;/td&gt; 
+   &lt;td&gt; 
+    &lt;video src="https://private-user-images.githubusercontent.com/49786633/469171151-657bbe61-5516-4ab9-84c2-c6ca75cc4a6f.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTMxOTEzNzEsIm5iZiI6MTc1MzE5MTA3MSwicGF0aCI6Ii80OTc4NjYzMy80NjkxNzExNTEtNjU3YmJlNjEtNTUxNi00YWI5LTg0YzItYzZjYTc1Y2M0YTZmLm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA3MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNzIyVDEzMzExMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmNGExZTlhNmM5NWMzMjc3ZWFlNTcyMzZjZTA4NWU4ZjY3OTA5ZTg5NzgwNDA2ODExNTg5MTkyNGQ5NDYzNTgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.n3ZWlSK1GSM5Zyibk-D9jAArzDqvX3WdZtj7IdzG-4I" data-canonical-src="https://private-user-images.githubusercontent.com/49786633/469171151-657bbe61-5516-4ab9-84c2-c6ca75cc4a6f.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTMxOTEzNzEsIm5iZiI6MTc1MzE5MTA3MSwicGF0aCI6Ii80OTc4NjYzMy80NjkxNzExNTEtNjU3YmJlNjEtNTUxNi00YWI5LTg0YzItYzZjYTc1Y2M0YTZmLm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA3MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNzIyVDEzMzExMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmNGExZTlhNmM5NWMzMjc3ZWFlNTcyMzZjZTA4NWU4ZjY3OTA5ZTg5NzgwNDA2ODExNTg5MTkyNGQ5NDYzNTgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.n3ZWlSK1GSM5Zyibk-D9jAArzDqvX3WdZtj7IdzG-4I" controls muted class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"&gt; 
+    &lt;/video&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;产品对比&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;分类&lt;/th&gt; 
+   &lt;th&gt;agent&lt;/th&gt; 
+   &lt;th&gt;是否开源&lt;/th&gt; 
+   &lt;th&gt;是否开源完整产品&lt;/th&gt; 
+   &lt;th&gt;是否依赖生态&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td rowspan="2"&gt;&lt;strong&gt;SDK类&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;SpringAI-Alibaba&lt;/td&gt; 
+   &lt;td&gt;部分&lt;/td&gt; 
+   &lt;td&gt;否，只开源SDK（SDK）&lt;/td&gt; 
+   &lt;td&gt;是（阿里云百炼平台）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Coze&lt;/td&gt; 
+   &lt;td&gt;部分&lt;/td&gt; 
+   &lt;td&gt;否，只开源部分Nieo SDK（SDK）&lt;/td&gt; 
+   &lt;td&gt;是（火山引擎平台）&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td rowspan="6"&gt;&lt;strong&gt;框架类&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Fellow&lt;/td&gt; 
+   &lt;td&gt;是&lt;/td&gt; 
+   &lt;td&gt;否，只开源了Eko智能体框架（框架）&lt;/td&gt; 
+   &lt;td&gt;否&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Dify&lt;/td&gt; 
+   &lt;td&gt;是&lt;/td&gt; 
+   &lt;td&gt;否，只开源了智能体框架，且主要是workflow（框架）&lt;/td&gt; 
+   &lt;td&gt;否&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;SkyworkAI&lt;/td&gt; 
+   &lt;td&gt;是&lt;/td&gt; 
+   &lt;td&gt;否，只开源了智能体框架（框架）&lt;/td&gt; 
+   &lt;td&gt;否&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;OpenManus&lt;/td&gt; 
+   &lt;td&gt;是&lt;/td&gt; 
+   &lt;td&gt;否，只开源了智能体框架（框架）&lt;/td&gt; 
+   &lt;td&gt;否&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Owl&lt;/td&gt; 
+   &lt;td&gt;是&lt;/td&gt; 
+   &lt;td&gt;否，只开源了智能体框架（框架）&lt;/td&gt; 
+   &lt;td&gt;否&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;n8n&lt;/td&gt; 
+   &lt;td&gt;是&lt;/td&gt; 
+   &lt;td&gt;否，只开源了智能体框架，且主要是workflow（框架）&lt;/td&gt; 
+   &lt;td&gt;否&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td rowspan="3"&gt;&lt;strong&gt;协议类&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;MCP&lt;/td&gt; 
+   &lt;td&gt;是&lt;/td&gt; 
+   &lt;td&gt;否，只是开源协议&lt;/td&gt; 
+   &lt;td&gt;否&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;A2A&lt;/td&gt; 
+   &lt;td&gt;是&lt;/td&gt; 
+   &lt;td&gt;否，只是开源协议&lt;/td&gt; 
+   &lt;td&gt;否&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;AG-UI&lt;/td&gt; 
+   &lt;td&gt;是&lt;/td&gt; 
+   &lt;td&gt;否，只是开源协议&lt;/td&gt; 
+   &lt;td&gt;否&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td rowspan="2"&gt;&lt;strong&gt;技术模块类&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;memory0&lt;/td&gt; 
+   &lt;td&gt;是&lt;/td&gt; 
+   &lt;td&gt;否，只是开源的技术模块&lt;/td&gt; 
+   &lt;td&gt;否&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;LlamaIndex&lt;/td&gt; 
+   &lt;td&gt;是&lt;/td&gt; 
+   &lt;td&gt;否，只是开源的技术模块&lt;/td&gt; 
+   &lt;td&gt;否&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;产品类&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Our&lt;/td&gt; 
+   &lt;td&gt;是&lt;/td&gt; 
+   &lt;td&gt;是，开源端到端完整的Agent产品（产品）&lt;/td&gt; 
+   &lt;td&gt;否&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;框架效果先进性&lt;/h2&gt; 
+&lt;h3&gt;Test集效果 65.12%&lt;/h3&gt; 
+&lt;img width="3524" height="1022" alt="test" src="https://github.com/user-attachments/assets/06c85286-e61f-4b5e-8335-413cd22ecbf4" /&gt; 
+&lt;h3&gt;Validation集效果 75.15%&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Agent&lt;/th&gt; 
+   &lt;th&gt;Score&lt;/th&gt; 
+   &lt;th&gt;Score_level1&lt;/th&gt; 
+   &lt;th&gt;Score_level2&lt;/th&gt; 
+   &lt;th&gt;Score_level3&lt;/th&gt; 
+   &lt;th&gt;机构&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Alita v2.1&lt;/td&gt; 
+   &lt;td&gt;0.8727&lt;/td&gt; 
+   &lt;td&gt;0.8868&lt;/td&gt; 
+   &lt;td&gt;0.8953&lt;/td&gt; 
+   &lt;td&gt;0.7692&lt;/td&gt; 
+   &lt;td&gt;Princeton&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Skywork&lt;/td&gt; 
+   &lt;td&gt;0.8242&lt;/td&gt; 
+   &lt;td&gt;0.9245&lt;/td&gt; 
+   &lt;td&gt;0.8372&lt;/td&gt; 
+   &lt;td&gt;0.5769&lt;/td&gt; 
+   &lt;td&gt;天工&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;AWorld&lt;/td&gt; 
+   &lt;td&gt;0.7758&lt;/td&gt; 
+   &lt;td&gt;0.8868&lt;/td&gt; 
+   &lt;td&gt;0.7791&lt;/td&gt; 
+   &lt;td&gt;0.5385&lt;/td&gt; 
+   &lt;td&gt;Ant Group&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Langfun&lt;/td&gt; 
+   &lt;td&gt;0.7697&lt;/td&gt; 
+   &lt;td&gt;0.8679&lt;/td&gt; 
+   &lt;td&gt;0.7674&lt;/td&gt; 
+   &lt;td&gt;0.5769&lt;/td&gt; 
+   &lt;td&gt;DeepMind&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;JoyAgent-JDGenie&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;0.7515&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;0.8679&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;0.7791&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;0.4230&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;JD&lt;/strong&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;OWL&lt;/td&gt; 
+   &lt;td&gt;0.6909&lt;/td&gt; 
+   &lt;td&gt;0.8491&lt;/td&gt; 
+   &lt;td&gt;0.6744&lt;/td&gt; 
+   &lt;td&gt;0.4231&lt;/td&gt; 
+   &lt;td&gt;CAMEL&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Smolagent&lt;/td&gt; 
+   &lt;td&gt;0.5515&lt;/td&gt; 
+   &lt;td&gt;0.6792&lt;/td&gt; 
+   &lt;td&gt;0.5349&lt;/td&gt; 
+   &lt;td&gt;0.3462&lt;/td&gt; 
+   &lt;td&gt;Huggingface&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;AutoAgent&lt;/td&gt; 
+   &lt;td&gt;0.5515&lt;/td&gt; 
+   &lt;td&gt;0.7170&lt;/td&gt; 
+   &lt;td&gt;0.5349&lt;/td&gt; 
+   &lt;td&gt;0.2692&lt;/td&gt; 
+   &lt;td&gt;HKU&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Magentic&lt;/td&gt; 
+   &lt;td&gt;0.4606&lt;/td&gt; 
+   &lt;td&gt;0.5660&lt;/td&gt; 
+   &lt;td&gt;0.4651&lt;/td&gt; 
+   &lt;td&gt;0.2308&lt;/td&gt; 
+   &lt;td&gt;MSR AI Frontiers&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;LRC-Huawei&lt;/td&gt; 
+   &lt;td&gt;0.406&lt;/td&gt; 
+   &lt;td&gt;0.5283&lt;/td&gt; 
+   &lt;td&gt;0.4302&lt;/td&gt; 
+   &lt;td&gt;0.0769&lt;/td&gt; 
+   &lt;td&gt;Huawei&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;xManus&lt;/td&gt; 
+   &lt;td&gt;0.4061&lt;/td&gt; 
+   &lt;td&gt;0.8113&lt;/td&gt; 
+   &lt;td&gt;0.2791&lt;/td&gt; 
+   &lt;td&gt;0.0000&lt;/td&gt; 
+   &lt;td&gt;OpenManus&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;img width="1073" height="411" alt="score" src="https://github.com/user-attachments/assets/9d997b68-565e-4228-8f5b-229158f33617" /&gt; 
+&lt;h2&gt;系统架构&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/jd-opensource/joyagent-jdgenie/data_agent/docs/img/archi.png" alt="archi" /&gt;&lt;/p&gt; 
+&lt;p&gt;本开源项目基于JoyAgent-JDGenie产品开源了整体的产品界面、智能体的多种核心模式（react模式、plan and executor模式等）、多个子智能体（report agent、search agent等）以及多整体间交互协议。&lt;/p&gt; 
+&lt;h3&gt;主要特点和优势&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;端到端完整的多智能体产品，开箱即用，支持二次开发&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;智能体框架协议&lt;/strong&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;支持多种智能体设计模式&lt;/li&gt; 
+   &lt;li&gt;多智能体上下文管理&lt;/li&gt; 
+   &lt;li&gt;高并发DAG执行引擎，极致的执行效率&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;子智能体和工具&lt;/strong&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;子Agent和工具可插拔：预置多种子智能体和工具&lt;/li&gt; 
+   &lt;li&gt;多种文件交付样式：html、ppt、markdown&lt;/li&gt; 
+   &lt;li&gt;plan和工具调用 RL优化迭代&lt;/li&gt; 
+   &lt;li&gt;全链路流式输出&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;主要创新点&lt;/h3&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/jd-opensource/joyagent-jdgenie/data_agent/docs/img/invo.png" alt="invo" /&gt;&lt;/p&gt; 
+&lt;h4&gt;multi-level and multi-pattern thinking:结合多种智能体设计模式支持多层级的规划和思考&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;multi-level&lt;/strong&gt;：work level 和 task level&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;multi-pattern&lt;/strong&gt;：plan and executor模式和react模式&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;cross task workflow memory:跨任务级别的相似任务memory&lt;/h4&gt; 
+&lt;h4&gt;tool evolution via auto-disassembly-and-reassembly of atom-tools&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;基于已有工具迭代产生新工具，而不是从0-1直接生成新工具（减少错误工具的生成）&lt;/li&gt; 
+ &lt;li&gt;基于已有工具隐性拆解为原子工具，并基于原子工具结合大模型自动组合成新工具（不需要花费人力预先定义和拆解原子工具）&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;快速开始&lt;/h2&gt; 
+&lt;h3&gt;方式1: docker 一键启动服务&lt;/h3&gt; 
+&lt;pre&gt;&lt;code&gt;1. git clone https://github.com/jd-opensource/joyagent-jdgenie.git
+
+2. 手动更新 genie-backend/src/main/resources/application.yml中 base_url、apikey、model、max_tokens、model_name等配置
+使用DeepSeek时: 注意deepseek-chat 为max_tokens: 8192
+
+手动更新 genie-tool/.env_template 中的 OPENAI_API_KEY、OPENAI_BASE_URL、DEFAULT_MODEL、SERPER_SEARCH_API_KEY
+使用DeepSeek时: 设置DEEPSEEK_API_KEY、DEEPSEEK_API_BASE，DEFAULT_MODEL 设置为 deepseek/deepseek-chat，所有 ${DEFAULT_MODEL} 也都改成deepseek/deepseek-chat
+
+3. 编译dockerfile
+docker build -t genie:latest .
+
+4. 启动dockerfile
+docker run -d -p 3000:3000 -p 8080:8080 -p 1601:1601 --name genie-app genie:latest
+
+5. 浏览器输入 localhost:3000 访问genie
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;如果部署遇到问题，可以参考视频:【5分钟使用deepseek启动开源智能体应用joyagent-genie-哔哩哔哩】 &lt;a href="https://b23.tv/8VQDBOK"&gt;https://b23.tv/8VQDBOK&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;方式2: 手动初始化环境，启动服务&lt;/h3&gt; 
+&lt;h4&gt;环境准备&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;jdk17&lt;/li&gt; 
+ &lt;li&gt;python3.11&lt;/li&gt; 
+ &lt;li&gt;python环境准备 
+  &lt;ul&gt; 
+   &lt;li&gt;pip install uv&lt;/li&gt; 
+   &lt;li&gt;cd genie-tool&lt;/li&gt; 
+   &lt;li&gt;uv sync&lt;/li&gt; 
+   &lt;li&gt;source .venv/bin/activate&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;方案1：手动step by step部署手册&lt;/h4&gt; 
+&lt;p&gt;手动超详细攻略参考 &lt;a href="https://raw.githubusercontent.com/jd-opensource/joyagent-jdgenie/data_agent/Deploy.md"&gt;Step by Step&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;方案2：手动一键启动部署（推荐）&lt;/h4&gt; 
+&lt;p&gt;直接通过shell启动所有服务&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;sh check_dep_port.sh # 检查所有依赖和端口占用情况
+sh Genie_start.sh  # 直接启动，以后改动配置直接重启动脚本即可，control+c 一键kill所有服务
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;部署时可以参考视频:【joyagent-jdgenie部署演示】 &lt;a href="https://www.bilibili.com/video/BV1Py8Yz4ELK/?vd_source=a5601a346d433a490c55293e76180c9d"&gt;https://www.bilibili.com/video/BV1Py8Yz4ELK/?vd_source=a5601a346d433a490c55293e76180c9d&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;二次开发&lt;/h2&gt; 
+&lt;h3&gt;如何添加自己的MCP工具到JoyAgent-JDGenie中&lt;/h3&gt; 
+&lt;h4&gt;配置文件&lt;/h4&gt; 
+&lt;p&gt;在 &lt;code&gt;genie-backend/src/main/resources/application.yml&lt;/code&gt; 添加mcp_server服务，多个server逗号分隔 在 &lt;code&gt;ui/.env&lt;/code&gt; 中可以修改前端请求后端的路径&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-yaml"&gt;mcp_server_url: "http://ip1:port1/sse,http://ip2:port2/sse"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;启动服务&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;sh start_genie.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;开始对话&lt;/h4&gt; 
+&lt;p&gt;比如添加12306工具后，规划7月7天2人从北京出发去新疆旅行计划，并查询相关火车票信息， genie会进行旅行计划设计，然后调用mcp工具查询车票信息，最终输出报告。 &lt;img src="https://raw.githubusercontent.com/jd-opensource/joyagent-jdgenie/data_agent/docs/img/mcp_example.png" alt="img.png" /&gt;&lt;/p&gt; 
+&lt;h3&gt;新增自定义子Agent到JoyAgent-JDGenie中&lt;/h3&gt; 
+&lt;p&gt;实现BaseTool接口，声明工具的名称、描述、参数、调用方法。&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-java"&gt;/**
+ * 工具基接口
+ */
+public interface BaseTool {
+    String getName(); // 工具名称
+    String getDescription(); // 工具描述
+    Map&amp;lt;String, Object&amp;gt; toParams(); // 工具参数
+    Object execute(Object input); // 调用工具
+}
+
+// 天气智能体示例
+public class WeatherTool implements BaseTool {
+    @Override
+    public String getName() {
+        return "agent_weather";
+    }
+
+    @Override
+    public String getDescription() {
+        return "这是一个可以查询天气的智能体";
+    }
+
+    @Override
+    public Map&amp;lt;String, Object&amp;gt; toParams() {
+        return "{\"type\":\"object\",\"properties\":{\"location\":{\"description\":\"地点\",\"type\":\"string\"}},\"required\":[\"location\"]}";
+    }
+
+    @Override
+    public Object execute(Object input) {
+        return "今日天气晴朗";
+    }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;在&lt;code&gt;com.jd.genie.controller.GenieController#buildToolCollection&lt;/code&gt;中添加如下代码，引入自定义Agent&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-java"&gt;WeatherTool weatherTool = new WeatherTool();
+toolCollection.addTool(weatherTool);
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;启动服务&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;sh start_genie.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;项目共建者&lt;/h2&gt; 
+&lt;p&gt;贡献者：Liu Shangkun,Li Xiang,&lt;a href="https://scholar.google.com.hk/citations?hl=zh-CN&amp;amp;user=AeCTbv8AAAAJ&amp;amp;view_op=list_works&amp;amp;gmla=AH8HC4zYqeayQxrQFmScZ7XYxLah1enc8ynhQYMtBdPmjwfpMBvsTj_OoBkFTPCw1Xi2xk7gbTzHPH-QpJSw_sGkCKdYDVXSu8Ty2tNJMhs"&gt;Li Yang&lt;/a&gt;,Jia Shilin,Tian Shaohua,Wang Zhen,Yao Ting,Wang Hongtao,Zhou Xiaoqing,Liu min,Zhang Shuang,Liuwen,Yangdong,Xu Jialei,Zhou Meilei,Zhao Tingchong,Wu jiaxing, Wang Hanmin, Zhou Zhiyuan, Xu Shiyue,Liu Jiarun, Hou Kang, Jing Lingtuan, Guo Hongliang, Wang Zhijiang, Liu Yanchen, Chen Kun, Ke Huilin, Pan Zheyi, Duan Zhewen, Tu Shengkun, Zhang Haidong, Wang Heng,Li Bo,Zhang Konghongbo,Guo fenghua, &lt;a href="https://tjdi.tongji.edu.cn/TeacherDetail.do?id=4991&amp;amp;lang="&gt;Wang Haofen&lt;/a&gt;, Zhang Junbo, Liu Haibo, Yang Haoran, Qiao Jiayang&lt;/p&gt; 
+&lt;p&gt;所属机构:京东CHO企业信息化团队（EI）、京东科技协同办公团队、京东物流数据资产团队&lt;/p&gt; 
+&lt;h2&gt;贡献和合作&lt;/h2&gt; 
+&lt;p&gt;我们欢迎所有好想法和建议，如果您想成为项目的共建者，可随时向我们提Pull Request。无论是完善产品和框架、修复bug还是添加新特性，您的贡献都非常宝贵。 在此之前需要您阅读并签署贡献者协议并发送到邮箱&lt;a href="mailto:org.developer3@jd.com"&gt;org.developer3@jd.com&lt;/a&gt;，请阅读 &lt;a href="https://github.com/jd-opensource/joyagent-jdgenie/raw/main/contributor_ZH.pdf"&gt;贡献指南中文版&lt;/a&gt;，&lt;a href="https://github.com/jd-opensource/joyagent-jdgenie/raw/main/contributor_EN.pdf"&gt;贡献指南英文版&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;引用&lt;/h2&gt; 
+&lt;p&gt;如需学术引用，请使用以下 BibTeX：&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bibtex"&gt;@software{JoyAgent-JDGenie,
+  author = {Agent Team at JDCHO},
+  title = {JoyAgent-JDGenie},
+  year = {2025},
+  url = {https://github.com/jd-opensource/joyagent-jdgenie},
+  version = {0.1.0},
+  publisher = {GitHub},
+  email = {jiashilin1@jd.com;liyang.1236@jd.com;liushangkun@jd.com;tianshaohua.1@jd.com;wangzhen449@jd.com;yaoting.2@jd.com;houkang6@jd.com;jinglingtuan@jd.com;guohongliang@jd.com}
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Contributors&lt;/h2&gt; 
+&lt;a href="https://github.com/jd-opensource/joyagent-jdgenie/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=jd-opensource/joyagent-jdgenie" /&gt; &lt;/a&gt; 
+&lt;h1&gt;Star History&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://star-history.com/#jd-opensource/joyagent-jdgenie&amp;amp;Date"&gt;&lt;img src="https://api.star-history.com/svg?repos=jd-opensource/joyagent-jdgenie&amp;amp;type=Date&amp;amp;cache=false" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;欢迎沟通和联系我们&lt;br /&gt; &lt;img width="396" height="396" alt="ME1758722833951" src="https://github.com/user-attachments/assets/0c47720f-78a4-4a98-b634-a8274072d36c" /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>spring-projects/spring-framework</title>
+      <link>https://github.com/spring-projects/spring-framework</link>
+      <description>&lt;p&gt;Spring Framework&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;&lt;img src="https://raw.githubusercontent.com/spring-projects/spring-framework/main/framework-docs/src/docs/spring-framework.png" width="80" height="80" /&gt; Spring Framework &lt;a href="https://github.com/spring-projects/spring-framework/actions/workflows/build-and-deploy-snapshot.yml?query=branch%3Amain"&gt;&lt;img src="https://github.com/spring-projects/spring-framework/actions/workflows/build-and-deploy-snapshot.yml/badge.svg?branch=main" alt="Build Status" /&gt;&lt;/a&gt; &lt;a href="https://ge.spring.io/scans?search.rootProjectNames=spring"&gt;&lt;img src="https://img.shields.io/badge/Revved%20up%20by-Develocity-06A0CE?logo=Gradle&amp;amp;labelColor=02303A" alt="Revved up by Develocity" /&gt;&lt;/a&gt;&lt;/h1&gt; 
+&lt;p&gt;This is the home of the Spring Framework: the foundation for all &lt;a href="https://spring.io/projects"&gt;Spring projects&lt;/a&gt;. Collectively the Spring Framework and the family of Spring projects are often referred to simply as "Spring".&lt;/p&gt; 
+&lt;p&gt;Spring provides everything required beyond the Java programming language for creating enterprise applications for a wide range of scenarios and architectures. Please read the &lt;a href="https://docs.spring.io/spring-framework/reference/overview.html"&gt;Overview&lt;/a&gt; section of the reference documentation for a more complete introduction.&lt;/p&gt; 
+&lt;h2&gt;Code of Conduct&lt;/h2&gt; 
+&lt;p&gt;This project is governed by the &lt;a href="https://github.com/spring-projects/spring-framework/?tab=coc-ov-file#contributor-code-of-conduct"&gt;Spring Code of Conduct&lt;/a&gt;. By participating, you are expected to uphold this code of conduct. Please report unacceptable behavior to &lt;a href="mailto:spring-code-of-conduct@spring.io"&gt;spring-code-of-conduct@spring.io&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Access to Binaries&lt;/h2&gt; 
+&lt;p&gt;For access to artifacts or a distribution zip, see the &lt;a href="https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Artifacts"&gt;Spring Framework Artifacts&lt;/a&gt; wiki page.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;The Spring Framework maintains reference documentation (&lt;a href="https://docs.spring.io/spring-framework/reference/"&gt;published&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/spring-projects/spring-framework/main/framework-docs/modules/ROOT"&gt;source&lt;/a&gt;), GitHub &lt;a href="https://github.com/spring-projects/spring-framework/wiki"&gt;wiki pages&lt;/a&gt;, and an &lt;a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/"&gt;API reference&lt;/a&gt;. There are also &lt;a href="https://spring.io/guides"&gt;guides and tutorials&lt;/a&gt; across Spring projects.&lt;/p&gt; 
+&lt;h2&gt;Micro-Benchmarks&lt;/h2&gt; 
+&lt;p&gt;See the &lt;a href="https://github.com/spring-projects/spring-framework/wiki/Micro-Benchmarks"&gt;Micro-Benchmarks&lt;/a&gt; wiki page.&lt;/p&gt; 
+&lt;h2&gt;Build from Source&lt;/h2&gt; 
+&lt;p&gt;See the &lt;a href="https://github.com/spring-projects/spring-framework/wiki/Build-from-Source"&gt;Build from Source&lt;/a&gt; wiki page and the &lt;a href="https://raw.githubusercontent.com/spring-projects/spring-framework/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; file.&lt;/p&gt; 
+&lt;h2&gt;Continuous Integration Builds&lt;/h2&gt; 
+&lt;p&gt;CI builds are defined with &lt;a href="https://raw.githubusercontent.com/spring-projects/spring-framework/main/.github/workflows"&gt;GitHub Actions workflows&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Stay in Touch&lt;/h2&gt; 
+&lt;p&gt;Follow &lt;a href="https://twitter.com/springcentral"&gt;@SpringCentral&lt;/a&gt;, &lt;a href="https://twitter.com/springframework"&gt;@SpringFramework&lt;/a&gt;, and its &lt;a href="https://twitter.com/springframework/lists/team/members"&gt;team members&lt;/a&gt; on 𝕏. In-depth articles can be found at &lt;a href="https://spring.io/blog/"&gt;The Spring Blog&lt;/a&gt;, and releases are announced via our &lt;a href="https://spring.io/blog/category/releases"&gt;releases feed&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;The Spring Framework is released under version 2.0 of the &lt;a href="https://www.apache.org/licenses/LICENSE-2.0"&gt;Apache License&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>kunal-kushwaha/DSA-Bootcamp-Java</title>
+      <link>https://github.com/kunal-kushwaha/DSA-Bootcamp-Java</link>
+      <description>&lt;p&gt;This repository consists of the code samples, assignments, and notes for the Java data structures &amp; algorithms + interview preparation bootcamp of WeMakeDevs.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;DSA + Interview preparation bootcamp&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Subscribe to the &lt;a href="https://www.youtube.com/KunalKushwaha?sub_confirmation=1"&gt;YouTube channel&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ"&gt;Lectures&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.techwithkunal.com/courses/dsa"&gt;Course website&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/tree/main/assignments"&gt;Assignments&lt;/a&gt; (solutions can be found on LeetCode)&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>CaffeineMC/sodium</title>
+      <link>https://github.com/CaffeineMC/sodium</link>
+      <description>&lt;p&gt;A Minecraft mod designed to improve frame rates and reduce micro-stutter&lt;/p&gt;&lt;hr&gt;&lt;img src="https://raw.githubusercontent.com/CaffeineMC/sodium/dev/common/src/main/resources/sodium-icon.png" width="128" /&gt; 
+&lt;h1&gt;Sodium&lt;/h1&gt; 
+&lt;p&gt;Sodium is a powerful rendering engine and optimization mod for the Minecraft client which improves frame rates and reduces micro-stutter, while fixing many graphical issues in Minecraft.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;This mod is the result of thousands of hours of development, and is made possible thanks to players like you.&lt;/strong&gt; If you would like to show a token of your appreciation for my work, and help support the development of Sodium in the process, then consider &lt;a href="https://caffeinemc.net/donate"&gt;buying me a coffee&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://caffeinemc.net/donate"&gt;&lt;img src="https://storage.ko-fi.com/cdn/kofi2.png?v=3" width="180" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;📥 Downloads&lt;/h3&gt; 
+&lt;h4&gt;Stable builds&lt;/h4&gt; 
+&lt;p&gt;The latest stable release of Sodium can be downloaded from our official &lt;a href="https://modrinth.com/mod/sodium"&gt;Modrinth&lt;/a&gt; and &lt;a href="https://www.curseforge.com/minecraft/mc-mods/sodium"&gt;CurseForge&lt;/a&gt; pages.&lt;/p&gt; 
+&lt;h4&gt;Nightly builds (for developers)&lt;/h4&gt; 
+&lt;p&gt;We also provide bleeding-edge builds ("nightlies") which are useful for testing the very latest changes before they're packaged into a release. These builds are primarily intended for other mod developers and users with expert skills, and do not come with any support or warranty.&lt;/p&gt; 
+&lt;p&gt;For a complete listing of available nightly builds, please see &lt;a href="https://github.com/CaffeineMC/sodium/wiki/Nightly-Builds"&gt;the wiki page&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;🖥️ Installation&lt;/h3&gt; 
+&lt;p&gt;Since the release of Sodium 0.6.0, both the &lt;em&gt;Fabric&lt;/em&gt; and &lt;em&gt;NeoForge&lt;/em&gt; mod loaders are supported. We generally recommend that new users prefer to use the &lt;em&gt;Fabric&lt;/em&gt; mod loader, since it is more lightweight and stable (for the time being.)&lt;/p&gt; 
+&lt;p&gt;For more information about downloading and installing the mod, please refer to our &lt;a href="https://github.com/CaffeineMC/sodium/wiki/Installation"&gt;Installation Guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;🙇 Getting Help&lt;/h3&gt; 
+&lt;p&gt;For technical support (including help with mod installation problems and game crashes), please use our &lt;a href="https://caffeinemc.net/discord"&gt;official Discord server&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;📬 Reporting Issues&lt;/h3&gt; 
+&lt;p&gt;If you do not need technical support and would like to report an issue (bug, crash, etc.) or otherwise request changes (for mod compatibility, new features, etc.), then we encourage you to open an issue on the &lt;a href="https://github.com/CaffeineMC/sodium/issues"&gt;project issue tracker&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Please note that while the issue tracker is open to feature requests, development is primarily focused on improving compatibility, performance, and finishing any unimplemented features necessary for parity with the vanilla renderer.&lt;/p&gt; 
+&lt;h3&gt;💬 Join the Community&lt;/h3&gt; 
+&lt;p&gt;We have an &lt;a href="https://caffeinemc.net/discord"&gt;official Discord community&lt;/a&gt; for all of our projects. By joining, you can:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Get installation help and technical support for all of our mods&lt;/li&gt; 
+ &lt;li&gt;Get the latest updates about development and community events&lt;/li&gt; 
+ &lt;li&gt;Talk with and collaborate with the rest of our team&lt;/li&gt; 
+ &lt;li&gt;... and just hang out with the rest of our community.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;✅ Hardware Compatibility&lt;/h2&gt; 
+&lt;p&gt;We only provide official support for graphics cards which have up-to-date drivers that are compatible with OpenGL 4.5 or newer. Most graphics cards released in the past 12 years will meet these requirements, including the following:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;AMD Radeon HD 7000 Series (GCN 1) or newer&lt;/li&gt; 
+ &lt;li&gt;NVIDIA GeForce 400 Series (Fermi) or newer&lt;/li&gt; 
+ &lt;li&gt;Intel HD Graphics 500 Series (Skylake) or newer&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Nearly all graphics cards that are already compatible with Minecraft (which requires OpenGL 3.3) should also work with Sodium. But our team cannot ensure compatibility or provide support for older graphics cards, and they may not work with future versions of Sodium.&lt;/p&gt; 
+&lt;h4&gt;OpenGL Compatibility Layers&lt;/h4&gt; 
+&lt;p&gt;Devices which need to use OpenGL translation layers (such as GL4ES, ANGLE, etc.) are not supported and will very likely not work with Sodium. These translation layers do not implement required functionality, and they suffer from underlying driver bugs which cannot be worked around.&lt;/p&gt; 
+&lt;h2&gt;🛠️ Building from sources&lt;/h2&gt; 
+&lt;p&gt;Sodium uses the &lt;a href="https://gradle.org/"&gt;Gradle build tool&lt;/a&gt; and can be built with the &lt;code&gt;gradle build&lt;/code&gt; command. The build artifacts (production binaries and their source bundles) can be found in the &lt;code&gt;build/mods&lt;/code&gt; directory.&lt;/p&gt; 
+&lt;p&gt;The &lt;a href="https://docs.gradle.org/current/userguide/gradle_wrapper.html#sec:using_wrapper"&gt;Gradle wrapper&lt;/a&gt; is provided for ease of use and will automatically download and install the appropriate version of Gradle for the project build. To use the Gradle wrapper, substitute &lt;code&gt;gradle&lt;/code&gt; in build commands with &lt;code&gt;./gradlew.bat&lt;/code&gt; (Windows) or &lt;code&gt;./gradlew&lt;/code&gt; (macOS and Linux).&lt;/p&gt; 
+&lt;h3&gt;Build Requirements&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;OpenJDK 21 
+  &lt;ul&gt; 
+   &lt;li&gt;We recommend using the &lt;a href="https://adoptium.net/"&gt;Eclipse Temurin&lt;/a&gt; distribution as it's regularly tested by our developers and known to be of high quality.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Gradle 8.10.x 
+  &lt;ul&gt; 
+   &lt;li&gt;Typically, newer versions of Gradle will work without issues, but the build script is only tested against the version used by the &lt;a href="https://raw.githubusercontent.com/CaffeineMC/sodium/dev/gradle/wrapper/gradle-wrapper.properties"&gt;wrapper script&lt;/a&gt;.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📜 License&lt;/h2&gt; 
+&lt;p&gt;Except where otherwise stated (see &lt;a href="https://raw.githubusercontent.com/CaffeineMC/sodium/dev/thirdparty/NOTICE.txt"&gt;third-party license notices&lt;/a&gt;), the content of this repository is provided under the &lt;a href="https://raw.githubusercontent.com/CaffeineMC/sodium/dev/LICENSE.md"&gt;Polyform Shield 1.0.0&lt;/a&gt; license by &lt;a href="https://jellysquid.me"&gt;JellySquid&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
