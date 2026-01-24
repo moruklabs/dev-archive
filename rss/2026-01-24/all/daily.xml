@@ -1,0 +1,1402 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub All Languages Daily Trending</title>
+    <description>Daily Trending of All Languages in GitHub</description>
+    <pubDate>Fri, 23 Jan 2026 01:33:50 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>virattt/dexter</title>
+      <link>https://github.com/virattt/dexter</link>
+      <description>&lt;p&gt;An autonomous agent for deep financial research&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Dexter 🤖&lt;/h1&gt; 
+&lt;p&gt;Dexter is an autonomous financial research agent that thinks, plans, and learns as it works. It performs analysis using task planning, self-reflection, and real-time market data. Think Claude Code, but built specifically for financial research.&lt;/p&gt; 
+&lt;img width="1098" height="659" alt="Screenshot 2026-01-21 at 5 25 10 PM" src="https://github.com/user-attachments/assets/3bcc3a7f-b68a-4f5e-8735-9d22196ff76e" /&gt; 
+&lt;h2&gt;Overview&lt;/h2&gt; 
+&lt;p&gt;Dexter takes complex financial questions and turns them into clear, step-by-step research plans. It runs those tasks using live market data, checks its own work, and refines the results until it has a confident, data-backed answer.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Key Capabilities:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Intelligent Task Planning&lt;/strong&gt;: Automatically decomposes complex queries into structured research steps&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Autonomous Execution&lt;/strong&gt;: Selects and executes the right tools to gather financial data&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Self-Validation&lt;/strong&gt;: Checks its own work and iterates until tasks are complete&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Real-Time Financial Data&lt;/strong&gt;: Access to income statements, balance sheets, and cash flow statements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Safety Features&lt;/strong&gt;: Built-in loop detection and step limits to prevent runaway execution&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;a href="https://twitter.com/virattt"&gt;&lt;img src="https://img.shields.io/twitter/follow/virattt?style=social" alt="Twitter Follow" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;img width="875" height="558" alt="Screenshot 2026-01-21 at 5 22 19 PM" src="https://github.com/user-attachments/assets/72d28363-69ea-4c74-a297-dfa60aa347f7" /&gt; 
+&lt;h3&gt;Prerequisites&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://bun.com"&gt;Bun&lt;/a&gt; runtime (v1.0 or higher)&lt;/li&gt; 
+ &lt;li&gt;OpenAI API key (get &lt;a href="https://platform.openai.com/api-keys"&gt;here&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;Financial Datasets API key (get &lt;a href="https://financialdatasets.ai"&gt;here&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;Tavily API key (get &lt;a href="https://tavily.com"&gt;here&lt;/a&gt;) - optional, for web search&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Installing Bun&lt;/h4&gt; 
+&lt;p&gt;If you don't have Bun installed, you can install it using curl:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;macOS/Linux:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -fsSL https://bun.com/install | bash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Windows:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;powershell -c "irm bun.sh/install.ps1|iex"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;After installation, restart your terminal and verify Bun is installed:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun --version
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Installing Dexter&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Clone the repository:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/virattt/dexter.git
+cd dexter
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Install dependencies with Bun:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;Set up your environment variables:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Copy the example environment file (from parent directory)
+cp env.example .env
+
+# Edit .env and add your API keys (if using cloud providers)
+# OPENAI_API_KEY=your-openai-api-key
+# ANTHROPIC_API_KEY=your-anthropic-api-key
+# GOOGLE_API_KEY=your-google-api-key
+# XAI_API_KEY=your-xai-api-key
+
+# (Optional) If using Ollama locally
+# OLLAMA_BASE_URL=http://127.0.0.1:11434
+
+# Other required keys
+# FINANCIAL_DATASETS_API_KEY=your-financial-datasets-api-key
+# TAVILY_API_KEY=your-tavily-api-key
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Usage&lt;/h3&gt; 
+&lt;p&gt;Run Dexter in interactive mode:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Or with watch mode for development:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;How to Contribute&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork the repository&lt;/li&gt; 
+ &lt;li&gt;Create a feature branch&lt;/li&gt; 
+ &lt;li&gt;Commit your changes&lt;/li&gt; 
+ &lt;li&gt;Push to the branch&lt;/li&gt; 
+ &lt;li&gt;Create a Pull Request&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Important&lt;/strong&gt;: Please keep your pull requests small and focused. This will make it easier to review and merge.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the MIT License.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>nexmoe/VidBee</title>
+      <link>https://github.com/nexmoe/VidBee</link>
+      <description>&lt;p&gt;Download videos from almost any website worldwide&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;a href="https://github.com/nexmoe/VidBee"&gt; &lt;img src="https://raw.githubusercontent.com/nexmoe/VidBee/main/build/icon.png" alt="Logo" width="80" height="80" /&gt; &lt;/a&gt; 
+ &lt;h3&gt;VidBee&lt;/h3&gt; 
+ &lt;p&gt; &lt;a href="https://github.com/nexmoe/VidBee/stargazers"&gt;&lt;img src="https://img.shields.io/github/stars/nexmoe/VidBee?color=ffcb47&amp;amp;labelColor=black&amp;amp;logo=github&amp;amp;label=Stars" /&gt;&lt;/a&gt; &lt;a href="https://github.com/nexmoe/VidBee/graphs/contributors"&gt;&lt;img src="https://img.shields.io/github/contributors/nexmoe/VidBee?ogo=github&amp;amp;label=Contributors&amp;amp;labelColor=black" /&gt;&lt;/a&gt; &lt;a href="https://github.com/nexmoe/VidBee/releases"&gt;&lt;img src="https://img.shields.io/github/downloads/nexmoe/VidBee/total?color=369eff&amp;amp;labelColor=black&amp;amp;logo=github&amp;amp;label=Downloads" /&gt;&lt;/a&gt; &lt;a href="https://github.com/nexmoe/VidBee/releases/latest"&gt;&lt;img src="https://img.shields.io/github/v/release/nexmoe/VidBee?color=369eff&amp;amp;labelColor=black&amp;amp;logo=github&amp;amp;label=Latest%20Release" /&gt;&lt;/a&gt; &lt;a href="https://x.com/intent/follow?screen_name=nexmoex"&gt;&lt;img src="https://img.shields.io/badge/Follow-blue?color=1d9bf0&amp;amp;logo=x&amp;amp;labelColor=black" /&gt;&lt;/a&gt; &lt;a href="https://deepwiki.com/nexmoe/VidBee"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" alt="Ask DeepWiki" /&gt;&lt;/a&gt; &lt;br /&gt; &lt;br /&gt; &lt;a href="https://github.com/nexmoe/VidBee/releases/latest" target="_blank"&gt;&lt;img src="https://raw.githubusercontent.com/nexmoe/VidBee/main/screenshots/main-interface.png" alt="VidBee Desktop" width="46%" /&gt;&lt;/a&gt; &lt;a href="https://github.com/nexmoe/VidBee/releases/latest" target="_blank"&gt;&lt;img src="https://raw.githubusercontent.com/nexmoe/VidBee/main/screenshots/download-queue.png" alt="VidBee Download Queue" width="46%" /&gt;&lt;/a&gt; &lt;br /&gt; &lt;br /&gt; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;p&gt;VidBee is a modern, open-source video downloader that lets you download videos and audios from 1000+ websites worldwide. Built with Electron and powered by yt-dlp, VidBee offers a clean, intuitive interface with powerful features for all your downloading needs, including RSS auto-download automation that automatically subscribes to feeds and downloads new videos from your favorite creators in the background.&lt;/p&gt; 
+&lt;h2&gt;👋🏻 Getting Started&lt;/h2&gt; 
+&lt;p&gt;VidBee is currently under active development, and feedback is welcome for any &lt;a href="https://github.com/nexmoe/VidBee/issues"&gt;issue&lt;/a&gt; encountered.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://vidbee.org/download/"&gt;📥 Download VidBee&lt;/a&gt; | &lt;a href="https://docs.vidbee.org"&gt;📚 Documentation&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!IMPORTANT]&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;Star Us&lt;/strong&gt;, You will receive all release notifications from GitHub without any delay ~&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;a href="https://next.ossinsight.io/widgets/official/compose-last-28-days-stats?repo_id=1081230042" target="_blank" style="display: block" align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source media="(prefers-color-scheme: dark)" srcset="https://next.ossinsight.io/widgets/official/compose-last-28-days-stats/thumbnail.png?repo_id=1081230042&amp;amp;image_size=auto&amp;amp;color_scheme=dark" width="655" height="auto" /&gt; 
+  &lt;img alt="Performance Stats of nexmoe/VidBee - Last 28 days" src="https://next.ossinsight.io/widgets/official/compose-last-28-days-stats/thumbnail.png?repo_id=1081230042&amp;amp;image_size=auto&amp;amp;color_scheme=light" width="655" height="auto" /&gt; 
+ &lt;/picture&gt; &lt;/a&gt; 
+&lt;!-- Made with [OSS Insight](https://ossinsight.io/) --&gt; 
+&lt;h2&gt;✨ Features&lt;/h2&gt; 
+&lt;h3&gt;🌍 Global Video Download Support&lt;/h3&gt; 
+&lt;p&gt;Download videos from almost any website worldwide through the powerful yt-dlp engine. Support for 1000+ sites including YouTube, TikTok, Instagram, Twitter, and many more.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/nexmoe/VidBee/main/screenshots/main-interface.png" alt="VidBee Main Interface" /&gt;&lt;/p&gt; 
+&lt;h3&gt;🎨 Best-in-class UI Experience&lt;/h3&gt; 
+&lt;p&gt;Modern, clean interface with intuitive operations. One-click pause/resume/retry, real-time progress tracking, and comprehensive download queue management.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/nexmoe/VidBee/main/screenshots/download-queue.png" alt="VidBee Download Queue" /&gt;&lt;/p&gt; 
+&lt;h3&gt;📡 RSS Auto Download&lt;/h3&gt; 
+&lt;p&gt;Automatically subscribe to RSS feeds and auto-download new videos in the background from your favorite creators across YouTube, TikTok, and more. Set up RSS subscriptions once, and VidBee will automatically download new uploads without manual intervention, perfect for keeping up with your favorite channels and creators.&lt;/p&gt; 
+&lt;h2&gt;🌐 Supported Sites&lt;/h2&gt; 
+&lt;p&gt;VidBee supports 1000+ video and audio platforms through yt-dlp. For the complete list of supported sites, visit &lt;a href="https://vidbee.org/supported-sites/"&gt;https://vidbee.org/supported-sites/&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🤝 Contributing&lt;/h2&gt; 
+&lt;p&gt;You are welcome to join the open source community to build together. For more details, check out:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/nexmoe/VidBee/main/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://deepwiki.com/nexmoe/VidBee"&gt;DeepWiki Documentation&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;📄 License&lt;/h2&gt; 
+&lt;p&gt;This project is distributed under the MIT License. See &lt;a href="https://raw.githubusercontent.com/nexmoe/VidBee/main/LICENSE"&gt;&lt;code&gt;LICENSE&lt;/code&gt;&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;h2&gt;🙏 Thanks&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/yt-dlp/yt-dlp"&gt;yt-dlp&lt;/a&gt; - The powerful video downloader engine&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://ffmpeg.org/"&gt;FFmpeg&lt;/a&gt; - The multimedia framework for video and audio processing&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.electronjs.org/"&gt;Electron&lt;/a&gt; - Build cross-platform desktop apps&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://react.dev/"&gt;React&lt;/a&gt; - The UI library&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://vitejs.dev/"&gt;Vite&lt;/a&gt; - Next generation frontend tooling&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://tailwindcss.com/"&gt;Tailwind CSS&lt;/a&gt; - Utility-first CSS framework&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://ui.shadcn.com/"&gt;shadcn/ui&lt;/a&gt; - Beautifully designed components&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>mastra-ai/mastra</title>
+      <link>https://github.com/mastra-ai/mastra</link>
+      <description>&lt;p&gt;From the team behind Gatsby, Mastra is a framework for building AI-powered applications and agents with a modern TypeScript stack.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Mastra&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://www.npmjs.com/package/@mastra/core"&gt;&lt;img src="https://badge.fury.io/js/@mastra%2Fcore.svg?sanitize=true" alt="npm version" /&gt;&lt;/a&gt; &lt;a href="https://github.com/mastra-ai/mastra/actions/workflows/github-code-scanning/codeql"&gt;&lt;img src="https://github.com/mastra-ai/mastra/actions/workflows/github-code-scanning/codeql/badge.svg?sanitize=true" alt="CodeQl" /&gt;&lt;/a&gt; &lt;a href="https://github.com/mastra-ai/mastra/stargazers"&gt;&lt;img src="https://img.shields.io/github/stars/mastra-ai/mastra" alt="GitHub Repo stars" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/BTYqqHKUrf"&gt;&lt;img src="https://img.shields.io/discord/1309558646228779139?logo=discord&amp;amp;label=Discord&amp;amp;labelColor=white&amp;amp;color=7289DA" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://x.com/mastra_ai"&gt;&lt;img src="https://img.shields.io/twitter/follow/mastra_ai?style=social" alt="Twitter Follow" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/@mastra/core"&gt;&lt;img src="https://img.shields.io/npm/dm/%40mastra%252Fcore" alt="NPM Downloads" /&gt;&lt;/a&gt; &lt;a href="https://www.ycombinator.com/companies?batch=W25"&gt;&lt;img src="https://img.shields.io/badge/Y%20Combinator-W25-orange" alt="Static Badge" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Mastra is a framework for building AI-powered applications and agents with a modern TypeScript stack.&lt;/p&gt; 
+&lt;p&gt;It includes everything you need to go from early prototypes to production-ready applications. Mastra integrates with frontend and backend frameworks like React, Next.js, and Node, or you can deploy it anywhere as a standalone server. It's the easiest way to build, tune, and scale reliable AI products.&lt;/p&gt; 
+&lt;h2&gt;Why Mastra?&lt;/h2&gt; 
+&lt;p&gt;Purpose-built for TypeScript and designed around established AI patterns, Mastra gives you everything you need to build great AI applications out-of-the-box.&lt;/p&gt; 
+&lt;p&gt;Some highlights include:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://mastra.ai/models"&gt;&lt;strong&gt;Model routing&lt;/strong&gt;&lt;/a&gt; - Connect to 40+ providers through one standard interface. Use models from OpenAI, Anthropic, Gemini, and more.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://mastra.ai/docs/agents/overview"&gt;&lt;strong&gt;Agents&lt;/strong&gt;&lt;/a&gt; - Build autonomous agents that use LLMs and tools to solve open-ended tasks. Agents reason about goals, decide which tools to use, and iterate internally until the model emits a final answer or an optional stopping condition is met.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://mastra.ai/docs/workflows/overview"&gt;&lt;strong&gt;Workflows&lt;/strong&gt;&lt;/a&gt; - When you need explicit control over execution, use Mastra's graph-based workflow engine to orchestrate complex multi-step processes. Mastra workflows use an intuitive syntax for control flow (&lt;code&gt;.then()&lt;/code&gt;, &lt;code&gt;.branch()&lt;/code&gt;, &lt;code&gt;.parallel()&lt;/code&gt;).&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://mastra.ai/docs/workflows/suspend-and-resume"&gt;&lt;strong&gt;Human-in-the-loop&lt;/strong&gt;&lt;/a&gt; - Suspend an agent or workflow and await user input or approval before resuming. Mastra uses &lt;a href="https://mastra.ai/docs/server-db/storage"&gt;storage&lt;/a&gt; to remember execution state, so you can pause indefinitely and resume where you left off.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Context management&lt;/strong&gt; - Give your agents the right context at the right time. Provide &lt;a href="https://mastra.ai/docs/memory/conversation-history"&gt;conversation history&lt;/a&gt;, &lt;a href="https://mastra.ai/docs/rag/overview"&gt;retrieve&lt;/a&gt; data from your sources (APIs, databases, files), and add human-like &lt;a href="https://mastra.ai/docs/memory/working-memory"&gt;working&lt;/a&gt; and &lt;a href="https://mastra.ai/docs/memory/semantic-recall"&gt;semantic&lt;/a&gt; memory so your agents behave coherently.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Integrations&lt;/strong&gt; - Bundle agents and workflows into existing React, Next.js, or Node.js apps, or ship them as standalone endpoints. When building UIs, integrate with agentic libraries like Vercel's AI SDK UI and CopilotKit to bring your AI assistant to life on the web.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a href="https://mastra.ai/docs/tools-mcp/mcp-overview"&gt;&lt;strong&gt;MCP servers&lt;/strong&gt;&lt;/a&gt; - Author Model Context Protocol servers, exposing agents, tools, and other structured resources via the MCP interface. These can then be accessed by any system or agent that supports the protocol.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Production essentials&lt;/strong&gt; - Shipping reliable agents takes ongoing insight, evaluation, and iteration. With built-in &lt;a href="https://mastra.ai/docs/evals/overview"&gt;evals&lt;/a&gt; and &lt;a href="https://mastra.ai/docs/observability/overview"&gt;observability&lt;/a&gt;, Mastra gives you the tools to observe, measure, and refine continuously.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Get started&lt;/h2&gt; 
+&lt;p&gt;The &lt;strong&gt;recommended&lt;/strong&gt; way to get started with Mastra is by running the command below:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-shell"&gt;npm create mastra@latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Follow the &lt;a href="https://mastra.ai/docs/getting-started/installation"&gt;Installation guide&lt;/a&gt; for step-by-step setup with the CLI or a manual install.&lt;/p&gt; 
+&lt;p&gt;If you're new to AI agents, check out our &lt;a href="https://mastra.ai/docs/getting-started/templates"&gt;templates&lt;/a&gt;, &lt;a href="https://mastra.ai/course"&gt;course&lt;/a&gt;, and &lt;a href="https://youtube.com/@mastra-ai"&gt;YouTube videos&lt;/a&gt; to start building with Mastra today.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Visit our &lt;a href="https://mastra.ai/docs"&gt;official documentation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;MCP Servers&lt;/h2&gt; 
+&lt;p&gt;Learn how to make your IDE a Mastra expert by following the &lt;a href="https://mastra.ai/docs/getting-started/mcp-docs-server"&gt;&lt;code&gt;@mastra/mcp-docs-server&lt;/code&gt; guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Looking to contribute? All types of help are appreciated, from coding to testing and feature specification.&lt;/p&gt; 
+&lt;p&gt;If you are a developer and would like to contribute with code, please open an issue to discuss before opening a Pull Request.&lt;/p&gt; 
+&lt;p&gt;Information about the project setup can be found in the &lt;a href="https://raw.githubusercontent.com/mastra-ai/mastra/main/DEVELOPMENT.md"&gt;development documentation&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;We have an &lt;a href="https://discord.gg/BTYqqHKUrf"&gt;open community Discord&lt;/a&gt;. Come and say hello and let us know if you have any questions or need any help getting things running.&lt;/p&gt; 
+&lt;p&gt;It's also super helpful if you leave the project a star here at the &lt;a href="https://github.com/mastra-ai/mastra"&gt;top of the page&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Security&lt;/h2&gt; 
+&lt;p&gt;We are committed to maintaining the security of this repo and of Mastra as a whole. If you discover a security finding we ask you to please responsibly disclose this to us at &lt;a href="mailto:security@mastra.ai"&gt;security@mastra.ai&lt;/a&gt; and we will get back to you.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>block/goose</title>
+      <link>https://github.com/block/goose</link>
+      <description>&lt;p&gt;an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;h1&gt;goose&lt;/h1&gt; 
+ &lt;p&gt;&lt;em&gt;a local, extensible, open source AI agent that automates engineering tasks&lt;/em&gt;&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;a href="https://opensource.org/licenses/Apache-2.0"&gt; &lt;img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg?sanitize=true" /&gt; &lt;/a&gt; &lt;a href="https://discord.gg/goose-oss"&gt; &lt;img src="https://img.shields.io/discord/1287729918100246654?logo=discord&amp;amp;logoColor=white&amp;amp;label=Join+Us&amp;amp;color=blueviolet" alt="Discord" /&gt; &lt;/a&gt; &lt;a href="https://github.com/block/goose/actions/workflows/ci.yml"&gt; &lt;img src="https://img.shields.io/github/actions/workflow/status/block/goose/ci.yml?branch=main" alt="CI" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;p&gt;goose is your on-machine AI agent, capable of automating complex development tasks from start to finish. More than just code suggestions, goose can build entire projects from scratch, write and execute code, debug failures, orchestrate workflows, and interact with external APIs - &lt;em&gt;autonomously&lt;/em&gt;.&lt;/p&gt; 
+&lt;p&gt;Whether you're prototyping an idea, refining existing code, or managing intricate engineering pipelines, goose adapts to your workflow and executes tasks with precision.&lt;/p&gt; 
+&lt;p&gt;Designed for maximum flexibility, goose works with any LLM and supports multi-model configuration to optimize performance and cost, seamlessly integrates with MCP servers, and is available as both a desktop app as well as CLI - making it the ultimate AI assistant for developers who want to move faster and focus on innovation.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://youtu.be/D-DpDunrbpo"&gt;&lt;img src="https://github.com/user-attachments/assets/ddc71240-3928-41b5-8210-626dfb28af7a" alt="Watch the video" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h1&gt;Quick Links&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://block.github.io/goose/docs/quickstart"&gt;Quickstart&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://block.github.io/goose/docs/getting-started/installation"&gt;Installation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://block.github.io/goose/docs/category/tutorials"&gt;Tutorials&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://block.github.io/goose/docs/category/getting-started"&gt;Documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/block/goose/raw/main/HOWTOAI.md"&gt;Responsible AI-Assisted Coding Guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/block/goose/raw/main/GOVERNANCE.md"&gt;Governance&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Need Help?&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://block.github.io/goose/docs/troubleshooting/diagnostics-and-reporting"&gt;Diagnostics &amp;amp; Reporting&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://block.github.io/goose/docs/troubleshooting/known-issues"&gt;Known Issues&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;a little goose humor 🦢&lt;/h1&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Why did the developer choose goose as their AI agent?&lt;/p&gt; 
+ &lt;p&gt;Because it always helps them "migrate" their code to production! 🚀&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h1&gt;goose around with us&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://discord.gg/goose-oss"&gt;Discord&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.youtube.com/@goose-oss"&gt;YouTube&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://www.linkedin.com/company/goose-oss"&gt;LinkedIn&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://x.com/goose_oss"&gt;Twitter/X&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://bsky.app/profile/opensource.block.xyz"&gt;Bluesky&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://njump.me/opensource@block.xyz"&gt;Nostr&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>twitter/the-algorithm</title>
+      <link>https://github.com/twitter/the-algorithm</link>
+      <description>&lt;p&gt;Source code for the X Recommendation Algorithm&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;X's Recommendation Algorithm&lt;/h1&gt; 
+&lt;p&gt;X's Recommendation Algorithm is a set of services and jobs that are responsible for serving feeds of posts and other content across all X product surfaces (e.g. For You Timeline, Search, Explore, Notifications). For an introduction to how the algorithm works, please refer to our &lt;a href="https://blog.x.com/engineering/en_us/topics/open-source/2023/twitter-recommendation-algorithm"&gt;engineering blog&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Architecture&lt;/h2&gt; 
+&lt;p&gt;Product surfaces at X are built on a shared set of data, models, and software frameworks. The shared components included in this repository are listed below:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Type&lt;/th&gt; 
+   &lt;th&gt;Component&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Data&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/tweetypie/server/README.md"&gt;tweetypie&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Core service that handles the reading and writing of post data.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/unified_user_actions/README.md"&gt;unified-user-actions&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Real-time stream of user actions on X.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/user-signal-service/README.md"&gt;user-signal-service&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Centralized platform to retrieve explicit (e.g. likes, replies) and implicit (e.g. profile visits, tweet clicks) user signals.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Model&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/src/scala/com/twitter/simclusters_v2/README.md"&gt;SimClusters&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Community detection and sparse embeddings into those communities.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/twitter/the-algorithm-ml/raw/main/projects/twhin/README.md"&gt;TwHIN&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Dense knowledge graph embeddings for Users and Posts.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/trust_and_safety_models/README.md"&gt;trust-and-safety-models&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Models for detecting NSFW or abusive content.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/src/scala/com/twitter/interaction_graph/README.md"&gt;real-graph&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Model to predict the likelihood of an X User interacting with another User.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/src/scala/com/twitter/graph/batch/job/tweepcred/README"&gt;tweepcred&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Page-Rank algorithm for calculating X User reputation.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/recos-injector/README.md"&gt;recos-injector&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Streaming event processor for building input streams for &lt;a href="https://github.com/twitter/GraphJet"&gt;GraphJet&lt;/a&gt; based services.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/graph-feature-service/README.md"&gt;graph-feature-service&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Serves graph features for a directed pair of users (e.g. how many of User A's following liked posts from User B).&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/topic-social-proof/README.md"&gt;topic-social-proof&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Identifies topics related to individual posts.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/representation-scorer/README.md"&gt;representation-scorer&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Compute scores between pairs of entities (Users, Posts, etc.) using embedding similarity.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Software framework&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/navi/README.md"&gt;navi&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;High performance, machine learning model serving written in Rust.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/product-mixer/README.md"&gt;product-mixer&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Software framework for building feeds of content.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/timelines/data_processing/ml_util/aggregation_framework/README.md"&gt;timelines-aggregation-framework&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Framework for generating aggregate features in batch or real time.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/representation-manager/README.md"&gt;representation-manager&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Service to retrieve embeddings (i.e. SimClusers and TwHIN).&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/twml/README.md"&gt;twml&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Legacy machine learning framework built on TensorFlow v1.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;The product surfaces currently included in this repository are the For You Timeline and Recommended Notifications.&lt;/p&gt; 
+&lt;h3&gt;For You Timeline&lt;/h3&gt; 
+&lt;p&gt;The diagram below illustrates how major services and jobs interconnect to construct a For You Timeline.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/twitter/the-algorithm/main/docs/system-diagram.png" alt="" /&gt;&lt;/p&gt; 
+&lt;p&gt;The core components of the For You Timeline included in this repository are listed below:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Type&lt;/th&gt; 
+   &lt;th&gt;Component&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Candidate Source&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/src/java/com/twitter/search/README.md"&gt;search-index&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Find and rank In-Network posts. ~50% of posts come from this candidate source.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/tweet-mixer"&gt;tweet-mixer&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Coordination layer for fetching Out-of-Network tweet candidates from underlying compute services.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/src/scala/com/twitter/recos/user_tweet_entity_graph/README.md"&gt;user-tweet-entity-graph&lt;/a&gt; (UTEG)&lt;/td&gt; 
+   &lt;td&gt;Maintains an in memory User to Post interaction graph, and finds candidates based on traversals of this graph. This is built on the &lt;a href="https://github.com/twitter/GraphJet"&gt;GraphJet&lt;/a&gt; framework. Several other GraphJet based features and candidate sources are located &lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/src/scala/com/twitter/recos"&gt;here&lt;/a&gt;.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/follow-recommendations-service/README.md"&gt;follow-recommendation-service&lt;/a&gt; (FRS)&lt;/td&gt; 
+   &lt;td&gt;Provides Users with recommendations for accounts to follow, and posts from those accounts.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Ranking&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/src/python/twitter/deepbird/projects/timelines/scripts/models/earlybird/README.md"&gt;light-ranker&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Light Ranker model used by search index (Earlybird) to rank posts.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/twitter/the-algorithm-ml/raw/main/projects/home/recap/README.md"&gt;heavy-ranker&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Neural network for ranking candidate posts. One of the main signals used to select timeline posts post candidate sourcing.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Post mixing &amp;amp; filtering&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/home-mixer/README.md"&gt;home-mixer&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Main service used to construct and serve the Home Timeline. Built on &lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/product-mixer/README.md"&gt;product-mixer&lt;/a&gt;.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/visibilitylib/README.md"&gt;visibility-filters&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Responsible for filtering X content to support legal compliance, improve product quality, increase user trust, protect revenue through the use of hard-filtering, visible product treatments, and coarse-grained downranking.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/timelineranker/README.md"&gt;timelineranker&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Legacy service which provides relevance-scored posts from the Earlybird Search Index and UTEG service.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Recommended Notifications&lt;/h3&gt; 
+&lt;p&gt;The core components of Recommended Notifications included in this repository are listed below:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Type&lt;/th&gt; 
+   &lt;th&gt;Component&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Service&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/pushservice/README.md"&gt;pushservice&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Main recommendation service at X used to surface recommendations to our users via notifications.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Ranking&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/pushservice/src/main/python/models/light_ranking/README.md"&gt;pushservice-light-ranker&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Light Ranker model used by pushservice to rank posts. Bridges candidate generation and heavy ranking by pre-selecting highly-relevant candidates from the initial huge candidate pool.&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://raw.githubusercontent.com/twitter/the-algorithm/main/pushservice/src/main/python/models/heavy_ranking/README.md"&gt;pushservice-heavy-ranker&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;Multi-task learning model to predict the probabilities that the target users will open and engage with the sent notifications.&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Build and test code&lt;/h2&gt; 
+&lt;p&gt;We include Bazel BUILD files for most components, but not a top-level BUILD or WORKSPACE file. We plan to add a more complete build and test system in the future.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We invite the community to submit GitHub issues and pull requests for suggestions on improving the recommendation algorithm. We are working on tools to manage these suggestions and sync changes to our internal repository. Any security concerns or issues should be routed to our official &lt;a href="https://hackerone.com/x"&gt;bug bounty program&lt;/a&gt; through HackerOne. We hope to benefit from the collective intelligence and expertise of the global community in helping us identify issues and suggest improvements, ultimately leading to a better X.&lt;/p&gt; 
+&lt;p&gt;Read our blog on the open source initiative &lt;a href="https://blog.x.com/en_us/topics/company/2023/a-new-era-of-transparency-for-twitter"&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>iOfficeAI/AionUi</title>
+      <link>https://github.com/iOfficeAI/AionUi</link>
+      <description>&lt;p&gt;Free, local, open-source Cowork for Gemini CLI, Claude Code, Codex, Opencode, Qwen Code, Goose Cli, Auggie, and more | 🌟 Star if you like it!&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="./resources/aionui-banner-1 copy.png" alt="AionUi - Cowork with Your CLI AI Agent" width="100%" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://img.shields.io/github/v/release/iOfficeAI/AionUi?style=flat-square&amp;amp;color=32CD32" alt="Version" /&gt; &amp;nbsp; &lt;img src="https://img.shields.io/badge/license-Apache--2.0-32CD32?style=flat-square&amp;amp;logo=apache&amp;amp;logoColor=white" alt="License" /&gt; &amp;nbsp; &lt;img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-6C757D?style=flat-square&amp;amp;logo=linux&amp;amp;logoColor=white" alt="Platform" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/15423" target="_blank"&gt; &lt;img src="https://trendshift.io/api/badge/repositories/15423" alt="GitHub Trending" height="80" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p align="center"&gt; &lt;strong&gt;🚀 Cowork with Your AI, Gemini CLI, Claude Code, Codex, Qwen Code, Goose CLI, Auggie, and more&lt;/strong&gt;&lt;br /&gt; &lt;em&gt;User-friendly | Visual graphical interface | Multi-model support | Local data security&lt;/em&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/iOfficeAI/AionUi/releases"&gt; &lt;img src="https://img.shields.io/badge/⬇️%20Download%20Now-Latest%20Release-32CD32?style=for-the-badge&amp;amp;logo=github&amp;amp;logoColor=white" alt="Download Latest Release" height="50" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;strong&gt;English&lt;/strong&gt; | &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/readme_ch.md"&gt;简体中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/readme_tw.md"&gt;繁體中文&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/readme_jp.md"&gt;日本語&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/readme_ko.md"&gt;한국어&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/readme_es.md"&gt;Español&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/readme_pt.md"&gt;Português&lt;/a&gt; | &lt;a href="https://www.aionui.com" target="_blank"&gt;Official Website&lt;/a&gt; | &lt;a href="https://twitter.com/AionUI" target="_blank"&gt;Twitter&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;strong&gt;💬 Community:&lt;/strong&gt; &lt;a href="https://discord.gg/g6u66vV9" target="_blank"&gt;Discord (English)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/resources/wechat_group.png" target="_blank"&gt;微信 (中文群)&lt;/a&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📋 Quick Navigation&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/#-what-can-aionui-do"&gt;✨ What Can AionUi Do?&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/#-why-choose-aionui"&gt;🤔 Why Choose AionUi?&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/#-core-features"&gt;✨ Core Features&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/#-quick-start"&gt;🚀 Quick Start&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/#-detailed-usage-guide"&gt;📖 Detailed Usage Guide&lt;/a&gt; · &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/#-community--support"&gt;💬 Community&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;✨ What Can AionUi Do?&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;img src="./resources/offica-ai BANNER-function copy.png" alt="AionUi - Cowork with Your CLI AI Agent" width="800" /&gt; &lt;/p&gt; 
+&lt;h3&gt;🤖 &lt;strong&gt;Multi-Agent Mode - Cowork for Your Command-Line AI Tools, Unified Graphical Interface&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;AionUi includes Gemini CLI built-in, ready to use out of the box with no extra installation. If you already have command-line tools like Gemini CLI, Claude Code, CodeX, Qwen Code, Goose AI, Augment Code installed, AionUi will auto-detect them and provide a unified graphical interface for a richer experience&lt;/em&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;Auto Detection + Unified Interface&lt;/strong&gt; - Automatically recognizes local CLI tools, provides a unified graphical interface, say goodbye to command line&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;Local Storage + Multi-Session&lt;/strong&gt; - Conversations saved locally, supports multiple parallel sessions, each session with independent context&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p align="center"&gt; &lt;img src="./resources/acp home page.gif" alt="Multi-Agent Mode Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;📁 &lt;strong&gt;Smart File Management (AI Cowork)&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;Batch renaming, automatic organization, smart classification, file merging&lt;/em&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Auto Organize&lt;/strong&gt;: Intelligently identify content and auto-classify, keeping folders tidy.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Efficient Batch&lt;/strong&gt;: One-click rename, merge files, say goodbye to tedious manual tasks.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p align="center"&gt; &lt;img src="./resources/aionui sort file.gif" alt="Smart File Management Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;📄 &lt;strong&gt;Preview Panel - Quickly View AI-Generated Results&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;Supports 9+ formats of visual preview (PDF, Word, Excel, PPT, code, Markdown, images, HTML, Diff, etc.)&lt;/em&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;View Results Instantly&lt;/strong&gt; - After AI generates files, view preview immediately without switching apps&lt;/li&gt; 
+ &lt;li&gt;✅ &lt;strong&gt;Real-time Tracking + Editable&lt;/strong&gt; - Automatically tracks file changes, editor and preview sync intelligently; supports real-time editing of Markdown, code, HTML, WYSIWYG&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/resources/preview.gif" alt="Preview Panel Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;🎨 &lt;strong&gt;AI Image Generation &amp;amp; Editing&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;Intelligent image generation, editing, and recognition, powered by Gemini&lt;/em&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/resources/Image_Generation.gif" alt="AI Image Generation Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;💬 &lt;strong&gt;Multi-Task Parallel Processing&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;Open multiple conversations, tasks don't get mixed up, independent memory, double efficiency&lt;/em&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/resources/multichat-side-by-side.gif" alt="Conversation Management Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;🌐 &lt;strong&gt;Access Anywhere - WebUI Mode&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;Remotely control your AI tools - Access AionUi from any device on the network! Securely control local Gemini CLI, Claude Code, Codex, and other tools, data never leaves your device&lt;/em&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Basic startup
+AionUi --webui
+
+# Remote access (accessible from other devices on the local network)
+AionUi --webui --remote
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;💡 &lt;strong&gt;Need detailed configuration guide?&lt;/strong&gt; Check out the &lt;a href="https://github.com/iOfficeAI/AionUi/wiki/WebUI-Configuration-Guide"&gt;WebUI Configuration Tutorial&lt;/a&gt; - includes complete startup commands for all platforms&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p align="center"&gt; &lt;img src="./resources/webui banner.png" alt="WebUI Remote Access Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🤔 Why Choose AionUi?&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Just like Claude Cowork makes Claude Code easier to use, AionUi is the Cowork platform for all your command-line AI tools&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Gemini CLI, Claude Code, Codex, Qwen Code are powerful, but share common pain points: conversations can't be saved, single-session limitations, cumbersome file operations, and only support a single model.&lt;/p&gt; 
+&lt;p&gt;AionUi provides unified &lt;strong&gt;Cowork capabilities&lt;/strong&gt; for these command-line tools:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🎯 &lt;strong&gt;Unified Platform&lt;/strong&gt; - One interface to manage all command-line AI tools, no switching needed; includes Gemini CLI, ready to use out of the box and completely free&lt;/li&gt; 
+ &lt;li&gt;🚀 &lt;strong&gt;Multi-Tool Support&lt;/strong&gt; - Not only supports Claude Code, but also Gemini CLI, Codex, Qwen Code, and more&lt;/li&gt; 
+ &lt;li&gt;🌐 &lt;strong&gt;Cross-Platform&lt;/strong&gt; - Full platform support for macOS, Windows, Linux (Claude Cowork currently only macOS)&lt;/li&gt; 
+ &lt;li&gt;🔄 &lt;strong&gt;Multi-Model Switching&lt;/strong&gt; - Flexibly switch between different models in the same interface, meeting different task requirements&lt;/li&gt; 
+ &lt;li&gt;📄 &lt;strong&gt;Real-time Preview&lt;/strong&gt; - Visual preview for 9+ formats, immediately view the effects of AI-generated files&lt;/li&gt; 
+ &lt;li&gt;💾 &lt;strong&gt;Local Data Security&lt;/strong&gt; - All conversations and files saved locally, data never leaves your device&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;❓ Quick Q&amp;amp;A&lt;/h3&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;Q: Why is AionUi a great replacement for Claude Cowork?&lt;/strong&gt;&lt;/summary&gt; A: AionUi is a **free and open-source** **Multi-AI Agent Desktop**. Compared to the official Cowork which only runs on macOS and is locked to Claude, AionUi is its **full-model, cross-platform enhanced version**, deeply covering **AI Office Automation** scenarios. 
+ &lt;table&gt; 
+  &lt;thead&gt; 
+   &lt;tr&gt; 
+    &lt;th align="left"&gt;Dimension&lt;/th&gt; 
+    &lt;th align="left"&gt;Claude Cowork&lt;/th&gt; 
+    &lt;th align="left"&gt;AionUi (This Project)&lt;/th&gt; 
+   &lt;/tr&gt; 
+  &lt;/thead&gt; 
+  &lt;tbody&gt; 
+   &lt;tr&gt; 
+    &lt;td align="left"&gt;OS&lt;/td&gt; 
+    &lt;td align="left"&gt;macOS Only&lt;/td&gt; 
+    &lt;td align="left"&gt;🍏 macOS / 🪟 Windows / 🐧 Linux&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td align="left"&gt;Model Support&lt;/td&gt; 
+    &lt;td align="left"&gt;Claude Only&lt;/td&gt; 
+    &lt;td align="left"&gt;🤖 Gemini, Claude, DeepSeek, OpenAI, Ollama&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td align="left"&gt;Interaction&lt;/td&gt; 
+    &lt;td align="left"&gt;GUI&lt;/td&gt; 
+    &lt;td align="left"&gt;🖥️ Full GUI + WebUI Remote Access&lt;/td&gt; 
+   &lt;/tr&gt; 
+   &lt;tr&gt; 
+    &lt;td align="left"&gt;Cost&lt;/td&gt; 
+    &lt;td align="left"&gt;Subscription $100/mo&lt;/td&gt; 
+    &lt;td align="left"&gt;🆓 Completely Free &amp;amp; Open Source&lt;/td&gt; 
+   &lt;/tr&gt; 
+  &lt;/tbody&gt; 
+ &lt;/table&gt; 
+ &lt;p&gt;&lt;strong&gt;Deep AI Office Scenario Support:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;strong&gt;File Management&lt;/strong&gt;: Intelligently organize messy local folders and batch rename with one click.&lt;/li&gt; 
+  &lt;li&gt;&lt;strong&gt;Data Processing&lt;/strong&gt;: Deeply analyze and automatically beautify Excel reports.&lt;/li&gt; 
+  &lt;li&gt;&lt;strong&gt;Document Generation&lt;/strong&gt;: Automatically write and format PPT, Word, and Markdown documents.&lt;/li&gt; 
+  &lt;li&gt;&lt;strong&gt;Instant Preview&lt;/strong&gt;: Built-in 9+ format preview panels, making AI office collaboration results instantly visible.&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;Q: What can I do with AionUi?&lt;/strong&gt;&lt;/summary&gt; A: It can be your **private Cowork workspace**. You can let it help you batch organize folders, deeply beautify Excel, and preview web code in real-time. It's your best graphical choice for exploring office automation workflows and enhancing your experience with Claude Code or Gemini CLI. 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;Q: Is AionUi ready to use out of the box?&lt;/strong&gt;&lt;/summary&gt; A: Yes! AionUi is ready right after installation with a built-in Gemini CLI—no extra installation needed. If you already have Gemini CLI or other command-line tools installed, AionUi will auto-detect them for a richer experience. 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;Q: Is it free?&lt;/strong&gt;&lt;/summary&gt; A: AionUi is completely free and open source, but using AI models requires corresponding API Keys. 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;Q: Which AI models are supported?&lt;/strong&gt;&lt;/summary&gt; A: Supports mainstream models like Gemini, OpenAI, Claude, Qwen, as well as local models like Ollama, LM Studio. 
+ &lt;p&gt;You can also run multiple AI Agents simultaneously (such as Gemini CLI, Claude Code, Qwen Code, etc.), see the configuration guide for details.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;Q: Is my data secure?&lt;/strong&gt;&lt;/summary&gt; A: All conversation data is stored in a local SQLite database and will not be uploaded to any server. 
+&lt;/details&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;✨ Core Features&lt;/h2&gt; 
+&lt;h3&gt;💬 &lt;strong&gt;Multi-Session Chat&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi-Session + Independent Context&lt;/strong&gt; - Open multiple chats simultaneously, each session has independent context memory, no confusion&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Local Storage&lt;/strong&gt; - All conversations are saved locally and will not be lost&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🤖 &lt;strong&gt;Multi-Model Support&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi-Platform Support&lt;/strong&gt; - Supports mainstream models like Gemini, OpenAI, Claude, Qwen, flexible switching&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Local Model Support&lt;/strong&gt; - Supports local model deployment like Ollama, LM Studio, select Custom platform and set local API address (e.g., &lt;code&gt;http://localhost:11434/v1&lt;/code&gt;) to connect&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Gemini 3 Subscription Optimization&lt;/strong&gt; - Automatically identifies subscribed users, recommends advanced models&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🗂️ &lt;strong&gt;File Management&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;File Tree Browsing + Drag &amp;amp; Drop Upload&lt;/strong&gt; - Browse files like folders, support drag and drop files or folders for one-click import&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Smart Organization&lt;/strong&gt; - You can let AI help organize folders, automatic classification&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;📄 &lt;strong&gt;Preview Panel - Give AI Agent a Display&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;9+ Format Preview&lt;/strong&gt; - Supports PDF, Word, Excel, PPT, code, Markdown, images, etc., view results immediately after AI generation&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Real-time Tracking + Editable&lt;/strong&gt; - Automatically tracks file changes, supports real-time editing and debugging of Markdown, code, HTML&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🎨 &lt;strong&gt;AI Image Generation &amp;amp; Editing&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Intelligent Image Generation&lt;/strong&gt; - Supports multiple image generation models like Gemini 2.5 Flash Image Preview, Nano, Banana&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Image Recognition &amp;amp; Editing&lt;/strong&gt; - AI-driven image analysis and editing features&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🌐 &lt;strong&gt;WebUI Remote Access&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Cross-Device Access&lt;/strong&gt; - Access from any device on the network via browser, supports mobile devices&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Local Data Security&lt;/strong&gt; - All data stored locally in SQLite database, suitable for server deployment&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🎨 &lt;strong&gt;Personalized Interface Customization&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;Customize with your own CSS code, make your interface match your preferences&lt;/em&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="./resources/css with skin.gif" alt="CSS Custom Interface Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Fully Customizable&lt;/strong&gt; - Freely customize interface colors, styles, layout through CSS code, create your exclusive experience&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📖 Detailed Usage Guide&lt;/h2&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;📖 Expand to View Complete Usage Guide&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;h3&gt;🚀 Quick Start&lt;/h3&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/Getting-Started"&gt;📖 Complete Installation Guide&lt;/a&gt; - Detailed steps from download to configuration&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/LLM-Configuration"&gt;⚙️ LLM Configuration Guide&lt;/a&gt; - Multi-platform AI model configuration&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/ACP-Setup"&gt;🤖 Multi-Agent Mode Setup&lt;/a&gt; - Integrate terminal AI agents&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/MCP-Configuration-Guide"&gt;🔌 MCP Tool Configuration&lt;/a&gt; - Model Context Protocol server setup&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/AionUi-Image-Generation-Tool-Model-Configuration-Guide"&gt;🎨 Image Generation Configuration&lt;/a&gt; - AI image generation setup tutorial&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/WebUI-Configuration-Guide"&gt;🌐 WebUI Configuration Guide&lt;/a&gt; - Complete WebUI setup and configuration tutorial&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;h3&gt;🎯 Use Cases&lt;/h3&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/file-management"&gt;📁 File Management&lt;/a&gt; - Smart file organization&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/excel-processing"&gt;📊 Excel Processing&lt;/a&gt; - AI-driven data processing&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/AionUi-Image-Generation-Tool-Model-Configuration-Guide"&gt;🎨 Image Generation&lt;/a&gt; - AI image creation&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/Use-Cases-Overview"&gt;📚 More Use Cases&lt;/a&gt; 
+   &lt;ul&gt; 
+    &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=yUU5E-U5B3M"&gt;🎬 WorldofAI&lt;/a&gt; - YouTube Video Review&lt;/li&gt; 
+    &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=enQnkKfth10"&gt;🎬 Julian Goldie SEO&lt;/a&gt; - YouTube Video Review&lt;/li&gt; 
+   &lt;/ul&gt; &lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;h3&gt;❓ Support &amp;amp; Help&lt;/h3&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/FAQ"&gt;❓ FAQ&lt;/a&gt; - Questions and troubleshooting&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/wiki/Configuration-Guides"&gt;🔧 Configuration &amp;amp; Usage Tutorials&lt;/a&gt; - Complete configuration documentation&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🚀 Quick Start&lt;/h2&gt; 
+&lt;h3&gt;💻 System Requirements&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;macOS&lt;/strong&gt;: 10.15 or higher&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Windows&lt;/strong&gt;: Windows 10 or higher&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Linux&lt;/strong&gt;: Ubuntu 18.04+ / Debian 10+ / Fedora 32+&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Memory&lt;/strong&gt;: Recommended 4GB or more&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Storage&lt;/strong&gt;: At least 500MB available space&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;📥 Download&lt;/h3&gt; 
+&lt;p&gt; &lt;a href="https://github.com/iOfficeAI/AionUi/releases"&gt; &lt;img src="https://img.shields.io/badge/Download-Latest%20Release-32CD32?style=for-the-badge&amp;amp;logo=github&amp;amp;logoColor=white" alt="Download Latest Release" height="50" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h3&gt;🍺 Install via Homebrew (macOS)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;brew install aionui
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;🔧 Simple Installation&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Download and install&lt;/strong&gt; AionUi application&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Configure AI service&lt;/strong&gt; - Support Google account login or API Key authentication&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Start using&lt;/strong&gt; - Immediately experience modern AI chat interface&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;💡 &lt;strong&gt;Need detailed configuration guide?&lt;/strong&gt; Check out our &lt;a href="https://github.com/iOfficeAI/AionUi/wiki/Getting-Started"&gt;Complete Installation Tutorial&lt;/a&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🤝 Community &amp;amp; Support&lt;/h2&gt; 
+&lt;h3&gt;💬 Community&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;💡 Your ideas matter!&lt;/strong&gt; We highly value every user's suggestions and feedback. Whether it's feature ideas, user experience, or issues you encounter, feel free to contact us anytime!&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://x.com/AionUi" target="_blank"&gt; &lt;img src="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/resources/contactus-x.png" alt="Contact Us on X" width="600" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/discussions"&gt;💬 GitHub Discussions&lt;/a&gt; - &lt;strong&gt;Share ideas, make suggestions, exchange usage tips&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/issues"&gt;🐛 Report Issues&lt;/a&gt; - Report bugs or feature requests&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/releases"&gt;📦 Release Updates&lt;/a&gt; - Get the latest version&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://discord.gg/g6u66vV9"&gt;💬 Discord Community&lt;/a&gt; - &lt;strong&gt;Join our English community on Discord&lt;/strong&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/resources/wechat_group.png"&gt;💬 微信 (中文群)&lt;/a&gt; - &lt;strong&gt;Click to view QR code&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🤝 Contributing&lt;/h3&gt; 
+&lt;p&gt;Welcome to submit Issues and Pull Requests!&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork this project&lt;/li&gt; 
+ &lt;li&gt;Create a feature branch (&lt;code&gt;git checkout -b feature/AmazingFeature&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Commit your changes (&lt;code&gt;git commit -m 'Add some AmazingFeature'&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Push to the branch (&lt;code&gt;git push origin feature/AmazingFeature&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Open a Pull Request&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;📄 License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under &lt;a href="https://raw.githubusercontent.com/iOfficeAI/AionUi/main/LICENSE"&gt;Apache-2.0&lt;/a&gt;.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;👥 Contributors&lt;/h2&gt; 
+&lt;p&gt;Thanks to all developers who have contributed to AionUi!&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/iOfficeAI/AionUi/graphs/contributors"&gt; &lt;img src="https://contrib.rocks/image?repo=iOfficeAI/AionUi&amp;amp;max=50" alt="Contributors" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;h2&gt;📊 Star History&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;a href="https://www.star-history.com/#iOfficeAI/aionui&amp;amp;Date" target="_blank"&gt; &lt;img src="https://api.star-history.com/svg?repos=iOfficeAI/aionui&amp;amp;type=Date" alt="GitHub Star Trends" width="600" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;&lt;strong&gt;⭐ If you like it, give us a star&lt;/strong&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://github.com/iOfficeAI/AionUi/issues"&gt;Report Bug&lt;/a&gt; · &lt;a href="https://github.com/iOfficeAI/AionUi/issues"&gt;Request Feature&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>remotion-dev/remotion</title>
+      <link>https://github.com/remotion-dev/remotion</link>
+      <description>&lt;p&gt;🎥 Make videos programmatically with React&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://github.com/remotion-dev/logo"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng" /&gt; 
+   &lt;img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://remotion.dev/discord"&gt;&lt;img src="https://img.shields.io/discord/809501355504959528?color=000000&amp;amp;label=Discord&amp;amp;logo=fdgssdf" alt="Discord Shield" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.org/package/remotion"&gt;&lt;img src="https://img.shields.io/npm/v/remotion.svg?style=flat&amp;amp;color=black" alt="NPM Version" /&gt;&lt;/a&gt; &lt;a href="https://npmcharts.com/compare/remotion?minimal=true"&gt;&lt;img src="https://img.shields.io/npm/dm/remotion.svg?style=flat&amp;amp;color=black&amp;amp;label=Downloads" alt="NPM Downloads" /&gt;&lt;/a&gt; &lt;a href="https://github.com/remotion-dev/remotion/issues?q=is%3Aopen+label%3A%22%F0%9F%92%8E+Bounty%22+sort%3Aupdated-desc"&gt;&lt;img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fconsole.algora.io%2Fapi%2Fshields%2Fremotion%2Fbounties%3Fstatus%3Dopen&amp;amp;style=flat&amp;amp;color=black&amp;amp;labelColor=grey&amp;amp;label=Open+Bounties" alt="Open Bounties" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/remotion"&gt;&lt;img src="https://img.shields.io/twitter/follow/remotion?label=Twitter&amp;amp;color=black" alt="Twitter" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Remotion is a framework for &lt;strong&gt;creating videos programmatically using React.&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Why create videos in React?&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Leverage web technologies&lt;/strong&gt;: Use all of CSS, Canvas, SVG, WebGL, etc.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Leverage programming&lt;/strong&gt;: Use variables, functions, APIs, math and algorithms to create new effects&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Leverage React&lt;/strong&gt;: Reusable components, Powerful composition, Fast Refresh, Package ecosystem&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Created with Remotion&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; &lt;img style="width: 290px" src="https://pub-646d808d9cb240cea53bedc76dd3cd0c.r2.dev/fireship-quick.gif" /&gt; &lt;p&gt;"This video was made with code" &lt;em&gt;- Fireship&lt;/em&gt; &lt;a href="https://youtu.be/deg8bOoziaE"&gt;Watch&lt;/a&gt; • &lt;a href="https://github.com/wcandillon/remotion-fireship"&gt;Source&lt;/a&gt;&lt;/p&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;img style="width: 240px" src="https://pub-646d808d9cb240cea53bedc76dd3cd0c.r2.dev/unwrapped-2023.gif" /&gt; &lt;p&gt;GitHub Unwrapped - Personalized Year in Review &lt;a href="https://www.githubunwrapped.com"&gt;Try&lt;/a&gt; • &lt;a href="https://github.com/remotion-dev/github-unwrapped"&gt;Source&lt;/a&gt;&lt;/p&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;em&gt;View more in the &lt;a href="https://remotion.dev/showcase"&gt;Remotion Showcase&lt;/a&gt;!&lt;/em&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;Get started&lt;/h2&gt; 
+&lt;p&gt;If you already have Node.JS installed, type&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-console"&gt;npx create-video@latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;to get started. Otherwise, read the &lt;a href="https://www.remotion.dev/docs/"&gt;installation page&lt;/a&gt; in the documentation.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Documentation: &lt;a href="https://www.remotion.dev/docs"&gt;&lt;strong&gt;remotion.dev/docs&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt; API Reference: &lt;a href="https://www.remotion.dev/api"&gt;&lt;strong&gt;remotion.dev/api&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Be aware of that Remotion has a special license and requires obtaining a company license in some cases. Read the &lt;a href="https://raw.githubusercontent.com/remotion-dev/remotion/main/LICENSE.md"&gt;LICENSE&lt;/a&gt; page for more information.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Please read &lt;a href="https://raw.githubusercontent.com/remotion-dev/remotion/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; to learn about contributing to this project.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>microsoft/Data-Science-For-Beginners</title>
+      <link>https://github.com/microsoft/Data-Science-For-Beginners</link>
+      <description>&lt;p&gt;10 Weeks, 20 Lessons, Data Science for All!&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Data Science for Beginners - A Curriculum&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/codespaces/new?hide_repo_select=true&amp;amp;ref=main&amp;amp;repo=344191198"&gt;&lt;img src="https://github.com/codespaces/badge.svg?sanitize=true" alt="Open in GitHub Codespaces" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/microsoft/Data-Science-For-Beginners/raw/master/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/microsoft/Data-Science-For-Beginners.svg?sanitize=true" alt="GitHub license" /&gt;&lt;/a&gt; &lt;a href="https://GitHub.com/microsoft/Data-Science-For-Beginners/graphs/contributors/"&gt;&lt;img src="https://img.shields.io/github/contributors/microsoft/Data-Science-For-Beginners.svg?sanitize=true" alt="GitHub contributors" /&gt;&lt;/a&gt; &lt;a href="https://GitHub.com/microsoft/Data-Science-For-Beginners/issues/"&gt;&lt;img src="https://img.shields.io/github/issues/microsoft/Data-Science-For-Beginners.svg?sanitize=true" alt="GitHub issues" /&gt;&lt;/a&gt; &lt;a href="https://GitHub.com/microsoft/Data-Science-For-Beginners/pulls/"&gt;&lt;img src="https://img.shields.io/github/issues-pr/microsoft/Data-Science-For-Beginners.svg?sanitize=true" alt="GitHub pull-requests" /&gt;&lt;/a&gt; &lt;a href="http://makeapullrequest.com"&gt;&lt;img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://GitHub.com/microsoft/Data-Science-For-Beginners/watchers/"&gt;&lt;img src="https://img.shields.io/github/watchers/microsoft/Data-Science-For-Beginners.svg?style=social&amp;amp;label=Watch" alt="GitHub watchers" /&gt;&lt;/a&gt; &lt;a href="https://GitHub.com/microsoft/Data-Science-For-Beginners/network/"&gt;&lt;img src="https://img.shields.io/github/forks/microsoft/Data-Science-For-Beginners.svg?style=social&amp;amp;label=Fork" alt="GitHub forks" /&gt;&lt;/a&gt; &lt;a href="https://GitHub.com/microsoft/Data-Science-For-Beginners/stargazers/"&gt;&lt;img src="https://img.shields.io/github/stars/microsoft/Data-Science-For-Beginners.svg?style=social&amp;amp;label=Star" alt="GitHub stars" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://discord.gg/nTYy5BXMWG"&gt;&lt;img src="https://dcbadge.limes.pink/api/server/nTYy5BXMWG" alt="Microsoft Foundry Discord" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://aka.ms/foundry/forum"&gt;&lt;img src="https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&amp;amp;logo=github&amp;amp;color=000000&amp;amp;logoColor=fff" alt="Microsoft Foundry Developer Forum" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Azure Cloud Advocates at Microsoft are pleased to offer a 10-week, 20-lesson curriculum all about Data Science. Each lesson includes pre-lesson and post-lesson quizzes, written instructions to complete the lesson, a solution, and an assignment. Our project-based pedagogy allows you to learn while building, a proven way for new skills to 'stick'.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Hearty thanks to our authors:&lt;/strong&gt; &lt;a href="https://www.twitter.com/paladique"&gt;Jasmine Greenaway&lt;/a&gt;, &lt;a href="http://soshnikov.com"&gt;Dmitry Soshnikov&lt;/a&gt;, &lt;a href="https://twitter.com/nitya"&gt;Nitya Narasimhan&lt;/a&gt;, &lt;a href="https://twitter.com/JalenMcG"&gt;Jalen McGee&lt;/a&gt;, &lt;a href="https://twitter.com/jenlooper"&gt;Jen Looper&lt;/a&gt;, &lt;a href="https://twitter.com/maudstweets"&gt;Maud Levy&lt;/a&gt;, &lt;a href="https://twitter.com/TiffanySouterre"&gt;Tiffany Souterre&lt;/a&gt;, &lt;a href="https://www.twitter.com/geektrainer"&gt;Christopher Harrison&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;🙏 Special thanks 🙏 to our &lt;a href="https://studentambassadors.microsoft.com/"&gt;Microsoft Student Ambassador&lt;/a&gt; authors, reviewers and content contributors,&lt;/strong&gt; notably Aaryan Arora, &lt;a href="https://github.com/AdityaGarg00"&gt;Aditya Garg&lt;/a&gt;, &lt;a href="https://www.linkedin.com/in/alondra-sanchez-molina/"&gt;Alondra Sanchez&lt;/a&gt;, &lt;a href="https://www.linkedin.com/in/ankitasingh007"&gt;Ankita Singh&lt;/a&gt;, &lt;a href="https://www.linkedin.com/in/anupam--mishra/"&gt;Anupam Mishra&lt;/a&gt;, &lt;a href="https://www.linkedin.com/in/arpitadas01/"&gt;Arpita Das&lt;/a&gt;, ChhailBihari Dubey, &lt;a href="https://www.linkedin.com/in/dibrinsofor"&gt;Dibri Nsofor&lt;/a&gt;, &lt;a href="https://www.linkedin.com/in/dishita-bhasin-7065281bb"&gt;Dishita Bhasin&lt;/a&gt;, &lt;a href="https://www.linkedin.com/in/majd-s/"&gt;Majd Safi&lt;/a&gt;, &lt;a href="https://www.linkedin.com/in/max-blum-6036a1186/"&gt;Max Blum&lt;/a&gt;, &lt;a href="https://www.linkedin.com/in/miguelmque/"&gt;Miguel Correa&lt;/a&gt;, &lt;a href="https://twitter.com/iftu119"&gt;Mohamma Iftekher (Iftu) Ebne Jalal&lt;/a&gt;, &lt;a href="https://www.linkedin.com/in/nawrin-tabassum"&gt;Nawrin Tabassum&lt;/a&gt;, &lt;a href="https://www.linkedin.com/in/raymond-wp/"&gt;Raymond Wangsa Putra&lt;/a&gt;, &lt;a href="https://www.linkedin.com/in/rty2423"&gt;Rohit Yadav&lt;/a&gt;, Samridhi Sharma, &lt;a href="https://www.linkedin.com/mwlite/in/sanya-sinha-13aab1200"&gt;Sanya Sinha&lt;/a&gt;, &lt;a href="https://www.linkedin.com/in/sheena-narua-n/"&gt;Sheena Narula&lt;/a&gt;, &lt;a href="https://www.linkedin.com/in/tauqeerahmad5201/"&gt;Tauqeer Ahmad&lt;/a&gt;, Yogendrasingh Pawar , &lt;a href="https://www.linkedin.com/in/vidushi-gupta07/"&gt;Vidushi Gupta&lt;/a&gt;, &lt;a href="https://www.linkedin.com/in/jasleen-sondhi/"&gt;Jasleen Sondhi&lt;/a&gt;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="center"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/sketchnotes/00-Title.png" alt="Sketchnote by @sketchthedocs https://sketchthedocs.dev" /&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Data Science For Beginners - &lt;em&gt;Sketchnote by &lt;a href="https://twitter.com/nitya"&gt;@nitya&lt;/a&gt;&lt;/em&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;🌐 Multi-Language Support&lt;/h3&gt; 
+&lt;h4&gt;Supported via GitHub Action (Automated &amp;amp; Always Up-to-Date)&lt;/h4&gt; 
+&lt;!-- CO-OP TRANSLATOR LANGUAGES TABLE START --&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/ar/README.md"&gt;Arabic&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/bn/README.md"&gt;Bengali&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/bg/README.md"&gt;Bulgarian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/my/README.md"&gt;Burmese (Myanmar)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/zh/README.md"&gt;Chinese (Simplified)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/hk/README.md"&gt;Chinese (Traditional, Hong Kong)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/mo/README.md"&gt;Chinese (Traditional, Macau)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/tw/README.md"&gt;Chinese (Traditional, Taiwan)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/hr/README.md"&gt;Croatian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/cs/README.md"&gt;Czech&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/da/README.md"&gt;Danish&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/nl/README.md"&gt;Dutch&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/et/README.md"&gt;Estonian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/fi/README.md"&gt;Finnish&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/fr/README.md"&gt;French&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/de/README.md"&gt;German&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/el/README.md"&gt;Greek&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/he/README.md"&gt;Hebrew&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/hi/README.md"&gt;Hindi&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/hu/README.md"&gt;Hungarian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/id/README.md"&gt;Indonesian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/it/README.md"&gt;Italian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/ja/README.md"&gt;Japanese&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/kn/README.md"&gt;Kannada&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/ko/README.md"&gt;Korean&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/lt/README.md"&gt;Lithuanian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/ms/README.md"&gt;Malay&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/ml/README.md"&gt;Malayalam&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/mr/README.md"&gt;Marathi&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/ne/README.md"&gt;Nepali&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/pcm/README.md"&gt;Nigerian Pidgin&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/no/README.md"&gt;Norwegian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/fa/README.md"&gt;Persian (Farsi)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/pl/README.md"&gt;Polish&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/br/README.md"&gt;Portuguese (Brazil)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/pt/README.md"&gt;Portuguese (Portugal)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/pa/README.md"&gt;Punjabi (Gurmukhi)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/ro/README.md"&gt;Romanian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/ru/README.md"&gt;Russian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/sr/README.md"&gt;Serbian (Cyrillic)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/sk/README.md"&gt;Slovak&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/sl/README.md"&gt;Slovenian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/es/README.md"&gt;Spanish&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/sw/README.md"&gt;Swahili&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/sv/README.md"&gt;Swedish&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/tl/README.md"&gt;Tagalog (Filipino)&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/ta/README.md"&gt;Tamil&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/te/README.md"&gt;Telugu&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/th/README.md"&gt;Thai&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/tr/README.md"&gt;Turkish&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/uk/README.md"&gt;Ukrainian&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/ur/README.md"&gt;Urdu&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/translations/vi/README.md"&gt;Vietnamese&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Prefer to Clone Locally?&lt;/strong&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;This repository includes 50+ language translations which significantly increases the download size. To clone without translations, use sparse checkout:&lt;/p&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;git clone --filter=blob:none --sparse https://github.com/microsoft/Data-Science-For-Beginners.git
+cd Data-Science-For-Beginners
+git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;p&gt;This gives you everything you need to complete the course with a much faster download.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;!-- CO-OP TRANSLATOR LANGUAGES TABLE END --&gt; 
+&lt;p&gt;&lt;strong&gt;If you wish to have additional translations languages supported are listed &lt;a href="https://github.com/Azure/co-op-translator/raw/main/getting_started/supported-languages.md"&gt;here&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;h4&gt;Join Our Community&lt;/h4&gt; 
+&lt;p&gt;&lt;a href="https://discord.gg/nTYy5BXMWG"&gt;&lt;img src="https://dcbadge.limes.pink/api/server/nTYy5BXMWG" alt="Microsoft Foundry Discord" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;We have a Discord learn with AI series ongoing, learn more and join us at &lt;a href="https://aka.ms/learnwithai/discord"&gt;Learn with AI Series&lt;/a&gt; from 18 - 30 September, 2025. You will get tips and tricks of using GitHub Copilot for Data Science.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/images/1.jpg" alt="Learn with AI series" /&gt;&lt;/p&gt; 
+&lt;h1&gt;Are you a student?&lt;/h1&gt; 
+&lt;p&gt;Get started with the following resources:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.microsoft.com/en-gb/learn/student-hub?WT.mc_id=academic-77958-bethanycheum"&gt;Student Hub page&lt;/a&gt; In this page, you will find beginner resources, Student packs and even ways to get a free cert voucher. This is one page you want to bookmark and check from time to time as we switch out content at least monthly.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://studentambassadors.microsoft.com?WT.mc_id=academic-77958-bethanycheum"&gt;Microsoft Learn Student Ambassadors&lt;/a&gt; Join a global community of student ambassadors, this could be your way into Microsoft.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h1&gt;Getting Started&lt;/h1&gt; 
+&lt;h2&gt;📚 Documentation&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/INSTALLATION.md"&gt;Installation Guide&lt;/a&gt;&lt;/strong&gt; - Step-by-step setup instructions for beginners&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/USAGE.md"&gt;Usage Guide&lt;/a&gt;&lt;/strong&gt; - Examples and common workflows&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/TROUBLESHOOTING.md"&gt;Troubleshooting&lt;/a&gt;&lt;/strong&gt; - Solutions to common issues&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt;&lt;/strong&gt; - How to contribute to this project&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/for-teachers.md"&gt;For Teachers&lt;/a&gt;&lt;/strong&gt; - Teaching guidance and classroom resources&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;👨‍🎓 For Students&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Complete Beginners&lt;/strong&gt;: New to data science? Start with our &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/examples/README.md"&gt;beginner-friendly examples&lt;/a&gt;! These simple, well-commented examples will help you understand the basics before diving into the full curriculum. &lt;strong&gt;&lt;a href="https://aka.ms/student-page"&gt;Students&lt;/a&gt;&lt;/strong&gt;: to use this curriculum on your own, fork the entire repo and complete the exercises on your own, starting with a pre-lecture quiz. Then read the lecture and complete the rest of the activities. Try to create the projects by comprehending the lessons rather than copying the solution code; however, that code is available in the /solutions folders in each project-oriented lesson. Another idea would be to form a study group with friends and go through the content together. For further study, we recommend &lt;a href="https://docs.microsoft.com/en-us/users/jenlooper-2911/collections/qprpajyoy3x0g7?WT.mc_id=academic-77958-bethanycheum"&gt;Microsoft Learn&lt;/a&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;strong&gt;Quick Start:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Check the &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/INSTALLATION.md"&gt;Installation Guide&lt;/a&gt; to set up your environment&lt;/li&gt; 
+ &lt;li&gt;Review the &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/USAGE.md"&gt;Usage Guide&lt;/a&gt; to learn how to work with the curriculum&lt;/li&gt; 
+ &lt;li&gt;Start with Lesson 1 and work through sequentially&lt;/li&gt; 
+ &lt;li&gt;Join our &lt;a href="https://aka.ms/ds4beginners/discord"&gt;Discord community&lt;/a&gt; for support&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;👩‍🏫 For Teachers&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Teachers&lt;/strong&gt;: we have &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/for-teachers.md"&gt;included some suggestions&lt;/a&gt; on how to use this curriculum. We'd love your feedback &lt;a href="https://github.com/microsoft/Data-Science-For-Beginners/discussions"&gt;in our discussion forum&lt;/a&gt;!&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Meet the Team&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://youtu.be/8mzavjQSMM4" title="Promo video"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/ds-for-beginners.gif" alt="Promo video" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Gif by&lt;/strong&gt; &lt;a href="https://www.linkedin.com/in/mohitjaisal"&gt;Mohit Jaisal&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;🎥 Click the image above for a video about the project the folks who created it!&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Pedagogy&lt;/h2&gt; 
+&lt;p&gt;We have chosen two pedagogical tenets while building this curriculum: ensuring that it is project-based and that it includes frequent quizzes. By the end of this series, students will have learned basic principles of data science, including ethical concepts, data preparation, different ways of working with data, data visualization, data analysis, real-world use cases of data science, and more.&lt;/p&gt; 
+&lt;p&gt;In addition, a low-stakes quiz before a class sets the intention of the student towards learning a topic, while a second quiz after class ensures further retention. This curriculum was designed to be flexible and fun and can be taken in whole or in part. The projects start small and become increasingly complex by the end of the 10 week cycle.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Find our &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/CODE_OF_CONDUCT.md"&gt;Code of Conduct&lt;/a&gt;, &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/CONTRIBUTING.md"&gt;Contributing&lt;/a&gt;, &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/TRANSLATIONS.md"&gt;Translation&lt;/a&gt; guidelines. We welcome your constructive feedback!&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Each lesson includes:&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Optional sketchnote&lt;/li&gt; 
+ &lt;li&gt;Optional supplemental video&lt;/li&gt; 
+ &lt;li&gt;Pre-lesson warmup quiz&lt;/li&gt; 
+ &lt;li&gt;Written lesson&lt;/li&gt; 
+ &lt;li&gt;For project-based lessons, step-by-step guides on how to build the project&lt;/li&gt; 
+ &lt;li&gt;Knowledge checks&lt;/li&gt; 
+ &lt;li&gt;A challenge&lt;/li&gt; 
+ &lt;li&gt;Supplemental reading&lt;/li&gt; 
+ &lt;li&gt;Assignment&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://ff-quizzes.netlify.app/en/"&gt;Post-lesson quiz&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;A note about quizzes&lt;/strong&gt;: All quizzes are contained in the Quiz-App folder, for 40 total quizzes of three questions each. They are linked from within the lessons, but the quiz app can be run locally or deployed to Azure; follow the instruction in the &lt;code&gt;quiz-app&lt;/code&gt; folder. They are gradually being localized.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;🎓 Beginner-Friendly Examples&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;New to Data Science?&lt;/strong&gt; We've created a special &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/examples/README.md"&gt;examples directory&lt;/a&gt; with simple, well-commented code to help you get started:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🌟 &lt;strong&gt;Hello World&lt;/strong&gt; - Your first data science program&lt;/li&gt; 
+ &lt;li&gt;📂 &lt;strong&gt;Loading Data&lt;/strong&gt; - Learn to read and explore datasets&lt;/li&gt; 
+ &lt;li&gt;📊 &lt;strong&gt;Simple Analysis&lt;/strong&gt; - Calculate statistics and find patterns&lt;/li&gt; 
+ &lt;li&gt;📈 &lt;strong&gt;Basic Visualization&lt;/strong&gt; - Create charts and graphs&lt;/li&gt; 
+ &lt;li&gt;🔬 &lt;strong&gt;Real-World Project&lt;/strong&gt; - Complete workflow from start to finish&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Each example includes detailed comments explaining every step, making it perfect for absolute beginners!&lt;/p&gt; 
+&lt;p&gt;👉 &lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/examples/README.md"&gt;Start with the examples&lt;/a&gt;&lt;/strong&gt; 👈&lt;/p&gt; 
+&lt;h2&gt;Lessons&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="center"&gt;&lt;img src="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/sketchnotes/00-Roadmap.png" alt=" Sketchnote by @sketchthedocs https://sketchthedocs.dev" /&gt;&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Data Science For Beginners: Roadmap - &lt;em&gt;Sketchnote by &lt;a href="https://twitter.com/nitya"&gt;@nitya&lt;/a&gt;&lt;/em&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="center"&gt;Lesson Number&lt;/th&gt; 
+   &lt;th align="center"&gt;Topic&lt;/th&gt; 
+   &lt;th align="center"&gt;Lesson Grouping&lt;/th&gt; 
+   &lt;th align="center"&gt;Learning Objectives&lt;/th&gt; 
+   &lt;th align="center"&gt;Linked Lesson&lt;/th&gt; 
+   &lt;th align="center"&gt;Author&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;01&lt;/td&gt; 
+   &lt;td align="center"&gt;Defining Data Science&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/1-Introduction/README.md"&gt;Introduction&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;Learn the basic concepts behind data science and how it’s related to artificial intelligence, machine learning, and big data.&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/1-Introduction/01-defining-data-science/README.md"&gt;lesson&lt;/a&gt; &lt;a href="https://youtu.be/beZ7Mb_oz9I"&gt;video&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="http://soshnikov.com"&gt;Dmitry&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;02&lt;/td&gt; 
+   &lt;td align="center"&gt;Data Science Ethics&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/1-Introduction/README.md"&gt;Introduction&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;Data Ethics Concepts, Challenges &amp;amp; Frameworks.&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/1-Introduction/02-ethics/README.md"&gt;lesson&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://twitter.com/nitya"&gt;Nitya&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;03&lt;/td&gt; 
+   &lt;td align="center"&gt;Defining Data&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/1-Introduction/README.md"&gt;Introduction&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;How data is classified and its common sources.&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/1-Introduction/03-defining-data/README.md"&gt;lesson&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://www.twitter.com/paladique"&gt;Jasmine&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;04&lt;/td&gt; 
+   &lt;td align="center"&gt;Introduction to Statistics &amp;amp; Probability&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/1-Introduction/README.md"&gt;Introduction&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;The mathematical techniques of probability and statistics to understand data.&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/1-Introduction/04-stats-and-probability/README.md"&gt;lesson&lt;/a&gt; &lt;a href="https://youtu.be/Z5Zy85g4Yjw"&gt;video&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="http://soshnikov.com"&gt;Dmitry&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;05&lt;/td&gt; 
+   &lt;td align="center"&gt;Working with Relational Data&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/2-Working-With-Data/README.md"&gt;Working With Data&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;Introduction to relational data and the basics of exploring and analyzing relational data with the Structured Query Language, also known as SQL (pronounced “see-quell”).&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/2-Working-With-Data/05-relational-databases/README.md"&gt;lesson&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://www.twitter.com/geektrainer"&gt;Christopher&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;06&lt;/td&gt; 
+   &lt;td align="center"&gt;Working with NoSQL Data&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/2-Working-With-Data/README.md"&gt;Working With Data&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;Introduction to non-relational data, its various types and the basics of exploring and analyzing document databases.&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/2-Working-With-Data/06-non-relational/README.md"&gt;lesson&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://twitter.com/paladique"&gt;Jasmine&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;07&lt;/td&gt; 
+   &lt;td align="center"&gt;Working with Python&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/2-Working-With-Data/README.md"&gt;Working With Data&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;Basics of using Python for data exploration with libraries such as Pandas. Foundational understanding of Python programming is recommended.&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/2-Working-With-Data/07-python/README.md"&gt;lesson&lt;/a&gt; &lt;a href="https://youtu.be/dZjWOGbsN4Y"&gt;video&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="http://soshnikov.com"&gt;Dmitry&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;08&lt;/td&gt; 
+   &lt;td align="center"&gt;Data Preparation&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/2-Working-With-Data/README.md"&gt;Working With Data&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;Topics on data techniques for cleaning and transforming the data to handle challenges of missing, inaccurate, or incomplete data.&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/2-Working-With-Data/08-data-preparation/README.md"&gt;lesson&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://www.twitter.com/paladique"&gt;Jasmine&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;09&lt;/td&gt; 
+   &lt;td align="center"&gt;Visualizing Quantities&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/3-Data-Visualization/README.md"&gt;Data Visualization&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;Learn how to use Matplotlib to visualize bird data 🦆&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/3-Data-Visualization/09-visualization-quantities/README.md"&gt;lesson&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://twitter.com/jenlooper"&gt;Jen&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;10&lt;/td&gt; 
+   &lt;td align="center"&gt;Visualizing Distributions of Data&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/3-Data-Visualization/README.md"&gt;Data Visualization&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;Visualizing observations and trends within an interval.&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/3-Data-Visualization/10-visualization-distributions/README.md"&gt;lesson&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://twitter.com/jenlooper"&gt;Jen&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;11&lt;/td&gt; 
+   &lt;td align="center"&gt;Visualizing Proportions&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/3-Data-Visualization/README.md"&gt;Data Visualization&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;Visualizing discrete and grouped percentages.&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/3-Data-Visualization/11-visualization-proportions/README.md"&gt;lesson&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://twitter.com/jenlooper"&gt;Jen&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;12&lt;/td&gt; 
+   &lt;td align="center"&gt;Visualizing Relationships&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/3-Data-Visualization/README.md"&gt;Data Visualization&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;Visualizing connections and correlations between sets of data and their variables.&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/3-Data-Visualization/12-visualization-relationships/README.md"&gt;lesson&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://twitter.com/jenlooper"&gt;Jen&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;13&lt;/td&gt; 
+   &lt;td align="center"&gt;Meaningful Visualizations&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/3-Data-Visualization/README.md"&gt;Data Visualization&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;Techniques and guidance for making your visualizations valuable for effective problem solving and insights.&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/3-Data-Visualization/13-meaningful-visualizations/README.md"&gt;lesson&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://twitter.com/jenlooper"&gt;Jen&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;14&lt;/td&gt; 
+   &lt;td align="center"&gt;Introduction to the Data Science lifecycle&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/4-Data-Science-Lifecycle/README.md"&gt;Lifecycle&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;Introduction to the data science lifecycle and its first step of acquiring and extracting data.&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/4-Data-Science-Lifecycle/14-Introduction/README.md"&gt;lesson&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://twitter.com/paladique"&gt;Jasmine&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;15&lt;/td&gt; 
+   &lt;td align="center"&gt;Analyzing&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/4-Data-Science-Lifecycle/README.md"&gt;Lifecycle&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;This phase of the data science lifecycle focuses on techniques to analyze data.&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/4-Data-Science-Lifecycle/15-analyzing/README.md"&gt;lesson&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://twitter.com/paladique"&gt;Jasmine&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;16&lt;/td&gt; 
+   &lt;td align="center"&gt;Communication&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/4-Data-Science-Lifecycle/README.md"&gt;Lifecycle&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;This phase of the data science lifecycle focuses on presenting the insights from the data in a way that makes it easier for decision makers to understand.&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/4-Data-Science-Lifecycle/16-communication/README.md"&gt;lesson&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://twitter.com/JalenMcG"&gt;Jalen&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;17&lt;/td&gt; 
+   &lt;td align="center"&gt;Data Science in the Cloud&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/5-Data-Science-In-Cloud/README.md"&gt;Cloud Data&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;This series of lessons introduces data science in the cloud and its benefits.&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/5-Data-Science-In-Cloud/17-Introduction/README.md"&gt;lesson&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://twitter.com/TiffanySouterre"&gt;Tiffany&lt;/a&gt; and &lt;a href="https://twitter.com/maudstweets"&gt;Maud&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;18&lt;/td&gt; 
+   &lt;td align="center"&gt;Data Science in the Cloud&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/5-Data-Science-In-Cloud/README.md"&gt;Cloud Data&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;Training models using Low Code tools.&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/5-Data-Science-In-Cloud/18-Low-Code/README.md"&gt;lesson&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://twitter.com/TiffanySouterre"&gt;Tiffany&lt;/a&gt; and &lt;a href="https://twitter.com/maudstweets"&gt;Maud&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;19&lt;/td&gt; 
+   &lt;td align="center"&gt;Data Science in the Cloud&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/5-Data-Science-In-Cloud/README.md"&gt;Cloud Data&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;Deploying models with Azure Machine Learning Studio.&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/5-Data-Science-In-Cloud/19-Azure/README.md"&gt;lesson&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://twitter.com/TiffanySouterre"&gt;Tiffany&lt;/a&gt; and &lt;a href="https://twitter.com/maudstweets"&gt;Maud&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;20&lt;/td&gt; 
+   &lt;td align="center"&gt;Data Science in the Wild&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/6-Data-Science-In-Wild/README.md"&gt;In the Wild&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;Data science driven projects in the real world.&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/6-Data-Science-In-Wild/20-Real-World-Examples/README.md"&gt;lesson&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://twitter.com/nitya"&gt;Nitya&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;GitHub Codespaces&lt;/h2&gt; 
+&lt;p&gt;Follow these steps to open this sample in a Codespace:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Click the Code drop-down menu and select the Open with Codespaces option.&lt;/li&gt; 
+ &lt;li&gt;Select + New codespace at the bottom on the pane. For more info, check out the &lt;a href="https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository#creating-a-codespace"&gt;GitHub documentation&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;VSCode Remote - Containers&lt;/h2&gt; 
+&lt;p&gt;Follow these steps to open this repo in a container using your local machine and VSCode using the VS Code Remote - Containers extension:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;If this is your first time using a development container, please ensure your system meets the pre-reqs (i.e. have Docker installed) in &lt;a href="https://code.visualstudio.com/docs/devcontainers/containers#_getting-started"&gt;the getting started documentation&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;To use this repository, you can either open the repository in an isolated Docker volume:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Under the hood, this will use the Remote-Containers: &lt;strong&gt;Clone Repository in Container Volume...&lt;/strong&gt; command to clone the source code in a Docker volume instead of the local filesystem. &lt;a href="https://docs.docker.com/storage/volumes/"&gt;Volumes&lt;/a&gt; are the preferred mechanism for persisting container data.&lt;/p&gt; 
+&lt;p&gt;Or open a locally cloned or downloaded version of the repository:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Clone this repository to your local filesystem.&lt;/li&gt; 
+ &lt;li&gt;Press F1 and select the &lt;strong&gt;Remote-Containers: Open Folder in Container...&lt;/strong&gt; command.&lt;/li&gt; 
+ &lt;li&gt;Select the cloned copy of this folder, wait for the container to start, and try things out.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Offline access&lt;/h2&gt; 
+&lt;p&gt;You can run this documentation offline by using &lt;a href="https://docsify.js.org/#/"&gt;Docsify&lt;/a&gt;. Fork this repo, &lt;a href="https://docsify.js.org/#/quickstart"&gt;install Docsify&lt;/a&gt; on your local machine, then in the root folder of this repo, type &lt;code&gt;docsify serve&lt;/code&gt;. The website will be served on port 3000 on your localhost: &lt;code&gt;localhost:3000&lt;/code&gt;.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Note, notebooks will not be rendered via Docsify, so when you need to run a notebook, do that separately in VS Code running a Python kernel.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Other Curricula&lt;/h2&gt; 
+&lt;p&gt;Our team produces other curricula! Check out:&lt;/p&gt; 
+&lt;!-- CO-OP TRANSLATOR OTHER COURSES START --&gt; 
+&lt;h3&gt;LangChain&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://aka.ms/langchain4j-for-beginners"&gt;&lt;img src="https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&amp;amp;&amp;amp;labelColor=E5E7EB&amp;amp;color=0553D6" alt="LangChain4j for Beginners" /&gt;&lt;/a&gt; &lt;a href="https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin"&gt;&lt;img src="https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=0553D6" alt="LangChain.js for Beginners" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Azure / Edge / MCP / Agents&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst"&gt;&lt;img src="https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=0078D4" alt="AZD for Beginners" /&gt;&lt;/a&gt; &lt;a href="https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst"&gt;&lt;img src="https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=00B8E4" alt="Edge AI for Beginners" /&gt;&lt;/a&gt; &lt;a href="https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst"&gt;&lt;img src="https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=009688" alt="MCP for Beginners" /&gt;&lt;/a&gt; &lt;a href="https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst"&gt;&lt;img src="https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=00C49A" alt="AI Agents for Beginners" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Generative AI Series&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst"&gt;&lt;img src="https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=8B5CF6" alt="Generative AI for Beginners" /&gt;&lt;/a&gt; &lt;a href="https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst"&gt;&lt;img src="https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=9333EA" alt="Generative AI (.NET)" /&gt;&lt;/a&gt; &lt;a href="https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst"&gt;&lt;img src="https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=C084FC" alt="Generative AI (Java)" /&gt;&lt;/a&gt; &lt;a href="https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst"&gt;&lt;img src="https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=E879F9" alt="Generative AI (JavaScript)" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Core Learning&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst"&gt;&lt;img src="https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=22C55E" alt="ML for Beginners" /&gt;&lt;/a&gt; &lt;a href="https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst"&gt;&lt;img src="https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=84CC16" alt="Data Science for Beginners" /&gt;&lt;/a&gt; &lt;a href="https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst"&gt;&lt;img src="https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=A3E635" alt="AI for Beginners" /&gt;&lt;/a&gt; &lt;a href="https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung"&gt;&lt;img src="https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=F97316" alt="Cybersecurity for Beginners" /&gt;&lt;/a&gt; &lt;a href="https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst"&gt;&lt;img src="https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=EC4899" alt="Web Dev for Beginners" /&gt;&lt;/a&gt; &lt;a href="https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst"&gt;&lt;img src="https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=14B8A6" alt="IoT for Beginners" /&gt;&lt;/a&gt; &lt;a href="https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst"&gt;&lt;img src="https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=38BDF8" alt="XR Development for Beginners" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;Copilot Series&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst"&gt;&lt;img src="https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=FACC15" alt="Copilot for AI Paired Programming" /&gt;&lt;/a&gt; &lt;a href="https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst"&gt;&lt;img src="https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=FBBF24" alt="Copilot for C#/.NET" /&gt;&lt;/a&gt; &lt;a href="https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst"&gt;&lt;img src="https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&amp;amp;labelColor=E5E7EB&amp;amp;color=FDE68A" alt="Copilot Adventure" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;!-- CO-OP TRANSLATOR OTHER COURSES END --&gt; 
+&lt;h2&gt;Getting Help&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Encountering issues?&lt;/strong&gt; Check our &lt;a href="https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/TROUBLESHOOTING.md"&gt;Troubleshooting Guide&lt;/a&gt; for solutions to common problems.&lt;/p&gt; 
+&lt;p&gt;If you get stuck or have any questions about building AI apps. Join fellow learners and experienced developers in discussions about MCP. It's a supportive community where questions are welcome and knowledge is shared freely.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://discord.gg/nTYy5BXMWG"&gt;&lt;img src="https://dcbadge.limes.pink/api/server/nTYy5BXMWG" alt="Microsoft Foundry Discord" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;If you have product feedback or errors while building visit:&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://aka.ms/foundry/forum"&gt;&lt;img src="https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&amp;amp;logo=github&amp;amp;color=000000&amp;amp;logoColor=fff" alt="Microsoft Foundry Developer Forum" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>deepseek-ai/FlashMLA</title>
+      <link>https://github.com/deepseek-ai/FlashMLA</link>
+      <description>&lt;p&gt;FlashMLA: Efficient Multi-head Latent Attention Kernels&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;FlashMLA&lt;/h1&gt; 
+&lt;h2&gt;Introduction&lt;/h2&gt; 
+&lt;p&gt;FlashMLA is DeepSeek's library of optimized attention kernels, powering the &lt;a href="https://github.com/deepseek-ai/DeepSeek-V3"&gt;DeepSeek-V3&lt;/a&gt; and &lt;a href="https://github.com/deepseek-ai/DeepSeek-V3.2-Exp"&gt;DeepSeek-V3.2-Exp&lt;/a&gt; models. This repository contains the following implementations:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Sparse Attention Kernels&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;These kernels power DeepSeek Sparse Attention (DSA), as introduced in &lt;a href="https://github.com/deepseek-ai/DeepSeek-V3.2-Exp"&gt;this paper&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Token-level sparse attention for the prefill stage&lt;/li&gt; 
+ &lt;li&gt;Token-level sparse attention for the decoding stage, with FP8 KV cache&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Dense Attention Kernels&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Dense attention for the prefill stage&lt;/li&gt; 
+ &lt;li&gt;Dense attention for the decoding stage&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;News&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;2025.09.29 Release of Sparse Attention Kernels&lt;/strong&gt;: With the launch of &lt;a href="https://github.com/deepseek-ai/DeepSeek-V3.2-Exp"&gt;DeepSeek-V3.2&lt;/a&gt;, we are releasing the corresponding token-level sparse attention kernels. These kernels power the model's DeepSeek Sparse Attention (DSA) and achieve up to 640 TFlops during prefilling and 410 TFlops during decoding. We also release a deep-dive blog for our new FP8 sparse decoding kernel. Check it out &lt;a href="https://raw.githubusercontent.com/deepseek-ai/FlashMLA/main/docs/20250929-hopper-fp8-sparse-deep-dive.md"&gt;here&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;2025.08.01 Kernels for MHA on SM100&lt;/strong&gt;: Thanks to &lt;a href="https://github.com/deepseek-ai/FlashMLA/pull/76"&gt;NVIDIA's PR&lt;/a&gt; for MHA forward / backward kernels on SM100!&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;2025.04.22 Deep-Dive Blog&lt;/strong&gt;: We'd love to share the technical details behind the new FlashMLA kernel! Check out our deep-dive write-up &lt;a href="https://raw.githubusercontent.com/deepseek-ai/FlashMLA/main/docs/20250422-new-kernel-deep-dive.md"&gt;here&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;2025.04.22 Performance Update&lt;/strong&gt;: We're excited to announce the new release of Flash MLA, which delivers 5% ~ 15% performance improvement for compute-bound workloads, achieving up to 660 TFlops on NVIDIA H800 SXM5 GPUs. The interface of the new version is fully compatible with the old one. Simply upgrade to the new version for an immediate performance boost! 🚀🚀🚀&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Performance&lt;/h2&gt; 
+&lt;h4&gt;Test &amp;amp; benchmark MLA decoding (Sparse &amp;amp; Dense):&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;python tests/test_flash_mla_dense_decoding.py
+python tests/test_flash_mla_sparse_decoding.py
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The dense MLA decoding kernel achieves up to 3000 GB/s in memory-bound configuration and 660 TFLOPS in computation-bound configuration on H800 SXM5 with CUDA 12.8. The token-level sparse MLA decoding kernel (which uses an FP8 KV cache while performing the matrix multiplication in bfloat16) achieves 410 TFLOPS in compute-bound configuration on H800 SXM5 with CUDA 12.8, and achieves up to 350 TFlops on B200 (which is not really optimized yet).&lt;/p&gt; 
+&lt;h4&gt;Test &amp;amp; benchmark MHA prefill (Dense):&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;python tests/test_fmha_sm100.py
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;It achieves up to 1460 TFlops in forward and 1000 TFlops in backward computation on B200, as reported by NVIDIA.&lt;/p&gt; 
+&lt;h4&gt;Test &amp;amp; benchmark MLA prefill (Sparse):&lt;/h4&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;python tests/test_flash_mla_sparse_prefill.py
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;It achieves up to 640 TFlops in forward computation on H800 SXM5 with CUDA 12.8, and achieves up to 1450 TFlops on B200, CUDA 12.9.&lt;/p&gt; 
+&lt;h2&gt;Requirements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;SM90 / SM100 (See the support matrix below)&lt;/li&gt; 
+ &lt;li&gt;CUDA 12.8 and above (CUDA 12.9+ is required for SM100 kernels)&lt;/li&gt; 
+ &lt;li&gt;PyTorch 2.0 and above&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Support matrix:&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="center"&gt;Kernel&lt;/th&gt; 
+   &lt;th align="center"&gt;GPU Architecture&lt;/th&gt; 
+   &lt;th align="center"&gt;MLA Mode [2]&lt;/th&gt; 
+   &lt;th align="center"&gt;KVCache Format&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Dense Decoding&lt;/td&gt; 
+   &lt;td align="center"&gt;SM90&lt;/td&gt; 
+   &lt;td align="center"&gt;MQA&lt;/td&gt; 
+   &lt;td align="center"&gt;BF16&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Sparse Decoding&lt;/td&gt; 
+   &lt;td align="center"&gt;SM90 &amp;amp; SM100&lt;/td&gt; 
+   &lt;td align="center"&gt;MQA&lt;/td&gt; 
+   &lt;td align="center"&gt;FP8 [1]&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Dense Prefill&lt;/td&gt; 
+   &lt;td align="center"&gt;SM100&lt;/td&gt; 
+   &lt;td align="center"&gt;MHA&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;Sparse Prefill&lt;/td&gt; 
+   &lt;td align="center"&gt;SM90 &amp;amp; SM100&lt;/td&gt; 
+   &lt;td align="center"&gt;MQA&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;[1]: For more details on using FP8 KV cache, see documents below.&lt;/p&gt; 
+&lt;p&gt;[2]: Here "MLA Mode" refers to the mode used for MLA calculation. MQA stands for Multi-Query Attention mode (i.e. &lt;code&gt;head_dim_k&lt;/code&gt; = 576 with &lt;code&gt;head_dim_v&lt;/code&gt; = 512), while MHA stands for Multi-Head Attention mode (i.e. &lt;code&gt;head_dim_k&lt;/code&gt; = 192 / 128 with &lt;code&gt;head_dim_v&lt;/code&gt; = 128). For a detailed explanation of these modes, please refer to the appendix of &lt;a href="https://github.com/deepseek-ai/DeepSeek-V3.2-Exp"&gt;DeepSeek V3.2's Paper&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/deepseek-ai/FlashMLA.git flash-mla
+cd flash-mla
+git submodule update --init --recursive
+pip install -v .
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;h3&gt;MLA Decoding&lt;/h3&gt; 
+&lt;p&gt;To use the MLA decoding kernels, call get_mla_metadata once before the decoding loop to get the tile scheduler metadata. Then, call flash_mla_with_kvcache in each decoding step. For example:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;from flash_mla import get_mla_metadata, flash_mla_with_kvcache
+
+tile_scheduler_metadata, num_splits = get_mla_metadata(
+    cache_seqlens,
+    s_q * h_q // h_kv,
+    h_kv,
+    h_q,
+    is_fp8,
+    topk,
+)
+
+for i in range(num_layers):
+    ...
+    o_i, lse_i = flash_mla_with_kvcache(
+        q_i, kvcache_i, block_table, cache_seqlens, dv,
+        tile_scheduler_metadata, num_splits,
+        is_causal, is_fp8_kvcache, indices,
+    )
+    ...
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Where&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;s_q&lt;/code&gt; is the number of q tokens per q sequence. If MTP (speculative decoding) is disabled, it should be 1.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;h_kv&lt;/code&gt; is the number of key-value heads.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;h_q&lt;/code&gt; is the number of query heads.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;FP8 KV Cache:&lt;/strong&gt; If &lt;code&gt;is_fp8_kvcache&lt;/code&gt; is set to &lt;code&gt;True&lt;/code&gt;, the kernel reads the KV cache in the "FP8 with scale" format (described below). It dequantizes the cache to bfloat16 and performs attention computation in bfloat16. The output is also in bfloat16.&lt;/p&gt; 
+&lt;p&gt;In the "FP8 with scale" format, each token's KV cache is 656 Bytes, structured as:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;First 512 bytes:&lt;/strong&gt; The "quantized NoPE" part, containing 512 &lt;code&gt;float8_e4m3&lt;/code&gt; values.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Next 16 bytes:&lt;/strong&gt; Scale factors, containing 4 &lt;code&gt;float32&lt;/code&gt; values. The first &lt;code&gt;float32&lt;/code&gt; is the scale for the first 128 &lt;code&gt;float8_e4m3&lt;/code&gt; values, the second for the next 128, and so on.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Last 128 bytes:&lt;/strong&gt; The "RoPE" part, containing 64 &lt;code&gt;bfloat16&lt;/code&gt; values. This part is not quantized for accuracy.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See &lt;code&gt;tests/quant.py&lt;/code&gt; for quantization and dequantization details.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Sparse Attention (&lt;code&gt;indices&lt;/code&gt; tensor):&lt;/strong&gt; The &lt;code&gt;indices&lt;/code&gt; tensor (if provided) enables token-level sparse attention by instructing the kernel to compute attention only for specified tokens.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Shape:&lt;/strong&gt; &lt;code&gt;indices&lt;/code&gt; should be a 3D tensor of shape &lt;code&gt;(batch_size, seq_len_q, topk)&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Format:&lt;/strong&gt; &lt;code&gt;indices_in_kvcache[i][j][k] = (the index of the page block where token t resides) * page_block_size + (the offset of token t within the page block)&lt;/code&gt;, where &lt;code&gt;t&lt;/code&gt; is the k-th token for the j-th query sequence in the i-th batch. Since the index of the page block has already been encoded into &lt;code&gt;indices_in_kvcache&lt;/code&gt;, the kernel does not require the &lt;code&gt;block_table&lt;/code&gt; parameter.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Invalid entries:&lt;/strong&gt; Set invalid indices to &lt;code&gt;-1&lt;/code&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Return Values:&lt;/strong&gt; The kernel returns &lt;code&gt;(out, lse)&lt;/code&gt;, where:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;out&lt;/code&gt; is the attention result.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;lse&lt;/code&gt; is the log-sum-exp value of the attention scores for each query head.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;See &lt;code&gt;tests/test_flash_mla_decoding.py&lt;/code&gt; for a complete example.&lt;/p&gt; 
+&lt;h3&gt;Sparse MLA Prefill&lt;/h3&gt; 
+&lt;p&gt;For the sparse MLA prefill kernel, call &lt;code&gt;flash_mla_sparse_fwd&lt;/code&gt; directly with the following parameters:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;q&lt;/code&gt;: Query tensor of shape &lt;code&gt;[s_q, h_q, d_qk]&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;kv&lt;/code&gt;: Key-Value tensor of shape &lt;code&gt;[s_kv, h_kv, d_qk]&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;indices&lt;/code&gt;: Indices tensor of shape &lt;code&gt;[s_q, h_kv, topk]&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;sm_scale&lt;/code&gt;: A scalar value&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Note on batching:&lt;/strong&gt; This kernel does not support a batch dimension. For multi-batch inference, reshape the input tensors and adjust the &lt;code&gt;indices&lt;/code&gt; parameter to simulate batch processing.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Invalid indices:&lt;/strong&gt; Set invalid entries in &lt;code&gt;indices&lt;/code&gt; to &lt;code&gt;-1&lt;/code&gt; or any number &lt;code&gt;&amp;gt;= s_kv&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Return Values and Equivalent PyTorch Code:&lt;/strong&gt; The kernel returns &lt;code&gt;(out, max_logits, lse)&lt;/code&gt;. This is equivalent to the following PyTorch operations:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;Q: [s_q, h_q, d_qk], bfloat16
+kv: [s_kv, h_kv, d_qk], bfloat16
+indices: [s_q, h_kv, topk], int32
+
+kv = kv.squeeze(1)  # [s_kv, d_qk], h_kv must be 1
+indices = indices.squeeze(1)    # [s_q, topk]
+focused_kv = kv[indices]    # For the i-th sequence (s_q), the corresponding KV tokens are selected from the KV cache based on indices[i, :]. This operation results in a tensor of shape [s_q, topk, d_qk].
+
+P = (Q @ focused_kv.transpose(-1, -2)) * sm_scale * math.log2(math.e)    # [s_q, h_q, topk]
+max_logits = P.max(dim=-1) # [s_q, h_q]
+lse = log2sumexp2(P, dim=-1, base=2)   # [s_q, h_q]，"log2sumexp2" means that the exponentiation and logarithm are base-2
+S = exp2(P - lse)      # [s_q, h_q, topk]
+out = S @ focused_kv  # [s_q, h_q, d_qk]
+
+return (out, max_logits, lse)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;code&gt;tests/test_flash_mla_prefill.py&lt;/code&gt; for a complete example.&lt;/p&gt; 
+&lt;h3&gt;Dense MHA Prefill&lt;/h3&gt; 
+&lt;p&gt;This kernel implements the standard dense Multi-Head Attention (MHA) forward and backward operations. It can be called using:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;flash_attn_varlen_func&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;flash_attn_varlen_qkvpacked_func&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;flash_attn_varlen_kvpacked_func&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The usage is similar to the &lt;code&gt;flash_attn&lt;/code&gt; package. See &lt;code&gt;tests/test_fmha_sm100.py&lt;/code&gt; for a complete example.&lt;/p&gt; 
+&lt;h2&gt;Acknowledgement&lt;/h2&gt; 
+&lt;p&gt;FlashMLA is inspired by &lt;a href="https://github.com/dao-AILab/flash-attention/"&gt;FlashAttention 2&amp;amp;3&lt;/a&gt; and &lt;a href="https://github.com/nvidia/cutlass"&gt;cutlass&lt;/a&gt; projects.&lt;/p&gt; 
+&lt;h2&gt;Community Support&lt;/h2&gt; 
+&lt;h3&gt;MetaX&lt;/h3&gt; 
+&lt;p&gt;For MetaX GPUs, visit the official website: &lt;a href="https://www.metax-tech.com"&gt;MetaX&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;The corresponding FlashMLA version can be found at: &lt;a href="https://github.com/MetaX-MACA/FlashMLA"&gt;MetaX-MACA/FlashMLA&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Moore Threads&lt;/h3&gt; 
+&lt;p&gt;For the Moore Threads GPU, visit the official website: &lt;a href="https://www.mthreads.com/"&gt;Moore Threads&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;The corresponding FlashMLA version is available on GitHub: &lt;a href="https://github.com/MooreThreads/MT-flashMLA"&gt;MooreThreads/MT-flashMLA&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Hygon DCU&lt;/h3&gt; 
+&lt;p&gt;For the Hygon DCU, visit the official website: &lt;a href="https://developer.sourcefind.cn/"&gt;Hygon Developer&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;The corresponding FlashMLA version is available here: &lt;a href="https://developer.sourcefind.cn/codes/OpenDAS/MLAttention"&gt;OpenDAS/MLAttention&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Intellifusion&lt;/h3&gt; 
+&lt;p&gt;For the Intellifusion NNP, visit the official website: &lt;a href="https://www.intellif.com"&gt;Intellifusion&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;The corresponding FlashMLA version is available on Gitee: &lt;a href="https://gitee.com/Intellifusion_2025/tyllm/blob/master/python/tylang/flash_mla.py"&gt;Intellifusion/tyllm&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Iluvatar Corex&lt;/h3&gt; 
+&lt;p&gt;For Iluvatar Corex GPUs, visit the official website: &lt;a href="https://www.iluvatar.com"&gt;Iluvatar Corex&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;The corresponding FlashMLA version is available on GitHub: &lt;a href="https://github.com/Deep-Spark/FlashMLA/tree/iluvatar_flashmla"&gt;Deep-Spark/FlashMLA&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;AMD Instinct&lt;/h3&gt; 
+&lt;p&gt;For AMD Instinct GPUs, visit the official website: &lt;a href="https://www.amd.com/en/products/accelerators/instinct.html"&gt;AMD Instinct&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;The corresponding FlashMLA version can be found at: &lt;a href="https://github.com/ROCm/aiter/raw/main/aiter/mla.py"&gt;AITER/MLA&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Citation&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bibtex"&gt;@misc{flashmla2025,
+      title={FlashMLA: Efficient Multi-head Latent Attention Kernels},
+      author={Jiashi Li, Shengyu Liu},
+      year={2025},
+      publisher = {GitHub},
+      howpublished = {\url{https://github.com/deepseek-ai/FlashMLA}},
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>microsoft/agent-lightning</title>
+      <link>https://github.com/microsoft/agent-lightning</link>
+      <description>&lt;p&gt;The absolute trainer to light up AI agents.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/microsoft/agent-lightning/main/docs/assets/readme-banner.svg?sanitize=true" alt="Agent-lightning-banner" style="width:600px" /&gt; &lt;/p&gt; 
+&lt;h1&gt;Agent Lightning⚡&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/microsoft/agent-lightning/actions/workflows/badge-unit.yml"&gt;&lt;img src="https://github.com/microsoft/agent-lightning/actions/workflows/badge-unit.yml/badge.svg?sanitize=true" alt="Unit Tests" /&gt;&lt;/a&gt; &lt;a href="https://microsoft.github.io/agent-lightning/"&gt;&lt;img src="https://img.shields.io/badge/GitHub%20Pages-Documentation-blue" alt="Documentation" /&gt;&lt;/a&gt; &lt;a href="https://badge.fury.io/py/agentlightning"&gt;&lt;img src="https://badge.fury.io/py/agentlightning.svg?sanitize=true" alt="PyPI version" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/microsoft/agent-lightning/main/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/license-MIT-blue.svg?sanitize=true" alt="License" /&gt;&lt;/a&gt; &lt;a href="https://deepwiki.com/microsoft/agent-lightning"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" alt="Ask DeepWiki" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/RYk7CdvDR7"&gt;&lt;img src="https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&amp;amp;logoColor=white" alt="Discord" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;The absolute trainer to light up AI agents.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Join our &lt;a href="https://discord.gg/RYk7CdvDR7"&gt;Discord community&lt;/a&gt; to connect with other users and contributors.&lt;/p&gt; 
+&lt;h2&gt;⚡ Core Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Turn your agent into an optimizable beast with &lt;strong&gt;ZERO CODE CHANGE&lt;/strong&gt; (almost)! 💤&lt;/li&gt; 
+ &lt;li&gt;Build with &lt;strong&gt;ANY&lt;/strong&gt; agent framework (LangChain, OpenAI Agent SDK, AutoGen, CrewAI, Microsoft Agent Framework...); or even WITHOUT agent framework (Python OpenAI). You name it! 🤖&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Selectively&lt;/strong&gt; optimize one or more agents in a multi-agent system. 🎯&lt;/li&gt; 
+ &lt;li&gt;Embraces &lt;strong&gt;Algorithms&lt;/strong&gt; like Reinforcement Learning, Automatic Prompt Optimization, Supervised Fine-tuning and more. 🤗&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Read more on our &lt;a href="https://microsoft.github.io/agent-lightning/"&gt;documentation website&lt;/a&gt;.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/microsoft/agent-lightning/main/docs/assets/readme-diff.svg?sanitize=true" alt="Agent-Lightning Core Quickstart" style="width:100%" /&gt; &lt;/p&gt; 
+&lt;h2&gt;⚡ Installation&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pip install agentlightning
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For the latest nightly build (cutting-edge features), you can install from Test PyPI:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pip install --upgrade --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ --pre agentlightning
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Please refer to our &lt;a href="https://microsoft.github.io/agent-lightning/stable/tutorials/installation/"&gt;installation guide&lt;/a&gt; for more details.&lt;/p&gt; 
+&lt;p&gt;To start using Agent-lightning, check out our &lt;a href="https://microsoft.github.io/agent-lightning/"&gt;documentation&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/microsoft/agent-lightning/main/examples"&gt;examples&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;⚡ Articles&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;12/17/2025 &lt;a href="https://agent-lightning.github.io/posts/trajectory_level_aggregation/"&gt;Adopting the Trajectory Level Aggregation for Faster Training&lt;/a&gt; Agent-lightning blog.&lt;/li&gt; 
+ &lt;li&gt;11/4/2025 &lt;a href="https://medium.com/@yugez/tuning-any-ai-agent-with-tinker-agent-lightning-part-1-1d8c9a397f0e"&gt;Tuning ANY AI agent with Tinker ✕ Agent-lightning&lt;/a&gt; Medium. See also &lt;a href="https://medium.com/@yugez/tuning-any-ai-agent-with-tinker-agent-lightning-part-2-332c5437f0dc"&gt;Part 2&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;10/22/2025 &lt;a href="https://blog.vllm.ai/2025/10/22/agent-lightning.html"&gt;No More Retokenization Drift: Returning Token IDs via the OpenAI Compatible API Matters in Agent RL&lt;/a&gt; vLLM blog. See also &lt;a href="https://zhuanlan.zhihu.com/p/1965067274642785725"&gt;Zhihu writeup&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;8/11/2025 &lt;a href="https://medium.com/@yugez/training-ai-agents-to-write-and-self-correct-sql-with-reinforcement-learning-571ed31281ad"&gt;Training AI Agents to Write and Self-correct SQL with Reinforcement Learning&lt;/a&gt; Medium.&lt;/li&gt; 
+ &lt;li&gt;8/5/2025 &lt;a href="https://arxiv.org/abs/2508.03680"&gt;Agent Lightning: Train ANY AI Agents with Reinforcement Learning&lt;/a&gt; arXiv paper.&lt;/li&gt; 
+ &lt;li&gt;7/26/2025 &lt;a href="https://www.reddit.com/r/LocalLLaMA/comments/1m9m670/we_discovered_an_approach_to_train_any_ai_agent/"&gt;We discovered an approach to train any AI agent with RL, with (almost) zero code changes.&lt;/a&gt; Reddit.&lt;/li&gt; 
+ &lt;li&gt;6/6/2025 &lt;a href="https://www.microsoft.com/en-us/research/project/agent-lightning/"&gt;Agent Lightning - Microsoft Research&lt;/a&gt; Project page.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;⚡ Community Projects&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/af-74413592/DeepWerewolf"&gt;DeepWerewolf&lt;/a&gt; — A case study of agent RL training for the Chinese Werewolf game built with AgentScope and Agent Lightning.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://agentflow.stanford.edu/"&gt;AgentFlow&lt;/a&gt; — A modular multi-agent framework that combines planner, executor, verifier, and generator agents with the Flow-GRPO algorithm to tackle long-horizon, sparse-reward tasks.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/TencentCloudADP/Youtu-agent"&gt;Youtu-Agent&lt;/a&gt; — Youtu-Agent lets you build and train your agent with ease. Built with &lt;a href="https://github.com/microsoft/agent-lightning/tree/contrib/youtu-agent-lightning"&gt;a modified branch&lt;/a&gt; of Agent Lightning, Youtu-Agent has verified up to 128 GPUs RL training on maths/code and search capabilities with steady convergence. Also check &lt;a href="https://github.com/TencentCloudADP/youtu-agent/tree/rl/agl"&gt;the recipe&lt;/a&gt; and their blog &lt;a href="https://spotted-coconut-df8.notion.site/Stop-Wrestling-with-Your-Agent-RL-How-Youtu-Agent-Achieved-Stable-128-GPU-Scaling-Without-Breaking-2ca5e8f089ba80539a98c582b65e0233"&gt;&lt;em&gt;Stop Wrestling with Your Agent RL: How Youtu-Agent Achieved Stable, 128-GPU Scaling Without Breaking a Sweat&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;⚡ Architecture&lt;/h2&gt; 
+&lt;p&gt;Agent Lightning keeps the moving parts to a minimum so you can focus on your idea, not the plumbing. Your agent continues to run as usual; you can still use any agent framework you like; you drop in the lightweight &lt;code&gt;agl.emit_xxx()&lt;/code&gt; helper, or let the tracer collect every prompt, tool call, and reward. Those events become structured spans that flow into the LightningStore, a central hub that keeps tasks, resources, and traces in sync.&lt;/p&gt; 
+&lt;p&gt;On the other side of the store sits the algorithm you choose, or write yourself. The algorithm reads spans, learns from them, and posts updated resources such as refined prompt templates or new policy weights. The Trainer ties it all together: it streams datasets to runners, ferries resources between the store and the algorithm, and updates the inference engine when improvements land. You can either stop there, or simply let the same loop keep turning.&lt;/p&gt; 
+&lt;p&gt;No rewrites, no lock-in, just a clear path from first rollout to steady improvement.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/microsoft/agent-lightning/main/docs/assets/readme-architecture.svg?sanitize=true" alt="Agent-lightning Architecture" style="width:100%" /&gt; &lt;/p&gt; 
+&lt;h2&gt;⚡ CI Status&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Workflow&lt;/th&gt; 
+   &lt;th&gt;Status&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;CPU Tests&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/microsoft/agent-lightning/actions/workflows/tests.yml"&gt;&lt;img src="https://github.com/microsoft/agent-lightning/actions/workflows/tests.yml/badge.svg?sanitize=true" alt="tests workflow status" /&gt;&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Full Tests&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/microsoft/agent-lightning/actions/workflows/badge-unit.yml"&gt;&lt;img src="https://github.com/microsoft/agent-lightning/actions/workflows/badge-unit.yml/badge.svg?sanitize=true" alt="tests summary workflow status" /&gt;&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;UI Tests&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/microsoft/agent-lightning/actions/workflows/dashboard.yml"&gt;&lt;img src="https://github.com/microsoft/agent-lightning/actions/workflows/dashboard.yml/badge.svg?sanitize=true" alt="UI Tests" /&gt;&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Examples Integration&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/microsoft/agent-lightning/actions/workflows/badge-examples.yml"&gt;&lt;img src="https://github.com/microsoft/agent-lightning/actions/workflows/badge-examples.yml/badge.svg?sanitize=true" alt="examples summary workflow status" /&gt;&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Latest Dependency Compatibility&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/microsoft/agent-lightning/actions/workflows/badge-latest.yml"&gt;&lt;img src="https://github.com/microsoft/agent-lightning/actions/workflows/badge-latest.yml/badge.svg?sanitize=true" alt="latest summary workflow status" /&gt;&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Legacy Examples Compatibility&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://github.com/microsoft/agent-lightning/actions/workflows/badge-compat.yml"&gt;&lt;img src="https://github.com/microsoft/agent-lightning/actions/workflows/badge-compat.yml/badge.svg?sanitize=true" alt="compat summary workflow status" /&gt;&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;⚡ Citation&lt;/h2&gt; 
+&lt;p&gt;If you find Agent Lightning useful in your research or projects, please cite our paper:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bibtex"&gt;@misc{luo2025agentlightningtrainai,
+      title={Agent Lightning: Train ANY AI Agents with Reinforcement Learning},
+      author={Xufang Luo and Yuge Zhang and Zhiyuan He and Zilong Wang and Siyun Zhao and Dongsheng Li and Luna K. Qiu and Yuqing Yang},
+      year={2025},
+      eprint={2508.03680},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2508.03680},
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;⚡ Contributing&lt;/h2&gt; 
+&lt;p&gt;This project welcomes contributions and suggestions. Start by reading the &lt;a href="https://raw.githubusercontent.com/microsoft/agent-lightning/main/docs/community/contributing.md"&gt;Contributing Guide&lt;/a&gt; for recommended contribution points, environment setup, branching conventions, and pull request expectations. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit &lt;a href="https://cla.opensource.microsoft.com"&gt;https://cla.opensource.microsoft.com&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.&lt;/p&gt; 
+&lt;p&gt;This project has adopted the &lt;a href="https://opensource.microsoft.com/codeofconduct/"&gt;Microsoft Open Source Code of Conduct&lt;/a&gt;. For more information see the &lt;a href="https://opensource.microsoft.com/codeofconduct/faq/"&gt;Code of Conduct FAQ&lt;/a&gt; or contact &lt;a href="mailto:opencode@microsoft.com"&gt;opencode@microsoft.com&lt;/a&gt; with any additional questions or comments.&lt;/p&gt; 
+&lt;h2&gt;⚡ Trademarks&lt;/h2&gt; 
+&lt;p&gt;This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to and must follow &lt;a href="https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general"&gt;Microsoft's Trademark &amp;amp; Brand Guidelines&lt;/a&gt;. Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship. Any use of third-party trademarks or logos are subject to those third-party's policies.&lt;/p&gt; 
+&lt;h2&gt;⚡ Responsible AI&lt;/h2&gt; 
+&lt;p&gt;This project has been evaluated and certified to comply with the Microsoft Responsible AI Standard. The team will continue to monitor and maintain the repository, addressing any severe issues, including potential harms, if they arise.&lt;/p&gt; 
+&lt;h2&gt;⚡ License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the MIT License. See the &lt;a href="https://raw.githubusercontent.com/microsoft/agent-lightning/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>xai-org/grok-1</title>
+      <link>https://github.com/xai-org/grok-1</link>
+      <description>&lt;p&gt;Grok open release&lt;/p&gt;&lt;hr&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
