@@ -1,0 +1,648 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub TypeScript Daily Trending</title>
+    <description>Daily Trending of TypeScript in GitHub</description>
+    <pubDate>Tue, 27 Jan 2026 01:42:15 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>wechat-article/wechat-article-exporter</title>
+      <link>https://github.com/wechat-article/wechat-article-exporter</link>
+      <description>&lt;p&gt;一款在线的 微信公众号文章批量下载 工具，支持导出阅读量与评论数据，无需搭建任何环境，可通过 在线网站 使用，支持 docker 私有化部署和 Cloudflare 部署。 支持下载各种文件格式，其中 HTML 格式可100%还原文章排版与样式。&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/wechat-article/wechat-article-exporter/master/assets/logo.svg?sanitize=true" alt="Logo" /&gt; &lt;/p&gt; 
+&lt;h1&gt;wechat-article-exporter&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://img.shields.io/github/stars/wechat-article/wechat-article-exporter?style=social&amp;amp;label=Star&amp;amp;style=plastic" alt="GitHub stars" /&gt; &lt;img src="https://img.shields.io/github/forks/wechat-article/wechat-article-exporter?style=social&amp;amp;label=Fork&amp;amp;style=plastic" alt="GitHub forks" /&gt; &lt;img src="https://img.shields.io/github/license/wechat-article/wechat-article-exporter?label=License" alt="GitHub License" /&gt; &lt;img src="https://img.shields.io/github/package-json/v/wechat-article/wechat-article-exporter" alt="Package Version" /&gt;&lt;/p&gt; 
+&lt;p&gt;一款在线的 &lt;strong&gt;微信公众号文章批量下载&lt;/strong&gt; 工具，支持导出阅读量与评论数据，无需搭建任何环境，可通过 &lt;a href="https://down.mptext.top"&gt;在线网站&lt;/a&gt; 使用，同时也支持 docker 私有化部署和 Cloudflare 部署。&lt;/p&gt; 
+&lt;p&gt;支持下载各种文件格式，其中 HTML 格式可100%还原文章排版与样式。&lt;/p&gt; 
+&lt;p&gt;交流群(QQ): &lt;code&gt;991482155&lt;/code&gt;&lt;/p&gt; 
+&lt;h2&gt;&lt;span&gt;🔔&lt;/span&gt; 重要告知：项目域名调整&lt;/h2&gt; 
+&lt;p&gt;项目域名调整如下：&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;&lt;/th&gt; 
+   &lt;th&gt;下载站&lt;/th&gt; 
+   &lt;th&gt;文档站&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;调整后&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://down.mptext.top"&gt;https://down.mptext.top&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://docs.mptext.top"&gt;https://docs.mptext.top&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;调整前&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://exporter.wxdown.online"&gt;https://exporter.wxdown.online&lt;/a&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;a href="https://docs.wxdown.online"&gt;https://docs.wxdown.online&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;具体细节可以查看 &lt;a href="https://docs.mptext.top/misc/domain.html"&gt;这里&lt;/a&gt;。&lt;/p&gt; 
+&lt;h2&gt;&lt;span&gt;📚&lt;/span&gt; 如何使用？&lt;/h2&gt; 
+&lt;p&gt;该工具的使用教程已移至 &lt;a href="https://docs.mptext.top"&gt;文档站点&lt;/a&gt;。&lt;/p&gt; 
+&lt;h2&gt;&lt;span&gt;🎯&lt;/span&gt; 特性&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 搜索公众号，支持关键字搜索&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 支持导出 html/json/excel/txt/md/docx 格式(html 格式打包了图片和样式文件，能够保证100%还原文章样式)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 缓存文章列表数据，减少接口请求次数&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 支持文章过滤，包括作者、标题、发布时间、原创标识、所属合集等&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 支持合集下载&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 支持图片分享消息&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 支持视频分享消息&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 支持导出评论、评论回复、阅读量、转发量等数据 (需要抓包获取 credentials 信息，&lt;a href="https://docs.mptext.top/advanced/wxdown-service.html"&gt;查看操作步骤&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 支持 Docker 部署&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 支持 Cloudflare 部署&lt;/li&gt; 
+ &lt;li&gt;&lt;input type="checkbox" checked disabled /&gt; 开放 API 接口&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;&lt;span&gt;❤️&lt;/span&gt; 感谢&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;感谢 &lt;a href="https://deno.com/deploy"&gt;Deno Deploy&lt;/a&gt;、&lt;a href="https://workers.cloudflare.com"&gt;Cloudflare Workers&lt;/a&gt; 提供免费托管服务&lt;/li&gt; 
+ &lt;li&gt;感谢 &lt;a href="https://github.com/1061700625/WeChat_Article"&gt;WeChat_Article&lt;/a&gt; 项目提供原理思路&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;&lt;span&gt;⭐&lt;/span&gt; 支持&lt;/h2&gt; 
+&lt;p&gt;如果你觉得本项目帮助到了你，请给作者一个免费的 Star，感谢你的支持！&lt;/p&gt; 
+&lt;h2&gt;&lt;span&gt;💡&lt;/span&gt; 原理&lt;/h2&gt; 
+&lt;p&gt;在公众号后台写文章时支持搜索其他公众号的文章功能，以此来实现抓取指定公众号所有文章的目的。&lt;/p&gt; 
+&lt;h2&gt;&lt;span&gt;📝&lt;/span&gt; 许可&lt;/h2&gt; 
+&lt;p&gt;MIT&lt;/p&gt; 
+&lt;h2&gt;&lt;span&gt;🔴&lt;/span&gt; 声明&lt;/h2&gt; 
+&lt;p&gt;本程序承诺，不会利用您扫码登录的公众号进行任何形式的私有爬虫，也就是说不存在把你的账号作为公共账号为别人爬取文章的行为，也不存在类似账号池的东西。&lt;/p&gt; 
+&lt;p&gt;您的公众号只会服务于您自己的抓取文章的目的。&lt;/p&gt; 
+&lt;p&gt;通过本程序获取的公众号文章内容，版权归文章原作者所有，请合理使用。若发现侵权行为，请联系我们处理。&lt;/p&gt; 
+&lt;h2&gt;&lt;span&gt;📈&lt;/span&gt; Star 历史&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://star-history.com/#wechat-article/wechat-article-exporter&amp;amp;Timeline"&gt;&lt;img src="https://api.star-history.com/svg?repos=wechat-article/wechat-article-exporter&amp;amp;type=Timeline" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;!-- Definitions --&gt;</description>
+    </item>
+    
+    <item>
+      <title>supermemoryai/supermemory</title>
+      <link>https://github.com/supermemoryai/supermemory</link>
+      <description>&lt;p&gt;Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.&lt;/p&gt;&lt;hr&gt;&lt;p align="center" style="padding-bottom:20px;padding-top:20px"&gt; 
+ &lt;picture&gt; 
+  &lt;source srcset="apps/web/public/logo-fullmark.svg" media="(prefers-color-scheme: dark)" /&gt; 
+  &lt;source srcset="apps/web/public/logo-light-fullmark.svg" media="(prefers-color-scheme: light)" /&gt; 
+  &lt;img src="https://raw.githubusercontent.com/supermemoryai/supermemory/main/apps/web/public/logo-fullmark.svg?sanitize=true" alt="supermemory Logo" width="400" /&gt; 
+ &lt;/picture&gt; &lt;br /&gt;&lt;br /&gt; &lt;em&gt;Your AI second brain for saving and organizing everything that matters.&lt;/em&gt; &lt;br /&gt;&lt;br /&gt; &lt;a href="https://app.supermemory.ai" style="text-decoration: none;"&gt; &lt;img src="https://img.shields.io/badge/Web-App-000000?style=for-the-badge" alt="Web App" /&gt; &lt;/a&gt; &amp;nbsp; &lt;a href="https://chromewebstore.google.com/detail/supermemory/afpgkkipfdpeaflnpoaffkcankadgjfc" style="text-decoration: none;"&gt; &lt;img src="https://img.shields.io/badge/Chrome-Extension-4285F4?style=for-the-badge&amp;amp;logo=googlechrome&amp;amp;logoColor=white" alt="Chrome Extension" /&gt; &lt;/a&gt; &amp;nbsp; &lt;a href="https://www.raycast.com/supermemory/supermemory" style="text-decoration: none;"&gt; &lt;img src="https://img.shields.io/badge/Raycast-Extension-FF6363?style=for-the-badge&amp;amp;logo=raycast&amp;amp;logoColor=white" alt="Raycast Extension" /&gt; &lt;/a&gt; &amp;nbsp; &lt;a href="https://supermemory.link/discord" style="text-decoration: none;"&gt; &lt;img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&amp;amp;logo=discord&amp;amp;logoColor=white" alt="Discord" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p style="font-size: 0.9em; color: #666;"&gt; &lt;strong&gt;Building with Supermemory?&lt;/strong&gt; Check out the &lt;a href="https://console.supermemory.ai?utm_source=github&amp;amp;utm_medium=readme&amp;amp;utm_campaign=consumer_app"&gt;Developer Console&lt;/a&gt; and &lt;a href="https://docs.supermemory.ai?utm_source=github&amp;amp;utm_medium=readme&amp;amp;utm_campaign=consumer_app"&gt;Documentation&lt;/a&gt; for API access. &lt;/p&gt; 
+&lt;p style="font-size: 0.9em; color: #666;"&gt; &lt;strong&gt;Want to self-host?&lt;/strong&gt; See our &lt;a href="https://supermemory.ai/docs/deployment/self-hosting#self-hosting"&gt;Self-Hosting Guide&lt;/a&gt; for enterprise deployment options. &lt;/p&gt; 
+&lt;br /&gt; 
+&lt;div align="center" style="padding-bottom:10px;padding-top:10px"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/supermemoryai/supermemory/main/apps/web/public/landing-page.jpeg" alt="supermemory" width="100%" /&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;h3&gt;Core Functionality&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/supermemoryai/supermemory/main/#add-memory"&gt;Add Memories from Any Content&lt;/a&gt;&lt;/strong&gt;: Easily add memories from URLs, PDFs, and plain text—just paste, upload, or link.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/supermemoryai/supermemory/main/#chat-memories"&gt;Chat with Your Memories&lt;/a&gt;&lt;/strong&gt;: Converse with your stored content using natural language chat.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/supermemoryai/supermemory/main/#mcp-integration"&gt;Supermemory MCP Integration&lt;/a&gt;&lt;/strong&gt;: Seamlessly connect with all major AI tools (Claude, Cursor, etc.) via Supermemory MCP.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/supermemoryai/supermemory/main/#browser-extension"&gt;Browser Extension&lt;/a&gt;&lt;/strong&gt;: Save memories directly from your browser with integrations for ChatGPT, Claude, and Twitter/X.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/supermemoryai/supermemory/main/#raycast-extension"&gt;Raycast Extension&lt;/a&gt;&lt;/strong&gt;: Add and search memories directly from Raycast with keyboard shortcuts.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How do I use this?&lt;/h2&gt; 
+&lt;p&gt;Go to &lt;a href="https://app.supermemory.ai"&gt;app.supermemory.ai&lt;/a&gt; and sign in with your account&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;a id="add-memory"&gt;&lt;/a&gt;Start Adding Memory with your choice of format (Note, Link, File)&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;div align="center" style="padding-bottom:10px;padding-top:10px"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/supermemoryai/supermemory/main/apps/web/public/add-memory.png" alt="supermemory" width="100%" /&gt; 
+&lt;/div&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;You can also Connect to your favourite services (Notion, Google Drive, OneDrive)&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;div align="center" style="padding-bottom:10px;padding-top:10px"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/supermemoryai/supermemory/main/apps/web/public/add-connections.png" alt="supermemory" width="100%" /&gt; 
+&lt;/div&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;&lt;a id="chat-memories"&gt;&lt;/a&gt;Once Memories are added, you can chat with Supermemory by clicking on "Open Chat" and retrieve info from your saved memories&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;div align="center" style="padding-bottom:10px;padding-top:10px"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/supermemoryai/supermemory/main/apps/web/public/chat.png" alt="supermemory" width="100%" /&gt; 
+&lt;/div&gt; 
+&lt;ol start="4"&gt; 
+ &lt;li&gt;&lt;a id="mcp-integration"&gt;&lt;/a&gt;Add MCP to your AI Tools (by clicking on "Connect to your AI" and select the AI tool you are trying to integrate)&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;div align="center" style="padding-bottom:10px;padding-top:10px"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/supermemoryai/supermemory/main/apps/web/public/mcp.png" alt="supermemory" width="100%" /&gt; 
+&lt;/div&gt; 
+&lt;ol start="5"&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a id="browser-extension"&gt;&lt;/a&gt;&lt;strong&gt;Browser Extension&lt;/strong&gt;: Install the &lt;a href="https://chromewebstore.google.com/detail/supermemory/afpgkkipfdpeaflnpoaffkcankadgjfc"&gt;Chrome/Edge extension&lt;/a&gt; to save memories directly from any webpage, integrate with ChatGPT and Claude conversations, and import from Twitter/X. Right-click on any content or use the extension popup to save memories instantly.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;a id="raycast-extension"&gt;&lt;/a&gt;&lt;strong&gt;Raycast Extension&lt;/strong&gt;: Install the &lt;a href="https://www.raycast.com/supermemory/supermemory"&gt;Raycast extension&lt;/a&gt; to add and search memories directly from Raycast. Use the "Add Memory" command to quickly save content, or "Search Memories" to find and retrieve your saved information with keyboard shortcuts.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;p&gt;Have questions or feedback? We're here to help:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Email: &lt;a href="mailto:support@supermemory.ai"&gt;support@supermemory.ai&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Discord: &lt;a href="https://supermemory.link/discord"&gt;Join our Discord server&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Documentation: &lt;a href="https://docs.supermemory.ai"&gt;docs.supermemory.ai&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions from developers of all skill levels! Whether you're fixing bugs, adding features, or improving documentation, your help makes supermemory better for everyone.&lt;/p&gt; 
+&lt;p&gt;For detailed guidelines, development setup, coding standards, and the complete contribution workflow, please see our &lt;a href="https://raw.githubusercontent.com/supermemoryai/supermemory/main/CONTRIBUTING.md"&gt;&lt;strong&gt;Contributing Guide&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Ways to Contribute&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🐛 &lt;strong&gt;Bug fixes&lt;/strong&gt; - Help us squash those pesky issues&lt;/li&gt; 
+ &lt;li&gt;✨ &lt;strong&gt;New features&lt;/strong&gt; - Add functionality that users will love&lt;/li&gt; 
+ &lt;li&gt;🎨 &lt;strong&gt;UI/UX improvements&lt;/strong&gt; - Make the interface more intuitive&lt;/li&gt; 
+ &lt;li&gt;⚡ &lt;strong&gt;Performance optimizations&lt;/strong&gt; - Help us make supermemory faster&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Check out our &lt;a href="https://github.com/supermemoryai/supermemory/issues"&gt;Issues&lt;/a&gt; page for &lt;code&gt;good first issue&lt;/code&gt; and &lt;code&gt;help wanted&lt;/code&gt; labels to get started!&lt;/p&gt; 
+&lt;h2&gt;Updates &amp;amp; Roadmap&lt;/h2&gt; 
+&lt;p&gt;Stay up to date with the latest improvements:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.supermemory.ai/changelog/overview"&gt;Changelog&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://x.com/supermemory"&gt;X&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>remotion-dev/remotion</title>
+      <link>https://github.com/remotion-dev/remotion</link>
+      <description>&lt;p&gt;🎥 Make videos programmatically with React&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://github.com/remotion-dev/logo"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng" /&gt; 
+   &lt;img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://remotion.dev/discord"&gt;&lt;img src="https://img.shields.io/discord/809501355504959528?color=000000&amp;amp;label=Discord&amp;amp;logo=fdgssdf" alt="Discord Shield" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.org/package/remotion"&gt;&lt;img src="https://img.shields.io/npm/v/remotion.svg?style=flat&amp;amp;color=black" alt="NPM Version" /&gt;&lt;/a&gt; &lt;a href="https://npmcharts.com/compare/remotion?minimal=true"&gt;&lt;img src="https://img.shields.io/npm/dm/remotion.svg?style=flat&amp;amp;color=black&amp;amp;label=Downloads" alt="NPM Downloads" /&gt;&lt;/a&gt; &lt;a href="https://github.com/remotion-dev/remotion/issues?q=is%3Aopen+label%3A%22%F0%9F%92%8E+Bounty%22+sort%3Aupdated-desc"&gt;&lt;img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fconsole.algora.io%2Fapi%2Fshields%2Fremotion%2Fbounties%3Fstatus%3Dopen&amp;amp;style=flat&amp;amp;color=black&amp;amp;labelColor=grey&amp;amp;label=Open+Bounties" alt="Open Bounties" /&gt;&lt;/a&gt; &lt;a href="https://twitter.com/remotion"&gt;&lt;img src="https://img.shields.io/twitter/follow/remotion?label=Twitter&amp;amp;color=black" alt="Twitter" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Remotion is a framework for &lt;strong&gt;creating videos programmatically using React.&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Why create videos in React?&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Leverage web technologies&lt;/strong&gt;: Use all of CSS, Canvas, SVG, WebGL, etc.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Leverage programming&lt;/strong&gt;: Use variables, functions, APIs, math and algorithms to create new effects&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Leverage React&lt;/strong&gt;: Reusable components, Powerful composition, Fast Refresh, Package ecosystem&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Created with Remotion&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td align="center"&gt; &lt;img style="width: 290px" src="https://pub-646d808d9cb240cea53bedc76dd3cd0c.r2.dev/fireship-quick.gif" /&gt; &lt;p&gt;"This video was made with code" &lt;em&gt;- Fireship&lt;/em&gt; &lt;a href="https://youtu.be/deg8bOoziaE"&gt;Watch&lt;/a&gt; • &lt;a href="https://github.com/wcandillon/remotion-fireship"&gt;Source&lt;/a&gt;&lt;/p&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;img style="width: 240px" src="https://pub-646d808d9cb240cea53bedc76dd3cd0c.r2.dev/unwrapped-2023.gif" /&gt; &lt;p&gt;GitHub Unwrapped - Personalized Year in Review &lt;a href="https://www.githubunwrapped.com"&gt;Try&lt;/a&gt; • &lt;a href="https://github.com/remotion-dev/github-unwrapped"&gt;Source&lt;/a&gt;&lt;/p&gt; &lt;/td&gt; 
+   &lt;td align="center"&gt; &lt;em&gt;View more in the &lt;a href="https://remotion.dev/showcase"&gt;Remotion Showcase&lt;/a&gt;!&lt;/em&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;Get started&lt;/h2&gt; 
+&lt;p&gt;If you already have Node.JS installed, type&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-console"&gt;npx create-video@latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;to get started. Otherwise, read the &lt;a href="https://www.remotion.dev/docs/"&gt;installation page&lt;/a&gt; in the documentation.&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Documentation: &lt;a href="https://www.remotion.dev/docs"&gt;&lt;strong&gt;remotion.dev/docs&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt; API Reference: &lt;a href="https://www.remotion.dev/api"&gt;&lt;strong&gt;remotion.dev/api&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;Be aware of that Remotion has a special license and requires obtaining a company license in some cases. Read the &lt;a href="https://raw.githubusercontent.com/remotion-dev/remotion/main/LICENSE.md"&gt;LICENSE&lt;/a&gt; page for more information.&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Please read &lt;a href="https://raw.githubusercontent.com/remotion-dev/remotion/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; to learn about contributing to this project.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>badlogic/pi-mono</title>
+      <link>https://github.com/badlogic/pi-mono</link>
+      <description>&lt;p&gt;AI agent toolkit: coding agent CLI, unified LLM API, TUI &amp; web UI libraries, Slack bot, vLLM pods&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://shittycodingagent.ai"&gt; &lt;img src="https://shittycodingagent.ai/logo.svg?sanitize=true" alt="pi logo" width="128" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://discord.com/invite/nKXTsAcmbT"&gt;&lt;img alt="Discord" src="https://img.shields.io/badge/discord-community-5865F2?style=flat-square&amp;amp;logo=discord&amp;amp;logoColor=white" /&gt;&lt;/a&gt; &lt;a href="https://github.com/badlogic/pi-mono/actions/workflows/ci.yml"&gt;&lt;img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/badlogic/pi-mono/ci.yml?style=flat-square&amp;amp;branch=main" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h1&gt;Pi Monorepo&lt;/h1&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Looking for the pi coding agent?&lt;/strong&gt; See &lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/coding-agent"&gt;packages/coding-agent&lt;/a&gt;&lt;/strong&gt; for installation and usage.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Tools for building AI agents and managing LLM deployments.&lt;/p&gt; 
+&lt;h2&gt;Packages&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Package&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/ai"&gt;@mariozechner/pi-ai&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Unified multi-provider LLM API (OpenAI, Anthropic, Google, etc.)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/agent"&gt;@mariozechner/pi-agent-core&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Agent runtime with tool calling and state management&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/coding-agent"&gt;@mariozechner/pi-coding-agent&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Interactive coding agent CLI&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/mom"&gt;@mariozechner/pi-mom&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Slack bot that delegates messages to the pi coding agent&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/tui"&gt;@mariozechner/pi-tui&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Terminal UI library with differential rendering&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/web-ui"&gt;@mariozechner/pi-web-ui&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Web components for AI chat interfaces&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/pods"&gt;@mariozechner/pi-pods&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;CLI for managing vLLM deployments on GPU pods&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for contribution guidelines and &lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/AGENTS.md"&gt;AGENTS.md&lt;/a&gt; for project-specific rules (for both humans and agents).&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install          # Install all dependencies
+npm run build        # Build all packages
+npm run check        # Lint, format, and type check
+./test.sh            # Run tests (skips LLM-dependent tests without API keys)
+./pi-test.sh         # Run pi from sources (must be run from repo root)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;code&gt;npm run check&lt;/code&gt; requires &lt;code&gt;npm run build&lt;/code&gt; to be run first. The web-ui package uses &lt;code&gt;tsc&lt;/code&gt; which needs compiled &lt;code&gt;.d.ts&lt;/code&gt; files from dependencies.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>simstudioai/sim</title>
+      <link>https://github.com/simstudioai/sim</link>
+      <description>&lt;p&gt;Open-source platform to build and deploy AI agent workflows.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://sim.ai" target="_blank" rel="noopener noreferrer"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/logo/reverse/text/large.png" alt="Sim Logo" width="500" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;Build and deploy AI agent workflows in minutes.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://sim.ai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/sim.ai-6F3DFA" alt="Sim.ai" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/Hr4UWYEcTT" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/Discord-Join%20Server-5865F2?logo=discord&amp;amp;logoColor=white" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://x.com/simdotai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/twitter/follow/simdotai?style=social" alt="Twitter" /&gt;&lt;/a&gt; &lt;a href="https://docs.sim.ai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/Docs-6F3DFA.svg?sanitize=true" alt="Documentation" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://deepwiki.com/simstudioai/sim" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" alt="Ask DeepWiki" /&gt;&lt;/a&gt; &lt;a href="https://cursor.com/link/prompt?text=Help%20me%20set%20up%20Sim%20locally.%20Follow%20these%20steps%3A%0A%0A1.%20First%2C%20verify%20Docker%20is%20installed%20and%20running%3A%0A%20%20%20docker%20--version%0A%20%20%20docker%20info%0A%0A2.%20Clone%20the%20repository%3A%0A%20%20%20git%20clone%20https%3A%2F%2Fgithub.com%2Fsimstudioai%2Fsim.git%0A%20%20%20cd%20sim%0A%0A3.%20Start%20the%20services%20with%20Docker%20Compose%3A%0A%20%20%20docker%20compose%20-f%20docker-compose.prod.yml%20up%20-d%0A%0A4.%20Wait%20for%20all%20containers%20to%20be%20healthy%20(this%20may%20take%201-2%20minutes)%3A%0A%20%20%20docker%20compose%20-f%20docker-compose.prod.yml%20ps%0A%0A5.%20Verify%20the%20app%20is%20accessible%20at%20http%3A%2F%2Flocalhost%3A3000%0A%0AIf%20there%20are%20any%20errors%2C%20help%20me%20troubleshoot%20them.%20Common%20issues%3A%0A-%20Port%203000%2C%203002%2C%20or%205432%20already%20in%20use%0A-%20Docker%20not%20running%0A-%20Insufficient%20memory%20(needs%2012GB%2B%20RAM)%0A%0AFor%20local%20AI%20models%20with%20Ollama%2C%20use%20this%20instead%20of%20step%203%3A%0A%20%20%20docker%20compose%20-f%20docker-compose.ollama.yml%20--profile%20setup%20up%20-d"&gt;&lt;img src="https://img.shields.io/badge/Set%20Up%20with-Cursor-000000?logo=cursor&amp;amp;logoColor=white" alt="Set Up with Cursor" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h3&gt;Build Workflows with Ease&lt;/h3&gt; 
+&lt;p&gt;Design agent workflows visually on a canvas—connect agents, tools, and blocks, then run them instantly.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/static/workflow.gif" alt="Workflow Builder Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;h3&gt;Supercharge with Copilot&lt;/h3&gt; 
+&lt;p&gt;Leverage Copilot to generate nodes, fix errors, and iterate on flows directly from natural language.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/static/copilot.gif" alt="Copilot Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;h3&gt;Integrate Vector Databases&lt;/h3&gt; 
+&lt;p&gt;Upload documents to a vector store and let agents answer questions grounded in your specific content.&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/public/static/knowledge.gif" alt="Knowledge Uploads and Retrieval Demo" width="800" /&gt; &lt;/p&gt; 
+&lt;h2&gt;Quickstart&lt;/h2&gt; 
+&lt;h3&gt;Cloud-hosted: &lt;a href="https://sim.ai"&gt;sim.ai&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://sim.ai" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://img.shields.io/badge/sim.ai-6F3DFA?logo=data:image/svg%2bxml;base64,PHN2ZyB3aWR0aD0iNjE2IiBoZWlnaHQ9IjYxNiIgdmlld0JveD0iMCAwIDYxNiA2MTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8xMTU5XzMxMykiPgo8cGF0aCBkPSJNNjE2IDBIMFY2MTZINjE2VjBaIiBmaWxsPSIjNkYzREZBIi8+CjxwYXRoIGQ9Ik04MyAzNjUuNTY3SDExM0MxMTMgMzczLjgwNSAxMTYgMzgwLjM3MyAxMjIgMzg1LjI3MkMxMjggMzg5Ljk0OCAxMzYuMTExIDM5Mi4yODUgMTQ2LjMzMyAzOTIuMjg1QzE1Ny40NDQgMzkyLjI4NSAxNjYgMzkwLjE3MSAxNzIgMzg1LjkzOUMxNzcuOTk5IDM4MS40ODcgMTgxIDM3NS41ODYgMTgxIDM2OC4yMzlDMTgxIDM2Mi44OTUgMTc5LjMzMyAzNTguNDQyIDE3NiAzNTQuODhDMTcyLjg4OSAzNTEuMzE4IDE2Ny4xMTEgMzQ4LjQyMiAxNTguNjY3IDM0Ni4xOTZMMTMwIDMzOS41MTdDMTE1LjU1NSAzMzUuOTU1IDEwNC43NzggMzMwLjQ5OSA5Ny42NjY1IDMyMy4xNTFDOTAuNzc3NSAzMTUuODA0IDg3LjMzMzQgMzA2LjExOSA4Ny4zMzM0IDI5NC4wOTZDODcuMzMzNCAyODQuMDc2IDg5Ljg4OSAyNzUuMzkyIDk0Ljk5OTYgMjY4LjA0NUMxMDAuMzMzIDI2MC42OTcgMTA3LjU1NSAyNTUuMDIgMTE2LjY2NiAyNTEuMDEyQzEyNiAyNDcuMDA0IDEzNi42NjcgMjQ1IDE0OC42NjYgMjQ1QzE2MC42NjcgMjQ1IDE3MSAyNDcuMTE2IDE3OS42NjcgMjUxLjM0NkMxODguNTU1IDI1NS41NzYgMTk1LjQ0NCAyNjEuNDc3IDIwMC4zMzMgMjY5LjA0N0MyMDUuNDQ0IDI3Ni42MTcgMjA4LjExMSAyODUuNjM0IDIwOC4zMzMgMjk2LjA5OUgxNzguMzMzQzE3OC4xMTEgMjg3LjYzOCAxNzUuMzMzIDI4MS4wNyAxNjkuOTk5IDI3Ni4zOTRDMTY0LjY2NiAyNzEuNzE5IDE1Ny4yMjIgMjY5LjM4MSAxNDcuNjY3IDI2OS4zODFDMTM3Ljg4OSAyNjkuMzgxIDEzMC4zMzMgMjcxLjQ5NiAxMjUgMjc1LjcyNkMxMTkuNjY2IDI3OS45NTcgMTE3IDI4NS43NDYgMTE3IDI5My4wOTNDMTE3IDMwNC4wMDMgMTI1IDMxMS40NjIgMTQxIDMxNS40N0wxNjkuNjY3IDMyMi40ODNDMTgzLjQ0NSAzMjUuNiAxOTMuNzc4IDMzMC43MjIgMjAwLjY2NyAzMzcuODQ3QzIwNy41NTUgMzQ0Ljc0OSAyMTEgMzU0LjIxMiAyMTEgMzY2LjIzNUMyMTEgMzc2LjQ3NyAyMDguMjIyIDM4NS40OTQgMjAyLjY2NiAzOTMuMjg3QzE5Ny4xMTEgNDAwLjg1NyAxODkuNDQ0IDQwNi43NTggMTc5LjY2NyA0MTAuOTg5QzE3MC4xMTEgNDE0Ljk5NiAxNTguNzc4IDQxNyAxNDUuNjY3IDQxN0MxMjYuNTU1IDQxNyAxMTEuMzMzIDQxMi4zMjUgOTkuOTk5NyA0MDIuOTczQzg4LjY2NjggMzkzLjYyMSA4MyAzODEuMTUzIDgzIDM2NS41NjdaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjMyLjI5MSA0MTNWMjUwLjA4MkMyNDQuNjg0IDI1NC42MTQgMjUwLjE0OCAyNTQuNjE0IDI2My4zNzEgMjUwLjA4MlY0MTNIMjMyLjI5MVpNMjQ3LjUgMjM5LjMxM0MyNDEuOTkgMjM5LjMxMyAyMzcuMTQgMjM3LjMxMyAyMzIuOTUyIDIzMy4zMTZDMjI4Ljk4NCAyMjkuMDk1IDIyNyAyMjQuMjA5IDIyNyAyMTguNjU2QzIyNyAyMTIuODgyIDIyOC45ODQgMjA3Ljk5NSAyMzIuOTUyIDIwMy45OTdDMjM3LjE0IDE5OS45OTkgMjQxLjk5IDE5OCAyNDcuNSAxOThDMjUzLjIzMSAxOTggMjU4LjA4IDE5OS45OTkgMjYyLjA0OSAyMDMuOTk3QzI2Ni4wMTYgMjA3Ljk5NSAyNjggMjEyLjg4MiAyNjggMjE4LjY1NkMyNjggMjI0LjIwOSAyNjYuMDE2IDIyOS4wOTUgMjYyLjA0OSAyMzMuMzE2QzI1OC4wOCAyMzcuMzEzIDI1My4yMzEgMjM5LjMxMyAyNDcuNSAyMzkuMzEzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTMxOS4zMzMgNDEzSDI4OFYyNDkuNjc2SDMxNlYyNzcuMjMzQzMxOS4zMzMgMjY4LjEwNCAzMjUuNzc4IDI2MC4zNjQgMzM0LjY2NyAyNTQuMzUyQzM0My43NzggMjQ4LjExNyAzNTQuNzc4IDI0NSAzNjcuNjY3IDI0NUMzODIuMTExIDI0NSAzOTQuMTEyIDI0OC44OTcgNDAzLjY2NyAyNTYuNjlDNDEzLjIyMiAyNjQuNDg0IDQxOS40NDQgMjc0LjgzNyA0MjIuMzM0IDI4Ny43NTJINDE2LjY2N0M0MTguODg5IDI3NC44MzcgNDI1IDI2NC40ODQgNDM1IDI1Ni42OUM0NDUgMjQ4Ljg5NyA0NTcuMzM0IDI0NSA0NzIgMjQ1QzQ5MC42NjYgMjQ1IDUwNS4zMzQgMjUwLjQ1NSA1MTYgMjYxLjM2NkM1MjYuNjY3IDI3Mi4yNzYgNTMyIDI4Ny4xOTUgNTMyIDMwNi4xMjFWNDEzSDUwMS4zMzNWMzEzLjgwNEM1MDEuMzMzIDMwMC44ODkgNDk4IDI5MC45ODEgNDkxLjMzMyAyODQuMDc4QzQ4NC44ODkgMjc2Ljk1MiA0NzYuMTExIDI3My4zOSA0NjUgMjczLjM5QzQ1Ny4yMjIgMjczLjM5IDQ1MC4zMzMgMjc1LjE3MSA0NDQuMzM0IDI3OC43MzRDNDM4LjU1NiAyODIuMDc0IDQzNCAyODYuOTcyIDQzMC42NjcgMjkzLjQzQzQyNy4zMzMgMjk5Ljg4NyA0MjUuNjY3IDMwNy40NTcgNDI1LjY2NyAzMTYuMTQxVjQxM0gzOTQuNjY3VjMxMy40NjlDMzk0LjY2NyAzMDAuNTU1IDM5MS40NDUgMjkwLjc1OCAzODUgMjg0LjA3OEMzNzguNTU2IDI3Ny4xNzUgMzY5Ljc3OCAyNzMuNzI0IDM1OC42NjcgMjczLjcyNEMzNTAuODg5IDI3My43MjQgMzQ0IDI3NS41MDUgMzM4IDI3OS4wNjhDMzMyLjIyMiAyODIuNDA4IDMyNy42NjcgMjg3LjMwNyAzMjQuMzMzIDI5My43NjNDMzIxIDI5OS45OTggMzE5LjMzMyAzMDcuNDU3IDMxOS4zMzMgMzE2LjE0MVY0MTNaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzExNTlfMzEzIj4KPHJlY3Qgd2lkdGg9IjYxNiIgaGVpZ2h0PSI2MTYiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==&amp;amp;logoColor=white" alt="Sim.ai" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Self-hosted: NPM Package&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npx simstudio
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;→ &lt;a href="http://localhost:3000"&gt;http://localhost:3000&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;Note&lt;/h4&gt; 
+&lt;p&gt;Docker must be installed and running on your machine.&lt;/p&gt; 
+&lt;h4&gt;Options&lt;/h4&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Flag&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;-p, --port &amp;lt;port&amp;gt;&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Port to run Sim on (default &lt;code&gt;3000&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;--no-pull&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Skip pulling latest Docker images&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Self-hosted: Docker Compose&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/simstudioai/sim.git &amp;amp;&amp;amp; cd sim
+docker compose -f docker-compose.prod.yml up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Open &lt;a href="http://localhost:3000"&gt;http://localhost:3000&lt;/a&gt;&lt;/p&gt; 
+&lt;h4&gt;Using Local Models with Ollama&lt;/h4&gt; 
+&lt;p&gt;Run Sim with local AI models using &lt;a href="https://ollama.ai"&gt;Ollama&lt;/a&gt; - no external APIs required:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Start with GPU support (automatically downloads gemma3:4b model)
+docker compose -f docker-compose.ollama.yml --profile setup up -d
+
+# For CPU-only systems:
+docker compose -f docker-compose.ollama.yml --profile cpu --profile setup up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Wait for the model to download, then visit &lt;a href="http://localhost:3000"&gt;http://localhost:3000&lt;/a&gt;. Add more models with:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker compose -f docker-compose.ollama.yml exec ollama ollama pull llama3.1:8b
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Using an External Ollama Instance&lt;/h4&gt; 
+&lt;p&gt;If Ollama is running on your host machine, use &lt;code&gt;host.docker.internal&lt;/code&gt; instead of &lt;code&gt;localhost&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;OLLAMA_URL=http://host.docker.internal:11434 docker compose -f docker-compose.prod.yml up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;On Linux, use your host's IP address or add &lt;code&gt;extra_hosts: ["host.docker.internal:host-gateway"]&lt;/code&gt; to the compose file.&lt;/p&gt; 
+&lt;h4&gt;Using vLLM&lt;/h4&gt; 
+&lt;p&gt;Sim supports &lt;a href="https://docs.vllm.ai/"&gt;vLLM&lt;/a&gt; for self-hosted models. Set &lt;code&gt;VLLM_BASE_URL&lt;/code&gt; and optionally &lt;code&gt;VLLM_API_KEY&lt;/code&gt; in your environment.&lt;/p&gt; 
+&lt;h3&gt;Self-hosted: Dev Containers&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Open VS Code with the &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers"&gt;Remote - Containers extension&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Open the project and click "Reopen in Container" when prompted&lt;/li&gt; 
+ &lt;li&gt;Run &lt;code&gt;bun run dev:full&lt;/code&gt; in the terminal or use the &lt;code&gt;sim-start&lt;/code&gt; alias 
+  &lt;ul&gt; 
+   &lt;li&gt;This starts both the main application and the realtime socket server&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Self-hosted: Manual Setup&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt; &lt;a href="https://bun.sh/"&gt;Bun&lt;/a&gt;, &lt;a href="https://nodejs.org/"&gt;Node.js&lt;/a&gt; v20+, PostgreSQL 12+ with &lt;a href="https://github.com/pgvector/pgvector"&gt;pgvector&lt;/a&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Clone and install:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/simstudioai/sim.git
+cd sim
+bun install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Set up PostgreSQL with pgvector:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run --name simstudio-db -e POSTGRES_PASSWORD=your_password -e POSTGRES_DB=simstudio -p 5432:5432 -d pgvector/pgvector:pg17
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Or install manually via the &lt;a href="https://github.com/pgvector/pgvector#installation"&gt;pgvector guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;Configure environment:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cp apps/sim/.env.example apps/sim/.env
+cp packages/db/.env.example packages/db/.env
+# Edit both .env files to set DATABASE_URL="postgresql://postgres:your_password@localhost:5432/simstudio"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="4"&gt; 
+ &lt;li&gt;Run migrations:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd packages/db &amp;amp;&amp;amp; bunx drizzle-kit migrate --config=./drizzle.config.ts
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="5"&gt; 
+ &lt;li&gt;Start development servers:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun run dev:full  # Starts both Next.js app and realtime socket server
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Or run separately: &lt;code&gt;bun run dev&lt;/code&gt; (Next.js) and &lt;code&gt;cd apps/sim &amp;amp;&amp;amp; bun run dev:sockets&lt;/code&gt; (realtime).&lt;/p&gt; 
+&lt;h2&gt;Copilot API Keys&lt;/h2&gt; 
+&lt;p&gt;Copilot is a Sim-managed service. To use Copilot on a self-hosted instance:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Go to &lt;a href="https://sim.ai"&gt;https://sim.ai&lt;/a&gt; → Settings → Copilot and generate a Copilot API key&lt;/li&gt; 
+ &lt;li&gt;Set &lt;code&gt;COPILOT_API_KEY&lt;/code&gt; environment variable in your self-hosted apps/sim/.env file to that value&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Environment Variables&lt;/h2&gt; 
+&lt;p&gt;Key environment variables for self-hosted deployments. See &lt;a href="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/.env.example"&gt;&lt;code&gt;.env.example&lt;/code&gt;&lt;/a&gt; for defaults or &lt;a href="https://raw.githubusercontent.com/simstudioai/sim/main/apps/sim/lib/core/config/env.ts"&gt;&lt;code&gt;env.ts&lt;/code&gt;&lt;/a&gt; for the full list.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Variable&lt;/th&gt; 
+   &lt;th&gt;Required&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;DATABASE_URL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;PostgreSQL connection string with pgvector&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;BETTER_AUTH_SECRET&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Auth secret (&lt;code&gt;openssl rand -hex 32&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;BETTER_AUTH_URL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Your app URL (e.g., &lt;code&gt;http://localhost:3000&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;NEXT_PUBLIC_APP_URL&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Public app URL (same as above)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;ENCRYPTION_KEY&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Encrypts environment variables (&lt;code&gt;openssl rand -hex 32&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;INTERNAL_API_SECRET&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Encrypts internal API routes (&lt;code&gt;openssl rand -hex 32&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;API_ENCRYPTION_KEY&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;Yes&lt;/td&gt; 
+   &lt;td&gt;Encrypts API keys (&lt;code&gt;openssl rand -hex 32&lt;/code&gt;)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;code&gt;COPILOT_API_KEY&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;No&lt;/td&gt; 
+   &lt;td&gt;API key from sim.ai for Copilot features&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Troubleshooting&lt;/h2&gt; 
+&lt;h3&gt;Ollama models not showing in dropdown (Docker)&lt;/h3&gt; 
+&lt;p&gt;If you're running Ollama on your host machine and Sim in Docker, change &lt;code&gt;OLLAMA_URL&lt;/code&gt; from &lt;code&gt;localhost&lt;/code&gt; to &lt;code&gt;host.docker.internal&lt;/code&gt;:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;OLLAMA_URL=http://host.docker.internal:11434 docker compose -f docker-compose.prod.yml up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/simstudioai/sim/main/#using-an-external-ollama-instance"&gt;Using an External Ollama Instance&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;h3&gt;Database connection issues&lt;/h3&gt; 
+&lt;p&gt;Ensure PostgreSQL has the pgvector extension installed. When using Docker, wait for the database to be healthy before running migrations.&lt;/p&gt; 
+&lt;h3&gt;Port conflicts&lt;/h3&gt; 
+&lt;p&gt;If ports 3000, 3002, or 5432 are in use, configure alternatives:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Custom ports
+NEXT_PUBLIC_APP_URL=http://localhost:3100 POSTGRES_PORT=5433 docker compose up -d
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Tech Stack&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Framework&lt;/strong&gt;: &lt;a href="https://nextjs.org/"&gt;Next.js&lt;/a&gt; (App Router)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Runtime&lt;/strong&gt;: &lt;a href="https://bun.sh/"&gt;Bun&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Database&lt;/strong&gt;: PostgreSQL with &lt;a href="https://orm.drizzle.team"&gt;Drizzle ORM&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Authentication&lt;/strong&gt;: &lt;a href="https://better-auth.com"&gt;Better Auth&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;UI&lt;/strong&gt;: &lt;a href="https://ui.shadcn.com/"&gt;Shadcn&lt;/a&gt;, &lt;a href="https://tailwindcss.com"&gt;Tailwind CSS&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;State Management&lt;/strong&gt;: &lt;a href="https://zustand-demo.pmnd.rs/"&gt;Zustand&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Flow Editor&lt;/strong&gt;: &lt;a href="https://reactflow.dev/"&gt;ReactFlow&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Docs&lt;/strong&gt;: &lt;a href="https://fumadocs.vercel.app/"&gt;Fumadocs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Monorepo&lt;/strong&gt;: &lt;a href="https://turborepo.org/"&gt;Turborepo&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Realtime&lt;/strong&gt;: &lt;a href="https://socket.io/"&gt;Socket.io&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Background Jobs&lt;/strong&gt;: &lt;a href="https://trigger.dev/"&gt;Trigger.dev&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Remote Code Execution&lt;/strong&gt;: &lt;a href="https://www.e2b.dev/"&gt;E2B&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions! Please see our &lt;a href="https://raw.githubusercontent.com/simstudioai/sim/main/.github/CONTRIBUTING.md"&gt;Contributing Guide&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the Apache License 2.0 - see the &lt;a href="https://raw.githubusercontent.com/simstudioai/sim/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for details.&lt;/p&gt; 
+&lt;p align="center"&gt;Made with ❤️ by the Sim Team&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>afkarxyz/SpotiFLAC</title>
+      <link>https://github.com/afkarxyz/SpotiFLAC</link>
+      <description>&lt;p&gt;Get Spotify tracks in true FLAC from Tidal, Qobuz &amp; Amazon Music — no account required.&lt;/p&gt;&lt;hr&gt;&lt;p&gt;&lt;a href="https://github.com/afkarxyz/SpotiFLAC/releases"&gt;&lt;img src="https://img.shields.io/github/downloads/afkarxyz/SpotiFLAC/total?style=for-the-badge" alt="GitHub All Releases" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;!-- ![Maintenance](https://maintenance.afkarxyz.fun?v=3) --&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/a6e92fdd-2944-45c1-83e8-e23a26c827af" alt="Image" /&gt;&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;p&gt;Get Spotify tracks in true FLAC from Tidal, Qobuz &amp;amp; Amazon Music — no account required.&lt;/p&gt; 
+ &lt;p&gt;&lt;img src="https://img.shields.io/badge/Windows-10%2B-0078D6?style=for-the-badge&amp;amp;logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgMjAgMjAiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTIwIDEwLjg3M1YyMEw4LjQ3OSAxOC41MzdsLjAwMS03LjY2NEgyMFptLTEzLjEyIDBsLS4wMDEgNy40NjFMMCAxNy40NjF2LTYuNTg4aDYuODhaTTIwIDkuMjczSDguNDhsLS4wMDEtNy44MUwyMCAwdjkuMjczWk02Ljg3OSAxLjY2NmwuMDAxIDcuNjA3SDBWMi41MzlsNi44NzktLjg3M1oiLz48L3N2Zz4=" alt="Windows" /&gt; &lt;img src="https://img.shields.io/badge/macOS-10.13%2B-000000?style=for-the-badge&amp;amp;logo=apple&amp;amp;logoColor=white" alt="macOS" /&gt; &lt;img src="https://img.shields.io/badge/Linux-Any-FCC624?style=for-the-badge&amp;amp;logo=linux&amp;amp;logoColor=white" alt="Linux" /&gt;&lt;/p&gt; 
+ &lt;p&gt;&lt;a href="https://trendshift.io/repositories/15737" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/15737" alt="afkarxyz%2FSpotiFLAC | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;h3&gt;&lt;a href="https://github.com/afkarxyz/SpotiFLAC/releases"&gt;Download&lt;/a&gt;&lt;/h3&gt; 
+&lt;h2&gt;Screenshot&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://github.com/user-attachments/assets/adbdc056-bace-44a9-8ba6-898b4526b65a" alt="Image" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Other projects&lt;/h2&gt; 
+&lt;h3&gt;&lt;a href="https://github.com/spotiverse/SpotiFLAC-Next"&gt;SpotiFLAC Next&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;Get Spotify tracks in Hi-Res lossless FLACs — no account required.&lt;/p&gt; 
+&lt;h3&gt;&lt;a href="https://github.com/afkarxyz/SpotiDownloader"&gt;SpotiDownloader&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;Get Spotify tracks in MP3 and FLAC via spotidownloader.com&lt;/p&gt; 
+&lt;h3&gt;&lt;a href="https://spotubedl.com"&gt;SpotubeDL&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;Download Spotify Tracks, Albums, Playlists as MP3/OGG/Opus with High Quality.&lt;/p&gt; 
+&lt;h3&gt;&lt;a href="https://github.com/zarzet/SpotiFLAC-Mobile"&gt;SpotiFLAC (Mobile)&lt;/a&gt;&lt;/h3&gt; 
+&lt;p&gt;SpotiFLAC for Android &amp;amp; iOS — maintained by &lt;a href="https://github.com/zarzet"&gt;@zarzet&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;FAQ&lt;/h2&gt; 
+&lt;h3&gt;Is this software free?&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;Yes. This software is completely free. You do not need an account, login, or subscription. All you need is an internet connection.&lt;/em&gt;&lt;/p&gt; 
+&lt;h3&gt;Can using this software get my Spotify account suspended or banned?&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;No. This software has no connection to your Spotify account. Spotify data is obtained through reverse engineering of the Spotify Web Player, not through user authentication.&lt;/em&gt;&lt;/p&gt; 
+&lt;h3&gt;Where does the audio come from?&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;The audio is fetched using third-party APIs.&lt;/em&gt;&lt;/p&gt; 
+&lt;h3&gt;Why does metadata fetching sometimes fail?&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;This usually happens because your IP address has been rate-limited. You can wait and try again later, or use a VPN to bypass the rate limit.&lt;/em&gt;&lt;/p&gt; 
+&lt;h3&gt;Why does Windows Defender or antivirus flag or delete the file?&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;This is a false positive. It likely happens because the executable is compressed using UPX.&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;If you are concerned, you can fork the repository and build the software yourself from source.&lt;/em&gt;&lt;/p&gt; 
+&lt;h3&gt;Want to support the project?&lt;/h3&gt; 
+&lt;p&gt;&lt;em&gt;If this software is useful and brings you value, consider supporting the project by buying me a coffee. Your support helps keep development going.&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://ko-fi.com/afkarxyz"&gt;&lt;img src="https://ko-fi.com/img/githubbutton_sm.svg?sanitize=true" alt="Ko-fi" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Disclaimer&lt;/h2&gt; 
+&lt;p&gt;This project is for &lt;strong&gt;educational and private use only&lt;/strong&gt;. The developer does not condone or encourage copyright infringement.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;SpotiFLAC&lt;/strong&gt; is a third-party tool and is not affiliated with, endorsed by, or connected to Spotify, Tidal, Qobuz, Amazon Music, or any other streaming service.&lt;/p&gt; 
+&lt;p&gt;You are solely responsible for:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Ensuring your use of this software complies with your local laws.&lt;/li&gt; 
+ &lt;li&gt;Reading and adhering to the Terms of Service of the respective platforms.&lt;/li&gt; 
+ &lt;li&gt;Any legal consequences resulting from the misuse of this tool.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;The software is provided "as is", without warranty of any kind. The author assumes no liability for any bans, damages, or legal issues arising from its use.&lt;/p&gt; 
+&lt;h2&gt;API Credits&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Tidal&lt;/strong&gt;: &lt;a href="https://github.com/binimum/hifi-api"&gt;hifi-api&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Qobuz&lt;/strong&gt;: &lt;a href="https://dabmusic.xyz"&gt;dabmusic.xyz&lt;/a&gt;, &lt;a href="https://squid.wtf"&gt;squid.wtf&lt;/a&gt;, &lt;a href="https://jumo-dl.pages.dev/"&gt;jumo-dl&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP]&lt;/p&gt; 
+ &lt;p&gt;&lt;strong&gt;Star Us&lt;/strong&gt;, You will receive all release notifications from GitHub without any delay ~&lt;/p&gt; 
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>caelestia-dots/caelestia</title>
+      <link>https://github.com/caelestia-dots/caelestia</link>
+      <description>&lt;p&gt;A very segsy rice&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;caelestia&lt;/h1&gt; 
+&lt;p&gt;This is the main repo of the caelestia dots and contains the user configs for apps. This repo also includes an install script to install the entire dots.&lt;/p&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;Simply clone this repo and run the install script (you need &lt;a href="https://github.com/fish-shell/fish-shell"&gt;&lt;code&gt;fish&lt;/code&gt;&lt;/a&gt; installed).&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!WARNING] The install script symlinks all configs into place, so you CANNOT move/remove the repo folder once you run the install script. If you do, most apps will not behave properly and some (e.g. Hyprland) will fail to start completely. I recommend cloning the repo to &lt;code&gt;~/.local/share/caelestia&lt;/code&gt;.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;The install script has some options for installing configs for some apps.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;$ ./install.fish -h
+usage: ./install.sh [-h] [--noconfirm] [--spotify] [--vscode] [--discord] [--aur-helper]
+
+options:
+  -h, --help                  show this help message and exit
+  --noconfirm                 do not confirm package installation
+  --spotify                   install Spotify (Spicetify)
+  --vscode=[codium|code]      install VSCodium (or VSCode)
+  --discord                   install Discord (OpenAsar + Equicord)
+  --zen                       install Zen browser
+  --aur-helper=[yay|paru]     the AUR helper to use
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For example:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;git clone https://github.com/caelestia-dots/caelestia.git ~/.local/share/caelestia
+~/.local/share/caelestia/install.fish
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Manual installation&lt;/h3&gt; 
+&lt;p&gt;Dependencies:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;hyprland&lt;/li&gt; 
+ &lt;li&gt;xdg-desktop-portal-hyprland&lt;/li&gt; 
+ &lt;li&gt;xdg-desktop-portal-gtk&lt;/li&gt; 
+ &lt;li&gt;hyprpicker&lt;/li&gt; 
+ &lt;li&gt;wl-clipboard&lt;/li&gt; 
+ &lt;li&gt;cliphist&lt;/li&gt; 
+ &lt;li&gt;inotify-tools&lt;/li&gt; 
+ &lt;li&gt;app2unit&lt;/li&gt; 
+ &lt;li&gt;wireplumber&lt;/li&gt; 
+ &lt;li&gt;trash-cli&lt;/li&gt; 
+ &lt;li&gt;foot&lt;/li&gt; 
+ &lt;li&gt;fish&lt;/li&gt; 
+ &lt;li&gt;fastfetch&lt;/li&gt; 
+ &lt;li&gt;starship&lt;/li&gt; 
+ &lt;li&gt;btop&lt;/li&gt; 
+ &lt;li&gt;jq&lt;/li&gt; 
+ &lt;li&gt;eza&lt;/li&gt; 
+ &lt;li&gt;adw-gtk-theme&lt;/li&gt; 
+ &lt;li&gt;papirus-icon-theme&lt;/li&gt; 
+ &lt;li&gt;qt5ct-kde&lt;/li&gt; 
+ &lt;li&gt;qt6ct-kde&lt;/li&gt; 
+ &lt;li&gt;ttf-jetbrains-mono-nerd&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Install all dependencies and follow the installation guides of the &lt;a href="https://github.com/caelestia-dots/shell"&gt;shell&lt;/a&gt; and &lt;a href="https://github.com/caelestia-dots/cli"&gt;cli&lt;/a&gt; to install them.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] If on Arch or an Arch-based distro, there is a meta package available &lt;a href="https://raw.githubusercontent.com/caelestia-dots/caelestia/main/PKGBUILD"&gt;in this repository&lt;/a&gt; that pulls in all dependencies. It can be installed through the install script, makepkg/pacman, yay, paru, or your preferred AUR helper.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Then copy or symlink the &lt;code&gt;hypr&lt;/code&gt;, &lt;code&gt;foot&lt;/code&gt;, &lt;code&gt;fish&lt;/code&gt;, &lt;code&gt;fastfetch&lt;/code&gt;, &lt;code&gt;uwsm&lt;/code&gt; and &lt;code&gt;btop&lt;/code&gt; folders to the &lt;code&gt;$XDG_CONFIG_HOME&lt;/code&gt; (usually &lt;code&gt;~/.config&lt;/code&gt;) directory. e.g. &lt;code&gt;hypr -&amp;gt; ~/.config/hypr&lt;/code&gt;. Copy &lt;code&gt;starship.toml&lt;/code&gt; to &lt;code&gt;$XDG_CONFIG_HOME/starship.toml&lt;/code&gt;.&lt;/p&gt; 
+&lt;h4&gt;Installing Spicetify configs:&lt;/h4&gt; 
+&lt;p&gt;Follow the Spicetify &lt;a href="https://spicetify.app/docs/advanced-usage/installation"&gt;installation instructions&lt;/a&gt;, copy or symlink the &lt;code&gt;spicetify&lt;/code&gt; folder to &lt;code&gt;$XDG_CONFIG_HOME/spicetify&lt;/code&gt; and run&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;spicetify config current_theme caelestia color_scheme caelestia custom_apps marketplace
+spicetify apply
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Installing VSCode/VSCodium configs:&lt;/h4&gt; 
+&lt;p&gt;Install VSCode or VSCodium, then copy or symlink &lt;code&gt;vscode/settings.json&lt;/code&gt; and &lt;code&gt;vscode/keybindings.json&lt;/code&gt; into the &lt;code&gt;$XDG_CONFIG_HOME/Code/User&lt;/code&gt; (or &lt;code&gt;$XDG_CONFIG_HOME/VSCodium/User&lt;/code&gt; if using VSCodium) folder. Then copy or symlink &lt;code&gt;vscode/flags.conf&lt;/code&gt; to &lt;code&gt;$XDG_CONFIG_HOME/code-flags.conf&lt;/code&gt; (or &lt;code&gt;$XDG_CONFIG_HOME/codium-flags.conf&lt;/code&gt; if using VSCodium).&lt;/p&gt; 
+&lt;p&gt;Finally, install the extension VSIX from &lt;code&gt;vscode/caelestia-vscode-integration&lt;/code&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-sh"&gt;# Use `codium` if using VSCodium
+code --install-extension vscode/caelestia-vscode-integration/caelestia-vscode-integration-*.vsix
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h4&gt;Installing Zen Browser configs:&lt;/h4&gt; 
+&lt;p&gt;Install Zen Browser, then copy or symlink &lt;code&gt;zen/userChrome.css&lt;/code&gt; to the &lt;code&gt;chrome&lt;/code&gt; folder in your profile of choice in &lt;code&gt;~/.zen&lt;/code&gt;. e.g. &lt;code&gt;zen/userChrome.css -&amp;gt; ~/.zen/&amp;lt;profile&amp;gt;/chrome/userChrome.css&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;Now install the native app by copying &lt;code&gt;zen/native_app/manifest.json&lt;/code&gt; to &lt;code&gt;~/.mozilla/native-messaging-hosts/caelestiafox.json&lt;/code&gt; and replacing the &lt;code&gt;{{ $lib }}&lt;/code&gt; string in it with the absolute path of &lt;code&gt;~/.local/lib/caelestia&lt;/code&gt; (this must be the absolute path, e.g. &lt;code&gt;/home/user/.local/lib/caelestia&lt;/code&gt;). Then copy or symlink &lt;code&gt;zen/native_app/app.fish&lt;/code&gt; to &lt;code&gt;~/.local/lib/caelestia/caelestiafox&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;Finally, install the CaelestiaFox extension from &lt;a href="https://addons.mozilla.org/en-US/firefox/addon/caelestiafox"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Updating&lt;/h2&gt; 
+&lt;p&gt;Simply run &lt;code&gt;yay&lt;/code&gt; to update the AUR packages, then &lt;code&gt;cd&lt;/code&gt; into the repo directory and run &lt;code&gt;git pull&lt;/code&gt; to update the configs.&lt;/p&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!NOTE] These dots do not contain a login manager (for now), so you must install a login manager yourself unless you want to log in from a TTY. I recommend &lt;a href="https://sr.ht/~kennylevinsen/greetd"&gt;&lt;code&gt;greetd&lt;/code&gt;&lt;/a&gt; with &lt;a href="https://github.com/apognu/tuigreet"&gt;&lt;code&gt;tuigreet&lt;/code&gt;&lt;/a&gt;, however you can use any login manager you want.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;There aren't really any usage instructions... these are a set of dotfiles.&lt;/p&gt; 
+&lt;p&gt;Here's a list of useful keybinds though:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;Super&lt;/code&gt; - open launcher&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Super&lt;/code&gt; + &lt;code&gt;#&lt;/code&gt; - switch to workspace &lt;code&gt;#&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Super&lt;/code&gt; &lt;code&gt;Alt&lt;/code&gt; + &lt;code&gt;#&lt;/code&gt; - move window to workspace &lt;code&gt;#&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Super&lt;/code&gt; + &lt;code&gt;T&lt;/code&gt; - open terminal (foot)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Super&lt;/code&gt; + &lt;code&gt;W&lt;/code&gt; - open browser (zen)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Super&lt;/code&gt; + &lt;code&gt;C&lt;/code&gt; - open IDE (vscodium)&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Super&lt;/code&gt; + &lt;code&gt;S&lt;/code&gt; - toggle special workspace or close current special workspace&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Ctrl&lt;/code&gt; &lt;code&gt;Alt&lt;/code&gt; + &lt;code&gt;Delete&lt;/code&gt; - open session menu&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Ctrl&lt;/code&gt; &lt;code&gt;Super&lt;/code&gt; + &lt;code&gt;Space&lt;/code&gt; - toggle media play state&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Ctrl&lt;/code&gt; &lt;code&gt;Super&lt;/code&gt; &lt;code&gt;Alt&lt;/code&gt; + &lt;code&gt;R&lt;/code&gt; - restart the shell&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>better-auth/better-auth</title>
+      <link>https://github.com/better-auth/better-auth</link>
+      <description>&lt;p&gt;The most comprehensive authentication framework for TypeScript&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; 
+ &lt;picture&gt; 
+  &lt;source srcset="./banner-dark.png" media="(prefers-color-scheme: dark)" /&gt; 
+  &lt;source srcset="./banner.png" media="(prefers-color-scheme: light)" /&gt; 
+  &lt;img src="https://raw.githubusercontent.com/better-auth/better-auth/canary/banner.png" alt="Better Auth Logo" /&gt; 
+ &lt;/picture&gt; &lt;/p&gt;
+&lt;h2 align="center"&gt; Better Auth &lt;/h2&gt; 
+&lt;p align="center"&gt; The most comprehensive authentication framework for TypeScript &lt;br /&gt; &lt;a href="https://better-auth.com"&gt;&lt;strong&gt;Learn more »&lt;/strong&gt;&lt;/a&gt; &lt;br /&gt; &lt;br /&gt; &lt;a href="https://discord.gg/better-auth"&gt;Discord&lt;/a&gt; · &lt;a href="https://better-auth.com"&gt;Website&lt;/a&gt; · &lt;a href="https://github.com/better-auth/better-auth/issues"&gt;Issues&lt;/a&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://npm.chart.dev/better-auth?primary=neutral&amp;amp;gray=neutral&amp;amp;theme=dark"&gt;&lt;img src="https://img.shields.io/npm/dm/better-auth?style=flat&amp;amp;colorA=000000&amp;amp;colorB=000000" alt="npm" /&gt;&lt;/a&gt; &lt;a href="https://www.npmjs.com/package/better-auth"&gt;&lt;img src="https://img.shields.io/npm/v/better-auth.svg?style=flat&amp;amp;colorA=000000&amp;amp;colorB=000000" alt="npm version" /&gt;&lt;/a&gt; &lt;a href="https://github.com/better-auth/better-auth/stargazers"&gt;&lt;img src="https://img.shields.io/github/stars/better-auth/better-auth?style=flat&amp;amp;colorA=000000&amp;amp;colorB=000000" alt="GitHub stars" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;/p&gt; 
+&lt;h2&gt;About the Project&lt;/h2&gt; 
+&lt;p&gt;Better Auth is framework-agnostic authentication (and authorization) library for TypeScript. It provides a comprehensive set of features out of the box and includes a plugin ecosystem that simplifies adding advanced functionalities with minimal code in a short amount of time. Whether you need 2FA, multi-tenant support, or other complex features. It lets you focus on building your actual application instead of reinventing the wheel.&lt;/p&gt; 
+&lt;h3&gt;Why Better Auth&lt;/h3&gt; 
+&lt;p&gt;Authentication in the TypeScript ecosystem is a half-solved problem. Other open-source libraries often require a lot of additional code for anything beyond basic authentication. Rather than just pushing third-party services as the solution, I believe we can do better as a community—hence, Better Auth.&lt;/p&gt; 
+&lt;h2&gt;Contribution&lt;/h2&gt; 
+&lt;p&gt;Better Auth is a free and open source project licensed under the &lt;a href="https://raw.githubusercontent.com/better-auth/better-auth/canary/LICENSE.md"&gt;MIT License&lt;/a&gt;. You are free to do whatever you want with it.&lt;/p&gt; 
+&lt;p&gt;You could help continuing its development by:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/better-auth/better-auth/canary/CONTRIBUTING.md"&gt;Contribute to the source code&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/better-auth/better-auth/issues"&gt;Suggest new features and report issues&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Security&lt;/h2&gt; 
+&lt;p&gt;If you discover a security vulnerability within Better Auth, please send an e-mail to &lt;a href="mailto:security@better-auth.com"&gt;security@better-auth.com&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;All reports will be promptly addressed, and you'll be credited accordingly.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
