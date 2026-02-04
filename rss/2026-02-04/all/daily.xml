@@ -1,0 +1,1820 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub All Languages Daily Trending</title>
+    <description>Daily Trending of All Languages in GitHub</description>
+    <pubDate>Tue, 03 Feb 2026 01:33:24 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>badlogic/pi-mono</title>
+      <link>https://github.com/badlogic/pi-mono</link>
+      <description>&lt;p&gt;AI agent toolkit: coding agent CLI, unified LLM API, TUI &amp; web UI libraries, Slack bot, vLLM pods&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; &lt;a href="https://shittycodingagent.ai"&gt; &lt;img src="https://shittycodingagent.ai/logo.svg?sanitize=true" alt="pi logo" width="128" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://discord.com/invite/3cU7Bz4UPx"&gt;&lt;img alt="Discord" src="https://img.shields.io/badge/discord-community-5865F2?style=flat-square&amp;amp;logo=discord&amp;amp;logoColor=white" /&gt;&lt;/a&gt; &lt;a href="https://github.com/badlogic/pi-mono/actions/workflows/ci.yml"&gt;&lt;img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/badlogic/pi-mono/ci.yml?style=flat-square&amp;amp;branch=main" /&gt;&lt;/a&gt; &lt;/p&gt; 
+&lt;h1&gt;Pi Monorepo&lt;/h1&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Looking for the pi coding agent?&lt;/strong&gt; See &lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/coding-agent"&gt;packages/coding-agent&lt;/a&gt;&lt;/strong&gt; for installation and usage.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Tools for building AI agents and managing LLM deployments.&lt;/p&gt; 
+&lt;h2&gt;Packages&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Package&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/ai"&gt;@mariozechner/pi-ai&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Unified multi-provider LLM API (OpenAI, Anthropic, Google, etc.)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/agent"&gt;@mariozechner/pi-agent-core&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Agent runtime with tool calling and state management&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/coding-agent"&gt;@mariozechner/pi-coding-agent&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Interactive coding agent CLI&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/mom"&gt;@mariozechner/pi-mom&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Slack bot that delegates messages to the pi coding agent&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/tui"&gt;@mariozechner/pi-tui&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Terminal UI library with differential rendering&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/web-ui"&gt;@mariozechner/pi-web-ui&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Web components for AI chat interfaces&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/pods"&gt;@mariozechner/pi-pods&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;CLI for managing vLLM deployments on GPU pods&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for contribution guidelines and &lt;a href="https://raw.githubusercontent.com/badlogic/pi-mono/main/AGENTS.md"&gt;AGENTS.md&lt;/a&gt; for project-specific rules (for both humans and agents).&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install          # Install all dependencies
+npm run build        # Build all packages
+npm run check        # Lint, format, and type check
+./test.sh            # Run tests (skips LLM-dependent tests without API keys)
+./pi-test.sh         # Run pi from sources (must be run from repo root)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;code&gt;npm run check&lt;/code&gt; requires &lt;code&gt;npm run build&lt;/code&gt; to be run first. The web-ui package uses &lt;code&gt;tsc&lt;/code&gt; which needs compiled &lt;code&gt;.d.ts&lt;/code&gt; files from dependencies.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>thedotmack/claude-mem</title>
+      <link>https://github.com/thedotmack/claude-mem</link>
+      <description>&lt;p&gt;A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; Official $CMEM Links: &lt;a href="https://bags.fm/2TsmuYUrsctE57VLckZBYEEzdokUF8j8e1GavekWBAGS"&gt;Bags.fm&lt;/a&gt; • &lt;a href="https://jup.ag/tokens/2TsmuYUrsctE57VLckZBYEEzdokUF8j8e1GavekWBAGS"&gt;Jupiter&lt;/a&gt; • &lt;a href="https://photon-sol.tinyastro.io/en/lp/6MzFAkWnac6GSK1EdFX93dZeukGfzrFq4UHWarhGSQyd"&gt;Photon&lt;/a&gt; • &lt;a href="https://dexscreener.com/solana/6mzfakwnac6gsk1edfx93dzeukgfzrfq4uhwarhgsqyd"&gt;DEXScreener&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;Official CA: 2TsmuYUrsctE57VLckZBYEEzdokUF8j8e1GavekWBAGS (on Solana)&lt;/p&gt; 
+&lt;h1 align="center"&gt; &lt;br /&gt; &lt;a href="https://github.com/thedotmack/claude-mem"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/claude-mem-logo-for-dark-mode.webp" /&gt; 
+   &lt;source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/claude-mem-logo-for-light-mode.webp" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/claude-mem-logo-for-light-mode.webp" alt="Claude-Mem" width="400" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;br /&gt; &lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.zh.md"&gt;🇨🇳 中文&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.ja.md"&gt;🇯🇵 日本語&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.pt-br.md"&gt;🇧🇷 Português&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.ko.md"&gt;🇰🇷 한국어&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.es.md"&gt;🇪🇸 Español&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.de.md"&gt;🇩🇪 Deutsch&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.fr.md"&gt;🇫🇷 Français&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.he.md"&gt;🇮🇱 עברית&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.ar.md"&gt;🇸🇦 العربية&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.ru.md"&gt;🇷🇺 Русский&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.pl.md"&gt;🇵🇱 Polski&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.cs.md"&gt;🇨🇿 Čeština&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.nl.md"&gt;🇳🇱 Nederlands&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.tr.md"&gt;🇹🇷 Türkçe&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.uk.md"&gt;🇺🇦 Українська&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.vi.md"&gt;🇻🇳 Tiếng Việt&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.id.md"&gt;🇮🇩 Indonesia&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.th.md"&gt;🇹🇭 ไทย&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.hi.md"&gt;🇮🇳 हिन्दी&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.bn.md"&gt;🇧🇩 বাংলা&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.ro.md"&gt;🇷🇴 Română&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.sv.md"&gt;🇸🇪 Svenska&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.it.md"&gt;🇮🇹 Italiano&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.el.md"&gt;🇬🇷 Ελληνικά&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.hu.md"&gt;🇭🇺 Magyar&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.fi.md"&gt;🇫🇮 Suomi&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.da.md"&gt;🇩🇰 Dansk&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.no.md"&gt;🇳🇴 Norsk&lt;/a&gt; &lt;/p&gt; 
+&lt;h4 align="center"&gt;Persistent memory compression system built for &lt;a href="https://claude.com/claude-code" target="_blank"&gt;Claude Code&lt;/a&gt;.&lt;/h4&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/LICENSE"&gt; &lt;img src="https://img.shields.io/badge/License-AGPL%203.0-blue.svg?sanitize=true" alt="License" /&gt; &lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/package.json"&gt; &lt;img src="https://img.shields.io/badge/version-6.5.0-green.svg?sanitize=true" alt="Version" /&gt; &lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/package.json"&gt; &lt;img src="https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg?sanitize=true" alt="Node" /&gt; &lt;/a&gt; &lt;a href="https://github.com/thedotmack/awesome-claude-code"&gt; &lt;img src="https://awesome.re/mentioned-badge.svg?sanitize=true" alt="Mentioned in Awesome Claude Code" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/15496" target="_blank"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/trendshift-badge-dark.svg" /&gt; 
+   &lt;source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/trendshift-badge.svg" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/trendshift-badge.svg?sanitize=true" alt="thedotmack/claude-mem | Trendshift" width="250" height="55" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;br /&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/thedotmack/claude-mem"&gt; 
+  &lt;picture&gt; 
+   &lt;img src="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/cm-preview.gif" alt="Claude-Mem Preview" width="800" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#quick-start"&gt;Quick Start&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#how-it-works"&gt;How It Works&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#mcp-search-tools"&gt;Search Tools&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#documentation"&gt;Documentation&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#configuration"&gt;Configuration&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#troubleshooting"&gt;Troubleshooting&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#license"&gt;License&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; Claude-Mem seamlessly preserves context across sessions by automatically capturing tool usage observations, generating semantic summaries, and making them available to future sessions. This enables Claude to maintain continuity of knowledge about projects even after sessions end or reconnect. &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;p&gt;Start a new Claude Code session in the terminal and enter the following commands:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;&amp;gt; /plugin marketplace add thedotmack/claude-mem
+
+&amp;gt; /plugin install claude-mem
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Restart Claude Code. Context from previous sessions will automatically appear in new sessions.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Key Features:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🧠 &lt;strong&gt;Persistent Memory&lt;/strong&gt; - Context survives across sessions&lt;/li&gt; 
+ &lt;li&gt;📊 &lt;strong&gt;Progressive Disclosure&lt;/strong&gt; - Layered memory retrieval with token cost visibility&lt;/li&gt; 
+ &lt;li&gt;🔍 &lt;strong&gt;Skill-Based Search&lt;/strong&gt; - Query your project history with mem-search skill&lt;/li&gt; 
+ &lt;li&gt;🖥️ &lt;strong&gt;Web Viewer UI&lt;/strong&gt; - Real-time memory stream at &lt;a href="http://localhost:37777"&gt;http://localhost:37777&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;💻 &lt;strong&gt;Claude Desktop Skill&lt;/strong&gt; - Search memory from Claude Desktop conversations&lt;/li&gt; 
+ &lt;li&gt;🔒 &lt;strong&gt;Privacy Control&lt;/strong&gt; - Use &lt;code&gt;&amp;lt;private&amp;gt;&lt;/code&gt; tags to exclude sensitive content from storage&lt;/li&gt; 
+ &lt;li&gt;⚙️ &lt;strong&gt;Context Configuration&lt;/strong&gt; - Fine-grained control over what context gets injected&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;strong&gt;Automatic Operation&lt;/strong&gt; - No manual intervention required&lt;/li&gt; 
+ &lt;li&gt;🔗 &lt;strong&gt;Citations&lt;/strong&gt; - Reference past observations with IDs (access via &lt;a href="http://localhost:37777/api/observation/%7Bid%7D"&gt;http://localhost:37777/api/observation/{id}&lt;/a&gt; or view all in the web viewer at &lt;a href="http://localhost:37777"&gt;http://localhost:37777&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;🧪 &lt;strong&gt;Beta Channel&lt;/strong&gt; - Try experimental features like Endless Mode via version switching&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;📚 &lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/"&gt;View Full Documentation&lt;/a&gt;&lt;/strong&gt; - Browse markdown docs on GitHub&lt;/p&gt; 
+&lt;h3&gt;Getting Started&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/installation"&gt;Installation Guide&lt;/a&gt;&lt;/strong&gt; - Quick start &amp;amp; advanced installation&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/usage/getting-started"&gt;Usage Guide&lt;/a&gt;&lt;/strong&gt; - How Claude-Mem works automatically&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/usage/search-tools"&gt;Search Tools&lt;/a&gt;&lt;/strong&gt; - Query your project history with natural language&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/beta-features"&gt;Beta Features&lt;/a&gt;&lt;/strong&gt; - Try experimental features like Endless Mode&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Best Practices&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/context-engineering"&gt;Context Engineering&lt;/a&gt;&lt;/strong&gt; - AI agent context optimization principles&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/progressive-disclosure"&gt;Progressive Disclosure&lt;/a&gt;&lt;/strong&gt; - Philosophy behind Claude-Mem's context priming strategy&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Architecture&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/overview"&gt;Overview&lt;/a&gt;&lt;/strong&gt; - System components &amp;amp; data flow&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture-evolution"&gt;Architecture Evolution&lt;/a&gt;&lt;/strong&gt; - The journey from v3 to v5&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/hooks-architecture"&gt;Hooks Architecture&lt;/a&gt;&lt;/strong&gt; - How Claude-Mem uses lifecycle hooks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/hooks"&gt;Hooks Reference&lt;/a&gt;&lt;/strong&gt; - 7 hook scripts explained&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/worker-service"&gt;Worker Service&lt;/a&gt;&lt;/strong&gt; - HTTP API &amp;amp; Bun management&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/database"&gt;Database&lt;/a&gt;&lt;/strong&gt; - SQLite schema &amp;amp; FTS5 search&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/search-architecture"&gt;Search Architecture&lt;/a&gt;&lt;/strong&gt; - Hybrid search with Chroma vector database&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Configuration &amp;amp; Development&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/configuration"&gt;Configuration&lt;/a&gt;&lt;/strong&gt; - Environment variables &amp;amp; settings&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/development"&gt;Development&lt;/a&gt;&lt;/strong&gt; - Building, testing, contributing&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/troubleshooting"&gt;Troubleshooting&lt;/a&gt;&lt;/strong&gt; - Common issues &amp;amp; solutions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;How It Works&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Core Components:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;5 Lifecycle Hooks&lt;/strong&gt; - SessionStart, UserPromptSubmit, PostToolUse, Stop, SessionEnd (6 hook scripts)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Smart Install&lt;/strong&gt; - Cached dependency checker (pre-hook script, not a lifecycle hook)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Worker Service&lt;/strong&gt; - HTTP API on port 37777 with web viewer UI and 10 search endpoints, managed by Bun&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;SQLite Database&lt;/strong&gt; - Stores sessions, observations, summaries&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;mem-search Skill&lt;/strong&gt; - Natural language queries with progressive disclosure&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Chroma Vector Database&lt;/strong&gt; - Hybrid semantic + keyword search for intelligent context retrieval&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/architecture/overview"&gt;Architecture Overview&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;MCP Search Tools&lt;/h2&gt; 
+&lt;p&gt;Claude-Mem provides intelligent memory search through &lt;strong&gt;4 MCP tools&lt;/strong&gt; following a token-efficient &lt;strong&gt;3-layer workflow pattern&lt;/strong&gt;:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;The 3-Layer Workflow:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;search&lt;/code&gt;&lt;/strong&gt; - Get compact index with IDs (~50-100 tokens/result)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;timeline&lt;/code&gt;&lt;/strong&gt; - Get chronological context around interesting results&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;get_observations&lt;/code&gt;&lt;/strong&gt; - Fetch full details ONLY for filtered IDs (~500-1,000 tokens/result)&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;How It Works:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Claude uses MCP tools to search your memory&lt;/li&gt; 
+ &lt;li&gt;Start with &lt;code&gt;search&lt;/code&gt; to get an index of results&lt;/li&gt; 
+ &lt;li&gt;Use &lt;code&gt;timeline&lt;/code&gt; to see what was happening around specific observations&lt;/li&gt; 
+ &lt;li&gt;Use &lt;code&gt;get_observations&lt;/code&gt; to fetch full details for relevant IDs&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;~10x token savings&lt;/strong&gt; by filtering before fetching details&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Available MCP Tools:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;search&lt;/code&gt;&lt;/strong&gt; - Search memory index with full-text queries, filters by type/date/project&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;timeline&lt;/code&gt;&lt;/strong&gt; - Get chronological context around a specific observation or query&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;get_observations&lt;/code&gt;&lt;/strong&gt; - Fetch full observation details by IDs (always batch multiple IDs)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;__IMPORTANT&lt;/code&gt;&lt;/strong&gt; - Workflow documentation (always visible to Claude)&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Example Usage:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-typescript"&gt;// Step 1: Search for index
+search(query="authentication bug", type="bugfix", limit=10)
+
+// Step 2: Review index, identify relevant IDs (e.g., #123, #456)
+
+// Step 3: Fetch full details
+get_observations(ids=[123, 456])
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/usage/search-tools"&gt;Search Tools Guide&lt;/a&gt; for detailed examples.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Beta Features&lt;/h2&gt; 
+&lt;p&gt;Claude-Mem offers a &lt;strong&gt;beta channel&lt;/strong&gt; with experimental features like &lt;strong&gt;Endless Mode&lt;/strong&gt; (biomimetic memory architecture for extended sessions). Switch between stable and beta versions from the web viewer UI at &lt;a href="http://localhost:37777"&gt;http://localhost:37777&lt;/a&gt; → Settings.&lt;/p&gt; 
+&lt;p&gt;See &lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/beta-features"&gt;Beta Features Documentation&lt;/a&gt;&lt;/strong&gt; for details on Endless Mode and how to try it.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;System Requirements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Node.js&lt;/strong&gt;: 18.0.0 or higher&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Claude Code&lt;/strong&gt;: Latest version with plugin support&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Bun&lt;/strong&gt;: JavaScript runtime and process manager (auto-installed if missing)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;uv&lt;/strong&gt;: Python package manager for vector search (auto-installed if missing)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;SQLite 3&lt;/strong&gt;: For persistent storage (bundled)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Configuration&lt;/h2&gt; 
+&lt;p&gt;Settings are managed in &lt;code&gt;~/.claude-mem/settings.json&lt;/code&gt; (auto-created with defaults on first run). Configure AI model, worker port, data directory, log level, and context injection settings.&lt;/p&gt; 
+&lt;p&gt;See the &lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/configuration"&gt;Configuration Guide&lt;/a&gt;&lt;/strong&gt; for all available settings and examples.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;p&gt;See the &lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/development"&gt;Development Guide&lt;/a&gt;&lt;/strong&gt; for build instructions, testing, and contribution workflow.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Troubleshooting&lt;/h2&gt; 
+&lt;p&gt;If experiencing issues, describe the problem to Claude and the troubleshoot skill will automatically diagnose and provide fixes.&lt;/p&gt; 
+&lt;p&gt;See the &lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/troubleshooting"&gt;Troubleshooting Guide&lt;/a&gt;&lt;/strong&gt; for common issues and solutions.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Bug Reports&lt;/h2&gt; 
+&lt;p&gt;Create comprehensive bug reports with the automated generator:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd ~/.claude/plugins/marketplaces/thedotmack
+npm run bug-report
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Contributions are welcome! Please:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork the repository&lt;/li&gt; 
+ &lt;li&gt;Create a feature branch&lt;/li&gt; 
+ &lt;li&gt;Make your changes with tests&lt;/li&gt; 
+ &lt;li&gt;Update documentation&lt;/li&gt; 
+ &lt;li&gt;Submit a Pull Request&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/development"&gt;Development Guide&lt;/a&gt; for contribution workflow.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the &lt;strong&gt;GNU Affero General Public License v3.0&lt;/strong&gt; (AGPL-3.0).&lt;/p&gt; 
+&lt;p&gt;Copyright (C) 2025 Alex Newman (@thedotmack). All rights reserved.&lt;/p&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for full details.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;What This Means:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;You can use, modify, and distribute this software freely&lt;/li&gt; 
+ &lt;li&gt;If you modify and deploy on a network server, you must make your source code available&lt;/li&gt; 
+ &lt;li&gt;Derivative works must also be licensed under AGPL-3.0&lt;/li&gt; 
+ &lt;li&gt;There is NO WARRANTY for this software&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Note on Ragtime&lt;/strong&gt;: The &lt;code&gt;ragtime/&lt;/code&gt; directory is licensed separately under the &lt;strong&gt;PolyForm Noncommercial License 1.0.0&lt;/strong&gt;. See &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/ragtime/LICENSE"&gt;ragtime/LICENSE&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Documentation&lt;/strong&gt;: &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/"&gt;docs/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Issues&lt;/strong&gt;: &lt;a href="https://github.com/thedotmack/claude-mem/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Repository&lt;/strong&gt;: &lt;a href="https://github.com/thedotmack/claude-mem"&gt;github.com/thedotmack/claude-mem&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Official X Account&lt;/strong&gt;: &lt;a href="https://x.com/Claude_Memory"&gt;@Claude_Memory&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Official Discord&lt;/strong&gt;: &lt;a href="https://discord.com/invite/J4wttp9vDu"&gt;Join Discord&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Author&lt;/strong&gt;: Alex Newman (&lt;a href="https://github.com/thedotmack"&gt;@thedotmack&lt;/a&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Built with Claude Agent SDK&lt;/strong&gt; | &lt;strong&gt;Powered by Claude Code&lt;/strong&gt; | &lt;strong&gt;Made with TypeScript&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>kovidgoyal/calibre</title>
+      <link>https://github.com/kovidgoyal/calibre</link>
+      <description>&lt;p&gt;The official source code repository for the calibre ebook manager&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;calibre&lt;/h1&gt; 
+&lt;img align="left" src="https://raw.githubusercontent.com/kovidgoyal/calibre/master/resources/images/lt.png" height="200" width="200" /&gt; 
+&lt;p&gt;calibre is an e-book manager. It can view, convert, edit and catalog e-books in all of the major e-book formats. It can also talk to e-book reader devices. It can go out to the internet and fetch metadata for your books. It can download newspapers and convert them into e-books for convenient reading. It is cross platform, running on Linux, Windows and macOS.&lt;/p&gt; 
+&lt;p&gt;For more information, see the &lt;a href="https://calibre-ebook.com/about"&gt;calibre About page&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/kovidgoyal/calibre/actions?query=workflow%3ACI"&gt;&lt;img src="https://github.com/kovidgoyal/calibre/workflows/CI/badge.svg?sanitize=true" alt="Build Status" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Screenshots&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://calibre-ebook.com/demo"&gt;Screenshots page&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;p&gt;See the &lt;a href="https://manual.calibre-ebook.com"&gt;User Manual&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://manual.calibre-ebook.com/develop.html"&gt;Setting up a development environment for calibre&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;A &lt;a href="https://calibre-ebook.com/dist/src"&gt;tarball of the source code&lt;/a&gt; for the current calibre release.&lt;/p&gt; 
+&lt;h2&gt;Bugs&lt;/h2&gt; 
+&lt;p&gt;Bug reports and feature requests should be made in the calibre bug tracker at &lt;a href="https://bugs.launchpad.net/calibre"&gt;Launchpad&lt;/a&gt;. GitHub is only used for code hosting and pull requests.&lt;/p&gt; 
+&lt;h2&gt;Support calibre&lt;/h2&gt; 
+&lt;p&gt;calibre is a result of the efforts of many volunteers from all over the world. If you find it useful, please consider contributing to support its development. &lt;a href="https://calibre-ebook.com/donate"&gt;Donate to support calibre development&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Building calibre binaries&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/kovidgoyal/calibre/master/bypy/README.rst"&gt;Build instructions&lt;/a&gt; for instructions on how to build the calibre binaries and installers for all the platforms calibre supports.&lt;/p&gt; 
+&lt;h2&gt;calibre package versions in various repositories&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://repology.org/project/calibre/versions"&gt;&lt;img src="https://repology.org/badge/vertical-allrepos/calibre.svg?columns=3&amp;amp;header=calibre" alt="Packaging Status" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>VectifyAI/PageIndex</title>
+      <link>https://github.com/VectifyAI/PageIndex</link>
+      <description>&lt;p&gt;📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;a href="https://vectify.ai/pageindex" target="_blank"&gt; &lt;img src="https://github.com/user-attachments/assets/46201e72-675b-43bc-bfbd-081cc6b65a1d" alt="PageIndex Banner" /&gt; &lt;/a&gt; 
+ &lt;br /&gt; 
+ &lt;br /&gt; 
+ &lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/14736" target="_blank"&gt;&lt;img src="https://trendshift.io/api/badge/repositories/14736" alt="VectifyAI%2FPageIndex | Trendshift" style="width: 250px; height: 55px;" width="250" height="55" /&gt;&lt;/a&gt; &lt;/p&gt; 
+ &lt;h1&gt;PageIndex: Vectorless, Reasoning-based RAG&lt;/h1&gt; 
+ &lt;p align="center"&gt;&lt;b&gt;Reasoning-based RAG&amp;nbsp; ◦ &amp;nbsp;No Vector DB&amp;nbsp; ◦ &amp;nbsp;No Chunking&amp;nbsp; ◦ &amp;nbsp;Human-like Retrieval&lt;/b&gt;&lt;/p&gt; 
+ &lt;h4 align="center"&gt; &lt;a href="https://vectify.ai"&gt;🏠 Homepage&lt;/a&gt;&amp;nbsp; • &amp;nbsp; &lt;a href="https://chat.pageindex.ai"&gt;🖥️ Chat Platform&lt;/a&gt;&amp;nbsp; • &amp;nbsp; &lt;a href="https://pageindex.ai/mcp"&gt;🔌 MCP&lt;/a&gt;&amp;nbsp; • &amp;nbsp; &lt;a href="https://docs.pageindex.ai"&gt;📚 Docs&lt;/a&gt;&amp;nbsp; • &amp;nbsp; &lt;a href="https://discord.com/invite/VuXuf29EUj"&gt;💬 Discord&lt;/a&gt;&amp;nbsp; • &amp;nbsp; &lt;a href="https://ii2abc2jejf.typeform.com/to/tK3AXl8T"&gt;✉️ Contact&lt;/a&gt;&amp;nbsp; &lt;/h4&gt; 
+&lt;/div&gt; 
+&lt;details open&gt; 
+ &lt;summary&gt;&lt;h3&gt;📢 Latest Updates&lt;/h3&gt;&lt;/summary&gt; 
+ &lt;p&gt;&lt;strong&gt;🔥 Releases:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;a href="https://chat.pageindex.ai"&gt;&lt;strong&gt;PageIndex Chat&lt;/strong&gt;&lt;/a&gt;: The first human-like document-analysis agent &lt;a href="https://chat.pageindex.ai"&gt;platform&lt;/a&gt; built for professional long documents. Can also be integrated via &lt;a href="https://pageindex.ai/mcp"&gt;MCP&lt;/a&gt; or &lt;a href="https://docs.pageindex.ai/quickstart"&gt;API&lt;/a&gt; (beta).&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;!-- - [**PageIndex Chat API**](https://docs.pageindex.ai/quickstart): An API that brings PageIndex's advanced long-document intelligence directly into your applications and workflows. --&gt; 
+ &lt;!-- - [PageIndex MCP](https://pageindex.ai/mcp): Bring PageIndex into Claude, Cursor, or any MCP-enabled agent. Chat with long PDFs in a reasoning-based, human-like way. --&gt; 
+ &lt;p&gt;&lt;strong&gt;📝 Articles:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;a href="https://pageindex.ai/blog/pageindex-intro"&gt;&lt;strong&gt;PageIndex Framework&lt;/strong&gt;&lt;/a&gt;: Introduces the PageIndex framework — an &lt;em&gt;agentic, in-context&lt;/em&gt; &lt;em&gt;tree index&lt;/em&gt; that enables LLMs to perform &lt;em&gt;reasoning-based&lt;/em&gt;, &lt;em&gt;human-like retrieval&lt;/em&gt; over long documents, without vector DB or chunking.&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;!-- - [Do We Still Need OCR?](https://pageindex.ai/blog/do-we-need-ocr): Explores how vision-based, reasoning-native RAG challenges the traditional OCR pipeline, and why the future of document AI might be *vectorless* and *vision-based*. --&gt; 
+ &lt;p&gt;&lt;strong&gt;🧪 Cookbooks:&lt;/strong&gt;&lt;/p&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;a href="https://docs.pageindex.ai/cookbook/vectorless-rag-pageindex"&gt;Vectorless RAG&lt;/a&gt;: A minimal, hands-on example of reasoning-based RAG using PageIndex. No vectors, no chunking, and human-like retrieval.&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://docs.pageindex.ai/cookbook/vision-rag-pageindex"&gt;Vision-based Vectorless RAG&lt;/a&gt;: OCR-free, vision-only RAG with PageIndex's reasoning-native retrieval workflow that works directly over PDF page images.&lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;📑 Introduction to PageIndex&lt;/h1&gt; 
+&lt;p&gt;Are you frustrated with vector database retrieval accuracy for long professional documents? Traditional vector-based RAG relies on semantic &lt;em&gt;similarity&lt;/em&gt; rather than true &lt;em&gt;relevance&lt;/em&gt;. But &lt;strong&gt;similarity ≠ relevance&lt;/strong&gt; — what we truly need in retrieval is &lt;strong&gt;relevance&lt;/strong&gt;, and that requires &lt;strong&gt;reasoning&lt;/strong&gt;. When working with professional documents that demand domain expertise and multi-step reasoning, similarity search often falls short.&lt;/p&gt; 
+&lt;p&gt;Inspired by AlphaGo, we propose &lt;strong&gt;&lt;a href="https://vectify.ai/pageindex"&gt;PageIndex&lt;/a&gt;&lt;/strong&gt; — a &lt;strong&gt;vectorless&lt;/strong&gt;, &lt;strong&gt;reasoning-based RAG&lt;/strong&gt; system that builds a &lt;strong&gt;hierarchical tree index&lt;/strong&gt; from long documents and uses LLMs to &lt;strong&gt;reason&lt;/strong&gt; &lt;em&gt;over that index&lt;/em&gt; for &lt;strong&gt;agentic, context-aware retrieval&lt;/strong&gt;. It simulates how &lt;em&gt;human experts&lt;/em&gt; navigate and extract knowledge from complex documents through &lt;em&gt;tree search&lt;/em&gt;, enabling LLMs to &lt;em&gt;think&lt;/em&gt; and &lt;em&gt;reason&lt;/em&gt; their way to the most relevant document sections. PageIndex performs retrieval in two steps:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Generate a “Table-of-Contents” &lt;strong&gt;tree structure index&lt;/strong&gt; of documents&lt;/li&gt; 
+ &lt;li&gt;Perform reasoning-based retrieval through &lt;strong&gt;tree search&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://pageindex.ai/blog/pageindex-intro" target="_blank" title="The PageIndex Framework"&gt; &lt;img src="https://docs.pageindex.ai/images/cookbook/vectorless-rag.png" width="70%" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;h3&gt;🎯 Core Features&lt;/h3&gt; 
+&lt;p&gt;Compared to traditional vector-based RAG, &lt;strong&gt;PageIndex&lt;/strong&gt; features:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;No Vector DB&lt;/strong&gt;: Uses document structure and LLM reasoning for retrieval, instead of vector similarity search.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;No Chunking&lt;/strong&gt;: Documents are organized into natural sections, not artificial chunks.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Human-like Retrieval&lt;/strong&gt;: Simulates how human experts navigate and extract knowledge from complex documents.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Better Explainability and Traceability&lt;/strong&gt;: Retrieval is based on reasoning — traceable and interpretable, with page and section references. No more opaque, approximate vector search (“vibe retrieval”).&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;PageIndex powers a reasoning-based RAG system that achieved &lt;strong&gt;state-of-the-art&lt;/strong&gt; &lt;a href="https://github.com/VectifyAI/Mafin2.5-FinanceBench"&gt;98.7% accuracy&lt;/a&gt; on FinanceBench, demonstrating superior performance over vector-based RAG solutions in professional document analysis (see our &lt;a href="https://vectify.ai/blog/Mafin2.5"&gt;blog post&lt;/a&gt; for details).&lt;/p&gt; 
+&lt;h3&gt;📍 Explore PageIndex&lt;/h3&gt; 
+&lt;p&gt;To learn more, please see a detailed introduction of the &lt;a href="https://pageindex.ai/blog/pageindex-intro"&gt;PageIndex framework&lt;/a&gt;. Check out this GitHub repo for open-source code, and the &lt;a href="https://docs.pageindex.ai/cookbook"&gt;cookbooks&lt;/a&gt;, &lt;a href="https://docs.pageindex.ai/tutorials"&gt;tutorials&lt;/a&gt;, and &lt;a href="https://pageindex.ai/blog"&gt;blog&lt;/a&gt; for additional usage guides and examples.&lt;/p&gt; 
+&lt;p&gt;The PageIndex service is available as a ChatGPT-style &lt;a href="https://chat.pageindex.ai"&gt;chat platform&lt;/a&gt;, or can be integrated via &lt;a href="https://pageindex.ai/mcp"&gt;MCP&lt;/a&gt; or &lt;a href="https://docs.pageindex.ai/quickstart"&gt;API&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;🛠️ Deployment Options&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Self-host — run locally with this open-source repo.&lt;/li&gt; 
+ &lt;li&gt;Cloud Service — try instantly with our &lt;a href="https://chat.pageindex.ai/"&gt;Chat Platform&lt;/a&gt;, or integrate with &lt;a href="https://pageindex.ai/mcp"&gt;MCP&lt;/a&gt; or &lt;a href="https://docs.pageindex.ai/quickstart"&gt;API&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;em&gt;Enterprise&lt;/em&gt; — private or on-prem deployment. &lt;a href="https://ii2abc2jejf.typeform.com/to/tK3AXl8T"&gt;Contact us&lt;/a&gt; or &lt;a href="https://calendly.com/pageindex/meet"&gt;book a demo&lt;/a&gt; for more details.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🧪 Quick Hands-on&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Try the &lt;a href="https://github.com/VectifyAI/PageIndex/raw/main/cookbook/pageindex_RAG_simple.ipynb"&gt;&lt;strong&gt;Vectorless RAG&lt;/strong&gt;&lt;/a&gt; notebook — a &lt;em&gt;minimal&lt;/em&gt;, hands-on example of reasoning-based RAG using PageIndex.&lt;/li&gt; 
+ &lt;li&gt;Experiment with &lt;a href="https://github.com/VectifyAI/PageIndex/raw/main/cookbook/vision_RAG_pageindex.ipynb"&gt;&lt;em&gt;Vision-based Vectorless RAG&lt;/em&gt;&lt;/a&gt; — no OCR; a minimal, reasoning-native RAG pipeline that works directly over page images.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://colab.research.google.com/github/VectifyAI/PageIndex/blob/main/cookbook/pageindex_RAG_simple.ipynb" target="_blank" rel="noopener"&gt; &lt;img src="https://img.shields.io/badge/Open_In_Colab-Vectorless_RAG-orange?style=for-the-badge&amp;amp;logo=googlecolab" alt="Open in Colab: Vectorless RAG" /&gt; &lt;/a&gt; &amp;nbsp;&amp;nbsp; 
+ &lt;a href="https://colab.research.google.com/github/VectifyAI/PageIndex/blob/main/cookbook/vision_RAG_pageindex.ipynb" target="_blank" rel="noopener"&gt; &lt;img src="https://img.shields.io/badge/Open_In_Colab-Vision_RAG-orange?style=for-the-badge&amp;amp;logo=googlecolab" alt="Open in Colab: Vision RAG" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;🌲 PageIndex Tree Structure&lt;/h1&gt; 
+&lt;p&gt;PageIndex can transform lengthy PDF documents into a semantic &lt;strong&gt;tree structure&lt;/strong&gt;, similar to a &lt;em&gt;"table of contents"&lt;/em&gt; but optimized for use with Large Language Models (LLMs). It's ideal for: financial reports, regulatory filings, academic textbooks, legal or technical manuals, and any document that exceeds LLM context limits.&lt;/p&gt; 
+&lt;p&gt;Below is an example PageIndex tree structure. Also see more example &lt;a href="https://github.com/VectifyAI/PageIndex/tree/main/tests/pdfs"&gt;documents&lt;/a&gt; and generated &lt;a href="https://github.com/VectifyAI/PageIndex/tree/main/tests/results"&gt;tree structures&lt;/a&gt;.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-jsonc"&gt;...
+{
+  "title": "Financial Stability",
+  "node_id": "0006",
+  "start_index": 21,
+  "end_index": 22,
+  "summary": "The Federal Reserve ...",
+  "nodes": [
+    {
+      "title": "Monitoring Financial Vulnerabilities",
+      "node_id": "0007",
+      "start_index": 22,
+      "end_index": 28,
+      "summary": "The Federal Reserve's monitoring ..."
+    },
+    {
+      "title": "Domestic and International Cooperation and Coordination",
+      "node_id": "0008",
+      "start_index": 28,
+      "end_index": 31,
+      "summary": "In 2023, the Federal Reserve collaborated ..."
+    }
+  ]
+}
+...
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You can generate the PageIndex tree structure with this open-source repo, or use our &lt;a href="https://docs.pageindex.ai/quickstart"&gt;API&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;⚙️ Package Usage&lt;/h1&gt; 
+&lt;p&gt;You can follow these steps to generate a PageIndex tree from a PDF document.&lt;/p&gt; 
+&lt;h3&gt;1. Install dependencies&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;pip3 install --upgrade -r requirements.txt
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;2. Set your OpenAI API key&lt;/h3&gt; 
+&lt;p&gt;Create a &lt;code&gt;.env&lt;/code&gt; file in the root directory and add your API key:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;CHATGPT_API_KEY=your_openai_key_here
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;3. Run PageIndex on your PDF&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;python3 run_pageindex.py --pdf_path /path/to/your/document.pdf
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;Optional parameters&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; You can customize the processing with additional optional arguments: 
+ &lt;pre&gt;&lt;code&gt;--model                 OpenAI model to use (default: gpt-4o-2024-11-20)
+--toc-check-pages       Pages to check for table of contents (default: 20)
+--max-pages-per-node    Max pages per node (default: 10)
+--max-tokens-per-node   Max tokens per node (default: 20000)
+--if-add-node-id        Add node ID (yes/no, default: yes)
+--if-add-node-summary   Add node summary (yes/no, default: yes)
+--if-add-doc-description Add doc description (yes/no, default: yes)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;strong&gt;Markdown support&lt;/strong&gt;&lt;/summary&gt; 
+ &lt;br /&gt; We also provide markdown support for PageIndex. You can use the `-md_path` flag to generate a tree structure for a markdown file. 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;python3 run_pageindex.py --md_path /path/to/your/document.md
+&lt;/code&gt;&lt;/pre&gt; 
+ &lt;blockquote&gt; 
+  &lt;p&gt;Note: in this function, we use "#" to determine node heading and their levels. For example, "##" is level 2, "###" is level 3, etc. Make sure your markdown file is formatted correctly. If your Markdown file was converted from a PDF or HTML, we don't recommend using this function, since most existing conversion tools cannot preserve the original hierarchy. Instead, use our &lt;a href="https://pageindex.ai/blog/ocr"&gt;PageIndex OCR&lt;/a&gt;, which is designed to preserve the original hierarchy, to convert the PDF to a markdown file and then use this function.&lt;/p&gt; 
+ &lt;/blockquote&gt; 
+&lt;/details&gt; 
+&lt;!-- 
+# ☁️ Improved Tree Generation with PageIndex OCR
+
+This repo is designed for generating PageIndex tree structure for simple PDFs, but many real-world use cases involve complex PDFs that are hard to parse by classic Python tools. However, extracting high-quality text from PDF documents remains a non-trivial challenge. Most OCR tools only extract page-level content, losing the broader document context and hierarchy.
+
+To address this, we introduced PageIndex OCR — the first long-context OCR model designed to preserve the global structure of documents. PageIndex OCR significantly outperforms other leading OCR tools, such as those from Mistral and Contextual AI, in recognizing true hierarchy and semantic relationships across document pages.
+
+- Experience next-level OCR quality with PageIndex OCR at our [Dashboard](https://dash.pageindex.ai/).
+- Integrate PageIndex OCR seamlessly into your stack via our [API](https://docs.pageindex.ai/quickstart).
+
+&lt;p align="center"&gt;
+  &lt;img src="https://github.com/user-attachments/assets/eb35d8ae-865c-4e60-a33b-ebbd00c41732" width="80%"&gt;
+&lt;/p&gt;
+--&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;📈 Case Study: PageIndex Leads Finance QA Benchmark&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://vectify.ai/mafin"&gt;Mafin 2.5&lt;/a&gt; is a reasoning-based RAG system for financial document analysis, powered by &lt;strong&gt;PageIndex&lt;/strong&gt;. It achieved a state-of-the-art &lt;a href="https://vectify.ai/blog/Mafin2.5"&gt;&lt;strong&gt;98.7% accuracy&lt;/strong&gt;&lt;/a&gt; on the &lt;a href="https://arxiv.org/abs/2311.11944"&gt;FinanceBench&lt;/a&gt; benchmark, significantly outperforming traditional vector-based RAG systems.&lt;/p&gt; 
+&lt;p&gt;PageIndex's hierarchical indexing and reasoning-driven retrieval enable precise navigation and extraction of relevant context from complex financial reports, such as SEC filings and earnings disclosures.&lt;/p&gt; 
+&lt;p&gt;Explore the full &lt;a href="https://github.com/VectifyAI/Mafin2.5-FinanceBench"&gt;benchmark results&lt;/a&gt; and our &lt;a href="https://vectify.ai/blog/Mafin2.5"&gt;blog post&lt;/a&gt; for detailed comparisons and performance metrics.&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://github.com/VectifyAI/Mafin2.5-FinanceBench"&gt; &lt;img src="https://github.com/user-attachments/assets/571aa074-d803-43c7-80c4-a04254b782a3" width="70%" /&gt; &lt;/a&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;🧭 Resources&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🧪 &lt;a href="https://docs.pageindex.ai/cookbook/vectorless-rag-pageindex"&gt;Cookbooks&lt;/a&gt;: hands-on, runnable examples and advanced use cases.&lt;/li&gt; 
+ &lt;li&gt;📖 &lt;a href="https://docs.pageindex.ai/doc-search"&gt;Tutorials&lt;/a&gt;: practical guides and strategies, including &lt;em&gt;Document Search&lt;/em&gt; and &lt;em&gt;Tree Search&lt;/em&gt;.&lt;/li&gt; 
+ &lt;li&gt;📝 &lt;a href="https://pageindex.ai/blog"&gt;Blog&lt;/a&gt;: technical articles, research insights, and product updates.&lt;/li&gt; 
+ &lt;li&gt;🔌 &lt;a href="https://pageindex.ai/mcp#quick-setup"&gt;MCP setup&lt;/a&gt; &amp;amp; &lt;a href="https://docs.pageindex.ai/quickstart"&gt;API docs&lt;/a&gt;: integration details and configuration options.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h1&gt;⭐ Support Us&lt;/h1&gt; 
+&lt;p&gt;Leave us a star 🌟 if you like our project. Thank you!&lt;/p&gt; 
+&lt;p&gt; &lt;img src="https://github.com/user-attachments/assets/eae4ff38-48ae-4a7c-b19f-eab81201d794" width="80%" /&gt; &lt;/p&gt; 
+&lt;h3&gt;Connect with Us&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://x.com/PageIndexAI"&gt;&lt;img src="https://img.shields.io/badge/Twitter-000000?style=for-the-badge&amp;amp;logo=x&amp;amp;logoColor=white" alt="Twitter" /&gt;&lt;/a&gt;&amp;nbsp; &lt;a href="https://www.linkedin.com/company/vectify-ai/"&gt;&lt;img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&amp;amp;logo=linkedin&amp;amp;logoColor=white" alt="LinkedIn" /&gt;&lt;/a&gt;&amp;nbsp; &lt;a href="https://discord.com/invite/VuXuf29EUj"&gt;&lt;img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&amp;amp;logo=discord&amp;amp;logoColor=white" alt="Discord" /&gt;&lt;/a&gt;&amp;nbsp; &lt;a href="https://ii2abc2jejf.typeform.com/to/tK3AXl8T"&gt;&lt;img src="https://img.shields.io/badge/Contact_Us-3B82F6?style=for-the-badge&amp;amp;logo=envelope&amp;amp;logoColor=white" alt="Contact Us" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;© 2025 &lt;a href="https://vectify.ai"&gt;Vectify AI&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenBMB/ChatDev</title>
+      <link>https://github.com/OpenBMB/ChatDev</link>
+      <description>&lt;p&gt;ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;ChatDev 2.0 - DevAll&lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/frontend/public/media/logo.png" alt="DevAll Logo" width="500" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;strong&gt;A Zero-Code Multi-Agent Platform for Developing Everything&lt;/strong&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; 【&lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/README.md"&gt;English&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/README-zh.md"&gt;简体中文&lt;/a&gt;】 &lt;/p&gt; 
+&lt;p align="center"&gt; 【📚 &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/#developers"&gt;Developers&lt;/a&gt; | 👥 &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/#primary-contributors"&gt;Contributors&lt;/a&gt;｜⭐️ &lt;a href="https://github.com/OpenBMB/ChatDev/tree/chatdev1.0"&gt;ChatDev 1.0 (Legacy)&lt;/a&gt;】 &lt;/p&gt; 
+&lt;h2&gt;📖 Overview&lt;/h2&gt; 
+&lt;p&gt;ChatDev has evolved from a specialized software development multi-agent system into a comprehensive multi-agent orchestration platform.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/OpenBMB/ChatDev/tree/main"&gt;&lt;strong&gt;ChatDev 2.0 (DevAll)&lt;/strong&gt;&lt;/a&gt; is a &lt;strong&gt;Zero-Code Multi-Agent Platform&lt;/strong&gt; for "Developing Everything". It empowers users to rapidly build and execute customized multi-agent systems through simple configuration. No coding is required—users can define agents, workflows, and tasks to orchestrate complex scenarios such as data visualization, 3D generation, and deep research.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/OpenBMB/ChatDev/tree/chatdev1.0"&gt;&lt;strong&gt;ChatDev 1.0 (Legacy)&lt;/strong&gt;&lt;/a&gt; operates as a &lt;strong&gt;Virtual Software Company&lt;/strong&gt;. It utilizes various intelligent agents (e.g., CEO, CTO, Programmer) participating in specialized functional seminars to automate the entire software development life cycle—including designing, coding, testing, and documenting. It serves as the foundational paradigm for communicative agent collaboration.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🎉 News&lt;/h2&gt; 
+&lt;p&gt;• &lt;strong&gt;Jan 07, 2026: 🚀 We are excited to announce the official release of ChatDev 2.0 (DevAll)!&lt;/strong&gt; This version introduces a zero-code multi-agent orchestration platform. The classic ChatDev (v1.x) has been moved to the &lt;a href="https://github.com/OpenBMB/ChatDev/tree/chatdev1.0"&gt;&lt;code&gt;chatdev1.0&lt;/code&gt;&lt;/a&gt; branch for maintenance. More details about ChatDev 2.0 can be found on &lt;a href="https://x.com/OpenBMB/status/2008916790399701335"&gt;our official post&lt;/a&gt;.&lt;/p&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Old News&lt;/summary&gt; 
+ &lt;p&gt;•Sep 24, 2025: 🎉 Our paper &lt;a href="https://arxiv.org/abs/2505.19591"&gt;Multi-Agent Collaboration via Evolving Orchestration&lt;/a&gt; has been accepted to NeurIPS 2025. The implementation is available in the &lt;code&gt;puppeteer&lt;/code&gt; branch of this repository.&lt;/p&gt; 
+ &lt;p&gt;•May 26, 2025: 🎉 We propose a novel puppeteer-style paradigm for multi-agent collaboration among large language model based agents. By leveraging a learnable central orchestrator optimized with reinforcement learning, our method dynamically activates and sequences agents to construct efficient, context-aware reasoning paths. This approach not only improves reasoning quality but also reduces computational costs, enabling scalable and adaptable multi-agent cooperation in complex tasks. See our paper in &lt;a href="https://arxiv.org/abs/2505.19591"&gt;Multi-Agent Collaboration via Evolving Orchestration&lt;/a&gt;.&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/puppeteer.png" width="800" /&gt; &lt;/p&gt; 
+ &lt;p&gt;•June 25, 2024: 🎉To foster development in LLM-powered multi-agent collaboration🤖🤖 and related fields, the ChatDev team has curated a collection of seminal papers📄 presented in a &lt;a href="https://github.com/OpenBMB/ChatDev/tree/main/MultiAgentEbook"&gt;open-source&lt;/a&gt; interactive e-book📚 format. Now you can explore the latest advancements on the &lt;a href="https://thinkwee.top/multiagent_ebook"&gt;Ebook Website&lt;/a&gt; and download the &lt;a href="https://github.com/OpenBMB/ChatDev/raw/main/MultiAgentEbook/papers.csv"&gt;paper list&lt;/a&gt;.&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/ebook.png" width="800" /&gt; &lt;/p&gt; 
+ &lt;p&gt;•June 12, 2024: We introduced Multi-Agent Collaboration Networks (MacNet) 🎉, which utilize directed acyclic graphs to facilitate effective task-oriented collaboration among agents through linguistic interactions 🤖🤖. MacNet supports co-operation across various topologies and among more than a thousand agents without exceeding context limits. More versatile and scalable, MacNet can be considered as a more advanced version of ChatDev's chain-shaped topology. Our preprint paper is available at &lt;a href="https://arxiv.org/abs/2406.07155"&gt;https://arxiv.org/abs/2406.07155&lt;/a&gt;. This technique has been incorporated into the &lt;a href="https://github.com/OpenBMB/ChatDev/tree/macnet"&gt;macnet&lt;/a&gt; branch, enhancing support for diverse organizational structures and offering richer solutions beyond software development (e.g., logical reasoning, data analysis, story generation, and more).&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/macnet.png" width="500" /&gt; &lt;/p&gt; 
+ &lt;p&gt;• May 07, 2024, we introduced "Iterative Experience Refinement" (IER), a novel method where instructor and assistant agents enhance shortcut-oriented experiences to efficiently adapt to new tasks. This approach encompasses experience acquisition, utilization, propagation and elimination across a series of tasks and making the pricess shorter and efficient. Our preprint paper is available at &lt;a href="https://arxiv.org/abs/2405.04219"&gt;https://arxiv.org/abs/2405.04219&lt;/a&gt;, and this technique will soon be incorporated into ChatDev.&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/ier.png" width="220" /&gt; &lt;/p&gt; 
+ &lt;p&gt;• January 25, 2024: We have integrated Experiential Co-Learning Module into ChatDev. Please see the &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/wiki.md#co-tracking"&gt;Experiential Co-Learning Guide&lt;/a&gt;.&lt;/p&gt; 
+ &lt;p&gt;• December 28, 2023: We present Experiential Co-Learning, an innovative approach where instructor and assistant agents accumulate shortcut-oriented experiences to effectively solve new tasks, reducing repetitive errors and enhancing efficiency. Check out our preprint paper at &lt;a href="https://arxiv.org/abs/2312.17025"&gt;https://arxiv.org/abs/2312.17025&lt;/a&gt; and this technique will soon be integrated into ChatDev.&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/ecl.png" width="860" /&gt; &lt;/p&gt; • November 15, 2023: We launched ChatDev as a SaaS platform that enables software developers and innovative entrepreneurs to build software efficiently at a very low cost and remove the barrier to entry. Try it out at https://chatdev.modelbest.cn/. 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/saas.png" width="560" /&gt; &lt;/p&gt; 
+ &lt;p&gt;• November 2, 2023: ChatDev is now supported with a new feature: incremental development, which allows agents to develop upon existing codes. Try &lt;code&gt;--config "incremental" --path "[source_code_directory_path]"&lt;/code&gt; to start it.&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/increment.png" width="700" /&gt; &lt;/p&gt; 
+ &lt;p&gt;• October 26, 2023: ChatDev is now supported with Docker for safe execution (thanks to contribution from &lt;a href="https://github.com/ManindraDeMel"&gt;ManindraDeMel&lt;/a&gt;). Please see &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/wiki.md#docker-start"&gt;Docker Start Guide&lt;/a&gt;.&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/docker.png" width="400" /&gt; &lt;/p&gt; 
+ &lt;p&gt;• September 25, 2023: The &lt;strong&gt;Git&lt;/strong&gt; mode is now available, enabling the programmer &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/visualizer/static/figures/programmer.png" height="20" /&gt; to utilize Git for version control. To enable this feature, simply set &lt;code&gt;"git_management"&lt;/code&gt; to &lt;code&gt;"True"&lt;/code&gt; in &lt;code&gt;ChatChainConfig.json&lt;/code&gt;. See &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/wiki.md#git-mode"&gt;guide&lt;/a&gt;.&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/github.png" width="600" /&gt; &lt;/p&gt; 
+ &lt;p&gt;• September 20, 2023: The &lt;strong&gt;Human-Agent-Interaction&lt;/strong&gt; mode is now available! You can get involved with the ChatDev team by playing the role of reviewer &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/visualizer/static/figures/reviewer.png" height="20" /&gt; and making suggestions to the programmer &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/visualizer/static/figures/programmer.png" height="20" /&gt;; try &lt;code&gt;python3 run.py --task [description_of_your_idea] --config "Human"&lt;/code&gt;. See &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/wiki.md#human-agent-interaction"&gt;guide&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/WareHouse/Gomoku_HumanAgentInteraction_20230920135038"&gt;example&lt;/a&gt;.&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/Human_intro.png" width="600" /&gt; &lt;/p&gt; 
+ &lt;p&gt;• September 1, 2023: The &lt;strong&gt;Art&lt;/strong&gt; mode is available now! You can activate the designer agent &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/visualizer/static/figures/designer.png" height="20" /&gt; to generate images used in the software; try &lt;code&gt;python3 run.py --task [description_of_your_idea] --config "Art"&lt;/code&gt;. See &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/wiki.md#art"&gt;guide&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/WareHouse/gomokugameArtExample_THUNLP_20230831122822"&gt;example&lt;/a&gt;.&lt;/p&gt; 
+ &lt;p&gt;• August 28, 2023: The system is publicly available.&lt;/p&gt; 
+ &lt;p&gt;• August 17, 2023: The v1.0.0 version was ready for release.&lt;/p&gt; 
+ &lt;p&gt;• July 30, 2023: Users can customize ChatChain, Phasea and Role settings. Additionally, both online Log mode and replay mode are now supported.&lt;/p&gt; 
+ &lt;p&gt;• July 16, 2023: The &lt;a href="https://arxiv.org/abs/2307.07924"&gt;preprint paper&lt;/a&gt; associated with this project was published.&lt;/p&gt; 
+ &lt;p&gt;• June 30, 2023: The initial version of the ChatDev repository was released.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;h2&gt;🚀 Quick Start&lt;/h2&gt; 
+&lt;h3&gt;📋 Prerequisites&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;OS&lt;/strong&gt;: macOS / Linux / WSL / Windows&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Python&lt;/strong&gt;: 3.12+&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Node.js&lt;/strong&gt;: 18+&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Package Manager&lt;/strong&gt;: &lt;a href="https://docs.astral.sh/uv/"&gt;uv&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;📦 Installation&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Backend Dependencies&lt;/strong&gt; (Python managed by &lt;code&gt;uv&lt;/code&gt;):&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;uv sync
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Frontend Dependencies&lt;/strong&gt; (Vite + Vue 3):&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;cd frontend &amp;amp;&amp;amp; npm install
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;⚡️ Run the Application&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Start Backend&lt;/strong&gt; :&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;# Run from the project root
+uv run python server_main.py --port 6400 --reload
+&lt;/code&gt;&lt;/pre&gt; 
+  &lt;blockquote&gt; 
+   &lt;p&gt;Remove &lt;code&gt;--reload&lt;/code&gt; if output files (e.g., GameDev) trigger restarts, which interrupts tasks and loses progress.&lt;/p&gt; 
+  &lt;/blockquote&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Start Frontend&lt;/strong&gt;:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;cd frontend
+VITE_API_BASE_URL=http://localhost:6400 npm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+  &lt;blockquote&gt; 
+   &lt;p&gt;Then access the Web Console at &lt;strong&gt;&lt;a href="http://localhost:5173"&gt;http://localhost:5173&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt; 
+  &lt;/blockquote&gt; 
+  &lt;blockquote&gt; 
+   &lt;p&gt;&lt;strong&gt;💡 Tip&lt;/strong&gt;: If the frontend fails to connect to the backend, the default port &lt;code&gt;6400&lt;/code&gt; may already be occupied. Please switch both services to an available port, for example:&lt;/p&gt; 
+   &lt;ul&gt; 
+    &lt;li&gt;&lt;strong&gt;Backend&lt;/strong&gt;: start with &lt;code&gt;--port 6401&lt;/code&gt;&lt;/li&gt; 
+    &lt;li&gt;&lt;strong&gt;Frontend&lt;/strong&gt;: set &lt;code&gt;VITE_API_BASE_URL=http://localhost:6401&lt;/code&gt;&lt;/li&gt; 
+   &lt;/ul&gt; 
+  &lt;/blockquote&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;🔑 Configuration&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Environment Variables&lt;/strong&gt;: Create a &lt;code&gt;.env&lt;/code&gt; file in the project root.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Model Keys&lt;/strong&gt;: Set &lt;code&gt;API_KEY&lt;/code&gt; and &lt;code&gt;BASE_URL&lt;/code&gt; in &lt;code&gt;.env&lt;/code&gt; for your LLM provider.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;YAML placeholders&lt;/strong&gt;: Use &lt;code&gt;${VAR}&lt;/code&gt;（e.g., &lt;code&gt;${API_KEY}&lt;/code&gt;）in configuration files to reference these variables.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;💡 How to Use&lt;/h2&gt; 
+&lt;h3&gt;🖥️ Web Console&lt;/h3&gt; 
+&lt;p&gt;The DevAll interface provides a seamless experience for both construction and execution&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Tutorial&lt;/strong&gt;: Comprehensive step-by-step guides and documentation integrated directly into the platform to help you get started quickly.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/tutorial-en.png" /&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Workflow&lt;/strong&gt;: A visual canvas to design your multi-agent systems. Configure node parameters, define context flows, and orchestrate complex agent interactions with drag-and-drop ease.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/workflow.gif" /&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Launch&lt;/strong&gt;: Initiate workflows, monitor real-time logs, inspect intermediate artifacts, and provide human-in-the-loop feedback.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/launch.gif" /&gt; 
+&lt;h3&gt;🧰 Python SDK&lt;/h3&gt; 
+&lt;p&gt;For automation and batch processing, use our lightweight Python SDK to execute workflows programmatically and retrieve results directly.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;from runtime.sdk import run_workflow
+
+# Execute a workflow and get the final node message
+result = run_workflow(
+    yaml_file="yaml_instance/demo.yaml",
+    task_prompt="Summarize the attached document in one sentence.",
+    attachments=["/path/to/document.pdf"],
+    variables={"API_KEY": "sk-xxxx"} # Override .env variables if needed
+)
+
+if result.final_message:
+    print(f"Output: {result.final_message.text_content()}")
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;a id="developers"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;⚙️ For Developers&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;For secondary development and extensions, please proceed with this section.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Extend DevAll with new nodes, providers, and tools. The project is organized into a modular structure:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Core Systems&lt;/strong&gt;: &lt;code&gt;server/&lt;/code&gt; hosts the FastAPI backend, while &lt;code&gt;runtime/&lt;/code&gt; manages agent abstraction and tool execution.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Orchestration&lt;/strong&gt;: &lt;code&gt;workflow/&lt;/code&gt; handles the multi-agent logic, driven by configurations in &lt;code&gt;entity/&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Frontend&lt;/strong&gt;: &lt;code&gt;frontend/&lt;/code&gt; contains the Vue 3 Web Console.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Extensibility&lt;/strong&gt;: &lt;code&gt;functions/&lt;/code&gt; is the place for custom Python tools.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Relevant reference documentation:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Getting Started&lt;/strong&gt;: &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/docs/user_guide/en/index.md"&gt;Start Guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Core Modules&lt;/strong&gt;: &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/docs/user_guide/en/workflow_authoring.md"&gt;Workflow Authoring&lt;/a&gt;, &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/docs/user_guide/en/modules/memory.md"&gt;Memory&lt;/a&gt;, and &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/docs/user_guide/en/modules/tooling/index.md"&gt;Tooling&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🌟 Featured Workflows&lt;/h2&gt; 
+&lt;p&gt;We provide robust, out-of-the-box templates for common scenarios. All runnable workflow configs are located in &lt;code&gt;yaml_instance/&lt;/code&gt;.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Demos&lt;/strong&gt;: Files named &lt;code&gt;demo_*.yaml&lt;/code&gt; showcase specific features or modules.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Implementations&lt;/strong&gt;: Files named directly (e.g., &lt;code&gt;ChatDev_v1.yaml&lt;/code&gt;) are full in-house or recreated workflows. As follows:&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;📋 Workflow Collection&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="left"&gt;Category&lt;/th&gt; 
+   &lt;th align="left"&gt;Workflow&lt;/th&gt; 
+   &lt;th align="left"&gt;Case&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;&lt;strong&gt;📈 Data Visualization&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;code&gt;data_visualization_basic.yaml&lt;/code&gt;&lt;br /&gt;&lt;code&gt;data_visualization_enhanced.yaml&lt;/code&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/cases/data_analysis/data_analysis.gif" width="100%" /&gt;&lt;br /&gt;Prompt: &lt;em&gt;"Create 4–6 high-quality PNG charts for my large real-estate transactions dataset."&lt;/em&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;&lt;strong&gt;🛠️ 3D Generation&lt;/strong&gt;&lt;br /&gt;&lt;em&gt;(Requires &lt;a href="https://www.blender.org/"&gt;Blender&lt;/a&gt; &amp;amp; &lt;a href="https://github.com/ahujasid/blender-mcp"&gt;blender-mcp&lt;/a&gt;)&lt;/em&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;code&gt;blender_3d_builder_simple.yaml&lt;/code&gt;&lt;br /&gt;&lt;code&gt;blender_3d_builder_hub.yaml&lt;/code&gt;&lt;br /&gt;&lt;code&gt;blender_scientific_illustration.yaml&lt;/code&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/cases/3d_generation/3d.gif" width="100%" /&gt;&lt;br /&gt;Prompt: &lt;em&gt;"Please build a Christmas tree."&lt;/em&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;&lt;strong&gt;🎮 Game Dev&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;code&gt;GameDev_v1.yaml&lt;/code&gt;&lt;br /&gt;&lt;code&gt;ChatDev_v1.yaml&lt;/code&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/cases/game_development/game.gif" width="100%" /&gt;&lt;br /&gt;Prompt: &lt;em&gt;"Please help me design and develop a Tank Battle game."&lt;/em&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;&lt;strong&gt;📚 Deep Research&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;code&gt;deep_research_v1.yaml&lt;/code&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/cases/deep_research/deep_research.gif" width="85%" /&gt;&lt;br /&gt;Prompt: &lt;em&gt;"Research about recent advances in the field of LLM-based agent RL"&lt;/em&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;&lt;strong&gt;🎓 Teach Video&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;code&gt;teach_video.yaml&lt;/code&gt; (Please run command &lt;code&gt;uv add manim&lt;/code&gt; before running this workflow)&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/cases/video_generation/video.gif" width="140%" /&gt;&lt;br /&gt;Prompt: &lt;em&gt;"讲一下什么是凸优化"&lt;/em&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;💡 Usage Guide&lt;/h3&gt; 
+&lt;p&gt;For those implementations, you can use the &lt;strong&gt;Launch&lt;/strong&gt; tab to execute them.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Select&lt;/strong&gt;: Choose a workflow in the &lt;strong&gt;Launch&lt;/strong&gt; tab.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt;: Upload necessary files (e.g., &lt;code&gt;.csv&lt;/code&gt; for data analysis) if required.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Prompt&lt;/strong&gt;: Enter your request (e.g., &lt;em&gt;"Visualize the sales trends"&lt;/em&gt; or &lt;em&gt;"Design a snake game"&lt;/em&gt;).&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🤝 Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions from the community! Whether you're fixing bugs, adding new workflow templates, or sharing high-quality cases/artifacts produced by DevAll, your help is much appreciated. Feel free to contribute by submitting &lt;strong&gt;Issues&lt;/strong&gt; or &lt;strong&gt;Pull Requests&lt;/strong&gt;.&lt;/p&gt; 
+&lt;p&gt;By contributing to DevAll, you'll be recognized in our &lt;strong&gt;Contributors&lt;/strong&gt; list below. Check out our &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/#developers"&gt;Developer Guide&lt;/a&gt; to get started!&lt;/p&gt; 
+&lt;h3&gt;👥 Contributors&lt;/h3&gt; 
+&lt;h4&gt;Primary Contributors&lt;/h4&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/NA-Wen"&gt;&lt;img src="https://github.com/NA-Wen.png?size=100" width="64px;" alt="" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;NA-Wen&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/zxrys"&gt;&lt;img src="https://github.com/zxrys.png?size=100" width="64px;" alt="" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;zxrys&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/swugi"&gt;&lt;img src="https://github.com/swugi.png?size=100" width="64px;" alt="" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;swugi&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/huatl98"&gt;&lt;img src="https://github.com/huatl98.png?size=100" width="64px;" alt="" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;huatl98&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h4&gt;Contributors&lt;/h4&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/shiowen"&gt;&lt;img src="https://github.com/shiowen.png?size=100" width="64px;" alt="" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;shiowen&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/kilo2127"&gt;&lt;img src="https://github.com/kilo2127.png?size=100" width="64px;" alt="" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;kilo2127&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/AckerlyLau"&gt;&lt;img src="https://github.com/AckerlyLau.png?size=100" width="64px;" alt="" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;AckerlyLau&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;🤝 Acknowledgments&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="http://nlp.csai.tsinghua.edu.cn/"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/thunlp.png" height="50pt" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp; &lt;a href="https://modelbest.cn/"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/modelbest.png" height="50pt" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp; &lt;a href="https://github.com/OpenBMB/AgentVerse/"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/agentverse.png" height="50pt" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp; &lt;a href="https://github.com/OpenBMB/RepoAgent"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/repoagent.png" height="50pt" /&gt;&lt;/a&gt; &lt;a href="https://app.commanddash.io/agent?github=https://github.com/OpenBMB/ChatDev"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/CommandDash.png" height="50pt" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/www.teachmaster.cn"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/teachmaster.png" height="50pt" /&gt;&lt;/a&gt; &lt;a href="https://github.com/OpenBMB/AppCopilot"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/appcopilot.png" height="50pt" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🔎 Citation&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;@article{chatdev,
+    title = {ChatDev: Communicative Agents for Software Development},
+    author = {Chen Qian and Wei Liu and Hongzhang Liu and Nuo Chen and Yufan Dang and Jiahao Li and Cheng Yang and Weize Chen and Yusheng Su and Xin Cong and Juyuan Xu and Dahai Li and Zhiyuan Liu and Maosong Sun},
+    journal = {arXiv preprint arXiv:2307.07924},
+    url = {https://arxiv.org/abs/2307.07924},
+    year = {2023}
+}
+
+@article{colearning,
+    title = {Experiential Co-Learning of Software-Developing Agents},
+    author = {Chen Qian and Yufan Dang and Jiahao Li and Wei Liu and Zihao Xie and Yifei Wang and Weize Chen and Cheng Yang and Xin Cong and Xiaoyin Che and Zhiyuan Liu and Maosong Sun},
+    journal = {arXiv preprint arXiv:2312.17025},
+    url = {https://arxiv.org/abs/2312.17025},
+    year = {2023}
+}
+
+@article{macnet,
+    title={Scaling Large-Language-Model-based Multi-Agent Collaboration},
+    author={Chen Qian and Zihao Xie and Yifei Wang and Wei Liu and Yufan Dang and Zhuoyun Du and Weize Chen and Cheng Yang and Zhiyuan Liu and Maosong Sun}
+    journal={arXiv preprint arXiv:2406.07155},
+    url = {https://arxiv.org/abs/2406.07155},
+    year={2024}
+}
+
+@article{iagents,
+    title={Autonomous Agents for Collaborative Task under Information Asymmetry},
+    author={Wei Liu and Chenxi Wang and Yifei Wang and Zihao Xie and Rennai Qiu and Yufan Dnag and Zhuoyun Du and Weize Chen and Cheng Yang and Chen Qian},
+    journal={arXiv preprint arXiv:2406.14928},
+    url = {https://arxiv.org/abs/2406.14928},
+    year={2024}
+}
+
+@article{puppeteer,
+      title={Multi-Agent Collaboration via Evolving Orchestration}, 
+      author={Yufan Dang and Chen Qian and Xueheng Luo and Jingru Fan and Zihao Xie and Ruijie Shi and Weize Chen and Cheng Yang and Xiaoyin Che and Ye Tian and Xuantang Xiong and Lei Han and Zhiyuan Liu and Maosong Sun},
+      journal={arXiv preprint arXiv:2505.19591},
+      url={https://arxiv.org/abs/2505.19591},
+      year={2025}
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;📬 Contact&lt;/h2&gt; 
+&lt;p&gt;If you have any questions, feedback, or would like to get in touch, please feel free to reach out to us via email at &lt;a href="mailto:qianc62@gmail.com"&gt;qianc62@gmail.com&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>netbirdio/netbird</title>
+      <link>https://github.com/netbirdio/netbird</link>
+      <description>&lt;p&gt;Connect your devices into a secure WireGuard®-based overlay network with SSO, MFA and granular access controls.&lt;/p&gt;&lt;hr&gt;&lt;div align="center"&gt; 
+ &lt;br /&gt; 
+ &lt;br /&gt; 
+ &lt;p align="center"&gt; &lt;img width="234" src="https://raw.githubusercontent.com/netbirdio/netbird/main/docs/media/logo-full.png" /&gt; &lt;/p&gt; 
+ &lt;p&gt; &lt;a href="https://img.shields.io/badge/license-BSD--3-blue)"&gt; &lt;img src="https://sonarcloud.io/api/project_badges/measure?project=netbirdio_netbird&amp;amp;metric=alert_status" /&gt; &lt;/a&gt; &lt;a href="https://github.com/netbirdio/netbird/raw/main/LICENSE"&gt; &lt;img src="https://img.shields.io/badge/license-BSD--3-blue" /&gt; &lt;/a&gt; &lt;br /&gt; &lt;a href="https://docs.netbird.io/slack-url"&gt; &lt;img src="https://img.shields.io/badge/slack-@netbird-red.svg?logo=slack" /&gt; &lt;/a&gt; &lt;a href="https://forum.netbird.io"&gt; &lt;img src="https://img.shields.io/badge/community forum-@netbird-red.svg?logo=discourse" /&gt; &lt;/a&gt; &lt;br /&gt; &lt;a href="https://gurubase.io/g/netbird"&gt; &lt;img src="https://img.shields.io/badge/Gurubase-Ask%20NetBird%20Guru-006BFF" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;/div&gt; 
+&lt;p align="center"&gt; &lt;strong&gt; Start using NetBird at &lt;a href="https://netbird.io/pricing"&gt;netbird.io&lt;/a&gt; &lt;br /&gt; See &lt;a href="https://netbird.io/docs/"&gt;Documentation&lt;/a&gt; &lt;br /&gt; Join our &lt;a href="https://docs.netbird.io/slack-url"&gt;Slack channel&lt;/a&gt; or our &lt;a href="https://forum.netbird.io"&gt;Community forum&lt;/a&gt; &lt;br /&gt; &lt;/strong&gt; &lt;br /&gt; &lt;strong&gt; 🚀 &lt;a href="https://careers.netbird.io"&gt;We are hiring! Join us at careers.netbird.io&lt;/a&gt; &lt;/strong&gt; &lt;br /&gt; &lt;br /&gt; &lt;a href="https://registry.terraform.io/providers/netbirdio/netbird/latest"&gt; New: NetBird terraform provider &lt;/a&gt; &lt;/p&gt; 
+&lt;br /&gt; 
+&lt;p&gt;&lt;strong&gt;NetBird combines a configuration-free peer-to-peer private network and a centralized access control system in a single platform, making it easy to create secure private networks for your organization or home.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Connect.&lt;/strong&gt; NetBird creates a WireGuard-based overlay network that automatically connects your machines over an encrypted tunnel, leaving behind the hassle of opening ports, complex firewall rules, VPN gateways, and so forth.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Secure.&lt;/strong&gt; NetBird enables secure remote access by applying granular access policies while allowing you to manage them intuitively from a single place. Works universally on any infrastructure.&lt;/p&gt; 
+&lt;h3&gt;Open Source Network Security in a Single Platform&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://github.com/user-attachments/assets/10cec749-bb56-4ab3-97af-4e38850108d2"&gt;https://github.com/user-attachments/assets/10cec749-bb56-4ab3-97af-4e38850108d2&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Self-Host NetBird (Video)&lt;/h3&gt; 
+&lt;p&gt;&lt;a href="https://youtu.be/bZAgpT6nzaQ"&gt;&lt;img src="https://img.youtube.com/vi/bZAgpT6nzaQ/0.jpg" alt="Watch the video" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Key features&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Connectivity&lt;/th&gt; 
+   &lt;th&gt;Management&lt;/th&gt; 
+   &lt;th&gt;Security&lt;/th&gt; 
+   &lt;th&gt;Automation&lt;/th&gt; 
+   &lt;th&gt;Platforms&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] Kernel WireGuard&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] &lt;a href="https://github.com/netbirdio/dashboard"&gt;Admin Web UI&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] &lt;a href="https://docs.netbird.io/how-to/installation#running-net-bird-with-sso-login"&gt;SSO &amp;amp; MFA support&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] &lt;a href="https://docs.netbird.io/api"&gt;Public API&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] Linux&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] Peer-to-peer connections&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] Auto peer discovery and configuration&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] &lt;a href="https://docs.netbird.io/how-to/manage-network-access"&gt;Access control - groups &amp;amp; rules&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] &lt;a href="https://docs.netbird.io/how-to/register-machines-using-setup-keys"&gt;Setup keys for bulk network provisioning&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] Mac&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] Connection relay fallback&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] &lt;a href="https://docs.netbird.io/selfhosted/identity-providers"&gt;IdP integrations&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] &lt;a href="https://docs.netbird.io/how-to/audit-events-logging"&gt;Activity logging&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] &lt;a href="https://docs.netbird.io/selfhosted/selfhosted-quickstart"&gt;Self-hosting quickstart script&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] Windows&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] &lt;a href="https://docs.netbird.io/how-to/routing-traffic-to-private-networks"&gt;Routes to external networks&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] &lt;a href="https://docs.netbird.io/how-to/manage-dns-in-your-network"&gt;Private DNS&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] &lt;a href="https://docs.netbird.io/how-to/manage-posture-checks"&gt;Device posture checks&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] IdP groups sync with JWT&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] Android&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] NAT traversal with BPF&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] &lt;a href="https://docs.netbird.io/how-to/add-users-to-your-network"&gt;Multiuser support&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] Peer-to-peer encryption&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] iOS&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] &lt;a href="https://netbird.io/knowledge-hub/the-first-quantum-resistant-mesh-vpn"&gt;Quantum-resistance with Rosenpass&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] OpenWRT&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] &lt;a href="https://docs.netbird.io/how-to/enforce-periodic-user-authentication"&gt;Periodic re-authentication&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] &lt;a href="https://docs.netbird.io/how-to/netbird-on-faas"&gt;Serverless&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;/td&gt; 
+   &lt;td&gt;
+    &lt;ul&gt;
+     &lt;li&gt;- [x] Docker&lt;/li&gt;
+    &lt;/ul&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h3&gt;Quickstart with NetBird Cloud&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Download and install NetBird at &lt;a href="https://app.netbird.io/install"&gt;https://app.netbird.io/install&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;Follow the steps to sign-up with Google, Microsoft, GitHub or your email address.&lt;/li&gt; 
+ &lt;li&gt;Check NetBird &lt;a href="https://app.netbird.io/"&gt;admin UI&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Add more machines.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Quickstart with self-hosted NetBird&lt;/h3&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;This is the quickest way to try self-hosted NetBird. It should take around 5 minutes to get started if you already have a public domain and a VM. Follow the &lt;a href="https://docs.netbird.io/selfhosted/selfhosted-guide#advanced-guide-with-a-custom-identity-provider"&gt;Advanced guide with a custom identity provider&lt;/a&gt; for installations with different IDPs.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;strong&gt;Infrastructure requirements:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;A Linux VM with at least &lt;strong&gt;1CPU&lt;/strong&gt; and &lt;strong&gt;2GB&lt;/strong&gt; of memory.&lt;/li&gt; 
+ &lt;li&gt;The VM should be publicly accessible on TCP ports &lt;strong&gt;80&lt;/strong&gt; and &lt;strong&gt;443&lt;/strong&gt; and UDP port: &lt;strong&gt;3478&lt;/strong&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Public domain&lt;/strong&gt; name pointing to the VM.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Software requirements:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Docker installed on the VM with the docker-compose plugin (&lt;a href="https://docs.docker.com/engine/install/"&gt;Docker installation guide&lt;/a&gt;) or docker with docker-compose in version 2 or higher.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://jqlang.github.io/jq/"&gt;jq&lt;/a&gt; installed. In most distributions Usually available in the official repositories and can be installed with &lt;code&gt;sudo apt install jq&lt;/code&gt; or &lt;code&gt;sudo yum install jq&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://curl.se/"&gt;curl&lt;/a&gt; installed. Usually available in the official repositories and can be installed with &lt;code&gt;sudo apt install curl&lt;/code&gt; or &lt;code&gt;sudo yum install curl&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Steps&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Download and run the installation script:&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;export NETBIRD_DOMAIN=netbird.example.com; curl -fsSL https://github.com/netbirdio/netbird/releases/latest/download/getting-started.sh | bash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Once finished, you can manage the resources via &lt;code&gt;docker-compose&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;A bit on NetBird internals&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Every machine in the network runs &lt;a href="https://raw.githubusercontent.com/netbirdio/netbird/main/client/"&gt;NetBird Agent (or Client)&lt;/a&gt; that manages WireGuard.&lt;/li&gt; 
+ &lt;li&gt;Every agent connects to &lt;a href="https://raw.githubusercontent.com/netbirdio/netbird/main/management/"&gt;Management Service&lt;/a&gt; that holds network state, manages peer IPs, and distributes network updates to agents (peers).&lt;/li&gt; 
+ &lt;li&gt;NetBird agent uses WebRTC ICE implemented in &lt;a href="https://github.com/pion/ice"&gt;pion/ice library&lt;/a&gt; to discover connection candidates when establishing a peer-to-peer connection between machines.&lt;/li&gt; 
+ &lt;li&gt;Connection candidates are discovered with the help of &lt;a href="https://en.wikipedia.org/wiki/STUN"&gt;STUN&lt;/a&gt; servers.&lt;/li&gt; 
+ &lt;li&gt;Agents negotiate a connection through &lt;a href="https://raw.githubusercontent.com/netbirdio/netbird/main/signal/"&gt;Signal Service&lt;/a&gt; passing p2p encrypted messages with candidates.&lt;/li&gt; 
+ &lt;li&gt;Sometimes the NAT traversal is unsuccessful due to strict NATs (e.g. mobile carrier-grade NAT) and a p2p connection isn't possible. When this occurs the system falls back to a relay server called &lt;a href="https://en.wikipedia.org/wiki/Traversal_Using_Relays_around_NAT"&gt;TURN&lt;/a&gt;, and a secure WireGuard tunnel is established via the TURN server.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;a href="https://github.com/coturn/coturn"&gt;Coturn&lt;/a&gt; is the one that has been successfully used for STUN and TURN in NetBird setups.&lt;/p&gt; 
+&lt;p float="left" align="middle"&gt; &lt;img src="https://docs.netbird.io/docs-static/img/about-netbird/high-level-dia.png" width="700" /&gt; &lt;/p&gt; 
+&lt;p&gt;See a complete &lt;a href="https://docs.netbird.io/about-netbird/how-netbird-works#architecture"&gt;architecture overview&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;h3&gt;Community projects&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/physk/netbird-installer"&gt;NetBird installer script&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://galaxy.ansible.com/ui/repo/published/dominion_solutions/netbird/"&gt;NetBird ansible collection by Dominion Solutions&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: The &lt;code&gt;main&lt;/code&gt; branch may be in an &lt;em&gt;unstable or even broken state&lt;/em&gt; during development. For stable versions, see &lt;a href="https://github.com/netbirdio/netbird/releases"&gt;releases&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;Support acknowledgement&lt;/h3&gt; 
+&lt;p&gt;In November 2022, NetBird joined the &lt;a href="https://www.forschung-it-sicherheit-kommunikationssysteme.de/foerderung/bekanntmachungen/startup-secure"&gt;StartUpSecure program&lt;/a&gt; sponsored by The Federal Ministry of Education and Research of The Federal Republic of Germany. Together with &lt;a href="https://cispa.de/en"&gt;CISPA Helmholtz Center for Information Security&lt;/a&gt; NetBird brings the security best practices and simplicity to private networking.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/700848/203091324-c6d311a0-22b5-4b05-a288-91cbc6cdcc46.png" alt="CISPA_Logo_BLACK_EN_RZ_RGB (1)" /&gt;&lt;/p&gt; 
+&lt;h3&gt;Testimonials&lt;/h3&gt; 
+&lt;p&gt;We use open-source technologies like &lt;a href="https://www.wireguard.com/"&gt;WireGuard®&lt;/a&gt;, &lt;a href="https://github.com/pion/ice"&gt;Pion ICE (WebRTC)&lt;/a&gt;, &lt;a href="https://github.com/coturn/coturn"&gt;Coturn&lt;/a&gt;, and &lt;a href="https://rosenpass.eu"&gt;Rosenpass&lt;/a&gt;. We very much appreciate the work these guys are doing and we'd greatly appreciate if you could support them in any way (e.g., by giving a star or a contribution).&lt;/p&gt; 
+&lt;h3&gt;Legal&lt;/h3&gt; 
+&lt;p&gt;This repository is licensed under BSD-3-Clause license that applies to all parts of the repository except for the directories management/, signal/ and relay/. Those directories are licensed under the GNU Affero General Public License version 3.0 (AGPLv3). See the respective LICENSE files inside each directory.&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;WireGuard&lt;/em&gt; and the &lt;em&gt;WireGuard&lt;/em&gt; logo are &lt;a href="https://www.wireguard.com/trademark-policy/"&gt;registered trademarks&lt;/a&gt; of Jason A. Donenfeld.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ThePrimeagen/99</title>
+      <link>https://github.com/ThePrimeagen/99</link>
+      <description>&lt;p&gt;Neovim AI agent done right&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;IF YOU ARE HERE FROM THE YT VIDEO&lt;/h1&gt; 
+&lt;p&gt;a few things changed. completion is a bit different for skills. i now require &lt;code&gt;@&lt;/code&gt; to begin with ... ill try to update as it happens ...&lt;/p&gt; 
+&lt;h3&gt;The Great Twitch Discussion&lt;/h3&gt; 
+&lt;p&gt;I will conduct a stream on Jan 30 at 8am The Lords Time (Montana Time/Mountain Time (same thing)) we will do an extensive deep dive on 99 and what we think is good and bad.&lt;/p&gt; 
+&lt;h2&gt;The AI Agent That Neovim Deserves&lt;/h2&gt; 
+&lt;p&gt;This is an example repo where i want to test what i think the ideal AI workflow is for people who dont have "skill issues." This is meant to streamline the requests to AI and limit them it restricted areas. For more general requests, please just use opencode. Dont use neovim.&lt;/p&gt; 
+&lt;h2&gt;Warning&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Prompts are temporary right now. they could be massively improved&lt;/li&gt; 
+ &lt;li&gt;TS and Lua language support, open to more&lt;/li&gt; 
+ &lt;li&gt;Still very alpha, could have severe problems&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h2&gt;How to use&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;you must have opencode installed and setup&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Add the following configuration to your neovim config&lt;/p&gt; 
+&lt;p&gt;I make the assumption you are using Lazy&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-lua"&gt;	{
+		"ThePrimeagen/99",
+		config = function()
+			local _99 = require("99")
+
+            -- For logging that is to a file if you wish to trace through requests
+            -- for reporting bugs, i would not rely on this, but instead the provided
+            -- logging mechanisms within 99.  This is for more debugging purposes
+            local cwd = vim.uv.cwd()
+            local basename = vim.fs.basename(cwd)
+			_99.setup({
+				logger = {
+					level = _99.DEBUG,
+					path = "/tmp/" .. basename .. ".99.debug",
+					print_on_error = true,
+				},
+
+                --- A new feature that is centered around tags
+                completion = {
+                    --- Defaults to .cursor/rules
+                    -- I am going to disable these until i understand the
+                    -- problem better.  Inside of cursor rules there is also
+                    -- application rules, which means i need to apply these
+                    -- differently
+                    -- cursor_rules = "&amp;lt;custom path to cursor rules&amp;gt;"
+
+                    --- A list of folders where you have your own SKILL.md
+                    --- Expected format:
+                    --- /path/to/dir/&amp;lt;skill_name&amp;gt;/SKILL.md
+                    ---
+                    --- Example:
+                    --- Input Path:
+                    --- "scratch/custom_rules/"
+                    ---
+                    --- Output Rules:
+                    --- {path = "scratch/custom_rules/vim/SKILL.md", name = "vim"},
+                    --- ... the other rules in that dir ...
+                    ---
+                    custom_rules = {
+                      "scratch/custom_rules/",
+                    },
+
+                    --- What autocomplete do you use.  We currently only
+                    --- support cmp right now
+                    source = "cmp",
+                },
+
+                --- WARNING: if you change cwd then this is likely broken
+                --- ill likely fix this in a later change
+                ---
+                --- md_files is a list of files to look for and auto add based on the location
+                --- of the originating request.  That means if you are at /foo/bar/baz.lua
+                --- the system will automagically look for:
+                --- /foo/bar/AGENT.md
+                --- /foo/AGENT.md
+                --- assuming that /foo is project root (based on cwd)
+				md_files = {
+					"AGENT.md",
+				},
+			})
+
+            -- Create your own short cuts for the different types of actions
+			vim.keymap.set("n", "&amp;lt;leader&amp;gt;9f", function()
+				_99.fill_in_function()
+			end)
+            -- take extra note that i have visual selection only in v mode
+            -- technically whatever your last visual selection is, will be used
+            -- so i have this set to visual mode so i dont screw up and use an
+            -- old visual selection
+            --
+            -- likely ill add a mode check and assert on required visual mode
+            -- so just prepare for it now
+			vim.keymap.set("v", "&amp;lt;leader&amp;gt;9v", function()
+				_99.visual()
+			end)
+
+            --- if you have a request you dont want to make any changes, just cancel it
+			vim.keymap.set("v", "&amp;lt;leader&amp;gt;9s", function()
+				_99.stop_all_requests()
+			end)
+
+            --- Example: Using rules + actions for custom behaviors
+            --- Create a rule file like ~/.rules/debug.md that defines custom behavior.
+            --- For instance, a "debug" rule could automatically add printf statements
+            --- throughout a function to help debug its execution flow.
+			vim.keymap.set("n", "&amp;lt;leader&amp;gt;9fd", function()
+				_99.fill_in_function()
+			end)
+		end,
+	},
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Completion&lt;/h2&gt; 
+&lt;p&gt;When prompting, if you have cmp installed as your autocomplete you can use an autocomplete for rule inclusion in your prompt.&lt;/p&gt; 
+&lt;p&gt;How skill completion and inclusion works is that you start by typing &lt;code&gt;@&lt;/code&gt;.&lt;/p&gt; 
+&lt;h2&gt;API&lt;/h2&gt; 
+&lt;p&gt;You can see the full api at &lt;a href="https://raw.githubusercontent.com/ThePrimeagen/99/master/lua/99/init.lua"&gt;99 API&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Reporting a bug&lt;/h2&gt; 
+&lt;p&gt;To report a bug, please provide the full running debug logs. This may require a bit of back and forth.&lt;/p&gt; 
+&lt;p&gt;Please do not request features. We will hold a public discussion on Twitch about features, which will be a much better jumping point then a bunch of requests that i have to close down. If you do make a feature request ill just shut it down instantly.&lt;/p&gt; 
+&lt;h3&gt;The logs&lt;/h3&gt; 
+&lt;p&gt;To get the &lt;em&gt;last&lt;/em&gt; run's logs execute &lt;code&gt;:lua require("99").view_logs()&lt;/code&gt;. If this happens to not be the log, you can navigate the logs with:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-lua"&gt;function _99.prev_request_logs() ... end
+function _99.next_request_logs() ... end
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Dont forget&lt;/h3&gt; 
+&lt;p&gt;If there are secrets or other information in the logs you want to be removed make sure that you delete the &lt;code&gt;query&lt;/code&gt; printing. This will likely contain information you may not want to share.&lt;/p&gt; 
+&lt;h3&gt;Known usability issues&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;long function definition issues.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;pre&gt;&lt;code class="language-typescript"&gt;function display_text(
+  game_state: GameState,
+  text: string,
+  x: number,
+  y: number,
+): void {
+  const ctx = game_state.canvas.getContext("2d");
+  assert(ctx, "cannot get game context");
+  ctx.fillStyle = "white";
+  ctx.fillText(text, x, y);
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then the virtual text will be displayed one line below "function" instead of first line in body&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;in lua and likely jsdoc, the replacing function will duplicate comment definitions&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;this wont happen in languages with types in the syntax&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;visual selection sends the whole file. there is likely a better way to use treesitter to make the selection of the content being sent more sensible.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;for both fill in function and visual there should be a better way to gather context. I think that treesitter + lsp could be really powerful. I am going to experiment with this more once i get access to the FIM models. This could make the time to completion less than a couple seconds, which would be incredible&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;every now and then the replacement seems to get jacked up and it screws up what i am currently editing.. I think it may have something to do with auto-complete&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;definitely not suure on this one&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;export function ... sometimes gets export as well. I think the prompt could help prevent this&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>termux/termux-app</title>
+      <link>https://github.com/termux/termux-app</link>
+      <description>&lt;p&gt;Termux - a terminal emulator application for Android OS extendible by variety of packages.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Termux application&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/termux/termux-app/actions"&gt;&lt;img src="https://github.com/termux/termux-app/workflows/Build/badge.svg?sanitize=true" alt="Build status" /&gt;&lt;/a&gt; &lt;a href="https://github.com/termux/termux-app/actions"&gt;&lt;img src="https://github.com/termux/termux-app/workflows/Unit%20tests/badge.svg?sanitize=true" alt="Testing status" /&gt;&lt;/a&gt; &lt;a href="https://gitter.im/termux/termux"&gt;&lt;img src="https://badges.gitter.im/termux/termux.svg?sanitize=true" alt="Join the chat at https://gitter.im/termux/termux" /&gt;&lt;/a&gt; &lt;a href="https://discord.gg/HXpF69X"&gt;&lt;img src="https://img.shields.io/discord/641256914684084234.svg?label=&amp;amp;logo=discord&amp;amp;logoColor=ffffff&amp;amp;color=5865F2" alt="Join the Termux discord server" /&gt;&lt;/a&gt; &lt;a href="https://jitpack.io/#termux/termux-app"&gt;&lt;img src="https://jitpack.io/v/termux/termux-app.svg?sanitize=true" alt="Termux library releases at Jitpack" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://termux.com"&gt;Termux&lt;/a&gt; is an Android terminal application and Linux environment.&lt;/p&gt; 
+&lt;p&gt;Note that this repository is for the app itself (the user interface and the terminal emulation). For the packages installable inside the app, see &lt;a href="https://github.com/termux/termux-packages"&gt;termux/termux-packages&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Quick how-to about Termux package management is available at &lt;a href="https://github.com/termux/termux-packages/wiki/Package-Management"&gt;Package Management&lt;/a&gt;. It also has info on how to fix &lt;strong&gt;&lt;code&gt;repository is under maintenance or down&lt;/code&gt;&lt;/strong&gt; errors when running &lt;code&gt;apt&lt;/code&gt; or &lt;code&gt;pkg&lt;/code&gt; commands.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;We are looking for Termux Android application maintainers.&lt;/strong&gt;&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;NOTICE: Termux may be unstable on Android 12+.&lt;/strong&gt; Android OS will kill any (phantom) processes greater than 32 (limit is for all apps combined) and also kill any processes using excessive CPU. You may get &lt;code&gt;[Process completed (signal 9) - press Enter]&lt;/code&gt; message in the terminal without actually exiting the shell process yourself. Check the related issue &lt;a href="https://github.com/termux/termux-app/issues/2366"&gt;#2366&lt;/a&gt;, &lt;a href="https://issuetracker.google.com/u/1/issues/205156966"&gt;issue tracker&lt;/a&gt;, &lt;a href="https://github.com/agnostic-apollo/Android-Docs/raw/master/en/docs/apps/processes/phantom-cached-and-empty-processes.md"&gt;phantom cached and empty processes docs&lt;/a&gt; and &lt;a href="https://github.com/termux/termux-app/issues/2366#issuecomment-1237468220"&gt;this TLDR comment&lt;/a&gt; on how to disable trimming of phantom and excessive cpu usage processes. A proper docs page will be added later. An option to disable the killing should be available in Android 12L or 13, so upgrade at your own risk if you are on Android 11, specially if you are not rooted.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#termux-app-and-plugins"&gt;Termux App and Plugins&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#installation"&gt;Installation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#uninstallation"&gt;Uninstallation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#important-links"&gt;Important Links&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#debugging"&gt;Debugging&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#for-maintainers-and-contributors"&gt;For Maintainers and Contributors&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#forking"&gt;Forking&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#sponsors-and-funders"&gt;Sponsors and Funders&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;&lt;/h2&gt; 
+&lt;h2&gt;Termux App and Plugins&lt;/h2&gt; 
+&lt;p&gt;The core &lt;a href="https://github.com/termux/termux-app"&gt;Termux&lt;/a&gt; app comes with the following optional plugin apps.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-api"&gt;Termux:API&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-boot"&gt;Termux:Boot&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-float"&gt;Termux:Float&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-styling"&gt;Termux:Styling&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-tasker"&gt;Termux:Tasker&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-widget"&gt;Termux:Widget&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;&lt;/h2&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;Latest version is &lt;code&gt;v0.118.3&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;NOTICE: It is highly recommended that you update to &lt;code&gt;v0.118.0&lt;/code&gt; or higher ASAP for various bug fixes, including a critical world-readable vulnerability reported &lt;a href="https://termux.github.io/general/2022/02/15/termux-apps-vulnerability-disclosures.html"&gt;here&lt;/a&gt;. See &lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#google-play-store-experimental-branch"&gt;below&lt;/a&gt; for information regarding Termux on Google Play.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Termux can be obtained through various sources listed below for &lt;strong&gt;only&lt;/strong&gt; Android &lt;code&gt;&amp;gt;= 7&lt;/code&gt; with full support for apps and packages.&lt;/p&gt; 
+&lt;p&gt;Support for both app and packages was dropped for Android &lt;code&gt;5&lt;/code&gt; and &lt;code&gt;6&lt;/code&gt; on &lt;a href="https://www.reddit.com/r/termux/comments/dnzdbs/end_of_android56_support_on_20200101/"&gt;2020-01-01&lt;/a&gt; at &lt;code&gt;v0.83&lt;/code&gt;, however it was re-added just for the app &lt;em&gt;without any support for package updates&lt;/em&gt; on &lt;a href="https://github.com/termux/termux-app/pull/2740"&gt;2022-05-24&lt;/a&gt; via the &lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#github"&gt;GitHub&lt;/a&gt; sources. Check &lt;a href="https://github.com/termux/termux-app/wiki/Termux-on-android-5-or-6"&gt;here&lt;/a&gt; for the details.&lt;/p&gt; 
+&lt;p&gt;The APK files of different sources are signed with different signature keys. The &lt;code&gt;Termux&lt;/code&gt; app and all its plugins use the same &lt;a href="https://developer.android.com/guide/topics/manifest/manifest-element"&gt;&lt;code&gt;sharedUserId&lt;/code&gt;&lt;/a&gt; &lt;code&gt;com.termux&lt;/code&gt; and so all their APKs installed on a device must have been signed with the same signature key to work together and so they must all be installed from the same source. Do not attempt to mix them together, i.e do not try to install an app or plugin from &lt;code&gt;F-Droid&lt;/code&gt; and another one from a different source like &lt;code&gt;GitHub&lt;/code&gt;. Android Package Manager will also normally not allow installation of APKs with different signatures and you will get errors on installation like &lt;code&gt;App not installed&lt;/code&gt;, &lt;code&gt;Failed to install due to an unknown error&lt;/code&gt;, &lt;code&gt;INSTALL_FAILED_UPDATE_INCOMPATIBLE&lt;/code&gt;, &lt;code&gt;INSTALL_FAILED_SHARED_USER_INCOMPATIBLE&lt;/code&gt;, &lt;code&gt;signatures do not match previously installed version&lt;/code&gt;, etc. This restriction can be bypassed with root or with custom roms.&lt;/p&gt; 
+&lt;p&gt;If you wish to install from a different source, then you must &lt;strong&gt;uninstall any and all existing Termux or its plugin app APKs&lt;/strong&gt; from your device first, then install all new APKs from the same new source. Check &lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#uninstallation"&gt;Uninstallation&lt;/a&gt; section for details. You may also want to consider &lt;a href="https://wiki.termux.com/wiki/Backing_up_Termux"&gt;Backing up Termux&lt;/a&gt; before the uninstallation so that you can restore it after re-installing from Termux different source.&lt;/p&gt; 
+&lt;p&gt;In the following paragraphs, &lt;em&gt;"bootstrap"&lt;/em&gt; refers to the minimal packages that are shipped with the &lt;code&gt;termux-app&lt;/code&gt; itself to start a working shell environment. Its zips are built and released &lt;a href="https://github.com/termux/termux-packages/releases"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3&gt;F-Droid&lt;/h3&gt; 
+&lt;p&gt;Termux application can be obtained from &lt;code&gt;F-Droid&lt;/code&gt; from &lt;a href="https://f-droid.org/en/packages/com.termux/"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;You &lt;strong&gt;do not&lt;/strong&gt; need to download the &lt;code&gt;F-Droid&lt;/code&gt; app (via the &lt;code&gt;Download F-Droid&lt;/code&gt; link) to install Termux. You can download the Termux APK directly from the site by clicking the &lt;code&gt;Download APK&lt;/code&gt; link at the bottom of each version section.&lt;/p&gt; 
+&lt;p&gt;It usually takes a few days (or even a week or more) for updates to be available on &lt;code&gt;F-Droid&lt;/code&gt; once an update has been released on &lt;code&gt;GitHub&lt;/code&gt;. The &lt;code&gt;F-Droid&lt;/code&gt; releases are built and published by &lt;code&gt;F-Droid&lt;/code&gt; once they &lt;a href="https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/com.termux.yml"&gt;detect&lt;/a&gt; a new &lt;code&gt;GitHub&lt;/code&gt; release. The Termux maintainers &lt;strong&gt;do not&lt;/strong&gt; have any control over the building and publishing of the Termux apps on &lt;code&gt;F-Droid&lt;/code&gt;. Moreover, the Termux maintainers also do not have access to the APK signing keys of &lt;code&gt;F-Droid&lt;/code&gt; releases, so we cannot release an APK ourselves on &lt;code&gt;GitHub&lt;/code&gt; that would be compatible with &lt;code&gt;F-Droid&lt;/code&gt; releases.&lt;/p&gt; 
+&lt;p&gt;The &lt;code&gt;F-Droid&lt;/code&gt; app often may not notify you of updates and you will manually have to do a pull down swipe action in the &lt;code&gt;Updates&lt;/code&gt; tab of the app for it to check updates. Make sure battery optimizations are disabled for the app, check &lt;a href="https://dontkillmyapp.com/"&gt;https://dontkillmyapp.com/&lt;/a&gt; for details on how to do that.&lt;/p&gt; 
+&lt;p&gt;Only a universal APK is released, which will work on all supported architectures. The APK and bootstrap installation size will be &lt;code&gt;~180MB&lt;/code&gt;. &lt;code&gt;F-Droid&lt;/code&gt; does &lt;a href="https://github.com/termux/termux-app/pull/1904"&gt;not support&lt;/a&gt; architecture specific APKs.&lt;/p&gt; 
+&lt;h3&gt;GitHub&lt;/h3&gt; 
+&lt;p&gt;Termux application can be obtained on &lt;code&gt;GitHub&lt;/code&gt; either from &lt;a href="https://github.com/termux/termux-app/releases"&gt;&lt;code&gt;GitHub Releases&lt;/code&gt;&lt;/a&gt; for version &lt;code&gt;&amp;gt;= 0.118.0&lt;/code&gt; or from &lt;a href="https://github.com/termux/termux-app/actions/workflows/debug_build.yml?query=branch%3Amaster+event%3Apush"&gt;&lt;code&gt;GitHub Build Action&lt;/code&gt;&lt;/a&gt; workflows. &lt;strong&gt;For android &lt;code&gt;&amp;gt;= 7&lt;/code&gt;, only install &lt;code&gt;apt-android-7&lt;/code&gt; variants. For android &lt;code&gt;5&lt;/code&gt; and &lt;code&gt;6&lt;/code&gt;, only install &lt;code&gt;apt-android-5&lt;/code&gt; variants.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;The APKs for &lt;code&gt;GitHub Releases&lt;/code&gt; will be listed under &lt;code&gt;Assets&lt;/code&gt; drop-down of a release. These are automatically attached when a new version is released.&lt;/p&gt; 
+&lt;p&gt;The APKs for &lt;code&gt;GitHub Build&lt;/code&gt; action workflows will be listed under &lt;code&gt;Artifacts&lt;/code&gt; section of a workflow run. These are created for each commit/push done to the repository and can be used by users who don't want to wait for releases and want to try out the latest features immediately or want to test their pull requests. Note that for action workflows, you need to be &lt;a href="https://github.com/login"&gt;&lt;strong&gt;logged into a &lt;code&gt;GitHub&lt;/code&gt; account&lt;/strong&gt;&lt;/a&gt; for the &lt;code&gt;Artifacts&lt;/code&gt; links to be enabled/clickable. If you are using the &lt;a href="https://github.com/mobile"&gt;&lt;code&gt;GitHub&lt;/code&gt; app&lt;/a&gt;, then make sure to open workflow link in a browser like Chrome or Firefox that has your GitHub account logged in since the in-app browser may not be logged in.&lt;/p&gt; 
+&lt;p&gt;The APKs for both of these are &lt;a href="https://developer.android.com/studio/debug"&gt;&lt;code&gt;debuggable&lt;/code&gt;&lt;/a&gt; and are compatible with each other but they are not compatible with other sources.&lt;/p&gt; 
+&lt;p&gt;Both universal and architecture specific APKs are released. The APK and bootstrap installation size will be &lt;code&gt;~180MB&lt;/code&gt; if using universal and &lt;code&gt;~120MB&lt;/code&gt; if using architecture specific. Check &lt;a href="https://github.com/termux/termux-app/issues/2153"&gt;here&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Security warning&lt;/strong&gt;: APK files on GitHub are signed with a test key that has been &lt;a href="https://github.com/termux/termux-app/raw/master/app/testkey_untrusted.jks"&gt;shared with community&lt;/a&gt;. This IS NOT an official developer key and everyone can use it to generate releases for own testing. Be very careful when using Termux GitHub builds obtained elsewhere except &lt;a href="https://github.com/termux/termux-app"&gt;https://github.com/termux/termux-app&lt;/a&gt;. Everyone is able to use it to forge a malicious Termux update installable over the GitHub build. Think twice about installing Termux builds distributed via Telegram or other social media. If your device get caught by malware, we will not be able to help you.&lt;/p&gt; 
+&lt;p&gt;The &lt;a href="https://github.com/termux/termux-app/raw/master/app/testkey_untrusted.jks"&gt;test key&lt;/a&gt; shall not be used to impersonate @termux and can't be used for this anyway. This key is not trusted by us and it is quite easy to detect its use in user generated content.&lt;/p&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Keystore information&lt;/summary&gt; 
+ &lt;pre&gt;&lt;code&gt;Alias name: alias
+Creation date: Oct 4, 2019
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: CN=APK Signer, OU=Earth, O=Earth
+Issuer: CN=APK Signer, OU=Earth, O=Earth
+Serial number: 29be297b
+Valid from: Wed Sep 04 02:03:24 EEST 2019 until: Tue Oct 26 02:03:24 EEST 2049
+Certificate fingerprints:
+         SHA1: 51:79:55:EA:BF:69:FC:05:7C:41:C7:D3:79:DB:BC:EF:20:AD:85:F2
+         SHA256: B6:DA:01:48:0E:EF:D5:FB:F2:CD:37:71:B8:D1:02:1E:C7:91:30:4B:DD:6C:4B:F4:1D:3F:AA:BA:D4:8E:E5:E1
+Signature algorithm name: SHA1withRSA (disabled)
+Subject Public Key Algorithm: 2048-bit RSA key
+Version: 3
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/details&gt; 
+&lt;h3&gt;Google Play Store &lt;strong&gt;(Experimental branch)&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;There is currently a build of Termux available on Google Play for Android 11+ devices, with extensive adjustments in order to pass policy requirements there. This is under development and has missing functionality and bugs (see &lt;a href="https://github.com/termux-play-store/"&gt;here&lt;/a&gt; for status updates) compared to the stable F-Droid build, which is why most users who can should still use F-Droid or GitHub build as mentioned above.&lt;/p&gt; 
+&lt;p&gt;Currently, Google Play will try to update installations away from F-Droid ones. Updating will still fail as &lt;a href="https://developer.android.com/guide/topics/manifest/manifest-element#uid"&gt;sharedUserId&lt;/a&gt; has been removed. A planned 0.118.1 F-Droid release will fix this by setting a higher version code than used for the PlayStore app. Meanwhile, to prevent Google Play from attempting to download and then fail to install the Google Play releases over existing installations, you can open the Termux apps pages on Google Play and then click on the 3 dots options button in the top right and then disable the Enable auto update toggle. However, the Termux apps updates will still show in the PlayStore app updates list.&lt;/p&gt; 
+&lt;p&gt;If you want to help out with testing the Google Play build (or cannot install Termux from other sources), be aware that it's built from a separate repository (&lt;a href="https://github.com/termux-play-store/"&gt;https://github.com/termux-play-store/&lt;/a&gt;) - be sure to report issues &lt;a href="https://github.com/termux-play-store/termux-issues/issues/new/choose"&gt;there&lt;/a&gt;, as any issues encountered might very well be specific to that repository.&lt;/p&gt; 
+&lt;h2&gt;Uninstallation&lt;/h2&gt; 
+&lt;p&gt;Uninstallation may be required if a user doesn't want Termux installed in their device anymore or is switching to a different &lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#installation"&gt;install source&lt;/a&gt;. You may also want to consider &lt;a href="https://wiki.termux.com/wiki/Backing_up_Termux"&gt;Backing up Termux&lt;/a&gt; before the uninstallation.&lt;/p&gt; 
+&lt;p&gt;To uninstall Termux completely, you must uninstall &lt;strong&gt;any and all existing Termux or its plugin app APKs&lt;/strong&gt; listed in &lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/#termux-app-and-plugins"&gt;Termux App and Plugins&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Go to &lt;code&gt;Android Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Applications&lt;/code&gt; and then look for those apps. You can also use the search feature if it’s available on your device and search &lt;code&gt;termux&lt;/code&gt; in the applications list.&lt;/p&gt; 
+&lt;p&gt;Even if you think you have not installed any of the plugins, it's strongly suggested to go through the application list in Android settings and double-check.&lt;/p&gt; 
+&lt;h2&gt;&lt;/h2&gt; 
+&lt;h2&gt;Important Links&lt;/h2&gt; 
+&lt;h3&gt;Community&lt;/h3&gt; 
+&lt;p&gt;All community links are available &lt;a href="https://wiki.termux.com/wiki/Community"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;The main ones are the following.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://reddit.com/r/termux"&gt;Termux Reddit community&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://matrix.to/#/#termux_termux:gitter.im"&gt;Termux User Matrix Channel&lt;/a&gt; (&lt;a href="https://gitter.im/termux/termux"&gt;Gitter&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://matrix.to/#/#termux_dev:gitter.im"&gt;Termux Dev Matrix Channel&lt;/a&gt; (&lt;a href="https://gitter.im/termux/dev"&gt;Gitter&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://twitter.com/termuxdevs"&gt;Termux X (Twitter)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="mailto:support@termux.dev"&gt;Termux Support Email&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Wikis&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/"&gt;Termux Wiki&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-app/wiki"&gt;Termux App Wiki&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-packages/wiki"&gt;Termux Packages Wiki&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Miscellaneous&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/FAQ"&gt;FAQ&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-packages/wiki/Termux-file-system-layout"&gt;Termux File System Layout&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Differences_from_Linux"&gt;Differences From Linux&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Package_Management"&gt;Package Management&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Remote_Access"&gt;Remote Access&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Backing_up_Termux"&gt;Backing up Termux&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Terminal_Settings"&gt;Terminal Settings&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Touch_Keyboard"&gt;Touch Keyboard&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Internal_and_external_storage"&gt;Android Storage and Sharing Data with Other Apps&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Termux:API"&gt;Android APIs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-packages/issues/6348"&gt;Moved Termux Packages Hosting From Bintray to IPFS&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-app/wiki/RUN_COMMAND-Intent"&gt;Running Commands in Termux From Other Apps via &lt;code&gt;RUN_COMMAND&lt;/code&gt; intent&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/termux/termux-packages/wiki/Termux-and-Android-10"&gt;Termux and Android 10&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Terminal&lt;/h3&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;&lt;/summary&gt; 
+ &lt;h3&gt;Terminal resources&lt;/h3&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt;&lt;a href="https://invisible-island.net/xterm/ctlseqs/ctlseqs.html"&gt;XTerm control sequences&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://vt100.net/"&gt;vt100.net&lt;/a&gt;&lt;/li&gt; 
+  &lt;li&gt;&lt;a href="https://wiki.bash-hackers.org/scripting/terminalcodes"&gt;Terminal codes (ANSI and terminfo equivalents)&lt;/a&gt;&lt;/li&gt; 
+ &lt;/ul&gt; 
+ &lt;h3&gt;Terminal emulators&lt;/h3&gt; 
+ &lt;ul&gt; 
+  &lt;li&gt; &lt;p&gt;VTE (libvte): Terminal emulator widget for GTK+, mainly used in gnome-terminal. &lt;a href="https://github.com/GNOME/vte"&gt;Source&lt;/a&gt;, &lt;a href="https://bugzilla.gnome.org/buglist.cgi?quicksearch=product%3A%22vte%22+"&gt;Open Issues&lt;/a&gt;, and &lt;a href="https://bugzilla.gnome.org/buglist.cgi?bug_status=RESOLVED&amp;amp;bug_status=VERIFIED&amp;amp;chfield=resolution&amp;amp;chfieldfrom=-2000d&amp;amp;chfieldvalue=FIXED&amp;amp;product=vte&amp;amp;resolution=FIXED"&gt;All (including closed) issues&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;iTerm 2: OS X terminal application. &lt;a href="https://github.com/gnachman/iTerm2"&gt;Source&lt;/a&gt;, &lt;a href="https://gitlab.com/gnachman/iterm2/issues"&gt;Issues&lt;/a&gt; and &lt;a href="https://iterm2.com/documentation.html"&gt;Documentation&lt;/a&gt; (which includes &lt;a href="https://iterm2.com/documentation-escape-codes.html"&gt;iTerm2 proprietary escape codes&lt;/a&gt;).&lt;/p&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;Konsole: KDE terminal application. &lt;a href="https://projects.kde.org/projects/kde/applications/konsole/repository"&gt;Source&lt;/a&gt;, in particular &lt;a href="https://projects.kde.org/projects/kde/applications/konsole/repository/revisions/master/show/tests"&gt;tests&lt;/a&gt;, &lt;a href="https://bugs.kde.org/buglist.cgi?bug_severity=critical&amp;amp;bug_severity=grave&amp;amp;bug_severity=major&amp;amp;bug_severity=crash&amp;amp;bug_severity=normal&amp;amp;bug_severity=minor&amp;amp;bug_status=UNCONFIRMED&amp;amp;bug_status=NEW&amp;amp;bug_status=ASSIGNED&amp;amp;bug_status=REOPENED&amp;amp;product=konsole"&gt;Bugs&lt;/a&gt; and &lt;a href="https://bugs.kde.org/buglist.cgi?bug_severity=wishlist&amp;amp;bug_status=UNCONFIRMED&amp;amp;bug_status=NEW&amp;amp;bug_status=ASSIGNED&amp;amp;bug_status=REOPENED&amp;amp;product=konsole"&gt;Wishes&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;hterm: JavaScript terminal implementation from Chromium. &lt;a href="https://github.com/chromium/hterm"&gt;Source&lt;/a&gt;, including &lt;a href="https://github.com/chromium/hterm/raw/master/js/hterm_vt_tests.js"&gt;tests&lt;/a&gt;, and &lt;a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-hterm"&gt;Google group&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;xterm: The grandfather of terminal emulators. &lt;a href="https://invisible-island.net/datafiles/release/xterm.tar.gz"&gt;Source&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;Connectbot: Android SSH client. &lt;a href="https://github.com/connectbot/connectbot"&gt;Source&lt;/a&gt;&lt;/p&gt; &lt;/li&gt; 
+  &lt;li&gt; &lt;p&gt;Android Terminal Emulator: Android terminal app which Termux terminal handling is based on. Inactive. &lt;a href="https://github.com/jackpal/Android-Terminal-Emulator"&gt;Source&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; 
+ &lt;/ul&gt; 
+&lt;/details&gt; 
+&lt;h2&gt;&lt;/h2&gt; 
+&lt;h3&gt;Debugging&lt;/h3&gt; 
+&lt;p&gt;You can help debug problems of the &lt;code&gt;Termux&lt;/code&gt; app and its plugins by setting appropriate &lt;code&gt;logcat&lt;/code&gt; &lt;code&gt;Log Level&lt;/code&gt; in &lt;code&gt;Termux&lt;/code&gt; app settings -&amp;gt; &lt;code&gt;&amp;lt;APP_NAME&amp;gt;&lt;/code&gt; -&amp;gt; &lt;code&gt;Debugging&lt;/code&gt; -&amp;gt; &lt;code&gt;Log Level&lt;/code&gt; (Requires &lt;code&gt;Termux&lt;/code&gt; app version &lt;code&gt;&amp;gt;= 0.118.0&lt;/code&gt;). The &lt;code&gt;Log Level&lt;/code&gt; defaults to &lt;code&gt;Normal&lt;/code&gt; and log level &lt;code&gt;Verbose&lt;/code&gt; currently logs additional information. Its best to revert log level to &lt;code&gt;Normal&lt;/code&gt; after you have finished debugging since private data may otherwise be passed to &lt;code&gt;logcat&lt;/code&gt; during normal operation and moreover, additional logging increases execution time.&lt;/p&gt; 
+&lt;p&gt;The plugin apps &lt;strong&gt;do not execute the commands themselves&lt;/strong&gt; but send execution intents to &lt;code&gt;Termux&lt;/code&gt; app, which has its own log level which can be set in &lt;code&gt;Termux&lt;/code&gt; app settings -&amp;gt; &lt;code&gt;Termux&lt;/code&gt; -&amp;gt; &lt;code&gt;Debugging&lt;/code&gt; -&amp;gt; &lt;code&gt;Log Level&lt;/code&gt;. So you must set log level for both &lt;code&gt;Termux&lt;/code&gt; and the respective plugin app settings to get all the info.&lt;/p&gt; 
+&lt;p&gt;Once log levels have been set, you can run the &lt;code&gt;logcat&lt;/code&gt; command in &lt;code&gt;Termux&lt;/code&gt; app terminal to view the logs in realtime (&lt;code&gt;Ctrl+c&lt;/code&gt; to stop) or use &lt;code&gt;logcat -d &amp;gt; logcat.txt&lt;/code&gt; to take a dump of the log. You can also view the logs from a PC over &lt;code&gt;ADB&lt;/code&gt;. For more information, check official android &lt;code&gt;logcat&lt;/code&gt; guide &lt;a href="https://developer.android.com/studio/command-line/logcat"&gt;here&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Moreover, users can generate termux files &lt;code&gt;stat&lt;/code&gt; info and &lt;code&gt;logcat&lt;/code&gt; dump automatically too with terminal's long hold options menu &lt;code&gt;More&lt;/code&gt; -&amp;gt; &lt;code&gt;Report Issue&lt;/code&gt; option and selecting &lt;code&gt;YES&lt;/code&gt; in the prompt shown to add debug info. This can be helpful for reporting and debugging other issues. If the report generated is too large, then &lt;code&gt;Save To File&lt;/code&gt; option in context menu (3 dots on top right) of &lt;code&gt;ReportActivity&lt;/code&gt; can be used and the file viewed/shared instead.&lt;/p&gt; 
+&lt;p&gt;Users must post complete report (optionally without sensitive info) when reporting issues. Issues opened with &lt;strong&gt;(partial) screenshots of error reports&lt;/strong&gt; instead of text will likely be automatically closed/deleted.&lt;/p&gt; 
+&lt;h5&gt;Log Levels&lt;/h5&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;Off&lt;/code&gt; - Log nothing.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Normal&lt;/code&gt; - Start logging error, warn and info messages and stacktraces.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Debug&lt;/code&gt; - Start logging debug messages.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;Verbose&lt;/code&gt; - Start logging verbose messages.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;&lt;/h2&gt; 
+&lt;h2&gt;For Maintainers and Contributors&lt;/h2&gt; 
+&lt;p&gt;The &lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/termux-shared"&gt;termux-shared&lt;/a&gt; library was added in &lt;a href="https://github.com/termux/termux-app/releases/tag/v0.109"&gt;&lt;code&gt;v0.109&lt;/code&gt;&lt;/a&gt;. It defines shared constants and utils of the Termux app and its plugins. It was created to allow for the removal of all hardcoded paths in the Termux app. Some of the termux plugins are using this as well and rest will in future. If you are contributing code that is using a constant or a util that may be shared, then define it in &lt;code&gt;termux-shared&lt;/code&gt; library if it currently doesn't exist and reference it from there. Update the relevant changelogs as well. Pull requests using hardcoded values &lt;strong&gt;will/should not&lt;/strong&gt; be accepted. Termux app and plugin specific classes must be added under &lt;code&gt;com.termux.shared.termux&lt;/code&gt; package and general classes outside it. The &lt;a href="https://raw.githubusercontent.com/termux/termux-app/master/termux-shared/LICENSE.md"&gt;&lt;code&gt;termux-shared&lt;/code&gt; &lt;code&gt;LICENSE&lt;/code&gt;&lt;/a&gt; must also be checked and updated if necessary when contributing code. The licenses of any external library or code must be honoured.&lt;/p&gt; 
+&lt;p&gt;The main Termux constants are defined by &lt;a href="https://github.com/termux/termux-app/raw/master/termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java"&gt;&lt;code&gt;TermuxConstants&lt;/code&gt;&lt;/a&gt; class. It also contains information on how to fork Termux or build it with your own package name. Changing the package name will require building the bootstrap zip packages and other packages with the new &lt;code&gt;$PREFIX&lt;/code&gt;, check &lt;a href="https://github.com/termux/termux-packages/wiki/Building-packages"&gt;Building Packages&lt;/a&gt; for more info.&lt;/p&gt; 
+&lt;p&gt;Check &lt;a href="https://github.com/termux/termux-app/wiki/Termux-Libraries"&gt;Termux Libraries&lt;/a&gt; for how to import termux libraries in plugin apps and &lt;a href="https://github.com/termux/termux-app/wiki/Termux-Libraries#forking-and-local-development"&gt;Forking and Local Development&lt;/a&gt; for how to update termux libraries for plugins.&lt;/p&gt; 
+&lt;p&gt;The &lt;code&gt;versionName&lt;/code&gt; in &lt;code&gt;build.gradle&lt;/code&gt; files of Termux and its plugin apps must follow the &lt;a href="https://semver.org/spec/v2.0.0.html"&gt;semantic version &lt;code&gt;2.0.0&lt;/code&gt; spec&lt;/a&gt; in the format &lt;code&gt;major.minor.patch(-prerelease)(+buildmetadata)&lt;/code&gt;. When bumping &lt;code&gt;versionName&lt;/code&gt; in &lt;code&gt;build.gradle&lt;/code&gt; files and when creating a tag for new releases on GitHub, make sure to include the patch number as well, like &lt;code&gt;v0.1.0&lt;/code&gt; instead of just &lt;code&gt;v0.1&lt;/code&gt;. The &lt;code&gt;build.gradle&lt;/code&gt; files and &lt;code&gt;attach_debug_apks_to_release&lt;/code&gt; workflow validates the version as well and the build/attachment will fail if &lt;code&gt;versionName&lt;/code&gt; does not follow the spec.&lt;/p&gt; 
+&lt;h3&gt;Commit Messages Guidelines&lt;/h3&gt; 
+&lt;p&gt;Commit messages &lt;strong&gt;must&lt;/strong&gt; use the &lt;a href="https://www.conventionalcommits.org"&gt;Conventional Commits&lt;/a&gt; spec so that chagelogs as per the &lt;a href="https://github.com/olivierlacan/keep-a-changelog"&gt;Keep a Changelog&lt;/a&gt; spec can automatically be generated by the &lt;a href="https://github.com/termux/create-conventional-changelog"&gt;&lt;code&gt;create-conventional-changelog&lt;/code&gt;&lt;/a&gt; script, check its repo for further details on the spec. &lt;strong&gt;The first letter for &lt;code&gt;type&lt;/code&gt; and &lt;code&gt;description&lt;/code&gt; must be capital and description should be in the present tense.&lt;/strong&gt; The space after the colon &lt;code&gt;:&lt;/code&gt; is necessary. For a breaking change, add an exclamation mark &lt;code&gt;!&lt;/code&gt; before the colon &lt;code&gt;:&lt;/code&gt;, so that it is highlighted in the chagelog automatically.&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;&amp;lt;type&amp;gt;[optional scope]: &amp;lt;description&amp;gt;
+
+[optional body]
+
+[optional footer(s)]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Only the &lt;code&gt;types&lt;/code&gt; listed below must be used exactly as they are used in the changelog headings.&lt;/strong&gt; For example, &lt;code&gt;Added: Add foo&lt;/code&gt;, &lt;code&gt;Added|Fixed: Add foo and fix bar&lt;/code&gt;, &lt;code&gt;Changed!: Change baz as a breaking change&lt;/code&gt;, etc. You can optionally add a scope as well, like &lt;code&gt;Fixed(terminal): Fix some bug&lt;/code&gt;. &lt;strong&gt;Do not use anything else as type, like &lt;code&gt;add&lt;/code&gt; instead of &lt;code&gt;Added&lt;/code&gt;, etc.&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Added&lt;/strong&gt; for new features.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Changed&lt;/strong&gt; for changes in existing functionality.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Deprecated&lt;/strong&gt; for soon-to-be removed features.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Removed&lt;/strong&gt; for now removed features.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Fixed&lt;/strong&gt; for any bug fixes.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Security&lt;/strong&gt; in case of vulnerabilities.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;&lt;/h2&gt; 
+&lt;h2&gt;Forking&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Check &lt;a href="https://github.com/termux/termux-app/raw/master/termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java"&gt;&lt;code&gt;TermuxConstants&lt;/code&gt;&lt;/a&gt; javadocs for instructions on what changes to make in the app to change package name.&lt;/li&gt; 
+ &lt;li&gt;You also need to recompile bootstrap zip for the new package name. Check &lt;a href="https://github.com/termux/termux-packages/wiki/For-maintainers#build-bootstrap-archives"&gt;building bootstrap&lt;/a&gt;, &lt;a href="https://github.com/termux/termux-app/issues/1983"&gt;here&lt;/a&gt; and &lt;a href="https://github.com/termux/termux-app/issues/2081#issuecomment-865280111"&gt;here&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Currently, not all plugins use &lt;code&gt;TermuxConstants&lt;/code&gt; from &lt;code&gt;termux-shared&lt;/code&gt; library and have hardcoded &lt;code&gt;com.termux&lt;/code&gt; values and will need to be manually patched.&lt;/li&gt; 
+ &lt;li&gt;If forking termux plugins, check &lt;a href="https://github.com/termux/termux-app/wiki/Termux-Libraries#forking-and-local-development"&gt;Forking and Local Development&lt;/a&gt; for info on how to use termux libraries for plugins.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;&lt;/h2&gt; 
+&lt;h2&gt;Sponsors and Funders&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com"&gt;&lt;img alt="GitHub Accelerator" width="25%" src="https://raw.githubusercontent.com/termux/termux-app/master/site/assets/sponsors/github.png" /&gt;&lt;/a&gt;&lt;br /&gt; &lt;em&gt;&lt;a href="https://github.com/accelerator"&gt;GitHub Accelerator&lt;/a&gt; (&lt;a href="https://github.blog/2023-04-12-github-accelerator-our-first-cohort-and-whats-next"&gt;1&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com"&gt;&lt;img alt="GitHub Secure Open Source Fund" width="25%" src="https://raw.githubusercontent.com/termux/termux-app/master/site/assets/sponsors/github.png" /&gt;&lt;/a&gt;&lt;br /&gt; &lt;em&gt;&lt;a href="https://resources.github.com/github-secure-open-source-fund"&gt;GitHub Secure Open Source Fund&lt;/a&gt; (&lt;a href="https://github.blog/open-source/maintainers/securing-the-supply-chain-at-scale-starting-with-71-important-open-source-projects"&gt;1&lt;/a&gt;, &lt;a href="https://termux.dev/en/posts/general/2025/08/11/termux-selected-for-github-secure-open-source-fund-session-2.html"&gt;2&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://nlnet.nl/mobifree"&gt;&lt;img alt="NLnet NGI Mobifree" width="25%" src="https://raw.githubusercontent.com/termux/termux-app/master/site/assets/sponsors/nlnet-ngi-mobifree.png" /&gt;&lt;/a&gt;&lt;br /&gt; &lt;em&gt;&lt;a href="https://nlnet.nl/mobifree"&gt;NLnet NGI Mobifree&lt;/a&gt; (&lt;a href="https://nlnet.nl/news/2024/20241111-NGI-Mobifree-grants.html"&gt;1&lt;/a&gt;, &lt;a href="https://termux.dev/en/posts/general/2024/11/11/termux-selected-for-nlnet-ngi-mobifree-grant.html"&gt;2&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.cloudflare.com"&gt;&lt;img alt="Cloudflare" width="25%" src="https://raw.githubusercontent.com/termux/termux-app/master/site/assets/sponsors/cloudflare.png" /&gt;&lt;/a&gt;&lt;br /&gt; &lt;em&gt;&lt;a href="https://www.cloudflare.com"&gt;Cloudflare&lt;/a&gt; (&lt;a href="https://packages-cf.termux.dev"&gt;1&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.warp.dev/?utm_source=github&amp;amp;utm_medium=readme&amp;amp;utm_campaign=termux"&gt;&lt;img alt="Warp" width="25%" src="https://github.com/warpdotdev/brand-assets/raw/640dffd347439bbcb535321ab36b7281cf4446c0/Github/Sponsor/Warp-Github-LG-03.png" /&gt;&lt;/a&gt;&lt;br /&gt; &lt;a href="https://www.warp.dev/?utm_source=github&amp;amp;utm_medium=readme&amp;amp;utm_campaign=termux"&gt;&lt;em&gt;Warp, built for coding with multiple AI agents&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>autobrr/qui</title>
+      <link>https://github.com/autobrr/qui</link>
+      <description>&lt;p&gt;A fast, single-binary qBittorrent web UI: manage multiple instances, automate torrent workflows, and cross-seed across trackers.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;qui&lt;/h1&gt; 
+&lt;p&gt;A fast, modern web interface for qBittorrent. Supports managing multiple qBittorrent instances from a single, lightweight application.&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;img src="https://raw.githubusercontent.com/autobrr/qui/develop/.github/assets/qui.png" alt="qui" width="100%" /&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Full documentation available at &lt;strong&gt;&lt;a href="https://getqui.com"&gt;getqui.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;h3&gt;Linux x86_64&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Download and extract the latest release
+wget $(curl -s https://api.github.com/repos/autobrr/qui/releases/latest | grep browser_download_url | grep linux_x86_64 | cut -d\" -f4)
+tar -C /usr/local/bin -xzf qui*.tar.gz
+
+# Run
+./qui serve
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The web interface will be available at &lt;a href="http://localhost:7476"&gt;http://localhost:7476&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Docker&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;docker run -d \
+  -p 7476:7476 \
+  -v $(pwd)/config:/config \
+  ghcr.io/autobrr/qui:latest
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Single Binary&lt;/strong&gt;: No dependencies, just download and run&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Multi-Instance Support&lt;/strong&gt;: Manage all your qBittorrent instances from one place&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Fast &amp;amp; Responsive&lt;/strong&gt;: Optimized for performance with large torrent collections&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Cross-Seed&lt;/strong&gt;: Automatically find and add matching torrents across trackers&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Automations&lt;/strong&gt;: Rule-based torrent management with conditions and actions&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Backups &amp;amp; Restore&lt;/strong&gt;: Scheduled snapshots with multiple restore modes&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Reverse Proxy&lt;/strong&gt;: Transparent qBittorrent proxy for external apps&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;p&gt;Join our community on &lt;a href="https://discord.autobrr.com/qui"&gt;Discord&lt;/a&gt;!&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/autobrr/qui/discussions/new/choose"&gt;GitHub Discussions&lt;/a&gt; - Feature requests and bug reports&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/autobrr/qui/issues"&gt;GitHub Issues&lt;/a&gt; - Work in progress&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Support Development&lt;/h2&gt; 
+&lt;p&gt;qui is developed and maintained by volunteers. Your support helps us continue improving the project.&lt;/p&gt; 
+&lt;h3&gt;License Key&lt;/h3&gt; 
+&lt;p&gt;Donate what you want (minimum $4.99) to unlock premium themes:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Use any donation method below&lt;/li&gt; 
+ &lt;li&gt;After donating, DM soup or ze0s on Discord (whoever you donated to) 
+  &lt;ul&gt; 
+   &lt;li&gt;For crypto, include the transaction hash/link&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;You'll receive a 100% discount code&lt;/li&gt; 
+ &lt;li&gt;Redeem the code on &lt;a href="https://buy.polar.sh/polar_cl_yyXJesVM9pFVfAPIplspbfCukgVgXzXjXIc2N0I8WcL"&gt;Polar&lt;/a&gt; (free order) to receive your license key&lt;/li&gt; 
+ &lt;li&gt;Enter the license key in Settings → Themes in your qui instance&lt;/li&gt; 
+ &lt;li&gt;License is lifetime&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Donation Methods&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;soup&lt;/strong&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/sponsors/s0up4200"&gt;GitHub Sponsors&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://buymeacoffee.com/s0up4200"&gt;Buy Me a Coffee&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://ko-fi.com/s0up4200"&gt;Ko-fi&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;zze0s&lt;/strong&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/sponsors/zze0s"&gt;GitHub Sponsors&lt;/a&gt;&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://buymeacoffee.com/ze0s"&gt;Buy Me a Coffee&lt;/a&gt;&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Cryptocurrency&lt;/h4&gt; 
+&lt;h4&gt;Bitcoin (BTC)&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;soup: &lt;code&gt;bc1qfe093kmhvsa436v4ksz0udfcggg3vtnm2tjgem&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;zze0s: &lt;code&gt;bc1q2nvdd83hrzelqn4vyjm8tvjwmsuuxsdlg4ws7x&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Ethereum (ETH)&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;soup: &lt;code&gt;0xD8f517c395a68FEa8d19832398d4dA7b45cbc38F&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;zze0s: &lt;code&gt;0xBF7d749574aabF17fC35b27232892d3F0ff4D423&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Litecoin (LTC)&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;soup: &lt;code&gt;ltc1q86nx64mu2j22psj378amm58ghvy4c9dw80z88h&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;zze0s: &lt;code&gt;ltc1qza9ffjr5y43uk8nj9ndjx9hkj0ph3rhur6wudn&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Monero (XMR)&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;soup: &lt;code&gt;8AMPTPgjmLG9armLBvRA8NMZqPWuNT4US3kQoZrxDDVSU21kpYpFr1UCWmmtcBKGsvDCFA3KTphGXExWb3aHEu67JkcjAvC&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;zze0s: &lt;code&gt;44AvbWXzFN3bnv2oj92AmEaR26PQf5Ys4W155zw3frvEJf2s4g325bk4tRBgH7umSVMhk88vkU3gw9cDvuCSHgpRPsuWVJp&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;All methods unlock premium themes — use whichever works best for you. For other currencies or donation methods, &lt;a href="https://discord.autobrr.com/qui"&gt;reach out on Discord&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Thank you for your support ❤️&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Contributions are welcome! Please feel free to submit a Pull Request.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;GPL-2.0-or-later&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>karpathy/nanochat</title>
+      <link>https://github.com/karpathy/nanochat</link>
+      <description>&lt;p&gt;The best ChatGPT that $100 can buy.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;nanochat&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/karpathy/nanochat/master/dev/nanochat.png" alt="nanochat logo" /&gt; &lt;img src="https://raw.githubusercontent.com/karpathy/nanochat/master/dev/scaling_laws_jan26.png" alt="scaling laws" /&gt;&lt;/p&gt; 
+&lt;p&gt;nanochat is the simplest experimental harness for training LLMs. It is designed to run on a single GPU node, the code is minimal/hackable, and it covers all major LLM stages including tokenization, pretraining, finetuning, evaluation, inference, and a chat UI. For example, you can train your own GPT-2 capability LLM (which cost ~$50,000 to train in 2019) for only $73 (3 hours of 8XH100 GPU node) and then talk to it in a familiar ChatGPT-like web UI.&lt;/p&gt; 
+&lt;p&gt;For questions about the repo, I recommend either using &lt;a href="https://deepwiki.com/karpathy/nanochat"&gt;DeepWiki&lt;/a&gt; from Devin/Cognition to ask questions about the repo, or use the &lt;a href="https://github.com/karpathy/nanochat/discussions"&gt;Discussions tab&lt;/a&gt;, or come by the &lt;a href="https://discord.com/channels/1020383067459821711/1427295580895314031"&gt;#nanochat&lt;/a&gt; channel on Discord.&lt;/p&gt; 
+&lt;h2&gt;Updates&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;(Jan 31 2026) Major revamp of all scripts/README ongoing, deleting midtraining stage, might be a bit messy briefly...&lt;/li&gt; 
+ &lt;li&gt;(Jan 30 2026) With all the latest improvements we're able to train GPT-2 grade LLM in about $73. The &lt;a href="https://raw.githubusercontent.com/karpathy/nanochat/master/runs/speedrun.sh"&gt;runs/speedrun.sh&lt;/a&gt; script will become the refernece way to train GPT-2 grade model and talk to it.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Leaderboard&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;#&lt;/th&gt; 
+   &lt;th&gt;Record time&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+   &lt;th&gt;Date&lt;/th&gt; 
+   &lt;th&gt;Commit&lt;/th&gt; 
+   &lt;th&gt;Contributors&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+   &lt;td&gt;3.04 hours&lt;/td&gt; 
+   &lt;td&gt;d24 baseline, slightly overtrained&lt;/td&gt; 
+   &lt;td&gt;Jan 29 2026&lt;/td&gt; 
+   &lt;td&gt;348fbb3&lt;/td&gt; 
+   &lt;td&gt;@karpathy&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;The primary metric we care about is "time to GPT-2" - the wall clock time needed to outperform the GPT-2 (1.6B) CORE metric on an 8XH100 GPU node. In 2019, the training of GPT-2 cost approximately $50,000 so it is incredible that due to many advances over 7 years across the stack, we can now do so in 3 hours or less, for ~$73 and below. Once your repo is set up (see the &lt;a href="https://raw.githubusercontent.com/karpathy/nanochat/master/runs/speedrun.sh"&gt;runs/speedrun.sh&lt;/a&gt; script for reference), e.g. the way I kicked off the jan29 run is as follows:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;OMP_NUM_THREADS=1 torchrun --standalone --nproc_per_node=8 -m scripts.base_train -- \
+    --depth=24 \
+    --run=d24-jan29 \
+    --model-tag=d24_jan29 \
+    --device-batch-size=16 \
+    --sample-every=-1 \
+    --save-every=-1 \
+    --core-metric-max-per-task=-1 \
+    --core-metric-every=3000 \
+    --target-param-data-ratio=12
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;After 3 hours we get output like this:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;...
+wandb: Run summary:
+wandb:          core_metric 0.25851
+wandb:                 step 16704
+wandb: total_training_flops 4.330784131228946e+19
+wandb:  total_training_time 10949.46713
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The GPT-2 CORE score (i.e. the target to beat) is 0.256525. So we see that this d24 CORE score is higher (0.25851). Then we look at the &lt;code&gt;total_training_time&lt;/code&gt;, which is the time of the training iterations alone, excluding all the evaluations and logging, in seconds. We get: &lt;code&gt;10949/60/60 ~= 3.04&lt;/code&gt; hours, the current record.&lt;/p&gt; 
+&lt;h2&gt;Getting started&lt;/h2&gt; 
+&lt;h3&gt;Reproduce and talk to GPT-2&lt;/h3&gt; 
+&lt;p&gt;The most fun you can have is to train your own GPT-2 and talk to it. The entire pipeline to do so is contained in the single file &lt;a href="https://raw.githubusercontent.com/karpathy/nanochat/master/runs/speedrun.sh"&gt;runs/speedrun.sh&lt;/a&gt;, which is designed to be run on an 8XH100 GPU node. Currently, at ~$24/hour for these nodes, pretraining GPT-2 grade model takes approximately 3 hours and will set you back about $75. Boot up a new 8XH100 GPU box from your favorite provider (e.g. I use and like &lt;a href="https://lambda.ai/service/gpu-cloud"&gt;Lambda&lt;/a&gt;), and kick off the training script:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bash runs/speedrun.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You mish to do so in a screen session as this will take ~3 hours to run. Once it's done, you can talk to it via the ChatGPT-like web UI. Make sure again that your local uv virtual environment is active (run &lt;code&gt;source .venv/bin/activate&lt;/code&gt;), and serve it:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;python -m scripts.chat_web
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;And then visit the URL shown. Make sure to access it correctly, e.g. on Lambda use the public IP of the node you're on, followed by the port, so for example &lt;a href="http://209.20.xxx.xxx:8000/"&gt;http://209.20.xxx.xxx:8000/&lt;/a&gt;, etc. Then talk to your LLM as you'd normally talk to ChatGPT! Get it to write stories or poems. Ask it to tell you who you are to see a hallucination. Ask it why the sky is blue. Or why it's green. The speedrun is a 4e19 FLOPs capability model so it's a bit like talking to a kindergartener :).&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;img width="2672" height="1520" alt="image" src="https://github.com/user-attachments/assets/ed39ddf8-2370-437a-bedc-0f39781e76b5" /&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;A few more notes:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The code will run just fine on the Ampere 8XA100 GPU node as well, but a bit slower.&lt;/li&gt; 
+ &lt;li&gt;All code will run just fine on even a single GPU by omitting &lt;code&gt;torchrun&lt;/code&gt;, and will produce ~identical results (code will automatically switch to gradient accumulation), but you'll have to wait 8 times longer.&lt;/li&gt; 
+ &lt;li&gt;If your GPU(s) have less than 80GB, you'll have to tune some of the hyperparameters or you will OOM / run out of VRAM. Look for &lt;code&gt;--device_batch_size&lt;/code&gt; in the scripts and reduce it until things fit. E.g. from 32 (default) to 16, 8, 4, 2, or even 1. Less than that you'll have to know a bit more what you're doing and get more creative.&lt;/li&gt; 
+ &lt;li&gt;Most of the code is fairly vanilla PyTorch so it should run on anything that supports that - xpu, mps, or etc, but I haven't personally exercised all of these code paths so there might be sharp edges.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Research&lt;/h2&gt; 
+&lt;p&gt;If you are a researcher and wish to help improve nanochat, two scripts of interest are &lt;a href="https://raw.githubusercontent.com/karpathy/nanochat/master/runs/scaling_laws.sh"&gt;runs/scaling_laws.sh&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/karpathy/nanochat/master/runs/miniseries.sh"&gt;runs/miniseries.sh&lt;/a&gt;. See &lt;a href="https://github.com/karpathy/nanochat/discussions/420"&gt;Jan 7 miniseries v1&lt;/a&gt; for related documentation. For quick experimentation (~5 min pretraining runs) my favorite scale is to train a 12-layer model (GPT-1 sized), e.g. like this:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;OMP_NUM_THREADS=1 torchrun --standalone --nproc_per_node=8 -m scripts.base_train -- \
+    --depth=12 \
+    --run="d12" \
+    --model-tag="d12" \
+    --core-metric-every=999999 \
+    --sample-every=-1 \
+    --save-every=-1 \
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This uses wandb (run name "d12"), only runs the CORE metric on last step, and it doesn't sample and save intermediate checkpoints. I like to change something in the code, re-run a d12 (or a d16 etc) and see if it helped, in an iteration loop.&lt;/p&gt; 
+&lt;p&gt;The overall approach is to treat the depth of the model as the single dial of complexity. By sweeping out the depth, we get increasingly more powerful models. We determine the scaling laws, set the data budget to a compute optimal setting, train a whole miniseries of models of increasing sizes, and compare them to the GPT-2 and GPT-3 miniseries. Right now, beating GPT-2 specifically faster and faster is the most interesting target.&lt;/p&gt; 
+&lt;h2&gt;Running on CPU / MPS&lt;/h2&gt; 
+&lt;p&gt;The script &lt;a href="https://raw.githubusercontent.com/karpathy/nanochat/master/runs/runcpu.sh"&gt;runs/runcpu.sh&lt;/a&gt; shows a very simple example of running on CPU or Apple Silicon. It dramatically shrinks the LLM tha tis being trained to make things fit into a reasonable time interval of a few ten minutes of training. You will not get strong results in this way.&lt;/p&gt; 
+&lt;h2&gt;Guides&lt;/h2&gt; 
+&lt;p&gt;I've published a number of guides that might contain helpful information:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/karpathy/nanochat/discussions/1"&gt;Oct 13 2025 original nanochat post&lt;/a&gt; introducing nanochat, though now it contains some deprecated information and the model is a lot older (with worse results) than current master.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/karpathy/nanochat/discussions/420"&gt;Jan 7 miniseries v1&lt;/a&gt; documents the first nanochat miniseries of models.&lt;/li&gt; 
+ &lt;li&gt;To customize your nanochat, see &lt;a href="https://github.com/karpathy/nanochat/discussions/139"&gt;Guide: infusing identity to your nanochat&lt;/a&gt; in Discussions, which describes how you can tune your nanochat's personality through synthetic data generation and mixing that data into the SFT stage.&lt;/li&gt; 
+ &lt;li&gt;To add new abilities to nanochat, see &lt;a href="https://github.com/karpathy/nanochat/discussions/164"&gt;Guide: counting r in strawberry (and how to add abilities generally)&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;File structure&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;.
+├── LICENSE
+├── README.md
+├── dev
+│   ├── gen_synthetic_data.py       # Example synthetic data for identity
+│   ├── generate_logo.html
+│   ├── nanochat.png
+│   └── repackage_data_reference.py # Pretraining data shard generation
+├── nanochat
+│   ├── __init__.py                 # empty
+│   ├── checkpoint_manager.py       # Save/Load model checkpoints
+│   ├── common.py                   # Misc small utilities, quality of life
+│   ├── core_eval.py                # Evaluates base model CORE score (DCLM paper)
+│   ├── dataloader.py               # Tokenizing Distributed Data Loader
+│   ├── dataset.py                  # Download/read utils for pretraining data
+│   ├── engine.py                   # Efficient model inference with KV Cache
+│   ├── execution.py                # Allows the LLM to execute Python code as tool
+│   ├── gpt.py                      # The GPT nn.Module Transformer
+│   ├── logo.svg
+│   ├── loss_eval.py                # Evaluate bits per byte (instead of loss)
+│   ├── optim.py                    # AdamW + Muon optimizer, 1GPU and distributed
+│   ├── report.py                   # Utilities for writing the nanochat Report
+│   ├── tokenizer.py                # BPE Tokenizer wrapper in style of GPT-4
+│   └── ui.html                     # HTML/CSS/JS for nanochat frontend
+├── pyproject.toml
+├── runs
+│   ├── miniseries.sh               # Miniseries training script
+│   ├── runcpu.sh                   # Small example of how to run on CPU/MPS
+│   ├── scaling_laws.sh             # Scaling laws experiments
+│   └── speedrun.sh                 # Train the ~$100 nanochat d20
+├── scripts
+│   ├── base_eval.py                # Base model: CORE score, bits per byte, samples
+│   ├── base_train.py               # Base model: train
+│   ├── chat_cli.py                 # Chat model: talk to over CLI
+│   ├── chat_eval.py                # Chat model: eval tasks
+│   ├── chat_rl.py                  # Chat model: reinforcement learning
+│   ├── chat_sft.py                 # Chat model: train SFT
+│   ├── chat_web.py                 # Chat model: talk to over WebUI
+│   ├── tok_eval.py                 # Tokenizer: evaluate compression rate
+│   └── tok_train.py                # Tokenizer: train it
+├── tasks
+│   ├── arc.py                      # Multiple choice science questions
+│   ├── common.py                   # TaskMixture | TaskSequence
+│   ├── customjson.py               # Make Task from arbitrary jsonl convos
+│   ├── gsm8k.py                    # 8K Grade School Math questions
+│   ├── humaneval.py                # Misnomer; Simple Python coding task
+│   ├── mmlu.py                     # Multiple choice questions, broad topics
+│   ├── smoltalk.py                 # Conglomerate dataset of SmolTalk from HF
+│   └── spellingbee.py              # Task teaching model to spell/count letters
+├── tests
+│   └── test_engine.py
+└── uv.lock
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;The goal of nanochat is to improve the state of the art in micro models that are accessible to work with end to end on budgets of &amp;lt; $1000 dollars. Accessibility is about overall cost but also about cognitive complexity - nanochat is not an exhaustively configurable LLM "framework"; there are no giant configuration objects, model factories, or if-then-else monsters in the code base. It is a single, cohesive, minimal, readable, hackable, maximally-forkable "strong baseline" codebase designed to run start to end and produce a ChatGPT model you can talk to. Currently, the most interesting part personally is speeding up the latency to GPT-2 (i.e. getting a CORE score above 0.256525). Currently this takes ~3 hours, but by improving the pretraining stage we can improve this further.&lt;/p&gt; 
+&lt;p&gt;Current AI policy: disclosure. When submitting a PR, please declare any parts that had substantial LLM contribution and that you have not written or that you do not fully understand.&lt;/p&gt; 
+&lt;h2&gt;Acknowledgements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The name (nanochat) derives from my earlier project &lt;a href="https://github.com/karpathy/nanoGPT"&gt;nanoGPT&lt;/a&gt;, which only covered pretraining.&lt;/li&gt; 
+ &lt;li&gt;nanochat is also inspired by &lt;a href="https://github.com/KellerJordan/modded-nanogpt"&gt;modded-nanoGPT&lt;/a&gt;, which gamified the nanoGPT repo with clear metrics and a leaderboard, and borrows a lot of its ideas and some implementation for pretraining.&lt;/li&gt; 
+ &lt;li&gt;Thank you to &lt;a href="https://huggingface.co/"&gt;HuggingFace&lt;/a&gt; for fineweb and smoltalk.&lt;/li&gt; 
+ &lt;li&gt;Thank you &lt;a href="https://lambda.ai/service/gpu-cloud"&gt;Lambda&lt;/a&gt; for the compute used in developing this project.&lt;/li&gt; 
+ &lt;li&gt;Thank you to chief LLM whisperer 🧙‍♂️ Alec Radford for advice/guidance.&lt;/li&gt; 
+ &lt;li&gt;Thank you to the repo czar Sofie &lt;a href="https://github.com/svlandeg"&gt;@svlandeg&lt;/a&gt; for help with managing issues, pull requests and discussions of nanochat.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Cite&lt;/h2&gt; 
+&lt;p&gt;If you find nanochat helpful in your research cite simply as:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bibtex"&gt;@misc{nanochat,
+  author = {Andrej Karpathy},
+  title = {nanochat: The best ChatGPT that \$100 can buy},
+  year = {2025},
+  publisher = {GitHub},
+  url = {https://github.com/karpathy/nanochat}
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>langchain-ai/rag-from-scratch</title>
+      <link>https://github.com/langchain-ai/rag-from-scratch</link>
+      <description>&lt;p&gt;&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;RAG From Scratch&lt;/h1&gt; 
+&lt;p&gt;LLMs are trained on a large but fixed corpus of data, limiting their ability to reason about private or recent information. Fine-tuning is one way to mitigate this, but is often &lt;a href="https://www.anyscale.com/blog/fine-tuning-is-for-form-not-facts"&gt;not well-suited for factual recall&lt;/a&gt; and &lt;a href="https://www.glean.com/blog/how-to-build-an-ai-assistant-for-the-enterprise"&gt;can be costly&lt;/a&gt;. Retrieval augmented generation (RAG) has emerged as a popular and powerful mechanism to expand an LLM's knowledge base, using documents retrieved from an external data source to ground the LLM generation via in-context learning. These notebooks accompany a &lt;a href="https://youtube.com/playlist?list=PLfaIDFEXuae2LXbO1_PKyVJiQ23ZztA0x&amp;amp;feature=shared"&gt;video playlist&lt;/a&gt; that builds up an understanding of RAG from scratch, starting with the basics of indexing, retrieval, and generation. &lt;img src="https://github.com/langchain-ai/rag-from-scratch/assets/122662504/54a2d76c-b07e-49e7-b4ce-fc45667360a1" alt="rag_detail_v2" /&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://www.youtube.com/playlist?list=PLfaIDFEXuae2LXbO1_PKyVJiQ23ZztA0x"&gt;Video playlist&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>pedramamini/Maestro</title>
+      <link>https://github.com/pedramamini/Maestro</link>
+      <description>&lt;p&gt;Agent Orchestration Command Center&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Maestro&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/pedramamini/Maestro"&gt;&lt;img src="https://raw.githubusercontent.com/pedramamini/Maestro/main/docs/assets/made-with-maestro.svg?sanitize=true" alt="Made with Maestro" /&gt;&lt;/a&gt; &lt;a href="https://runmaestro.ai/discord"&gt;&lt;img src="https://img.shields.io/badge/Discord-Join%20Us-5865F2?logo=discord&amp;amp;logoColor=white" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://docs.runmaestro.ai/"&gt;&lt;img src="https://img.shields.io/badge/Docs-Usage%20%26%20Documentation-blue?logo=readthedocs&amp;amp;logoColor=white" alt="User Docs" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Maestro hones fractured attention into focused intent.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Maestro is a cross-platform desktop app for orchestrating your fleet of AI agents and projects. It's a high-velocity solution for hackers who are juggling multiple projects in parallel. Designed for power users who live on the keyboard and rarely touch the mouse.&lt;/p&gt; 
+&lt;p&gt;Collaborate with AI to create detailed specification documents, then let Auto Run execute them automatically, each task in a fresh session with clean context. Allowing for long-running unattended sessions, my current record is nearly 24 hours of continuous runtime.&lt;/p&gt; 
+&lt;p&gt;Run multiple agents in parallel with a Linear/Superhuman-level responsive interface. Currently supporting &lt;strong&gt;Claude Code&lt;/strong&gt;, &lt;strong&gt;OpenAI Codex&lt;/strong&gt;, and &lt;strong&gt;OpenCode&lt;/strong&gt; with plans for additional agentic coding tools (Aider, Gemini CLI, Qwen3 Coder) based on user demand.&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://youtu.be/fmwwTOg7cyA?si=dJ89K54tGflKa5G4"&gt; &lt;img src="https://github.com/user-attachments/assets/deaf601d-1898-4ede-bf5a-42e46874ebb3" alt="Maestro Video Thumbnail" width="650" /&gt; &lt;/a&gt; 
+ &lt;div&gt; 
+  &lt;a href="https://youtu.be/fmwwTOg7cyA?si=VOkjO6oYjCSQvM0A"&gt;~27m Walkthrough and Demo&lt;/a&gt; &amp;nbsp;|&amp;nbsp; 
+  &lt;a href="https://youtu.be/3wX5Q1I0sgI?si=oJkJDxgAWUvBXX4D"&gt;~6m Onboarding Demo&lt;/a&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;h3&gt;Power Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🌳 &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/git-worktrees"&gt;Git Worktrees&lt;/a&gt;&lt;/strong&gt; - Run AI agents in parallel on isolated branches. Create worktree sub-agents from the git branch menu, each operating in their own directory. Work interactively in the main repo while sub-agents process tasks independently—then create PRs with one click. True parallel development without conflicts.&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/autorun-playbooks"&gt;Auto Run &amp;amp; Playbooks&lt;/a&gt;&lt;/strong&gt; - File-system-based task runner that batch-processes markdown checklists through AI agents. Create playbooks for repeatable workflows, run in loops, and track progress with full history. Each task gets its own AI session for clean conversation context.&lt;/li&gt; 
+ &lt;li&gt;💬 &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/group-chat"&gt;Group Chat&lt;/a&gt;&lt;/strong&gt; - Coordinate multiple AI agents in a single conversation. A moderator AI orchestrates discussions, routing questions to the right agents and synthesizing their responses for cross-project questions and architecture discussions.&lt;/li&gt; 
+ &lt;li&gt;🌐 &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/remote-access"&gt;Mobile Remote Control&lt;/a&gt;&lt;/strong&gt; - Built-in web server with QR code access. Monitor and control all your agents from your phone. Supports local network access and remote tunneling via Cloudflare for access from anywhere.&lt;/li&gt; 
+ &lt;li&gt;💻 &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/cli"&gt;Command Line Interface&lt;/a&gt;&lt;/strong&gt; - Full CLI (&lt;code&gt;maestro-cli&lt;/code&gt;) for headless operation. List agents/groups, run playbooks from cron jobs or CI/CD pipelines, with human-readable or JSONL output for scripting.&lt;/li&gt; 
+ &lt;li&gt;🚀 &lt;strong&gt;Multi-Agent Management&lt;/strong&gt; - Run unlimited agents and terminal sessions in parallel. Each agent has its own workspace, conversation history, and isolated context.&lt;/li&gt; 
+ &lt;li&gt;📬 &lt;strong&gt;Message Queueing&lt;/strong&gt; - Queue messages while AI is busy; they're sent automatically when the agent becomes ready. Never lose a thought.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Core Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🔄 &lt;strong&gt;Dual-Mode Sessions&lt;/strong&gt; - Each agent has both an AI Terminal and Command Terminal. Switch seamlessly between AI conversation and shell commands with &lt;code&gt;Cmd+J&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;⌨️ &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/keyboard-shortcuts"&gt;Keyboard-First Design&lt;/a&gt;&lt;/strong&gt; - Full keyboard control with customizable shortcuts and &lt;a href="https://docs.runmaestro.ai/keyboard-shortcuts#keyboard-mastery"&gt;mastery tracking&lt;/a&gt; that rewards you for leveling up. &lt;code&gt;Cmd+K&lt;/code&gt; quick actions, rapid agent switching, and focus management designed for flow state.&lt;/li&gt; 
+ &lt;li&gt;📋 &lt;strong&gt;Session Discovery&lt;/strong&gt; - Automatically discovers and imports existing sessions from all supported providers, including conversations from before Maestro was installed. Browse, search, star, rename, and resume any session.&lt;/li&gt; 
+ &lt;li&gt;🔀 &lt;strong&gt;Git Integration&lt;/strong&gt; - Automatic repo detection, branch display, diff viewer, commit logs, and git-aware file completion. Work with git without leaving the app.&lt;/li&gt; 
+ &lt;li&gt;📁 &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/general-usage#file-explorer-and-preview"&gt;File Explorer&lt;/a&gt;&lt;/strong&gt; - Browse project files with syntax highlighting, markdown preview, and image viewing. Reference files in prompts with &lt;code&gt;@&lt;/code&gt; mentions.&lt;/li&gt; 
+ &lt;li&gt;🔍 &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/general-usage#output-filtering"&gt;Powerful Output Filtering&lt;/a&gt;&lt;/strong&gt; - Search and filter AI output with include/exclude modes, regex support, and per-response local filters.&lt;/li&gt; 
+ &lt;li&gt;⚡ &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/slash-commands"&gt;Slash Commands&lt;/a&gt;&lt;/strong&gt; - Extensible command system with autocomplete. Create custom commands with template variables for your workflows.&lt;/li&gt; 
+ &lt;li&gt;💾 &lt;strong&gt;Draft Auto-Save&lt;/strong&gt; - Never lose work. Drafts are automatically saved and restored per session.&lt;/li&gt; 
+ &lt;li&gt;🔊 &lt;strong&gt;Speakable Notifications&lt;/strong&gt; - Audio alerts with text-to-speech announcements when agents complete tasks.&lt;/li&gt; 
+ &lt;li&gt;🎨 &lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/pedramamini/Maestro/main/THEMES.md"&gt;Beautiful Themes&lt;/a&gt;&lt;/strong&gt; - 12 themes including Dracula, Monokai, Nord, Tokyo Night, GitHub Light, and more.&lt;/li&gt; 
+ &lt;li&gt;💰 &lt;strong&gt;Cost Tracking&lt;/strong&gt; - Real-time token usage and cost tracking per session and globally.&lt;/li&gt; 
+ &lt;li&gt;🏆 &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/achievements"&gt;Achievements&lt;/a&gt;&lt;/strong&gt; - Level up from Apprentice to Titan of the Baton based on cumulative Auto Run time. 11 conductor-themed ranks to unlock.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Analytics &amp;amp; Visualization&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;📊 &lt;strong&gt;Usage Dashboard&lt;/strong&gt; - Comprehensive analytics for tracking AI usage patterns across all sessions. View aggregated statistics with multiple time ranges (day, week, month, year, all time), compare agent performance, analyze user vs. Auto Run activity distribution, and explore activity heatmaps. Includes CSV export, real-time updates, and configurable colorblind-friendly palettes. Access via &lt;code&gt;Opt+Cmd+U&lt;/code&gt; (macOS) / &lt;code&gt;Alt+Ctrl+U&lt;/code&gt; (Windows/Linux) or the Command K menu.&lt;/li&gt; 
+ &lt;li&gt;🕸️ &lt;strong&gt;Document Graph&lt;/strong&gt; - Visual knowledge graph of your markdown documentation. Automatically discovers internal &lt;code&gt;[[wiki-links]]&lt;/code&gt; and &lt;code&gt;[markdown](links)&lt;/code&gt;, visualizes document relationships with interactive nodes and edges. Toggle between force-directed and hierarchical layouts, search/filter documents, navigate via keyboard, and track external link references. Includes mini-map, legend, and pagination for large directories. Access from the File Explorer context menu or Command K menu.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Keyboard Shortcuts for Analytics Features&lt;/h4&gt; 
+&lt;p&gt;&lt;strong&gt;Usage Dashboard&lt;/strong&gt; (&lt;code&gt;Opt+Cmd+U&lt;/code&gt; / &lt;code&gt;Alt+Ctrl+U&lt;/code&gt;):&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Action&lt;/th&gt; 
+   &lt;th&gt;Key&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Navigate view tabs&lt;/td&gt; 
+   &lt;td&gt;Arrow Left/Right/Up/Down&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Move between sections&lt;/td&gt; 
+   &lt;td&gt;Tab / Shift+Tab&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Jump to first/last section&lt;/td&gt; 
+   &lt;td&gt;Home / End&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Close dashboard&lt;/td&gt; 
+   &lt;td&gt;Escape&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;Document Graph&lt;/strong&gt; (Command K → "Document Graph"):&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Action&lt;/th&gt; 
+   &lt;th&gt;Key&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Navigate to connected node&lt;/td&gt; 
+   &lt;td&gt;Arrow Up/Down/Left/Right&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Cycle through connections&lt;/td&gt; 
+   &lt;td&gt;Tab&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Open selected document/link&lt;/td&gt; 
+   &lt;td&gt;Enter&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Close graph&lt;/td&gt; 
+   &lt;td&gt;Escape&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Search documents&lt;/td&gt; 
+   &lt;td&gt;Focus search input, type query&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;Additional interactions: Drag nodes to reposition, scroll to zoom, use mini-map for overview.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Maestro supports Claude Code, OpenAI Codex, and OpenCode. Support for additional agents (Aider, Gemini CLI, Qwen3 Coder) may be added in future releases based on community demand.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;h3&gt;Installation&lt;/h3&gt; 
+&lt;p&gt;Download the latest release for your platform from the &lt;a href="https://github.com/pedramamini/Maestro/releases"&gt;Releases page&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Or build from source:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/pedramamini/Maestro.git
+cd Maestro
+npm install
+npm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Requirements&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;At least one supported AI coding agent installed and authenticated: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://docs.anthropic.com/en/docs/claude-code"&gt;Claude Code&lt;/a&gt; - Anthropic's AI coding assistant&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/openai/codex"&gt;OpenAI Codex&lt;/a&gt; - OpenAI's coding agent&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/sst/opencode"&gt;OpenCode&lt;/a&gt; - Open-source AI coding assistant&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Git (optional, for git-aware features)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Essential Keyboard Shortcuts&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Action&lt;/th&gt; 
+   &lt;th&gt;macOS&lt;/th&gt; 
+   &lt;th&gt;Windows/Linux&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Quick Actions&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Cmd+K&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Ctrl+K&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;New Agent&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Cmd+N&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Ctrl+N&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Switch AI/Terminal&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Cmd+J&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Ctrl+J&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Previous/Next Agent&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Cmd+[&lt;/code&gt; / &lt;code&gt;Cmd+]&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Ctrl+[&lt;/code&gt; / &lt;code&gt;Ctrl+]&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Toggle Sidebar&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Cmd+B&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Ctrl+B&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;New Tab&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Cmd+T&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Ctrl+T&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Usage Dashboard&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Opt+Cmd+U&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Alt+Ctrl+U&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;All Shortcuts&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Cmd+/&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Ctrl+/&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;a href="https://docs.runmaestro.ai/keyboard-shortcuts"&gt;Full keyboard shortcut reference&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Screenshots&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/pedramamini/Maestro/main/docs/screenshots/main-screen.png" alt="Maestro Main Screen" width="800" /&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;Main screen with multiple agents and conversation&lt;/em&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/pedramamini/Maestro/main/docs/screenshots/group-chat.png" alt="Group Chat" width="800" /&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;Group Chat coordinates multiple AI agents in a single conversation&lt;/em&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/pedramamini/Maestro/main/docs/screenshots/cmd-k-1.png" alt="Command Palette" width="800" /&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;Quick Actions palette for rapid navigation (CTRL/CMD + K)&lt;/em&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/pedramamini/Maestro/main/docs/screenshots/git-diff.png" alt="Git Diff Viewer" width="800" /&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;Git diff viewer with syntax highlighting&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/pedramamini/Maestro/main/docs/screenshots/"&gt;See more...&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Full documentation and usage guide available at &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai"&gt;docs.runmaestro.ai&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.runmaestro.ai/installation"&gt;Installation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.runmaestro.ai/getting-started"&gt;Getting Started&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.runmaestro.ai/features"&gt;Features Overview&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.runmaestro.ai/autorun-playbooks"&gt;Auto Run + Playbooks&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.runmaestro.ai/git-worktrees"&gt;Git Worktrees&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.runmaestro.ai/keyboard-shortcuts"&gt;Keyboard Shortcuts&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.runmaestro.ai/context-management"&gt;Context Management&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.runmaestro.ai/mcp-server"&gt;MCP Server&lt;/a&gt; - Connect AI apps to Maestro docs&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.runmaestro.ai/troubleshooting"&gt;Troubleshooting&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Discord&lt;/strong&gt;: &lt;a href="https://runmaestro.ai/discord"&gt;Join Us&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;GitHub Issues&lt;/strong&gt;: &lt;a href="https://github.com/pedramamini/Maestro/issues"&gt;Report bugs &amp;amp; request features&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/pedramamini/Maestro/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for development setup, architecture details, and contribution guidelines.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/pedramamini/Maestro/main/LICENSE"&gt;AGPL-3.0 License&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
