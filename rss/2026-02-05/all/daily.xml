@@ -1,0 +1,1748 @@
+<rss version="2.0">
+  <channel>
+    <title>GitHub All Languages Daily Trending</title>
+    <description>Daily Trending of All Languages in GitHub</description>
+    <pubDate>Wed, 04 Feb 2026 01:32:38 GMT</pubDate>
+    <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
+    
+    <item>
+      <title>karpathy/nanochat</title>
+      <link>https://github.com/karpathy/nanochat</link>
+      <description>&lt;p&gt;The best ChatGPT that $100 can buy.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;nanochat&lt;/h1&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/karpathy/nanochat/master/dev/nanochat.png" alt="nanochat logo" /&gt; &lt;img src="https://raw.githubusercontent.com/karpathy/nanochat/master/dev/scaling_laws_jan26.png" alt="scaling laws" /&gt;&lt;/p&gt; 
+&lt;p&gt;nanochat is the simplest experimental harness for training LLMs. It is designed to run on a single GPU node, the code is minimal/hackable, and it covers all major LLM stages including tokenization, pretraining, finetuning, evaluation, inference, and a chat UI. For example, you can train your own GPT-2 capability LLM (which cost ~$50,000 to train in 2019) for only $73 (3 hours of 8XH100 GPU node) and then talk to it in a familiar ChatGPT-like web UI.&lt;/p&gt; 
+&lt;p&gt;For questions about the repo, I recommend either using &lt;a href="https://deepwiki.com/karpathy/nanochat"&gt;DeepWiki&lt;/a&gt; from Devin/Cognition to ask questions about the repo, or use the &lt;a href="https://github.com/karpathy/nanochat/discussions"&gt;Discussions tab&lt;/a&gt;, or come by the &lt;a href="https://discord.com/channels/1020383067459821711/1427295580895314031"&gt;#nanochat&lt;/a&gt; channel on Discord.&lt;/p&gt; 
+&lt;h2&gt;Updates&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;(Jan 31 2026) Major revamp of all scripts/README ongoing, deleting midtraining stage, might be a bit messy briefly...&lt;/li&gt; 
+ &lt;li&gt;(Jan 30 2026) With all the latest improvements we're able to train GPT-2 grade LLM in about $73. The &lt;a href="https://raw.githubusercontent.com/karpathy/nanochat/master/runs/speedrun.sh"&gt;runs/speedrun.sh&lt;/a&gt; script will become the refernece way to train GPT-2 grade model and talk to it.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Leaderboard&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;#&lt;/th&gt; 
+   &lt;th&gt;time&lt;/th&gt; 
+   &lt;th&gt;val_bpb&lt;/th&gt; 
+   &lt;th&gt;CORE&lt;/th&gt; 
+   &lt;th&gt;Description&lt;/th&gt; 
+   &lt;th&gt;Date&lt;/th&gt; 
+   &lt;th&gt;Commit&lt;/th&gt; 
+   &lt;th&gt;Contributors&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;0&lt;/td&gt; 
+   &lt;td&gt;168 hours&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+   &lt;td&gt;0.2565&lt;/td&gt; 
+   &lt;td&gt;Original OpenAI GPT-2 checkpoint&lt;/td&gt; 
+   &lt;td&gt;2019&lt;/td&gt; 
+   &lt;td&gt;-&lt;/td&gt; 
+   &lt;td&gt;OpenAI&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;1&lt;/td&gt; 
+   &lt;td&gt;3.04&lt;/td&gt; 
+   &lt;td&gt;0.74833&lt;/td&gt; 
+   &lt;td&gt;0.2585&lt;/td&gt; 
+   &lt;td&gt;d24 baseline, slightly overtrained&lt;/td&gt; 
+   &lt;td&gt;Jan 29 2026&lt;/td&gt; 
+   &lt;td&gt;348fbb3&lt;/td&gt; 
+   &lt;td&gt;@karpathy&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;2&lt;/td&gt; 
+   &lt;td&gt;2.91&lt;/td&gt; 
+   &lt;td&gt;0.74504&lt;/td&gt; 
+   &lt;td&gt;0.2578&lt;/td&gt; 
+   &lt;td&gt;d26 slightly undertrained &lt;strong&gt;+fp8&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;Feb 2 2026&lt;/td&gt; 
+   &lt;td&gt;8309b83&lt;/td&gt; 
+   &lt;td&gt;@karpathy&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;The primary metric we care about is "time to GPT-2" - the wall clock time needed to outperform the GPT-2 (1.6B) CORE metric on an 8XH100 GPU node. The GPT-2 CORE score is 0.256525. In 2019, the training of GPT-2 cost approximately $50,000 so it is incredible that due to many advances over 7 years across the stack, we can now do so much faster and for well below $100 (e.g. at the current ~$3/GPU/hr, an 8XH100 node is ~$24/hr, so 3 hours is ~$72).&lt;/p&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/karpathy/nanochat/master/dev/LEADERBOARD.md"&gt;dev/LEADERBOARD.md&lt;/a&gt; for more docs on how to interpret and contribute to the leaderboard.&lt;/p&gt; 
+&lt;h2&gt;Getting started&lt;/h2&gt; 
+&lt;h3&gt;Reproduce and talk to GPT-2&lt;/h3&gt; 
+&lt;p&gt;The most fun you can have is to train your own GPT-2 and talk to it. The entire pipeline to do so is contained in the single file &lt;a href="https://raw.githubusercontent.com/karpathy/nanochat/master/runs/speedrun.sh"&gt;runs/speedrun.sh&lt;/a&gt;, which is designed to be run on an 8XH100 GPU node. Currently, at ~$24/hour for these nodes, pretraining GPT-2 grade model takes approximately 3 hours and will set you back about $75. Boot up a new 8XH100 GPU box from your favorite provider (e.g. I use and like &lt;a href="https://lambda.ai/service/gpu-cloud"&gt;Lambda&lt;/a&gt;), and kick off the training script:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bash runs/speedrun.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;You mish to do so in a screen session as this will take ~3 hours to run. Once it's done, you can talk to it via the ChatGPT-like web UI. Make sure again that your local uv virtual environment is active (run &lt;code&gt;source .venv/bin/activate&lt;/code&gt;), and serve it:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;python -m scripts.chat_web
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;And then visit the URL shown. Make sure to access it correctly, e.g. on Lambda use the public IP of the node you're on, followed by the port, so for example &lt;a href="http://209.20.xxx.xxx:8000/"&gt;http://209.20.xxx.xxx:8000/&lt;/a&gt;, etc. Then talk to your LLM as you'd normally talk to ChatGPT! Get it to write stories or poems. Ask it to tell you who you are to see a hallucination. Ask it why the sky is blue. Or why it's green. The speedrun is a 4e19 FLOPs capability model so it's a bit like talking to a kindergartener :).&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;img width="2672" height="1520" alt="image" src="https://github.com/user-attachments/assets/ed39ddf8-2370-437a-bedc-0f39781e76b5" /&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;A few more notes:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The code will run just fine on the Ampere 8XA100 GPU node as well, but a bit slower.&lt;/li&gt; 
+ &lt;li&gt;All code will run just fine on even a single GPU by omitting &lt;code&gt;torchrun&lt;/code&gt;, and will produce ~identical results (code will automatically switch to gradient accumulation), but you'll have to wait 8 times longer.&lt;/li&gt; 
+ &lt;li&gt;If your GPU(s) have less than 80GB, you'll have to tune some of the hyperparameters or you will OOM / run out of VRAM. Look for &lt;code&gt;--device_batch_size&lt;/code&gt; in the scripts and reduce it until things fit. E.g. from 32 (default) to 16, 8, 4, 2, or even 1. Less than that you'll have to know a bit more what you're doing and get more creative.&lt;/li&gt; 
+ &lt;li&gt;Most of the code is fairly vanilla PyTorch so it should run on anything that supports that - xpu, mps, or etc, but I haven't personally exercised all of these code paths so there might be sharp edges.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Research&lt;/h2&gt; 
+&lt;p&gt;If you are a researcher and wish to help improve nanochat, two scripts of interest are &lt;a href="https://raw.githubusercontent.com/karpathy/nanochat/master/runs/scaling_laws.sh"&gt;runs/scaling_laws.sh&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/karpathy/nanochat/master/runs/miniseries.sh"&gt;runs/miniseries.sh&lt;/a&gt;. See &lt;a href="https://github.com/karpathy/nanochat/discussions/420"&gt;Jan 7 miniseries v1&lt;/a&gt; for related documentation. For quick experimentation (~5 min pretraining runs) my favorite scale is to train a 12-layer model (GPT-1 sized), e.g. like this:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;OMP_NUM_THREADS=1 torchrun --standalone --nproc_per_node=8 -m scripts.base_train -- \
+    --depth=12 \
+    --run="d12" \
+    --model-tag="d12" \
+    --core-metric-every=999999 \
+    --sample-every=-1 \
+    --save-every=-1 \
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This uses wandb (run name "d12"), only runs the CORE metric on last step, and it doesn't sample and save intermediate checkpoints. I like to change something in the code, re-run a d12 (or a d16 etc) and see if it helped, in an iteration loop.&lt;/p&gt; 
+&lt;p&gt;The overall approach is to treat the depth of the model as the single dial of complexity. By sweeping out the depth, we get increasingly more powerful models. We determine the scaling laws, set the data budget to a compute optimal setting, train a whole miniseries of models of increasing sizes, and compare them to the GPT-2 and GPT-3 miniseries. Right now, beating GPT-2 specifically faster and faster is the most interesting target.&lt;/p&gt; 
+&lt;h2&gt;Running on CPU / MPS&lt;/h2&gt; 
+&lt;p&gt;The script &lt;a href="https://raw.githubusercontent.com/karpathy/nanochat/master/runs/runcpu.sh"&gt;runs/runcpu.sh&lt;/a&gt; shows a very simple example of running on CPU or Apple Silicon. It dramatically shrinks the LLM tha tis being trained to make things fit into a reasonable time interval of a few ten minutes of training. You will not get strong results in this way.&lt;/p&gt; 
+&lt;h2&gt;Guides&lt;/h2&gt; 
+&lt;p&gt;I've published a number of guides that might contain helpful information:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/karpathy/nanochat/discussions/1"&gt;Oct 13 2025 original nanochat post&lt;/a&gt; introducing nanochat, though now it contains some deprecated information and the model is a lot older (with worse results) than current master.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/karpathy/nanochat/discussions/420"&gt;Jan 7 miniseries v1&lt;/a&gt; documents the first nanochat miniseries of models.&lt;/li&gt; 
+ &lt;li&gt;To customize your nanochat, see &lt;a href="https://github.com/karpathy/nanochat/discussions/139"&gt;Guide: infusing identity to your nanochat&lt;/a&gt; in Discussions, which describes how you can tune your nanochat's personality through synthetic data generation and mixing that data into the SFT stage.&lt;/li&gt; 
+ &lt;li&gt;To add new abilities to nanochat, see &lt;a href="https://github.com/karpathy/nanochat/discussions/164"&gt;Guide: counting r in strawberry (and how to add abilities generally)&lt;/a&gt;.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;File structure&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;.
+├── LICENSE
+├── README.md
+├── dev
+│   ├── gen_synthetic_data.py       # Example synthetic data for identity
+│   ├── generate_logo.html
+│   ├── nanochat.png
+│   └── repackage_data_reference.py # Pretraining data shard generation
+├── nanochat
+│   ├── __init__.py                 # empty
+│   ├── checkpoint_manager.py       # Save/Load model checkpoints
+│   ├── common.py                   # Misc small utilities, quality of life
+│   ├── core_eval.py                # Evaluates base model CORE score (DCLM paper)
+│   ├── dataloader.py               # Tokenizing Distributed Data Loader
+│   ├── dataset.py                  # Download/read utils for pretraining data
+│   ├── engine.py                   # Efficient model inference with KV Cache
+│   ├── execution.py                # Allows the LLM to execute Python code as tool
+│   ├── gpt.py                      # The GPT nn.Module Transformer
+│   ├── logo.svg
+│   ├── loss_eval.py                # Evaluate bits per byte (instead of loss)
+│   ├── optim.py                    # AdamW + Muon optimizer, 1GPU and distributed
+│   ├── report.py                   # Utilities for writing the nanochat Report
+│   ├── tokenizer.py                # BPE Tokenizer wrapper in style of GPT-4
+│   └── ui.html                     # HTML/CSS/JS for nanochat frontend
+├── pyproject.toml
+├── runs
+│   ├── miniseries.sh               # Miniseries training script
+│   ├── runcpu.sh                   # Small example of how to run on CPU/MPS
+│   ├── scaling_laws.sh             # Scaling laws experiments
+│   └── speedrun.sh                 # Train the ~$100 nanochat d20
+├── scripts
+│   ├── base_eval.py                # Base model: CORE score, bits per byte, samples
+│   ├── base_train.py               # Base model: train
+│   ├── chat_cli.py                 # Chat model: talk to over CLI
+│   ├── chat_eval.py                # Chat model: eval tasks
+│   ├── chat_rl.py                  # Chat model: reinforcement learning
+│   ├── chat_sft.py                 # Chat model: train SFT
+│   ├── chat_web.py                 # Chat model: talk to over WebUI
+│   ├── tok_eval.py                 # Tokenizer: evaluate compression rate
+│   └── tok_train.py                # Tokenizer: train it
+├── tasks
+│   ├── arc.py                      # Multiple choice science questions
+│   ├── common.py                   # TaskMixture | TaskSequence
+│   ├── customjson.py               # Make Task from arbitrary jsonl convos
+│   ├── gsm8k.py                    # 8K Grade School Math questions
+│   ├── humaneval.py                # Misnomer; Simple Python coding task
+│   ├── mmlu.py                     # Multiple choice questions, broad topics
+│   ├── smoltalk.py                 # Conglomerate dataset of SmolTalk from HF
+│   └── spellingbee.py              # Task teaching model to spell/count letters
+├── tests
+│   └── test_engine.py
+└── uv.lock
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;The goal of nanochat is to improve the state of the art in micro models that are accessible to work with end to end on budgets of &amp;lt; $1000 dollars. Accessibility is about overall cost but also about cognitive complexity - nanochat is not an exhaustively configurable LLM "framework"; there are no giant configuration objects, model factories, or if-then-else monsters in the code base. It is a single, cohesive, minimal, readable, hackable, maximally-forkable "strong baseline" codebase designed to run start to end and produce a ChatGPT model you can talk to. Currently, the most interesting part personally is speeding up the latency to GPT-2 (i.e. getting a CORE score above 0.256525). Currently this takes ~3 hours, but by improving the pretraining stage we can improve this further.&lt;/p&gt; 
+&lt;p&gt;Current AI policy: disclosure. When submitting a PR, please declare any parts that had substantial LLM contribution and that you have not written or that you do not fully understand.&lt;/p&gt; 
+&lt;h2&gt;Acknowledgements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;The name (nanochat) derives from my earlier project &lt;a href="https://github.com/karpathy/nanoGPT"&gt;nanoGPT&lt;/a&gt;, which only covered pretraining.&lt;/li&gt; 
+ &lt;li&gt;nanochat is also inspired by &lt;a href="https://github.com/KellerJordan/modded-nanogpt"&gt;modded-nanoGPT&lt;/a&gt;, which gamified the nanoGPT repo with clear metrics and a leaderboard, and borrows a lot of its ideas and some implementation for pretraining.&lt;/li&gt; 
+ &lt;li&gt;Thank you to &lt;a href="https://huggingface.co/"&gt;HuggingFace&lt;/a&gt; for fineweb and smoltalk.&lt;/li&gt; 
+ &lt;li&gt;Thank you &lt;a href="https://lambda.ai/service/gpu-cloud"&gt;Lambda&lt;/a&gt; for the compute used in developing this project.&lt;/li&gt; 
+ &lt;li&gt;Thank you to chief LLM whisperer 🧙‍♂️ Alec Radford for advice/guidance.&lt;/li&gt; 
+ &lt;li&gt;Thank you to the repo czar Sofie &lt;a href="https://github.com/svlandeg"&gt;@svlandeg&lt;/a&gt; for help with managing issues, pull requests and discussions of nanochat.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Cite&lt;/h2&gt; 
+&lt;p&gt;If you find nanochat helpful in your research cite simply as:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bibtex"&gt;@misc{nanochat,
+  author = {Andrej Karpathy},
+  title = {nanochat: The best ChatGPT that \$100 can buy},
+  year = {2025},
+  publisher = {GitHub},
+  url = {https://github.com/karpathy/nanochat}
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenBMB/ChatDev</title>
+      <link>https://github.com/OpenBMB/ChatDev</link>
+      <description>&lt;p&gt;ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;ChatDev 2.0 - DevAll&lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/frontend/public/media/logo.png" alt="DevAll Logo" width="500" /&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;strong&gt;A Zero-Code Multi-Agent Platform for Developing Everything&lt;/strong&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; 【&lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/README.md"&gt;English&lt;/a&gt; | &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/README-zh.md"&gt;简体中文&lt;/a&gt;】 &lt;/p&gt; 
+&lt;p align="center"&gt; 【📚 &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/#developers"&gt;Developers&lt;/a&gt; | 👥 &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/#primary-contributors"&gt;Contributors&lt;/a&gt;｜⭐️ &lt;a href="https://github.com/OpenBMB/ChatDev/tree/chatdev1.0"&gt;ChatDev 1.0 (Legacy)&lt;/a&gt;】 &lt;/p&gt; 
+&lt;h2&gt;📖 Overview&lt;/h2&gt; 
+&lt;p&gt;ChatDev has evolved from a specialized software development multi-agent system into a comprehensive multi-agent orchestration platform.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/OpenBMB/ChatDev/tree/main"&gt;&lt;strong&gt;ChatDev 2.0 (DevAll)&lt;/strong&gt;&lt;/a&gt; is a &lt;strong&gt;Zero-Code Multi-Agent Platform&lt;/strong&gt; for "Developing Everything". It empowers users to rapidly build and execute customized multi-agent systems through simple configuration. No coding is required—users can define agents, workflows, and tasks to orchestrate complex scenarios such as data visualization, 3D generation, and deep research.&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/OpenBMB/ChatDev/tree/chatdev1.0"&gt;&lt;strong&gt;ChatDev 1.0 (Legacy)&lt;/strong&gt;&lt;/a&gt; operates as a &lt;strong&gt;Virtual Software Company&lt;/strong&gt;. It utilizes various intelligent agents (e.g., CEO, CTO, Programmer) participating in specialized functional seminars to automate the entire software development life cycle—including designing, coding, testing, and documenting. It serves as the foundational paradigm for communicative agent collaboration.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🎉 News&lt;/h2&gt; 
+&lt;p&gt;• &lt;strong&gt;Jan 07, 2026: 🚀 We are excited to announce the official release of ChatDev 2.0 (DevAll)!&lt;/strong&gt; This version introduces a zero-code multi-agent orchestration platform. The classic ChatDev (v1.x) has been moved to the &lt;a href="https://github.com/OpenBMB/ChatDev/tree/chatdev1.0"&gt;&lt;code&gt;chatdev1.0&lt;/code&gt;&lt;/a&gt; branch for maintenance. More details about ChatDev 2.0 can be found on &lt;a href="https://x.com/OpenBMB/status/2008916790399701335"&gt;our official post&lt;/a&gt;.&lt;/p&gt; 
+&lt;details&gt; 
+ &lt;summary&gt;Old News&lt;/summary&gt; 
+ &lt;p&gt;•Sep 24, 2025: 🎉 Our paper &lt;a href="https://arxiv.org/abs/2505.19591"&gt;Multi-Agent Collaboration via Evolving Orchestration&lt;/a&gt; has been accepted to NeurIPS 2025. The implementation is available in the &lt;code&gt;puppeteer&lt;/code&gt; branch of this repository.&lt;/p&gt; 
+ &lt;p&gt;•May 26, 2025: 🎉 We propose a novel puppeteer-style paradigm for multi-agent collaboration among large language model based agents. By leveraging a learnable central orchestrator optimized with reinforcement learning, our method dynamically activates and sequences agents to construct efficient, context-aware reasoning paths. This approach not only improves reasoning quality but also reduces computational costs, enabling scalable and adaptable multi-agent cooperation in complex tasks. See our paper in &lt;a href="https://arxiv.org/abs/2505.19591"&gt;Multi-Agent Collaboration via Evolving Orchestration&lt;/a&gt;.&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/puppeteer.png" width="800" /&gt; &lt;/p&gt; 
+ &lt;p&gt;•June 25, 2024: 🎉To foster development in LLM-powered multi-agent collaboration🤖🤖 and related fields, the ChatDev team has curated a collection of seminal papers📄 presented in a &lt;a href="https://github.com/OpenBMB/ChatDev/tree/main/MultiAgentEbook"&gt;open-source&lt;/a&gt; interactive e-book📚 format. Now you can explore the latest advancements on the &lt;a href="https://thinkwee.top/multiagent_ebook"&gt;Ebook Website&lt;/a&gt; and download the &lt;a href="https://github.com/OpenBMB/ChatDev/raw/main/MultiAgentEbook/papers.csv"&gt;paper list&lt;/a&gt;.&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/ebook.png" width="800" /&gt; &lt;/p&gt; 
+ &lt;p&gt;•June 12, 2024: We introduced Multi-Agent Collaboration Networks (MacNet) 🎉, which utilize directed acyclic graphs to facilitate effective task-oriented collaboration among agents through linguistic interactions 🤖🤖. MacNet supports co-operation across various topologies and among more than a thousand agents without exceeding context limits. More versatile and scalable, MacNet can be considered as a more advanced version of ChatDev's chain-shaped topology. Our preprint paper is available at &lt;a href="https://arxiv.org/abs/2406.07155"&gt;https://arxiv.org/abs/2406.07155&lt;/a&gt;. This technique has been incorporated into the &lt;a href="https://github.com/OpenBMB/ChatDev/tree/macnet"&gt;macnet&lt;/a&gt; branch, enhancing support for diverse organizational structures and offering richer solutions beyond software development (e.g., logical reasoning, data analysis, story generation, and more).&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/macnet.png" width="500" /&gt; &lt;/p&gt; 
+ &lt;p&gt;• May 07, 2024, we introduced "Iterative Experience Refinement" (IER), a novel method where instructor and assistant agents enhance shortcut-oriented experiences to efficiently adapt to new tasks. This approach encompasses experience acquisition, utilization, propagation and elimination across a series of tasks and making the pricess shorter and efficient. Our preprint paper is available at &lt;a href="https://arxiv.org/abs/2405.04219"&gt;https://arxiv.org/abs/2405.04219&lt;/a&gt;, and this technique will soon be incorporated into ChatDev.&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/ier.png" width="220" /&gt; &lt;/p&gt; 
+ &lt;p&gt;• January 25, 2024: We have integrated Experiential Co-Learning Module into ChatDev. Please see the &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/wiki.md#co-tracking"&gt;Experiential Co-Learning Guide&lt;/a&gt;.&lt;/p&gt; 
+ &lt;p&gt;• December 28, 2023: We present Experiential Co-Learning, an innovative approach where instructor and assistant agents accumulate shortcut-oriented experiences to effectively solve new tasks, reducing repetitive errors and enhancing efficiency. Check out our preprint paper at &lt;a href="https://arxiv.org/abs/2312.17025"&gt;https://arxiv.org/abs/2312.17025&lt;/a&gt; and this technique will soon be integrated into ChatDev.&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/ecl.png" width="860" /&gt; &lt;/p&gt; • November 15, 2023: We launched ChatDev as a SaaS platform that enables software developers and innovative entrepreneurs to build software efficiently at a very low cost and remove the barrier to entry. Try it out at https://chatdev.modelbest.cn/. 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/saas.png" width="560" /&gt; &lt;/p&gt; 
+ &lt;p&gt;• November 2, 2023: ChatDev is now supported with a new feature: incremental development, which allows agents to develop upon existing codes. Try &lt;code&gt;--config "incremental" --path "[source_code_directory_path]"&lt;/code&gt; to start it.&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/increment.png" width="700" /&gt; &lt;/p&gt; 
+ &lt;p&gt;• October 26, 2023: ChatDev is now supported with Docker for safe execution (thanks to contribution from &lt;a href="https://github.com/ManindraDeMel"&gt;ManindraDeMel&lt;/a&gt;). Please see &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/wiki.md#docker-start"&gt;Docker Start Guide&lt;/a&gt;.&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/docker.png" width="400" /&gt; &lt;/p&gt; 
+ &lt;p&gt;• September 25, 2023: The &lt;strong&gt;Git&lt;/strong&gt; mode is now available, enabling the programmer &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/visualizer/static/figures/programmer.png" height="20" /&gt; to utilize Git for version control. To enable this feature, simply set &lt;code&gt;"git_management"&lt;/code&gt; to &lt;code&gt;"True"&lt;/code&gt; in &lt;code&gt;ChatChainConfig.json&lt;/code&gt;. See &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/wiki.md#git-mode"&gt;guide&lt;/a&gt;.&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/github.png" width="600" /&gt; &lt;/p&gt; 
+ &lt;p&gt;• September 20, 2023: The &lt;strong&gt;Human-Agent-Interaction&lt;/strong&gt; mode is now available! You can get involved with the ChatDev team by playing the role of reviewer &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/visualizer/static/figures/reviewer.png" height="20" /&gt; and making suggestions to the programmer &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/visualizer/static/figures/programmer.png" height="20" /&gt;; try &lt;code&gt;python3 run.py --task [description_of_your_idea] --config "Human"&lt;/code&gt;. See &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/wiki.md#human-agent-interaction"&gt;guide&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/WareHouse/Gomoku_HumanAgentInteraction_20230920135038"&gt;example&lt;/a&gt;.&lt;/p&gt; 
+ &lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/Human_intro.png" width="600" /&gt; &lt;/p&gt; 
+ &lt;p&gt;• September 1, 2023: The &lt;strong&gt;Art&lt;/strong&gt; mode is available now! You can activate the designer agent &lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/visualizer/static/figures/designer.png" height="20" /&gt; to generate images used in the software; try &lt;code&gt;python3 run.py --task [description_of_your_idea] --config "Art"&lt;/code&gt;. See &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/wiki.md#art"&gt;guide&lt;/a&gt; and &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/WareHouse/gomokugameArtExample_THUNLP_20230831122822"&gt;example&lt;/a&gt;.&lt;/p&gt; 
+ &lt;p&gt;• August 28, 2023: The system is publicly available.&lt;/p&gt; 
+ &lt;p&gt;• August 17, 2023: The v1.0.0 version was ready for release.&lt;/p&gt; 
+ &lt;p&gt;• July 30, 2023: Users can customize ChatChain, Phasea and Role settings. Additionally, both online Log mode and replay mode are now supported.&lt;/p&gt; 
+ &lt;p&gt;• July 16, 2023: The &lt;a href="https://arxiv.org/abs/2307.07924"&gt;preprint paper&lt;/a&gt; associated with this project was published.&lt;/p&gt; 
+ &lt;p&gt;• June 30, 2023: The initial version of the ChatDev repository was released.&lt;/p&gt; 
+&lt;/details&gt; 
+&lt;h2&gt;🚀 Quick Start&lt;/h2&gt; 
+&lt;h3&gt;📋 Prerequisites&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;OS&lt;/strong&gt;: macOS / Linux / WSL / Windows&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Python&lt;/strong&gt;: 3.12+&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Node.js&lt;/strong&gt;: 18+&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Package Manager&lt;/strong&gt;: &lt;a href="https://docs.astral.sh/uv/"&gt;uv&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;📦 Installation&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Backend Dependencies&lt;/strong&gt; (Python managed by &lt;code&gt;uv&lt;/code&gt;):&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;uv sync
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Frontend Dependencies&lt;/strong&gt; (Vite + Vue 3):&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;cd frontend &amp;amp;&amp;amp; npm install
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;⚡️ Run the Application&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Start Backend&lt;/strong&gt; :&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;# Run from the project root
+uv run python server_main.py --port 6400 --reload
+&lt;/code&gt;&lt;/pre&gt; 
+  &lt;blockquote&gt; 
+   &lt;p&gt;Remove &lt;code&gt;--reload&lt;/code&gt; if output files (e.g., GameDev) trigger restarts, which interrupts tasks and loses progress.&lt;/p&gt; 
+  &lt;/blockquote&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Start Frontend&lt;/strong&gt;:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;cd frontend
+VITE_API_BASE_URL=http://localhost:6400 npm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+  &lt;blockquote&gt; 
+   &lt;p&gt;Then access the Web Console at &lt;strong&gt;&lt;a href="http://localhost:5173"&gt;http://localhost:5173&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt; 
+  &lt;/blockquote&gt; 
+  &lt;blockquote&gt; 
+   &lt;p&gt;&lt;strong&gt;💡 Tip&lt;/strong&gt;: If the frontend fails to connect to the backend, the default port &lt;code&gt;6400&lt;/code&gt; may already be occupied. Please switch both services to an available port, for example:&lt;/p&gt; 
+   &lt;ul&gt; 
+    &lt;li&gt;&lt;strong&gt;Backend&lt;/strong&gt;: start with &lt;code&gt;--port 6401&lt;/code&gt;&lt;/li&gt; 
+    &lt;li&gt;&lt;strong&gt;Frontend&lt;/strong&gt;: set &lt;code&gt;VITE_API_BASE_URL=http://localhost:6401&lt;/code&gt;&lt;/li&gt; 
+   &lt;/ul&gt; 
+  &lt;/blockquote&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;🔑 Configuration&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Environment Variables&lt;/strong&gt;: Create a &lt;code&gt;.env&lt;/code&gt; file in the project root.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Model Keys&lt;/strong&gt;: Set &lt;code&gt;API_KEY&lt;/code&gt; and &lt;code&gt;BASE_URL&lt;/code&gt; in &lt;code&gt;.env&lt;/code&gt; for your LLM provider.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;YAML placeholders&lt;/strong&gt;: Use &lt;code&gt;${VAR}&lt;/code&gt;（e.g., &lt;code&gt;${API_KEY}&lt;/code&gt;）in configuration files to reference these variables.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;💡 How to Use&lt;/h2&gt; 
+&lt;h3&gt;🖥️ Web Console&lt;/h3&gt; 
+&lt;p&gt;The DevAll interface provides a seamless experience for both construction and execution&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Tutorial&lt;/strong&gt;: Comprehensive step-by-step guides and documentation integrated directly into the platform to help you get started quickly.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/tutorial-en.png" /&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Workflow&lt;/strong&gt;: A visual canvas to design your multi-agent systems. Configure node parameters, define context flows, and orchestrate complex agent interactions with drag-and-drop ease.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/workflow.gif" /&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Launch&lt;/strong&gt;: Initiate workflows, monitor real-time logs, inspect intermediate artifacts, and provide human-in-the-loop feedback.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/launch.gif" /&gt; 
+&lt;h3&gt;🧰 Python SDK&lt;/h3&gt; 
+&lt;p&gt;For automation and batch processing, use our lightweight Python SDK to execute workflows programmatically and retrieve results directly.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-python"&gt;from runtime.sdk import run_workflow
+
+# Execute a workflow and get the final node message
+result = run_workflow(
+    yaml_file="yaml_instance/demo.yaml",
+    task_prompt="Summarize the attached document in one sentence.",
+    attachments=["/path/to/document.pdf"],
+    variables={"API_KEY": "sk-xxxx"} # Override .env variables if needed
+)
+
+if result.final_message:
+    print(f"Output: {result.final_message.text_content()}")
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;a id="developers"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;⚙️ For Developers&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;For secondary development and extensions, please proceed with this section.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Extend DevAll with new nodes, providers, and tools. The project is organized into a modular structure:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Core Systems&lt;/strong&gt;: &lt;code&gt;server/&lt;/code&gt; hosts the FastAPI backend, while &lt;code&gt;runtime/&lt;/code&gt; manages agent abstraction and tool execution.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Orchestration&lt;/strong&gt;: &lt;code&gt;workflow/&lt;/code&gt; handles the multi-agent logic, driven by configurations in &lt;code&gt;entity/&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Frontend&lt;/strong&gt;: &lt;code&gt;frontend/&lt;/code&gt; contains the Vue 3 Web Console.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Extensibility&lt;/strong&gt;: &lt;code&gt;functions/&lt;/code&gt; is the place for custom Python tools.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Relevant reference documentation:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Getting Started&lt;/strong&gt;: &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/docs/user_guide/en/index.md"&gt;Start Guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Core Modules&lt;/strong&gt;: &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/docs/user_guide/en/workflow_authoring.md"&gt;Workflow Authoring&lt;/a&gt;, &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/docs/user_guide/en/modules/memory.md"&gt;Memory&lt;/a&gt;, and &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/docs/user_guide/en/modules/tooling/index.md"&gt;Tooling&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🌟 Featured Workflows&lt;/h2&gt; 
+&lt;p&gt;We provide robust, out-of-the-box templates for common scenarios. All runnable workflow configs are located in &lt;code&gt;yaml_instance/&lt;/code&gt;.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Demos&lt;/strong&gt;: Files named &lt;code&gt;demo_*.yaml&lt;/code&gt; showcase specific features or modules.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Implementations&lt;/strong&gt;: Files named directly (e.g., &lt;code&gt;ChatDev_v1.yaml&lt;/code&gt;) are full in-house or recreated workflows. As follows:&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;📋 Workflow Collection&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th align="left"&gt;Category&lt;/th&gt; 
+   &lt;th align="left"&gt;Workflow&lt;/th&gt; 
+   &lt;th align="left"&gt;Case&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;&lt;strong&gt;📈 Data Visualization&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;code&gt;data_visualization_basic.yaml&lt;/code&gt;&lt;br /&gt;&lt;code&gt;data_visualization_enhanced.yaml&lt;/code&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/cases/data_analysis/data_analysis.gif" width="100%" /&gt;&lt;br /&gt;Prompt: &lt;em&gt;"Create 4–6 high-quality PNG charts for my large real-estate transactions dataset."&lt;/em&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;&lt;strong&gt;🛠️ 3D Generation&lt;/strong&gt;&lt;br /&gt;&lt;em&gt;(Requires &lt;a href="https://www.blender.org/"&gt;Blender&lt;/a&gt; &amp;amp; &lt;a href="https://github.com/ahujasid/blender-mcp"&gt;blender-mcp&lt;/a&gt;)&lt;/em&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;code&gt;blender_3d_builder_simple.yaml&lt;/code&gt;&lt;br /&gt;&lt;code&gt;blender_3d_builder_hub.yaml&lt;/code&gt;&lt;br /&gt;&lt;code&gt;blender_scientific_illustration.yaml&lt;/code&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/cases/3d_generation/3d.gif" width="100%" /&gt;&lt;br /&gt;Prompt: &lt;em&gt;"Please build a Christmas tree."&lt;/em&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;&lt;strong&gt;🎮 Game Dev&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;code&gt;GameDev_v1.yaml&lt;/code&gt;&lt;br /&gt;&lt;code&gt;ChatDev_v1.yaml&lt;/code&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/cases/game_development/game.gif" width="100%" /&gt;&lt;br /&gt;Prompt: &lt;em&gt;"Please help me design and develop a Tank Battle game."&lt;/em&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;&lt;strong&gt;📚 Deep Research&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;code&gt;deep_research_v1.yaml&lt;/code&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/cases/deep_research/deep_research.gif" width="85%" /&gt;&lt;br /&gt;Prompt: &lt;em&gt;"Research about recent advances in the field of LLM-based agent RL"&lt;/em&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td align="left"&gt;&lt;strong&gt;🎓 Teach Video&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;code&gt;teach_video.yaml&lt;/code&gt; (Please run command &lt;code&gt;uv add manim&lt;/code&gt; before running this workflow)&lt;/td&gt; 
+   &lt;td align="left"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/cases/video_generation/video.gif" width="140%" /&gt;&lt;br /&gt;Prompt: &lt;em&gt;"讲一下什么是凸优化"&lt;/em&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;hr /&gt; 
+&lt;h3&gt;💡 Usage Guide&lt;/h3&gt; 
+&lt;p&gt;For those implementations, you can use the &lt;strong&gt;Launch&lt;/strong&gt; tab to execute them.&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Select&lt;/strong&gt;: Choose a workflow in the &lt;strong&gt;Launch&lt;/strong&gt; tab.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt;: Upload necessary files (e.g., &lt;code&gt;.csv&lt;/code&gt; for data analysis) if required.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Prompt&lt;/strong&gt;: Enter your request (e.g., &lt;em&gt;"Visualize the sales trends"&lt;/em&gt; or &lt;em&gt;"Design a snake game"&lt;/em&gt;).&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🤝 Contributing&lt;/h2&gt; 
+&lt;p&gt;We welcome contributions from the community! Whether you're fixing bugs, adding new workflow templates, or sharing high-quality cases/artifacts produced by DevAll, your help is much appreciated. Feel free to contribute by submitting &lt;strong&gt;Issues&lt;/strong&gt; or &lt;strong&gt;Pull Requests&lt;/strong&gt;.&lt;/p&gt; 
+&lt;p&gt;By contributing to DevAll, you'll be recognized in our &lt;strong&gt;Contributors&lt;/strong&gt; list below. Check out our &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/#developers"&gt;Developer Guide&lt;/a&gt; to get started!&lt;/p&gt; 
+&lt;h3&gt;👥 Contributors&lt;/h3&gt; 
+&lt;h4&gt;Primary Contributors&lt;/h4&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/NA-Wen"&gt;&lt;img src="https://github.com/NA-Wen.png?size=100" width="64px;" alt="" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;NA-Wen&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/zxrys"&gt;&lt;img src="https://github.com/zxrys.png?size=100" width="64px;" alt="" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;zxrys&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/swugi"&gt;&lt;img src="https://github.com/swugi.png?size=100" width="64px;" alt="" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;swugi&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/huatl98"&gt;&lt;img src="https://github.com/huatl98.png?size=100" width="64px;" alt="" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;huatl98&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h4&gt;Contributors&lt;/h4&gt; 
+&lt;table&gt; 
+ &lt;tbody&gt;
+  &lt;tr&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/shiowen"&gt;&lt;img src="https://github.com/shiowen.png?size=100" width="64px;" alt="" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;shiowen&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/kilo2127"&gt;&lt;img src="https://github.com/kilo2127.png?size=100" width="64px;" alt="" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;kilo2127&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;/td&gt; 
+   &lt;td align="center"&gt;&lt;a href="https://github.com/AckerlyLau"&gt;&lt;img src="https://github.com/AckerlyLau.png?size=100" width="64px;" alt="" /&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;AckerlyLau&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt; 
+&lt;h2&gt;🤝 Acknowledgments&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="http://nlp.csai.tsinghua.edu.cn/"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/thunlp.png" height="50pt" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp; &lt;a href="https://modelbest.cn/"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/modelbest.png" height="50pt" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp; &lt;a href="https://github.com/OpenBMB/AgentVerse/"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/agentverse.png" height="50pt" /&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp; &lt;a href="https://github.com/OpenBMB/RepoAgent"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/repoagent.png" height="50pt" /&gt;&lt;/a&gt; &lt;a href="https://app.commanddash.io/agent?github=https://github.com/OpenBMB/ChatDev"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/CommandDash.png" height="50pt" /&gt;&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/www.teachmaster.cn"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/teachmaster.png" height="50pt" /&gt;&lt;/a&gt; &lt;a href="https://github.com/OpenBMB/AppCopilot"&gt;&lt;img src="https://raw.githubusercontent.com/OpenBMB/ChatDev/main/assets/appcopilot.png" height="50pt" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;🔎 Citation&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;@article{chatdev,
+    title = {ChatDev: Communicative Agents for Software Development},
+    author = {Chen Qian and Wei Liu and Hongzhang Liu and Nuo Chen and Yufan Dang and Jiahao Li and Cheng Yang and Weize Chen and Yusheng Su and Xin Cong and Juyuan Xu and Dahai Li and Zhiyuan Liu and Maosong Sun},
+    journal = {arXiv preprint arXiv:2307.07924},
+    url = {https://arxiv.org/abs/2307.07924},
+    year = {2023}
+}
+
+@article{colearning,
+    title = {Experiential Co-Learning of Software-Developing Agents},
+    author = {Chen Qian and Yufan Dang and Jiahao Li and Wei Liu and Zihao Xie and Yifei Wang and Weize Chen and Cheng Yang and Xin Cong and Xiaoyin Che and Zhiyuan Liu and Maosong Sun},
+    journal = {arXiv preprint arXiv:2312.17025},
+    url = {https://arxiv.org/abs/2312.17025},
+    year = {2023}
+}
+
+@article{macnet,
+    title={Scaling Large-Language-Model-based Multi-Agent Collaboration},
+    author={Chen Qian and Zihao Xie and Yifei Wang and Wei Liu and Yufan Dang and Zhuoyun Du and Weize Chen and Cheng Yang and Zhiyuan Liu and Maosong Sun}
+    journal={arXiv preprint arXiv:2406.07155},
+    url = {https://arxiv.org/abs/2406.07155},
+    year={2024}
+}
+
+@article{iagents,
+    title={Autonomous Agents for Collaborative Task under Information Asymmetry},
+    author={Wei Liu and Chenxi Wang and Yifei Wang and Zihao Xie and Rennai Qiu and Yufan Dnag and Zhuoyun Du and Weize Chen and Cheng Yang and Chen Qian},
+    journal={arXiv preprint arXiv:2406.14928},
+    url = {https://arxiv.org/abs/2406.14928},
+    year={2024}
+}
+
+@article{puppeteer,
+      title={Multi-Agent Collaboration via Evolving Orchestration}, 
+      author={Yufan Dang and Chen Qian and Xueheng Luo and Jingru Fan and Zihao Xie and Ruijie Shi and Weize Chen and Cheng Yang and Xiaoyin Che and Ye Tian and Xuantang Xiong and Lei Han and Zhiyuan Liu and Maosong Sun},
+      journal={arXiv preprint arXiv:2505.19591},
+      url={https://arxiv.org/abs/2505.19591},
+      year={2025}
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;📬 Contact&lt;/h2&gt; 
+&lt;p&gt;If you have any questions, feedback, or would like to get in touch, please feel free to reach out to us via email at &lt;a href="mailto:qianc62@gmail.com"&gt;qianc62@gmail.com&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>masoncl/review-prompts</title>
+      <link>https://github.com/masoncl/review-prompts</link>
+      <description>&lt;p&gt;AI review prompts&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Review Prompts for AI-Assisted Code Review&lt;/h1&gt; 
+&lt;p&gt;AI-assisted code review prompts for Linux kernel and systemd development. Works with Claude Code and other AI tools.&lt;/p&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;h3&gt;Install Kernel Prompts Only&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd kernel/scripts
+./claude-setup.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Install systemd Prompts Only&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd systemd/scripts
+./claude-setup.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Install Both&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd kernel/scripts &amp;amp;&amp;amp; ./claude-setup.sh
+cd ../systemd/scripts &amp;amp;&amp;amp; ./claude-setup.sh
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Available Commands&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Project&lt;/th&gt; 
+   &lt;th&gt;Review&lt;/th&gt; 
+   &lt;th&gt;Debug&lt;/th&gt; 
+   &lt;th&gt;Verify&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Kernel&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;/kreview&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;/kdebug&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;/kverify&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;systemd&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;/systemd-review&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;/systemd-debug&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;/systemd-verify&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Project Documentation&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/masoncl/review-prompts/main/kernel/README.md"&gt;Kernel Review Prompts&lt;/a&gt; - Linux kernel specific patterns and protocols&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/masoncl/review-prompts/main/systemd/README.md"&gt;systemd Review Prompts&lt;/a&gt; - systemd specific patterns and protocols&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;How It Works&lt;/h2&gt; 
+&lt;p&gt;Each project has:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Skill file&lt;/strong&gt; - Automatically loads context when working in the project tree&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Slash commands&lt;/strong&gt; - Quick access to review, debug, and verify workflows&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Subsystem files&lt;/strong&gt; - Domain-specific knowledge loaded on demand&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The skills detect your working directory and load appropriate context:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;In a kernel tree: kernel skill loads automatically&lt;/li&gt; 
+ &lt;li&gt;In a systemd tree: systemd skill loads automatically&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Structure&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;review-prompts/
+├── kernel/                    # Linux kernel prompts
+│   ├── skills/               # Skill template
+│   ├── slash-commands/       # /kreview, /kdebug, /kverify
+│   ├── scripts/              # Setup script and utilities
+│   ├── patterns/             # Bug pattern documentation
+│   └── *.md                  # Subsystem and protocol files
+│
+├── systemd/                   # systemd prompts
+│   ├── skills/               # Skill template
+│   ├── slash-commands/       # /systemd-review, /systemd-debug, /systemd-verify
+│   ├── scripts/              # Setup script
+│   ├── patterns/             # Bug pattern documentation
+│   └── *.md                  # Subsystem and protocol files
+│
+└── README.md                  # This file
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Semcode Integration&lt;/h2&gt; 
+&lt;p&gt;These prompts work best with &lt;a href="https://github.com/facebookexperimental/semcode"&gt;semcode&lt;/a&gt; for fast code navigation and semantic search.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/masoncl/review-prompts/main/kernel/LICENSE"&gt;kernel/LICENSE&lt;/a&gt; for license information.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>pedramamini/Maestro</title>
+      <link>https://github.com/pedramamini/Maestro</link>
+      <description>&lt;p&gt;Agent Orchestration Command Center&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Maestro&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://github.com/pedramamini/Maestro"&gt;&lt;img src="https://raw.githubusercontent.com/pedramamini/Maestro/main/docs/assets/made-with-maestro.svg?sanitize=true" alt="Made with Maestro" /&gt;&lt;/a&gt; &lt;a href="https://runmaestro.ai/discord"&gt;&lt;img src="https://img.shields.io/badge/Discord-Join%20Us-5865F2?logo=discord&amp;amp;logoColor=white" alt="Discord" /&gt;&lt;/a&gt; &lt;a href="https://docs.runmaestro.ai/"&gt;&lt;img src="https://img.shields.io/badge/Docs-Usage%20%26%20Documentation-blue?logo=readthedocs&amp;amp;logoColor=white" alt="User Docs" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;Maestro hones fractured attention into focused intent.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;Maestro is a cross-platform desktop app for orchestrating your fleet of AI agents and projects. It's a high-velocity solution for hackers who are juggling multiple projects in parallel. Designed for power users who live on the keyboard and rarely touch the mouse.&lt;/p&gt; 
+&lt;p&gt;Collaborate with AI to create detailed specification documents, then let Auto Run execute them automatically, each task in a fresh session with clean context. Allowing for long-running unattended sessions, my current record is nearly 24 hours of continuous runtime.&lt;/p&gt; 
+&lt;p&gt;Run multiple agents in parallel with a Linear/Superhuman-level responsive interface. Currently supporting &lt;strong&gt;Claude Code&lt;/strong&gt;, &lt;strong&gt;OpenAI Codex&lt;/strong&gt;, &lt;strong&gt;OpenCode&lt;/strong&gt;, and &lt;strong&gt;Factory Droid&lt;/strong&gt; with plans for additional agentic coding tools (Gemini CLI, Qwen3 Coder) based on user demand.&lt;/p&gt; 
+&lt;div align="center"&gt; 
+ &lt;a href="https://youtu.be/fmwwTOg7cyA?si=dJ89K54tGflKa5G4"&gt; &lt;img src="https://github.com/user-attachments/assets/deaf601d-1898-4ede-bf5a-42e46874ebb3" alt="Maestro Video Thumbnail" width="650" /&gt; &lt;/a&gt; 
+ &lt;div&gt; 
+  &lt;a href="https://youtu.be/fmwwTOg7cyA?si=VOkjO6oYjCSQvM0A"&gt;~27m Walkthrough and Demo&lt;/a&gt; &amp;nbsp;|&amp;nbsp; 
+  &lt;a href="https://youtu.be/3wX5Q1I0sgI?si=oJkJDxgAWUvBXX4D"&gt;~6m Onboarding Demo&lt;/a&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;Features&lt;/h2&gt; 
+&lt;h3&gt;Power Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🌳 &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/git-worktrees"&gt;Git Worktrees&lt;/a&gt;&lt;/strong&gt; - Run AI agents in parallel on isolated branches. Create worktree sub-agents from the git branch menu, each operating in their own directory. Work interactively in the main repo while sub-agents process tasks independently—then create PRs with one click. True parallel development without conflicts.&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/autorun-playbooks"&gt;Auto Run &amp;amp; Playbooks&lt;/a&gt;&lt;/strong&gt; - File-system-based task runner that batch-processes markdown checklists through AI agents. Create playbooks for repeatable workflows, run in loops, and track progress with full history. Each task gets its own AI session for clean conversation context.&lt;/li&gt; 
+ &lt;li&gt;💬 &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/group-chat"&gt;Group Chat&lt;/a&gt;&lt;/strong&gt; - Coordinate multiple AI agents in a single conversation. A moderator AI orchestrates discussions, routing questions to the right agents and synthesizing their responses for cross-project questions and architecture discussions.&lt;/li&gt; 
+ &lt;li&gt;🌐 &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/remote-access"&gt;Mobile Remote Control&lt;/a&gt;&lt;/strong&gt; - Built-in web server with QR code access. Monitor and control all your agents from your phone. Supports local network access and remote tunneling via Cloudflare for access from anywhere.&lt;/li&gt; 
+ &lt;li&gt;💻 &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/cli"&gt;Command Line Interface&lt;/a&gt;&lt;/strong&gt; - Full CLI (&lt;code&gt;maestro-cli&lt;/code&gt;) for headless operation. List agents/groups, run playbooks from cron jobs or CI/CD pipelines, with human-readable or JSONL output for scripting.&lt;/li&gt; 
+ &lt;li&gt;🚀 &lt;strong&gt;Multi-Agent Management&lt;/strong&gt; - Run unlimited agents and terminal sessions in parallel. Each agent has its own workspace, conversation history, and isolated context.&lt;/li&gt; 
+ &lt;li&gt;📬 &lt;strong&gt;Message Queueing&lt;/strong&gt; - Queue messages while AI is busy; they're sent automatically when the agent becomes ready. Never lose a thought.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Core Features&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🔄 &lt;strong&gt;Dual-Mode Sessions&lt;/strong&gt; - Each agent has both an AI Terminal and Command Terminal. Switch seamlessly between AI conversation and shell commands with &lt;code&gt;Cmd+J&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;⌨️ &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/keyboard-shortcuts"&gt;Keyboard-First Design&lt;/a&gt;&lt;/strong&gt; - Full keyboard control with customizable shortcuts and &lt;a href="https://docs.runmaestro.ai/keyboard-shortcuts#keyboard-mastery"&gt;mastery tracking&lt;/a&gt; that rewards you for leveling up. &lt;code&gt;Cmd+K&lt;/code&gt; quick actions, rapid agent switching, and focus management designed for flow state.&lt;/li&gt; 
+ &lt;li&gt;📋 &lt;strong&gt;Session Discovery&lt;/strong&gt; - Automatically discovers and imports existing sessions from all supported providers, including conversations from before Maestro was installed. Browse, search, star, rename, and resume any session.&lt;/li&gt; 
+ &lt;li&gt;🔀 &lt;strong&gt;Git Integration&lt;/strong&gt; - Automatic repo detection, branch display, diff viewer, commit logs, and git-aware file completion. Work with git without leaving the app.&lt;/li&gt; 
+ &lt;li&gt;📁 &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/general-usage#file-explorer-and-preview"&gt;File Explorer&lt;/a&gt;&lt;/strong&gt; - Browse project files with syntax highlighting, markdown preview, and image viewing. Reference files in prompts with &lt;code&gt;@&lt;/code&gt; mentions.&lt;/li&gt; 
+ &lt;li&gt;🔍 &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/general-usage#output-filtering"&gt;Powerful Output Filtering&lt;/a&gt;&lt;/strong&gt; - Search and filter AI output with include/exclude modes, regex support, and per-response local filters.&lt;/li&gt; 
+ &lt;li&gt;⚡ &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/slash-commands"&gt;Slash Commands&lt;/a&gt;&lt;/strong&gt; - Extensible command system with autocomplete. Create custom commands with template variables for your workflows.&lt;/li&gt; 
+ &lt;li&gt;💾 &lt;strong&gt;Draft Auto-Save&lt;/strong&gt; - Never lose work. Drafts are automatically saved and restored per session.&lt;/li&gt; 
+ &lt;li&gt;🔊 &lt;strong&gt;Speakable Notifications&lt;/strong&gt; - Audio alerts with text-to-speech announcements when agents complete tasks.&lt;/li&gt; 
+ &lt;li&gt;🎨 &lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/pedramamini/Maestro/main/THEMES.md"&gt;Beautiful Themes&lt;/a&gt;&lt;/strong&gt; - 12 themes including Dracula, Monokai, Nord, Tokyo Night, GitHub Light, and more.&lt;/li&gt; 
+ &lt;li&gt;💰 &lt;strong&gt;Cost Tracking&lt;/strong&gt; - Real-time token usage and cost tracking per session and globally.&lt;/li&gt; 
+ &lt;li&gt;🏆 &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai/achievements"&gt;Achievements&lt;/a&gt;&lt;/strong&gt; - Level up from Apprentice to Titan of the Baton based on cumulative Auto Run time. 11 conductor-themed ranks to unlock.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Analytics &amp;amp; Visualization&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;📊 &lt;strong&gt;Usage Dashboard&lt;/strong&gt; - Comprehensive analytics for tracking AI usage patterns across all sessions. View aggregated statistics with multiple time ranges (day, week, month, year, all time), compare agent performance, analyze user vs. Auto Run activity distribution, and explore activity heatmaps. Includes CSV export, real-time updates, and configurable colorblind-friendly palettes. Access via &lt;code&gt;Opt+Cmd+U&lt;/code&gt; (macOS) / &lt;code&gt;Alt+Ctrl+U&lt;/code&gt; (Windows/Linux) or the Command K menu.&lt;/li&gt; 
+ &lt;li&gt;🕸️ &lt;strong&gt;Document Graph&lt;/strong&gt; - Visual knowledge graph of your markdown documentation. Automatically discovers internal &lt;code&gt;[[wiki-links]]&lt;/code&gt; and &lt;code&gt;[markdown](links)&lt;/code&gt;, visualizes document relationships with interactive nodes and edges. Toggle between force-directed and hierarchical layouts, search/filter documents, navigate via keyboard, and track external link references. Includes mini-map, legend, and pagination for large directories. Access from the File Explorer context menu or Command K menu.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Keyboard Shortcuts for Analytics Features&lt;/h4&gt; 
+&lt;p&gt;&lt;strong&gt;Usage Dashboard&lt;/strong&gt; (&lt;code&gt;Opt+Cmd+U&lt;/code&gt; / &lt;code&gt;Alt+Ctrl+U&lt;/code&gt;):&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Action&lt;/th&gt; 
+   &lt;th&gt;Key&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Navigate view tabs&lt;/td&gt; 
+   &lt;td&gt;Arrow Left/Right/Up/Down&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Move between sections&lt;/td&gt; 
+   &lt;td&gt;Tab / Shift+Tab&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Jump to first/last section&lt;/td&gt; 
+   &lt;td&gt;Home / End&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Close dashboard&lt;/td&gt; 
+   &lt;td&gt;Escape&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;Document Graph&lt;/strong&gt; (Command K → "Document Graph"):&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Action&lt;/th&gt; 
+   &lt;th&gt;Key&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Navigate to connected node&lt;/td&gt; 
+   &lt;td&gt;Arrow Up/Down/Left/Right&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Cycle through connections&lt;/td&gt; 
+   &lt;td&gt;Tab&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Open selected document/link&lt;/td&gt; 
+   &lt;td&gt;Enter&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Close graph&lt;/td&gt; 
+   &lt;td&gt;Escape&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Search documents&lt;/td&gt; 
+   &lt;td&gt;Focus search input, type query&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;Additional interactions: Drag nodes to reposition, scroll to zoom, use mini-map for overview.&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Maestro supports Claude Code, OpenAI Codex, OpenCode, and Factory Droid. Support for additional agents (Gemini CLI, Qwen3 Coder) may be added in future releases based on community demand.&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;h3&gt;Installation&lt;/h3&gt; 
+&lt;p&gt;Download the latest release for your platform from the &lt;a href="https://github.com/pedramamini/Maestro/releases"&gt;Releases page&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Or build from source:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/pedramamini/Maestro.git
+cd Maestro
+npm install
+npm run dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Requirements&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;At least one supported AI coding agent installed and authenticated: 
+  &lt;ul&gt; 
+   &lt;li&gt;&lt;a href="https://docs.anthropic.com/en/docs/claude-code"&gt;Claude Code&lt;/a&gt; - Anthropic's AI coding assistant&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/openai/codex"&gt;OpenAI Codex&lt;/a&gt; - OpenAI's coding agent&lt;/li&gt; 
+   &lt;li&gt;&lt;a href="https://github.com/sst/opencode"&gt;OpenCode&lt;/a&gt; - Open-source AI coding assistant&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Git (optional, for git-aware features)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Essential Keyboard Shortcuts&lt;/h3&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Action&lt;/th&gt; 
+   &lt;th&gt;macOS&lt;/th&gt; 
+   &lt;th&gt;Windows/Linux&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Quick Actions&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Cmd+K&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Ctrl+K&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;New Agent&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Cmd+N&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Ctrl+N&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Switch AI/Terminal&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Cmd+J&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Ctrl+J&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Previous/Next Agent&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Cmd+[&lt;/code&gt; / &lt;code&gt;Cmd+]&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Ctrl+[&lt;/code&gt; / &lt;code&gt;Ctrl+]&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Toggle Sidebar&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Cmd+B&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Ctrl+B&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;New Tab&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Cmd+T&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Ctrl+T&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Usage Dashboard&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Opt+Cmd+U&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Alt+Ctrl+U&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;All Shortcuts&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Cmd+/&lt;/code&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;code&gt;Ctrl+/&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;a href="https://docs.runmaestro.ai/keyboard-shortcuts"&gt;Full keyboard shortcut reference&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Screenshots&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/pedramamini/Maestro/main/docs/screenshots/main-screen.png" alt="Maestro Main Screen" width="800" /&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;Main screen with multiple agents and conversation&lt;/em&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/pedramamini/Maestro/main/docs/screenshots/group-chat.png" alt="Group Chat" width="800" /&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;Group Chat coordinates multiple AI agents in a single conversation&lt;/em&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/pedramamini/Maestro/main/docs/screenshots/cmd-k-1.png" alt="Command Palette" width="800" /&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;Quick Actions palette for rapid navigation (CTRL/CMD + K)&lt;/em&gt;&lt;/p&gt; 
+&lt;p align="center"&gt; &lt;img src="https://raw.githubusercontent.com/pedramamini/Maestro/main/docs/screenshots/git-diff.png" alt="Git Diff Viewer" width="800" /&gt; &lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;Git diff viewer with syntax highlighting&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/pedramamini/Maestro/main/docs/screenshots/"&gt;See more...&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;Full documentation and usage guide available at &lt;strong&gt;&lt;a href="https://docs.runmaestro.ai"&gt;docs.runmaestro.ai&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://docs.runmaestro.ai/installation"&gt;Installation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.runmaestro.ai/getting-started"&gt;Getting Started&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.runmaestro.ai/features"&gt;Features Overview&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.runmaestro.ai/autorun-playbooks"&gt;Auto Run + Playbooks&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.runmaestro.ai/git-worktrees"&gt;Git Worktrees&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.runmaestro.ai/keyboard-shortcuts"&gt;Keyboard Shortcuts&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.runmaestro.ai/context-management"&gt;Context Management&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.runmaestro.ai/mcp-server"&gt;MCP Server&lt;/a&gt; - Connect AI apps to Maestro docs&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.runmaestro.ai/troubleshooting"&gt;Troubleshooting&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Community&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Discord&lt;/strong&gt;: &lt;a href="https://runmaestro.ai/discord"&gt;Join Us&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;GitHub Issues&lt;/strong&gt;: &lt;a href="https://github.com/pedramamini/Maestro/issues"&gt;Report bugs &amp;amp; request features&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Contributors&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/pedramamini"&gt;@pedramamini&lt;/a&gt; - Creator and Benevolent Dictator&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/mattjay"&gt;@mattjay&lt;/a&gt; - Contributor and tester&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/chr1syy"&gt;@chr1syy&lt;/a&gt; - Windows Contributor and tester&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Contributing&lt;/h3&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/pedramamini/Maestro/main/CONTRIBUTING.md"&gt;CONTRIBUTING.md&lt;/a&gt; for development setup, architecture details, and contribution guidelines.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/pedramamini/Maestro/main/LICENSE"&gt;AGPL-3.0 License&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>automazeio/ccpm</title>
+      <link>https://github.com/automazeio/ccpm</link>
+      <description>&lt;p&gt;Project management system for Claude Code using GitHub Issues and Git worktrees for parallel agent execution.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Claude Code PM&lt;/h1&gt; 
+&lt;p&gt;&lt;a href="https://automaze.io"&gt;&lt;img src="https://img.shields.io/badge/By-automaze.io-4b3baf" alt="Automaze" /&gt;&lt;/a&gt; &amp;nbsp; &lt;a href="https://github.com/automazeio/ccpm/raw/main/README.md"&gt;&lt;img src="https://img.shields.io/badge/+-Claude%20Code-d97757" alt="Claude Code" /&gt;&lt;/a&gt; &lt;a href="https://github.com/automazeio/ccpm"&gt;&lt;img src="https://img.shields.io/badge/+-GitHub%20Issues-1f2328" alt="GitHub Issues" /&gt;&lt;/a&gt; &amp;nbsp; &lt;a href="https://github.com/hesreallyhim/awesome-claude-code?tab=readme-ov-file#general-"&gt;&lt;img src="https://awesome.re/mentioned-badge.svg?sanitize=true" alt="Mentioned in Awesome Claude Code" /&gt;&lt;/a&gt; &amp;nbsp; &lt;a href="https://github.com/automazeio/ccpm/raw/main/LICENSE"&gt;&lt;img src="https://img.shields.io/badge/License-MIT-28a745" alt="MIT License" /&gt;&lt;/a&gt; &amp;nbsp; &lt;a href="http://x.com/intent/follow?screen_name=aroussi"&gt;&lt;img src="https://img.shields.io/badge/%F0%9D%95%8F-@aroussi-1c9bf0" alt="Follow on 𝕏" /&gt;&lt;/a&gt; &amp;nbsp; &lt;a href="https://github.com/automazeio/ccpm"&gt;&lt;img src="https://img.shields.io/github/stars/automazeio/ccpm.svg?style=social&amp;amp;label=Star%20this%20repo&amp;amp;maxAge=60" alt="Star this repo" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;Claude Code workflow to ship &lt;del&gt;faster&lt;/del&gt; &lt;em&gt;better&lt;/em&gt; using spec-driven development, GitHub issues, Git worktrees, and multiple AI agents running in parallel.&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/automazeio/ccpm/main/zh-docs/README_ZH.md"&gt;中文文档 (Chinese Documentation)&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;Stop losing context. Stop blocking on tasks. Stop shipping bugs. This battle-tested system turns PRDs into epics, epics into GitHub issues, and issues into production code – with full traceability at every step.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/automazeio/ccpm/main/screenshot.webp" alt="Claude Code PM" /&gt;&lt;/p&gt; 
+&lt;h2&gt;Table of Contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/automazeio/ccpm/main/#background"&gt;Background&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/automazeio/ccpm/main/#the-workflow"&gt;The Workflow&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/automazeio/ccpm/main/#what-makes-this-different"&gt;What Makes This Different?&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/automazeio/ccpm/main/#why-github-issues"&gt;Why GitHub Issues?&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/automazeio/ccpm/main/#core-principle-no-vibe-coding"&gt;Core Principle: No Vibe Coding&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/automazeio/ccpm/main/#system-architecture"&gt;System Architecture&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/automazeio/ccpm/main/#workflow-phases"&gt;Workflow Phases&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/automazeio/ccpm/main/#command-reference"&gt;Command Reference&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/automazeio/ccpm/main/#the-parallel-execution-system"&gt;The Parallel Execution System&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/automazeio/ccpm/main/#key-features--benefits"&gt;Key Features &amp;amp; Benefits&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/automazeio/ccpm/main/#proven-results"&gt;Proven Results&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/automazeio/ccpm/main/#example-flow"&gt;Example Flow&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/automazeio/ccpm/main/#get-started-now"&gt;Get Started Now&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/automazeio/ccpm/main/#local-vs-remote"&gt;Local vs Remote&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/automazeio/ccpm/main/#technical-notes"&gt;Technical Notes&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/automazeio/ccpm/main/#support-this-project"&gt;Support This Project&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Background&lt;/h2&gt; 
+&lt;p&gt;Every team struggles with the same problems:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Context evaporates&lt;/strong&gt; between sessions, forcing constant re-discovery&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Parallel work creates conflicts&lt;/strong&gt; when multiple developers touch the same code&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Requirements drift&lt;/strong&gt; as verbal decisions override written specs&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Progress becomes invisible&lt;/strong&gt; until the very end&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;This system solves all of that.&lt;/p&gt; 
+&lt;h2&gt;The Workflow&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-mermaid"&gt;graph LR
+    A[PRD Creation] --&amp;gt; B[Epic Planning]
+    B --&amp;gt; C[Task Decomposition]
+    C --&amp;gt; D[GitHub Sync]
+    D --&amp;gt; E[Parallel Execution]
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;See It In Action (60 seconds)&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Create a comprehensive PRD through guided brainstorming
+/pm:prd-new memory-system
+
+# Transform PRD into a technical epic with task breakdown
+/pm:prd-parse memory-system
+
+# Push to GitHub and start parallel execution
+/pm:epic-oneshot memory-system
+/pm:issue-start 1235
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;What Makes This Different?&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Traditional Development&lt;/th&gt; 
+   &lt;th&gt;Claude Code PM System&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Context lost between sessions&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Persistent context&lt;/strong&gt; across all work&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Serial task execution&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Parallel agents&lt;/strong&gt; on independent tasks&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;"Vibe coding" from memory&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Spec-driven&lt;/strong&gt; with full traceability&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Progress hidden in branches&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Transparent audit trail&lt;/strong&gt; in GitHub&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Manual task coordination&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Intelligent prioritization&lt;/strong&gt; with &lt;code&gt;/pm:next&lt;/code&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Why GitHub Issues?&lt;/h2&gt; 
+&lt;p&gt;Most Claude Code workflows operate in isolation – a single developer working with AI in their local environment. This creates a fundamental problem: &lt;strong&gt;AI-assisted development becomes a silo&lt;/strong&gt;.&lt;/p&gt; 
+&lt;p&gt;By using GitHub Issues as our database, we unlock something powerful:&lt;/p&gt; 
+&lt;h3&gt;🤝 &lt;strong&gt;True Team Collaboration&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Multiple Claude instances can work on the same project simultaneously&lt;/li&gt; 
+ &lt;li&gt;Human developers see AI progress in real-time through issue comments&lt;/li&gt; 
+ &lt;li&gt;Team members can jump in anywhere – the context is always visible&lt;/li&gt; 
+ &lt;li&gt;Managers get transparency without interrupting flow&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🔄 &lt;strong&gt;Seamless Human-AI Handoffs&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;AI can start a task, human can finish it (or vice versa)&lt;/li&gt; 
+ &lt;li&gt;Progress updates are visible to everyone, not trapped in chat logs&lt;/li&gt; 
+ &lt;li&gt;Code reviews happen naturally through PR comments&lt;/li&gt; 
+ &lt;li&gt;No "what did the AI do?" meetings&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;📈 &lt;strong&gt;Scalable Beyond Solo Work&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Add team members without onboarding friction&lt;/li&gt; 
+ &lt;li&gt;Multiple AI agents working in parallel on different issues&lt;/li&gt; 
+ &lt;li&gt;Distributed teams stay synchronized automatically&lt;/li&gt; 
+ &lt;li&gt;Works with existing GitHub workflows and tools&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;🎯 &lt;strong&gt;Single Source of Truth&lt;/strong&gt;&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;No separate databases or project management tools&lt;/li&gt; 
+ &lt;li&gt;Issue state is the project state&lt;/li&gt; 
+ &lt;li&gt;Comments are the audit trail&lt;/li&gt; 
+ &lt;li&gt;Labels provide organization&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;This isn't just a project management system – it's a &lt;strong&gt;collaboration protocol&lt;/strong&gt; that lets humans and AI agents work together at scale, using infrastructure your team already trusts.&lt;/p&gt; 
+&lt;h2&gt;Core Principle: No Vibe Coding&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;&lt;strong&gt;Every line of code must trace back to a specification.&lt;/strong&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;We follow a strict 5-phase discipline:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;🧠 Brainstorm&lt;/strong&gt; - Think deeper than comfortable&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;📝 Document&lt;/strong&gt; - Write specs that leave nothing to interpretation&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;📐 Plan&lt;/strong&gt; - Architect with explicit technical decisions&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;⚡ Execute&lt;/strong&gt; - Build exactly what was specified&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;📊 Track&lt;/strong&gt; - Maintain transparent progress at every step&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;No shortcuts. No assumptions. No regrets.&lt;/p&gt; 
+&lt;h2&gt;System Architecture&lt;/h2&gt; 
+&lt;pre&gt;&lt;code&gt;.claude/
+├── CLAUDE.md          # Always-on instructions (copy content to your project's CLAUDE.md file)
+├── agents/            # Task-oriented agents (for context preservation)
+├── commands/          # Command definitions
+│   ├── context/       # Create, update, and prime context
+│   ├── pm/            # ← Project management commands (this system)
+│   └── testing/       # Prime and execute tests (edit this)
+├── context/           # Project-wide context files
+├── epics/             # ← PM's local workspace (place in .gitignore)
+│   └── [epic-name]/   # Epic and related tasks
+│       ├── epic.md    # Implementation plan
+│       ├── [#].md     # Individual task files
+│       └── updates/   # Work-in-progress updates
+├── prds/              # ← PM's PRD files
+├── rules/             # Place any rule files you'd like to reference here
+└── scripts/           # Place any script files you'd like to use here
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Workflow Phases&lt;/h2&gt; 
+&lt;h3&gt;1. Product Planning Phase&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/pm:prd-new feature-name
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Launches comprehensive brainstorming to create a Product Requirements Document capturing vision, user stories, success criteria, and constraints.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; &lt;code&gt;.claude/prds/feature-name.md&lt;/code&gt;&lt;/p&gt; 
+&lt;h3&gt;2. Implementation Planning Phase&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/pm:prd-parse feature-name
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Transforms PRD into a technical implementation plan with architectural decisions, technical approach, and dependency mapping.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; &lt;code&gt;.claude/epics/feature-name/epic.md&lt;/code&gt;&lt;/p&gt; 
+&lt;h3&gt;3. Task Decomposition Phase&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/pm:epic-decompose feature-name
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Breaks epic into concrete, actionable tasks with acceptance criteria, effort estimates, and parallelization flags.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; &lt;code&gt;.claude/epics/feature-name/[task].md&lt;/code&gt;&lt;/p&gt; 
+&lt;h3&gt;4. GitHub Synchronization&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/pm:epic-sync feature-name
+# Or for confident workflows:
+/pm:epic-oneshot feature-name
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Pushes epic and tasks to GitHub as issues with appropriate labels and relationships.&lt;/p&gt; 
+&lt;h3&gt;5. Execution Phase&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/pm:issue-start 1234  # Launch specialized agent
+/pm:issue-sync 1234   # Push progress updates
+/pm:next             # Get next priority task
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Specialized agents implement tasks while maintaining progress updates and an audit trail.&lt;/p&gt; 
+&lt;h2&gt;Command Reference&lt;/h2&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] Type &lt;code&gt;/pm:help&lt;/code&gt; for a concise command summary&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;h3&gt;Initial Setup&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:init&lt;/code&gt; - Install dependencies and configure GitHub&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;PRD Commands&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:prd-new&lt;/code&gt; - Launch brainstorming for new product requirement&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:prd-parse&lt;/code&gt; - Convert PRD to implementation epic&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:prd-list&lt;/code&gt; - List all PRDs&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:prd-edit&lt;/code&gt; - Edit existing PRD&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:prd-status&lt;/code&gt; - Show PRD implementation status&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Epic Commands&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:epic-decompose&lt;/code&gt; - Break epic into task files&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:epic-sync&lt;/code&gt; - Push epic and tasks to GitHub&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:epic-oneshot&lt;/code&gt; - Decompose and sync in one command&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:epic-list&lt;/code&gt; - List all epics&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:epic-show&lt;/code&gt; - Display epic and its tasks&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:epic-close&lt;/code&gt; - Mark epic as complete&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:epic-edit&lt;/code&gt; - Edit epic details&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:epic-refresh&lt;/code&gt; - Update epic progress from tasks&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Issue Commands&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:issue-show&lt;/code&gt; - Display issue and sub-issues&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:issue-status&lt;/code&gt; - Check issue status&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:issue-start&lt;/code&gt; - Begin work with specialized agent&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:issue-sync&lt;/code&gt; - Push updates to GitHub&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:issue-close&lt;/code&gt; - Mark issue as complete&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:issue-reopen&lt;/code&gt; - Reopen closed issue&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:issue-edit&lt;/code&gt; - Edit issue details&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Workflow Commands&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:next&lt;/code&gt; - Show next priority issue with epic context&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:status&lt;/code&gt; - Overall project dashboard&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:standup&lt;/code&gt; - Daily standup report&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:blocked&lt;/code&gt; - Show blocked tasks&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:in-progress&lt;/code&gt; - List work in progress&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Sync Commands&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:sync&lt;/code&gt; - Full bidirectional sync with GitHub&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:import&lt;/code&gt; - Import existing GitHub issues&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Maintenance Commands&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:validate&lt;/code&gt; - Check system integrity&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:clean&lt;/code&gt; - Archive completed work&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;/pm:search&lt;/code&gt; - Search across all content&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;The Parallel Execution System&lt;/h2&gt; 
+&lt;h3&gt;Issues Aren't Atomic&lt;/h3&gt; 
+&lt;p&gt;Traditional thinking: One issue = One developer = One task&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Reality: One issue = Multiple parallel work streams&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;A single "Implement user authentication" issue isn't one task. It's...&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Agent 1&lt;/strong&gt;: Database tables and migrations&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Agent 2&lt;/strong&gt;: Service layer and business logic&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Agent 3&lt;/strong&gt;: API endpoints and middleware&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Agent 4&lt;/strong&gt;: UI components and forms&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Agent 5&lt;/strong&gt;: Test suites and documentation&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;All running &lt;strong&gt;simultaneously&lt;/strong&gt; in the same worktree.&lt;/p&gt; 
+&lt;h3&gt;The Math of Velocity&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Traditional Approach:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Epic with 3 issues&lt;/li&gt; 
+ &lt;li&gt;Sequential execution&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;This System:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Same epic with 3 issues&lt;/li&gt; 
+ &lt;li&gt;Each issue splits into ~4 parallel streams&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;12 agents working simultaneously&lt;/strong&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;We're not assigning agents to issues. We're &lt;strong&gt;leveraging multiple agents&lt;/strong&gt; to ship faster.&lt;/p&gt; 
+&lt;h3&gt;Context Optimization&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Traditional single-thread approach:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Main conversation carries ALL the implementation details&lt;/li&gt; 
+ &lt;li&gt;Context window fills with database schemas, API code, UI components&lt;/li&gt; 
+ &lt;li&gt;Eventually hits context limits and loses coherence&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Parallel agent approach:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Main thread stays clean and strategic&lt;/li&gt; 
+ &lt;li&gt;Each agent handles its own context in isolation&lt;/li&gt; 
+ &lt;li&gt;Implementation details never pollute the main conversation&lt;/li&gt; 
+ &lt;li&gt;Main thread maintains oversight without drowning in code&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Your main conversation becomes the conductor, not the orchestra.&lt;/p&gt; 
+&lt;h3&gt;GitHub vs Local: Perfect Separation&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;What GitHub Sees:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Clean, simple issues&lt;/li&gt; 
+ &lt;li&gt;Progress updates&lt;/li&gt; 
+ &lt;li&gt;Completion status&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;What Actually Happens Locally:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Issue #1234 explodes into 5 parallel agents&lt;/li&gt; 
+ &lt;li&gt;Agents coordinate through Git commits&lt;/li&gt; 
+ &lt;li&gt;Complex orchestration hidden from view&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;GitHub doesn't need to know HOW the work got done – just that it IS done.&lt;/p&gt; 
+&lt;h3&gt;The Command Flow&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Analyze what can be parallelized
+/pm:issue-analyze 1234
+
+# Launch the swarm
+/pm:epic-start memory-system
+
+# Watch the magic
+# 12 agents working across 3 issues
+# All in: ../epic-memory-system/
+
+# One clean merge when done
+/pm:epic-merge memory-system
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Key Features &amp;amp; Benefits&lt;/h2&gt; 
+&lt;h3&gt;🧠 &lt;strong&gt;Context Preservation&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;Never lose project state again. Each epic maintains its own context, agents read from &lt;code&gt;.claude/context/&lt;/code&gt;, and updates locally before syncing.&lt;/p&gt; 
+&lt;h3&gt;⚡ &lt;strong&gt;Parallel Execution&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;Ship faster with multiple agents working simultaneously. Tasks marked &lt;code&gt;parallel: true&lt;/code&gt; enable conflict-free concurrent development.&lt;/p&gt; 
+&lt;h3&gt;🔗 &lt;strong&gt;GitHub Native&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;Works with tools your team already uses. Issues are the source of truth, comments provide history, and there is no dependency on the Projects API.&lt;/p&gt; 
+&lt;h3&gt;🤖 &lt;strong&gt;Agent Specialization&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;Right tool for every job. Different agents for UI, API, and database work. Each reads requirements and posts updates automatically.&lt;/p&gt; 
+&lt;h3&gt;📊 &lt;strong&gt;Full Traceability&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;Every decision is documented. PRD → Epic → Task → Issue → Code → Commit. Complete audit trail from idea to production.&lt;/p&gt; 
+&lt;h3&gt;🚀 &lt;strong&gt;Developer Productivity&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;Focus on building, not managing. Intelligent prioritization, automatic context loading, and incremental sync when ready.&lt;/p&gt; 
+&lt;h2&gt;Proven Results&lt;/h2&gt; 
+&lt;p&gt;Teams using this system report:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;89% less time&lt;/strong&gt; lost to context switching – you'll use &lt;code&gt;/compact&lt;/code&gt; and &lt;code&gt;/clear&lt;/code&gt; a LOT less&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;5-8 parallel tasks&lt;/strong&gt; vs 1 previously – editing/testing multiple files at the same time&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;75% reduction&lt;/strong&gt; in bug rates – due to the breaking down features into detailed tasks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Up to 3x faster&lt;/strong&gt; feature delivery – based on feature size and complexity&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Example Flow&lt;/h2&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Start a new feature
+/pm:prd-new memory-system
+
+# Review and refine the PRD...
+
+# Create implementation plan
+/pm:prd-parse memory-system
+
+# Review the epic...
+
+# Break into tasks and push to GitHub
+/pm:epic-oneshot memory-system
+# Creates issues: #1234 (epic), #1235, #1236 (tasks)
+
+# Start development on a task
+/pm:issue-start 1235
+# Agent begins work, maintains local progress
+
+# Sync progress to GitHub
+/pm:issue-sync 1235
+# Updates posted as issue comments
+
+# Check overall status
+/pm:epic-show memory-system
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Get Started Now&lt;/h2&gt; 
+&lt;h3&gt;Quick Setup (2 minutes)&lt;/h3&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Install this repository into your project&lt;/strong&gt;:&lt;/p&gt; &lt;h4&gt;Unix/Linux/macOS&lt;/h4&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;cd path/to/your/project/
+curl -sSL https://automaze.io/ccpm/install | bash
+# or: wget -qO- https://automaze.io/ccpm/install | bash
+&lt;/code&gt;&lt;/pre&gt; &lt;h4&gt;Windows (PowerShell)&lt;/h4&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;cd path/to/your/project/
+iwr -useb https://automaze.io/ccpm/install | iex
+&lt;/code&gt;&lt;/pre&gt; 
+  &lt;blockquote&gt; 
+   &lt;p&gt;⚠️ &lt;strong&gt;IMPORTANT&lt;/strong&gt;: If you already have a &lt;code&gt;.claude&lt;/code&gt; directory, clone this repository to a different directory and copy the contents of the cloned &lt;code&gt;.claude&lt;/code&gt; directory to your project's &lt;code&gt;.claude&lt;/code&gt; directory.&lt;/p&gt; 
+  &lt;/blockquote&gt; &lt;p&gt;See full/other installation options in the &lt;a href="https://github.com/automazeio/ccpm/tree/main/install"&gt;installation guide ›&lt;/a&gt;&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Initialize the PM system&lt;/strong&gt;:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;/pm:init
+&lt;/code&gt;&lt;/pre&gt; &lt;p&gt;This command will:&lt;/p&gt; 
+  &lt;ul&gt; 
+   &lt;li&gt;Install GitHub CLI (if needed)&lt;/li&gt; 
+   &lt;li&gt;Authenticate with GitHub&lt;/li&gt; 
+   &lt;li&gt;Install &lt;a href="https://github.com/yahsan2/gh-sub-issue"&gt;gh-sub-issue extension&lt;/a&gt; for proper parent-child relationships&lt;/li&gt; 
+   &lt;li&gt;Create required directories&lt;/li&gt; 
+   &lt;li&gt;Update .gitignore&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Create &lt;code&gt;CLAUDE.md&lt;/code&gt;&lt;/strong&gt; with your repository information&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;/init include rules from .claude/CLAUDE.md
+&lt;/code&gt;&lt;/pre&gt; 
+  &lt;blockquote&gt; 
+   &lt;p&gt;If you already have a &lt;code&gt;CLAUDE.md&lt;/code&gt; file, run: &lt;code&gt;/re-init&lt;/code&gt; to update it with important rules from &lt;code&gt;.claude/CLAUDE.md&lt;/code&gt;.&lt;/p&gt; 
+  &lt;/blockquote&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;Prime the system&lt;/strong&gt;:&lt;/p&gt; &lt;pre&gt;&lt;code class="language-bash"&gt;/context:create
+&lt;/code&gt;&lt;/pre&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3&gt;Start Your First Feature&lt;/h3&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/pm:prd-new your-feature-name
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Watch as structured planning transforms into shipped code.&lt;/p&gt; 
+&lt;h2&gt;Local vs Remote&lt;/h2&gt; 
+&lt;table&gt; 
+ &lt;thead&gt; 
+  &lt;tr&gt; 
+   &lt;th&gt;Operation&lt;/th&gt; 
+   &lt;th&gt;Local&lt;/th&gt; 
+   &lt;th&gt;GitHub&lt;/th&gt; 
+  &lt;/tr&gt; 
+ &lt;/thead&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;PRD Creation&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;—&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Implementation Planning&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;—&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Task Breakdown&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;✅ (sync)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Execution&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;—&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Status Updates&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+   &lt;td&gt;✅ (sync)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Final Deliverables&lt;/td&gt; 
+   &lt;td&gt;—&lt;/td&gt; 
+   &lt;td&gt;✅&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h2&gt;Technical Notes&lt;/h2&gt; 
+&lt;h3&gt;GitHub Integration&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Uses &lt;strong&gt;gh-sub-issue extension&lt;/strong&gt; for proper parent-child relationships&lt;/li&gt; 
+ &lt;li&gt;Falls back to task lists if extension not installed&lt;/li&gt; 
+ &lt;li&gt;Epic issues track sub-task completion automatically&lt;/li&gt; 
+ &lt;li&gt;Labels provide additional organization (&lt;code&gt;epic:feature&lt;/code&gt;, &lt;code&gt;task:feature&lt;/code&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;File Naming Convention&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Tasks start as &lt;code&gt;001.md&lt;/code&gt;, &lt;code&gt;002.md&lt;/code&gt; during decomposition&lt;/li&gt; 
+ &lt;li&gt;After GitHub sync, renamed to &lt;code&gt;{issue-id}.md&lt;/code&gt; (e.g., &lt;code&gt;1234.md&lt;/code&gt;)&lt;/li&gt; 
+ &lt;li&gt;Makes it easy to navigate: issue #1234 = file &lt;code&gt;1234.md&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Design Decisions&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Intentionally avoids GitHub Projects API complexity&lt;/li&gt; 
+ &lt;li&gt;All commands operate on local files first for speed&lt;/li&gt; 
+ &lt;li&gt;Synchronization with GitHub is explicit and controlled&lt;/li&gt; 
+ &lt;li&gt;Worktrees provide clean git isolation for parallel work&lt;/li&gt; 
+ &lt;li&gt;GitHub Projects can be added separately for visualization&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Support This Project&lt;/h2&gt; 
+&lt;p&gt;Claude Code PM was developed at &lt;a href="https://automaze.io"&gt;Automaze&lt;/a&gt; &lt;strong&gt;for developers who ship, by developers who ship&lt;/strong&gt;.&lt;/p&gt; 
+&lt;p&gt;If Claude Code PM helps your team ship better software:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;⭐ &lt;strong&gt;&lt;a href="https://github.com/automazeio/ccpm"&gt;Star this repository&lt;/a&gt;&lt;/strong&gt; to show your support&lt;/li&gt; 
+ &lt;li&gt;🐦 &lt;strong&gt;&lt;a href="https://x.com/aroussi"&gt;Follow @aroussi on X&lt;/a&gt;&lt;/strong&gt; for updates and tips&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;blockquote&gt; 
+ &lt;p&gt;[!TIP] &lt;strong&gt;Ship faster with Automaze.&lt;/strong&gt; We partner with founders to bring their vision to life, scale their business, and optimize for success. &lt;strong&gt;&lt;a href="https://automaze.io"&gt;Visit Automaze to book a call with me ›&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; 
+&lt;/blockquote&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;img src="https://api.star-history.com/svg?repos=automazeio/ccpm" alt="Star History Chart" /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>obra/superpowers</title>
+      <link>https://github.com/obra/superpowers</link>
+      <description>&lt;p&gt;An agentic skills framework &amp; software development methodology that works.&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Superpowers&lt;/h1&gt; 
+&lt;p&gt;Superpowers is a complete software development workflow for your coding agents, built on top of a set of composable "skills" and some initial instructions that make sure your agent uses them.&lt;/p&gt; 
+&lt;h2&gt;How it works&lt;/h2&gt; 
+&lt;p&gt;It starts from the moment you fire up your coding agent. As soon as it sees that you're building something, it &lt;em&gt;doesn't&lt;/em&gt; just jump into trying to write code. Instead, it steps back and asks you what you're really trying to do.&lt;/p&gt; 
+&lt;p&gt;Once it's teased a spec out of the conversation, it shows it to you in chunks short enough to actually read and digest.&lt;/p&gt; 
+&lt;p&gt;After you've signed off on the design, your agent puts together an implementation plan that's clear enough for an enthusiastic junior engineer with poor taste, no judgement, no project context, and an aversion to testing to follow. It emphasizes true red/green TDD, YAGNI (You Aren't Gonna Need It), and DRY.&lt;/p&gt; 
+&lt;p&gt;Next up, once you say "go", it launches a &lt;em&gt;subagent-driven-development&lt;/em&gt; process, having agents work through each engineering task, inspecting and reviewing their work, and continuing forward. It's not uncommon for Claude to be able to work autonomously for a couple hours at a time without deviating from the plan you put together.&lt;/p&gt; 
+&lt;p&gt;There's a bunch more to it, but that's the core of the system. And because the skills trigger automatically, you don't need to do anything special. Your coding agent just has Superpowers.&lt;/p&gt; 
+&lt;h2&gt;Sponsorship&lt;/h2&gt; 
+&lt;p&gt;If Superpowers has helped you do stuff that makes money and you are so inclined, I'd greatly appreciate it if you'd consider &lt;a href="https://github.com/sponsors/obra"&gt;sponsoring my opensource work&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Thanks!&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Jesse&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Installation&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Installation differs by platform. Claude Code has a built-in plugin system. Codex and OpenCode require manual setup.&lt;/p&gt; 
+&lt;h3&gt;Claude Code (via Plugin Marketplace)&lt;/h3&gt; 
+&lt;p&gt;In Claude Code, register the marketplace first:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/plugin marketplace add obra/superpowers-marketplace
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then install the plugin from this marketplace:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/plugin install superpowers@superpowers-marketplace
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Verify Installation&lt;/h3&gt; 
+&lt;p&gt;Check that commands appear:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/help
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code&gt;# Should see:
+# /superpowers:brainstorm - Interactive design refinement
+# /superpowers:write-plan - Create implementation plan
+# /superpowers:execute-plan - Execute plan in batches
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h3&gt;Codex&lt;/h3&gt; 
+&lt;p&gt;Tell Codex:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.codex/INSTALL.md
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Detailed docs:&lt;/strong&gt; &lt;a href="https://raw.githubusercontent.com/obra/superpowers/main/docs/README.codex.md"&gt;docs/README.codex.md&lt;/a&gt;&lt;/p&gt; 
+&lt;h3&gt;OpenCode&lt;/h3&gt; 
+&lt;p&gt;Tell OpenCode:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INSTALL.md
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Detailed docs:&lt;/strong&gt; &lt;a href="https://raw.githubusercontent.com/obra/superpowers/main/docs/README.opencode.md"&gt;docs/README.opencode.md&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;The Basic Workflow&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;brainstorming&lt;/strong&gt; - Activates before writing code. Refines rough ideas through questions, explores alternatives, presents design in sections for validation. Saves design document.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;using-git-worktrees&lt;/strong&gt; - Activates after design approval. Creates isolated workspace on new branch, runs project setup, verifies clean test baseline.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;writing-plans&lt;/strong&gt; - Activates with approved design. Breaks work into bite-sized tasks (2-5 minutes each). Every task has exact file paths, complete code, verification steps.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;subagent-driven-development&lt;/strong&gt; or &lt;strong&gt;executing-plans&lt;/strong&gt; - Activates with plan. Dispatches fresh subagent per task with two-stage review (spec compliance, then code quality), or executes in batches with human checkpoints.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;test-driven-development&lt;/strong&gt; - Activates during implementation. Enforces RED-GREEN-REFACTOR: write failing test, watch it fail, write minimal code, watch it pass, commit. Deletes code written before tests.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;requesting-code-review&lt;/strong&gt; - Activates between tasks. Reviews against plan, reports issues by severity. Critical issues block progress.&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;&lt;strong&gt;finishing-a-development-branch&lt;/strong&gt; - Activates when tasks complete. Verifies tests, presents options (merge/PR/keep/discard), cleans up worktree.&lt;/p&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;The agent checks for relevant skills before any task.&lt;/strong&gt; Mandatory workflows, not suggestions.&lt;/p&gt; 
+&lt;h2&gt;What's Inside&lt;/h2&gt; 
+&lt;h3&gt;Skills Library&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;Testing&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;test-driven-development&lt;/strong&gt; - RED-GREEN-REFACTOR cycle (includes testing anti-patterns reference)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Debugging&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;systematic-debugging&lt;/strong&gt; - 4-phase root cause process (includes root-cause-tracing, defense-in-depth, condition-based-waiting techniques)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;verification-before-completion&lt;/strong&gt; - Ensure it's actually fixed&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Collaboration&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;brainstorming&lt;/strong&gt; - Socratic design refinement&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;writing-plans&lt;/strong&gt; - Detailed implementation plans&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;executing-plans&lt;/strong&gt; - Batch execution with checkpoints&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;dispatching-parallel-agents&lt;/strong&gt; - Concurrent subagent workflows&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;requesting-code-review&lt;/strong&gt; - Pre-review checklist&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;receiving-code-review&lt;/strong&gt; - Responding to feedback&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;using-git-worktrees&lt;/strong&gt; - Parallel development branches&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;finishing-a-development-branch&lt;/strong&gt; - Merge/PR decision workflow&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;subagent-driven-development&lt;/strong&gt; - Fast iteration with two-stage review (spec compliance, then code quality)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Meta&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;writing-skills&lt;/strong&gt; - Create new skills following best practices (includes testing methodology)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;using-superpowers&lt;/strong&gt; - Introduction to the skills system&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Philosophy&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Test-Driven Development&lt;/strong&gt; - Write tests first, always&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Systematic over ad-hoc&lt;/strong&gt; - Process over guessing&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Complexity reduction&lt;/strong&gt; - Simplicity as primary goal&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Evidence over claims&lt;/strong&gt; - Verify before declaring success&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;Read more: &lt;a href="https://blog.fsck.com/2025/10/09/superpowers/"&gt;Superpowers for Claude Code&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Skills live directly in this repository. To contribute:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork the repository&lt;/li&gt; 
+ &lt;li&gt;Create a branch for your skill&lt;/li&gt; 
+ &lt;li&gt;Follow the &lt;code&gt;writing-skills&lt;/code&gt; skill for creating and testing new skills&lt;/li&gt; 
+ &lt;li&gt;Submit a PR&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;See &lt;code&gt;skills/writing-skills/SKILL.md&lt;/code&gt; for the complete guide.&lt;/p&gt; 
+&lt;h2&gt;Updating&lt;/h2&gt; 
+&lt;p&gt;Skills update automatically when you update the plugin:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;/plugin update superpowers
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;MIT License - see LICENSE file for details&lt;/p&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Issues&lt;/strong&gt;: &lt;a href="https://github.com/obra/superpowers/issues"&gt;https://github.com/obra/superpowers/issues&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Marketplace&lt;/strong&gt;: &lt;a href="https://github.com/obra/superpowers-marketplace"&gt;https://github.com/obra/superpowers-marketplace&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>kovidgoyal/calibre</title>
+      <link>https://github.com/kovidgoyal/calibre</link>
+      <description>&lt;p&gt;The official source code repository for the calibre ebook manager&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;calibre&lt;/h1&gt; 
+&lt;img align="left" src="https://raw.githubusercontent.com/kovidgoyal/calibre/master/resources/images/lt.png" height="200" width="200" /&gt; 
+&lt;p&gt;calibre is an e-book manager. It can view, convert, edit and catalog e-books in all of the major e-book formats. It can also talk to e-book reader devices. It can go out to the internet and fetch metadata for your books. It can download newspapers and convert them into e-books for convenient reading. It is cross platform, running on Linux, Windows and macOS.&lt;/p&gt; 
+&lt;p&gt;For more information, see the &lt;a href="https://calibre-ebook.com/about"&gt;calibre About page&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://github.com/kovidgoyal/calibre/actions?query=workflow%3ACI"&gt;&lt;img src="https://github.com/kovidgoyal/calibre/workflows/CI/badge.svg?sanitize=true" alt="Build Status" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Screenshots&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://calibre-ebook.com/demo"&gt;Screenshots page&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;Usage&lt;/h2&gt; 
+&lt;p&gt;See the &lt;a href="https://manual.calibre-ebook.com"&gt;User Manual&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://manual.calibre-ebook.com/develop.html"&gt;Setting up a development environment for calibre&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;A &lt;a href="https://calibre-ebook.com/dist/src"&gt;tarball of the source code&lt;/a&gt; for the current calibre release.&lt;/p&gt; 
+&lt;h2&gt;Bugs&lt;/h2&gt; 
+&lt;p&gt;Bug reports and feature requests should be made in the calibre bug tracker at &lt;a href="https://bugs.launchpad.net/calibre"&gt;Launchpad&lt;/a&gt;. GitHub is only used for code hosting and pull requests.&lt;/p&gt; 
+&lt;h2&gt;Support calibre&lt;/h2&gt; 
+&lt;p&gt;calibre is a result of the efforts of many volunteers from all over the world. If you find it useful, please consider contributing to support its development. &lt;a href="https://calibre-ebook.com/donate"&gt;Donate to support calibre development&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;Building calibre binaries&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/kovidgoyal/calibre/master/bypy/README.rst"&gt;Build instructions&lt;/a&gt; for instructions on how to build the calibre binaries and installers for all the platforms calibre supports.&lt;/p&gt; 
+&lt;h2&gt;calibre package versions in various repositories&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://repology.org/project/calibre/versions"&gt;&lt;img src="https://repology.org/badge/vertical-allrepos/calibre.svg?columns=3&amp;amp;header=calibre" alt="Packaging Status" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>vm0-ai/vm0</title>
+      <link>https://github.com/vm0-ai/vm0</link>
+      <description>&lt;p&gt;the easiest way to run natural language-described workflows automatically&lt;/p&gt;&lt;hr&gt;&lt;h2 align="center"&gt; &lt;a href="https://vm0.ai"&gt;&lt;img src="https://github.com/vm0-ai/vm0/raw/main/turbo/apps/web/public/assets/Logo_VM0_combo_black_bg.svg?sanitize=true" alt="VM0 Logo" width="500" /&gt;&lt;/a&gt; &lt;br /&gt; &lt;br /&gt; Natural language Agent, 24/7 in cloud sandbox &lt;br /&gt; &lt;br /&gt; &lt;p&gt; &lt;a href="https://deepwiki.com/vm0-ai/vm0"&gt;&lt;img src="https://deepwiki.com/badge.svg?sanitize=true" alt="Ask DeepWiki" /&gt;&lt;/a&gt; &lt;img src="https://img.shields.io/npm/types/@vm0/cli" alt="NPM Type Definitions" /&gt; &lt;img src="https://img.shields.io/npm/v/@vm0/cli" alt="NPM Version" /&gt; &lt;img src="https://img.shields.io/bundlejs/size/@vm0/cli" alt="Bundle Size" /&gt; &lt;a href="https://github.com/vm0-ai/vm0/actions/workflows/turbo.yml?query=event%3Apush+branch%3Amain"&gt;&lt;img src="https://github.com/vm0-ai/vm0/actions/workflows/turbo.yml/badge.svg?event=push" alt="CI" /&gt;&lt;/a&gt; &lt;/p&gt; &lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://docs.vm0.ai"&gt;Documentation&lt;/a&gt; / &lt;a href="https://www.vm0.ai"&gt;Website&lt;/a&gt; / &lt;a href="https://discord.gg/WMpAmHFfp6"&gt;Discord&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;VM0&lt;/code&gt; runs natural language-described workflows automatically on schedule in remote sandbox environments.&lt;/p&gt; 
+&lt;p&gt;⭐ Star us on GitHub, it motivates us a lot! ⭐&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;🔥 What you GET&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Cloud sandbox&lt;/strong&gt;, run Claude Code in isolated claude sandbox 24/7&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Skill Native&lt;/strong&gt;, Compatible with 35,738+ skills in &lt;a href="https://skills.sh"&gt;skills.sh&lt;/a&gt;, and 70+ high quality SaaS integration skill like GitHub, Slack, Notion, Firecrawl, and &lt;a href="https://github.com/vm0-ai/vm0-skills"&gt;more&lt;/a&gt;,&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Persistence&lt;/strong&gt;, continue chat, resume, fork, and version your workflow sessions&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Observability&lt;/strong&gt;, logs, metrics, and network visibility for every run&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;🚀 &lt;a href="https://docs.vm0.ai/docs/quick-start"&gt;Quick Start&lt;/a&gt;&lt;/h2&gt; 
+&lt;p&gt;From zero to workflow agent in 5 minutes&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;npm install -g @vm0/cli &amp;amp;&amp;amp; vm0 onboard
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;📕 Showcase&lt;/h2&gt; 
+&lt;img src="https://raw.githubusercontent.com/vm0-ai/vm0-cookbooks/main/tapes/welcome/welcome.gif" alt="VM0 CLI Quickstart Demo" width="500" /&gt; 
+&lt;h2&gt;📚 Architecture&lt;/h2&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/vm0-ai/vm0/main/docs/architecture.md"&gt; &lt;img src="https://raw.githubusercontent.com/vm0-ai/vm0/main/docs/arch.svg?sanitize=true" alt="VM0 Architecture Diagram" width="800" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/vm0-ai/vm0/main/docs/architecture.md"&gt;Architecture Documentation&lt;/a&gt;&lt;/strong&gt; - Comprehensive technical reference covering sandbox technologies (E2B, Firecracker), infrastructure components and network architecture&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;For user-facing guides and tutorials, visit &lt;a href="https://docs.vm0.ai"&gt;docs.vm0.ai&lt;/a&gt;.&lt;/p&gt; 
+&lt;h2&gt;🤝 Contribute&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://github.com/vm0-ai/vm0/raw/main/CONTRIBUTING.md"&gt; &lt;img src="https://contrib.rocks/image?repo=vm0-ai/vm0" /&gt; &lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://repobeats.axiom.co/api/embed/ef46db5e11f5146fcc8af07077a79d789efdfbe5.svg?sanitize=true" alt="Alt" title="Repobeats analytics image" /&gt;&lt;/p&gt; 
+&lt;h2&gt;⭐ Star History&lt;/h2&gt; 
+&lt;p&gt;&lt;a href="https://www.star-history.com/#vm0-ai/vm0&amp;amp;type=date&amp;amp;legend=top-left"&gt;&lt;img src="https://api.star-history.com/svg?repos=vm0-ai/vm0&amp;amp;type=date&amp;amp;legend=top-left" alt="Star History Chart" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;📃 License&lt;/h2&gt; 
+&lt;p&gt;See &lt;a href="https://raw.githubusercontent.com/vm0-ai/vm0/main/LICENSE"&gt;LICENSE&lt;/a&gt; for details.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>openai/skills</title>
+      <link>https://github.com/openai/skills</link>
+      <description>&lt;p&gt;Skills Catalog for Codex&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Agent Skills&lt;/h1&gt; 
+&lt;p&gt;Agent Skills are folders of instructions, scripts, and resources that AI agents can discover and use to perform at specific tasks. Write once, use everywhere.&lt;/p&gt; 
+&lt;p&gt;Codex uses skills to help package capabilities that teams and individuals can use to complete specific tasks in a repeatable way. This repository catalogs skills for use and distribution with Codex.&lt;/p&gt; 
+&lt;p&gt;Learn more:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://developers.openai.com/codex/skills"&gt;Using skills in Codex&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://developers.openai.com/codex/skills/create-skill"&gt;Create custom skills in Codex&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://agentskills.io"&gt;Agent Skills open standard&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Installing a skill&lt;/h2&gt; 
+&lt;p&gt;Skills in &lt;a href="https://raw.githubusercontent.com/openai/skills/main/skills/.system/"&gt;&lt;code&gt;.system&lt;/code&gt;&lt;/a&gt; are automatically installed in the latest version of Codex.&lt;/p&gt; 
+&lt;p&gt;To install &lt;a href="https://raw.githubusercontent.com/openai/skills/main/skills/.curated/"&gt;curated&lt;/a&gt; or &lt;a href="https://raw.githubusercontent.com/openai/skills/main/skills/.experimental/"&gt;experimental&lt;/a&gt; skills, you can use the &lt;code&gt;$skill-installer&lt;/code&gt; inside Codex.&lt;/p&gt; 
+&lt;p&gt;Curated skills can be installed by name (defaults to &lt;code&gt;skills/.curated&lt;/code&gt;):&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;$skill-installer gh-address-comments
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;For experimental skills, specify the skill folder. For example:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;$skill-installer install the create-plan skill from the .experimental folder
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Or provide the GitHub directory URL:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;$skill-installer install https://github.com/openai/skills/tree/main/skills/.experimental/create-plan
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;After installing a skill, restart Codex to pick up new skills.&lt;/p&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;The license of an individual skill can be found directly inside the skill's directory inside the &lt;code&gt;LICENSE.txt&lt;/code&gt; file.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>virattt/dexter</title>
+      <link>https://github.com/virattt/dexter</link>
+      <description>&lt;p&gt;An autonomous agent for deep financial research&lt;/p&gt;&lt;hr&gt;&lt;h1&gt;Dexter 🤖&lt;/h1&gt; 
+&lt;p&gt;Dexter is an autonomous financial research agent that thinks, plans, and learns as it works. It performs analysis using task planning, self-reflection, and real-time market data. Think Claude Code, but built specifically for financial research.&lt;/p&gt; 
+&lt;img width="1098" height="659" alt="Screenshot 2026-01-21 at 5 25 10 PM" src="https://github.com/user-attachments/assets/3bcc3a7f-b68a-4f5e-8735-9d22196ff76e" /&gt; 
+&lt;h2&gt;Table of Contents&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/dexter/main/#-overview"&gt;👋 Overview&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/dexter/main/#-prerequisites"&gt;✅ Prerequisites&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/dexter/main/#-how-to-install"&gt;💻 How to Install&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/dexter/main/#-how-to-run"&gt;🚀 How to Run&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/dexter/main/#-how-to-evaluate"&gt;📊 How to Evaluate&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/dexter/main/#-how-to-debug"&gt;🐛 How to Debug&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/dexter/main/#-how-to-contribute"&gt;🤝 How to Contribute&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://raw.githubusercontent.com/virattt/dexter/main/#-license"&gt;📄 License&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;👋 Overview&lt;/h2&gt; 
+&lt;p&gt;Dexter takes complex financial questions and turns them into clear, step-by-step research plans. It runs those tasks using live market data, checks its own work, and refines the results until it has a confident, data-backed answer.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Key Capabilities:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Intelligent Task Planning&lt;/strong&gt;: Automatically decomposes complex queries into structured research steps&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Autonomous Execution&lt;/strong&gt;: Selects and executes the right tools to gather financial data&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Self-Validation&lt;/strong&gt;: Checks its own work and iterates until tasks are complete&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Real-Time Financial Data&lt;/strong&gt;: Access to income statements, balance sheets, and cash flow statements&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Safety Features&lt;/strong&gt;: Built-in loop detection and step limits to prevent runaway execution&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;a href="https://twitter.com/virattt"&gt;&lt;img src="https://img.shields.io/twitter/follow/virattt?style=social" alt="Twitter Follow" /&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;img width="875" height="558" alt="Screenshot 2026-01-21 at 5 22 19 PM" src="https://github.com/user-attachments/assets/72d28363-69ea-4c74-a297-dfa60aa347f7" /&gt; 
+&lt;h2&gt;✅ Prerequisites&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://bun.com"&gt;Bun&lt;/a&gt; runtime (v1.0 or higher)&lt;/li&gt; 
+ &lt;li&gt;OpenAI API key (get &lt;a href="https://platform.openai.com/api-keys"&gt;here&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;Financial Datasets API key (get &lt;a href="https://financialdatasets.ai"&gt;here&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;Exa API key (get &lt;a href="https://exa.ai"&gt;here&lt;/a&gt;) - optional, for web search&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4&gt;Installing Bun&lt;/h4&gt; 
+&lt;p&gt;If you don't have Bun installed, you can install it using curl:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;macOS/Linux:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -fsSL https://bun.com/install | bash
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Windows:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;powershell -c "irm bun.sh/install.ps1|iex"
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;After installation, restart your terminal and verify Bun is installed:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun --version
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;💻 How to Install&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Clone the repository:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;git clone https://github.com/virattt/dexter.git
+cd dexter
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="2"&gt; 
+ &lt;li&gt;Install dependencies with Bun:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun install
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ol start="3"&gt; 
+ &lt;li&gt;Set up your environment variables:&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;# Copy the example environment file
+cp env.example .env
+
+# Edit .env and add your API keys (if using cloud providers)
+# OPENAI_API_KEY=your-openai-api-key
+# ANTHROPIC_API_KEY=your-anthropic-api-key (optional)
+# GOOGLE_API_KEY=your-google-api-key (optional)
+# XAI_API_KEY=your-xai-api-key (optional)
+# OPENROUTER_API_KEY=your-openrouter-api-key (optional)
+
+# (Optional) If using Ollama locally
+# OLLAMA_BASE_URL=http://127.0.0.1:11434
+
+# Other required keys
+# FINANCIAL_DATASETS_API_KEY=your-financial-datasets-api-key
+
+# Web Search (Exa preferred, Tavily fallback)
+# EXASEARCH_API_KEY=your-exa-api-key
+# TAVILY_API_KEY=your-tavily-api-key
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;🚀 How to Run&lt;/h2&gt; 
+&lt;p&gt;Run Dexter in interactive mode:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun start
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Or with watch mode for development:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun dev
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;📊 How to Evaluate&lt;/h2&gt; 
+&lt;p&gt;Dexter includes an evaluation suite that tests the agent against a dataset of financial questions. Evals use LangSmith for tracking and an LLM-as-judge approach for scoring correctness.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Run on all questions:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun run src/evals/run.ts
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;&lt;strong&gt;Run on a random sample of data:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;bun run src/evals/run.ts --sample 10
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The eval runner displays a real-time UI showing progress, current question, and running accuracy statistics. Results are logged to LangSmith for analysis.&lt;/p&gt; 
+&lt;h2&gt;🐛 How to Debug&lt;/h2&gt; 
+&lt;p&gt;Dexter logs all tool calls to a scratchpad file for debugging and history tracking. Each query creates a new JSONL file in &lt;code&gt;.dexter/scratchpad/&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Scratchpad location:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;.dexter/scratchpad/
+├── 2026-01-30-111400_9a8f10723f79.jsonl
+├── 2026-01-30-143022_a1b2c3d4e5f6.jsonl
+└── ...
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Each file contains newline-delimited JSON entries tracking:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;init&lt;/strong&gt;: The original query&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;tool_result&lt;/strong&gt;: Each tool call with arguments, raw result, and LLM summary&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;thinking&lt;/strong&gt;: Agent reasoning steps&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Example scratchpad entry:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-json"&gt;{"type":"tool_result","timestamp":"2026-01-30T11:14:05.123Z","toolName":"get_income_statements","args":{"ticker":"AAPL","period":"annual","limit":5},"result":{...},"llmSummary":"Retrieved 5 years of Apple annual income statements showing revenue growth from $274B to $394B"}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;This makes it easy to inspect exactly what data the agent gathered and how it interpreted results.&lt;/p&gt; 
+&lt;h2&gt;🤝 How to Contribute&lt;/h2&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork the repository&lt;/li&gt; 
+ &lt;li&gt;Create a feature branch&lt;/li&gt; 
+ &lt;li&gt;Commit your changes&lt;/li&gt; 
+ &lt;li&gt;Push to the branch&lt;/li&gt; 
+ &lt;li&gt;Create a Pull Request&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Important&lt;/strong&gt;: Please keep your pull requests small and focused. This will make it easier to review and merge.&lt;/p&gt; 
+&lt;h2&gt;📄 License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the MIT License.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>thedotmack/claude-mem</title>
+      <link>https://github.com/thedotmack/claude-mem</link>
+      <description>&lt;p&gt;A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.&lt;/p&gt;&lt;hr&gt;&lt;p align="center"&gt; Official $CMEM Links: &lt;a href="https://bags.fm/2TsmuYUrsctE57VLckZBYEEzdokUF8j8e1GavekWBAGS"&gt;Bags.fm&lt;/a&gt; • &lt;a href="https://jup.ag/tokens/2TsmuYUrsctE57VLckZBYEEzdokUF8j8e1GavekWBAGS"&gt;Jupiter&lt;/a&gt; • &lt;a href="https://photon-sol.tinyastro.io/en/lp/6MzFAkWnac6GSK1EdFX93dZeukGfzrFq4UHWarhGSQyd"&gt;Photon&lt;/a&gt; • &lt;a href="https://dexscreener.com/solana/6mzfakwnac6gsk1edfx93dzeukgfzrfq4uhwarhgsqyd"&gt;DEXScreener&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt;Official CA: 2TsmuYUrsctE57VLckZBYEEzdokUF8j8e1GavekWBAGS (on Solana)&lt;/p&gt; 
+&lt;h1 align="center"&gt; &lt;br /&gt; &lt;a href="https://github.com/thedotmack/claude-mem"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/claude-mem-logo-for-dark-mode.webp" /&gt; 
+   &lt;source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/claude-mem-logo-for-light-mode.webp" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/claude-mem-logo-for-light-mode.webp" alt="Claude-Mem" width="400" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;br /&gt; &lt;/h1&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.zh.md"&gt;🇨🇳 中文&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.ja.md"&gt;🇯🇵 日本語&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.pt-br.md"&gt;🇧🇷 Português&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.ko.md"&gt;🇰🇷 한국어&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.es.md"&gt;🇪🇸 Español&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.de.md"&gt;🇩🇪 Deutsch&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.fr.md"&gt;🇫🇷 Français&lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.he.md"&gt;🇮🇱 עברית&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.ar.md"&gt;🇸🇦 العربية&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.ru.md"&gt;🇷🇺 Русский&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.pl.md"&gt;🇵🇱 Polski&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.cs.md"&gt;🇨🇿 Čeština&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.nl.md"&gt;🇳🇱 Nederlands&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.tr.md"&gt;🇹🇷 Türkçe&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.uk.md"&gt;🇺🇦 Українська&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.vi.md"&gt;🇻🇳 Tiếng Việt&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.id.md"&gt;🇮🇩 Indonesia&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.th.md"&gt;🇹🇭 ไทย&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.hi.md"&gt;🇮🇳 हिन्दी&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.bn.md"&gt;🇧🇩 বাংলা&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.ro.md"&gt;🇷🇴 Română&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.sv.md"&gt;🇸🇪 Svenska&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.it.md"&gt;🇮🇹 Italiano&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.el.md"&gt;🇬🇷 Ελληνικά&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.hu.md"&gt;🇭🇺 Magyar&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.fi.md"&gt;🇫🇮 Suomi&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.da.md"&gt;🇩🇰 Dansk&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/i18n/README.no.md"&gt;🇳🇴 Norsk&lt;/a&gt; &lt;/p&gt; 
+&lt;h4 align="center"&gt;Persistent memory compression system built for &lt;a href="https://claude.com/claude-code" target="_blank"&gt;Claude Code&lt;/a&gt;.&lt;/h4&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/LICENSE"&gt; &lt;img src="https://img.shields.io/badge/License-AGPL%203.0-blue.svg?sanitize=true" alt="License" /&gt; &lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/package.json"&gt; &lt;img src="https://img.shields.io/badge/version-6.5.0-green.svg?sanitize=true" alt="Version" /&gt; &lt;/a&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/package.json"&gt; &lt;img src="https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg?sanitize=true" alt="Node" /&gt; &lt;/a&gt; &lt;a href="https://github.com/thedotmack/awesome-claude-code"&gt; &lt;img src="https://awesome.re/mentioned-badge.svg?sanitize=true" alt="Mentioned in Awesome Claude Code" /&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://trendshift.io/repositories/15496" target="_blank"&gt; 
+  &lt;picture&gt; 
+   &lt;source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/trendshift-badge-dark.svg" /&gt; 
+   &lt;source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/trendshift-badge.svg" /&gt; 
+   &lt;img src="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/trendshift-badge.svg?sanitize=true" alt="thedotmack/claude-mem | Trendshift" width="250" height="55" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;br /&gt; 
+&lt;p align="center"&gt; &lt;a href="https://github.com/thedotmack/claude-mem"&gt; 
+  &lt;picture&gt; 
+   &lt;img src="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/public/cm-preview.gif" alt="Claude-Mem Preview" width="800" /&gt; 
+  &lt;/picture&gt; &lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#quick-start"&gt;Quick Start&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#how-it-works"&gt;How It Works&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#mcp-search-tools"&gt;Search Tools&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#documentation"&gt;Documentation&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#configuration"&gt;Configuration&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#troubleshooting"&gt;Troubleshooting&lt;/a&gt; • &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/#license"&gt;License&lt;/a&gt; &lt;/p&gt; 
+&lt;p align="center"&gt; Claude-Mem seamlessly preserves context across sessions by automatically capturing tool usage observations, generating semantic summaries, and making them available to future sessions. This enables Claude to maintain continuity of knowledge about projects even after sessions end or reconnect. &lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Quick Start&lt;/h2&gt; 
+&lt;p&gt;Start a new Claude Code session in the terminal and enter the following commands:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;&amp;gt; /plugin marketplace add thedotmack/claude-mem
+
+&amp;gt; /plugin install claude-mem
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Restart Claude Code. Context from previous sessions will automatically appear in new sessions.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Key Features:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;🧠 &lt;strong&gt;Persistent Memory&lt;/strong&gt; - Context survives across sessions&lt;/li&gt; 
+ &lt;li&gt;📊 &lt;strong&gt;Progressive Disclosure&lt;/strong&gt; - Layered memory retrieval with token cost visibility&lt;/li&gt; 
+ &lt;li&gt;🔍 &lt;strong&gt;Skill-Based Search&lt;/strong&gt; - Query your project history with mem-search skill&lt;/li&gt; 
+ &lt;li&gt;🖥️ &lt;strong&gt;Web Viewer UI&lt;/strong&gt; - Real-time memory stream at &lt;a href="http://localhost:37777"&gt;http://localhost:37777&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;💻 &lt;strong&gt;Claude Desktop Skill&lt;/strong&gt; - Search memory from Claude Desktop conversations&lt;/li&gt; 
+ &lt;li&gt;🔒 &lt;strong&gt;Privacy Control&lt;/strong&gt; - Use &lt;code&gt;&amp;lt;private&amp;gt;&lt;/code&gt; tags to exclude sensitive content from storage&lt;/li&gt; 
+ &lt;li&gt;⚙️ &lt;strong&gt;Context Configuration&lt;/strong&gt; - Fine-grained control over what context gets injected&lt;/li&gt; 
+ &lt;li&gt;🤖 &lt;strong&gt;Automatic Operation&lt;/strong&gt; - No manual intervention required&lt;/li&gt; 
+ &lt;li&gt;🔗 &lt;strong&gt;Citations&lt;/strong&gt; - Reference past observations with IDs (access via &lt;a href="http://localhost:37777/api/observation/%7Bid%7D"&gt;http://localhost:37777/api/observation/{id}&lt;/a&gt; or view all in the web viewer at &lt;a href="http://localhost:37777"&gt;http://localhost:37777&lt;/a&gt;)&lt;/li&gt; 
+ &lt;li&gt;🧪 &lt;strong&gt;Beta Channel&lt;/strong&gt; - Try experimental features like Endless Mode via version switching&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Documentation&lt;/h2&gt; 
+&lt;p&gt;📚 &lt;strong&gt;&lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/"&gt;View Full Documentation&lt;/a&gt;&lt;/strong&gt; - Browse markdown docs on GitHub&lt;/p&gt; 
+&lt;h3&gt;Getting Started&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/installation"&gt;Installation Guide&lt;/a&gt;&lt;/strong&gt; - Quick start &amp;amp; advanced installation&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/usage/getting-started"&gt;Usage Guide&lt;/a&gt;&lt;/strong&gt; - How Claude-Mem works automatically&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/usage/search-tools"&gt;Search Tools&lt;/a&gt;&lt;/strong&gt; - Query your project history with natural language&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/beta-features"&gt;Beta Features&lt;/a&gt;&lt;/strong&gt; - Try experimental features like Endless Mode&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Best Practices&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/context-engineering"&gt;Context Engineering&lt;/a&gt;&lt;/strong&gt; - AI agent context optimization principles&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/progressive-disclosure"&gt;Progressive Disclosure&lt;/a&gt;&lt;/strong&gt; - Philosophy behind Claude-Mem's context priming strategy&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Architecture&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/overview"&gt;Overview&lt;/a&gt;&lt;/strong&gt; - System components &amp;amp; data flow&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture-evolution"&gt;Architecture Evolution&lt;/a&gt;&lt;/strong&gt; - The journey from v3 to v5&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/hooks-architecture"&gt;Hooks Architecture&lt;/a&gt;&lt;/strong&gt; - How Claude-Mem uses lifecycle hooks&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/hooks"&gt;Hooks Reference&lt;/a&gt;&lt;/strong&gt; - 7 hook scripts explained&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/worker-service"&gt;Worker Service&lt;/a&gt;&lt;/strong&gt; - HTTP API &amp;amp; Bun management&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/database"&gt;Database&lt;/a&gt;&lt;/strong&gt; - SQLite schema &amp;amp; FTS5 search&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/architecture/search-architecture"&gt;Search Architecture&lt;/a&gt;&lt;/strong&gt; - Hybrid search with Chroma vector database&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3&gt;Configuration &amp;amp; Development&lt;/h3&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/configuration"&gt;Configuration&lt;/a&gt;&lt;/strong&gt; - Environment variables &amp;amp; settings&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/development"&gt;Development&lt;/a&gt;&lt;/strong&gt; - Building, testing, contributing&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/troubleshooting"&gt;Troubleshooting&lt;/a&gt;&lt;/strong&gt; - Common issues &amp;amp; solutions&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;How It Works&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;Core Components:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;5 Lifecycle Hooks&lt;/strong&gt; - SessionStart, UserPromptSubmit, PostToolUse, Stop, SessionEnd (6 hook scripts)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Smart Install&lt;/strong&gt; - Cached dependency checker (pre-hook script, not a lifecycle hook)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Worker Service&lt;/strong&gt; - HTTP API on port 37777 with web viewer UI and 10 search endpoints, managed by Bun&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;SQLite Database&lt;/strong&gt; - Stores sessions, observations, summaries&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;mem-search Skill&lt;/strong&gt; - Natural language queries with progressive disclosure&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Chroma Vector Database&lt;/strong&gt; - Hybrid semantic + keyword search for intelligent context retrieval&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/architecture/overview"&gt;Architecture Overview&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;MCP Search Tools&lt;/h2&gt; 
+&lt;p&gt;Claude-Mem provides intelligent memory search through &lt;strong&gt;4 MCP tools&lt;/strong&gt; following a token-efficient &lt;strong&gt;3-layer workflow pattern&lt;/strong&gt;:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;The 3-Layer Workflow:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;search&lt;/code&gt;&lt;/strong&gt; - Get compact index with IDs (~50-100 tokens/result)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;timeline&lt;/code&gt;&lt;/strong&gt; - Get chronological context around interesting results&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;get_observations&lt;/code&gt;&lt;/strong&gt; - Fetch full details ONLY for filtered IDs (~500-1,000 tokens/result)&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;How It Works:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Claude uses MCP tools to search your memory&lt;/li&gt; 
+ &lt;li&gt;Start with &lt;code&gt;search&lt;/code&gt; to get an index of results&lt;/li&gt; 
+ &lt;li&gt;Use &lt;code&gt;timeline&lt;/code&gt; to see what was happening around specific observations&lt;/li&gt; 
+ &lt;li&gt;Use &lt;code&gt;get_observations&lt;/code&gt; to fetch full details for relevant IDs&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;~10x token savings&lt;/strong&gt; by filtering before fetching details&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Available MCP Tools:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;search&lt;/code&gt;&lt;/strong&gt; - Search memory index with full-text queries, filters by type/date/project&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;timeline&lt;/code&gt;&lt;/strong&gt; - Get chronological context around a specific observation or query&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;get_observations&lt;/code&gt;&lt;/strong&gt; - Fetch full observation details by IDs (always batch multiple IDs)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;&lt;code&gt;__IMPORTANT&lt;/code&gt;&lt;/strong&gt; - Workflow documentation (always visible to Claude)&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;&lt;strong&gt;Example Usage:&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-typescript"&gt;// Step 1: Search for index
+search(query="authentication bug", type="bugfix", limit=10)
+
+// Step 2: Review index, identify relevant IDs (e.g., #123, #456)
+
+// Step 3: Fetch full details
+get_observations(ids=[123, 456])
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/usage/search-tools"&gt;Search Tools Guide&lt;/a&gt; for detailed examples.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Beta Features&lt;/h2&gt; 
+&lt;p&gt;Claude-Mem offers a &lt;strong&gt;beta channel&lt;/strong&gt; with experimental features like &lt;strong&gt;Endless Mode&lt;/strong&gt; (biomimetic memory architecture for extended sessions). Switch between stable and beta versions from the web viewer UI at &lt;a href="http://localhost:37777"&gt;http://localhost:37777&lt;/a&gt; → Settings.&lt;/p&gt; 
+&lt;p&gt;See &lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/beta-features"&gt;Beta Features Documentation&lt;/a&gt;&lt;/strong&gt; for details on Endless Mode and how to try it.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;System Requirements&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Node.js&lt;/strong&gt;: 18.0.0 or higher&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Claude Code&lt;/strong&gt;: Latest version with plugin support&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Bun&lt;/strong&gt;: JavaScript runtime and process manager (auto-installed if missing)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;uv&lt;/strong&gt;: Python package manager for vector search (auto-installed if missing)&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;SQLite 3&lt;/strong&gt;: For persistent storage (bundled)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Configuration&lt;/h2&gt; 
+&lt;p&gt;Settings are managed in &lt;code&gt;~/.claude-mem/settings.json&lt;/code&gt; (auto-created with defaults on first run). Configure AI model, worker port, data directory, log level, and context injection settings.&lt;/p&gt; 
+&lt;p&gt;See the &lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/configuration"&gt;Configuration Guide&lt;/a&gt;&lt;/strong&gt; for all available settings and examples.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Development&lt;/h2&gt; 
+&lt;p&gt;See the &lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/development"&gt;Development Guide&lt;/a&gt;&lt;/strong&gt; for build instructions, testing, and contribution workflow.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Troubleshooting&lt;/h2&gt; 
+&lt;p&gt;If experiencing issues, describe the problem to Claude and the troubleshoot skill will automatically diagnose and provide fixes.&lt;/p&gt; 
+&lt;p&gt;See the &lt;strong&gt;&lt;a href="https://docs.claude-mem.ai/troubleshooting"&gt;Troubleshooting Guide&lt;/a&gt;&lt;/strong&gt; for common issues and solutions.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Bug Reports&lt;/h2&gt; 
+&lt;p&gt;Create comprehensive bug reports with the automated generator:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class="language-bash"&gt;cd ~/.claude/plugins/marketplaces/thedotmack
+npm run bug-report
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Contributing&lt;/h2&gt; 
+&lt;p&gt;Contributions are welcome! Please:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Fork the repository&lt;/li&gt; 
+ &lt;li&gt;Create a feature branch&lt;/li&gt; 
+ &lt;li&gt;Make your changes with tests&lt;/li&gt; 
+ &lt;li&gt;Update documentation&lt;/li&gt; 
+ &lt;li&gt;Submit a Pull Request&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;See &lt;a href="https://docs.claude-mem.ai/development"&gt;Development Guide&lt;/a&gt; for contribution workflow.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;License&lt;/h2&gt; 
+&lt;p&gt;This project is licensed under the &lt;strong&gt;GNU Affero General Public License v3.0&lt;/strong&gt; (AGPL-3.0).&lt;/p&gt; 
+&lt;p&gt;Copyright (C) 2025 Alex Newman (@thedotmack). All rights reserved.&lt;/p&gt; 
+&lt;p&gt;See the &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/LICENSE"&gt;LICENSE&lt;/a&gt; file for full details.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;What This Means:&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;You can use, modify, and distribute this software freely&lt;/li&gt; 
+ &lt;li&gt;If you modify and deploy on a network server, you must make your source code available&lt;/li&gt; 
+ &lt;li&gt;Derivative works must also be licensed under AGPL-3.0&lt;/li&gt; 
+ &lt;li&gt;There is NO WARRANTY for this software&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Note on Ragtime&lt;/strong&gt;: The &lt;code&gt;ragtime/&lt;/code&gt; directory is licensed separately under the &lt;strong&gt;PolyForm Noncommercial License 1.0.0&lt;/strong&gt;. See &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/ragtime/LICENSE"&gt;ragtime/LICENSE&lt;/a&gt; for details.&lt;/p&gt; 
+&lt;hr /&gt; 
+&lt;h2&gt;Support&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Documentation&lt;/strong&gt;: &lt;a href="https://raw.githubusercontent.com/thedotmack/claude-mem/main/docs/"&gt;docs/&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Issues&lt;/strong&gt;: &lt;a href="https://github.com/thedotmack/claude-mem/issues"&gt;GitHub Issues&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Repository&lt;/strong&gt;: &lt;a href="https://github.com/thedotmack/claude-mem"&gt;github.com/thedotmack/claude-mem&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Official X Account&lt;/strong&gt;: &lt;a href="https://x.com/Claude_Memory"&gt;@Claude_Memory&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Official Discord&lt;/strong&gt;: &lt;a href="https://discord.com/invite/J4wttp9vDu"&gt;Join Discord&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Author&lt;/strong&gt;: Alex Newman (&lt;a href="https://github.com/thedotmack"&gt;@thedotmack&lt;/a&gt;)&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;hr /&gt; 
+&lt;p&gt;&lt;strong&gt;Built with Claude Agent SDK&lt;/strong&gt; | &lt;strong&gt;Powered by Claude Code&lt;/strong&gt; | &lt;strong&gt;Made with TypeScript&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
